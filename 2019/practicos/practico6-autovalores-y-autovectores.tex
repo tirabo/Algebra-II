@@ -1,0 +1,98 @@
+\documentclass[11pt,spanish,makeidx]{amsbook}
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+
+\usepackage{t1enc}
+%usepackage[spanish]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}       % From LaTeX distribution
+%\usepackage{subfigure}    % From CTAN/macros/latex/contrib/supported/subfigure
+\usepackage{pst-all}      % From PSTricks
+\usepackage{pst-poly}     % From pstricks/contrib/pst-poly
+\usepackage{pst-tools}
+\usepackage{multido}      % From PSTricks
+\input{random.tex}        % From CTAN/macros/generic
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\oddsidemargin -0.25cm \evensidemargin -.5cm \topmargin 0cm \textheight 23cm
+\textwidth 16.5cm
+
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\K {\mathbb{K}}
+\newcommand\B {\mathcal{B}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\gen[1]{\langle #1 \rangle}
+
+
+\begin{document}
+
+\begin{center} {\large \bf \'Algebra y \'Algebra II - Segundo Cuatrimestre 2018 \\  Pr\'actico 6 - Autovalores y Autovectores } \end{center}
+%============================================================
+\vskip .4cm
+
+\begin{enumerate}
+	
+	\item Hallar los autovalores, autovectores y autoespacios de la siguientes matrices $A_i$, $i=1,\dots,4$ y
+	decidir si son semejantes
+	o no a una matriz diagonal $D_i$, $i=1,\dots,4$. 	Cuando s\'i lo sean, dar una $P_i$ tal que $D_i=P_i^{-1}A_iP_i$.
+	Considerarlas primero como matrices reales y luego como complejas.
+	\[ A_1=\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix} \qquad A_2=\begin{bmatrix} 2 & 3 \\ -1 & 1
+	\end{bmatrix} \qquad
+	A_3=\begin{bmatrix} -9 & 4 & 4 \\ -8 & 3 & 4 \\ -16 & 8 & 7 \end{bmatrix} \qquad
+	A_4=\begin{bmatrix} 6 & -3 & -2 \\ 4 & -1 & -2 \\ 10 & -5 & -3 \end{bmatrix}. \]
+	
+	\ 
+	
+	\item Para cada una de las siguientes transformaciones lineales $T$ hallar sus autovalores
+	y para cada uno de ellos
+	dar una base de autovectores del espacio propio asociado. Luego decir si la
+	transformaci\'on considerada es o no  diagonalizable.
+	\begin{enumerate}
+		\item $T:\R^2\to \R^2$, $T(x,y)=(y,0)$.
+		\item $T:\R^4\to \R^4$, $T(x,y,z,w)=(2x-y,x+4y,z+3w,z-w)$.
+		\item $T:\R^3\to \R^3$, $T(x,y,z)=(x+2z,z-x-y,x+2y+z)$.
+		\item $T:\R^3\to \R^3$, $T(x,y,z)=(4x+y+5z,4x-y+3z,-12x+y-11z)$.
+	\end{enumerate}
+		
+	\
+	
+	\item \begin{enumerate}
+		\item Sea $A\in\C^{n\times n}$. Probar que el t\'ermino independiente del
+		polinomio caracter\'istico de $A$ es $(-1)^n\det(A)$ y que el coeficiente
+		de grado $(n-1)$ es $-\tr(A)$.
+		\item Concluir que si $A$ es una matriz $2 \times 2$ entonces el polinomio caracter\'istico de $A$ es
+		$x^2-\tr(A)x+\det(A)$ y por lo tanto, si $A$ no es invertible, entonces $A$ tiene autovalores 0 y
+		$\tr(A)$.
+	\end{enumerate}
+		
+	\
+	
+	\item Sea $A\in\C^{n\times n}$. Probar que si $c_1,\dots,c_n$ son los autovalores de $A$
+	(posiblemente repetidos), entonces
+	$\det(A)=c_1\dots c_n$ y $\tr(A)=c_1+\dots+c_n$.
+		
+	\
+		
+	\item Probar que hay una \'unica transformaci\'on lineal $T$ de $\R^2$ en $\R^2$ tal que
+	$(1,1)$ es autovector
+	de autovalor 2 y $(-2,1)$ es autovector de autovalor 1. 	Calcular $\det(T)$ y dar la matriz de $T$ en la base can\'onica de $\R^2$.
+	
+	
+\end{enumerate}
+
+
+\end{document}

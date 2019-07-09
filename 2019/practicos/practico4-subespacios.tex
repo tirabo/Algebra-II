@@ -1,0 +1,326 @@
+\documentclass[11pt,spanish,makeidx]{amsbook}
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+
+\usepackage{t1enc}
+%usepackage[spanish]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}       % From LaTeX distribution
+%\usepackage{subfigure}    % From CTAN/macros/latex/contrib/supported/subfigure
+\usepackage{pst-all}      % From PSTricks
+\usepackage{pst-poly}     % From pstricks/contrib/pst-poly
+\usepackage{pst-tools}
+\usepackage{multido}      % From PSTricks
+\input{random.tex}        % From CTAN/macros/generic
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\oddsidemargin -0.25cm \evensidemargin -.5cm \topmargin 0cm \textheight 23cm
+\textwidth 16.5cm
+
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand \gen[1] {\langle #1 \rangle}
+
+
+\begin{document}
+
+\begin{center} {\large \bf \'Algebra y \'Algebra II - Segundo Cuatrimestre 2018 \\  Pr\'actico 4 - Subespacios Vectoriales } \end{center}
+%============================================================
+\vskip .4cm
+
+\begin{enumerate}
+	
+	
+		
+			\item Sea $n\in \N$. Mostrar que el conjunto de polinomios sobre $\R$ de grado menor que $n$ es un subespacio vectorial de $\R[x]$. Este espacio
+			ser\'a denotado por $P_n$.
+			
+			\
+				
+			\item Decidir si los siguientes subconjuntos de $\R^n$ son subespacios vectoriales:
+			\begin{enumerate}
+				\item $\{(x_1, \ldots ,x_n) \in \R^n \,|\, x_1 = x_n\}$.
+				\item $\{(x_1, \ldots ,x_n) \in \R^n \,|\, x_1 +\dots + x_n=1\}$.
+				\item $\{(x_1, \ldots ,x_n) \in \R^n \,|\, x_1 +\dots + x_n=0\}$.
+				\item $\{(x_1, \ldots ,x_n) \in \R^n \,|\, x_1 \le x_2\}$.
+				\item $\{(x_1, \ldots ,x_n) \in \R^n \,|\, x_n=1\}$.
+				\item $\{(x_1, \ldots ,x_n) \in \R^n \,|\, x_n=0\}$.
+			\end{enumerate}
+				
+			\
+			
+			\item Sea $V= C[0,1]$ el conjunto de las funciones continuas de $[0,1]$ en $\R$.  
+			Decidir en cada caso si el conjunto dado es un subespacio vectorial de $V$:
+				\begin{enumerate}
+					\item $C^1[0,1] = \{ f : [0,1] \rightarrow \R : f \ \text{es  derivable}\}$.
+					\item $\{ f \in C[0,1] : f(1) = 1 \}$.
+					\item $\{ f \in C[0,1]:\int_0^1 f(x)\, \mathrm{d}x = 0\}$.
+				\end{enumerate}
+				
+				\
+				
+					
+		\item  En cada caso caracterizar con ecuaciones el subespacio vectorial dado  por generadores.
+		\begin{enumerate}
+			\item $\gen{(1,0,3),(0,1,-2)}\subseteq \R^3$.
+			\item $\gen{(1,2,0),(0,-1,1),(2,3,-1)}\subseteq \R^3$.
+			\item $\gen{(1,1,0,0),(0,1,1,0),(0,0,1,1)}\subseteq \R^4$.
+			\item $\gen{ 1+x+x^2,\, x-x^2+x^3,\, 1-x,\, 1-x^2,\, x-x^2,\, 1+x^4}\subseteq \R[x]$.
+		\end{enumerate}
+			
+		\
+			
+		\item  Dar una base y la dimensi\'on de los siguientes subespacios vectoriales.
+		\begin{enumerate}
+			\item $W=\{(x,y,z) \in \R^3 :\, z = x + y \}$.
+			\item $W = \{(x,y,z,w,u) \in \R^5 :\, w = x + z,\, y = x - z,\, u = 2x - 3z \}$.
+			\item $W = \{ p(x)=a+bx+cx^2+dx^3\in P_4:\, a+d=b+c \}$.
+			\item $W= \{ p(x)\in P_4:\, p'(0)=0 \}$.
+		\end{enumerate}
+			
+		\
+		
+	\item
+	\begin{enumerate}
+		\item
+		Expresar ${\Bbb R}^2$ como suma de dos subespacios no nulos.
+		\item
+		Encuentre dos complementos distintos del subespacio generado por $(1,2)$ en ${\R}^2$.
+	\end{enumerate}
+		
+	\
+	
+	\item Sean $V=\R^6$ y sean $W_1$ y $W_2$ los siguientes subespacios de $V$:
+	\begin{align*}
+	W_1 &= \{ (u,v,w,x,y,z):\, u+v+w=0,\, x+y+z=0\};  \\
+	W_2 &= \gen{(1,-1,1,-1,1,-1),(1,2,3,4,5,6),(1,0,-1,-1,0,1),(2,1,0,0,0,0)}.
+	\end{align*}
+	\begin{enumerate}
+		\item  Determinar $W_1 \cap W_2$ y describirlo por generadores y con ecuaciones.
+		\item  Determinar $W_1+W_2$ y describirlo por generadores y con ecuaciones.
+		\item  ?`Es la suma $W_1+W_2$ directa?
+		\item  Dar un complemento de $W_1$.
+		\item  Dar un complemento de $W_2$.
+		\item  Decir cu\'ales de los siguientes vectores est\'an en $W_1\cap W_2$ y cu\'ales en $W_1+W_2$:
+		\[ (1,1,-2,-2,1,1);\ (0,0,0,1,0,-1);\ (1,1,1,0,0,0);\ (3,0,0,1,1,3);\ (-1,2,5,6,5,4). \]
+		\item Para los vectores $v$ del punto anterior en $W_1+W_2$,  hallar $w_1\in W_1$ y $w_2\in W_2$ tales que $v=w_1+w_2$.
+	\end{enumerate}
+		
+	\
+	
+	\item Sea  $S=\{v_1,v_2,v_3,v_4\}\subset\Bbb R^4$  donde
+	$$
+	v_1=(-1,0,1,2) \quad v_2=(3,4,-2,5) \quad v_3=(0,4,1,11) \quad
+	v_4=(1,4,0,9).
+	$$
+	\begin{enumerate}
+		\item  Describir impl{\'\i}citamente el subespacio  $W= \langle \, S\, \rangle$.
+		\item Si $W_1 = \langle \, v_1,v_2,v_3+v_4\, \rangle $ y $W_2 = \langle \, v_3,v_4\, \rangle $
+		describir $W_1\cap W_2$ impl{\'\i}citamente.
+	\end{enumerate}
+		
+	
+	
+	
+	\vspace{.5cm}
+	
+	%============================================================
+	\section*{Coordenadas y cambio de base}
+	%============================================================
+	
+	\vspace{.5cm}
+	
+	
+	\item
+	Probar que los vectores $\;v_1=(1,0,-i),\;
+	v_2=(1+i,1-i,1),\;v_3=(i,i,i)$ forman una base de $\mathbb{C}^3$
+	y dar las coordenadas de un vector $(x,y,z)$ en esta base.
+		
+	\
+	
+	\item Dados los siguientes vectores de $\R^4$
+	$$
+	v_1=(1,1,0,0) \quad v_2=(0,0,1,1) \quad v_3=(1,0,0,4)
+	\quad v_4=(0,0,0,2).
+	$$
+	\begin{enumerate}
+		\item Demostrar que
+		$\mathcal{B}=\{v_1,v_2,v_3,v_4\}$ es una base de
+		$\R ^4$.
+		\item Hallar las coordenadas de los vectores de la
+		base can\'onica respecto de $\mathcal{B}$.
+		\item Hallar las matrices de cambio de base de la base can\'onica
+		a $\mathcal{B}$ y viceversa.
+	\end{enumerate}
+		
+	\
+	
+	\item  Sea $V=P_3$.
+	Sean
+	$$ g_1=1-x,\quad g_2=x+x^2, \quad g_3=(x+1)^2.$$
+	\begin{enumerate}
+		\item Demostrar que $\mathcal{B}=\{g_1,g_2,g_3\}$ es una base de $V$.
+		\item Hallar las matrices de cambio de base con respecto a $\mathcal{B}$
+		y a la base can{\'o}nica $\{1,x,x^2\}$.
+	\end{enumerate}
+		
+	\
+		
+	\item Sea $\mathcal{B}=
+	\left\{
+	\begin{bmatrix}
+	2 & 0& 0 \\
+	0 & 3& 1
+	\end{bmatrix},
+	\begin{bmatrix}
+	0& 2& -1\\
+	0& 2&-1
+	\end{bmatrix},
+	\begin{bmatrix}
+	-1 &1&1 \\
+	2 & 0 &2
+	\end{bmatrix},
+	\begin{bmatrix}
+	1 &0 &1\\
+	0 &0 &0
+	\end{bmatrix},
+	\begin{bmatrix}
+	1& 0& 0\\
+	0 &2 &0
+	\end{bmatrix},
+	\begin{bmatrix}
+	0 &0 & 0\\
+	1 & 2&1
+	\end{bmatrix}
+	\right\}$.
+
+    
+    \vskip .3cm
+    
+
+\begin{enumerate}
+		\item Demostrar que
+		$\mathcal{B}$ es una base de $M_{2\times3}(\mathbb{R})$.
+		\item Hallar las coordenadas de
+		$
+		\begin{bmatrix}
+		1 & 1& 1 \\
+		1 & 1& 1
+		\end{bmatrix}$ con respecto a la base $\mathcal{B}$.
+		\item Hallar las matrices de cambio de base de la base can\'onica
+		a $\mathcal{B}$ y viceversa.
+	\end{enumerate}
+		
+	\
+		
+	\item Sea $W=<v_1,v_2>$ el subespacio de $\mathbb{C}^3$
+	generado por $v_1=(1,0,i)$ y $v_2=(1+i,1,-1)$.
+	\begin{enumerate}
+		\item Demostrar que $\mathcal{B}_1=\{v_1,v_2\}$ es una base de $W$.
+		\item Describir $W$ impl{\'\i}citamente.
+		\item Demostrar que los vectores $w_1=(1,1,0)$ y
+		$w_2=(1,i,1+i)$ pertenecen a $W$ y que $\mathcal{B}_2=\{w_1,w_2\}$
+		es otra base de $W$.
+		\item  ¿Cu{\'a}les son las coordenadas de $v_1$ y $v_2$ en la
+		base ordenada $\mathcal{B}_2$?
+		\item Hallar las matrices de cambio de base
+		$P_{\mathcal{B}_1,\mathcal{B}_2}$ y $P_{\mathcal{B}_2,\mathcal{B}_1}$.
+	\end{enumerate}
+	
+	
+\end{enumerate}
+
+\vskip .3cm
+
+\medskip
+\centerline{EJERCICIOS ADICIONALES}
+\medskip
+
+\begin{enumerate}
+	
+
+	
+	
+	\item Sea $V= C[0,1]$ el espacio vectorial de las funciones continuas en $[0,1]$. Decidir en cada caso si el conjunto dado es un subespacio vectorial
+	de $V$.
+	\begin{enumerate}
+		\item $\{f \in C[0,1]: f(1) = 0\}$.
+		\item $\{ f \in C[0,1] : f(1) \geq 0\}$.
+		\item $\{f \in C[0,1] : f(1) = f (0)\}$.
+		\item $\{ f \in C[0,1]:\int_0^1 (f(x))^2 dx = 0\}$.
+	\end{enumerate}
+		
+	\
+	
+	\item Sea $V= \R^n$. Decidir en cada caso si el conjunto dado es un subespacio vectorial de $V$.
+	\begin{enumerate}
+		\item $\{(x_1, \ldots ,x_n) \in \R^n\,|\,\exists \, j > 1 : x_1 = x_j\}$.
+		\item $\{(x_1, \ldots , x_n) \in \R^n\,|\,x_1x_n = 0 \}$.
+	\end{enumerate}
+		
+	\
+		
+	\item Sea $\R[x]$ el espacio vectorial de polinomios con coeficientes reales. Decidir si el subconjunto de polinomios de grado par, junto
+	con el polinomio nulo, es un subespacio vectorial.
+		
+	\
+	
+	\item Sea $V= M_n(\R)$ el espacio vectorial de matrices $n\times n$. Decidir en cada caso si el conjunto dado es un subespacio vectorial de $V$.
+	\begin{enumerate}
+		\item El conjunto de matrices $n\times n$ invertibles.
+		\item El conjunto de matrices $n\times n$ NO invertibles.
+		\item El conjunto de matrices $n\times n$ $A$ tales que $AB = BA$. ($B$ una matriz $n\times n$ fija).
+	\end{enumerate}
+		
+
+		
+	\item Sean
+	\[
+	A_1=\begin{bmatrix}
+	1&-2&0&3&7\\
+	2&1&-3&1&1
+	\end{bmatrix}\text { y }
+	A_2=\begin{bmatrix}
+	3&2&0&0&3\\
+	1&0&-3&1&0 \\
+	-1&1&-3&1&-2
+	\end{bmatrix}
+	\]
+	y sean $W_1$ y $W_2$ los espacios soluci{\'o}n de los sistemas
+	homog{\'e}neos asociados a $A_1$ y $A_2$ respectivamente.
+	
+	Describir impl{\'\i}citamente $W_1\cap W_2$ y $W_1+W_2$.
+		
+	\
+	
+	\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar
+	\begin{enumerate}
+		\item Sean $W_1$ y $W_2$ subespacios no nulos de $\R^2$ entonces si $W_1 \cap W_2$ contiene un vector no nulo $W_1 = W_2$
+			\item Sean $W_1$ y $W_2$ subespacios de dimensi\'on $2$ de $\R^3$ entonces si $W_1 \cap W_2$ contiene un vector no nulo.
+	\end{enumerate}
+	
+		
+		\item Sean $W_1, W_2$ subespacios de un espacio vectorial $V$. Probar que $W_1 \cup W_2$ es un subespacio
+		de $V$ si y s\'olo si $W_1 \subseteq W_2$ o bien $W_2 \subseteq W_1$.
+			
+
+	
+	
+	
+\end{enumerate}
+
+
+
+\end{document}

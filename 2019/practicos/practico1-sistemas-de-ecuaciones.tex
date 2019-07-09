@@ -1,0 +1,338 @@
+\documentclass[11pt,spanish,makeidx]{amsbook}
+\tolerance=10000
+
+\usepackage{t1enc}
+%usepackage[spanish]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}       % From LaTeX distribution
+%\usepackage{subfigure}    % From CTAN/macros/latex/contrib/supported/subfigure
+\usepackage{pst-all}      % From PSTricks
+\usepackage{pst-poly}     % From pstricks/contrib/pst-poly
+\usepackage{pst-tools}
+\usepackage{multido}      % From PSTricks
+\input{random.tex}        % From CTAN/macros/generic
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\oddsidemargin -0.25cm \evensidemargin -.5cm \topmargin 0cm \textheight 23cm
+\textwidth 16.5cm
+
+\renewcommand\Im{\operatorname{Im}}
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+\newcommand\tr{\operatorname{tr}}
+
+
+
+\begin{document}
+
+\begin{center} {\large \bf \'Algebra y \'Algebra II - Segundo Cuatrimestre 2018 \\  Pr\'actico 1 - Sistemas de ecuaciones lineales y  matrices } \end{center}
+%============================================================
+\vskip .4cm
+
+%============================================================
+\section*{N\'umeros complejos}
+%============================================================
+
+
+\begin{enumerate}
+
+
+\item
+Simplificar las siguientes expresiones:
+$$\begin{array}{ll}
+ \text{a) } \ \left(\dfrac{-3}{\frac{4}{5}+1}\right)^{-1}\cdot\left(\dfrac{4}{5}-1\right) + \dfrac{1}{3}, \quad &
+\text{ b)} \ \dfrac{a}{2\pi-6}(\pi-3)^2 -\dfrac{2a(\pi^2-9)}{\pi-3}.
+\end{array}$$
+
+\vspace{.5cm}
+
+
+%\item Demostrar que en $(\C,+, \cdot)$ se cumple:
+%\[ |\bar z|= |z|, \qquad |z_1 \, z_2|= |z_1| \, |z_2|. \]
+%
+%\vspace{.5cm}
+
+
+\item Sean $z=1+i$ y $w=\sqrt{2}-i$. Calcular:
+ \begin{enumerate}
+  \item $z^{-1}$; $1/w$; $z/w$; $w/z$.
+
+  \item $1+z+z^2+z^3+\dots+z^{2017}$.
+
+  \item $(z(z+w)^2-iz)/w$.
+ \end{enumerate}
+
+
+
+\vspace{.5cm}
+
+
+ \item Expresar los siguientes n{\'u}meros complejos en la forma $a +i b$.
+ Hallar el m{\'o}dulo, argumento y conjugado de cada uno de ellos y graficarlos.
+\begin{align*}
+\text{a) }&\ 2e^{\mathrm{i}\pi}-i,  & \text{ b)} & \  i^3 - 2i^{-7} -1, &\text{ c)} &\ (-2+i) (1+2i).
+\end{align*}
+
+
+
+
+%============================================================
+\section*{Sistemas de ecuaciones lineales}
+%============================================================
+
+
+\item En cada caso decidir si los sistemas son equivalentes y si lo son, expresar cada ecuaci\'on del primer sistema como combinaci\'on lineal de las ecuaciones del segundo.
+$$\begin{array}{ll}
+   \text{a) } \begin{cases} x-y=0 \\ 2x+y=0 \end{cases} \;
+     \begin{cases} 3x+y=0 \\ x+y=0 \end{cases}   &
+  \text{b) } \begin{cases} -x-y+4z=0 \\ x+3y+8z=0 \\ \tfrac{1}{2}x+y+\tfrac{5}{2}z=0 \end{cases} \;
+    \begin{cases} x-z=0 \\ y+3z=0 \end{cases}
+    \end{array}$$
+
+\
+
+\item Mostrar que los siguientes sistemas no son equivalentes estudiando sus soluciones.
+\begin{align*}
+    &\begin{cases} x+y=1 \\ 2x+y=0 \end{cases} &
+    & \begin{cases} -x+y=1 \\ x-2y=0 \end{cases}  
+\end{align*}
+
+
+
+\
+
+\item Sea $A=\begin{bmatrix}3 & -1 & 2 \\2 & 1 & 1 \\1&-3&0\end{bmatrix}$. Reduciendo $A$ por filas
+ \begin{enumerate}
+   \item encontrar todas las soluciones sobre $\Q,\R$ y $\C$ del sistema $AX=0$.
+   \item encontrar todas las soluciones sobre $\Q,\R$ y $\C$ del sistema $AX=\left[\begin{array}{c}
+     1\\i\\0 \end{array}\right]$.
+ \end{enumerate}
+
+\
+
+\item Demostrar que las matrices  siguientes no son equivalentes por filas
+ $$\begin{bmatrix}2 & 0 & 0 \\a & -1 & 0 \\ b&c&3\end{bmatrix}, \qquad  \begin{bmatrix}1 & 1 & 2 \\-2 & 0 & -1 \\1&3&5\end{bmatrix}.$$
+
+\
+
+\item Determinar los valores de $a\in\R$ para los cuales el sistema
+\[
+\begin{bmatrix}1 & 1 & -1& 2 \\2 & 1 & 1 & 1 \\3&2&0&3\\1&-1&1&2\end{bmatrix}\left[\begin{array}{c}
+     x_1\\x_2\\x_3\\x_4 \end{array}\right]=\left[\begin{array}{c}
+     a\\1\\0\\1 \end{array}\right]
+\]
+admite soluci\'on. 
+
+Para esos valores de $a$, calcular todas las soluciones del sistema.
+
+\
+
+%\item Sea $A=\begin{bmatrix}1 & 2 & 3 & \dots & 2016 \\ 2 & 3 & 4 & \dots & 2017 \\ 3&4&5& \dots & 2018\\ \vdots & &&& \vdots \\ 100 & 101 & 102& \dots& 2115\end{bmatrix}$.
+% \begin{enumerate}
+%   \item Encontrar todas las soluciones del sistema $AX=0$.
+%   \item encontrar todas las soluciones del sistema $AX=\left[\begin{array}{c}
+%     1\\\vdots \\1 \end{array}\right]$.
+% \end{enumerate}
+%\
+
+\item Determinar cu{\'a}les de las siguientes matrices
+est{\'a}n escal\'on reducidas por filas.
+$$\begin{array}{lccccl}
+\begin{bmatrix}1 & 2 & 0 \\0 & 0 & 1 \end{bmatrix}, &
+\begin{bmatrix}1 & 0 & 2 \\0 & 1 & -3 \end{bmatrix}, &
+\begin{bmatrix}0 & 1 & 0 \\0 & 0 & 1 \end{bmatrix}, &
+\begin{bmatrix}0 & 1 & 0 \\0 & 0 & 0 \end{bmatrix}, &
+\begin{bmatrix}1 & 0 & 0  \\0 & 0 & 1 \\0 & 0 & 1 \end{bmatrix},&
+\begin{bmatrix}1 & 0 & 0  \\0 & 0 & 0 \\0 & 0 & 1 \end{bmatrix}.
+\end{array}$$
+
+\
+
+\item Para cada una de las matrices escal\'on reducida por filas del ejercicio anterior
+\begin{enumerate}
+\item
+asumir que es la matriz de un sistema homog\'eneo, escribir el sistema
+y dar las soluciones del sistema,
+\item
+asumir que es la matriz ampliada de un sistema no homog\'eneo, escribir el sistema
+y dar las soluciones del sistema.
+\end{enumerate}
+
+\
+
+\item
+Dar todas las posibles matrices $2\times2$ escal\'on reducidas por filas.
+
+
+\
+
+\item Probar que si un sistema homog\'eneo, $AX=0$, posee soluciones
+distinta de la trivial, entonces el sistema $AX=b$ no tiene
+soluci\'on o tiene al menos dos soluciones distintas.
+
+\vspace{.5cm}
+
+%============================================================
+\section*{Operaciones con Matrices}
+%============================================================
+
+\vspace{.5cm}
+
+\item\label{ej} Calcular  $AB$, $BA$, $AC$, $CA$, $BC$, $CB$,
+$ABC$, $ACB$, $BAC$, $BCA$, $CAB$ y $CBA$:
+$$
+A= \begin{bmatrix} 1&-2&0\\ 1&-2&1\\ 1&-2&-1\end{bmatrix},\quad
+\quad B= \begin{bmatrix}1&1&2\\ -2&0&-1\\ 1&3&5 \end{bmatrix},
+\quad\quad C=\begin{bmatrix}1&-1&1\\ 2&0&1\\ 3&0&1 \end{bmatrix}.
+$$
+
+%\
+%
+%\begin{enumerate} 
+%\item Calcular $AB$, $BA$, $AC$, $CA$, $BC$, $CB$,
+%$ABC$, $ACB$, $BAC$, $BCA$, $CAB$ y $CBA.$
+%\item Verificar que, en los productos de 3 matrices,
+%da lo mismo asociar de una u otra forma.
+%\end{enumerate}
+
+%\
+%
+%\item Probar que si $A$ y $B$ son matrices $r\times n$ y $C$ es una matriz $n\times q,$ entonces $(A+B)C=AC+BC.$
+
+\
+
+ \item  Repetir el ejercicio (\ref{ej}) con aquellos productos que tengan sentido para las matrices: 
+ \begin{equation*}
+ 	A=\begin{bmatrix} 2 & -1 & 1 \\ 1 & 2 &
+ 	1\end{bmatrix},\qquad
+ 	B=\begin{bmatrix} 3 \\ 1 \\ -1\end{bmatrix}, \qquad
+ 	C=\begin{bmatrix} 1 & -1 \end{bmatrix}.
+ \end{equation*}
+
+
+
+
+\item Hallar dos matrices distintas $A$ tales que $A^2=0$ pero $A\ne 0$.
+
+\
+
+\item Para cada una de las siguientes matrices, usar operaciones elementales
+por fila para decidir si son inversibles y hallar la inversa cuando lo sean.
+\begin{equation*}
+\begin{bmatrix} 3 & -1 & 2 \\ 2 & 1 & 1 \\ 1 & -3 & 0\end{bmatrix}\qquad
+\begin{bmatrix} 2 & 5 & -1 \\ 4 & -1 & 2 \\ 6 & 4 & 1\end{bmatrix}\qquad
+\begin{bmatrix} 1 & 1 & 1 & 2 \\ 1 & -3 & 3 & -8 \\ -2 & 1 & 2 & -2 \\ 1 & 2 & 1 & 4 \end{bmatrix}\qquad
+\begin{bmatrix} 1 & 2 & 1 \\ 2 & 1 & 3 \\ 3 & 0 & i \end{bmatrix}.
+\end{equation*}
+
+\
+
+\item Sea $A$ la primera matriz del ejercicio anterior.
+Hallar matrices elementales $E_1,E_2,\dots,E_k$ tales que $E_kE_{k-1}\dots E_2E_1A=I$.
+
+\
+
+
+\
+
+
+
+
+\end{enumerate}
+
+
+
+
+\medskip
+\centerline{EJERCICIOS ADICIONALES}
+\medskip
+\vspace{.5cm}
+
+\begin{enumerate}
+
+
+\item Sean $a,b\in\mathbb{C}$. Decidir si existe $z \in \mathbb{C}$ tal que:
+\begin{enumerate}
+  \item $a \, \Im(z)=2$.  ?`Es \'unico?
+  \item $z^2=b$. ?`Es \'unico? ?`Para qu\'e valores de $b$ resulta $z$ ser un n\'umero real?
+  \item $z$ es imaginario puro y $z^2=4$.
+  \item $z$ es imaginario puro y $z^2=-4$.
+\end{enumerate}
+
+\item Hallar una matriz reducida por filas que sea equivalente por filas a
+$$A= \begin{bmatrix}i & -(1+i) & 0 \\1 & -2 & 1 \\1&2i&-1 \end{bmatrix}.$$
+
+\vspace{.5cm}
+
+\item Mostrar que los siguientes sistemas tienen las mismas soluciones.
+\[\begin{cases} x-y=0 \\ 2x+y=0; \end{cases} \;
+     \begin{cases} 3x+y=0 \\ x+y=0. \end{cases}   \]
+?`Implica esto que son equivalentes? ?`Por qu\'e?
+
+\
+
+\item
+Dar todas las posibles matrices $2\times3$ escal\'on reducidas por filas.
+
+
+
+\
+
+
+\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
+\begin{enumerate}
+\item Sea $A$ es una matriz $5\times 4$ y $b \ne 0$. Si $AX=b$ tiene una \'unica soluci\'on, entonces $AX=0$ tiene una soluci\'on no trivial.
+\item Sea $A$ es una matriz $5\times 4$ y $b \ne 0$. Si $AX=b$ no tiene soluci\'on, entonces $AX=0$ tiene solo la soluci\'on trivial.
+\item Sea $A$ es una matriz $4\times 5$ y $b \ne 0$. El sistema $AX=b$ tiene soluci\'on si y sólo si el sistema $AX=0$ tiene soluci\'on.
+\item Sea $A$ es una matriz $5\times 5$ y $b \ne 0$. Si $AX=b$ tiene soluci\'on exactamente cuando $AX=0$ tiene una soluci\'on no trivial.
+\item
+Sean $A$ y $B$ matrices cuadradas tales $AB=BA$ pero ninguna es m\'ultiplo de la otra.
+Entonces $A$ o $B$ es diagonal.
+\item Si $A$ es una matriz diagonal tal que $\tr A^2=0 \Rightarrow A=0.$
+\item Dos matrices $3\times 3$ escal\'on reducidas por filas que tienen la misma cantidad
+de unos son iguales.
+\item Si $A$ y $B$ son matrices $n\times n$, entonces $\tr(A+B)=\tr(A)+\tr(B)$.
+\item Si $A$ y $B$ son matrices inversibles entonces $(A+B)$ es una matriz inversible.
+\item Si un sistema de ecuaciones tiene dos soluciones diferentes entonces tiene infinitas soluciones diferentes.
+\end{enumerate}
+
+\
+
+\item
+Sean $A$ y $B$ matrices $r\times n$ y $n\times m$ respectivamente.
+Probar que:
+ \begin{enumerate}
+    \item  si $m>n$, entonces el sistema $ABX=0$ tiene soluciones no nulas.
+  \item  si $r>n$, entonces existe un $b$, $r\times 1$, tal que $ABX=b$
+   no tiene soluci\'on.
+ \end{enumerate}
+
+\
+
+\item Dada una matriz cuadrada $n\times n$ $A$, se define la {\it traza} de $A$
+ como $\tr(A)=\displaystyle{\sum_{i=1}^n} A_{ii}$. 
+ 
+ Probar que si $A$ y $B$ son matrices $n\times n$ entonces
+$\text{tr}(AB)=\text{tr}(BA)$.
+
+
+
+
+
+
+\end{enumerate}
+
+
+
+
+\end{document}

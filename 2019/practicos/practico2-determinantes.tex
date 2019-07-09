@@ -1,0 +1,162 @@
+\documentclass[11pt,spanish,makeidx]{amsbook}
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+
+\usepackage{t1enc}
+%usepackage[spanish]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}       % From LaTeX distribution
+%\usepackage{subfigure}    % From CTAN/macros/latex/contrib/supported/subfigure
+\usepackage{pst-all}      % From PSTricks
+\usepackage{pst-poly}     % From pstricks/contrib/pst-poly
+\usepackage{pst-tools}
+\usepackage{multido}      % From PSTricks
+\input{random.tex}        % From CTAN/macros/generic
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\oddsidemargin -0.25cm \evensidemargin -.5cm \topmargin 0cm \textheight 23cm
+\textwidth 16.5cm
+
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+\newcommand\tr{\operatorname{tr}}
+
+
+
+\begin{document}
+
+\begin{center} {\large \bf \'Algebra y \'Algebra II - Segundo Cuatrimestre 2018 \\  Pr\'actico 2 - Determinantes } \end{center}
+%============================================================
+\vskip .4cm
+
+
+\begin{enumerate}
+	
+	\item Calcular el determinante de las siguientes matrices.
+	\begin{align*}
+	&A=\begin{bmatrix} 4&7\\ 5&3\end{bmatrix},
+	&&B=\begin{bmatrix} -3&2&4\\ 1&-1&2\\ -1&4&0\end{bmatrix},
+	&&C=\begin{bmatrix} 2&3&1&1\\ 0&2&-1&3 \\ 0&5&1&1 \\1&1&2&5\end{bmatrix}.
+	\end{align*}
+	
+	\ 
+	
+	\item Determinar para qu\'e valores de $c\in\R$ las siguientes matrices son invertibles.
+	\begin{align*}
+	&A=\begin{bmatrix} 0&c&-c\\ -1&2&-1\\c&-c&c\end{bmatrix},
+	&&B=\begin{bmatrix}4& c&3\\c&2&c\\ 5&c&4 \end{bmatrix},
+	&&C=\begin{bmatrix} 1&c&-1\\ c&1&1\\0&1&c\end{bmatrix}.
+	\end{align*}
+	
+	\ 
+	
+	\item Sean $A$, $B$ y $C$ matrices $n\times n$, tales que $\det A=-1$, $\det B=2$ y $\det C=3$. 
+	Calcular $\det(A^2BC^TB^{-1})$ y $\det(B^2C^{-1}AB^{-1}C^T)$.
+	
+	\ 
+	
+	\item
+	Usar la matriz de cofactores para calcular la inversa de las matrices:
+	\[
+	A=\begin{bmatrix} -2&3&2\\ 6&0&3\\4&1&-1\end{bmatrix},\qquad
+	B=\begin{bmatrix}\cos(t)& 0& \sin(t)\\ 0&1&0 \\ \sin(t)&0&\cos(t) \end{bmatrix}.
+	\]
+
+
+%\
+%
+%\item
+%Usar la regla de Cramer para resolver los siguientes sistemas de
+%ecuaciones lineales.
+%\begin{align*}
+%&\begin{cases}
+%x+y+z=11\\
+%2x-6y -z= 0\\
+%3x+4y+2z=0
+%\end{cases}
+%&&\begin{cases}
+%3x-2y=7\\
+%3y-2z=6 \\
+%3z-2x=-1.
+%\end{cases}
+%&&\begin{cases}
+%2ix-z=4\\
+%x-2y+2z=7+i \\
+%3x+2y=1.
+%\end{cases}
+%\end{align*}
+
+\end{enumerate}
+\vskip .3cm
+
+\medskip
+\centerline{EJERCICIOS ADICIONALES}
+\medskip
+
+\begin{enumerate}
+
+
+		\item Calcular el determinante de las siguientes matrices.
+		\begin{align*}
+		&A=\begin{bmatrix} -2&3&2&-6\\ 0&4&4&-5\\ 5&-6&-3&2\\ -3&7&0&0 \end{bmatrix},\quad
+		&&B=\begin{bmatrix} 2&0&0&0\\ 0&0&3&0\\ 0&-1&0&0\\ 0&0&0&4\end{bmatrix},\quad
+		&&C=\begin{bmatrix}
+		1&-1&2&0&0\\ 3&1&4&0&0\\ 2&-1&5&0&0 \\0&0&0&2&1\\ 0&0&0&-1&4
+		\end{bmatrix}.
+		\end{align*}
+	
+\ 		
+		
+		\item Sabiendo que
+		$
+		\det \begin{bmatrix} a&b&c\\ p&q&r\\
+		x&y&z\end{bmatrix}=-1
+		$,
+		calcular
+		$
+		\det \begin{bmatrix} -2a&-2b&-2c\\ 2p+x&2q+y&2r+z\\
+		3x&3y&3z\end{bmatrix}.
+		$
+	
+\ 	
+		
+		\item
+		Probar que
+		$$
+		\det\begin{bmatrix}
+		1+x_1 & x_2 & x_3 & \cdots & x_n \\
+		x_1 & 1+x_2 & x_3 & \cdots & x_n \\
+		x_1 & x_2 & 1+x_3 & \cdots & x_n \\
+		\vdots & \vdots & \vdots &\ddots& \vdots \\
+		x_1 & x_2 & x_3 & \cdots & 1+x_n
+		\end{bmatrix}
+		= 1+x_1+x_2 + \cdots x_n.
+		$$
+	
+\ 
+	
+		\item
+		Una matriz $A$ compleja $n \times n$ se dice {\it antisim\'etrica}
+		si $A^t=-A$.
+		\begin{enumerate}
+			\item Probar que si $n$ es impar y $A$ es antisim\'etrica, entonces
+			$\det(A)=0$.
+			\item Para cada $n$ par encontrar una matriz $A$ antisim\'etrica
+			$n \times n$ tal que $\det(A)\not=0$.
+		\end{enumerate}
+		
+	
+	
+\end{enumerate}
+
+\end{document}

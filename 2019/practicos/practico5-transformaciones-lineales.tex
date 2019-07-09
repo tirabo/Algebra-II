@@ -1,0 +1,340 @@
+\documentclass[11pt,spanish,makeidx]{amsbook}
+
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+
+\usepackage{t1enc}
+%usepackage[spanish]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}       % From LaTeX distribution
+%\usepackage{subfigure}    % From CTAN/macros/latex/contrib/supported/subfigure
+\usepackage{pst-all}      % From PSTricks
+\usepackage{pst-poly}     % From pstricks/contrib/pst-poly
+\usepackage{pst-tools}
+\usepackage{multido}      % From PSTricks
+\input{random.tex}        % From CTAN/macros/generic
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\oddsidemargin -0.25cm \evensidemargin -.5cm \topmargin 0cm \textheight 23cm
+\textwidth 16.5cm
+
+\newcommand\im{\operatorname{Im}}
+\renewcommand\Re{\operatorname{Re}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\K {\mathbb{K}}
+\newcommand\B {\mathcal{B}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\gen[1]{\langle #1 \rangle}
+
+
+\begin{document}
+
+\begin{center} {\large \bf \'Algebra y \'Algebra II - Segundo Cuatrimestre 2018 \\  Pr\'actico 5 - Transformaciones Lineales } \end{center}
+%============================================================
+\vskip .4cm
+
+\begin{enumerate}
+	
+	\item ?`Cu\'ales de las siguientes funciones de $\mathbb{R}^n$ en
+	$\mathbb{R}^m$ son transformaciones lineales?
+	\begin{enumerate}
+		\item $T(x,y)=(1+x,y)$
+		\item $T(x,y)=(y,x,x-2y)$
+		\item $T(x,y)=xy$
+		\item $T(x,y,z)=3x-2y+7z$
+	\end{enumerate}
+	
+	\
+		
+	\item ?`Cu\'ales de las siguientes funciones de $\mathbb{R}^n$ en
+	$\mathbb{R}^m$ son transformaciones lineales?
+	\begin{enumerate}
+		\item $T(x_1, \dots,x_n)=(x_1,-x_1,x_2,-x_2, \dots, x_n,-x_n)$
+		\item $T(x_1,\dots,x_n)=(x_1,2x_2, \dots, nx_n)$
+		\item $T(x_1, \dots,x_n)=(x_1,x_1+x_2,\dots, x_1+x_2+\dots+x_n)$
+		\item $T(x_1, \dots,x_n)=(x_1,x_1.x_2,\dots, x_1.x_2.\dots.x_n)$.
+	\end{enumerate}
+		
+	\
+	
+	\item Para cada una de las siguientes funciones de $\mathbb{C}$ en
+	$\mathbb{C}$ decidir si son $\mathbb{R}$-lineales o $\mathbb{C}$-lineales.
+	\begin{enumerate}
+		\item $T(z)=iz,$
+		\item $R(z)=\overline{z},$
+		\item $S(z)=\Re(z)+\im(z)$.
+	\end{enumerate}
+		
+	\
+	
+	\item En cada caso, si es posible, dar una transformaci\'on lineal $T$ de $\R^n$
+	en $\R^m$ que satisfaga las condiciones exigidas. Si existe, estudiar la unicidad y si no existe explicar porqu\'e no es posible definirla.
+	\begin{enumerate}
+		\item $T(0,1)=(1,2,0,0),\,T(1,0)=(1,1,0,0). $
+		\item $T(1,1,1)=(0,1,3),\,T(1,2,1)=(1,1,3),\,T(2,1,1)=(3,1,0). $
+		\item $T(1,1,1)=(3,2),\,T(1,0,1)=(1,1),\,T(0,1,0)=(1,0). $
+		\item $T(0,1,1)=(1,2,0,0),\,T(1,0,0)=(1,1,0,0)). $
+	\end{enumerate}
+		
+	\
+	
+	\item Sea $A=\begin{bmatrix}
+	0& 2& 0&1\\   1& 3& 0&1\\  -1&-1&0&0\\3&0&3&0\\2&1&1&0 \end{bmatrix}$
+	y sea $T: \R^4 \to \R^5$ dada por $T(x) = Ax.$
+	
+	\vskip .3cm
+	
+	\begin{enumerate}
+		\item Decir cu\'ales de los siguientes vectores est\'an en el n\'ucleo:
+		$(1,2,3,4)$, $(1,-1,-1,2)$, $(1,0,2,1)$.
+		\item decir cu\'ales de los siguientes vectores est\'an en la imagen:
+		$(2,3,-1,0,1)$, $(1,1,0,3,1)$, $(1,0,2,1,0)$.
+		\item Dar una base del n\'ucleo.
+		\item Dar una base de la imagen.
+		\item Describir la imagen impl\'icitamente.
+	\end{enumerate}
+		
+	\
+	
+	\item Para cada una de las siguientes matrices $A_i$ sea $T$ la transformaci\'on lineal dada por $T(x) = A_ix$:
+	
+	$A_1=\begin{bmatrix}
+	0& 2& -1\\
+	1& 1&-1\\
+	1&-1&0\\
+	\end{bmatrix}, A_2=\begin{bmatrix}
+	1& -1& 0&1\\
+	0& 2&-1&1\\
+	\end{bmatrix}, A_3=\begin{bmatrix}
+	1& 2& 1&-1\\0&1&1&3\\ 1&0& 2&-1
+	\end{bmatrix}.$
+	
+	\begin{enumerate}
+		\item Dar una base del n\'ucleo,
+		\item dar una base de la imagen, y
+		\item describir la imagen impl\'icitamente.
+	\end{enumerate}
+		
+	\
+	
+	\item \label{lineales1} Para cada una de las siguientes transformaciones lineales calcular el n\'ucleo y la imagen;
+	describir ambos subespacios impl\'icita y expl\'icitamente.
+	\begin{enumerate}
+		\item $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
+		\item $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
+	\end{enumerate}
+		
+	\
+		
+	\item En cada caso definir, cuando sea posible, una transformaci\'on lineal $T$ de $\R^3$
+	en $\R^3$ que satisfaga las condiciones exigidas.
+	Cuando no sea posible explicar porqu\'e no es posible.
+	\begin{enumerate}
+		\item $\dim \im T=1$.
+		\item $\dim \im T=2$ y $\dim \nu T=2$.
+		\item $(1,1,0)\in \im T$ y $(0,1,1)\in \nu T$.
+		\item $(1,1,0)\in \im T$, $(0,1,1), (1,2,1)\in \nu T$.
+		\item $\im T \subseteq \nu T$.
+		\item $\nu T \subseteq \im T$.
+	\end{enumerate}
+		
+	\
+	
+	\item \label{lineales2} Para cada una de las siguientes transformaciones lineales calcular el n\'ucleo y la imagen;
+	describir ambos subespacios impl\'icita y expl\'icitamente.
+	\begin{enumerate}
+		\item $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
+		\item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\tr (A)$.
+		\item $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
+		\item $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
+	\end{enumerate}
+		
+	\	
+	
+	\item Sea $V=P_n$. Decidir cu\'ales de las siguientes transformaciones  lineales de $V$ en
+	$V$ son isomorfismos.
+	\begin{align*}
+	& (a) \ T(p(x))=p(x-1), && (b)  \ S(p(x))=xp'(x), && (c)  \  Q(p(x))=p(x)+p'(x).
+	\end{align*}
+		
+	\	
+	
+	\item\label{base canonica} Escribir las matrices de las transformaciones lineales de los Ejercicios \ref{lineales1} y \ref{lineales2}
+	respecto de las bases can\'onicas de los espacios involucrados.
+		
+	\
+	
+	\item\label{otras bases} Sean $\mathcal{C}_n$, $n=2,3$, las bases can\'onica de $\R^2$ y $\R^3$ respectivamente. Sean
+	$\mathcal{B}_2=\{(1,0),(1,1)\}$ y $\mathcal{B}_3=\{(1,0,0),(1,1,0),(1,1,1)\}$ bases de $\R^2$, $\R^3$, respectivamente.
+	\begin{enumerate}
+		\item Escribir la matriz de cambio de base $P_{{\mathcal{C}_n},{\mathcal{B}_n}}$ de $\mathcal{C}_n$ a $\mathcal{B}_n$, $n=2,3$.
+		\item Escribir la matriz de cambio de base $P_{{\mathcal{B}_n},{\mathcal{C}_n}}$ de $\mathcal{B}_n$ a $\mathcal{C}_n$, $n=2,3$.
+		\item ?`Qu\'e relaci\'on hay entre $P_{{\mathcal{C}_n},{\mathcal{B}_n}}$ y $P_{{\mathcal{B}_n},{\mathcal{C}_n}}$?
+	\end{enumerate}
+		
+	\
+	
+	\item \label{basesRn} Sean $\mathcal{C}_n, \mathcal{B}_n$ como en el ejercicio anterior.
+	\begin{enumerate}
+		\item Dar las matrices de las transformaciones del Ejercicio \ref{lineales1} respecto de las bases $\mathcal{B}_n$ y
+		$\mathcal{C}_n$.
+		\item Dar las matrices de las transformaciones del Ejercicio \ref{lineales1} respecto de las bases $\mathcal{C}_n$ y
+		$\mathcal{B}_n$.
+		\item Dar las matrices de las transformaciones del Ejercicio \ref{lineales1} respecto de las bases $\mathcal{B}_n$ y
+		$\mathcal{B}_n$.
+	\end{enumerate}
+	{\it Ayuda:} Utilizar los Ejercicios \ref{base canonica} y \ref{otras bases}.
+		
+	\
+	
+	\item Sea $T:V \to W$ una transformaci\'on lineal mostrar que:
+	\begin{enumerate}
+		\item Si $T \equiv 0$ entonces para cualesquiera bases $\B_V$ y $\B_W$ de $V$ y $W$ respectivamente, la matriz de $T$ respecto de ellas es la matriz nula.
+		\item Si $\nu T$ es no trivial entonces existe una base $\B_V$ de $V$ tal que para cualquier base $\B_W$ de $W$ la matriz de $T$ respecto de ellas tiene al menos una columna nula. M\'as a\'un, se puede elegir $\B_V$ de tal manera que tenga $\dim \nu T$ columnas nulas.
+		\item Existen bases $\B_V$ y $\B_W$ de $V$ y $W$ respectivamente tal que la matriz de $T$ respecto de ellas es $\begin{bmatrix}
+		Id_m& 0\\
+		0&0
+		\end{bmatrix} $ donde $m=\dim \im(T)$.
+	\end{enumerate}
+		
+%	\	
+%	
+%	\item Sea $T:\R^2\longrightarrow\R^3$ dada por $T(x,y)=(x-y,0,x+y)$.
+%	Sea $f:\R^3\to \R$, $f(x,y,z)=2x-3y-z$.  Calcular $T^t(f)$.
+%		
+%	\
+%	
+%	\item Sea $V=\R^3$ y sea $\B=\{(1,0,1),(1,-1,0),(1,1,1)\}$ base de $V$.
+%	Calcular la base dual $\{f_1,f_2,f_3\}$ de $B$ expl\'icitamente, es decir determinar
+%	cu\'anto vale $f_i(x,y,z)$ para $(x,y,x)\in\R^3$.
+%		
+%	\	
+%	
+%	\item Sea $V=P_3$ y $f_i\in V^*$ dadas por: $f_i(p)=\int_0^i p(x)\, \mathrm{d}x$.  Probar que $\{f_1,f_2,f_{-1}\}$ es una base de $V^*$.
+%		
+	\
+	
+	\item Decidir si las siguientes afirmaciones son verdaderas o falsas:
+	\begin{enumerate}
+		\item Si $T:\R^4 \to \R^3$ es una transformaci\'on lineal entonces $\dim \text{Nu} T = 1.$
+		\item Existen dos transformaciones lineales  $T:\R^2 \to \R^3$ y $S:\R^3 \to \R^2$ tales que  $TS = \text{Id}.$
+		\item Existe una transformaci\'on lineal $T:\R^3 \to \R^3$ tal que
+		$$ T(1,1,0)=(1,0,0), \qquad T(-1,1,0)=(1,1,1), \qquad T(1,0,0)=(1,1,0).$$
+		\item Sea $T:\R^n \to \R^n$ y $A$ la matriz de $T$ con respecto a una base $\beta.$ Si $A$ es escal\'on reducida por filas con $r$ filas no nulas
+		entonces la dimensi\'on de la imagen de $T$ es $r$.
+		\item Si $T:V \to W$ es un isomorfismo entonces $TS$ es un isomorfismo para toda transformaci\'on lineal $S:W \to W.$
+	\end{enumerate}
+
+	
+	
+\end{enumerate}
+
+
+
+
+\medskip
+\centerline{\sc EJERCICIOS ADICIONALES}
+\bigskip
+
+\begin{enumerate}
+
+\item Sea $T$ la reflexi\'on en $\R^2$ con respecto a la recta $y=x$. Sea $\mathcal B$ la base ordenada $\{(1,1),(1,-1)\}$.
+\begin{enumerate}
+	\item Dar la matriz de $T$ respecto de $\B$.
+	\item Dar la matriz de $T$ respecto de $\mathcal{C}_2$ (ver Ej. \ref{basesRn}).
+\end{enumerate}
+	
+\
+
+\item Sea $T$ la proyecci\'on de $\C^2$ dada por $T(x_1,x_2)=(x_1,0)$.
+Sea $\B$ la base can\'onica de $\C^2$ y sea $\B'$ la base ordenada $\{(1,i),(-i,2)\}$.
+\begin{enumerate}
+	\item Dar la matriz de $T$ respecto del par $\B$, $\B'$.
+	\item Dar la matriz de $T$ respecto de $\B'$.
+\end{enumerate}
+	
+\
+
+\item Sea $g\in \mathcal{C}^1[0,1]$ fija. Sea $T:\mathcal{C}^1[0,1]\longrightarrow
+\mathcal{C}[0,1]$ definida por
+$T(f)=(fg)'$.
+\begin{enumerate}
+	\item  Probar que $T$ es lineal.
+	\item Calcular el n\'ucleo de $T$.
+	\item Describir el n\'ucleo en los casos $g(x)=e^x$ y $g(x)=x$ y
+	calcular su dimensi\'on.
+\end{enumerate}
+	
+\
+
+\item Sean $T:V\longrightarrow W$ y $S:W\longrightarrow Z$ transformaciones lineales.
+Probar que:
+\begin{enumerate}
+	\item Si $T$ y $S$ son suryectivas, entonces $ST$ es suryectiva.
+	\item Si $T$ y $S$ son inyectivas, entonces $ST$ es inyectiva.
+	\item Si $S$ no es suryectiva, entonces $ST$ no es suryectiva.
+	\item Si $T$ no es inyectiva, entonces $ST$ no es inyectiva.
+	\item Puede ser $S$ suryectiva y $ST$ no.
+	\item Puede ser que $T$ inyectiva y $ST$ no.
+\end{enumerate}
+	
+\
+
+\item Sea $T:\C\longrightarrow \R^{2\times 2}$ definida por
+$ T(a+ib)=\begin{bmatrix} a & -b \\ b & a \end{bmatrix}$.
+\begin{enumerate}
+	\item Probar que $T$ es $\R$-lineal.
+	\item Probar que $T$ es inyectiva. Notar que eso implica que el espacio vectorial real de los n\'umeros
+	complejos
+	es isomorfo al subespacio de matrices $2\times 2$ de la forma
+	$\left( \begin{smallmatrix} a & -b \\ b & a \end{smallmatrix} \right)$.
+	\item Probar adem\'as que $T(z_1z_2)=T(z_1)T(z_2)$ para todo par de complejos
+	$z_1,z_2$.
+\end{enumerate}
+	
+\
+
+\item Sea $V$ el espacio de matrices reales $n \times n$ y sea $A$ una matriz fija.
+Sean $L_A$ y $T_A$ las transformaciones lineales de $V$ en $V$ definidas por:
+\[ L_A(B)=AB; \qquad T_A(B)=AB-BA. \]
+\begin{enumerate}
+	\item Demostar que $L_A=0$ si y solo si $A=0$.
+	\item ?`Es cierto que $T_A=0$ si y solo $A=0$?
+	\item Determinar $\{A: \, I\in\im L_A \}$ y $\{A: \, I\in\im T_A \}$.
+\end{enumerate}
+	
+\
+
+\item Sean $V$ y $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $U$ un isomorfismo de
+$V$ en $W$.
+Probar que $L:\Hom(V,V) \longrightarrow \Hom(W,W)$, definida por $L(T)=UTU^{-1}$ es un
+isomorfismo.
+	
+\
+
+\item Sea $T$ la transformaci\'on lineal de $P_3$ en $P_3$ definida por $T(p(x))=p(x-2)$.
+\begin{enumerate}
+	\item Calcular $T^t$.
+	\item Escribir la matriz de $T$ en la base can\'onica.
+	\item Escribir la matriz de $T^t$ en la base dual de la base can\'onica de $P_3$.
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+\end{document}

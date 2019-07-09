@@ -1,0 +1,222 @@
+\documentclass[11pt,spanish,makeidx]{amsbook}
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+
+\usepackage{t1enc}
+%usepackage[spanish]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}       % From LaTeX distribution
+%\usepackage{subfigure}    % From CTAN/macros/latex/contrib/supported/subfigure
+\usepackage{pst-all}      % From PSTricks
+\usepackage{pst-poly}     % From pstricks/contrib/pst-poly
+\usepackage{pst-tools}
+\usepackage{multido}      % From PSTricks
+\input{random.tex}        % From CTAN/macros/generic
+
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\oddsidemargin -0.25cm \evensidemargin -.5cm \topmargin 0cm \textheight 23cm
+\textwidth 16.5cm
+
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand \gen[1] {\langle #1 \rangle}
+
+
+\begin{document}
+
+\begin{center} {\large \bf \'Algebra y \'Algebra II - Segundo Cuatrimestre 2018 \\  Pr\'actico 3 - Espacios Vectoriales } \end{center}
+%============================================================
+\vskip .4cm
+
+\begin{enumerate}
+	
+
+\item motivaci\'on geom\'etrica 1
+
+\
+
+\item motivaci\'on geom\'etrica 2
+
+\
+\item motivaci\'on geom\'etrica 3
+
+\
+
+	\item Decidir si los siguientes conjuntos son $\R$-espacios vectoriales, con las operaciones abajo definidas.
+	\begin{enumerate}
+		\item $\R^n$, con $v\oplus w = v - w$, y el producto por escalares usual.
+		
+		\item $\R^2$, con $(x,y)\oplus(x_1,y_2) = (x + x_1, 0), \,\,c\odot(x,y) = (cx,0)$.
+	\end{enumerate}
+		
+	\
+	
+	\item\label{func} Sea $\mathbb{K}$ un cuerpo. Si $(V,\oplus,\odot)$ un $\mathbb{K}$-espacio vectorial y $S$ un conjunto cualquiera, sea
+	$$V^S=\{f:S\to V\}, \text{ el conjunto de funciones de $S$ en $V$}.$$
+	Definimos en $V^S$ la suma y el producto por escalares de la siguiente manera:
+	Si $f,g \in V^S$ y $c\in \mathbb{K}$ entonces $f + g: S \rightarrow V $ y $c\cdot f: S \rightarrow V$ est\'an dadas por
+	$$
+	(f + g)(x) = f(x) \oplus g(x), \quad  (c\cdot f)(x) = c\odot f(x), \qquad  \forall\, x \,\in S.
+	$$
+	Probar que $(V^S,+,.)$ es un $\mathbb{K}$-espacio vectorial.
+	
+	En el caso en que $V=\mathbb{K}$, denotaremos $F(S)$.
+		
+	\
+		
+	\item Sea $V= C[0,1]$ el conjunto de las funciones continuas de $[0,1]$ en $\R$.  Probar que $V$ es un espacio vectorial. 
+
+\
+	
+%	\item
+%	\begin{enumerate}
+%		\item  Hallar $a, b, c\in \R$ tales que $(-1,2,1)=a(1,1,1)+b(1,-1,0)+c(2,1,-1)$.
+%		
+%		\item Sean $u=(-1,1)$, $v=(i,i)$ y $w=(2,-i)$ y sea $z=(1,1+i)$.
+%		\begin{enumerate}
+%			\item Escribir $z$ como combinaci\'on lineal de $u,v$ y $w$ con coeficientes todos no nulos.
+%			\item Escribir $z$ como combinaci\'on lineal de $u$ y $v$.
+%			\item Escribir $z$ como combinaci\'on lineal de $u$ y $w$.
+%			\item Escribir $z$ como combinaci\'on lineal de $v$ y $w$.
+%		\end{enumerate}
+%		
+%		\item Sean $p(x)=(1-x)(x+2)$, $q(x)=x^2-1$ y $r(x)=x(x^2-1)$.
+%		\begin{enumerate}
+%			\item Escribir, si es posible, el polinomio $x$ como combinaci\'on lineal de $p,q$ y $r$.
+%			\item Elegir $a$ tal que el polinomio $x$ se pueda escribir como combinaci\'on lineal de $p,q$ y $2x^2+a$.
+%			\item Escribir, si es posible, el polinomio $x^3+x^2+x+1$ como combinaci\'on lineal de $p,q$ y $r$.
+%			\item Describir todos los polinomios de grado menor o igual que $3$ que son combinaciones lineales de $p,q$ y $r$.
+%		\end{enumerate}
+%	\end{enumerate}
+%		
+%	\
+	
+	\item En cada caso, determinar si el subconjunto indicado es linealmente independiente.
+	\begin{enumerate}
+		\item $\{ (1,0,-1), (1,2,1), (0,-3,2) \}\subseteq \R^3$.
+		\item $\left\{  \begin{bmatrix} 1 & 0 & 2 \\ 0 & -1 & -3 \\ \end{bmatrix}, \quad
+		\begin{bmatrix} 1 & 0 & 1 \\ -2 & 1 & 0 \\ \end{bmatrix}, \quad
+		\begin{bmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \\ \end{bmatrix} \right\}\subseteq M_{2\times 3}(\R)$.
+		\item $\{1,{\rm sen}(x),\cos(x)\}  \subset F(\R)$  (ver Ej. (\ref{func})).
+		\item $\{1,2{\rm sen}^2(x),\cos^2(x)\} \subset F(\R)$.
+	\end{enumerate}
+		
+	\
+	
+	\item Dar 3 vectores en $\R^3$ que son LD, y tales que dos cualesquiera de ellos son LI.
+		
+		\
+		
+		
+	\item ?`Cual es la dimensi\'on de $\C^n$ cuando se lo considera como $\R$-espacio vectorial?.
+		
+	\
+		
+	\item Calcular la dimensi\'on y exhibir una base de:
+	\begin{enumerate}
+		\item $S = \{A \in \R^{n\times n} : A = A^t\}$.
+		\item $S = \{A \in \C^{n\times n} : A = \bar{A^t}\}$ (considerado como $\R$-subespacio de $\C^{n\times n}$).
+	\end{enumerate}
+		
+	\
+		
+	\item
+	\begin{enumerate}
+		\item Extender, de ser posible, el conjunto $\{ (1,2,0,0),(1,0,1,0) \}$ a una base de $\R^4$.
+		\item Extender, de ser posible, el conjunto $\{ (1,2,1,1),(1,0,1,1),(3,2,3,3)\}$ a una base de $\R^4$.
+	\end{enumerate}
+		
+	
+	\vspace{.5cm}
+	
+
+	
+	
+\end{enumerate}
+
+\vskip .3cm
+
+\medskip
+\centerline{EJERCICIOS ADICIONALES}
+\medskip
+
+\begin{enumerate}
+	
+	
+	\item Decidir si los siguientes conjuntos son espacios vectoriales sobre $\R$ con las operaciones abajo definidas.
+	\begin{enumerate}
+		\item El conjunto de polinomios, con el producto por escalares (reales) usual, pero con suma
+		$p(x)\oplus q(x) = p'(x) + q' (x)$ (suma de derivadas).
+		\item $\R^3$ con:
+		\begin{align*}
+		(x,y,z)\oplus(x',y',z') &=(x + x', y + y' - 1, z + z');\\
+		c\odot(x,y,z) &= (cx,cy + 1 - c, cz).
+		\end{align*}
+	\end{enumerate}
+		
+	\
+		
+	\item
+	\begin{enumerate}
+		\item Hallar reales $a$ y $b$ tales que $1+2i=a(1+i)+b(1-i)$.
+		\item  Hallar complejos $w$ y $z$ tales que $1+2i=z(1+i)+w(1-i)$.
+	\end{enumerate}
+		
+	\
+		
+	\item Sea $\{f_1,...,f_n\}$ un conjunto LI de funciones {\it pares} de $\R$ en $\R$ (i.e., $f(x)=f(-x)$ para todo $x$) y sea $\{g_1,...,g_m\}$ un conjunto LI de funciones {\it impares}
+	de $\R$ en $\R$ (i.e., $f(-x)=-f(x)$ para todo $x$).
+	Probar que $\{f_1,...,f_n,g_1,...,g_m\}$ es LI.
+		
+	\
+		
+	\item En cada caso extender los conjuntos dados (LI) a una base de dos maneras distintas.
+	\begin{enumerate}
+		\item $\left\{ \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}, \begin{bmatrix} 0 & -1 \\ 0 & 0 \end{bmatrix},\begin{bmatrix} 0 & -1
+		\\ 1 & 0 \end{bmatrix} \right\}
+		\subseteq M^{2\times 2}(\R)$.
+		\item $\{x-2x^2, 1-x+x^2, x\} \subseteq P_4$.
+	\end{enumerate}
+		
+	\
+		
+	\item Sea $\mathbb{K}$ un cuerpo.
+	\begin{enumerate}
+		\item Probar que si $p_i(x), i = 1, \ldots , n$ son polinomios en $\mathbb{K}[x]$ tales que sus grados son todos distintos entonces $\{p_1(x), \ldots ,p_n(x)\}$ es un conjunto LI en $\mathbb{K}[x]$.
+		\item Probar que $\{1 ,1 + x, (1 +x)^2\}$ es una base de $P_3$
+		\item Probar que $P_3$ es generado por $\{1, 2 + 2x, 1 - x + x^2, 2 - x^2\}$.
+		?`Es ese conjunto una base?
+	\end{enumerate}
+	
+	\	
+	
+	\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar
+	\begin{enumerate}
+		\item Todo conjunto de $3$ vectores en $\R^4$ se extiende a una base.
+\item  Si $\alpha$, $\beta$ y $\gamma$ son vectores LI en el $\R$-espacio vectorial $V$, entonces $\alpha +\beta$, $\alpha +\gamma$ y $\beta +\gamma $ tambi\'en son LI.
+	\end{enumerate}
+	
+	
+	
+	
+	
+	
+	
+	
+\end{enumerate}
+
+
+
+\end{document}
