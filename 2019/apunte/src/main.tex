@@ -6,7 +6,7 @@
 % Para hacer el  indice en linea de comando hacer 
 % makeindex main
 \usepackage{t1enc}
-\usepackage[spanish]{babel}
+\usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{latexsym}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
@@ -107,7 +107,7 @@
 \newcommand{\K}{\mathbb K}
 \newcommand{\F}{\mathbb F}
 \newcommand{\Z}{\mathbb Z}
-
+\newcommand{\sen}{\operatorname{sen}}
 \newcommand \circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
@@ -210,6 +210,537 @@
 	
 	\setcounter{chapter}{0}
 	
+\begin{chapter}{Vectores}
+
+	El concepto de vector es básico para el estudio de funciones de varias variables y proporciona la motivación geométrica para todo el curso. Por lo tanto, las propiedades de los vectores, tanto algebraicas como geométricas, serán discutidas en forma extensa en este capítulo.
+	
+	\begin{section}{Álgebra lineal en $\R^2$ y $\R^3$}  
+		Sabemos que se puede usar un número para representar un punto en una línea, una vez que se selecciona la longitud de una unidad.
+		
+		\begin{figure}[h]\label{fig-punto-en-R}
+			\begin{tikzpicture}
+			\draw[thick,->] (-4.0,0) -- (4.0,0) node[right] {$x$}; % eje x
+			\foreach \x in {-3,...,3}
+			\draw (\x,3pt) -- (\x,-3pt)
+			node[anchor=north] {\x};
+			\end{tikzpicture}
+			\caption{La recta real y algunos números enteros.}
+		\end{figure}
+		
+		Se puede usar un par de números $(x, y)$ para representar un punto en el plano. Estos pueden ser representados como en la figura \ref{fig-punto-en-R2}.
+		\begin{figure}[h]
+			\begin{tikzpicture}
+			\draw[thick,->] (-4.0,0) -- (4.0,0) node[right] {$x$}; % eje x
+			\draw[thick,->] (0,-3) -- (0,3) node[above] {$y$}; % eje y
+			\foreach \x in {-3,...,-1}
+			\draw (\x,3pt) -- (\x,-3pt)
+			node[anchor=north] {\x};
+			\foreach \x in {1,...,3}
+			\draw (\x,3pt) -- (\x,-3pt)
+			node[anchor=north] {\x};
+			\foreach \y in {-2,...,-1}
+			\draw (3pt,\y) -- (-3pt,\y) 
+			node[anchor=east] {\y}; 
+			\foreach \y in {1,...,2}
+			\draw (3pt,\y) -- (-3pt,\y)
+			node[anchor=east] {\y}; 
+			%\draw[fill] (2,1) circle [radius=0.025];
+			\draw[->] (0,0) -- (2,1);
+			\node [right] at (2,1) {$(2,1)$};
+			\draw [dotted] (0,1) -- (2,1);
+			\draw [dotted] (2,0) -- (2,1);
+			%\draw[fill] (-1,2.5) circle [radius=0.025];
+			\draw[->] (0,0) -- (-1,2.5);
+			\node [left] at (-1,2.5) {$(-1,2.5)$};
+			\draw [dotted] (0,2.5) -- (-1,2.5);
+			\draw [dotted] (-1,0) -- (-1,2.5);
+			%\draw[fill] (-2.5,-2.5) circle [radius=0.025];
+			\draw[->] (0,0) -- (-2.5,-2.5);
+			\node [below] at (-2.5,-2.5) {$(-2.5,-2.5)$};
+			\draw [dotted] (0,-2.5) -- (-2.5,-2.5);
+			\draw [dotted] (-2.5,0) -- (-2.5,-2.5);
+			\end{tikzpicture}
+			\caption{Representación gráfica de los puntos $(2,1)$, $(-1,2.5)$ y  $(-2.5,-2.5)$ en $\R^2$.}
+			\label{fig-punto-en-R2}
+		\end{figure}
+		
+		
+		Ahora observamos que un triple de números $(x, y, z)$ se puede usar para representar un punto en el espacio, es decir, espacio tridimensional, o 3-espacio. Simplemente introducimos un eje más. La figura \ref{fig-punto-en-R3} ilustra esto.
+		\begin{figure}[h]
+			\begin{tikzpicture}
+			%draw the main coordinate system axes
+			\draw[thick,->] (0,0,0) -- (5,0,0) node[right]{$y$};
+			\draw[thick,->] (0,0,0) -- (0,5,0) node[above]{$z$};
+			\draw[thick,->] (0,0,0) -- (0,0,5) node[anchor=north east]{$x$};
+			\draw[->] (0,0,0) -- (3,2.5,3.5) node[anchor=west]{$v$};
+			\draw [dotted] (0,2.5,0) -- (3,2.5,0);
+			\draw [dotted] (0,2.5,0) --  (0,2.5,3.5);
+			\draw [dotted] (0,2.5,3.5) -- (3,2.5,3.5) ;
+			\draw [dotted] (3,0,0) -- (3,2.5,0);
+			\draw [dotted] (0,0,3.5) -- (3,0,3.5);
+			\draw [dotted] (0,0,3.5) -- (0,2.5,3.5);
+			\draw [dotted] (3,0,3.5) -- (3,0,0);
+			\draw [dotted] (3,2.5,3.5) -- (3,2.5,0);
+			\draw [dotted] (3,2.5,3.5) -- (3,0,3.5);
+			\foreach \y in {1,...,4}
+			\draw (\y,0.1,0) -- (\y,-0.1,0)
+			node[anchor=north] {\y};
+			\foreach \y in {1,...,4}
+			\draw (-0.1,\y,0) -- (0.1,\y,0)
+			node[anchor=east] {\y\;};
+			\foreach \y in {1,...,4}
+			\draw (0.1,-0.1,\y) -- (-0.1,0.1,\y)
+			node[anchor=south east] {\y\,};
+			\end{tikzpicture}
+			\caption{Representación gráfica del punto $v = (3.5,\,3,\,2.5)$ en $\R^3$. }
+			\label{fig-punto-en-R3}
+		\end{figure}			
+		
+		En lugar de usar $(x,y,z)$, también podríamos usar $(x_1,x_2,x_3)$. La línea podría llamarse el 1-espacio, y el plano podría llamarse el 2-espacio. Por lo tanto, podemos decir que un solo número representa un punto en el 1-espacio. Un par representa un punto en el 2-espacio. Un triple representa un punto en el 3-espacio.
+		
+		Aunque no podemos hacer un dibujo para ir más lejos, no hay nada que nos impida considerar un cuádruple de números y decretar que este es un punto en el 4-espacio. Un quíntuple sería un punto en el 5-espacio, luego vendría un séxtuple, séptuple, óctuple, ...
+		
+		Podemos generalizar y definir un punto en el $n$-espacio, para $n$ un entero positivo, como una $n$-tupla de números. Vamos a denotar tal $n$-tupla con letras $v$, $w$, $u$, ... y usaremos otras letras minúsculas para los números. Si $v =(x_1,x_2,\ldots,x_n)$, llamamos a los números $x_1,x_2,\ldots,x_n$ las \textit{coordenadas} del punto $v$. Más precisamente, $x_i$ será la \textit{coordenada $i$-ésima} de $v$. Por ejemplo, en el 3-espacio, 2 es la primera coordenada del punto $(2,3, -4)$, y $-4$ es la tercera coordenada. Denotamos a los  $n$-espacios por $\R^n$. Para formalizar:
+		\begin{definicion}
+			Sea $\R$ el cuerpo de los números reales,  entonces
+			$$
+			\R^n:= \{(x_1,x_2,\ldots,x_n): x_i \in \R, 1 \le i \le n \}.
+			$$
+			Tode $v$ en $\R^n$ será llamado {\em punto}\index{punto} o  {\em vector}.\index{vector}
+		\end{definicion}
+		
+		La mayoría de nuestros ejemplos tendrán lugar cuando $n = 2$ o $n = 3$. Por lo tanto, el lector puede visualizar cualquiera de estos dos casos a lo largo del apunte. Para ello usaremos el {\em sistema  de coordenadas cartesianas}\index{sistema  de coordenadas cartesianas} para representar los elementos de  $\R^2$ y  $\R^3$, tal como se ha hecho en las figuras \ref{fig-punto-en-R2} y \ref{fig-punto-en-R3}.
+		
+		En  álgebra lineal pensaremos a cada punto como un {\em vector} que comienza en el origen.  Los vectores en  $\R^2$ y $\R^3$ se pueden graficar como ``flechas'' que parten del origen y llegan a las coordenadas del vector.
+	
+	
+		\begin{ejemplo} \label{ej-3espacio-industria}
+			Un ejemplo clásico de 3-espacio es, por supuesto, el espacio en el que vivimos. Después de seleccionar un origen y un sistema de coordenadas, podemos describir la posición de un punto (cuerpo, partícula, etc.) mediante 3 coordenadas. Además, como se sabía hace mucho tiempo, es conveniente extender este espacio a un espacio de 4 dimensiones, donde la cuarta coordenada es el tiempo, seleccionándose el origen del tiempo, por ejemplo, como el nacimiento de Cristo, aunque esto es puramente arbitrario. Entonces, un punto con coordenada de tiempo negativo es un punto antes de Cristo, y un punto con coordenada  de tiempo positiva es un punto después de Cristo.
+			
+			Sin embargo, no es que obligatoriamente ``el tiempo es la cuarta dimensión''. El espacio 4-dimensional anterior es solo un ejemplo posible. Hagamos un ejemplo relacionado a la economía: tomamos como coordenadas la cantidad de dinero gastado por una industria a lo largo de un año. 
+			Por ejemplo, podríamos tener un espacio de 6 dimensiones con coordenadas correspondientes a las siguientes industrias: 1. acero, 2. automotriz, 3. productos agrícolas,  4. productos químicos, 5. indumentaria y 6. transporte. Las coordenadas de las 6-tuplas representarían el gasto anual de las industrias correspondientes. Por  ejemplo, 
+			\begin{equation*}
+			(1000, 800, 550, 300, 700, 200)
+			\end{equation*}
+			significaría que la industria del acero gastó mil en un año determinado, y que la industria química gastó 300 en ese año.
+		\end{ejemplo} 
+
+		Los 3-espacios pueden ser visualizados como ``productos de espacios de dimensiones inferiores''. Por ejemplo, podemos ver las coordenadas de los 3-espacios como dos coordenadas en un 2-espacio acompañada por una coordenada en el 1-espacio. Esto se escribe como 
+		\begin{equation*}
+			\R^3 = \R^2 \times \R^1.
+		\end{equation*}
+		Utilizamos el signo del producto, que no debe confundirse con otros ``productos'', como el producto de los números. Del mismo modo, podemos escribir
+		\begin{equation*}
+		\R^4 = \R^3 \times \R^1.
+		\end{equation*}
+		Hay otras formas de expresar $\R^4$ como un producto, a saber:
+		\begin{equation*}
+		\R^4 = \R^2 \times \R^2.
+		\end{equation*}
+		Esto significa que vemos por separado las dos primeras coordenadas $(x_l, x_2)$ y
+		las dos últimas coordenadas $(x_3, x_3)$. 
+			
+		Ahora vamos a definir cómo sumar vectores. Si $v$, $w$ son dos puntos, digamos en le 2-espacio,  definimos $v + w$ como el punto cuyas coordenadas son la suma de cada coordenada. Es decir, si, por ejemplo,  $v= (1, 2)$ y $w= (- 3, 5)$, entonces $v+w = (- 2, 7)$. En 3-espacios la definición es análoga. Por  ejemplo, si $v= (- 1, n, 3)$ y $w= (k, 7, - 2)$, entonces $v+w = (k - 1, n + 7, 1)$.
+		
+		Generalizando, podemos hacer la siguiente definición:
+			\begin{definicion}
+				Dados $(x_1,x_2), (y_1,y_2) \in \R^2$ o $(x_1,x_2,x_3), (y_1,y_2,y_3) \in \R^3$, definimos
+				\begin{itemize}
+					\item $(x_1,x_2)+ (y_1,y_2)=(x_1+y_1,x_2+y_2)$, 
+					\item $(x_1,x_2,x_3)+ (y_1,y_2,y_3)=(x_1+y_1,x_2+y_2,x_3+y_3)$, 
+				\end{itemize}
+				y en general, si $(x_1,\ldots,x_n), (y_1,\ldots,y_n) \in \R^n$, definimos 
+					\begin{itemize}
+					\item $(x_1,\ldots,x_n)+ (y_1,\ldots,y_n)=(x_1+y_1,\ldots,x_n+y_n)$, 
+				\end{itemize}
+			\end{definicion}
+			
+		Observemos que se cumplen las siguientes reglas: sean $v,w,u$ vectores en $\R^n$,  entonces
+		\begin{enumerate}
+			\item $v+ (w +u) = (v+w)+u$,
+			\item $v + w = w + v$,
+			\item si definimos
+			\begin{equation*}
+				0 = (0,\dots,0),
+			\end{equation*}
+			el punto cuyas coordenadas son todas $0$, entonces 
+			\begin{equation*}
+				v +0 = 0 +v = v,
+			\end{equation*}
+			\item si $v = (x_1,\ldots,x_n)$,  definimos $-v = (-x_1,\ldots, -x_n)$. Entonces 
+			\begin{equation*}
+				v + (-v) = (-v) + v = 0.
+			\end{equation*}
+		\end{enumerate}	
+	Estas propiedades se deducen casi trivialmente de la definición de suma de vectores, coordenada a coordenada, y de la validez de las propiedades en el caso de la recta real. 
+	
+	
+	\begin{ejemplo} 
+		Vimos al final del ejemplo  \ref{ej-3espacio-industria} que una $n$-tupla puede representar cuetiones relacionadas con las finanzas. En  nuestro ejemplo una 6-tupla representaba el gasto anual de determinadas actividades económicas, por ejemplo los gastos  en los años 2000 y 2001 son 
+		\begin{center}
+			\begin{tabular}{lcl}
+				2000 \quad&$\rightarrow$\quad &$(1000, 800, 550, 300, 700, 200)$ \\
+				2001 \quad&$\rightarrow$\quad &$(1200, 700, 600, 300, 900, 250)$ 
+			\end{tabular} 
+		\end{center}
+		Luego los costos totales en los dos años son 
+		\begin{align*}
+			(1000, 800, 550, 300, 700&, 200) + (1200, 700, 600, 300, 900, 250) = \\
+			&=(1000+1200, 800+700, 550+600, 300+300, 700+900, 200+250) \\
+			&= (2200, 1500, 1350, 600, 1600, 450). 
+		\end{align*} 
+	\end{ejemplo}
+	
+	
+	En  el ejemplo anterior es claro que la suma de vectores se corresponde con lo que nosotros esperamos que ocurra. Ahora interpretaremos la suma  geométricamente en el plano.
+	
+	\begin{ejemplo}
+		Sea $v =(2,3)$ y $w= (-1, 1)$. Entonces $v+w= (1, 4)$. En el dibujo de los vectores involucrados aparece un \textit{paralelogramo} (fig. \ref{fig-ley-del-paralelogramo})
+		\begin{figure}[h]
+			\begin{tikzpicture}[scale=1.0]
+				\draw[thick,->] (-3.0,0) -- (3.0,0) node[right] {$x$}; % eje x
+				\draw[thick,->] (0,-1) -- (0,4) node[above] {$y$}; % eje y
+				\foreach \x in {-2,...,2}
+				\draw (\x,3pt) -- (\x,-3pt);
+				\foreach \y in {0,...,3}
+				\draw (3pt,\y) -- (-3pt,\y) ;
+				\draw[very thick, ->] (0,0) -- (-1,1);
+				\node [left] at (-1,1) {$(-1,1)$};
+				\draw[very thick,->] (0,0) -- (2,3);
+				\node [right] at (2,3) {$(2,3)$};
+				\draw[very thick,-] (0,0) -- (1,4);
+				\node [above] at (1,4) {$(1,4)$};
+				\draw[fill] (1,4) circle [radius=0.05];
+				\draw[-] (-1,1) -- (1,4);
+				\draw[-] (2,3) -- (1,4);
+			\end{tikzpicture}
+			\caption{\;}\label{fig-ley-del-paralelogramo}
+		\end{figure} 
+	\end{ejemplo}
+	
+	\begin{ejemplo}
+		Sea $v= (3, 1)$ y $w=(1,2)$. Entonces
+		\begin{equation*}
+			v+w = (4,3). 
+		\end{equation*}
+		Esta suma la representamos en la fig. \ref{fig-ley-del-paralelogramo-2}. 
+		\begin{figure}[h]
+			\begin{tikzpicture}[scale=1.0]
+				\draw[thick,->] (-3.0,0) -- (4.0,0) node[right] {$x$}; % eje x
+				\draw[thick,->] (0,-1) -- (0,3) node[above] {$y$}; % eje y
+				\foreach \x in {-2,...,3}
+				\draw (\x,3pt) -- (\x,-3pt);
+				\foreach \y in {0,...,2}
+				\draw (3pt,\y) -- (-3pt,\y) ;
+				\draw[very thick, ->] (0,0) -- (3,1);
+				\node [right] at (3,1) {$v$};
+				\draw[very thick,->] (0,0) -- (1,2);
+				\node [above] at (0.9,2) {$w$};
+				\draw[very thick,-] (0,0) -- (4,3);
+				\node [above] at (4,3) {$v+w$};
+				\draw[fill] (4,3) circle [radius=0.05];
+				\draw[-] (3,1) -- (4,3);
+				\draw[-] (1,2) -- (4,3);
+			\end{tikzpicture}
+			\caption{\;}\label{fig-ley-del-paralelogramo-2}
+		\end{figure}
+		
+		Vemos de nuevo que en la representación geométrica aparece un paralelogramo. La razón por la cual la figura que aparece es un paralelogramo se puede dar en 	términos de la geometría plana de la siguiente manera. Obtenemos $v = (1, 2)$ comenzando desde el origen $0 = (0, 0)$, y moviéndonos 1 unidad hacia la derecha y 2 hacia arriba. Para obtener $v+w$, comenzamos desde $v$, y de nuevo nos movemos 1 unidad a la derecha y 2 hacia arriba. Así, el segmento entre 0 y $w$, y entre $v$ y $v+w$ son las hipotenusas de los triángulos rectángulos cuyos catetos  correspondientes son de la misma longitud y paralelos. Los segmentos anteriores son por lo tanto paralelos y de la misma longitud, como se ilustra en la fig. \ref{fig-ley-del-paralelogramo-3}.
+		\begin{figure}[h]
+			\begin{tikzpicture}[scale=1.0]
+			\draw[thick,->] (-3.0,0) -- (4.0,0) node[right] {$x$}; % eje x
+			\draw[thick,->] (0,-1) -- (0,3) node[above] {$y$}; % eje y
+			\foreach \x in {-2,...,3}
+			\draw (\x,3pt) -- (\x,-3pt);
+			\foreach \y in {0,...,2}
+			\draw (3pt,\y) -- (-3pt,\y) ;
+			\draw[very thick,-] (0,0) -- (1,2);
+			\node [above] at (0.9,2) {$w$};
+			\draw[very thick,-] (3,1) -- (4,3);
+			\node [above] at (4,3) {$v+w$};
+			\node [below] at (3,1) {$v$};
+			\node [left] at (0,-0.3) {$0$};
+			\draw [dotted] (1,0) -- (1,2);
+			\draw [dotted] (3, 1) -- (4,1) -- (4,3);
+			\end{tikzpicture}
+			\caption{\;}\label{fig-ley-del-paralelogramo-3}
+		\end{figure}
+	\end{ejemplo}
+	
+	
+	\begin{ejemplo} Sea el vector $v =(3, 1)$ , entonces $-v = (- 3, - 1)$. Si dibujamos $v$ y $-v$ vemos que $-v$ es un vector del mismo ``tamaño'' que $v$ pero con la dirección opuesta. Podemos ver a $-v$ como la reflexión de $v$ a través del origen (fig. \ref{fig-vector-opuesto}). 
+	\begin{figure}[h]
+		\begin{tikzpicture}[scale=1.0]
+		\draw[thick,->] (-4.0,0) -- (4.0,0) node[right] {$x$}; % eje x
+		\draw[thick,->] (0,-2) -- (0,2) node[above] {$y$}; % eje y
+		\foreach \x in {-3,...,3}
+		\draw (\x,3pt) -- (\x,-3pt);
+		\foreach \y in {-1,...,1}
+		\draw (3pt,\y) -- (-3pt,\y) ;
+		\draw[very thick, ->] (0,0) -- (3,1);
+		\node [right] at (3,1) {$v$};
+		\draw[very thick, ->] (0,0) -- (-3,-1);
+		\node [left] at (-3,-1) {$-v$};
+		\draw[fill] (0,0) circle [radius=0.1];
+		\end{tikzpicture}
+		\caption{\;}\label{fig-vector-opuesto}
+	\end{figure}
+	\end{ejemplo}
+
+	Ahora consideraremos la multiplicación de un vector $v$ por un número. 
+	
+	\begin{definicion}
+		Sea $v = (x_1,\ldots,x_n) \in \R^n$ y $c \in \R$, entonces
+		\begin{equation*}
+			c.v = (cx_1,\ldots,cx_n).
+		\end{equation*}  
+		También denotamos $cv = c.v$.
+	\end{definicion}
+
+	\begin{ejemplo}
+		 Si $v= (2, -1,5)$  y $c = 7$, entonces $cv = (14, -7.35)$.
+	\end{ejemplo}
+	
+	Es fácil verificar las siguientes reglas: dados $v,w \in \R^n$, 
+	\begin{enumerate}
+		\item[5.] si $c \in \R$, $c (v + w) = cv + cw$.
+		\item[6.] Si $c_1,c_2 \in \R$, $(c_1+c_2)v= c_1v + c_2v$.
+	\end{enumerate}
+
+	También tengamos en cuenta que 
+	\begin{equation*}
+		(-1)v = -v.
+	\end{equation*}
+	
+	¿Cuál es la representación geométrica de la multiplicación por un número?
+	\begin{ejemplo}
+		Sea $v= (1,2)$ y $c = 3$. Luego $cv == (3,6)$ como en la fig. \ref{fig-homotecia} (a)
+		\begin{figure}[h]
+			\begin{tabular}{ccc}
+				\begin{tikzpicture}[scale=1.0]
+				\draw[thick,->] (-1.0,0) -- (4.0,0) node[right] {$x$}; % eje x
+				\draw[thick,->] (0,-1) -- (0,6) node[above] {$y$}; % eje y
+				\foreach \x in {0,...,3}
+				\draw (\x,3pt) -- (\x,-3pt);
+				\foreach \y in {-1,...,5}
+				\draw (3pt,\y) -- (-3pt,\y) ;
+				\draw[very thick, -] (0,0) -- (1,2);
+				\node [right] at (1.1,1.9) {$v=(1,2)$};
+				\draw[very thick, -] (0,0) -- (3,6);
+				\node [right] at (3.1,5.9) {$3v=(3,6)$};
+				\draw[very thick, -] (0,0) -- (0.5,1);
+				\node [right] at (0.6,0.9) {$\frac12v=(0.5,1)$};
+				\draw[fill] (0,0) circle [radius=0.07];
+				\draw[fill] (0.5,1) circle [radius=0.07];
+				\draw[fill] (3,6) circle [radius=0.07];
+				\draw[fill] (1,2) circle [radius=0.07];
+				\node [right] at (1.8,-1.5) {(a)};
+				\end{tikzpicture}
+				&\qquad &
+				\begin{tikzpicture}[scale=0.58]
+				\draw[thick,->] (-4.0,0) -- (4.0,0) node[right] {$x$}; % eje x
+				\draw[thick,->] (0,-6) -- (0,6) node[above] {$y$}; % eje y
+				\foreach \x in {-3,...,3}
+				\draw (\x,3pt) -- (\x,-3pt);
+				\foreach \y in {-5,...,5}
+				\draw (3pt,\y) -- (-3pt,\y) ;
+				\draw[very thick, -] (0,0) -- (1,2);
+				\node [right] at (1.1,1.9) {$v$};
+				\draw[very thick, -] (0,0) -- (3,6);
+				\node [right] at (3.1,5.9) {$3v$};
+				\draw[very thick, -] (0,0) -- (-3,-6);
+				\node [right] at (-3.0,-5.9) {$-3v$};
+				\draw[fill] (0,0) circle [radius=0.12];
+				\draw[fill] (-3,-6) circle [radius=0.12];
+				\draw[fill] (3,6) circle [radius=0.12];
+				\draw[fill] (1,2) circle [radius=0.12];
+				\node [right] at (-0.2,-7) {(b)};
+				\end{tikzpicture}
+			\end{tabular}
+		\caption{\;}\label{fig-homotecia}
+		\end{figure}
+			
+			
+	\end{ejemplo}
+	 La multiplicación por 3 equivale a ``estirar'' $v$ por 3. Del mismo modo, $\frac12v$ 	equivale a estirar $v$ en $\frac12$, es decir, reducir $v$ a la mitad de su tamaño. En general, si $t$ es un número con $t> 0$, interpretamos $tv$ como un punto en la misma dirección que $v$ con tamaño  $t$-veces el tamaño de $v$.  De hecho, decimos que $v$ y $w$ tienen la misma dirección si existe un número $c> 0$ tal que $v = cw$. La multiplicación por un número negativo invierte la dirección. Así, $-3 v$ se representa como en la fig. \ref{fig-homotecia} (b). Decimos que $v$ y $w$  (ninguno de los cuales es cero) tienen direcciones opuestas si existe un número $c <0$ tal que $v =cw$. Por lo tanto, $-v$ tiene dirección opuesta a $v$.
+		\end{section}
+	
+	\begin{section}{El producto escalar}
+		
+		En 2-espacios, dados dos vectores $v = (x_1, x_2)$ y $w= (y_l, y_2)$, definimos su \textit{producto escalar} como
+		\begin{equation*}
+			\langle v , w  \rangle :=x_1y_1 + x_2y_2.
+		\end{equation*}
+		Para el caso de 3-espacios, sean   $v = (x_1, x_2,x_3)$ y $w= (y_l, y_2,y_3)$,  entonces el \textit{producto escalar de $v$ y $w$} es
+		\begin{equation*}
+			\langle v , w  \rangle :=x_1y_1 + x_2y_2+x_3y_3.
+		\end{equation*}
+		Finalmente, en los $n$-espacios,  generalizamos la definición de la manera obvia: sean  $v = (x_1, \ldots,x_n)$ y $w= (y_l, \ldots,y_n)$,  entonces el \textit{producto escalar de $v$ y $w$} es
+		\begin{equation*}
+		\langle v , w \rangle :=x_1y_1 + x_2y_2+\cdots+x_ny_n.
+		\end{equation*}
+		
+		Es importante notar  que este producto es un número real. Por ejemplo, si
+		\begin{equation*}
+			v= (1, 3, - 2) \quad\text{ y } \quad w= (- 1, 4, - 3),
+		\end{equation*}
+		entonces
+		\begin{equation*}
+			\langle v , w \rangle= - 1 + 12 + 6 = 17.
+		\end{equation*}
+		
+		Por el momento, no le damos una interpretación geométrica a este producto escalar. Haremos esto más tarde. Primero derivaremos algunas propiedades importantes. Los básicas son: sean $v$, $w$, $u$  tres vectores, entonces
+		\begin{enumerate}
+			\item[\textbf{P1.}]	$\langle v , w \rangle = \langle w , v \rangle$.
+			\item[\textbf{P2.}] 
+			\begin{equation*}
+				\langle v , w + u \rangle =\langle v , w \rangle + \langle v , u \rangle = \langle w +u , v \rangle.
+			\end{equation*}
+			\item[\textbf{P3.}] Si $c$ es un número, entonces 
+			\begin{equation*}
+				\langle cv , w \rangle = c \langle v , w \rangle \quad \text{ y } \quad  \langle v , cw \rangle = c \langle v , w \rangle.
+			\end{equation*}
+			\item[\textbf{P4.}] Si $v=0$ es el vector cero, entonces $\langle v , v \rangle =0$,  de lo contrario
+			\begin{equation*}
+				\langle v , v \rangle >0
+			\end{equation*}
+		\end{enumerate}
+		
+		Ahora vamos a probar estas propiedades. En cuanto a la primera, tenemos que
+		\begin{equation*}
+			x_1y_1 + x_2y_2+\cdots+x_ny_n = y_1x_1 + y_2x_2+\cdots+y_nx_n
+		\end{equation*}
+		porque para cualquiera de los dos números $x, y$, tenemos que $xy=yx$. Esto prueba la propiedad \textbf{P1}. 
+		
+		Para \textbf{P2}, sea $u = (z_1, \ldots, z_n)$. Entonces
+		\begin{equation*}
+			w + u = (y_1+z_1, \ldots, y_n+ z_n)
+		\end{equation*}
+		y
+		\begin{align*}
+			\langle v , w + u \rangle &= \langle (x_1, \ldots,x_n) , (y_1+z_1, \ldots, y_n+ z_n) \rangle\\
+			&= x_1(y_1+z_1) + \cdots x_n(y_n+z_n) \\
+			&= x_1y_1+x_1z_1 + \cdots x_ny_n+x_nz_n
+		\end{align*}
+		Reordenando los términos obtenemos
+		\begin{equation*}
+				\langle v , w + u \rangle =  x_1y_1+\cdots +  x_ny_n +x_1z_1 + \cdots+x_nz_n,
+		\end{equation*}
+		que no es otra cosa que $\langle v , w \rangle + \langle v , u \rangle$.
+		
+		Dejamos la propiedad \textbf{P3} como ejercicio.
+		
+		Finalmente probemos \textbf{P4}. Observemos que 
+		\begin{equation}\label{eq-v-escalar-v}
+			\langle v , v \rangle = x_1^2 + x_2^2 + \cdots + x_n^2.
+		\end{equation}
+		Como $x_i^2 \ge 0$ para todo $i$,  entonces $\langle v , v \rangle \ge 0$. Además, es claro que si $v$ tiene todas las coordenadas iguales a 0,  entonces  $\langle v , v \rangle =0$. En  el caso que $v\not=0$, entonces,  existe algún $i$  tal que  $x_i \ne 0$, por lo tanto $x_i^2>0$ y por la ecuación (\ref{eq-v-escalar-v}), tenemos que  $\langle v , v \rangle>0$.
+		
+		
+		
+		
+		El producto escalar $\langle v , w \rangle$ puede ser  igual a 0 para determinados  vescoes,  incluso ambos distintos de 0.  Por ejemplo, si $v = (1,2,3)$ y $w = (2, 1, -\frac43)$,  entonces
+		\begin{equation*}
+			\langle v , w \rangle = 2 + 2 -4 =0.
+		\end{equation*}
+	
+		Decimos que dos vectores $v$ y $w$ son  \textit{perpendiculares} u \textit{ortogonales}  $\langle v , w \rangle=0$. Por el momento, no está claro que en el plano, esta definición coincida con nuestra noción geométrica intuitiva de perpendicularidad. Esto lo veremos en la siguiente sección. Aquí nos limitaremos a observar un ejemplo. En  $\R^3$ consideremos los vectores
+		\begin{equation*}
+			e_1 = (1,0,0),\quad e_2 = (0, 1,0),\quad e_3 = (0,0,1),
+		\end{equation*}
+		representados en la fig. \ref{fig-canonicos-en-R3}
+		\begin{figure}[h]
+			\begin{tikzpicture}[scale=1.3]
+			%draw the main coordinate system axes
+			\draw[thick,->] (0,0,0) -- (2,0,0) node[right]{$y$};
+			\draw[thick,->] (0,0,0) -- (0,2,0) node[above]{$z$};
+			\draw[thick,->] (0,0,0) -- (0,0,2) node[anchor=north east]{$x$};
+			\draw[very thick,->] (0,0,0) -- (1,0,0);
+			\node [below] at (1,0,0.1) {$e_2$};
+			\draw[very thick,->] (0,0,0) -- (0,1,0) node[anchor=west]{$e_3$};
+			\draw[very thick,->] (0,0,0) -- (0,0,1);
+			\node [below] at (0.2,0,1) {$e_1$};
+			\draw [dotted] (0,0.8,0) -- (1.5,0.8,0);
+			\draw [dotted] (1.5,0,0) -- (1.5,0.8,0);
+			\draw[->] (0,0,0) -- (1.5,0.8,0) node[right]{$v$};
+			\end{tikzpicture}
+			\caption{}
+			\label{fig-canonicos-en-R3}
+		\end{figure}
+				
+		Luego, vemos que $\langle e_i , e_j \rangle = 0$, si $i \ne j$ y por lo tanto $e_i$  es perpendicular a $e_j$ si $i \ne j$, lo cual concuerda con nuestra intuición. 
+		
+		Observemos que si $v = (x_1,x_2,x_3)$,  entonces $\langle v , e_i \rangle = x_i$. Por lo tanto,  si la coordenada $i$-ésima de $v$ es cero,  $v$  es ortogonal a $e_i$. Esto nos dice,  por ejemplo,  que si $v$  es un vector contenido en el plano que incluye $e_2$ y $e_3$,  es decir si la primera coordenada es cero,  entonces $v$  es ortogonal a $e_1$. 
+		
+		
+		
+		
+	\end{section}
+
+	\begin{section}{La norma de un vector}
+	
+
+			Comenzaremos con el problema, similar, de encontrar el ángulo comprendido entre dos vectores de $\R^2$.  	El  \textit{producto escalar} o \textit{producto interno canónico} en $\R^2$ se define 
+		\begin{equation*}
+		\langle v_1 , v_2 \rangle :=x_1x_2 + y_1y_2,
+		\end{equation*}
+		donde  $v_1= (x_1,y_1)$ y $v_2= (x_2,y_2)$. Veremos a continuación que
+		\begin{equation*}
+		\langle v_1 , v_2 \rangle = ||v_1||\, ||v_2|| \cos(\theta)
+		\end{equation*}
+		donde  $||v_1||$ y  $||v_2||$ denotan las longitudes de $v_1$ y $v_2$ respectivamente y $\theta$ es el ángulo comprendido entre $v_1$ y $v_2$.
+		Si $v = (x,y)$, entonces, por el  teorema de Pitágoras, la longitud de $v$ es igual a $\sqrt{x^2+y^2}$.  Luego
+		$$
+		||v||^2 = {x^2+y^2} = \langle v , v \rangle.
+		$$
+		Es decir, el producto escalar de un vector consigo mismo es la longitud del  vector al cuadrado.
+		
+		Sean   $v_1= (x_1,y_1)$ y $v_2= (x_2,y_2)$ en $\R^2$ y  sea $\alpha_1$ el ángulo comprendido  entre $v_1$ y el eje horizontal y $\alpha_2$ el ángulo comprendido  entre $v_2$ y el eje horizontal.  Entonces,
+		\begin{equation*}
+		v_1 = ||v_1||(\cos (\alpha_1), \sen(\alpha_1) ), \quad v_2 = ||v_2||(\cos (\alpha_2), \sen(\alpha_2) ),
+		\end{equation*}
+		por lo tanto
+		\begin{equation*}
+		\langle v_1 | v_2 \rangle =  ||v_1|| \,  ||v_2|| (\cos (\alpha_1)\cos(\alpha_2)+  \sen(\alpha_1)\sen\alpha_2)). 
+		\end{equation*}
+		Por otro  lado, por la propiedad de la suma de los cosenos tenemos que 
+		\begin{equation*}
+		\cos (\alpha_1)\cos(\alpha_2)+  \sen(\alpha_1)\sen(\alpha_2) = \cos(\alpha_1- \alpha_2).
+		\end{equation*}
+		Es decir, 
+		\begin{equation*}
+		\langle v , w \rangle =   ||v_1|| \,  ||v_2|| \cos (\alpha_1-\alpha_2), 
+		\end{equation*}
+		y precisamente, el ángulo comprendido entre  $v$ y $w$ es $\theta =  \alpha_1-\alpha_2$.
+		
+		Es decir, el producto escalar no sólo es útil para encontrar la longitud de un vector, sino que nos permite averiguar el coseno del ángulo comprendido entre dos vectores. 
+		
+		Veamos ahora el problema en  $\R^3$. De forma análoga  al caso  $\R^2$,  definimos el producto escalar en $\R^3$ por 
+		\begin{equation*}
+		\langle v_1 , v_2 \rangle := x_1x_2 +y_1y_2+z_1z_2,
+		\end{equation*}
+		con  $v= (x_1,y_1,z_1)$ y $w = (x_2,y_2,z_2)$. Usando el teorema de  Pitágoras, también podemos demostrar que la longitud de un vector es $||v|| = \sqrt{ \langle v , v \rangle}$. Sean $\phi,\lambda$ la latitud y longitud geográfica en radianes de un vector $v$  en una esfera de radio $r$. Las coordenadas cartesianas del punto son 
+		\begin{equation}\label{eq-coord-cartesianas}
+		v = r(\cos\phi \, \cos\lambda,\cos\phi \, \sen\lambda,\sen\phi).
+		\end{equation}
+		
+		
+		La ley esférica de los cosenos nos permite demostrar una fórmula idéntica al caso $\R^2$: 
+		\begin{equation}\label{eq-prod-interno}
+		\langle v_1 |v_2 \rangle = ||v_1||\, ||v_2|| \cos(\theta)
+		\end{equation}
+		con $v_1$ y $v_2$ vectores en $\R^3$ y $\theta$ el ángulo comprendido entre ellos. Si $v_1$ y $v_2$ se encuentran en la circunferencia de radio $r$, de la ecuación (\ref{eq-prod-interno}) obtenemos
+		\begin{equation}\label{eq-ang-comprendido}
+		\theta = 	\operatorname{arcos}\left(\frac{\langle v_1 | v_2 \rangle}{r^2}\right).
+		\end{equation}  
+
+	\end{section}
+
+	\begin{section}{Rectas y planos}
+		content
+	\end{section}
+
+	\end{chapter}
 	
 	
 	\begin{chapter}{Sistemas lineales}\label{chap-sist-lin}
@@ -2766,124 +3297,14 @@ También vale este resultado para matrices $n \times n$.
 \end{section}	
 	\end{chapter}
 
-	
 
-	aa
+
 	\begin{chapter}{Espacios vectoriales}\label{chap-esp-vect} En este capítulo estudiaremos en forma general las combinaciones lineales sobre conjuntos abstractos.
 		En el primer capítulo desarrollamos el método de Gauss para la resolución de sistemas de ecuaciones lineales. En el método de Gauss se usan sistemáticamente las combinaciones lineales de las filas de una matriz. Podemos ver estas filas como elementos de $\K^n$  y nuestro primer impulso para el estudio de las combinaciones lineales sería trabajar en este contexto, es decir  en $\K^n$. Eso es lo que haremos, en forma introductoria, en la primera sección, donde trabajaremos restringidos a   $\R^2$ y $\R^3$.   Sin embargo, muchos de los resultados sobre combinaciones lineales en $\K^n$ son aplicables también a conjuntos más generales y de gran utilidad en la matemática. Por lo tanto,  apartir de la segunda sección,  nuestros ``espacios vectoriales'' (espacios donde pueden hacerse combinaciones lineales de vectores) serán espacios abstractos. 
 		
-	\begin{comment}
-	
-		\begin{section}{Álgebra lineal en $\R^2$ y $\R^3$}  
-			\begin{definicion}
-				Sea $\R$ el cuerpo de los números reales,  entonces
-				$$
-				\R^2:= \{(x,y): x,y \in \R \}, \quad \R^3:= \{(x,y,z): x,y,z \in \R \}.
-				$$
-			\end{definicion}
+
 		
-		Usaremos el {\em sistema  de coordenadas cartesianas} para representar los elementos de  $\R^2$ y $\R^3$,  que llamaremos  {\em puntos.} 
-				
-	
-		
-	En  álgebra lineal pensaremos a cada punto como un {\em vector} que comienza en el origen.  Los vectores en  $\R^2$ y $\R^3$ se pueden graficar como ``flechas'' que parten del origen y llegan a las coordenadas del vector.
-	
-		
-	
-\begin{center}
-		\begin{tikzpicture}
-		\draw[thick,->] (-4.0,0) -- (4.0,0) node[right] {$x$}; % eje x
-		\draw[thick,->] (0,-3) -- (0,3) node[above] {$y$}; % eje y
-		\foreach \x in {-3,...,-1}
-		\draw (\x,3pt) -- (\x,-3pt)
-		node[anchor=north] {\x};
-		\foreach \x in {1,...,3}
-		\draw (\x,3pt) -- (\x,-3pt)
-		node[anchor=north] {\x};
-		\foreach \y in {-2,...,-1}
-		\draw (3pt,\y) -- (-3pt,\y) 
-		node[anchor=east] {\y}; 
-		\foreach \y in {1,...,2}
-		\draw (3pt,\y) -- (-3pt,\y)
-		node[anchor=east] {\y}; 
-		\draw[fill] (2,1) circle [radius=0.025];
-		\draw[->] (0,0) -- (2,1);
-		\node [right] at (2,1) {$(2,1)$};
-		\draw [dotted] (0,1) -- (2,1);
-		\draw [dotted] (2,0) -- (2,1);
-		\draw[fill] (-1,2.5) circle [radius=0.025];
-		\draw[->] (0,0) -- (-1,2.5);
-		\node [left] at (-1,2.5) {$(-1,2.5)$};
-		\draw [dotted] (0,2.5) -- (-1,2.5);
-		\draw [dotted] (-1,0) -- (-1,2.5);
-		\draw[fill] (-2.5,-2.5) circle [radius=0.025];
-		\draw[->] (0,0) -- (-2.5,-2.5);
-		\node [below] at (-2.5,-2.5) {$(-2.5,-2.5)$};
-		\draw [dotted] (0,-2.5) -- (-2.5,-2.5);
-		\draw [dotted] (-2.5,0) -- (-2.5,-2.5);
-		\end{tikzpicture}
-		
-		\captionof{figure}{Representación gráfica de vectores en $\R^2$.} 	
-\end{center}	
-	
-	\vskip 0.5cm
-	
-	\begin{center}
-		\begin{tikzpicture}
-		%draw the main coordinate system axes
-		\draw[thick,->] (0,0,0) -- (5,0,0) node[right]{$y$};
-		\draw[thick,->] (0,0,0) -- (0,5,0) node[above]{$z$};
-		\draw[thick,->] (0,0,0) -- (0,0,5) node[anchor=north east]{$x$};
-		\draw[->] (0,0,0) -- (3,2.5,3.5) node[anchor=west]{$v$};
-		\draw [dotted] (0,2.5,0) -- (3,2.5,0);
-		\draw [dotted] (0,2.5,0) --  (0,2.5,3.5);
-		\draw [dotted] (0,2.5,3.5) -- (3,2.5,3.5) ;
-		\draw [dotted] (3,0,0) -- (3,2.5,0);
-		\draw [dotted] (0,0,3.5) -- (3,0,3.5);
-		\draw [dotted] (0,0,3.5) -- (0,2.5,3.5);
-		\draw [dotted] (3,0,3.5) -- (3,0,0);
-		\draw [dotted] (3,2.5,3.5) -- (3,2.5,0);
-		\draw [dotted] (3,2.5,3.5) -- (3,0,3.5);
-		\foreach \y in {1,...,4}
-		\draw (\y,0.1,0) -- (\y,-0.1,0)
-		node[anchor=north] {\y};
-		\foreach \y in {1,...,4}
-		\draw (-0.1,\y,0) -- (0.1,\y,0)
-		node[anchor=east] {\y\;};
-		\foreach \y in {1,...,4}
-		\draw (0.1,-0.1,\y) -- (-0.1,0.1,\y)
-		node[anchor=south east] {\y\,};
-		
-		\end{tikzpicture}
-		
-		\captionof{figure}{Representación gráfica del vector $v = (3.5,\,3,\,2.5)$ en $\R^3$. }
-	\end{center}
-	
-	\vskip .5cm
-	
-		En  forma análoga a como definimos la suma de dos filas de una matriz  o el producto de una fila por un escalar, podemos definir suma y producto por un escalar de vectores. 
-		
-		\begin{definicion}
-			Dados $(x_1,x_2), (y_1,y_2) \in \R^2$ o $(x_1,x_2,x_3), (y_1,y_2,y_3) \in \R^3$ y $c \in \R$, definimos
-		\begin{itemize}
-			\item $(x_1,x_2)+ (y_1,y_2)=(x_1+y_1,x_2+y_2)$, 
-			\item $(x_1,x_2,x_3)+ (y_1,y_2,y_3)=(x_1+y_1,x_2+y_2,x_3+y_3)$, 
-		\end{itemize}
-		y
-		\begin{itemize}
-			\item $c(x_1,x_2)=(cx_1,cx_2)$, 
-			\item $c(x_1,x_2,x_3)= (cx_1,cx_2,cx_3)$. 
-		\end{itemize}
-		\end{definicion}
-		
-		\end{section}
-	
-			
-		\end{comment}
-		
-		\begin{section}{Vectores en  el plano y el espacio}
-			content
-		\end{section}
+
 		
 		\begin{section}{Definición y ejemplos de espacios vectoriales}
 			
@@ -5823,6 +6244,9 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 
 	\begin{chapter}{Espacios de producto  interno}
 	
+	\begin{comment}
+	
+
 	
 	\begin{section}{Suma directa de subespacios y proyecciones}
 		
@@ -6016,7 +6440,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 	\end{section}
 
-	
+		\end{comment}
 	
 	
 	\begin{section}{Producto interno}
@@ -6517,7 +6941,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\end{ejemplo}
 	\end{section}
 
-
+\begin{comment}
 
 \begin{section}{La adjunta de una transformación lineal} Mostraremos en esta sección como el producto interno nos permite asociar a cada transformación lineal $T: V \to W$ una nueva transformación  lineal $T^*: W \to V$ llamada la adjunta de $T$. 
 	
@@ -6813,6 +7237,214 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	\end{proof}
 \end{section}
 
+
+
+\end{comment}
+
+\begin{section}{La adjunta de una transformación lineal} Mostraremos en esta sección como el producto interno nos permite asociar a cada transformación lineal $T: V \to W$ una nueva transformación  lineal $T^*: W \to V$ llamada la adjunta de $T$. 
+	
+	
+	
+	\begin{teorema}
+		Sean $V, W$ espacios vectoriales de dimensión finita y con producto interno $\la \;,\;\ra$ y $\la \;,\;\ra$ respectivamente (se denotan igual). Sea $T: V \to W$ lineal, entonces existe una única $T^*: W \to V$ que cumple
+		\begin{equation}\label{eq-adjunta}
+		\la Tv,w\ra = \la v,T^*w\ra,
+		\end{equation}  
+		para $v\in V$, $w \in W$.
+	\end{teorema}
+	\begin{proof}
+	Sea $\{v_1,\ldots,v_n\}$ una BON de $V$ y $\{w_1,\ldots,w_m\}$ una BON de $W$, observemos que la coordenada $j$ (en $V$) de $T^*w_i$ debe cumplir
+	\begin{equation}\label{eq-transp}
+		\la T^*w_i,v_j\ra = 	\la w_i,Tv_j\ra.
+	\end{equation}
+	Por lo tanto,  definimos
+	\begin{equation*}
+		T^*(w_i) = \sum_{j=1}^{n} \la w_i,Tv_j\ra v_j,
+	\end{equation*}
+	y extendemos linealmente a una transformación lineal $T^*: W \to V$. Claramente $T^*$   está bien definida y es lineal (por definición).  La unicidad está garantizada por la ecuación (\ref{eq-transp}).  
+	
+	Finalmente,  debemos comprobar que se verifica la ecuación (\ref{eq-adjunta}): sean  $w \in W$ y $v \in V$, entonces $w = \sum_{i=1}^{m} \la w_i,w\ra w_i$ y $v = \sum_{j=1}^{n} \la v_j,v\ra v_j$. Reemplazando en  la ecuación (\ref{eq-adjunta}) $w$ y $v$ por su desarrollo en las bases se obtiene la igualdad. Para el lector curioso, a continuación hacemos la demostración:
+	\begin{align*}
+		\la v,T^*w\ra &= 	\la v, T^*(\sum_{i=1}^{m} \la w_i,w\ra w_i) \ra\\
+		 &= \la v, \sum_{i=1}^{m} \la w_i,w\ra T^*(w_i) \ra\\
+		 &=	\sum_{i=1}^{m} \la w_i,w\ra\la v,  T^*(w_i) \ra\\
+		 &=\sum_{i=1}^{m} \la w_i,w\ra\la v,  \sum_{j=1}^{n} \la w_i,Tv_j\ra v_j\ra\\
+		 &=\sum_{i=1}^{m} \la w_i,w\ra \sum_{j=1}^{n} \la w_i,Tv_j\ra\la v,  v_j\ra.
+	\end{align*}
+	Por otro lado, como $v = \sum_{j=1}^{n} \la v_j,v\ra v_j$, entonces
+	\begin{equation*}
+		\sum_{j=1}^{n} \la w_i,Tv_j\ra\la v,  v_j\ra = \sum_{j=1}^{n} \la w_i,\la v,  v_j\ra Tv_j\ra = \la w_i, T (\sum_{j=1}^{n}\la v,  v_j\ra v_j)\ra = \la w_i, T v\ra, 
+	\end{equation*}
+	por lo tanto 
+	\begin{equation*}
+		\la v,T^*w\ra = \sum_{i=1}^{m} \la w_i,w\ra \la w_i, T v\ra =  \la\sum_{i=1}^{m} \la w_i,w\ra w_i, T v\ra = \la w, T v\ra
+	\end{equation*}
+	\end{proof}
+	
+	
+	
+	\begin{obs} El caso más interesante, y que pasaremos a estudiar ahora, es cuando $T: V \to V$, es decir cuando el espacio de llegada y  de partida es el mismo, y por lo tanto también $T^*: V \to V$. 
+	\end{obs}
+	
+	
+	\begin{ejemplo}\label{ejemplo4.10}
+		Sea $T: \R^3 \to \R^3$ la transformación lineal $T(x,y,z) = (3x +y, 2x -y+ 3z, x)$. Calcular $T^*$ y la matriz de $T$ y $T^*$ en la base canónica.  
+	\end{ejemplo}
+	\begin{proof}[Solución 1] 
+		La observación principal para hacer el cálculo de $T^*$ es que dada cualquier transformación lineal $S$, tenemos que 
+		$$
+		\la e_i, S(v)\ra  = t_i \Leftrightarrow S(v) = (t_1,\ldots,t_n). 
+		$$ 
+		Aplicado a este caso,
+		\begin{align*}
+		\la e_1, T^*(x,y,z)\ra  &= \la  T(e_1),(x,y,z)\ra =    \la (3,2,1),(x,y,z)\ra = 3x+2y+z \\
+		\la e_2, T^*(x,y,z)\ra  &= \la  T(e_2),(x,y,z)\ra =    \la (1,-1,0),(x,y,z)\ra = x-y \\
+		\la e_3, T^*(x,y,z)\ra  &= \la  T(e_3),(x,y,z)\ra =    \la (0,3,0),(x,y,z)\ra = 3y. \\
+		\end{align*}
+		Por lo tanto
+		$$
+		T^*(x,y,z) = (3x+2y+z,x-y,3y).
+		$$
+		Por lo tanto, la matriz de $T$ en la base canónica es 
+		$$
+		\left[\begin{matrix}
+		3&1&0\\2&-1&3\\1&0&0.
+		\end{matrix}
+		\right]
+		$$
+		y la matriz de $T^*$ en la base canónica es
+		$$
+		\left[\begin{matrix}
+		3&2&1\\1&-1&0\\0&3&0.
+		\end{matrix}
+		\right]
+		$$
+	\end{proof}
+	
+	
+	Observemos que en el ejemplo anterior la matriz de la adjunta es la transpuesta de la matriz de la transformación original. Veremos ahora, que este es un resultado general. 
+	
+	\begin{teorema}\label{matrizadjunta}
+		Sea $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y sea  $\mathcal U = \{u_1, \ldots , u_n\}$ una BON de $V$. Sea $T: V \to V$ una transformación lineal y $A$ la matriz de $T$ en  la base $\mathcal U$,  es decir $[T]_{\mathcal U} = A$.
+		
+		Entonces, $[T^*]_{\mathcal U} = A^\t$, es decir, la matriz de $T^*$ en la base $\mathcal U$ es la transpuesta de $A$. 
+	\end{teorema}
+	\begin{proof}
+		Observemos  que como $T(u_j) = \sum_i a_{ij}u_i$, entonces 
+		$$
+		\la Tu_j,u_i\ra = a_{ij}.
+		$$
+		Luego 
+		$$
+		a_{ij} = \la Tu_j,u_i\ra = \la u_j,T^*u_i\ra.
+		$$
+		Es decir  que $T^*(u_i) = \sum_j a_{ij}$. Es decir $[T^*]_{\mathcal U} = A^\t$.
+	\end{proof}
+	
+	
+	\begin{ejemplo} Resolveremos nuevamente, en forma más sencilla, el ejemplo  \ref{ejemplo4.10}.
+	\end{ejemplo}
+	\begin{proof}[Solución 2]
+		Como $T(x,y,z) = (3x +y, 2x -y+ 3z, x)$, la matriz de $T$ en la base canónica es 
+		$$
+		\left[\begin{matrix}
+		3&1&0\\2&-1&3\\1&0&0.
+		\end{matrix}
+		\right].
+		$$
+		Por lo tanto, por teorema  \ref{matrizadjunta}, la matriz de $T^*$ en la base canónica es
+		$$
+		\left[\begin{matrix}
+		3&2&1\\1&-1&0\\0&3&0.
+		\end{matrix}
+		\right].
+		$$
+		Luego $T^*(x,y,z) = (3x+2y+z,x-y,3y)$.
+	\end{proof}
+	
+	
+	
+	\begin{proposicion}\label{adjprop}
+		Sean $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y $T,S:V \to V$ transformaciones lineales. Entonces
+		\begin{enumerate}
+			\item\label{adj0} $Id^* = Id$.
+			\item\label{adj1} Si $c \in \R$, entonces $(cR)^* = cR^*$.
+			\item\label{adj2} $(R+S)^* = R^* + S^*$.
+			\item\label{adj3} $(RS)^* = S^*R^*$.
+			\item\label{adj4} $R^{**} = R$.
+		\end{enumerate} 
+	\end{proposicion}
+	\begin{proof}
+		(\ref{adj0}). Es trivial.
+		
+		\vskip .3cm
+		
+		(\ref{adj1}). Por definición de adjunta $(cR)^*$ es la única transformación lineal tal que
+		$$
+		\la cR(v),w\ra = \la v,(cR)^*(w)\ra, \quad \forall v,w \in V.
+		$$
+		Ahora bien
+		$$
+		\la v,cR^*(w)\ra = c\la v,R^*(w)\ra = c\la R(v),w\ra =  \la cR(v),w\ra. 
+		$$
+		Es decir $(cR)^* = cR^*$.
+		
+		\vskip .3cm
+		
+		(\ref{adj2}). Como en el caso anterior, debemos demostrar que  $R^* + S^*$ es la única transformación lineal tal que
+		$$ 
+		\la (R+S)(v),w\ra = \la v,(R^* + S^*)(w)\ra, \quad \forall v,w \in V.
+		$$
+		Ahora bien,
+		\begin{align*}
+		\la v,(R^* + S^*)(w)\ra &= \la v,R^*(w) + S^*(w)\ra =  \la v,R^*(w) \ra+\la v, S^*(w)\ra \\
+		&=  \la R(v),w \ra+\la S(v), w\ra =  \la R(v) + S(v), w\ra =  \la (R+S)(v), w\ra .
+		\end{align*}
+		
+		\vskip .3cm
+		
+		(\ref{adj3}). 
+		\begin{align*}
+		\la v,(S^*R^*)(w)\ra &= \la v, S^*(R^*(w))\ra =  \la S(v),R^*(w) \ra \\
+		&=  \la R(S(v)),w \ra =  \la (RS)(v), w\ra .
+		\end{align*}
+		Por lo tanto  $(RS)^* = S^*R^*$.
+		
+		\vskip .3cm
+		
+		(\ref{adj4}). Por definición de adjunta de $R^*$, tenemos que $ (R^*)^*=R^{**}$  es la única transformación lineal tal que 
+		$$
+		\la R^*(v), w\ra = \la v, R^{**}(w)\ra  , \; \forall\, v,w \in V.
+		$$ 
+		Ahora bien, por la definición de adjunta de $R$ sabemos que 
+		$$
+		\la R^*(v), w\ra = \la v, R(w)\ra , \; \forall\, v,w \in V.
+		$$ 
+		Luego $R = R^{**}$.
+		
+	\end{proof}
+	
+	
+	\begin{teorema}[$*$]\label{rel-adj-ort}
+		Sea $T: V \to W$ una transformación lineal entre espacios vectoriales de dimensión finita con producto interno. Entonces,
+		\begin{enumerate}
+			\item $\nu(T^*) = \im(T)^\perp$,
+			\item $\im(T^*) = \nu(T)^\perp$,
+			\item $\nu(T) = \im(T^*)^\perp$,
+			\item $\im(T) = \nu(T^*)^\perp$.
+		\end{enumerate}
+	\end{teorema}
+	\begin{proof}
+		Probaremos la primera afirmación, pues las otras se deducen fácilmente del hecho que $T^{**} = T$ y $U^{\perp\perp} = U$. Ahora bien,
+		\begin{align*}
+		w \in  \nu(T^*) &\Leftrightarrow T^*(w) =0 \Leftrightarrow \la v, T^*(w) \ra = 0,\; \forall\, v\in V \Leftrightarrow \\
+		&\Leftrightarrow \la T(v), w \ra = 0,\; \forall\, v\in V\Leftrightarrow  w \in \im(T)^\perp.
+		\end{align*}
+		
+		
+	\end{proof}
+\end{section}
+
 \begin{section}{Matrices simétricas y operadores autoadjuntos}
 	
 	En esta sección todos los espacios vectoriales serán sobre $\R$ y de dimensión finita. 
@@ -6834,15 +7466,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		($\Leftarrow$) Por hipótesis, $[T]_\mathcal{U} =[T]_\mathcal{U}^\t $. Pero por el teorema \ref{matrizadjunta}, tenemos que  $[T^*]_\mathcal{U} =[T]_\mathcal{U}^\t$. Por lo tanto $[T^*]_\mathcal{U} = [T]_\mathcal{U}$, lo cual implica que  $T= T^*$.
 	\end{proof}
 	
-	\begin{ejemplo}\label{poautoadjunto} Sea $P:V \to V$ una proyección ortogonal,  entonces $P$ es un operador  autoadjunto. 
-		
-		Veamos que es así: sea $W\subset V$, tal que $P$ proyecta ortogonalmente a $W$,  es decir $V = W \oplus W^\perp$, con $P(w) = w$, $w \in W$ y $P(w')= 0$, $w' \in W^\perp$. 
-		
-		Entonces si $v_1,v_2 \in V$, tenemos que $v_1 = w_1 + w'_1,  v_2 = w_2 + w'_2$ con $w_1,w_2 \in W$, $w'_1,w'_2 \in W^\perp$. Luego
-		$$
-		\la P(v_1),v_2 \ra = \la w_1, w_2+w'_2 \ra = \la w_1,w_2\ra = \la w_1, P(v_2) \ra = \la v_1, P(v_2) \ra. 
-		$$
-	\end{ejemplo}
+ Este proposición nos  permite reducir los espacios de producto interno al  espacio  vectorial $\R^n$ con el producto interno canónico y al los operadores autoadjuntos a matrices simétricas. 
 	
 	
 	\begin{proposicion}
