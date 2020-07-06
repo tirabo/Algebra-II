@@ -1,9 +1,19 @@
-\documentclass[11pt,spanish,makeidx]{amsbook}
+\documentclass[a4paper,12pt,twoside,spanish]{amsbook}
 \tolerance=10000
 \renewcommand{\baselinestretch}{1.3}
 
+
+%\renewcommand{\familydefault}{\sfdefault} % pasa las font a sans serif
 % Para hacer el  indice en linea de comando hacer 
 % makeindex main
+%% En http://www.tug.org/pracjourn/2006-1/hartke/hartke.pdf hay ejemplos de packages de fonts libres, como los siguientes:
+%\usepackage{cmbright}
+%\usepackage{pxfonts}
+%\usepackage[varg]{txfonts}
+%\usepackage{ccfonts}
+%\usepackage[math]{iwona}
+\usepackage[math]{kurier}
+
 \usepackage{etex}
 \usepackage{t1enc}
 \usepackage[spanish,es-nodecimaldot]{babel}
@@ -63,6 +73,27 @@
 }
 \usepackage{hypcap}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CONTROLADORES DE ESTILO %%%
+%%%--------------------------------------------------------------------------
+%%% CAPÍTULOS 
+%%%--------------------------------------------------------------------------
+\usepackage{titlesec}%--
+\newcommand{\hsp}{\hspace{15pt}}
+\titleformat{\chapter}[hang]{\huge\bfseries}{{
+		\fontsize{6em}{6em}\selectfont
+		\thechapter}\hsp%\textcolor{}%
+	{\vrule height 4em width 3pt}\hsp}{0pt}{\huge\bfseries}
+%--------------------------------------------------------------------------
+% SECCIONES 
+%--------------------------------------------------------------------------
+\usepackage{titlesec}
+\titleformat{\section}[frame]{\normalfont}%
+{\filright\footnotesize\enspace \large {\large SECCIÓN \thesection} \enspace}%
+{8pt}{\huge\bfseries\filcenter}%
+%%%--------------------------------------------------------------------------	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
@@ -311,7 +342,7 @@
 		
 		Aunque no podemos hacer un dibujo para generalizar lo anterior a $4$-espacios, no hay nada que nos impida considerar un cuádruple de números y decretar que este es un punto en el $4$-espacio. Un quíntuple sería un punto en el 5-espacio, luego vendría un séxtuple, séptuple, óctuple, etc.
 		
-		Podemos generalizar y definir un punto en el $n$-espacio, para $n$ un entero positivo, como una $n$-tupla de números. Vamos a denotar tal $n$-tupla con letras $v$, $w$, $u$, ... y usaremos otras letras minúsculas para los números. Si $v =(x_1,x_2,\ldots,x_n)$, llamamos a los números $x_1,x_2,\ldots,x_n$ las \textit{coordenadas} del punto $v$. Más precisamente, $x_i$ será la \textit{coordenada $i$-ésima} de $v$. Por ejemplo, en el 3-espacio, 2 es la primera coordenada del punto $(2,3, -4)$, y $-4$ es la tercera coordenada. Denotamos a los  $n$-espacios por $\R^n$. Para formalizar:
+		Podemos generalizar y definir un punto en el $n$-espacio, para $n$ un entero positivo, como una $n$-tupla de números. Vamos a denotar tal $n$-tupla con letras $v$, $w$, $u$, ... y usaremos otras letras minúsculas para los números. Si $v =(x_1,x_2,\ldots,x_n)$, llamamos a los números $x_1,x_2,\ldots,x_n$ las \textit{coordenadas} del punto $v$. Más precisamente, $x_i$ será la \textit{coordenada $i$-ésima} de $v$. Por ejemplo, en el 3-espacio, 2 es la primera coordenada\index{coordenada} del punto $(2,3, -4)$, y $-4$ es la tercera coordenada. Denotamos a los  $n$-espacios por $\R^n$. Para formalizar:
 		\begin{definicion}
 			Sea $\R$ el cuerpo de los números reales,  entonces
 			\begin{equation*}
@@ -320,7 +351,7 @@
 			Tode $v$ en $\R^n$ será llamado {\em punto}\index{punto}. Alternativamente, también podemos decir que $v$  es un \textit{vector en el origen} o simplemente un \textit{vector}. 
 		\end{definicion}
 		
-		La mayoría de nuestros ejemplos tendrán lugar cuando $n = 2$ o $n = 3$. Por lo tanto, el lector puede visualizar cualquiera de estos dos casos a lo largo del apunte. Para ello usaremos el {\em sistema  de coordenadas cartesianas}\index{sistema  de coordenadas cartesianas} para representar los elementos de  $\R^2$ y  $\R^3$, tal como se ha hecho en las figuras \ref{fig-punto-en-R2} y \ref{fig-punto-en-R3}.
+		La mayoría de nuestros ejemplos tendrán lugar cuando $n = 2$ o $n = 3$. Por lo tanto, el lector puede visualizar cualquiera de estos dos casos a lo largo del apunte. Para ello usaremos el {\em sistema  de coordenadas cartesianas}\index{sistema  de coordenadas cartesianas}\index{coordenadas cartesianas} para representar los elementos de  $\R^2$ y  $\R^3$, tal como se ha hecho en las figuras \ref{fig-punto-en-R2} y \ref{fig-punto-en-R3}.
 		
 		
 	
@@ -627,7 +658,7 @@
 	
 	\begin{section}{El producto escalar}
 		
-		En 2-espacios, dados dos vectores $v = (x_1, x_2)$ y $w= (y_l, y_2)$, definimos su \textit{producto escalar} como
+		En 2-espacios, dados dos vectores $v = (x_1, x_2)$ y $w= (y_l, y_2)$, definimos su \textit{producto escalar}\index{producto escalar} como
 		\begin{equation*}
 			\langle v , w  \rangle :=x_1y_1 + x_2y_2.
 		\end{equation*}
@@ -740,7 +771,7 @@
 	\end{section}
 
 	\begin{section}{La norma de un vector}\label{secccion-norma-de-un-vector}
-	Si $v$  es vector,  entonces $\langle v , v \rangle \ge 0$ y definimos como la \textit{norma de $v$} o \textit{longitud de $v$} al número
+	Si $v$  es vector,  entonces $\langle v , v \rangle \ge 0$ y definimos como la \textit{norma de $v$}\index{norma de un vector} o \textit{longitud de $v$} al número
 	\begin{equation*}
 		||v|| = \sqrt{\langle v , v \rangle}.
 	\end{equation*}
@@ -793,7 +824,7 @@
 	\end{equation*} 
 	y la aplicación reiterada del  teorema de Pitágoras nos dice que esta es la definición correcta de longitud o norma de un vector. 
 	
-	\begin{proposicion}
+	\begin{proposicion}\label{prop-lambda-norma}
 		Sea $v \in \R^n$ y $\lambda \in \R$,  entonces
 		\begin{equation*}
 			||\lambda v|| = |\lambda|||v||.
@@ -810,9 +841,9 @@
 	\vskip .3cm
 	
 El producto escalar no sólo es útil para definir la longitud de un vector,  sino que también nos dice cual es el ángulo entre dos vectores: sean   $v_1= (x_1,y_1)$ y $v_2= (x_2,y_2)$ en $\R^2$; veremos a continuación que 
-		\begin{equation*}
+		\begin{equation}\label{eq-cos-theta}
 		\langle v_1 , v_2 \rangle = ||v_1||\, ||v_2|| \cos(\theta),
-		\end{equation*}
+		\end{equation}
 		donde  $\theta$ es el ángulo comprendido entre $v_1$ y $v_2$.
 	
 		
@@ -844,7 +875,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		Terminaremos esta sección dando la noción de  distancia entre dos vectores o dos puntos. 
 		
 		\begin{definicion}
-			Sea $v,w \in \R^n$, entonce las \textit{distancia} entre $v$ y $w$ es $||v-w||$.
+			Sea $v,w \in \R^n$, entonce las \textit{distancia}\index{distancia en $\mathbb R^n$} entre $v$ y $w$ es $||v-w||$.
 		\end{definicion}
 	
 	Vemos en la fig. \ref{fig-distancia-de-vectores} que la norma del vector $v-w$ es la longitud del segmento que une $w$ con $v$.
@@ -878,7 +909,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 \end{figure}
 
 
-	\begin{section}{Vectores afines}
+	\begin{section}{Vectores afines ($*$)}
 		En  esta sección veremos el concepto de vector afín, que nos servirá  para entender más geométricamente los conceptos de rectas y planos en $\R^2$ y $\R^3$,  respectivamente (secciones \ref{seccion-rectas-en-r2} y \ref{seccion-planos-en-r3}). 
 		\begin{figure}[h]
 			\begin{tikzpicture}[scale=0.5]
@@ -892,11 +923,11 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\caption{Un vector afín.}
 			\label{fig-vector-afin}
 		\end{figure}
-		Definimos un \textit{vector afín} como un par ordenado de puntos  $v$ y $w$, que escribimos $\overrightarrow{vw}$ y lo visualizamos como una flecha entre $v$ y $w$. Llamamos a $v$ el \textit{punto inicial} y $w$ el \textit{punto final} del vector afín (fig. \ref{fig-vector-afin}).
+		Definimos un \textit{vector afín}\index{vector afín} como un par ordenado de puntos  $v$ y $w$, que escribimos $\overrightarrow{vw}$ y lo visualizamos como una flecha entre $v$ y $w$. Llamamos a $v$ el \textit{punto inicial}\index{vector afín!punto inicial} y $w$ el \textit{punto final}\index{vector afín!punto final} del vector afín (fig. \ref{fig-vector-afin}).
 		
 		
 		
-		Sean $\overrightarrow{vw}$ y $\overrightarrow{pq}$ dos vectores afines. Diremos que son \textit{equivalentes} si $w-v= q-p$. 
+		Sean $\overrightarrow{vw}$ y $\overrightarrow{pq}$ dos vectores afines. Diremos que son \textit{equivalentes}\index{vector afín!equivalencia} si $w-v= q-p$. 
 		\begin{figure}[h]
 			\begin{tikzpicture}
 			\draw[thick,-] (-1,0) -- (4,0);
@@ -1007,11 +1038,11 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 	
 	No es difícil dar una definición que englobe todas las rectas posibles del plano:
 	
-	\begin{definicion}[Definición general de la recta] Una  \textit{recta} está formada por el conjunto de puntos $(x,y)$ en $\R^2$ que satisfacen la ecuación
+	\begin{definicion}[Definición general de la recta] Una  \textit{recta}\index{recta} está formada por el conjunto de puntos $(x,y)$ en $\R^2$ que satisfacen la ecuación
 	\begin{equation}\label{eq-implicita-de-la-recta}
 		ax +by =c,
 	\end{equation}
-	con $a,b,c \in \R$ y tal que $a,b$ no pueden ser simultáneamente $0$.  También suele decirse que la ecuación (\ref{eq-implicita-de-la-recta}) es la \textit{ecuación implícita de la recta}.
+	con $a,b,c \in \R$ y tal que $a,b$ no pueden ser simultáneamente $0$.  También suele decirse que la ecuación (\ref{eq-implicita-de-la-recta}) es la \textit{ecuación implícita de la recta}\index{recta!ecuación implícita}.
 	\end{definicion}
 
 	Observar  que si $b\ne0$, entonces la recta es \, $y= -\displaystyle\frac{a}{b}x + \displaystyle\frac{c}{b}$ \, y que si $b=0$,  entonces $a\ne 0$ y la recta es \, $x =\displaystyle\frac{c}{a}$.
@@ -1032,7 +1063,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 	\begin{equation}\label{eq-ecuacion-parametrica-recta}
 	X(t) =v +tw, \quad \text{para $t \in \R$.} 
 	\end{equation} 
-	En  el espacio $\R^2$, diremos que (\ref{eq-ecuacion-parametrica-recta}) es la \textit{ecuación paramétrica} o la \textit{representación paramétrica} de la recta $L$ que pasa por el punto $v$ paralela a $w \ne 0$.
+	En  el espacio $\R^2$, diremos que (\ref{eq-ecuacion-parametrica-recta}) es la \textit{ecuación paramétrica} o la \textit{representación paramétrica}\index{recta!ecuación paramétrica} de la recta $L$ que pasa por el punto $v$ paralela a $w \ne 0$.
 		
 
 		
@@ -1063,7 +1094,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		\begin{equation}\label{eq-segmento-parametrico}
 			S(t) = v + t(u-v)\quad  \text{con}\quad 0 \le t \le 1.
 		\end{equation}
-		Observar que en tiempo 0, $S(0) = v$ y  en tiempo 1, $S(1)= v + (u-v)= u$. Como $t$ ``va'' de 0 a 1,  el móvil va de $v$ a $u$,  en linea recta. En  el lenguaje de vectores afines, (\ref{eq-segmento-parametrico}) es \textit{la ecuación paramétrica del vector $\overrightarrow{vu}$}.
+		Observar que en tiempo 0, $S(0) = v$ y  en tiempo 1, $S(1)= v + (u-v)= u$. Como $t$ ``va'' de 0 a 1,  el móvil va de $v$ a $u$,  en linea recta. %En  el lenguaje de vectores afines, (\ref{eq-segmento-parametrico}) es \textit{la ecuación paramétrica del vector $\overrightarrow{vu}$}.
 		
 		Extendiendo a ambos lados el segmento, podemos describir la recta que pasa por $v$ y $u$ por la ecuación paramétrica (fig. \ref{fig-recta-entre-puntos})
 		\begin{equation*}
@@ -1188,7 +1219,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		\begin{equation*}
 			P = \{(x,y,z): ax +by +cz =d\}.
 		\end{equation*}
-		Entonces diremos que $P$  es  un \textit{plano con ecuación implícita}  $ax +by +cz =d$ y  que $(a,b,c)$ es un \textit{vector normal al plano $P$.}
+		Entonces diremos que $P$  es  un \textit{plano con ecuación implícita}\index{plano en $\R^3$!ecuación implícita}  $ax +by +cz =d$ y  que $(a,b,c)$ es un \textit{vector normal al plano $P$.}
 		\end{definicion} 
 		
 		Observar que la ecuación $ ax +by +cz =d$ no es más que la ecuación $\la(x,y,z),(a,b,c) \ra=d$. 	
@@ -1237,7 +1268,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		\begin{equation*}
 		P = \{v + sw_1 + tw_2: s,t \in \R\}. 
 		\end{equation*}
-		Diremos entonces que  \textit{$P$ es el  plano a través de $v$ paralelo a los vectores $w_1$ y $w_2$.} 
+		Diremos entonces que  \textit{$P$ es el  plano a través de $v$ paralelo a los vectores $w_1$ y $w_2$.}\index{plano en $\R^3$!ecuación paramétrica} 
 	\end{definicion}
 	
 		Claramente,  en la definición de arriba, el vector $v$ pertenece al plano y el plano 
@@ -1378,11 +1409,13 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\end{proof}
 			
 			La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas. En principio no es cierto que si obtenemos un sistema de ecuaciones por combinaciones lineales de otro sistema, ambos tengan las mismas soluciones   (por ejemplo hacer combinaciones lineales triviales con todos los coeficientes iguales a 0).
+			\begin{definicion}
+			Decimos que dos sistemas de ecuaciones lineales son \textit{equivalentes}\index{sistemas lineales equivalentes} si cada ecuación de un sistema es combinación lineal del otro.
+			\end{definicion}
 			
-			Decimos que dos sistemas son \textit{equivalentes}\index{sistemas lineales equivalentes} si cada ecuación de un sistema es combinación lineal del otro.
 			
 			\begin{teorema}\label{sistemas-equiv}
-				Sistemas de ecuaciones lineales equivalentes tienen las mismas soluciones.
+				Dos sistemas de ecuaciones lineales equivalentes tienen las mismas soluciones.
 			\end{teorema}
 			\begin{proof}
 				Sea 
@@ -1509,6 +1542,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\vskip .3cm 
 		\end{section}
 		
+		\vskip .5cm
 		
 		
 		\begin{section}{Matrices, operaciones elementales por fila y método de Gauss }
@@ -1888,7 +1922,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\begin{subsection}{Matrices reducidas por filas} Ahora avanzaremos en una forma sistemática para hallar todas las soluciones de un sistema de ecuaciones.
 				
 				\begin{definicion}
-					Una matriz $A$ de $m \times n$ se llama \textit{reducida por filas}\index{matriz reducida por filas} o \textit{MRF}\index{MRF} si 
+					Una matriz $A$ de $m \times n$ se llama \textit{reducida por filas}\index{matriz!reducida por filas} o \textit{MRF}\index{MRF} si 
 					\begin{enumerate}
 						\item[(a)] la primera entrada no nula de una fila de $A$ es 1. Este 1 es llamado \textit{1 principal}\index{1 principal de una MRF}.
 						\item[(b)] Cada columna de $A$ que contiene un  1 principal tiene todos los otros elementos iguales a 0. 
@@ -1921,7 +1955,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 					0 & 0 & \cdots & 1
 					\end{bmatrix}
 					\end{equation*}
-					(la matriz cuadrada con 1's en la diagonal y 0's en las otras entradas). Llamaremos a $I_n$ la \textit{matriz identidad $n \times n$}\index{matriz identidad $n \times n$}.
+					(la matriz cuadrada con 1's en la diagonal y 0's en las otras entradas). Llamaremos a $I_n$ la \textit{matriz identidad $n \times n$}\index{matriz!identidad $n \times n$}.
 				\end{definicion}
 				
 				Observar que $I_n$ es una matriz reducida por fila.
@@ -2013,7 +2047,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\end{ejemplo}
 				
 				\begin{definicion}
-					Una matriz $A$ de $m \times n$ es \textit{escalón reducida por fila}\index{matriz escalón reducida por fila} o \textit{MERF}\index{MERF} si
+					Una matriz $A$ de $m \times n$ es \textit{escalón reducida por fila}\index{matriz!escalón reducida por fila} o \textit{MERF}\index{MERF} si
 					\begin{enumerate}
 						\item[\textit{a})] $A$ es reducida por fila,
 						\item[\textit{b})] todas las filas cuyas entradas son todas iguales a cero están al final de la matriz, y
@@ -2329,14 +2363,14 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				
 				\vskip .3cm
 				
-				\textbf{Matriz diagonal y matriz escalar.} Una matriz cuadrada, $A=[a_{ij}]$ de orden $n$, es \textit{diagonal}\index{matriz diagonal} si $a_{ij}  =0$ , para $i \not= j$ . Es decir, si todos los elementos situados fuera de la diagonal principal son cero. Por ejemplo, la siguiente matriz es diagonal:
+				\textbf{Matriz diagonal y matriz escalar.} Una matriz cuadrada, $A=[a_{ij}]$ de orden $n$, es \textit{diagonal}\index{matriz!diagonal} si $a_{ij}  =0$ , para $i \not= j$ . Es decir, si todos los elementos situados fuera de la diagonal principal son cero. Por ejemplo, la siguiente matriz es diagonal:
 				\begin{equation}
 				\begin{bmatrix}
 				2&0&0&0\\0&-1&0&0\\0&0&5&0\\0&0&0&3
 				\end{bmatrix}.
 				\end{equation}
 				
-				Un matriz $n \times n$  es \textit{escalar}\index{matriz escalar} si  es diagonal y todos los elementos de la diagonal son iguales, por ejemplo, en el caso $4 \times 4$ las matrices escalares son 
+				Un matriz $n \times n$  es \textit{escalar}\index{matriz!escalar} si  es diagonal y todos los elementos de la diagonal son iguales, por ejemplo, en el caso $4 \times 4$ las matrices escalares son 
 				
 				\begin{equation}
 				\begin{bmatrix}
@@ -2353,7 +2387,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				
 				\vskip .3cm
 				
-				\textbf{Matriz nula}. La \textit{matriz nula}\index{matriz nula} de orden $m\times n$, denotada $0_{m \times n}$ o simplemente $0$ si $m$ y $n$ están sobreentendidos,  es la  matriz $m \times n$ cuyas entradas son todas nulas ($=0$). 
+				\textbf{Matriz nula}. La \textit{matriz nula}\index{matriz!nula} de orden $m\times n$, denotada $0_{m \times n}$ o simplemente $0$ si $m$ y $n$ están sobreentendidos,  es la  matriz $m \times n$ cuyas entradas son todas nulas ($=0$). 
 				
 				Por ejemplo, la matriz nula $2 \times 3$ es
 				\begin{equation*}
@@ -2361,13 +2395,13 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\end{equation*}
 				Veremos luego que la matriz nula juega un papel similar al número 0 en el álgebra de matrices (elemento neutro de la suma).  
 				
-				\textbf{Matriz triangular.} Una matriz cuadrada es \textit{triangular superior} o \textit{escalón}\index{matriz triangular superior}\index{matriz escalón} si todos los elementos situados por debajo de la diagonal principal son cero. Por ejemplo, la siguiente matriz es triangular superior:
+				\textbf{Matriz triangular.} Una matriz cuadrada es \textit{triangular superior} o \textit{escalón}\index{matriz!triangular superior}\index{matriz!escalón} si todos los elementos situados por debajo de la diagonal principal son cero. Por ejemplo, la siguiente matriz es triangular superior:
 				\begin{equation}
 				\begin{bmatrix}
 				2&-1&3&1\\0&-1&0&2\\0&0&5&1\\0&0&0&3
 				\end{bmatrix}.
 				\end{equation}
-				Análogamente, una matriz cuadrada es \textit{triangular inferior}\index{matriz triangular inferior} si todos los elementos situados por encima de la diagonal principal son cero. Un matriz triangular (superior o inferior) se dice \textit{estricta} si la diagonal principal es 0.
+				Análogamente, una matriz cuadrada es \textit{triangular inferior}\index{matriz!triangular inferior} si todos los elementos situados por encima de la diagonal principal son cero. Un matriz triangular (superior o inferior) se dice \textit{estricta} si la diagonal principal es 0.
 				
 				En forma más precisa, sea $A =[a_{ij}]\in M_n(\K)$,  entonces
 				\begin{itemize}
@@ -2669,7 +2703,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\end{equation*}
 			(producto de matrices). Es decir, la notación antes utilizada es consistente con el, ahora definido, producto de matrices.  
 			
-			\begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $I_m$.
+			\begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz!elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $I_m$.
 			\end{definicion}
 			
 			\begin{ejemplo} Veamos cuales son las matrices elementales  $2 \times 2$:
@@ -2919,7 +2953,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		\end{section}
 		
 		\begin{section}{Matrices inversibles}
-			\begin{definicion} Sea $A$ una  matriz $n \times n$ con coeficientes en $\K$. Una matriz $B \in M_{n\times n}(\K)$  es \textit{inversa  de $A$}\index{matriz inversa} si $BA=AB=I_n$. En  ese caso,  diremos que  $A$ es \textit{inversible}.\index{matriz inversible}
+			\begin{definicion} Sea $A$ una  matriz $n \times n$ con coeficientes en $\K$. Una matriz $B \in M_{n\times n}(\K)$  es \textit{inversa  de $A$}\index{matriz!inversa} si $BA=AB=I_n$. En  ese caso,  diremos que  $A$ es \textit{inversible}.\index{matriz!inversible}
 			\end{definicion}
 			
 			\begin{ejemplo}
@@ -3472,9 +3506,12 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		- a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
 		- a_{13}a_{22}a_{31},
 		\end{equation} 
-		no es fácil de recordar, pero existe un procedimiento sencillo que nos permite obtenerla: 1) a la matriz original le agregamos las dos primeras filas al final, 2) ``sumamos'' las diagonales descendentes y ``restamos'' las diagonales ascendentes,
-		
-		
+		no es fácil de recordar, pero existe un procedimiento sencillo que nos permite obtenerla y es el siguiente: 
+		\begin{enumerate}
+			\item a la matriz original le agregamos las dos primeras filas al final, 
+			\item ``sumamos''  cada producto de las diagonales descendentes y ``restamos'' cada producto de las diagonales ascendentes.
+		\end{enumerate}
+			
 		
 		\begin{equation}
 		\begin{tikzpicture}[baseline=(A.center)]
@@ -3592,7 +3629,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		\end{align*}
 	\end{corolario}
 	\begin{proof}
-		Si $R$ no tiene filas nulas es igual a $I_n$ (lema \ref{mtrx-merf-id}), luego $\det R = 1$. En general, $R$ es una matriz triangular superior y si tiene alguna fila nula $r$, entonces el coeficiente ${rr}$ es igual a $0$ y por lo tanto 	$\det R = 0$.
+		Si $R$ no tiene filas nulas es igual a $I_n$ (lema \ref{mtrx-merf-id}), luego $\det R = 1$. En general, $R$ es una matriz triangular superior y si tiene alguna fila nula $r$, entonces el coeficiente en la diagonal de la fila $r$ es igual a $0$ y por lo tanto 	$\det R = 0$.
 	\end{proof}
 
 	\begin{ejemplo} Veamos,  en el caso de una matriz $A= [a_{ij}]$ de orden  $2 \times 2$ que ocurre con el determinante cuando hacemos una operación elemental. 
@@ -3691,11 +3728,12 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		$\det (AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)$.
 	\end{proof}
 	
-	\begin{definicion}
-		Sea $A$ una matriz $m \times n$ con coeficientes en $\K$. La \textit{transpuesta}\index{matriz transpuesta} de $A$, denotada $A^\t$, es la matriz  $n \times m$ que en la fila $i$ y columna $j$ tiene el coeficiente $[A]_{ji}$. Es decir
+	\begin{definicion}\label{def-transpuesta-simetrica}
+		Sea $A$ una matriz $m \times n$ con coeficientes en $\K$. La \textit{transpuesta}\index{matriz!transpuesta} de $A$, denotada $A^\t$, es la matriz  $n \times m$ que en la fila $i$ y columna $j$ tiene el coeficiente $[A]_{ji}$. Es decir
 		\begin{equation*}
 		[A^\t]_{ij} = [A]_{ji}.
-		\end{equation*}  
+		\end{equation*} 
+		Si $A$ es una matriz $n \times n$, diremos que es \textit{simétrica}\index{matriz!simétrica} si $A^\t = A$. 
 	\end{definicion}
 	
 	\begin{ejemplo} Si
@@ -3712,6 +3750,14 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 	
 	
 	En  general $A^\t$ es la matriz cuyas filas son las columnas de $A$. 
+	
+	\begin{ejemplo}
+		Si 
+		\begin{equation*}
+			A=\begin{bmatrix}1&2&3\\2&-1&4\\3&4&7\end{bmatrix},
+		\end{equation*}
+		entonces $A^\t =A$, es decir  $A$ es simétrica.
+	\end{ejemplo}
 	
 	\begin{proposicion}\label{prop-matriz-transpuesta} Sea $A$ matriz $m \times n$.
 		\begin{enumerate}
@@ -5945,7 +5991,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 				\item\label{d-dimV=dimW} Si $\{v_1,\ldots,v_n \}$ es una base de $V$,  entonces $\{T(v_1),\ldots,T(v_n) \}$ es una base de $W$.
 			\end{enumerate}
 		\end{teorema}
-		\begin{proof} Sea $n = \dim V = \dim W$.
+		\begin{proof}[Demostración (*)] Sea $n = \dim V = \dim W$.
 			
 			
 			(\ref{a-dimV=dimW}) $\Rightarrow$ (\ref{b-dimV=dimW}). Como $T$ es isomorfismo,  es biyectiva y por lo tanto inyectiva.
@@ -6118,7 +6164,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			$mn$ escalares $a_{ij}$ mediante la expresión (\ref{matriz-de-T-1}). 
 			
 			\begin{definicion}
-				La matriz $m \times n$, $A$, definida por $[A]_{ij} = a_{ij}$, donde $a_{ij}$  es como en  (\ref{matriz-de-T-1}), se llama \textit{matriz de $T$ respecto a las bases ordenadas $\mathcal B$ y $\mathcal B'$;}\index{matriz de una transformación lineal} y se denota 
+				La matriz $m \times n$, $A$, definida por $[A]_{ij} = a_{ij}$, donde $a_{ij}$  es como en  (\ref{matriz-de-T-1}), se llama \textit{matriz de $T$ respecto a las bases ordenadas $\mathcal B$ y $\mathcal B'$;}\index{matriz!de una transformación lineal} y se denota 
 				$$
 				[T]_{\mathcal B \mathcal B'} = A .
 				$$.
@@ -6348,7 +6394,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\end{proof}
 	
 	
-		La matriz $P$ del teorema anterior es llamada la \textit{matriz de cambio de base}. \index{matriz de cambio de base}La fórmula (\ref{eq-cambio de base}) es importante por si misma y debemos recordarla.
+		La matriz $P$ del teorema anterior es llamada la \textit{matriz de cambio de base}. \index{matriz!de cambio de base}La fórmula (\ref{eq-cambio de base}) es importante por si misma y debemos recordarla.
 	\vskip .3cm
 	
 		El teorema anterior nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
@@ -6370,7 +6416,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	
 	
 		\begin{section}{Autovalores y autovectores}
-		Sea $V$ espacio vectorial de dimensión finita. Un operador lineal en $V$ es \textit{diagonalizable}\index{matriz diagonalizable}  si existe una base ordenada $\mathcal B= \{v_1,\ldots,v_n\}$ de $V$ y $\lambda_1,\ldots,\lambda_n \in \K$ tal que 
+		Sea $V$ espacio vectorial de dimensión finita. Un operador lineal en $V$ es \textit{diagonalizable}\index{matriz!diagonalizable}  si existe una base ordenada $\mathcal B= \{v_1,\ldots,v_n\}$ de $V$ y $\lambda_1,\ldots,\lambda_n \in \K$ tal que 
 		\begin{equation}\label{eq-auto-49}
 			T(v_i) = \lambda_i v_i,\qquad 1\le i \le n. 
 		\end{equation}
@@ -6796,121 +6842,96 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 	\end{chapter}
 
-	\begin{chapter}{Espacios de producto  interno}\label{chap-esp-prod-int}
+	\begin{chapter}{Espacio con producto interno}\label{chap-esp-prod-int}
 	
 
-	
-
+	Las propiedades algebraicas de $\R^n$ no son suficientes para hacer frente a ciertas nociones geométricas  como  ángulos, perpendicularidad y longitud. Hemos visto en el  capítulo \ref{chap-vectores} que con la introducción del producto escalar pudimos definir y  trabajar  los conceptos previamente mencionados. En  este capítulo daremos algunas propiedades adicionales del producto escalar, veremos que las matrices simétricas pueden ser interpretadas a partir del producto escalar y, finalmente, probaremos que las matrices simétricas son diagonalizables.
 	
 	
 	\begin{section}{Producto interno}
-		Los axiomas de espacio vectorial no son suficientes para hacer frente a ciertas nociones geométricas  como  ángulos, perpendicularidad, longitud, distancia, etc. Con la  introducción del producto interno,  una generalización del producto escalar que hemos visto en el capítulo \ref{chap-vectores}, podremos hacer las definiciones correspondientes y trabajar con los conceptos previamente mencionados.
+		
 		
 		\medskip 
 		
-		En  el  capítulo \ref{chap-vectores} hemos visto el producto escalar en $\R^n$ y que este producto escalar  cumplía cuatro propiedades básicas,  que llamamos \ref{prop-P1}, \ref{prop-P2}, \ref{prop-P3} y \ref{prop-P4}. La axiomatización de estas propiedades al caso general es lo que nos permite definir el producto interno en cualquier $\R$-espacio vectorial. Obtendremos a partir de estas propiedades resultados  muy intuitivos e importantes, como ser el teorema de Pitágoras y la desigualdad triangular.  
+		Recordemos que en
+		 el  capítulo \ref{chap-vectores} hemos visto que el producto escalar entre dos vectores $x,y \in \R^n$ se define como
+		\begin{equation*}
+			\la x,y\ra = x_1y_1 + x_2y_2+\cdots+x_ny_n = \sum_{i=1}^{n} x_iy_i.
+		\end{equation*}
+		También recordemos que si  $x \in \R^n$,  entonces la norma de $x$ es $||x|| = \sqrt{\la x,x\ra} = \sqrt{ \sum_{i=1}^{n} x_i^2}$.
 		
-		\medskip
+		Como hemos visto en  el capítulo \ref{chap-vectores} el producto escalar  cumple cuatro propiedades básicas,  que hemos llamado \ref{prop-P1} (simetría), \ref{prop-P2} y \ref{prop-P3} (bilinealidad o linealidad en cada variable), y \ref{prop-P4} (positividad). Estas son las únicas propiedades que usaremos, y no la definición explícita de producto escalar,  para deducir los resultados de esta sección. 
 		
-			\begin{definicion} Sea $V$ un espacio vectorial. Un \emph{producto interno} es  una aplicación 
+		\begin{definicion} Sea $V$  un espacio  vectorial y  una función
 			\begin{equation*}
-				\la\;|,\;\ra: V \times V \to \R
+			\la \,,\,\ra: V \times V \to \R .
 			\end{equation*}
-			que satisface las propiedades enumeradas a continuación.
+			Diremos que $\la \,,\,\ra$ es un \textit{producto interno}\index{producto interno} si para todo $v, w, u \in \R^n$, se satisface:
+			
 			\begin{enumerate}[label=\textbf{P\arabic*.},ref=P\arabic*]
-				\item\label{prop-P1-pi}	Para $v,w \in V$, 
+				\item\label{prop-P1-2}
 				\begin{equation*}
 					\langle v , w \rangle = \langle w , v \rangle.
-				\end{equation*}
-				\item\label{prop-P2-pi} Para $v,w,u \in V$,
-				\begin{equation*}  
+				\end{equation*} 	
+				\item\label{prop-P2-2} 
+				\begin{equation*}
 				\langle v , w + u \rangle =\langle v , w \rangle + \langle v , u \rangle = \langle w +u , v \rangle.
 				\end{equation*}
-				\item\label{prop-P3-pi} Si $v,w \in V$ y $\lambda$ es un número, entonces 
+				\item\label{prop-P3-2}  Si $\lambda \in \R$, entonces 
 				\begin{equation*}
 				\langle \lambda v , w \rangle = \lambda \langle v , w \rangle \quad \text{ y } \quad  \langle v , \lambda w \rangle = \lambda \langle v , w \rangle.
 				\end{equation*}
-				\item\label{prop-P4-pi} Si $v=0$ es el vector cero, entonces $\langle v , v \rangle =0$,  de lo contrario
+				\item\label{prop-P4-2} Si $v=0$ es el vector cero, entonces $\langle v , v \rangle =0$,  de lo contrario
 				\begin{equation*}
 				\langle v , v \rangle >0
 				\end{equation*}
 			\end{enumerate}
+			Es decir  $\la \,,\,\ra$ es una forma bilineal (\ref{prop-P2-2} y \ref{prop-P3-2}),  simétrica (\ref{prop-P1-2}) y positiva (\ref{prop-P4-2})
 		\end{definicion}
-		
-		Debido a que  $\langle  ,  \rangle$ satisface \ref{prop-P2-pi} y \ref{prop-P3-pi}, decimos que  $\langle  ,  \rangle$ es una \textit{2-forma bilineal}.  Debido a \ref{prop-P1-pi} se dice que la forma bilineal es \textit{simétrica} y por \ref{prop-P4-pi} que es \textit{positiva.} Es decir,  un producto interno es una 2-forma bilineal,  simétrica y positiva.   
-
-		
-		Veremos luego  que hay una infinidad de productos internos en un espacio vectorial dado. Cuando hablamos de un \emph{espacio vectorial con producto interno}, nos estamos refiriendo a un espacio vectorial con un producto interno particular. 
-		
-		
-		\medskip 
-		
-		\begin{ejemplo} Consideremos la función $d:\R^2 \times \R^2 \to \R$,  definida de la siguiente manera: si  $v,w \in \R^2$, $d(v,w) = \det[\,v\;w\,]$,  donde a $v$ y $w$ los miramos como vectores columna. Por las propiedades del determinante es claro  que $d$  es una forma bilineal (cumple \ref{prop-P2-pi} y \ref{prop-P3-pi}). Sin embargo,  no es simétrica  debido a que $d(w,v) = det[w\, v] = -det[v\,w] =-d(v,w)$. Tampoco es positivo.   
-		\end{ejemplo}
-		
-		\medskip 
-		
-		\begin{ejemplo}\label{prodescalar}  Hemos visto que el  producto escalar en $\R^n$ es un producto interno y este será el ejemplo que tendremos siempre presente para lo que sigue. Al  producto escalar en $\R^n$ se lo denomina el \emph{producto interno canónico} de $\R^n$. 
-		\end{ejemplo}
-		
-		\medskip 
 	
-				
-		\begin{observacion}
-			Sea $V$  espacio vectorial  de dimensión finita con $\dim(V)=n$ y $\la \;|\;\ra$ un producto interno en $V$. Sea ${\mathcal B}= \{v_1,v_2,\ldots,v_n\}$ es una base de $V$. Dados $v,w \in V$, tenemos que $v = \sum_i a_i v_i$ y $w = \sum_i b_i v_i$ y
-			$$
-			\begin{array}{rlr}
-			\la v|w \ra &=  \la  \sum_i a_i v_i|\sum_j b_j v_j\ra & \\
-			&=  \sum_i a_i  \la  v_i|\sum_j b_j v_j\ra&\quad \text{(linealidad en la primera variable)} \\
-			&=  \sum_i a_i \sum_j b_j \la  v_i| v_j\ra&\quad \text{(linealidad en la segunda variable)} \\
-			&= \sum_{i,j} a_i b_j \la  v_i| v_j\ra.&
-			\end{array}
-			$$
-			Luego conociendo $ \la  v_i| v_j\ra$ para $1 \le i,j \le n$ podemos averiguar el producto escalar de dos vectores $v = \sum_i a_i v_i$ y $w = \sum_i b_i v_i$ con la fórmula
-			\begin{equation}
-			\la v|w \ra = \sum_{i=1}^n\sum_{j=1}^n a_i b_j \la  v_i| v_j\ra.
-			\end{equation}
-			
-			Más aún, si $a_{ij}= \la  v_i| v_j\ra$ y $A = [a_{ij}]$ (matriz $n \times n$),  entonces 
-			\begin{equation*}
-				\la  v| w\ra = [v]_{\mathcal B}^t A [w]_{\mathcal B}.
-			\end{equation*}
-		\end{observacion}
 		
-		\medskip
-		
-		\begin{definicion} Sea $V$ espacio vectorial y $\la\;|\;\ra$ un producto interno en $V$. Dado $v \in V$ la \emph{norma} de $v$ es
-			$$
-			||v|| = \sqrt{\la v,v\ra}.
-			$$
-			Diremos que un vector $v$ es \emph{unitario} si $||v|| = 1$.
-		\end{definicion}
-		
-		\medskip 
-		
+		Obviamente el producto escalar en $\R^n$  es un producto interno,  que llamaremos  el  \textit{producto interno canónico} de $\R^n$. Los resultados de esta sección valen en general para un producto interno en un espacio vectorial de dimensión finita, pero tendremos siempre en mente el producto escalar en $\R^n$. 
 
+			\begin{ejemplo} El producto escalar es uno entre  muchos de los productos internos que podemos tener en $\R^n$, por ejemplo,  en $\R^3$,  la función definida:
+				\begin{equation*}
+					\langle (x_1,x_2,x_3) , (y_1,y_2,y_3)\rangle =2x_1y_1-x_1y_2-x_2y_1+2x_2y_2-x_2y_3-x_3y_2+2x_3y_3
+				\end{equation*}
+				Es un producto interno (ejercicio).
+			\end{ejemplo}
+		
+		\begin{ejemplo} También  se puede definir un producto interno en un espacio de dimensión infinita, como veremos a continuación.
+			
+			Sea $E = C^0([a,b])$ el espacio vectorial cuyos elementos son las funciones continuas $f: [a, b] \to\R$. Se puede definir un producto interno en $E$ de la siguiente manera: sean $f,g \in  C^0([a,b])$,  entonces
+			\begin{equation*}
+			\la f, g \ra = \int_a^b f(x)g(x) dx.
+			\end{equation*}
+			Usando las propiedades de la integral es sencillo ver que $\la , \ra $ es una 2-forma, bilineal y simétrica. Por propiedades de las funciones continuas se demuestra que además la 2-forma es positiva. 
+			
+			Este producto interno se utiliza en el estudio de series de Fourier.
+		\end{ejemplo}
+			
+			
 		
 		
-		\begin{proposicion} Sea $V$ espacio  vectorial con  producto interno $\la\;|\;\ra$. Entonces, 
+		\begin{proposicion} Sean   $x,y \in \R^n$. Entonces, 
 			\begin{enumerate}
-				\item\label{prop-pi-1} Si $v \in V$, $\la0|v\ra = \la v|0\ra = 0$.
-				\item\label{prop-pi-2} Si $c \in \R$, y $v \in V$, tenemos $||cv|| = |c|||v||$.
-				\item\label{prop-pi-3} $||u+v||^2 = ||u||^2 + ||v||^2 + 2\la u,v\ra$. 
+				\item\label{prop-pi-2} Si $c \in \R$, tenemos $||cx|| = |c|||x||$.
+				\item\label{prop-pi-3} $||x+y||^2 = ||x||^2 + ||y||^2 + 2\la x,y\ra$. 
 			\end{enumerate}
 		\end{proposicion}
 		\begin{proof}
 			
-			\ref{prop-pi-1} $\la0|v\ra = \la 0\cdot0|0\ra = 0 \cdot \la0|v\ra  =0$.
+			${}^{}$
 			
-			\ref{prop-pi-2}  $||cv|| =  \sqrt{\la cv,cv\ra} = \sqrt{c^2\la v,v\ra} =\sqrt{c^2}\sqrt{\la v,v\ra}=|c|||v||$.
+			\textit{Demostración de \ref{prop-pi-2}.}  Es exactamente, proposición \ref{prop-lambda-norma} (que se demuestra usando \ref{prop-P3-2}).
 			
-			\ref{prop-pi-3} 
+			\textit{Demostración de \ref{prop-pi-3}.}
 			\begin{align*}
 				||u+v||^2 &= \la u+v,u+v\ra\\
 				&= \la u,u+v\ra+ \la v,u+v\ra  \\
-				&= \la u,u\ra+ \la u,v\ra+\la v,u\ra+ \la v,v\ra  \\
-				&= \la u,u\ra+ 2\la u,v\ra+ \la v,v\ra  \\
-				&= ||u||^2 + ||v||^2 + 2\la u,v\ra.
+				&\overset{(\ref{prop-P2-2})}{=} \la u,u\ra+ \la u,v\ra+\la v,u\ra+ \la v,v\ra  \\
+				&\overset{(\ref{prop-P2-2})}{=} \la u,u\ra+ 2\la u,v\ra+ \la v,v\ra  \\
+				&\overset{(\ref{prop-P1-1})}{=} ||u||^2 + ||v||^2 + 2\la u,v\ra.
 			\end{align*}
 			
 			
@@ -6918,40 +6939,18 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 		\medskip
 		
-	
-		En dimensión finita todos los ejemplos son ``parecidos''  al producto escalar en $\R^n$. En dimensión infinita podemos encontrar productos internos muy diversos y el siguiente ejemplo muestra uno de ellos.   
+		Recordemos que dos vectores $x,y$  de $\R^n$ son perpendiculares u ortogonales si $\la x,y\ra =0$, lo cual era denotado $x \perp y$. 
 		
-		\begin{ejemplo} 
-			Sea $E = C^0([a,b])$ el espacio vectorial cuyos elementos son las funciones continuas $f: [a, b] \to\R$. Se puede definir un producto interno en $E$ de la siguiente manera: sean $f,g \in  C^0([a,b])$,  entonces
-			\begin{equation*}
-				\la f, g \ra = \int_a^b f(x)g(x) dx.
-			\end{equation*}
-			En este caso, la función norma es
-			\begin{equation*}
-			||f|| = \sqrt{\int_a^b f(x)^2 dx}.
-			\end{equation*}
-			Usando las propiedades de la integral es sencillo ver que $\la , \ra $ es una 2-forma, bilineal y simétrica. Por propiedades de las funciones continuas se demuestra que además la 2-forma es positiva. 
-			
-			Este producto interno se utiliza en el estudio de series de Fourier.
-			 
-		\end{ejemplo}
-		
-	
-		
-		
-		\begin{definicion} Se $V$ un espacio vectorial con producto interno $\la\; ,\; \ra$. Dos vectores $v,w \in V$ se dicen \emph{ortogonales} o \emph{perpendiculares} si $\la v,w \ra = 0$. En  ese caso podemos usar la notación $v\perp w$. Sea $X \subset V$, diremos que $X$ es un \emph{conjunto ortogonal} si $v\perp w$ para $v,w \in X$, $v\not= w$. Diremos que $X$ es un \emph{conjunto ortonormal} si $X$ es ortogonal y todos los vectores de $X$ son  unitarios (es decir $||v|| =1$ para $v \in X$).
+		\begin{definicion} Sea $X \subset \R^n$, diremos que $X$ es un \emph{conjunto ortogonal} si $v\perp w$ para $v,w \in X$, $v\not= w$. Diremos que $X$ es un \emph{conjunto ortonormal} si $X$ es ortogonal y todos los vectores de $X$ son  \textit{unitarios} (es decir $||v|| =1$ para $v \in X$).
 		\end{definicion}
-		
-		\begin{obs}
-			Hemos visto que en $\R^n$ si dos vectores son perpendiculares, entonces su producto escalar es 0 y viceversa. Luego perpendicular es el mismo concepto que ortogonal. 
-		\end{obs}
+	
 		
 		\begin{proposicion}\label{ortogonal->ortonormal}
-			Sea $V$ un espacio vectorial con producto interno $\la\; ,\; \ra$ y $$X = \{v_1,\ldots,v_r \} \subset V$$ un conjunto ortogonal. Sea 
+			Sea  $$X = \{v_1,\ldots,v_r \} \subset \R^n$$ un conjunto ortogonal. Sea 
 			\begin{equation*}
 				X' =  \left\{\frac{v_1}{||v_1||},\ldots,\frac{v_r}{||v_r||} \right\}.
 			\end{equation*}
-			Entonces $X'$ es  un conjunto ortonormal de $V$. 
+			Entonces $X'$ es  un conjunto ortonormal. 
 		\end{proposicion}
 		\begin{proof}
 			Para demostrar esto debemos ver que dos vectores distintos de $X'$ son ortogonales y que cada vector de $X'$ es de norma 1.
@@ -6972,7 +6971,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 		\medskip
 		
-		\begin{teorema}\label{th-ortogonal-implica-li} Se $V$ un espacio vectorial de dimensión finita con producto interno $\la\; ,\; \ra$. Sea $X \subset V$ un conjunto  ortogonal. Entonces $X$ es LI. 
+		\begin{teorema}\label{th-ortogonal-implica-li} Sea $X \subset \R^n$ un conjunto  ortogonal. Entonces $X$ es LI. 
 		\end{teorema}
 		\begin{proof} Sea $X =\{v_1,\ldots,v_r \}$ y sea $a_1,\ldots,a_r$ en $F$ tales que  $\sum_{i=1}^r a_iv_i =0$. Entonces,  dado $j$ con $1 \le j \le r$,  tenemos 
 			$$
@@ -6990,7 +6989,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 				\item Ley del Paralelogramo: $||u+v||^2+ ||u-v||^2 = 2||u||^2 + 2||v||^2$.
 			\end{enumerate}
 		\end{proposicion}
-		\begin{proof} Ambas demostraciones se hacen desarrollando las fórmulas y usando las propiedades del producto interno.
+		\begin{proof} Ambas demostraciones se hacen desarrollando las fórmulas y usando las propiedades del producto escalar.
 			
 			\textit{Demostración de 1.}
 			\begin{equation*}
@@ -7010,19 +7009,20 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\end{align*}
 		\end{proof}
 		
-		\begin{definicion} Sea $V$ un espacio vectorial con producto interno $\la\; ,\; \ra$. Si $X \subset V$ es ortogonal (ortonormal) y es base diremos que $X$ es una \emph{base ortogonal} (resp. \emph{base ortonormal}) o diremos que $X$ es \textit{BO} (resp. \textit{BON}).
+		\begin{definicion} Si $X \subset \R^n$ es ortogonal (ortonormal) y es base, diremos que $X$ es una \emph{base ortogonal} (resp. \emph{base ortonormal}) o diremos que $X$ es \textit{BO} (resp. \textit{BON}).
 		\end{definicion}
 		
-		\begin{ejemplo} 
+		\begin{ejemplo} ${}^{}$
 			\begin{enumerate}
 				\item La base canónica de $\R^n$ es ortonormal. 
 				\item Si $u=(1,1)$, $v=(1,-1)$, entonces $u,v$ es una base ortogonal.  
 			\end{enumerate}
 		\end{ejemplo}
 		
-		\begin{proposicion} Sea $V$ un espacio vectorial de dimensión finita con producto interno $\la\; ,\; \ra$ y sea $ X = \{v_1,\ldots,v_n\}$ una base ortogonal, entonces 
-			$$X' = \left\{\frac{v_1}{||v_1||},\ldots,\frac{v_n}{||v_n||} \right\}
-			$$
+		\begin{proposicion} Sea $ X = \{v_1,\ldots,v_n\}$ una base ortogonal, entonces 
+			\begin{equation*}
+				X' = \left\{\frac{v_1}{||v_1||},\ldots,\frac{v_n}{||v_n||} \right\}
+			\end{equation*}
 			es una base ortonormal.
 		\end{proposicion}
 		\begin{proof}
@@ -7043,9 +7043,13 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\medskip
 		
 		\begin{observacion}\label{obs-proyeccion-ort}
-			No es difícil ver en un dibujo que $\operatorname{pr}_u(v) := \frac{\la u|v\ra}{\la u|u\ra}u$ es la proyección de $v$ en $u$ y que   $(v - \operatorname{pr}(v)) \perp u$. Es decir,   los vectores
+			No es difícil ver en un dibujo que 
 			\begin{equation*}
-					u, \quad  v - \operatorname{pr}(v) = v - \frac{\la u|v\ra}{\la u|u\ra}u,
+				\operatorname{pr}_u(v) := \frac{\la u|v\ra}{\la u|u\ra}u
+			\end{equation*}
+			 es la proyección de $v$ en $u$ y que   $(v - \operatorname{pr}(v)) \perp u$. Es decir,   los vectores
+			\begin{equation*}
+					u, \quad   v - \frac{\la u|v\ra}{\la u|u\ra}u,
 			\end{equation*}
 			son ortogonales.
 			\begin{figure}[h]
@@ -7062,10 +7066,22 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			
 		\end{observacion}
 		
-		\begin{proposicion}[Desigualdad de Schwarz] Sea   $V$ un espacio vectorial con producto interno y $u, v\in V$. Entonces 
+		\begin{proposicion}[Desigualdad de Schwarz] Sean $u, v\in \R^n$. Entonces 
 			$$|\la u, v \ra| \le ||u||||v||.$$
 		\end{proposicion}
-		\begin{proof}[Demostración ($*$)]
+		\begin{proof} Primero daremos una demostración basada en los resultados geométricos vistos en el capítulo \ref{chap-vectores}, luego,  el lector interesado, podrá leer una demostración algebraica del resultado. 
+		
+		\textit{Demostración 1.} Esta demostración es válida para el producto escalar en $\R^n$. La fórmula (\ref{eq-cos-theta}) nos dice que 
+		\begin{equation*}
+			\la u, v \ra = ||u||||v||\cos(\theta)
+		\end{equation*}
+		donde $\theta$ es el ángulo comprendido entre $u$ y $v$. Como $|\cos(\theta)| \le 1$,  tenemos
+		\begin{equation*}
+			|\la u, v \ra| = ||u||\,||v||\,|\cos(\theta)| \le  ||u||\,||v||.
+		\end{equation*}
+		
+			
+		\textit{Demostración 2 ($*$).}
 			Sea $c = \displaystyle\frac{\la u,v\ra}{\la u,u\ra} = \frac{\la u,v\ra}{||u||^2}$, entonces, por la observación \ref{obs-proyeccion-ort}, tenemos que  $ v-cu$ es ortogonal a $u$. Ahora bien, 
 			\begin{equation*}
 				v = (v - cu) + cu   
@@ -7081,7 +7097,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			$$
 		\end{proof}
 		
-		\begin{teorema}[Desigualdad triangular] Sea   $V$ un espacio vectorial con producto interno y $u, v\in V$. Entonces 
+		\begin{teorema}[Desigualdad triangular] Sean $u, v\in \R^n$, entonces 
 			$$||u + v|| \le ||u|| + ||v||	$$
 		\end{teorema}
 		\begin{proof}
@@ -7095,29 +7111,24 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 		\medskip
 		
-		Ahora vamos a demostrar que hay bases ortonormales en cualquier espacio vectorial de dimensión finita  con un producto interno.
+		Ahora vamos a demostrar el proceso de ortonormalización de Gram-Schmidt, que consta de  un algoritmo que permite pasar de una base cualquiera $\{v_1,\ldots, v_n\}$ de $\R^n$ a una base ortonormal $\{u_1,\ldots, u_n\}$, con la importante propiedad de que, para $m$ con  $1 \le m \le n$, el subespacio generado por los vectores $\{u_1,\ldots, u_m\}$ es el mismo que el subespacio generado por los vectores $\{v_1,\ldots, v_m\}$.
 		
-		Más precisamente, vamos a mostrar el proceso de ortonormalización de Gram-Schmidt, que consta de  un algoritmo que permite pasar de una base cualquiera $\{v_1,\ldots, v_n\}$ a una base ortonormal $\{u_1,\ldots, u_n\}$, con la importante propiedad de que, para $m$ con  $1 \le m \le n$, el subespacio generado por los vectores $\{u_1,\ldots, u_m\}$ es el mismo que el subespacio generado por los vectores $\{v_1,\ldots, v_m\}$.
-		
-		Dada la base $\{v_1,\ldots, v_n\}$ obtendremos primero una base ortogonal $\{w_1,\ldots, w_n\}$ y luego haciendo $u_i = w_i/||w_i||$ obtenemos la base ortonormal $\{u_1,\ldots, u_n\}$.
+	
 		
 		\medskip 
 		
-		La idea del proceso es sencillo para dos vectores $v_1,v_2$ no nulos y no proporcionales vimos en la observación \ref{obs-proyeccion-ort} que  los vectores
-		$$
-		w_1 = v_1, \quad w_2 = v_2 - \operatorname{pr}_{v_1}(v_2) = v_2 - \frac{\la v_1,v_2\ra}{\la v_1,v_1\ra}v_1
-		$$
-		son ortogonales. 
-		Ahora bien,  $v_1 = w_1$ y $v_2  = \frac{\la v_1,v_2\ra}{\la v_1,v_1\ra}w_1 + w_2$, luego  $w_1,w_2$ generan el mismo subespacio que $v_1,v_2$. Concluyendo, dados  $v_1,v_2$ dos vectores LI, $w_1,w_2$ son dos vectores ortogonales que generan el mismo subespacio. Para $n >2$ la idea es similar. 
+		La idea del proceso es sencillo para dos vectores: sean  $v_1,v_2 \in \R^n$ no  nulos y no proporcionales, vimos en la observación \ref{obs-proyeccion-ort} que  los vectores
+		\begin{equation*}
+			w_1 = v_1, \quad w_2 = v_2 - \operatorname{pr}_{v_1}(v_2) = v_2 - \frac{\la v_1,v_2\ra}{\la v_1,v_1\ra}v_1
+		\end{equation*}
+		son ortogonales. Ahora bien, $v_1 = w_1$ y $v_2  = \frac{\la v_1,v_2\ra}{\la v_1,v_1\ra}w_1 + w_2$, luego  $w_1,w_2$ generan el mismo subespacio que $v_1,v_2$. Concluyendo, dados  $v_1,v_2$ dos vectores LI, $w_1,w_2$ son dos vectores ortogonales que generan el mismo subespacio. Para $n >2$ la idea es similar. 
 		
 		\medskip 
-		
-		
 		
 		
 		
 		\begin{proposicion}[Proceso de ortogonalización de Gram-Schmidt]
-			Sea $V$ espacio vectorial de dimensión finita con producto interno $\la\;,\;\ra$ y $\{v_1,\ldots,v_n\}$ una base de $V$. Entonces existe una base ortogonal $\{w_1,\ldots, w_n\}$ tal que el subespacio generado por los vectores $\{w_1,\ldots, w_m\}$ es el mismo que el subespacio generado por $\{v_1,\ldots, v_m\}$ ($1\le m \le n$). Explícitamente, la base es
+			Sea $\{v_1,\ldots,v_n\}$ una base de $\R^n$. Entonces existe una base ortogonal $\{w_1,\ldots, w_n\}$ tal que el subespacio generado por los vectores $\{w_1,\ldots, w_m\}$ es el mismo que el subespacio generado por $\{v_1,\ldots, v_m\}$ ($1\le m \le n$). Explícitamente, la base es
 			\begin{align}
 			w_1 &= v_1, \tag{1} \\
 			w_2 &= v_2 - \frac{\la v_2,w_1\ra}{\la w_1,w_1\ra}w_1, \tag{2}\\
@@ -7131,6 +7142,8 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\end{equation}
 		\end{proposicion} 
 		\begin{proof}[Demostración ($*$)]
+			
+			
 			Haremos la demostración por inducción sobre $n$. 
 			
 			Para $n= 1$ el resultado es trivial.
@@ -7158,22 +7171,46 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 		\medskip
 		
-		\begin{obs} 
-			Sea $V$ espacio vectorial de dimensión finita con producto interno $\la\;,\;\ra$ y $\{v_1,\ldots,v_n\}$ una base de $V$. Entonces, por Gram-Schmidt existe una base ortogonal $\{w_1,\ldots, w_n\}$ de $V$. Sea $u_i = w_i/||w_i||$, entonces  $\{u_1,\ldots, u_n\}$ es una base de $V$ donde los vectores son ortogonales y de norma 1.
+		\begin{obs} Sea $W$ subespacio de $\R^n$, entonces existe una base ortogonal de $W$. Esto se deduce del proceso de ortogonalización de Gram-Schmidt: sea $v_1,\ldots,v_k$ una base de $W$ y completamos a $v_{1},\ldots,v_n$ una base de $\R^n$. Por Gram-Schmidt obtenemos una BO $w_{1},\ldots,w_n$ tal que el subespacio generado  por $w_{1},\ldots,w_i$ es igual al subespacio generado por $v_{1},\ldots,v_i$ para $1 \le i \le n$. En  particular $W = \la v_{1},\ldots,v_k \ra =  \la w_{1},\ldots,w_k \ra$ y por lo tanto  $w_{1},\ldots,w_k$ es una BON de $W$.
+			
+		En la práctica, dada una base $v_1,\ldots,v_k$ de $W$,  con los primeros $k$ pasos del proceso de ortogonalización de Gram-Schmidt obtenemos $ w_{1},\ldots,w_k $ una base ortogonal de $W$.
 		\end{obs}
+		
+		\begin{ejemplo}
+			Encontrar una base ortogonal del subespacio de $\R^3$ generado por los vectores $(1,2,-1)$ y $(-2,-1,0)$
+			\begin{proof}[Solución] Por Gram-Schmidt:
+				\begin{align*}
+				w_1 &= (1,2,-1),  \\
+				w_2 &= (-2,-1,0) - \frac{\la (-2,-1,0),w_1\ra}{\la w_1,w_1\ra}w_1,
+				\end{align*}
+				es una base ortogonal de $W$. Calculemos 
+				\begin{align*}
+					w_2  &= (-2,-1,0) - \frac{\la (-2,-1,0),(1,2,-1)\ra}{\la(1,2,-1),(1,2,-1)\ra}(1,2,-1)\\
+					&= (-2,-1,0) - \frac{-4}{6}(1,2,-1) \\
+					&= (-2,-1,0) - (\frac{-2}{3},\frac{-4}{3},\frac{2}{3}) \\
+					&= (\frac{-4}{3},\frac{1}{3},\frac{-2}{3}).
+				\end{align*}
+				Para simplificar, multiplicamos a $w_2$ por $3$ y obtenemos que
+				\begin{equation*}
+					(1,2,-1), (-4,1,-2)
+				\end{equation*} 
+				es una BO de $W$. 
+				
+			\end{proof}  
+		\end{ejemplo}
 		
 		\medskip
 		
-		\begin{definicion}  Sea $V$ espacio vectorial con producto interno $\la \;,\;\ra$ y sean $U, W$ subespacios de $V$. Diremos que \textit{$U$ es ortogonal a $W$} y denotaremos $U \perp W$ si  para todo $u \in U$ y para todo $w \in W$ tenemos que $ \la u,w\ra =0$. 
+		\begin{definicion}  Sean $U, W$ subespacios de $\R^n$. Diremos que \textit{$U$ es ortogonal a $W$} y denotaremos $U \perp W$ si  para todo $u \in U$ y para todo $w \in W$ tenemos que $ \la u,w\ra =0$. 
 			
-			Si $X$ es subconjunto de $V$,  definimos 
+			Si $X$ es subconjunto de $\R^n$,  definimos 
 			$$
-			X^\perp := \{u \in V: \la u,x\ra = 0, \forall\, x \in X\} = \{u \in V: \la u,X\ra = 0\}.
+			X^\perp := \{u \in \R^n: \la u,x\ra = 0, \forall\, x \in X\} = \{u \in \R^n: \la u,X\ra = 0\}.
 			$$ 
 		\end{definicion}
 		
 		\begin{proposicion}
-			Sea $V$ espacio vectorial con producto interno $\la \;,\;\ra$ y $X \subset V$. Entonces $X^\perp$  es un subespacio de $V$.
+			Sea  $X \subset \R^n$, entonces $X^\perp$  es un subespacio de $\R^n$.
 		\end{proposicion}
 		\begin{proof}
 			Debemos probar que si $u,v \in X^\perp$ y $c \in \R$,  entonces $cu+v \in X^\perp$,  es decir que para todo $x \in X$,  se cumple que  $\la cu+v,x\ra=0$. Ahora bien,
@@ -7183,547 +7220,18 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\end{proof}
 		
 		\begin{definicion}
-			Sea $V$ espacio vectorial con producto interno $\la \;,\;\ra$ y sea $X$ subconjunto de $V$. Diremos que $X^\perp$ es el  \textit{subespacio  ortogonal a $X$ en $V$}.   
+			Sea $\R^n$ espacio vectorial con producto interno $\la \;,\;\ra$ y sea $X$ subconjunto de $\R^n$. Diremos que $X^\perp$ es el  \textit{subespacio  ortogonal a $X$ en $\R^n$}.   
 		\end{definicion}
 		
-		
+		\vskip .5cm 
 	
 	\end{section}
 
-\begin{comment}
 
-\begin{section}{La adjunta de una transformación lineal} Mostraremos en esta sección como el producto interno nos permite asociar a cada transformación lineal $T: V \to W$ una nueva transformación  lineal $T^*: W \to V$ llamada la adjunta de $T$. 
-	
-	Repasemos algunas definiciones.  
-	
-	\begin{definicion} 
-		Sea $V$ un espacio vectorial  sobre $F$ cuerpo. Entonces el \textit{espacio dual de $V$}, es
-		$$
-		V^* = \{\lambda: V \to F: \text{$\lambda$ es $F$-lineal} \}.
-		$$  
-	\end{definicion}
-	
-	\begin{obs} Sea $V$ un espacio vectorial  sobre $F$ . Las siguientes son propiedades elementales del espacio dual. 
-		\begin{enumerate}
-			\item $V^*$ es un espacio vectorial. 
-			\item Si $e_1,\ldots,e_n$ es una base de $V$, entonces $V^*$ también tiene una base de $n$ elementos: $f_1,\ldots,f_n$, donde 
-			$f_i$ se define sobre la base de $V$ de la siguiente manera $f_i(e_i) =1$ y $f_i(e_j)=0$ si $i\ne j$; y entonces extendemos $f_i$ a $V$ por linealidad. La base $f_1,\ldots,f_n$ es llamada la \textit{la base dual} de $e_1,\ldots,e_n$.
-			\item En particular, por el item anterior, tenemos que $\dim(V) = \dim(V^*)$. 
-		\end{enumerate}
-	\end{obs}	
-	
-	\medskip 
-	
-	En lo que resta de la sección trabajaremos con $\R$-espacios vectoriales.
-	
-	\medskip
-	
-	\begin{proposicion} \label{intida}
-		Sea $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y sea $v \in V$. Entonces la aplicación 
-		$$
-		\begin{matrix}
-		v^*: &V &\to& \R\quad &\text{ definida } \\
-		&w&\mapsto &  \la w,v\ra
-		\end{matrix}	
-		$$
-		es lineal. Es decir $v^* \in V^*$. 
-	\end{proposicion}
-	\begin{proof}
-		El resultado se obtiene directamente por la bilinealidad del producto interno. Es decir, como el producto interno es lineal en la primera entrada, entonces la aplicación $v^* = \la \;,v\ra$ es lineal. Simbólicamente
-		$$
-		v^*( ru+w)= \la ru+w,v\ra = r\la u,v\ra + \la w,v\ra = rv^*(u)+v^*(w),
-		$$
-		para $r \in \R$, $u,w,\in V$.
-	\end{proof}
-	
-	Veamos que la recíproca es cierta
-	
-	\begin{proposicion}\label{intvuelta}
-		Sea $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y sea $\lambda \in V^*$. Entonces existe un único $v \in $V tal que 
-		$$\lambda(w) = \la w,v\ra,$$
-		para $w \in V$.
-	\end{proposicion}
-	\begin{proof}
-		Sea $e_1,\ldots,e_n$ una BON de $V$ y  sea $a_i = \lambda(e_i)$. Definimos $v = \sum a_ie_i$. Entonces, dado cualquier $w\in V$, si $w = \sum b_ie_i$, tenemos que 
-		$$
-		\lambda(w) = \lambda(\sum_i b_ie_i) = \sum_i b_i\lambda(e_i) =  \sum_i b_ia_i.
-		$$ 
-		Por otro lado
-		$$
-		\la w,v\ra = \la \sum_i b_ie_i,\sum_j a_je_j\ra  = \sum_i\sum_j b_ia_j\la e_i,e_j\ra  = \sum_i b_ia_i.
-		$$
-		Es decir $\lambda(w) = \la w,v\ra$ para cualquier $w \in V$. Por lo tanto $\lambda =v^*$.
-		
-		\medskip
-		
-		\textit{Unicidad.} Supongamos que existe $v'\in V$ tal que $\lambda(w) = \la w,v'\ra$ para todo $w \in V$. Por lo tanto $0= \lambda(w) - \lambda(w) =  \la w,v\ra -  \la w,v'\ra =  \la w,v-v'\ra$. En particular $\la v-v',v-v'\ra =0$, lo cual implica que $v-v'=0$ o, equivalentemente, $v = v'$.
-	\end{proof}
-	
-	\begin{obs}\label{obs45}
-		La proposición anterior nos permite definir $\phi: V^* \to V$, de la siguiente forma: sea $\lambda \in V^*$, entonces $\phi(\lambda) =v$, donde $v$ es el único elemento de $V$ tal que  $\lambda(w) = \la w,v\ra.$
-	\end{obs}
-	
-	\begin{teorema}\label{isodual}
-		Sea $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$. Entonces la aplicación 
-		$$
-		\begin{matrix}
-		V &\to& V^* &\text{  } \\
-		v&\mapsto &  v^* &
-		\end{matrix}	
-		$$
-		es un isomorfismo de espacios vectoriales. 
-	\end{teorema}
-	\begin{proof}
-		Primero debemos ver que la aplicación es lineal: Sea $r \in \R$ y $v,w \in V$, debemos verificar que 
-		$$
-		(rv + w)^* =  rv^* +  w^*.
-		$$
-		Ahora bien, esto es cierto pues, debido a la linealidad del producto interno en el segundo factor, para todo $u \in V$ se cumple que
-		$$
-		(rv + w)^*(u) = \la u,rv + w\ra =  r\la u,v\ra +  \la u,w\ra = rv^*(u) +  w^*(u).
-		$$
-		
-		
-		\medskip
-		
-		Ahora mostraremos que la aplicación  $v\mapsto   v^*$ es un isomorfismo mostrando que  es inyectiva, luego se deduce lo requerido por dimensión.
-		
-		Recordemos que una aplicación lineal  es inyectiva si y sólo si su nucleo es $0$. Ahora bien, sea $v \in V$ tal que  $v^* =0$. Luego, $0= v^*(w) = \la w,v\ra$ para todo $w \in V$, en particular para $w=v$. Es decir, $\la v,v\ra =0$. Por positividad del producto interno, tenemos que  esto sólo se puede cumplir si $v=0$. Por lo tanto la aplicación $v \mapsto v^*$ es inyectiva  y como $\dim(V) = \dim(V^*)$, tenemos que es un isomorfismo.    
-	\end{proof}
-	
-	\begin{obs}
-		No es difícil  comprobar que $v \mapsto v^*$ y $\phi$ (ver proposición \ref{intvuelta} y observación  \ref{obs45}) son una inversa de la otra. 
-	\end{obs}
-	
-	
-	\begin{teorema}
-		Sean $V, W$ espacios vectoriales de dimensión finita y con producto interno $\la \;,\;\ra$ y $\la \;,\;\ra$ respectivamente (se denotan igual). Sea $T: V \to W$ lineal, entonces existe una única $T^*: W \to V$ que cumple
-		\begin{equation}\label{adjunta}
-		\la Tv,w\ra = \la v,T^*w\ra,
-		\end{equation}  
-		para $v\in V$, $w \in W$.
-	\end{teorema}
-	\begin{proof}
-		Sea $w \in W$ y definimos $\lambda_w :V \to \R$ por $\lambda_w(v) = \la Tv,w\ra$. Por linealidad de $T$ y del producto interno en el primer factor, claramente $\lambda_w \in V^*$. Entonces por teorema \ref{isodual} existe un único $u \in V$ tal que $u^* = \lambda_w$, es decir   
-		$$
-		\la v,u\ra= \la Tv,w\ra
-		$$
-		para todo $v \in V$. Definamos $T^*w = u$ y entonces se satisface la ecuación (\ref{adjunta}). 
-		
-		\medskip
-		
-		Faltaría comprobar que es lineal y es única. Se deja como ejercicio. 
-	\end{proof}
-	
-	
-	
-	\begin{obs} El caso más interesante, y que pasaremos a estudiar ahora, es cuando $T: V \to V$, es decir cuando el espacio de llegada y  de partida es el mismo, y por lo tanto también $T^*: V \to V$. 
-	\end{obs}
-	
-	
-	\begin{ejemplo}\label{ejemplo4.10}
-		Sea $T: \R^3 \to \R^3$ la transformación lineal $T(x,y,z) = (3x +y, 2x -y+ 3z, x)$. Calcular $T^*$ y la matriz de $T$ y $T^*$ en la base canónica.  
-	\end{ejemplo}
-	\begin{proof}[Solución 1] 
-		La observación principal para hacer el cálculo de $T^*$ es que dada cualquier transformación lineal $S$, tenemos que 
-		$$
-		\la e_i, S(v)\ra  = t_i \Leftrightarrow S(v) = (t_1,\ldots,t_n). 
-		$$ 
-		Aplicado a este caso,
-		\begin{align*}
-		\la e_1, T^*(x,y,z)\ra  &= \la  T(e_1),(x,y,z)\ra =    \la (3,2,1),(x,y,z)\ra = 3x+2y+z \\
-		\la e_2, T^*(x,y,z)\ra  &= \la  T(e_2),(x,y,z)\ra =    \la (1,-1,0),(x,y,z)\ra = x-y \\
-		\la e_3, T^*(x,y,z)\ra  &= \la  T(e_3),(x,y,z)\ra =    \la (0,3,0),(x,y,z)\ra = 3y. \\
-		\end{align*}
-		Por lo tanto
-		$$
-		T^*(x,y,z) = (3x+2y+z,x-y,3y).
-		$$
-		Por lo tanto, la matriz de $T$ en la base canónica es 
-		$$
-		\left[\begin{matrix}
-		3&1&0\\2&-1&3\\1&0&0.
-		\end{matrix}
-		\right]
-		$$
-		y la matriz de $T^*$ en la base canónica es
-		$$
-		\left[\begin{matrix}
-		3&2&1\\1&-1&0\\0&3&0.
-		\end{matrix}
-		\right]
-		$$
-	\end{proof}
-	
-	
-	
-	\begin{definicion}
-		Sea $n \in \mathbb{N}$ y $A = [a_{ij}]$ matriz $n \times n$. Entonces la \textit{matriz transpuesta} se define como
-		$$A^\t = [a_{ji}].$$  
-		Diremos que una matriz $A$ es \textit{simétrica} si $A^\t = A$. 
-	\end{definicion}
-	
-	Observemos que en el ejemplo anterior la matriz de la adjunta es la transpuesta de la matriz de la transformación original. Veremos ahora, que este es un resultado general. 
-	
-	\begin{teorema}\label{matrizadjunta}
-		Sea $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y sea  $\mathcal U = \{u_1, \ldots , u_n\}$ una BON de $V$. Sea $T: V \to V$ una transformación lineal y $A$ la matriz de $T$ en  la base $\mathcal U$,  es decir $[T]_{\mathcal U} = A$.
-		
-		Entonces, $[T^*]_{\mathcal U} = A^\t$, es decir, la matriz de $T^*$ en la base $\mathcal U$ es la transpuesta de $A$. 
-	\end{teorema}
-	\begin{proof}
-		Observemos  que como $T(u_j) = \sum_i a_{ij}u_i$, entonces 
-		$$
-		\la Tu_j,u_i\ra = a_{ij}.
-		$$
-		Luego 
-		$$
-		a_{ij} = \la Tu_j,u_i\ra = \la u_j,T^*u_i\ra.
-		$$
-		Es decir  que $T^*(u_i) = \sum_j a_{ij}$. Es decir $[T^*]_{\mathcal U} = A^\t$.
-	\end{proof}
-	
-	
-	\begin{ejemplo} Resolveremos nuevamente, en forma más sencilla, el ejemplo  \ref{ejemplo4.10}.
-	\end{ejemplo}
-	\begin{proof}[Solución 2]
-		Como $T(x,y,z) = (3x +y, 2x -y+ 3z, x)$, la matriz de $T$ en la base canónica es 
-		$$
-		\left[\begin{matrix}
-		3&1&0\\2&-1&3\\1&0&0.
-		\end{matrix}
-		\right].
-		$$
-		Por lo tanto, por teorema  \ref{matrizadjunta}, la matriz de $T^*$ en la base canónica es
-		$$
-		\left[\begin{matrix}
-		3&2&1\\1&-1&0\\0&3&0.
-		\end{matrix}
-		\right].
-		$$
-		Luego $T^*(x,y,z) = (3x+2y+z,x-y,3y)$.
-	\end{proof}
-	
-	
-	
-	\begin{proposicion}\label{adjprop}
-		Sean $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y $T,S:V \to V$ transformaciones lineales. Entonces
-		\begin{enumerate}
-			\item\label{adj0} $Id^* = Id$.
-			\item\label{adj1} Si $c \in \R$, entonces $(cR)^* = cR^*$.
-			\item\label{adj2} $(R+S)^* = R^* + S^*$.
-			\item\label{adj3} $(RS)^* = S^*R^*$.
-			\item\label{adj4} $R^{**} = R$.
-		\end{enumerate} 
-	\end{proposicion}
-	\begin{proof}
-		(\ref{adj0}). Es trivial.
-		
-		\vskip .3cm
-		
-		(\ref{adj1}). Por definición de adjunta $(cR)^*$ es la única transformación lineal tal que
-		$$
-		\la cR(v),w\ra = \la v,(cR)^*(w)\ra, \quad \forall v,w \in V.
-		$$
-		Ahora bien
-		$$
-		\la v,cR^*(w)\ra = c\la v,R^*(w)\ra = c\la R(v),w\ra =  \la cR(v),w\ra. 
-		$$
-		Es decir $(cR)^* = cR^*$.
-		
-		\vskip .3cm
-		
-		(\ref{adj2}). Como en el caso anterior, debemos demostrar que  $R^* + S^*$ es la única transformación lineal tal que
-		$$ 
-		\la (R+S)(v),w\ra = \la v,(R^* + S^*)(w)\ra, \quad \forall v,w \in V.
-		$$
-		Ahora bien,
-		\begin{align*}
-		\la v,(R^* + S^*)(w)\ra &= \la v,R^*(w) + S^*(w)\ra =  \la v,R^*(w) \ra+\la v, S^*(w)\ra \\
-		&=  \la R(v),w \ra+\la S(v), w\ra =  \la R(v) + S(v), w\ra =  \la (R+S)(v), w\ra .
-		\end{align*}
-		
-		\vskip .3cm
-		
-		(\ref{adj3}). 
-		\begin{align*}
-		\la v,(S^*R^*)(w)\ra &= \la v, S^*(R^*(w))\ra =  \la S(v),R^*(w) \ra \\
-		&=  \la R(S(v)),w \ra =  \la (RS)(v), w\ra .
-		\end{align*}
-		Por lo tanto  $(RS)^* = S^*R^*$.
-		
-		\vskip .3cm
-		
-		(\ref{adj4}). Por definición de adjunta de $R^*$, tenemos que $ (R^*)^*=R^{**}$  es la única transformación lineal tal que 
-		$$
-		\la R^*(v), w\ra = \la v, R^{**}(w)\ra  , \; \forall\, v,w \in V.
-		$$ 
-		Ahora bien, por la definición de adjunta de $R$ sabemos que 
-		$$
-		\la R^*(v), w\ra = \la v, R(w)\ra , \; \forall\, v,w \in V.
-		$$ 
-		Luego $R = R^{**}$.
-		
-	\end{proof}
-	
-	
-	\begin{teorema}\label{rel-adj-ort}
-		Sea $T: V \to W$ una transformación lineal entre espacios vectoriales de dimensión finita con producto interno. Entonces,
-		\begin{enumerate}
-			\item $\nu(T^*) = \im(T)^\perp$,
-			\item $\im(T^*) = \nu(T)^\perp$,
-			\item $\nu(T) = \im(T^*)^\perp$,
-			\item $\im(T) = \nu(T^*)^\perp$.
-		\end{enumerate}
-	\end{teorema}
-	\begin{proof}
-		Probaremos la primera afirmación, pues las otras se deducen fácilmente del hecho que $T^{**} = T$ y $U^{\perp\perp} = U$. Ahora bien,
-		\begin{align*}
-		w \in  \nu(T^*) &\Leftrightarrow T^*(w) =0 \Leftrightarrow \la v, T^*(w) \ra = 0,\; \forall\, v\in V \Leftrightarrow \\
-		&\Leftrightarrow \la T(v), w \ra = 0,\; \forall\, v\in V\Leftrightarrow  w \in \im(T)^\perp.
-		\end{align*}
-		
-		
-	\end{proof}
-\end{section}
-
-
-
-\end{comment}
-
-\begin{section}{La adjunta de una transformación lineal} Mostraremos en esta sección como el producto interno nos permite asociar a cada transformación lineal $T: V \to W$ una nueva transformación  lineal $T^*: W \to V$ llamada la adjunta de $T$. 
-	
-	
-	
-	\begin{teorema}
-		Sean $V, W$ espacios vectoriales de dimensión finita y con producto interno $\la \;,\;\ra$ y $\la \;,\;\ra$ respectivamente (se denotan igual). Sea $T: V \to W$ lineal, entonces existe una única $T^*: W \to V$ que cumple
-		\begin{equation}\label{eq-adjunta}
-		\la Tv,w\ra = \la v,T^*w\ra,
-		\end{equation}  
-		para $v\in V$, $w \in W$ (el producto de la izquierda es en $W$ y el de la derecha en $V$).
-	\end{teorema}
-	\begin{proof}
-	Sea $\{v_1,\ldots,v_n\}$ una BON de $V$ y $\{w_1,\ldots,w_m\}$ una BON de $W$, observemos que la coordenada $j$ (en $V$) de $T^*w_i$ debe cumplir
-	\begin{equation}\label{eq-transp}
-		\la T^*w_i,v_j\ra = 	\la w_i,Tv_j\ra.
-	\end{equation}
-	Por lo tanto,  definimos
-	\begin{equation*}
-		T^*(w_i) = \sum_{j=1}^{n} \la w_i,Tv_j\ra v_j,
-	\end{equation*}
-	y extendemos linealmente a una transformación lineal $T^*: W \to V$. Claramente $T^*$   está bien definida y es lineal (por definición).  La unicidad está garantizada por la ecuación (\ref{eq-transp}).  
-	
-	Finalmente,  debemos comprobar que se verifica la ecuación (\ref{eq-adjunta}): sean  $w \in W$ y $v \in V$, entonces $w = \sum_{i=1}^{m} \la w_i,w\ra w_i$ y $v = \sum_{j=1}^{n} \la v_j,v\ra v_j$. Reemplazando en  la ecuación (\ref{eq-adjunta}) $w$ y $v$ por su desarrollo en las bases se obtiene la igualdad. Para el lector curioso, a continuación desarrollamos la demostración:
-	\begin{align*}
-		\la v,T^*w\ra &= 	\la v, T^*(\sum_{i=1}^{m} \la w_i,w\ra w_i) \ra\\
-		 &= \la v, \sum_{i=1}^{m} \la w_i,w\ra T^*(w_i) \ra\\
-		 &=	\sum_{i=1}^{m} \la w_i,w\ra\la v,  T^*(w_i) \ra\\
-		 &=\sum_{i=1}^{m} \la w_i,w\ra\la v,  \sum_{j=1}^{n} \la w_i,Tv_j\ra v_j\ra\\
-		 &=\sum_{i=1}^{m} \la w_i,w\ra \sum_{j=1}^{n} \la w_i,Tv_j\ra\la v,  v_j\ra.
-	\end{align*}
-	Por otro lado, como $v = \sum_{j=1}^{n} \la v_j,v\ra v_j$, entonces
-	\begin{equation*}
-		\sum_{j=1}^{n} \la w_i,Tv_j\ra\la v,  v_j\ra = \sum_{j=1}^{n} \la w_i,\la v,  v_j\ra Tv_j\ra = \la w_i, T (\sum_{j=1}^{n}\la v,  v_j\ra v_j)\ra = \la w_i, T v\ra, 
-	\end{equation*}
-	por lo tanto 
-	\begin{equation*}
-		\la v,T^*w\ra = \sum_{i=1}^{m} \la w_i,w\ra \la w_i, T v\ra =  \la\sum_{i=1}^{m} \la w_i,w\ra w_i, T v\ra = \la w, T v\ra
-	\end{equation*}
-	\end{proof}
-	
-	
-	
-	\begin{obs} El caso más interesante, y que pasaremos a estudiar ahora, es cuando $T: V \to V$, es decir cuando el espacio de llegada y  de partida es el mismo, y por lo tanto también $T^*: V \to V$. 
-	\end{obs}
-	
-	
-	\begin{ejemplo}\label{ejemplo4.10}
-		Sea $T: \R^3 \to \R^3$ la transformación lineal $T(x,y,z) = (3x +y, 2x -y+ 3z, x)$. Calcular $T^*$ y la matriz de $T$ y $T^*$ en la base canónica.  
-	\end{ejemplo}
-	\begin{proof}[Solución 1] 
-		La observación principal para hacer el cálculo de $T^*$ es que dada cualquier transformación lineal $S$, tenemos que 
-		$$
-		\la e_i, S(v)\ra  = t_i \Leftrightarrow S(v) = (t_1,\ldots,t_n). 
-		$$ 
-		Aplicado a este caso,
-		\begin{align*}
-		\la e_1, T^*(x,y,z)\ra  &= \la  T(e_1),(x,y,z)\ra =    \la (3,2,1),(x,y,z)\ra = 3x+2y+z \\
-		\la e_2, T^*(x,y,z)\ra  &= \la  T(e_2),(x,y,z)\ra =    \la (1,-1,0),(x,y,z)\ra = x-y \\
-		\la e_3, T^*(x,y,z)\ra  &= \la  T(e_3),(x,y,z)\ra =    \la (0,3,0),(x,y,z)\ra = 3y. \\
-		\end{align*}
-		Por lo tanto
-		$$
-		T^*(x,y,z) = (3x+2y+z,x-y,3y).
-		$$
-		La matriz de $T$ en la base canónica es 
-		$$
-		\left[\begin{matrix}
-		3&1&0\\2&-1&3\\1&0&0.
-		\end{matrix}
-		\right]
-		$$
-		y la matriz de $T^*$ en la base canónica es
-		$$
-		\left[\begin{matrix}
-		3&2&1\\1&-1&0\\0&3&0.
-		\end{matrix}
-		\right]
-		$$
-	\end{proof}
-	
-	
-	Observemos que en el ejemplo anterior la matriz de la adjunta es la transpuesta de la matriz de la transformación original. Veremos ahora, que este es un resultado general. 
-	
-	\begin{teorema}\label{matrizadjunta}
-		Sea $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y sea  $\mathcal U = \{u_1, \ldots , u_n\}$ una BON de $V$. Sea $T: V \to V$ una transformación lineal y $A$ la matriz de $T$ en  la base $\mathcal U$,  es decir $[T]_{\mathcal U} = A$.
-		
-		Entonces, $[T^*]_{\mathcal U} = A^\t$, es decir, la matriz de $T^*$ en la base $\mathcal U$ es la transpuesta de $A$. 
-	\end{teorema}
-	\begin{proof}
-		Observemos  que como $T(u_j) = \sum_i a_{ij}u_i$, entonces 
-		$$
-		\la Tu_j,u_i\ra = a_{ij}.
-		$$
-		Luego 
-		$$
-		a_{ij} = \la Tu_j,u_i\ra = \la u_j,T^*u_i\ra.
-		$$
-		Es decir  que $T^*(u_i) = \sum_j a_{ij}$. Es decir $[T^*]_{\mathcal U} = A^\t$.
-	\end{proof}
-	
-	
-
-	
-	\begin{ejemplo} Resolveremos nuevamente, en forma más sencilla, el ejemplo  \ref{ejemplo4.10}.
-	\end{ejemplo}
-	\begin{proof}[Solución 2]
-		Como $T(x,y,z) = (3x +y, 2x -y+ 3z, x)$, la matriz de $T$ en la base canónica es 
-		$$
-		\left[\begin{matrix}
-		3&1&0\\2&-1&3\\1&0&0.
-		\end{matrix}
-		\right].
-		$$
-		Por lo tanto, por teorema  \ref{matrizadjunta}, la matriz de $T^*$ en la base canónica es
-		$$
-		\left[\begin{matrix}
-		3&2&1\\1&-1&0\\0&3&0.
-		\end{matrix}
-		\right].
-		$$
-		Luego $T^*(x,y,z) = (3x+2y+z,x-y,3y)$.
-	\end{proof}
-	
-	\begin{comment}
-		
-
-	
-	\begin{proposicion}\label{adjprop}
-		Sean $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y $T,S:V \to V$ transformaciones lineales. Entonces
-		\begin{enumerate}
-			\item\label{adj0} $Id^* = Id$.
-			\item\label{adj1} Si $c \in \R$, entonces $(cR)^* = cR^*$.
-			\item\label{adj2} $(R+S)^* = R^* + S^*$.
-			\item\label{adj3} $(RS)^* = S^*R^*$.
-			\item\label{adj4} $R^{**} = R$.
-		\end{enumerate} 
-	\end{proposicion}
-	\begin{proof}
-		(\ref{adj0}). Es trivial.
-		
-		\vskip .3cm
-		
-		(\ref{adj1}). Por definición de adjunta $(cR)^*$ es la única transformación lineal tal que
-		$$
-		\la cR(v),w\ra = \la v,(cR)^*(w)\ra, \quad \forall v,w \in V.
-		$$
-		Ahora bien
-		$$
-		\la v,cR^*(w)\ra = c\la v,R^*(w)\ra = c\la R(v),w\ra =  \la cR(v),w\ra. 
-		$$
-		Es decir $(cR)^* = cR^*$.
-		
-		\vskip .3cm
-		
-		(\ref{adj2}). Como en el caso anterior, debemos demostrar que  $R^* + S^*$ es la única transformación lineal tal que
-		$$ 
-		\la (R+S)(v),w\ra = \la v,(R^* + S^*)(w)\ra, \quad \forall v,w \in V.
-		$$
-		Ahora bien,
-		\begin{align*}
-		\la v,(R^* + S^*)(w)\ra &= \la v,R^*(w) + S^*(w)\ra =  \la v,R^*(w) \ra+\la v, S^*(w)\ra \\
-		&=  \la R(v),w \ra+\la S(v), w\ra =  \la R(v) + S(v), w\ra =  \la (R+S)(v), w\ra .
-		\end{align*}
-		
-		\vskip .3cm
-		
-		(\ref{adj3}). 
-		\begin{align*}
-		\la v,(S^*R^*)(w)\ra &= \la v, S^*(R^*(w))\ra =  \la S(v),R^*(w) \ra \\
-		&=  \la R(S(v)),w \ra =  \la (RS)(v), w\ra .
-		\end{align*}
-		Por lo tanto  $(RS)^* = S^*R^*$.
-		
-		\vskip .3cm
-		
-		(\ref{adj4}). Por definición de adjunta de $R^*$, tenemos que $ (R^*)^*=R^{**}$  es la única transformación lineal tal que 
-		$$
-		\la R^*(v), w\ra = \la v, R^{**}(w)\ra  , \; \forall\, v,w \in V.
-		$$ 
-		Ahora bien, por la definición de adjunta de $R$ sabemos que 
-		$$
-		\la R^*(v), w\ra = \la v, R(w)\ra , \; \forall\, v,w \in V.
-		$$ 
-		Luego $R = R^{**}$.
-		
-	\end{proof}
-	
-	
-	\begin{teorema}[$*$]\label{rel-adj-ort}
-		Sea $T: V \to W$ una transformación lineal entre espacios vectoriales de dimensión finita con producto interno. Entonces,
-		\begin{enumerate}
-			\item $\nu(T^*) = \im(T)^\perp$,
-			\item $\im(T^*) = \nu(T)^\perp$,
-			\item $\nu(T) = \im(T^*)^\perp$,
-			\item $\im(T) = \nu(T^*)^\perp$.
-		\end{enumerate}
-	\end{teorema}
-	\begin{proof}
-		Probaremos la primera afirmación, pues las otras se deducen fácilmente del hecho que $T^{**} = T$ y $U^{\perp\perp} = U$. Ahora bien,
-		\begin{align*}
-		w \in  \nu(T^*) &\Leftrightarrow T^*(w) =0 \Leftrightarrow \la v, T^*(w) \ra = 0,\; \forall\, v\in V \Leftrightarrow \\
-		&\Leftrightarrow \la T(v), w \ra = 0,\; \forall\, v\in V\Leftrightarrow  w \in \im(T)^\perp.
-		\end{align*}
-		
-		
-	\end{proof}
-	
-	
-		\end{comment}
-\end{section}
 
 \begin{section}{Diagonalización de matrices simétricas}
 	
-	\begin{definicion}
-		Sea $V$ un espacio vectorial de dimensión finita con producto interno y $T: V \to V$ una transformación lineal. Diremos que $T$ es una \textit{transformación lineal autoadjunta} si $T^* = T$. En  ese caso, también suele decirse que $T$ es un \textit{operador lineal autoadjunto}.
-	\end{definicion}
-	
-	
-	Del  teorema \ref{matrizadjunta} (y un  poco más) se deduce el siguiente resultado.
-	
-	\begin{proposicion}\label{prop-autoadjunta-impl-sim}
-		Sea $V$ un espacio vectorial de dimensión finita con producto interno y $T: V \to V$ una transformación lineal. Entonces $T$ es un operador lineal autoadjunto si y sólo si para cualquier $\mathcal{U}$ BON de $V$, la matriz de $T$ en la base $\mathcal{U}$  es simétrica.
-	\end{proposicion}
-	\begin{proof}
-		($\Rightarrow$) Por teorema \ref{matrizadjunta}, si $A$ es la matriz de $T$, entonces  la  matriz de $T^*$ es $A^\t$. Como $T=T^*$, entonces $A = A^\t$.
-		
-		\vskip .1cm
-		($\Leftarrow$) Por hipótesis, $[T]_\mathcal{U} =[T]_\mathcal{U}^\t $. Pero por el teorema \ref{matrizadjunta}, tenemos que  $[T^*]_\mathcal{U} =[T]_\mathcal{U}^\t$. Por lo tanto $[T^*]_\mathcal{U} = [T]_\mathcal{U}$, lo cual implica que  $T= T^*$.
-	\end{proof}
-	
-	Este proposición nos  permite reducir los espacios de producto interno al  espacio  vectorial $\R^n$ con el producto interno canónico y al los operadores autoadjuntos a matrices simétricas. 
-	
-	
-	\vskip .3cm
+
 	
 	
 	Observar que en $\R^n$ el producto escalar es 
@@ -7734,19 +7242,35 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	\begin{equation*}
 		\la x,y \ra = x^\t y.
 	\end{equation*}
-	Si $A$ es una matriz $n \times n$ simétrica, entonces notar que, sin usar la proposición \ref{prop-autoadjunta-impl-sim}, podemos demostrar directamente que es autoadjunta:
+	
+	Recordemos que una matriz es simétrica si $A^\t =A$. 
+	
+\begin{proposicion}
+	Si $A$ es una matriz $n \times n$ simétrica, entonces 
+	\begin{enumerate}[label=\emph{\alph*})]
+		\item 
+		\begin{equation*}
+		\la Ax,y \ra =  \la x,Ay \ra .
+		\end{equation*}
+		\item Si $W$ un subespacio de $\R^n$ invariante por $A$, entonces $W^\perp$ es invariante por $A$.
+	\end{enumerate}
+\end{proposicion}
+\begin{proof}
+	Notar que
 	\begin{equation*}
-		\la Ax,y \ra = (Ax)^\t y = x^\t A^\t y  = x^\t A y = \la x,Ay \ra 
+	\la Ax,y \ra = (Ax)^\t y = x^\t A^\t y  = x^\t A y = \la x,Ay \ra 
 	\end{equation*}
+\end{proof}
+	
 	
 	
 	\begin{proposicion}\label{wperpinv}
 		Sea $A$ matriz simétrica $n \times n$ y $W$ un subespacio de $\R^n$ invariante por $A$, entonces $W^\perp$ es invariante por $A$.
 	\end{proposicion}
 	\begin{proof}
-		Sea $u \in W^\perp$,  debemos ver que $Au \in W^\perp$,  es decir que $(Au)^\t w =0$ para todo $w \in W$. Ahora bien,
+		Sea $u \in W^\perp$,  debemos ver que $Au \in W^\perp$,  es decir que $\la Au,w\ra =0$ para todo $w \in W$. Ahora bien,
 		\begin{equation*}
-			(Au)^\t w = u^\t A^\t w =u^\t A w = u^\t (A w) =0.  
+			\la Au,w\ra =(Au)^\t w = u^\t A^\t w =u^\t A w = u^\t (A w) = \la u, Aw\ra=0.  
 		\end{equation*}
 		La útima igualdad es válida pues $u \in W^\perp$ y  como $w \in W$, por hipótesis $Aw \in W$.
 	\end{proof}
@@ -7834,10 +7358,10 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 	\end{obs}
 	
-	\begin{teorema}\label{existeauto}
+	\begin{teorema}\label{th-existeauto}
 		Sea $A$ matriz simétrica $n \times n$, con coeficientes reales. Entonces existe $\lambda \in \R$ autovalor de $A$.   
 	\end{teorema}
-	\begin{proof} Extendamos $A$  a una transformación lineal de $A: \mathbb{C}^n \to \mathbb{C}^n$ de manera natural (con el producto de matrices). Sea $\chi_A$ el polinomio característico de $A$. Por el teorema fundamental  del álgebra, existe $\lambda \in \mathbb{C}$ tal que $\chi_A(\lambda)=0$. Luego existe $x \in \mathbb{C}^n$, no nulo,  tal que $Ax = \lambda x$.  Veremos que $\lambda$ es un número real: por un lado, como $A$ tiene coeficientes reales,
+	\begin{proof} Extendamos $A$  a una transformación lineal de $A: \mathbb{C}^n \to \mathbb{C}^n$ de manera natural (con el producto de matrices). Sea $\chi_A$ el polinomio característico de $A$. Por el teorema fundamental  del álgebra, existe $\lambda \in \mathbb{C}$ tal que $\chi_A(\lambda)=0$. Luego existe $x \in \mathbb{C}^n$, no nulo,  tal que $Ax = \lambda x$.  Veremos que $\lambda$ es un número real. Por un lado, como $A$ tiene coeficientes reales, tenemos que $A = \overline{A}$ y entonces:
 		\begin{equation*}
 		x^\t A\overline{x} = x^\t \overline{A}\overline{x} =x^\t\overline{Ax} =x^\t\overline{\lambda x} = \overline{\lambda} x^\t\overline{x} = \overline{\lambda} ||x||^2 .
 		\end{equation*}
@@ -7854,16 +7378,16 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	
 	\vskip .3cm
 	
-	
+	El siguiente resultado, el \textit{teorema espectral}, requiere para su demostración una generalización del resultado anterior para espacios de producto interno  de dimensión finita y matrices (transformaciones lineales)  simétricas respecto a este producto interno. Todos estos conceptos y resultados son generalizaciones sencillas, pero llevan algún tiempo desarrollarlas y no las veremos ahora. La demostración que daremos del teorema espectral se hará por inducción en la dimensión del espacio y utiliza en el paso inductivo la generalización del teorema \ref{th-existeauto}.   
 		
-	\begin{teorema}[Teorema espectral] Sea $A$ matriz simétrica $n \times n$. Entonces existe $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $\R^n$ de autovectores de $A$.
+	\begin{teorema}[Teorema espectral]\index{Teorema espectral} Sea $A$ matriz simétrica $n \times n$. Entonces existe $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $\R^n$ de autovectores de $A$.
 	\end{teorema}
 	\begin{proof}		
 		Se hará por inducción en $n= \dim(V)$.
 		
 		Si $n=1$ es trivial. 
 		
-		Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por le teorema  \ref{existeauto} existe $\lambda \in \R$ y $x \in \R^n$ tal que $Ax = \lambda x$. Si $u_n = x/||x||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W = span\{u_n\}$. Entonces por  corolario \ref{wperpinv}, $W^\perp$ es invariante por $A$. Podemos considerar entonces a  $A$ como una transformación lineal de $W^\perp$ a $W^\perp$. No es difícil verificar que el producto interno canónico es un producto interno en $W^\perp$ y que $A$ es una matriz simétrica con este producto interno restringido.  
+		Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por le teorema  \ref{th-existeauto} existe $\lambda \in \R$ y $x \in \R^n$ tal que $Ax = \lambda x$. Si $u_n = x/||x||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W = span\{u_n\}$. Entonces por  corolario \ref{wperpinv}, $W^\perp$ es invariante por $A$. Podemos considerar entonces a  $A$ como una transformación lineal de $W^\perp$ a $W^\perp$. No es difícil verificar que el producto interno canónico es un producto interno en $W^\perp$ y que $A$ es una matriz simétrica con este producto interno restringido.  
 		
 		Como $\dim(W^\perp) = n-1$, por hipótesis inductiva existe   $\{u_1,\ldots,u_{n-1}\}$ una BON de $W^\perp$ de autovectores de $A: W^\perp \to W^\perp$. Es claro entonces que $\mathcal{U} = \{u_1,\ldots,u_n\}$  una BON de $\R^n$ de autovectores de $A$. 
 	\end{proof}
@@ -8462,15 +7986,15 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 	\vskip .3cm	
 	
-	Ahora describiremos un procedimiento análogo para polinomios, que nos da el
-	\vskip .1cm	
-	\textit{\textbf{Algoritmo de Euclides.} Sean $f$ y $g$ polinomios distintos de cero. Entonces existen polinomios $q$, $r$ tales que $\operatorname{gr}(r) < \operatorname{gr}(g)$ y tales que}
+	Ahora describiremos un procedimiento análogo para polinomios.
+	\vskip .3cm	
+	\textit{\textbf{Algoritmo de División.} Sean $f$ y $g$ polinomios distintos de cero. Entonces existen polinomios $q$, $r$ tales que $\operatorname{gr}(r) < \operatorname{gr}(g)$ y tales que}
 	\begin{equation*}
 		f (x) = q (x) g (x) + r (x).
 	\end{equation*}
 	A $q(x)$ lo llamamos el \textit{cociente} de la \textit{división polinomial} y  a $r(x)$ lo llamamos el \textit{resto}  de la división polinomial. 
 	
-	No veremos aquí la demostración del algoritmo de Euclides, basta decir que es muy similar a  la demostración del algoritmo de división para números enteros. En los siguientes ejemplos se verá como se calculan el cociente y resto de la división polinomial. 
+	No veremos aquí la demostración del algoritmo de división, basta decir que es muy similar a  la demostración del algoritmo de división para números enteros. En los siguientes ejemplos se verá como se calculan el cociente y resto de la división polinomial. 
 	 
 	\vskip .3cm	
 	
@@ -8857,7 +8381,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 	
 		 
 		 
-		 \begin{section}{Regla de Cramer} Veremos ahora que la inversa de una matriz inversible se puede escribir en términos de determinantes de algunas matrices relacionadas.  
+		 \begin{section}{Regla de Cramer} Veremos ahora que la inversa de una matriz inversible se puede escribir en términos de determinantes de algunas matrices relacionadas y esto, junto a otros resultados, nos permitirá resolver ecuaciones lineales con $n$-variables y $n$-incógnitas cuya matriz asociada es inversible.  
 		 	
 		 	\begin{teorema} \label{th-cof-01}
 		 		Sea $A$ matriz $n \times n$, entonces
@@ -8900,7 +8424,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 		
 		 	\end{proof}
 		 	
-		 	\begin{definicion} Sea $A$ matriz $n \times n$, la \textit{matriz de cofactores}\index{matriz de cofactores} es la matriz cuyo coeficiente $ij$ vale $C_{ij}$. La matriz de cofactores de $A$  se denota $\operatorname{cof}(A)$. La \textit{matriz adjunta de A} es $\operatorname{adj}(A) = \operatorname{cof}(A)^\t$.
+		 	\begin{definicion} Sea $A$ matriz $n \times n$, la \textit{matriz de cofactores}\index{matriz!de cofactores} es la matriz cuyo coeficiente $ij$ vale $C_{ij}$. La matriz de cofactores de $A$  se denota $\operatorname{cof}(A)$. La \textit{matriz adjunta de A} es $\operatorname{adj}(A) = \operatorname{cof}(A)^\t$.
 		 	\end{definicion}
 		 	
 		 	\begin{teorema} Sea $A$ matriz $n \times n$,  entonces
