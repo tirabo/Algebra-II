@@ -73,7 +73,7 @@
 }
 \usepackage{hypcap}
 
-
+%\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CONTROLADORES DE ESTILO %%%
 %%%--------------------------------------------------------------------------
@@ -94,7 +94,7 @@
 {8pt}{\huge\bfseries\filcenter}%
 %%%--------------------------------------------------------------------------	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%\end{comment}
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 
@@ -440,7 +440,7 @@
 		\end{center}
 		Luego los costos totales en los dos años son 
 		\begin{align*}
-			(1000, 800, 550, 300, 700&, 200) + (1200, 700, 600, 300, 900, 250) = \\
+			(1000, 800,& 550, 300, 700, 200) + (1200, 700, 600, 300, 900, 250) = \\
 			&=(1000+1200, 800+700, 550+600, 300+300, 700+900, 200+250) \\
 			&= (2200, 1500, 1350, 600, 1600, 450). 
 		\end{align*} 
@@ -739,34 +739,42 @@
 		\begin{equation*}
 			\langle v , w \rangle = 2 + 2 -4 =0.
 		\end{equation*}
-	
-		Decimos que dos vectores $v$ y $w$ son  \textit{perpendiculares} u \textit{ortogonales} si  $\langle v , w \rangle=0$. Por el momento, no es claro que en el plano esta definición coincida con nuestra noción geométrica intuitiva de perpendicularidad. Esto lo veremos en la siguiente sección. Aquí nos limitaremos a observar un ejemplo. En  $\R^3$ consideremos los vectores
-		\begin{equation*}
-			e_1 = (1,0,0),\quad e_2 = (0, 1,0),\quad e_3 = (0,0,1),
-		\end{equation*}
-		representados en la fig. \ref{fig-canonicos-en-R3}
-		\begin{figure}[h]
-			\begin{tikzpicture}[scale=1.3]
-			%draw the main coordinate system axes
-			\draw[thick,->] (0,0,0) -- (2,0,0) node[right]{$y$};
-			\draw[thick,->] (0,0,0) -- (0,2,0) node[above]{$z$};
-			\draw[thick,->] (0,0,0) -- (0,0,2) node[anchor=north east]{$x$};
-			\draw[very thick,->] (0,0,0) -- (1,0,0);
-			\node [below] at (1,0,0.1) {$e_2$};
-			\draw[very thick,->] (0,0,0) -- (0,1,0) node[anchor=west]{$e_3$};
-			\draw[very thick,->] (0,0,0) -- (0,0,1);
-			\node [below] at (0.2,0,1) {$e_1$};
-			\draw [dashed] (0,0.8,0) -- (1.5,0.8,0);
-			\draw [dashed] (1.5,0,0) -- (1.5,0.8,0);
-			\draw[very thick,->] (0,0,0) -- (1.5,0.8,0) node[right]{$v$};
-			\end{tikzpicture}
-			\caption{}
-			\label{fig-canonicos-en-R3}
-		\end{figure}
-				
-		Luego, vemos que $\langle e_i , e_j \rangle = 0$, si $i \ne j$ y por lo tanto $e_i$  es perpendicular a $e_j$ si $i \ne j$, lo cual concuerda con nuestra intuición. 
+		\begin{definicion}
+			Decimos que dos vectores $v$ y $w$ en $\mathbb R^n$ son  \textit{perpendiculares} u \textit{ortogonales} si  $\langle v , w \rangle=0$. Cuando $v$ y $w$ son ortogonales  denotamos $v \perp w$.
+		\end{definicion}
 		
-		Observemos que si $v = (x_1,x_2,x_3)$,  entonces $\langle v , e_i \rangle = x_i$. Por lo tanto,  si la coordenada $i$-ésima de $v$ es cero,  $v$  es ortogonal a $e_i$. Esto nos dice,  por ejemplo,  que si $v$  es un vector contenido en el plano que incluye $e_2$ y $e_3$,  es decir si la primera coordenada es cero,  entonces $v$  es ortogonal a $e_1$. 
+		Por el momento, no es claro que en el plano la definición anterior coincida con nuestra noción geométrica e intuitiva de perpendicularidad. Esto lo veremos en la siguiente sección. Aquí nos limitaremos a observar un ejemplo.
+		
+		\begin{ejemplo}
+			En  $\R^3$ consideremos los vectores
+			\begin{equation*}
+			e_1 = (1,0,0),\quad e_2 = (0, 1,0),\quad e_3 = (0,0,1),
+			\end{equation*}
+			representados en la fig. \ref{fig-canonicos-en-R3}
+			\begin{figure}[h]
+				\begin{tikzpicture}[scale=1.3]
+				%draw the main coordinate system axes
+				\draw[thick,->] (0,0,0) -- (2,0,0) node[right]{$y$};
+				\draw[thick,->] (0,0,0) -- (0,2,0) node[above]{$z$};
+				\draw[thick,->] (0,0,0) -- (0,0,2) node[anchor=north east]{$x$};
+				\draw[very thick,->] (0,0,0) -- (1,0,0);
+				\node [below] at (1,0,0.1) {$e_2$};
+				\draw[very thick,->] (0,0,0) -- (0,1,0) node[anchor=west]{$e_3$};
+				\draw[very thick,->] (0,0,0) -- (0,0,1);
+				\node [below] at (0.2,0,1) {$e_1$};
+				\draw [dashed] (0,0.8,0) -- (1.5,0.8,0);
+				\draw [dashed] (1.5,0,0) -- (1.5,0.8,0);
+				\draw[very thick,->] (0,0,0) -- (1.5,0.8,0) node[right]{$v$};
+				\end{tikzpicture}
+				\caption{}
+				\label{fig-canonicos-en-R3}
+			\end{figure}
+			
+			Luego, vemos que $\langle e_i , e_j \rangle = 0$, si $i \ne j$ y por lo tanto $e_i$  es perpendicular a $e_j$ si $i \ne j$, lo cual concuerda con nuestra intuición. 
+		\end{ejemplo} 
+			
+			Observemos que si $v = (x_1,x_2,x_3)$,  entonces $\langle v , e_i \rangle = x_i$. Por lo tanto,  si la coordenada $i$-ésima de $v$ es cero,  $v$  es ortogonal a $e_i$. Esto nos dice,  por ejemplo,  que si $v$  es un vector contenido en el plano que incluye $e_2$ y $e_3$,  es decir si la primera coordenada es cero,  entonces $v$  es ortogonal a $e_1$. 
+			
 		
 		
 		
@@ -912,7 +920,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 \end{figure}
 
 
-	\begin{section}{Vectores afines ($*$)}
+	\begin{section}{Vectores afines}
 		En  esta sección veremos el concepto de vector afín, que nos servirá  para entender más geométricamente los conceptos de rectas y planos en $\R^2$ y $\R^3$,  respectivamente (secciones \ref{seccion-rectas-en-r2} y \ref{seccion-planos-en-r3}). 
 		\begin{figure}[h]
 			\begin{tikzpicture}[scale=0.5]
@@ -1041,15 +1049,97 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 	
 	No es difícil dar una definición que englobe todas las rectas posibles del plano:
 	
-	\begin{definicion}[Definición general de la recta] Una  \textit{recta}\index{recta} está formada por el conjunto de puntos $(x,y)$ en $\R^2$ que satisfacen la ecuación
+	\begin{definicion}[Definición general de la recta] Sean  $a,b,c \in \R$ y tal que $a,b$ no son simultáneamente $0$. La \textit{recta con ecuación implícita}\index{recta} \index{recta!ecuación implícita}
 	\begin{equation}\label{eq-implicita-de-la-recta}
 		ax +by =c,
 	\end{equation}
-	con $a,b,c \in \R$ y tal que $a,b$ no pueden ser simultáneamente $0$.  También suele decirse que la ecuación (\ref{eq-implicita-de-la-recta}) es la \textit{ecuación implícita de la recta}\index{recta!ecuación implícita}.
+	es el conjunto de puntos $(x,y)$ en $\R^2$ que satisfacen la ecuación (\ref{eq-implicita-de-la-recta}).  Es decir, si denotamos $L$  a la recta,
+	\begin{equation*}
+		L = \{ (x,y)\in \R^2: ax +by =c\}.
+	\end{equation*}
 	\end{definicion}
 
-	Observar  que si $b\ne0$, entonces la recta es \, $y= -\displaystyle\frac{a}{b}x + \displaystyle\frac{c}{b}$ \, y que si $b=0$,  entonces $a\ne 0$ y la recta es \, $x =\displaystyle\frac{c}{a}$.
+\vskip .3cm
 
+	Observar  que si $b\ne0$, entonces la recta es \, $y= -\displaystyle\frac{a}{b}x + \displaystyle\frac{c}{b}$ \, y que si $b=0$,  entonces $a\ne 0$ y la recta es \, $x =\displaystyle\frac{c}{a}$.
+	
+	\begin{observacion}
+		Si  consideramos  el vector $(a,b)$ en $\R^2$, $c \in \R$ y $L$ la recta definida por los puntos $(x,y)$ tal que $ax +by =c$,  entonces $L$ es la recta formada por el conjunto de puntos $(x,y)$ en $\R^2$ que satisfacen 
+		\begin{equation*}
+			\langle (x,y), (a,b) \rangle = c.
+		\end{equation*}
+	Ahora bien, consideremos $(x_0,y_0)$ un punto de la recta, entonces,  obviamente tenemos que $\langle (x_0,y_0), (a,b) \rangle = c$, por lo tanto la recta se puede describir como los puntos $(x,y)$ que satisfacen la ecuación 
+	\begin{equation*}
+	\langle (x,y), (a,b) \rangle = \langle (x_0,y_0), (a,b) \rangle.
+	\end{equation*}	
+	Por la propiedad \ref{prop-P2} del producto escalar, llegamos a la conclusión que 
+	\begin{equation*}
+	L = \{(x,y) \in \R^2: \langle (x,y)-(x_0,y_0)\,,\, (a,b) \rangle = 0 \}.
+	\end{equation*}
+	Sea $v_0 =(x_0,y_0)$ y $v =(x,y)$,   representemos gráficamente la situación: 
+	\begin{figure}[h]
+		\begin{tikzpicture}
+		\def\vx{3}
+		\def\vy{2}
+		\def\wx{4}
+		\def\wy{1}	
+		\def\tv{3.0}
+		\def\tw{1.4}
+		\def\taa{1.5}
+		\def\tab{-1.5}
+		\def\rr{\tv*\vy-\tv*\wy}	
+		\def\ss{\tv*\wx-\tv*\vx}		
+		\def\rrm{-\tw*\vy+\tw*\wy}	
+		\def\ssm{-\tw*\wx+\tw*\vx}		
+		\draw[thick,-] (-4,0) -- (4,0);
+		\draw[thick,-] (0,-1) -- (0,3);
+		%\node[inner sep=1.5pt,fill,circle] at (\vx,\vy) {};
+		\draw[very thick,->] (0,0) -- (\vx,\vy) node[above]{$v_0$};
+		\draw[very thick,->] (0,0) -- (\wx,\wy) node[above]{\;$v$};
+		\draw[very thick,->] (0,0) -- (\wx-\vx,\wy-\vy) node[right]{$v-v_0$};
+		\draw[thick,blue,-] (\vx- \tab*\vx + \tab*\wx ,\vy - \tab*\vy + \tab*\wy) --  (\vx- \taa*\vx + \taa*\wx ,\vy - \taa*\vy + \taa*\wy);
+		\draw[very thick,->] (0,0) -- (\tw*\vy-\tw*\wy,\tw*\wx-\tw*\vx) node[left]{$(a,b)$};
+		\draw[dashed, thick,-] (0,0) -- (\rr,\ss);
+		\draw[dashed, thick,-] (0,0) -- (\rr,\ss);
+		\draw[dashed, thick,-] (\rrm,\ssm) -- (0,0);
+		%\draw[dashed,thick] (0,0) (\tw*\wx,\tw*\wy) -- (\vx+\tw*\wx,\vy+\tw*\wy+0.1);
+		%\node[inner sep=1.5pt,fill,circle,blue] at (\vx+\tw*\wx+0.04*\wx,\vy+\tw*\wy+0.04*\wy)  {};
+		%\node[right] at (\vx+\tw*\wx,\vy+\tw*\wy+0.1){$v+tw$};
+		\end{tikzpicture}
+		\caption{Una recta en el plano.}
+		\label{fig-recta-parametrica}
+	\end{figure} 
+
+
+	La recta $L$ es, entonces, la recta perpendicular a $(a,b)$ y que pasa por $v_0$. 
+	
+	\end{observacion}
+\vskip .3cm
+	El  razonamiento también es posible hacerlo en el otro sentido: 
+	\vskip .2cm
+	\noindent \textit{La ecuación implícita de la recta $L$ perpendicular a $(a,b)$ y que pasa por $(x_0,y_0)$ es
+\begin{equation*}
+ax +by = \langle (x_0,y_0), (a,b) \rangle.
+\end{equation*}}
+\vskip .3cm
+
+\begin{ejemplo}
+	Encontrar la ecuación implícita de la recta que pasa por $(2,-1)$ y  es perpendicular a $(-2,3)$.
+\end{ejemplo}
+\begin{proof}[Solución]
+Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales que
+	\begin{equation*}
+			-2x+3y = c
+	\end{equation*}
+	 y debemos determinar el valor de $c$. Como $(2,-1)$ pertenece a la recta
+	 \begin{equation*}
+	 c = -2\cdot 2+3\cdot (-1) = -7.
+	 \end{equation*}
+	 Luego, la ecuación implícita de la recta es
+	 \begin{equation*}
+	 -2x+3y = -7.
+	 \end{equation*}
+\end{proof}
 \vskip .3cm
 
 	Una definición equivalente de recta es la siguiente:
@@ -1066,27 +1156,28 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 	\begin{equation}\label{eq-ecuacion-parametrica-recta}
 	X(t) =v +tw, \quad \text{para $t \in \R$.} 
 	\end{equation} 
-	En  el espacio $\R^2$, diremos que (\ref{eq-ecuacion-parametrica-recta}) es la \textit{ecuación paramétrica} o la \textit{representación paramétrica}\index{recta!ecuación paramétrica} de la recta $L$ que pasa por el punto $v$ paralela a $w \ne 0$.
+	En  el espacio $\R^2$, diremos que (\ref{eq-ecuacion-parametrica-recta}) es la \textit{ecuación paramétrica} o la \textit{representación paramétrica}\index{recta!ecuación paramétrica} de la recta $L$ que pasa por el punto $v$ y es paralela a $w \ne 0$.
 		
 
 		
 		Podemos representar una recta dada en forma paramétrica como en la figura \ref{fig-recta-parametrica}.
 		\begin{figure}[h]
 			\begin{tikzpicture}
-			\def\vx{0.5}
-			\def\vy{1.2}
-			\def\wx{-2}
-			\def\wy{1.5}						
+			\def\vx{1.2}
+			\def\vy{0.7}
+			\def\wx{-2.2}
+			\def\wy{1.5}	
+			\def\tw{1.4}					
 			\draw[thick,-] (-4,0) -- (4,0);
 			\draw[thick,-] (0,-1) -- (0,3);
 			\draw[thick,blue,-] (\vx+1.5*\wx,\vy+1.5*\wy) -- (\vx-1*\wx,\vy-1*\wy);
 			%\node[inner sep=1.5pt,fill,circle] at (\vx,\vy) {};
 			\draw[very thick,->] (0,0) -- (\vx,\vy) node[above]{$v$};
 			\draw[very thick,->] (0,0) -- (\wx,\wy) node[above]{\;$w$};
-			\draw[dashed, thick,->] (0,0) -- (1.3*\wx,1.3*\wy) node[left]{$tw$};
-			\draw[dashed,thick] (0,0) (1.3*\wx,1.3*\wy) -- (\vx+1.3*\wx,\vy+1.3*\wy+0.1);
-			\node[inner sep=1.5pt,fill,circle,blue] at (\vx+1.3*\wx,\vy+1.3*\wy)  {};
-			\node[right] at (\vx+1.3*\wx,\vy+1.3*\wy+0.1){$v+tw$};
+			\draw[dashed, thick,->] (0,0) -- (\tw*\wx,\tw*\wy) node[left]{$tw$};
+			\draw[dashed,thick] (0,0) (\tw*\wx,\tw*\wy) -- (\vx+\tw*\wx,\vy+\tw*\wy+0.1);
+			\node[inner sep=1.5pt,fill,circle,blue] at (\vx+\tw*\wx+0.04*\wx,\vy+\tw*\wy+0.04*\wy)  {};
+			\node[right] at (\vx+\tw*\wx,\vy+\tw*\wy+0.1){$v+tw$};
 			\end{tikzpicture}
 			\caption{Una recta en el plano.}
 			\label{fig-recta-parametrica}
@@ -1130,9 +1221,9 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 	
 		Ahora discutiremos la relación entre una representación paramétrica y la ecuación implícita de una recta en el plano.
 		
-		Supongamos que trabajamos en el plano y tenemos una recta descrita en forma paramétrica:
+		Supongamos que trabajamos en el plano y tenemos $v, w \in \R^2$ con $w \not= 0$ y la recta descrita en forma paramétrica:
 		\begin{equation*}
-		X =v +tw.
+		X(t) =v +tw.
 		\end{equation*}
 		Sea $v = (x_1,y_1)$, $w = (x_2,y_2)$,  entonces, todo punto de la recta es de la forma
 		\begin{equation*}
@@ -1142,35 +1233,74 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		\begin{equation*}
 			x = x_1+tx_2, \qquad y = y_1+ty_2, \qquad
 		\end{equation*}
-		para $t \in \R$. Entonces,  podemos eliminar $t$ y obtener la ecuación implícita que relaciona $x$ e $y$.
+		para $t \in \R$. Dado  que $(x_2,y_2) \ne 0$, podemos despejar $t$  de alguna de las ecuaciones y usando la otra ecuación eliminamos $t$ y obtenemos una ecuación implícita. Veremos esto en un ejemplo.
 		
 		\begin{ejemplo}
-			Sean $v = (2, 1)$ y $w = (- 1, 5)$. Entonces la representación paramétrica de la línea a través de $v$ en la dirección de $w$ nos da $(x,y)= (2,1)+ t(-1,5) = (2-t,1+5t)$. Es decir,
+			Sean $v = (2, 1)$ y $w = (- 1, 5)$ y sea $X$ la recta que pasa por $v$  en la dirección $w$. Encontrar la ecuación  implícita de $L$.
+	\end{ejemplo}
+\begin{proof}[Solución]	
+			La representación paramétrica de la recta que pasa por  $v$ en la dirección de $w$ es 
+			\begin{equation*}
+				X(t)= (2,1)+ t(-1,5) = (2-t,1+5t).
+			\end{equation*}
+			 Es decir, si  miramos cada coordenada, 
 			\begin{equation}\label{eq-par-des-ej}
 			x = 2 - t, \qquad\quad y = 1 + 5t. \qquad\quad\tag{*}
 			\end{equation}
 			Despejando $t$ de la primera ecuación obtenemos $t = 2-x$. Reemplazando este valor de $t$  en la segunda ecuación obtenemos $y = 1 + 5t=1 + 5(2-x)t= y = 11- 5x$, luego
-			\begin{equation*}\label{eq-impl-rec-ej}
+			\begin{equation}\label{eq-impl-rec-ej}
 				5x + y = 11,\tag{**}
-			\end{equation*}
+			\end{equation}
 			que es la ecuación implícita de la recta.
 			
-			Esta eliminación de $t$ muestra que cada par $(x, y)$ que satisface la representación paramétrica (\ref{eq-par-des-ej}) para algún valor de $t$ también satisface la ecuación (\ref{eq-impl-rec-ej}). A la inversa, supongamos que tenemos un par de números $(x, y)$ que satisfacen (\ref{eq-impl-rec-ej}). Sea $t = 2 - x$. Entonces
-			\begin{equation*}
-				y = 11 - 5x = 11 - 5 (2 - t) = 1 + 5t.
-			\end{equation*}
-			Por lo tanto, existe algún valor de $t$ que satisface la ecuación (\ref{eq-par-des-ej}). Así, hemos demostrado que los pares $(x, y)$ que son soluciones de (\ref{eq-impl-rec-ej}) son exactamente los mismos pares de números que los obtenidos al dar valores arbitrarios para $t$ en (\ref{eq-par-des-ej}). Por lo tanto, la línea recta se puede describir paramétricamente como en (\ref{eq-par-des-ej}) o en términos de su ecuación implícita (\ref{eq-impl-rec-ej}).
-		\end{ejemplo}
+			\end{proof}	
+			\vskip .1cm		
+			
+			Esta eliminación de $t$ muestra que cada par $(x, y)$ que satisface la representación paramétrica (\ref{eq-par-des-ej}) para algún valor de $t$ también satisface la ecuación (\ref{eq-impl-rec-ej}).
+			
+			\vskip .2cm	
+			
+			Recíprocamente, de la ecuación implícita podemos obtener la representación paramétrica. 
+			
+			\begin{ejemplo} Encontrar la representación paramétrica de la recta definida por 
+				\begin{equation*}
+				5x + y = 11. 
+				\end{equation*}
+			\end{ejemplo}
+			\begin{proof}[Solución]
+				 Supongamos que tenemos un par de números $(x, y)$ que satisfacen la ecuación  implícita, $5x + y = 11$, luego $y = (-5)x + 11$, remplazando $x$ por $t$ (sólo por notación) obtenemos que 
+				 \begin{equation*}
+				 	Y(t) = (t, -5t+11)
+				 \end{equation*}
+				es la representación paramétrica de la recta.
+		\end{proof}	 
 	
-		El razonamiento anterior se puede generalizar a cualquier recta y de esa forma se puede demostrar que la definición paramétrica y la definición implícita de la recta son equivalentes. 
+	 \vskip .2cm	
+	 
+	 De los ejemplos anteriores se deduce que la recta 
+	 \begin{equation*}
+	 	X(t)=  (2-t,1+5t)
+	 \end{equation*}
+	 es la misma que la recta 
+	 \begin{equation*}
+	 	Y(t) = (t, -5t+11).
+	 \end{equation*}     
+	 Observar que, pese a que hablamos de ``la representación paramétrica de la recta'', una recta tiene muchas formas de ser representada paramétricamente. 
+	
+	\vskip .3cm 
+		Los procedimientos  de los ejemplos anteriores se pueden generalizar a cualquier recta y de esa forma se puede demostrar que la definición paramétrica y la definición implícita de la recta son equivalentes. 
+		
+
 		
 		\vskip .3cm 
 		
-		Debemos observar que en $\R^3$ no alcanza una sola ecuación lineal del tipo $ax+by+cz=d$ para definir una recta. Veremos en la sección siguiente que una ecuación lineal define un plano en $\R^3$. Genéricamente hablando, con las soluciones de una ecuación en $\R^n$ se obtiene un objeto ``con una dimensión menos''. Todo esto quedará claro al final de la materia. 
+		Debemos observar que en $\R^3$ no alcanza una sola ecuación lineal del tipo $ax+by+cz=d$ para definir una recta. Veremos en la sección siguiente que una ecuación lineal define un plano en $\R^3$. Genéricamente hablando, con las soluciones de una ecuación en $\R^n$ se obtiene un objeto ``con una dimensión menos''. Todo esto quedará claro al final de la materia cuando estudiemos subespacios vectoriales de un espacio vectorial. 
 		
 
 	
 	\end{section}
+
+\vskip .8cm 
 
 	\begin{section}{Planos en $\R^3$}\label{seccion-planos-en-r3} 
 		En  la sección anterior vimos (aunque no lo demostramos) que existe una equivalencia entre la definición implícita y la definición paramétrica de la recta. En esta sección definiremos un plano en $\R^3$ utilizando la forma implícita, que es la forma más usual y además es geométricamente intuitiva. Luego veremos la definición del plano en su versión paramétrica . 
@@ -1222,7 +1352,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		\begin{equation*}
 			P = \{(x,y,z): ax +by +cz =d\}.
 		\end{equation*}
-		Entonces diremos que $P$  es  un \textit{plano con ecuación implícita}\index{plano en $\R^3$!ecuación implícita}  $ax +by +cz =d$ y  que $(a,b,c)$ es un \textit{vector normal al plano $P$.}
+		Entonces diremos que $P$  es  un \textit{plano con ecuación implícita}\index{plano en $\R^3$!ecuación implícita}  $ax +by +cz =d$ y  que $(a,b,c)$ es un \textit{vector normal al plano $P$.} A esta forma de describir el plano también suele llamársela la \textit{ecuación normal del plano.}
 		\end{definicion} 
 		
 		Observar que la ecuación $ ax +by +cz =d$ no es más que la ecuación $\la(x,y,z),(a,b,c) \ra=d$. 	
@@ -1247,7 +1377,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		
 		
 		
-		Como $(a,b,c) \ne (0,0,0)$,  entonces una de las tres componentes del vector no es cero. supongamos que $a\ne 0$,  luego es fácil despejar $x$ en función de las constantes $a$, $b$, $c$ y $d$; y las variables $y$ y $z$, por lo tanto cada coordenada del plano depende paramétricamente de $y$ y $z$ y así obtenemos una ecuación paramétrica de $P$ (que depende de 2 parámetros). Se puede hacer de forma análoga cuando $b\ne 0$ o $c \ne 0$. 
+		Como $(a,b,c) \ne (0,0,0)$,  entonces una de las tres componentes del vector normal al plano no es cero. Supongamos que $a\ne 0$,  luego es fácil despejar $x$ en función de las constantes $a$, $b$, $c$ y $d$; y las variables $y$ y $z$, por lo tanto cada coordenada del plano depende paramétricamente de $y$ y $z$ y así obtenemos una ecuación paramétrica de $P$ (que depende de 2 parámetros). Se puede hacer de forma análoga cuando $b\ne 0$ o $c \ne 0$. 
 		
 		\begin{ejemplo}
 			Dado el plano $P = \{(x,y,z): x -2y +z =1\}$,  hallaremos una ecuación paramétrica de $P$. Como  $x -2y +z =1$ sii  $x = 2y-z +1$, tenemos que
@@ -1262,7 +1392,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\begin{equation*}
 			P = \{(1,0,0) + s(2,1,0) + t(-1,0,1): s,t \in \R\}. 
 			\end{equation*}
-			Cualquiera de las formas paramétricas de describir $P$  es correcta, pero la última es a la que se utiliza para definir formalmente el plano en forma paramétrica. 
+			Cualquiera de las formas paramétricas de describir $P$  es correcta, pero la última es la que se utiliza para definir formalmente el plano en forma paramétrica. 
 			
 		\end{ejemplo}
 	
@@ -1302,7 +1432,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\la u,(-1,0,-1) \ra = 0 \quad &\Leftrightarrow \quad -a -c=0, \\
 			\la u,(0,1,-2) \ra = 0 \quad &\Leftrightarrow \quad b -2c=0.
 		\end{align*} 
-		Estas dos ecuaciones se cumplen sii $a = -c$ y $b=2c$, es decir si $u=(-c,2c,c)$. si tomamos, por ejemplo, $c=1$, tenemos $u=(-1,2,1)$, luego el plano paralelo a $P$  que pasa por el origen es
+		Estas dos ecuaciones se cumplen sii $a = -c$ y $b=2c$, es decir si $u=(-c,2c,c)$. Si, por ejemplo, $c=1$, tenemos $u=(-1,2,1)$, luego el plano paralelo a $P$  que pasa por el origen es
 		\begin{equation*}
 		P_0 = \{(x,y,z): -x+2y+z =0\}. 
 		\end{equation*}
@@ -1412,6 +1542,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\end{proof}
 			
 			La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas. En principio no es cierto que si obtenemos un sistema de ecuaciones por combinaciones lineales de otro sistema, ambos tengan las mismas soluciones   (por ejemplo hacer combinaciones lineales triviales con todos los coeficientes iguales a 0).
+		
 			\begin{definicion}
 			Decimos que dos sistemas de ecuaciones lineales son \textit{equivalentes}\index{sistemas lineales equivalentes} si cada ecuación de un sistema es combinación lineal del otro.
 			\end{definicion}
@@ -2252,7 +2383,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				
 				El método de resolución de los sistemas no homogéneos es similar al de los sistemas homogéneos. Utilizamos el método de Gauss para la matriz $A$ pero realizando las operaciones en toda la fila, inclusive en los elementos a la derecha de la línea: el método de Gauss se basa en intercambiar y operar con ecuaciones, así que para no cambiar las soluciones debemos trabajar con ambos miembros de las ecuaciones. En el caso homogéneo, esto no era necesario porque siempre los segundos miembros eran idénticamente iguales a cero. 
 				
-				\begin{teorema} Sea $[A | Y]$ la matriz ampliada de un sistema no homogéneo y sea $[B | Z]$ una matriz que se obtiene a partir de $[A | Y]$ por medio de una operación elemental. Entonces, los sistemas correspondientes a $[A | Y]$ y  $[B | Z]$ tiene las mismas soluciones. 
+				\begin{teorema} Sea $[A | Y]$ la matriz ampliada de un sistema no homogéneo y sea $[B | Z]$ una matriz que se obtiene a partir de $[A | Y]$ por medio de una operación elemental. Entonces, los sistemas correspondientes a $[A | Y]$ y  $[B | Z]$ tienen las mismas soluciones. 
 				\end{teorema}
 				\begin{proof}
 					Como $[B | Z]$ se obtiene por una operación elemental por fila a partir de $[A | Y]$,  entonces las ecuaciones de $[B | Z]$ son combinaciones lineales de las ecuaciones de $[A | Y]$. Como toda operación elemental por fila tiene inversa, podemos obtener $[A | Y]$ a partir de $[B | Z]$ y por lo tanto las ecuaciones de $[A | Y]$ son combinaciones lineales de las ecuaciones de $[B | Z]$. Es decir $[A | Y]$ y $[B | Z]$ determinan sistemas de ecuaciones lineales equivalentes y por lo tanto tiene las mismas soluciones (teorema \ref{sistemas-equiv}).
@@ -2955,8 +3086,8 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			
 		\end{section}
 		
-		\begin{section}{Matrices inversibles}
-			\begin{definicion} Sea $A$ una  matriz $n \times n$ con coeficientes en $\K$. Una matriz $B \in M_{n\times n}(\K)$  es \textit{inversa  de $A$}\index{matriz!inversa} si $BA=AB=I_n$. En  ese caso,  diremos que  $A$ es \textit{inversible}.\index{matriz!inversible}
+		\begin{section}{Matrices invertibles}
+			\begin{definicion} Sea $A$ una  matriz $n \times n$ con coeficientes en $\K$. Una matriz $B \in M_{n\times n}(\K)$  es \textit{inversa  de $A$}\index{matriz!inversa} si $BA=AB=I_n$. En  ese caso,  diremos que  $A$ es \textit{invertible}.\index{matriz!invertible}
 			\end{definicion}
 			
 			\begin{ejemplo}
@@ -2978,7 +3109,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				Sea $A  \in M_{n\times n}(\K)$, 
 				\begin{enumerate}
 					\item	sean $B, C \in M_{n \times n}(\K)$ tales que $BA =I_n$ y $AC = I_n$, entonces $B=C$;
-					\item  si $A$ inversible la inversa es única.
+					\item  si $A$ invertible la inversa es única.
 				\end{enumerate}
 			\end{proposicion}
 			\begin{proof} (1)
@@ -2992,10 +3123,10 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			
 			
 			\begin{definicion}
-				Sea $A\in M_{n\times n}(\K)$ inversible. A la única matriz inversa de $A$ la llamamos \textit{la matriz inversa de $A$} y la denotamos $A^{-1}$.
+				Sea $A\in M_{n\times n}(\K)$ invertible. A la única matriz inversa de $A$ la llamamos \textit{la matriz inversa de $A$} y la denotamos $A^{-1}$.
 			\end{definicion}
 			
-			Veremos más adelante que si una matriz $n \times n$ admite una inversa a izquierda,  es decir si existe $B$ tal que $BA=I_n$, entonces la matriz es inversible. Lo mismo vale si $A$  admite inversa a derecha.
+			Veremos más adelante que si una matriz $n \times n$ admite una inversa a izquierda,  es decir si existe $B$ tal que $BA=I_n$, entonces la matriz es invertible. Lo mismo vale si $A$  admite inversa a derecha.
 			
 			\begin{ejemplo}
 				Sea $A$ la matriz 
@@ -3003,7 +3134,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\begin{bmatrix} 2&1&-2\\ 1&1&-2\\ -1&0&1
 				\end{bmatrix}.
 				\end{equation*}
-				Entonces,  $A$ es inversible y su inversa es
+				Entonces,  $A$ es invertible y su inversa es
 				\begin{equation*}
 				A^{-1} = \begin{bmatrix} 1&-1&0\\ 1&0&2\\ 1&-1&1
 				\end{bmatrix}.
@@ -3012,7 +3143,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\end{ejemplo} 
 			
 			\begin{observacion}
-				No toda matriz tiene inversa, por ejemplo  la  matriz nula (cuyos coeficientes son todos iguales a $0$) no tiene inversa pues $0\,.\, A= 0 \not= I$.  También existen matrices no nulas no inversibles,  por ejemplo la matriz 
+				No toda matriz tiene inversa, por ejemplo  la  matriz nula (cuyos coeficientes son todos iguales a $0$) no tiene inversa pues $0\,.\, A= 0 \not= I$.  También existen matrices no nulas no invertibles,  por ejemplo la matriz 
 				\begin{equation*}
 				A = \begin{bmatrix} 2&1\\ 0&0\end{bmatrix}
 				\end{equation*}
@@ -3031,8 +3162,8 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\begin{teorema}\label{th-prod-inv-impl-inv}
 				Sean $A$ y $B$ matrices $n \times n$ con coeficientes en $\K$. Entonces
 				\begin{enumerate}
-					\item \label{inv-itm1} si $A$ inversible,  entonces $A^{-1}$  es inversible y su inversa es $A$,  es decir $(A^{-1})^{-1}=A$;
-					\item \label{inv-itm2} si $A$ y $B$ son inversibles, entonces $AB$ es inversible y $(AB)^{-1} = B^{-1}A^{-1}$.
+					\item \label{inv-itm1} si $A$ invertible,  entonces $A^{-1}$  es invertible y su inversa es $A$,  es decir $(A^{-1})^{-1}=A$;
+					\item \label{inv-itm2} si $A$ y $B$ son invertibles, entonces $AB$ es invertible y $(AB)^{-1} = B^{-1}A^{-1}$.
 				\end{enumerate}
 				\begin{proof}
 					(\ref{inv-itm1}) La inversa a izquierda de $A^{-1}$ es $A$, pues $AA^{-1}=I_n$. Análogamente, la inversa a derecha de $A^{-1}$ es $A$, pues $A^{-1}A = I_n$. Concluyendo: $A$  es la inversa de $A^{-1}$.
@@ -3049,17 +3180,17 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\end{teorema}
 			
 			\begin{observacion}
-				Si $A_1,\ldots,A_k$  son inversibles,  entonces $A_1\ldots A_k$ es inversible y su inversa es  $$(A_1\ldots A_k)^{-1} = A_k^{-1}\ldots A_1^{-1} .$$
+				Si $A_1,\ldots,A_k$  son invertibles,  entonces $A_1\ldots A_k$ es invertible y su inversa es  $$(A_1\ldots A_k)^{-1} = A_k^{-1}\ldots A_1^{-1} .$$
 				El resultado es una generalización del punto (2) del teorema anterior y su demostración se hace por inducción en $k$ (usando (2)  del teorema anterior). Se deja como ejercicio al lector. 
 			\end{observacion}
 			
 			\begin{observacion}
-				La suma de matrices inversibles no necesariamente es inversible, por ejemplo $A+ (-A)= 0$ que no es inversible. 
+				La suma de matrices invertibles no necesariamente es invertible, por ejemplo $A+ (-A)= 0$ que no es invertible. 
 			\end{observacion}	
 			
 			
-			\begin{teorema}\label{th-elmental-impl-inversible}
-				Una matriz elemental es inversible.
+			\begin{teorema}\label{th-elmental-impl-invertible}
+				Una matriz elemental es invertible.
 			\end{teorema}
 			\begin{proof}
 				Sea $E$ la matriz elemental que se obtiene a partir de $I_n$ por la operación elemental $e$. Se $e_1$ la operación elemental inversa (teorema \ref{op-elem}) y $E_1 = e_1(I_n)$. Entonces 
@@ -3186,7 +3317,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			
 			\begin{teorema}\label{mtrx-inv-equiv} Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Las siguientes afirmaciones son equivalentes
 				\begin{enumerate}
-					\item[\textit{i})] $A$ es inversible,
+					\item[\textit{i})] $A$ es invertible,
 					\item[\textit{ii})] $A$  es equivalente por filas a $I_n$, 
 					\item[\textit{iii})] $A$ es producto de matrices elementales.
 				\end{enumerate}
@@ -3195,31 +3326,31 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				
 				\
 				
-				\textit{i}) $\Rightarrow$ \textit{ii}) Sea $R$ la matriz escalón reducida por fila equivalente por filas a $A$. Entonces,  existen $E_1,\ldots,E_k$ matrices elementales tal que $E_1,\ldots,E_kA = R$. Como las matrices elementales son inversibles, el producto de matrices elementales es inversible, luego  $E_1,\ldots,E_k$ es inversible y por lo tanto $R=E_1,\ldots,E_kA$ es inversible. 
+				\textit{i}) $\Rightarrow$ \textit{ii}) Sea $R$ la matriz escalón reducida por fila equivalente por filas a $A$. Entonces,  existen $E_1,\ldots,E_k$ matrices elementales tal que $E_1,\ldots,E_kA = R$. Como las matrices elementales son invertibles, el producto de matrices elementales es invertible, luego  $E_1,\ldots,E_k$ es invertible y por lo tanto $R=E_1,\ldots,E_kA$ es invertible. 
 				
-				Recordemos que las matrices escalón reducidas por fila si tienen filas nulas, ellas se encuentran al final.  Ahora bien,  si la última fila de $R$ es nula entonces,  $RB$ tiene la última fila nula también y por lo tanto no puede ser igual a la identidad, es decir, en ese caso $R$ no es inversible, lo cual produce un absurdo. Concluyendo: la última fila (la fila $n$) de $R$ no es nula y como es MERF, $R$ no tiene filas nulas. Por lo tanto $R=I_n$ (lema \ref{mtrx-merf-id}) y,  entonces, $A$ es equivalente por filas a $I_n$. 
+				Recordemos que las matrices escalón reducidas por fila si tienen filas nulas, ellas se encuentran al final.  Ahora bien,  si la última fila de $R$ es nula entonces,  $RB$ tiene la última fila nula también y por lo tanto no puede ser igual a la identidad, es decir, en ese caso $R$ no es invertible, lo cual produce un absurdo. Concluyendo: la última fila (la fila $n$) de $R$ no es nula y como es MERF, $R$ no tiene filas nulas. Por lo tanto $R=I_n$ (lema \ref{mtrx-merf-id}) y,  entonces, $A$ es equivalente por filas a $I_n$. 
 				
 				\textit{ii}) $\Rightarrow$ \textit{iii}) Como $A$  es equivalente por filas a $I_n$, al ser la equivalencia por filas una relación de equivalencia,  tenemos que $I_n$ es equivalente por filas a $A$, es decir  existen $E_1,\ldots,E_k$ matrices elementales, tales que $E_1E_2,\ldots,E_kI_n = A$. Por lo tanto, $A =E_1E_2,\ldots,E_k$ producto de matrices elementales.
 				
-				\textit{iii}) $\Rightarrow$ \textit{i}) Sea $A = E_1E_2,\ldots,E_k$ donde $E_i$  es una matriz elemental ($i=1,\ldots,k$). Como cada $E_i$ es inversible,  el producto de ellos es inversible,  por lo tanto $A$ es inversible.
+				\textit{iii}) $\Rightarrow$ \textit{i}) Sea $A = E_1E_2,\ldots,E_k$ donde $E_i$  es una matriz elemental ($i=1,\ldots,k$). Como cada $E_i$ es invertible,  el producto de ellos es invertible,  por lo tanto $A$ es invertible.
 			\end{proof}	
 			
 			\begin{corolario}
-				Sean $A$ y $B$ matrices $m \times n$. Entonces,   $B$ es equivalente por filas a $A$ si y sólo si existe matriz inversible $P$ de orden $m \times m$ tal que $B =PA$ . 
+				Sean $A$ y $B$ matrices $m \times n$. Entonces,   $B$ es equivalente por filas a $A$ si y sólo si existe matriz invertible $P$ de orden $m \times m$ tal que $B =PA$ . 
 			\end{corolario}
 			\begin{proof}
 				
 				\
 				
-				($\Rightarrow$) $B$ es equivalente por filas a $A$,  luego existe $P$ matriz producto de matrices elementales tal que $B =PA$. Como cada matriz elemental es inversible (teorema \ref{th-elmental-impl-inversible}) y el producto de matrices inversibles es inversible (teorema  \ref{th-prod-inv-impl-inv}(\ref{inv-itm2})), se deduce que $P$ es inversible. 
+				($\Rightarrow$) $B$ es equivalente por filas a $A$,  luego existe $P$ matriz producto de matrices elementales tal que $B =PA$. Como cada matriz elemental es invertible (teorema \ref{th-elmental-impl-invertible}) y el producto de matrices invertibles es invertible (teorema  \ref{th-prod-inv-impl-inv}(\ref{inv-itm2})), se deduce que $P$ es invertible. 
 				
-				($\Leftarrow$) Sea  $P$  matriz inversible tal que $B =PA$. Como $P$ es inversible, por el teorema anterior, $P$ es producto de matrices elementales, luego $B =PA$ es equivalente por filas a $A$.
+				($\Leftarrow$) Sea  $P$  matriz invertible tal que $B =PA$. Como $P$ es invertible, por el teorema anterior, $P$ es producto de matrices elementales, luego $B =PA$ es equivalente por filas a $A$.
 			\end{proof}	
 			
 			\begin{corolario}\label{mtrx-inv-gauss}
-				Sea $A$ matriz $n \times n$. Sean $e_1,\ldots,e_k$ las operaciones elementales por filas que reducen a $A$  a una MERF y esta MERF es la identidad,  es decir $e_1(e_{2}(\cdots(e_k(A))\cdots)) =I_n$. Entonces, $A$ inversible y  las mismas operaciones elementales aplicadas a $I_n$ nos llevan a $A^{-1}$,  es decir $e_1(e_{2}(\cdots(e_k(I_n))\cdots)) =A^{-1}$.
+				Sea $A$ matriz $n \times n$. Sean $e_1,\ldots,e_k$ las operaciones elementales por filas que reducen a $A$  a una MERF y esta MERF es la identidad,  es decir $e_1(e_{2}(\cdots(e_k(A))\cdots)) =I_n$. Entonces, $A$ invertible y  las mismas operaciones elementales aplicadas a $I_n$ nos llevan a $A^{-1}$,  es decir $e_1(e_{2}(\cdots(e_k(I_n))\cdots)) =A^{-1}$.
 			\end{corolario}
-			\begin{proof} Por el teorema anterior, al ser $A$ equivalente por filas a la identidad, $A$ es inversible.  
+			\begin{proof} Por el teorema anterior, al ser $A$ equivalente por filas a la identidad, $A$ es invertible.  
 				Sean las matrices elementales  $E_i = e_i(I_n)$ para $i=1,\ldots,k$,  entonces (ver corolario \ref{coro-mrtx-elem}) $E_1E_2\ldots E_kA = I_n$, por lo tanto, multiplicando por $A^{-1}$ a derecha en ambos miembros,    
 				\begin{align*}
 				E_1E_2\ldots E_kA A^{-1}&= I_nA^{-1} \quad \Leftrightarrow \\
@@ -3228,7 +3359,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\end{align*}
 			\end{proof}
 			
-			Este último corolario nos provee un método sencillo para calcular la inversa de una matriz $A$ (inversible). Primero,  encontramos $R = I_n$ la MERF  equivalente por filas a $A$, luego, aplicando la mismas operaciones elementales a $I_n$, obtenemos la inversa de $A$. Para facilitar el cálculo es  conveniente comenzar con $A$ e $I_n$ e ir aplicando paralelamente las operaciones elementales por fila. Veamos un ejemplo.
+			Este último corolario nos provee un método sencillo para calcular la inversa de una matriz $A$ (invertible). Primero,  encontramos $R = I_n$ la MERF  equivalente por filas a $A$, luego, aplicando la mismas operaciones elementales a $I_n$, obtenemos la inversa de $A$. Para facilitar el cálculo es  conveniente comenzar con $A$ e $I_n$ e ir aplicando paralelamente las operaciones elementales por fila. Veamos un ejemplo.
 
 			\begin{ejemplo}
 				Calculemos la inversa (si tiene) de 
@@ -3256,7 +3387,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\stackrel{F_1-3 F_2}{\longrightarrow}
 				\left[\begin{array}{cc|cc}1&0&  \frac37&\frac17\\0&1 &  -\frac17&\frac27 \end{array}\right].
 				\end{align*}
-				Luego, como $A$ se reduce por filas a la identidad, $A$ es inversible y su inversa es  
+				Luego, como $A$ se reduce por filas a la identidad, $A$ es invertible y su inversa es  
 				\begin{equation*}
 				A^{-1}=\begin{bmatrix}\frac37&\frac17\\-\frac17&\frac27 \end{bmatrix}.
 				\end{equation*}
@@ -3267,7 +3398,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\begin{teorema}\label{mtrx-inv-equiv2} 
 				Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces,  las siguientes afirmaciones son equivalentes. 
 				\begin{enumerate}
-					\item[\textit{i})] $A$ es inversible.
+					\item[\textit{i})] $A$ es invertible.
 					\item[\textit{ii})] El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
 					\item[\textit{iii})] El sistema homogéneo $AX=0$ tiene una única solución trivial.
 				\end{enumerate}
@@ -3287,17 +3418,17 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				
 				
 				
-				\textit{iii}) $\Rightarrow$  \textit{i}) Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ inversible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por teorema \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=I_n$. Luego $A$ es equivalente por filas a $I_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es inversible. 			
+				\textit{iii}) $\Rightarrow$  \textit{i}) Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ invertible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por teorema \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=I_n$. Luego $A$ es equivalente por filas a $I_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es invertible. 			
 				
 			\end{proof}
 			
 			\begin{corolario}
-				Sea $A$ una matriz $n \times n$ con coeficientes  en $\K$. Si $A$ tiene inversa a izquierda,  es decir si existe $B$ matriz $n \times n$ tal que $BA=I_n$,   entonces $A$ es inversible.  Lo mismo vale si $A$ tiene inversa a derecha. 
+				Sea $A$ una matriz $n \times n$ con coeficientes  en $\K$. Si $A$ tiene inversa a izquierda,  es decir si existe $B$ matriz $n \times n$ tal que $BA=I_n$,   entonces $A$ es invertible.  Lo mismo vale si $A$ tiene inversa a derecha. 
 			\end{corolario}	
 			\begin{proof}
-				Supongamos que  $A$ tiene inversa a izquierda y  que $B$ sea la inversa a izquierda,  es decir $BA=I_n$. El sistema $AX=0$ tiene una única solución, pues $AX_0=0 \Rightarrow BAX_0=B0 \Rightarrow X_0=0$. Luego, $A$  es inversible (y su inversa es $B$). 
+				Supongamos que  $A$ tiene inversa a izquierda y  que $B$ sea la inversa a izquierda,  es decir $BA=I_n$. El sistema $AX=0$ tiene una única solución, pues $AX_0=0 \Rightarrow BAX_0=B0 \Rightarrow X_0=0$. Luego, $A$  es invertible (y su inversa es $B$). 
 				
-				Supongamos que  $A$ tiene inversa a derecha y  que $C$ sea la inversa a derecha, es decir $AC=I$. Por lo anterior, $C$ es inversible y  su inversa es $A$, es decir $AC=I$ y $CA=I$, luego $A$  es inversible. 
+				Supongamos que  $A$ tiene inversa a derecha y  que $C$ sea la inversa a derecha, es decir $AC=I$. Por lo anterior, $C$ es invertible y  su inversa es $A$, es decir $AC=I$ y $CA=I$, luego $A$  es invertible. 
 			\end{proof}	
 			
 			
@@ -3338,7 +3469,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\end{proof}
 			
 			\begin{ejemplo}\label{inv-2x2-0}
-				Dados $a,b,c,d \in \mathbb R$, determinar cuando la matriz $A = \begin{bmatrix*} a&b\\c&d\end{bmatrix*}$  es inversible y en ese caso,  cual es su inversa. 
+				Dados $a,b,c,d \in \mathbb R$, determinar cuando la matriz $A = \begin{bmatrix*} a&b\\c&d\end{bmatrix*}$  es invertible y en ese caso,  cual es su inversa. 
 			\end{ejemplo}
 			\begin{proof}[Solución] Para poder aplicar el método de Gauss, debemos ir haciendo casos. 
 				
@@ -3349,14 +3480,14 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&d- c\dfrac{b}{a}\end{bmatrix} =
 				\begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&\dfrac{ad-bc}{a}\end{bmatrix}
 				\end{equation*}   
-				Si $ad-bc=0$,  entonces la matriz se encuentra reducida por filas y la última fila es $0$, luego en ese caso no es inversible.  Si $ad-bc\not=0$, entonces
+				Si $ad-bc=0$,  entonces la matriz se encuentra reducida por filas y la última fila es $0$, luego en ese caso no es invertible.  Si $ad-bc\not=0$, entonces
 				\begin{equation*}
 				\begin{bmatrix}1&\dfrac{b}{a}\\[8pt]0&\dfrac{ad-bc}{a}\end{bmatrix} \stackrel{a/(ad-bc)\,F_2}{\longrightarrow}
 				\begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&1\end{bmatrix}
 				\stackrel{F1-b/a\,F_2}{\longrightarrow}
 				\begin{bmatrix}1&0\\0&1\end{bmatrix}.
 				\end{equation*} 
-				Luego, en el caso $a\not=0$, $ad-bc\not=0$ hemos reducido por filas la matriz $A$  a la identidad y por lo tanto $A$  es inversible. Además, podemos encontrar $A^{-1}$ aplicando a $I$ las mismas operaciones elementales que reducían $A$ a la identidad:
+				Luego, en el caso $a\not=0$, $ad-bc\not=0$ hemos reducido por filas la matriz $A$  a la identidad y por lo tanto $A$  es invertible. Además, podemos encontrar $A^{-1}$ aplicando a $I$ las mismas operaciones elementales que reducían $A$ a la identidad:
 				\begin{align*}
 				\begin{bmatrix}1&0\\0&1\end{bmatrix} 
 				&\stackrel{F_1/a}{\longrightarrow}
@@ -3371,13 +3502,13 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				=
 				\begin{bmatrix*}[c]\dfrac{d}{ad-bc}&-\dfrac{b}{ad-bc}\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*} .
 				\end{align*}  
-				Concluyendo, en el caso $a\not=0$, $ad-bc\not=0$, $A$  es inversible y 
+				Concluyendo, en el caso $a\not=0$, $ad-bc\not=0$, $A$  es invertible y 
 				\begin{equation}\label{inv-2x2}
 				A^{-1} = \dfrac{1}{ad-bc}
 				\begin{bmatrix*}[c]d&-b\\-c&a\end{bmatrix*}.
 				\end{equation}
 				
-				2) Estudiemos el caso $a=0$. Primero observemos que si $c=0$ o $b=0$ , entonces la matriz no es inversible, pues en ambos casos nos quedan matrices que no pueden ser reducidas por fila a la identidad. Luego la matriz puede ser inversible si $bc\not=0$ y en este caso la reducción por filas es:
+				2) Estudiemos el caso $a=0$. Primero observemos que si $c=0$ o $b=0$ , entonces la matriz no es invertible, pues en ambos casos nos quedan matrices que no pueden ser reducidas por fila a la identidad. Luego la matriz puede ser invertible si $bc\not=0$ y en este caso la reducción por filas es:
 				\begin{equation*}
 				\begin{bmatrix}0&b\\c&d\end{bmatrix} \stackrel{F_1\leftrightarrow F_2}{\longrightarrow}
 				\begin{bmatrix}c&d\\0&b\end{bmatrix} \stackrel{F_1/c}{\longrightarrow}
@@ -3386,7 +3517,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\stackrel{F_1 - d/c F_2}{\longrightarrow}
 				\begin{bmatrix}1&0\\0&1\end{bmatrix}.
 				\end{equation*}   
-				Luego $A$  es inversible y aplicando estas mismas operaciones elementales a la identidad  obtenemos la inversa:
+				Luego $A$  es invertible y aplicando estas mismas operaciones elementales a la identidad  obtenemos la inversa:
 				\begin{equation*}
 				\begin{bmatrix}1&0\\0&1\end{bmatrix} \stackrel{F_1\leftrightarrow F_2}{\longrightarrow}
 				\begin{bmatrix}0&1\\1&0\end{bmatrix} \stackrel{F_1/c}{\longrightarrow}
@@ -3395,7 +3526,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\stackrel{F_1 - d/c F_2}{\longrightarrow}
 				\begin{bmatrix}-\dfrac{d}{bc}&\dfrac{1}{c}\\[6pt]\dfrac{1}{b}&0\end{bmatrix}.
 				\end{equation*}  
-				Luego, en el caso  que $a=0$, entonces $A$ inversible si  $b c\not=0$ y su inversa es
+				Luego, en el caso  que $a=0$, entonces $A$ invertible si  $b c\not=0$ y su inversa es
 				\begin{equation*}
 				A^{-1} = \begin{bmatrix}-\dfrac{d}{bc}&\dfrac{1}{c}\\[6pt]\dfrac{1}{b}&0\end{bmatrix} = 
 				\dfrac{1}{-bc}
@@ -3403,13 +3534,13 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 				\end{equation*}
 				Es decir, la expresión de la inversa es igual a (\ref{inv-2x2}) (considerando que  $a=0$).
 				
-				Reuniendo los dos casos:  $A$ es inversible si $a\not=0$ y  $ad-bc\not=0$ o si $a=0$ y $bc\not=0$, pero esto es lógicamente equivalente a pedir solamente  $ad-bc\not=0$, es decir
+				Reuniendo los dos casos:  $A$ es invertible si $a\not=0$ y  $ad-bc\not=0$ o si $a=0$ y $bc\not=0$, pero esto es lógicamente equivalente a pedir solamente  $ad-bc\not=0$, es decir
 				\begin{equation*}
 				(a\not=0 \wedge ad-bc\not=0) \vee (a=0 \wedge bc\not=0)\; \Leftrightarrow\; ad-bc\not=0
 				\end{equation*}
 				(ejercicio).
 				
-				Resumiendo, $\begin{bmatrix*} a&b\\c&d\end{bmatrix*}$ es inversible  $\Leftrightarrow ad-bc\not=0$  y en ese caso,  su inversa viene dada por 
+				Resumiendo, $\begin{bmatrix*} a&b\\c&d\end{bmatrix*}$ es invertible  $\Leftrightarrow ad-bc\not=0$  y en ese caso,  su inversa viene dada por 
 				\begin{equation}
 				\begin{bmatrix*} a&b\\c&d\end{bmatrix*}^{-1} =  \dfrac{1}{ad-bc}
 				\begin{bmatrix*}[c]d&-b\\-c&a\end{bmatrix*}
@@ -3477,9 +3608,9 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		\det A = a \det [d] - c \det [b] = ad-bc.
 		$$
 		
-		Hemos visto en el ejemplo \ref{inv-2x2-0} que $A$ es inversible si y solo si $ ad-bc \not=0$,  es decir 
+		Hemos visto en el ejemplo \ref{inv-2x2-0} que $A$ es invertible si y solo si $ ad-bc \not=0$,  es decir 
 		\begin{equation}
-		\text{\textit{$A$ es inversible si y solo si $ \det A \not=0$.}}
+		\text{\textit{$A$ es invertible si y solo si $ \det A \not=0$.}}
 		\end{equation}
 		Este resultado se generaliza para matrices $n \times n$. Más aún, la fórmula (\ref{inv-2x2}),  que aquí reescribimos como
 		\begin{equation*}
@@ -3720,7 +3851,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 	\begin{teorema} \label{mtrx-inv-equiv3} Sean $A,B \in M_n(\K)$, entonces
 		\begin{enumerate}
 			\item $\det (A B) = \det(A)\det(B)$. 
-			\item $A$ inversible si y solo si  $\det(A)\ne0$.
+			\item $A$ invertible si y solo si  $\det(A)\ne0$.
 		\end{enumerate}
 	\end{teorema}
 		
@@ -3769,7 +3900,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 			\begin{equation*}
 			(AB)^\t = B^\t A^\t.
 			\end{equation*} 
-			\item  Sea $A$ matriz $n \times n$, entonces, $A$ inversible si y sólo si  $A^\t$ es inversible y  en ese caso $(A^\t)^{-1} = (A^{-1})^\t$.
+			\item  Sea $A$ matriz $n \times n$, entonces, $A$ invertible si y sólo si  $A^\t$ es invertible y  en ese caso $(A^\t)^{-1} = (A^{-1})^\t$.
 		\end{enumerate}
 	\end{proposicion}
 	\begin{proof}
@@ -3781,12 +3912,12 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 		
 		(3) 
 		\begin{align*}
-			\text{$A$ inversible } &\Leftrightarrow \text{existe $B$ matriz $n \times n$ tal que $AB = I_n = BA$} \\
+			\text{$A$ invertible } &\Leftrightarrow \text{existe $B$ matriz $n \times n$ tal que $AB = I_n = BA$} \\
 			&\Leftrightarrow (AB)^\t = I^\t_n = (BA)^\t\\
 			&\Leftrightarrow B^\t A^\t = I_n = A^\t B^\t\\
 			&\Leftrightarrow \text{$B^\t$ es  la inversa de $A^\t$}. 
 		\end{align*}
-		Es decir, $A$ inversible si y sólo si  $A^\t$ es inversible y si $B = A^{-1}$, entonces  $(A^\t)^{-1} = B^\t$.
+		Es decir, $A$ invertible si y sólo si  $A^\t$ es invertible y si $B = A^{-1}$, entonces  $(A^\t)^{-1} = B^\t$.
 	\end{proof}
 	
 	Observar que por inducción no es complicado probar que si $A_1,\ldots, A_k$ son matrices,  entonces 
@@ -4599,7 +4730,7 @@ Las siguientes afirmaciones son consecuencias fáciles de la definición.
  
  
  \begin{ejemplo}
- 	Sea $P$ una matriz $n \times n$ inversible con elementos en el cuerpo $\K$. Entonces si $C_1,\ldots,C_n$ son los vectores columna de $P$ (ver definición  \ref{espacio-fila-columna}), estos forman una base de $\K^n$. Eso se verá como sigue. Si $X = (x_1,\ldots,x_n) \in \K^n$, lo podemos ver como columna y 
+ 	Sea $P$ una matriz $n \times n$ invertible con elementos en el cuerpo $\K$. Entonces si $C_1,\ldots,C_n$ son los vectores columna de $P$ (ver definición  \ref{espacio-fila-columna}), estos forman una base de $\K^n$. Eso se verá como sigue. Si $X = (x_1,\ldots,x_n) \in \K^n$, lo podemos ver como columna y 
  	$$
  	PX=x_1C_1+\cdots+x_nC_n.
  	$$
@@ -4797,7 +4928,7 @@ Es decir, todo subconjunto LI de un espacio vectorial de dimensión finita se pu
 	\end{proof}
 
 	\begin{corolario}
-		Sea A una matriz $n \times n$ sobre el cuerpo $\K$, y supóngase que los vectores fila de $A$ forman un conjunto linealmente independiente de vectores de $\K^n$. Entonces $A$ es inversible.
+		Sea A una matriz $n \times n$ sobre el cuerpo $\K$, y supóngase que los vectores fila de $A$ forman un conjunto linealmente independiente de vectores de $\K^n$. Entonces $A$ es invertible.
 	\end{corolario}
 	\begin{proof}
 		Sean $v_1,\ldots,v_n$ los  vectores fila de $A$, y sea $W = \langle v_1,\ldots,v_n \rangle$.  Como los $v_1,\ldots,v_n$ son linealmente independientes, la dimensión de $W$ es $n$. Por el corolario  \ref{dimw-menor-dimv} se tiene 	que $W$ no es propio y por lo tanto $W = \K^n$.  Luego existen escalares $b_{ij}$ en $\K$ tales que
@@ -4929,7 +5060,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
 	
 		
 		\begin{teorema}
-			Sean $A$ matriz $m \times n$ con coeficientes en $\K$, $P$ matriz $m\times m$ inversible y $B =PA$. Entonces el el espacio fila de $A$ es igual al espacio fila de $B$.
+			Sean $A$ matriz $m \times n$ con coeficientes en $\K$, $P$ matriz $m\times m$ invertible y $B =PA$. Entonces el el espacio fila de $A$ es igual al espacio fila de $B$.
 		\end{teorema}
 		\begin{proof}
 			Sea $A= [a_{ij}]$, $P =[p_{ij}]$ y $B = [b_{ij}]$. Como  $B= PA$, tenemos que la fila $i$ de $B$ es
@@ -4940,27 +5071,27 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
 			\end{align*}
 		Luego, cada vector fila de $B$ se puede obtener como combinación lineal de los vectores fila de $A$, y por lo tanto el espacio fila de $B$ está incluido en el espacio fila de $A$. 
 		
-		Ahora bien, como $P$ inversible, podemos multiplicar por $P^{-1}$ a izquierda la fórmula $B= PA$, y obtenemos $P^{-1}B = P^{-1}P A = A$. Haciendo el mismo razonamiento que arriba concluimos que  también el espacio fila de $A$ está incluido en el espacio fila de $B$ y por lo tanto son iguales. 
+		Ahora bien, como $P$ invertible, podemos multiplicar por $P^{-1}$ a izquierda la fórmula $B= PA$, y obtenemos $P^{-1}B = P^{-1}P A = A$. Haciendo el mismo razonamiento que arriba concluimos que  también el espacio fila de $A$ está incluido en el espacio fila de $B$ y por lo tanto son iguales. 
 		\end{proof}
 	
 	\begin{corolario}\label{subesp-merf}
 			Sean $A$ matriz $m \times n$ y $R$ la MERF equivalente por filas a $A$. Entonces, el espacio fila de $A$ es igual al espacio fila de $R$ y las filas no nulas de $R$ forman una base del espacio fila de $A$. 
 	\end{corolario}
 	\begin{proof}
-		$R=PA$, donde $P$ es una matriz $m \times m$ inversible, luego, por el teorema anterior, el espacio fila de $A$  es igual al espacio fila de $R$. Calculemos ahora cual es la dimensión del espacio fila de $R$. Veamos que filas no nulas de $R$ son LI. 
+		$R=PA$, donde $P$ es una matriz $m \times m$ invertible, luego, por el teorema anterior, el espacio fila de $A$  es igual al espacio fila de $R$. Calculemos ahora cual es la dimensión del espacio fila de $R$. Veamos que filas no nulas de $R$ son LI. 
 		
 		Recordemos  que por definición de MERF cada fila no nula comienza con un 1 y en esa coordenada  todas las demás filas tienen un 0, por lo tanto una combinación lineal no trivial resulta en un vector no nulo: si $v$ es una fila no nula de $R$, con el 1 principal en la coordinada $i$ y $\lambda \ne0$,  entonces $\lambda v$ vale $\lambda$ en la posición $i$ y esta coordenada no puede ser anulada por la combinación de otras filas.  
 	\end{proof}
 
 	\begin{corolario}\label{inv-impl-filasgen}
-			Sean $A$ matriz $n \times n$. Entonces, $A$ es inversible si y sólo si las filas de $A$ son una base de $\K^n$.
+			Sean $A$ matriz $n \times n$. Entonces, $A$ es invertible si y sólo si las filas de $A$ son una base de $\K^n$.
 	\end{corolario}
 	\begin{proof}
-		Si $A$ es inversible entonces la MERF de $A$ es la identidad, por lo tanto  el espacio fila de $A$ genera $\K^n$.
+		Si $A$ es invertible entonces la MERF de $A$ es la identidad, por lo tanto  el espacio fila de $A$ genera $\K^n$.
 		
-		Por otro lado, si el espacio fila de $A$  genera $\K^n$, el espacio fila de  la  MERF es $\K^n$ y por lo tanto  la MERF de $A$ es la identidad y en consecuencia $A$ es inversible.
+		Por otro lado, si el espacio fila de $A$  genera $\K^n$, el espacio fila de  la  MERF es $\K^n$ y por lo tanto  la MERF de $A$ es la identidad y en consecuencia $A$ es invertible.
 		
-		Hemos probado que $A$ es inversible si y sólo si las $n$ filas de $A$ generan $\K^n$. Como $\dim \K^n = n$,  todo conjunto de $n$ generadores es una base. 
+		Hemos probado que $A$ es invertible si y sólo si las $n$ filas de $A$ generan $\K^n$. Como $\dim \K^n = n$,  todo conjunto de $n$ generadores es una base. 
 	\end{proof}
 	
 	\vskip .5cm
@@ -5039,12 +5170,12 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
 		y que la misma se obtiene sin usar permutaciones. Esta matriz tiene las dos primeras filas no nulas, por lo tanto, $\{(1,0,1),(1,-1,0)\}$ es una base de $W$.
 	\end{proof}
 
-Finalmente, terminaremos esta sección con un teorema que resume algunas equivalencias respecto a matrices inversibles.
+Finalmente, terminaremos esta sección con un teorema que resume algunas equivalencias respecto a matrices invertibles.
 
 \begin{teorema}
 	Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces son equivalentes
 	\begin{enumerate} 
-		\item $A$ es inversible.
+		\item $A$ es invertible.
 		\item $A$  es equivalente por filas a $I_n$.
 		\item $A$ es producto de matrices elementales.
 		\item El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
@@ -5060,7 +5191,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	
 	(1) $\Leftrightarrow$ (7). Por corolario \ref{inv-impl-filasgen}.
 	
-	(1) $\Leftrightarrow$ (8). $A$ inversible $\Leftrightarrow$ $A^\t$ inversible $\Leftrightarrow$  las filas de $A^\t$ son LI $\Leftrightarrow$  las columnas de $A$ son LI. 
+	(1) $\Leftrightarrow$ (8). $A$ invertible $\Leftrightarrow$ $A^\t$ invertible $\Leftrightarrow$  las filas de $A^\t$ son LI $\Leftrightarrow$  las columnas de $A$ son LI. 
 \end{proof}
 	
 	\end{section}
@@ -5166,7 +5297,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	\end{proof}
 	
 	\begin{teorema}
-			Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $	\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces existe una única matriz $P$ de orden $n \times n$, inversible, tal que para todo $v \in V$
+			Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $	\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces existe una única matriz $P$ de orden $n \times n$, invertible, tal que para todo $v \in V$
 			\begin{enumerate}
 				\item $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y
 				\item $[v]_\mathcal{B'} = P^{-1}[v]_\mathcal{B}$.
@@ -5200,9 +5331,9 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		 \begin{bmatrix}x'_1 \\ x'_2\\ \vdots \\ x'_n\end{bmatrix}.
 		$$
 		
-		Veamos que $P$  es inversible: sea $(x_1,\ldots,x_n)$ solución del sistema de ecuaciones $PX =0$. Eso implica que si $v =\sum x_i v'_i$,  entonces $P[v]_{\mathcal B'}=0$.     Eso quiere decir que el vector  escrito en la base $\mathcal B$ tiene coordenadas $0$,  es decir $v = \sum 0. v_i =0$ y entonces $v = \sum 0. v'_i$ por la unicidad de escritura. Por lo tanto, la única solución del sistema $PX=0$ es 0 y en consecuencia $P$  es inversible.
+		Veamos que $P$  es invertible: sea $(x_1,\ldots,x_n)$ solución del sistema de ecuaciones $PX =0$. Eso implica que si $v =\sum x_i v'_i$,  entonces $P[v]_{\mathcal B'}=0$.     Eso quiere decir que el vector  escrito en la base $\mathcal B$ tiene coordenadas $0$,  es decir $v = \sum 0. v_i =0$ y entonces $v = \sum 0. v'_i$ por la unicidad de escritura. Por lo tanto, la única solución del sistema $PX=0$ es 0 y en consecuencia $P$  es invertible.
 		
-		(2)  Como $P$ es inversible, multiplicamos por $P^{-1}$  a izquierda la ecuación $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y obtenemos el resultado.
+		(2)  Como $P$ es invertible, multiplicamos por $P^{-1}$  a izquierda la ecuación $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y obtenemos el resultado.
 	\end{proof}
 
 	Observemos que, por simetría,  los coeficientes de la columna $j$ de $P^{-1}$ son las coordenadas de $v_j$ en la base $\mathcal{B'}$. 
@@ -5239,7 +5370,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	\det A = 1.(-1)^{3+1}. 
 	\left| \begin{matrix} 0&-1\\1&1	\end{matrix} \right| = 1.1.1 =1.
 	$$ 
-	Por  lo tanto $A$ es inversible y en consecuencia el espacio fila de $A$ es $\R^3$. Como $\mathcal{B}$ es un conjunto de 3  generadores de  $\R^3$, $\mathcal{B}$ es base.
+	Por  lo tanto $A$ es invertible y en consecuencia el espacio fila de $A$ es $\R^3$. Como $\mathcal{B}$ es un conjunto de 3  generadores de  $\R^3$, $\mathcal{B}$ es base.
 	
 	(2) Si $x_1,x_2,x_3$  son las coordenadas de $(2,3,5)$ respecto a la base  $\mathcal{B}$, entonces
 	$$
@@ -6342,7 +6473,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\begin{enumerate}
 				\item\label{itm-cor-cambio-1} $[UT]_{\mathcal B} = [U]_{\mathcal B} [T]_{\mathcal B}$.
 				\item\label{itm-cor-cambio-2} Si $I: V \to V$  es el operador identidad, entonces $[I]_{\mathcal B} =Id$,  donde $Id$  es la matriz identidad $n \times n$.
-				\item\label{itm-cor-cambio-3} Si $T$  es inversible,  entonces $[T]_{\mathcal B}$  es una matriz inversible y  $$[T^{-1}]_{\mathcal B} = [T]_{\mathcal B}^{-1}.$$
+				\item\label{itm-cor-cambio-3} Si $T$  es invertible,  entonces $[T]_{\mathcal B}$  es una matriz invertible y  $$[T^{-1}]_{\mathcal B} = [T]_{\mathcal B}^{-1}.$$
 			\end{enumerate}
 		\end{corolario}
 		\begin{proof}
@@ -6372,7 +6503,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			$$
 			\mathcal B = \{v_1,\ldots,v_n \}, \qquad \mathcal B' = \{v'_1,\ldots,v'_n \}
 			$$
-			bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces existe $P$ una  matriz inversible  $n \times n$ tal que 
+			bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces existe $P$ una  matriz invertible  $n \times n$ tal que 
 			\begin{equation*}
 			[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}  P.
 			\end{equation*}
@@ -6401,7 +6532,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	\vskip .3cm
 	
 		El teorema anterior nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
-		bases ordenadas de $V$, entonces $[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}P$, para $P$ una matriz inversible. Por lo tanto, 
+		bases ordenadas de $V$, entonces $[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}P$, para $P$ una matriz invertible. Por lo tanto, 
 		\begin{equation*}
 			\det([T]_{\mathcal B'}) = \det(P^{-1}[T]_{\mathcal B}  P) =  \det([T]_{\mathcal B}  PP^{-1}) =  \det([T]_{\mathcal B}). 
 		\end{equation*}
@@ -6514,7 +6645,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{definicion}
 			Sea $A \in M_n(\K)$   el \textit{polinomio característico}\index{polinomio característico} de $A$ es $\chi_A(x) = \det(A-xI)$, donde $x$ es una indeterminada. 
 			
-			Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal, el  \textit{polinomio característico de $T$} es $\chi_T(x) = \det(T-x Id)$.
+			Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal, el  \textit{polinomio característico de $T$} es $\chi_T(x) = \det(x Id-T)$.
 		\end{definicion}
 	
 			
@@ -6522,15 +6653,15 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{equation}
 		\chi_A(x) = \det(A- x\,Id) = \det
 		\begin{bmatrix}
-		a_{11}-x&a_{12}&\cdots&a_{1n}\\
-		a_{21}&a_{22}-x&\cdots&a_{2n}\\
+		x -a_{11}&-a_{12}&\cdots&-a_{1n}\\
+		-a_{21}&x -a_{22}&\cdots&-a_{2n}\\
 		\vdots&\vdots&\ddots&\vdots\\
-		a_{n1}&a_{n2}&\cdots&a_{nn}-x\\
+		-a_{n1}&-a_{n2}&\cdots&x -a_{nn}\\
 		\end{bmatrix}
 		\end{equation} 
 		y el polinomio característico de $A$ es un polinomio  de grado $n$,  más precisamente  
 		$$
-		\chi_A(x) = (-1)^n x^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
+		\chi_A(x) =x^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
 		$$ 
 		Esto se puede demostrar fácilmente por inducción. 
 		
@@ -6544,9 +6675,9 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		entonces
 		\begin{equation*}
 				 \det \begin{bmatrix}
-				a -x & b \\ c &d-x
+				x-a & -b \\ -c &x-d
 				\end{bmatrix} = 
-				(a-x)(d-x) - bc = x^2 -(a+d)x + (ad -bc).
+				(x-a)(x-d) - bc = x^2 -(a+d)x + (ad -bc).
 		\end{equation*}
 		Es decir,
 		$$
@@ -6564,11 +6695,11 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			$$
 			entonces el  polinomio característico de $A$ es
 			$$
-			\det \begin{bmatrix}10-x&-10&6\\8& -8-x& 6\\-5& 5& -3-x\end{bmatrix} =- x^3  - x^2 + 6 x .
+			\det \begin{bmatrix}10-x&-10&6\\8& -8-x& 6\\-5& 5& -3-x\end{bmatrix} = x^3  + x^2 - 6 x .
 			$$
 			Es posible factorizar esta expresión y obtenemos
 			$$
-			\chi_A(x) = -x (x-2)(x+3).
+			\chi_A(x) = x (x-2)(x+3).
 			$$
 		\end{ejemplo}
 		
@@ -6599,11 +6730,11 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			
 			($\Rightarrow$) Si $\lambda$ es autovalor, entonces existe $v \in V$, no nulo, tal que $Tv = \lambda v$, luego 
 			$$
-			0 = Tv -\lambda v = Tv - \lambda Id \, v=  (T - \lambda Id)v.
+			0 = \lambda v-Tv  =  \lambda Id \, v - Tv =  (\lambda Id-T)v.
 			$$
-			Por lo tanto, $T - \lambda Id$ no es inversible, lo cual implica que $0 = \det(T-\lambda Id) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
+			Por lo tanto, $\lambda Id-T$ no es invertible, lo cual implica que $0 = \det(\lambda Id-T) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
 			
-			($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(T-\lambda Id)$, entonces $T-\lambda Id$ no es una matriz inversible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(T-\lambda Id)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
+			($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(\lambda Id-T)$, entonces $\lambda Id-T$ no es una matriz invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(\lambda Id-T)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
 		\end{proof}
 		
 		Repetimos ahora algunos conceptos ya expresados al comienzo de la sección. 
@@ -6634,7 +6765,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\end{equation*}
 		Ya vimos que  el  polinomio característico de esta aplicación es 
 		$$
-		\chi_A(x) = -x (x-2)(x+3).
+		\chi_A(x) = x (x-2)(x+3).
 		$$
 		Luego, por 	proposición \ref{autovalores}, los autovalores de $A$ son $0$, $2$ y $-3$. Debido al corolario \ref{cor-aut-li} existe una base de autovectores de $A$. Veamos cuales son. Si $\lambda$ autovalor de $A$, para encontrar los autovectores con autovalor $\lambda$  debemos resolver la ecuación $Av -\lambda v=0 $,  en este caso sería
 		\begin{equation*}
@@ -6707,7 +6838,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			Por la proposición \ref{autovalores}, los autovalores de $T$  son las raíces del polinomio característico,  es decir las raíces de 
 			$$
 			\det\left[\begin{matrix}
-			2-x & -1 \\ 1 & 4-x
+			x-2 & 1 \\ -1 & x-4
 			\end{matrix} \right] = (2-x)(4-x)+1 = x^2 -6x + 9 = 
 			(x -3)^2. 
 			$$
@@ -6733,7 +6864,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{proposicion}
 			 Sea $T$ un operador lineal diagonalizable sobre un espacio vectorial $V$ de dimensión finita. Sean $\lambda_1,\ldots,\lambda_k$ los autovalores distintos de $T$. Entonces,  el  polinomio característico de $T$ es
 			 	$$
-			 	\chi_T(x) =(-1)^n(x -\lambda_1)^{d_1}\ldots(x -\lambda_k)^{d_k}
+			 	\chi_T(x) = x -\lambda_1)^{d_1}\ldots(x -\lambda_k)^{d_k}
 			 	$$
 			 	con
 			 	$$
@@ -6767,7 +6898,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\end{equation*}
 			donde $I_j$ es la matriz identidad $d_j \times d_j$. Luego,  el polinomio característico de $T$ es el producto
 			\begin{align*}
-				(\lambda_1-x)^{d_1}\ldots(\lambda_k-z)^{d_k} = (-1)^n(x -\lambda_1)^{d_1}\ldots(x -\lambda_k)^{d_k}.
+			(x -\lambda_1)^{d_1}\ldots(x -\lambda_k)^{d_k}.
 			\end{align*}
 		\end{proof}
 	
@@ -6782,9 +6913,9 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			El  polinomio característico de $A$ es
 			\begin{equation*}
 				\chi_A(x) = \det \begin{bmatrix}
-				5-x &-6 &-6\\ -1& 4-x& 2\\3 &-6& -4-x
+				x-5 &6 &6\\ 1& x-4& -2\\-3 &6& x+4
 				\end{bmatrix} 
-				= -x^3 + 5 x^2 - 8 x + 4 = -(x-2)^2(x-1).
+				= x^3 - 5 x^2 + 8 x - 4 = (x-2)^2(x-1).
 			\end{equation*}
 			¿Cuáles son las dimensiones de los espacios de los vectores propios asociados
 			con los dos valores propios? Se deben resolver las ecuaciones asociadas a las matrices
@@ -7539,7 +7670,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	
 	
 	\begin{section}{Números complejos}
-		La ecuacion polinómica $x^2 + 1 =0$ (¿cuál es el número que elevado  al cuadrado y adicionado 1 da 0?) no tiene solución dentro del cuerpo de los números reales,  pues todos sabemos que  $x^2 \ge 0$ para todo $x \in \R$ y por lo tanto $x^2 + 1 >0$ $\forall\; x \in \R$. Podemos extender $\R$ a otro cuerpo,  de tal forma que \textit{toda} ecuación polinómica con coeficentes en $\R$ tenga solución. 
+		La ecuación polinómica $x^2 + 1 =0$ (¿cuál es el número que elevado  al cuadrado y adicionado 1 da 0?) no tiene solución dentro del cuerpo de los números reales,  pues todos sabemos que  $x^2 \ge 0$ para todo $x \in \R$ y por lo tanto $x^2 + 1 >0$ $\forall\; x \in \R$. Podemos extender $\R$ a otro cuerpo,  de tal forma que \textit{toda} ecuación polinómica con coeficentes en $\R$ tenga solución. 
 		
 		\begin{definicion} 
 			Los \textit{números complejos}\index{números complejos} es el conjunto $\C$  de los pares ordendados $(a,b)$,  denotados $a+ib$, con $a, b$  en $\R$, con las operaciones '$+$' y '$\cdot$', definidas
@@ -7557,13 +7688,13 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 		Podemos  ver a $\R$ contenido en $\C$,  con la correspondencia $a \to a + i \cdot 0$ y  observamos que si  nos restringimos a $\R$, tenemos las reglas de adición y  multiplicación usuales.  
 		
-		La definición de la suma de dos números complejos no debería sorprendernos, pues es la suma ``coordenada a coordenada''. La definición del producto se basa en que deseamos que $i^2 = -1$ y que el producto sea distributivo. 	
+		La definición de la suma de dos números complejos no debería sorprendernos, pues es la suma ``coordenada a coordenada''. La definición del producto se basa en que deseamos que $i^2 = -1$,  es decir que $i$  sea la solución de la ecuación polinómica $x^2 + 1 =0$,   y que el producto sea distributivo. 	
 		
 		Primero, comprobemos que  $i^2 = -1$. Esto es debido a que
 		\begin{equation*}
 		i^2 = (0 + i\cdot 1)(0 + i\cdot 1) = (0\cdot 0 - 1 \cdot 1) + i(0\cdot 1 + 1 \cdot 0) = -1,
 		\end{equation*} 
-		y por lo tanto $i^2 + 1 = -1+1 = 0$,  es decir $i$  es solución de la ecuación polinómica $x^2 + 1 =0$.  
+		y por lo tanto $i^2 + 1 = -1+1 = 0$.  
 		
 		
 		Sean $0 = 0 + i\cdot 0, 1 = 1 + i\cdot 0 \in \C$,  es fácil comprobar que son los elementos neutros de la suma y el producto,  respectivamente. Por otro lado, si $z = a + ib$,  entonces $-z = -a -ib$ es el opuesto aditivo de $z$. 
@@ -8253,7 +8384,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	\begin{equation}
 		 	A = E_kE_{k-1}\ldots E_1R.
 		 	\end{equation}
-		 	Ya vimos,  en el  teorema \ref{mtrx-inv-equiv} que si $A$ inversible $R= I_n$ y por lo tanto  $A$ es equivalente por filas a un producto de  matrices elementales. Si $A$ no es inversible, entonces $R$ no es la identidad y por lo tanto tiene filas nulas. 
+		 	Ya vimos,  en el  teorema \ref{mtrx-inv-equiv} que si $A$ invertible $R= I_n$ y por lo tanto  $A$ es equivalente por filas a un producto de  matrices elementales. Si $A$ no es invertible, entonces $R$ no es la identidad y por lo tanto tiene filas nulas. 
 		 \end{obs}
 		
 		 
@@ -8261,7 +8392,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 \begin{teorema}  Sean $A,B \in M_n(\K)$,  entonces
 		 	\begin{enumerate}
 		 		\item $\det (A B) = \det(A)\det(B)$. 
-		 		\item $A$ inversible si y solo si  $\det(A)\ne0$.
+		 		\item $A$ invertible si y solo si  $\det(A)\ne0$.
 		 	\end{enumerate}
 		 \end{teorema}
 		 \begin{proof} 	
@@ -8270,14 +8401,14 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	(1) Como $AB = E_kE_{k-1}\ldots E_1RB$, por corolario \ref{coro-det-prod-elem-mtrx}  tenemos que  $\det(AB) = \det( E_k) \ldots \det(E_1)\det(RB)$.
 		 	
 		 	
-		 	Separaremos la demostración en dos casos: (a) $A$ es inversible y  (b) $A$ no es inversible. 
+		 	Separaremos la demostración en dos casos: (a) $A$ es invertible y  (b) $A$ no es invertible. 
 		 	
-		 	(a) Si $A$  es inversible,  entonces $R=I_n$ y  $A = E_k\ldots E_1$, por lo tanto 
+		 	(a) Si $A$  es invertible,  entonces $R=I_n$ y  $A = E_k\ldots E_1$, por lo tanto 
 		 	\begin{equation*}
 		 	\det(AB) = \det(E_k) \ldots \det(E_1)\det(B) = \det(A)\det(B).
 		 	\end{equation*}
 		 	
-		 	(b) Si $A$ no es inversible, entonces $R$ no es la identidad, por lo tanto tiene la última fila nula y por lo tanto $\det(R)=0$, y en consecuencia $\det(A)=0$. Como $R$ tiene la última fila nula, no es difícil ver que entonces $RB$ tiene la última fila nula y por lo tanto $\det(RB)=0$. Luego 
+		 	(b) Si $A$ no es invertible, entonces $R$ no es la identidad, por lo tanto tiene la última fila nula y por lo tanto $\det(R)=0$, y en consecuencia $\det(A)=0$. Como $R$ tiene la última fila nula, no es difícil ver que entonces $RB$ tiene la última fila nula y por lo tanto $\det(RB)=0$. Luego 
 		 	$$
 		 	\det(AB) = \det( E_k) \ldots \det(E_1)\det(RB) =0.
 		 	$$
@@ -8288,9 +8419,9 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	
 		 	\vskip .3cm
 		 	
-		 	(2) ($\Rightarrow$) Como $A$ inversible, $R = I_n$ y $\det A = \det( E_k) 	 \ldots \det(E_1)$ es no nulo, pues las matrices elementales tiene determinante no nulo. 
+		 	(2) ($\Rightarrow$) Como $A$ invertible, $R = I_n$ y $\det A = \det( E_k) 	 \ldots \det(E_1)$ es no nulo, pues las matrices elementales tiene determinante no nulo. 
 		 	
-		 	(2)($\Leftarrow$)  Si $\det(A) \ne 0$, entonces $\det(R) \ne 0$, luego $R = I_n$ y $A$ es producto de matrices elementales, por lo tanto inversible. 
+		 	(2)($\Leftarrow$)  Si $\det(A) \ne 0$, entonces $\det(R) \ne 0$, luego $R = I_n$ y $A$ es producto de matrices elementales, por lo tanto invertible. 
 		 \end{proof}
 		 
 		 Haremos ahora la demostración del teorema \ref{det-a-trans}. 
@@ -8313,12 +8444,12 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	$\det(A) = \det(A^\t)$
 		 \end{teorema}
 		 \begin{proof}
-		 	Si $A$ es inversible, entonces  $A = E_kE_{k-1}\ldots E_1$ con $E_i$ elemental, por lo tanto $\det(A) = \det( E_k)\det(E_{k-1})\ldots \det(E_1)$. Luego,
+		 	Si $A$ es invertible, entonces  $A = E_kE_{k-1}\ldots E_1$ con $E_i$ elemental, por lo tanto $\det(A) = \det( E_k)\det(E_{k-1})\ldots \det(E_1)$. Luego,
 		 	\begin{equation*}
 		 	\det(A^\t) = \det(E_1^\t \ldots E_k^\t) = \det(E_1^\t) \ldots \det(E_k^\t) = 
 		 	\det(E_1) \ldots \det(E_k) = \det(A).
 		 	\end{equation*}
-		 	Si $A$ no es inversible, entonces $A^\t$ no es inversible y en ese caso $\det(A) = \det(A^\t)=0$.
+		 	Si $A$ no es invertible, entonces $A^\t$ no es invertible y en ese caso $\det(A) = \det(A^\t)=0$.
 		 \end{proof}
 		 
 		 \vskip .3cm
@@ -8384,7 +8515,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 	
 		 
 		 
-		 \begin{section}{Regla de Cramer} Veremos ahora que la inversa de una matriz inversible se puede escribir en términos de determinantes de algunas matrices relacionadas y esto, junto a otros resultados, nos permitirá resolver ecuaciones lineales con $n$-variables y $n$-incógnitas cuya matriz asociada es inversible.  
+		 \begin{section}{Regla de Cramer} Veremos ahora que la inversa de una matriz invertible se puede escribir en términos de determinantes de algunas matrices relacionadas y esto, junto a otros resultados, nos permitirá resolver ecuaciones lineales con $n$-variables y $n$-incógnitas cuya matriz asociada es invertible.  
 		 	
 		 	\begin{teorema} \label{th-cof-01}
 		 		Sea $A$ matriz $n \times n$, entonces
@@ -8455,7 +8586,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	\end{proof}
 		 	
 		 	\begin{corolario}\label{cor-inv-x-det}
-		 		Si $A$  es inversible,  entonces 
+		 		Si $A$  es invertible,  entonces 
 		 		\begin{equation*}
 		 		A^{-1} = \frac{1}{\det A} \operatorname{adj}A.
 		 		\end{equation*}
@@ -8468,7 +8599,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	
 		 	
 		 	
-		 	\begin{teorema}[Regla de Cramer]\index{regla de Cramer} Sea $AX=Y$ un sistema de ecuaciones tal que $A \in M_n(\K)$ es inversible. Entonces, el sistema tiene una única solución $(x_1,\ldots,,x_n)$ con 
+		 	\begin{teorema}[Regla de Cramer]\index{regla de Cramer} Sea $AX=Y$ un sistema de ecuaciones tal que $A \in M_n(\K)$ es invertible. Entonces, el sistema tiene una única solución $(x_1,\ldots,,x_n)$ con 
 		 		\begin{equation*}
 		 		x_j = \frac{\det A_j}{\det A},\qquad j=1,\ldots,n,
 		 		\end{equation*}
@@ -8478,7 +8609,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	\begin{proof}
 		 		Haremos la demostración para matrices $3 \times 3$. La demostración en el caso general es completamente análoga. 
 		 		
-		 		Como $A$  es inversible, existe $A^{-1}$ y multiplicamos la ecuación a izquierda por $A^{-1}$ y obtenemos que $A^{-1}A X = A^{-1}Y$,  es decir $X = A^{-1}Y$ y esta es la única solución. Luego
+		 		Como $A$  es invertible, existe $A^{-1}$ y multiplicamos la ecuación a izquierda por $A^{-1}$ y obtenemos que $A^{-1}A X = A^{-1}Y$,  es decir $X = A^{-1}Y$ y esta es la única solución. Luego
 		 		\begin{align*}
 		 		A^{-1}Y & = \frac{1}{\det A}
 		 		\begin{bmatrix} C_{11} & C_{21} & C_{31}\\
@@ -8557,7 +8688,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	\vskip .5cm
 		 	
 		 	\begin{observacion}
-		 		En  general, la regla de Cramer no es utilizada para resolver sistemas  de ecuaciones. El  método de Gauss, además de ser mucho más rápido, tiene el beneficio de ser un método que abarca más casos y nos da más información que la regla de Cramer. Por ejemplo,  el método de Gauss también funciona para matrices no inversibles, mientras que la regla de Cramer no. Más aún, el método de Gauss se puede utilizar para resolver sistemas con matrices no cuadradas (es decir, sistemas de ecuaciones con números no iguales de variables y ecuaciones), mientras que la regla de Cramer no.
+		 		En  general, la regla de Cramer no es utilizada para resolver sistemas  de ecuaciones. El  método de Gauss, además de ser mucho más rápido, tiene el beneficio de ser un método que abarca más casos y nos da más información que la regla de Cramer. Por ejemplo,  el método de Gauss también funciona para matrices no invertibles, mientras que la regla de Cramer no. Más aún, el método de Gauss se puede utilizar para resolver sistemas con matrices no cuadradas (es decir, sistemas de ecuaciones con números no iguales de variables y ecuaciones), mientras que la regla de Cramer no.
 		 		
 		 		Con respecto a la velocidad  de resolución, para matrices $n \times n$ el método de Gauss requiere ``alrededor de $n^3$ operaciones'', mientras que la regla de Cramer requiere ``alrededor de $n^4$ operaciones'', haciendo el primer método $n$ veces más rápido que el segundo. En  lenguaje técnico, el método de Gauss tiene complejidad $O(n^3)$ y la regla de Cramer complejidad $O(n^4)$ (ver
 		 		\href{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}) 
