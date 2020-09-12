@@ -91,7 +91,7 @@
 %\usepackage{titlesec}
 \titleformat{\section}[frame]{\normalfont}%
 {\filright\footnotesize\enspace \large {\large SECCIÓN \thesection} \enspace}%
-{8pt}{\huge\bfseries\filcenter}%
+{16pt}{\huge\bfseries\filcenter}%
 %%%--------------------------------------------------------------------------	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\end{comment}
@@ -407,23 +407,27 @@
 				\end{itemize}
 			\end{definicion}
 			
-		Observemos que se cumplen las siguientes reglas: sean $v,w,u$ en $\R^n$,  entonces
+		Observemos que se satisfacen las siguientes propiedades: sean $v,w,u$ en $\R^n$,  entonces
 		\begin{enumerate}
-			\item $v+ (w +u) = (v+w)+u$,
-			\item $v + w = w + v$,
-			\item si definimos
+		\item[\textbf{S1.}] $v + w = w + v$ (\textit{conmutatividad de la suma}),
+		\item[\textbf{S2.}] $(v+ w)+ u = v + (w+u)$ (\textit{asociatividad de la suma}),
+		\item[\textbf{S3.}] si definimos
+		\begin{equation*}
+		0 = (0,\dots,0),
+		\end{equation*}
+		el punto cuyas coordenadas son todas $0$, el \textit{vector cero}, entonces 
 			\begin{equation*}
-				0 = (0,\dots,0),
-			\end{equation*}
-			el punto cuyas coordenadas son todas $0$, entonces 
-			\begin{equation*}
-				v +0 = 0 +v = v,
-			\end{equation*}
-			\item si $v = (x_1,\ldots,x_n)$,  definimos $-v = (-x_1,\ldots, -x_n)$. Entonces 
-			\begin{equation*}
-				v + (-v) = (-v) + v = 0.
-			\end{equation*}
-		\end{enumerate}	
+		v +0 = 0 +v = v,
+		\end{equation*}
+		 (\textit{existencia de elemento neutro de la suma}).
+		\item[\textbf{S4.}]si $v = (x_1,\ldots,x_n)$,  definimos $-v = (-x_1,\ldots, -x_n)$. Entonces 
+		\begin{equation*}
+		v + (-v) = (-v) + v = 0
+		\end{equation*} 
+		(\textit{existencia de opuesto} o  \textit{inverso aditivo}).
+	\end{enumerate}
+
+
 	Estas propiedades se deducen casi trivialmente de la definición de suma, coordenada a coordenada, y de la validez de las propiedades en el caso de la recta real. 
 	
 	
@@ -595,8 +599,10 @@
 	
 	Es fácil verificar las siguientes reglas: dados $v,w \in \R^n$, 
 	\begin{enumerate}
-		\item[5.] si $\lambda \in \R$, $\lambda (v + w) = \lambda v + \lambda w$.
-		\item[6.] Si $\lambda_1,\lambda_2 \in \R$, $(\lambda_1+\lambda_2)v= \lambda_1v + \lambda_2v$.
+		\item[\textbf{P1.}] $1.v=v$.
+		\item[\textbf{P2.}] $\lambda_1(\lambda_2v) = (\lambda_1\lambda_2)v$, para todo $\lambda_1,\lambda_2 \in \R$.
+		\item[\textbf{D1.}] $\lambda(v+w) = \lambda v +\lambda w$, para todo $\lambda \in \R$  (\textit{propiedad distributiva}).
+		\item[\textbf{D2.}] $(\lambda_1+\lambda_2)v = \lambda_1v + \lambda_2 v$ para todo $\lambda_1,\lambda_2 \in \R$  (\textit{propiedad distributiva}).
 	\end{enumerate}
 
 	También tengamos en cuenta que 
@@ -606,8 +612,8 @@
 	
 	¿Cuál es la representación geométrica de la multiplicación de un vector  por un número?
 	\begin{ejemplo}
-		Sea $v= (1,2)$ y $\lambda = 3$. Luego $\lambda v = (3,6)$ como en la fig. \ref{fig-homotecia}(a)
-		\begin{figure}[h]
+		Sea $v= (1,2)$ y $\lambda = 3$. Luego $\lambda v = (3,6)$ como en la siguiente figura:
+		\begin{center}
 			\begin{tabular}{ccc}
 				\begin{tikzpicture}[scale=1.0]
 				\draw[thick,->] (-1.0,0) -- (4.0,0) node[right] {$x$}; % eje x
@@ -649,13 +655,45 @@
 				\node [right] at (-0.2,-7) {(b)};
 				\end{tikzpicture}
 			\end{tabular}
-		\caption{\;}\label{fig-homotecia}
-		\end{figure}
+		\end{center}
 			
 			
 	\end{ejemplo}
+
+\vskip .3cm
 	 La multiplicación por 3 equivale a ``estirar'' $v$ por 3. Del mismo modo, $\frac12v$ 	equivale a estirar $v$ en $\frac12$, es decir, reducir $v$ a la mitad de su tamaño. En general, si $t$ es un número con $t> 0$, interpretamos $tv$ como un punto en la misma dirección que $v$ con tamaño  $t$-veces el tamaño de $v$.  De hecho, decimos que $v$ y $w$ tienen la misma dirección si existe un número $\lambda> 0$ tal que $v = \lambda w$. La multiplicación por un número negativo invierte la dirección. Así, $-3 v$ se representa como en la fig. \ref{fig-homotecia}(b). Decimos que $v$ y $w$  (ninguno de los cuales es cero) tienen direcciones opuestas si existe un número $\lambda <0$ tal que $v =\lambda w$. Por lo tanto, $-v$ tiene dirección opuesta a $v$.
-		\end{section}
+
+		
+\vskip .3cm Más allá de las interpretaciones geométricas,  hemos definido  en forma algebraica la suma de vectores en $\R^n$ y  la multiplicación de un vector por un escalar,  y estas operaciones tienen ciertas propiedades de interés. 
+\vskip .3cm
+Concluyendo, las definiciones y resultados más importantes de esta sección son:
+\vskip .3cm
+
+Sean  $(x_1,\ldots,x_n), (y_1,\ldots,y_n) \in \R^n$ y $\lambda \in \R$, definimos
+	\begin{itemize}
+		\item $(x_1,\ldots,x_n)+ (y_1,\ldots,y_n):=(x_1+y_1,\ldots,x_n+y_n)$, 
+		\item $\lambda.v := (\lambda x_1,\ldots,\lambda x_n)$.
+	\end{itemize}
+Dados  $v,w,u$ en $\R^n$,  se verifican
+\begin{enumerate}
+	\item[\textbf{S1.}] $v + w = w + v$ (\textit{conmutatividad de la suma}),
+	\item[\textbf{S2.}] $(v+ w)+ u = v + (w+u)$ (\textit{asociatividad de la suma}),
+	\item[\textbf{S3.}] sea $0: =(0,\ldots, 0)$, el \textit{vector cero}, entonces $0+ v = v + 0 =v$ (\textit{existencia de elemento neutro de la suma}).
+	\item[\textbf{S4.}] Si $v =(x_1,\ldots,x_n)$, entonces $-v:=(-x_1,\ldots,-x_n)$ y se satisface  $v + (-v) = (-v)+ v =0$ (\textit{existencia de opuesto} o  \textit{inverso aditivo}).
+	\item[\textbf{P1.}] $1.v=v$.
+	\item[\textbf{P2.}] $\lambda_1(\lambda_2v) = (\lambda_1\lambda_2)v$, para todo $\lambda_1,\lambda_2 \in \R$.
+	\item[\textbf{D1.}] $\lambda(v+w) = \lambda v +\lambda w$, para todo $\lambda \in \R$  (\textit{propiedad distributiva}).
+	\item[\textbf{D2.}] $(\lambda_1+\lambda_2)v = \lambda_1v + \lambda_2 v$ para todo $\lambda_1,\lambda_2 \in \R$  (\textit{propiedad distributiva}).
+\end{enumerate}
+
+\vskip .3cm
+
+Verán más adelante que las propiedades anteriores son muy parecidas a los  ``axiomas'' que se utilizan en el  capítulo \ref{chap-esp-vect} para definir espacios vectoriales abstractos (ver definición \ref{def-esp-vect}). 
+
+\vskip .6cm
+
+
+\end{section}
 	
 	
 	
@@ -1455,6 +1493,8 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 		
 		\begin{section}{Sistemas de ecuaciones lineales}
 		
+		\vskip .3cm 
+		
 			El problema a resolver será el siguiente: buscamos números  $x_1,\ldots,x_n$ en el cuerpo $\K$ ($= \R$ o $\C$)  que satisfagan las siguientes condiciones
 			\begin{equation}\label{sist-eq}
 			\begin{matrix}
@@ -1464,6 +1504,8 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			\end{matrix}
 			\end{equation}
 			donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$.
+			
+				\vskip .3cm 
 			
 			Llamaremos a (\ref{sist-eq}) un \textit{sistema de $m$ ecuaciones lineales con $n$ incógnitas.}\index{sistema de ecuaciones lineales} A una  $n$-upla $(x_1,\ldots,x_n)$ de elementos de $\K^n$ que satisface cada una de las ecuaciones de  (\ref{sist-eq}) la llamaremos una \textit{solución del sistema}. Si $y_1 = \cdots = y_m=0$, el sistema se llamará \textit{homogéneo.} En caso contrario el sistema se denominará \textit{no-homogéneo.}
 			
@@ -1490,29 +1532,265 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 				\end{equation*}
 			\end{ejemplo} 
 			
-			Resolvamos ahora un sistema de ecuaciones homogéneo sencillo:
-			\begin{equation*}
+			\begin{ejemplo}\label{ej-sist-1}
+				Resolvamos ahora un sistema de ecuaciones homogéneo sencillo:
+				\begin{equation*}
+				\begin{matrix}
+				{\footnotesize{\footnotesize\circled{1}}}&\qquad& 2x_1 -x_2 + x_3 &=& 0 \\
+				{\footnotesize{\footnotesize\circled{2}}}&\qquad& x_1 + 3x_2 + 4x_3 &=& 0.
+				\end{matrix}
+				\end{equation*}
+			\end{ejemplo}
+			\begin{proof}[Solución]
+				Observar que $(0,0,0)$ es solución. Busquemos otras soluciones manipulado las ecuaciones.
+				\begin{align*}
+				\begin{matrix}
+				&\text{Si  hacemos}&-2\,{\footnotesize\circled{2}} +  {\footnotesize\circled{1}}& \text{obtenemos:} & & {\footnotesize\circled{$1^\prime$}}&  -7x_2 - 7x_3&=&0 &\;\Rightarrow\;& x_2 &=& -x_3\\
+				&\text{Si  hacemos}&3 \,{\footnotesize\circled{1}} + {\footnotesize\circled{2}}& \text{obtenemos:} && {\footnotesize\circled{$2^\prime$}}& 7x_1 + 7x_3&=&0&\;\Rightarrow\;& x_1 &=& -x_3,
+				\end{matrix}
+				\end{align*}
+				y esto nos dice que las soluciones son de la forma $\{(-x_3,-x_3, x_3): x_3 \in \R \}$, por ejemplo $(-1,-1,1)$ es solución y $(1,2,3)$ no es solución.
+			\end{proof}
+			
+				
+			En  el ejemplo anterior hemos encontrado soluciones por \textit{eliminación de incógnitas},  es decir multiplicando por constantes adecuadas  ciertas ecuaciones y sumándolas hemos eliminado en  {\footnotesize\circled{$1$}} a $x_1$ y en  {\footnotesize\circled{$2$}} a $x_2$, con lo cual la solución del sistema se deduce inmediatamente por pasaje de término.   
+			
+			\vskip .6cm
+			
+			\begin{ejemplo}\label{ej-sist-2}
+					Encontrar las soluciones $(x,y,z)$ del sistema de ecuaciones:
+					\begin{equation*}
+					\begin{matrix}
+					{\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & =& 1 \\
+					{\footnotesize{\footnotesize\circled{2}}}&\qquad&x& -3y & +3z & =&2 \\
+					{\footnotesize{\footnotesize\circled{3}}}&\qquad&2x& -y & +5z & =&3
+					\end{matrix} \tag{S1}
+					\end{equation*}
+					Es decir, queremos encontrar los n\'umeros reales $x$, $y$ y $z$ que satisfagan las ecuaciones anteriores.
+				
+			\end{ejemplo}
+				
+				\begin{proof}[Solución]
+					Veremos que la única solución es $(x,y,z)=(-1,0,1)$.  El  método que usaremos, similar al del ejemplo anterior,  será el de eliminación de variables o incógnitas: vemos  en el sistema que queremos resolver 8 variables, algunas repetidas. Trataremos de eliminar en cada ecuación la mayor cantidad de variables posibles de tal forma de llegar a una formulación equivalente del sistema que nos de inmediatamente la solución. 
+\vskip .3cm	
+
+
+
+
+
+	Supongamos que $(x,y,z)$ es una solución de nuestro sistema. Entonces también vale que: 
+	\begin{equation*}
+	\begin{matrix}
+	&{\footnotesize{\footnotesize\circled{2}}}&\qquad&x& -3y & +3z & = & 2 \\
+	(-1)\cdot&{\footnotesize{\footnotesize\circled{1}}}&\qquad(-1)\cdot&(x &  & +2z) & = &(-1)\cdot1 \\
+	\hline
+	&{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = & 1  
+	\end{matrix}
+	\end{equation*}
+	
+	 
+	Por lo tanto $(x,y,z)$ también es solución del sistema
+	\begin{equation*}
+	\begin{matrix}
+	{\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & = 1 \\
+	{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = 1   \\
+	{\footnotesize{\footnotesize\circled{3}}}&\qquad&2x& -y & +5z & =3
+	\end{matrix}\tag{S2}
+	\end{equation*}
+ 
+
+
+ 
+Dado que $(x,y,z)$ es solución del sistema (S2),  entonces también vale que:
+\begin{equation*}
+\begin{matrix}
+&{\footnotesize{\footnotesize\circled{3}}}&\qquad&&2x& -y & +5z & = &3 \\
+(-2)\cdot&{\footnotesize{\footnotesize\circled{1}}}&\qquad&(-2)\cdot&(x &  & +2z) & = &(-2)\cdot1 \\
+\hline
+&{\footnotesize{\footnotesize\circled{3'}}}&\qquad&& & -y & + z & = & 1  
+\end{matrix}
+\end{equation*}
+ 
+
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+{\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & = 1 \\
+{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = 1   \\
+{\footnotesize{\footnotesize\circled{3'}}}&\qquad&& -y & +z & =1
+\end{matrix}\tag{S3}
+\end{equation*}
+ 
+
+ 
+Dado que $(x,y,z)$ es solución del sistema (S3), entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = & 1 \\
+(-3)\cdot&{\footnotesize{\footnotesize\circled{3'}}}&\qquad&(-3)\cdot&( -y & +z) & = &(-3)\cdot1 \\
+\hline
+&{\footnotesize{\footnotesize\circled{2''}}}&\qquad&&   & -2z & = & -2  
+\end{matrix}
+\end{equation*}
+
+ 
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+&    & -2z & = -2\\
+& -y & +z & =1 
+\end{matrix}
+\qquad\mbox{equivalentemente}\qquad
+\begin{matrix}
+x &  & +2z & = 1 \\
+&    & z & = 1\\
+& -y & +z & =1 
+\end{matrix}
+\end{equation*}
+ 
+
+ 
+Dado $(x,y,z)$ es solución del sistema
+\begin{equation*}
+\begin{matrix}
+{\footnotesize{\footnotesize\circled{1}}}&x &  & +2z & = 1 \\
+{\footnotesize{\footnotesize\circled{2''}}}&&    & z & = 1 \\
+{\footnotesize{\footnotesize\circled{3'}}}&& -y & +z & =1
+\end{matrix}\tag{S4}
+\end{equation*}
+o equivalentemente 
+\begin{equation*}
+\begin{matrix}
+{\footnotesize{\footnotesize\circled{1}}}&x &  & +2z & = 1 \\
+{\footnotesize{\footnotesize\circled{3'}}}&& -y & +z & =1\\
+{\footnotesize{\footnotesize\circled{2''}}}&&    & z & = 1 
+\end{matrix}\tag{S5}
+\end{equation*}
+
+Entonces también vale que: 
+\begin{center}
+\begin{tabular}{rrr}
+	{\footnotesize{\footnotesize\circled{1}}}&$x  +2z$  = & 1 \\
+	$(-2)\cdot${\footnotesize{\footnotesize\circled{2''}}}&$(-2)\cdot$(\quad\;\;\;$z$ ) = &$(-2)\cdot 1$ \\
+	\hline
+	{\footnotesize{\footnotesize\circled{1'}}}  &$x$\qquad\; = & $-1$    
+\end{tabular}\quad\; y \quad\;
+\begin{tabular}{rrr}
+	{\footnotesize{\footnotesize\circled{3'}}}&$-y  +z$  = & 1 \\
+	$(-1)\cdot${\footnotesize{\footnotesize\circled{2''}}}&$(-1)\cdot$(\quad\;\;\;$z$ ) = &$(-1)\cdot 1$ \\
+	\hline
+	{\footnotesize{\footnotesize\circled{3''}}}  &$-y$\quad\; = & $0$    
+\end{tabular}
+\end{center}
+
+
+
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  &  & =& -1 \\
+& -y &  & =&0 \\
+&    & z & =& 1
+\end{matrix} \tag{S6}
+\end{equation*}
+ o equivalentemente
+\begin{equation*}
+\begin{matrix}
+	x & =& -1 \\
+	y & =&0 \\
+	z & =& 1
+	\end{matrix}\tag{S7}
+\end{equation*}
+
+
+ 
+
+ 
+En resumen, supusimos que $(x,y,z)$ es una solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+x& -3y & +3z & =2 \\
+2x& -y & +3z & =1
+\end{matrix}
+\end{equation*}
+
+y probamos que 
+\begin{equation*}
+x=-1\quad y=0,\quad z=1. 
+\end{equation*}
+				\end{proof}
+
+
+
+
+Tanto en el ejemplo \ref{ej-sist-1} como en el ejemplo \ref{ej-sist-2} eliminamos variables usando alguna de las siguientes operaciones entre ecuaciones:
+	\begin{enumerate}
+		\item[E1.] multiplicar una ecuación por una constante no nula,  
+		\item[E2.] sumar a una ecuación una constante por otra, y
+		\item[E3.] permutar ecuaciones.  
+	\end{enumerate}
+	Veremos en  las secciones siguientes que estas operaciones son ``reversibles'' y que con ellas podemos reducir todo sistema de ecuaciones a uno cuyas soluciones son obvias. 
+	
+	
+\begin{ejemplo}
+Así como  haciendo operaciones del tipo E1, E2 y E3  en la ecuaciones del ejemplo \ref{ej-sist-2}   llegamos de 
+	
+	\begin{equation*}
+	\begin{matrix}
+	x &  & +2z & =& 1 \\
+	x& -3y & +3z & =&2 \\
+	2x& -y & +5z & =&3
+	\end{matrix}
+	\qquad \text{ a } 
+	\qquad 
+	\begin{matrix}x&=&-1\\ y&=&0 \\ z&=&1,
+	\end{matrix}
+	\end{equation*}
+haciendo  las ``operaciones inversas'' (que son del mismo tipo)  podemos llegar de  
+\begin{equation*}
+\begin{matrix}x&=&-1\\ y&=&0 \\ z&=&1.
+\end{matrix}
+\qquad \text{ a } 
+\qquad 
+\begin{matrix}
+x &  & +2z & =& 1 \\
+x& -3y & +3z & =&2 \\
+2x& -y & +5z & =&3
+\end{matrix}.
+\end{equation*}
+Luego,  ambos sistemas son  tienen las mismas soluciones.
+
+\end{ejemplo}
+
+\vskip .5cm
+
+
+	\end{section}
+
+
+
+
+		\begin{section}{Equivalencia de sistemas de ecuaciones lineales}
+
+		
+		
+		
+
+			
+			
+			
+			\vskip .3cm 
+			Dado el sistema
+			\begin{equation}\label{sist-eq-2}
 			\begin{matrix}
-			\circled{1}&\qquad& 2x_1 -x_2 + x_3 &=& 0 \\
-			\circled{2}&\qquad& x_1 + 3x_2 + 4x_3 &=& 0.
+			a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+			\vdots&  &\vdots& &&  &\vdots \\
+			a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
 			\end{matrix}
-			\end{equation*}
-			Observar que $(0,0,0)$ es solución. Busquemos otras soluciones manipulado las ecuaciones.
-			\begin{align*}
-			\begin{matrix}
-			&\text{Si  hacemos}&-2\,\circled{2} +  \circled{1}& \text{obtenemos:} & & \circled{$1^\prime$}&  -7x_2 - 7x_3&=&0 &\;\Rightarrow\;& x_2 &=& -x_3\\
-			&\text{Si  hacemos}&3 \,\circled{1} + \circled{2}& \text{obtenemos:} && \circled{$2^\prime$}& 7x_1 + 7x_3&=&0&\;\Rightarrow\;& x_1 &=& -x_3,
-			\end{matrix}
-			\end{align*}
-			y esto nos dice que las soluciones son de la forma $\{(-x_3,-x_3, x_3): x_3 \in \R \}$, por ejemplo $(-1,-1,1)$ es solución y $(1,2,3)$ no es solución.
-			
-			Hemos encontrado soluciones por \textit{eliminación de incógnitas},  es decir multiplicando por constantes adecuadas  las ecuaciones y sumándolas hemos eliminado en  \circled{$1^\prime$} a $x_1$ y en  \circled{$2^\prime$} a $x_2$, con lo cual el resultado se deduce inmediatamente por pasaje de término.   
-			
-			\vskip .3cm
-			
-			
-			
-			Veremos ahora que este método se puede extender a sistemas de ecuaciones más generales, como en  (\ref{sist-eq}): si en este sistema multiplicamos cada ecuación por $c_i$ ($1 \le i \le m$) y sumamos miembro a miembro obtenemos
+			\end{equation}
+			donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$, si multiplicamos cada ecuación por $c_i$ ($1 \le i \le m$) y sumamos miembro a miembro obtenemos
 			\begin{equation*}
 			\sum_{i=1}^m c_i(a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n) = \sum_i c_iy_i.
 			\end{equation*}
@@ -1524,10 +1802,21 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			\begin{equation}\label{comb-lin-eq}
 			\left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +  	\left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}	c_{i}y_{i},
 			\end{equation}
-			la cual es una \textit{combinación lineal} de las ecuaciones dadas en (\ref{sist-eq}). Observar que la ecuación (\ref{comb-lin-eq}),  es  una ecuación lineal con $n$ incógnitas, es decir  es del mismo tipo que cada una de las ecuaciones que componen el sistema de ecuaciones original.
+			la cual es una \textit{combinación lineal} de las ecuaciones dadas en (\ref{sist-eq-2}). Observar que la ecuación (\ref{comb-lin-eq}),  es  una ecuación lineal con $n$ incógnitas, es decir  es del mismo tipo que cada una de las ecuaciones que componen el sistema de ecuaciones original.
 			
 			\begin{proposicion}\label{sist-impl}
-				Si $(x_1,\ldots,x_n) \in \K^n$  es solución del sistema de ecuaciones (\ref{sist-eq}), entonces $(x_1,\ldots,x_n)$ también es solución de la ecuación (\ref{comb-lin-eq}). 
+				Sean $c_1,\ldots,c_m$ en $\K$. Si $(x_1,\ldots,x_n) \in \K^n$  es solución del sistema de ecuaciones
+				\begin{equation*}
+				\begin{matrix}
+				a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+				\vdots&  &\vdots& &&  &\vdots \\
+				a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m.
+				\end{matrix}
+				\end{equation*}
+				 entonces $(x_1,\ldots,x_n)$ también es solución de la ecuación
+				 \begin{equation*}
+				 \left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +  	\left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}	c_{i}y_{i},
+				 \end{equation*}
 			\end{proposicion}
 			\begin{proof}
 				Por hipótesis
@@ -1538,10 +1827,10 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 				\begin{equation*}
 				\sum_{i=1}^m c_i(a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n) = \sum_i c_iy_i
 				\end{equation*}
-				y  esta es otra escritura de la ecuación (\ref{comb-lin-eq}).
+				y  esta, como vimos, es otra escritura de la ecuación (\ref{comb-lin-eq}).
 			\end{proof}
 			
-			La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas. En principio no es cierto que si obtenemos un sistema de ecuaciones por combinaciones lineales de otro sistema, ambos tengan las mismas soluciones   (por ejemplo hacer combinaciones lineales triviales con todos los coeficientes iguales a 0).
+			La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas. En principio, no es cierto que si obtenemos un sistema de ecuaciones por combinaciones lineales de otro sistema, ambos tengan las mismas soluciones   (por ejemplo, hacer combinaciones lineales triviales con todos los coeficientes iguales a 0).
 		
 			\begin{definicion}
 			Decimos que dos sistemas de ecuaciones lineales son \textit{equivalentes}\index{sistemas lineales equivalentes} si cada ecuación de un sistema es combinación lineal del otro.
@@ -1579,46 +1868,48 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			
 			
 			
-			\vskip .3cm  
-			
-			Observar que la equivalencia de sistemas lineales es una relación de equivalencia,  en particular  vale la propiedad transitiva: si el sistema (A) es equivalente al sistema (B) y  el sistema (B)  es equivalente al sistema (C),  entonces (A) es equivalente a (C). Esto nos permite, ir paso a paso para eliminar las incógnitas. 
-			
+			\vskip .2cm  
+			\begin{observacion}
+				La equivalencia de sistemas lineales es una relación de equivalencia,  en particular  vale la propiedad transitiva: si el sistema (A) es equivalente al sistema (B) y  el sistema (B)  es equivalente al sistema (C),  entonces (A) es equivalente a (C). Esto nos permite, ir paso a paso para eliminar las incógnitas. 
+			\end{observacion}
+
+			\vskip .2cm
 			\begin{ejemplo}
 				Encontrar las soluciones del siguiente sistema de ecuaciones
 				\begin{equation*}\label{sist-000} \tag{S0}
 				\begin{matrix}
-				\circled{1}&\qquad& 2x_1 &+&4x_2 &-& 6x_3 &=& 0 \\
-				\circled{2}&\qquad& 3x_1 &-& x_2 &+& 5x_3 &=& 0.
+				{\footnotesize\circled{1}}&\qquad& 2x_1 &+&4x_2 &-& 6x_3 &=& 0 \\
+				{\footnotesize\circled{2}}&\qquad& 3x_1 &-& x_2 &+& 5x_3 &=& 0.
 				\end{matrix}
 				\end{equation*}
 			\end{ejemplo}
 			\begin{proof}[Solución]
-				Si reemplazamos la ecuación $\circled{1}$ por $\circled{1}/2$, obtenemos el sistema
+				Si reemplazamos la ecuación ${\footnotesize\circled{1}}$ por ${\footnotesize\circled{1}}/2$, obtenemos el sistema
 				\begin{align*}\label{sist-001} \tag{S1}
 				\begin{matrix}
-				\circled{$1^\prime$}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
-				\circled{$2^\prime$}&\qquad 3x_1 &-& x_2 &+& 5x_3 &=& 0.
+				{\footnotesize\circled{$1^\prime$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+				{\footnotesize\circled{$2^\prime$}}&\qquad 3x_1 &-& x_2 &+& 5x_3 &=& 0.
 				\end{matrix}
 				\end{align*}
-				Reemplazando \circled{$2^\prime$} por $\circled{$2^\prime$}-3\circled{$1^\prime$}$, obtenemos
+				Reemplazando {\footnotesize\circled{$2^\prime$}} por ${\footnotesize\circled{$2^\prime$}}-3{\footnotesize\circled{$1^\prime$}}$, obtenemos
 				\begin{align*}\label{sist-002} \tag{S2}
 				\begin{matrix}
-				\circled{$1^{\prime\prime}$}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
-				\circled{$2^{\prime\prime}$}&\qquad &-&7 x_2 &+& 14x_3 &=& 0.
+				{\footnotesize\circled{$1^{\prime\prime}$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+				{\footnotesize\circled{$2^{\prime\prime}$}}&\qquad &-&7 x_2 &+& 14x_3 &=& 0.
 				\end{matrix}
 				\end{align*} 
-				Reemplazando \circled{$2^{\prime\prime}$} por $\circled{$2^{\prime\prime}$}/(-7)$, obtenemos
+				Reemplazando {\footnotesize\circled{$2^{\prime\prime}$}} por ${\footnotesize{\footnotesize\circled{$2^{\prime\prime}$}}}/(-7)$, obtenemos
 				\begin{align*}\label{sist-003} \tag{S3}
 				\begin{matrix}
-				\circled{$1^{\prime\prime\prime}$}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
-				\circled{$2^{\prime\prime\prime}$}&\qquad && x_2 &-& 2x_3 &=& 0.
+				{\footnotesize\circled{$1^{\prime\prime\prime}$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+				{\footnotesize\circled{$2^{\prime\prime\prime}$}}&\qquad && x_2 &-& 2x_3 &=& 0.
 				\end{matrix}
 				\end{align*} 
-				Reemplazando \circled{$1^{\prime\prime\prime}$} por $\circled{$1^{\prime\prime\prime}$}-2\circled{$2^{\prime\prime\prime}$}$, obtenemos
+				Reemplazando {\footnotesize\circled{$1^{\prime\prime\prime}$}} por ${\footnotesize\circled{$1^{\prime\prime\prime}$}}-2{\footnotesize\circled{$2^{\prime\prime\prime}$}}$, obtenemos
 				\begin{align*}\label{sist-004} \tag{S4}
 				\begin{matrix}
-				\circled{$1^{\prime\prime\prime\prime}$}&\qquad x_1 && &+& x_3 &=& 0 \\
-				\circled{$2^{\prime\prime\prime\prime}$}&\qquad && x_2 &-& 2x_3 &=& 0.
+				{\footnotesize\circled{$1^{\prime\prime\prime\prime}$}}&\qquad x_1 && &+& x_3 &=& 0 \\
+				{\footnotesize\circled{$2^{\prime\prime\prime\prime}$}}&\qquad && x_2 &-& 2x_3 &=& 0.
 				\end{matrix}
 				\end{align*} 
 				
@@ -1626,9 +1917,9 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 				
 				Por otro lado, observar que 
 				\begin{itemize}
-					\item a partir de (\ref{sist-004}) podemos obtener (\ref{sist-003}) reemplazando \circled{$1^{\prime\prime\prime\prime}$} por $\circled{$1^{\prime\prime\prime\prime}$}+2 \,\circled{$2^{\prime\prime\prime\prime}$}$;
-					\item a partir de (\ref{sist-003}) podemos obtener (\ref{sist-002}) reemplazando \circled{$2^{\prime\prime\prime}$} por $-7\,\circled{$2^{\prime\prime\prime}$}$;
-					\item a partir de (\ref{sist-002}) podemos obtener (\ref{sist-001}) reemplazando \circled{$2^{\prime\prime}$} por $\circled{$2^{\prime\prime}$}+3\, \circled{$1^{\prime\prime}$}$;
+					\item a partir de (\ref{sist-004}) podemos obtener (\ref{sist-003}) reemplazando {\footnotesize\circled{$1^{\prime\prime\prime\prime}$}} por ${\footnotesize\circled{$1^{\prime\prime\prime\prime}$}}+2 \,{\footnotesize\circled{$2^{\prime\prime\prime\prime}$}}$;
+					\item a partir de (\ref{sist-003}) podemos obtener (\ref{sist-002}) reemplazando {\footnotesize\circled{$2^{\prime\prime\prime}$}} por $-7\,{\footnotesize\circled{$2^{\prime\prime\prime}$}}$;
+					\item a partir de (\ref{sist-002}) podemos obtener (\ref{sist-001}) reemplazando {\footnotesize\circled{$2^{\prime\prime}$}} por ${\footnotesize\circled{$2^{\prime\prime}$}}+3\, {\footnotesize\circled{$1^{\prime\prime}$}}$;
 					\item a partir de (\ref{sist-001}) podemos obtener (\ref{sist-000}) reemplazando \circled{$1^{\prime}$} por $2\,\circled{$1^{\prime}$}$.
 				\end{itemize}
 				
@@ -1639,8 +1930,8 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 				Encontrar las soluciones del siguiente sistema de ecuaciones
 				\begin{equation*}
 				\begin{matrix}
-				\circled{1}&\qquad& 2x_1 &-&x_2 &+& x_3 &=& 1 \\
-				\circled{2}&\qquad& x_1 &+& 3x_2 &+& 3x_3 &=&  2 \\
+				{\footnotesize\circled{1}}&\qquad& 2x_1 &-&x_2 &+& x_3 &=& 1 \\
+				{\footnotesize\circled{2}}&\qquad& x_1 &+& 3x_2 &+& 3x_3 &=&  2 \\
 				\circled{3}&\qquad& x_1 &+& &+& 2x_3 &=&   1 .
 				\end{matrix}
 				\end{equation*}
@@ -1649,46 +1940,53 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			\begin{proof}[Solución] Si
 				\begin{align*}
 				\begin{matrix*}[l]
-				&\text{reemplazamos \circled{1} por }&\circled{1}-2\,\circled{2} + & \text{obtenemos:} &\quad& \circled{$1^\prime$}&\; -7x_2 - 5x_3&=&-3, \\
-				&\text{reemplazamos \circled{2} por }&\circled{2}+3 \,\circled{1}& \text{obtenemos:} &\quad& \circled{$2^\prime$}&\; 7x_1 + 6x_3&=& 5, \\
+				&\text{reemplazamos {\footnotesize\circled{1}} por }&{\footnotesize\circled{1}}-2\,{\footnotesize\circled{2}} + & \text{obtenemos:} &\quad& {\footnotesize\circled{$1^\prime$}}&\; -7x_2 - 5x_3&=&-3, \\
+				&\text{reemplazamos {\footnotesize\circled{2}} por }&{\footnotesize\circled{2}}+3 \,{\footnotesize\circled{1}}& \text{obtenemos:} &\quad& {\footnotesize\circled{$2^\prime$}}&\; 7x_1 + 6x_3&=& 5, \\
 				&\text{no cambiamos}&\circled{3} & \text{y obtenemos:} &\quad& \circled{$3^\prime$}&\; x_1 + 2x_3&=& 1.
 				\end{matrix*}
 				\end{align*}
-				Ahora reemplazando  $\circled{$2^\prime$}$ por  $ \circled{$2^\prime$}- 7\, \circled{$1^\prime$}$, obtenemos $- 8x_3= -2$, que es equivalente a que $x_3 = \frac14$. Por lo tanto, obtenemos el sistema
+				Ahora reemplazando  ${\footnotesize\circled{$2^\prime$}}$ por  $ {\footnotesize\circled{$2^\prime$}}- 7\, {\footnotesize\circled{$1^\prime$}}$, obtenemos $- 8x_3= -2$, que es equivalente a que $x_3 = \frac14$. Por lo tanto, obtenemos el sistema
 				\begin{align*}
 				\begin{matrix*}[r]
-				\circled{$1^{\prime\prime}$}&\qquad -7x_2 - 5x_3&=&-3 \\
-				\circled{$2^{\prime\prime}$}&\qquad x_3&=& \frac14 \\
+				{\footnotesize\circled{$1^{\prime\prime}$}}&\qquad -7x_2 - 5x_3&=&-3 \\
+				{\footnotesize\circled{$2^{\prime\prime}$}}&\qquad x_3&=& \frac14 \\
 				\circled{$3^{\prime\prime}$}&\qquad x_1 + 2x_3&=& 1 ,
 				\end{matrix*}
 				\end{align*}
-				Luego, reemplazando $x_3$ por $\frac14$ y  despejando en  \circled{$1^{\prime\prime}$} y \circled{$2^{\prime\prime}$}:
+				Luego, reemplazando $x_3$ por $\frac14$ y  despejando en  {\footnotesize\circled{$1^{\prime\prime}$}} y {\footnotesize\circled{$2^{\prime\prime}$}}:
 				\begin{align*}
 				\begin{matrix*}[r]
-				\circled{$1^{\prime\prime\prime}$}&\qquad -7x_2 &=&-3 +5\frac14 \\
-				\circled{$2^{\prime\prime\prime}$}&\qquad x_3&=& \frac14 \\
+				{\footnotesize\circled{$1^{\prime\prime\prime}$}}&\qquad -7x_2 &=&-3 +5\frac14 \\
+				{\footnotesize\circled{$2^{\prime\prime\prime}$}}&\qquad x_3&=& \frac14 \\
 				\circled{$3^{\prime\prime\prime}$}&\qquad x_1 &=& 1 -2\frac14.
 				\end{matrix*}
 				\end{align*}
 				Por lo tanto, $x_1 = \frac12$, $x_2 = \frac14$, $x_3 = \frac14$. 
 			\end{proof}
 			
-			\vskip .3cm 
+
 		\end{section}
 		
-		\vskip .5cm
+
 		
 		
-		\begin{section}{Matrices, operaciones elementales por fila y método de Gauss }
-			Estudiaremos primeramente la solución de un sistema de ecuaciones lineales homogéneo
+		\begin{section}{Matrices}
+			
+
+			\vskip .4cm En  esta sección introduciremos el concepto de matriz y veremos un sistema de ecuaciones se puede describir en el lenguaje de las matrices. También veremos que sistemas de ecuaciones lineales equivalentes se corresponden con matrices equivalentes por filas. Esto nos permitirá,  en la próxima sección, explicitar en forma clara y concisa el  método de Gauss.  
+			
+			Debemos tener claro que el lenguaje de las matrices en el contexto de esta sección, no es más que una notación más cómoda para el problema de resolver sistemas de ecuaciones lineales.  
+			
+				\vskip .4cm 
+			Estudiaremos la solución de un sistema de ecuaciones lineales 
 			\begin{equation}\label{sist-eq-hom}
 			\begin{matrix}
-			a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &0\\
+			a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
 			\vdots&  &\vdots& &&  &\vdots \\
-			a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&0.
+			a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m.
 			\end{matrix}
 			\end{equation}
-			Observemos que podemos escribir el sistema omitiendo las incógnitas, las sumas y los iguales (que estarán implícitos), como un arreglo rectangular de $m$ filas y $n$ columnas:
+			Observemos que podemos escribir los coeficientes de  las fórmulas de la izquierda en  un arreglo rectangular de $m$ filas y $n$ columnas:
 			\begin{equation}\label{matriz}
 			A = \begin{bmatrix}
 			a_{11}& a_{12}& \cdots &a_{1n} \\
@@ -1696,6 +1994,19 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			a_{m1} &a_{m2}&\cdots &a_{mn}
 			\end{bmatrix}
 			\end{equation} 
+			También  podemos escribir los $x_1,\ldots,x_n$ e $y_1,\ldots,y_n$ como \textit{matrices columna}
+			\begin{equation}\label{matriz-columna}
+			X = \begin{bmatrix}
+			x_1 \\
+			\vdots \\
+			x_{n}
+			\end{bmatrix}, \qquad
+			Y = \begin{bmatrix}
+			y_1 \\
+			\vdots \\
+			y_{m}
+			\end{bmatrix}
+			\end{equation}
 			
 			
 			\begin{definicion} Sea $\K$ cuerpo. Una \textit{matriz}\index{matriz} $m \times  n$ o de \textit{orden $m \times  n$} es un arreglo rectangular de elementos de $\K$ con $m$ filas y $n$ columnas. A cada elemento de la matriz la llamamos \textit{entrada} o \textit{coeficiente}. Si $A$ es una matriz $m \times  n$, denotamos $[A]_{ij}$ la entrada que se ubica en la fila $i$ y la columna $j$. Al conjunto de matrices de orden $m \times  n$ con entradas en $\K$ lo denotamos $M_{m\times n}(\K)$, o simplemente $M_{m\times n}$ si $\K$  está sobreentendido. 
@@ -1719,21 +2030,40 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			
 			\vskip .3cm
 			
-			Como hicimos al comienzo de la sección, a un sistema de $m$ ecuaciones con $n$ incógnitas le asignaremos una matriz $m \times  n$  lo cual nos permitirá trabajar en forma más cómoda y, como veremos en la próxima sección,  podremos resolver los sistemas en forma algebraica (usando ``sumas'' y ``productos''  entre matrices).
-			En  esta sección haremos operaciones en la matriz asociada al sistema de ecuaciones para pasar a un sistema equivalente más ``fácil'' de resolver.
+			Como hicimos al comienzo de la sección, a un sistema de $m$ ecuaciones con $n$ incógnitas le asignaremos una matriz $m \times  n$  lo cual nos permitirá trabajar en forma más cómoda y, como veremos en la próxima sección,  podremos resolver los sistemas de ecuaciones lineales en forma algorítmica, realizando operaciones elementales por fila en las matrices correspondientes. 
 			
 			Sean
 			$$
+				A = \begin{bmatrix}
+			a_{11}& a_{12}& \cdots &a_{1n} \\
+			\vdots&\vdots  &  &\vdots \\
+			a_{m1} &a_{m2}&\cdots &a_{mn}
+			\end{bmatrix}, \quad 
 			X = \begin{bmatrix}
 			x_1 \\ \vdots \\ x_n
-			\end{bmatrix}\qquad \text{ y } \qquad
-			0 = \begin{bmatrix}
-			0 \\ \vdots \\ 0
-			\end{bmatrix},
+			\end{bmatrix}\quad \text{ e } \quad
+			Y = \begin{bmatrix}
+			y_1 \\ \vdots \\ y_m
+			\end{bmatrix}.
 			$$
-			podemos escribir el sistema de ecuaciones (\ref*{sist-eq-hom}) en forma resumida como
+			Entonces, podemos escribir el sistema de ecuaciones (\ref*{sist-eq-hom}) como
+			\begin{equation}\label{sist-eq-2}
+				A = \begin{bmatrix}
+				a_{11}& a_{12}& \cdots &a_{1n} \\
+				\vdots&\vdots  &  &\vdots \\
+				a_{m1} &a_{m2}&\cdots &a_{mn}
+				\end{bmatrix}
+				\begin{bmatrix}
+				x_1  \\ \vdots \\  x_n
+				\end{bmatrix} = 
+				\begin{bmatrix}
+				y_1 \\ \vdots \\ y_m
+				\end{bmatrix}.
+			\end{equation}
+			
+			 En forma resumida:
 			\begin{equation}\label{sis-eq-hom-2}
-			AX = 0.
+			AX = Y.
 			\end{equation}
 			Más adelante, veremos que esta notación tiene un sentido algebraico (el término de la izquierda es un ``producto de matrices'').
 			
@@ -1758,26 +2088,26 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 				\begin{definicion}
 					Sea $A = [a_{ij}]$ una matriz $m \times  n$, diremos que $e$ es una  \textit{operación elemental por fila}\index{operación elemental por fila} si aplicada a la matriz $A$ se obtiene  $e(A)$ de la siguiente manera:
 					\begin{enumerate}
-						\item\label{elem-1} multiplicando una fila por una constante $c\not=0$, o
-						\item\label{elem-2} cambiando la fila $F_r$ por $F_r + tF_s$ con $r\not=s$, para algún $t \in \K$, o
-						\item\label{elem-3} permutando la fila $r$ por la fila $s$.   
+						\item[E1.]\label{elem-1} multiplicando la fila $r$ por una constante $c\not=0$, o
+						\item[E2.]\label{elem-2} cambiando la fila $F_r$ por $F_r + tF_s$ con $r\not=s$, para algún $t \in \K$, o
+						\item[E3.]\label{elem-3} permutando la fila $r$ por la fila $s$.   
 					\end{enumerate}
-					Más precisamente sea 
+					E1, E2 y E3 son tres tipos de operaciones elementales, más precisamente sea 
 					\begin{equation*}
 					A = \begin{bmatrix} 
 					F_1 \\  \vdots \\	F_m
 					\end{bmatrix},
 					\end{equation*} entonces 
 					\begin{enumerate}
-						\item si multiplicamos la fila $r$ por $c \not=0$, 
+						\item[E1.] si multiplicamos la fila $r$ por $c \not=0$, 
 						$$ e(A) = \begin{bmatrix} 
 						F_1 \\ 	\vdots \\ cF_r \\ \vdots \\	F_m
 						\end{bmatrix} $$ con $c \not=0$, o
-						\item si $r\not=s$, multiplicamos la fila $s$ por  $t \in \K$ y la sumamos a la fila $r$, 
+						\item[E2.] si $r\not=s$, multiplicamos la fila $s$ por  $t \in \K$ y la sumamos a la fila $r$, 
 						$$ e(A)= \begin{bmatrix} 
 						F_1 \\  \vdots \\ F_r + t F_s\\ \vdots \\	F_m
 						\end{bmatrix}.$$
-						\item La última operación elemental es  permutar la fila $r$ por la fila $s$:
+						\item[E3.] La última operación elemental es  permutar la fila $r$ por la fila $s$:
 						$$
 						A= \begin{bmatrix} 
 						F_1 \\ 	\vdots \\ F_r \\ \vdots \\ F_s\\ \vdots \\	F_m
@@ -1787,26 +2117,25 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 						\end{bmatrix}.$$
 					\end{enumerate}
 				\end{definicion} 
-				
-				Podemos describir en forma más compacta una operación elemental por fila de la matriz $A=[a_{ij}]$:
+				\vskip .3cm
+				Podemos describir en forma más compacta una operación elemental por fila de la matriz $A=[a_{ij}]$.
 				\begin{enumerate}
-					\item multiplicar la fila $r$ por $c \not=0$
+					\item[E1.] Multiplicar la fila $r$ por $c \not=0$
 					$$
 					e(A)_{ij} = \left\{ \begin{matrix}
 					a_{ij}& \quad &\text{si $i\not=r$} \\
 					ca_{ij}& \quad &\text{si $i=r$}
 					\end{matrix}\right.
 					$$
-					o
-					\item si $r\not=s$, multiplicar la fila $s$ por $t \in \K$ y sumarla a la fila $r$
+					\item[E2.] Si $r\not=s$, multiplicar la fila $s$ por $t \in \K$ y sumarla a la fila $r$
 					$$
 					e(A)_{ij} = \left\{ \begin{matrix}
 					a_{ij}& \quad &\text{si $i\not=r$} \\
 					a_{rj} + t a_{sj}& \quad &\text{si $i=r$}
 					\end{matrix}\right.
 					$$
-					con $t \in \K$, o
-					\item permutar la fila $r$ por la fila $s$
+					con $t \in \K$.
+					\item[E3.] Permutar la fila $r$ por la fila $s$
 					$$
 					e(A)_{ij} = \left\{ \begin{matrix}
 					a_{ij}& \quad &\text{si $i\not=r,s$}
@@ -1816,6 +2145,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					$$
 				\end{enumerate} 
 				
+				\vskip .3cm 
 				\begin{ejemplo}
 					Sea 
 					$$
@@ -1826,7 +2156,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					$$
 					Ejemplificaremos las operaciones elementales
 					
-					(1) Multipliquemos la fila 2 por -2, obtenemos
+					E1. Multipliquemos la fila 2 por -2, obtenemos
 					$$
 					e(A) = 
 					\begin{bmatrix}
@@ -1834,7 +2164,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					\end{bmatrix}.
 					$$
 					
-					(2) Sumemos a la fila 3 dos veces la fila 1,
+					E2. Sumemos a la fila 3 dos veces la fila 1,
 					$$
 					e(A) = 
 					\begin{bmatrix}
@@ -1842,7 +2172,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					\end{bmatrix}.
 					$$
 					
-					(3) Permutemos la fila 2 con la fila 3.
+					E3. Permutemos la fila 2 con la fila 3.
 					$$
 					e(A) = 
 					\begin{bmatrix}
@@ -1858,9 +2188,9 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 				\end{teorema}
 				\begin{proof} \
 					\begin{enumerate}
-						\item[(1)] La operación inversa de multiplicar la fila $r$ por $c\not=0$ es multiplicar la misma fila por $1/r$.
-						\item[(2)] La operación inversa de multiplicar la fila $s$ por  $t \in \K$ y sumarla a la fila $r$ es multiplicar  la fila $s$ por  $-t \in \K$ y sumarla a la fila $r$.
-						\item[(3)] La operación inversa de permutar la fila $r$ por la fila $s$ es la misma operación.
+						\item[E1.] La operación inversa de multiplicar la fila $r$ por $c\not=0$ es multiplicar la misma fila por $1/r$.
+						\item[E2.] La operación inversa de multiplicar la fila $s$ por  $t \in \K$ y sumarla a la fila $r$ es multiplicar  la fila $s$ por  $-t \in \K$ y sumarla a la fila $r$.
+						\item[E3.] La operación inversa de permutar la fila $r$ por la fila $s$ es la misma operación.
 					\end{enumerate}
 				\end{proof}
 				
@@ -1902,6 +2232,9 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					1&0&-1 \\ 0&0&0\\  0&-1&-1
 					\end{bmatrix}.
 					\end{equation*}
+						\end{ejemplo}
+					
+					\begin{proof}[Solución]				
 					Hasta ahora, no hemos aprendido ningún algoritmo o método que nos lleve una matriz a otra por operaciones elementales por fila, pero no es difícil, en este caso, encontrar una forma de llevar la matriz $A$ a la matriz $B$:
 					\begin{multline*}
 					\begin{bmatrix}
@@ -1945,78 +2278,90 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					\stackrel{3F_1}{\longrightarrow} 
 					\begin{bmatrix} 3 & 9 & 6 \\ 4&8&4 \\ 0&2&2 \end{bmatrix}.
 					\end{multline*}
-				\end{ejemplo}
+				\end{proof}
 				
 				\vskip .5cm 
 				
-				\begin{teorema}\label{eq-fila-impl-sol}
-					Sean $A,B$ matrices $m \times n$ tal que $A$ y $B$ son equivalentes  por filas. Entonces, los sistemas homogéneos $AX =0$ y $BX =0$ tiene las mismas soluciones. 
-				\end{teorema}
-				\begin{proof}
-					Recordemos que dos sistemas de ecuaciones lineales son equivalentes si cada ecuación de un sistema es combinación lineal de las ecuaciones del otro. 	El  teorema \ref{sistemas-equiv} nos dice que dos sistemas equivalentes tienen las mismas soluciones. Probaremos, entonces,  que los sistemas  $AX =0$ y $BX =0$ son equivalentes, es decir que cada ecuación de $AX$ es combinación lineal de las ecuaciones de $BX$ y viceversa.
 					
-					Ahora bien, como $A$ y $B$ son equivalentes por filas existe una sucesión de operaciones elementales por fila que lleva la matriz $A$ a la matriz $B$:
-					$$
-					A = A_0 \longrightarrow A_1 \longrightarrow \cdots \longrightarrow A_k = B,
-					$$
-					donde $A_{i} = e_i(A_{i-1})$ con $e_i$ es una operación elemental ($1 \le i \le k $). Como las operaciones elementales permutan filas o realizan combinaciones lineales de filas, es claro que las ecuaciones de $A_{i}X=0$ son combinación lineal de las ecuaciones de $A_{i-1}X = 0$.  Por teorema  \ref{op-elem}, existe una operación elemental $e'_i$ inversa de $e_i$ tal  que $A_{{i-1}} = e'_i(A_i)$, luego las ecuaciones de $A_{i-1}X=0$ son combinación lineal de las ecuaciones de $A_iX = 0$ y concluimos que  $ A_{i}$ y   $ A_{i-1}$ determinan sistemas de ecuaciones equivalentes para  $1 \le i \le k$.
-					
-					Luego $A_0X$ es equivalente a $A_1X$, que es equivalente a a $A_2X$ y así sucesivamente, concluyendo que $AX=A_0X$ es equivalente a $BX =A_kX$. Luego ambos sistemas tiene las mismas soluciones.   
-				\end{proof}
+				\begin{definicion}
+					Consideremos un sistema como en (\ref{sist-eq-hom}) y sea  $A$ la matriz correspondiente al sistema. La \textit{matriz  ampliada}\index{sistema de ecuaciones lineales!matriz  ampliada} del sistema es 
+					\begin{equation}\label{mtrx-ampliada}
+					A' = \left[\begin{array}{ccc|c}  
+					a_{11} & \cdots & a_{1n} &  y_1 \\
+					a_{21} & \cdots & a_{2n} &  y_2 \\
+					\vdots &  & \vdots  &  \vdots  \\
+					a_{m1} & \cdots & a_{mn} &  y_m 
+					\end{array}\right]
+					\end{equation}
+					que también podemos denotar
+					\begin{equation*}
+					A' = [A | Y].
+					\end{equation*}
+				\end{definicion}
+				
+				
+				\begin{teorema}\label{th-equiv-op-elem} Sea $[A | Y]$ la matriz ampliada de un sistema no homogéneo y sea $[B | Z]$ una matriz que se obtiene a partir de $[A | Y]$ por medio de operaciones elementales. Entonces, los sistemas correspondientes a $[A | Y]$ y  $[B | Z]$ tienen las mismas soluciones. 
+			\end{teorema}
+			\begin{proof}
+				 Supongamos que $[B | Z]$ se obtiene por una operación elemental por fila a partir de $[A | Y]$,  entonces las ecuaciones de $[B | Z]$ son combinaciones lineales de las ecuaciones de $[A | Y]$. Como toda operación elemental por fila tiene inversa, podemos obtener $[A | Y]$ a partir de $[B | Z]$ y por lo tanto las ecuaciones de $[A | Y]$ son combinaciones lineales de las ecuaciones de $[B | Z]$. Es decir $[A | Y]$ y $[B | Z]$ determinan sistemas de ecuaciones lineales equivalentes y por lo tanto tiene las mismas soluciones (teorema \ref{sistemas-equiv}).
+				 
+				 En el caso que $[B | Z]$ se obtenga a partir $[A | Y]$ haciendo varias operaciones elementales,  se aplica el razonamiento de arriba las veces que sea necesario. 
+			\end{proof}
 				
 				\begin{ejemplo}\label{ejemplo2.11}
 					Resolvamos el siguiente sistema:
 					\begin{align}\label{sist-eq-01}
 					\begin{split}
-					2x_1 - x_2 + x_3 + 2x_4 &= 0 \\
-					x_1 - 4x_2 -x_4 &=0 \\
+					2x_1 - x_2 + x_3 + 2x_4 &= 2 \\
+					x_1 - 4x_2 -x_4 &=1 \\
 					2x_1 +6x_2 -x_3 +3x_4 &= 0,  
 					\end{split}
 					\end{align}
 					para  $x_i \in \R$ ($1 \le i \le 4$). 
-					En todo sistema homogéneo $x_i =0$ ($1 \le i \le 4$) es solución. Veamos si hay otra soluciones. 
+				
 					
-					La matriz correspondiente a este sistema de ecuaciones es 
+					La matriz ampliada  correspondiente a este sistema de ecuaciones es 
 					$$
-					\begin{bmatrix} 2& -1&1& 2 \\ 1&-4 &0&-1 \\ 2&6&-1&3 \end{bmatrix}.
+					\left[\begin{array}{cccc|c} 
+					 2& -1&1& 2&2 \\ 1&-4 &0&-1&1 \\ 2&6&-1&3&0 \end{array}\right].
 					$$
 					Encontraremos una matriz que nos dará un sistema de ecuaciones equivalente, pero con soluciones mucho más evidentes:
 					\begin{multline*}
-					\begin{bmatrix} 2& -1&1& 2 \\ 1&-4 &0&-1 \\ 2&6&-1&3 \end{bmatrix}
+					\left[\begin{array}{cccc|c}  2& -1&1& 2&2 \\ 1&-4 &0&-1&1 \\ 2&6&-1&3&0 \end{array}\right]
 					\stackrel{F_1\leftrightarrow F_2}{\longrightarrow} 
-					\begin{bmatrix} 1&-4 &0&-1 \\ 2& -1&1& 2 \\ 2&6&-1&3 \end{bmatrix}
+					\left[\begin{array}{cccc|c}  1&-4 &0&-1&1 \\ 2& -1&1& 2&2 \\ 2&6&-1&3&0 \end{array}\right]
 					\stackrel{F_2-2 F_1}{\longrightarrow} 
-					\begin{bmatrix} 1&-4 &0&-1 \\ 0& 7&1& 4 \\ 2&6&-1&3 \end{bmatrix}
+					\left[\begin{array}{cccc|c}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 2&6&-1&3&0 \end{array}\right]
 					\\
 					\stackrel{F_3-2 F_1}{\longrightarrow} 
-					\begin{bmatrix} 1&-4 &0&-1 \\ 0& 7&1& 4 \\ 0&14&-1&5 \end{bmatrix} 
+					\left[\begin{array}{cccc|c}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&14&-1&5&-2 \end{array}\right] 
 					\stackrel{F_3-2 F_2}{\longrightarrow} 
-					\begin{bmatrix} 1&-4 &0&-1 \\ 0& 7&1& 4 \\ 0&0&-3&-3 \end{bmatrix} 
+					\left[\begin{array}{cccc|c}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&0&-3&-3&-2 \end{array}\right] 
 					\stackrel{F_3/(-3)}{\longrightarrow} 
-					\begin{bmatrix} 1&-4 &0&-1 \\ 0& 7&1& 4 \\ 0&0&1&1 \end{bmatrix}
+					\left[\begin{array}{cccc|c}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&0&1&1&\frac{2}{3} \end{array}\right]
 					\\
 					\stackrel{F_2- F_3}{\longrightarrow} 
-					\begin{bmatrix} 1&-4 &0&-1 \\ 0& 7&0& 3 \\ 0&0&1&1 \end{bmatrix}
+					\left[\begin{array}{cccc|c}  1&-4 &0&-1&1 \\ 0& 7&0& 3&-\frac{2}{3} \\ 0&0&1&1&\frac{2}{3} \end{array}\right]
 					\stackrel{F_2/7}{\longrightarrow} 
-					\begin{bmatrix} 1&-4 &0&-1\\ 0& 1&0& \frac37\\ 0&0&1&1\end{bmatrix}
+					\left[\begin{array}{cccc|c}  1&-4 &0&-1&1\\ 0& 1&0& \frac37&-\frac{2}{21}\\ 0&0&1&1&\frac{2}{3}\end{array}\right]
 					\stackrel{F_1 +4F_2}{\longrightarrow} 
-					\begin{bmatrix}1&0&0&\frac{5}{7}\\0&1&0&\frac37 \\ 0&0&1&1\end{bmatrix}.
+					\left[\begin{array}{cccc|c} 1&0&0&\frac{5}{7}&\frac{13}{21}\\0&1&0&\frac37&-\frac{2}{21} \\ 0&0&1&1&\frac{2}{3}\end{array}\right].
 					\end{multline*}
 					Volvamos a las ecuaciones: el nuevo sistema de ecuaciones, equivalente al original, es
 					\begin{align*}
-					x_1 +\frac{5}{7}x_4 &= 0 \\
-					x_2 + \frac{3}{7}x_4 &=0 \\
-					x_3 +x_4 &= 0, 
+					x_1 +\frac{5}{7}x_4 &= \frac{13}{21} \\
+					x_2 + \frac{3}{7}x_4 &=-\frac{2}{21} \\
+					x_3 +x_4 &= \frac{2}{3}, 
 					\end{align*}
 					luego 
 					\begin{align*}
-					x_1  &=-\frac{5}{7}x_4 \\
-					x_2  &=- \frac{3}{7}x_4  \\
-					x_3  &= -x_4. 
+					x_1  &=-\frac{5}{7}x_4 + \frac{13}{21}\\
+					x_2  &=- \frac{3}{7}x_4 -\frac{2}{21} \\
+					x_3  &= -x_4+\frac{2}{3}. 
 					\end{align*}
 					Por lo tanto, el conjunto de soluciones del sistema de ecuaciones (\ref{sist-eq-01}) es
 					$$
-					\left\{(-\frac{5}{7}t,- \frac{3}{7}t, -t,t): t \in \R \right\}.
+					\left\{(-\frac{5}{7}t+ \frac{13}{21},\,- \frac{3}{7}t-\frac{2}{21},\, -t+\frac{2}{3},\,t): t \in \R \right\}.
 					$$
 					Luego, el sistema tiene infinitas soluciones parametrizadas por una variable $t \in \R$.
 				\end{ejemplo}
@@ -2051,9 +2396,14 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					Luego  el sistema (\ref{sist-eq-03}) es equivalente al sistema  $x_1=x_2 = 0$, que resulta ser la única solución.
 				\end{ejemplo}
 			\end{subsection} 
+		\end{section}
+	
+	
+	
+			\begin{section}{Método de Gauss } Ahora avanzaremos en una forma sistemática para hallar todas las soluciones de un sistema de ecuaciones.
+	
 			
-			
-			\begin{subsection}{Matrices reducidas por filas} Ahora avanzaremos en una forma sistemática para hallar todas las soluciones de un sistema de ecuaciones.
+			\begin{subsection}{Matrices reducidas por filas} 
 				
 				\begin{definicion}
 					Una matriz $A$ de $m \times n$ se llama \textit{reducida por filas}\index{matriz!reducida por filas} o \textit{MRF}\index{MRF} si 
@@ -2061,19 +2411,51 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 						\item[(a)] la primera entrada no nula de una fila de $A$ es 1. Este 1 es llamado \textit{1 principal}\index{1 principal de una MRF}.
 						\item[(b)] Cada columna de $A$ que contiene un  1 principal tiene todos los otros elementos iguales a 0. 
 					\end{enumerate} 
+				Una matriz $A$ de $m \times n$ es \textit{escalón reducida por fila}\index{matriz!escalón reducida por fila} o \textit{MERF}\index{MERF} si,  es  MRF y
+				\begin{enumerate}
+					\item[\textit{c})] todas las filas cuyas entradas son todas iguales a cero están al final de la matriz, y
+					\item[\textit{d})] en dos filas consecutivas no nulas el 1 principal de la fila inferior está más a la derecha que el 1 principal de la fila superior. 
+				\end{enumerate}
+				
 				\end{definicion} 
 				
-				\begin{ejemplo} Las siguientes matrices son MRF:
+				\begin{ejemplo} Las siguientes matrices son MRF, pero  no MERF:
 					\begin{equation*}
-					\begin{bmatrix}1 & 0& -1 \\ 0&1&3\\  0&0&0 \end{bmatrix}\; \qquad 
-					\begin{bmatrix} 0&1&3 \\1 & 0& -1\\  0&0&0 \end{bmatrix};
+					\begin{bmatrix}1 & 0& -1 \\  0&0&0\\ 0&1&3 \end{bmatrix}\;  \text{no cumple (c),} \qquad
+					\begin{bmatrix} 0&1&3 \\1 & 0& -1\\  0&0&0 \end{bmatrix}\; \text{no cumple (d).} \qquad
 					\end{equation*}
-					y las siguientes matrices, no son MRF:
+					Las siguientes matrices, no son MRF:
 					\begin{equation*}
 					\begin{bmatrix}1 & 0& 1 \\ 0&2&3\\  0&0&0 \end{bmatrix}\; \text{no cumple (a),} \qquad
 					\begin{bmatrix}1 & 0& -1 \\ 0&1&3\\  0&0&1 \end{bmatrix}\; \text{no cumple (b)}. 
 					\end{equation*}
+					Las siguientes son MERF:
+					\begin{equation*}
+					\begin{bmatrix} 1&0&0&2 \\ 0&1&0&5 \\ 0&0&1&4\end{bmatrix}, \qquad
+					\begin{bmatrix} 1&0&0 \\ 0&1&0 \\ 0&0&0\end{bmatrix}, \qquad
+					\begin{bmatrix} 0&0 \\ 0&0\end{bmatrix}, \qquad
+					\begin{bmatrix} 0&1&2&0&1 \\ 0&0&0&1&0 \\ 0&0&0&0&0 \\ 0&0&0&0&0\end{bmatrix}.
+					\end{equation*}
 				\end{ejemplo}
+				
+				
+				En general una matriz  MERF tiene la forma
+				\begin{equation}\label{merf-general}
+				\begin{bmatrix}
+				0& \cdots & 1 & *&0&* &* &0& * &*\\
+				0& \cdots &0 &\cdots & 1& *  & * & 0& * &*\\
+				\vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
+				0& \cdots &0& \cdots & 0&\cdots &\cdots & 1& * &* \\
+				0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0 \\
+				\vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
+				0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0
+				\end{bmatrix}
+				\end{equation}
+				
+				\vskip .5cm
+				
+				
+				
 				
 				\begin{definicion}
 					Sea $I_n$ la matriz  $n \times n$ definida 
@@ -2092,10 +2474,10 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					(la matriz cuadrada con 1's en la diagonal y 0's en las otras entradas). Llamaremos a $I_n$ la \textit{matriz identidad $n \times n$}\index{matriz!identidad $n \times n$}.
 				\end{definicion}
 				
-				Observar que $I_n$ es una matriz reducida por fila.
+				Observar que $I_n$ es una matriz escalón reducida por fila.
 				
-				\begin{teorema}\label{th-mrf}
-					Toda matriz $m \times n$ sobre $\K$ es equivalente por fila a una matriz reducida por fila.
+				\begin{teorema}\label{th-merf}
+					Toda matriz $m \times n$ sobre $\K$ es equivalente por fila a una matriz escalón reducida por fila.
 				\end{teorema}
 				\begin{proof}[Demostración (*)]
 					Sea $A = [a_{ij}]$ una matriz $m \times n$. Trabajaremos fila por fila, de la primera a la última, de tal forma de ir encontrando matrices equivalentes por fila en cada paso, con ciertas características que ya detallaremos. Cuando terminemos llegaremos a una MRF.  
@@ -2134,11 +2516,15 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					El mismo procedimiento que hicimos arriba lo podemos hacer en la fila 2,  de tal forma que la fila 2 es cero u obtenemos otro 1 principal y todas las demás entradas de la columna donde se encuentra el 1 principal son nulas. 
 					
 					Repitiendo este procedimiento en todas las filas hasta la última, obtenemos que cada fila es, o bien 0, o bien la primera entrada no nula es  1 y todas las entradas en la misma columna de este 1 principal son nulas.   Esto, claramente, nos dice que hemos obtenido una matriz reducida por fila.  
+					
+				 Finalmente, intercambiando filas podemos entonces obtener una matriz escalón reducida por fila.
+
+					
 				\end{proof}
 				
-				El procedimiento que usamos en la demostración del teorema anterior nos da un algoritmo para obtener una MRF a partir de una matriz arbitraria.
+				El procedimiento que usamos en la demostración del teorema anterior nos da un algoritmo para obtener una MERF a partir de una matriz arbitraria.
 				
-				\begin{observacion}[\sc Método para reducir a MRF] \label{metodo-merf}  
+				\begin{observacion}[\sc Método para reducir a MERF] \label{metodo-merf}  
 					\
 									
 				\begin{enumerate}
@@ -2149,9 +2535,9 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 						\item si el primera entrada no nula está en  la columna $k$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale 1),
 						\item con operaciones elementales del tipo $F_r+ tF_s$ hacer 0  todas las entradas en la columna $k$ (menos la de la columna actual).    
 					\end{enumerate}
-					\item \label{paso-3} Si la fila es la última, terminar. Si la fila no es la última, pasar a la fila siguiente e ir al paso (\ref{paso-1}).  
+					\item \label{paso-3} Si la fila es la última, pasar al (\ref{paso-4}). Si la fila no es la última, pasar a la fila siguiente e ir al paso (\ref{paso-1}).  
+					\item \label{paso-4} Permutar las filas hasta obtener una MERF. 
 				\end{enumerate}
-				Observar  que en este procedimiento nunca se utiliza la operación elemental de permutar filas.
 			\end{observacion}
 				
 				
@@ -2180,55 +2566,11 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					Observemos que llegamos a la misma matriz que en el ejemplo \ref{ejemplo2.11}, pese a que hicimos otras operaciones elementales.
 				\end{ejemplo}
 				
-				\begin{definicion}
-					Una matriz $A$ de $m \times n$ es \textit{escalón reducida por fila}\index{matriz!escalón reducida por fila} o \textit{MERF}\index{MERF} si
-					\begin{enumerate}
-						\item[\textit{a})] $A$ es reducida por fila,
-						\item[\textit{b})] todas las filas cuyas entradas son todas iguales a cero están al final de la matriz, y
-						\item[\textit{c})] en dos filas consecutivas no nulas el 1 principal de la fila inferior está más a la derecha que el 1 principal de la fila superior. 
-					\end{enumerate}
-				\end{definicion}
+
 				
-				\begin{ejemplo}
-					Las siguientes son MERF:
-					\begin{equation*}
-					\begin{bmatrix} 1&0&0&2 \\ 0&1&0&5 \\ 0&0&1&4\end{bmatrix}, \qquad
-					\begin{bmatrix} 1&0&0 \\ 0&1&0 \\ 0&0&0\end{bmatrix}, \qquad
-					\begin{bmatrix} 0&0 \\ 0&0\end{bmatrix}, \qquad
-					\begin{bmatrix} 0&1&2&0&1 \\ 0&0&0&1&0 \\ 0&0&0&0&0 \\ 0&0&0&0&0\end{bmatrix}.
-					\end{equation*}
-					Las siguientes no son MERF:
-					\begin{equation*}
-					\begin{bmatrix} 1&0&2&2 \\ 0&1&0&5 \\ 0&0&1&4\end{bmatrix}, \qquad
-					\begin{bmatrix} 1&1&0 \\ 0&1&0 \\ 0&0&0\end{bmatrix}, \qquad
-					\begin{bmatrix} 0&1&0 \\ 1&0&0 \\ 0&0&0\end{bmatrix}\qquad,
-					\begin{bmatrix} 1&0&0 \\ 0&0&0 \\ 0&0&2\end{bmatrix}.
-					\end{equation*}
-				\end{ejemplo}
+			
 				
-				
-				En general una matriz  MERF tiene la forma
-				\begin{equation}\label{merf-general}
-				\begin{bmatrix}
-				0& \cdots & 1 & *&0&* &* &0& * &*\\
-				0& \cdots &0 &\cdots & 1& *  & * & 0& * &*\\
-				\vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
-				0& \cdots &0& \cdots & 0&\cdots &\cdots & 1& * &* \\
-				0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0 \\
-				\vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
-				0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0
-				\end{bmatrix}
-				\end{equation}
-				
-				\vskip .5cm
-				
-				\begin{teorema}\label{th-merf}
-					Toda matriz $m \times n$ es equivalente por filas a una matriz escalón reducida por fila.
-				\end{teorema}
-				\begin{proof}
-					Ya vimos en el teorema \ref{th-mrf} que toda matriz es equivalente por fila a una matriz reducida por fila. Intercambiando filas podemos entonces obtener una matriz escalón reducida por fila.
-				\end{proof}
-				
+	
 				
 				Llevar una matriz a una matriz  escalón reducida por fila equivalente nos provee un método para encontrar todas las soluciones de sistemas de ecuaciones homogéneos.
 				
@@ -2258,52 +2600,56 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			\begin{subsection}{Método de Gauss} Consideremos el siguiente sistema homogéneo de $m$ ecuaciones lineales con $n$ incógnitas:
 				\begin{equation*}
 				\begin{matrix}
-				a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &0\\
+				a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
 				\vdots&  &\vdots& &&  &\vdots \\
-				a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&0
+				a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_n
 				\end{matrix}
 				\end{equation*}
-				con $a_{ij} \in \K$. Sea $A= [a_{ij}]$ la matriz asociada a este sistema. Mediante operaciones elementales de fila obtenemos una matriz $B= [b_{ij}]$ escalón reducida por fila (teoremas \ref{th-mrf} y \ref{th-merf}). Por el teorema \ref{eq-fila-impl-sol} los sistemas de ecuaciones $AX=0$ y $BX=0$ tiene las mismas soluciones. 
+				con $a_{ij} \in \K$. Sea $[A | Y]$ la matriz asociada a este sistema. Mediante operaciones elementales de fila obtenemos una matriz $[B|Z]$ escalón reducida por fila (teoremas \ref{th-mrf} y \ref{th-merf}). Por el teorema \ref{th-equiv-op-elem} los sistemas de ecuaciones $AX=Y$ y $BX=Z$ tiene las mismas soluciones. 
 				
 				
-				 Veamos ahora formalmente cuales son las soluciones del sistema $BX=0$. Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros 1's en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
+				 Veamos ahora formalmente cuales son las soluciones del sistema $BX=Z$. Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros 1's en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
 				\begin{equation}
 				\begin{matrix}
-				&x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j= &0\\
-				&x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j= &0\\
+				&x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j= &z_1\\
+				&x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j= &z_2\\
 				& \vdots& &  &\vdots \\
-				&x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j= &0\\
+				&x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j= &z_r\\
 				\end{matrix}
 				\end{equation}  
 				y, por lo tanto,
 				\begin{equation}
 				\begin{matrix}\label{sist-eq-hom-merf0}
-				x_{k_1} &= -\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j\\
-				x_{k_2} &= -\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j\\
+				x_{k_1} &= z_1-\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j\\
+				x_{k_2} &= z_2-\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j\\
 				\vdots& \vdots \\
-				x_{k_r}  &= -\textstyle\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j
+				x_{k_r}  &= z_r-\textstyle\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j
 				\end{matrix}.
 				\end{equation} 
 				Llamaremos a  $x_{k_1}, x_{k_2}, \ldots, x_{k_r}$ las \textit{variables principales}\index{sistema de ecuaciones lineales!variables principales} del sistema  y  las $n-r$ variables restantes son las \textit{variables libres}.\index{sistema de ecuaciones lineales!variables libres} Es claro entonces que variando de forma arbitraria todas las variables libres obtenemos todas las soluciones del sistema.
 				
 				 Las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones (\ref{sist-eq-hom-merf0}) y $x_i \in \K$ para $x_i$ libre. 
 				
-				
-				El método anterior es denominado \textit{método de Gauss.}\index{sistema de ecuaciones lineales!método de Gauss} En particular,  hemos probado
+				\vskip .3cm
+				El método anterior es denominado \textit{método de Gauss.}\index{sistema de ecuaciones lineales!método de Gauss} 
+				\vskip .3cm
+				En particular,  hemos probado:
 				
 				\begin{teorema}\label{inf-sol}
-					Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces, si $A$ es equivalente por filas a  $R$ una  MERF y $R$ tiene filas nulas, el sistema $AX=0$ tiene más de una solución. 
+					Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces, si $A$ es equivalente por filas a  $B$ una  MERF y $B$ tiene filas nulas, el sistema $AX=Y$ tiene infinitas soluciones. 
 				\end{teorema}
 				\begin{proof}
-					Sea $r$  el número de filas no nulas de $R$, como $R$ tiene $n$ filas y  tiene filas nulas, $r<n$. Por ser $A$ y $R$ equivalentes por fila, $AX$ y $RX$ tienen las mismas soluciones. Como $r <n$, entonces $n-r \ge 1$, por lo tanto existe al menos una variable libre y por lo tanto alguna solución no trivial.  
+					Sea $r$  el número de filas no nulas de $B$, como $B$ tiene filas nulas,  entonces $r<n$ y, por lo tanto, existe al menos una variable libre. Esto implica que hay infinitas soluciones. 
+					
+					Por ser $A$ y $B$ equivalentes por fila, $AX=Y$ y $BX=Z$ tienen las mismas soluciones y, por consiguiente, $AX=Y$ tiene infinitas soluciones. 
 				\end{proof}
 				
 				\begin{teorema}\label{soluciones-m-menor-n}
-					Sea $A$ una matriz $m \times n$ con  $m < n$. Entonces, el sistema de ecuaciones lineales asociado a esta matriz  tiene soluciones no triviales.
+					Sea $A$ una matriz $m \times n$ con  $m < n$ e $Y$ matriz $m \times 1$ . Entonces, el sistema de ecuaciones lineales $AX=Y$ tiene infinitas soluciones.
 				\end{teorema}
 				\begin{proof}
-					La matriz $A$ es equivalente por fila a una matriz $R$ escalón reducida por fila 
-					y $R$ tiene $r$ filas no nulas con $r \le m <n$. Por lo tanto hay $n-r \ge 1$ variables libres, y en consecuencia $RX$ (y $AX$) tiene otras soluciones además de la trivial $(0,\ldots,0)$.
+					La matriz $A$ es equivalente por fila a una matriz $B$ escalón reducida por fila 
+					y $B$ tiene $r$ filas no nulas con $r \le m <n$. Por lo tanto hay $n-r \ge 1$ variables libres, y en consecuencia $BX=Z$ (y $AX=Y$) tienen infinitas soluciones.
 				\end{proof}
 				
 				\begin{lema}\label{mtrx-merf-id}
@@ -2316,106 +2662,21 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 				\end{proof}			
 				
 				\begin{teorema}
-					Sea $A$ una matriz $n \times n$. Entonces, $A$ es equivalente por filas a la matriz $I_n$  si y sólo si el sistema $AX = 0$ tiene un única solución. 
+					Sea $A$ una matriz $n \times n$. Entonces, $A$ es equivalente por filas a la matriz $I_n$  si y sólo si el sistema $AX = Y$ tiene un única solución. 
 				\end{teorema}
 				\begin{proof}
-					($\Rightarrow$) Como $A$ es equivalente por filas a la matriz $I_n$, las soluciones de $AX =0$ son las mismas que las de $I_nX=0$. Ahora bien,  en la fila $i$ de la matriz $I_n$ tenemos $[I_n]_{ii} =1$ y las otras entradas son cero, luego la ecuación correspondiente a esa fila es $x _i =0$, y esto ocurre en todas las filas, luego el sistema de ecuaciones es
+					($\Rightarrow$) Como $A$ es equivalente por filas a la matriz $I_n$, las soluciones de $AX =Y$ son las mismas que las de $I_nX=Z$, para algún $Z$. Ahora bien,  en la fila $i$ de la matriz $I_n$ tenemos $[I_n]_{ii} =1$ y las otras entradas son cero, luego la ecuación correspondiente a esa fila es $x _i =0$, y esto ocurre en todas las filas, luego el sistema de ecuaciones es
 					\begin{align*}
-					x_1 &=0 \\ x_2 &= 0 \\ \vdots \\ x_n &= 0
+					x_1 &=z_1 \\ x_2 &= z_2 \\ \vdots \\ x_n &= z_n
 					\end{align*}
 					cuya única solución es la solución trivial.
 					
-					($\Leftarrow$) Sea $R$ la matriz escalón reducida por filas asociada a $A$. Por hipótesis, $AX=0$ tiene una sola solución y  por lo tanto $RX=0$ tiene una sola solución. Como la solución trivial es la única que existe, no hay variables libres, es decir hay $n$ filas no nulas en $R$, como $R$ tiene $n$ filas, lo anterior implica que $R$ no tiene filas nulas. Entonces, por el lema anterior, $R=I_n$.
+					($\Leftarrow$) Sea $R$ la matriz escalón reducida por filas asociada a $A$. Por hipótesis, $AX=Y$ tiene una sola solución y  por lo tanto $RX=Z$, para algún $Z$, tiene una sola solución. Luego, no hay variables libres, es decir hay $n$ filas no nulas en $R$, como $R$ tiene $n$ filas, lo anterior implica que $R$ no tiene filas nulas. Entonces, por el lema anterior, $R=I_n$.
 				\end{proof}
 			\end{subsection}
 			
 			
 			
-			\begin{subsection}{Sistemas no homogéneos} Estudiaremos ahora sistemas lineales de ecuaciones donde las ecuaciones no están necesariamente igualadas a 0. En general, un  sistema de este tipo se escribe 
-				\begin{equation}\label{sist-eq-gen-2}
-				\begin{matrix}
-				a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
-				\vdots&  &\vdots& &&  &\vdots \\
-				a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
-				\end{matrix}
-				\end{equation}
-				donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$. Si denotamos
-				$$
-				X = \begin{bmatrix}
-				x_1 \\ \vdots \\ x_n 
-				\end{bmatrix},
-				\qquad 
-				Y = \begin{bmatrix}
-				y_1 \\ \vdots \\ y_n
-				\end{bmatrix},
-				$$
-				entonces el sistema, para simplificar, se puede escribir como
-				\begin{equation*}
-				AX = Y.
-				\end{equation*}
-				
-				A diferencia  de los sistemas homogéneos, los sistemas no homogéneos a veces no tiene solución.
-				
-				\begin{ejemplo}
-					Comprobemos que el sistema
-					\begin{align*}
-					2x_1 +x_2 &= 0 \\ 2x_1 +x_2 &= 1 
-					\end{align*}
-					no tiene solución. Supongamos que $(x_1,x_2)$ es solución del sistema. Entonces $0= 2x_1+x_2=1$, absurdo. 
-				\end{ejemplo}
-				
-				
-				\begin{definicion}
-					Consideremos un sistema como en (\ref{sist-eq-gen-2}) y sea  $A$ la matriz correspondiente al sistema. La \textit{matriz  ampliada}\index{sistema de ecuaciones lineales!matriz  ampliada} del sistema es 
-					\begin{equation}\label{mtrx-ampliada}
-					A' = \left[\begin{array}{ccc|c}  
-					a_{11} & \cdots & a_{1n} &  y_1 \\
-					a_{21} & \cdots & a_{2n} &  y_2 \\
-					\vdots &  & \vdots  &  \vdots  \\
-					a_{m1} & \cdots & a_{mn} &  y_m 
-					\end{array}\right]
-					\end{equation}
-					que también podemos denotar
-					\begin{equation*}
-					A' = [A | Y].
-					\end{equation*}
-				\end{definicion}
-				
-				El método de resolución de los sistemas no homogéneos es similar al de los sistemas homogéneos. Utilizamos el método de Gauss para la matriz $A$ pero realizando las operaciones en toda la fila, inclusive en los elementos a la derecha de la línea: el método de Gauss se basa en intercambiar y operar con ecuaciones, así que para no cambiar las soluciones debemos trabajar con ambos miembros de las ecuaciones. En el caso homogéneo, esto no era necesario porque siempre los segundos miembros eran idénticamente iguales a cero. 
-				
-				\begin{teorema} Sea $[A | Y]$ la matriz ampliada de un sistema no homogéneo y sea $[B | Z]$ una matriz que se obtiene a partir de $[A | Y]$ por medio de una operación elemental. Entonces, los sistemas correspondientes a $[A | Y]$ y  $[B | Z]$ tienen las mismas soluciones. 
-				\end{teorema}
-				\begin{proof}
-					Como $[B | Z]$ se obtiene por una operación elemental por fila a partir de $[A | Y]$,  entonces las ecuaciones de $[B | Z]$ son combinaciones lineales de las ecuaciones de $[A | Y]$. Como toda operación elemental por fila tiene inversa, podemos obtener $[A | Y]$ a partir de $[B | Z]$ y por lo tanto las ecuaciones de $[A | Y]$ son combinaciones lineales de las ecuaciones de $[B | Z]$. Es decir $[A | Y]$ y $[B | Z]$ determinan sistemas de ecuaciones lineales equivalentes y por lo tanto tiene las mismas soluciones (teorema \ref{sistemas-equiv}).
-				\end{proof}
-				
-				\begin{corolario}
-					Sean  $[A | Y]$  y  $[B | Z]$  matrices ampliadas equivalentes por fila.  Entonces, los sistemas correspondientes tiene las mismas soluciones.  
-				\end{corolario}
-				
-				Estos resultados nos permiten usar el  método de Gauss para encontrar las soluciones de un sistema no homogéneo: hacemos operaciones elementales por fila en la matriz ampliada $[A | Y]$ hasta obtener $[B | Z]$,  donde $B = [b_{ij}]$ es la MERF equivalente por filas a $A$. Traducido a ecuaciones, obtenemos 
-				\begin{equation}
-				\begin{matrix}
-				&x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&=& &z_1\\
-				&x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j&=& &z_2\\
-				& \vdots& &  &\vdots \\
-				&x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j&=& &z_r\\
-				&&&0 &=& &z_{r+1}  \\
-				& & & \vdots &&&\vdots \\
-				&&&0 &=& &z_{m} 
-				\end{matrix}.
-				\end{equation}  
-				En  el caso que para algún $i>r$ se cumpla que $z_r\ne 0$, entonces el sistema no tiene ninguna solución. Si $z_{r+1}= \cdots =z_m = 0$, las soluciones son
-				\begin{equation}
-				\begin{matrix}\label{sist-eq-nohom-merf0}
-				x_{k_1} &= -\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j + z_1\\
-				x_{k_2} &= -\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j + z_2\\
-				\vdots& \vdots \\
-				x_{k_r}  &= -\textstyle\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j + z_r
-				\end{matrix}.
-				\end{equation} 
-				Como en el caso homogéneo, $x_{k_1},\ldots x_{k_r}$ serán llamadas las variables principales  y $\{x_j\}$ con  $j \not= k_1,\ldots, k_r$ son las variables libres.
-				
 				\begin{ejemplo} Resolvamos el sistema
 					\begin{align*}
 					x_1 -2x_2 + x_3  &= 1\\
@@ -2457,7 +2718,6 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					\end{equation*}
 				\end{ejemplo} 
 				
-			\end{subsection}
 			
 			
 			
@@ -2470,7 +2730,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 		
 		
 		
-		\begin{section}{Álgebra de matrices}
+		\begin{section}{Álgebra de matrices}\label{seccion-alg-de-matrices}
 			
 			Ahora estudiaremos propiedades algebraicas de las matrices,  en particular veremos que dado $n\in \mathbb N$, entonces podemos definir una suma y un producto en el conjunto de matrices $n \times n$ con la propiedad de que estas operaciones satisfacen muchos de los axiomas que definen a  $\mathbb Z$.  
 			
@@ -3813,7 +4073,9 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			
 		\end{enumerate}
 	\end{teorema}
-	
+	\begin{proof}
+		Ver  los teoremas \ref{det-prop-mult-esc}, \ref{det-prop-perm-filas}, \ref{det-prop-fila-mas-cfila} y  sus demostraciones.
+	\end{proof}
 
 	
 	
@@ -3854,7 +4116,10 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			\item $A$ invertible si y solo si  $\det(A)\ne0$.
 		\end{enumerate}
 	\end{teorema}
-		
+\begin{proof}
+	Ver el teorema \ref{th-dem-detAB}.
+\end{proof}
+		\vskip .2cm
 	\begin{corolario}
 		$\det (AB) = \det(BA)$.
 	\end{corolario}
@@ -3962,7 +4227,9 @@ También vale este resultado para matrices $n \times n$.
 \begin{teorema}\label{det-a-trans} Sea $A \in M_n(\K)$,  entonces 
 	$\det(A) = \det(A^\t)$
 \end{teorema}
-	
+\begin{proof}
+	Ver el teorema \ref{th-det-a-trans-app}.
+\end{proof}
 	\vskip .3cm
 	
 	El resultado anterior permite obtener resultados nuevos del cálculo de determinante a partir de resultados vistos anteriormente. 
@@ -4018,6 +4285,9 @@ También vale este resultado para matrices $n \times n$.
 			\end{align*} 
 		\end{enumerate}
 	\end{teorema}
+\begin{proof}
+	Ver la demostración de el teorema  \ref{th-dessarrollo-por-columnas}.
+\end{proof}
 
 
 
@@ -4037,7 +4307,7 @@ También vale este resultado para matrices $n \times n$.
 		
 		\begin{section}{Definición y ejemplos de espacios vectoriales}
 			
-			\begin{definicion} Sea $\K$ cuerpo. Un \textit{espacio vectorial}\index{espacio vectorial} sobre $\K$ o un \textit{$\K$-espacio vectorial }, consiste de  un  conjunto $V$ no vacío, cuyos elementos son llamados \textit{vectores}, junto a  '$+$' y '$.$' tal que
+			\begin{definicion}\label{def-esp-vect} Sea $\K$ cuerpo. Un \textit{espacio vectorial}\index{espacio vectorial} sobre $\K$ o un \textit{$\K$-espacio vectorial }, consiste de  un  conjunto $V$ no vacío, cuyos elementos son llamados \textit{vectores}, junto a  '$+$' y '$.$' tal que
 				\begin{enumerate}
 					\item[(\textit{a})] '$+\colon V\times V\to V$' es una operación, llamada \textit{adición} o  \textit{suma de vectores,} tal que a dos vectores $v,w \in V$ les asigna otro vector $v+w \in V$,
 					\item[(\textit{b})]  '$.
@@ -8389,7 +8659,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		
 		 
 		 
-		 \begin{teorema}  Sean $A,B \in M_n(\K)$,  entonces
+		 \begin{teorema}\label{th-dem-detAB}  Sean $A,B \in M_n(\K)$,  entonces
 		 	\begin{enumerate}
 		 		\item $\det (A B) = \det(A)\det(B)$. 
 		 		\item $A$ invertible si y solo si  $\det(A)\ne0$.
@@ -8439,7 +8709,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 
 
 		 
-		 \begin{teorema}%\label{det-a-trans} 
+		 \begin{teorema}\label{th-det-a-trans-app} 
 		 	Sea $A \in M_n(\K)$,  entonces 
 		 	$\det(A) = \det(A^\t)$
 		 \end{teorema}
@@ -8456,7 +8726,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 
 		 Finalmente,  demostremos el teorema \ref{th-expancion-cofactores}.
 	
-		 \begin{teorema} El determinante de una matriz $A$ de orden $n \times n$ puede ser calculado por la expansión de los cofactores en  cualquier columna o cualquier fila. Más específicamente, 
+		 \begin{teorema}\label{th-dessarrollo-por-columnas} El determinante de una matriz $A$ de orden $n \times n$ puede ser calculado por la expansión de los cofactores en  cualquier columna o cualquier fila. Más específicamente, 
 		 	\begin{enumerate}
 		 		\item si usamos la expansión por la $j$-ésima columna, $1 \le j \le n$, tenemos
 		 		\begin{align*}
