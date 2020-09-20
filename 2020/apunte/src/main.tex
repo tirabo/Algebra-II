@@ -3438,42 +3438,45 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			\begin{proof}
 				Hagamos la prueba para matrices $2 \times 2$. La prueba en general es similar, pero requiere de un complicado manejo de índices.
 				\begin{enumerate}
-					\item Si $c \not=0$, multiplicar $I_2$ por  $c$ la primera fila resulta en la matriz elemental
+					\item[E1.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(I_2)$ resulta en la matriz elemental:
 					\begin{equation*}
-					\begin{bmatrix} c& 0\\ 0&1\end{bmatrix}.
+					E= \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}.
 					\end{equation*}
-					Luego
-					\begin{equation*}
-					\begin{bmatrix} c& 0\\ 0&1\end{bmatrix}
-					\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
+					Ahora bien,
+					\begin{align*}
+					E A&=\begin{bmatrix} c& 0\\ 0&1\end{bmatrix}
+					\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} \\
+					&\qquad= 
 					\begin{bmatrix} 
 					c\,.\,a_{11} + 0 \,.\,a_{21}&c\,.\,a_{12}+0\,.\,a_{22}\\
-					0\,.\,a_{11} + 1 \,.\,a_{21}&0\,.\,a_{12}+1\,.\,a_{22}\end{bmatrix}
+					0\,.\,a_{11} + 1 \,.\,a_{21}&0\,.\,a_{12}+1\,.\,a_{22}\end{bmatrix} 
 					=
 					\begin{bmatrix} 
 					c\,.\,a_{11}&c\,.\,a_{12}\\
 					a_{21}&a_{22}\end{bmatrix} = e(A).
-					\end{equation*}
+					\end{align*}
 					De forma análoga se demuestra en el caso que la operación elemental sea  multiplicar la segunda fila por $c$.
-					\item Sea  $c \in \K$, si en $I_2$ a la fila 2 le sumamos  la fila 1 multiplicada por $c$, resulta en la matriz elemental: 
+					
+					\item[E2.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(I_2)$ resulta en la matriz elemental: 
 					\begin{equation*}
-					\begin{bmatrix} 1& 0\\ c&1\end{bmatrix}.
+					E=\begin{bmatrix} 1& 0\\ c&1\end{bmatrix}.
 					\end{equation*}
 					Luego 
 					\begin{equation*}
-					\begin{bmatrix} 1& 0\\ c&1\end{bmatrix}	\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
+					EA= \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}	\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
 					\begin{bmatrix} 
 					a_{11} &a_{12}\\
 					c\,.\,a_{11} + a_{21}&c\,.\,a_{12}+a_{22}\end{bmatrix} = e(A).
 					\end{equation*}
 					La demostración es análoga si la operación elemental es sumar a la fila 1 la fila 2 multiplicada por $c$.
-					\item Finalmente, si intercambiamos en $I_2$ la fila 1 por la fila 2 obtenemos la matriz elemental
+					
+					\item[E3.]  Finalmente, sea $e$ la operación elemental que intercambia la fila 1 por la fila 2. Entonces,  $E:=e(I_2)$ es la matriz 
 					\begin{equation*}
-					\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
+					E=\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
 					\end{equation*}
 					Luego
 					\begin{equation*}
-					\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}	\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
+					EA= \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}	\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
 					\begin{bmatrix}
 					a_{21} &a_{22}\\
 					a_{11} &a_{12}\end{bmatrix} = e(A).
