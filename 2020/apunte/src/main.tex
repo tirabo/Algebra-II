@@ -3455,7 +3455,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					a_{21}&a_{22}\end{bmatrix} = e(A).
 					\end{equation*}
 					De forma análoga se demuestra en el caso que la operación elemental sea  multiplicar la segunda fila por $c$.
-					\item Si  $c \in \K$, cambiar en $I_2$ la fila 2 por la fila 1 multiplicada por $c$ resulta en la matriz elemental 
+					\item Sea  $c \in \K$, si en $I_2$ a la fila 2 le sumamos  la fila 1 multiplicada por $c$, resulta en la matriz elemental: 
 					\begin{equation*}
 					\begin{bmatrix} 1& 0\\ c&1\end{bmatrix}.
 					\end{equation*}
@@ -3466,7 +3466,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					a_{11} &a_{12}\\
 					c\,.\,a_{11} + a_{21}&c\,.\,a_{12}+a_{22}\end{bmatrix} = e(A).
 					\end{equation*}
-					La demostración es análoga si la operación elemental es cambiar la fila 1 por la fila 2 multiplicada por $c$.
+					La demostración es análoga si la operación elemental es sumar a la fila 1 la fila 2 multiplicada por $c$.
 					\item Finalmente, si intercambiamos en $I_2$ la fila 1 por la fila 2 obtenemos la matriz elemental
 					\begin{equation*}
 					\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
@@ -3480,62 +3480,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					\end{equation*}
 				\end{enumerate}
 				
-				\begin{comment}
-				\begin{enumerate}
-				\item[(1)] Analicemos primero la operación elemental $e$ que es multiplicar la fila $r$ por $c\not=0$. En  ese caso  
-				\begin{equation*}
-				e(I) = \begin{bmatrix} 1&0& \cdots& &0 \\ &\ddots& & & \\ 0& & c & &0 \\ &&  &\ddots& \\ 0&& \cdots& &1		 		
-				\end{bmatrix}
-				\begin{matrix} && \\ && \\ \leftarrow&\text{fila $r$,}& \\ && \\ &&	 		
-				\end{matrix}
-				\end{equation*}
-				es decir, la matriz diagonal con 1's en la diagonal excepto en la fila $r$ y columna $r$ donde vale $c$, en símbolos
-				\begin{equation*}
-				e(I)_{ij} = \left\{ \begin{matrix*}[l]
-				1& \quad &\text{si $i=j$, $i\not=r$} \\
-				c& \quad &\text{si $i=j$, $i=r$} \\
-				0 & \quad &\text{si $i\not=j$}
-				\end{matrix*}\right..
-				\end{equation*}
-				
-				
-				\item[(2)] Si la operación elemental es multiplicar la fila $s$ por  $c$ y sumarla a la fila $r$ obtenemos
-				\begin{equation*}
-				e(I) = \begin{bmatrix} 
-				1 & 0 &\cdots &&    0 \\
-				& \ddots & &&  \\
-				0 &\cdots& 1 &\cdots\; c \;\cdots& 0	\\
-				&  & & \ddots &  \\
-				0		&  & \cdots& & 1	
-				\end{bmatrix}
-				\begin{matrix} && \\ && \\ \leftarrow&\text{fila $r$.}& \\ && \\ &&	 		
-				\end{matrix} 
-				\end{equation*}
-				Es decir en la fila $r$ hay un 1 en la posición $r$ y una $c$  en la posición $s$. En símbolos, 
-				\begin{equation*}
-				e(I)_{ij} = \left\{ \begin{matrix*}[l]
-				1& \quad &\text{si $i=j$} \\
-				c& \quad &\text{si $i=r$, $j=s$} \\
-				0 & \quad &\text{otro caso}
-				\end{matrix*}\right..
-				\end{equation*}
-				
-				
-				\item[(3)] Si la operación elemental es permutar la fila $r$ por la fila $s$ obtenemos 
-				\begin{equation*}
-				e(I) = \begin{bmatrix} 1&0& \cdots& &0 \\ &\ddots& & & \\ 0& & c & &0 \\ &&  &\ddots& \\ 0&& \cdots& &1		 		
-				\end{bmatrix}.
-				\end{equation*}
-				
-				\begin{equation*}
-				e(I)_{ij} = \left\{ \begin{matrix*}[l]
-				1& \quad &\text{si $i=j$, $i,j \not= r,s$ } \\
-				1& \quad &\text{si $i=r$, $j=s$ o $i=s$, $j=r$} \\
-				0 & \quad &\text{otro caso}
-				\end{matrix*}\right..
-				\end{equation*}
-				\end{enumerate}
-				\end{comment} 
+	
 			\end{proof}
 			
 			
@@ -3641,6 +3586,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					\item \label{inv-itm1} si $A$ invertible,  entonces $A^{-1}$  es invertible y su inversa es $A$,  es decir $(A^{-1})^{-1}=A$;
 					\item \label{inv-itm2} si $A$ y $B$ son invertibles, entonces $AB$ es invertible y $(AB)^{-1} = B^{-1}A^{-1}$.
 				\end{enumerate}
+			\end{teorema}
 				\begin{proof}
 					(\ref{inv-itm1}) La inversa a izquierda de $A^{-1}$ es $A$, pues $AA^{-1}=I_n$. Análogamente, la inversa a derecha de $A^{-1}$ es $A$, pues $A^{-1}A = I_n$. Concluyendo: $A$  es la inversa de $A^{-1}$.
 					
@@ -3653,7 +3599,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					AB(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = AI_nA^{-1} =AA^{-1} = I_n.
 					\end{equation*} 
 				\end{proof}
-			\end{teorema}
+			
 			
 			\begin{observacion}
 				Si $A_1,\ldots,A_k$  son invertibles,  entonces $A_1\ldots A_k$ es invertible y su inversa es  $$(A_1\ldots A_k)^{-1} = A_k^{-1}\ldots A_1^{-1} .$$
