@@ -3984,10 +3984,14 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 	El determinante puede ser pensado como una función que a cada matriz cuadrada $n \times n$ con coeficientes en $\K$,  le asocia un elemento de $\K$. En  esta sección veremos como se define esta función y algunas propiedades de la misma. Algunas  demostraciones se omitirán, pues se pondrá énfasis en los usos del determinante y no tanto en sus propiedades teóricas. Las demostraciones faltantes se pueden ver en el Apéndice \ref{apend.Determinante}.
 	
 	\vskip .5cm
-	
-	
-	
-	Una forma de definir determinante es mediante una definición recursiva,  es decir para calcular el determinante de una matriz $n \times n$, usaremos el cálculo  del determinante para matrices $n-1 \times n-1$,  que a su vez se calcula usando el determinante de matrices $n-2 \times n-2$ y así sucesivamente hasta llegar al caso base, que es el caso  de matrices $1 \times 1$.
+	El determinante, permite, entre otras cosas, 
+	\begin{itemize}
+		\item determinar si  una matriz cuadrada es invertible,
+		\item dar una fórmula cerrada para la inversa de una matriz invertible.
+	\end{itemize}
+	Como consecuencia de lo anterior, el determinante permite determinar si un sistema de $n$  ecuaciones lineales con $n$ incógnitas admite una única solución o no, y en el caso de que exista una única solución, dar una fórmula cerrada de esa solución. 
+	\vskip .5cm
+	Una forma de definir determinante es con una fórmula cerrada que usa el \textit{grupo de permutaciones.} Esta forma de definir determinante está fuera del alcance de este curso. La forma  que usaremos nosotros para definir determinante es mediante una definición recursiva: para calcular el determinante de una matriz $n \times n$, usaremos el cálculo  del determinante para matrices $n-1 \times n-1$,  que a su vez se calcula usando el determinante de matrices $n-2 \times n-2$ y así sucesivamente hasta llegar al caso base, que es el caso  de matrices $1 \times 1$.
 	
 	
 	\vskip .5cm

@@ -7,5 +7,10 @@
 			"path": "G:\\Mi unidad\\ALG2-2020\\Beamer\\Ale"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"cSpell.language": ",es",
+		"cSpell.words": [
+			"permutaciones"
+		]
+	}
 }
