@@ -5,12 +5,19 @@
 		},
 		{
 			"path": "G:\\Mi unidad\\ALG2-2020\\Beamer\\Ale"
+		},
+		{
+			"path": "G:\\Mi unidad\\ALG2-2020\\Practicos"
+		},
+		{
+			"path": "G:\\Mi unidad\\ALG2-2020\\Tarea"
 		}
 	],
 	"settings": {
 		"cSpell.language": ",es",
 		"cSpell.words": [
 			"permutaciones"
-		]
+		],
+		"cSpell.enabled": true
 	}
 }
