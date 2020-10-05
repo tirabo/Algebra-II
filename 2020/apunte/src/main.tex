@@ -8296,9 +8296,9 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 		
 		\textbf{Notación exponencial.} Otra notación para representar a los números complejos es la \textit{notación exponencial}, \index{notación exponencial}en la cual se denota
-		\begin{equation*}
-		e^{i\theta} := \cos(\theta) + i\sin(\theta).
-		\end{equation*}
+		\begin{equation}\label{eq-formula-de-euler}
+		e^{i\theta} = \cos(\theta) + i\sin(\theta).
+		\end{equation}
 		Por lo tanto si $z \in \C$ y $\theta$  es el argumento de  $z$,
 		\begin{equation*}
 		z = r e^{i\theta} 
@@ -8322,6 +8322,44 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			La igualdad ($*$) se debe a las tradicionales fórmulas trigonométrica del coseno y  seno de la suma de ángulos.
 		\end{proof}
 		
+		
+		\begin{observacion}[Identidad de Euler] Los alumnos que conozcan las series de Taylor reconocerán inmediatamente la fórmula
+			\begin{equation*}
+				e^x = \sum_{n=0}^{\infty} \frac{1}{n!}x^n,
+			\end{equation*} 
+			donde $x$ es un número real. Ahora bien, remplacemos $x$ por $i\theta$ y obtenemos
+			\begin{align*}
+				e^{i\theta} &= \sum_{n=0}^{\infty} \frac{1}{n!}(i\theta)^n \\
+				&=  \sum_{k=0}^{\infty} \frac{1}{(2k)!}(i\theta)^{2k}  + \sum_{k=0}^{\infty} \frac{1}{(2k+1)!}(i\theta)^{2k+1}. \tag{*}
+			\end{align*}
+		
+		No es difícil ver que $i^{2k} = (-1)^k$ y por lo tanto $i^{2k+1} = i^{2k}\cdot i = (-1)^ki $. Por lo tanto, por (*), 
+		\begin{align*}
+			e^{i\theta} &=  \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!}\theta^{2k}  + i\sum_{k=0}^{\infty} \frac{ (-1)^k}{(2k+1)!}\theta^{2k+1} \\
+			&=\cos(\theta) + i \sen(\theta), 
+		\end{align*}
+		recuperando así  la fórmula (\ref{eq-formula-de-euler}), llamada \emph{fórmula de Euler.}\index{fórmula de Euler} Observemos que especializando la fórmula en $\pi$ obtenemos 
+		\begin{equation*}
+				e^{i\pi} = \cos(\pi) + i\sin(\pi) = -1.
+		\end{equation*}
+		Escrito de otra forma
+		\begin{equation}
+			e^{i\pi} -1 =0.
+		\end{equation}
+		Esta última expresión es denominada la \emph{identidad de Euler}\index{identidad de Euler} y es considerada una de las fórmulas más relevantes de la matemática, pues comprende las cinco constantes matemáticas más importantes. 
+		
+		Las cinco constantes son:
+		\begin{enumerate}
+			\item El número $\mathbf 0$.
+			\item El numero $\mathbf 1$.
+			\item El número $\mathbf \pi$, número irracional  que es la relación entre la circunferencia de un círculo y su diámetro. Es aproximadamente $3.14159\ldots$.
+			\item El número $\mathbf e$, también un número irracional. Es la base de los logaritmos naturales y surge naturalmente a través del estudio del interés compuesto y el cálculo. El número $e$ está presente en una gran cantidad de ecuaciones importantes. Es aproximadamente $2.71828\ldots$.
+			\item El número $\mathbf i$, el más fundamental de los números imaginarios.
+			
+		\end{enumerate}
+		
+		
+		\end{observacion}
 		
 		
 		
