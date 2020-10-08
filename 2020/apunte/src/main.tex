@@ -2764,7 +2764,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			\end{subsection}
 			
 			
-			\begin{subsection}{Método de Gauss} Consideremos el siguiente sistema homogéneo de $m$ ecuaciones lineales con $n$ incógnitas:
+			\begin{subsection}{Método de Gauss} Consideremos el siguiente sistema no homogéneo de $m$ ecuaciones lineales con $n$ incógnitas:
 				\begin{equation*}
 				\begin{matrix}
 				a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
@@ -2772,19 +2772,22 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_n
 				\end{matrix}
 				\end{equation*}
-				con $a_{ij} \in \K$. Sea $[A | Y]$ la matriz asociada a este sistema. Mediante operaciones elementales de fila obtenemos una matriz $[B|Z]$ escalón reducida por fila (teoremas \ref{th-mrf} y \ref{th-merf}). Por el teorema \ref{th-equiv-op-elem} los sistemas de ecuaciones $AX=Y$ y $BX=Z$ tiene las mismas soluciones. 
+				con $a_{ij} \in \K$. Sea $[A | Y]$ la matriz asociada a este sistema. Mediante operaciones elementales de fila obtenemos una matriz $[B|Z]$, donde $B$ es matriz escalón reducida por fila (teorema \ref{th-merf}). Por el teorema \ref{th-equiv-op-elem} los sistemas de ecuaciones $AX=Y$ y $BX=Z$ tiene las mismas soluciones. 
 				
 				
 				 Veamos ahora formalmente cuales son las soluciones del sistema $BX=Z$. Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros 1's en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
 				\begin{equation}
 				\begin{matrix}
-				&x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j= &z_1\\
-				&x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j= &z_2\\
+				&x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&= &z_1\\
+				&x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j&= &z_2\\
 				& \vdots& &  &\vdots \\
-				&x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j= &z_r\\
+				&x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j&= &z_r\\
+				&&  &0&= &z_{r+1}\\
+				&&  &\vdots &\\
+				&&  &0&= &z_{m}.\\
 				\end{matrix}
 				\end{equation}  
-				y, por lo tanto,
+				y, por lo tanto, el sistema tiene solución si y solo si  $z_{r+1} = \cdots = z_m =0$ y en ese caso las soluciones son: 
 				\begin{equation}
 				\begin{matrix}\label{sist-eq-hom-merf0}
 				x_{k_1} &= z_1-\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j\\
@@ -2803,20 +2806,20 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				En particular,  hemos probado:
 				
 				\begin{teorema}\label{inf-sol}
-					Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces, si $A$ es equivalente por filas a  $B$ una  MERF y $B$ tiene filas nulas, el sistema $AX=Y$ tiene infinitas soluciones. 
+					Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Si $A$ es equivalente por filas a  $B$ una  MERF y $B$ tiene filas nulas, entonces si el sistema $AX=Y$ tiene solución,  tiene infinitas soluciones. 
 				\end{teorema}
 				\begin{proof}
-					Sea $r$  el número de filas no nulas de $B$, como $B$ tiene filas nulas,  entonces $r<n$ y, por lo tanto, existe al menos una variable libre. Esto implica que hay infinitas soluciones. 
+					Sea $r$  el número de filas no nulas de $B$, como $B$ tiene filas nulas,  entonces $r<n$. Como el sistema tiene solución y $r<n$  hay al menos una variable libre. Esto implica que hay infinitas soluciones. 
 					
 					Por ser $A$ y $B$ equivalentes por fila, $AX=Y$ y $BX=Z$ tienen las mismas soluciones y, por consiguiente, $AX=Y$ tiene infinitas soluciones. 
 				\end{proof}
 				
 				\begin{teorema}\label{soluciones-m-menor-n}
-					Sea $A$ una matriz $m \times n$ con  $m < n$ e $Y$ matriz $m \times 1$ . Entonces, el sistema de ecuaciones lineales $AX=Y$ tiene infinitas soluciones.
+					Sea $A$ una matriz $m \times n$ con  $m < n$ e $Y$ matriz $m \times 1$ . Entonces, si el sistema de ecuaciones lineales $AX=Y$ tiene solución, tiene infinitas soluciones.
 				\end{teorema}
 				\begin{proof}
 					La matriz $A$ es equivalente por fila a una matriz $B$ escalón reducida por fila 
-					y $B$ tiene $r$ filas no nulas con $r \le m <n$. Por lo tanto hay $n-r \ge 1$ variables libres, y en consecuencia $BX=Z$ (y $AX=Y$) tienen infinitas soluciones.
+					y $B$ tiene $r$ filas no nulas con $r \le m <n$. Como el sistema tiene solución y $r<n$  hay al menos una variable libre. Por lo tanto, $BX=Z$ (y $AX=Y$) tienen infinitas soluciones.
 				\end{proof}
 				
 				\begin{lema}\label{mtrx-merf-id}
