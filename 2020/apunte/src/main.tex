@@ -4246,7 +4246,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 		\end{enumerate}
 	\end{teorema}
 	\begin{proof}
-		Ver  los teoremas \ref{det-prop-mult-esc}, \ref{det-prop-perm-filas}, \ref{det-prop-fila-mas-cfila} y  sus demostraciones.
+		Ver  los teoremas \ref{th-E1}, \ref{th-E3}, \ref{th-E2} y  sus demostraciones.
 	\end{proof}
 
 	
@@ -8674,10 +8674,10 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		
 		\begin{section}{Determinantes}
 			
-		Lo primero que veremos será la demostración del  teorema \ref{det-prop-fundamentales}. Los tres resultados de ese teorema los demostraremos en forma separada: serán los teoremas \ref{det-prop-mult-esc}, \ref{det-prop-perm-filas} y \ref{det-prop-fila-mas-cfila}.
+		Lo primero que veremos será la demostración del  teorema \ref{det-prop-fundamentales}. Los tres resultados de ese teorema los demostraremos en forma separada: serán los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3}.
 		
 		
-		\begin{teorema} \label{det-prop-mult-esc}
+		\begin{teorema} \label{th-E1}
 			Sea $A  \in M_n(\K)$ y sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ multiplicando la fila $r$ por $c$, es decir $A  \stackrel{cF_r}{\longrightarrow} B$, entonces $\det B = c \det A$.
 		\end{teorema}
 		\begin{proof}
@@ -8702,55 +8702,8 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		\end{proof}
 		
 
-		
-		
-		\begin{teorema} \label{det-prop-perm-filas}
-			Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
-			Sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} B$, entonces $\det B = -\det A$.
-		\end{teorema}
-		\begin{proof}
-			Primero probaremos el teorema bajo el supuesto de que la fila $1$ es permutada con la fila $k$, para $k > 1$. Esto será suficiente para probar el teorema, puesto que intercambiar las filas $k$ y $k_ 0$ es equivalente a realizar tres permutaciones de filas: primero intercambiamos las filas $1$ y $k$, luego las filas $1$ y $k_{0}$, y finalmente intercambiando las filas $1$ y $k$. Cada permutación cambia el signo del determinante y al ser tres permutaciones,  el intercambio de la fila $k$ con la fila $k_0$ cambia el signo.
 			
-			
-			La prueba es por inducción en $n$. El caso base $n = 1$ es completamente trivial.
-			(O, si lo prefiere, puede tomar $n = 2$ como el caso base, y el teorema es
-			fácilmente probado usando la fórmula para el determinante de una matriz $2 \times 2$).
-			Las definiciones de los determinantes de $A$ y $B$ son:
-			\begin{equation*}
-			\det(A) = \sum_{i=1}^{n}  a_{i1}C^A_{i1} \quad \text{ y } \quad \det(B) = \sum_{i=1}^{n}  b_{i1}C^B_{i1}.
-			\end{equation*}
-			
-			
-			Supongamos primero que $i \ne 1, k$. En este caso, está claro que $A(i|1)$ y $B(i|1)$ son iguales, excepto que dos filas se intercambian. Por lo tanto, por hipótesis inductiva $C^A_{i1} = -C^B_{i1}$. Ya que también $a_{i1} = b_{i1}$, tenemos entonces que
-			\begin{equation}\label{det-perm-01}
-			a_{i1}C^A_{i1} = - b_{i1}C^B_{i1}, \quad \text{ para } i\ne 1,k.
-			\end{equation}
-			
-			Queda por considerar los términos $i = 1$ y $i = k$. Nosotros afirmamos que
-			\begin{equation}\label{det-perm-02}
-			-	a_{k1}C^A_{k1} =  b_{11}C^B_{11}  \quad \text{ y } \quad - a_{11}C^A_{11} = b_{k1}C^B_{k1}. 
-			\end{equation}
-			Si probamos esto, entonces 
-			\begin{align*}
-			\det(A) &= \sum_{i=1}^{n}  a_{i1}C^A_{i1} \\
-			&= a_{11}C^A_{11} +  \sum_{i=2}^{k-1}  a_{i1}C^A_{i1} + a_{k1}C^A_{k1} + \sum_{i=k+1}^{n}  a_{i1}C^A_{i1}\qquad \text{por (\ref{det-perm-01}) y (\ref{det-perm-02})} \\
-			&= -b_{k1}C^B_{k1} - \sum_{i=2}^{k-1}  b_{i1}C^B_{i1} - b_{11}C^B_{11} - \sum_{i=k+1}^{n}  b_{i1}C^B_{i1}  \\
-			&= - \sum_{i=1}^{n}  b_{i1}C^B_{i1} =- \det(B).
-			\end{align*}
-			Luego el teorema está probado. Por lo tanto debemos probar (\ref{det-perm-02}). Por simetría, basta probar la primera identidad de (\ref{det-perm-02}),  es decir  que $	a_{k1}C^A_{k1} = - b_{11}C^B_{11}$. 
-			
-			Para esto, primero debemos observar que $a_{k1} = b_{11}$, por lo tanto sólo hace falta probar que $-C^A_{k1} = C^B_{11}$. En segundo lugar, debemos tener  en cuenta que $B(1|1)$ se obtiene de $A(k|1)$ reordenando las filas $1,2,\ldots, k -1$  de $A(k|1)$ en el orden $2,3, \ldots, k-1,1$. Este reordenamiento puede hacerse permutando la fila $1$ con la fila $2$, luego permutando esa fila con la fila $3$, etc., terminando con una permutación con la fila $k-1$. Esto es un total de $k - 2$  permutaciones de fila. Asi que, por hipótesis inductiva,
-			\begin{equation*}
-			\det(B(1|1)) = (-1)^{k-2}\det(A(k|1)) = (-1)^{k}\det(A(k|1)) = - (-1)^{k+1}\det(A(k|1)), 
-			\end{equation*}
-			es decir $C^B_{11} = -C^A_{k1}$. Esto completa la demostración del teorema.
-		\end{proof}
-		
-	\begin{observacion}
-		Recordar que del resultado anterior se deduce fácilmente que si una matriz tiene dos filas iguales entonces su determinante es 0. Esto se debía a que, intercambiando las dos filas iguales obtenemos la misma matriz, pero calculando el determinante con el teorema anterior vemos que cambia de signo y el único número en $\K$ que es igual a su opuesto es el 0. 
-	\end{observacion}
-		
-		\begin{lema} Sean $A,B,C$ matrices $n \times n$ tal que
+		\begin{lema}\label{lema-E2} Sean $A,B,C$ matrices $n \times n$ tal que
 			\begin{equation*}
 			A= \begin{bmatrix}
 			a_{11}&a_{12}&\cdots&a_{1n}\\
@@ -8799,10 +8752,10 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 			&= \det A + \det B.
 			\end{align*}
 			
-			El caso $r >1$ se demuestra de manera similar o,  si se prefiere, puede usarse el teorema \ref{det-prop-perm-filas}, observando que la permutación entre la fila $1$ y la fila $r$ cambia el signo del determinante.  
+			El caso $r >1$ se demuestra de manera similar o,  si se prefiere, puede usarse el teorema \ref{th-E3}, observando que la permutación entre la fila $1$ y la fila $r$ cambia el signo del determinante.  
 		\end{proof}
 	
-		\begin{teorema}\label{det-prop-fila-mas-cfila}
+		\begin{teorema}\label{th-E2}
 			Sea $A  \in M_n(\K)$. Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ sumando a la fila $r$ la fila $s$ multiplicada por $c$, es decir  $A  \stackrel{F_r + cF_s}{\longrightarrow} B$, entonces $\det B = \det A$.
 		\end{teorema}
 		\begin{proof}
@@ -8816,14 +8769,76 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 			\begin{equation}
 			\det B = \det A + \det A'.
 			\end{equation}
-			Ahora bien, por teorema \ref{det-prop-mult-esc}, 
+			Ahora bien, por teorema \ref{th-E1}, 
 			$$
 			\det A' = c \left| \begin{matrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_s \\ \vdots \\ F_n \end{matrix} \right|,
 			$$
 			y este último determinante es cero, debido a que la matriz tiene dos filas iguales. Luego,  $\det B = \det A$. 
 		\end{proof}
 		
-		 \vskip .3cm
+		\vskip .3cm
+		
+		\begin{teorema} \label{th-E3}
+			Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
+			Sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} B$, entonces $\det B = -\det A$.
+		\end{teorema}
+		\begin{proof}
+			Primero probaremos el teorema bajo el supuesto de que la fila $1$ es permutada con la fila $k$, para $k > 1$. Esto será suficiente para probar el teorema, puesto que intercambiar las filas $k$ y $k_ 0$ es equivalente a realizar tres permutaciones de filas: primero intercambiamos las filas $1$ y $k$, luego las filas $1$ y $k_{0}$, y finalmente intercambiando las filas $1$ y $k$. Cada permutación cambia el signo del determinante y al ser tres permutaciones,  el intercambio de la fila $k$ con la fila $k_0$ cambia el signo.
+			
+			
+			La prueba es por inducción en $n$. El caso base $n = 1$ es completamente trivial.
+			(O, si lo prefiere, puede tomar $n = 2$ como el caso base, y el teorema es
+			fácilmente probado usando la fórmula para el determinante de una matriz $2 \times 2$).
+			Las definiciones de los determinantes de $A$ y $B$ son:
+			\begin{equation*}
+			\det(A) = \sum_{i=1}^{n}  a_{i1}C^A_{i1} \quad \text{ y } \quad \det(B) = \sum_{i=1}^{n}  b_{i1}C^B_{i1}.
+			\end{equation*}
+			
+			
+			Supongamos primero que $i \ne 1, k$. En este caso, está claro que $A(i|1)$ y $B(i|1)$ son iguales, excepto que dos filas se intercambian. Por lo tanto, por hipótesis inductiva $C^A_{i1} = -C^B_{i1}$. Ya que también $a_{i1} = b_{i1}$, tenemos entonces que
+			\begin{equation}\label{det-perm-01}
+			a_{i1}C^A_{i1} = - b_{i1}C^B_{i1}, \quad \text{ para } i\ne 1,k.
+			\end{equation}
+			
+			Queda por considerar los términos $i = 1$ y $i = k$. Nosotros afirmamos que
+			\begin{equation}\label{det-perm-02}
+			-	a_{k1}C^A_{k1} =  b_{11}C^B_{11}  \quad \text{ y } \quad - a_{11}C^A_{11} = b_{k1}C^B_{k1}. 
+			\end{equation}
+			Si probamos esto, entonces 
+			\begin{align*}
+			\det(A) &= \sum_{i=1}^{n}  a_{i1}C^A_{i1} \\
+			&= a_{11}C^A_{11} +  \sum_{i=2}^{k-1}  a_{i1}C^A_{i1} + a_{k1}C^A_{k1} + \sum_{i=k+1}^{n}  a_{i1}C^A_{i1}\qquad \text{por (\ref{det-perm-01}) y (\ref{det-perm-02})} \\
+			&= -b_{k1}C^B_{k1} - \sum_{i=2}^{k-1}  b_{i1}C^B_{i1} - b_{11}C^B_{11} - \sum_{i=k+1}^{n}  b_{i1}C^B_{i1}  \\
+			&= - \sum_{i=1}^{n}  b_{i1}C^B_{i1} =- \det(B).
+			\end{align*}
+			Luego el teorema está probado. Por lo tanto debemos probar (\ref{det-perm-02}). Por simetría, basta probar la primera identidad de (\ref{det-perm-02}),  es decir  que $	a_{k1}C^A_{k1} = - b_{11}C^B_{11}$. 
+			
+			Para esto, primero debemos observar que $a_{k1} = b_{11}$, por lo tanto sólo hace falta probar que $-C^A_{k1} = C^B_{11}$. En segundo lugar, debemos tener  en cuenta que $B(1|1)$ se obtiene de $A(k|1)$ reordenando las filas $1,2,\ldots, k -1$  de $A(k|1)$ en el orden $2,3, \ldots, k-1,1$. Este reordenamiento puede hacerse permutando la fila $1$ con la fila $2$, luego permutando esa fila con la fila $3$, etc., terminando con una permutación con la fila $k-1$. Esto es un total de $k - 2$  permutaciones de fila. Asi que, por hipótesis inductiva,
+			\begin{equation*}
+			\det(B(1|1)) = (-1)^{k-2}\det(A(k|1)) = (-1)^{k}\det(A(k|1)) = - (-1)^{k+1}\det(A(k|1)), 
+			\end{equation*}
+			es decir $C^B_{11} = -C^A_{k1}$. Esto completa la demostración del teorema.
+		\end{proof}
+		
+	\begin{observacion}
+		Del resultado anterior se deduce fácilmente que si una matriz tiene dos filas iguales entonces su determinante es 0. Esto se debe a que, intercambiando las dos filas iguales obtenemos la misma matriz, pero calculando el determinante con el teorema anterior vemos que cambia de signo y el único número en $\K$ que es igual a su opuesto es el 0. 
+	\end{observacion}
+	
+	\vskip .3cm
+	
+\begin{corolario}\label{cor-det-elemental} Consideremos matrices elementales en $\K^{n \times n}$. 
+	\begin{enumerate}
+		\item\label{cor-det-E1} Sea $E$ la matriz elemental que se obtiene  multiplicando por $c\ne 0$ la matriz $I_n$.  Entonces $\det(E) = c$. 
+		\item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $I_n$  sumando $c$ veces $F_r$  a $F_s$ ($r\ne s$).  Entonces $det(E) = 1$.
+		\item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $I_n$ de permutando la $F_r$ con  $F_s$ ($r\ne s$).  Entonces $\det(E)=-1$. 
+	\end{enumerate}
+\end{corolario}
+
+\begin{proof}
+	Se  demuestra trivialmente considerando que en todos los casos $E=e(I_n)$ donde $e$  es una operación elemental por fila,  considerando  que $\det(I_n)=1$  y aplicando los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3},  según corresponda.
+\end{proof}
+
+	\vskip .3cm
 		 
 		 A continuación veremos que el determinante del producto de matrices es el producto de los determinantes de las matrices. 
 		 
@@ -8832,8 +8847,15 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	\det (EA) = \det E \det A.
 		 	\end{equation}  
 		 \end{teorema}
-		 \begin{proof}
-		 	(1) Si $c \not=0$, y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $I_n$, sabemos, por corolario \ref{det-mtrx-elem}, que tiene determinante igual a $c$. Por otro lado, el teorema \ref{th-mrtx-elem} nos dice que $EA$ es la matriz que se obtiene a partir de $A$ multiplicando la fila $r$ por $c$, y entonces, por teorema \ref{det-prop-fundamentales}, $\det(EA) = c \det A = \det E \det A$.
+		 \begin{proof} 
+			En todos los casos $EA = e(A)$ donde $e$  es una operación elemental por fila (teorema \ref{th-mrtx-elem}). 
+			
+			
+			 (1) Si $c \not=0$, y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $I_n$, luego
+			 \begin{equation*}
+				 det(EA) = det(e(A)) \stackrel{\text{Teor. }\ref{th-E1}}{=} c \cdot det(A)  \stackrel{\text{Cor. }\ref{cor-det-elemental}.\ref{cor-det-E1}}{=} det(E) det(A). 
+			 \end{equation*}
+			 
 		 	
 		 	(2) Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $I_n$  la fila $s$ multiplicada por $c$, entonces $\det E =1$. Por  otro lado  $\det(EA) = \det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
 		 	
