@@ -121,6 +121,19 @@
 \newtheorem{observacion}{Observaci\'on}[section]
 \newtheorem{obs}{Observaci\'on}[section]
 \newtheorem{nota}{Nota}[section]
+\newtheorem{conclusion}{Conclusión}[section]
+
+\newenvironment{solucion}{%
+\renewcommand{\proofname}{Solución}
+\begin{proof}%
+
+  }{%
+\end{proof}%
+\renewcommand{\proofname}{Demostraci\'on}
+}{%
+  \endquote
+}
+
 
 
 \renewcommand{\abstractname}{Resumen}
@@ -4465,6 +4478,573 @@ También vale este resultado para matrices $n \times n$.
 
 
 \end{section}	
+
+\begin{section}{Autovalores y autovectores}
+
+  
+    \begin{definicion}
+		Sea $A\in\K^{n\times n}$. Se dice que {$\lambda\in\K$} es un \textit{autovalor} de $A$ y si existe \textit{$v\in\K^{n}$} no nulo tal que 
+		\begin{align*}
+		Av=\lambda v .
+		\end{align*}
+		En ese caso decimos que $v$  es un \textit{autovector} asociado a $\lambda$
+		\end{definicion}
+		\vskip .5cm
+		\begin{ejemplo}
+		$1$ es un autovalor de  $Id_n$ y todo $v\in\K^n$ es un autovector asociado a $1$ pues
+		\begin{align*}
+		Id_n v= v 
+		\end{align*}
+		\end{ejemplo}
+		 
+		
+		 
+		
+		
+		
+		\begin{observacion}
+		El autovalor puede ser $0$ pero el autovector nunca puede ser $0$ 
+		\end{observacion}
+		\vskip .8cm
+		
+		\begin{ejemplo}
+		$0$ es un autovalor de  
+		$\left[\begin{array}{cc}
+					0&1\\0&0
+					\end{array}
+		\right]$
+		y $\left[\begin{array}{c}
+					1\\0
+					\end{array}
+		\right]$ es un autovector asociado a $0$ pues
+		\begin{align*}
+		\left[\begin{array}{cc}
+					0&1\\0&0
+					\end{array}
+		\right]
+		\left[
+		\begin{array}{c}
+		1\\0 
+		\end{array}
+		\right]
+		=
+		\left[
+		\begin{array}{c}
+		0\\0 
+		\end{array}
+		\right]=
+		0\left[
+		\begin{array}{c}
+		1\\0 
+		\end{array}
+		\right]
+		\end{align*}
+		\end{ejemplo}
+		 
+		
+		 
+		
+	
+		
+		\begin{observacion}
+		La existencia de autovalores dependen del cuerpo donde estamos trabajando. 
+		\vskip .2cm
+		Por ejemplo sea $A \in \R^{n\times n}$ 
+		$$A=\left[
+		\begin{array}{rr}
+		0&-1\\1&0
+		\end{array}
+		\right].$$ 
+		Entonces,  $A$ no tiene autovalores reales. 
+		\vskip .2cm
+		Veremos que si permitimos autovalores complejos entonces sí tienen autovalores.
+		
+	
+		\end{observacion}
+
+		
+		
+		 
+		
+	
+		
+		
+		 
+		
+		\begin{definicion}
+		
+		Dado $i\in\{1, ..., n\}$, se denota \textit{$e_i$} al vector de $\K^n$ cuyas coordenadas son todas ceros excepto la coordenada $i$ que es un $1$
+		\begin{align*}
+		e_i=\left[
+		\begin{array}{c}
+		0\\ \vdots\\1\\ \vdots\\0
+		\end{array}
+		\right]
+		\end{align*}
+		El conjunto $\{e_1, ..., e_n\}$ se llama \textit{base canónica} de $\K^n$.
+		\end{definicion}
+		
+		\begin{ejemplo}
+		En $\K^3$ los vectores son $
+		e_1=\left[
+		\begin{array}{c}
+		1\\0\\0
+		\end{array}
+		\right]$, $
+		e_2=\left[
+		\begin{array}{c}
+		0\\1\\0
+		\end{array}
+		\right]$, 
+		$
+		e_3=\left[
+		\begin{array}{c}
+		0\\0\\1
+		\end{array}
+		\right]
+		$
+		\end{ejemplo}
+		 
+		
+	
+	
+		 
+		\begin{ejemplo}{Ejemplo: Matriz diagonal}
+		Sea $D\in\K^{n\times n}$ una matriz diagonal con entradas $\lambda_1$, $\lambda_2$, ..., $\lambda_n$.
+		\vskip .2cm
+		Entonces $e_i$ es un autovector con autovalor $\lambda_i$  $\,\forall\, i\in\{1, ..., n\}$
+		\end{ejemplo}
+		
+		\begin{proof}
+			Recordar que la multiplicación $De_i$ se corresponde con multiplicar cada fila de $e_i$ por el elemento correspondiente de la diagonal. 
+		\vskip .2cm
+			Como las filas (en este caso entradas) de $e_i$ son todas nulas excepto un $1$ en la entrada $i$ queda queda
+			$$
+			De_i=\left[
+			\begin{array}{c}
+			0\\ \vdots\\\lambda_i\\ \vdots\\0
+			\end{array}
+			\right]=\lambda_i e_i
+			$$
+
+		\end{proof}
+	  
+		 
+		
+	
+		
+		 
+		
+		\begin{observacion}
+		Puede haber varios autovectores con el mismo autovalor. 
+		\end{observacion}
+		
+		Vimos esto en el ejemplo con $Id$ y en el caso de la diagonal si tiene entradas iguales sucede lo mismo. 
+		
+		\
+		
+		Más aún
+		el conjunto de todos los autovectores con un mismo autovalor es \textit{invariante por la suma y la multiplicación por escalares.}
+		
+		\
+		
+		En particular los múltiplos de un autovector son autovectores con el mismo autovalor.
+		
+		 
+			 
+	  
+		 
+		
+		\begin{definicion}
+		Sea $A\in\K^{n\times n}$ y $\lambda\in\K$ un autovalor de $A$. El \textit{autoespacio} asociado a $\lambda$ es
+		$$
+		V_\lambda=
+		\{v\in\K^n\mid Av=\lambda v\}.
+		$$
+		Es decir, \textit{$V_\lambda$} es el conjunto  formado por todos los autovectores asociados a $\lambda$ y el vector nulo.
+		\end{definicion}
+		
+		
+		\begin{teorema}
+		Si $v$ y $w$ pertenecen al autoespacio de $A$ asociado a $\lambda$, entonces $v+tw$ también pertenece 
+		\end{teorema}
+		
+		\begin{proof}
+		 $$
+		A(v+tw)=Av+tAw=\lambda v+t\lambda w=\lambda(v+tw).
+		$$
+		\end{proof}
+		
+		 
+	
+	
+		
+		 
+		
+		\begin{proposicion}
+		Un autovector no puede tener dos autovalores distintos. 		
+		Por lo tanto autovectores con autovalores distintos son distintos.
+		\end{proposicion}
+		
+	   \begin{proof}
+		Supongamos que $Av=\lambda v$ y $Av=\mu v$. Entonces $\lambda v=\mu v$ y por lo tanto 
+		$$
+		(\lambda-\mu) v=
+		\left[
+		\begin{array}{c}
+		(\lambda-\mu)v_1\\ \vdots\\(\lambda-\mu)v_n
+		\end{array}
+		\right]
+		=
+		\left[
+		\begin{array}{c}
+		0\\ \vdots\\0
+		\end{array}
+		\right]
+		$$
+		
+		Como $v\neq0$ por ser autovector, alguna de sus coordenadas es no nula. Entonces $\lambda-\mu$ tiene que ser $0$ o dicho de otro modo $\lambda=\mu$.
+	   \end{proof}
+		
+		 
+		 
+		
+	   
+		
+		
+		
+		 
+		
+		\begin{problema}
+		Hallar los autovalores de $A\in\K^{n\times n}$ y para cada autovalor, describir explícitamente el autoespacio asociado.
+		\end{problema}
+		
+		\begin{itemize}
+			\item En otras palabras nos preguntamos que $\lambda\in\K$ y  que $v\in\K^{n}$ satisfacen
+			$$
+			Av=\lambda v
+			\Longleftrightarrow
+			Av-\lambda v=0
+			\Longleftrightarrow
+			(A-\lambda Id)v=0 .
+			$$
+			\item La última igualdad es un sistema de ecuaciones lineales. Queremos ver entonces si existe un $v\in\K^{n}$ no nulo que sea solución del sistema homogéneo
+			\begin{equation*}
+				(A-\lambda Id)X=0.\tag{*}
+			\end{equation*}
+			\item  Un  sistema $BX =0$ tiene solución no trivial sii $\det(B)=0$. Por lo tanto (*) tiene  solución no trivial si y sólo si 
+			$$
+			\det(A-\lambda Id)=0.
+			$$ 
+		\end{itemize}
+		
+		
+	   
+		 
+		
+	
+	
+		 
+		
+		
+		\begin{conclusion}
+		$\lambda\in\K$ es un autovalor de $A$ y $v\in\K^n$ es un autovector asociado a $\lambda$ si y sólo si
+		\begin{itemize}
+		 \item $\det(A-\lambda Id)=0$
+		 \item $v$ es solución del sistema homogéneo $(A-\lambda Id)X=0$
+		\end{itemize}
+		\end{conclusion}
+		\vskip .6cm
+		Esta es casi la respuesta a nuestro problema. Para dar una respuesta más precisa introducimos el siguiente polinomio.
+		 
+		
+		 
+		
+		\begin{definicion}
+		
+		Sea $A\in\K^{n\times n}$. El \textit{polinomio característico} de $A$ es
+		\begin{align*}
+		\chi_A(x)=\det(A-x Id)
+		\end{align*}
+		\end{definicion}
+		\vskip .2cm
+		\begin{ejemplo}
+		El polinomio  característico de $Id_n$ es 
+		\begin{align*}
+		\chi_{Id_n}(x)=(1-x)^n 
+		\end{align*}
+		\end{ejemplo} \vskip -.6cm
+		\begin{proof}
+			$Id-x Id=(1-x)Id$ es una matriz diagonal con $(1-x)$ en todas las entradas de la diagonal. Entonces el determinante es el producto de la diagonal. 
+		\end{proof}
+	
+		 
+		
+	 
+		En general,  si $A = [a_{ij}]$ matriz $n \times n$, tenemos que
+			\begin{equation*}
+			\chi_A(x) = \det(A- x\,Id) = \det
+			\begin{bmatrix}
+			a_{11}-x&a_{12}&\cdots&a_{1n}\\
+			a_{21}&a_{22}-x&\cdots&a_{2n}\\
+			\vdots&\vdots&\ddots&\vdots\\
+			a_{n1}&a_{n2}&\cdots&a_{nn}-x\\
+			\end{bmatrix}
+			\end{equation*} 
+			y el polinomio característico de $A$ es un polinomio  de grado $n$,  más precisamente  
+			$$
+			\chi_A(x) =(-1)^nx^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
+			$$ 
+			Esto se puede demostrar por inducción. 
+			
+	 
+	
+	
+	
+		 
+		
+		
+		\begin{ejemplo}
+		El polinomio  característico de 
+		$
+		A=
+		\left[
+		\begin{array}{cc}
+		0&1\\0&0 
+		\end{array}
+		\right]
+		$ es 
+		$
+		\chi_{A}(x)=x^2
+		$
+		\end{ejemplo}\vskip -.4cm
+		\begin{proof}
+			$A-x Id=\left[
+		\begin{array}{cc}
+		-x&1\\0&-x 
+		\end{array}
+		\right]$ es triangular superior. Entonces el determinante es el producto de la diagonal. 
+		\end{proof}
+	 
+		\vskip .2cm
+		
+		\begin{ejemplo}
+		Si
+		$
+		A=
+		\left[
+		\begin{array}{cc}
+		a&b\\c&d 
+		\end{array}
+		\right]
+		$, entonces $ \chi_{A}(x)=(a-x)(d-x)-bc $.
+		\end{ejemplo}
+		\vskip -.2cm
+		\begin{proof}
+			$A-x Id=\left[
+		\begin{array}{cc}
+		a-x&b\\c&d-x 
+		\end{array}
+		\right]$ y usamos la fórmula del determinante de una $2\times 2$. 
+		\end{proof}
+	
+		 
+		
+	 
+	
+		 
+		
+	   
+			
+			\begin{proposicion}\label{autovalores}
+				Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ 
+			\end{proposicion}
+			\begin{proof}
+				\begin{tabular}{rl}
+		$\lambda$ es autovalor &$\Leftrightarrow$ existe $v \ne 0$ tal que $Av = \lambda v$ \\
+					&\\
+					&$\Leftrightarrow$ $0 = Av-\lambda v  =   Av-\lambda Id v =  (A-\lambda Id)v$ \\
+					&\\
+					&$\Leftrightarrow$ $(A-\lambda Id)X=0$ tiene solución no trivial \\
+					&\\
+					&$\Leftrightarrow$ $\chi_A(\lambda) = \det(A-\lambda Id) =0$ \\
+					&\\
+					&$\Leftrightarrow$ $\lambda$ es raíz del polinomio característico.  
+				\end{tabular}
+				 
+			
+			\end{proof}
+		
+		 
+		
+	 
+		\begin{observacion}{Método para encontrar autovalores y autovectores de $A$}
+			\vskip .2cm
+			\begin{enumerate}
+				\item Calcular $\chi_A(x) =\det(A-x Id{})$,
+				\vskip .2cm
+				\item Encontrar las raíces $\lambda_1,\ldots,\lambda_k$ de $\chi_A(x)$.
+				
+				(no siempre se puede. No hay fórmula para encontrar las raíces de polinomios de grado 5 o superior).
+				\vskip .2cm
+				\item Para cada $i$ con $1 \le i \le k$ resolver el sistema de ecuaciones lineales:
+				\begin{equation*}
+					(A-\lambda_i Id)X = 0.
+				\end{equation*}
+				Las soluciones no triviales  de este sistema son los autovectores con autovalor $\lambda_i$.
+	
+			\end{enumerate}
+		\end{observacion}
+	 
+		
+	 
+		\begin{ejemplo}
+			Encontrar autovalores y autovectores de la matriz 
+			\begin{equation*}
+				A=\begin{bmatrix}
+					3&-2 \\ 1&0
+				\end{bmatrix}.
+			\end{equation*}
+		\end{ejemplo}
+		\vskip -.4cm
+		\begin{solucion}
+			\begin{enumerate}
+				\item  $            \chi_A(x)= \det\left[\begin{matrix}
+				3-x& -2 \\ 1 & -x
+				\end{matrix} \right]= x^2 -3x +2   =(x -1)(x -2)$.
+				\item Los autovalores de $A$ son las raíces de  $\chi_A(x)$: $1$ y $2$.
+				\item Debemos resolver los sistemas de ecuaciones:
+				\begin{equation*}
+					(A - Id)X = 0,\qquad (A - 2 Id)X = 0.
+				\end{equation*}
+			\end{enumerate}
+		
+	 
+	
+	 
+		Es decir,  debemos resolver los sistemas
+		\begin{align*}
+			\begin{bmatrix}
+				3 - 1&-2 \\ 1&-1
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_1\\x_2
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				0\\0
+			\end{bmatrix}
+			\qquad &\Rightarrow \qquad 
+			\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix}
+			\begin{bmatrix}
+				x_1\\x_2
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				0\\0
+			\end{bmatrix} \tag{S1}
+			\\
+			&
+			\\
+			\begin{bmatrix}
+				3 - 2&-2 \\ 1&-2
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_1\\x_2
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				0\\0
+			\end{bmatrix}
+			\qquad &\Rightarrow \qquad 
+			\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix}
+			\begin{bmatrix}
+				x_1\\x_2
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				0\\0
+			\end{bmatrix} \tag{S2}
+		\end{align*}
+	\vskip .4cm
+		(S1) $\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix} \stackrel{F_1 -2F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-1 \end{bmatrix}$  $\Rightarrow$ $x_1-x_2=0$ $\Rightarrow$ $(t,t)$ es solución. 
+		\vskip .4cm
+		(S2)  $\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix} \stackrel{F_2 -F_1}{\longrightarrow} \begin{bmatrix}1&-2 \\ 0&0\end{bmatrix}$  $\Rightarrow$ $x_1-2x_2=0$ $\Rightarrow$ $(2t,t)$ es solución. 
+	
+	 
+	
+	
+	 Respuesta final:
+		
+			\begin{itemize}
+				\item Los autovalores de $A$ son $1$ y $2$.
+				\item El conjunto de autovectores con autovalor $1$ es
+				\begin{equation*}
+					\{t(1,1): t \ne 0\}.
+				\end{equation*}
+				\item El conjunto de autovectores con autovalor $2$ es
+				\begin{equation*}
+					\{t(2,1): t \ne 0\}.
+				\end{equation*}
+			\end{itemize}
+	
+			
+		\end{solucion}
+	 
+	
+	
+		
+		 
+	
+		\begin{ejemplo}
+		 Sea $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix} \in \R^2$. Encontrar los autovalores \textit{reales} de $A$.    
+		\end{ejemplo}
+		\begin{solucion}
+			$A-x Id= \begin{bmatrix}-x&-1\\1&-x\end{bmatrix}$, luego
+			\begin{align*}
+				\chi_A(x)=x^2+1.
+				\end{align*}
+	\vskip .2cm
+			El polinomio no tiene raíces reales, por lo tanto no existen autovalores reales (obviamente no hay autovectores).
+	
+	
+
+	 
+	
+	
+		
+	 
+		Sin embargo si nos dicen 
+		\vskip .2cm
+		\textit{Encontrar autovalores y autovectores complejos de la matriz  $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix}$}, 
+		\vskip .2cm
+		la respuesta va a ser diferente. 
+		\vskip .2cm
+		Lo  que ocurre es que 
+		\begin{align*}
+		\chi_A(x)=x^2+1=(x+i)(x-i),
+		\end{align*}
+		y este polinomio \textit{sí} tiene raíces complejas: $i$ y $-i$.
+		\vskip .2cm
+	  En este caso, entonces, $i$ y $-i$ son los autovalores  y es fácil ver que
+	  \begin{equation*}
+		  V_i = \left\{ \omega(i,1): \omega\in \C \right\}, \qquad  V_{-i} = \left\{ \omega(-i,1): \omega\in \C \right\}.
+	  \end{equation*} 
+		
+		 
+	 
+		Nunca está de más comprobar los resultados:
+	
+		\begin{align*}
+			\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}i\\1\end{bmatrix} &= \begin{bmatrix}-1\\i\end{bmatrix} = i \begin{bmatrix}i\\1\end{bmatrix}.\\
+			\\
+			\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}-i\\1\end{bmatrix} &= \begin{bmatrix}-1\\-i\end{bmatrix} = (-i) \begin{bmatrix}-i\\1\end{bmatrix}.
+		\end{align*}
+	
+	\end{solucion}
+	 
+	
+\end{section}	
 	\end{chapter}
 
 
@@ -7095,15 +7675,15 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{equation}
 		\chi_A(x) = \det(A- x\,Id) = \det
 		\begin{bmatrix}
-		x -a_{11}&-a_{12}&\cdots&-a_{1n}\\
-		-a_{21}&x -a_{22}&\cdots&-a_{2n}\\
+		a_{11}-x&a_{12}&\cdots&a_{1n}\\
+		a_{21}&a_{22}-x&\cdots&a_{2n}\\
 		\vdots&\vdots&\ddots&\vdots\\
-		-a_{n1}&-a_{n2}&\cdots&x -a_{nn}\\
+		a_{n1}&a_{n2}&\cdots&a_{nn}-x\\
 		\end{bmatrix}
 		\end{equation} 
 		y el polinomio característico de $A$ es un polinomio  de grado $n$,  más precisamente  
 		$$
-		\chi_A(x) =x^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
+		\chi_A(x) =(-1)^nx^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
 		$$ 
 		Esto se puede demostrar fácilmente por inducción. 
 		
@@ -7117,9 +7697,9 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		entonces
 		\begin{equation*}
 				 \det \begin{bmatrix}
-				x-a & -b \\ -c &x-d
+				a-x & b \\ c &d-x
 				\end{bmatrix} = 
-				(x-a)(x-d) - bc = x^2 -(a+d)x + (ad -bc).
+				(a-x)(d-x) - bc = x^2 -(a+d)x + (ad -bc).
 		\end{equation*}
 		Es decir,
 		$$
@@ -7137,11 +7717,11 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			$$
 			entonces el  polinomio característico de $A$ es
 			$$
-			\det \begin{bmatrix}10-x&-10&6\\8& -8-x& 6\\-5& 5& -3-x\end{bmatrix} = x^3  + x^2 - 6 x .
+			\det \begin{bmatrix}10-x&-10&6\\8& -8-x& 6\\-5& 5& -3-x\end{bmatrix} = -x^3  - x^2 + 6 x .
 			$$
 			Es posible factorizar esta expresión y obtenemos
 			$$
-			\chi_A(x) = x (x-2)(x+3).
+			\chi_A(x) = -x (x-2)(x+3).
 			$$
 		\end{ejemplo}
 		
@@ -7248,15 +7828,15 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{proof}
 			Por la proposición \ref{autovalores}, los autovalores de $T$  son las raíces del polinomio característico,  es decir las raíces de 
 			$$
-			\det\left[\begin{matrix}
-			-x& 1 \\ 1 & -x
-			\end{matrix} \right]= x^2 -1  =(x -1)(x +1). 
+			\chi_T(\lambda)= \det\left[\begin{matrix}
+			-\lambda& 1 \\ 1 & -\lambda
+			\end{matrix} \right]= \lambda^2 -1  =(\lambda -1)(\lambda +1). 
 			$$
-			Luego los autovalores son 1 y $-1$. Para hallar un autovector con autovalor 1 debemos resolver la ecuación $T(x,y) = (x,y)$. Ahora bien, 
+			Luego los autovalores son $1$ y $-1$. Para hallar un autovector con autovalor $1$ debemos resolver la ecuación $T(x,y) = (x,y)$. Ahora bien, 
 			$$
 			(x,y) = T(x,y) = (y,x),
 			$$
-			luego $x =y$ y claramente $(1,1)$ es autovector con autovalor 1.
+			luego $x =y$ y claramente $(1,1)$ es autovector con autovalor $1$.
 			
 			Por otro lado $T(x,y) = -(x,y)$, implica  que $(y,x) = -(x,y)$, es decir $y = -x$ y claramente podemos elegir $(1,-1)$ como autovector con autovalor $-1$.
 			
@@ -7306,7 +7886,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{proposicion}
 			 Sea $T$ un operador lineal diagonalizable sobre un espacio vectorial $V$ de dimensión finita. Sean $\lambda_1,\ldots,\lambda_k$ los autovalores distintos de $T$. Entonces,  el  polinomio característico de $T$ es
 			 	$$
-			 	\chi_T(x) = x -\lambda_1)^{d_1}\ldots(x -\lambda_k)^{d_k}
+			 	\chi_T(x) = (\lambda_1 -x)^{d_1}\ldots(\lambda_k- x)^{d_k}
 			 	$$
 			 	con
 			 	$$
@@ -7340,7 +7920,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\end{equation*}
 			donde $I_j$ es la matriz identidad $d_j \times d_j$. Luego,  el polinomio característico de $T$ es el producto
 			\begin{align*}
-			(x -\lambda_1)^{d_1}\ldots(x -\lambda_k)^{d_k}.
+				(\lambda_1 -x)^{d_1}\ldots(\lambda_k- x)^{d_k}.
 			\end{align*}
 		\end{proof}
 	
