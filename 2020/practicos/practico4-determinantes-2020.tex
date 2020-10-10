@@ -1,0 +1,429 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\newcommand{\este}{($\star$) \; }
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+	
+\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
+	
+\centerline{\Large{Pr\' actico 4}}
+	
+\
+	
+\centerline{\textsc{Determinantes}}
+
+\
+
+\noindent \textbf{Objetivos.}
+
+\begin{itemize}
+\item Aprender a calcular el determinante de una matriz.
+
+\item Aprender a utilizar operaciones elementales por filas y/o columnas para calcular el determinante.
+
+\item Aplicar las propiedades del determinante para calcular el determinante de un producto de matrices, y para decidir si una matriz cuadrada es o no invertible.
+\end{itemize}
+		
+\
+
+\noindent \textbf{Ejercicios.} Los ejercicios con el s\'imbolo $\textcircled{a}$ tienen una ayuda al final del archivo.
+
+\begin{enumerate}
+\item Calcular el determinante de las siguientes matrices.
+	\begin{align*}
+	&A=\begin{bmatrix} 4&7\\ 5&3\end{bmatrix},
+	&&B=\begin{bmatrix} -3&2&4\\ 1&-1&2\\ -1&4&0\end{bmatrix},
+	&&
+	C=\begin{bmatrix} 2&3&1&1\\ 0&2&-1&3 \\ 0&5&1&1 \\1&1&2&5\end{bmatrix}.
+	\end{align*}
+
+\
+
+\item Sean
+		$$A=
+	\begin{bmatrix}
+		1&3&2 \\
+		3&0&2 \\
+		1&1&1
+	\end{bmatrix}, \qquad
+	B =
+	\begin{bmatrix}
+		1&-1&2\\
+		1&1&1 \\
+		-1&-1&3
+	\end{bmatrix}.
+	$$
+	Calcular:
+	\begin{multicols}{3}
+	\begin{enumerate}
+		\item $\det(AB)$.
+		\item $\det(BA)$.
+		\item $\det(A^{-1})$.
+		\item $\det(A^{4})$.
+		\item $\det(A+B)$.
+		\item $\det(A+tB)$, con $t \in \mathbb{R}$.
+	\end{enumerate}
+\end{multicols}
+
+
+\
+
+\item Reduciendo a matrices triangulares superiores, calcular el determinante de las siguientes matrices.
+
+		$$A =
+		\begin{bmatrix}
+			a&1&1&1 \\
+			1&a&1&1 \\
+			1&1&a&1 \\
+			1&1&1&a \\
+		\end{bmatrix}, \qquad	
+        B =
+		\begin{bmatrix}
+			1&1&1&1&1 \\
+			1&3&3&3&3 \\
+			1&3&5&5&5 \\
+			1&3&5&7&7 \\
+			1&3&5&7&9 \\
+		\end{bmatrix}.
+		$$
+
+\
+
+\item Sean $A$, $B$ y $C$ matrices $n\times n$, tales que $\det A=-1$, $\det B=2$ y $\det C=3$.
+Calcular:
+
+\
+
+\begin{enumerate}
+\item $\det(PQR)$, donde $P$, $Q$ y $R$ son las matrices que se obtienen a partir de $A$, $B$ y $C$ mediante operaciones elementales por filas de la siguiente manera
+ \begin{align*}
+ A\overset{F_1+2F_2}{\longrightarrow} P,\quad
+ B\overset{3F_3}{\longrightarrow} Q
+ \quad\mbox{y}\quad
+ C\overset{F_1\leftrightarrow F_4}{\longrightarrow} R.
+ \end{align*}
+ Es decir,
+ \begin{itemize}
+  \item[$\circ$] $P$ se obtiene a partir de $A$ sumando a la fila $1$ la fila $2$ multiplicada por $2$.
+  \item[$\circ$] $Q$ se obtiene a partir de $B$ multiplicando la fila $3$ por $3$.
+  \item[$\circ$] $R$ se obtiene a partir de $C$ intercambiando las filas $1$ y $4$.
+ \end{itemize}
+
+\
+
+\item $\det(A^2BC^tB^{-1})$ \ y \ $\det(B^2C^{-1}AB^{-1}C^{t})$.
+
+\end{enumerate}
+
+
+\
+
+\item  Sea
+$$A=
+\begin{bmatrix}
+	x&y&z \\
+	3&0&2\\
+	1&1&1
+\end{bmatrix}.$$
+Sabiendo que $\det(A) = 5$, calcular el determinante de las siguientes matrices.
+$$
+B = \begin{bmatrix}
+2x&2y&2z \\
+3/2&0&1\\
+1&1&1
+\end{bmatrix}, \qquad
+C=
+\begin{bmatrix}
+	x&y&z \\
+	3x+3&3y&3z+2\\
+	x+1&y+1&z+1
+\end{bmatrix}.
+$$
+
+\
+
+\item Determinar todos los valores de $c\in\mathbb{R}$ tales que las siguientes matrices sean invertibles.
+\begin{align*}
+A=\begin{bmatrix}4& c&3\\c&2&c\\ 5&c&4 \end{bmatrix},\qquad
+B=\begin{bmatrix} 1&c&-1\\ c&1&1\\0&1&c\end{bmatrix}.
+\end{align*}
+
+
+\
+
+\item Calcular el determinante de las siguientes matrices, usando operaciones elementales por fila y/o columnas u otras propiedades del determinante. Determinar cu\'ales de ellas son invertibles.
+
+\begin{align*}
+&A=
+\begin{bmatrix}
+-2&3&2&-6\\ 0&4&4&-5\\ 5&-6&-3&2\\ -3&7&0&0 \end{bmatrix},\quad
+&&B=\begin{bmatrix} 2&0&0&0\\ 0&0&3&0\\ 0&-1&0&0\\ 0&0&0&4\end{bmatrix},\quad
+&&
+C=\begin{bmatrix}
+  -2&3&2&-6&0\\
+0&4&4&-5&0\\
+5&-6&-3&2&0\\
+-3&7&0&0&0\\
+1&1&1&1&1
+  \end{bmatrix},
+\end{align*}
+\begin{align*}
+D=\begin{bmatrix}
+1&2&3&0&0\\
+-1&2&-13&6&\frac{1}{3}\\
+2&0&0&0&0\\
+11&1&0&0&0\\
+\sqrt{2}&2&1&\pi&0\\
+\end{bmatrix},&&
+E=\begin{bmatrix}
+1&-1&2&0&0\\ 3&1&4&0&0\\ 2&-1&5&0&0 \\0&0&0&2&1\\ 0&0&0&-1&4
+\end{bmatrix}.
+\end{align*}
+
+
+\
+
+\item Sean $A$ y  $B$ matrices $n \times n$. Probar que:
+
+\
+
+\begin{enumerate}
+	\item $\det(AB) = \det (BA)$.
+	
+	\
+	
+	\item Si $B$ es invertible, entonces $\det(B A B^{-1}) = \det (A)$.
+	
+	\
+	
+		\item\label{-A} $\textcircled{a}$ $\det(-A) = (-1)^n\det (A)$.
+\end{enumerate}
+
+\
+
+\item\label{vandermonde} Sean $\lambda_1, \lambda_2, \dots, \lambda_n$ escalares, la matriz de \emph{Vandermonde} asociada es
+\begin{align*}
+\mathtt V = \begin{bmatrix}
+1 & \lambda_1 & \lambda_1^2 & \cdots & \lambda_1^{n-1}\\
+1 & \lambda_2 & \lambda_2^2 & \cdots & \lambda_2^{n-1}\\
+\vdots &\vdots &\vdots & &\vdots\\
+1 & \lambda_n & \lambda_n^2 & \cdots & \lambda_n^{n-1}\\
+\end{bmatrix}.
+\end{align*}
+Esta es la matriz del sistema de ecuaciones del Ejercicios 12 (c) del Pr\'actico 2.
+
+\
+
+\begin{enumerate}
+\item Si $n=2$, probar que $\det(\mathtt V) = \lambda_2-\lambda_1$.
+
+\
+
+\item Si $n=3$, probar que $\det(\mathtt V) = (\lambda_3-\lambda_2) (\lambda_3-\lambda_1) (\lambda_2-\lambda_1)$.
+
+\
+
+\item\label{vandermonde gral} $\textcircled{a}$ Probar que $\det(\mathtt V) = \prod_{1\leq i< j \leq n}(\lambda_j-\lambda_i)$ para todo $n\in\mathbb{N}$.
+
+\
+
+\item Dar una condici\'on necesaria y suficiente para que la matriz de Vandermonde sea invertible.
+
+\
+
+\item Usar lo anterior para responder a la pregunta del Ejercicio 12 (b) del Pr\'actico 2.
+\end{enumerate}
+
+\
+
+\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar con una demostraci\' on o con un contraejemplo, seg\' un corresponda.
+
+\
+
+\begin{enumerate}
+\item Sean $A$ y $B$ matrices $n \times n$. Entonces $\det(A + B) = \det (A) + \det(B)$.
+
+\
+
+\item Existen una matriz $3\times 2$, $A$, y una matriz $2\times 3$, $B$, tales que $\det(AB) \neq 0$.
+
+\
+
+\item Sea $A$ una matriz $n\times n$. Si $A^n$ es no invertible, entonces $A$ es no invertible.
+\end{enumerate}
+
+\item Sea $A$ matriz $n \times n$.
+\begin{enumerate}
+	\item Probar 
+	 $$ A^{\operatorname t} \stackrel{{F_r \leftrightarrow F_s}}{\longrightarrow} B  \qquad \Leftrightarrow   \qquad 
+	A \stackrel{{C_r \leftrightarrow C_s}}{\longrightarrow} B^{\operatorname t},$$
+	donde $C_j$ indica columna $j$ de $A$.
+	\item Probar que intercambiar dos columna se una matriz cambia el signo del determinante, es decir
+	 $$  A \stackrel{{C_r \leftrightarrow C_s}}{\longrightarrow}C \qquad \Rightarrow   \qquad \det(C) = -\det(A).
+	$$
+	
+\end{enumerate} 
+
+
+
+
+
+\end{enumerate}
+
+
+
+\
+
+\subsection*{Ejercicios de repaso}
+Si ya hizo los ejercicios anteriores continue con la siguiente gu\'ia. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los ex\'amenes.
+
+\
+
+\begin{enumerate}[resume]
+\item Determinar todos los valores de $c\in\mathbb{K}$ tales que la siguiente matriz sea invertible.
+$$A=\begin{bmatrix} 0&c&-c\\ -1&2&-1\\c&-c&c\end{bmatrix}.$$
+
+%\
+%		
+%\item
+%En cada caso decidir si la matriz es invertible y si lo es, calcular la inversa usando la matriz de cofactores.
+%\[
+%A=\begin{bmatrix} -2&3&2\\ 6&0&3\\4&1&-1\end{bmatrix},\qquad
+%B=\begin{bmatrix}\cos(t)& 0& \sin(t)\\ 0&1&0 \\ \sin(t)&0&\cos(t) \end{bmatrix}.
+%\]
+
+\
+
+\item Sabiendo que \
+$
+\det \begin{bmatrix} a&b&c\\ p&q&r\\
+x&y&z\end{bmatrix}=-1
+$,
+calcular \
+$
+\det \begin{bmatrix} -2a&-2b&-2c\\ 2p+x&2q+y&2r+z\\
+3x&3y&3z\end{bmatrix}.
+$
+
+\
+
+\item Probar que
+$$
+\det\begin{bmatrix}
+1+x_1 & x_2 & x_3 & \cdots & x_n \\
+x_1 & 1+x_2 & x_3 & \cdots & x_n \\
+x_1 & x_2 & 1+x_3 & \cdots & x_n \\
+\vdots & \vdots & \vdots &\ddots& \vdots \\
+x_1 & x_2 & x_3 & \cdots & 1+x_n
+\end{bmatrix}
+= 1+x_1+x_2 + \cdots + x_n.
+$$
+
+\
+
+\item
+Una matriz $A$ $n {\operatorname t}imes n$ se dice {\it antisim\'etrica}
+si $A^t=-A$.
+
+\
+
+\begin{enumerate}
+\item\label{anti a} $\textcircled{a}$ Probar que si $n$ es impar y $A$ es antisim\'etrica, entonces
+$\det(A)=0$.
+
+\
+
+\item\label{anti b} $\textcircled{a}$ Para cada $n$ par, encontrar una matriz $A$ antisim\'etrica
+$n {\operatorname t}imes n$ tal que $\det(A)\not=0$.
+\end{enumerate}
+
+%\
+%
+%\item
+%Usar la Regla de Cramer [Secci\'on C.2 del libro {\it Notas de \'Algebra II}] para resolver los siguientes sistemas de
+%ecuaciones lineales.
+%\begin{align*}
+%&\begin{cases}
+%x+y+z=11\\
+%2x-6y -z= 0\\
+%3x+4y+2z=0
+%\end{cases}
+%&&\begin{cases}
+%3x-2y=7\\
+%3y-2z=6 \\
+%3z-2x=-1
+%\end{cases}
+%&&\begin{cases}
+%2ix-z=4\\
+%x-2y+2z=7+i \\
+%3x+2y=1
+%\end{cases}
+%\end{align*}
+	
+	
+\end{enumerate}
+
+\
+
+\subsection*{Ayudas}
+
+\
+
+\
+
+\eqref{-A} Analizar primero los casos $n=2,3$.
+
+\
+
+\eqref{vandermonde gral} En Wikipedia hay una posible demostraci\'on.
+
+\
+
+\eqref{anti a} Usar el Ejercicio \eqref{-A}.
+
+\
+
+\eqref{anti b} Encontrar primero una matriz $A_0$ para el caso $2\times 2$. Para $n = 2m$ considerar la matriz $2m \times 2m$ formada por $m$ bloques diagonales iguales a $A_0$.
+% \subsection*{Ejercicios un poco m\'as dif\' \i ciles}
+%
+% Si ya hizo los primeros ejercicios ya sabe lo que tiene que saber. Los siguientes ejercicios le pueden servir si esta muy aburridx con la cuarentena.
+%
+% \begin{enumerate}[resume, topsep=5pt,itemsep=5pt]
+%
+% \item Dados escalares $a_0, \ldots, a_{n-1}$ probar por inducci\' on que
+% \[
+%    \det\left(\begin{matrix}
+% t & 0 & 0 & \cdots & 0 & a_0\\
+% -1 & t & 0 & \cdots & 0 & a_1\\
+% 0 & -1 & t & \cdots & 0 & a_2\\
+% \vdots & & & & & \vdots\\
+% 0 & 0 & 0 & \cdots & -1 & \ t+a_{n-1}\end{matrix} \right) = t^n +a_{n-1}t^{n-1} + \dots + a_1t+a_0.
+%  \]
+%
+% \item Probar que si $k_1, \ldots, k_n$ son elementos de $\mathbb{R}$, entonces
+%   \[
+%     \det\begin{pmatrix}
+% 1+k_1 & k_2 & k_3 & \cdots & k_n \\
+% k_1 & 1+k_2 & k_3 & \cdots & k_n \\
+% k_1 & k_2 & 1+k_3 & \cdots & k_n \\
+% \vdots & \vdots & \vdots &\ddots& \vdots \\
+% k_1 & k_2 & k_3 & \cdots & 1+k_n
+% \end{pmatrix}
+% = 1+k_1+k_2 + \cdots +k_n.
+% \]
+% \end{enumerate}
+
+\end{document}

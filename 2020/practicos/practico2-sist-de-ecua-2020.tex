@@ -1,0 +1,354 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\pagestyle{fancy}
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+
+
+\begin{document}
+
+%\title{Pr\'actico 1}
+
+\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
+
+%\maketitle
+
+\centerline{\Large{Pr\' actico 2}}
+
+\
+
+\centerline{\textsc{Sistemas de ecuaciones}}
+
+
+\bigbreak
+
+
+
+\subsection*{Objetivos}
+
+\begin{itemize}
+ \item Aprender a plantear y resolver sistemas de ecuaciones lineales.
+\end{itemize}
+
+\smallskip
+
+\subsection*{Ejercicios}
+
+\begin{enumerate}
+\item {\it Juego Suko}. Colocar los n\'umeros del $1$ al $9$ en las celdas de la siguiente tabla de modo que el n\'umero en cada c\'irculo sea igual a la suma de las cuatro celdas adyacentes, y la suma de las celdas del mismo color sea igual al n\'umero en el c\'irculo de igual color.
+
+\begin{center}
+\includegraphics[width=0.2\textwidth]{suko.png}
+\end{center}
+
+\
+
+\item\label{polinomio} Encontrar los coeficientes reales del polinomio $p(x) = ax^2+bx+c$ de manera tal que $p(1)=2$, $p(2)=7$ y $p(3)=14$.
+
+\
+
+\item Determinar cu{\'a}les de las siguientes matrices son MERF.
+$$\begin{array}{lccccl}
+\begin{bmatrix}1 & 2 & 0 \\0 & 0 & 1 \end{bmatrix}, &
+\begin{bmatrix}1 & 0 & 2 \\0 & 1 & -3 \end{bmatrix}, &
+\begin{bmatrix}0 & 1 & 0 \\0 & 0 & 1 \end{bmatrix}, &
+\begin{bmatrix}0 & 1 & 0 \\0 & 0 & 0 \end{bmatrix}, &
+\begin{bmatrix}1 & 0 & 0  \\0 & 0 & 1 \\0 & 0 & 1 \end{bmatrix},&
+\begin{bmatrix}1 & 0 & 0  \\0 & 0 & 0 \\0 & 0 & 1 \end{bmatrix}.
+\end{array}$$
+
+\
+
+\item Para cada una de las MERF del ejercicio anterior,
+
+\
+
+\begin{enumerate}
+\item
+asumir que es la matriz de un sistema homog\'eneo, escribir el sistema
+y dar las soluciones del sistema.
+
+\
+
+\item
+asumir que es la matriz ampliada de un sistema no homog\'eneo, escribir el sistema
+y dar las soluciones del sistema.
+\end{enumerate}
+
+\
+
+\item\label{sistemas homogeneos} Para cada uno de los siguientes sistemas de ecuaciones, describir expl\'icita o param\'etricamente todas las soluciones e indicar cu\'al es la MERF asociada al sistema.
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item $\begin{cases}
+ -x - y + 4z = 0\\
+ x+3y+8z = 0\\
+ x+2y + 5z = 0
+\end{cases}$
+
+\item $\begin{cases}
+ x - 3y + 5z = 0\\
+ 2x-3y+z = 0\\
+ -y + 3z = 0
+\end{cases}$
+
+
+\item $\begin{cases}
+x-z+2t = 0\\
+-x+2y-z+2t = 0\\
+-x+y = 0
+\end{cases}$
+
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item[(d)] $\begin{cases}
+ -x - y + 4z = 1\\
+ x+3y+8z = 3\\
+ x+2y + 5z = 1
+\end{cases}$
+
+\item[(e)] $\begin{cases}
+ x - 3y + 5z = 1\\
+ 2x-3y+z = 3\\
+ -y + 3z = 1
+\end{cases}$
+
+
+\item[(f)] $\begin{cases}
+x-z+2t = 1\\
+-x+2y-z+2t = 3\\
+-x+y = 1
+\end{cases}$
+
+\end{enumerate}
+\end{multicols}
+
+\
+
+\item\label{sistemas con soluciones} Para cada uno de los siguientes sistemas, describir impl\'icitamente el conjunto de los vectores $(b_1,b_2,b_3)$
+o $(b_1,b_2,b_3,b_4)$ para los cuales cada sistema tiene soluci\'on.
+
+\begin{multicols}{3}
+\begin{enumerate}
+
+\item $\begin{cases}
+ x - 3y + 5z = b_1\\
+ 2x-3y+z = b_2\\
+ -y + 3z = b_3
+\end{cases}$
+
+
+\item $\begin{cases}
+x-z+2t = b_1\\
+-x+2y-z+2t = b_2\\
+-x+y = b_3\\
+y-z+2t=b_4
+\end{cases}$
+
+
+\item $\begin{cases}
+ - x - y + 4 z = b_1\\
+ x+3y+8z = b_2\\
+ x + 2y + 5z = b_3
+\end{cases}$
+
+\end{enumerate}
+\end{multicols}
+
+\
+
+\item Sea $A=\begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 2 & 3 & 4 & \cdots & 2017 \\ 3&4&5& \cdots & 2018\\ \vdots & &&& \vdots \\ 100 & 101 & 102& \cdots& 2115\end{bmatrix}$.
+
+\
+
+ \begin{enumerate}
+   \item Encontrar todas las soluciones del sistema $AX=0$.
+   \item Encontrar todas las soluciones del sistema $AX=\left[\begin{array}{c}
+     1\\\vdots \\1 \end{array}\right]$.
+
+     \end{enumerate}
+
+     \item Sea $A=\begin{bmatrix}3 & -1 & 2 \\2 & 1 & 1 \\1&-3&0\end{bmatrix}$. Reduciendo $A$ por filas,
+ \begin{enumerate}
+   \item encontrar todas las soluciones sobre $\mathbb{R}$ y $\mathbb{C}$ del sistema $AX=0$.
+   \item encontrar todas las soluciones sobre $\mathbb{R}$ y $\mathbb{C}$ del sistema $AX=\left[\begin{array}{c}
+     1\\i\\0 \end{array}\right]$.
+ \end{enumerate}
+
+
+% \item >Para qu\'e valores de $a$ el siguiente sistema tiene \'unica o infinitas soluciones?
+% \begin{align*}
+% \left\{\begin{array}{l}ax-y+z=2 \\ x-y+z = 2  \\ 2x -2y + (2-a)z = 4a\end{array}\right.
+% \end{align*}
+
+\
+
+\item Suponga que tiene que resolver un sistema de ecuaciones lineales homog\'eneo y que tras hacer algunas operaciones elementales por fila a la matriz asociada obtiene una matriz con la siguiente forma
+\begin{align*}
+\left(
+\begin{array}{cccc}
+a & * & * & *\\
+0 & b & * & *\\
+0 & 0 & c & *\\
+0 & 0 & 0 & d
+\end{array}
+\right)
+\end{align*}
+donde $a,b,c,d\in\R$ y $*$ son algunos n\'umeros reales.
+?`Qu\'e conclusiones puede inferir acerca del conjunto de soluciones a partir de los valores de $a$, $b$, $c$ y $d$?
+
+\
+
+\item Suponga que tiene que resolver un sistema de ecuaciones lineales y que tras hacer algunas operaciones elementales por fila a la matriz ampliada obtiene una matriz con la siguiente forma
+\begin{align*}
+\left(
+\begin{array}{cccc|c}
+a & * & * & * & *\\
+0 & b & * & * & *\\
+0 & 0 & 0 & 0 & c\\
+0 & 0 & 0 & d & *
+\end{array}
+\right)
+\end{align*}
+donde $a,b,c,d\in\R$ y $*$ son algunos n\'umeros reales.
+?`Qu\'e conclusiones puede inferir acerca del conjunto de soluciones a partir de los valores de $a$, $b$, $c$ y $d$?
+
+\
+
+\item Suponga que tiene que resolver un sistema de $m$ ecuaciones lineales con $n$ inc\'ognitas. Antes de empezar a hacer cuentas y apelando a la teor\'ia, ?`Qu\'e puede afirmar acerca del conjunto de soluciones en base a $m$ y $n$? ?`C\'omo saber si es vac\'io o no vac\'io? ?`Si tiene una o varias soluciones?
+
+\
+
+\item\label{polinomios} $\textcircled{a}$ Sean $\lambda_1, ..., \lambda_n\in\R$ y $b_1, ..., b_n\in\R$.
+
+\
+
+\begin{enumerate}
+ \item Para cada $n\in\{1,2,3,4,5\}$, plantear un sistema de ecuaciones lineales que le permita encontrar un polin\'omio $p(x)$ con coeficientes reales de grado $n-1$ tal que
+ $$
+ p(\lambda_1)=b_1, \dots, p(\lambda_n)=b_n.
+ $$
+
+ \
+
+\item ?`Se le ocurre alguna condici\'on con la cual pueda afirmar que el sistema anterior no tiene soluci\'on?
+
+\
+
+\item  ?`Puede dar una forma general del sistema para cualquier $n$?
+
+\end{enumerate}
+
+\end{enumerate}
+
+\
+
+%============================================================
+\subsection*{Ejercicios de repaso} Si ya hizo los ejercicios anteriores continue a la siguiente gu\'ia. Los ejercicios que siguen son similares a los anteriores y le pueden servir para practicar antes de los ex\'amenes.
+%============================================================
+
+\
+
+\begin{enumerate}[resume]
+
+\item En cada caso decidir si los sistemas son equivalentes y si lo son, expresar cada ecuaci\'on del primer sistema como combinaci\'on lineal de las ecuaciones del segundo.
+$$\begin{array}{ll}
+   \text{(a) } \begin{cases} x-y=0 \\ 2x+y=0 \end{cases} \;
+     \begin{cases} 3x+y=0 \\ x+y=0 \end{cases}   &
+  \text{(b) } \begin{cases} -x-y+4z=0 \\ x+3y+8z=0 \\ \tfrac{1}{2}x+y+\tfrac{5}{2}z=0 \end{cases} \;
+    \begin{cases} x-z=0 \\ y+3z=0 \end{cases}
+    \end{array}$$
+
+\
+
+\item Mostrar que los siguientes sistemas no son equivalentes estudiando sus soluciones.
+\[
+    \begin{cases} x+y=1 \\ 2x+y=0 \end{cases} \;
+     \begin{cases} -x+y=1 \\ x-2y=0 \end{cases}  \]
+
+\
+
+\item Probar que si dos sistemas de ecuaciones lineales en dos inc\'ognitas homog\'eneos tienen las mismas soluciones entonces son equivalentes.
+
+\
+
+\item Demostrar que las siguientes matrices no son equivalentes por filas.
+ $$\begin{bmatrix}2 & 0 & 0 \\a & -1 & 0 \\ b&c&3\end{bmatrix}, \qquad  \begin{bmatrix}1 & 1 & 2 \\-2 & 0 & -1 \\1&3&5\end{bmatrix}.$$
+
+\
+
+\item Dar todas las posibles matrices $2\times2$ escal\'on reducidas por filas.
+
+\
+
+\item Como el ejercicio \eqref{sistemas homogeneos} pero con el sistema:
+$\begin{cases}
+ 2y  + z = 0\\
+ -x+ y+2z = 0\\
+x + 3y  = 0
+\end{cases}$
+
+\
+
+\item\label{sistemas con soluciones} Para cada uno de los siguientes sistemas, describir impl\'icitamente el conjunto de los vectores $(b_1,b_2)$
+o $(b_1,b_2,b_3)$ para los cuales cada sistema tiene soluci\'on.
+
+\begin{multicols}{3}
+\begin{enumerate}
+\item  $\left\{\begin{array}{l}x+y=b_1\\ 2x+2y=b_2\end{array}\right.$
+\item  $\left\{\begin{array}{l}x+y=b_1\\ 2x-2y=b_2\end{array}\right.$
+\item  $\left\{\begin{array}{l}2x-y+z = b_1 \\ 3x +y +4z = b_2 \\ -x +3y + 2z = b_3\end{array}\right.$
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}
+\item[(d)]  $\left\{\begin{array}{l}x-y+2z+w = b_1 \\ 2x+2y+z-w =b_2 \\ 3x+y+3z = b_3\end{array}\right.$
+\end{enumerate}
+\end{multicols}
+
+\
+
+\item Sea $A=\begin{bmatrix}1 & 1 & -1& 2 \\2 & 1 & 1 & 1 \\3&2&0&3\\1&-1&1&2\end{bmatrix}$.
+Determinar para cuales $a$,  el sistema $AX=\left[\begin{array}{c}
+     a\\1\\0\\1 \end{array}\right]$ admite soluci\'on. Para esos valores de $a$, calcular todas las soluciones del sistema.
+
+\end{enumerate}
+
+\
+
+\medskip
+
+\section*{Ayudas}
+\eqref{polinomios} El ejercicio \eqref{polinomio} es un caso particular del item (a). Para el item (c) googlear.
+\end{document}
+
+\end{document}

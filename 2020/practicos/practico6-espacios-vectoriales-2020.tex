@@ -1,0 +1,179 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\newcommand{\este}{($\star$) \; }
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+	
+\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
+	
+\centerline{\Large{Pr\' actico 6}}
+	
+\
+	
+\centerline{\textsc{Espacios y subespacios vectoriales}}
+	
+\
+	
+\noindent \textbf{Objetivos.} 
+	
+\begin{itemize}
+\item Familiarizarse con los conceptos de espacio y subespacio vectorial.
+\end{itemize}
+	
+	\
+	
+	\noindent \textbf{Ejercicios.} 
+	
+\begin{enumerate}
+
+	
+% \item\label{func} Sea $F$ un cuerpo. Si $(V,\oplus,\odot)$ es un $F$-espacio vectorial y $S$ un conjunto cualquiera, entonces
+% $$V^S=\{f:S\to V: \, f \ \text{es una funci\' on}\},$$
+% denota al conjunto de todas las funciones de $S$ en $V$.  Definimos en $V^S$ la suma y el producto por escalares de la siguiente manera:
+% Si $f,g \in V^S$ y $c\in F$ entonces $f + g: S \rightarrow V $ y $c\cdot f: S \rightarrow V$ est\'an dadas por
+% $$
+% (f + g)(x) = f(x) \oplus g(x), \quad  (c\cdot f)(x) = c\odot f(x), \qquad  \forall\, x \,\in S.
+% $$
+% Probar que $(V^S,+,\cdot)$ es un $F$-espacio vectorial.  
+
+		
+	\item Decidir si los siguientes subconjuntos de $\mathbb{R}^n$ son subespacios vectoriales.
+
+\
+
+	\begin{enumerate}
+		\item $\{(x_1, \ldots ,x_n) \in \mathbb{R}^n \ : \ x_1 = x_n\}$.
+		\item $\{(x_1, \ldots ,x_n) \in \mathbb{R}^n \ : \ x_1 +\dots + x_n=1\}$.
+		\item $C=\{(x_1, \ldots ,x_n) \in \mathbb{R}^n \ : \ x_1 +\dots + x_n=0\}$.
+		\item $\{(x_1, \ldots ,x_n) \in \mathbb{R}^n \ : \ x_1 \le x_2\}$.
+		\item $\{(x_1, \ldots ,x_n) \in \mathbb{R}^n \ : \ x_n=1\}$.
+		\item $F=\{(x_1, \ldots ,x_n) \in \mathbb{R}^n \ : \ x_n=0\}$.
+		\item $C\cup F$
+		\item $C\cap F$
+		\item $\mathbb{Q}^n=\{(x_1, \ldots ,x_n) \in \mathbb{R}^n\ :\ x_1, ..., x_n\in\mathbb{Q}\}$.
+	\end{enumerate}
+		
+\
+
+    \item Decidir en cada caso si el conjunto dado es un subespacio vectorial del espacio vectorial de matrices cuadradas $M_n(\mathbb{R})$.
+
+\
+
+\begin{enumerate}
+	\item El conjunto de matrices  inversibles.
+	\item El conjunto de matrices no inversibles.
+	\item El conjunto de matrices $A$ tales que $AB = BA$, donde $B$ es una matriz fija.
+	\item El conjunto de matrices sim\'etricas $\{A\in M_n(\mathbb{R})\ :\ A=A^t\}$
+	\item El conjunto de matrices triangulares superiores.
+	\item El conjunto de matrices de traza cero $\{A\in M_n(\mathbb{R})\ :\ \operatorname{tr}(A)=0\}$
+	\item $\{A\in M_n(\mathbb{R})\ :\ \operatorname{tr}(A)=1\}$
+\end{enumerate}
+
+\
+	
+    \item Probar que los siguientes  subconjuntos del espacio vectorial $\mathbb{R}[x]$ son subespacios vectoriales
+    
+    \begin{enumerate}
+     \item El conjunto $\mathbb{R}_{< n}[x]$ formado por los polinomios de grado estrictamente menor que $n\in\mathbb{N}$.
+     
+    \item El conjunto $\mathbb{R}_{par}[x]$ formado por los polinomios de grado par, junto
+	con el polinomio nulo.
+	
+	\item $\mathbb{R}_{< n}[x]\cup \mathbb{R}_{par}[x]$
+
+	\item $\mathbb{R}_{< n}[x]\cap \mathbb{R}_{par}[x]$
+     \end{enumerate}
+
+	
+\
+
+    \item Sea $V= F[0,1]$ el espacio de funciones de $[0,1]$ en $\mathbb{R}$. Decidir en cada caso si el conjunto dado es un subespacio vectorial de $V$.
+    \begin{enumerate}
+    \item $C[0,1] = \{ f : [0,1] \rightarrow \mathbb{R} \ : \ f \ \text{es continua}\}$.
+			\item $C^1[0,1] = \{ f : [0,1] \rightarrow \mathbb{R} \ : \ f \ \text{es  derivable}\}$.
+\item $\{ f : [0,1] \rightarrow \mathbb{R} \ : \ f \ \text{es  derivable y }f'=0\}$.
+					\item $\{ f \in C[0,1] \ : \ f(1) \geq 0\}$.
+			\item $\{ f : [0,1] \rightarrow \mathbb{R} \ : \ f(1) = 1 \}$.
+					\item $E=\{f \in C[0,1] \ : \ f(1) = f (0)\}$.
+			\item $F=\{f \in C[0,1] \ : \ f(1) = 0\}$.
+    \item $E\cup F$
+    \item $E\cap F$
+\end{enumerate}
+
+\
+
+\item Sean $V$ un espacio vectorial, $v\in V$ no nulo y $\lambda,\mu\in\mathbb{R}$ tal que $\lambda v=\mu v$. Probar que $\lambda=\mu$.
+
+\
+
+	\item Sean $W_1, W_2$ subespacios de un espacio vectorial $V$. Probar que $W_1 \cup W_2$ es un subespacio
+	de $V$ si y s\'olo si $W_1 \subseteq W_2$ o bien $W_2 \subseteq W_1$.
+
+\end{enumerate}
+
+%============================================================
+\subsection*{M\'as ejercicios}
+%============================================================
+
+\begin{enumerate}[resume]
+
+    \item Sea $V= \mathbb{R}^{n}$. Decidir en cada caso si el conjunto dado es un subespacio vectorial de $V$.
+	\begin{enumerate}
+		\item $\{(x_1, \ldots ,x_n) \in \mathbb{R}^n \ : \ \exists \, j > 1, \, x_1 = x_j\}$.
+		\item $\{(x_1, \ldots , x_n) \in\mathbb{R}^n \ : \ x_1x_n = 0 \}$.
+	\end{enumerate}
+		
+
+\
+	
+	\item Sea $V= C[0,1]$, el espacio vectorial de las funciones continuas de $[0,1]$ en $\mathbb{R}$. Decidir en cada caso si el conjunto dado es un subespacio vectorial de $V$.
+	
+	\
+	
+	\begin{enumerate}
+		\item $\{ f : [0,1] \rightarrow \mathbb{R}\ : \ \int_0^1 f(x)\, \mathrm{d}x = 0\}$.
+			\item $\{ f \in C[0,1] \ : \ \int_0^1 f(x)^2 dx = 0\}$.
+	\end{enumerate}
+\end{enumerate}
+
+\subsection*{Ejercicios un poco m\'as dif\' \i ciles} 
+
+Si ya hizo los primeros ejercicios ya sabe lo que tiene que saber. Los siguientes ejercicios le pueden servir si esta muy aburridx con la cuarentena. 
+
+
+\begin{enumerate}[resume]
+\item Decidir si los siguientes conjuntos son $\mathbb{R}$-espacios vectoriales, con las operaciones abajo definidas.
+
+\
+
+\begin{enumerate}
+\item $\mathbb{R}^n$, con $v\oplus w = v - w$, y el producto por escalares usual.
+		
+\item $\mathbb{R}^2$, con $(x,y)\oplus(x_1,y_2) = (x + x_1, 0), \,\,c\odot(x,y) = (cx,0)$.
+
+\item $\mathbb{R}^{3}$, con:
+		\begin{align*}
+		(x,y,z)\oplus(x',y',z') &=(x + x', y + y' - 1, z + z');\\
+		c\odot(x,y,z) &= (cx,cy + 1 - c, cz).
+		\end{align*}
+		\item El conjunto de polinomios, con el producto por escalares (reales) usual, pero con suma
+		$p(x)\oplus q(x) = p'(x) + q' (x)$ (suma de derivadas).
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{document} 
