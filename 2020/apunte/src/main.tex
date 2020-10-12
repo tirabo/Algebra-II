@@ -4550,7 +4550,7 @@ También vale este resultado para matrices $n \times n$.
 
 	\vskip .4cm
 
-	La multiplicación de una matriz por un vector es una transformación lineal, las cuales veremos en el capítulo \ref{chap-trans-lin}, y estas juegan un rol muy importante en toda la matemática, pasando por el álgebra, el análisis, la geometría, etc.  Como ya vimos, es sencillo multiplicar a izquierda por matrices diagonales:
+	La multiplicación de una matriz por  un vector es una transformación lineal, las cuales veremos en el capítulo \ref{chap-trans-lin}, y estas juegan un rol muy importante en toda la matemática, pasando por el álgebra, el análisis, la geometría, etc.  Como ya vimos, es sencillo multiplicar a izquierda por matrices diagonales:
 	\begin{equation*}
 		\begin{bmatrix}
 			d_1 & 0 & \cdots &0 \\
@@ -4807,7 +4807,7 @@ También vale este resultado para matrices $n \times n$.
 		\end{itemize}
 	\end{proposicion}
 		\vskip .6cm
-		Esta es casi la respuesta a nuestro problema. Para dar una respuesta más precisa introducimos el siguiente polinomio.
+		Esta es casi la respuesta a nuestro problema. Para dar una respuesta más operativa introducimos el siguiente polinomio.
 		 
 		
 		 
@@ -4899,19 +4899,16 @@ También vale este resultado para matrices $n \times n$.
 		\end{array}
 		\right]$ y usamos la fórmula del determinante de una $2\times 2$. 
 		\end{proof}
-	
-		 
-		
-	 
-	
-		 
-		
-	   
-			
-			\begin{proposicion}\label{autovalores}
-				Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ 
+
+		\vskip .2cm 
+
+		\begin{proposicion}\label{autovalores}
+				Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico de $A$. 
 			\end{proposicion}
-			\begin{proof}
+			\begin{proof}${}^{}$
+				\vskip .1cm 
+
+
 				\begin{tabular}{rl}
 		$\lambda$ es autovalor &$\Leftrightarrow$ existe $v \ne 0$ tal que $Av = \lambda v$ \\
 					&\\
@@ -4930,21 +4927,20 @@ También vale este resultado para matrices $n \times n$.
 		 
 		
 	 
-		\begin{observacion}{Método para encontrar autovalores y autovectores de $A$}
+		\begin{observacion} Sea $A\in \K^{n \times n}$, entonces podemos aplicar el siguiente método para encontrar autovalores y autovectores de $A$.
 			\vskip .2cm
 			\begin{enumerate}
 				\item Calcular $\chi_A(x) =\det(A-x \Id{})$,
 				\vskip .2cm
 				\item Encontrar las raíces $\lambda_1,\ldots,\lambda_k$ de $\chi_A(x)$.
 				
-				(no siempre se puede. No hay fórmula para encontrar las raíces de polinomios de grado 5 o superior).
+				\noindent No siempre es posible hacerlo, pues no hay una fórmula o método general para encontrar las raíces de polinomios de grado 5 o superior.
 				\vskip .2cm
 				\item Para cada $i$ con $1 \le i \le k$ resolver el sistema de ecuaciones lineales:
 				\begin{equation*}
 					(A-\lambda_i \Id)X = 0.
 				\end{equation*}
 				Las soluciones no triviales  de este sistema son los autovectores con autovalor $\lambda_i$.
-	
 			\end{enumerate}
 		\end{observacion}
 	 
@@ -4958,13 +4954,15 @@ También vale este resultado para matrices $n \times n$.
 			\end{equation*}
 		\end{ejemplo}
 		\vskip -.4cm
-		\renewcommand{\proofname}{Solucion}
-		\begin{proof}
+		
+		\begin{proof}[Solución]${}^{}$
 			\begin{enumerate}
 				\item  $            \chi_A(x)= \det\left[\begin{matrix}
 				3-x& -2 \\ 1 & -x
 				\end{matrix} \right]= x^2 -3x +2   =(x -1)(x -2)$.
+				\vskip .2cm
 				\item Los autovalores de $A$ son las raíces de  $\chi_A(x)$: $1$ y $2$.
+				\vskip .2cm
 				\item Debemos resolver los sistemas de ecuaciones:
 				\begin{equation*}
 					(A - \Id)X = 0,\qquad (A - 2 \Id)X = 0.
@@ -4976,97 +4974,66 @@ También vale este resultado para matrices $n \times n$.
 	 
 		Es decir,  debemos resolver los sistemas
 		\begin{align*}
-			\begin{bmatrix}
-				3 - 1&-2 \\ 1&-1
-			\end{bmatrix}
-			\begin{bmatrix}
-				x_1\\x_2
-			\end{bmatrix}
+			\begin{bmatrix} 3 - 1&-2 \\ 1&-1\end{bmatrix}
+			\begin{bmatrix}	x_1\\x_2\end{bmatrix}
 			=
-			\begin{bmatrix}
-				0\\0
-			\end{bmatrix}
-			\qquad &\Rightarrow \qquad 
+			\begin{bmatrix}	0\\0\end{bmatrix}
+			\quad &\text{o, equivalentemente,} \quad 
 			\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix}
-			\begin{bmatrix}
-				x_1\\x_2
-			\end{bmatrix}
+			\begin{bmatrix}	x_1\\x_2\end{bmatrix}
 			=
-			\begin{bmatrix}
-				0\\0
-			\end{bmatrix} \tag{S1}
+			\begin{bmatrix}	0\\0\end{bmatrix} \tag{S1}
 			\\
 			&
 			\\
-			\begin{bmatrix}
-				3 - 2&-2 \\ 1&-2
-			\end{bmatrix}
-			\begin{bmatrix}
-				x_1\\x_2
-			\end{bmatrix}
+			\begin{bmatrix}	3 - 2&-2 \\ 1&-2\end{bmatrix}
+			\begin{bmatrix}	x_1\\x_2\end{bmatrix}
 			=
-			\begin{bmatrix}
-				0\\0
-			\end{bmatrix}
-			\qquad &\Rightarrow \qquad 
+			\begin{bmatrix}	0\\0\end{bmatrix}
+			\quad &\text{o, equivalentemente,} \quad 
 			\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix}
-			\begin{bmatrix}
-				x_1\\x_2
-			\end{bmatrix}
+			\begin{bmatrix}	x_1\\x_2\end{bmatrix}
 			=
-			\begin{bmatrix}
-				0\\0
-			\end{bmatrix} \tag{S2}
+			\begin{bmatrix}	0\\0\end{bmatrix} \tag{S2}
 		\end{align*}
 	\vskip .4cm
-		(S1) $\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix} \stackrel{F_1 -2F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-1 \end{bmatrix}$  $\Rightarrow$ $x_1-x_2=0$ $\Rightarrow$ $(t,t)$ es solución. 
+		(S1)\quad $\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix} \stackrel{F_1 -2F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-1 \end{bmatrix}$  $\Rightarrow$ $x_1-x_2=0$ $\Rightarrow$ $(t,t)$ es solución. 
 		\vskip .4cm
-		(S2)  $\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix} \stackrel{F_2 -F_1}{\longrightarrow} \begin{bmatrix}1&-2 \\ 0&0\end{bmatrix}$  $\Rightarrow$ $x_1-2x_2=0$ $\Rightarrow$ $(2t,t)$ es solución. 
+		(S2)\quad  $\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix} \stackrel{F_2 -F_1}{\longrightarrow} \begin{bmatrix}1&-2 \\ 0&0\end{bmatrix}$  $\Rightarrow$ $x_1-2x_2=0$ $\Rightarrow$ $(2t,t)$ es solución. 
 	
 	 
 	
 	
-	 Respuesta final:
+	 De lo anterior concluimos:
 		
 			\begin{itemize}
 				\item Los autovalores de $A$ son $1$ y $2$.
-				\item El conjunto de autovectores con autovalor $1$ es
-				\begin{equation*}
-					\{t(1,1): t \ne 0\}.
-				\end{equation*}
-				\item El conjunto de autovectores con autovalor $2$ es
-				\begin{equation*}
-					\{t(2,1): t \ne 0\}.
-				\end{equation*}
+				\item El auto espacio correspondiente al  autovalor $1$ es
+            \begin{equation*}
+                V_1 = \{t(1,1): t \in \R\}.
+            \end{equation*}
+            \item El auto espacio correspondiente al  autovalor $2$ es
+            \begin{equation*}
+                V_2 = \{t(2,1): t \in \R\}.
+            \end{equation*}
 			\end{itemize}
 	
 			
 		\end{proof}
-	 	\renewcommand{\proofname}{Demostración}
 	
-	
-		
-		 
+
 	
 		\begin{ejemplo}
 		 Sea $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix} \in \R^2$. Encontrar los autovalores \textit{reales} de $A$.    
 		\end{ejemplo}
-	\renewcommand{\proofname}{Solución}
-		\begin{proof}
+		\begin{proof}[Solución]
 			$A-x \Id= \begin{bmatrix}-x&-1\\1&-x\end{bmatrix}$, luego
 			\begin{align*}
 				\chi_A(x)=x^2+1.
 				\end{align*}
 	\vskip .2cm
 			El polinomio no tiene raíces reales, por lo tanto no existen autovalores reales (obviamente no hay autovectores).
-	
-	
-
-	 
-	
-	
-		
-	 
+		\end{proof}
 		Sin embargo si nos dicen 
 		\vskip .2cm
 		\textit{Encontrar autovalores y autovectores complejos de la matriz  $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix}$}, 
@@ -5077,9 +5044,35 @@ También vale este resultado para matrices $n \times n$.
 		\begin{align*}
 		\chi_A(x)=x^2+1=(x+i)(x-i),
 		\end{align*}
-		y este polinomio \textit{sí} tiene raíces complejas: $i$ y $-i$.
+		y este polinomio \textit{sí} tiene raíces complejas: $i$ y $-i$, por lo tanto  $i$ y $-i$ son los autovalores de $A$.
 		\vskip .2cm
-	  En este caso, entonces, $i$ y $-i$ son los autovalores  y es fácil ver que
+	  
+		Averigüemos los autovalores planteando los sistemas de ecuaciones correspondientes,  es decir $A- \lambda \Id x =0$ para $\lambda=i, -i$:
+
+		\begin{align*}
+			\begin{bmatrix}  - i& -1\\ 1&-i\end{bmatrix}
+			\begin{bmatrix}	x_1\\x_2\end{bmatrix}
+			=
+			\begin{bmatrix}	0\\0\end{bmatrix},
+			 \tag{S1}
+			\\
+			&
+			\\
+			\begin{bmatrix}	i&-1 \\ 1&i\end{bmatrix}
+			\begin{bmatrix}	x_1\\x_2\end{bmatrix}
+			=
+			\begin{bmatrix}	0\\0\end{bmatrix}.
+			 \tag{S2}
+		\end{align*}
+		
+		Resolvamos los sistemas:
+
+		(S1)\quad $\begin{bmatrix}  - i& -1\\ 1&-i\end{bmatrix} \stackrel{F_1 +i F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-i \end{bmatrix}$  $\Rightarrow$ $x_1-i x_2=0$ $\Rightarrow$ $(i\omega ,\omega)$ es solución ($\omega \in \C$). 
+		\vskip .4cm
+		(S2)\quad  $\begin{bmatrix}	i&-1 \\ 1&i\end{bmatrix} \stackrel{F_1 -i F_2}{\longrightarrow} \begin{bmatrix}0&0 \\  1&i\end{bmatrix}$  $\Rightarrow$ $x_1+i x_2=0$ $\Rightarrow$ $(-i \omega,\omega)$ es solución ($\omega \in \C$).
+
+
+		Luego $A$ tiene dos autovalores, $i$ y $-i$, y 
 	  \begin{equation*}
 		  V_i = \left\{ \omega(i,1): \omega\in \C \right\}, \qquad  V_{-i} = \left\{ \omega(-i,1): \omega\in \C \right\}.
 	  \end{equation*} 
@@ -5094,8 +5087,7 @@ También vale este resultado para matrices $n \times n$.
 			\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}-i\\1\end{bmatrix} &= \begin{bmatrix}-1\\-i\end{bmatrix} = (-i) \begin{bmatrix}-i\\1\end{bmatrix}.
 		\end{align*}
 	
-	\end{proof}
-	 \renewcommand{\proofname}{Demostración}
+	
 	
 \end{section}	
 	\end{chapter}
