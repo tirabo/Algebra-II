@@ -2681,12 +2681,12 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				
 				
 				\begin{definicion}
-					Sea $I_n$ la matriz  $n \times n$ definida 
+					Sea $\Id_n$ la matriz  $n \times n$ definida 
 					\begin{equation*}
-					[I_n]_{ij} = \left\{ \begin{matrix}
+					[\Id_n]_{ij} = \left\{ \begin{matrix}
 					1 && \text{si $i=j$,}\\
 					0 && \text{si $i\not=j$,}
-					\end{matrix}\right.\qquad \text{ o bien }\qquad I_n =
+					\end{matrix}\right.\qquad \text{ o bien }\qquad \Id_n =
 					\begin{bmatrix}
 					1 & 0 & \cdots & 0 \\
 					0 & 1 & \cdots & 0 \\
@@ -2694,10 +2694,10 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					0 & 0 & \cdots & 1
 					\end{bmatrix}
 					\end{equation*}
-					(la matriz cuadrada con 1's en la diagonal y 0's en las otras entradas). Llamaremos a $I_n$ la \textit{matriz identidad $n \times n$}\index{matriz!identidad $n \times n$}.
+					(la matriz cuadrada con 1's en la diagonal y 0's en las otras entradas). Llamaremos a $\Id_n$ la \textit{matriz identidad $n \times n$}\index{matriz!identidad $n \times n$}.
 				\end{definicion}
 				
-				Observar que $I_n$ es una matriz escalón reducida por fila.
+				Observar que $\Id_n$ es una matriz escalón reducida por fila.
 				
 				\begin{teorema}\label{th-merf}
 					Toda matriz $m \times n$ sobre $\K$ es equivalente por fila a una matriz escalón reducida por fila.
@@ -2879,25 +2879,25 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				\end{proof}
 				
 				\begin{lema}\label{mtrx-merf-id}
-					Sea $R$ una matriz $n \times n$ escalón reducida por fila tal que no tiene filas nulas. Entonces $R=I_n$. 
+					Sea $R$ una matriz $n \times n$ escalón reducida por fila tal que no tiene filas nulas. Entonces $R=\Id_n$. 
 				\end{lema}
 				\begin{proof}
 					Como  $R$ es reducida por fila y no tiene filas nulas, cada fila tiene  un 1 en alguna entrada y en la columna donde está el 1 todos las otras entradas son nulas, por  lo tanto hay $n$ 1's principales distribuidos en $n$ columnas. Concluyendo: hay un 1 por columna y en esa columna todas las demás entradas son nulas. 
 					
-					Ahora bien como $R$ es una MERF, la primera fila contiene el 1 que está más a la izquierda, que no puede estar en otra ubicación que no sea la primera (pues si no la primera columna sería nula). Con el mismo razonamiento vemos que en la segunda fila hay un 1 en la columna 2 y en general en la fila $k$-ésima hay un 1 en la columna $k$. Luego $R=I_n$.
+					Ahora bien como $R$ es una MERF, la primera fila contiene el 1 que está más a la izquierda, que no puede estar en otra ubicación que no sea la primera (pues si no la primera columna sería nula). Con el mismo razonamiento vemos que en la segunda fila hay un 1 en la columna 2 y en general en la fila $k$-ésima hay un 1 en la columna $k$. Luego $R=\Id_n$.
 				\end{proof}			
 				
 				\begin{teorema}
-					Sea $A$ una matriz $n \times n$. Entonces, $A$ es equivalente por filas a la matriz $I_n$  si y sólo si el sistema $AX = Y$ tiene un única solución. 
+					Sea $A$ una matriz $n \times n$. Entonces, $A$ es equivalente por filas a la matriz $\Id_n$  si y sólo si el sistema $AX = Y$ tiene un única solución. 
 				\end{teorema}
 				\begin{proof}
-					($\Rightarrow$) Como $A$ es equivalente por filas a la matriz $I_n$, las soluciones de $AX =Y$ son las mismas que las de $I_nX=Z$, para algún $Z$. Ahora bien,  en la fila $i$ de la matriz $I_n$ tenemos $[I_n]_{ii} =1$ y las otras entradas son cero, luego la ecuación correspondiente a esa fila es $x _i =0$, y esto ocurre en todas las filas, luego el sistema de ecuaciones es
+					($\Rightarrow$) Como $A$ es equivalente por filas a la matriz $\Id_n$, las soluciones de $AX =Y$ son las mismas que las de $\Id_nX=Z$, para algún $Z$. Ahora bien,  en la fila $i$ de la matriz $\Id_n$ tenemos $[\Id_n]_{ii} =1$ y las otras entradas son cero, luego la ecuación correspondiente a esa fila es $x _i =0$, y esto ocurre en todas las filas, luego el sistema de ecuaciones es
 					\begin{align*}
 					x_1 &=z_1 \\ x_2 &= z_2 \\ \vdots \\ x_n &= z_n
 					\end{align*}
 					cuya única solución es la solución trivial.
 					
-					($\Leftarrow$) Sea $R$ la matriz escalón reducida por filas asociada a $A$. Por hipótesis, $AX=Y$ tiene una sola solución y  por lo tanto $RX=Z$, para algún $Z$, tiene una sola solución. Luego, no hay variables libres, es decir hay $n$ filas no nulas en $R$, como $R$ tiene $n$ filas, lo anterior implica que $R$ no tiene filas nulas. Entonces, por el lema anterior, $R=I_n$.
+					($\Leftarrow$) Sea $R$ la matriz escalón reducida por filas asociada a $A$. Por hipótesis, $AX=Y$ tiene una sola solución y  por lo tanto $RX=Z$, para algún $Z$, tiene una sola solución. Luego, no hay variables libres, es decir hay $n$ filas no nulas en $R$, como $R$ tiene $n$ filas, lo anterior implica que $R$ no tiene filas nulas. Entonces, por el lema anterior, $R=\Id_n$.
 				\end{proof}
 			\end{subsection}
 			
@@ -3175,7 +3175,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					
 					\item Elemento neutro: si  $A$ es matriz $m \times n$,  entonces
 					\begin{equation*}
-					AI_{n} = A = I_{m}A,
+					A\Id_{n} = A = \Id_{m}A,
 					\end{equation*}
 					\item Distributiva:
 					\begin{equation*}
@@ -3193,7 +3193,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				
 				Cuando las matrices son cuadradas podemos multiplicarlas por si mismas y  definimos,  de forma análoga a lo que ocurre en los productos de números, la potencia de una matriz: sea $A$ matriz $n \times n$, y sea $m \in \mathbb N$ entonces
 				\begin{equation*}
-				A^0 = I_{n}, \quad A^m = A^{m-1}A,		
+				A^0 = \Id_{n}, \quad A^m = A^{m-1}A,		
 				\end{equation*}
 				es decir $A^m$ es multiplicar $A$ consigo mismo $m$-veces.  
 				
@@ -3394,7 +3394,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			\end{equation*}
 			(producto de matrices). Es decir, la notación antes utilizada es consistente con el, ahora definido, producto de matrices.  
 			
-			\begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz!elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $I_m$.
+			\begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz!elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $\Id_m$.
 			\end{definicion}
 			
 			\begin{ejemplo} Veamos cuales son las matrices elementales  $2 \times 2$:
@@ -3418,7 +3418,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			
 			En el caso de matrices $m \times m$ tampoco es difícil encontrar las matrices elementales:
 			\begin{enumerate}
-				\item Si $c \not=0$, multiplicar por  $c$ la fila $k$ de la matriz identidad, resulta en la matriz elemental que tiene todos 1's en la diagonal, excepto en la posición $k,k$ donde vale $c$,  es decir si $e(I_m) = [a_{ij}]$,  entonces
+				\item Si $c \not=0$, multiplicar por  $c$ la fila $k$ de la matriz identidad, resulta en la matriz elemental que tiene todos 1's en la diagonal, excepto en la posición $k,k$ donde vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
 				\begin{equation}\label{elem-tipo-1}
 				a_{ij} = \left\{ 
 				\begin{matrix*}[l]
@@ -3447,7 +3447,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				0  & \cdots  & &\cdots & 1
 				\end{bmatrix}
 				\end{align*}
-				\item si  $c \in \K$, sumar a la fila $r$  la fila $s$ multiplicada por $c$, resulta en la matriz elemental que tiene todos 1's en la diagonal, y todos los demás coeficientes son 0,  excepto en la fila  $r$ y columna $s$ donde  vale $c$,  es decir si $e(I_m) = [a_{ij}]$,  entonces
+				\item si  $c \in \K$, sumar a la fila $r$  la fila $s$ multiplicada por $c$, resulta en la matriz elemental que tiene todos 1's en la diagonal, y todos los demás coeficientes son 0,  excepto en la fila  $r$ y columna $s$ donde  vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
 				\begin{equation}\label{elem-tipo-2}
 				a_{ij} = \left\{ 
 				\begin{matrix*}[l]
@@ -3514,12 +3514,12 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			Veamos ahora que, dada una matriz $A$,   hacer una operación elemental en $A$ es igual a multiplicar $A$ a izquierda por una matriz elemental. Más precisamente:
 			
 			\begin{teorema}\label{th-mrtx-elem}
-				Sea $e$ una operación elemental por fila y sea $E$ la matriz elemental $E=e(I)$. Entonces $e(A) = EA$.
+				Sea $e$ una operación elemental por fila y sea $E$ la matriz elemental $E=e(\Id)$. Entonces $e(A) = EA$.
 			\end{teorema}
 			\begin{proof}
 				Hagamos la prueba para matrices $2 \times 2$. La prueba en general es similar, pero requiere de un complicado manejo de índices.
 				\begin{enumerate}
-					\item[E1.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(I_2)$ resulta en la matriz elemental:
+					\item[E1.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(\Id_2)$ resulta en la matriz elemental:
 					\begin{equation*}
 					E= \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}.
 					\end{equation*}
@@ -3538,7 +3538,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					\end{align*}
 					De forma análoga se demuestra en el caso que la operación elemental sea  multiplicar la segunda fila por $c$.
 					
-					\item[E2.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(I_2)$ resulta en la matriz elemental: 
+					\item[E2.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(\Id_2)$ resulta en la matriz elemental: 
 					\begin{equation*}
 					E=\begin{bmatrix} 1& 0\\ c&1\end{bmatrix}.
 					\end{equation*}
@@ -3551,7 +3551,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					\end{equation*}
 					La demostración es análoga si la operación elemental es sumar a la fila 1 la fila 2 multiplicada por $c$.
 					
-					\item[E3.]  Finalmente, sea $e$ la operación elemental que intercambia la fila 1 por la fila 2. Entonces,  $E:=e(I_2)$ es la matriz 
+					\item[E3.]  Finalmente, sea $e$ la operación elemental que intercambia la fila 1 por la fila 2. Entonces,  $E:=e(\Id_2)$ es la matriz 
 					\begin{equation*}
 					E=\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
 					\end{equation*}
@@ -3571,7 +3571,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			
 			
 			\begin{corolario}\label{coro-mrtx-elem}
-				Sean $A$ y $B$ matrices $m \times n$. Entonces $B$ equivalente por filas a $A$ si y sólo si $B=PA$ donde $P$ es  producto de matrices elementales. Más aún, si $B = e_k(e_{k-1}(\cdots(e_1(A))\cdots))$ con $e_1,e_2,\ldots,e_k$ operaciones elementales de fila y $E_i=e_i(I)$ para $i=1,\ldots,k$,  entonces $B =  E_kE_{k-1}\cdots E_1A$.
+				Sean $A$ y $B$ matrices $m \times n$. Entonces $B$ equivalente por filas a $A$ si y sólo si $B=PA$ donde $P$ es  producto de matrices elementales. Más aún, si $B = e_k(e_{k-1}(\cdots(e_1(A))\cdots))$ con $e_1,e_2,\ldots,e_k$ operaciones elementales de fila y $E_i=e_i(\Id)$ para $i=1,\ldots,k$,  entonces $B =  E_kE_{k-1}\cdots E_1A$.
 			\end{corolario}
 			\begin{proof} 
 				\
@@ -3580,9 +3580,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				\begin{equation*}
 				\text{si } A_1 = e_1(A)\text{ y } A_i = e_i(A_{i-1})\text{ para }i=2,\ldots,k\text{, entonces } e_k(A_{k-1})= B.
 				\end{equation*}
-				Sea $E_i = e_i(I_m)$, entonces, por el teorema anterior $A_1= E_1A$ y $A_i = E_iA_{i-1}$ ($i=2,\ldots,k$). Por  lo tanto $B=E_kA_{k-1}$, en otras palabras $B =  E_kE_{k-1}\cdots E_1A$, luego $P = E_kE_{k-1}\cdots E_1$.
+				Sea $E_i = e_i(\Id_m)$, entonces, por el teorema anterior $A_1= E_1A$ y $A_i = E_iA_{i-1}$ ($i=2,\ldots,k$). Por  lo tanto $B=E_kA_{k-1}$, en otras palabras $B =  E_kE_{k-1}\cdots E_1A$, luego $P = E_kE_{k-1}\cdots E_1$.
 				
-				($\Leftarrow$) Si $B= PA$, con  $P = E_kE_{k-1}\cdots E_1$ donde $E_i=e_i(I_m)$ es una matriz elemental,  entonces
+				($\Leftarrow$) Si $B= PA$, con  $P = E_kE_{k-1}\cdots E_1$ donde $E_i=e_i(\Id_m)$ es una matriz elemental,  entonces
 				$$
 				B = PA = E_kE_{k-1}\cdots E_1A \stackrel{\text{Teor. \ref{th-mrtx-elem}}}{=\joinrel=}  e_k(e_{k-1}(\cdots(e_1(A))\cdots)). 
 				$$
@@ -3592,7 +3592,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 		\end{section}
 		
 		\begin{section}{Matrices invertibles}
-			\begin{definicion} Sea $A$ una  matriz $n \times n$ con coeficientes en $\K$. Una matriz $B \in M_{n\times n}(\K)$  es \textit{inversa  de $A$}\index{matriz!inversa} si $BA=AB=I_n$. En  ese caso,  diremos que  $A$ es \textit{invertible}.\index{matriz!invertible}
+			\begin{definicion} Sea $A$ una  matriz $n \times n$ con coeficientes en $\K$. Una matriz $B \in M_{n\times n}(\K)$  es \textit{inversa  de $A$}\index{matriz!inversa} si $BA=AB=\Id_n$. En  ese caso,  diremos que  $A$ es \textit{invertible}.\index{matriz!invertible}
 			\end{definicion}
 			
 			\begin{ejemplo}
@@ -3613,16 +3613,16 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			\begin{proposicion}
 				Sea $A  \in M_{n\times n}(\K)$, 
 				\begin{enumerate}
-					\item	sean $B, C \in M_{n \times n}(\K)$ tales que $BA =I_n$ y $AC = I_n$, entonces $B=C$;
+					\item	sean $B, C \in M_{n \times n}(\K)$ tales que $BA =\Id_n$ y $AC = \Id_n$, entonces $B=C$;
 					\item  si $A$ invertible la inversa es única.
 				\end{enumerate}
 			\end{proposicion}
 			\begin{proof} (1)
 				\begin{equation*}
-				B = BI_n = B(AC) = (BA)C = I_nC = C.
+				B = B\Id_n = B(AC) = (BA)C = \Id_nC = C.
 				\end{equation*}
 				
-				(2) Sean $B$ y $C$ inversas de $A$, es decir $BA=AB=I_n$ y  $CA=AC=I_n$. En particular, $BA=I_n$ y $AC= I_n$, luego, por (1), $B=C$.  
+				(2) Sean $B$ y $C$ inversas de $A$, es decir $BA=AB=\Id_n$ y  $CA=AC=\Id_n$. En particular, $BA=\Id_n$ y $AC= \Id_n$, luego, por (1), $B=C$.  
 			\end{proof}
 			
 			
@@ -3631,7 +3631,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				Sea $A\in M_{n\times n}(\K)$ invertible. A la única matriz inversa de $A$ la llamamos \textit{la matriz inversa de $A$} y la denotamos $A^{-1}$.
 			\end{definicion}
 			
-			Veremos más adelante que si una matriz $n \times n$ admite una inversa a izquierda,  es decir si existe $B$ tal que $BA=I_n$, entonces la matriz es invertible. Lo mismo vale si $A$  admite inversa a derecha.
+			Veremos más adelante que si una matriz $n \times n$ admite una inversa a izquierda,  es decir si existe $B$ tal que $BA=\Id_n$, entonces la matriz es invertible. Lo mismo vale si $A$  admite inversa a derecha.
 			
 			\begin{ejemplo}
 				Sea $A$ la matriz 
@@ -3644,11 +3644,11 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				A^{-1} = \begin{bmatrix} 1&-1&0\\ 1&0&2\\ 1&-1&1
 				\end{bmatrix}.
 				\end{equation*}
-				Esto se resuelve comprobando que $AA^{-1}=I_3$ (por lo dicho más arriba es innecesario comprobar que $A^{-1}A=I_3$).
+				Esto se resuelve comprobando que $AA^{-1}=\Id_3$ (por lo dicho más arriba es innecesario comprobar que $A^{-1}A=\Id_3$).
 			\end{ejemplo} 
 			
 			\begin{observacion}
-				No toda matriz tiene inversa, por ejemplo  la  matriz nula (cuyos coeficientes son todos iguales a $0$) no tiene inversa pues $0\,.\, A= 0 \not= I$.  También existen matrices no nulas no invertibles,  por ejemplo la matriz 
+				No toda matriz tiene inversa, por ejemplo  la  matriz nula (cuyos coeficientes son todos iguales a $0$) no tiene inversa pues $0\,.\, A= 0 \not= \Id$.  También existen matrices no nulas no invertibles,  por ejemplo la matriz 
 				\begin{equation*}
 				A = \begin{bmatrix} 2&1\\ 0&0\end{bmatrix}
 				\end{equation*}
@@ -3672,15 +3672,15 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				\end{enumerate}
 			\end{teorema}
 				\begin{proof}
-					(\ref{inv-itm1}) La inversa a izquierda de $A^{-1}$ es $A$, pues $AA^{-1}=I_n$. Análogamente, la inversa a derecha de $A^{-1}$ es $A$, pues $A^{-1}A = I_n$. Concluyendo: $A$  es la inversa de $A^{-1}$.
+					(\ref{inv-itm1}) La inversa a izquierda de $A^{-1}$ es $A$, pues $AA^{-1}=\Id_n$. Análogamente, la inversa a derecha de $A^{-1}$ es $A$, pues $A^{-1}A = \Id_n$. Concluyendo: $A$  es la inversa de $A^{-1}$.
 					
 					(\ref{inv-itm2}) Simplemente debemos comprobar que $B^{-1}A^{-1}$ es inversa a izquierda y derecha de $AB$:
 					\begin{equation*}
-					(B^{-1}A^{-1})AB = B^{-1}(A^{-1}A)B = B^{-1}I_nB =B^{-1}B = I_n,
+					(B^{-1}A^{-1})AB = B^{-1}(A^{-1}A)B = B^{-1}\Id_nB =B^{-1}B = \Id_n,
 					\end{equation*}
 					y,  análogamente,
 					\begin{equation*}
-					AB(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = AI_nA^{-1} =AA^{-1} = I_n.
+					AB(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = A\Id_nA^{-1} =AA^{-1} = \Id_n.
 					\end{equation*} 
 				\end{proof}
 			
@@ -3699,10 +3699,10 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				Una matriz elemental es invertible.
 			\end{teorema}
 			\begin{proof}
-				Sea $E$ la matriz elemental que se obtiene a partir de $I_n$ por la operación elemental $e$. Se $e_1$ la operación elemental inversa (teorema \ref{op-elem}) y $E_1 = e_1(I_n)$. Entonces 
+				Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ por la operación elemental $e$. Se $e_1$ la operación elemental inversa (teorema \ref{op-elem}) y $E_1 = e_1(\Id_n)$. Entonces 
 				\begin{align*}
-				EE_1 &= e(e_1(I_n)) = I_n \\
-				E_1E &= e_1(e(I_n)) = I_n.
+				EE_1 &= e(e_1(\Id_n)) = \Id_n \\
+				E_1E &= e_1(e(\Id_n)) = \Id_n.
 				\end{align*}
 				Luego  $E_1 = E^{-1}$. 
 			\end{proof}	
@@ -3824,7 +3824,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			\begin{teorema}\label{mtrx-inv-equiv} Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Las siguientes afirmaciones son equivalentes
 				\begin{enumerate}
 					\item[\textit{i})] $A$ es invertible,
-					\item[\textit{ii})] $A$  es equivalente por filas a $I_n$, 
+					\item[\textit{ii})] $A$  es equivalente por filas a $\Id_n$, 
 					\item[\textit{iii})] $A$ es producto de matrices elementales.
 				\end{enumerate}
 			\end{teorema}
@@ -3834,9 +3834,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				
 				\textit{i}) $\Rightarrow$ \textit{ii})\; Sea $R$ la matriz escalón reducida por fila equivalente por filas a $A$. Entonces,  existen $E_1,\ldots,E_k$ matrices elementales tal que $E_1,\ldots,E_kA = R$. Como las matrices elementales son invertibles, el producto de matrices elementales es invertible, luego  $E_1,\ldots,E_k$ es invertible y por lo tanto $R=E_1,\ldots,E_kA$ es invertible. 
 				
-				Recordemos que las matrices escalón reducidas por fila si tienen filas nulas, ellas se encuentran al final.  Ahora bien,  si la última fila de $R$ es nula entonces,  $RB$ tiene la última fila nula también y por lo tanto no puede ser igual a la identidad, es decir, en ese caso $R$ no es invertible, lo cual produce un absurdo. Concluyendo: la última fila (la fila $n$) de $R$ no es nula y como es MERF, $R$ no tiene filas nulas. Por lo tanto $R=I_n$ (lema \ref{mtrx-merf-id}) y,  entonces, $A$ es equivalente por filas a $I_n$. 
+				Recordemos que las matrices escalón reducidas por fila si tienen filas nulas, ellas se encuentran al final.  Ahora bien,  si la última fila de $R$ es nula entonces,  $RB$ tiene la última fila nula también y por lo tanto no puede ser igual a la identidad, es decir, en ese caso $R$ no es invertible, lo cual produce un absurdo. Concluyendo: la última fila (la fila $n$) de $R$ no es nula y como es MERF, $R$ no tiene filas nulas. Por lo tanto $R=\Id_n$ (lema \ref{mtrx-merf-id}) y,  entonces, $A$ es equivalente por filas a $\Id_n$. 
 				
-				\textit{ii}) $\Rightarrow$ \textit{iii})\; Como $A$  es equivalente por filas a $I_n$, al ser la equivalencia por filas una relación de equivalencia,  tenemos que $I_n$ es equivalente por filas a $A$, es decir  existen $E_1,\ldots,E_k$ matrices elementales, tales que $E_1E_2,\ldots,E_kI_n = A$. Por lo tanto, $A =E_1E_2,\ldots,E_k$ producto de matrices elementales.
+				\textit{ii}) $\Rightarrow$ \textit{iii})\; Como $A$  es equivalente por filas a $\Id_n$, al ser la equivalencia por filas una relación de equivalencia,  tenemos que $\Id_n$ es equivalente por filas a $A$, es decir  existen $E_1,\ldots,E_k$ matrices elementales, tales que $E_1E_2,\ldots,E_k\Id_n = A$. Por lo tanto, $A =E_1E_2,\ldots,E_k$ producto de matrices elementales.
 				
 				\textit{iii}) $\Rightarrow$ \textit{i}) \; Sea $A = E_1E_2,\ldots,E_k$ donde $E_i$  es una matriz elemental ($i=1,\ldots,k$). Como cada $E_i$ es invertible,  el producto de ellos es invertible,  por lo tanto $A$ es invertible.
 			\end{proof}	
@@ -3854,18 +3854,18 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			\end{proof}	
 			
 			\begin{corolario}\label{mtrx-inv-gauss}
-				Sea $A$ matriz $n \times n$. Sean $e_1,\ldots,e_k$ las operaciones elementales por filas que reducen a $A$  a una MERF y esta MERF es la identidad,  es decir $e_1(e_{2}(\cdots(e_k(A))\cdots)) =I_n$. Entonces, $A$ invertible y  las mismas operaciones elementales aplicadas a $I_n$ nos llevan a $A^{-1}$,  es decir $e_1(e_{2}(\cdots(e_k(I_n))\cdots)) =A^{-1}$.
+				Sea $A$ matriz $n \times n$. Sean $e_1,\ldots,e_k$ las operaciones elementales por filas que reducen a $A$  a una MERF y esta MERF es la identidad,  es decir $e_1(e_{2}(\cdots(e_k(A))\cdots)) =\Id_n$. Entonces, $A$ invertible y  las mismas operaciones elementales aplicadas a $\Id_n$ nos llevan a $A^{-1}$,  es decir $e_1(e_{2}(\cdots(e_k(\Id_n))\cdots)) =A^{-1}$.
 			\end{corolario}
 			\begin{proof} Por el teorema anterior, al ser $A$ equivalente por filas a la identidad, $A$ es invertible.  
-				Sean las matrices elementales  $E_i = e_i(I_n)$ para $i=1,\ldots,k$,  entonces (ver corolario \ref{coro-mrtx-elem}) $E_1E_2\ldots E_kA = I_n$, por lo tanto, multiplicando por $A^{-1}$ a derecha en ambos miembros,    
+				Sean las matrices elementales  $E_i = e_i(\Id_n)$ para $i=1,\ldots,k$,  entonces (ver corolario \ref{coro-mrtx-elem}) $E_1E_2\ldots E_kA = \Id_n$, por lo tanto, multiplicando por $A^{-1}$ a derecha en ambos miembros,    
 				\begin{align*}
-				E_1E_2\ldots E_kA A^{-1}&= I_nA^{-1} \quad \Leftrightarrow \\
-				E_1E_2\ldots E_kI_n&= A^{-1} \quad \Leftrightarrow \\
-				e_1(e_{2}(\cdots(e_k(I_n))\cdots)) &=A^{-1}.
+				E_1E_2\ldots E_kA A^{-1}&= \Id_nA^{-1} \quad \Leftrightarrow \\
+				E_1E_2\ldots E_k\Id_n&= A^{-1} \quad \Leftrightarrow \\
+				e_1(e_{2}(\cdots(e_k(\Id_n))\cdots)) &=A^{-1}.
 				\end{align*}
 			\end{proof}
 			
-			Este último corolario nos provee un método sencillo para calcular la inversa de una matriz $A$ (invertible). Primero,  encontramos $R = I_n$ la MERF  equivalente por filas a $A$, luego, aplicando la mismas operaciones elementales a $I_n$, obtenemos la inversa de $A$. Para facilitar el cálculo es  conveniente comenzar con $A$ e $I_n$ e ir aplicando paralelamente las operaciones elementales por fila. Veamos un ejemplo.
+			Este último corolario nos provee un método sencillo para calcular la inversa de una matriz $A$ (invertible). Primero,  encontramos $R = \Id_n$ la MERF  equivalente por filas a $A$, luego, aplicando la mismas operaciones elementales a $\Id_n$, obtenemos la inversa de $A$. Para facilitar el cálculo es  conveniente comenzar con $A$ e $\Id_n$ e ir aplicando paralelamente las operaciones elementales por fila. Veamos un ejemplo.
 
 			\begin{ejemplo}
 				Calculemos la inversa (si tiene) de 
@@ -3882,7 +3882,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				%\end{array}\right]
 				%$$
 				\begin{align*}
-				[A|I] &= \left[\begin{array}{cc|cc}2&-1 &  1&0\\1&3& 0&1\end{array}\right] 
+				[A|\Id] &= \left[\begin{array}{cc|cc}2&-1 &  1&0\\1&3& 0&1\end{array}\right] 
 				\stackrel{F_1\leftrightarrow F_2}{\longrightarrow} 
 				\left[\begin{array}{cc|cc}1&3& 0&1\\2&-1 &  1&0 \end{array}\right]
 				\stackrel{F_2-2 F_1}{\longrightarrow}
@@ -3897,7 +3897,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				\begin{equation*}
 				A^{-1}=\begin{bmatrix}\frac37&\frac17\\-\frac17&\frac27 \end{bmatrix}.
 				\end{equation*}
-				El lector desconfiado  podrá comprobar, haciendo el producto de matrices, que $AA^{-1} = A^{-1}A=I_2$.
+				El lector desconfiado  podrá comprobar, haciendo el producto de matrices, que $AA^{-1} = A^{-1}A=\Id_2$.
 			\end{proof}
 			
 			
@@ -3924,17 +3924,17 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				
 				
 				
-				\textit{iii}) $\Rightarrow$  \textit{i}) Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ invertible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por teorema \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=I_n$. Luego $A$ es equivalente por filas a $I_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es invertible. 			
+				\textit{iii}) $\Rightarrow$  \textit{i}) Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ invertible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por teorema \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=\Id_n$. Luego $A$ es equivalente por filas a $\Id_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es invertible. 			
 				
 			\end{proof}
 			
 			\begin{corolario}
-				Sea $A$ una matriz $n \times n$ con coeficientes  en $\K$. Si $A$ tiene inversa a izquierda,  es decir si existe $B$ matriz $n \times n$ tal que $BA=I_n$,   entonces $A$ es invertible.  Lo mismo vale si $A$ tiene inversa a derecha. 
+				Sea $A$ una matriz $n \times n$ con coeficientes  en $\K$. Si $A$ tiene inversa a izquierda,  es decir si existe $B$ matriz $n \times n$ tal que $BA=\Id_n$,   entonces $A$ es invertible.  Lo mismo vale si $A$ tiene inversa a derecha. 
 			\end{corolario}	
 			\begin{proof}
-				Supongamos que  $A$ tiene inversa a izquierda y  que $B$ sea la inversa a izquierda,  es decir $BA=I_n$. El sistema $AX=0$ tiene una única solución, pues $AX_0=0 \Rightarrow BAX_0=B0 \Rightarrow X_0=0$. Luego, $A$  es invertible (y su inversa es $B$). 
+				Supongamos que  $A$ tiene inversa a izquierda y  que $B$ sea la inversa a izquierda,  es decir $BA=\Id_n$. El sistema $AX=0$ tiene una única solución, pues $AX_0=0 \Rightarrow BAX_0=B0 \Rightarrow X_0=0$. Luego, $A$  es invertible (y su inversa es $B$). 
 				
-				Supongamos que  $A$ tiene inversa a derecha y  que $C$ sea la inversa a derecha, es decir $AC=I$. Por lo demostrado más arriba, $C$ es invertible y su inversa es $A$, es decir $AC=I$ y $CA=I$, luego $A$  es invertible. 
+				Supongamos que  $A$ tiene inversa a derecha y  que $C$ sea la inversa a derecha, es decir $AC=\Id$. Por lo demostrado más arriba, $C$ es invertible y su inversa es $A$, es decir $AC=\Id$ y $CA=\Id$, luego $A$  es invertible. 
 			\end{proof}	
 			
 			
@@ -3993,7 +3993,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				\stackrel{F1-b/a\,F_2}{\longrightarrow}
 				\begin{bmatrix}1&0\\0&1\end{bmatrix}.
 				\end{equation*} 
-				Luego, en el caso $a\not=0$, $ad-bc\not=0$ hemos reducido por filas la matriz $A$  a la identidad y por lo tanto $A$  es invertible. Además, podemos encontrar $A^{-1}$ aplicando a $I$ las mismas operaciones elementales que reducían $A$ a la identidad:
+				Luego, en el caso $a\not=0$, $ad-bc\not=0$ hemos reducido por filas la matriz $A$  a la identidad y por lo tanto $A$  es invertible. Además, podemos encontrar $A^{-1}$ aplicando a $\Id$ las mismas operaciones elementales que reducían $A$ a la identidad:
 				\begin{align*}
 				\begin{bmatrix}1&0\\0&1\end{bmatrix} 
 				&\stackrel{F_1/a}{\longrightarrow}
@@ -4257,10 +4257,10 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 	\end{proof}
 	
 	\begin{corolario}
-		$det I_n = 1$.
+		$det \Id_n = 1$.
 	\end{corolario}
 	\begin{proof}
-		Se deduce del hecho que $I_n$  es triangular superior y todo coeficiente de la diagonal principal vale 1.
+		Se deduce del hecho que $\Id_n$  es triangular superior y todo coeficiente de la diagonal principal vale 1.
 	\end{proof}
 	
 	\begin{corolario}
@@ -4273,7 +4273,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 		\end{align*}
 	\end{corolario}
 	\begin{proof}
-		Si $R$ no tiene filas nulas es igual a $I_n$ (lema \ref{mtrx-merf-id}), luego $\det R = 1$. En general, $R$ es una matriz triangular superior y si tiene alguna fila nula $r$, entonces el coeficiente en la diagonal de la fila $r$ es igual a $0$ y por lo tanto 	$\det R = 0$.
+		Si $R$ no tiene filas nulas es igual a $\Id_n$ (lema \ref{mtrx-merf-id}), luego $\det R = 1$. En general, $R$ es una matriz triangular superior y si tiene alguna fila nula $r$, entonces el coeficiente en la diagonal de la fila $r$ es igual a $0$ y por lo tanto 	$\det R = 0$.
 	\end{proof}
 
 	\begin{ejemplo} Veamos,  en el caso de una matriz $A= [a_{ij}]$ de orden  $2 \times 2$ que ocurre con el determinante cuando hacemos una operación elemental. 
@@ -4336,13 +4336,13 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 	
 	\begin{corolario}\label{det-mtrx-elem} Sea $n \in \mathbb N$ y $c \in \K$. Sean $1 \le r,s \le n$,  con $r \ne s$.
 		\begin{enumerate}
-			\item Si $c \not=0$, la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $I_n$, tiene determinante igual a $c$.
-			\item Sea $r \ne s$. La matriz elemental que se obtiene de sumar a la fila $r$ de $I_n$  la fila $s$ multiplicada por $c$, tiene determinante $1$.
-			\item Finalmente, si $r \ne s$, la matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $I_n$ tiene determinante $-1$.
+			\item Si $c \not=0$, la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, tiene determinante igual a $c$.
+			\item Sea $r \ne s$. La matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$  la fila $s$ multiplicada por $c$, tiene determinante $1$.
+			\item Finalmente, si $r \ne s$, la matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$ tiene determinante $-1$.
 		\end{enumerate}	
 	\end{corolario} 
 	\begin{proof}
-		Se deduce fácilmente del teorema anterior y del hecho de que $det I_n =1$.			
+		Se deduce fácilmente del teorema anterior y del hecho de que $det \Id_n =1$.			
 	\end{proof}
 	
 	
@@ -4427,9 +4427,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 		
 		(3) 
 		\begin{align*}
-			\text{$A$ invertible } &\Leftrightarrow \text{existe $B$ matriz $n \times n$ tal que $AB = I_n = BA$} \\
-			&\Leftrightarrow (AB)^\t = I^\t_n = (BA)^\t\\
-			&\Leftrightarrow B^\t A^\t = I_n = A^\t B^\t\\
+			\text{$A$ invertible } &\Leftrightarrow \text{existe $B$ matriz $n \times n$ tal que $AB = \Id_n = BA$} \\
+			&\Leftrightarrow (AB)^\t = \Id^\t_n = (BA)^\t\\
+			&\Leftrightarrow B^\t A^\t = \Id_n = A^\t B^\t\\
 			&\Leftrightarrow \text{$B^\t$ es  la inversa de $A^\t$}. 
 		\end{align*}
 		Es decir, $A$ invertible si y sólo si  $A^\t$ es invertible y si $B = A^{-1}$, entonces  $(A^\t)^{-1} = B^\t$.
@@ -6249,7 +6249,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces son equivalentes
 	\begin{enumerate} 
 		\item $A$ es invertible.
-		\item $A$  es equivalente por filas a $I_n$.
+		\item $A$  es equivalente por filas a $\Id_n$.
 		\item $A$ es producto de matrices elementales.
 		\item El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
 		\item El sistema homogéneo $AX=0$ tiene una única solución trivial.
@@ -6523,7 +6523,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\end{obs}
 			
 			\begin{ejemplo}
-				Si $V$ es cualquier espacio vectorial, la transformación identidad $I$, definida por $Iv = v$ ($v \in V$), es una transformación lineal de $V$ en $V$. La transformación cero $0$, definida por $0v = 0$, es una transformación lineal de $V$ en $V$.
+				Si $V$ es cualquier espacio vectorial, la transformación identidad $\Id$, definida por $\Id v = v$ ($v \in V$), es una transformación lineal de $V$ en $V$. La transformación cero $0$, definida por $0v = 0$, es una transformación lineal de $V$ en $V$.
 			\end{ejemplo}
 		
 			\begin{ejemplo}\label{ejemplo-lineal-3}
@@ -7331,12 +7331,12 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\end{definicion}
 		
 		Cuando  en el teorema \ref{th-6-hoffman}, consideramos $V = W = Z$, tenemos que $U$ y $T$ son opera-
-		dores lineales en el espacio $V$, y por lo tanto la composición $UT$ es también un operador lineal sobre $V$. Así, el espacio $L(V, V)$ tiene una ``multiplicación'' definida por composición. En este caso el operador $TU$ también está definido, y debe observarse que en general $UT \not= TU$, es decir, $UT - TU \not= 0$. Se ha de advertir de manera especial que si $T$ es un operador lineal sobre $V$, entonces se puede componer $T$ con $T$. Se usará para ello la notación $T^2 = TT$, y en general $T^n = T \cdots T$ ($n$ veces) para $n = 1, 2, 3, \ldots$\,  Si $T \ne 0$, se define $T^0 = I_V$, el operador identidad.
+		dores lineales en el espacio $V$, y por lo tanto la composición $UT$ es también un operador lineal sobre $V$. Así, el espacio $L(V, V)$ tiene una ``multiplicación'' definida por composición. En este caso el operador $TU$ también está definido, y debe observarse que en general $UT \not= TU$, es decir, $UT - TU \not= 0$. Se ha de advertir de manera especial que si $T$ es un operador lineal sobre $V$, entonces se puede componer $T$ con $T$. Se usará para ello la notación $T^2 = TT$, y en general $T^n = T \cdots T$ ($n$ veces) para $n = 1, 2, 3, \ldots$\,  Si $T \ne 0$, se define $T^0 = \Id_V$, el operador identidad.
 			
 		\begin{lema}
-			Sea $V$ un espacio vectorial sobre el cuerpo $\K$; sean $U$, $T$ y $S$ operadores lineales sobre $V$ y sea $\lambda$ un elemento de $\K$. Denotemos $I_V$ el operador identidad. Entonces
+			Sea $V$ un espacio vectorial sobre el cuerpo $\K$; sean $U$, $T$ y $S$ operadores lineales sobre $V$ y sea $\lambda$ un elemento de $\K$. Denotemos $\Id_V$ el operador identidad. Entonces
 			\begin{enumerate}
-				\item $U = I_VU = UI_V$,
+				\item $U = \Id_VU = U\Id_V$,
 				\item $U(T+S) = UT + US$, $(T+S)U = TU + SU$,
 				\item $\lambda (UT) = (\lambda U)T = U (\lambda T)$.
 			\end{enumerate}¡
@@ -7545,26 +7545,26 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{corolario}\label{cor-5.6} Sean $V$ espacio vectorial de dimensión finita, $\mathcal B = \{v_1,\ldots,v_n\}$ base ordenada de $V$ y $T,U: V \to V$ operadores lineales. Entonces
 			\begin{enumerate}
 				\item\label{itm-cor-cambio-1} $[UT]_{\mathcal B} = [U]_{\mathcal B} [T]_{\mathcal B}$.
-				\item\label{itm-cor-cambio-2} Si $I: V \to V$  es el operador identidad, entonces $[I]_{\mathcal B} =\Id$,  donde $\Id$  es la matriz identidad $n \times n$.
+				\item\label{itm-cor-cambio-2} Si $\Id: V \to V$  es el operador identidad, entonces $[\Id]_{\mathcal B} =\Id$,  donde $\Id$  es la matriz identidad $n \times n$.
 				\item\label{itm-cor-cambio-3} Si $T$  es invertible,  entonces $[T]_{\mathcal B}$  es una matriz invertible y  $$[T^{-1}]_{\mathcal B} = [T]_{\mathcal B}^{-1}.$$
 			\end{enumerate}
 		\end{corolario}
 		\begin{proof}
 			(\ref{itm-cor-cambio-1}). Es inmediato del teorema anterior tomado $\mathcal B' =\mathcal B'' = \mathcal B$. 
 			
-			(\ref{itm-cor-cambio-2}). $I(v_i) = v_i$ y por lo tanto
+			(\ref{itm-cor-cambio-2}). $\Id(v_i) = v_i$ y por lo tanto
 			\begin{equation*}
-				[I]_{\mathcal B} = \begin{bmatrix} 1&0&\cdots&0 \\0&1&\cdots&0\\\vdots&&&\vdots\\0&0&\cdots&1 	\end{bmatrix} = \Id.
+				[\Id]_{\mathcal B} = \begin{bmatrix} 1&0&\cdots&0 \\0&1&\cdots&0\\\vdots&&&\vdots\\0&0&\cdots&1 	\end{bmatrix} = \Id.
 			\end{equation*}
 			
 			
-			(\ref{itm-cor-cambio-3}). $I = T T^{-1}$, luego
+			(\ref{itm-cor-cambio-3}). $\Id = T T^{-1}$, luego
 			\begin{equation*}
-				\Id = [I]_{\mathcal B} =  [T T^{-1}]_{\mathcal B} =  [T]_{\mathcal B} [T^{-1}]_{\mathcal B}.
+				\Id = [\Id]_{\mathcal B} =  [T T^{-1}]_{\mathcal B} =  [T]_{\mathcal B} [T^{-1}]_{\mathcal B}.
 			\end{equation*}
-			 Análogamente, $I = T^{-1} T$, luego
+			 Análogamente, $\Id = T^{-1} T$, luego
 			\begin{equation*}
-			\Id = [I]_{\mathcal B} =  [T^{-1} T]_{\mathcal B} =  [T^{-1}]_{\mathcal B} [T]_{\mathcal B}. 
+			\Id = [\Id]_{\mathcal B} =  [T^{-1} T]_{\mathcal B} =  [T^{-1}]_{\mathcal B} [T]_{\mathcal B}. 
 			\end{equation*}
 			Por  lo tanto $[T]_{\mathcal B}^{-1} = [T^{-1}]_{\mathcal B}$.
 		\end{proof}	
@@ -7580,23 +7580,23 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\begin{equation*}
 			[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}  P.
 			\end{equation*}
-			Más aún, $P = [I]_{\mathcal B' \mathcal B}$,  donde $I$ al  operador  identidad de $V$.
+			Más aún, $P = [\Id]_{\mathcal B' \mathcal B}$,  donde $\Id$ al  operador  identidad de $V$.
 		\end{teorema}
-		\begin{proof} Tenemos que $T = I T$ y $T =T  I$, luego 
+		\begin{proof} Tenemos que $T = \Id T$ y $T =T  \Id$, luego 
 			\begin{align*}
-				[T]_{\mathcal B'\mathcal B'} &=  [I T]_{\mathcal B'\mathcal B'}& \qquad& \\
-				&= [I]_{\mathcal B \mathcal B'} [T]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-5.5}})  \\
-				&= [I]_{\mathcal B \mathcal B'} [T I]_{\mathcal B' \mathcal B}& &\\
-				&= [I]_{\mathcal B \mathcal B'} [T]_{\mathcal B\mathcal B} [I]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-5.5}}).
+				[T]_{\mathcal B'\mathcal B'} &=  [\Id T]_{\mathcal B'\mathcal B'}& \qquad& \\
+				&= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-5.5}})  \\
+				&= [\Id]_{\mathcal B \mathcal B'} [T \Id]_{\mathcal B' \mathcal B}& &\\
+				&= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B\mathcal B} [\Id]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-5.5}}).
 			\end{align*} 
 			Es decir
 			\begin{equation}\label{eq-cambio de base}
-				[T]_{\mathcal B'} = [I]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [I]_{\mathcal B' \mathcal B}.
+				[T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B}.
 			\end{equation}
-			Falta probar que $[I]_{\mathcal B \mathcal B'}$  es el inverso de  $[I]_{\mathcal B' \mathcal B}$. Ahora bien,
+			Falta probar que $[\Id]_{\mathcal B \mathcal B'}$  es el inverso de  $[\Id]_{\mathcal B' \mathcal B}$. Ahora bien,
 			\begin{align*}
-				[I]_{\mathcal B \mathcal B'} [I]_{\mathcal B' \mathcal B}&= [I]_{\mathcal B \mathcal B} = \Id,\\
-				[I]_{\mathcal B' \mathcal B} [I]_{\mathcal B \mathcal B'}&= [I]_{\mathcal B' \mathcal B'} = \Id.
+				[\Id]_{\mathcal B \mathcal B'} [\Id]_{\mathcal B' \mathcal B}&= [\Id]_{\mathcal B \mathcal B} = \Id,\\
+				[\Id]_{\mathcal B' \mathcal B} [\Id]_{\mathcal B \mathcal B'}&= [\Id]_{\mathcal B' \mathcal B'} = \Id.
 			\end{align*}
 		\end{proof}
 	
@@ -7716,7 +7716,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		Recordemos que si $T$  es una transformación lineal, el determinante de $T$  se define como el determinante de la matriz de la transformación lineal en una base dada y que este determinante no depende de la base.    
 		
 		\begin{definicion}
-			Sea $A \in M_n(\K)$   el \textit{polinomio característico}\index{polinomio característico} de $A$ es $\chi_A(x) = \det(A-xI)$, donde $x$ es una indeterminada. 
+			Sea $A \in M_n(\K)$   el \textit{polinomio característico}\index{polinomio característico} de $A$ es $$\chi_A(x) = \det(A-x \Id),$$ donde $x$ es una indeterminada. 
 			
 			Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal, el  \textit{polinomio característico de $T$} es $\chi_T(x) = \det(T- x \Id)$.
 		\end{definicion}
@@ -7803,11 +7803,11 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			
 			($\Rightarrow$) Si $\lambda$ es autovalor, entonces existe $v \in V$, no nulo, tal que $Tv = \lambda v$, luego 
 			$$
-			0 = \lambda v-Tv  =  \lambda \Id \, v - Tv =  (\lambda \Id-T)v.
+			0 = \lambda Tv -v  =   Tv - \lambda \Id v =  (T-\lambda \Id)v.
 			$$
-			Por lo tanto, $\lambda \Id-T$ no es invertible, lo cual implica que $0 = \det(\lambda \Id-T) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
+			Por lo tanto, $T-\lambda \Id$ no es invertible, lo cual implica que $0 = \det(T-\lambda \Id) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
 			
-			($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(\lambda \Id-T)$, entonces $\lambda \Id-T$ no es una matriz invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(\lambda \Id-T)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
+			($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(T-\lambda \Id)$, entonces $T-\lambda \Id$ no es una matriz invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(T-\lambda \Id)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
 		\end{proof}
 		
 		Repetimos ahora algunos conceptos ya expresados al comienzo de la sección. 
@@ -7838,7 +7838,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\end{equation*}
 		Ya vimos que  el  polinomio característico de esta aplicación es 
 		$$
-		\chi_A(x) = x (x-2)(x+3).
+		\chi_A(t) = t (t-2)(t+3).
 		$$
 		Luego, por 	proposición \ref{autovalores}, los autovalores de $A$ son $0$, $2$ y $-3$. Debido al corolario \ref{cor-aut-li} existe una base de autovectores de $A$. Veamos cuales son. Si $\lambda$ autovalor de $A$, para encontrar los autovectores con autovalor $\lambda$  debemos resolver la ecuación $Av -\lambda v=0 $,  en este caso sería
 		\begin{equation*}
@@ -7911,7 +7911,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			Por la proposición \ref{autovalores}, los autovalores de $T$  son las raíces del polinomio característico,  es decir las raíces de 
 			$$
 			\det\left[\begin{matrix}
-			x-2 & 1 \\ -1 & x-4
+			2-x & -1 \\ 1 & 4-x
 			\end{matrix} \right] = (2-x)(4-x)+1 = x^2 -6x + 9 = 
 			(x -3)^2. 
 			$$
@@ -7966,10 +7966,10 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			Por otro lado, la matriz de $T$ en la base $\mathcal{B}$ tiene la forma
 			\begin{equation*}
 				\begin{bmatrix}
-				\lambda_1 I_1 &0&\cdots&0 \\0&\lambda_2 I_2&\cdots&0 \\\vdots&\vdots&&\vdots \\0&0&\cdots&\lambda_n I_n 
+				\lambda_1 \Id_1 &0&\cdots&0 \\0&\lambda_2 \Id_2&\cdots&0 \\\vdots&\vdots&&\vdots \\0&0&\cdots&\lambda_n \Id_n 
 				\end{bmatrix}
 			\end{equation*}
-			donde $I_j$ es la matriz identidad $d_j \times d_j$. Luego,  el polinomio característico de $T$ es el producto
+			donde $\Id_j$ es la matriz identidad $d_j \times d_j$. Luego,  el polinomio característico de $T$ es el producto
 			\begin{align*}
 				(\lambda_1 -x)^{d_1}\ldots(\lambda_k- x)^{d_k}.
 			\end{align*}
@@ -7986,21 +7986,21 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			El  polinomio característico de $A$ es
 			\begin{equation*}
 				\chi_A(x) = \det \begin{bmatrix}
-				x-5 &6 &6\\ 1& x-4& -2\\-3 &6& x+4
+					5-x &-6 &-6\\ -1& 4-x& 2\\3 &-6& -4-x
 				\end{bmatrix} 
-				= x^3 - 5 x^2 + 8 x - 4 = (x-2)^2(x-1).
+				= -x^3 + 5 x^2 - 8 x + 4 = -(x-2)^2(x-1).
 			\end{equation*}
 			¿Cuáles son las dimensiones de los espacios de los vectores propios asociados
 			con los dos valores propios? Se deben resolver las ecuaciones asociadas a las matrices
 			\begin{equation*}
-			A - 2I = 
+			A - 2 \Id = 
 			\begin{bmatrix}
 			3 &-6 &-6\\ -1& 2& 2\\3 &-6& -6
 			\end{bmatrix} 
 			\end{equation*}
 			y 
 			\begin{equation*}
-			A -I= 
+			A -\Id= 
 			\begin{bmatrix}
 			4 &-6 &-6\\ -1& 3& 2\\3 &-6& -5
 			\end{bmatrix}.
@@ -8011,7 +8011,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\underset{F_3+3F_2}{\stackrel{F_1+3 F_2}{\longrightarrow}} 
 			\begin{bmatrix} 0 &0 &0\\ -1& 2& 2\\0 &0& 0 \end{bmatrix}.
 			\end{equation*}
-			Luego,  la solución del sistema asociado a $A-2I$ es 
+			Luego,  la solución del sistema asociado a $A-2\Id$ es 
 			$$
 			V_2 = \{(2y+2z,y,z): y,z \in \R\} = <(2,1,0),(2,0,1)>
 			$$
@@ -8025,7 +8025,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\underset{F_2-F_3}{\stackrel{F_1-2 F_3}{\longrightarrow}}
 			\begin{bmatrix}0 &0 &0\\ -1& 0& 1\\0 &3& 1 	\end{bmatrix}.
 			\end{equation*}
-			Luego,  la solución del sistema asociado a  $A-I$ es 
+			Luego,  la solución del sistema asociado a  $A-\Id$ es 
 			$$
 			V_1 = \{(z,-\frac13z,z): z \in \R\} = <(1,-\frac13,1)>.
 			$$
@@ -9459,14 +9459,14 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 	
 \begin{corolario}\label{cor-det-elemental} Consideremos matrices elementales en $\K^{n \times n}$. 
 	\begin{enumerate}
-		\item\label{cor-det-E1} Sea $E$ la matriz elemental que se obtiene  multiplicando por $c\ne 0$ la matriz $I_n$.  Entonces $\det(E) = c$. 
-		\item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $I_n$  sumando $c$ veces $F_r$  a $F_s$ ($r\ne s$).  Entonces $det(E) = 1$.
-		\item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $I_n$ de permutando la $F_r$ con  $F_s$ ($r\ne s$).  Entonces $\det(E)=-1$. 
+		\item\label{cor-det-E1} Sea $E$ la matriz elemental que se obtiene  multiplicando por $c\ne 0$ la matriz $\Id_n$.  Entonces $\det(E) = c$. 
+		\item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$  sumando $c$ veces $F_r$  a $F_s$ ($r\ne s$).  Entonces $det(E) = 1$.
+		\item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ de permutando la $F_r$ con  $F_s$ ($r\ne s$).  Entonces $\det(E)=-1$. 
 	\end{enumerate}
 \end{corolario}
 
 \begin{proof}
-	Se  demuestra trivialmente considerando que en todos los casos $E=e(I_n)$ donde $e$  es una operación elemental por fila,  considerando  que $\det(I_n)=1$  y aplicando los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3},  según corresponda.
+	Se  demuestra trivialmente considerando que en todos los casos $E=e(\Id_n)$ donde $e$  es una operación elemental por fila,  considerando  que $\det(\Id_n)=1$  y aplicando los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3},  según corresponda.
 \end{proof}
 
 	\vskip .3cm
@@ -9482,15 +9482,15 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 			En todos los casos $EA = e(A)$ donde $e$  es una operación elemental por fila (teorema \ref{th-mrtx-elem}). 
 			
 			
-			 (1) Si $c \not=0$, y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $I_n$, luego
+			 (1) Si $c \not=0$, y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, luego
 			 \begin{equation*}
 				 det(EA) = det(e(A)) \stackrel{\text{Teor. }\ref{th-E1}}{=} c \cdot det(A)  \stackrel{\text{Cor. }\ref{cor-det-elemental}.\ref{cor-det-E1}}{=} det(E) det(A). 
 			 \end{equation*}
 			 
 		 	
-		 	(2) Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $I_n$  la fila $s$ multiplicada por $c$, entonces $\det E =1$. Por  otro lado  $\det(EA) = \det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
+		 	(2) Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$  la fila $s$ multiplicada por $c$, entonces $\det E =1$. Por  otro lado  $\det(EA) = \det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
 		 	
-		 	(3) Finalmente, si $E$ es la matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $I_n$, entonces $\det E=-1$. Por  otro lado  $\det(EA) = -\det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
+		 	(3) Finalmente, si $E$ es la matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$, entonces $\det E=-1$. Por  otro lado  $\det(EA) = -\det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
 		 \end{proof}
 		 
 		 \begin{corolario}\label{coro-det-prod-elem-mtrx}
@@ -9517,7 +9517,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	\begin{equation}
 		 	A = E_kE_{k-1}\ldots E_1R.
 		 	\end{equation}
-		 	Ya vimos,  en el  teorema \ref{mtrx-inv-equiv} que si $A$ invertible $R= I_n$ y por lo tanto  $A$ es equivalente por filas a un producto de  matrices elementales. Si $A$ no es invertible, entonces $R$ no es la identidad y por lo tanto tiene filas nulas. 
+		 	Ya vimos,  en el  teorema \ref{mtrx-inv-equiv} que si $A$ invertible $R= \Id_n$ y por lo tanto  $A$ es equivalente por filas a un producto de  matrices elementales. Si $A$ no es invertible, entonces $R$ no es la identidad y por lo tanto tiene filas nulas. 
 		 \end{obs}
 		
 		 
@@ -9536,7 +9536,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	
 		 	Separaremos la demostración en dos casos: (a) $A$ es invertible y  (b) $A$ no es invertible. 
 		 	
-		 	(a) Si $A$  es invertible,  entonces $R=I_n$ y  $A = E_k\ldots E_1$, por lo tanto 
+		 	(a) Si $A$  es invertible,  entonces $R=\Id_n$ y  $A = E_k\ldots E_1$, por lo tanto 
 		 	\begin{equation*}
 		 	\det(AB) = \det(E_k) \ldots \det(E_1)\det(B) = \det(A)\det(B).
 		 	\end{equation*}
@@ -9552,9 +9552,9 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	
 		 	\vskip .3cm
 		 	
-		 	(2) ($\Rightarrow$) Como $A$ invertible, $R = I_n$ y $\det A = \det( E_k) 	 \ldots \det(E_1)$ es no nulo, pues las matrices elementales tiene determinante no nulo. 
+		 	(2) ($\Rightarrow$) Como $A$ invertible, $R = \Id_n$ y $\det A = \det( E_k) 	 \ldots \det(E_1)$ es no nulo, pues las matrices elementales tiene determinante no nulo. 
 		 	
-		 	(2)($\Leftarrow$)  Si $\det(A) \ne 0$, entonces $\det(R) \ne 0$, luego $R = I_n$ y $A$ es producto de matrices elementales, por lo tanto invertible. 
+		 	(2)($\Leftarrow$)  Si $\det(A) \ne 0$, entonces $\det(R) \ne 0$, luego $R = \Id_n$ y $A$ es producto de matrices elementales, por lo tanto invertible. 
 		 \end{proof}
 		 
 		 Haremos ahora la demostración del teorema \ref{det-a-trans}. 
@@ -9563,11 +9563,11 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	Sea $E$ matriz elemental, entonces $E^\t$ es matriz elemental del mismo tipo y $\det(E) = \det(E^\t)$. 
 		 \end{teorema}
 		 \begin{proof}
-		 	Si $c \not=0$ y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $I_n$, es claro que $E^t = E$ y por lo tanto 	$\det(E) = \det(E^\t)$.
+		 	Si $c \not=0$ y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, es claro que $E^t = E$ y por lo tanto 	$\det(E) = \det(E^\t)$.
 		 	
-		 	Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $I_n$ la fila $s$ multiplicada por $c \in \K$,  entonces  $E^\t$  es la matriz elemental que se obtiene de sumar a la fila $s$ de $I_n$ la fila $r$ multiplicada por $c$. Luego,   $\det(E) = \det(E^\t) = 1$.
+		 	Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$ la fila $s$ multiplicada por $c \in \K$,  entonces  $E^\t$  es la matriz elemental que se obtiene de sumar a la fila $s$ de $\Id_n$ la fila $r$ multiplicada por $c$. Luego,   $\det(E) = \det(E^\t) = 1$.
 		 	
-		 	Finalmente, si $E$ es la  matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $I_n$,entonces $E^\t = E$ y por lo tanto $\det(E) = \det(E^\t)$.
+		 	Finalmente, si $E$ es la  matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$,entonces $E^\t = E$ y por lo tanto $\det(E) = \det(E^\t)$.
 		 \end{proof}
 		 
 
@@ -9696,7 +9696,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	
 		 	\begin{teorema} Sea $A$ matriz $n \times n$,  entonces
 		 		\begin{equation*}
-		 		\operatorname{adj}(A).A = \det(A)I_n.
+		 		\operatorname{adj}(A).A = \det(A)\Id_n.
 		 		\end{equation*}
 		 	\end{teorema}
 		 	\begin{proof}
@@ -9714,7 +9714,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 		\begin{bmatrix}\det A & 0 & \cdots & 0\\
 		 		0 & \det A & \cdots & 0 \\
 		 		\vdots & \vdots & \ddots & \vdots \\
-		 		0 & 0 & \cdots & \det A\end{bmatrix} = \det(A) I_n
+		 		0 & 0 & \cdots & \det A\end{bmatrix} = \det(A) \Id_n
 		 		$$
 		 	\end{proof}
 		 	
@@ -9726,7 +9726,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	\end{corolario}
 		 	\begin{proof}
 		 		\begin{equation*}
-		 		\frac{1}{\det A} \operatorname{adj}A.A = \frac{1}{\det A}\det A I_n = I_n.
+		 		\frac{1}{\det A} \operatorname{adj}A.A = \frac{1}{\det A}\det A \Id_n = \Id_n.
 		 		\end{equation*}
 		 	\end{proof}
 		 	
@@ -9837,4 +9837,3 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 
 
 \end{document}
-%configuration={"latex_command":"latexmk -pdf -f -g -bibtex -synctex=1 -interaction=nonstopmode 'teoricoAlgII.tex'"}}
