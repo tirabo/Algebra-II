@@ -14,7 +14,7 @@
 		}
 	],
 	"settings": {
-		"cSpell.language": ",es",
+		"cSpell.language": "es,es-ES",
 		"cSpell.words": [
 			"determinate",
 			"permutaciones"

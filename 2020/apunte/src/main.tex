@@ -1,9 +1,10 @@
-\documentclass[a4paper,12pt,twoside,spanish]{amsbook}
-\tolerance=10000
-\renewcommand{\baselinestretch}{1.3}
+% PDFLaTeX
+\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
+%%%---------------------------------------------------
 
+%\renewcommand{\familydefault}{\sfdefault} % la font por default es sans serif
+%\usepackage[T1]{fontenc}
 
-%\renewcommand{\familydefault}{\sfdefault} % pasa las font a sans serif
 % Para hacer el  indice en linea de comando hacer 
 % makeindex main
 %% En http://www.tug.org/pracjourn/2006-1/hartke/hartke.pdf hay ejemplos de packages de fonts libres, como los siguientes:
@@ -16,7 +17,6 @@
 
 \usepackage{etex}
 \usepackage{t1enc}
-\usepackage[spanish,es-nodecimaldot]{babel}
 \usepackage{latexsym}
 \usepackage[utf8]{inputenc}
 \usepackage{verbatim}
@@ -26,48 +26,16 @@
 \usepackage{calc}         % From LaTeX distribution
 \usepackage{graphicx}     % From LaTeX distribution
 \usepackage{ifthen}
-%\usepackage{makeidx}
 \input{random.tex}        % From CTAN/macros/generic
 \usepackage{subfigure} 
 \usepackage{tikz}
 \usetikzlibrary{arrows}
 \usetikzlibrary{matrix}
-\tikzset{
-	every picture/.append style={
-		execute at begin picture={\deactivatequoting},
-		execute at end picture={\activatequoting}
-	}
-}
-\usetikzlibrary{decorations.pathreplacing,angles,quotes}
-\usetikzlibrary{shapes.geometric}
-%\usetikzlibrary{graphs}
-%\usepackage{tikz-3dplot} %for tikz-3dplot functionality
-%\usepackage{pgfplots}
 \usepackage{mathtools}
 \usepackage{stackrel}
-%\usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage{tkz-graph}
-\usepackage{polynom}
-
-\polyset{%
-	style=B,
-	delims={(}{)},
-	div=:
-}
-
-\renewcommand\labelitemi{$\circ$}
-
-
-%% \theoremstyle{plain} %% This is the default
-\oddsidemargin 0.0in \evensidemargin -1.0cm \topmargin 0in
-\headheight .3in \headsep .2in \footskip .2in
-\setlength{\textwidth}{16cm} %ancho para apunte
-\setlength{\textheight}{21cm} %largo para apunte
-%\leftmargin 2.5cm
-%\rightmargin 2.5cm
-\topmargin 0.5 cm
-
+%\usepackage{makeidx}
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -77,6 +45,60 @@
 }
 \usepackage{hypcap}
 
+
+
+
+\usepackage[spanish]{babel}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+
+
+
+\usepackage{polynom}
+
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+
+\renewcommand\labelitemi{$\circ$}
+\setcounter{MaxMatrixCols}{20}
+
+%% \theoremstyle{plain} %% This is the default
+%\oddsidemargin 0.0in \evensidemargin -1.0cm \topmargin 0in
+%\headheight .3in \headsep .2in \footskip .2in
+%\setlength{\textwidth}{16cm} %ancho para apunte
+%\setlength{\textheight}{21cm} %largo para apunte
+%\leftmargin 2.5cm
+%\rightmargin 2.5cm
+%\topmargin 0.5 cm
+
+
+
+%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+%% CONTROLADORES DE.
+% Tamaño de la hoja de impresión.
+% Tamaños de los laterales del documento. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% \theoremstyle{plain} %% This is the default
+%\oddsidemargin 0.0in \evensidemargin -1.0cm \topmargin 0in
+%\headheight .3in \headsep .2in \footskip .2in
+%\setlength{\textwidth}{16cm} %ancho para apunte
+%\setlength{\textheight}{21cm} %largo para apunte
+%%%%\leftmargin 2.5cm
+%%%%\rightmargin 2.5cm
+%\topmargin 0.5 cm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CONTROLADORES DE ESTILO %%%
@@ -89,16 +111,37 @@
 		\fontsize{6em}{6em}\selectfont
 		\thechapter}\hsp%\textcolor{}%
 	{\vrule height 4em width 3pt}\hsp}{0pt}{\huge\bfseries}
+
+%--------------------------------------------------------------------------
 %--------------------------------------------------------------------------
 % SECCIONES 
 %--------------------------------------------------------------------------
-%\usepackage{titlesec}
+\usepackage{titlesec}
 \titleformat{\section}[frame]{\normalfont}%
 {\filright\footnotesize\enspace \large {\large SECCIÓN \thesection} \enspace}%
-{16pt}{\huge\bfseries\filcenter}%
+{8pt}{\huge\bfseries\filcenter}
 %%%--------------------------------------------------------------------------	
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% algoritmos %%%
+%% Antes: "pip  install Pygments"
+%% Entrar a la configuración del texmaker o Kile y en órdenes de pdflatex poner
+%% pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
+%\usepackage{minted}
+%\newminted{python}{frame=lines, mathescape} %con eso usar \begin{pythoncode} ... \end{pythoncode}
+%\usepackage{clrscode3e}
+%% nota, para sistener las fount si o si, se tienen que compilar con XeleTeX %%
+%-------------------------------
+%% INTRA TEXTO                %%
+\usepackage{setspace}
+%\setlength{\parindent}{0,7cm}% tamaño de sangria.
+\setlength{\parskip}{0,4cm} % separación entre parrafos.
+\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\end{comment}
+%%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
 \renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
 
@@ -107,12 +150,12 @@
 \newtheorem{corolario}[teorema]{Corolario}
 \newtheorem{lema}[teorema]{Lema}
 \newtheorem{propiedad}[teorema]{Propiedad}
-\newtheorem{resultado}[teorema]{Resultado}
+
 \theoremstyle{definition}
 
 \newtheorem{definicion}{Definici\'on}[section]
 \newtheorem{ejemplo}{Ejemplo}[section]
-\newtheorem{ejemplos}{Ejemplos}[section]
+\newtheorem{resultado}{Resultado}[section]
 \newtheorem{problema}{Problema}[section]
 \newtheorem{ejercicio}{Ejercicio}[section]
 \newtheorem{ejerciciof}{}[section]
@@ -123,35 +166,22 @@
 \newtheorem{nota}{Nota}[section]
 \newtheorem{conclusion}{Conclusión}[section]
 
-\newenvironment{solucion}{%
-\renewcommand{\proofname}{Solución}
-\begin{proof}%
-
-  }{%
-\end{proof}%
-\renewcommand{\proofname}{Demostraci\'on}
-}{%
-  \endquote
-}
 
 
-
-\renewcommand{\abstractname}{Resumen}
 \renewcommand{\partname }{Parte }
 \renewcommand{\indexname}{Indice }
 \renewcommand{\figurename }{Figura }
 \renewcommand{\tablename }{Tabla }
 \renewcommand{\proofname}{Demostraci\'on}
-\renewcommand{\refname }{Referencias }
-\renewcommand{\appendixname }{Ap\'endice }
+\renewcommand{\appendixname }{}
 \renewcommand{\contentsname }{Contenidos }
-\renewcommand{\chaptername }{Cap\'\i tulo }
+\renewcommand{\chaptername }{}
 \renewcommand{\bibname }{Bibliograf\'\i a }
 
 
 \setcounter{MaxMatrixCols}{20}
 
-
+\newcommand{\Id}{\operatorname{Id}}
 \newcommand{\img}{\operatorname{Im}}
 \newcommand{\nuc}{\operatorname{Nu}}
 \newcommand\im{\operatorname{Im}}
@@ -246,10 +276,11 @@
 	
 	
 	Otra bibliografía de interés:
-	\begin{enumerate}
-		\item [-] \textit{Álgebra Lineal.}  Autor: Serge Lang. Año: 1976. Editorial: Fondo Educativo Interamericano. Ficha en biblioteca de FAMAF: \href{http://bit.ly/2stBTzs}{http://bit.ly/2stBTzs}
-		\item [-] \textit{Álgebra Lineal.} Autores: Kenneth Hoffman y Ray Kunze.  Año: 1973. Editorial: Prentice Hall. Ficha en biblioteca de FAMAF:  \href{http://bit.ly/2tn3eRc}{http://bit.ly/2tn3eRc}
-	\end{enumerate}
+		\begin{enumerate}
+			\item [-] \textit{Álgebra Lineal.}  Autor: Serge Lang. Año: 1976. Editorial: Fondo Educativo Interamericano. Ficha en biblioteca de FAMAF: \href{http://bit.ly/2stBTzs}{http://bit.ly/2stBTzs}
+			\item [-] \textit{Álgebra Lineal.} Autores: Kenneth Hoffman y Ray Kunze.  Año: 1973. Editorial: Prentice Hall. Ficha en biblioteca de FAMAF:  \href{http://bit.ly/2tn3eRc}{http://bit.ly/2tn3eRc}
+		\end{enumerate}
+	
 	
 	\newpage
 	\begin{center}
@@ -266,7 +297,7 @@
 	
 	
 
-	
+
 	
 	\pagenumbering{arabic}
 	
@@ -325,8 +356,7 @@
 			\caption{Representación gráfica de los puntos $(2,1)$, $(-1,2.5)$ y  $(-2.5,-2.5)$ en $\R^2$.}
 			\label{fig-punto-en-R2}
 		\end{figure}
-		
-		
+
 		Ahora observamos que un triple de números $(x, y, z)$ se puede usar para representar un punto en el espacio, es decir, espacio tridimensional, o 3-espacio. Simplemente, introducimos un eje más. La figura \ref{fig-punto-en-R3} ilustra esto.
 		\begin{figure}[h]
 			\begin{tikzpicture}
@@ -370,10 +400,10 @@
 				\R^n:= \{(x_1,x_2,\ldots,x_n): x_i \in \R, 1 \le i \le n \}.
 			\end{equation*}
 			Tode $v$ en $\R^n$ será llamado {\em punto}\index{punto}. Alternativamente, también podemos decir que $v$  es un \textit{vector en el origen} o simplemente un \textit{vector}. 
+
 		\end{definicion}
 		
 		La mayoría de nuestros ejemplos tendrán lugar cuando $n = 2$ o $n = 3$. Por lo tanto, el lector puede visualizar cualquiera de estos dos casos a lo largo del apunte. Para ello usaremos el {\em sistema  de coordenadas cartesianas}\index{sistema  de coordenadas cartesianas}\index{coordenadas cartesianas} para representar los elementos de  $\R^2$ y  $\R^3$, tal como se ha hecho en las figuras \ref{fig-punto-en-R2} y \ref{fig-punto-en-R3}.
-		
 		
 	
 	
@@ -573,6 +603,9 @@
 	\end{figure}
 	\end{ejemplo}
 
+
+
+
 	La resta de dos vectores también se puede representar geométricamente: restemos  al vector $v$ el vector $w$. Como primera opción podemos encontrar el  vector $-w$ y sumarlo  a $v$ aplicando la regla del paralelogramo. Esto es equivalente a lo siguiente: los vectores $v$ y $w$ determinan el triángulo determinado por los puntos $0$, $v$ y $w$. Entonces,  el lado determinado por $w$ y $v$,  en ese sentido, trasladado al origen es el vector $v-w$  (fig. \ref{fig-resta-de-vectores}). 
 	\begin{figure}[h]
 		\begin{tikzpicture}[scale=1.0]
@@ -696,16 +729,19 @@ Sean  $(x_1,\ldots,x_n), (y_1,\ldots,y_n) \in \R^n$ y $\lambda \in \R$, definimo
 		\item $\lambda.v := (\lambda x_1,\ldots,\lambda x_n)$.
 	\end{itemize}
 Dados  $v,w,u$ en $\R^n$,  se verifican
-\begin{enumerate}
-	\item[\textbf{S1.}] $v + w = w + v$ (\textit{conmutatividad de la suma}),
-	\item[\textbf{S2.}] $(v+ w)+ u = v + (w+u)$ (\textit{asociatividad de la suma}),
-	\item[\textbf{S3.}] sea $0: =(0,\ldots, 0)$, el \textit{vector cero}, entonces $0+ v = v + 0 =v$ (\textit{existencia de elemento neutro de la suma}).
-	\item[\textbf{S4.}] Si $v =(x_1,\ldots,x_n)$, entonces $-v:=(-x_1,\ldots,-x_n)$ y se satisface  $v + (-v) = (-v)+ v =0$ (\textit{existencia de opuesto} o  \textit{inverso aditivo}).
-	\item[\textbf{P1.}] $1.v=v$.
-	\item[\textbf{P2.}] $\lambda_1(\lambda_2v) = (\lambda_1\lambda_2)v$, para todo $\lambda_1,\lambda_2 \in \R$.
-	\item[\textbf{D1.}] $\lambda(v+w) = \lambda v +\lambda w$, para todo $\lambda \in \R$  (\textit{propiedad distributiva}).
-	\item[\textbf{D2.}] $(\lambda_1+\lambda_2)v = \lambda_1v + \lambda_2 v$ para todo $\lambda_1,\lambda_2 \in \R$  (\textit{propiedad distributiva}).
-\end{enumerate}
+
+	\begin{enumerate}
+		\item[\textbf{S1.}] $v + w = w + v$ (\textit{conmutatividad de la suma}),
+		\item[\textbf{S2.}] $(v+ w)+ u = v + (w+u)$ (\textit{asociatividad de la suma}),
+		\item[\textbf{S3.}] sea $0: =(0,\ldots, 0)$, el \textit{vector cero}, entonces $0+ v = v + 0 =v$ (\textit{existencia de elemento neutro de la suma}).
+		\item[\textbf{S4.}] Si $v =(x_1,\ldots,x_n)$, entonces $-v:=(-x_1,\ldots,-x_n)$ y se satisface  $v + (-v) = (-v)+ v =0$ (\textit{existencia de opuesto} o  \textit{inverso aditivo}).
+		\item[\textbf{P1.}] $1.v=v$.
+		\item[\textbf{P2.}] $\lambda_1(\lambda_2v) = (\lambda_1\lambda_2)v$, para todo $\lambda_1,\lambda_2 \in \R$.
+		\item[\textbf{D1.}] $\lambda(v+w) = \lambda v +\lambda w$, para todo $\lambda \in \R$  (\textit{propiedad distributiva}).
+		\item[\textbf{D2.}] $(\lambda_1+\lambda_2)v = \lambda_1v + \lambda_2 v$ para todo $\lambda_1,\lambda_2 \in \R$  (\textit{propiedad distributiva}).
+	\end{enumerate}
+
+
 
 \vskip .3cm
 
@@ -1348,6 +1384,8 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 	En  el espacio $\R^2$, diremos que (\ref{eq-ecuacion-parametrica-recta}) es la \textit{ecuación paramétrica} o la \textit{representación paramétrica}\index{recta!ecuación paramétrica} de la recta $L$ que pasa por el punto $v$ y es paralela a $w \ne 0$.
 		
 
+
+
 		
 		Podemos representar una recta dada en forma paramétrica como en la figura \ref{fig-recta-parametrica}.
 		\begin{figure}[h]
@@ -1664,7 +1702,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 	\end{ejemplo}
 
 	\end{chapter}
-	
+
 	
 	\begin{chapter}{Sistemas lineales}\label{chap-sist-lin}
 		
@@ -2377,7 +2415,8 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				\begin{definicion} 
 					Sean $A$ y $B$ dos matrices $m \times n$. Diremos que $B$ es \textit{equivalente por filas}\index{matrices equivalentes por filas} a $A$, si $B$ se puede obtener de $A$ por un número finito de operaciones elementales por fila. 
 				\end{definicion}
-				
+			
+
 				\begin{obs} Denotamos $A \sim B$, si $B$ es equivalente a $A$ por filas. Entonces esta relación es una \textit{relación de equivalencia}\index{relación de equivalencia}, es decir es reflexiva, simétrica y transitiva. En  nuestro caso, sean $A$, $B$ y $C$ matrices $m \times n$, entonces ``$\sim$'' cumple: 
 					\begin{enumerate}
 						\item  $A \sim A$ (reflexiva), 
@@ -2576,6 +2615,10 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					Luego  el sistema (\ref{sist-eq-03}) es equivalente al sistema  $x_1=x_2 = 0$, que resulta ser la única solución.
 				\end{ejemplo}
 			\end{subsection} 
+		
+
+
+		
 		\end{section}
 	
 	
@@ -3154,17 +3197,17 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				\end{equation*}
 				es decir $A^m$ es multiplicar $A$ consigo mismo $m$-veces.  
 				
-				\begin{observacion}
-					Un  caso especial de multiplicación es la multiplicación por matrices diagonales. Sea 
+				\begin{observacion}\label{obs-mult-matrices-diagonales}
+					Un  caso especial de multiplicación es la multiplicación por matrices diagonales. Sea $n \in \mathbb N$ y 
 				\begin{equation*}
-					D = \begin{bmatrix}
+					\operatorname{diag}(d_1,d_2,\ldots,d_n) := \begin{bmatrix}
 					d_1 & 0 & \cdots &0 \\
 					0 & d_2 & \cdots &0 \\
 					\vdots & \vdots & \ddots &\vdots \\
 					0 & 0 & \cdots & d_n 
 					\end{bmatrix}
 				\end{equation*}
-				matriz $n \times n$ diagonal con valor $d_i$  en la posición $ii$,  entonces si $A$ es matriz $n \times p$, tenemos que $DA$  es la matriz que en la fila $i$ tiene a la fila $i$ de $A$ multiplicada por $d_i$.  Es decir,
+				matriz $n \times n$ diagonal con valor $d_i$  en la posición $ii$,  entonces si $A$ es matriz $n \times p$,  con la multiplicación a izquierda de la matriz diagonal por $A$  se obtiene la matriz que en la fila $i$ tiene a la fila $i$ de $A$ multiplicada por $d_i$.  Es decir,
 				\begin{equation*}
 				\begin{bmatrix}
 				d_1 & 0 & \cdots &0 \\
@@ -3186,7 +3229,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				d_n a_{n1} & d_n a_{n2} & \cdots & d_n a_{np} 
 				\end{bmatrix}.
 				\end{equation*}
-				Esto es claro, pues el coeficiente $ij$  de $DA$ es la fila $i$ de $D$ por la columna $j$ de $A$, es decir
+				Esto es claro, pues si denotamos $D = \operatorname{diag}(d_1,d_2,\ldots,d_n)$, el coeficiente $ij$  de $DA$ es la fila $i$ de $D$ por la columna $j$ de $A$, es decir
 				$$
 				[DA]_{ij} = 0.a_{1j}+\cdots + 0.a_{i-1,j}+d_i.a_{ij}+0.a_{i+1,j}+\cdots + 0.a_{nj} = d_ia_{ij}. 
 				$$
@@ -3194,8 +3237,30 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				 
 				
 				
-				 Si $B$ es $m \times n$, ¿qué se obtiene haciendo $BD$? 
+				 Si $B$ es $m \times n$, el lector podrá comprobar que 
+				 \begin{equation*}
+					 B\,\operatorname{diag}(d_1,d_2,\ldots,d_n) = \begin{bmatrix}
+						 d_1C_1& d_2C_2& \cdots &d_nC_n
+					 \end{bmatrix},
+				 \end{equation*} 
+				 donde $C_1,C_2,\ldots,C_n$ son las columnas de $B$.
 				 
+				 Finalmente,  de lo visto más arriba respecto a la multiplicación por una matriz diagonal obtenemos:
+				 \begin{equation*}
+					\begin{bmatrix}
+						d_1 & 0 & \cdots &0 \\
+						0 & d_2 & \cdots &0 \\
+						\vdots & \vdots & \ddots &\vdots \\
+						0 & 0 & \cdots & d_n 
+						\end{bmatrix}^k =
+						\begin{bmatrix}
+							d_1^k & 0 & \cdots &0 \\
+							0 & d_2^k & \cdots &0 \\
+							\vdots & \vdots & \ddots &\vdots \\
+							0 & 0 & \cdots & d_n^k 
+							\end{bmatrix} ,
+				 \end{equation*}
+				 para $k \in \mathbb N$.
 				
 				\end{observacion}
 				
@@ -4479,9 +4544,45 @@ También vale este resultado para matrices $n \times n$.
 
 \end{section}	
 
+\vskip .4cm
+
 \begin{section}{Autovalores y autovectores}
 
-  
+	\vskip .4cm
+
+	La multiplicación de una matriz por un vector es una transformación lineal, las cuales veremos en el capítulo \ref{chap-trans-lin}, y estas juegan un rol muy importante en toda la matemática, pasando por el álgebra, el análisis, la geometría, etc.  Como ya vimos, es sencillo multiplicar a izquierda por matrices diagonales:
+	\begin{equation*}
+		\begin{bmatrix}
+			d_1 & 0 & \cdots &0 \\
+			0 & d_2 & \cdots &0 \\
+			\vdots & \vdots & \ddots &\vdots \\
+			0 & 0 & \cdots & d_n 
+			\end{bmatrix}
+		\begin{bmatrix}
+			x_1\\x_2 \\\vdots \\x_n
+		\end{bmatrix}
+		= \begin{bmatrix}
+			d_1x_1\\d_2x_2 \\\vdots \\d_nx_n
+		\end{bmatrix}
+	\end{equation*} 
+	(ver observación \ref{obs-mult-matrices-diagonales}). En particular,  si $e_i$  es el vector columna  que tiene un $1$ en la fila $i$ y todas las demás filas iguales a $0$,  entonces
+	\begin{equation*}
+		\begin{bmatrix}
+			d_1 & 0 & \cdots &0 \\
+			0 & d_2 & \cdots &0 \\
+			\vdots & \vdots & \ddots &\vdots \\
+			0 & 0 & \cdots & d_n 
+			\end{bmatrix}
+		e_i
+		= d_ie_i
+	\end{equation*} 
+	y esta propiedad caracteríza las matrices diagonales, es decir una matriz $D$ es diagonal si  y solo si $De_i =d_ie_i$ para $1 \le i \le n$. Dicho de  otra forma una matriz es diagonal si y solo si  al aplicarla sobre algún $e_i$ obtenemos un mútiplo de $e_i$. 
+
+	Aunque no siempre es posible caracterizar una matriz $A$  por los vectores $v$ que  al aplicarle $A$  obtenemos un múltiplo de $v$,  el estudio de estos $v$ resulta importante para obtener información fundamental de la matriz y proiedades de la misma.  
+	
+	
+
+
     \begin{definicion}
 		Sea $A\in\K^{n\times n}$. Se dice que {$\lambda\in\K$} es un \textit{autovalor} de $A$ y si existe \textit{$v\in\K^{n}$} no nulo tal que 
 		\begin{align*}
@@ -4489,23 +4590,20 @@ También vale este resultado para matrices $n \times n$.
 		\end{align*}
 		En ese caso decimos que $v$  es un \textit{autovector} asociado a $\lambda$
 		\end{definicion}
-		\vskip .5cm
+		\vskip .1cm
+
+		\begin{observacion} Nada impide, por definición, que un autovalor pueda valer $0$, pero un autovector \textit{nunca} puede ser $0$. 
+		\end{observacion}
+
+		\vskip .1cm
 		\begin{ejemplo}
-		$1$ es un autovalor de  $Id_n$ y todo $v\in\K^n$ es un autovector asociado a $1$ pues
+		$1$ es un autovalor de $\Id_n$ y todo $v\in\K^n$ es un autovector asociado a $1$ pues
 		\begin{align*}
-		Id_n v= v 
+		\Id_n v= v 
 		\end{align*}
 		\end{ejemplo}
 		 
-		
-		 
-		
-		
-		
-		\begin{observacion}
-		El autovalor puede ser $0$ pero el autovector nunca puede ser $0$ 
-		\end{observacion}
-		\vskip .8cm
+		\vskip .1cm
 		
 		\begin{ejemplo}
 		$0$ es un autovalor de  
@@ -4542,38 +4640,52 @@ También vale este resultado para matrices $n \times n$.
 		\end{ejemplo}
 		 
 		
-		 
+		\vskip .2cm
 		
 	
 		
 		\begin{observacion}
 		La existencia de autovalores dependen del cuerpo donde estamos trabajando. 
-		\vskip .2cm
-		Por ejemplo sea $A \in \R^{n\times n}$ 
-		$$A=\left[
-		\begin{array}{rr}
-		0&-1\\1&0
-		\end{array}
-		\right].$$ 
-		Entonces,  $A$ no tiene autovalores reales. 
-		\vskip .2cm
-		Veremos que si permitimos autovalores complejos entonces sí tienen autovalores.
-		
-	
+		Por ejemplo sea $A \in \R^{n\times n}$,  definida por 
+		$$A=
+		\begin{bmatrix}
+			0&-1\\1&0
+		\end{bmatrix}
+		.$$ 
+		Entonces,  $A$ no tiene autovalores reales. Veamos por qué.
+		\begin{equation}\label{eq-no-aut-1}
+			\begin{bmatrix}
+				0&-1\\1&0
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_1\\x_2
+			\end{bmatrix} =
+			\begin{bmatrix}
+				-x_2\\x_1
+			\end{bmatrix}
+		\end{equation}
+		Si $\lambda$ fuera un autovalor y $\begin{bmatrix}x_1\\x_2\end{bmatrix}$ fuera autovector, tendríamos
+		\begin{equation}\label{eq-no-aut-2}
+			\begin{bmatrix}
+				0&-1\\1&0
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_1\\x_2
+			\end{bmatrix} =
+			\begin{bmatrix}
+				\lambda x_1\\\lambda x_2
+			\end{bmatrix}.
+		\end{equation}
+		Luego, por (\ref{eq-no-aut-1}) y (\ref{eq-no-aut-2}), $-x_2 = \lambda x_1$ y $x_1 = \lambda x_2$,  entonces   $-x_2 = \lambda x_1 = \lambda^2 x_2$. Si  $\lambda \ne0$,  entonces $\lambda^2 >0$, y eso implica que $x_2=0$ y  en consecuencia $x_1=0$. Si $\lambda=0$, también $x_1=x_2 =0$. Es decir, en ambos casos $\begin{bmatrix}x_1\\x_2\end{bmatrix} = \begin{bmatrix}0\\0\end{bmatrix} $ y no es autovector.
+
+		Veremos más adelante que si permitimos autovalores complejos entonces esta matriz tiene  autovalores.
 		\end{observacion}
 
-		
-		
-		 
-		
-	
-		
-		
-		 
+		\vskip .2cm
 		
 		\begin{definicion}
 		
-		Dado $i\in\{1, ..., n\}$, se denota \textit{$e_i$} al vector de $\K^n$ cuyas coordenadas son todas ceros excepto la coordenada $i$ que es un $1$
+		Dado $i\in\{1, ..., n\}$, como ya vimos se denota \textit{$e_i$} al vector columna de $\K^n$ cuyas coordenadas son todas ceros excepto la coordenada $i$ que es un $1$
 		\begin{align*}
 		e_i=\left[
 		\begin{array}{c}
@@ -4583,9 +4695,9 @@ También vale este resultado para matrices $n \times n$.
 		\end{align*}
 		El conjunto $\{e_1, ..., e_n\}$ se llama \textit{base canónica} de $\K^n$.
 		\end{definicion}
-		
+		\vskip .2cm
 		\begin{ejemplo}
-		En $\K^3$ los vectores son $
+		En $\K^3$ la base canónica es  $
 		e_1=\left[
 		\begin{array}{c}
 		1\\0\\0
@@ -4605,56 +4717,18 @@ También vale este resultado para matrices $n \times n$.
 		$
 		\end{ejemplo}
 		 
-		
+		\vskip .2cm
 	
 	
 		 
-		\begin{ejemplo}{Ejemplo: Matriz diagonal}
-		Sea $D\in\K^{n\times n}$ una matriz diagonal con entradas $\lambda_1$, $\lambda_2$, ..., $\lambda_n$.
-		\vskip .2cm
-		Entonces $e_i$ es un autovector con autovalor $\lambda_i$  $\,\forall\, i\in\{1, ..., n\}$
+		\begin{ejemplo}
+		Sea $D\in\K^{n\times n}$ una matriz diagonal con entradas $\lambda_1$, $\lambda_2$, ..., $\lambda_n$. Entonces $e_i$ es un autovector con autovalor $\lambda_i$  $\,\forall\, i\in\{1, ..., n\}$
 		\end{ejemplo}
-		
-		\begin{proof}
-			Recordar que la multiplicación $De_i$ se corresponde con multiplicar cada fila de $e_i$ por el elemento correspondiente de la diagonal. 
 		\vskip .2cm
-			Como las filas (en este caso entradas) de $e_i$ son todas nulas excepto un $1$ en la entrada $i$ queda queda
-			$$
-			De_i=\left[
-			\begin{array}{c}
-			0\\ \vdots\\\lambda_i\\ \vdots\\0
-			\end{array}
-			\right]=\lambda_i e_i
-			$$
-
-		\end{proof}
-	  
-		 
 		
-	
-		
-		 
-		
-		\begin{observacion}
-		Puede haber varios autovectores con el mismo autovalor. 
-		\end{observacion}
-		
-		Vimos esto en el ejemplo con $Id$ y en el caso de la diagonal si tiene entradas iguales sucede lo mismo. 
-		
-		\
-		
-		Más aún
-		el conjunto de todos los autovectores con un mismo autovalor es \textit{invariante por la suma y la multiplicación por escalares.}
-		
-		\
-		
-		En particular los múltiplos de un autovector son autovectores con el mismo autovalor.
-		
-		 
+		 El conjunto de todos los autovectores con un mismo autovalor es \textit{invariante por la suma y la multiplicación por escalares.}	En particular los múltiplos de un autovector son autovectores con el mismo autovalor.
 			 
-	  
-		 
-		
+		 \vskip .2cm
 		\begin{definicion}
 		Sea $A\in\K^{n\times n}$ y $\lambda\in\K$ un autovalor de $A$. El \textit{autoespacio} asociado a $\lambda$ es
 		$$
@@ -4664,9 +4738,9 @@ También vale este resultado para matrices $n \times n$.
 		Es decir, \textit{$V_\lambda$} es el conjunto  formado por todos los autovectores asociados a $\lambda$ y el vector nulo.
 		\end{definicion}
 		
-		
-		\begin{teorema}
-		Si $v$ y $w$ pertenecen al autoespacio de $A$ asociado a $\lambda$, entonces $v+tw$ también pertenece 
+		\vskip .2cm
+		\begin{teorema} Sea $A$ matriz $n \times n$ y $\lambda \in \K$. 
+		Si $v, w $ pertenecen a $V_\lambda$, el autoespacio de $A$ asociado a $\lambda$, entonces $v+tw \in V_\lambda$ para cualquier $\t \in \K$. 
 		\end{teorema}
 		
 		\begin{proof}
@@ -4675,19 +4749,11 @@ También vale este resultado para matrices $n \times n$.
 		$$
 		\end{proof}
 		
-		 
-	
-	
-		
-		 
-		
-		\begin{proposicion}
-		Un autovector no puede tener dos autovalores distintos. 		
-		Por lo tanto autovectores con autovalores distintos son distintos.
+		\begin{proposicion} Sea $A$ matriz  $n \times n$ y $v,w \in \K^n$ autovectores con autovalores $\lambda, \mu \in \K$,  respectivamente. Entonces.  $\lambda \ne \mu$ implica que $v \ne w$. Es decir,  autovectores con autovalores distintos son distintos.
 		\end{proposicion}
 		
 	   \begin{proof}
-		Supongamos que $Av=\lambda v$ y $Av=\mu v$. Entonces $\lambda v=\mu v$ y por lo tanto 
+		Supongamos que $v = w$,  entonces  $Av=\lambda v$ y $Av=\mu v$. Luego, $\lambda v=\mu v$ y por lo tanto 
 		$$
 		(\lambda-\mu) v=
 		\left[
@@ -4703,21 +4769,13 @@ También vale este resultado para matrices $n \times n$.
 		\right]
 		$$
 		
-		Como $v\neq0$ por ser autovector, alguna de sus coordenadas es no nula. Entonces $\lambda-\mu$ tiene que ser $0$ o dicho de otro modo $\lambda=\mu$.
+		Como $v\neq0$ por ser autovector, alguna de sus coordenadas es no nula. Entonces $\lambda-\mu$ tiene que ser $0$ o dicho de otro modo $\lambda=\mu$, lo cual es un absurdo.
 	   \end{proof}
 		
-		 
-		 
-		
-	   
-		
-		
-		
-		 
 		
 		\begin{problema}
 		Hallar los autovalores de $A\in\K^{n\times n}$ y para cada autovalor, describir explícitamente el autoespacio asociado.
-		\end{problema}
+	\end{problema}
 		
 		\begin{itemize}
 			\item En otras palabras nos preguntamos que $\lambda\in\K$ y  que $v\in\K^{n}$ satisfacen
@@ -4726,34 +4784,28 @@ También vale este resultado para matrices $n \times n$.
 			\Longleftrightarrow
 			Av-\lambda v=0
 			\Longleftrightarrow
-			(A-\lambda Id)v=0 .
+			(A-\lambda \Id)v=0 .
 			$$
 			\item La última igualdad es un sistema de ecuaciones lineales. Queremos ver entonces si existe un $v\in\K^{n}$ no nulo que sea solución del sistema homogéneo
 			\begin{equation*}
-				(A-\lambda Id)X=0.\tag{*}
+				(A-\lambda \Id)X=0.\tag{*}
 			\end{equation*}
 			\item  Un  sistema $BX =0$ tiene solución no trivial sii $\det(B)=0$. Por lo tanto (*) tiene  solución no trivial si y sólo si 
 			$$
-			\det(A-\lambda Id)=0.
+			\det(A-\lambda \Id)=0.
 			$$ 
 		\end{itemize}
 		
-		
-	   
-		 
-		
-	
-	
-		 
-		
-		
-		\begin{conclusion}
+		Estos sencillos pasos demuestran  lo siguiente.
+
+		\begin{proposicion}
 		$\lambda\in\K$ es un autovalor de $A$ y $v\in\K^n$ es un autovector asociado a $\lambda$ si y sólo si
+	
 		\begin{itemize}
-		 \item $\det(A-\lambda Id)=0$
-		 \item $v$ es solución del sistema homogéneo $(A-\lambda Id)X=0$
+		 \item $\det(A-\lambda \Id)=0$
+		 \item $v$ es solución del sistema homogéneo $(A-\lambda \Id)X=0$
 		\end{itemize}
-		\end{conclusion}
+	\end{proposicion}
 		\vskip .6cm
 		Esta es casi la respuesta a nuestro problema. Para dar una respuesta más precisa introducimos el siguiente polinomio.
 		 
@@ -4764,18 +4816,18 @@ También vale este resultado para matrices $n \times n$.
 		
 		Sea $A\in\K^{n\times n}$. El \textit{polinomio característico} de $A$ es
 		\begin{align*}
-		\chi_A(x)=\det(A-x Id)
+		\chi_A(x)=\det(A-x \Id)
 		\end{align*}
 		\end{definicion}
 		\vskip .2cm
 		\begin{ejemplo}
-		El polinomio  característico de $Id_n$ es 
+		El polinomio  característico de $\Id_n$ es 
 		\begin{align*}
-		\chi_{Id_n}(x)=(1-x)^n 
+		\chi_{\Id_n}(x)=(1-x)^n 
 		\end{align*}
 		\end{ejemplo} \vskip -.6cm
 		\begin{proof}
-			$Id-x Id=(1-x)Id$ es una matriz diagonal con $(1-x)$ en todas las entradas de la diagonal. Entonces el determinante es el producto de la diagonal. 
+			$\Id-x \Id=(1-x)\Id$ es una matriz diagonal con $(1-x)$ en todas las entradas de la diagonal. Entonces el determinante es el producto de la diagonal. 
 		\end{proof}
 	
 		 
@@ -4783,7 +4835,7 @@ También vale este resultado para matrices $n \times n$.
 	 
 		En general,  si $A = [a_{ij}]$ matriz $n \times n$, tenemos que
 			\begin{equation*}
-			\chi_A(x) = \det(A- x\,Id) = \det
+			\chi_A(x) = \det(A- x\,\Id) = \det
 			\begin{bmatrix}
 			a_{11}-x&a_{12}&\cdots&a_{1n}\\
 			a_{21}&a_{22}-x&\cdots&a_{2n}\\
@@ -4819,7 +4871,7 @@ También vale este resultado para matrices $n \times n$.
 		$
 		\end{ejemplo}\vskip -.4cm
 		\begin{proof}
-			$A-x Id=\left[
+			$A-x \Id=\left[
 		\begin{array}{cc}
 		-x&1\\0&-x 
 		\end{array}
@@ -4841,7 +4893,7 @@ También vale este resultado para matrices $n \times n$.
 		\end{ejemplo}
 		\vskip -.2cm
 		\begin{proof}
-			$A-x Id=\left[
+			$A-x \Id=\left[
 		\begin{array}{cc}
 		a-x&b\\c&d-x 
 		\end{array}
@@ -4863,11 +4915,11 @@ También vale este resultado para matrices $n \times n$.
 				\begin{tabular}{rl}
 		$\lambda$ es autovalor &$\Leftrightarrow$ existe $v \ne 0$ tal que $Av = \lambda v$ \\
 					&\\
-					&$\Leftrightarrow$ $0 = Av-\lambda v  =   Av-\lambda Id v =  (A-\lambda Id)v$ \\
+					&$\Leftrightarrow$ $0 = Av-\lambda v  =   Av-\lambda \Id v =  (A-\lambda \Id)v$ \\
 					&\\
-					&$\Leftrightarrow$ $(A-\lambda Id)X=0$ tiene solución no trivial \\
+					&$\Leftrightarrow$ $(A-\lambda \Id)X=0$ tiene solución no trivial \\
 					&\\
-					&$\Leftrightarrow$ $\chi_A(\lambda) = \det(A-\lambda Id) =0$ \\
+					&$\Leftrightarrow$ $\chi_A(\lambda) = \det(A-\lambda \Id) =0$ \\
 					&\\
 					&$\Leftrightarrow$ $\lambda$ es raíz del polinomio característico.  
 				\end{tabular}
@@ -4881,7 +4933,7 @@ También vale este resultado para matrices $n \times n$.
 		\begin{observacion}{Método para encontrar autovalores y autovectores de $A$}
 			\vskip .2cm
 			\begin{enumerate}
-				\item Calcular $\chi_A(x) =\det(A-x Id{})$,
+				\item Calcular $\chi_A(x) =\det(A-x \Id{})$,
 				\vskip .2cm
 				\item Encontrar las raíces $\lambda_1,\ldots,\lambda_k$ de $\chi_A(x)$.
 				
@@ -4889,15 +4941,14 @@ También vale este resultado para matrices $n \times n$.
 				\vskip .2cm
 				\item Para cada $i$ con $1 \le i \le k$ resolver el sistema de ecuaciones lineales:
 				\begin{equation*}
-					(A-\lambda_i Id)X = 0.
+					(A-\lambda_i \Id)X = 0.
 				\end{equation*}
 				Las soluciones no triviales  de este sistema son los autovectores con autovalor $\lambda_i$.
 	
 			\end{enumerate}
 		\end{observacion}
 	 
-		
-	 
+		 
 		\begin{ejemplo}
 			Encontrar autovalores y autovectores de la matriz 
 			\begin{equation*}
@@ -4907,7 +4958,8 @@ También vale este resultado para matrices $n \times n$.
 			\end{equation*}
 		\end{ejemplo}
 		\vskip -.4cm
-		\begin{solucion}
+		\renewcommand{\proofname}{Solucion}
+		\begin{proof}
 			\begin{enumerate}
 				\item  $            \chi_A(x)= \det\left[\begin{matrix}
 				3-x& -2 \\ 1 & -x
@@ -4915,7 +4967,7 @@ También vale este resultado para matrices $n \times n$.
 				\item Los autovalores de $A$ son las raíces de  $\chi_A(x)$: $1$ y $2$.
 				\item Debemos resolver los sistemas de ecuaciones:
 				\begin{equation*}
-					(A - Id)X = 0,\qquad (A - 2 Id)X = 0.
+					(A - \Id)X = 0,\qquad (A - 2 \Id)X = 0.
 				\end{equation*}
 			\end{enumerate}
 		
@@ -4989,8 +5041,8 @@ También vale este resultado para matrices $n \times n$.
 			\end{itemize}
 	
 			
-		\end{solucion}
-	 
+		\end{proof}
+	 	\renewcommand{\proofname}{Demostración}
 	
 	
 		
@@ -4999,8 +5051,9 @@ También vale este resultado para matrices $n \times n$.
 		\begin{ejemplo}
 		 Sea $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix} \in \R^2$. Encontrar los autovalores \textit{reales} de $A$.    
 		\end{ejemplo}
-		\begin{solucion}
-			$A-x Id= \begin{bmatrix}-x&-1\\1&-x\end{bmatrix}$, luego
+	\renewcommand{\proofname}{Solución}
+		\begin{proof}
+			$A-x \Id= \begin{bmatrix}-x&-1\\1&-x\end{bmatrix}$, luego
 			\begin{align*}
 				\chi_A(x)=x^2+1.
 				\end{align*}
@@ -5041,8 +5094,8 @@ También vale este resultado para matrices $n \times n$.
 			\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}-i\\1\end{bmatrix} &= \begin{bmatrix}-1\\-i\end{bmatrix} = (-i) \begin{bmatrix}-i\\1\end{bmatrix}.
 		\end{align*}
 	
-	\end{solucion}
-	 
+	\end{proof}
+	 \renewcommand{\proofname}{Demostración}
 	
 \end{section}	
 	\end{chapter}
@@ -5540,6 +5593,12 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 		($\supseteq$) Si $w \in \langle v_1 \rangle+ \cdots + \langle v_r \rangle$, entonces $w = w_1 + \cdots+w_r$ con $w_i \in \langle v_i\rangle$ para todo $i$. Por lo tanto, $w_i = \lambda_i v_i$ para algún $\lambda_i \in \K$ y  $w = \lambda_1 v_1 +\cdots+ \lambda_r v_r \in \langle v_1,\ldots,v_r \rangle $. En  consecuencia, $\langle v_1 \rangle+ \cdots + \langle v_r \rangle \subseteq \langle v_1,\ldots,v_r \rangle$. 
 	\end{proof}
 
+
+
+		
+
+
+
 	\begin{ejemplo}\label{ejemplos2} Veremos una serie de ejemplos de subespacios,  suma e intersección de subespacios.
 		\begin{enumerate}
 			\item\label{ejemplos2-1} Sea $\K = \C$ y $V= \C^5$. Consideremos los vectores
@@ -5966,7 +6025,7 @@ Es decir, todo subconjunto LI de un espacio vectorial de dimensión finita se pu
 		
 		Así, para la matriz $B= [b_{ij}]$ se tiene
 		$$
-		BA=Id.
+		BA=\Id.
 		$$
 	\end{proof}
 	
@@ -7494,7 +7553,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{corolario}\label{cor-5.6} Sean $V$ espacio vectorial de dimensión finita, $\mathcal B = \{v_1,\ldots,v_n\}$ base ordenada de $V$ y $T,U: V \to V$ operadores lineales. Entonces
 			\begin{enumerate}
 				\item\label{itm-cor-cambio-1} $[UT]_{\mathcal B} = [U]_{\mathcal B} [T]_{\mathcal B}$.
-				\item\label{itm-cor-cambio-2} Si $I: V \to V$  es el operador identidad, entonces $[I]_{\mathcal B} =Id$,  donde $Id$  es la matriz identidad $n \times n$.
+				\item\label{itm-cor-cambio-2} Si $I: V \to V$  es el operador identidad, entonces $[I]_{\mathcal B} =\Id$,  donde $\Id$  es la matriz identidad $n \times n$.
 				\item\label{itm-cor-cambio-3} Si $T$  es invertible,  entonces $[T]_{\mathcal B}$  es una matriz invertible y  $$[T^{-1}]_{\mathcal B} = [T]_{\mathcal B}^{-1}.$$
 			\end{enumerate}
 		\end{corolario}
@@ -7503,17 +7562,17 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			
 			(\ref{itm-cor-cambio-2}). $I(v_i) = v_i$ y por lo tanto
 			\begin{equation*}
-				[I]_{\mathcal B} = \begin{bmatrix} 1&0&\cdots&0 \\0&1&\cdots&0\\\vdots&&&\vdots\\0&0&\cdots&1 	\end{bmatrix} = Id.
+				[I]_{\mathcal B} = \begin{bmatrix} 1&0&\cdots&0 \\0&1&\cdots&0\\\vdots&&&\vdots\\0&0&\cdots&1 	\end{bmatrix} = \Id.
 			\end{equation*}
 			
 			
 			(\ref{itm-cor-cambio-3}). $I = T T^{-1}$, luego
 			\begin{equation*}
-				Id = [I]_{\mathcal B} =  [T T^{-1}]_{\mathcal B} =  [T]_{\mathcal B} [T^{-1}]_{\mathcal B}.
+				\Id = [I]_{\mathcal B} =  [T T^{-1}]_{\mathcal B} =  [T]_{\mathcal B} [T^{-1}]_{\mathcal B}.
 			\end{equation*}
 			 Análogamente, $I = T^{-1} T$, luego
 			\begin{equation*}
-			Id = [I]_{\mathcal B} =  [T^{-1} T]_{\mathcal B} =  [T^{-1}]_{\mathcal B} [T]_{\mathcal B}. 
+			\Id = [I]_{\mathcal B} =  [T^{-1} T]_{\mathcal B} =  [T^{-1}]_{\mathcal B} [T]_{\mathcal B}. 
 			\end{equation*}
 			Por  lo tanto $[T]_{\mathcal B}^{-1} = [T^{-1}]_{\mathcal B}$.
 		\end{proof}	
@@ -7544,8 +7603,8 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\end{equation}
 			Falta probar que $[I]_{\mathcal B \mathcal B'}$  es el inverso de  $[I]_{\mathcal B' \mathcal B}$. Ahora bien,
 			\begin{align*}
-				[I]_{\mathcal B \mathcal B'} [I]_{\mathcal B' \mathcal B}&= [I]_{\mathcal B \mathcal B} = Id,\\
-				[I]_{\mathcal B' \mathcal B} [I]_{\mathcal B \mathcal B'}&= [I]_{\mathcal B' \mathcal B'} = Id.
+				[I]_{\mathcal B \mathcal B'} [I]_{\mathcal B' \mathcal B}&= [I]_{\mathcal B \mathcal B} = \Id,\\
+				[I]_{\mathcal B' \mathcal B} [I]_{\mathcal B \mathcal B'}&= [I]_{\mathcal B' \mathcal B'} = \Id.
 			\end{align*}
 		\end{proof}
 	
@@ -7667,13 +7726,13 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{definicion}
 			Sea $A \in M_n(\K)$   el \textit{polinomio característico}\index{polinomio característico} de $A$ es $\chi_A(x) = \det(A-xI)$, donde $x$ es una indeterminada. 
 			
-			Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal, el  \textit{polinomio característico de $T$} es $\chi_T(x) = \det(x Id-T)$.
+			Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal, el  \textit{polinomio característico de $T$} es $\chi_T(x) = \det(T- x \Id)$.
 		\end{definicion}
 	
 			
 		En general,  si $A = [a_{ij}]$ matriz $n \times n$, tenemos que
 		\begin{equation}
-		\chi_A(x) = \det(A- x\,Id) = \det
+		\chi_A(x) = \det(A- x\Id) = \det
 		\begin{bmatrix}
 		a_{11}-x&a_{12}&\cdots&a_{1n}\\
 		a_{21}&a_{22}-x&\cdots&a_{2n}\\
@@ -7752,11 +7811,11 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			
 			($\Rightarrow$) Si $\lambda$ es autovalor, entonces existe $v \in V$, no nulo, tal que $Tv = \lambda v$, luego 
 			$$
-			0 = \lambda v-Tv  =  \lambda Id \, v - Tv =  (\lambda Id-T)v.
+			0 = \lambda v-Tv  =  \lambda \Id \, v - Tv =  (\lambda \Id-T)v.
 			$$
-			Por lo tanto, $\lambda Id-T$ no es invertible, lo cual implica que $0 = \det(\lambda Id-T) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
+			Por lo tanto, $\lambda \Id-T$ no es invertible, lo cual implica que $0 = \det(\lambda \Id-T) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
 			
-			($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(\lambda Id-T)$, entonces $\lambda Id-T$ no es una matriz invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(\lambda Id-T)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
+			($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(\lambda \Id-T)$, entonces $\lambda \Id-T$ no es una matriz invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(\lambda \Id-T)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
 		\end{proof}
 		
 		Repetimos ahora algunos conceptos ya expresados al comienzo de la sección. 
