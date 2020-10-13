@@ -26,7 +26,7 @@
 \usepackage{calc}         % From LaTeX distribution
 \usepackage{graphicx}     % From LaTeX distribution
 \usepackage{ifthen}
-\input{random.tex}        % From CTAN/macros/generic
+\input{random.tex}        
 \usepackage{subfigure} 
 \usepackage{tikz}
 \usetikzlibrary{arrows}
@@ -121,20 +121,12 @@
 {\filright\footnotesize\enspace \large {\large SECCIÓN \thesection} \enspace}%
 {8pt}{\huge\bfseries\filcenter}
 %%%--------------------------------------------------------------------------	
-%%% algoritmos %%%
-%% Antes: "pip  install Pygments"
-%% Entrar a la configuración del texmaker o Kile y en órdenes de pdflatex poner
-%% pdflatex -shell-escape -synctex=1 -interaction=nonstopmode %.tex
-%\usepackage{minted}
-%\newminted{python}{frame=lines, mathescape} %con eso usar \begin{pythoncode} ... \end{pythoncode}
-%\usepackage{clrscode3e}
-%% nota, para sistener las fount si o si, se tienen que compilar con XeleTeX %%
 %-------------------------------
 %% INTRA TEXTO                %%
 \usepackage{setspace}
-%\setlength{\parindent}{0,7cm}% tamaño de sangria.
-\setlength{\parskip}{0,4cm} % separación entre parrafos.
-\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
+%\setlength{\parindent}{0,7cm}% tamaño de sangría.
+\setlength{\parskip}{0,4cm} % separación entre párrafos.
+\renewcommand{\baselinestretch}{0.90}% separación del interlineado
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\end{comment}
 %%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -266,7 +258,7 @@
 	También hemos utilizado como bibliografía de apoyo  los siguientes: 
 	
 	\begin{enumerate}
-		\item [-] \textit{Álgebra Lineal.} Autores: Gabriela Jeronimo, Juan Sabia y Susana Tesauri. Año 2008. Puede descargarse del Departamento de Matemática de la UBA, en la dirección
+		\item [-] \textit{Álgebra Lineal.} Autores: Gabriela Jerónimo, Juan Sabia y Susana Tesauri. Año 2008. Puede descargarse del Departamento de Matemática de la UBA, en la dirección
 		
 		\href{http://mate.dm.uba.ar/~jeronimo/algebra_lineal/AlgebraLineal.pdf}	 {http://mate.dm.uba.ar/~jeronimo/algebra\_lineal/AlgebraLineal.pdf}
 		\item [- ] \textit{Linear Algebra.} Autores: Jim Hefferon. Se descarga en
@@ -399,7 +391,7 @@
 			\begin{equation*}
 				\R^n:= \{(x_1,x_2,\ldots,x_n): x_i \in \R, 1 \le i \le n \}.
 			\end{equation*}
-			Tode $v$ en $\R^n$ será llamado {\em punto}\index{punto}. Alternativamente, también podemos decir que $v$  es un \textit{vector en el origen} o simplemente un \textit{vector}. 
+			Todo $v$ en $\R^n$ será llamado {\em punto}\index{punto}. Alternativamente, también podemos decir que $v$  es un \textit{vector en el origen} o simplemente un \textit{vector}. 
 
 		\end{definicion}
 		
@@ -778,7 +770,7 @@ Estos vectores jugarán un rol central en la materia, principalmente, por la sig
 \end{proposicion}
 
 
-La demostraci\'on es trivial pero por ahora no la haremos. 
+La demostración es trivial pero por ahora no la haremos. 
 
 
 \begin{ejemplo}
@@ -1183,7 +1175,7 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
 		
 		Claramente este es el único vector cuyo punto inicial es el origen y que es equivalente a $\overrightarrow{vw}$. Si visualizamos la ley del paralelogramo en el plano, entonces está claro que la equivalencia de dos vectores afines se puede interpretar geométricamente diciendo que las longitudes de los segmentos de línea determinadas por el par de puntos son iguales, y que las ``direcciones'' de los dos vectores son las mismos. 
 		
-		A una $n$-upla  la podemos interpretar como un  vector cuyo punto inicial es el origen. En vista de esto, llamaremos, como lo venimos haciendo,  a una $n$-upla punto o vector, dependiendo de la interpretación que tenemos en mente.
+		A una $n$-tupla  la podemos interpretar como un  vector cuyo punto inicial es el origen. En vista de esto, llamaremos, como lo venimos haciendo,  a una $n$-tupla punto o vector, dependiendo de la interpretación que tenemos en mente.
 		
 		Se dice que dos vectores afines $\overrightarrow{vw}$ y $\overrightarrow{pq}$ son \textit{paralelos} si hay un 	número $\lambda\ne 0$  tal que $w-v= \lambda(q-p)$. Se dice que tienen la \textit{misma dirección} si hay un número $\lambda >0$ tal que $w-v= \lambda(q-p)$, y que tienen \textit{direcciones opuestas} si hay un número $\lambda <0$ tal que $w-v= \lambda(q-p)$.
 		
@@ -1233,7 +1225,7 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
 	\end{section}
 
 	\begin{section}{Rectas en $\R^2$}\label{seccion-rectas-en-r2}
-	Conocemos de la secundaria y de cursos anteriores el concepto de recta, por ejemplo en el  sitio on-line EcuRed dice: 
+	Conocemos de la secundaria y de cursos anteriores el concepto de recta, por ejemplo en el  sitio online EcuRed dice: 
 	
 	\textit{``Una recta puede ser expresada mediante una ecuación del tipo $y = m x + b$, donde $x$, $y$ son variables en un plano. En dicha expresión $m$ es denominada pendiente de la recta y está relacionada con la inclinación que toma la recta respecto a un par de ejes que definen el Plano. Mientras que $b$ es el término independiente y es el valor del punto en el cual la recta corta al eje vertical en el plano.''}
 	
@@ -1725,7 +1717,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 			
 				\vskip .3cm 
 			
-			Llamaremos a (\ref{sist-eq}) un \textit{sistema de $m$ ecuaciones lineales con $n$ incógnitas.}\index{sistema de ecuaciones lineales} A una  $n$-upla $(x_1,\ldots,x_n)$ de elementos de $\K^n$ que satisface cada una de las ecuaciones de  (\ref{sist-eq}) la llamaremos una \textit{solución del sistema}. Si $y_1 = \cdots = y_m=0$, el sistema se llamará \textit{homogéneo.} En caso contrario el sistema se denominará \textit{no-homogéneo.}
+			Llamaremos a (\ref{sist-eq}) un \textit{sistema de $m$ ecuaciones lineales con $n$ incógnitas.}\index{sistema de ecuaciones lineales} A una  $n$-tupla $(x_1,\ldots,x_n)$ de elementos de $\K^n$ que satisface cada una de las ecuaciones de  (\ref{sist-eq}) la llamaremos una \textit{solución del sistema}. Si $y_1 = \cdots = y_m=0$, el sistema se llamará \textit{homogéneo.} En caso contrario el sistema se denominará \textit{no-homogéneo.}
 			
 			\begin{ejemplo}
 				Los siguientes son sistemas de 2 ecuaciones lineales con 2 incógnitas:
@@ -1784,7 +1776,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 					{\footnotesize{\footnotesize\circled{3}}}&\qquad&2x& -y & +5z & =&3
 					\end{matrix} \tag{S1}
 					\end{equation*}
-					Es decir, queremos encontrar los n\'umeros reales $x$, $y$ y $z$ que satisfagan las ecuaciones anteriores.
+					Es decir, queremos encontrar los números reales $x$, $y$ y $z$ que satisfagan las ecuaciones anteriores.
 				
 			\end{ejemplo}
 				
@@ -2231,7 +2223,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			\end{definicion}
 			
 			\begin{observacion}
-				Más formalmente, podemos ver una matriz como un elemento del producto cartesiano $(\K^n)^m$, es decir como $m$-uplas donde en cada coordenada hay una $n$-upla. Esta es la forma usual de describir una matriz en los lenguajes de programación modernos. 
+				Más formalmente, podemos ver una matriz como un elemento del producto cartesiano $(\K^n)^m$, es decir como $m$-tuplas donde en cada coordenada hay una $n$-tupla. Esta es la forma usual de describir una matriz en los lenguajes de programación modernos. 
 			\end{observacion}
 			
 			\begin{ejemplo}
@@ -2264,7 +2256,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 			y_1 \\ \vdots \\ y_m
 			\end{bmatrix}.
 			$$
-			Entonces, podemos escribir el sistema de ecuaciones (\ref*{sist-eq-hom}) como
+			\vskip .1cm
+			Entonces, podemos escribir el sistema de ecuaciones (\ref{sist-eq-hom}) como
+		
 			\begin{equation}\label{sist-eq-2}
 				A = \begin{bmatrix}
 				a_{11}& a_{12}& \cdots &a_{1n} \\
@@ -3025,8 +3019,8 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				
 				En forma más precisa, sea $A =[a_{ij}]\in M_n(\K)$,  entonces
 				\begin{itemize}
-					\item $A$ es \textit{triangular superior} (\textit{triangular superior estricta}) si $a_{ij} =0$ para $i < j$ (resp. $i \le j$),
-					\item $A$ es \textit{triangular inferior} (\textit{triangular inferior estricta}) si $a_{ij} =0$ para $i > j$ (resp. $i \ge j$).
+					\item $A$ es \textit{triangular superior} (\textit{triangular superior estricta}) si $a_{ij} =0$ para $i < j$ (respectivamente $i \le j$),
+					\item $A$ es \textit{triangular inferior} (\textit{triangular inferior estricta}) si $a_{ij} =0$ para $i > j$ (respectivamente $i \ge j$).
 				\end{itemize}
 				
 				Por  ejemplo, cualquier matriz diagonal es triangular superior y también triangular inferior. 
@@ -3659,7 +3653,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				\begin{bmatrix} b_{11}&b_{12}\\ b_{21}&b_{22}\end{bmatrix} =
 				\begin{bmatrix} 2b_{11}+b_{21}&2b_{12}+b_{22}\\0 &0\end{bmatrix}.
 				\end{equation*}
-				Luego $AB$, al tener una fila identicamente nula, no puede ser nunca la identidad. 
+				Luego $AB$, al tener una fila idénticamente nula, no puede ser nunca la identidad. 
 			\end{observacion}
 			
 			
@@ -4576,9 +4570,9 @@ También vale este resultado para matrices $n \times n$.
 		e_i
 		= d_ie_i
 	\end{equation*} 
-	y esta propiedad caracteríza las matrices diagonales, es decir una matriz $D$ es diagonal si  y solo si $De_i =d_ie_i$ para $1 \le i \le n$. Dicho de  otra forma una matriz es diagonal si y solo si  al aplicarla sobre algún $e_i$ obtenemos un mútiplo de $e_i$. 
+	y esta propiedad caracteríza las matrices diagonales, es decir una matriz $D$ es diagonal si  y solo si $De_i =d_ie_i$ para $1 \le i \le n$. Dicho de  otra forma una matriz es diagonal si y solo si  al aplicarla sobre algún $e_i$ obtenemos un múltiplo de $e_i$. 
 
-	Aunque no siempre es posible caracterizar una matriz $A$  por los vectores $v$ que  al aplicarle $A$  obtenemos un múltiplo de $v$,  el estudio de estos $v$ resulta importante para obtener información fundamental de la matriz y proiedades de la misma.  
+	Aunque no siempre es posible caracterizar una matriz $A$  por los vectores $v$ que  al aplicarle $A$  obtenemos un múltiplo de $v$,  el estudio de este tipo de vectores  resulta importante para obtener información de la matriz y propiedades de la misma.  
 	
 	
 
@@ -5096,7 +5090,7 @@ También vale este resultado para matrices $n \times n$.
 
 
 	\begin{chapter}{Espacios vectoriales}\label{chap-esp-vect} En este capítulo estudiaremos en forma general las combinaciones lineales sobre conjuntos abstractos.
-		En el primer capítulo desarrollamos el método de Gauss para la resolución de sistemas de ecuaciones lineales. En el método de Gauss se usan sistemáticamente las combinaciones lineales de las filas de una matriz. Podemos ver estas filas como elementos de $\K^n$  y nuestro primer impulso para el estudio de las combinaciones lineales sería trabajar en este contexto, es decir  en $\K^n$. Eso es lo que haremos, en forma introductoria, en la primera sección, donde trabajaremos restringidos a   $\R^2$ y $\R^3$.   Sin embargo, muchos de los resultados sobre combinaciones lineales en $\K^n$ son aplicables también a conjuntos más generales y de gran utilidad en la matemática. Por lo tanto,  apartir de la segunda sección,  nuestros ``espacios vectoriales'' (espacios donde pueden hacerse combinaciones lineales de vectores) serán espacios abstractos. 
+		En el primer capítulo desarrollamos el método de Gauss para la resolución de sistemas de ecuaciones lineales. En el método de Gauss se usan sistemáticamente las combinaciones lineales de las filas de una matriz. Podemos ver estas filas como elementos de $\K^n$  y nuestro primer impulso para el estudio de las combinaciones lineales sería trabajar en este contexto, es decir  en $\K^n$. Eso es lo que haremos, en forma introductoria, en la primera sección, donde trabajaremos restringidos a   $\R^2$ y $\R^3$.   Sin embargo, muchos de los resultados sobre combinaciones lineales en $\K^n$ son aplicables también a conjuntos más generales y de gran utilidad en la matemática. Por lo tanto,  a partir de la segunda sección,  nuestros ``espacios vectoriales'' (espacios donde pueden hacerse combinaciones lineales de vectores) serán espacios abstractos. 
 		
 
 		
@@ -5431,7 +5425,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 		$$
 		W = \left\{ (x_1,x_2,\ldots,x_n): x_i \in \K\; (1 \le i \le n), x_j =0\right\}.
 		$$
-		Es decir $W$  es el subconjunto de $V$ de todas las $n$-uplas con la coordenada $j$ igual a 0. Por ejemplo  si $j=1$ 
+		Es decir $W$  es el subconjunto de $V$ de todas las $n$-tuplas con la coordenada $j$ igual a 0. Por ejemplo  si $j=1$ 
 		$$
 		W = \left\{ (0,x_2,\ldots,x_n): x_i \in \K \;(2 \le i \le n)\right\}.
 		$$
@@ -5926,10 +5920,10 @@ Como ya demostramos, si $V$  es un espacio vectorial de dimensión finita y $\ma
 	\end{proof}
 
 	\begin{lema}\label{li+vec=li}
-		Sea $S$ un subconjunto linealmente independiente de un espacio vectorial $V$. Supóngase que $w$ es un vector de $V$ que no pertenece al subespacio generado por $S$. Entonces el conjunto que se obtiene agregando $w$  a $S$, es linealmente independiente.
+		Sea $S$ un subconjunto linealmente independiente de un espacio vectorial $V$. Suponga que $w$ es un vector de $V$ que no pertenece al subespacio generado por $S$. Entonces el conjunto que se obtiene agregando $w$  a $S$, es linealmente independiente.
 	\end{lema}
 	\begin{proof}
-		Supóngase que $v_1,\ldots,v_n$  son vectores distintos de $S$ y sean $\lambda_i,\lambda \in \K$  tales que
+		Suponga que $v_1,\ldots,v_n$  son vectores distintos de $S$ y sean $\lambda_i,\lambda \in \K$  tales que
 		\begin{equation}\label{eq-dep-lin}
 			\lambda_1 v_1 + \cdots + \lambda_n v_n + \lambda w =0 .
 		\end{equation}
@@ -6001,7 +5995,7 @@ Es decir, todo subconjunto LI de un espacio vectorial de dimensión finita se pu
 	\end{proof}
 
 	\begin{corolario}
-		Sea A una matriz $n \times n$ sobre el cuerpo $\K$, y supóngase que los vectores fila de $A$ forman un conjunto linealmente independiente de vectores de $\K^n$. Entonces $A$ es invertible.
+		Sea A una matriz $n \times n$ sobre el cuerpo $\K$, y suponga que los vectores fila de $A$ forman un conjunto linealmente independiente de vectores de $\K^n$. Entonces $A$ es invertible.
 	\end{corolario}
 	\begin{proof}
 		Sean $v_1,\ldots,v_n$ los  vectores fila de $A$, y sea $W = \langle v_1,\ldots,v_n \rangle$.  Como los $v_1,\ldots,v_n$ son linealmente independientes, la dimensión de $W$ es $n$. Por el corolario  \ref{dimw-menor-dimv} se tiene 	que $W$ no es propio y por lo tanto $W = \K^n$.  Luego existen escalares $b_{ij}$ en $\K$ tales que
@@ -6058,7 +6052,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
 		$$
 		u_1,\ldots,u_k,v_1,\ldots,v_n,w_1,\ldots,w_m.
 		$$
-		Veamos que estos  vectores forman un conjunto independiente. En efecto, supóngase que
+		Veamos que estos  vectores forman un conjunto independiente. En efecto, suponga que
 		\begin{equation}\label{tres-sumas}
 			\sum \lambda_i u_i + \sum \gamma_i v_i + \sum \mu_i w_i =0,
 		\end{equation}
@@ -6309,7 +6303,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			Ahora bien,  $v_1,\ldots,v_n$ son  LI, por lo tanto todos los coeficientes de la ecuación anterior son nulos, es decir $x_i-y_i=0$ para $1 \le i \le n$ y entonces $x_i = y_i$ para $1 \le i \le n$.
 		\end{proof}
 	
-	La proposición anterior permite asociar a cada vector una $n$-upla: sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, si $v \in V$ y $$v =   x_1v_1 + \cdots +x_nv_n,$$  entonces \textit{$x_i$ es la coordenada $i$-ésima de $v$} y denotamos
+	La proposición anterior permite asociar a cada vector una $n$-tupla: sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, si $v \in V$ y $$v =   x_1v_1 + \cdots +x_nv_n,$$  entonces \textit{$x_i$ es la coordenada $i$-ésima de $v$} y denotamos
 	$$
 	v = (x_1,\ldots,x_n)_{\mathcal B}.
 	$$
@@ -6916,7 +6910,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		He aquí uno de los resultados más importantes del álgebra lineal.
 		
 		\begin{teorema}\label{rang+nul=dimV}
-			 	Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal. Supóngase que $V$ es de dimensión finita. Entonces 
+			 	Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal. Suponga que $V$ es de dimensión finita. Entonces 
 			 	$$
 			 	rango (T) + nulidad (T) = \dim V.
 			 	$$
@@ -6946,7 +6940,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		 	
 		 	\textit{(2) $\{Tv_{k+1},\ldots,Tv_n \}$ es un conjunto linealmente independiente.}
 		 	
-		 	Para ver que  $\{Tv_{k+1},\ldots,Tv_n \}$ es linealmente independiente, supóngase que se tienen escalares $\mu_i$ tales que
+		 	Para ver que  $\{Tv_{k+1},\ldots,Tv_n \}$ es linealmente independiente, suponga que se tienen escalares $\mu_i$ tales que
 		 	$$
 		 	\sum_{i=k+1}^n \mu_i Tv_i = 0,
 		 	$$
@@ -7150,7 +7144,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 		
 		
-		Obsérvese que $V$ es trivialmente isomorfo a $V$, ya que el operador identidad es un isomorfismo de $V$ sobre $V$. 
+		Observe que $V$ es trivialmente isomorfo a $V$, ya que el operador identidad es un isomorfismo de $V$ sobre $V$. 
 			
 		Recordemos que si una función $f: X \to Y$ es suryectiva e inyectiva, es decir biyectiva, existe su inversa, la cual también es biyectiva. La inversa se denota $f^{-1}: Y \to X$ y viene definida por
 		$$
@@ -7349,7 +7343,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\begin{equation*}
 			\begin{array}{rlll}
 			U(T+S)(v) &= U((T+S)(v))&\qquad&\text{(definición de composición)} \\
-			&= U(T(v)+S(v))&\qquad&\text{(definicion  de $T+S$)} \\
+			&= U(T(v)+S(v))&\qquad&\text{(definición  de $T+S$)} \\
 			&= U(T(v))+U(S(v))&\qquad&\text{($U$ lineal)} \\
 			&= UT(v)+US(v)&\qquad&\text{(definición de composición)}.
 			\end{array}
@@ -7367,7 +7361,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 			\begin{equation}\label{matriz-de-T-1}
 				Tv_j = \sum_{i=1}^{m} a_{ij} w_i
 			\end{equation}
-			de los $w_i$. Los escalares $a_{1j},\ldots,a_{mj}$ son las coordenadas de $Tv_j$ en la base or	denada $\mathcal B'$. Por consiguiente, la transformación $T$ está determinada por los
+			de los $w_i$. Los escalares $a_{1j},\ldots,a_{mj}$ son las coordenadas de $Tv_j$ en la base ordenada $\mathcal B'$. Por consiguiente, la transformación $T$ está determinada por los
 			$mn$ escalares $a_{ij}$ mediante la expresión (\ref{matriz-de-T-1}). 
 			
 			\begin{definicion}
@@ -7900,7 +7894,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		
 		
 		\begin{ejemplo}
-			Sea $T:\R^2 \longrightarrow \R^2$ el operador definido por $T(x,y)=(2x-y,x+4y)$. Probar que $T$ tiene un \'unico autovalor $\lambda$ cuyo autoespacio $V_\lambda=\{v\in \R^2: Tv=\lambda v\}$ es de dimensi\'on 1.
+			Sea $T:\R^2 \longrightarrow \R^2$ el operador definido por $T(x,y)=(2x-y,x+4y)$. Probar que $T$ tiene un único autovalor $\lambda$ cuyo autoespacio $V_\lambda=\{v\in \R^2: Tv=\lambda v\}$ es de dimensión 1.
 		\end{ejemplo}
 		\begin{proof} La matriz de  $T$ en la base canónica es 
 			$$
@@ -8479,7 +8473,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{equation*}
 			\la Au,w\ra =(Au)^\t w = u^\t A^\t w =u^\t A w = u^\t (A w) = \la u, Aw\ra=0.  
 		\end{equation*}
-		La útima igualdad es válida pues $u \in W^\perp$ y  como $w \in W$, por hipótesis $Aw \in W$.
+		La última igualdad es válida pues $u \in W^\perp$ y  como $w \in W$, por hipótesis $Aw \in W$.
 	\end{proof}
 	
 	
@@ -8613,7 +8607,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		\begin{equation*}
 			\chi_A(x) = \det  \begin{bmatrix} 2-x&-1&0\\-1&2-x&-1\\0&-1&2-x \end{bmatrix} =	-x^3 + 6 x^2 - 10 x + 4.
 		\end{equation*}
-		Ahora bien, las raices de $-x^3 + 6 x^2 - 10 x + 4 $  son 
+		Ahora bien, las raíces de $-x^3 + 6 x^2 - 10 x + 4 $  son 
 		\begin{align*}
 			\lambda_1 &= 2 + \sqrt 2 \\
 			\lambda_2 &= 2 \\
@@ -8691,7 +8685,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 		$$
 		abc = (ab)c = a(bc).
 		$$
-		Debido a la ley de conmutatividad (axioma {\bf I2}), es claro que del axioma {\bf I4} se deduce que  $0+a=a+0=a$ y $1a = a1=a$. Análogamante,  por  {\bf I2} e  {\bf I6} obtenemos que  $-a+a =   
+		Debido a la ley de conmutatividad (axioma {\bf I2}), es claro que del axioma {\bf I4} se deduce que  $0+a=a+0=a$ y $1a = a1=a$. Análogamente,  por  {\bf I2} e  {\bf I6} obtenemos que  $-a+a =   
 		a+(-a)=0$, y por {\bf I6} que  $a a^{-1} = a^{-1}a=1$.
 		
 		
@@ -8743,7 +8737,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 	
 	
 	\begin{section}{Números complejos}
-		La ecuación polinómica $x^2 + 1 =0$ (¿cuál es el número que elevado  al cuadrado y adicionado 1 da 0?) no tiene solución dentro del cuerpo de los números reales,  pues todos sabemos que  $x^2 \ge 0$ para todo $x \in \R$ y por lo tanto $x^2 + 1 >0$ $\forall\; x \in \R$. Podemos extender $\R$ a otro cuerpo,  de tal forma que \textit{toda} ecuación polinómica con coeficentes en $\R$ tenga solución. 
+		La ecuación polinómica $x^2 + 1 =0$ (¿cuál es el número que elevado  al cuadrado y adicionado 1 da 0?) no tiene solución dentro del cuerpo de los números reales,  pues todos sabemos que  $x^2 \ge 0$ para todo $x \in \R$ y por lo tanto $x^2 + 1 >0$ $\forall\; x \in \R$. Podemos extender $\R$ a otro cuerpo,  de tal forma que \textit{toda} ecuación polinómica con coeficientes en $\R$ tenga solución. 
 		
 		\begin{definicion} 
 			Los \textit{números complejos}\index{números complejos} es el conjunto $\C$  de los pares ordendados $(a,b)$,  denotados $a+ib$, con $a, b$  en $\R$, con las operaciones '$+$' y '$\cdot$', definidas

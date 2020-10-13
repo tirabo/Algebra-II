@@ -17,8 +17,13 @@
 		"cSpell.language": "es,es-ES",
 		"cSpell.words": [
 			"determinate",
+			"ejemplos",
 			"permutaciones"
 		],
-		"cSpell.enabled": true
+		"cSpell.enabled": true,
+		"cSpell.allowCompoundWords": true,
+		"cSpell.languageSettings": [
+		
+		]
 	}
 }
