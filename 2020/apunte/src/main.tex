@@ -2872,7 +2872,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 					y $B$ tiene $r$ filas no nulas con $r \le m <n$. Como el sistema tiene solución y $r<n$  hay al menos una variable libre. Por lo tanto, $BX=Z$ (y $AX=Y$) tienen infinitas soluciones.
 				\end{proof}
 				
-				\begin{lema}\label{mtrx-merf-id}
+				\begin{lema}\label{lem-mtrx-merf-id}
 					Sea $R$ una matriz $n \times n$ escalón reducida por fila tal que no tiene filas nulas. Entonces $R=\Id_n$. 
 				\end{lema}
 				\begin{proof}
@@ -3828,7 +3828,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 				
 				\textit{i}) $\Rightarrow$ \textit{ii})\; Sea $R$ la matriz escalón reducida por fila equivalente por filas a $A$. Entonces,  existen $E_1,\ldots,E_k$ matrices elementales tal que $E_1,\ldots,E_kA = R$. Como las matrices elementales son invertibles, el producto de matrices elementales es invertible, luego  $E_1,\ldots,E_k$ es invertible y por lo tanto $R=E_1,\ldots,E_kA$ es invertible. 
 				
-				Recordemos que las matrices escalón reducidas por fila si tienen filas nulas, ellas se encuentran al final.  Ahora bien,  si la última fila de $R$ es nula entonces,  $RB$ tiene la última fila nula también y por lo tanto no puede ser igual a la identidad, es decir, en ese caso $R$ no es invertible, lo cual produce un absurdo. Concluyendo: la última fila (la fila $n$) de $R$ no es nula y como es MERF, $R$ no tiene filas nulas. Por lo tanto $R=\Id_n$ (lema \ref{mtrx-merf-id}) y,  entonces, $A$ es equivalente por filas a $\Id_n$. 
+				Recordemos que las matrices escalón reducidas por fila si tienen filas nulas, ellas se encuentran al final.  Ahora bien,  si la última fila de $R$ es nula entonces,  $RB$ tiene la última fila nula también y por lo tanto no puede ser igual a la identidad, es decir, en ese caso $R$ no es invertible, lo cual produce un absurdo. Concluyendo: la última fila (la fila $n$) de $R$ no es nula y como es MERF, $R$ no tiene filas nulas. Por lo tanto $R=\Id_n$ (lema \ref{lem-mtrx-merf-id}) y,  entonces, $A$ es equivalente por filas a $\Id_n$. 
 				
 				\textit{ii}) $\Rightarrow$ \textit{iii})\; Como $A$  es equivalente por filas a $\Id_n$, al ser la equivalencia por filas una relación de equivalencia,  tenemos que $\Id_n$ es equivalente por filas a $A$, es decir  existen $E_1,\ldots,E_k$ matrices elementales, tales que $E_1E_2,\ldots,E_k\Id_n = A$. Por lo tanto, $A =E_1E_2,\ldots,E_k$ producto de matrices elementales.
 				
@@ -4257,7 +4257,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 		Se deduce del hecho que $\Id_n$  es triangular superior y todo coeficiente de la diagonal principal vale 1.
 	\end{proof}
 	
-	\begin{corolario}
+	\begin{corolario}\label{cor-det-merf}
 		Si $R$ es una MERF, entonces 
 		\begin{align*}
 		\det R = \left\{ \begin{matrix*}[l]
@@ -4267,7 +4267,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 		\end{align*}
 	\end{corolario}
 	\begin{proof}
-		Si $R$ no tiene filas nulas es igual a $\Id_n$ (lema \ref{mtrx-merf-id}), luego $\det R = 1$. En general, $R$ es una matriz triangular superior y si tiene alguna fila nula $r$, entonces el coeficiente en la diagonal de la fila $r$ es igual a $0$ y por lo tanto 	$\det R = 0$.
+		Si $R$ no tiene filas nulas es igual a $\Id_n$ (lema \ref{lem-mtrx-merf-id}), luego $\det R = 1$. En general, $R$ es una matriz triangular superior y si tiene alguna fila nula $r$, entonces el coeficiente en la diagonal de la fila $r$ es igual a $0$ y por lo tanto 	$\det R = 0$.
 	\end{proof}
 
 	\begin{ejemplo} Veamos,  en el caso de una matriz $A= [a_{ij}]$ de orden  $2 \times 2$ que ocurre con el determinante cuando hacemos una operación elemental. 
@@ -5382,27 +5382,25 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 		\end{enumerate}
 	\end{definicion}
 
-	\begin{observacion} Si $W$ subespacio de $V$,  entonces $0 \in W$: como  $W \ne \emptyset$, tomo  cualquier $w \in W$ y  por (a) tenemos que $0.w \in W$. Ya vimos, proposición \ref{prop-basicas-ev}(\ref{0*c=0}),  que $0.w =0$ y por lo tanto $0 \in W$. 
+	\begin{observacion}\label{obs-0-en-supescacio} Si $W$ subespacio de $V$,  entonces $0 \in W$: como  $W \ne \emptyset$, tomo  cualquier $w \in W$ y  por (a) tenemos que $0.w \in W$. Ya vimos, proposición \ref{prop-basicas-ev}(\ref{0*c=0}),  que $0.w =0$ y por lo tanto $0 \in W$. 
 	\end{observacion}
 
-	\begin{observacion}
+	\begin{observacion}\label{obs-comb-lin-en-subespacio}
 		 Si $W$ subespacio de $V$ y $w_1,\ldots,w_k \in W$,  entonces cualquier combinación lineal de los $w_1,\ldots,w_k$ pertenece a $W$. Es decir, para cualesquiera $\lambda_1,\ldots,\lambda_k \in \K$, se cumple que  $\lambda_1w_1+\cdots\lambda_kw_k \in W$. Esto se debe a que $\lambda_iw_i \in W$ para $1\le i \le k$. Por un argumento inductivo, no es difícil probar que la suma de $k$ términos en $W$ es un elemento de $W$, por lo tanto $\lambda_1w_1+\cdots\lambda_kw_k \in W$.  
 	\end{observacion}
 
 	\begin{teorema}
 		Sea $V$ un espacio vectorial sobre $\K$ y $W$ subespacio de $V$. Entonces $W$ con las operaciones suma y producto por escalares de $V$ es un espacio vectorial.
 	\end{teorema}
-	\begin{proof} Debemos verificar las propiedades de la definición de espacio vectorial.
-		\begin{enumerate}
-			\item[S1.] $w,w' \in W$, entonces $w + w' = w' + w$, pues conmutan en $V$;
-			\item[S2.] si $w_1,w_2,w_3 \in W$, entonces $w_1+(w_2+w_3) = (w_1+w_2)+w_3$, pues la suma es asociativa en $V$;
-			\item[S3.] ya vimos que $0 \in W$, y como $0$ es el elemento neutro de la suma para $V$, también lo es para $W$.
-			\item[S4.] Sea $w \in W$, entonces $(-1)w \in W$ (por SE2). Pero, por proposición \ref{prop-basicas-ev}(\ref{-1*v=-v}), $(-1)w=-w$,  es decir $(-1)w$ es el opuesto aditivo de $w$  en $V$, luego es el opuesto aditivo de $w$ en $W$.
-			\item[P1.] $1.v=v$ para todo $v \in V$, luego $1.w =w$ para todo $w \in W$.
-			\item[P2.] $\lambda_1(\lambda_2v) = (\lambda_1\lambda_2)v$, para todo $\lambda_1,\lambda_2 \in \K$ y todo $v \in V$, luego $\lambda_1(\lambda_2w) = (\lambda_1\lambda_2)w$, para todo $\lambda_1,\lambda_2 \in \K$ y todo $w \in W$.
-			\item[D1.] $\lambda(v_1+v_2) = \lambda v_1 +\lambda v_2$, para todo $\lambda \in \K$ y cualesquiera $v_1,v_2 \in V$, luego   $\lambda(w_1+w_2) = cw_1 +cw_2$, para todo $\lambda \in \K$ y cualesquiera $w_1,w_2 \in W$.
-			\item[D2.] $(\lambda_1+\lambda_2)v = \lambda_1v + \lambda_2 v$ para todo $\lambda_1,\lambda_2 \in \K$ y todo $v \in V$, luego $(\lambda_1+\lambda_2)w = \lambda_1w + \lambda_2 w$ para todo $\lambda_1,\lambda_2 \in \K$ y todo $w \in W$.
-		\end{enumerate} 
+	\begin{proof} 
+		Para que $W$ sea espacio vectorial sus operaciones deben satisfacer los axiomas de la definición de espacio vectorial (definición \ref{def-esp-vect}). 
+		
+		Por la observación \ref{obs-0-en-supescacio}, el $0$ del espacio vectorial pertenece al subespacio. 
+		
+		Si $w \in W$,  $-w = (-1)w$ (proposición \ref{prop-basicas-ev}(\ref{-1*v=-v})).  Por la observación  \ref{obs-comb-lin-en-subespacio} concluimos que $-w\in W$. Es decir el opuesto de un vector en $W$ también pertenece a $W$. 
+		
+		Teniendo en cuenta estos dos hechos y que las operaciones en $V$ satisfacen los axiomas de la definición \ref{def-esp-vect} (y por lo tanto en $W$ también),  queda demostrado que $W$, con las operaciones heredadas de $V$, es espacio vectorial.  
+		
 	\end{proof}
 
 
@@ -9507,56 +9505,55 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
 		 	\end{equation*}
 		 \end{proof}
 		 
+
+
+		 \begin{teorema}\label{th-det-matriz-invertible}
+			$A \in \K^{n \times n}$ es invertible si y solo si $\det(A) \ne 0$.
+		\end{teorema}
+		\begin{proof}
+			($\Rightarrow$)  $A$ invertible, luego por el  teorema \ref{mtrx-inv-equiv}, $A$ es producto de matrices elementales, es decir  $A = E_1 E_2 \cdots E_k$  donde $E_1, E_2, \ldots, E_k$ son matrice elementales. 
+			
+			Por el corolario anterior,  $\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)$. Como el determinante de matrices elementales es distinto de cero, $\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)\ne 0$.
+	
+			($\Leftarrow$) Sean $E_1, E_2, \ldots, E_k$ matrices elementales tales que $R = E_1 E_2 \cdots E_k A$ y $R$ es MERF. Luego,
+			\begin{equation*}
+				\det(R) = \det(E_1) \det(E_2) \cdots \det(E_k) \det(A). 
+			\end{equation*}
+		    Como los determinantes de matrices  elementales son no nulos
+    \begin{equation*}
+        \frac{\det(R)}{\det(E_1) \det(E_2) \cdots \det(E_k) } = \det(A). \tag{*}
+    \end{equation*}
+
+    
+    Supongamos que $R$ no es la identidad.  Entonces, por el corolario \ref{cor-det-merf}, $\det(R) =0$,  por lo tanto, $\det(A)=0$, lo cual contradice la hipótesis y llegamos a un absurdo. 
+
+    Esto implica que  $R= \Id_n$ y en consecuencia  $A$ es equivalente por filas a $\Id_n$ y por lo tanto  invertible.
+		\end{proof}
 		 
-		 \begin{obs}\label{mtrx-elem-por-merf}
-		 	Sea $A  \in M_n(\K)$,  entonces $A$ es equivalente por filas a una matriz $R$ que es  MERF, por lo tanto $R$ es equivalente por filas a $A$. Es decir, existen $E_1,\ldots,E_k$ matrices elementales, tal que
-		 	\begin{equation}
-		 	A = E_kE_{k-1}\ldots E_1R.
-		 	\end{equation}
-		 	Ya vimos,  en el  teorema \ref{mtrx-inv-equiv} que si $A$ invertible $R= \Id_n$ y por lo tanto  $A$ es equivalente por filas a un producto de  matrices elementales. Si $A$ no es invertible, entonces $R$ no es la identidad y por lo tanto tiene filas nulas. 
-		 \end{obs}
-		
-		 
-		 
+	
 		 \begin{teorema}\label{th-dem-detAB}  Sean $A,B \in M_n(\K)$,  entonces
-		 	\begin{enumerate}
-		 		\item $\det (A B) = \det(A)\det(B)$. 
-		 		\item $A$ invertible si y solo si  $\det(A)\ne0$.
-		 	\end{enumerate}
+		$$\det (A B) = \det(A)\det(B).$$
 		 \end{teorema}
-		 \begin{proof} 	
-		 		Sea $A = E_kE_{k-1}\ldots E_1R$ con $E_i$  elemental y $R$ una MERF.
-		 	
-		 	(1) Como $AB = E_kE_{k-1}\ldots E_1RB$, por corolario \ref{coro-det-prod-elem-mtrx}  tenemos que  $\det(AB) = \det( E_k) \ldots \det(E_1)\det(RB)$.
-		 	
-		 	
-		 	Separaremos la demostración en dos casos: (a) $A$ es invertible y  (b) $A$ no es invertible. 
-		 	
-		 	(a) Si $A$  es invertible,  entonces $R=\Id_n$ y  $A = E_k\ldots E_1$, por lo tanto 
-		 	\begin{equation*}
-		 	\det(AB) = \det(E_k) \ldots \det(E_1)\det(B) = \det(A)\det(B).
-		 	\end{equation*}
-		 	
-		 	(b) Si $A$ no es invertible, entonces $R$ no es la identidad, por lo tanto tiene la última fila nula y por lo tanto $\det(R)=0$, y en consecuencia $\det(A)=0$. Como $R$ tiene la última fila nula, no es difícil ver que entonces $RB$ tiene la última fila nula y por lo tanto $\det(RB)=0$. Luego 
+		 \begin{proof} 	Separemos la prueba en dos casos (a) $A$ es invertible  y (b) $A$ no es invertible.
+
+			(a) Si $A$ invertible, entonces $A= E_1\cdots E_k$ producto de matrices elementales. Por lo tanto  $AB =  E_1\cdots E_kB$, luego por el corolario \ref{coro-det-prod-elem-mtrx}  $\det(AB) =  \det(E_1)\cdots \det(E_k)\det(B) = \det(A)\det(B)$. 
+			
+			(b) Si $A$ no invertible,  entonces $A$  es equivalente por filas a una MERF $R$ con la última fila nula. Es decir $R =E_1\cdots E_kA$ y $R$ tiene la última fila nula, por  lo tanto $A=  E_k^{-1}E_{k-1}^{-1}\ldots E_1^{-1}R$. 
+			
+			Como $R$ tiene la última fila nula, no es difícil ver que  $RB$ tiene tiene también la última fila nula y por lo tanto $\det(RB)=0$. Luego 
 		 	$$
-		 	\det(AB) = \det( E_k) \ldots \det(E_1)\det(RB) =0.
+		 	\det(AB) = \det( E_k^{-1}) \ldots \det(E_1^{-1})\det(RB) =0.
 		 	$$
-		 	Como  $\det(A)=0$, tenemos también 
+		 	Como  $\det(A)=0$, tenemos también qure 
 		 	$$
 		 	\det(A)\det(B) =0.
-		 	$$ 
-		 	
-		 	\vskip .3cm
-		 	
-		 	(2) ($\Rightarrow$) Como $A$ invertible, $R = \Id_n$ y $\det A = \det( E_k) 	 \ldots \det(E_1)$ es no nulo, pues las matrices elementales tiene determinante no nulo. 
-		 	
-		 	(2)($\Leftarrow$)  Si $\det(A) \ne 0$, entonces $\det(R) \ne 0$, luego $R = \Id_n$ y $A$ es producto de matrices elementales, por lo tanto invertible. 
+		 	$$  
 		 \end{proof}
 		 
 		 Haremos ahora la demostración del teorema \ref{det-a-trans}. 
 		 
 		 \begin{teorema}
-		 	Sea $E$ matriz elemental, entonces $E^\t$ es matriz elemental del mismo tipo y $\det(E) = \det(E^\t)$. 
+		 	Sea $E$ matriz elemental, entonces $E^\t$ es matriz elemental del mismo tipo y $\det(E) = \det(E^\t)$.
 		 \end{teorema}
 		 \begin{proof}
 		 	Si $c \not=0$ y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, es claro que $E^t = E$ y por lo tanto 	$\det(E) = \det(E^\t)$.
