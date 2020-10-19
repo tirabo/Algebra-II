@@ -1,0 +1,277 @@
+\documentclass[12pt]{amsart}
+
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\pagestyle{fancy}
+
+\usepackage{xcolor} 
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage[compatibility=false]{caption} % para usar subcaption
+\usepackage{subcaption} % para poner varias imagenes juntas
+\usepackage[spanish,activeacute,es-lcroman,es-tabla]{babel}
+\usetikzlibrary{babel}
+
+\begin{document}
+
+\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
+
+\centerline{\Large{Pr\' actico 0}}
+
+\
+
+\centerline{\textsc{N\'{u}meros complejos}}
+
+\centerline{\textsc{Soluciones}}
+
+\bigbreak 
+
+\begin{enumerate}
+
+\item Expresar los siguientes n{\'u}meros complejos en la forma $a +i b$.
+Hallar el m{\'o}dulo y conjugado de cada uno de ellos, y graficarlos.
+
+\begin{multicols}{3}
+\begin{enumerate}
+\item $(-1+i) (3-2i)$
+\item $i^{131} - i^9 +1$
+\item $\frac {1+i}{1+2i} + \frac{1-i}{1-2i}$
+\end{enumerate}
+\end{multicols}
+
+\textsc{Solución:}
+
+\
+
+\begin{enumerate}
+    \item $(-1+i) (3-2i) = -3 + 3i + 2i - 2i^2 = -3 + 5i + 2 = \boxed{-1 + 5i}$
+
+\
+
+$ | (-1+i) (3-2i) | = | -1 + 5i | = \sqrt{ (-1)^2 + 5^2 } = \sqrt{1 + 25 } = \boxed{\sqrt{ 26}}$
+
+\
+
+$ \overline{ (-1+i) (3-2i) } = \overline { -1 + 5i } = \boxed{ -1 -5i }$
+
+\
+
+\item $i^{131} - i^9 +1 = i^{4 \cdot 32 + 3} - i^{4 \cdot 2 + 1} +1 = 
+(i^4)^{32} \cdot i^3 - (i^4)^2 \cdot i^1 + 1 = i^3 - i +1 = -i -i +1 = \boxed{ 1-2i}$
+
+\
+
+$ | i^{131} - i^9 +1 | = | 1-2i | = \sqrt{ 1^2 + (-2)^2 } = \sqrt{1 + 4 } = \boxed{\sqrt{ 5}}$
+
+\
+
+$ \overline{ i^{131} - i^9 +1  } = \overline { 1-2i} = \boxed{ 1+2i}$
+
+\
+
+\item $\dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} = \dfrac{(1+i)(1-2i)+(1-i)(1+2i)}{1^2 + 2^2} = \dfrac{2 Re( 1 - 2i + i - 2 i^2) }{5} = \boxed{ \dfrac{6}{5} }$
+
+\
+
+$ \left| \dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} \right| = \left| \dfrac{6}{5} \right| = \boxed{ \dfrac{6}{5} }$
+
+\
+
+\
+
+$ \overline{\; \dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} \;} = \overline {\; \dfrac{6}{5} \;} = \boxed{ \dfrac{6}{5} }$
+\end{enumerate}
+
+\begin{figure}[!h]
+
+\begin{subfigure}{.3\textwidth}
+	\begin{tikzpicture}
+		\draw[->] (-2.0,0) -- (1.0,0) node[right] {}; % eje x
+		\draw[->] (0,-1) -- (0,6) node[above] {}; % eje y
+		\draw[fill] (-1,5) circle [radius=0.05];
+		\node [above left] at (-1,5) {$-1 + 5 i$};
+		\node [below] at (-1,-3pt) {$-1$};
+		\node [right] at (3pt,5) {$5$};
+		\draw (-1,-3pt) -- (-1,3pt);
+		\draw (-3pt, 5) -- (3pt, 5);
+		\draw [dashed] (0,5) -- (-1,5);
+		\draw [dashed] (-1,0) -- (-1,5);
+	\end{tikzpicture}
+\caption{}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+	\begin{tikzpicture}
+		\draw[->] (-1.0,0) -- (2.0,0) node[right] {}; % eje x
+		\draw[->] (0,-3) -- (0,1) node[above] {}; % eje y
+		\draw[fill] (1,-2) circle [radius=0.05];
+		\node [below right] at (1,-2) {$1 -2 i$};
+		\node [above] at (1,3pt) {$1$};
+		\node [left] at (-3pt,-2) {$-2$};
+		\draw (1,-3pt) -- (1,3pt);
+		\draw (-3pt, -2) -- (3pt, -2);
+		\draw [dashed] (0,-2) -- (1,-2);
+		\draw [dashed] (1,0) -- (1,-2);
+	\end{tikzpicture}
+\caption{}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+	\begin{tikzpicture}
+		\draw[->] (-1.0,0) -- (1+6/5,0) node[right] {}; % eje x
+		\draw[->] (0,-1) -- (0,1) node[above] {}; % eje y
+		\draw[fill] (6/5,0) circle [radius=0.05];
+%		\node [above right] at (6/5,0) {$ \frac{6}{5}$};
+		\node [above] at (6/5,3pt) {$\frac{6}{5}$};
+%		\node [left] at (-3pt,-2) {$-2$};
+		\draw (6/5,-3pt) -- (6/5,3pt);
+%		\draw (-3pt, -2) -- (3pt, -2);
+%		\draw [dashed] (0,-2) -- (1,-2);
+%		\draw [dashed] (1,0) -- (1,-2);
+	\end{tikzpicture}
+\caption{}
+\end{subfigure}
+\caption{Ejercicio 1}
+\end{figure}
+
+\newpage
+
+\item Encontrar n\'umeros reales $x$ e $y$ tales que $3x+2yi-xi+5y = 7 + 5i$.
+
+\
+
+\textsc{Solución:} Sean $x, y \in \mathbb{R}$, separo las partes real e imaginaria de la ecuación y planteo un sistema de ecuaciones:
+
+\begin{equation*}
+\begin{array}{rl}
+3x+2yi-xi+5y = 7 + 5i &\implies \left\{ \begin{array}{rl}
+\operatorname{Re} (3x+2yi-xi+5y) &= \operatorname{Re} ( 7 + 5i)	\\
+\operatorname{Im} (3x+2yi-xi+5y) &= \operatorname{Im}( 7 + 5i)
+\end{array}\right. \\
+&\implies \left\{ \begin{array}{rl}
+3x+ 5y &= 7	\\
+2y -x &= 5
+\end{array}\right.
+\end{array}
+\end{equation*}
+
+\begin{equation*}
+\begin{array}{l|r}
+\begin{array}{rl|rl}
+3 (2y -5) + 5y &= 7		 &	2 \cdot 2 - 5 &= x \\
+6y - 15 + 5 y &= 7		 &	-1 &= x \\
+11 y &= 22	& &  \\
+y &= 2		& & 
+\end{array} & 
+\boxed{\begin{array}{rl}
+y &= 2 \\
+x &= -1
+\end{array}}
+\end{array}
+\end{equation*}
+
+\
+
+\
+
+%\item Sean $a,b\in\mathbb{C}$. Decidir si existe $z \in \mathbb{C}$ tal que:
+%\begin{enumerate}
+%  \item Dicho $z$ existe sólo si $a \in \mathbb{R}$. No es único, cualquier $z$ con $\operatorname{Im}(z) = 2/a$ cumple.
+%  \item Existe, pero no es único. $z$ puede tomar el valor de cualquiera de las dos raíces cuadradas de $b$. $z$ será un número real exáctamente cuando $b \in \mathbb{R}_{\geq 0}$,
+%  \item No existe, pues si $z$ es imaginario puro luego $z^2 \in \mathbb{R}_{\leq 0}$,
+%  \item Si existe, $z = \pm 2i$ satisface ambas condiciones.
+%\end{enumerate}
+
+%\
+
+\item Probar que si $z \in \mathbb{C}$ tiene m\'odulo $1$ entonces $z + z^{-1} \in \mathbb{R}$.
+
+\
+
+\textsc{Solución:} Sabemos que el inverso de $z$ se puede escribir $z^{-1} = \frac{\overline{z} }{|z|^2}$. Como por hipótesis tenemos que $|z|=1$, resulta $z^{-1} = \overline{z}$. Luego:
+
+$z + z^{-1} = z + \overline{z} = 2 \operatorname{Re} (z) \in \mathbb{R}$ \qed 
+
+\
+
+\item Probar que si $a\in \mathbb{R} \backslash \{0\} $ entonces el polinomio $x^2+a^2$ tiene siempre dos ra\'ices complejas distintas.
+
+\
+
+\textsc{Solución:} Se iguala a $0$ el polinomio:
+
+\begin{equation*}
+0 = x^2 + a^2 = x^2 - (ia)^2 = (x+ai)(x-ai) \implies \left\{ \begin{array}{rl}
+x_1 &= ai \\
+x_2 &= -ai
+\end{array} \right.
+\end{equation*}
+
+Se tendrá $x_1 \neq x_2 \Leftrightarrow a \neq 0$.
+
+\end{enumerate}
+
+%%============================================================
+%\subsection*{Ejercicios de repaso} Si ya hizo los ejercicios anteriores continue a la siguiente gu\'ia. Los ejercicios que siguen son similares a los anteriores y le pueden servir para practicar antes de los ex\'amenes.
+%%============================================================
+%
+%\
+%
+%\begin{enumerate}[resume]
+%
+%\item Expresar los siguientes n{\'u}meros complejos en la forma $a +i b$. Hallar el m{\'o}dulo, argumento y conjugado de cada uno de ellos y graficarlos.
+%
+%$$\textrm{(a)}\; (\cos\theta - i\sin\theta)^{-1},\; 0\leq\theta<2\pi, \quad \qquad 
+%\textrm{(b)} \; 3 i(1 + i)^4, \quad \qquad 
+%\textrm{(c)} \; \dfrac{1+i}{1-i}$$
+%
+%
+%\
+%
+%  \item Sea $z=2+\frac{1}{2}i$, calcular
+% \begin{multicols}{3}
+%\begin{enumerate}
+%\item $\dfrac{(z+i)(z-i)}{z^2+1}$.
+%\item $z-2 + \dfrac{1}{z-2}$.
+%\item $\left|\dfrac{1}{z-i}\right|^2$.
+%\end{enumerate}
+%\end{multicols}
+%
+%\
+%
+%\item Sea $z\in\mathbb{C}$. Calcular $\frac{1}{z}+\frac{1}{\overline{z}} - \frac{1}{|z|^2}$.
+%
+%\
+%
+%\item Mostrar que las soluciones de la ecuaci\'on $z^4 + (-4+2i)z^2 - 1 =0$ son exactamente 
+%$-1+\sqrt {1-i}$, $-1-\sqrt {1-i}$, $1+\sqrt {1-i}$ y $1-\sqrt {1-i}$.
+%
+%\
+%
+%\item\label{desT} (Desigualdad triangular) Sean $w$ y $z$ n\'umeros complejos. Probar que
+%\begin{eqnarray*}
+%  |w + z| \leq |w| + |z|,
+%\end{eqnarray*}
+%y la igualdad se cumple si y s\'olo si $w= r\cdot z$ para alg\'un n\'umero real $r \geq 0$.
+%En general, sean $z_1,z_2,\ldots, z_n$ n\'umeros complejos. Probar que 
+%\begin{eqnarray*}
+%  \left|\sum_{k=1}^{n} z_k\right| \leq \sum_{k=1}^{n} |z_k|.
+%\end{eqnarray*}
+%
+%\
+%
+%\item Sean $w$ y $z$ n\'umeros complejos. Entonces
+%\begin{eqnarray*}
+%  ||w|-|z|| \leq |w-z|.
+%\end{eqnarray*}
+%
+%\end{enumerate}
+
+
+\end{document} 

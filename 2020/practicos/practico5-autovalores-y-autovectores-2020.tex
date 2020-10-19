@@ -27,68 +27,64 @@
 	
 	\
 	
-	\noindent \textbf{Objetivos.} 
+\subsection*{Objetivos}
 	
 \begin{itemize}
 \item Familiarizarse con las nociones de autovalor y autovector de una matriz cuadrada.
 
-\item Aprender a calcular el polinomio caracter\' \i stico y los autovalores y autoespacios de una matriz.
+\item Aprender a calcular el polinomio caracter\' \i stico, los autovalores, y los autoespacios de una matriz.
 \end{itemize}
 	
 	\
 	
-	\noindent \textbf{Ejercicios.} Los ejercicios con el s\'imbolo $\textcircled{a}$ tienen una ayuda al final del archivo para que recurran a ella despu\'es de pensar un poco.
-
-\begin{enumerate} 
-
-
-\item Para cada una de las siguientes matrices, hallar sus autovalores reales, y para cada autovalor, dar una descripci\' on param\'etrica del autoespacio asociado sobre $\mathbb{R}$. 
-
-
-$$\textrm{(a)\; } \left[\begin{matrix}0 & 1\\ 0 & 0 \end{matrix} \right]
-\quad 
-\textrm{(b)\; } 
-\left[\begin{matrix}0 & -1\\ -1 & 0 \end{matrix} \right]
-\quad \textrm{(c)\; } \left[\begin{matrix}2 & 0 & 0\\ -1 & 1& -1\\ 0 & 0 & 2 \end{matrix} \right] , 
-\quad 
-\textrm{(d)\; } \begin{bmatrix} \lambda & 0 & 0 \\ 1 & \lambda & 0\\ 0 & 1 & \lambda \\ \end{bmatrix}, \; \lambda\in \mathbb R.$$
-
-
-$$(e)\begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}
-\quad
-\textrm{(f)\; } \left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \operatorname{sen}\theta\\ 0 & -\operatorname{sen}\theta & \cos\theta \end{matrix} \right], 0\leq \theta<2\pi
-$$
-
-\item Calcular los autovalores complejos de las matrices (e) y (f) del ejercicio anterior y para cada autovalor, dar una descripci\' on param\'etrica del autoespacio asociado sobre $\mathbb{C}$. 
-
-\
-
-\item[{\it Observaci\'on:}] Es oportuno destacar algunos fen\'omenos que podemos observar en los ejerecicios (1)-(2).
+\subsection*{Ejercicios} Los ejercicios con el s\'imbolo $\textcircled{a}$ tienen una ayuda al final del archivo para que recurran a ella despu\'es de pensar un poco.
 
 \
 
 \begin{enumerate}
- \item Una matriz con coeficientes reales puede no tener autovalores reales pero s\'i complejos (matriz $(e)$) o tener ambos (matriz $(f)$).
- 
- \
- 
- \item La cantidad de autovalores distintos es menor o igual al tama\~no de la matriz. Incluso puede tener un s\'olo autovalor y ser muy grande (matriz $(d)$ y m\'as generalmente la matriz $(e)$ del Ejercicio \eqref{mas}) o tener tantos como el tama\~no (matriz $(b)$ y $(f)$).
- 
- \
- 
- \item Para describir param\'etricamente los autoespacios podemos necesitar distintas cantidad de par\'ametros para los distintos autovalores (la matriz $(c)$). Esta cantidad de par\'ametros es lo que llamaremos {\it dimensi\'on}. 
-\end{enumerate}
 
+
+\item Para cada una de las siguientes matrices, hallar sus autovalores reales, y para cada autovalor, dar una descripci\' on param\'etrica del autoespacio asociado sobre $\mathbb{R}$.
+
+
+$$\textrm{(a)\; } \left[\begin{matrix} 2 & 1\\ -1 & 4 \end{matrix} \right],
+\quad
+\textrm{(b)\; }
+\left[\begin{matrix} 1 & 0\\ 1 & -2 \end{matrix} \right],
+\quad \textrm{(c)\; } \left[\begin{matrix}2 & 0 & 0\\ -1 & 1& -1\\ 0 & 0 & 2 \end{matrix} \right] ,
+\quad
+\textrm{(d)\; } \begin{bmatrix} \lambda & 0 & 0 \\ 1 & \lambda & 0\\ 0 & 1 & \lambda \\ \end{bmatrix}, \; \lambda\in \mathbb R,$$
+
+
+$$(e)\begin{bmatrix} 3 & -5 \\ 1 & -1 \end{bmatrix},
+\quad
+\textrm{(f)\; } \left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \operatorname{sen}\theta\\ 0 & -\operatorname{sen}\theta & \cos\theta \end{matrix} \right], 0\leq \theta<2\pi.
+$$
 
 \
 
-%\begin{enumerate}
-%\item $T:\mathbb{R}^2\to \mathbb{R}^2$, \ $T(x,y)=(y,0)$.
-%\item $T:\mathbb{R}^3\to \mathbb{R}^3$, \ $T(x,y,z)=(x+2z,-x-y+z,x+2y+z)$.
-%\item $T:\mathbb{R}^3\to \mathbb{R}^3$, \ %$T(x,y,z)=(4x+y+5z,4x-y+3z,-12x+y-11z)$.
-%\item $T:\mathbb{R}^4\to \mathbb{R}^4$, \ $T(x,y,z,w)=(2x-y,x+4y,z+3w,z-w)$.
-%\end{enumerate}
-		
+\item Calcular los autovalores complejos de las matrices (e) y (f) del ejercicio anterior, y para cada autovalor, dar una descripci\' on param\'etrica del autoespacio asociado sobre $\mathbb{C}$.
+
+
+\subsection*{Observaci\'{o}n} Es oportuno destacar algunos fen\'omenos que podemos observar en los ejerecicios (1)-(2).
+
+\
+
+\begin{itemize}
+ \item[(i)] Una matriz con coeficientes reales puede no tener autovalores reales pero s\'i complejos (matriz $(e)$) o tener ambos (matriz $(f)$).
+
+ \
+
+ \item[(ii)] Para describir param\'etricamente los autoespacios podemos necesitar distintas cantidades de par\'ametros para los distintos autovalores (la matriz $(c)$). Esta cantidad m\'inima de par\'ametros es lo que llamaremos {\it dimensi\'on}.
+
+ \
+
+ \item[(iii)] La cantidad de autovalores distintos es menor o igual al tama\~no de la matriz. Incluso puede tener un s\'olo autovalor (matriz $(d)$ y m\'as generalmente la matriz $(e)$ del Ejercicio \eqref{mas}) o tener tantos como el tama\~no (matriz $(b)$ y $(f)$).
+\end{itemize}
+
+% \
+% 
+% \item Probar que hay una \'unica matriz $A\in\mathbb{R}^{2\times 2}$ tal que $(1,1)$ es autovector de autovalor $2$, y $(-2,1)$ es autovector de autovalor $1$.
 
 \
 	
@@ -106,6 +102,13 @@ $$
 
 \
 
+\item Sea $A$ una matriz $n\times n$, y sea $f(x) = ax^2+bx+c$ un polinomio. Sea $f(A)$ la matriz $n \times n$ definida por
+$$f(A) = a A^2+bA+c\operatorname{Id}_n.$$
+Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)$ con autovalor $f(\lambda)$.
+
+\
+
+
 \item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
 
 \
@@ -115,109 +118,168 @@ $$
 
 \
 
-\item  Si $A$ es invertible todo autovector de $A$ es autovector de $A^{-1}$.
+\item  Si $A$ es invertible, entonces todo autovector de $A$ es autovector de $A^{-1}$.
 
-\
-
-\item Si $A$ es una matriz nilpotente entonces $0$ es el \' unico autovalor de $A$.
 \end{enumerate}
 
 \
 
-\item Sea $A$ una matriz $n\times n$ y sea $f(x) = ax^2+bx+c$ un polinomio. Sea $f(A)$ la matriz $n \times n$ definida por
-$$f(A) = a A^2+bA+c\operatorname{Id}_n.$$
-Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)$ con autovalor $f(\lambda)$.
+\item Probar que si $A$ es una matriz nilpotente entonces $0$ es el \' unico autovalor de $A$. Usar esto para deducir que la matriz $\operatorname{Id}-A$ es invertible (esta es otra demostraci\'on del Ejercicio (13) de la Pr\'actica 3). 
 
 \
 
-\item  Calcular el polinomio caracter\'istico de las matrices.
-\begin{align*}
-A_1=\begin{bmatrix} 0 & -a_0 \\ 1 & -a_1 
-\end{bmatrix}\quad\mbox{y}\quad
-A_2=\begin{bmatrix} 0 & 0 & -a_0 \\ 1 & 0 & -a_1 \\ 0 & 1 & -a_2 
-\end{bmatrix}
-\end{align*}
-donde $a_0, a_1, a_2$ son escalares.
+\item Sea $A$ una matriz cuadrada. Probar que el polinomio $\tilde\chi_A(x)=\det(x\operatorname{Id}-A)$ y el polinomio caracter\'istico de $A$ tienen las mismas ra\'ices.
 
+\subsection*{Observaci\'{o}n} Algunos libros definen el polinomio caracter\'istico de la matriz $A$ como $\tilde\chi_A(x)=\det(x\operatorname{Id}-A)$. Como vemos en el ejercicio anterior, ambas definiciones sirvena para encontrar autovalores de $A$. El polinomio $\tilde\chi_A(x)$ tiene la particularidad de ser m\'onico, o sea que el coeficiente del t\'ermino $x^n$ es $1$.
 
-Estas matrices forman parte de una familia de matrices similares. Es decir, para cada $n\in\mathbb{N}$ podr\'iamos definir una matriz $A_{n-1}$ de tama\~no $n\times n$ con una forma parecida. ?`Te imaginas c\'omo ser\'ia $A_3$, $A_4$, etc.? La respuesta est\'a en el ejercicio \eqref{matriz de un polinomio}.
-
-
-
+\end{enumerate}
 
 \
 
-\item\label{tr det}$\textcircled{a}$ Sea $A$ una matriz $n \times n$. Probar que el t\'ermino independiente del		polinomio caracter\'istico de $A$ es igual $(-1)^n\det(A)$ y que el coeficiente de grado $(n-1)$ es igual a $-\operatorname{Tr}(A)$.
-
-
-
-	\end{enumerate}
-
-\
-
-\subsection*{M\'as ejercicios}
+\subsection*{Ejercicios de repaso}
 Si ya hizo los ejercicios anteriores continue con la siguiente gu\'ia. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los ex\'amenes.
 
 \
 
 \begin{enumerate}[resume]
 
-\item\label{mas} Repetir los Ejercicio 1 y 2 con las matrices 
+\item\label{mas} Repetir los Ejercicio 1 y 2 con las matrices
 
 $$\textrm{(a)\; }\begin{bmatrix} 2 & 3 \\ -1 & 1
 \end{bmatrix}, \qquad
-\textrm{(b)\; }\begin{bmatrix} -9 & 4 & 4 \\ -8 & 3 & 4 \\ -16 & 8 & 7 \end{bmatrix}, \qquad \textrm{(c)\; } \left[\begin{matrix}4 & 4 & -12\\ 1 & -1 & 1\\ 5 & 3 & -11 \end{matrix} \right]$$
+\textrm{(b)\; }\begin{bmatrix} -9 & 4 & 4 \\ -8 & 3 & 4 \\ -16 & 8 & 7 \end{bmatrix}, \qquad \textrm{(c)\; } \left[\begin{matrix}4 & 4 & -12\\ 1 & -1 & 1\\ 5 & 3 & -11 \end{matrix} \right],$$
 
 $$
-\textrm{(d)\; } \left[\begin{matrix}2 & 1 & 0 & 0\\ -1 & 4 & 0 & 0\\ 0 & 0 & 1 & 1 \\ 0 & 0 & 3 & -1\end{matrix} \right], 
+\textrm{(d)\; } \left[\begin{matrix}2 & 1 & 0 & 0\\ -1 & 4 & 0 & 0\\ 0 & 0 & 1 & 1 \\ 0 & 0 & 3 & -1\end{matrix} \right],
 \quad \textrm{(e)\; } \begin{bmatrix} \lambda & 0 & 0 & \dots & 0  \\ 1 & \lambda & 0 &\dots & 0  \\ 0 & 1 & \lambda&  \dots & 0  \\ \vdots & \vdots & \quad & \ddots & \vdots\\ 0 &  0&   \dots & 1  & \lambda \end{bmatrix}, \; \lambda\in \mathbb R.
 $$
+
 \
 
-\item Sea $A$ una matriz $n\times n$ y sea $f(x) = a_0 + a_1 x + \dots + a_nx^n$, $n \geq 1$, $a_n \neq 0$, un polinomio. Sea $f(A)$ la matriz $n \times n$ definida por
+\item Sea $A$ una matriz $n\times n$, y sea $f(x) = a_0 + a_1 x + \dots + a_nx^n$, $n \geq 1$, $a_n \neq 0$, un polinomio. Sea $f(A)$ la matriz $n \times n$ definida por
 $$f(A) = a_0 \operatorname{Id}_n + a_1 A + \dots + a_n A^n.$$
-
 Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)$ con autovalor $f(\lambda)$.
 
 \
 
-\item Probar que hay una \'unica matriz $2\times 2$, $A$, con coeficientes reales tal que $(1,1)$ es autovector de autovalor $2$, y $(-2,1)$ es autovector de autovalor $1$. 
-
-\
-
-\item\label{matriz de un polinomio} $\textcircled{a}$ Sean $a_0, ..., a_{n-1}$ escalares. Calcular el polinomio caracter\'istico de
-\begin{align*}
-\begin{bmatrix} 0 & 0 & 0 &\dots & 0 & -a_0 \\ 1 & 0 & 0&  \dots & 0  & -a_1 \\ 0 & 1 & 0&  \dots & 0  & -a_2 \\ \vdots & \vdots & \ddots & \quad  & \vdots\\ 0 & 0 & 0 & \dots & 1  & -a_{n-1} 
-\end{bmatrix}.		
- \end{align*}
-Deducir que dado un polinomio $p(x)$ siempre existe una matriz $A$ tal que $\chi_A(x)=p(x)$.
-
-\
-
-\item\label{complejos} $\textcircled{a}$ Sea $A$ una matriz $n \times n$ con coeficientes en $\mathbb C$. Probar que si $c_1,\dots,c_n \in \mathbb C$ son los autovalores de $A$
-(posiblemente repetidos), entonces se cumple que:
-
-
+\item {\bf En este ejercicio consideraremos el polinomio $\tilde\chi_A(x)=\det(x\operatorname{Id}-A)$.}
 
 \begin{enumerate}
-	\item $\det(A)=c_1\cdots c_n$.
+ 
+\item  Calcular el polinomio $\tilde\chi_A(x)$ de las matrices.
+\begin{align*}
+A_2=\begin{bmatrix} 0 & a_0 \\ 1 & a_1
+\end{bmatrix},\quad\quad
+A_3=\begin{bmatrix} 0 & 0 & a_0 \\ 1 & 0 & a_1 \\ 0 & 1 & a_2
+\end{bmatrix}.
+\end{align*}
+donde $a_0, a_1, a_2$ son escalares.
+
+\
+\item\label{matriz de un polinomio} $\textcircled{a}$ Sean $a_0, ..., a_{n-1}$ escalares. Calcular el polinomio $\tilde\chi_A(x)$ de
+\begin{align*}
+\begin{bmatrix} 0 & 0 & 0 &\dots & 0 & a_0 \\ 1 & 0 & 0&  \dots & 0  & a_1 \\ 0 & 1 & 0&  \dots & 0  & a_2 \\ \vdots & \vdots & \ddots & \quad  & \vdots\\ 0 & 0 & 0 & \dots & 1  & a_{n-1}
+\end{bmatrix}.		
+ \end{align*}
+
+ \item Deducir que dado un m\'onico polinomio $p(x)$ siempre existe una matriz $A$ tal que $\tilde\chi_A(x)=p(x)$.
+
+
+\end{enumerate}
+
+\
+
+
+\item\label{tr det}$\textcircled{a}$ {\bf En este ejercicio consideraremos el polinomio $\tilde\chi_A(x)=\det(x\operatorname{Id}-A)$.}
+Sea $A$ una matriz $n \times n$ y $\tilde\chi_A(x)=(-1)^nx^n+a_{n-1}x^{n-1}+\cdots+a_0$. Probar que
+\begin{multicols}{2}
+\begin{enumerate}
+	\item $a_0=\det(A)$
 	
 	\
 	
-	\item $\operatorname{Tr}(A)=c_1+\cdots+c_n$.
+	\item $a_{n-1}=(-1)^{n-1}\operatorname{Tr}(A)$.
 \end{enumerate}
+\end{multicols}
 
-\end{enumerate}
-
-\subsection*{Ayudas}
-
-\eqref{tr det} Evaluar el polinomio caracter\'istico en un valor apropiado para obtener el t\'ermino independiente. Desarrollar el determinante por la primera columna y hacer inducci\'on, prestando atenci\'on a la potencias de $x$.
+% 
+% \
+% 
+% Demostraci\'on de la parte de la $\operatorname{Tr}$. Notemos que la matriz $x\operatorname{Id}-A$ tiene la siguiente forma
+% \begin{align*}
+% x\operatorname{Id}-A=
+% \left[\begin{matrix} x-a_{11}   & \cdots & -a_{1n}\\ -a_{21}  &  & \\ \vdots   & x\operatorname{Id}-A(1|1) &  \\ -a_{n1} &  &\end{matrix} \right].
+% \end{align*}
+% Si desarrollamos el determinante de $x\operatorname{Id}-A$ por la primera columna tenemos que 
+% \begin{align*}
+% \det(x\operatorname{Id}-A)&=\\
+% (x-a_{11})\det(x\operatorname{Id}-A(1|1))&-a_{21}\det((x\operatorname{Id}-A)(2|1))+\cdots+(-1)^n-a_{n1}\det((x\operatorname{Id}-A)(n|1)).
+% \end{align*}
+% 
+% Ahora observemos que $\det((x\operatorname{Id}-A)(2|1))$, ..., $\det((x\operatorname{Id}-A)(n|1))$ son polinomios de grado $n-2$. Entonces no contribuyen en el t\'ermino $n-1$ del polinomio $\det(x\operatorname{Id}-A)$. Entonces este t\'ermino es igual al t\'ermino $n-1$ del polin\'omio 
+% \begin{align*}
+% (x-a_{11})\det(x\operatorname{Id}-A(1|1))=x\det(x\operatorname{Id}-A(1|1))-a_{11}\det(x\operatorname{Id}-A(1|1)).
+% \end{align*}
+% De esta igualdad podemos ver que el t\'ermino $n-1$ es igual al t\'ermino $n-2$ de $\det(x\operatorname{Id}-A(1|1))$ m\'as el t\'ermino $n-1$ de $\det(x\operatorname{Id}-A(1|1))$ multiplicado por $-a_{11}$.
+% 
+% \
+% 
+% Dado que $\det(x\operatorname{Id}-A(1|1))$ es el polinomio caracter\'istico de la matriz $A(1|1)$ y esta es una matriz cuadrada $n-1$ podemos deducir que el t\'ermino $n$ es $-a_{11}$ y (haciendo inducci\'on) el t\'ermino $n-1$ es $-\operatorname{Tr}(A(1|1))=-a_{22}-\cdots -a_{nn}$. Sumando ambas cosas obtenemos lo que quer\'iamos.
 
 \
+
+\item\label{complejos} $\textcircled{a}$ {\bf En este ejercicio consideraremos el polinomio $\tilde\chi_A(x)=\det(x\operatorname{Id}-A)$.} Sea $A\in\mathbb{C}^{n\times n}$. Probar que si $\lambda_1,\dots,\lambda_n \in \mathbb C$ son los autovalores de $A$
+(posiblemente repetidos), entonces se cumple que:
+\begin{multicols}{2}
+\begin{enumerate}
+	\item $\det(A)=\lambda_1\cdots \lambda_n$.
+	
+	\
+	
+	\item $(-1)^n\operatorname{Tr}(A)=\lambda_1+\cdots+\lambda_n$.
+\end{enumerate}
+\end{multicols}
+
+\subsection*{Aclaraci\'on} 
+Los Ejercicio (11) y (12) (b) no son f\'aciles de probar y no son evaluable. Pero ya que enunciamos los items (a) es interesante saber que valen los items (b).
+% Demostraci\'on: Por hipotesis el polinomio caracter\'istico de $A$ se descompone de la siguiente manera:
+% \begin{align*}
+% \chi_A(x)=(x-\lambda_1)(x-\lambda_2)\cdots(x-\lambda_n).
+% \end{align*}
+% Entonces podemos usar esta igualdad para calcular de distintas maneras los t\'erminos $0$ y $n-1$ del polinomio caracter\'istico.
+% 
+% Por el ejercicio anterior el t\'ermino $0$ de $\chi_A(x)$ es $(-1)^{n}\det(A)$ y por la igualdad anterior es $(-1)^n\lambda_1\cdots\lambda_n$. De lo cual deducimos el item (a).
+% 
+% Tambi\'en por el ejercicio anterior $-\operatorname{Tr}(A)$ es el t\'ermino $n-1$ del polinomio caracter\'istico mientras que por la igualdad anterior podemos ver que es igual a $-\lambda_1-\lambda_2-\cdots-\lambda_n$. De lo cual deducimos (b).
+
+\end{enumerate}
+
+
+\
+
+\subsection*{Ayudas}
 
 \eqref{matriz de un polinomio} Desarrollar el determinante por la primera fila y hacer inducci\'on.
 
 \
 
-\eqref{complejos} Usar el Ejercicio \eqref{tr det}.
-\end{document} 
+\eqref{tr det} (a) Evaluar el polinomio $\tilde\chi_A(x)$ en un valor apropiado para obtener el t\'ermino independiente $a_0$.
+
+\
+
+\eqref{tr det} (b) Desarrollar el determinante de $x\operatorname{Id}-A$ por la primera columna y hacer inducci\'on en el tama\~no de la matriz. Es decir, primero 
+\begin{align*}
+\det(x\operatorname{Id}-A)&=\\
+(x-a_{11})\det((x\operatorname{Id}-A)(1|1))&-a_{21}\det((x\operatorname{Id}-A)(2|1))+\cdots+(-1)^n-a_{n1}\det((x\operatorname{Id}-A)(n|1)).
+\end{align*}
+De estos sumando el \'unico sumando donde hay $x^{n-1}$ es $(x-a_{11})\det((x\operatorname{Id}-A)(1|1))$. Adem\'as $\det((x\operatorname{Id}-A)(1|1))$ es el polinomio caracter\'istico de la submatriz $A(1|1)$. Podemos aplicar la hipotesis inductiva a esta matriz y deducir que el coeficiente de $x^{n-1}$ en el producto de polinomios $(x-a_{11})\det((x\operatorname{Id}-A)(1|1))$ es $(-1)^{n-1}\operatorname{Tr}(A)$.
+
+
+\
+
+\eqref{complejos} Sobre $\mathbb{C}$ podemos descomponer el polinomio $\tilde\chi_A(x)$ de la siguiente manera
+\begin{align*}
+\tilde\chi_A(x)=(x-\lambda_1)(x-\lambda_2)\cdots(x-\lambda_n).
+\end{align*} 
+Con esta igualdad podemos calcular los t\'erminos de grado cero y $n-1$ de $\tilde\chi_A(x)$ de dos maneras. La primera es la obtenida en el Ejercicio \eqref{tr det}. La segunda es usando la multiplicaci\'on del lado derecho. Para el t\'ermino de grado cero hay que evaluar en un valor apropiado. Para el t\'ermino de grado $n-1$ hay que notar que para obtener $x^{n-1}$ debemos elegir una $x$ de todos los factores salvo en uno elegir $-\lambda_i$. Igualando lo que obtengamos probamos el ejercicio.
+\end{document}
