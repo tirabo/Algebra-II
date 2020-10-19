@@ -4356,21 +4356,28 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 	
 	\begin{teorema} \label{mtrx-inv-equiv3} Sean $A,B \in M_n(\K)$, entonces
 		\begin{enumerate}
-			\item $\det (A B) = \det(A)\det(B)$. 
 			\item $A$ invertible si y solo si  $\det(A)\ne0$.
+			\item $\det (A B) = \det(A)\det(B)$. 
 		\end{enumerate}
 	\end{teorema}
 \begin{proof}
-	Ver el teorema \ref{th-dem-detAB}.
+	Ver el teoremas \ref{th-det-matriz-invertible} y \ref{th-dem-detAB} y .
 \end{proof}
 		\vskip .2cm
-	\begin{corolario}
-		$\det (AB) = \det(BA)$.
-	\end{corolario}
-	\begin{proof}
+	\begin{corolario}  Sean $A,B \in M_n(\K)$, entonces
+		\begin{enumerate}
+			\item si $A$ invertible $\det(A^{-1}) = \det(A)^{-1}$,
+			\item $\det (AB) = \det(BA)$.
+			\end{enumerate}
+	\end{corolario} 
+	\begin{proof} 
+
+		1. Por teorema \ref{mtrx-inv-equiv3}, $\det(AA^{-1}) = \det(A)\det(A^{-1})$. Como $AA^{-1} = \Id_n$, entonces $1 =\det(\Id_n) =  \det(AA^{-1}) = \det(A)\det(A^{-1})$. Por lo tanto  $\det(A^{-1}) = 1/\det(A)$.
+
+		2.  
 		$\det (AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)$.
 	\end{proof}
-	
+	\vskip .4cm 
 	\begin{definicion}\label{def-transpuesta-simetrica}
 		Sea $A$ una matriz $m \times n$ con coeficientes en $\K$. La \textit{transpuesta}\index{matriz!transpuesta} de $A$, denotada $A^\t$, es la matriz  $n \times m$ que en la fila $i$ y columna $j$ tiene el coeficiente $[A]_{ji}$. Es decir
 		\begin{equation*}
@@ -4392,7 +4399,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 	\end{ejemplo}
 	
 	
-	En  general $A^\t$ es la matriz cuyas filas son las columnas de $A$. 
+	En  general $A^\t$ es la matriz cuyas filas son las columnas de $A$ y viceversa. 
 	
 	\begin{ejemplo}
 		Si 
