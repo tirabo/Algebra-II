@@ -5289,99 +5289,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
                 (4)  $(-1).v +v = (-1).v +1.v = (-1+1).v$,  esto último es por la propiedad distributiva. Ahora bien $(-1+1).v = 0.v \overset{(2)}{=} 0$. Es decir   $(-1).v +v = 0$ y por lo tanto  $(-1).v$ es el opuesto de $v$ (que es $-v$).  
             
             \end{proof}
-        
-        \begin{definicion}
-            Sea $V$ espacio vectorial sobre $\K$ y $v_1,\ldots,v_n$ vectores en $V$. Dado $v \in V$, diremos que\textit{ $v$  es combinación lineal de los $v_1,\ldots,v_n$ }\index{combinación lineal} si existen escalares $\lambda_1,\ldots,\lambda_n$ en $\K$,  tal que 
-            $$
-            v = \lambda_1v_1+\cdots+\lambda_nv_n.
-            $$
-        \end{definicion}
-    
-    \begin{ejemplo}
-        \begin{enumerate}
-            \item Sean $v_1 = (1,0)$, $v_2 = (0,1)$ en $\C^2$ ¿es $v = (i,2)$ combinación lineal de $v_1,v_2$? La respuesta es sí, pues 
-            $$
-            v = iv_1+2v_2.
-            $$
-            Observar además que es la única combinación lineal posible, pues si 
-            $$
-            v = \lambda_1v_1+ \lambda_2 v_2,
-            $$
-            entonces
-            $$
-            (i,2) = (\lambda_1,0)+(0,\lambda_2) = (\lambda_1,\lambda_2),
-            $$
-            luego $\lambda_1=i$ y $\lambda_2= 2$.
-            
-            Puede ocurrir que un vector sea combinación lineal de otros vectores de varias formas diferentes. Por ejemplo,   si   $v = (i,2)$ y $v_1 = (1,0)$, $v_2 = (0,1)$, $v_3 = (1,1)$,  tenemos que
-            \begin{align*}
-                v &= iv_1+2v_2+0v_3,\quad\quad\quad\text{y también}\\
-                v &= (i-1)v_1 + v_2 + v_3.  
-            \end{align*}
-            
-            \item Sean $(0,1,0)$, $(0,1,1)$ en $\C^3$ ¿es $(1,1,0)$ combinación lineal de $(0,1,0)$, $(0,1,1)$? La respuesta es no, pues si 
-            $$
-            (1,1,0) = \lambda_1(0,1,0)+ \lambda_2(0,1,1) = (0,\lambda_1,0)+ (0,\lambda_2,\lambda_2) = (0,\lambda_1+\lambda_2,\lambda_2),
-            $$ 
-            luego, la primera coordenada nos dice que $1=0$, lo cual es absurdo. Por lo tanto,  no existe un par $\lambda_1,\lambda_2 \in \K$ tal que  $(1,1,0) = \lambda_1(0,1,0)+ (0,1,1)$.
-            
-        \end{enumerate}
-    \end{ejemplo}
-        
-        \vskip .3cm
-        
-        \begin{observacion}
-            La pregunta de si un vector $v =(b_1,\ldots,b_m) \in \K^m$ es combinación lineal de vectores $v_1,\ldots,v_n \in \K^m$ se resuelve con un sistema de ecuaciones lineales: si 
-            $$
-            v_i = (a_{1i},\ldots,a_{mi}), \quad \text{para $1 \le i \le n$,}
-            $$
-            entonces $v = \lambda_1v_1 + \cdots +\lambda_nv_n$ se traduce, en coordenadas, a
-            \begin{align*}
-                (b_1,\ldots,b_m) &= \lambda_1(a_{11},\ldots,a_{m1}) + \cdots +\lambda_n(a_{1n},\ldots,a_{mn}) \\
-                &= (\lambda_1a_{11} + \cdots+ \lambda_na_{1n}, \ldots, \lambda_1a_{m1} + \cdots+ \lambda_na_{mn}).
-            \end{align*}
-            Luego, $v$  es combinación lineal de los vectores $v_1,\ldots,v_n \in \K^m$ si y sólo si  el sistema de ecuaciones:
-            \begin{equation*}
-            \begin{matrix}
-            a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
-            \vdots&  &\vdots& &&  &\vdots \\
-            a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m,
-            \end{matrix}
-            \end{equation*}
-    
-            \noindent con incógnitas $\lambda_1,\ldots, \lambda_n$ tiene solución.
-        \end{observacion}
-        
-        
-        \begin{ejemplo} Demostrar que $(5,12,5)$  es combinación lineal de los vectores $(1,-5,2), (0,1,-1), (1,2,-1)$. Planteamos la ecuación:
-            \begin{align*}
-                (5,12,5) &= \lambda_1(1,-5,2)+\lambda_2 (0,1,-1)+\lambda_3 (1,2,-1) 
-                \\&= (\lambda_1+\lambda_3,-5\lambda_1+\lambda_2+2\lambda_3,2\lambda_1-\lambda_2-\lambda_3).
-            \end{align*}
-            Por consiguiente,  esta ecuación se resuelve con el siguiente sistema de ecuaciones
-            \begin{align*}
-                \lambda_1+\lambda_3 &= 5 \\
-                -5\lambda_1+\lambda_2+2\lambda_3 &= 12 \\
-                2\lambda_1-\lambda_2-\lambda_3 &= 5.
-            \end{align*}
-            Ahora bien, usando el método de Gauss
-                                \begin{multline*}
-            \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ -5 & 1 & 2 &  12 \\	2 & -1 & -1 &  5  \end{array}\right]
-            \stackrel[F_3 -2F_1]{F_2 + 5F_1}{\longrightarrow} 
-            \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & -1 & -3 &  -5  \end{array}\right]
-            \stackrel{F_3+F_1}{\longrightarrow} 
-            \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & 0 & 4 & 32  \end{array}\right]
-            \\
-            \stackrel{F_3/4}{\longrightarrow} 
-            \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 & 5 \\ 0 & 1 & 7 & 37 \\	0 & 0 & 1& 8  \end{array}\right]
-            \stackrel[F_2 -7F_3]{F_1 - F_3}{\longrightarrow}
-            \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 0 & -3 \\ 0 & 1 & 0 &  -19 \\	0 & 0 & 1& 8  \end{array}\right].
-            \end{multline*}	
-            Luego $\lambda_1= -3$, $\lambda_2 = -19$ y $\lambda_3=8$,  es decir
-            \begin{align*}
-            (5,12,5) &= -3(1,-5,2)-19 (0,1,-1)+8 (1,2,-1).
-            \end{align*}
-        \end{ejemplo}
+   
 \end{section}
     
 \begin{section}{Subespacios vectoriales}
@@ -5393,11 +5301,10 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         \end{enumerate}
     \end{definicion}
 
-    \begin{observacion}\label{obs-0-en-supescacio} Si $W$ subespacio de $V$,  entonces $0 \in W$: como  $W \ne \emptyset$, tomo  cualquier $w \in W$ y  por (a) tenemos que $0.w \in W$. Ya vimos, proposición \ref{prop-basicas-ev}(\ref{0*c=0}),  que $0.w =0$ y por lo tanto $0 \in W$. 
+    \begin{observacion}\label{obs-0-en-subespacio} Si $W$ subespacio de $V$,  entonces $0 \in W$: como  $W \ne \emptyset$, tomo  cualquier $w \in W$ y  por (a) tenemos que $0.w \in W$. Ya vimos en la proposición \ref{prop-basicas-ev}(\ref{0*c=0})  que $0.w =0$ y por lo tanto $0 \in W$. 
     \end{observacion}
 
-    \begin{observacion}\label{obs-comb-lin-en-subespacio}
-         Si $W$ subespacio de $V$ y $w_1,\ldots,w_k \in W$,  entonces cualquier combinación lineal de los $w_1,\ldots,w_k$ pertenece a $W$. Es decir, para cualesquiera $\lambda_1,\ldots,\lambda_k \in \K$, se cumple que  $\lambda_1w_1+\cdots\lambda_kw_k \in W$. Esto se debe a que $\lambda_iw_i \in W$ para $1\le i \le k$. Por un argumento inductivo, no es difícil probar que la suma de $k$ términos en $W$ es un elemento de $W$, por lo tanto $\lambda_1w_1+\cdots\lambda_kw_k \in W$.  
+    \begin{observacion}\label{obs-opuesto-en-subespacio} Si $W$ subespacio de $V$ y $w \in W$,  entonces $-w \in W$: hemos visto (proposición \ref{prop-basicas-ev}(\ref{-1*v=-v})) que  $(-1)w=-w $, luego por (b) de la definición de subespacio $-w \in W$.
     \end{observacion}
 
     \begin{teorema}
@@ -5406,12 +5313,11 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     \begin{proof} 
         Para que $W$ sea espacio vectorial sus operaciones deben satisfacer los axiomas de la definición de espacio vectorial (definición \ref{def-esp-vect}). 
         
-        Por la observación \ref{obs-0-en-supescacio}, el $0$ del espacio vectorial pertenece al subespacio. 
+        Por la observación \ref{obs-0-en-subespacio}, el $0$ del espacio vectorial pertenece al subespacio. 
         
-        Si $w \in W$,  $-w = (-1)w$ (proposición \ref{prop-basicas-ev}(\ref{-1*v=-v})).  Por la observación  \ref{obs-comb-lin-en-subespacio} concluimos que $-w\in W$. Es decir el opuesto de un vector en $W$ también pertenece a $W$. 
+       Por la observación  \ref{obs-opuesto-en-subespacio} concluimos que $-w\in W$. Es decir el opuesto de un vector en $W$ también pertenece a $W$. 
         
         Teniendo en cuenta estos dos hechos y que las operaciones en $V$ satisfacen los axiomas de la definición \ref{def-esp-vect} (y por lo tanto en $W$ también),  queda demostrado que $W$, con las operaciones heredadas de $V$, es espacio vectorial.  
-        
     \end{proof}
 
 
@@ -5481,6 +5387,101 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 
 \vskip .5cm
 
+     
+\begin{definicion}
+    Sea $V$ espacio vectorial sobre $\K$ y $v_1,\ldots,v_n$ vectores en $V$. Dado $v \in V$, diremos que\textit{ $v$  es combinación lineal de los $v_1,\ldots,v_n$ }\index{combinación lineal} si existen escalares $\lambda_1,\ldots,\lambda_n$ en $\K$,  tal que 
+    $$
+    v = \lambda_1v_1+\cdots+\lambda_nv_n.
+    $$
+\end{definicion}
+
+\begin{ejemplo} ${}^{}$
+\begin{enumerate}
+    \item Sean $v_1 = (1,0)$, $v_2 = (0,1)$ en $\C^2$ ¿es $v = (i,2)$ combinación lineal de $v_1,v_2$? La respuesta es sí, pues 
+    $$
+    v = iv_1+2v_2.
+    $$
+    Observar además que es la única combinación lineal posible, pues si 
+    $$
+    v = \lambda_1v_1+ \lambda_2 v_2,
+    $$
+    entonces
+    $$
+    (i,2) = (\lambda_1,0)+(0,\lambda_2) = (\lambda_1,\lambda_2),
+    $$
+    luego $\lambda_1=i$ y $\lambda_2= 2$.
+    
+    Puede ocurrir que un vector sea combinación lineal de otros vectores de varias formas diferentes. Por ejemplo,   si   $v = (i,2)$ y $v_1 = (1,0)$, $v_2 = (0,1)$, $v_3 = (1,1)$,  tenemos que
+    \begin{align*}
+        v &= iv_1+2v_2+0v_3,\quad\quad\quad\text{y también}\\
+        v &= (i-1)v_1 + v_2 + v_3.  
+    \end{align*}
+    
+    \item Sean $(0,1,0)$, $(0,1,1)$ en $\C^3$ ¿es $(1,1,0)$ combinación lineal de $(0,1,0)$, $(0,1,1)$? La respuesta es no, pues si 
+    $$
+    (1,1,0) = \lambda_1(0,1,0)+ \lambda_2(0,1,1) = (0,\lambda_1,0)+ (0,\lambda_2,\lambda_2) = (0,\lambda_1+\lambda_2,\lambda_2),
+    $$ 
+    luego, la primera coordenada nos dice que $1=0$, lo cual es absurdo. Por lo tanto,  no existe un par $\lambda_1,\lambda_2 \in \K$ tal que  $(1,1,0) = \lambda_1(0,1,0)+ (0,1,1)$.
+    
+\end{enumerate}
+\end{ejemplo}
+
+\vskip .3cm
+
+\begin{observacion}
+    La pregunta de si un vector $v =(b_1,\ldots,b_m) \in \K^m$ es combinación lineal de vectores $v_1,\ldots,v_n \in \K^m$ se resuelve con un sistema de ecuaciones lineales: si 
+    $$
+    v_i = (a_{1i},\ldots,a_{mi}), \quad \text{para $1 \le i \le n$,}
+    $$
+    entonces $v = \lambda_1v_1 + \cdots +\lambda_nv_n$ se traduce, en coordenadas, a
+    \begin{align*}
+        (b_1,\ldots,b_m) &= \lambda_1(a_{11},\ldots,a_{m1}) + \cdots +\lambda_n(a_{1n},\ldots,a_{mn}) \\
+        &= (\lambda_1a_{11} + \cdots+ \lambda_na_{1n}, \ldots, \lambda_1a_{m1} + \cdots+ \lambda_na_{mn}).
+    \end{align*}
+    Luego, $v$  es combinación lineal de los vectores $v_1,\ldots,v_n \in \K^m$ si y sólo si  el sistema de ecuaciones:
+    \begin{equation*}
+    \begin{matrix}
+    a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
+    \vdots&  &\vdots& &&  &\vdots \\
+    a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m,
+    \end{matrix}
+    \end{equation*}
+
+    \noindent con incógnitas $\lambda_1,\ldots, \lambda_n$ tiene solución.
+\end{observacion}
+
+
+\begin{ejemplo} Demostrar que $(5,12,5)$  es combinación lineal de los vectores $(1,-5,2), (0,1,-1), (1,2,-1)$. Planteamos la ecuación:
+    \begin{align*}
+        (5,12,5) &= \lambda_1(1,-5,2)+\lambda_2 (0,1,-1)+\lambda_3 (1,2,-1) 
+        \\&= (\lambda_1+\lambda_3,-5\lambda_1+\lambda_2+2\lambda_3,2\lambda_1-\lambda_2-\lambda_3).
+    \end{align*}
+    Por consiguiente,  esta ecuación se resuelve con el siguiente sistema de ecuaciones
+    \begin{align*}
+        \lambda_1+\lambda_3 &= 5 \\
+        -5\lambda_1+\lambda_2+2\lambda_3 &= 12 \\
+        2\lambda_1-\lambda_2-\lambda_3 &= 5.
+    \end{align*}
+    Ahora bien, usando el método de Gauss
+                        \begin{multline*}
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ -5 & 1 & 2 &  12 \\	2 & -1 & -1 &  5  \end{array}\right]
+    \stackrel[F_3 -2F_1]{F_2 + 5F_1}{\longrightarrow} 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & -1 & -3 &  -5  \end{array}\right]
+    \stackrel{F_3+F_1}{\longrightarrow} 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & 0 & 4 & 32  \end{array}\right]
+    \\
+    \stackrel{F_3/4}{\longrightarrow} 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 & 5 \\ 0 & 1 & 7 & 37 \\	0 & 0 & 1& 8  \end{array}\right]
+    \stackrel[F_2 -7F_3]{F_1 - F_3}{\longrightarrow}
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 0 & -3 \\ 0 & 1 & 0 &  -19 \\	0 & 0 & 1& 8  \end{array}\right].
+    \end{multline*}	
+    Luego $\lambda_1= -3$, $\lambda_2 = -19$ y $\lambda_3=8$,  es decir
+    \begin{align*}
+    (5,12,5) &= -3(1,-5,2)-19 (0,1,-1)+8 (1,2,-1).
+    \end{align*}
+\end{ejemplo}
+
+\vskip .4cm 
     \begin{teorema}
     Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_k \in V$. Entonces
     $$
@@ -5516,7 +5517,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         W &=&  \operatorname{span}\left\{ v_1,\ldots,v_k\right\}.&
         \end{array}
     \end{equation*}
-    Además, en este caso, diremos que el conjunto $S = \left\{ v_1,\ldots,v_k \right\}$ \textit{genera} al subespacio $W$.
+    Además, en este caso, diremos que el conjunto $S = \left\{ v_1,\ldots,v_k \right\}$ \textit{genera} al subespacio $W$  o que los vectores $v_1,\ldots,v_k$ \textit{generan} $W$.
     
 \end{definicion}
 
