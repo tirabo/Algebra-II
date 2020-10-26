@@ -5616,8 +5616,8 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
             
             \item Sea $V = M_2(\C)$ y sean 
             \begin{equation*}
-                W_1 = \left\{\begin{bmatrix} x&y\\z&0 \end{bmatrix}: x,y,z \in \C \right\}, 
-                \qquad W_2 = \left\{\begin{bmatrix} x&0\\0&y \end{bmatrix}: x,y \in \C \right\}.
+                W_1 = \left\{\begin{bmatrix} x_1&x_2\\x_3&0 \end{bmatrix}: x_1,x_2,x_3 \in \C \right\}, 
+                \qquad W_2 = \left\{\begin{bmatrix} y_1&0\\0&y_2 \end{bmatrix}: y_1,y_2 \in \C \right\}.
             \end{equation*} 
             Es claro que cada uno de estos conjuntos es un subespacio, pues,
             $$
@@ -5630,17 +5630,17 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
             Entonces, $W_1 + W_2 = V$. En  efecto, sea 
             $\begin{bmatrix} a&b\\c&d\end{bmatrix} \in V$, entonces
             $$
-            \begin{bmatrix} a&b\\c&d\end{bmatrix} =  \begin{bmatrix} x_1&y_1\\z_1&0 \end{bmatrix} + 
-            \begin{bmatrix} x_2&0\\0&y_2 \end{bmatrix} =
-            \begin{bmatrix} x_1+x_2&y_1\\z_1&y_2 \end{bmatrix},
+            \begin{bmatrix} a&b\\c&d\end{bmatrix} =  \begin{bmatrix} x_1&x_2\\x_3&0 \end{bmatrix} + 
+            \begin{bmatrix} y_1&0\\0&y_2 \end{bmatrix} =
+            \begin{bmatrix} x_1+y_1&x_2\\x_3&y_2 \end{bmatrix},
             $$
-            y esto se cumple  tomando $x_1 = a, x_2 =0,  y_1 = b, z_1= c, y_2 =d$.
+            y esto se cumple  tomando $x_1 = a, y_1 =0,  x_2 = b, x_3= c, y_2 =d$.
             
             Por otro lado
             \begin{align*}
                 W_1 \cap W_2 &= \left\{\begin{bmatrix} a&b\\c&d\end{bmatrix}:  \begin{bmatrix} a&b\\c&d\end{bmatrix} \in W_1, \begin{bmatrix} a&b\\c&d\end{bmatrix} \in W_2\right\} \\
                 &= \left\{\begin{bmatrix} a&b\\c&d\end{bmatrix}:  \begin{matrix}
-                (a =x_1, b = y_1, c = z_1,d =0)\wedge \\(a = x_2, b=c=0, d= y_2)
+                (a =x_1, b = x_2, c = x_3,d =0)\wedge \\(a = y_1, b=c=0, d= y_2)
                 \end{matrix} \right\} \\
                 &= \left\{\begin{bmatrix} a&0\\0&0\end{bmatrix}:  a \in \C\right\} .
             \end{align*}
@@ -5896,12 +5896,14 @@ Si $S$ es un conjunto finito denotemos $|S|$  al \textit{cardinal} de  $S$ es de
         Sea $\mathcal B'$  otra base de $V$, como $\mathcal B$  genera $V$ y  $\mathcal B'$ es  un conjunto LI, entonces, por el teorema anterior, $|\mathcal B'| \le m$. Sea $n = |\mathcal B'|$,  entonces $n \le m$. Por otro lado $\mathcal B'$ es base y, por lo tanto,  genera $V$ y  $\mathcal B$ es LI, luego, por el teorema anterior nuevamente,  $m \le n$, y en consecuencia $m=n$.
 \end{proof}
 
+Hemos demostrado, si $V$  es un espacio vectorial de dimensión finita y $\mathcal B,\mathcal B' $ dos bases de $V$,  entonces $|\mathcal B|=|\mathcal B'|$. Esto nos permite hacer la siguiente definición. 
+
+
 \begin{definicion}
     Sea $V$ espacio vectorial de dimensión finita. Diremos que $n$  es \textit{la dimensión de $V$}\index{dimensión de un espacio vectorial} y  denotaremos $\dim V =n$,  si existe una base de $V$  de $n$  vectores. Si $V = \{0\}$,  entonces definimos $\dim V =0$.
 \end{definicion}
 
 
-Como ya demostramos, si $V$  es un espacio vectorial de dimensión finita y $\mathcal B,\mathcal B' $ dos bases de $V$,  entonces $|\mathcal B|=|\mathcal B'|$.
 
 
 
