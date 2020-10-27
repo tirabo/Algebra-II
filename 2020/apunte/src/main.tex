@@ -5649,6 +5649,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     \end{ejemplo}
 
 \vskip .3cm
+Finalmente, daremos un ejemplo muy importante. 
 
     \begin{definicion}\label{espacio-fila-columna}
         Sea $A = [a_{ij}] \in M_{m \times n}(\K)$. El \textit{vector fila $i$} es el vector  $(a_{i1},\ldots,a_{in}) \in \K^n$. El \textit{espacio fila} de $A$ es el subespacio de $\K^n$ generado por los $m$ vectores fila de $A$.  De forma análoga, se define  el vector columna $i$ al vector $(a_{11},\ldots,a_{mi}) \in \K^m$ y  el \textit{espacio columna} de $A$ es el subespacio de $\K^m$ generado por los $n$ vectores columna de $A$.  
@@ -5662,55 +5663,56 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         \end{bmatrix},
         $$
         entonces, como vimos en el ejemplo \ref{ejemplos2}(\ref{ejemplos2-1}), el espacio fila es
-        \begin{equation*}
-        W = \left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
-        \end{equation*}
+        \begin{align*}
+        W &= \left\{(\lambda_1,2\lambda_1,\lambda_2,3\lambda_1+4\lambda_2,\lambda_3)\in \C^5: \lambda_1,\lambda_2, \lambda_3 \in \C \right\} \\
+        &=\left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
+        \end{align*}
     \end{ejemplo}
 \end{section}		
         
 \begin{section}{Bases y dimensión}
     \begin{definicion}
-        Sea $V$ un espacio vectorial sobre $\K$. Un subconjunto $S$ de $V$ se dice \textit{linealmente dependiente}\index{linealmente dependiente} (o simplemente, \textit{dependiente}) si existen vectores distintos $v_1,\ldots,v_n \in S$  y escalares $\lambda_1,\ldots,\lambda_n$ de $\K$, no todos nulos, tales que 	
+        Sea $V$ un espacio vectorial sobre $\K$. Un subconjunto $S$ de $V$ se dice \textit{linealmente dependiente}\index{linealmente dependiente} (o simplemente, \textit{LD} o \textit{dependiente}) si existen vectores distintos $v_1,\ldots,v_n \in S$  y escalares $\lambda_1,\ldots,\lambda_n$ de $\K$, no todos nulos, tales que 	
         \begin{equation*}
             \lambda_1v_1+\cdots+\lambda_nv_n=0.
         \end{equation*}
-        Un conjunto que no es linealmente dependiente se dice \textit{linealmente independiente}\index{linealmente independiente} (o simplemente, \textit{independiente}).
+        Un conjunto que no es linealmente dependiente se dice \textit{linealmente independiente}\index{linealmente independiente} (o simplemente, \textit{LI} o \textit{independiente}).
         
         Si el conjunto $S$ tiene solo un número finito de vectores $v_1,\ldots,v_n$, se dice,
-        a veces, que los $v_1,\ldots,v_n$ son dependientes (o independientes), en vez de decir
-        que $S$ es dependiente (o independiente).
+        a veces, que los $v_1,\ldots,v_n$ son LD (o LI), en vez de decir
+        que $S$ es LD (o LI, respectivamente).
         
-        Cuando un conjunto $S$ es dependiente (independiente), diremos,  para simplificar,  que $S$ es LD (resp. LI).
     \end{definicion}
 
 \begin{observacion} Por definición, un conjunto $S = \left\{v_1,\ldots,v_n \right\}$ es independiente si se cumple cualquiera de las dos afirmaciones siguientes:
-    \begin{enumerate}[label=(\alph*),ref=\alph*]
-        \item\label{li1} dados $\lambda_1,\ldots,\lambda_n$ en $\K$ tal que $\lambda_i \ne 0$ para algún $i$,  entonces  $\lambda_1v_1+\cdots+\lambda_nv_n\not=0$, o ,
-        \item \label{li2}dados $\lambda_1,\ldots,\lambda_n$ en $\K$ tal que $\lambda_1v_1+\cdots+\lambda_nv_n=0$,  entonces $0=\lambda_1=\cdots=\lambda_n$
+    \begin{enumerate}
+        \item[(LI-1)]\label{li1} $\forall\,\lambda_1,\ldots,\lambda_n$ en $\K$ tal que $\lambda_i \ne 0$ para algún $i$,  entonces  $\lambda_1v_1+\cdots+\lambda_nv_n\not=0$, o ,
+        \item[(LI-2)] \label{li2} si $\lambda_1,\ldots,\lambda_n$ en $\K$ tales que $\lambda_1v_1+\cdots+\lambda_nv_n=0$,  entonces $0=\lambda_1=\cdots=\lambda_n$
     \end{enumerate}
     El enunciado (\ref{li1}) se deduce intuitivamente negando  la definición de linealmente dependiente y el resultado (\ref{li2}) es el contrarrecíproco  de (\ref{li1}).
     
     
-Para los interesados, esto es un ejercicio de lógica: ser linealmente dependiente se puede enunciar 
-$$
-(\exists \lambda_1,\ldots,\lambda_n: (\exists i: \lambda_i \ne 0) \wedge (\lambda_1v_1+\cdots+\lambda_nv_n=0 )),
-$$
-luego, su negación  (es decir ser LI), es 
-$$
-(\forall \lambda_1,\ldots,\lambda_n:  (\exists i: \lambda_i \ne 0) \Rightarrow \lambda_1v_1+\cdots+\lambda_nv_n\ne 0),
-$$
-(observar  que $\neg(P \wedge Q) \,\equiv\, \neg P \vee \neg Q \,\equiv\, P \Rightarrow \neg Q$). 
+Para los interesados, lo anterior es un ejercicio de lógica: ser LD se puede enunciar 
+\begin{equation*}\label{eq-ld}
+    (\exists \lambda_1,\ldots,\lambda_n: (\exists i: \lambda_i \ne 0) \wedge (\lambda_1v_1+\cdots+\lambda_nv_n=0 )).
+\tag{LD}
+\end{equation*}
 
-Como $(P \Rightarrow Q) \equiv (\neg Q \Rightarrow \neg P)$, la propiedad anterior  es equivalente a
-$$
-(\forall \lambda_1,\ldots,\lambda_n:  (\lambda_1v_1+\cdots+\lambda_nv_n=0 ) \Rightarrow (\forall i: \lambda_i = 0)),
-$$	
+Recordar que $\neg(\exists \lambda: P \wedge Q) \,\equiv\, (\forall \lambda: \neg P \vee \neg Q)$ y  que  $\neg P \vee \neg Q\,\equiv\, P \Rightarrow \neg Q$. Luego  la negación de (\ref{eq-ld}), es decir ser LI, es 
+\begin{equation*}\label{eq-li-1}
+    (\forall \lambda_1,\ldots,\lambda_n:  (\exists i: \lambda_i \ne 0) \Rightarrow \lambda_1v_1+\cdots+\lambda_nv_n\ne 0). \tag{LI-1}
+\end{equation*}
+
+Como $(P \Rightarrow Q) \equiv (\neg Q \Rightarrow \neg P)$, el contrarrecíproco, la propiedad (\ref{eq-li-1})  es equivalente a
+\begin{equation*}
+(\forall \lambda_1,\ldots,\lambda_n:  (\lambda_1v_1+\cdots+\lambda_nv_n=0 ) \Rightarrow (\forall i: \lambda_i = 0)). \tag{LI-2}
+\end{equation*}
     
 \end{observacion}
 
-\vskip .5cm
+\vskip .2cm
 
-Las siguientes afirmaciones son consecuencias fáciles de la definición.
+Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la definición.
 \begin{enumerate}
     \item Todo conjunto que contiene un conjunto linealmente dependiente es linealmente dependiente.
     \item  Todo subconjunto de un conjunto linealmente independiente es linealmente independiente.
