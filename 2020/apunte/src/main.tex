@@ -6281,233 +6281,6 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 
 
 
-
-    \begin{section}{Coordenadas}
-        Una de las características útiles de una base $\mathcal B$ en un espacio vectorial  $V$ de dimensión $n$ es que permite introducir coordenadas en $V$ en forma análoga a las ``coordenadas naturales'', $x_i$, de un vector $v = (x_l,\ldots, x_n)$ en el espacio $\K^n$. En este esquema, las coordenadas de un vector $v$ en $V$, respecto de la base $\mathcal B$, serán los escalares que sirven para expresar $v$ como combinación lineal de los vectores de la base. En  el caso  de la base canónica $e_1,\ldots,e_n$ de $\K^n$ tenemos
-        $$
-        v = (x_1,\ldots,x_n) = \sum_{i=1}^{n} x_ie_i.
-        $$
-        por lo tanto $x_i$  es la coordenada $i$-ésima de $v$ respecto a la base canónica. 
-        
-        En  forma análoga veremos que si $v_1,\ldots,v_n$  es una base de $V$,  entonces existe una única forma de  escribir 
-        $$
-        v =  \sum_{i=1}^{n} x_iv_i,
-        $$ 
-        y los valores  $x_i$  serán las \textit{coordenadas de $v$}\index{coordenadas de un vector} en la base dada. 
-        
-        \begin{definicion}
-            Si $V$ es un espacio vectorial de dimensión finita, una \textit{base ordenada}\index{base ordenada} de $V$ es una sucesión finita de vectores linealmente independiente y que genera $V$.
-        \end{definicion}
-        
-        
-        La diferencia entre la definición de ``base'' y la de ``base ordenada'',  es que en la última es  importante el orden de los vectores de la base. Si la sucesión $v_1,\ldots,v_n$ es una base ordenada de $V$, entonces el conjunto $\{v_1,\ldots,v_n\}$ es una base de $V$. La base ordenada es el conjunto, juntamente con el orden dado. Se incurrirá en un pequeño abuso de notación y se escribirá
-        $$
-        \mathcal{B} = \{v_1,\ldots,v_n\}
-        $$
-        diciendo que $\mathcal{B}$ es una base ordenada de $V$.
-        
-        \begin{proposicion}
-            Sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$. Entonces, para cada $v \in V$,  existen únicos $x_1,\ldots,x_n \in \K$ tales que $$v =   x_1v_1 + \cdots +x_nv_n.$$
-        \end{proposicion}
-        \begin{proof}
-            Como $v_1,\ldots,v_n$  generan $V$,  es claro que existen $x_1,\ldots,x_n \in \K$ tales que $v =   x_1v_1 + \cdots +x_nv_n$. Sean $y_1,\ldots,y_n \in \K$ tales que $v =   y_1v_1 + \cdots +y_nv_n$. Veremos que $x_i = y_i$ para $1 \le i \le n$.
-            
-            Como $v =  \sum_{i=1}^{n} x_iv_i$ y $v =  \sum_{i=1}^{n} y_iv_i$,  restando miembro a miembro obtenemos 
-            $$
-            0 =   \sum_{i=1}^{n} (x_i-y_i)v_i.
-            $$
-            Ahora bien,  $v_1,\ldots,v_n$ son  LI, por lo tanto todos los coeficientes de la ecuación anterior son nulos, es decir $x_i-y_i=0$ para $1 \le i \le n$ y entonces $x_i = y_i$ para $1 \le i \le n$.
-        \end{proof}
-    
-    La proposición anterior permite asociar a cada vector una $n$-tupla: sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, si $v \in V$ y $$v =   x_1v_1 + \cdots +x_nv_n,$$  entonces \textit{$x_i$ es la coordenada $i$-ésima de $v$} y denotamos
-    $$
-    v = (x_1,\ldots,x_n)_{\mathcal B}.
-    $$
-    También nos será útil describir a $v$ como una matriz $n \times 1$: \textit{la matriz de $v$  en la base  $\mathcal{B}$}  es
-    $$
-    [v]_\mathcal{B} = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}.
-    $$
-    
-    \begin{ejemplo}
-        Sea $\mathcal B = \{(1,-1),(2,3)\}$ base ordenada de $\R^2$. Encontrar las coordenadas  de $(1,0)$ y $(0,1)$ en la base $\mathcal B$.
-    \end{ejemplo}
-    \begin{proof}[Solución] Debemos encontrar $x_1, x_2 \in \R$ tal que 
-        $$
-        (1,0) = x_1(1,-1)+ x_2(2,3).
-        $$
-        Es decir 
-        \begin{align*}
-            x_1+ 2x_2 &= 1\\
-            -x_1 + 3x_2 &= 0.
-        \end{align*}
-        Resolviendo el sistema de ecuaciones obtenemos $x_1 = \frac35$ y $x_2 = \frac15$,  es decir
-        $$
-        (1,0) =\; \frac35(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (1,0) = (\;\frac35,\frac15)_{\mathcal B}.
-        $$ 
-        De forma análoga podemos ver que
-        $$
-        (0,1) = -\frac25(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (0,1) = (-\frac25,\frac15)_{\mathcal B}.
-        $$
-    \end{proof}
-    
-    \begin{proposicion}\label{vectorbase->lineal}
-        Sea $\mathcal{B}=\{v_1,\ldots,v_n\}$ una base ordenada de $V$ un $\K$-espacio vectorial. Entonces
-        \begin{enumerate}
-            \item $[v + w]_\mathcal{B} = [v]_\mathcal{B} +[w]_\mathcal{B}$, para $v,w \in V$,
-            \item $[\lambda v]_\mathcal{B} = \lambda[v]_\mathcal{B}$, para $\lambda \in \K$ y $v \in V$.
-        \end{enumerate}
-    \end{proposicion} 
-    \begin{proof}
-        (1) Si $v = x_1v_1 + \cdots +x_nv_n$ y $w = y_1v_1 + \cdots +y_nv_n$, entonces 
-        $$
-        v + w = (x_1+y_1)v_1 + \cdots +(x_n+y_n)v_n,
-        $$
-        luego
-        $$
-        [v + w]_\mathcal{B} = \begin{bmatrix}x_1+y_1 \\ \vdots \\ x_n+y_n\end{bmatrix}
-        = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}+\begin{bmatrix}y_1 \\ \vdots \\ y_n\end{bmatrix} = [v]_\mathcal{B} +[w]_\mathcal{B}.
-        $$
-        
-        (2) Si $v = x_1v_1 + \cdots +x_nv_n$ y $\ \in \K$, entonces 
-        $$
-        \lambda v = (\lambda x_1)v_1 + \cdots +(\lambda x_n)v_n,
-        $$
-        luego
-        $$
-        [\lambda v ]_\mathcal{B} = \begin{bmatrix}\lambda x_1 \\ \vdots \\ \lambda x_n\end{bmatrix}
-        = \lambda \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix} = \lambda [v]_\mathcal{B}.
-        $$
-    \end{proof}
-    
-    \begin{teorema}
-            Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $	\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces existe una única matriz $P$ de orden $n \times n$, invertible, tal que para todo $v \in V$
-            \begin{enumerate}
-                \item $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y
-                \item $[v]_\mathcal{B'} = P^{-1}[v]_\mathcal{B}$.
-            \end{enumerate} 
-            Las columnas de $P$ están dadas por
-            $$
-            C_j = [v'_j]_\mathcal{B},\qquad 1 \le j \le n,
-            $$
-            es decir, los coeficientes de la columna $j$ de $P$ son las coordenadas de $v'_j$ en la base $\mathcal{B}$. 
-    \end{teorema}
-    \begin{proof} (1) Tenemos
-        \begin{align*}
-            v &=   x_1v_1 + \cdots +x_nv_n, \\
-            v &=  x'_1v'_1 + \cdots +x'_nv'_n.
-        \end{align*}
-         También podemos escribir cada $v'_j$ en coordenadas respecto a $\mathcal B$:
-         $$
-         v'_j =  p_{1j}v_1 + \cdots +p_{nj}v_n, \qquad  1 \le j \le n.
-         $$ 
-        Luego, 
-        \begin{align*}
-             \sum_{i=1}^{n}x_iv_i &=  \sum_{j=1}^{n}x'_jv'_j \\
-            &=  \sum_{j=1}^{n}x'_j(\sum_{i=1}^{n}p_{ij}v_i) \\
-            &=  \sum_{i=1}^{n}\sum_{j=1}^{n}x'_jp_{ij}v_i \\
-            &=  \sum_{i=1}^{n}(\sum_{j=1}^{n}p_{ij}x'_j)v_i.			
-        \end{align*}
-        Es decir, $x_i = \sum_{j=1}^{n}p_{ij}x'_j$. Por lo tanto, si $P = [p_{ij}]$ tenemos que
-        $$
-        \begin{bmatrix}x_1 \\ x_2\\ \vdots \\ x_n\end{bmatrix} = 
-        \begin{bmatrix}p_{11} &p_{12} & \ldots & p_{1n} \\p_{21} &p_{22} & \ldots & p_{2n} \\ \vdots &\vdots && \vdots\\ p_{n1} &p_{n2} & \ldots & p_{nn}\end{bmatrix}
-         \begin{bmatrix}x'_1 \\ x'_2\\ \vdots \\ x'_n\end{bmatrix}.
-        $$
-        
-        Veamos que $P$  es invertible: sea $(x_1,\ldots,x_n)$ solución del sistema de ecuaciones $PX =0$. Eso implica que si $v =\sum x_i v'_i$,  entonces $P[v]_{\mathcal B'}=0$.     Eso quiere decir que el vector  escrito en la base $\mathcal B$ tiene coordenadas $0$,  es decir $v = \sum 0. v_i =0$ y entonces $v = \sum 0. v'_i$ por la unicidad de escritura. Por lo tanto, la única solución del sistema $PX=0$ es 0 y en consecuencia $P$  es invertible.
-        
-        (2)  Como $P$ es invertible, multiplicamos por $P^{-1}$  a izquierda la ecuación $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y obtenemos el resultado.
-    \end{proof}
-
-    Observemos que, por simetría,  los coeficientes de la columna $j$ de $P^{-1}$ son las coordenadas de $v_j$ en la base $\mathcal{B'}$. 
-    
-    \begin{definicion} 
-        Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces la matriz
-        $$
-        P = \begin{bmatrix}
-         C_1 &C_2 &\cdots &C_n
-        \end{bmatrix}
-        $$
-        con 
-        $$
-            C_j = [v'_j]_\mathcal{B},\qquad 1 \le j \le n,
-        $$
-        es la matriz de \textit{cambio de coordenadas}\index{cambiode coordenadas} de la base $\mathcal{B'}$  a la base $\mathcal{B}$.
-    \end{definicion}
-    
-    
-    \begin{ejemplo}
-         $\mathcal{B} = \{v_1,v_2,v_3 \}=\{(1,0,-1),(1,1,1),(1,0,0) \}$ en $\R^3$.
-        \begin{enumerate}
-            \item Probar que $\mathcal{B}$ es una base de $\R^3$, y 
-            \item encontrar las coordenadas del vector  $(2,3,5)$ respecto a la base  $\mathcal{B}$. 
-        \end{enumerate}
-    \end{ejemplo}
-\begin{proof}[Solución]
-    (1) Sea $A$ la matriz cuyas filas son los vectores de $\mathcal{B}$ :
-    $$
-    A = \begin{bmatrix} 1&0&-1\\1&1&1\\1&0&0	\end{bmatrix}.
-    $$
-    Entonces,  calculando el determinante  por desarrollo de la última fila, obtenemos
-    $$
-    \det A = 1.(-1)^{3+1}. 
-    \left| \begin{matrix} 0&-1\\1&1	\end{matrix} \right| = 1.1.1 =1.
-    $$ 
-    Por  lo tanto $A$ es invertible y en consecuencia el espacio fila de $A$ es $\R^3$. Como $\mathcal{B}$ es un conjunto de 3  generadores de  $\R^3$, $\mathcal{B}$ es base.
-    
-    (2) Si $x_1,x_2,x_3$  son las coordenadas de $(2,3,5)$ respecto a la base  $\mathcal{B}$, entonces
-    $$
-    (2,3,5) = x_1(1,0,-1)+x_2(1,1,1)+x_3(1,0,0)
-    $$
-    y esto es un sistema de tres ecuaciones y tres incógnitas.  Resolviendo este sistema encontramos la solución buscada. 
-    
-    Sin embargo,  nos interesa conocer una solución que sirva para cualquier vector, no solo para $(2,3,5)$, es decir buscamos la matriz $P = [p_{ij}]$ de cambio de coordenadas de la base canónica a la base $\mathcal B$. En particular,  esta matriz cumple 
-    $$
-    \begin{bmatrix} x_1\\x_2\\x_3 \end{bmatrix} = 
-    \begin{bmatrix}p_{11} &p_{12}& p_{13} \\p_{21} &p_{22} & p_{23}\\ p_{31} &p_{32}& p_{33}\end{bmatrix}
-    \begin{bmatrix} 2\\3\\5 \end{bmatrix}.
-    $$
-    con $(x_1,x_2,x_3)_{\mathcal B} = (2,3,5)$.
-    
-    
-    Ahora bien, sabemos que $P^{-1}$ es la matriz cuya columna $j$ es la matriz de $v_j$ en la base canónica (fácil de calcular) y luego calculamos su inversa que es $P$.
-    
-    Por lo dicho en el párrafo anterior, $P^{-1}$  es la matriz cuya  columna $1$ es $(1,0,-1)$,  la columna $2$ es $(1,1,1)$ y la columna $3$ es $(1,0,0)$, luego 
-    $$
-    P^{-1} = \begin{bmatrix} 1&1&1\\0&1&0\\-1&1&0	\end{bmatrix}.
-    $$ 
-    Encontremos su inversa,
-        \begin{multline*} 
-    \left[\begin{array}{rrr|rrr}	1&1&1&1&0&0\\ 0&1&0&0&1&0\\ -1&1&0&0&0&1 \end{array}\right]
-    \stackrel{F_3+ F_1}{\longrightarrow}
-    \left[\begin{array}{rrr|rrr}	1&1&1&1&0&0\\ 0&1&0&0&1&0\\ 0&2&1&1&0&1 \end{array}\right]
-    \underset{F_3-2F_2}{\stackrel{F_1 - F_2}{\longrightarrow}}\\
-    \longrightarrow 
-    \left[\begin{array}{rrr|rrr}	1&0&1&1&-1&0\\ 0&1&0&0&1&0\\ 0&0&1&1&-2&1 \end{array}\right]
-    \stackrel{F_1 - F_3}{\longrightarrow}
-    \left[\begin{array}{rrr|rrr}	1&0&0&0&1&-1\\ 0&1&0&0&1&0\\ 0&0&1&1&-2&1 \end{array}\right]
-    .
-    \end{multline*}
-    Entonces 
-    $$
-    P = \left[\begin{array}{rrr}	0&1&-1\\ 0&1&0\\ 1&-2&1 \end{array}\right]
-    $$
-    y 
-    $$
-    \left[\begin{array}{rrr}	0&1&-1\\ 0&1&0\\ 1&-2&1 \end{array}\right]
-    \left[\begin{array}{r} 2\\3\\5 \end{array}\right] = 
-    \left[\begin{array}{r} -2\\3\\1 \end{array}\right].
-    $$
-    Por  lo tanto las coordenadas de   $(2,3,5)$ respecto a la base  $\mathcal{B}$ son $(-2,3,1)_{\mathcal B}$ o,  equivalentemente, 
-    $$
-    (2,3,5) = -2(1,0,-1)+3(1,1,1)+(1,0,0).
-    $$
-    
-      
-\end{proof}
-    
-    \end{section}
-
     \end{chapter}
     
         
@@ -7371,6 +7144,241 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
     
 
         \end{section}
+
+
+
+
+        
+
+
+    \begin{section}{Coordenadas}
+        Una de las características útiles de una base $\mathcal B$ en un espacio vectorial  $V$ de dimensión $n$ es que permite introducir coordenadas en $V$ en forma análoga a las ``coordenadas naturales'', $x_i$, de un vector $v = (x_l,\ldots, x_n)$ en el espacio $\K^n$. En este esquema, las coordenadas de un vector $v$ en $V$, respecto de la base $\mathcal B$, serán los escalares que sirven para expresar $v$ como combinación lineal de los vectores de la base. En  el caso  de la base canónica $e_1,\ldots,e_n$ de $\K^n$ tenemos
+        $$
+        v = (x_1,\ldots,x_n) = \sum_{i=1}^{n} x_ie_i.
+        $$
+        por lo tanto $x_i$  es la coordenada $i$-ésima de $v$ respecto a la base canónica. 
+        
+        En  forma análoga veremos que si $v_1,\ldots,v_n$  es una base de $V$,  entonces existe una única forma de  escribir 
+        $$
+        v =  \sum_{i=1}^{n} x_iv_i,
+        $$ 
+        y los valores  $x_i$  serán las \textit{coordenadas de $v$}\index{coordenadas de un vector} en la base dada. 
+        
+        \begin{definicion}
+            Si $V$ es un espacio vectorial de dimensión finita, una \textit{base ordenada}\index{base ordenada} de $V$ es una sucesión finita de vectores linealmente independiente y que genera $V$.
+        \end{definicion}
+        
+        
+        La diferencia entre la definición de ``base'' y la de ``base ordenada'',  es que en la última es  importante el orden de los vectores de la base. Si la sucesión $v_1,\ldots,v_n$ es una base ordenada de $V$, entonces el conjunto $\{v_1,\ldots,v_n\}$ es una base de $V$. La base ordenada es el conjunto, juntamente con el orden dado. Se incurrirá en un pequeño abuso de notación y se escribirá
+        $$
+        \mathcal{B} = \{v_1,\ldots,v_n\}
+        $$
+        diciendo que $\mathcal{B}$ es una base ordenada de $V$.
+        
+        \begin{proposicion}
+            Sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$. Entonces, para cada $v \in V$,  existen únicos $x_1,\ldots,x_n \in \K$ tales que $$v =   x_1v_1 + \cdots +x_nv_n.$$
+        \end{proposicion}
+        \begin{proof}
+            Como $v_1,\ldots,v_n$  generan $V$,  es claro que existen $x_1,\ldots,x_n \in \K$ tales que $v =   x_1v_1 + \cdots +x_nv_n$. Sean $y_1,\ldots,y_n \in \K$ tales que $v =   y_1v_1 + \cdots +y_nv_n$. Veremos que $x_i = y_i$ para $1 \le i \le n$.
+            
+            Como $v =  \sum_{i=1}^{n} x_iv_i$ y $v =  \sum_{i=1}^{n} y_iv_i$,  restando miembro a miembro obtenemos 
+            $$
+            0 =   \sum_{i=1}^{n} (x_i-y_i)v_i.
+            $$
+            Ahora bien,  $v_1,\ldots,v_n$ son  LI, por lo tanto todos los coeficientes de la ecuación anterior son nulos, es decir $x_i-y_i=0$ para $1 \le i \le n$ y entonces $x_i = y_i$ para $1 \le i \le n$.
+        \end{proof}
+    
+    La proposición anterior permite asociar a cada vector una $n$-tupla: sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, si $v \in V$ y $$v =   x_1v_1 + \cdots +x_nv_n,$$  entonces \textit{$x_i$ es la coordenada $i$-ésima de $v$} y denotamos
+    $$
+    v = (x_1,\ldots,x_n)_{\mathcal B}.
+    $$
+    También nos será útil describir a $v$ como una matriz $n \times 1$: \textit{la matriz de $v$  en la base  $\mathcal{B}$}  es
+    $$
+    [v]_\mathcal{B} = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}.
+    $$
+    
+    \begin{ejemplo}
+        Sea $\mathcal B = \{(1,-1),(2,3)\}$ base ordenada de $\R^2$. Encontrar las coordenadas  de $(1,0)$ y $(0,1)$ en la base $\mathcal B$.
+    \end{ejemplo}
+    \begin{proof}[Solución] Debemos encontrar $x_1, x_2 \in \R$ tal que 
+        $$
+        (1,0) = x_1(1,-1)+ x_2(2,3).
+        $$
+        Es decir 
+        \begin{align*}
+            x_1+ 2x_2 &= 1\\
+            -x_1 + 3x_2 &= 0.
+        \end{align*}
+        Resolviendo el sistema de ecuaciones obtenemos $x_1 = \frac35$ y $x_2 = \frac15$,  es decir
+        $$
+        (1,0) =\; \frac35(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (1,0) = (\;\frac35,\frac15)_{\mathcal B}.
+        $$ 
+        De forma análoga podemos ver que
+        $$
+        (0,1) = -\frac25(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (0,1) = (-\frac25,\frac15)_{\mathcal B}.
+        $$
+    \end{proof}
+    
+    \begin{proposicion}\label{vectorbase->lineal}
+        Sea $\mathcal{B}=\{v_1,\ldots,v_n\}$ una base ordenada de $V$ un $\K$-espacio vectorial. Entonces
+        \begin{enumerate}
+            \item $[v + w]_\mathcal{B} = [v]_\mathcal{B} +[w]_\mathcal{B}$, para $v,w \in V$,
+            \item $[\lambda v]_\mathcal{B} = \lambda[v]_\mathcal{B}$, para $\lambda \in \K$ y $v \in V$.
+        \end{enumerate}
+    \end{proposicion} 
+    \begin{proof}
+        (1) Si $v = x_1v_1 + \cdots +x_nv_n$ y $w = y_1v_1 + \cdots +y_nv_n$, entonces 
+        $$
+        v + w = (x_1+y_1)v_1 + \cdots +(x_n+y_n)v_n,
+        $$
+        luego
+        $$
+        [v + w]_\mathcal{B} = \begin{bmatrix}x_1+y_1 \\ \vdots \\ x_n+y_n\end{bmatrix}
+        = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}+\begin{bmatrix}y_1 \\ \vdots \\ y_n\end{bmatrix} = [v]_\mathcal{B} +[w]_\mathcal{B}.
+        $$
+        
+        (2) Si $v = x_1v_1 + \cdots +x_nv_n$ y $\ \in \K$, entonces 
+        $$
+        \lambda v = (\lambda x_1)v_1 + \cdots +(\lambda x_n)v_n,
+        $$
+        luego
+        $$
+        [\lambda v ]_\mathcal{B} = \begin{bmatrix}\lambda x_1 \\ \vdots \\ \lambda x_n\end{bmatrix}
+        = \lambda \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix} = \lambda [v]_\mathcal{B}.
+        $$
+    \end{proof}
+    
+    \begin{teorema}
+            Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $	\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces existe una única matriz $P$ de orden $n \times n$, invertible, tal que para todo $v \in V$
+            \begin{enumerate}
+                \item $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y
+                \item $[v]_\mathcal{B'} = P^{-1}[v]_\mathcal{B}$.
+            \end{enumerate} 
+            Las columnas de $P$ están dadas por
+            $$
+            C_j = [v'_j]_\mathcal{B},\qquad 1 \le j \le n,
+            $$
+            es decir, los coeficientes de la columna $j$ de $P$ son las coordenadas de $v'_j$ en la base $\mathcal{B}$. 
+    \end{teorema}
+    \begin{proof} (1) Tenemos
+        \begin{align*}
+            v &=   x_1v_1 + \cdots +x_nv_n, \\
+            v &=  x'_1v'_1 + \cdots +x'_nv'_n.
+        \end{align*}
+         También podemos escribir cada $v'_j$ en coordenadas respecto a $\mathcal B$:
+         $$
+         v'_j =  p_{1j}v_1 + \cdots +p_{nj}v_n, \qquad  1 \le j \le n.
+         $$ 
+        Luego, 
+        \begin{align*}
+             \sum_{i=1}^{n}x_iv_i &=  \sum_{j=1}^{n}x'_jv'_j \\
+            &=  \sum_{j=1}^{n}x'_j(\sum_{i=1}^{n}p_{ij}v_i) \\
+            &=  \sum_{i=1}^{n}\sum_{j=1}^{n}x'_jp_{ij}v_i \\
+            &=  \sum_{i=1}^{n}(\sum_{j=1}^{n}p_{ij}x'_j)v_i.			
+        \end{align*}
+        Es decir, $x_i = \sum_{j=1}^{n}p_{ij}x'_j$. Por lo tanto, si $P = [p_{ij}]$ tenemos que
+        $$
+        \begin{bmatrix}x_1 \\ x_2\\ \vdots \\ x_n\end{bmatrix} = 
+        \begin{bmatrix}p_{11} &p_{12} & \ldots & p_{1n} \\p_{21} &p_{22} & \ldots & p_{2n} \\ \vdots &\vdots && \vdots\\ p_{n1} &p_{n2} & \ldots & p_{nn}\end{bmatrix}
+         \begin{bmatrix}x'_1 \\ x'_2\\ \vdots \\ x'_n\end{bmatrix}.
+        $$
+        
+        Veamos que $P$  es invertible: sea $(x_1,\ldots,x_n)$ solución del sistema de ecuaciones $PX =0$. Eso implica que si $v =\sum x_i v'_i$,  entonces $P[v]_{\mathcal B'}=0$.     Eso quiere decir que el vector  escrito en la base $\mathcal B$ tiene coordenadas $0$,  es decir $v = \sum 0. v_i =0$ y entonces $v = \sum 0. v'_i$ por la unicidad de escritura. Por lo tanto, la única solución del sistema $PX=0$ es 0 y en consecuencia $P$  es invertible.
+        
+        (2)  Como $P$ es invertible, multiplicamos por $P^{-1}$  a izquierda la ecuación $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y obtenemos el resultado.
+    \end{proof}
+
+    Observemos que, por simetría,  los coeficientes de la columna $j$ de $P^{-1}$ son las coordenadas de $v_j$ en la base $\mathcal{B'}$. 
+    
+    \begin{definicion} 
+        Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces la matriz
+        $$
+        P = \begin{bmatrix}
+         C_1 &C_2 &\cdots &C_n
+        \end{bmatrix}
+        $$
+        con 
+        $$
+            C_j = [v'_j]_\mathcal{B},\qquad 1 \le j \le n,
+        $$
+        es la matriz de \textit{cambio de coordenadas}\index{cambiode coordenadas} de la base $\mathcal{B'}$  a la base $\mathcal{B}$.
+    \end{definicion}
+    
+    
+    \begin{ejemplo}
+         $\mathcal{B} = \{v_1,v_2,v_3 \}=\{(1,0,-1),(1,1,1),(1,0,0) \}$ en $\R^3$.
+        \begin{enumerate}
+            \item Probar que $\mathcal{B}$ es una base de $\R^3$, y 
+            \item encontrar las coordenadas del vector  $(2,3,5)$ respecto a la base  $\mathcal{B}$. 
+        \end{enumerate}
+    \end{ejemplo}
+\begin{proof}[Solución]
+    (1) Sea $A$ la matriz cuyas filas son los vectores de $\mathcal{B}$ :
+    $$
+    A = \begin{bmatrix} 1&0&-1\\1&1&1\\1&0&0	\end{bmatrix}.
+    $$
+    Entonces,  calculando el determinante  por desarrollo de la última fila, obtenemos
+    $$
+    \det A = 1.(-1)^{3+1}. 
+    \left| \begin{matrix} 0&-1\\1&1	\end{matrix} \right| = 1.1.1 =1.
+    $$ 
+    Por  lo tanto $A$ es invertible y en consecuencia el espacio fila de $A$ es $\R^3$. Como $\mathcal{B}$ es un conjunto de 3  generadores de  $\R^3$, $\mathcal{B}$ es base.
+    
+    (2) Si $x_1,x_2,x_3$  son las coordenadas de $(2,3,5)$ respecto a la base  $\mathcal{B}$, entonces
+    $$
+    (2,3,5) = x_1(1,0,-1)+x_2(1,1,1)+x_3(1,0,0)
+    $$
+    y esto es un sistema de tres ecuaciones y tres incógnitas.  Resolviendo este sistema encontramos la solución buscada. 
+    
+    Sin embargo,  nos interesa conocer una solución que sirva para cualquier vector, no solo para $(2,3,5)$, es decir buscamos la matriz $P = [p_{ij}]$ de cambio de coordenadas de la base canónica a la base $\mathcal B$. En particular,  esta matriz cumple 
+    $$
+    \begin{bmatrix} x_1\\x_2\\x_3 \end{bmatrix} = 
+    \begin{bmatrix}p_{11} &p_{12}& p_{13} \\p_{21} &p_{22} & p_{23}\\ p_{31} &p_{32}& p_{33}\end{bmatrix}
+    \begin{bmatrix} 2\\3\\5 \end{bmatrix}.
+    $$
+    con $(x_1,x_2,x_3)_{\mathcal B} = (2,3,5)$.
+    
+    
+    Ahora bien, sabemos que $P^{-1}$ es la matriz cuya columna $j$ es la matriz de $v_j$ en la base canónica (fácil de calcular) y luego calculamos su inversa que es $P$.
+    
+    Por lo dicho en el párrafo anterior, $P^{-1}$  es la matriz cuya  columna $1$ es $(1,0,-1)$,  la columna $2$ es $(1,1,1)$ y la columna $3$ es $(1,0,0)$, luego 
+    $$
+    P^{-1} = \begin{bmatrix} 1&1&1\\0&1&0\\-1&1&0	\end{bmatrix}.
+    $$ 
+    Encontremos su inversa,
+        \begin{multline*} 
+    \left[\begin{array}{rrr|rrr}	1&1&1&1&0&0\\ 0&1&0&0&1&0\\ -1&1&0&0&0&1 \end{array}\right]
+    \stackrel{F_3+ F_1}{\longrightarrow}
+    \left[\begin{array}{rrr|rrr}	1&1&1&1&0&0\\ 0&1&0&0&1&0\\ 0&2&1&1&0&1 \end{array}\right]
+    \underset{F_3-2F_2}{\stackrel{F_1 - F_2}{\longrightarrow}}\\
+    \longrightarrow 
+    \left[\begin{array}{rrr|rrr}	1&0&1&1&-1&0\\ 0&1&0&0&1&0\\ 0&0&1&1&-2&1 \end{array}\right]
+    \stackrel{F_1 - F_3}{\longrightarrow}
+    \left[\begin{array}{rrr|rrr}	1&0&0&0&1&-1\\ 0&1&0&0&1&0\\ 0&0&1&1&-2&1 \end{array}\right]
+    .
+    \end{multline*}
+    Entonces 
+    $$
+    P = \left[\begin{array}{rrr}	0&1&-1\\ 0&1&0\\ 1&-2&1 \end{array}\right]
+    $$
+    y 
+    $$
+    \left[\begin{array}{rrr}	0&1&-1\\ 0&1&0\\ 1&-2&1 \end{array}\right]
+    \left[\begin{array}{r} 2\\3\\5 \end{array}\right] = 
+    \left[\begin{array}{r} -2\\3\\1 \end{array}\right].
+    $$
+    Por  lo tanto las coordenadas de   $(2,3,5)$ respecto a la base  $\mathcal{B}$ son $(-2,3,1)_{\mathcal B}$ o,  equivalentemente, 
+    $$
+    (2,3,5) = -2(1,0,-1)+3(1,1,1)+(1,0,0).
+    $$
+    
+      
+\end{proof}
+    
+    \end{section}
+
+
+
     
         \begin{section}{Matriz de una transformación lineal}
             Sea $V$ un espacio vectorial de dimensión $n$ sobre el cuerpo $\K$, y sea $W$ un espacio vectorial de dimensión $m$ sobre $\K$. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Si $T$ es cualquier 		transformación lineal de $V$ en $W$, entonces $T$ está determinada por su efecto sobre los vectores $v_j$, puesto que todo vector de $V$ es combinación lineal de ellos. Cada uno de los $n$ vectores $Tv_j$ se expresa de manera única 	como combinación lineal
