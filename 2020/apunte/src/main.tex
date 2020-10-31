@@ -7,6 +7,7 @@
 
 % Para hacer el  indice en linea de comando hacer 
 % makeindex main
+
 %% En http://www.tug.org/pracjourn/2006-1/hartke/hartke.pdf hay ejemplos de packages de fonts libres, como los siguientes:
 %\usepackage{cmbright}
 %\usepackage{pxfonts}
@@ -14,10 +15,6 @@
 %\usepackage{ccfonts}
 %\usepackage[math]{iwona}
 \usepackage[math]{kurier}
-
-%\usepackage[default]{cantarell} %% Use option "defaultsans" to use cantarell as sans serif only
-%\usepackage[T1]{fontenc}
-
 
 \usepackage{etex}
 \usepackage{t1enc}
@@ -88,8 +85,9 @@
 
 %%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tolerance=10000
-\renewcommand{\baselinestretch}{1.3}
-\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+%\renewcommand{\baselinestretch}{1.3}
+%\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage[a4paper, left=3cm, right=2cm, bottom=2.5cm]{geometry}
 %% CONTROLADORES DE.
 % Tamaño de la hoja de impresión.
 % Tamaños de los laterales del documento. 
@@ -123,7 +121,7 @@
 \usepackage{titlesec}
 \titleformat{\section}[frame]{\normalfont}%
 {\filright\footnotesize\enspace \large {\large SECCIÓN \thesection} \enspace}%
-{8pt}{\huge\bfseries\filcenter}
+{16pt}{\huge\bfseries\filcenter}
 %%%--------------------------------------------------------------------------	
 %-------------------------------
 %% INTRA TEXTO                %%
@@ -5525,7 +5523,7 @@ También vale este resultado para matrices $n \times n$.
                     \item[(\textit{a})] '$+\colon V\times V\to V$' es una operación, llamada \textit{adición} o  \textit{suma de vectores,}\index{suma de vectores} tal que a dos vectores $v,w \in V$ les asigna otro vector $v+w \in V$,
                     \item[(\textit{b})]  '$.
                      \colon \K\times V\to V$' es una operación tal que a $\lambda \in \K$ y $v \in V$ le asigna el vector $\lambda.v$ (o simplemente $\lambda v$).  '$.$' es llamada  el \textit{producto por escalares}.
-                    
+                     
                 \end{enumerate}	 
                 Además, estas operaciones deben satisfacer 
                 \begin{enumerate}
