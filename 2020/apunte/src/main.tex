@@ -6061,7 +6061,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 Finalmente, daremos un ejemplo muy importante. 
 
     \begin{definicion}\label{espacio-fila-columna}
-        Sea $A = [a_{ij}] \in M_{m \times n}(\K)$. El \textit{vector fila $i$} es el vector  $(a_{i1},\ldots,a_{in}) \in \K^n$. El \textit{espacio fila}\index{matriz!espacio fila} de $A$ es el subespacio de $\K^n$ generado por los $m$ vectores fila de $A$.  De forma análoga, se define  el vector columna $i$ al vector $(a_{11},\ldots,a_{mi}) \in \K^m$ y  el \textit{espacio columna}\index{matriz!espacio columna} de $A$ es el subespacio de $\K^m$ generado por los $n$ vectores columna de $A$.  
+        Sea $A = [a_{ij}] \in M_{m \times n}(\K)$. El \textit{vector fila $i$} es el vector  $(a_{i1},\ldots,a_{in}) \in \K^n$. El \textit{espacio fila}\index{matriz!espacio fila} de $A$ es el subespacio de $\K^n$ generado por los $m$ vectores fila de $A$.  De forma análoga, se define  el vector columna $j$ al vector $(a_{1j},\ldots,a_{mj}) \in \K^m$ y  el \textit{espacio columna}\index{matriz!espacio columna} de $A$ es el subespacio de $\K^m$ generado por los $n$ vectores columna de $A$.  
     \end{definicion}
 
     \begin{ejemplo*}
@@ -6541,7 +6541,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
             x  &=& -2z - 4w  \\ y &=& -5z -3w ,
             \end{array}
             \end{equation*}
-            y por lo tanto
+            y entonces 
             \begin{align*}
             W &= \left\{(-2z -4w,-5z -3w,z,w) : z,w\in \mathbb{R} \right\} \\
             &= \left\{(-2,-5,1,0)z+(-4, -3,0,1)w : z,w\in \mathbb{R} \right\}\\
@@ -6570,12 +6570,12 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
         \end{proof}
     
     \begin{corolario}\label{subesp-merf}
-            Sean $A$ matriz $m \times n$ y $R$ la MERF equivalente por filas a $A$. Entonces, el espacio fila de $A$ es igual al espacio fila de $R$ y las filas no nulas de $R$ forman una base del espacio fila de $A$. 
+            Sean $A$ matriz $m \times n$ y $R$ la MRF equivalente por filas a $A$. Entonces, el espacio fila de $A$ es igual al espacio fila de $R$ y las filas no nulas de $R$ forman una base del espacio fila de $A$. 
     \end{corolario}
     \begin{proof}
         $R=PA$, donde $P$ es una matriz $m \times m$ invertible, luego, por el teorema anterior, el espacio fila de $A$  es igual al espacio fila de $R$. Calculemos ahora cual es la dimensión del espacio fila de $R$. Veamos que filas no nulas de $R$ son LI. 
         
-        Recordemos  que por definición de MERF cada fila no nula comienza con un 1 y en esa coordenada  todas las demás filas tienen un 0, por lo tanto una combinación lineal no trivial resulta en un vector no nulo: si $v$ es una fila no nula de $R$, con el 1 principal en la coordinada $i$ y $\lambda \ne0$,  entonces $\lambda v$ vale $\lambda$ en la posición $i$ y esta coordenada no puede ser anulada por la combinación de otras filas.  
+        Recordemos  que por definición de MRF cada fila no nula comienza con un 1 y en esa coordenada  todas las demás filas tienen un 0, por lo tanto una combinación lineal no trivial resulta en un vector no nulo: si $v$ es una fila no nula de $R$, con el 1 principal en la coordinada $i$ y $\lambda \ne0$,  entonces $\lambda v$ vale $\lambda$ en la posición $i$ y esta coordenada no puede ser anulada por la combinación de otras filas.  
     \end{proof}
 
     \begin{corolario}\label{inv-impl-filasgen}
@@ -6597,7 +6597,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
     v_1 \\ v_2 \\ \vdots \\ v_m
     \end{bmatrix}
     $$
-    donde las filas son los vectores $v_1,\ldots,v_m$. Luego calculamos $R$, la MERF equivalente por filas a $A$, y si $R$ tiene $r$ filas no nulas, las $r$ filas no nulas son una base de $W$ y, por consiguiente, $\dim W = r$. 
+    donde las filas son los vectores $v_1,\ldots,v_m$. Luego calculamos $R$, una MRF equivalente por filas a $A$, y si $R$ tiene $r$ filas no nulas, las $r$ filas no nulas son una base de $W$ y, por consiguiente, $\dim W = r$. 
     
     \begin{ejemplo*}\label{ej-4.5}
         Encontrar una base  de $W= \langle (1,0,1), (1,-1,0), (5,-3,2)\rangle$. 
@@ -6631,7 +6631,8 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
         
         Si $r = 1$ es trivial ver que vale la afirmación. 
         
-        Supongamos que tenemos el resultado probado para $1\le k < r$ (hipótesis inductiva). 		
+        Supongamos que tenemos el resultado probado para $r-1$ (hipótesis inductiva).
+    	
         Sea $W' = \langle  v_1,\ldots, v_{r-1} \rangle$ y sea $A'$ la matriz formada por las $r-1$ filas $v_1,\ldots, v_{r-1}$. 		
         Sea $R'$ la MRF equivalente por filas a $A'$ que se obtiene sin usar permutaciones de filas. Por hipótesis inductiva, si $i_1,i_2,\ldots,i_s$ son las filas no nulas de $R'$,  entonces $v_{i_1},v_{i_2},\ldots,v_{i_s}$ es una base de $W'$.
         
@@ -6639,10 +6640,8 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
         \begin{equation*}
             R_0 = \begin{bmatrix}
             R' \\ v_r
-            \end{bmatrix}
+            \end{bmatrix}.
         \end{equation*}
-        donde $R'$ es la MRF de $A'$. 
-        
         Si $v_r \in W'$, entonces  $v_{i_1},v_{i_2},\ldots,v_{i_s}$ es una base de $W$ y 
         \begin{equation*}
         R = \begin{bmatrix}
