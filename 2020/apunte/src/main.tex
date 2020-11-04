@@ -8,13 +8,15 @@
 % Para hacer el  indice en linea de comando hacer 
 % makeindex main
 
-%% En http://www.tug.org/pracjourn/2006-1/hartke/hartke.pdf hay ejemplos de packages de fonts libres, como los siguientes:
-%\usepackage{cmbright}
+%% En http://www.tug.org/pracjourn/2006-1/hartke/hartke.pdf hay ejemplos de packages de fonts libres.
+%% En https://tug.org/FontCatalogue/ hay un catalogo de fonts
+%% En https://tug.org/FontCatalogue/mathfonts.html catalogo de fonts con math support
 %\usepackage{pxfonts}
 %\usepackage[varg]{txfonts}
 %\usepackage{ccfonts}
 %\usepackage[math]{iwona}
-\usepackage[math]{kurier}
+\usepackage[math]{kurier} %++
+%\usepackage{cmbright} %++
 
 \usepackage{etex}
 \usepackage{t1enc}
@@ -70,6 +72,7 @@
 \numberwithin{equation}{section}
 \renewcommand\labelitemi{$\circ$}
 \setlist[enumerate, 1]{label={(\arabic*)}}
+\setlist[enumerate, 2]{label=\emph{\alph*)}}
 
 \setcounter{MaxMatrixCols}{20}
 
@@ -6333,17 +6336,24 @@ Si $S$ es un conjunto finito denotemos $|S|$  al \textit{cardinal} de  $S$ es de
         v_j = \sum_{i=1}^{m}a_{ij}w_i, \qquad (1 \le j \le n).
     \end{equation*}
     Probaremos ahora que existen $x_1,\ldots,x_n \in \K$ no todos nulos, tal que $x_1v_1 + \cdots+x_nv_n =0$. Ahora bien, para cualesquiera $x_1,\ldots,x_n \in \K$ tenemos
+
+
     \begin{align*}
         x_1v_1 + \cdots+x_nv_n &= \sum_{j=1}^{n} x_jv_j& \\
         & = \sum_{j=1}^{n}x_j \sum_{i=1}^{m}a_{ij}w_i& \\
         & = \sum_{j=1}^{n} \sum_{i=1}^{m}(x_ja_{ij})w_i& \\ 
         & = \sum_{i=1}^{m}(\sum_{j=1}^{n} x_ja_{ij})w_i.&  (*)
     \end{align*}
-    El sistema de ecuaciones
+    
+    Si cada coeficiente que multiplica a cada $w_i$ es nulo, entonces $  x_1v_1 + \cdots+x_nv_n=0$. Vamos a ver ahora que existen $x_,\ldots,x_n$ no todos nulos tal que los coeficientes que multiplica a $w_i$  en ($*$) sean todos nulos. Esto se debe a que el sistema de ecuaciones
     \begin{equation*}
         \sum_{j=1}^{n} x_ja_{ij} = 0, \qquad (1 \le i \le m) 
     \end{equation*}
-    tiene $m$ ecuaciones  y $n > m$ incógnitas, luego, por el teorema \ref{soluciones-m-menor-n}, existen escalares $x_1,\ldots,x_n \in \K$ no todos nulos, tal que $\sum_{j=1}^{n} x_ja_{ij} = 0$, ($1 \le i \le m$) y, por $(*)$, tenemos que  $x_1v_1 + \cdots+x_nv_n =0$. Esto quiere decir que los $v_1,\ldots,v_n$ son LD.
+    tiene $m$ ecuaciones  y $n > m$ incógnitas, luego, por el teorema \ref{soluciones-m-menor-n}, existen escalares $x_1,\ldots,x_n \in \K$ no todos nulos, tal que $\sum_{j=1}^{n} x_ja_{ij} = 0$, ($1 \le i \le m$) y, por $(*)$
+    \begin{align*}
+        x_1v_1 + \cdots+x_nv_n &=  \sum_{i=1}^{m}(\sum_{j=1}^{n} x_ja_{ij})w_i = \sum_{i=1}^{m}0\cdot w_i =0,
+    \end{align*}
+    con algún $x_i \ne 0$. Esto quiere decir que los $v_1,\ldots,v_n$ son LD.
 \end{proof}
 
 
@@ -8098,8 +8108,8 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
     
     
     
-        \begin{section}{Autovalores y autovectores}\label{seccion-autovalores-y-autovectores-de-una-tl}
-        Vimos en la sección  \ref{seccion-autovalores-y-autovectores-de-matrices} la definición de autovalores y autovectores de una matriz. Por otro lado,  en la sección \ref{seccion-matriz-de-una-tl} vimos que dada una base podemos asignarle a cada transformación lineal una matriz. En  esta sección veremos los autovalores y autovectores desde una perspectiva de las transformaciones lineales, pero por lo dicho anteriormente  verán que muchos conceptos y demostraciones se repiten o son similares al caso de la matrices. 
+        \begin{section}{Operadores diagonalizables}\label{seccion-autovalores-y-autovectores-de-una-tl}
+        Vimos en la sección  \ref{seccion-autovalores-y-autovectores-de-matrices} la definición de autovalores y autovectores de una matriz. Por otro lado,  en la sección \ref{seccion-matriz-de-una-tl} vimos que dada una base podemos asignarle a cada transformación lineal una matriz. En  esta sección veremos,  entro otros temas,  los autovalores y autovectores desde una perspectiva de las transformaciones lineales. Por lo dicho anteriormente  verán que muchos conceptos y demostraciones se repiten o son similares al caso de la matrices. 
         
         Sea $V$ espacio vectorial de dimensión finita. Un operador lineal en $V$ es \textit{diagonalizable}\index{matriz!diagonalizable}  si existe una base ordenada $\mathcal B= \{v_1,\ldots,v_n\}$ de $V$ y $\lambda_1,\ldots,\lambda_n \in \K$ tal que 
         \begin{equation}\label{eq-auto-49}
@@ -8125,7 +8135,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
             Sea $V$ un espacio vectorial sobre el cuerpo $\K$ y sea $T$ un operador lineal sobre $V$. Un \textit{valor propio}\index{valor propio} o \textit{autovalor}\index{autovalor} de $T$ es un escalar $\lambda$ de $\K$ tal que existe un vector no nulo $v \in V$ con $T(v) = \lambda v$. Si $\lambda$ es un autovalor de $T$, entonces
             \begin{enumerate}
                 \item  cualquier  $v \in V$ tal que $T(v) = \lambda v$  se llama un \textit{vector propio}\index{vector propio} o  \textit{autovector}\index{autovector} de $T$ asociado al valor propio $\lambda$;
-                \item la colección de todos los $v \in V$ tal que $T(v) = \lambda v$  se llama \textit{espacio propio}\index{espacio propio} o \textit{autoespacio}\index{autoespacio} 	asociado a $\lambda$.
+                \item la colección de todos los $v \in V$ tal que $T(v) = \lambda v$  se llama \textit{espacio propio}\index{espacio propio} o \textit{autoespacio}\index{autoespacio} 	asociado a $\lambda$. 
             \end{enumerate}
             
             Los valores propios se llaman también a menudo raíces características, eigenvalores. valores característicos o valores espectrales. Nosotros usaremos, preferentemente, ``autovalores''.
@@ -8134,7 +8144,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
             $$
             V_\lambda := \{v \in V: Tv = \lambda v \}.
             $$
-            Observar que $V_\lambda \ne 0$ si y sólo si $\lambda$ es autovalor. 
+            Observar que $V_\lambda \ne 0$ si y sólo si $\lambda$ es autovalor y en ese caso $V_\lambda$  es el autoespacio asociado a $\lambda$. 
         \end{definicion}
         
         
@@ -8291,7 +8301,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
             $$
             Por lo tanto, $T-\lambda \Id$ no es invertible, lo cual implica que $0 = \det(T-\lambda \Id) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
             
-            ($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(T-\lambda \Id)$, entonces $T-\lambda \Id$ no es una matriz invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(T-\lambda \Id)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
+            ($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(T-\lambda \Id)$, entonces $T-\lambda \Id$ no es una transformación lineal  invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(T-\lambda \Id)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
         \end{proof}
         
         Repetimos ahora algunos conceptos ya expresados al comienzo de la sección. 
@@ -8532,11 +8542,11 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 
     
     
-    Observar que en $\R^n$ el producto escalar es 
+    Observar, como ya hemos visto anteriormente,  que en $\R^n$ el producto escalar es 
     \begin{equation*}
         \la (x_1,\ldots,x_n),(y_1,\ldots,y_n)  \ra = \sum_i x_iy_i = \begin{bmatrix} x_1& \cdots &x_n\end{bmatrix}\begin{bmatrix} y_1 \\ \vdots \\ y_n \end{bmatrix}.
     \end{equation*}
-    Es decir si usamos la convención que un vector en $\R^n$  se escribe como una matriz columna (de $n$ filas y una columna),  tenemos que dados $x,y \in \R^n$, 
+    Es decir, si usamos la convención que un vector en $\R^n$  se escribe como una matriz columna (de $n$ filas y una columna),  tenemos que dados $x,y \in \R^n$, 
     \begin{equation*}
         \la x,y \ra = x^\t y.
     \end{equation*}
@@ -8676,7 +8686,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
     
     \vskip .3cm
     
-    El siguiente resultado, el \textit{teorema espectral}, requiere para su demostración una generalización del resultado anterior para espacios de producto interno  de dimensión finita y matrices (transformaciones lineales)  simétricas respecto a este producto interno. Todos estos conceptos y resultados son generalizaciones sencillas, pero llevan algún tiempo desarrollarlas y el lector interesado la puede ver en la sección \ref{secccion-operadores-autoadjuntos}. La demostración que daremos del teorema espectral se hará por inducción en la dimensión del espacio y utiliza en el paso inductivo la generalización del teorema \ref{th-existe-autovalor-simetrica}.   
+    El siguiente resultado, el \textit{teorema espectral}, requiere para su demostración una generalización del resultado anterior para espacios de producto interno  de dimensión finita y matrices (transformaciones lineales)  simétricas respecto a este producto interno. Todos estos conceptos y resultados son generalizaciones sencillas, pero llevan algún tiempo desarrollarlas y el lector interesado las puede ver en la sección \ref{secccion-operadores-autoadjuntos}. La demostración que daremos del teorema espectral se hará por inducción en la dimensión del espacio y utiliza en el paso inductivo la generalización del teorema \ref{th-existe-autovalor-simetrica}.   
         
     \begin{teorema}[Teorema espectral]\index{Teorema espectral} Sea $A$ matriz simétrica $n \times n$. Entonces existe $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $\R^n$ de autovectores de $A$.
     \end{teorema}
@@ -8685,7 +8695,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
         
         Si $n=1$ es trivial. 
         
-        Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por le teorema  \ref{th-existe-autovalor-simetrica} existe $\lambda \in \R$ y $x \in \R^n$ tal que $Ax = \lambda x$. Si $u_n = x/||x||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W =\la u_n \ra$. Entonces, puede verse que $W^\perp$ es invariante por $A$. De esta forma, podemos considerar entonces a  $A$ como una transformación lineal de $W^\perp$ a $W^\perp$. No es difícil verificar que el producto interno canónico es un producto interno en $W^\perp$ y que $A$ es una matriz simétrica con este producto interno restringido.  
+        Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por el teorema  \ref{th-existe-autovalor-simetrica} existe $\lambda \in \R$ y $x \in \R^n$ tal que $Ax = \lambda x$. Si $u_n = x/||x||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W =\la u_n \ra$. Entonces, puede verse que $W^\perp$ es invariante por $A$. De esta forma, podemos considerar entonces a  $A$ como una transformación lineal de $W^\perp$ a $W^\perp$. No es difícil verificar que el producto interno canónico es un producto interno en $W^\perp$ y que $A$ es una matriz simétrica con este producto interno restringido.  
         
         Como $\dim(W^\perp) = n-1$, por hipótesis inductiva existe   $\{u_1,\ldots,u_{n-1}\}$ una BON de $W^\perp$ de autovectores de $A: W^\perp \to W^\perp$. Es claro entonces que $\mathcal{U} = \{u_1,\ldots,u_n\}$  una BON de $\R^n$ de autovectores de $A$. 
     \end{proof}
