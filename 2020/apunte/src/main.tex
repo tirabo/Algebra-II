@@ -6811,7 +6811,9 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
                 &=(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j),
                 \end{align*}
                 con $a_{ij} \in \K$, entonces $T$  es lineal. 
-            \begin{proof}
+            \end{obs}
+            \begin{proof} Se puede hacer directamente como ejercicio. También se demuestra más adelante en la observación \ref{obs-nu-im}. 
+            \begin{comment}
                 Sean $(x_1,\cdots,x_n), (y_1,\cdots,y_n) \in \K^n$ y $\lambda \in \K$,  entonces
                 \begin{align*}
                 T(\lambda(x_1,\cdots,x_n)+ (y_1,\cdots,y_n)) &= T(\lambda x_1+y_1,\ldots,\lambda x_n+y_n) \\
@@ -6820,8 +6822,9 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
                 &= \lambda(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j) +(\sum_{j=1}^n a_{1j} y_j,\ldots,\sum_{j=1}^n a_{mj} y_j) \\
                 & =\lambda T(x_1,\cdots,x_n)+ T(y_1,\cdots,y_n).
                 \end{align*}
+            \end{comment}
             \end{proof}
-            \end{obs}
+            
             
             \begin{ejemplo}[{\sc Transformaciones de $\R^2$ en $\R^2$}] Las rotaciones y reflexiones en $\R^2$ son transformaciones lineales. Sea $\theta \in \R$ tal que  $0 \le \theta \le 2\pi$,  definimos
                 \begin{equation*}
@@ -7069,8 +7072,112 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
         
         La expresión (\ref{forma-parametrica-2}),  que depende de dos parámetros ($s$ y $t$) que son independientes entre ellos, es llamada la \textit{descripción paramétrica} del núcleo	
         \end{ejemplo*}
+
+        \vskip .4cm
+
+        Todas las transformaciones lineales entre $\R^n$ y $\R^m$ son de la forma ``multiplicar por una matriz''. Más aún,  toda transformación lineal entre espacios vectoriales de dimensión finita se puede expresar de esta forma. Así que analizaremos un poco más en detalle este tipo de transformaciones.
+\begin{observacion}
+Sea $A\in\R^{m\times n}$ y consideramos la función $T$:
+\begin{align*}
+\begin{array}{rccc}
+    T : &\R^n &\to &\R^m \\
+        &v &\mapsto &Av.
+\end{array}
+\end{align*}
+Entonces $T$ es una transformación lineal. 
+\end{observacion}
+\begin{proof}
+    Debemos ver que $T$ respeta suma y producto por escalares.
+Sean $v_1,v_2\in\R^n$ y $\lambda\in\R$ entonces
+\begin{align*}
+T(v_1+\lambda v_2)=A(v_1+\lambda v_2)=
+Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2)
+\end{align*}
+\end{proof}
+
+\begin{definicion}
+    Sea $A\in\R^{m\times n}$ y sea $T$ la transformación lineal 
+    \begin{align*}
+        \begin{array}{rccc}
+            T : &\R^n &\to &\R^m \\
+                &v &\mapsto &Av.
+        \end{array}
+        \end{align*}
+        Diremos que $T$  es \textit{la transformación lineal asociada a $A$} o  \textit{la transformación lineal inducida por $A$}. Muchas veces denotaremos a esta transformación lineal con el mismo símbolo que la matriz, es decir, en este caso con $A$.  
+\end{definicion}
+
+
+
+\begin{ejemplo*}
+    Consideremos la matriz $A=\begin{bmatrix}   1&1&1\\   2&2&2 \end{bmatrix}$.
+    
+
+    
+    Entonces si $v =(x,y,z)$, 
+    \begin{align*}
+    A(v) &= \begin{bmatrix} 1&1&1\\2&2&2 \end{bmatrix} \begin{bmatrix}  x\\y\\z \end{bmatrix}
+    = \begin{bmatrix}  x+y+z\\2x+2y+2z \end{bmatrix}           
+    \end{align*}
+    
+
+    
+    En particular,
+    $(1,-1,0)\in\nu(A)$ pues $A(1,-1,0)=0$ y
+    \begin{align*}
+    A(1,0,0)&=(1,2)\in\im(A)\\
+    A(0,1,\pi)&=(1+\pi,2+2\pi)\in\im(A)
+    \end{align*}
+\end{ejemplo*}
+
+
+\begin{observacion}\label{obs-nu-im} 	Sea $T: \K^n \to \K^m$ definida por
+    \begin{align*}
+    T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )
+    \end{align*}
+    con $a_{ij} \in \K$, entonces 
+    \begin{equation*}
+        T(x) = \begin{bmatrix*}
+            a_{11}& a_{12} & \cdots &a_{1n} \\
+            a_{21}& a_{22} & \cdots &a_{2n} \\
+            \vdots&\vdots&\ddots&\vdots \\
+            a_{m1}& a_{m2} & \cdots &a_{mn}
+        \end{bmatrix*}
+        \begin{bmatrix}
+            x_1 \\ x_2 \\ \vdots \\ x_n
+        \end{bmatrix}
+    \end{equation*} 
+
+    Es decir,  $T$ es la transformación lineal inducida por la matriz $A = [a_{ij}]$. 
+ 
+    Esto, en particular,  demuestra la observación  \ref{obs-tl-1.5}.
+\end{observacion}
+
+
+
+\begin{proposicion}
+
+    Sea $A\in\R^{m\times n}$ y $T:\R^n\longrightarrow\R^m$ la transformación lineal asociada. Entonces
+    \begin{itemize}
+     \item El núcleo de $T$ es el conjunto de soluciones del sistema homogéneo $AX=0$
+     
+     \item La imagen de $T$ es el conjunto de los $b\in\R^m$ para los cuales el sistema $AX=b$ tiene solución
+    \end{itemize}
+    \end{proposicion}
+    \begin{proof}
         
-        \begin{ejemplo*}
+   
+    Se demuestra fácilmente escribiendo las definiciones de los respectivos subconjuntos.
+    \begin{align*}
+    v\in\nu(T)\Leftrightarrow Av=0\Leftrightarrow v\,\mbox{ es solución de $AX=0$.}
+    \end{align*}
+    \begin{align*}
+    b\in\im(T)&\Leftrightarrow\exists v\in\R^n\,\mbox{ tal que } Av=b 
+    \Leftrightarrow\,\mbox{$AX=b$ tienen solución}.
+    \end{align*}
+\end{proof}
+    
+        
+\begin{ejemplo*}
         Sea $T: \R^3 \to \R^4$, definida
         $$
         T(x,y,z) = (x +y ,\,x +2y +z,\,3y +3z,\,2x +4y +2z).
@@ -7079,85 +7186,63 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
             \item Describir $\nuc(T)$  en forma paramétrica y dar una base.
             \item Describir $\img(T)$  en forma paramétrica y  dar una base. 
         \end{enumerate}
-        \begin{proof}[Solución] 
-        Observemos que 
-        \begin{align*}
-        \nuc(T) &= \{(x,y,z)\in \R^3: (x +y ,\,x +2y +z,\,3y +3z,\,2x +4y +2z) =(0,0,0,0)\}.
-        \end{align*}
-        Por  lo tanto, describir el núcleo de $T$ se reduce a encontrar las soluciones de una sistema de ecuaciones lineales homogéneo, y la matriz asociada a este sistema es.   
-        \begin{equation*}
+        \end{ejemplo*}
+\begin{proof}[Solución]
+    La matriz asociada a esta transformación lineal  es 
+    \begin{equation*}
         A = \begin{bmatrix}
         1&1&0\\1&2&1\\0&3&3\\2&4&2
         \end{bmatrix}
-        \end{equation*}
-        
-        Por  otro lado,
-        \begin{align*}
-        \img(T) &= \{(y_1,y_2,y_3,y_4)\in \R^4: (x +y ,\,x +2y +z,\,3y +3z,\,2x +4y +2z) =(y_1,y_2,y_3,y_4)\}\\
-        &=  \{(y_1,y_2,y_3,y_4)\in \R^4: A\begin{bmatrix}x\\y\\z	\end{bmatrix}  =
-        \begin{bmatrix}y_1\\y_2\\y_3\\y_4\end{bmatrix}\}.
-        \end{align*}
-        
-        
-        Por lo tanto, y haciendo abuso de notación,  
-        \begin{align*}
+    \end{equation*}
+
+    Debemos encontrar la descripción paramétrica de
+    \begin{align*}
         \nuc(T) &= \{v=(x,y,z):   A.{v}=0\}\\
         \img(T) &= \{y= (y_1,y_2,y_3,y_4): \text{ tal que } \exists v \in \R^3, A.{v} = {y}  \}
         \end{align*}
-        En  ambos casos, la solución depende de resolver el sistema de ecuaciones cuya matriz asociada es $A$:
-        \begin{equation*}
-        \left[\begin{array}{@{}*{3}{c}|c@{}}1&1&0&y_1\\1&2&1&y_2\\0&3&3&y_3\\2&4&2&y_4 \end{array}\right]
-        \underset{F_4-2F_1}{\stackrel{F_2 -F_1}{\longrightarrow}} 
-        \left[\begin{array}{@{}*{3}{c}|c@{}}1&1&0&y_1\\0&1&1&-y_1+y_2\\0&3&3&y_3\\0&2&2&-2y_1 +y_4 \end{array}\right]
-        \underset{F_4-2F_2}{\underset{F_3-3F_2}{\stackrel{F_1 -F_2}{\longrightarrow}} }
-        \left[\begin{array}{@{}*{3}{c}|c@{}}1&0&-1&2y_1-y_2\\0&1&1&-y_1+y_2\\0&0&0&3y_1-3y_2+y_3\\0&0&0&-2y_2 +y_4 \end{array}\right],
-        \end{equation*}
-        es decir
-        \begin{equation}\label{eq-gen}
-        T(x,y,z) = (y_1,y_2,y_3,y_4) \quad\Leftrightarrow \quad
-        \begin{array}{rl}
-        x -z &= 2y_1-y_2\\ 
-        y +z &= -y_1+y_2\\
-        0&=3y_1-3y_2+y_3 \\
-        0&= -2y_2 +y_4
-        \end{array}
-        \end{equation}
-        Si hacemos $y_1 = y_2 = y_3 = y_4 = 0$, entonces las soluciones del sistema describen el núcleo de $T$, es decir
-        $$
-        \nuc(T) = \{(x,y,z):x-z=0, y+z =0 \} = \{(s,-s,s):s \in \R \},
-        $$
-        que es la forma paramétrica. Una base del núcleo de $T$  es $(1,-1,1)$. 
-        
-        
-        Con respecto a la imagen de $T$ tenemos
-        \begin{equation*}
-        \text{$(y_1,y_2,y_3,y_4) \in \img(T)$} \; \Leftrightarrow \;
-        \begin{array}{l}
-        \text{$\exists\, x,y,z \in \R$ tal que\, $2y_1-y_2 = x-z$\, y \,$-y_1+y_2 = y+z$; y} \\
-        \text{$0=3y_1-3y_2+y_3$\; y\; $0= -2y_2 +y_4$.}
-        \end{array}
-        \end{equation*}
-        Como variando los valores de $x, y,z$ es posible obtener, para cualesquiera valores de  $y_1,y_2,y_3,y_4$,\; $2y_1-y_2 = x-z$ \;y \;$-y_1+y_2 = y+z$, tenemos
-        \begin{equation}\label{eq-gen-2}
-        \text{$(y_1,y_2,y_3,y_4) \in \img(T)$} \quad \Leftrightarrow \quad \text{$0=3y_1-3y_2+y_3$\; y\; $0= -2y_2 +y_4$.}
-        \end{equation}
-        Luego, 
-        $$
-        \img(T) =  \{(y_1,y_2,y_3,y_4): \text{ tal que $0=3y_1-3y_2+y_3$ y $0= -2y_2 +y_4$} \}.
-        $$
-        Ahora bien, $$0= -2y_2 +y_4 \Leftrightarrow 2y_2 = y_4 \Leftrightarrow\; y_2 = \frac12 y_4.$$
-        Por  otro lado 
-        $$0=3y_1-3y_2+y_3 \Leftrightarrow 3y_1 =3y_2-y_3 \Leftrightarrow y_1 =y_2-\frac13y_3 \Leftrightarrow\; y_1 =\frac12y_4-\frac13y_3$$ 
-        
-        Es decir, cambiando $y-3$ por $s$ e $y_4$ por $t$:
-        $$
-        \img(T) =  \{(-\frac13 s + \frac12 t, \frac 12 t, s,t): s,t \in \R \}.
-        $$
-        Como $(-\frac13 s + \frac12 t, \frac 12 t, s,t) = s(-\frac13,0,1,0) + t(\frac12,\frac12,0,1)$ el conjunto  $\{(-\frac13,0,1,0),(\frac12,\frac12,0,1) \}$ es una base de $\img(T)$.
-        
-        \end{proof}
 
-        \end{ejemplo*}
+    En  ambos casos, la solución depende de resolver el sistema de ecuaciones cuya matriz asociada es $A$:
+    \begin{align*}
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1&1&0&y_1\\1&2&1&y_2\\0&3&3&y_3\\2&4&2&y_4 \end{array}\right]
+    &\underset{F_4-2F_1}{\stackrel{F_2 -F_1}{\longrightarrow}} 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1&1&0&y_1\\0&1&1&-y_1+y_2\\0&3&3&y_3\\0&2&2&-2y_1 +y_4 \end{array}\right]\\
+    &\underset{F_4-2F_2}{\underset{F_3-3F_2}{\stackrel{F_1 -F_2}{\longrightarrow}} } 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1&0&-1&2y_1-y_2\\0&1&1&-y_1+y_2\\0&0&0&3y_1-3y_2+y_3\\0&0&0&-2y_2 +y_4 \end{array}\right].
+    \end{align*}
+Luego, 
+    \begin{equation*}\label{eq-gen}
+    T(x,y,z) = (y_1,y_2,y_3,y_4) \quad\Leftrightarrow \quad
+    \left\{\begin{array}{rl}
+    x -z &= 2y_1-y_2\\ 
+    y +z &= -y_1+y_2\\
+    0&=3y_1-3y_2+y_3 \\
+    0&= -2y_2 +y_4
+    \end{array}\right.\tag{*}
+    \end{equation*}
+    Si hacemos $y_1 = y_2 = y_3 = y_4 = 0$, entonces las soluciones del sistema describen el núcleo de $T$, es decir
+    \begin{align*}
+    \nuc(T) &= \{(x,y,z):x-z=0, y+z =0 \} = \{(s,-s,s):s \in \R \} \\
+    &= \{s(1,-1,1):s \in \R \}
+    \end{align*}
+    que es la forma paramétrica del $\nu(T)$. Una base del núcleo de $T$  es $\{(1,-1,1)\}$. 
+
+
+    En  el sistema (*) las dos primeras ecuaciones no imponen ninguna restricción sobre los $y_i$ (por ejemplo si hacemos $z=0$ resulta $x = 2y_1-y_2$,  $y= -y_1+y_2$). Claramente, las últimas dos ecuaciones sí establecen condiciones sobre los $y_i$ y resulta entonces que   
+    \begin{align*}
+        \img(T) &=  \{(y_1,y_2,y_3,y_4): \text{ tal que $0=3y_1-3y_2+y_3$ y $0= -2y_2 +y_4$} \} 
+    \end{align*}
+    
+    
+    Resolviendo este sistema, obtenemos
+    \begin{align*}
+        \img(T) &=  \{(-\frac13 s + \frac12 t, \frac 12 t, s,t): s,t \in \R \}\\
+        &=  \{s(-\frac13,0,1,0)+t(\frac12,\frac12,0,1): s,t \in \R \}
+    \end{align*}
+    que es la descripción paramétrica $\img(T)$.  Es claro que  $\{(-\frac13,0,1,0),(\frac12,\frac12,0,1) \}$ es una base de $\img(T)$.
+\end{proof}
+
+
+
 
         \vskip .5cm
         
