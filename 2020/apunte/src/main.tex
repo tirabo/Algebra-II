@@ -7944,15 +7944,18 @@ Luego,
 
     
         \begin{section}{Matriz de una transformación lineal}\label{seccion-matriz-de-una-tl}
-            Sea $V$ un espacio vectorial de dimensión $n$ sobre el cuerpo $\K$, y sea $W$ un espacio vectorial de dimensión $m$ sobre $\K$. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Si $T$ es cualquier 		transformación lineal de $V$ en $W$, entonces $T$ está determinada por su efecto sobre los vectores $v_j$, puesto que todo vector de $V$ es combinación lineal de ellos. Cada uno de los $n$ vectores $Tv_j$ se expresa de manera única 	como combinación lineal
+            Sea $V$ un espacio vectorial de dimensión $n$ sobre el cuerpo $\K$, y sea $W$ un espacio vectorial de dimensión $m$ sobre $\K$. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_m\}$ una base ordenada de $W$. Si $T$ es cualquier 		transformación lineal de $V$ en $W$, entonces $T$ está determinada por su efecto sobre los vectores $v_j$, puesto que todo vector de $V$ es combinación lineal de ellos. Cada uno de los $n$ vectores $Tv_j$ se expresa de manera única 	como combinación lineal
             \begin{equation}\label{matriz-de-T-1}
                 Tv_j = \sum_{i=1}^{m} a_{ij} w_i
             \end{equation}
             de los $w_i$. Los escalares $a_{1j},\ldots,a_{mj}$ son las coordenadas de $Tv_j$ en la base ordenada $\mathcal B'$. Por consiguiente, la transformación $T$ está determinada por los
             $mn$ escalares $a_{ij}$ mediante la expresión (\ref{matriz-de-T-1}). 
             
-            \begin{definicion}
-                La matriz $m \times n$, $A$, definida por $[A]_{ij} = a_{ij}$, donde $a_{ij}$  es como en  (\ref{matriz-de-T-1}), se llama \textit{matriz de $T$ respecto a las bases ordenadas $\mathcal B$ y $\mathcal B'$;}\index{matriz!de una transformación lineal} y se denota 
+            \begin{definicion} Sean $V$ y $W$ espacios vectoriales de dimensión finita con bases ordenadas $\mathcal B = \{v_1,\ldots,v_n\}$  y $\mathcal B' = \{w_1,\ldots,w_m\}$, respectivamente. Sea $T: V \to W$ una transformación lineal tal que 
+                \begin{equation*}\label{matriz-de-T-1}
+                    Tv_j = \sum_{i=1}^{m} a_{ij} w_i.
+                \end{equation*}
+                A  $A$  La matriz $m \times n$  definida por $[A]_{ij} = a_{ij}$ se la  denomina \textit{la matriz de $T$ respecto a las bases ordenadas $\mathcal B$ y $\mathcal B'$;}\index{matriz!de una transformación lineal} y se la denota 
                 $$
                 [T]_{\mathcal B \mathcal B'} = A .
                 $$.
@@ -8152,7 +8155,7 @@ Luego,
     
     
             
-        \begin{teorema}[Matriz de cambio de base]
+        \begin{teorema}[Matriz de cambio de base]\label{th-cambio-de-base}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean
             $$
             \mathcal B = \{v_1,\ldots,v_n \}, \qquad \mathcal B' = \{v'_1,\ldots,v'_n \}
@@ -8182,10 +8185,12 @@ Luego,
         \end{proof}
     
     
-        La matriz $P$ del teorema anterior es llamada la \textit{matriz de cambio de base}. \index{matriz!de cambio de base}La fórmula (\ref{eq-cambio de base}) es importante por si misma y debemos recordarla.
+        La matriz $P$ del teorema anterior es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base}de la base $\mathcal B'$  a la base $\mathcal B$. 
+        
+        La fórmula (\ref{eq-cambio de base})  es importante por si misma y debemos recordarla.
     \vskip .3cm
     
-        El teorema anterior nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
+        El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
         bases ordenadas de $V$, entonces $[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}P$, para $P$ una matriz invertible. Por lo tanto, 
         \begin{equation*}
             \det([T]_{\mathcal B'}) = \det(P^{-1}[T]_{\mathcal B}  P) =  \det([T]_{\mathcal B}  PP^{-1}) =  \det([T]_{\mathcal B}). 
