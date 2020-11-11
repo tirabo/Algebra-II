@@ -18,6 +18,9 @@
 \usepackage[math]{kurier} %++
 %\usepackage{cmbright} %++
 
+
+%\usepackage{classicthesis}
+
 \usepackage{etex}
 \usepackage{t1enc}
 \usepackage{latexsym}
@@ -239,7 +242,8 @@
     \pagenumbering{roman}
     
     \title{Álgebra II / Álgebra - Notas del teórico  \\ Año 2020 - 2º Cuatrimestre  \\ FAMAF  - UNC 
-    %\\ Versión: \today
+    \\ ${}^{}$ 
+    \\  Versión: \today
     }
     
     \maketitle
@@ -3202,7 +3206,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 
                 El procedimiento que usamos en la demostración del teorema anterior nos da un algoritmo para obtener una MERF a partir de una matriz arbitraria.
                 
-                \begin{observacion}[\sc Método para reducir a MERF] \label{metodo-merf}  
+                \begin{observacion}[\textsc{Método para reducir a MERF}] \label{metodo-merf}  
                     \
                                     
                 \begin{enumerate}
@@ -4567,7 +4571,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
     |A| := \det A.
     $$
     
-    \begin{obs*}[{\sc Determinantes $\mathbf{2 \times 2}$}] Calculemos el determinante de las matrices $2 \times 2$. Sea 
+    \begin{obs*}[\textsc{Determinantes $\mathbf{2 \times 2}$}] Calculemos el determinante de las matrices $2 \times 2$. Sea 
         $$A=\begin{bmatrix}a&b\\c&d\end{bmatrix},$$  entonces
         $$
         \det A = a \det [d] - c \det [b] = ad-bc.
@@ -4585,7 +4589,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
     \end{obs*}
     
     
-    \begin{observacion*}[{\sc Determinantes $\mathbf{3 \times 3}$}]  Calculemos el determinante de las matrices $3 \times 3$. Sea 
+    \begin{observacion*}[{\textsc{Determinantes $\mathbf{3 \times 3}$}}]  Calculemos el determinante de las matrices $3 \times 3$. Sea 
         $$A=\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{bmatrix},$$  entonces
         \begin{align*}
         \det A &= a_{11}\left|\begin{matrix}a_{22}&a_{23}\\a_{32}&a_{33}\end{matrix}\right|
@@ -5601,7 +5605,7 @@ También vale este resultado para matrices $n \times n$.
             $$
             y a menudo diremos que $v-w$ es la \textit{resta} de $v$ menos $w$. 
             
-            \begin{ejemplo*} {\sc $\K^n$.} Sea $\K$ cuerpo, y sea
+            \begin{ejemplo*} {\textsc{$\K^n$.}} Sea $\K$ cuerpo, y sea
                 \begin{equation*}
                 V = \{(x_1,x_2,\ldots,x_n): x_i \in \K, 1 \le i \le n \} = \K^n.
                 \end{equation*}	
@@ -5629,7 +5633,7 @@ También vale este resultado para matrices $n \times n$.
             
             \medspace
             
-            \begin{ejemplo*}{\sc Matrices $m \times n$.} Sea $\K$ cuerpo,  definimos en $M_{m \times n}(\K)$ la suma  y el producto por escalares de la siguiente forma. Sean $A = [a_{ij}]$, $B = [b_{ij}]$ matrices $m \times n$ y $ \lambda \in \K$, entonces $A+B$, $\lambda A$ son matrices en $M_{m \times n}(\K)$ con coeficientes:
+            \begin{ejemplo*}{\textsc{Matrices $m \times n$.}} Sea $\K$ cuerpo,  definimos en $M_{m \times n}(\K)$ la suma  y el producto por escalares de la siguiente forma. Sean $A = [a_{ij}]$, $B = [b_{ij}]$ matrices $m \times n$ y $ \lambda \in \K$, entonces $A+B$, $\lambda A$ son matrices en $M_{m \times n}(\K)$ con coeficientes:
                 \begin{align*}
                 [A + B]_{ij} &= [a_{ij} + b_{ij}], \\
                 [\lambda A]_{ij} &= [\lambda a_{ij}]. 
@@ -5646,7 +5650,7 @@ También vale este resultado para matrices $n \times n$.
             
             \medspace
             
-            \begin{ejemplo*}{\sc Polinomios.} Sea 
+            \begin{ejemplo*}{\textsc{Polinomios.}} Sea 
                 \begin{equation*}
                 \K[x] = \{a_nx^n + \cdots + a_1x + a_0: n \in \mathbb N_0, a_i \in \K\text{, para } 0\le i \le n  \}
                 \end{equation*}
@@ -5668,7 +5672,7 @@ También vale este resultado para matrices $n \times n$.
             
             \medspace
             
-            \begin{ejemplo*}{\sc Espacios de funciones.} Sean
+            \begin{ejemplo*}{\textsc{Espacios de funciones.}} Sean
                 \begin{align*}
                 \operatorname{F}(\R) &= \{f: \R \to \R: \text{ tal que } f \text{ es una función} \},\\
                 \operatorname{C}(\R) &= \{f: \R \to \R: \text{ tal que }  f  \text{ es una función continua} \}.
@@ -5697,7 +5701,7 @@ También vale este resultado para matrices $n \times n$.
             
             \medspace
             
-            \begin{ejemplo*}{\sc Reales positivos.}
+            \begin{ejemplo*}{\textsc{Reales positivos.}}
             Consideremos el conjunto de los números reales positivos:
             \[
             R_{>0}=\{x\in\R : x>0\}.
@@ -5709,7 +5713,7 @@ También vale este resultado para matrices $n \times n$.
             para cada $c\in\R$, $x,y\in R_{>0}$.
 Es fácil ver que los axiomas \textbf{S1.} y \textbf{S2.} sobre la conmutatividad y asociatividad, respectivamente, de la suma $\oplus$ se siguen de las propiedades de conmutatividad y asociatividad del producto $\cdot$ en $\R$.
 
-La existencia del vector $\bf0$ del axioma \textbf{S3.}, neutro para la suma $\oplus$, requiere de cierto cuidado. Notar que este vector debe ser un elemento $\bf0$ en $V$ (un real positivo) que cumpla $x\oplus \bf 0=x$ para todo $x$. Ahora, $x\oplus \bf0=x\cdot \bf0$ por definición, de donde se desprende que debemos tomar $bf0=1$. Es decir, {\it el vector cero es el número 1}. De manera similar, se sigue que el opuesto indicado en el  axioma \textbf{S4.} debe estar dado por $-x=x^{-1}$.
+La existencia del vector $\textbf{0}$ del axioma \textbf{S3.}, neutro para la suma $\oplus$, requiere de cierto cuidado. Notar que este vector debe ser un elemento $\textbf{0}$ en $V$ (un real positivo) que cumpla $x\oplus \textbf{0}=x$ para todo $x$. Ahora, $x\oplus \textbf{0}=x\cdot \textbf{0}0$ por definición, de donde se desprende que debemos tomar $\textbf{0}=1$. Es decir, {\it el vector cero es el número 1}. De manera similar, se sigue que el opuesto indicado en el  axioma \textbf{S4.} debe estar dado por $-x=x^{-1}$.
 
 Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D1.} y \textbf{D2.} se siguen de las propiedades conocidas de la exponenciación en $\R$ y quedan a cargo del lector, como un interesante desafío para terminar de comprender este ejemplo.
 \end{ejemplo*}            
@@ -6235,7 +6239,7 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
 
 
 
-\begin{ejemplo*}[{\sc Base canónica de $\K^n$}] Sea el espacio vectorial $\K^n$ y sean
+\begin{ejemplo*}[{\textsc{Base canónica de $\K^n$}}] Sea el espacio vectorial $\K^n$ y sean
     \begin{equation*}
     \begin{array}{rcl}
     e_1 &=& (1,0,0,\ldots,0) \\
@@ -6290,7 +6294,7 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
     Entonces $1,x,x^2,\ldots,x^n$  es una base de $\K_n[x]$. Es claro que los $1,x,x^2,\ldots,x^n$ generan $\K_n[x]$. Por otro lado, si  $\lambda_0 + \lambda_1 x + \lambda_2x^2+\cdots+\lambda_{n-1}x^{n-1} =0$, tenemos que $\lambda_0=\lambda_1 = \lambda_2 =\cdots =\lambda_{n-1} =0$.
 \end{ejemplo*}
 
-\begin{ejemplo*}[{\sc Base canónica de $M_{m \times n}(\K)$}] 
+\begin{ejemplo*}[\textsc{Base canónica de $M_{m \times n}(\K)$}] 
     Sean $1 \le i \le m$, $1\le j \le m$ y $E_{ij} \in M_{m \times n}(\K)$ definida por
     \begin{equation*}
         [E_{ij}]_{kl} = \left\{ 
@@ -6836,7 +6840,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
             \end{proof}
             
             
-            \begin{ejemplo}[{\sc Transformaciones de $\R^2$ en $\R^2$}] Las rotaciones y reflexiones en $\R^2$ son transformaciones lineales. Sea $\theta \in \R$ tal que  $0 \le \theta \le 2\pi$,  definimos
+            \begin{ejemplo}[\textsc{Transformaciones de $\R^2$ en $\R^2$}] Las rotaciones y reflexiones en $\R^2$ son transformaciones lineales. Sea $\theta \in \R$ tal que  $0 \le \theta \le 2\pi$,  definimos
                 \begin{equation*}
                     \begin{array}{llll}
                     R_\theta:&\R^2 &\to &\R^2 \\
@@ -7811,6 +7815,8 @@ Luego,
         $$
     \end{proof}
     
+    \begin{comment}
+    
     \begin{teorema}
             Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $	\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces existe una única matriz $P$ de orden $n \times n$, invertible, tal que para todo $v \in V$
             \begin{enumerate}
@@ -7937,7 +7943,7 @@ Luego,
     
       
 \end{proof}
-    
+\end{comment}
     \end{section}
 
 
@@ -7993,20 +7999,26 @@ Luego,
             \end{ejemplo*}
         
         
-            \begin{definicion}
-                Sa $A$ matriz $m \times n$,  el \textit{operador lineal asociado a $A$}\index{matriz!operador lineal asociado} es $A: \R^n \to \R^m$  definido $A(X) = AX$. Es decir
+            \begin{observacion*}
+                Recordemos que si  $A = [a_{ij}]$ matriz $m \times n$, el operador lineal asociado a $A$ si se define por 
+                \begin{align*}
+                    \begin{array}{rccc}
+                        T : &\R^n &\to &\R^m \\
+                            &v &\mapsto &Av.
+                    \end{array}.
+                \end{align*}
+                Es decir
                 \begin{equation}
-                    A(x_1,\ldots,x_n):= \begin{bmatrix} a_{11} &\cdots &a_{1n} \\ \vdots &\ddots& \vdots \\a_{m1} &\cdots &a_{mn}
+                    T(x_1,\ldots,x_n):= \begin{bmatrix} a_{11} &\cdots &a_{1n} \\ \vdots &\ddots& \vdots \\a_{m1} &\cdots &a_{mn}
                     \end{bmatrix}\begin{bmatrix}x_1\\\vdots\\x_n\end{bmatrix}.
                 \end{equation}
-            \end{definicion}	
+         	
         
-            \begin{ejemplo*}
-                    Sa $A$ matriz $m \times n$, entonces  el operador lineal asociado a $A$ en las bases canónicas es $A$. Es decir  si $\mathcal B$ y $\mathcal B'$ son las bases canónicas de $\R^n$ y $\R^m$,  respectivamente, entonces 
+                Sean  $\mathcal C_n$ y $\mathcal C_m$ las bases canónicas de $\R^n$ y $\R^m$,  respectivamente, entonces 
                     \begin{equation*}
-                        [A]_{\mathcal B\mathcal B'} =A.
+                        [T]_{\mathcal C_n\mathcal C_m} =A.
                     \end{equation*}
-            \end{ejemplo*}	
+                \end{observacion*}
             
             \begin{proposicion} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
             \begin{equation}\label{matriz-de-tl-2}
@@ -8043,7 +8055,7 @@ Luego,
             De las ecuaciones (\ref{eq-45}) y (\ref{eq-46}) se deduce la formula (\ref{matriz-de-tl-2}).
         \end{proof}
         
-        \begin{teorema}
+        \begin{teorema}[*]
             Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y $\mathcal B = \{v_1,\ldots,v_n\}$ y $\mathcal B' = \{w_1,\ldots,w_m\}$ dos bases  ordenadas de $V$ y $W$ respectivamente. Entonces 
             $$
             \kappa: L(V,W) \to M_{m \times n}(\K)
@@ -8054,7 +8066,7 @@ Luego,
             $$
             es un isomorfismos de espacios vectoriales. 
         \end{teorema}
-        \begin{proof}[Demostracion ($*$)]
+        \begin{proof}[Demostracion]
             Primero probaremos que $\kappa$  es lineal y luego que tiene inversa.
             
             Sean $T,T' \in L(V,W)$ y $\lambda \in \K$, veamos que $\kappa(\lambda T+ T') = \lambda \kappa(T)+ \kappa(T')$,  es decir
@@ -8158,13 +8170,16 @@ Luego,
         \begin{teorema}[Matriz de cambio de base]\label{th-cambio-de-base}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean
             $$
-            \mathcal B = \{v_1,\ldots,v_n \}, \qquad \mathcal B' = \{v'_1,\ldots,v'_n \}
+            \mathcal B = \{v_1,\ldots,v_n \}, \qquad \mathcal B' = \{w_1,\ldots,w_n \}
             $$
             bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces existe $P$ una  matriz invertible  $n \times n$ tal que 
             \begin{equation*}
             [T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}  P.
             \end{equation*}
-            Más aún, $P = [\Id]_{\mathcal B' \mathcal B}$,  donde $\Id$ al  operador  identidad de $V$.
+            Más aún, $P = [\Id]_{\mathcal B' \mathcal B}$ y $P^{-1} = [\Id]_{\mathcal B \mathcal B'}$ ,  donde $\Id$ al  operador  identidad de $V$. Es decir
+            \begin{equation}\label{eq-cambio de base}
+                [T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B}.
+            \end{equation}
         \end{teorema}
         \begin{proof} Tenemos que $T = \Id T$ y $T =T  \Id$, luego 
             \begin{align*}
@@ -8173,10 +8188,9 @@ Luego,
                 &= [\Id]_{\mathcal B \mathcal B'} [T \Id]_{\mathcal B' \mathcal B}& &\\
                 &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B\mathcal B} [\Id]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-5.5}}).
             \end{align*} 
-            Es decir
-            \begin{equation}\label{eq-cambio de base}
-                [T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B}.
-            \end{equation}
+            
+            Por lo tanto  $ [T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B}$.
+            
             Falta probar que $[\Id]_{\mathcal B \mathcal B'}$  es el inverso de  $[\Id]_{\mathcal B' \mathcal B}$. Ahora bien,
             \begin{align*}
                 [\Id]_{\mathcal B \mathcal B'} [\Id]_{\mathcal B' \mathcal B}&= [\Id]_{\mathcal B \mathcal B} = \Id,\\
@@ -8185,9 +8199,50 @@ Luego,
         \end{proof}
     
     
-        La matriz $P$ del teorema anterior es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base}de la base $\mathcal B'$  a la base $\mathcal B$. 
+        La matriz $P =[\Id]_{\mathcal B' \mathcal B} $ del teorema anterior es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base}de la base $\mathcal B'$  a la base $\mathcal B$. 
         
         La fórmula (\ref{eq-cambio de base})  es importante por si misma y debemos recordarla.
+
+        \begin{proposicion}
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\mathcal B$, $\mathcal B'$  bases ordenadas de $V$ y $P$ la matriz de cambio de base de $\mathcal B'$ a $\mathcal B$. Entonces 
+            \begin{equation*}
+                [v]_{\mathcal B} = P [v]_{\mathcal B'}, \quad \forall v \in V.
+            \end{equation*}
+        \end{proposicion}
+        \begin{proof}
+            Sean $\mathcal B = \{v_1,\ldots,v_n \}$, y $\mathcal B' = \{w_1,\ldots,w_n \}$. Entonces  $v= \sum_{i=1}^n a_i v_i$ y $v = \sum_{i=1}^n b_i w_i$ para algunos $a_i$ y $b_i$ en $\K$. Por lo tanto,  debemos probar que
+            \begin{align*}
+                \begin{bmatrix}
+                    a_1 \\ a_2 \\ \vdots \\a_n
+                \end{bmatrix}
+                =
+                    \begin{bmatrix}
+                        p_{11} & \cdots& p_{1n}\\
+                        p_{21} & \cdots & p_{2n} \\ 
+                        \vdots & & \vdots \\
+                        p_{n1} & \cdots & p_{nn}
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        b_1 \\ b_2 \\ \vdots \\b_n
+                    \end{bmatrix}.
+            \end{align*}
+            donde $p_{ij} = [P]_{ij}$,  o lo que es lo mismo  $a_i = \sum_{j=1}^n p_{ij} b_j$, ($1 \le i \le n$).
+
+            Ahora bien, $P =[\Id]_{\mathcal B' \mathcal B} $, por lo tanto 
+            \begin{equation*}
+                w_j = \sum_{i=1}^n p_{ij} v_i , \qquad (1 \le j \le n).
+            \end{equation*}
+            Entonces,
+            \begin{align*}
+                v &= \sum_{i=1}^n b_j w_j \\
+                &= \sum_{i=1}^n b_j(\sum_{i=1}^n p_{ij} v_i) \\
+                &= \sum_{i=1}^n \sum_{i=1}^n p_{ij}b_j v_i \\
+                &= \sum_{i=1}^n (\sum_{i=1}^n p_{ij}b_j) v_i. 
+            \end{align*}
+            Es decir $v = \sum_{i=1}^n (\sum_{i=1}^n p_{ij}b_j) v_i$. Como  $v= \sum_{i=1}^n a_i v_i$, debido a la unicidad de escritura de vectores en bases ordenadas obtenemos que  $a_i = \sum_{j=1}^n p_{ij} b_j$ que es lo que queríamos probar. 
+        \end{proof}
+
+       
     \vskip .3cm
     
         El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
@@ -10222,17 +10277,17 @@ Luego,
         \begin{definicion}
             Un  conjunto $\K$ es un \textit{cuerpo}\index{cuerpo} si es un anillo de división conmutativo, es decir, un anillo conmutativo con unidad en el que todo elemento distinto de cero es invertible respecto del producto. Por tanto,  un cuerpo es un conjunto $\K$ en el que se han definido dos operaciones, '$+$' y '$\cdot$', llamadas \textit{adición} y \textit{multiplicación} respectivamente, que cumplen las siguientes propiedades. En la siguiente lista de axiomas $a$, $b$, $c$ denotan elementos arbitrarios de $\K$, y $0$ y $1$ denotan elementos especiales de $\K$ que cumplen las propiedades especificadas más abajo.
             \begin{enumerate}
-                \item[{\bf I1.}] $a+b$ y $a\cdot b$ pertenecen a ${\K}$.
-                \item[{\bf I2.}] {\em Conmutatividad.}\, $a+b = b+a$; $ab=ba$. 
-                \item[{\bf I3.}] {\em Asociatividad.}\, $(a+b)+c = a+(b+c)$;\; $(a\cdot b)\cdot c = a\cdot (b\cdot c)$. 
-                \item[{\bf I4.}] {\em Existencia de elemento neutro.}\, Existen números $0$, $1 \in \K$ con $0\not=1$ tal que $a+0=a$; $a\cdot 1=a$. 
-                \item[{\bf I5.}] {\em Distributividad.}\, $a\cdot (b+c)=a\cdot b+a\cdot c$. 
-                \item[{\bf I6.}] {\em Existencia del inverso aditivo.}\, Por cada $a$ en ${\K}$ existe un único  $-a$ en ${\K}$ tal que $a+(-a)=0$. 
-                \item[{\bf I7.}] {\em Existencia de inverso multiplicativo.}\, Si $a$ es distinto de 0, existe un único elemento $a^{-1} \in \K$  tal que $a\cdot a^{-1}=1$. 
+                \item[\textbf{I1.}] $a+b$ y $a\cdot b$ pertenecen a ${\K}$.
+                \item[\textbf{I2.}] {\em Conmutatividad.}\, $a+b = b+a$; $ab=ba$. 
+                \item[\textbf{I3.}] {\em Asociatividad.}\, $(a+b)+c = a+(b+c)$;\; $(a\cdot b)\cdot c = a\cdot (b\cdot c)$. 
+                \item[\textbf{I4.}] {\em Existencia de elemento neutro.}\, Existen números $0$, $1 \in \K$ con $0\not=1$ tal que $a+0=a$; $a\cdot 1=a$. 
+                \item[\textbf{I5.}] {\em Distributividad.}\, $a\cdot (b+c)=a\cdot b+a\cdot c$. 
+                \item[\textbf{I6.}] {\em Existencia del inverso aditivo.}\, Por cada $a$ en ${\K}$ existe un único  $-a$ en ${\K}$ tal que $a+(-a)=0$. 
+                \item[\textbf{I7.}] {\em Existencia de inverso multiplicativo.}\, Si $a$ es distinto de 0, existe un único elemento $a^{-1} \in \K$  tal que $a\cdot a^{-1}=1$. 
             \end{enumerate}
         \end{definicion}
         
-        Muchas veces denotaremos el producto yuxtaponiendo los elementos,  es decir $ab := a\cdot b$, para $a,b \in \K$. Debido a la ley de asociatividad para la suma (axioma {\bf I3}) $(a+b)+c$ es igual a $a+(b+c)$ y por lo tanto podemos eliminar los paréntesis sin ambigüedad. Es decir, denotamos
+        Muchas veces denotaremos el producto yuxtaponiendo los elementos,  es decir $ab := a\cdot b$, para $a,b \in \K$. Debido a la ley de asociatividad para la suma (axioma \textbf{I3}) $(a+b)+c$ es igual a $a+(b+c)$ y por lo tanto podemos eliminar los paréntesis sin ambigüedad. Es decir, denotamos
         $$
         a+b+c := (a+b)+c = a+(b+c).
         $$
@@ -10240,8 +10295,8 @@ Luego,
         $$
         abc = (ab)c = a(bc).
         $$
-        Debido a la ley de conmutatividad (axioma {\bf I2}), es claro que del axioma {\bf I4} se deduce que  $0+a=a+0=a$ y $1a = a1=a$. Análogamente,  por  {\bf I2} e  {\bf I6} obtenemos que  $-a+a =   
-        a+(-a)=0$, y por {\bf I6} que  $a a^{-1} = a^{-1}a=1$.
+        Debido a la ley de conmutatividad (axioma \textbf{I2}), es claro que del axioma \textbf{I4} se deduce que  $0+a=a+0=a$ y $1a = a1=a$. Análogamente,  por  \textbf{I2} e  \textbf{I6} obtenemos que  $-a+a =   
+        a+(-a)=0$, y por \textbf{I6} que  $a a^{-1} = a^{-1}a=1$.
         
         
         
@@ -10282,7 +10337,7 @@ Luego,
         \begin{align*}
         0\cdot 0&=0, & 0\cdot 1&=0, & 1\cdot 0&=0, & 1\cdot 1&=1.
         \end{align*}
-        Dejamos como ejercicio para el lector comprobar que estas operaciones así definidas satisfacen los axiomas {\bf I1.} a {\bf I7.} y por lo tanto $\F_2$ es un cuerpo, con dos elementos.
+        Dejamos como ejercicio para el lector comprobar que estas operaciones así definidas satisfacen los axiomas \textbf{I1.} a \textbf{I7.} y por lo tanto $\F_2$ es un cuerpo, con dos elementos.
         
         \begin{obs*}
             El lector suspicaz reconocerá en estas operaciones a la suma y el producto definidos en el conjunto $\Z_2=\{\overline{0},\overline{1}\}$ de congruencias módulo 2  definido en Álgebra 1/Matemática Discreta I. En efecto, resultados desarrollados en ese curso permiten demostrar que los conjuntos $\Z_p$, con $p$ primo, son ejemplos de cuerpos, en este caso con $p$ elementos.
