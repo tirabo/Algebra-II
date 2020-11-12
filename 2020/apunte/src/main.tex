@@ -522,8 +522,6 @@
         (\textit{existencia de opuesto} o  \textit{inverso aditivo}).
     \end{enumerate}
 
-\vskip .3cm
-
     Estas propiedades se deducen casi trivialmente de la definición de suma, coordenada a coordenada, y de la validez de las propiedades en el caso de la recta real. Como es usual en otros contextos ya conocidos, si $v,w \in \R^n$,  entonces denotamos $v- w := v + (-w)$.
     
     
@@ -761,7 +759,6 @@
             
     \end{ejemplo*}
 
-\vskip .3cm
      La multiplicación por 3 equivale a ``estirar'' $v$ por 3. Del mismo modo, $\frac12v$ 	equivale a estirar $v$ en $\frac12$, es decir, reducir $v$ a la mitad de su tamaño. En general, si $t$ es un número con $t> 0$, interpretamos $tv$ como un punto en la misma dirección que $v$ con tamaño  $t$-veces el tamaño de $v$.  De hecho, decimos que $v$ y $w$ tienen la misma dirección si existe un número $\lambda> 0$ tal que $v = \lambda w$. La multiplicación por un número negativo invierte la dirección. Así, $-3 v$ se representa como en la figura anterior, en la parte (b). Decimos que $v$ y $w$  (ninguno de los cuales es cero) tienen direcciones opuestas si existe un número $\lambda <0$ tal que $v =\lambda w$. Por lo tanto, $-v$ tiene dirección opuesta a $v$.
 
         
@@ -1294,10 +1291,6 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
     \end{enumerate}
 
 
-
-\vskip .5cm
-
-
     \begin{section}{Vectores afines}\label{seccion-vectores-afines}
         En  esta sección veremos el concepto de vector afín, que nos servirá  para entender más geométricamente los conceptos de rectas y planos en $\R^2$ y $\R^3$,  respectivamente (secciones \ref{seccion-rectas-en-r2} y \ref{seccion-planos-en-r3}). 
         \begin{figure}[h]
@@ -1347,7 +1340,6 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
         
         En los siguientes dibujos, ilustramos vectores afines paralelos. En el primer dibujo  con la misma dirección,  en el segundo, con direcciones opuestas.
         
-        \vskip .3cm
         
         \begin{center}
             \begin{tabular}{lcl}
@@ -2498,17 +2490,12 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 (\ref{sist-02}) es solución de  (\ref{sist-01}).
             \end{proof}
             
-            
-            
-            
-            
-            
-            \vskip .2cm  
+
             \begin{observacion*}
                 La equivalencia de sistemas lineales es una relación de equivalencia,  en particular  vale la propiedad transitiva: si el sistema (A) es equivalente al sistema (B) y  el sistema (B)  es equivalente al sistema (C),  entonces (A) es equivalente a (C). Esto nos permite, ir paso a paso para eliminar las incógnitas. 
             \end{observacion*}
 
-            \vskip .2cm
+    
             \begin{ejemplo*}
                 Encontrar las soluciones del siguiente sistema de ecuaciones
                 \begin{equation*}\label{sist-000} \tag{S0}
@@ -2612,7 +2599,6 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
             
             Debemos tener claro que el lenguaje de las matrices en el contexto de esta sección, no es más que una notación más cómoda para el problema de resolver sistemas de ecuaciones lineales.  
             
-                \vskip .4cm 
             Estudiaremos la solución de un sistema de ecuaciones lineales 
             \begin{equation}\label{sist-eq-hom}
             \begin{matrix}
@@ -2663,8 +2649,6 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
             
             Usualmente escribiremos a una matriz $m \times  n$   con entradas  $[A]_{ij} = a_{ij}$ como en (\ref{matriz}). A esta matriz también la podemos denotar como $A = [a_{ij}]$. Dos matrices $A = [a_{ij}]$ y $B = [b_{ij}]$, de orden $m \times n$, son iguales si $a_{ij} = b_{ij}$ para todo $i = 1,\ldots,m$  y $j = 1,\ldots,n$. Es decir, dos matrices son iguales si los elementos que ocupan la misma posición en ambas matrices coinciden.
             
-            \vskip .3cm
-            
             Como hicimos al comienzo de la sección, a un sistema de $m$ ecuaciones con $n$ incógnitas le asignaremos una matriz $m \times  n$  lo cual nos permitirá trabajar en forma más cómoda y, como veremos en la próxima sección,  podremos resolver los sistemas de ecuaciones lineales en forma algorítmica, realizando operaciones elementales por fila en las matrices correspondientes. 
             
             Sean
@@ -2681,7 +2665,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
             y_1 \\ \vdots \\ y_m
             \end{bmatrix}.
             $$
-            \vskip .1cm
+
             Entonces, podemos escribir el sistema de ecuaciones (\ref{sist-eq-hom}) como
         
             \begin{equation}\label{sist-eq-2}
@@ -2754,7 +2738,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                         \end{bmatrix}.$$
                     \end{enumerate}
                 \end{definicion} 
-                \vskip .3cm
+
                 Podemos describir en forma más compacta una operación elemental por fila de la matriz $A=[a_{ij}]$.
                 \begin{enumerate}
                     \item[E1.] Multiplicar la fila $r$ por $c \not=0$
@@ -2782,7 +2766,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     $$
                 \end{enumerate} 
                 
-                \vskip .3cm 
+                \vskip .5cm 
                 \begin{ejemplo*}
                     Sea 
                     $$
@@ -2917,10 +2901,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \begin{bmatrix} 3 & 9 & 6 \\ 4&8&4 \\ 0&2&2 \end{bmatrix}.
                     \end{multline*}
                 \end{proof}
-                
-                \vskip .5cm 
-                
-                    
+
                 \begin{definicion}
                     Consideremos un sistema como en (\ref{sist-eq-hom}) y sea  $A$ la matriz correspondiente al sistema. La \textit{matriz  ampliada}\index{sistema de ecuaciones lineales!matriz  ampliada} del sistema es 
                     \begin{equation}\label{mtrx-ampliada}
@@ -3093,11 +3074,6 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0
                 \end{bmatrix}
                 \end{equation}
-                
-                \vskip .5cm
-                
-                
-                
                 
                 \begin{definicion}
                     Sea $\Id_n$ la matriz  $n \times n$ definida 
@@ -3275,9 +3251,8 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 
                  Las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones (\ref{sist-eq-hom-merf0}) y $x_i \in \K$ para $x_i$ libre. 
                 
-                \vskip .3cm
                 El método anterior es denominado \textit{método de Gauss.}\index{sistema de ecuaciones lineales!método de Gauss} 
-                \vskip .3cm
+
                 En particular,  hemos probado:
                 
                 \begin{teorema}\label{inf-sol}
@@ -3382,9 +3357,6 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
             
             \begin{subsection}{Algunos tipos de matrices}
                 
-                \
-                \vskip .3cm
-                
                 \textbf{Matriz cuadrada.} Es aquella que tiene igual número de filas que de columnas, es decir si es una matriz $n \times n$ para algún $n \in\mathbb N$. En ese caso, se dice que la matriz es de orden $n$. Por ejemplo, la matriz
                 \begin{equation*}
                 A= \begin{bmatrix}
@@ -3399,9 +3371,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 en la diagonal que va desde la esquina superior izquierda hasta la inferior derecha. En otras
                 palabras, la diagonal principal de una matriz $A=[a_{ij}]$ está formada por los elementos
                 $a_{11},a_{22},\ldots,a_{nn}$.  En el ejemplo anterior la diagonal principal está compuesta por los elementos: $a_{11} = 1$, $a_{22} = 4$ , $a_{33} = 1$.
-                
-                \vskip .3cm
-                
+
                 \textbf{Matriz diagonal y matriz escalar.} Una matriz cuadrada, $A=[a_{ij}]$ de orden $n$, es \textit{diagonal}\index{matriz!diagonal} si $a_{ij}  =0$ , para $i \not= j$ . Es decir, si todos los elementos situados fuera de la diagonal principal son cero. Por ejemplo, la siguiente matriz es diagonal:
                 \begin{equation}
                 \begin{bmatrix}
@@ -3418,13 +3388,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \end{equation}
                 con $c \in \K$.
                 
-                \vskip .3cm
-                
                 \textbf{Matriz unidad o identidad.} Esta matriz ya la hemos definido anteriormente. Recordemos que es una matriz diagonal cuya diagonal principal está compuesta de 1's. 
                 
                 Más adelante veremos que la matriz identidad, respecto a la multiplicación de matrices, juega un papel similar al número 1 respecto a la multiplicación de números reales o enteros (elemento neutro del producto).
-                
-                \vskip .3cm
                 
                 \textbf{Matriz nula}. La \textit{matriz nula}\index{matriz!nula} de orden $m\times n$, denotada $0_{m \times n}$ o simplemente $0$ si $m$ y $n$ están sobreentendidos,  es la  matriz $m \times n$ cuyas entradas son todas nulas ($=0$). 
                 
@@ -3492,13 +3458,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \end{equation}
                 Es decir, los elementos que ocupan la posición $ij$ en la matriz producto, se obtienen sumando 	los productos que resultan de multiplicar los elementos de la fila $i$ en la primera matriz por los
                 elementos de la columna $j$ de la segunda matriz. Al producto de $A$ por $B$ lo denotamos $AB$. 
-                
-                \vskip .2cm 
-                
+
                 Es muy importante recalcar que por la definición, se puede multiplicar una matriz $m \times n$ por una matriz $r \times p$, sólo si $n=r$ y en ese caso, la multiplicación resulta ser una matriz $m \times p$. 
-                
-                \vskip .2cm 
-                        
+
                 Podemos visualizar la multiplicación así:
                 \begin{align*}
                     \left[
@@ -3530,12 +3492,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \end{array}
                     \right]
                 \end{align*} 
-                
-    
-                
-                \vskip .2cm 
-                
-                
+
                 \begin{obs}\label{mtrx-filasxcols}
                      Sean $A=[a_{ij}]$ matriz $m \times n$ y $B=[b_{ij}]$ matriz $n \times p$, entonces si 
                      multiplicamos la matriz que se forma con la fila $i$ de $A$ por la matriz que determina la columna $j$ de $B$, obtenemos el coeficiente $ij$ de $AB$.
@@ -3682,9 +3639,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                  para $k \in \mathbb N$.
                 
                 \end{observacion}
-                
-                \vskip .3cm
-                
+
                 Otras observaciones importantes: 
                 
                 \begin{itemize}
@@ -3832,9 +3787,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \end{equation*}
                 \end{enumerate}
             \end{ejemplo*}
-            
-            \vskip .5cm
-            
+
             En el caso de matrices $m \times m$ tampoco es difícil encontrar las matrices elementales:
             \begin{enumerate}
                 \item Si $c \not=0$, multiplicar por  $c$ la fila $k$ de la matriz identidad, resulta en la matriz elemental que tiene todos 1's en la diagonal, excepto en la posición $k,k$ donde vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
@@ -4026,9 +3979,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \begin{bmatrix} 1&0\\0&1\end{bmatrix}.
                 \end{equation*}
             \end{ejemplo*}
-            
-            \vskip .5cm
-            
+ 
             \begin{proposicion}
                 Sea $A  \in M_{n\times n}(\K)$, 
                 \begin{enumerate}
@@ -4470,9 +4421,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \begin{bmatrix*} a&b\\c&d\end{bmatrix*}^{-1} =  \dfrac{1}{ad-bc}
                 \begin{bmatrix*}[c]d&-b\\-c&a\end{bmatrix*}
                 \end{equation} 
-                
-                \vskip 6pt
-                
+
                 Veremos en la próxima sección que el uso de determinantes permitirá establecer la generalización de este resultado para matrices $n \times n$ con $n\ge 1$.
                 
             \end{proof}
@@ -4483,19 +4432,17 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
     \begin{section}{Determinante}\label{seccion-determinate}
     El determinante puede ser pensado como una función que a cada matriz cuadrada $n \times n$ con coeficientes en $\K$,  le asocia un elemento de $\K$. En  esta sección veremos como se define esta función y algunas propiedades de la misma. Algunas  demostraciones se omitirán, pues se pondrá énfasis en los usos del determinante y no tanto en sus propiedades teóricas. Las demostraciones faltantes se pueden ver en el Apéndice \ref{apend.Determinante}.
     
-    \vskip .5cm
     El determinante, permite, entre otras cosas, 
     \begin{itemize}
         \item determinar si  una matriz cuadrada es invertible,
         \item dar una fórmula cerrada para la inversa de una matriz invertible.
     \end{itemize}
     Como consecuencia de lo anterior, el determinante permite determinar si un sistema de $n$  ecuaciones lineales con $n$ incógnitas admite una única solución o no, y en el caso de que exista una única solución, dar una fórmula cerrada de esa solución. 
-    \vskip .5cm
+    
     Una forma de definir determinante es con una fórmula cerrada que usa el \textit{grupo de permutaciones.}\index{grupo de permutaciones} Esta forma de definir determinante está fuera del alcance de este curso. La forma  que usaremos nosotros para definir determinante es mediante una definición recursiva: para calcular el determinante de una matriz $n \times n$, usaremos el cálculo  del determinante para matrices $n-1 \times n-1$,  que a su vez se calcula usando el determinante de matrices $n-2 \times n-2$ y así sucesivamente hasta llegar al caso base, que es el caso  de matrices $1 \times 1$.
-    
-    
-    \vskip .5cm
-    
+
+    \vskip .3cm
+
     \begin{definicion} Sea $A \in M_n(\K)$. Sean  $i, j$ tal que  $1 \le i,j \le n$. Entonces
         $A(i|j)$ es la matriz $n-1 \times n-1$ que se obtiene eliminando la fila $i$ y la columna $j$ de $A$.
     \end{definicion}
@@ -4508,7 +4455,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
         A(3|1)= \begin{bmatrix} -1&3\\2&-5 \end{bmatrix}.
         \end{equation*}
     \end{ejemplo*}		
-    
+
+    \vskip .3cm
+
     \begin{definicion}
         Sea $n \in \mathbb N$ y $A =[a_{ij}] \in M_n(\K)$ , entonces el \textit{determinante de $A$}\index{determinante}, denotado $\det(A)$ se define como:
         \begin{enumerate}
@@ -4788,7 +4737,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 \begin{proof}
     Ver el teoremas \ref{th-det-matriz-invertible} y \ref{th-dem-detAB} y .
 \end{proof}
-        \vskip .2cm
+
     \begin{corolario}  Sean $A,B \in M_n(\K)$, entonces
         \begin{enumerate}
             \item si $A$ invertible $\det(A^{-1}) = \det(A)^{-1}$,
@@ -4802,7 +4751,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
         2.  
         $\det (AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)$.
     \end{proof}
-    \vskip .4cm 
+
     \begin{definicion}\label{def-transpuesta-simetrica}
         Sea $A$ una matriz $m \times n$ con coeficientes en $\K$. La \textit{transpuesta}\index{matriz!transpuesta} de $A$, denotada $A^\t$, es la matriz  $n \times m$ que en la fila $i$ y columna $j$ tiene el coeficiente $[A]_{ji}$. Es decir
         \begin{equation*}
@@ -4846,9 +4795,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
     \end{proposicion}
     \begin{proof}
         (1) 	$[(A^\t)^\t]_{ij} = [A^\t]_{ji} = [A]_{ij}$. 
-        
-        \vskip .3cm 
-        
+
         (2)	Por definición de transpuesta $(AB)^\t$ es una matriz $k \times m$.  Ahora observemos  que $B^\t$  es una matriz $k \times n$ y $A^\t$ es $n \times m$, luego tiene sentido multiplicar $B^\t$ por $A^\t$ y se obtiene también  una matriz  $k \times m$. La demostración de la proposición se hace comprobando que el coeficiente $ij$ de $(AB)^\t$ es igual al coeficiente $ij$ de $B^\t A^\t$ y se deja como ejercicio para el lector. 
         
         (3) 
@@ -4906,7 +4853,6 @@ También vale este resultado para matrices $n \times n$.
 \begin{proof}
     Ver el teorema \ref{th-det-a-trans-app}.
 \end{proof}
-    \vskip .3cm
     
     El resultado anterior permite obtener resultados nuevos del cálculo de determinante a partir de resultados vistos anteriormente. 
     
@@ -4970,11 +4916,9 @@ También vale este resultado para matrices $n \times n$.
 
 \end{section}	
 
-\vskip .4cm
 
 \begin{section}{Autovalores y autovectores}\label{seccion-autovalores-y-autovectores-de-matrices}
 
-    \vskip .4cm
 
     La multiplicación de una matriz por  un vector es una transformación lineal, las cuales veremos en el capítulo \ref{chap-trans-lin}, y estas juegan un rol muy importante en toda la matemática, pasando por el álgebra, el análisis, la geometría, etc.  Como ya vimos, es sencillo multiplicar a izquierda por matrices diagonales:
     \begin{equation*}
@@ -5016,20 +4960,16 @@ También vale este resultado para matrices $n \times n$.
         \end{align*}
         En ese caso decimos que $v$  es un \textit{autovector}\index{autovector de una matriz} asociado a $\lambda$
         \end{definicion}
-        \vskip .1cm
 
         \begin{observacion*} Nada impide, por definición, que un autovalor pueda valer $0$, pero un autovector \textit{nunca} puede ser $0$. 
         \end{observacion*}
 
-        \vskip .1cm
         \begin{ejemplo*}
         $1$ es un autovalor de $\Id_n$ y todo $v\in\K^n$ es un autovector asociado a $1$ pues
         \begin{align*}
         \Id_n v= v 
         \end{align*}
         \end{ejemplo*}
-         
-        \vskip .1cm
         
         \begin{ejemplo*}
         $0$ es un autovalor de  
@@ -5064,12 +5004,7 @@ También vale este resultado para matrices $n \times n$.
         \right]
         \end{align*}
         \end{ejemplo*}
-         
-        
-        \vskip .2cm
-        
-    
-        
+
         \begin{observacion*}
         La existencia de autovalores dependen del cuerpo donde estamos trabajando. 
         Por ejemplo sea $A \in \R^{n\times n}$,  definida por 
@@ -5107,8 +5042,6 @@ También vale este resultado para matrices $n \times n$.
         Veremos más adelante que si permitimos autovalores complejos entonces esta matriz tiene  autovalores.
         \end{observacion*}
 
-        \vskip .2cm
-        
         \begin{definicion}
         
         Dado $i\in\{1, ..., n\}$, como ya vimos se denota \textit{$e_i$} al vector columna de $\K^n$ cuyas coordenadas son todas ceros excepto la coordenada $i$ que es un $1$
@@ -5121,7 +5054,7 @@ También vale este resultado para matrices $n \times n$.
         \end{align*}
         El conjunto $\{e_1, ..., e_n\}$ se llama \textit{base canónica}\index{base canónica} de $\K^n$.
         \end{definicion}
-        \vskip .2cm
+
         \begin{ejemplo*}
         En $\K^3$ la base canónica es  $
         e_1=\left[
@@ -5142,15 +5075,11 @@ También vale este resultado para matrices $n \times n$.
         \right]
         $
         \end{ejemplo*}
-         
-        \vskip .2cm
-    
-    
-         
+
         \begin{ejemplo*}
         Sea $D\in\K^{n\times n}$ una matriz diagonal con entradas $\lambda_1$, $\lambda_2$, ..., $\lambda_n$. Entonces $e_i$ es un autovector con autovalor $\lambda_i$  $\,\forall\, i\in\{1, ..., n\}$
         \end{ejemplo*}
-        \vskip .2cm
+
         
          El conjunto de todos los autovectores con un mismo autovalor es \textit{invariante por la suma y la multiplicación por escalares.}	En particular los múltiplos de un autovector son autovectores con el mismo autovalor.
              
@@ -5163,8 +5092,7 @@ También vale este resultado para matrices $n \times n$.
         $$
         Es decir, \textit{$V_\lambda$} es el conjunto  formado por todos los autovectores asociados a $\lambda$ y el vector nulo.
         \end{definicion}
-        
-        \vskip .2cm
+
         \begin{teorema} Sea $A$ matriz $n \times n$ y $\lambda \in \K$. 
         Si $v, w $ pertenecen a $V_\lambda$, el autoespacio de $A$ asociado a $\lambda$, entonces $v+tw \in V_\lambda$ para cualquier $\t \in \K$. 
         \end{teorema}
@@ -5232,12 +5160,9 @@ También vale este resultado para matrices $n \times n$.
          \item $v$ es solución del sistema homogéneo $(A-\lambda \Id)X=0$
         \end{itemize}
     \end{proposicion}
-        \vskip .6cm
+
         Esta es casi la respuesta a nuestro problema. Para dar una respuesta más operativa introducimos el siguiente polinomio.
          
-        
-         
-        
         \begin{definicion}
         
         Sea $A\in\K^{n\times n}$. El \textit{polinomio característico}\index{polinomio característico} de $A$ es
@@ -5245,7 +5170,7 @@ También vale este resultado para matrices $n \times n$.
         \chi_A(x)=\det(A-x \Id)
         \end{align*}
         \end{definicion}
-        \vskip .2cm
+
         \begin{ejemplo*}
         El polinomio  característico de $\Id_n$ es 
         \begin{align*}
@@ -5294,17 +5219,8 @@ También vale este resultado para matrices $n \times n$.
         $
         \chi_{A}(x)=x^2
         $
-        \end{ejemplo*}\vskip -.4cm
-        \begin{proof}
-            $A-x \Id=\left[
-        \begin{array}{cc}
-        -x&1\\0&-x 
-        \end{array}
-        \right]$ es triangular superior. Entonces el determinante es el producto de la diagonal. 
-        \end{proof}
-     
-        \vskip .2cm
         
+        \end{ejemplo*}\vskip -.8cm 
         \begin{ejemplo*}
         Si
         $
@@ -5316,24 +5232,19 @@ También vale este resultado para matrices $n \times n$.
         \right]
         $, entonces $ \chi_{A}(x)=(a-x)(d-x)-bc $.
         \end{ejemplo*}
-        \vskip -.2cm
+
         \begin{proof}
             $A-x \Id=\left[
         \begin{array}{cc}
         a-x&b\\c&d-x 
         \end{array}
         \right]$ y usamos la fórmula del determinante de una $2\times 2$. 
-        \end{proof}
-
-        \vskip .2cm 
+        \end{proof}\vskip.4cm
 
         \begin{proposicion}\label{autovalores}
                 Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico de $A$. 
             \end{proposicion}
             \begin{proof}${}^{}$
-                \vskip .1cm 
-
-
                 \begin{tabular}{rl}
         $\lambda$ es autovalor &$\Leftrightarrow$ existe $v \ne 0$ tal que $Av = \lambda v$ \\
                     &\\
@@ -5353,7 +5264,6 @@ También vale este resultado para matrices $n \times n$.
         
      
         \begin{observacion*} Sea $A\in \K^{n \times n}$, entonces podemos aplicar el siguiente método para encontrar autovalores y autovectores de $A$.
-            \vskip .2cm
             \begin{enumerate}
                 \item Calcular $\chi_A(x) =\det(A-x \Id{})$,
                 \vskip .2cm
@@ -5369,6 +5279,7 @@ También vale este resultado para matrices $n \times n$.
             \end{enumerate}
         \end{observacion*}
      
+        \vskip .4cm
          
         \begin{ejemplo*}
             Encontrar autovalores y autovectores de la matriz 
@@ -5378,7 +5289,7 @@ También vale este resultado para matrices $n \times n$.
                 \end{bmatrix}.
             \end{equation*}
         \end{ejemplo*}
-        \vskip -.4cm
+        \vskip -.8cm
         
         \begin{proof}[Solución]${}^{}$
             \begin{enumerate}
@@ -5421,9 +5332,9 @@ También vale este resultado para matrices $n \times n$.
             =
             \begin{bmatrix}	0\\0\end{bmatrix} \tag{S2}
         \end{align*}
-    \vskip .4cm
+
         (S1)\quad $\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix} \stackrel{F_1 -2F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-1 \end{bmatrix}$  $\Rightarrow$ $x_1-x_2=0$ $\Rightarrow$ $(t,t)$ es solución. 
-        \vskip .4cm
+
         (S2)\quad  $\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix} \stackrel{F_2 -F_1}{\longrightarrow} \begin{bmatrix}1&-2 \\ 0&0\end{bmatrix}$  $\Rightarrow$ $x_1-2x_2=0$ $\Rightarrow$ $(2t,t)$ es solución. 
     
      
@@ -5456,22 +5367,23 @@ También vale este resultado para matrices $n \times n$.
             \begin{align*}
                 \chi_A(x)=x^2+1.
                 \end{align*}
-    \vskip .2cm
+ 
+                
             El polinomio no tiene raíces reales, por lo tanto no existen autovalores reales (obviamente no hay autovectores).
         \end{proof}
+
         Sin embargo si nos dicen 
-        \vskip .2cm
-        \textit{Encontrar autovalores y autovectores complejos de la matriz  $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix}$}, 
-        \vskip .2cm
+        \begin{center}
+            \textit{Encontrar autovalores y autovectores complejos de la matriz  $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix}$}, 
+        \end{center}
         la respuesta va a ser diferente. 
-        \vskip .2cm
+
         Lo  que ocurre es que 
         \begin{align*}
         \chi_A(x)=x^2+1=(x+i)(x-i),
         \end{align*}
         y este polinomio \textit{sí} tiene raíces complejas: $i$ y $-i$, por lo tanto  $i$ y $-i$ son los autovalores de $A$.
-        \vskip .2cm
-      
+
         Averigüemos los autovalores planteando los sistemas de ecuaciones correspondientes,  es decir $A- \lambda \Id x =0$ para $\lambda=i, -i$:
 
         \begin{align*}
@@ -5493,7 +5405,7 @@ También vale este resultado para matrices $n \times n$.
         Resolvamos los sistemas:
 
         (S1)\quad $\begin{bmatrix}  - i& -1\\ 1&-i\end{bmatrix} \stackrel{F_1 +i F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-i \end{bmatrix}$  $\Rightarrow$ $x_1-i x_2=0$ $\Rightarrow$ $(i\omega ,\omega)$ es solución ($\omega \in \C$). 
-        \vskip .4cm
+   
         (S2)\quad  $\begin{bmatrix}	i&-1 \\ 1&i\end{bmatrix} \stackrel{F_1 -i F_2}{\longrightarrow} \begin{bmatrix}0&0 \\  1&i\end{bmatrix}$  $\Rightarrow$ $x_1+i x_2=0$ $\Rightarrow$ $(-i \omega,\omega)$ es solución ($\omega \in \C$).
 
 
@@ -5677,10 +5589,7 @@ La existencia del vector $\textbf{0}$ del axioma \textbf{S3.}, neutro para la su
 
 Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D1.} y \textbf{D2.} se siguen de las propiedades conocidas de la exponenciación en $\R$ y quedan a cargo del lector, como un interesante desafío para terminar de comprender este ejemplo.
 \end{ejemplo*}            
-            
-            \vskip .3cm
-            
-            
+
             \begin{proposicion}\label{prop-basicas-ev} Sea $V$ un espacio vectorial sobre el cuerpo $\K$. Entonces,
                 \begin{enumerate}
                     \item\label{c*0=0} $\lambda.0=0$, para todo $\lambda \in \K$;
@@ -5805,9 +5714,6 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     \end{enumerate}
 \end{ejemplo*}
 
-\vskip .5cm
-
-     
 \begin{definicion}
     Sea $V$ espacio vectorial sobre $\K$ y $v_1,\ldots,v_n$ vectores en $V$. Dado $v \in V$, diremos que\textit{ $v$  es combinación lineal de los $v_1,\ldots,v_n$ }\index{combinación lineal} si existen escalares $\lambda_1,\ldots,\lambda_n$ en $\K$,  tal que 
     $$
@@ -5968,11 +5874,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     \begin{proof}
         Denotemos $W_1 = \langle v_1,\ldots,v_k \rangle$ y $W_2$ la intersección de todos los subespacios vectoriales que contienen  a $v_1,\ldots,v_k$. Probaremos que  $W_1 = W_2$ con la doble inclusión,  es decir probando que $W_1 \subseteq W_2$ y  $W_2 \subseteq W_1$.
         
-        \vskip.3cm
-        
         ($W_1 \subseteq W_2$). Sea $W$  subespacio vectorial que contiene $v_1,\ldots,v_k$. Como $W$ es subespacio,  entonces  $W$ contiene a cualquier combinación lineal de los $v_1,\ldots,v_k$, por lo tanto $W$ contiene a $W_1$. Es decir, cualquier subespacio que contiene a $v_1,\ldots,v_k$,  también contiene a  $W_1$, por lo tanto la intersección de todos los subespacios que  contienen a $v_1,\ldots,v_k$, contiene a $W_1$. Luego $W_2 \supseteq W_1$.
-        
-        \vskip.3cm
         
         ($W_2 \subseteq W_1$). $W_1$ es un subespacio que contiene a $v_1,\ldots,v_k$, por lo tanto  la intersección de todos los subespacios que  contienen a $v_1,\ldots,v_k$  está contenida en $W_1$. Es decir, $W_2 \subseteq W_1$.
     \end{proof}
@@ -6068,8 +5970,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         \end{enumerate}
     \end{ejemplo*}
 
-\vskip .3cm
-Finalmente, daremos un ejemplo muy importante. 
+    Finalmente, daremos la definición de espacio fila y espacio columna de una matriz, definiciones  que veremos posteriormente son de importancia en la teoría. 
 
     \begin{definicion}\label{espacio-fila-columna}
         Sea $A = [a_{ij}] \in M_{m \times n}(\K)$. El \textit{vector fila $i$} es el vector  $(a_{i1},\ldots,a_{in}) \in \K^n$. El \textit{espacio fila}\index{matriz!espacio fila} de $A$ es el subespacio de $\K^n$ generado por los $m$ vectores fila de $A$.  De forma análoga, se define  el vector columna $j$ al vector $(a_{1j},\ldots,a_{mj}) \in \K^m$ y  el \textit{espacio columna}\index{matriz!espacio columna} de $A$ es el subespacio de $\K^m$ generado por los $n$ vectores columna de $A$.  
@@ -6080,12 +5981,15 @@ Finalmente, daremos un ejemplo muy importante.
         $$
         A = \begin{bmatrix}
         1&2&0&3&0\\ 0&0&1&4&0 \\0&0&0&0&1
-        \end{bmatrix},
+        \end{bmatrix} \in \C^{3 \times 5},
         $$
-        entonces, como vimos en \ref{ejemplos2-1} del ejemplo de la p. \pageref{ejemplos2}, el espacio fila es
+        entonces, por definición, el espacio fila es el subespacio generados por las filas de la matriz: 
+        $$
+        W = \la  (1,2,0,3,0), (0,0,1,4,0), (0,0,0,0,1) \ra_\C.
+        $$ 
+        También, como vimos en \ref{ejemplos2-1} del ejemplo de la p. \pageref{ejemplos2}, el espacio fila puede ser caracterizado de forma implícita:
         \begin{align*}
-        W &= \left\{(\lambda_1,2\lambda_1,\lambda_2,3\lambda_1+4\lambda_2,\lambda_3)\in \C^5: \lambda_1,\lambda_2, \lambda_3 \in \C \right\} \\
-        &=\left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
+        W =\left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
         \end{align*}
     \end{ejemplo*}
 \end{section}		
@@ -7209,8 +7113,6 @@ Luego,
     que es la descripción paramétrica $\img(T)$.  Es claro que  $\{(-\frac13,0,1,0),(\frac12,\frac12,0,1) \}$ es una base de $\img(T)$.
 \end{proof}
 
-
-        
         He aquí uno de los resultados más importantes del álgebra lineal.
         
         \begin{teorema}\label{rang+nul=dimV}
@@ -7467,7 +7369,7 @@ Luego,
             \begin{multline*}
                 T^{-1}(w_1+w_2) = 	T^{-1}(T(v_1)+T(v_2))  = 	T^{-1}(T(v_1+v_2)) = \\ =(T^{-1}\circ T)(v_1+v_2) = v_1+v_2 = T^{-1}(w_1)+ T^{-1}(w_2). 
             \end{multline*}    
-            \vskip .1cm
+            
             
             Sean $w \in W$ y $\lambda  \in \K$, probemos que $T^{-1}(\lambda w) =\lambda  T^{-1}(w)$. 
             
@@ -7510,11 +7412,11 @@ Luego,
             
             (\ref{c-dimV=dimW}) $\Rightarrow$ (\ref{a-dimV=dimW}). $T$ es suryectiva, entonces $rango(T) = n$, luego  $nulidad(T) = 0$, por lo tanto $\nuc(T)=0$ y en consecuencia $T$ es inyectiva. Como $T$ es suryectiva e inyectiva  es un isomorfismo. 
             
-            \vskip .3cm
+            
             
             Hasta aquí probamos que (\ref{a-dimV=dimW}), (\ref{b-dimV=dimW}) y (\ref{c-dimV=dimW}) son equivalentes, luego si probamos que (\ref{a-dimV=dimW}), (\ref{b-dimV=dimW}) o (\ref{c-dimV=dimW}) $\Rightarrow$ (\ref{d-dimV=dimW}) y que (\ref{d-dimV=dimW}) $\Rightarrow$ (\ref{a-dimV=dimW}), (\ref{b-dimV=dimW}) o (\ref{c-dimV=dimW}), estaría probado el teorema. 
             
-            \vskip .3cm			
+          		
             
             (\ref{a-dimV=dimW}) $\Rightarrow$ (\ref{d-dimV=dimW}). Sea $\{v_1,\ldots,v_n \}$  una base de $V$,  entonces $\{v_1,\ldots,v_n \}$ es LI y  genera $V$. Por proposición \ref{prop-T-mono-sii-li-2-li}, tenemos que $\{T(v_1),\ldots,T(v_n) \}$ es LI y  genera $W$, por lo tanto $\{T(v_1),\ldots,T(v_n) \}$ es una base de $W$.
             
@@ -8045,7 +7947,6 @@ Luego,
             \end{equation*}
             y hemos probado (\ref{kappa-lineal}) y, en consecuencia, $\kappa$  es lineal.
             
-            \vskip .3cm
             
             Definamos ahora la inversa de $\kappa$: sea $A = [a_{ij}]$ matriz $m \times n$ y sea $T: V \to W$ la única transformación lineal que satisface, para $1 \le j \le n$, que
             $$
@@ -8198,9 +8099,6 @@ Luego,
             \end{align*}
             Es decir $v = \sum_{i=1}^n (\sum_{i=1}^n p_{ij}b_j) v_i$. Como  $v= \sum_{i=1}^n a_i v_i$, debido a la unicidad de escritura de vectores en bases ordenadas obtenemos que  $a_i = \sum_{j=1}^n p_{ij} b_j$ que es lo que queríamos probar. 
         \end{proof}
-
-       
-    \vskip .3cm
     
         El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
         bases ordenadas de $V$, entonces $[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}P$, para $P$ una matriz invertible. Por lo tanto, 
@@ -8491,12 +8389,10 @@ Luego,
             $$
             luego $x =y$ y claramente $(1,1)$ es autovector con autovalor $1$.
             
-            Por otro lado $T(x,y) = -(x,y)$, implica  que $(y,x) = -(x,y)$, es decir $y = -x$ y claramente podemos elegir $(1,-1)$ como autovector con autovalor $-1$.
+            Por otro lado $T(x,y) = -(x,y)$, implica  que $(y,x)            = -(x,y)$, es decir $y = -x$ y claramente podemos elegir $(1,-1)$ como autovector con autovalor $-1$.
             
             Luego $\mathcal{B} = \{(1,1),(1,-1) \}$  es una base de $\R^2$ de autovectores de  $T$.
         \end{proof}
-        
-        \vskip .3cm
         
         No todas la matrices son diagonalizables,  como veremos en el ejemplo a continuación. 
         
@@ -8708,7 +8604,7 @@ Luego,
          $$
          es decir, $A$ y $B$ conmutan.
          
-         \vskip .3cm
+ 
          
          ($\Leftarrow$)  
          $$
@@ -8730,13 +8626,9 @@ Luego,
          \end{ejemplo*}
          
      \end{comment}
-    
-    
-    
-    \vskip 0.5 cm
+
+ 
     Veremos ahora que una matriz simétrica es diagonalizable, es decir que hay una base de autovectores del operador asociado a la matriz o, equivalentemente, existe matriz $P$ invertible tal que $P^{-1}AP$ es diagonal. 
-    
-    \vskip .3cm
     
     Usaremos el siguiente resultado sin demostración.
     
@@ -8758,8 +8650,6 @@ Luego,
         \end{equation*}
         con $c,\alpha_i \in \C$.
     \end{corolario}
-    
-    
     
     
     \begin{obs}\label{5.9} 	Recordemos que si $a+bi \in \mathbb{C}$, $a$ es la \textit{parte real} y $b$ es la \textit{parte imaginaria}. El conjugado $a+b_i$ es $\overline{a +bi} = a-bi$. La conjugación cumple que $\overline{\overline{z}} = z$, $\overline{z +w} = \overline{z}+\overline{w}$ y $\overline{z w} = \overline{z}\,\overline{w}$ ($z,w \in \mathbb{C}$). Recordemos también que $z\overline{z} = |z|^2$.
@@ -8796,7 +8686,7 @@ Luego,
     Como $A$ es una matriz real $Av,Aw \in \R^n$ y como $\lambda \in \R$, tenemos que $Av = \lambda v$ y $Aw = \lambda w$, luego hay al menos un autovector en $\R^n$ con autovalor $\lambda \in \R$. 
     \end{proof}
     
-    \vskip .3cm
+ 
     
     El siguiente resultado, el \textit{teorema espectral}, requiere para su demostración una generalización del resultado anterior para espacios de producto interno  de dimensión finita y matrices (transformaciones lineales)  simétricas respecto a este producto interno. Todos estos conceptos y resultados son generalizaciones sencillas, pero llevan algún tiempo desarrollarlas y el lector interesado las puede ver en la sección \ref{secccion-operadores-autoadjuntos}. La demostración que daremos del teorema espectral se hará por inducción en la dimensión del espacio y utiliza en el paso inductivo la generalización del teorema \ref{th-existe-autovalor-simetrica}.   
         
@@ -9251,7 +9141,6 @@ Luego,
             Sea $\R^n$ espacio vectorial con producto interno $\la \;,\;\ra$ y sea $X$ subconjunto de $\R^n$. Diremos que $X^\perp$ es el  \textit{subespacio  ortogonal a $X$ en $\R^n$}.   
         \end{definicion}
         
-        \vskip .5cm 
     
     \end{section}
 
@@ -9402,8 +9291,6 @@ Luego,
         \begin{proof}
             \ref{adj0}. Es trivial.
             
-            \vskip .3cm
-            
             \ref{adj1}. Por definición de adjunta $(cR)^*$ es la única transformación lineal tal que
             $$
             \la cR(v),w\ra = \la v,(cR)^*(w)\ra, \quad \forall v,w \in V.
@@ -9414,8 +9301,6 @@ Luego,
             $$
             Es decir $(cR)^* = cR^*$.
             
-            \vskip .3cm
-            
             \ref{adj2}. Como en el caso anterior, debemos demostrar que  $R^* + S^*$ es la única transformación lineal tal que
             $$ 
             \la (R+S)(v),w\ra = \la v,(R^* + S^*)(w)\ra, \quad \forall v,w \in V.
@@ -9425,17 +9310,13 @@ Luego,
             \la v,(R^* + S^*)(w)\ra &= \la v,R^*(w) + S^*(w)\ra =  \la v,R^*(w) \ra+\la v, S^*(w)\ra \\
             &=  \la R(v),w \ra+\la S(v), w\ra =  \la R(v) + S(v), w\ra =  \la (R+S)(v), w\ra .
             \end{align*}
-            
-            \vskip .3cm
-            
+
             \ref{adj3}. 
             \begin{align*}
             \la v,(S^*R^*)(w)\ra &= \la v, S^*(R^*(w))\ra =  \la S(v),R^*(w) \ra \\
             &=  \la R(S(v)),w \ra =  \la (RS)(v), w\ra .
             \end{align*}
             Por lo tanto  $(RS)^* = S^*R^*$.
-            
-            \vskip .3cm
             
             \ref{adj4}. Por definición de adjunta de $R^*$, tenemos que $ (R^*)^*=R^{**}$  es la única transformación lineal tal que 
             $$
@@ -9511,7 +9392,6 @@ Luego,
         \begin{proof}
             ($\Rightarrow$) Por teorema \ref{matrizadjunta}, si $A$ es la matriz de $T$, entonces  la  matriz de $T^*$ es $A^\t$. Como $T=T^*$, entonces $A = A^\t$.
             
-            \vskip .1cm
             ($\Leftarrow$) Por hipótesis, $[T]_\mathcal{U} =[T]_\mathcal{U}^\t $. Pero por el teorema \ref{matrizadjunta}, tenemos que  $[T^*]_\mathcal{U} =[T]_\mathcal{U}^\t$. Por lo tanto $[T^*]_\mathcal{U} = [T]_\mathcal{U}$, lo cual implica que  $T= T^*$.
         \end{proof}
         
@@ -9543,8 +9423,6 @@ Luego,
             $$
             es decir, $S$ y $T$ conmutan.
             
-            \vskip .3cm
-            
             ($\Leftarrow$)  
             $$
             (ST)^* = T^*S^* = TS = ST.
@@ -9571,10 +9449,7 @@ Luego,
             
             Esto ocurre pues, $TS(x,y) = (y,2x)$ es distinto a  $ST(x,y) = S(x,2y)= (2y,x)$. Es decir, $S$ y $T$ no conmutan.
         \end{ejemplo*}
-        
-        
-        \vskip 0.5 cm
-        Veremos ahora la demostración completa de que un operador autoadjunto es diagonalizable, es decir que hay una base de autovectores del operador. 
+
         
         \begin{ejemplo*}
             En el ejemplo \ref{poautoadjunto} vimos que si  $P$ es una proyección ortogonal, entonces es  operador autoadjunto. Veamos ahora que es diagonalizable: sea $P$ la proyección ortogonal a $W$, y tomemos $\mathcal{U}_0 = \{u_1,\ldots,u_k\}$ una base de $W$ y  $\mathcal{U}_1 = \{u_{k+1},\ldots,u_n\}$ una base de $W^\perp$, luego $\mathcal{U} = \{u_1,\ldots,u_n\}$ es una base de $V$ con la siguiente particularidad
@@ -9584,6 +9459,9 @@ Luego,
             Luego, la base $\mathcal{U}$ consta de autovectores, de los  cuales los primeros $k$ tienen autovalor 1 y los siguientes tienen autovalor 0.
         \end{ejemplo*}
         
+                
+        Veremos ahora la demostración completa de que un operador autoadjunto es diagonalizable, es decir que hay una base de autovectores del operador. 
+
         \begin{proposicion}
                 Sea $V$ un espacio vectorial con producto interno y $T: V \to V$ una transformación lineal. Sea $W$ un subespacio de $V$ invariante por $T$. Entonces $W^\perp$ es invariante por $T^*$.
         \end{proposicion}
@@ -9599,10 +9477,6 @@ Luego,
         \begin{corolario}\label{wperpinv}
             Si  $T: V \to V$ una transformación lineal autoadjunta y $W$ un subespacio de $V$ invariante por $T$, entonces $W^\perp$ es invariante por $T$.
         \end{corolario}
-        
-        \vskip .5cm
-        
-        
         
         \begin{obs}\label{5.8}
             Sea $V$ espacio vectorial  sobre $\R$, $\la\;,\;\ra$ un producto interno y $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $V$. Si $x,y \in V$ con $x = \sum x_iu_i$ y $y = \sum y_i u_i$, entonces
@@ -9628,8 +9502,6 @@ Luego,
         \begin{proof}
             Si $\mathcal{U}$ una BON de $V$ y $A = [T]_\mathcal{U}$. Como vimos  en  la observación \ref{5.8}, podemos pensar a la transformación lineal como  $A: \R^n \to \R^n$ y  al producto escalar como el canónico  en $\R^n$. Observar que como $T$ es autoadjunta, entonces $A$ es simétrica y  la demostración se obtiene directamente del teorema \ref{th-existe-autovalor-simetrica}.  
             \end{proof}
-        
-        \vskip .3cm
         
         \begin{teorema}[Teorema espectral] Sea $T: V \to V$ un operador autoadjunto. Entonces existe $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $V$ de autovectores de $T$.
         \end{teorema}
@@ -9662,10 +9534,6 @@ Luego,
             $$V_{\lambda_i} = span\{u_1,\ldots,u_k\} \quad \text{ y } \quad \sum_{j  \ne i} V_{\lambda_j} = span\{u_{k+1},\ldots,u_n\}.$$     
         \end{proof}
         
-        
-        
-        \vskip .4cm
-        
         \begin{definicion}
             Diremos que un operador lineal $T: V \to V$ es \textit{no negativo}\index{operador lineal!no negativo}, y escribiremos $T \ge 0$, cuando $T$ es autoadjunto  y además $\la T(v),v \ra \ge 0$ para todo $v \in V$. En  el caso que $\la T(v),v \ra > 0$ para todo  $v \in V$, diremos que $T$ es un operador \textit{positivo} y escribiremos $T>0$.\index{operador lineal!positivo}
         \end{definicion}
@@ -9688,8 +9556,6 @@ Luego,
              \la T(v),v \ra  =  \la T(\sum_i a_i u_i),\sum_j a_j u_j \ra =  \la \sum_i \lambda_i a_i u_i,\sum_j a_j u_j \ra  =  \sum_i\sum_j\lambda_i a_ia_j\la  u_i,  u_j \ra = \sum_i\lambda_i a_i^2.
             $$ 
             Como por hipótesis $\lambda_i \ge 0$, tenemos que $\sum_i\lambda_i a_i^2\ge 0$, por lo tanto $ \la T(v),v \ra \ge 0$.
-            
-            \vskip 0.3 cm
             
             La segunda afirmación se prueba de manera totalmente análoga (cambiando $\ge$ por $>$).
         \end{proof}
@@ -9724,9 +9590,7 @@ Luego,
         \end{corolario}
         \begin{proof}
             ($\Rightarrow$) Como $T>0$, claramente $T \ge 0$. Por otro lado, si $v \ne 0$, entonces $\la T(v), v \ra > 0$, luego $T(v) \ne 0$, por lo tanto $T$ es inyectiva, luego es biyectiva.
-            
-            \vskip .2cm
-            
+
             ($\Leftarrow$)  Sea $v \in V$, $v\not=0$. Si $\la T(v), v \ra = 0$,  entonces por el corolario \ref{coro1}, tenemos que $T(v)=0$, lo cual no puede ser pues $T$ es inversible. Por lo tanto, $\la T(v), v \ra \ne 0$ y como  $T\ge 0$, $\la T(v), v \ra > 0$.
         \end{proof}
         
@@ -9806,8 +9670,6 @@ Luego,
             Además, $$S^2(v) = S(\sum_{i=1}^k \sqrt{\lambda_i} v_i) = \sum_{i=1}^k \sqrt{\lambda_i}S( v_i) = \sum_{i=1}^k {\lambda_i}v_i = T(v).$$
             
             Es claro que si $T$ es positiva,  $S$ también resulta positiva.
-            
-            \vskip .3cm
             
             Es un poco más complicado demostrar que es única. Sea $R \ge 0$ tal que $R^2 = T$. Demostraremos que $R=S$ en varios pasos. 
             
@@ -10122,8 +9984,6 @@ Luego,
             \ref{oth3} $\Rightarrow$ \ref{oth0} Sea $\mathcal V =\{Tu_1,\ldots,Tu_n\}$. Entonces,  $[T]_{\mathcal U \mathcal V}=I$ y por lo tanto es ortogonal. Por el teorema \ref{th-6.5}, $T$  es ortogonal. 
         \end{proof}
         
-        \vskip .3cm
-        
         Veremos a continuación la descomposición polar y la descomposición en valores singulares (DVS) de un operador lineal o una matriz. 
         
         \begin{teorema}[Descomposición polar]\index{descomposición polar de un operador} Sea $T: V \to V$ operador lineal en un espacio vectorial de dimensión finita con producto interno. Entonces $T$  admite una descomposición
@@ -10354,9 +10214,7 @@ Luego,
         \begin{proof}
             Ejercicio.
         \end{proof}
-        
-        \vskip .3cm
-        
+
         Hemos definido los números complejos como pares ordenados y como tales es posible representarlos en el plano $\R \times \R$:
         
         
@@ -10414,8 +10272,6 @@ Luego,
             \caption{Ejemplos de la representación gráfica de los números complejos. }
         \end{figure}
         
-        \vskip .3cm
-        
         Por el teorema de Pitágoras, la distancia del  número complejo $a+ib$ al $0$ es $\sqrt{a^2+b^2}$.
         
         \begin{definicion} Sea $z = a + ib \in \C$. El \textit{módulo} de $z$ es
@@ -10428,15 +10284,10 @@ Luego,
             \end{equation*}
         \end{definicion} 
         
-        \vskip .5cm 
-        
-        
         \begin{ejemplo*}
             $|4+3i| = \sqrt{4^2+3^2} = \sqrt{25} =5$, $\overline{4+3i} = 4-3i$.
         \end{ejemplo*}
-        
-        \vskip .5cm 
-        
+
         \begin{proposicion} Sean $z$ y $w$ números complejos.
             \begin{enumerate}
                 \item $z\bar{z} = |z|^2$.
@@ -10471,7 +10322,7 @@ Luego,
             \end{align*}
         \end{proof}
         
-        \vskip .3cm
+
         \textbf{Un poco de trigonometría}. Recordemos que dado un punto $p=(x,y)$ en el plano, la recta que une el origen con $p$ determina un ángulo $\theta$ con el eje $x$ y entonces 
         \begin{equation*}
         x = r\sin(\theta) , \qquad y =  r\cos(\theta)  
@@ -10485,10 +10336,7 @@ Luego,
         z = |z|(\cos(\theta)+i\sin(\theta)).
         \end{equation}
         Si $z \in \C$, la fórmula (\ref{forma-polar}) e llamada la \textit{forma polar}\index{forma polar} de $z$ y $\theta$ es llamado  el  \textit{argumento de $z$}. 
-        
-        \vskip .3cm 
-        
-        
+
         \textbf{Notación exponencial.} Otra notación para representar a los números complejos es la \textit{notación exponencial}, \index{notación exponencial}en la cual se denota
         \begin{equation}\label{eq-formula-de-euler}
         e^{i\theta} = \cos(\theta) + i\sin(\theta).
@@ -10577,8 +10425,6 @@ Luego,
     \end{definicion}
 
     Estaríamos tentados en decir que  una función polinómica como en (\ref{eq-funcion-polinomica}) con $a_n\ne0$ tiene grado $n$, pero debemos ser cuidadosos pues todavía no sabemos si la escritura de una función polinómica es única. Es  decir,  existe la posibilidad de $f$  se escriba de otra forma y por lo tanto el coeficiente más significativo sea diferente. Veremos más adelante que esto no puede ocurrir. 
-    
-    \vskip .3cm
     
     Sea $f$ un polinomio. Si $c$ es un número tal que $f (c) = 0$, entonces llamamos a \textit{$c$ una raíz de $f$}. Veremos en un momento que un polinomio distinto de cero puede tener solo un número finito de raíces, y daremos un límite para la cantidad de estas raíces.
     
@@ -10779,8 +10625,6 @@ Luego,
     \end{section}
 
     \begin{section}{División de polinomios}\label{seccion-division-de-polinomios} Si $f$ y $g$ son polinomios,  entonces no necesariamente la función $f/g$ está bien definida en todo punto y puede que tampoco sea un polinomio. Cuando trabajamos con enteros, en cursos anteriores,  probamos la existencia del algoritmo de división, más precisamente.
-    
-    \vskip .1cm	
         
         \textit{Sean $n$, $d$ enteros positivos. Entonces existe un entero $r$ tal que
             $0 \le  r <d$  un entero $q \ge 0$ tal que
@@ -10788,11 +10632,9 @@ Luego,
         \begin{equation*}
             n = qd + r.
         \end{equation*}
-        
-    \vskip .3cm	
     
     Ahora describiremos un procedimiento análogo para polinomios.
-    \vskip .3cm	
+
     \textit{\textbf{Algoritmo de División.} Sean $f$ y $g$ polinomios distintos de cero. Entonces existen polinomios $q$, $r$ tales que $\operatorname{gr}(r) < \operatorname{gr}(g)$ y tales que}
     \begin{equation*}
         f (x) = q (x) g (x) + r (x).
@@ -10800,10 +10642,7 @@ Luego,
     A $q(x)$ lo llamamos el \textit{cociente} de la \textit{división polinomial} y  a $r(x)$ lo llamamos el \textit{resto}  de la división polinomial. 
     
     No veremos aquí la demostración del algoritmo de división, basta decir que es muy similar a  la demostración del algoritmo de división para números enteros. En los siguientes ejemplos se verá como se calculan el cociente y resto de la división polinomial. 
-     
-    \vskip .3cm	
-    
-    
+
     \begin{ejemplo*} Sean $f(x) = 4x^3 - 3x^2 + x + 2$ y $g(x) = x^2 + 1$. Para encontrar la división polinomial, debemos multiplicar por un monomio $ax^k$ a $g(x)$ de tal forma que el coeficiente principal de  $ax^kg(x)$ sea igual al coeficiente principal de $f(x)$. En este caso, multiplicamos a $g(x)$ por $4x$ y nos queda 
     \begin{equation*}
         f(x) = 4xg(x) + r_1(x) = (4x^3 +4x)+(-3x^2-3x +2)
@@ -10967,8 +10806,6 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
             y este último determinante es cero, debido a que la matriz tiene dos filas iguales. Luego,  $\det B = \det A$. 
         \end{proof}
         
-        \vskip .3cm
-        
         \begin{teorema} \label{th-E3}
             Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
             Sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} B$, entonces $\det B = -\det A$.
@@ -11014,9 +10851,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
     \begin{observacion*}
         Del resultado anterior se deduce fácilmente que si una matriz tiene dos filas iguales entonces su determinante es 0. Esto se debe a que, intercambiando las dos filas iguales obtenemos la misma matriz, pero calculando el determinante con el teorema anterior vemos que cambia de signo y el único número en $\K$ que es igual a su opuesto es el 0. 
     \end{observacion*}
-    
-    \vskip .3cm
-    
+
 \begin{corolario}\label{cor-det-elemental} Consideremos matrices elementales en $\K^{n \times n}$. 
     \begin{enumerate}
         \item\label{cor-det-E1} Sea $E$ la matriz elemental que se obtiene  multiplicando por $c\ne 0$ la matriz $\Id_n$.  Entonces $\det(E) = c$. 
@@ -11029,8 +10864,6 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
     Se  demuestra trivialmente considerando que en todos los casos $E=e(\Id_n)$ donde $e$  es una operación elemental por fila,  considerando  que $\det(\Id_n)=1$  y aplicando los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3},  según corresponda.
 \end{proof}
 
-    \vskip .3cm
-         
          A continuación veremos que el determinante del producto de matrices es el producto de los determinantes de las matrices. 
          
          \begin{teorema}\label{det-elem-por-mtrx} Sea $A  \in M_n(\K)$ y $E$ una matriz elemental $n \times n$. Entonces
@@ -11143,8 +10976,6 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
              \end{equation*}
              Si $A$ no es invertible, entonces $A^\t$ no es invertible y en ese caso $\det(A) = \det(A^\t)=0$.
          \end{proof}
-         
-         \vskip .3cm
          
          Finalmente,  demostremos el teorema \ref{th-expancion-cofactores}.
     
@@ -11377,7 +11208,7 @@ Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, l
                  \end{align*} 
              \end{ejemplo*}
              
-             \vskip .5cm
+             \vskip .3cm
              
              \begin{observacion*}
                  En  general, la regla de Cramer no es utilizada para resolver sistemas  de ecuaciones. El  método de Gauss, además de ser mucho más rápido, tiene el beneficio de ser un método que abarca más casos y nos da más información que la regla de Cramer. Por ejemplo,  el método de Gauss también funciona para matrices no invertibles, mientras que la regla de Cramer no. Más aún, el método de Gauss se puede utilizar para resolver sistemas con matrices no cuadradas (es decir, sistemas de ecuaciones con números no iguales de variables y ecuaciones), mientras que la regla de Cramer no.
