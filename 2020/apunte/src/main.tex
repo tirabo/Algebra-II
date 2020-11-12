@@ -2,6 +2,11 @@
 \documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
 %%%---------------------------------------------------
 
+\setlength{\parindent}{1.8em} % Sangría al inicio de párrafo
+\setlength{\parskip}{0.8em} % espacio entre párrafo y párrafo
+\renewcommand{\baselinestretch}{1.05} % espacio entre linea y linea dentro de un párrafo
+\usepackage[a4paper, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+
 %\renewcommand{\familydefault}{\sfdefault} % la font por default es sans serif
 %\usepackage[T1]{fontenc}
 
@@ -93,8 +98,8 @@
 %%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tolerance=10000
 %\renewcommand{\baselinestretch}{1.3}
-\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
-\usepackage[a4paper, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+%\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+
 %% CONTROLADORES DE.
 % Tamaño de la hoja de impresión.
 % Tamaños de los laterales del documento. 
@@ -108,7 +113,7 @@
 %%%%\rightmargin 2.5cm
 %\topmargin 0.5 cm
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{comment}
+\begin{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% CONTROLADORES DE ESTILO %%%
 %%%--------------------------------------------------------------------------
@@ -137,7 +142,7 @@
 \setlength{\parskip}{0.3cm} % separación entre párrafos.
 %\renewcommand{\baselinestretch}{0.90}% separación del interlineado
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\end{comment}
+\end{comment}
 %%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -236,7 +241,7 @@
 
 \makeindex
 \begin{document}
-    \baselineskip=0.55truecm %original
+    %\baselineskip=0.55truecm %original
     %\baselineskip=0.43truecm
     
     \pagenumbering{roman}
@@ -760,10 +765,10 @@
      La multiplicación por 3 equivale a ``estirar'' $v$ por 3. Del mismo modo, $\frac12v$ 	equivale a estirar $v$ en $\frac12$, es decir, reducir $v$ a la mitad de su tamaño. En general, si $t$ es un número con $t> 0$, interpretamos $tv$ como un punto en la misma dirección que $v$ con tamaño  $t$-veces el tamaño de $v$.  De hecho, decimos que $v$ y $w$ tienen la misma dirección si existe un número $\lambda> 0$ tal que $v = \lambda w$. La multiplicación por un número negativo invierte la dirección. Así, $-3 v$ se representa como en la figura anterior, en la parte (b). Decimos que $v$ y $w$  (ninguno de los cuales es cero) tienen direcciones opuestas si existe un número $\lambda <0$ tal que $v =\lambda w$. Por lo tanto, $-v$ tiene dirección opuesta a $v$.
 
         
-\vskip .3cm Más allá de las interpretaciones geométricas,  hemos definido  en forma algebraica la suma de vectores en $\R^n$ y  la multiplicación de un vector por un escalar,  y estas operaciones tienen ciertas propiedades de interés. 
-\vskip .3cm
+Más allá de las interpretaciones geométricas,  hemos definido  en forma algebraica la suma de vectores en $\R^n$ y  la multiplicación de un vector por un escalar,  y estas operaciones tienen ciertas propiedades de interés. 
+
 Concluyendo, las definiciones y resultados más importantes de esta sección son:
-\vskip .3cm
+
 
 Sean  $(x_1,\ldots,x_n), (y_1,\ldots,y_n) \in \R^n$ y $\lambda \in \R$, definimos
     \begin{itemize}
@@ -785,11 +790,11 @@ Dados  $v,w,u$ en $\R^n$,  se verifican
 
 
 
-\vskip .3cm
+
 
 Verán más adelante que las propiedades anteriores son muy parecidas a los  ``axiomas'' que se utilizan en el  capítulo \ref{chap-esp-vect} para definir espacios vectoriales abstractos (ver definición \ref{def-esp-vect}). 
 
-\vskip .3cm
+
 
     \begin{definicion}\label{def-base-canonica-rn}
     Dado, $n \in \mathbb N$, para cada $i\in\{1, ..., n\}$, se denota ${e_i}\in\R^n$ al vector cuyas coordenadas son todas $0$ excepto la coordenada $i$ que es un $1$.
@@ -806,8 +811,6 @@ Verán más adelante que las propiedades anteriores son muy parecidas a los  ``a
     $e_3=(0,0,1)
     $
 \end{ejemplo*}
-
-\vskip .3cm
 
 Estos vectores jugarán un rol central en la materia, principalmente, por la siguiente propiedad.
 
@@ -938,15 +941,8 @@ La demostración es trivial pero por ahora no la haremos.
         \end{equation}
         Como $x_i^2 \ge 0$ para todo $i$,  entonces $\langle v , v \rangle \ge 0$. Además, es claro que si $v$ tiene todas las coordenadas iguales a 0,  entonces  $\langle v , v \rangle =0$. En  el caso que $v\not=0$, entonces,  existe algún $i$  tal que  $x_i \ne 0$, por lo tanto $x_i^2>0$ y por la ecuación (\ref{eq-v-escalar-v}), tenemos que  $\langle v , v \rangle>0$.
     \end{proof}
-        \vskip .3cm
-        
+
         Por  la propiedad \ref{prop-P1} diremos que el producto escalar es \textit{simétrico}, por las propiedades  \ref{prop-P2} y \ref{prop-P3} diremos que es una \textit{forma bilineal} y, finalmente, por la propiedad \ref{prop-P4} diremos que es \textit{definido positivo.} 
-        
-        \vskip .3cm
-        
-        
-        
-        
         
         El producto escalar $\langle v , w \rangle$ puede ser  igual a 0 para determinados  vectores,  incluso ambos distintos de 0.  Por ejemplo, si $v = (1,2,3)$ y $w = (2, 1, -\frac43)$,  entonces
         \begin{equation*}
@@ -1146,8 +1142,6 @@ La demostración es trivial pero por ahora no la haremos.
         Es decir 	$||\lambda v||^2 =  \lambda^2 ||v||^2$, por lo tanto (sacando raíz cuadrada), $||\lambda v|| = |\lambda|||v||$.
     \end{proof}
     
-    \vskip .3cm
-    
 El producto escalar no sólo es útil para definir la longitud de un vector,  sino que también nos dice cual es el ángulo entre dos vectores: sean   $v_1= (x_1,y_1)$ y $v_2= (x_2,y_2)$ en $\R^2$; veremos a continuación que 
         \begin{equation}\label{eq-cos-theta}
         \langle v_1 , v_2 \rangle = ||v_1||\, ||v_2|| \cos(\theta),
@@ -1178,7 +1172,6 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
         \theta = 	\operatorname{arcos}\left(\frac{\langle v_1 , v_2 \rangle}{||v_1|| \,  ||v_2|| }\right).
         \end{equation}  
         
-        \vskip .3cm 
         
         Terminaremos esta sección dando la noción de  distancia entre dos vectores o dos puntos. 
         
@@ -1274,7 +1267,7 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
     
     \vskip .2cm
     
-    \item Calcular $\langle v , w  \rangle$ y el {\'a}ngulo entre $v$ y $w$  para los siguientes vectores.
+    \item Calcular $\langle v , w  \rangle$ y el {á}ngulo entre $v$ y $w$  para los siguientes vectores.
     \begin{align*}
     &(a) \ v=(2,2), w=(1,0), &&  (b) \  v=(-5,3,1), w=(2,-4,-7).
     \end{align*}
@@ -1456,7 +1449,6 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
     \end{equation*}
     \end{definicion}
 
-\vskip .3cm
 
     Observar  que si $b\ne0$, entonces la recta es \, $y= -\displaystyle\frac{a}{b}x + \displaystyle\frac{c}{b}$ \, y que si $b=0$,  entonces $a\ne 0$ y la recta es \, $x =\displaystyle\frac{c}{a}$.
     
@@ -1511,19 +1503,15 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
     La recta $L$ es, entonces, la recta perpendicular a $(a,b)$ y que pasa por $v_0$. 
     
     \end{observacion*}
-\vskip .3cm
+
     El  razonamiento también es posible hacerlo en el otro sentido: 
-    \vskip .2cm
-    
+
     \begin{resultado}\label{res-recta-perp}
         {La ecuación implícita de la recta $L$ perpendicular a $(a,b)$ y que pasa por $(x_0,y_0)$ es
             \begin{equation*}
             ax +by = \langle (x_0,y_0), (a,b) \rangle.
             \end{equation*}}
     \end{resultado}
-    
-
-\vskip .3cm
 
 \begin{ejemplo*}
     Encontrar la ecuación implícita de la recta que pasa por $(2,-1)$ y  es perpendicular a $(-2,3)$.
@@ -1542,7 +1530,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
      -2x+3y = -7.
      \end{equation*}
 \end{proof}
-\vskip .3cm
+
 
     Una definición equivalente de recta es la siguiente:
     
@@ -1658,11 +1646,8 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
             que es la ecuación implícita de la recta.
             
             \end{proof}	
-            \vskip .1cm		
             
             Esta eliminación de $t$ muestra que cada par $(x, y)$ que satisface la representación paramétrica (\ref{eq-par-des-ej}) para algún valor de $t$ también satisface la ecuación (\ref{eq-impl-rec-ej}).
-            
-            \vskip .2cm	
             
             Recíprocamente, de la ecuación implícita podemos obtener la representación paramétrica. 
             
@@ -1679,7 +1664,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
                 es la representación paramétrica de la recta.
         \end{proof}	 
     
-     \vskip .2cm	
+
      
      De los ejemplos anteriores se deduce que la recta 
      \begin{equation*}
@@ -1691,10 +1676,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
      \end{equation*}     
      Observar que, pese a que hablamos de ``la representación paramétrica de la recta'', una recta tiene muchas formas de ser representada paramétricamente. 
     
-    \vskip .3cm 
         Los procedimientos  de los ejemplos anteriores se pueden generalizar a cualquier recta y de esa forma se puede demostrar que la definición paramétrica y la definición implícita de la recta son equivalentes. 
-        
-        \vskip .3cm 
         
         Finalmente, podemos obtener la representación paramétrica de la recta a partir de un vector ortogonal a ella y otro vector perteneciente a ella. 
                 
@@ -1725,10 +1707,9 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 
 
         
-        \vskip .3cm 
         
         Debemos observar que en $\R^3$ no alcanza una sola ecuación lineal del tipo $ax+by+cz=d$ para definir una recta. Veremos en la sección siguiente que una ecuación lineal define un plano en $\R^3$. Genéricamente hablando, con las soluciones de una ecuación en $\R^n$ se obtiene un objeto ``con una dimensión menos''. Todo esto quedará claro al final de la materia cuando estudiemos subespacios vectoriales de un espacio vectorial. 
-    \vskip .3cm 		
+	
 
 
     \subsection*{\Large $\S$ Ejercicios}
@@ -1782,7 +1763,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
     
     \end{section}
 
-\vskip .8cm 
+
 
     \begin{section}{Planos en $\R^3$}\label{seccion-planos-en-r3} 
         En  la sección anterior vimos (aunque no lo demostramos) que existe una equivalencia entre la definición implícita y la definición paramétrica de la recta. En esta sección definiremos un plano en $\R^3$ utilizando la forma implícita, que es la forma más usual y además es geométricamente intuitiva. Luego veremos la definición del plano en su versión paramétrica . 
@@ -1941,7 +1922,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         
         \vskip .2cm
         
-    \item\label{ej-planos} Escribir la ecuaci{\'o}n paramétrica  y la ecuaci{\'o}n normal de los siguientes planos.
+    \item\label{ej-planos} Escribir la ecuación paramétrica  y la ecuación normal de los siguientes planos.
         \begin{enumerate}
             \item $\pi_1$: el plano que pasa por $(0,0,0)$, $(1,1,0)$, $(1,-2,0)$.
             \item $\pi_2$: el plano que pasa por $(1,2,-2)$ y es perpendicular a la
@@ -1952,8 +1933,8 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         \vskip .2cm
         
         
-    \item ¿Cu\'ales de las siguientes rectas cortan al plano $\pi_3$ del  ejercicio \ref{ej-planos-c})?
-        Describir la intersecci{\'o}n en cada caso.
+    \item ¿Cuáles de las siguientes rectas cortan al plano $\pi_3$ del  ejercicio \ref{ej-planos-c})?
+        Describir la intersección en cada caso.
         \begin{align*}
         &(a) \ \{w: w=(3,2,1)+t(1,1,1)\}, && (b) \  \{w: w=(1,-1,1)+t(1,2,-1)\}, \\
         &(c)\  \{w: w=(-1,0,-1)+t(1,2,-1)\}, && (d) \  \{w: w=(1,-2,1)+t(2,-1,1)\}.
@@ -2166,8 +2147,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         
         
         \begin{section}{Sistemas de ecuaciones lineales}\label{seccion-sistemas-de-ecuaciones-lineales}
-        
-        \vskip .3cm 
+  
         
             El problema a resolver será el siguiente: buscamos números  $x_1,\ldots,x_n$ en el cuerpo $\K$ ($= \R$ o $\C$)  que satisfagan las siguientes condiciones
             \begin{equation}\label{sist-eq}
@@ -2178,8 +2158,6 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
             \end{matrix}
             \end{equation}
             donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$.
-            
-                \vskip .3cm 
             
             Llamaremos a (\ref{sist-eq}) un \textit{sistema de $m$ ecuaciones lineales con $n$ incógnitas.}\index{sistema de ecuaciones lineales} A una  $n$-tupla $(x_1,\ldots,x_n)$ de elementos de $\K^n$ que satisface cada una de las ecuaciones de  (\ref{sist-eq}) la llamaremos una \textit{solución del sistema}. Si $y_1 = \cdots = y_m=0$, el sistema se llamará \textit{homogéneo.} En caso contrario el sistema se denominará \textit{no homogéneo.}\index{sistema de ecuaciones lineales!homogéneo}\index{sistema de ecuaciones lineales!no  homogéneo}
             
@@ -2210,8 +2188,8 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
                 Resolvamos ahora un sistema de ecuaciones homogéneo sencillo:
                 \begin{equation*}
                 \begin{matrix}
-                {\footnotesize{\footnotesize\circled{1}}}&\qquad& 2x_1 -x_2 + x_3 &=& 0 \\
-                {\footnotesize{\footnotesize\circled{2}}}&\qquad& x_1 + 3x_2 + 4x_3 &=& 0.
+                {\footnotesize\circled{1}}&\qquad& 2x_1 -x_2 + x_3 &=& 0 \\
+                {\footnotesize\circled{2}}&\qquad& x_1 + 3x_2 + 4x_3 &=& 0.
                 \end{matrix}
                 \end{equation*}
             \end{ejemplo}
@@ -2229,8 +2207,6 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
                 
             En  el ejemplo anterior hemos encontrado soluciones por \textit{eliminación de incógnitas},  es decir multiplicando por constantes adecuadas  ciertas ecuaciones y sumándolas hemos eliminado en  {\footnotesize\circled{$1$}} a $x_1$ y en  {\footnotesize\circled{$2$}} a $x_2$, con lo cual la solución del sistema se deduce inmediatamente por pasaje de término.   
             
-            \vskip .6cm
-            
             \begin{ejemplo}\label{ej-sist-2}
                     Encontrar las soluciones $(x,y,z)$ del sistema de ecuaciones:
                     \begin{equation*}
@@ -2246,11 +2222,6 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
                 
                 \begin{proof}[Solución]
                     Veremos que la única solución es $(x,y,z)=(-1,0,1)$.  El  método que usaremos, similar al del ejemplo anterior,  será el de eliminación de variables o incógnitas: vemos  en el sistema que queremos resolver 8 variables, algunas repetidas. Trataremos de eliminar en cada ecuación la mayor cantidad de variables posibles de tal forma de llegar a una formulación equivalente del sistema que nos de inmediatamente la solución. 
-\vskip .3cm	
-
-
-
-
 
     Supongamos que $(x,y,z)$ es una solución de nuestro sistema. Entonces también vale que: 
     \begin{equation*}
@@ -2438,25 +2409,14 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 
 \end{ejemplo*}
 
-\vskip .5cm
 
-
-    \end{section}
+\end{section}
 
 
 
 
      \begin{section}{Equivalencia de sistemas de ecuaciones lineales}\label{seccion-equivalencia-de-sistemas-de-ecuaciones-lineales}
 
-
-        
-        
-        
-
-            
-            
-            
-            \vskip .3cm 
             Dado el sistema
             \begin{equation}\label{sist-eq-2}
             \begin{matrix}
@@ -6322,7 +6282,8 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
 
 \begin{observacion*}
     ¿Todo espacio vectorial tiene una base? La respuesta es \textit{sí}. Sin embargo, la demostración de este hecho no es sencilla y requiere de herramientas de la teoría de conjuntos,  en particular del Lema de Zorn. El lector interesado podrá ver el artículos sobre bases de un espacio vectorial en la Wikipedia:  
-    \href{https://es.wikipedia.org/wiki/Base\_(álgebra)}{https://es.wikipedia.org/wiki/Base\_(álgebra)} y una demostración de la existencias de bases para cualquer espacio vectorial en  \href{http://fernandorevilla.es/blog/2014/06/22/existencia-de-base-en-todo-espacio-vectorial/}{http://fernandorevilla.es/blog/2014/06/22/existencia-de-base-en-todo-espacio-vectorial}.
+    \href{https://es.wikipedia.org/wiki/Base\_(álgebra)}{https://es.wikipedia.org/wiki/Base\_(álgebra)} y una demostración de la existencia de bases para cualquer espacio vectorial en  
+    \href{http://fernandorevilla.es/blog/2014/06/22/existencia-de-base-en-todo-espacio-vectorial/}{http://fernandorevilla.es/blog/2014/06/22/existencia-de-base-en-todo-espacio-vectorial}.
 
     Más allá, de la dificultad en la demostración, supondremos siempre que todo espacio vectorial tiene una base. 
 \end{observacion*}
@@ -6617,11 +6578,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
             \end{align*}
             Concluimos entonces que $(-2,-5,1,0),(-4, -3,0,1)$  es una base de $W$ y, por lo tanto,  su dimensión es 2.
         \end{proof}
-        
-        \vskip .5cm 
-        
-    
-        
+
         \begin{teorema}
             Sean $A$ matriz $m \times n$ con coeficientes en $\K$, $P$ matriz $m\times m$ invertible y $B =PA$. Entonces el el espacio fila de $A$ es igual al espacio fila de $B$.
         \end{teorema}
@@ -6657,7 +6614,6 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
         Hemos probado que $A$ es invertible si y sólo si las $n$ filas de $A$ generan $\K^n$. Como $\dim \K^n = n$,  todo conjunto de $n$ generadores es una base. 
     \end{proof}
     
-    \vskip .5cm
     
     El  corolario  \ref{subesp-merf} nos provee un método para encontrar una base de un  subespacio de $\K^n$ generado por $m$ vectores: si $v_1,\ldots,v_m \in \K^n$ y $W = \langle v_1,\ldots,v_m\rangle$, consideramos la matriz 
     $$
@@ -7087,8 +7043,6 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
         La expresión (\ref{forma-parametrica-2}),  que depende de dos parámetros ($s$ y $t$) que son independientes entre ellos, es llamada la \textit{descripción paramétrica} del núcleo	
         \end{ejemplo*}
 
-        \vskip .4cm
-
         Todas las transformaciones lineales entre $\R^n$ y $\R^m$ son de la forma ``multiplicar por una matriz''. Más aún,  toda transformación lineal entre espacios vectoriales de dimensión finita se puede expresar de esta forma. Así que analizaremos un poco más en detalle este tipo de transformaciones.
 \begin{observacion}
 Sea $A\in\R^{m\times n}$ y consideramos la función $T$:
@@ -7256,9 +7210,6 @@ Luego,
 \end{proof}
 
 
-
-
-        \vskip .5cm
         
         He aquí uno de los resultados más importantes del álgebra lineal.
         
@@ -8199,9 +8150,15 @@ Luego,
         \end{proof}
     
     
-        La matriz $P =[\Id]_{\mathcal B' \mathcal B} $ del teorema anterior es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base}de la base $\mathcal B'$  a la base $\mathcal B$. 
+        
         
         La fórmula (\ref{eq-cambio de base})  es importante por si misma y debemos recordarla.
+
+
+        La matriz $P =[\Id]_{\mathcal B' \mathcal B} $ del teorema anterior es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base}de la base $\mathcal B'$  a la base $\mathcal B$. 
+        
+        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\mathcal B$ y $\mathcal B'$,  y dadas las coordenadas de $v$ en la base  $\mathcal B'$ es decir la matriz columna $[v]_\mathcal B'$ ¿Cómo averiguamos las coordenadas de $v$  en la base $\mathcal B$? La respuesta la da la siguiente proposición. 
+
 
         \begin{proposicion}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\mathcal B$, $\mathcal B'$  bases ordenadas de $V$ y $P$ la matriz de cambio de base de $\mathcal B'$ a $\mathcal B$. Entonces 
@@ -8328,7 +8285,7 @@ Luego,
             
             \textit{Caso base.} Si $m=1$, no hay nada que demostrar puesto que un vector no nulo el LI.
             
-            \medskip
+        
             
             \textit{Paso inductivo.} Supongamos que el enunciado es verdadero para el caso $m-1$ con $m>1$, (hipótesis inductiva o HI), y probemos entonces que esto implica que es cierto para $m$. Debemos ver  que si 
             \begin{equation}
@@ -8923,7 +8880,7 @@ Luego,
     \begin{section}{Producto interno}\label{seccion-producto-interno}
         
         
-        \medskip 
+   
         
         Recordemos que en
          el  capítulo \ref{chap-vectores} hemos visto que el producto escalar entre dos vectores $x,y \in \R^n$ se define como
@@ -9009,7 +8966,7 @@ Luego,
             
         \end{proof}
         
-        \medskip
+ 
         
         Recordemos que dos vectores $x,y$  de $\R^n$ son perpendiculares u ortogonales si $\la x,y\ra =0$, lo cual era denotado $x \perp y$. 
         
@@ -9181,13 +9138,12 @@ Luego,
         \end{proof}
         
         
-        \medskip
+  
         
         Ahora vamos a demostrar el proceso de ortonormalización de Gram-Schmidt, que consta de  un algoritmo que permite pasar de una base cualquiera $\{v_1,\ldots, v_n\}$ de $\R^n$ a una base ortonormal $\{u_1,\ldots, u_n\}$, con la importante propiedad de que, para $m$ con  $1 \le m \le n$, el subespacio generado por los vectores $\{u_1,\ldots, u_m\}$ es el mismo que el subespacio generado por los vectores $\{v_1,\ldots, v_m\}$.
         
     
-        
-        \medskip 
+
         
         La idea del proceso es sencillo para dos vectores: sean  $v_1,v_2 \in \R^n$ no  nulos y no proporcionales, vimos en la observación \ref{obs-proyeccion-ort} que  los vectores
         \begin{equation*}
@@ -9195,7 +9151,7 @@ Luego,
         \end{equation*}
         son ortogonales. Ahora bien, $v_1 = w_1$ y $v_2  = \frac{\la v_1,v_2\ra}{\la v_1,v_1\ra}w_1 + w_2$, luego  $w_1,w_2$ generan el mismo subespacio que $v_1,v_2$. Concluyendo, dados  $v_1,v_2$ dos vectores LI, $w_1,w_2$ son dos vectores ortogonales que generan el mismo subespacio. Para $n >2$ la idea es similar. 
         
-        \medskip 
+  
         
         
         
@@ -9241,7 +9197,7 @@ Luego,
         \end{proof}
         
         
-        \medskip
+
         
         \begin{obs*} Sea $W$ subespacio de $\R^n$, entonces existe una base ortogonal de $W$. Esto se deduce del proceso de ortogonalización de Gram-Schmidt: sea $v_1,\ldots,v_k$ una base de $W$ y completamos a $v_{1},\ldots,v_n$ una base de $\R^n$. Por Gram-Schmidt obtenemos una BO $w_{1},\ldots,w_n$ tal que el subespacio generado  por $w_{1},\ldots,w_i$ es igual al subespacio generado por $v_{1},\ldots,v_i$ para $1 \le i \le n$. En  particular $W = \la v_{1},\ldots,v_k \ra =  \la w_{1},\ldots,w_k \ra$ y por lo tanto  $w_{1},\ldots,w_k$ es una BON de $W$.
             
@@ -9271,7 +9227,7 @@ Luego,
             \end{proof}  
         \end{ejemplo*}
         
-        \medskip
+
         
         \begin{definicion}  Sean $U, W$ subespacios de $\R^n$. Diremos que \textit{$U$ es ortogonal a $W$} y denotaremos $U \perp W$ si  para todo $u \in U$ y para todo $w \in W$ tenemos que $ \la u,w\ra =0$. 
             
