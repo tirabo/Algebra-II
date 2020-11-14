@@ -176,6 +176,17 @@
 %FIN: Esquema de numeración hasta 2020
 
 %INICIO: Esquema de numeración desde 2021 (ver: https://www.math.uh.edu/~torok/math_6298/latex/numbering.html)
+
+
+\renewenvironment{proof}[1][\proofname]% environment name
+{% begin code
+    \par\vskip -.2cm%
+	\textsc{#1. }%
+}%
+{%
+	\hfill\qed\vskip .4cm}% end code
+
+
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{proposicion}[teorema]{Proposici\'on}
 \newtheorem{corolario}[teorema]{Corolario}
@@ -323,12 +334,12 @@
         \end{enumerate}
     
     
-    \newpage
+        \vskip .5cm
     \begin{center}
         \textbf{\large Contenidos mínimos}
     \end{center}
     
-    \vskip .5cm
+
     
     \noindent Resolución de ecuaciones lineales. Matrices. Operaciones elementales. Matriz inversa. Espacios vectoriales sobre $\mathbb R$ y $\mathbb C$. Subespacios. Independencia lineal. Bases y dimensión Rectas y planos en $\mathbb R^n$. Transformaciones lineales y matrices. Isomorfismos. Cambio de bases. Núcleo e imagen de transformaciones lineales. Rango fila y columna. Determinante de una matriz. Cálculo y propiedades básicas. Espacios con producto interno. Desigualdad de Cauchy-Schwartz. Desigualdad triangular. Teorema de Pitágoras. Ortonormalización de Gram-Schmidt. Ecuaciones de rectas y planos en $\mathbb R^n$. Distancias. Introducción a vectores y valores propios. Aplicaciones. Diagonalización de matrices simétricas.
     \pagenumbering{roman}
@@ -6882,7 +6893,7 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
             \end{equation*}
         \end{ejemplo*}
         
-        \end{section}\newpage
+        \end{section}
     
     
         \begin{section}{Núcleo e imagen de una transformación lineal}\label{seccion-nucleo-e-imagen-de-una-tl}
@@ -7265,8 +7276,6 @@ Luego,
         \end{proposicion}	
         \begin{proof} 
             
-            \
-            
             ($\Rightarrow$) Debemos ver que  $\nuc(T)=0$,  es decir que si $T(v)=0$,  entonces  $v=0$. Ahora bien,  si $T(v) = 0$, como  $T(0)=0$, tenemos que $T(v)  = T(0)$, y como $T$ es inyectiva, implica que $v =0$.
             
             ($\Leftarrow$) Sean  $v_1,v_2 \in V$ tal que $T(v_1)=T(v_2)$. Entonces 
@@ -7290,9 +7299,7 @@ Luego,
                 \item\label{itm-T-epi-sii} $T$ es epimorfismo si y sólo si $T$ de un conjunto de generadores de $V$ es un conjunto de generadores de $W$.
             \end{enumerate}
         \end{proposicion}
-        \begin{proof}
-            
-            \
+        \begin{proof} Haremos la demostración para el caso de dimensión finita,  pero en el caso general la demostración es similar. 
             
             
             \ref{itm-T-mono-sii} ($\Rightarrow$) Sea $\{v_1,\ldots,v_n \}$ un conjunto LI en $V$ y sean  $\lambda_1,\ldots,\lambda_n \in \K$ tales que
@@ -7351,7 +7358,26 @@ Luego,
         
         
         Observe que $V$ es trivialmente isomorfo a $V$, ya que el operador identidad es un isomorfismo de $V$ sobre $V$. 
-            
+
+        \begin{proposicion}
+            Sea $T:V \to W$ transformación lineal. Entonces $T$ es un isomorfismo si y solo si $T$ de una base de $V$ es una base de $W$.
+        \end{proposicion}
+        \begin{proof} 
+
+         ($\Rightarrow$) 
+           Sea $ \mathcal B$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición \ref{prop-T-mono-sii-li-2-li}, $T(\mathcal B)$ es LI y genera $W$,  es decir,  es base de $W$.
+
+           ($\Leftarrow$) Sea $ \mathcal B$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\mathcal B)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo.
+        \end{proof}
+
+        \begin{corolario}
+            Sean $V$ y $W$ dos  $\K$-espacios vectoriales de dimensión finita tal que $V$ es isomorfo a $W$. Entonces $\dim(V) = \dim(W)$.
+        \end{corolario}
+        \begin{proof}
+        Como $V$  es isomorfo  a $W$,  existe un isomorfismo $T: V \to W$. Por la proposición anterior si $v_1,\ldots,v_n$ es base de $V$,  entonces $T(v_1),\ldots,T(v_n)$ es base de $W$. Por lo tanto, $\dim(V) = n = \dim(W)$.
+        \end{proof}
+
+
         Recordemos que si una función $f: X \to Y$ es suryectiva e inyectiva, es decir biyectiva, existe su inversa, la cual también es biyectiva. La inversa se denota $f^{-1}: Y \to X$ y viene definida por
         $$
         f^{-1}(y) = x \Leftrightarrow f(x) =y.
@@ -7380,6 +7406,9 @@ Luego,
                 \end{proof}
         
         
+
+
+
         \begin{ejercicio*} 
             Sean $V$, $W$ y $Z$ espacios vectoriales sobre el cuerpo $\K$ y sean $T:V \to W$, $S:W \to Z$ isomorfismos. Entonces, 
             \begin{enumerate}
@@ -7389,9 +7418,12 @@ Luego,
         \end{ejercicio*}
         
         
+
+
         Como ya se ha dicho, $V$ es isomorfo a $V$ vía la identidad. Por  el teorema anterior, si $V$ es isomorfo a $W$,  entonces $W$ es isomorfo a $V$. Por  el ejercicio anterior, si $V$ es isomorfo a $W$ y $W$ es isomorfo a $Z$, entonces $V$ es isomorfo a $Z$. En resumen, el isomorfismo es una relación de equivalencia sobre la clase de espacios vectoriales. Si existe un isomorfismo de $V$ sobre $W$, se dirá a veces que \textit{$V$ y $W$ son isomorfos}, en vez de que $V$ es isomorfo a $W$. Ello no será motivo de confusión porque $V$ es isomorfo a $W$, si, y solo si, $W$ es isomorfo a $V$.	
             
         
+   
             
             
         \begin{teorema}
@@ -7544,7 +7576,7 @@ Luego,
                 \item\label{itm-op-1} $U = \Id_VU = U\Id_V$,
                 \item\label{itm-op-2} $U(T+S) = UT + US$, $(T+S)U = TU + SU$,
                 \item\label{itm-op-3} $\lambda (UT) = (\lambda U)T = U (\lambda T)$.
-            \end{enumerate}¡
+            \end{enumerate}
         \end{lema}
         \begin{proof}
             \ref{itm-op-1} es trivial. 
