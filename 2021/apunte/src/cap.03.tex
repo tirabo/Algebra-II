@@ -1,0 +1,1192 @@
+
+
+
+    \begin{chapter}{Espacios vectoriales}\label{chap-esp-vect} En este capítulo estudiaremos en forma general las combinaciones lineales sobre conjuntos abstractos.
+        En el primer capítulo desarrollamos el método de Gauss para la resolución de sistemas de ecuaciones lineales. En el método de Gauss se usan sistemáticamente las combinaciones lineales de las filas de una matriz. Podemos ver estas filas como elementos de $\K^n$  y nuestro primer impulso para el estudio de las combinaciones lineales sería trabajar en este contexto, es decir  en $\K^n$.  Sin embargo, muchos de los resultados sobre combinaciones lineales en $\K^n$ son aplicables también a conjuntos más generales y de gran utilidad en la matemática. Por lo tanto, en este capítulo nuestros ``espacios vectoriales'' (espacios donde pueden hacerse combinaciones lineales de vectores) serán espacios abstractos, pero usualmente haremos referencia a los espacios vectoriales ``concretos'' (los $\K^n$) que ya conocemos. 
+        
+
+        
+
+        
+        \begin{section}{Definici\'on y ejemplos de espacios vectoriales}\label{seccion-definicion-de-espacios-vectoriales}
+            
+            \begin{definicion}\label{def-esp-vect} Sea $\K$ cuerpo. Un \textit{espacio vectorial}\index{espacio vectorial} sobre $\K$ o un \textit{$\K$-espacio vectorial }, consiste de  un  conjunto $V$ no vacío, cuyos elementos son llamados \textit{vectores}, junto a  '$+$' y '$.$' tal que
+                \begin{enumerate}
+                    \item[(\textit{a})] '$+\colon V\times V\to V$' es una operación, llamada \textit{adición} o  \textit{suma de vectores,}\index{suma de vectores} tal que a dos vectores $v,w \in V$ les asigna otro vector $v+w \in V$,
+                    \item[(\textit{b})]  '$.
+                     \colon \K\times V\to V$' es una operación tal que a $\lambda \in \K$ y $v \in V$ le asigna el vector $\lambda.v$ (o simplemente $\lambda v$).  '$.$' es llamada  el \textit{producto por escalares}.
+                     
+                \end{enumerate}	 
+                Además, estas operaciones deben satisfacer 
+                \begin{enumerate}
+                    \item[\textbf{S1.}] $v + w = w + v$, para $v,w \in V$ (\textit{conmutatividad de la suma}),
+                    \item[\textbf{S2.}] $(v+ w)+ u = v + (w+u)$, para $v,w,u \in V$ (\textit{asociatividad de la suma}),
+                    \item[\textbf{S3.}] existe un único vector $0$, llamado \textit{vector cero}, tal que $0+ v = v + 0 =v$, para todo $v \in V$ (\textit{existencia de elemento neutro de la suma}).
+                    \item[\textbf{S4.}] Para cada $v \in V$, existe un  único vector $-v$ tal que  $v + (-v) = (-v)+ v =0$ (\textit{existencia de opuesto} o  \textit{inverso aditivo}).
+                    \item[\textbf{P1.}] $1.v=v$ para todo $v \in V$.
+                    \item[\textbf{P2.}] $\lambda_1(\lambda_2v) = (\lambda_1\lambda_2)v$, para todo $\lambda_1,\lambda_2 \in \K$ y todo $v \in V$.
+                    \item[\textbf{D1.}] $\lambda(v+w) = \lambda v +\lambda w$, para todo $\lambda \in \K$ y todo $v,w \in V$ (\textit{propiedad distributiva}).
+                    \item[\textbf{D2.}] $(\lambda_1+\lambda_2)v = \lambda_1v + \lambda_2 v$ para todo $\lambda_1,\lambda_2 \in \K$ y todo $v \in V$ (\textit{propiedad distributiva}).
+                \end{enumerate}
+            \end{definicion}
+            
+            Debido a la ley de asociatividad para la suma $(v+w)+u$ es igual a $v+(w+u)$ y por lo tanto podemos eliminar los paréntesis sin ambigüedad. Es decir, 	$\forall\, v,w,u \in V$ denotamos 
+            $$
+            v + w + u := (v+w)+u =v+(w+u).
+            $$
+            
+            De forma análoga, $\forall\, \lambda_1,\lambda_2 \in V$, $\forall \, v \in V$ usaremos la notación
+            $$
+            \lambda_1\lambda_2v  = (\lambda_1\lambda_2)v = \lambda_1(\lambda_2v).
+            $$
+            
+            Otra notación importante, e intuitiva, es la siguiente	$\forall\, v,w \in V$
+            $$
+            v-w := v+(-w),
+            $$
+            y a menudo diremos que $v-w$ es la \textit{resta} de $v$ menos $w$. 
+            
+            \begin{ejemplo*} {\textsc{$\K^n$.}} Sea $\K$ cuerpo, y sea
+                \begin{equation*}
+                V = \{(x_1,x_2,\ldots,x_n): x_i \in \K, 1 \le i \le n \} = \K^n.
+                \end{equation*}	
+                Entonces $V$ es espacio vectorial con las siguientes operaciones: si $(x_1,x_2,\ldots,x_n) \in \K^n$, $(y_1,y_2,\ldots,y_n) \in K^n$, $\lambda \in \K$
+                \begin{enumerate}
+                    \item[(\textit{a})] $(x_1,x_2,\ldots,x_n)+ (y_1,y_2,\ldots,y_n) = (x_1+y_1,x_2+y_2,\ldots,x_n+y_n)$,
+                    \item[(\textit{b})] $\lambda(x_1,x_2,\ldots,x_n) = (\lambda x_1,\lambda x_2,\ldots,\lambda x_n)$.
+                \end{enumerate}
+                Observar que las sumas y productos son coordenada a coordenada y, por lo tanto, en cada coordenada son sumas y productos en $\K$.
+                
+                Comprobemos las propiedades necesarias para que $V$ sea un espacio vectorial. Como la suma de vectores y el producto por escalares es coordenada a coordenada, las propiedades se deducirán fácilmente de los axiomas para la suma y el producto en los cuerpos.  Sean $x =  (x_1,\ldots,x_n)$, $y = (y_1,\ldots,y_n)$, $z = (z_1,\ldots,z_n)$ en $V$ y $\lambda, \lambda_1,\lambda_2 \in \K$:
+                \begin{enumerate}
+                    \item[S1.] $x + y = y +x$, pues $x_i + y_i = y_i + x_i$, $1 \le i \le n$.
+                    \item[S2.]  $(x+ y)+ z = x + (y+z)$,  pues $(x_i + y_i) + z_i = x_i + (y_i + z_i)$, $1 \le i \le n$. 
+                    \item[S3.] Sea $0 = (0,\ldots,0)$,  entonces $0+x = (0+x_1,\ldots, 0+x_n) =(x_1,\ldots,x_n) =x$.
+                    \item[S4.] Sea $-x = (-x_1,\ldots,-x_n)$,  entonces $x + (-x) = (x_1-x_1,\ldots,x_n-x_n) =  (0,\ldots,0)$.
+                    \item[P1.] $1.x=(1.x_1,\ldots,1.x_n) = (x_1,\ldots,x_n)=x$.
+                    \item[P2.] $\lambda_1(\lambda_2x) = (\lambda_1\lambda_2)x$ pues $\lambda_1(\lambda_2x_i) =(\lambda_1\lambda_2)x_i$, $1 \le i \le n$.
+                    \item[D1.] $\lambda(x+y) = \lambda x +\lambda y$,  pues $\lambda(x_i+y_i) = \lambda x_i + \lambda y_i$, $1 \le i \le n$.
+                    \item[D2.] $(\lambda_1+\lambda_2)x = \lambda_1x + \lambda_2 x$, pues $ (\lambda_1+\lambda_2)x_i = \lambda_1x_i + \lambda_2 x_i$, $1 \le i \le n$.
+                \end{enumerate} 
+                
+                
+            \end{ejemplo*}
+            
+            \medspace
+            
+            \begin{ejemplo*}{\textsc{Matrices $m \times n$.}} Sea $\K$ cuerpo,  definimos en $M_{m \times n}(\K)$ la suma  y el producto por escalares de la siguiente forma. Sean $A = [a_{ij}]$, $B = [b_{ij}]$ matrices $m \times n$ y $ \lambda \in \K$, entonces $A+B$, $\lambda A$ son matrices en $M_{m \times n}(\K)$ con coeficientes:
+                \begin{align*}
+                [A + B]_{ij} &= [a_{ij} + b_{ij}], \\
+                [\lambda A]_{ij} &= [\lambda a_{ij}]. 
+                \end{align*}
+                Es decir, la suma es coordenada a coordenada y el producto es multiplicar el escalar en cada coordenada. Este caso no es más que $\K^{mn}$ presentado de otra manera. 
+                
+                Ejemplifiquemos, con casos sencillos, la suma de matrices y el producto por escalares
+                \begin{equation*}
+                \begin{bmatrix} -2&1\\0&4 \end{bmatrix} + \begin{bmatrix} 5&1\\2&-5 \end{bmatrix} =
+                \begin{bmatrix} 3&2\\2&-1 \end{bmatrix}, \qquad 
+                3\begin{bmatrix} -2&1\\0&4 \end{bmatrix} = \begin{bmatrix} -6&3\\0&12 \end{bmatrix}.
+                \end{equation*}	
+            \end{ejemplo*}
+            
+            \medspace
+            
+            \begin{ejemplo*}{\textsc{Polinomios.}} Sea 
+                \begin{equation*}
+                \K[x] = \{a_nx^n + \cdots + a_1x + a_0: n \in \mathbb N_0, a_i \in \K\text{, para } 0\le i \le n  \}
+                \end{equation*}
+                el conjunto de polinomios sobre $\K$. Entonces si $P(x), Q(x) \in \K[x]$, definimos la suma de polinomios de la siguiente manera: sea $P(x) = a_nx^n + \cdots + a_1x + a_0$ y $Q(x)= b_nx^n + \cdots + b_1x + a_0$ (completamos coeficientes con 0 hasta que ambos tengan el mismo $n$), entonces
+                \begin{equation*}
+                (P+Q)(x) = (a_n+b_n)x^n + \cdots + (a_1+ b_1)x + (a_0+b_0).
+                \end{equation*}
+                Si $\lambda \in \K$, 
+                \begin{equation*}
+                (\lambda P)(x) = \lambda a_nx^n + \cdots + \lambda a_1x + \lambda a_0.
+                \end{equation*}
+                Por ejemplo,
+                \begin{align*}
+                (3x^2 + 1)+(x^4 + 2x^3 + 5x^2-x) &= x^4 + 2x^3 + 8x^2-x +1, \qquad \text{ y } \\
+                3(x^4 + 2x^3 + 5x^2-x) &= 3x^4 + 6x^3 + 15x^2-3x.
+                \end{align*}
+            \end{ejemplo*}
+            
+            
+            \medspace
+            
+            \begin{ejemplo*}{\textsc{Espacios de funciones.}} Sean
+                \begin{align*}
+                \operatorname{F}(\R) &= \{f: \R \to \R: \text{ tal que } f \text{ es una función} \},\\
+                \operatorname{C}(\R) &= \{f: \R \to \R: \text{ tal que }  f  \text{ es una función continua} \}.
+                \end{align*}
+                Recordemos que si $f,g$ son funciones, entonces la función suma de $f$ y $g$ está definida por
+                \begin{equation*}
+                (f+g)(x) = f(x) + g(x).
+                \end{equation*}
+                Por otro lado, si $\lambda \in \R$, la función multiplicar $f$ por $\lambda $ está definida por
+                \begin{equation*}
+                (\lambda f)(x) = \lambda f(x).
+                \end{equation*}			
+                                
+                Es sencillo ver que con estas dos operaciones, $\operatorname{F}(\R)$ es un $\R$-espacio vectorial.
+                
+                Con respecto a $\operatorname{C}(\R)$, hemos visto en el primer curso de análisis matemático  que la suma de funciones continuas es una función continua y, por lo tanto, $f+g$ es continua si $f$ y $g$ lo son.  
+                
+                El producto de un escalar $c$ por una función continua $f$,  puede ser visto como el producto de una función que es constante y vale $\lambda $ (y es continua) y la función $f$. Por lo tanto, $\lambda f$ es producto de funciones continuas y, en consecuencia, es una función continua.  Resumiendo,
+                \begin{equation*}
+                f, g \in \operatorname{C}(\R) \Rightarrow f+g \in \operatorname{C}(\R), \qquad \lambda \in \R, f \in \operatorname{C}(\R) \Rightarrow \lambda f \in \operatorname{C}(\R).
+                \end{equation*}
+                No es difícil ver que con estas definiciones $\operatorname{C}(\R)$  es un $\R$-espacio vectorial.
+            \end{ejemplo*}
+            
+            
+            
+            \medspace
+            
+            \begin{ejemplo*}{\textsc{Reales positivos.}}
+            Consideremos el conjunto de los números reales positivos:
+            \[
+            R_{>0}=\{x\in\R : x>0\}.
+            \]
+            Entonces $V=R_{>0}$ es un $\R$-espacio vectorial con la suma $\oplus:V\times V\to V$ y  y el producto $\odot:\R\times V\to V$ dados por
+            \begin{align*}
+            x\oplus y&=x\cdot y, & c\odot x&=x^c,
+            \end{align*}
+            para cada $c\in\R$, $x,y\in R_{>0}$.
+Es fácil ver que los axiomas \textbf{S1.} y \textbf{S2.} sobre la conmutatividad y asociatividad, respectivamente, de la suma $\oplus$ se siguen de las propiedades de conmutatividad y asociatividad del producto $\cdot$ en $\R$.
+
+La existencia del vector $\textbf{0}$ del axioma \textbf{S3.}, neutro para la suma $\oplus$, requiere de cierto cuidado. Notar que este vector debe ser un elemento $\textbf{0}$ en $V$ (un real positivo) que cumpla $x\oplus \textbf{0}=x$ para todo $x$. Ahora, $x\oplus \textbf{0}=x\cdot \textbf{0}0$ por definición, de donde se desprende que debemos tomar $\textbf{0}=1$. Es decir, \textit{el vector cero es el número 1}. De manera similar, se sigue que el opuesto indicado en el  axioma \textbf{S4.} debe estar dado por $-x=x^{-1}$.
+
+Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D1.} y \textbf{D2.} se siguen de las propiedades conocidas de la exponenciación en $\R$ y quedan a cargo del lector, como un interesante desafío para terminar de comprender este ejemplo.
+\end{ejemplo*}            
+
+            \begin{proposicion}\label{prop-basicas-ev} Sea $V$ un espacio vectorial sobre el cuerpo $\K$. Entonces,
+                \begin{enumerate}
+                    \item\label{c*0=0} $\lambda.0=0$, para todo $\lambda \in \K$;
+                    \item\label{0*c=0} $0.v = 0$, para todo $v \in V$;
+                    \item\label{c*v=0} si $\lambda \in \K$, $v \in V, v\ne 0$ y $\lambda.v=0$,  entonces $\lambda =0$;
+                    \item\label{-1*v=-v} $(-1).v = -v$, para todo $v \in V$.
+                \end{enumerate}
+            \end{proposicion}
+            \begin{proof} Tanto la prueba de (1), como la de (2) son similares a la demostración de que $0.a=0$  en $\mathbb Z$ (o en  $\R$).
+                 
+                (1) Como $0$ es el elemento neutro de la suma en $V$, entonces $0 = 0 +0$, luego 
+                \begin{equation*}
+                    \begin{array}{rllll}
+                    \lambda.0 &=& \lambda.(0+0)&\quad&\text{(propiedad distributiva $\Rightarrow$)}  \\
+                    \lambda.0&=& \lambda.0 + \lambda.0 && \text{(sumando a la izquierda $-\lambda.0$ $\Rightarrow$)} \\
+                \lambda.0 - \lambda.0 &=& \lambda.0 + \lambda.0 -\lambda.0 && \text{(opuesto $\Rightarrow$)}\\
+                    0 &=& \lambda.0 +0  &&\text{(elemento neutro $\Rightarrow$)}\\
+                    0 &=& \lambda.0.
+                    \end{array}
+                \end{equation*}
+                
+                (2) Análoga a (1).
+                
+                (3) Supongamos que  $\lambda.v=0$ y  $\lambda \ne 0$, entonces, por (1), $ \lambda^{-1}(\lambda.v)=0$, pero $\lambda^{-1}(\lambda.v) = (\lambda^{-1}\lambda).v = 1.v = v$. Luego $0=v$,  que contradice la hipótesis. El absurdo vino de suponer que $\lambda \ne 0$.
+                
+                (4)  $(-1).v +v = (-1).v +1.v = (-1+1).v$,  esto último es por la propiedad distributiva. Ahora bien $(-1+1).v = 0.v \overset{(2)}{=} 0$. Es decir   $(-1).v +v = 0$ y por lo tanto  $(-1).v$ es el opuesto de $v$ (que es $-v$).  
+            
+            \end{proof}
+   
+\end{section}
+    
+\begin{section}{Subespacios vectoriales}\label{seccion-subespacios-vectoriales}
+    \begin{definicion}
+        Sea $V$ un espacio vectorial sobre $\K$. diremos que $W \subset V$ es \textit{subespacio de $V$}\index{subespacio} si $W \not= \emptyset$ y
+        \begin{enumerate}
+            \item[(a)] si para cualesquiera $w_1,w_2 \in W$, se cumple que $w_1+w_2 \in W$ y
+            \item[(b)] si $\lambda \in \K$ y  $w \in W$, entonces $\lambda w \in W$.
+        \end{enumerate}
+    \end{definicion}
+
+    \begin{observacion}\label{obs-0-en-subespacio} Si $W$ subespacio de $V$,  entonces $0 \in W$: como  $W \ne \emptyset$, tomo  cualquier $w \in W$ y  por (a) tenemos que $0.w \in W$. Ya vimos en la proposición \ref{prop-basicas-ev}\ref{0*c=0}  que $0.w =0$ y por lo tanto $0 \in W$. 
+    \end{observacion}
+
+    \begin{observacion}\label{obs-opuesto-en-subespacio} Si $W$ subespacio de $V$ y $w \in W$,  entonces $-w \in W$: hemos visto (proposición \ref{prop-basicas-ev}\ref{-1*v=-v}) que  $(-1)w=-w $, luego por (b) de la definición de subespacio $-w \in W$.
+    \end{observacion}
+
+    \begin{teorema}
+        Sea $V$ un espacio vectorial sobre $\K$ y $W$ subespacio de $V$. Entonces $W$ con las operaciones suma y producto por escalares de $V$ es un espacio vectorial.
+    \end{teorema}
+    \begin{proof} 
+        Para que $W$ sea espacio vectorial sus operaciones deben satisfacer los axiomas de la definición de espacio vectorial (definición \ref{def-esp-vect}). 
+        
+        Por la observación \ref{obs-0-en-subespacio}, el $0$ del espacio vectorial pertenece al subespacio. 
+        
+       Por la observación  \ref{obs-opuesto-en-subespacio} concluimos que $-w\in W$. Es decir el opuesto de un vector en $W$ también pertenece a $W$. 
+        
+        Teniendo en cuenta estos dos hechos y que las operaciones en $V$ satisfacen los axiomas de la definición \ref{def-esp-vect} (y por lo tanto en $W$ también),  queda demostrado que $W$, con las operaciones heredadas de $V$, es espacio vectorial.  
+    \end{proof}
+
+
+
+\begin{ejemplo*} Veremos ahora una serie de ejemplos de subespacios vectoriales.
+    \begin{enumerate}
+        \item Sea $V$ un $\K$-espacio vectorial, entonces $0$ y $V$ son subespacios vectoriales de $V$. Suelen ser llamados los \textit{subespacios triviales}\index{subespacios triviales} de $V$.
+        
+        \item Sea $V$ un $\K$-espacio vectorial y sea $v \in V$, entonces
+        $$
+        W = \{\lambda v: \lambda \in \K \}
+        $$
+        es un subespacio vectorial. En  efecto
+        \begin{enumerate}
+            \item si $\lambda_1v,\lambda_2v \in W$, con $\lambda_1,\lambda_2 \in \K$,  entonces $\lambda_1v + \lambda_2v = (\lambda_1+\lambda_2)v \in W$;
+            \item  $\lambda_1v \in W$, con $\lambda_1 \in \K$ y $\lambda \in \K$,  entonces $\lambda(\lambda_1v) = (\lambda \lambda_1)v \in W$.
+        \end{enumerate}
+        El subespacio $W$ suele ser denotado $\K v$.
+    
+        
+        \item Sean $V=\K^n$ y $1\le j \le n$. Definimos 
+        $$
+        W = \left\{ (x_1,x_2,\ldots,x_n): x_i \in \K\; (1 \le i \le n), x_j =0\right\}.
+        $$
+        Es decir $W$  es el subconjunto de $V$ de todas las $n$-tuplas con la coordenada $j$ igual a 0. Por ejemplo  si $j=1$ 
+        $$
+        W = \left\{ (0,x_2,\ldots,x_n): x_i \in \K \;(2 \le i \le n)\right\}.
+        $$
+        Veamos que este último es un subespacio: 
+        \begin{enumerate}
+            \item si $(0,x_2,\ldots,x_n), (0,y_2,\ldots,y_n) \in W$,  entonces
+            $(0,x_2,\ldots,x_n)+ (0,y_2,\ldots,y_n) = (0,x_2+y_2,\ldots,x_n+y_n)$, el cual pertenece a $W$. 
+            \item 	Por otro lado, si $\lambda \in \K$, $\lambda(0,x_2,\ldots,x_n) = (0,\lambda x_2,\ldots,\lambda x_n) \in W$.
+        \end{enumerate}
+        La demostración para $j >1$ es completamente análoga. 
+        \item El  conjunto $\R[x] = \left\{P(x): P(x) \text{ es polinomio en $\R$ } \right\}$, es subespacio de $\operatorname{F}(\R)$, pues $\R[x] \subset \operatorname{F}(\R)$ y las operaciones de suma y producto por un escalar son cerradas en $\R[x]$.
+        \item De forma análoga, el conjunto $\R[x]$ es subespacio de $\operatorname{C}(\R)$,  el espacio de funciones continuas de  $\R$.
+        \item Sea $W= \left\{A \in M_n(\K): A^\t = A \right\}$. Es claro que  $A \in W$ si y sólo si $[A]_{ij} = [A]_{ji}$. Veamos que  $W$ es subespacio de $M_n(\K)$: 
+        \begin{enumerate}
+            \item sean $A=[a_{ij}]$, $B= [b_{ij}]$ tales que $A=A^\t$ y $B=B^\t$, entonces debemos verificar que $A+ B \in W$,  es decir que la transpuesta de $A+B$  es la misma matriz: ahora bien, $[A+B]_{ij} = a_{ij}+b_{ij}$, luego 
+            \begin{equation*}
+                [(A+B)^\t]_{ij} =a_{ji}+b_{ji} = [A]_{ji} + [B]_{ji} = [A]_{ij} + [B]_{ij} = [A+B]_{ij},
+            \end{equation*}
+            por lo tanto $A+B \in W$.
+            \item Si $\lambda \in \K$, $[\lambda A]_{ij} = \lambda a_{ij}$, luego, 
+            $$
+            [\lambda A^\t]_{ij} = \lambda a_{ji} = \lambda a_{ij} = [\lambda A]_{ij},
+            $$
+            por lo tanto $\lambda A \in W$.
+        \end{enumerate} 	
+
+        \item Sea $A \in M_{m \times n}(\K)$. Si $x = (x_1,\ldots,x_n) \in \K^n$,  entonces $Ax$ denotará la multiplicación de $A$ por la matriz columna formada por $x_1,\ldots,x_n$,  es decir
+        $$
+        Ax = A\begin{bmatrix} x_1 \\ \vdots \\ x_n\end{bmatrix}.
+        $$
+        Sea 
+        $$
+        W = \left\{x \in \K^n: Ax=0 \right\}.
+        $$
+        Es decir, $W$  es el subconjunto de $\K^n$ de las soluciones del sistema $Ax=0$. Entonces, $W$  es un subespacio de $\K^n$:
+        \begin{enumerate}
+            \item si $x,y \in W$, es decir si $Ax=0$ y $Ay=0$,  entonces $A(x+y) = Ax + Ay = 0 + 0 = 0$, luego , $x+y \in W$;
+            \item si $\lambda \in \K$ y $x \in W$, entonces $A(\lambda x) = \lambda Ax =\lambda.0 =0$, luego $\lambda x \in W$. 
+        \end{enumerate}
+    \end{enumerate}
+\end{ejemplo*}
+
+\begin{definicion}
+    Sea $V$ espacio vectorial sobre $\K$ y $v_1,\ldots,v_n$ vectores en $V$. Dado $v \in V$, diremos que\textit{ $v$  es combinación lineal de los $v_1,\ldots,v_n$ }\index{combinación lineal} si existen escalares $\lambda_1,\ldots,\lambda_n$ en $\K$,  tal que 
+    $$
+    v = \lambda_1v_1+\cdots+\lambda_nv_n.
+    $$
+\end{definicion}
+
+\begin{ejemplo*} ${}^{}$
+\begin{enumerate}
+    \item Sean $v_1 = (1,0)$, $v_2 = (0,1)$ en $\C^2$ ¿es $v = (i,2)$ combinación lineal de $v_1,v_2$? La respuesta es sí, pues 
+    $$
+    v = iv_1+2v_2.
+    $$
+    Observar además que es la única combinación lineal posible, pues si 
+    $$
+    v = \lambda_1v_1+ \lambda_2 v_2,
+    $$
+    entonces
+    $$
+    (i,2) = (\lambda_1,0)+(0,\lambda_2) = (\lambda_1,\lambda_2),
+    $$
+    luego $\lambda_1=i$ y $\lambda_2= 2$.
+    
+    Puede ocurrir que un vector sea combinación lineal de otros vectores de varias formas diferentes. Por ejemplo,   si   $v = (i,2)$ y $v_1 = (1,0)$, $v_2 = (0,1)$, $v_3 = (1,1)$,  tenemos que
+    \begin{align*}
+        v &= iv_1+2v_2+0v_3,\quad\quad\quad\text{y también}\\
+        v &= (i-1)v_1 + v_2 + v_3.  
+    \end{align*}
+    
+    \item Sean $(0,1,0)$, $(0,1,1)$ en $\C^3$ ¿es $(1,1,0)$ combinación lineal de $(0,1,0)$, $(0,1,1)$? La respuesta es no, pues si 
+    $$
+    (1,1,0) = \lambda_1(0,1,0)+ \lambda_2(0,1,1) = (0,\lambda_1,0)+ (0,\lambda_2,\lambda_2) = (0,\lambda_1+\lambda_2,\lambda_2),
+    $$ 
+    luego, la primera coordenada nos dice que $1=0$, lo cual es absurdo. Por lo tanto,  no existe un par $\lambda_1,\lambda_2 \in \K$ tal que  $(1,1,0) = \lambda_1(0,1,0)+ (0,1,1)$.
+    
+\end{enumerate}
+\end{ejemplo*}
+
+\vskip .3cm
+
+\begin{observacion*}
+    La pregunta de si un vector $v =(b_1,\ldots,b_m) \in \K^m$ es combinación lineal de vectores $v_1,\ldots,v_n \in \K^m$ se resuelve con un sistema de ecuaciones lineales: si 
+    $$
+    v_i = (a_{1i},\ldots,a_{mi}), \quad \text{para $1 \le i \le n$,}
+    $$
+    entonces $v = \lambda_1v_1 + \cdots +\lambda_nv_n$ se traduce, en coordenadas, a
+    \begin{align*}
+        (b_1,\ldots,b_m) &= \lambda_1(a_{11},\ldots,a_{m1}) + \cdots +\lambda_n(a_{1n},\ldots,a_{mn}) \\
+        &= (\lambda_1a_{11} + \cdots+ \lambda_na_{1n}, \ldots, \lambda_1a_{m1} + \cdots+ \lambda_na_{mn}).
+    \end{align*}
+    Luego, $v$  es combinación lineal de los vectores $v_1,\ldots,v_n \in \K^m$ si y sólo si  el sistema de ecuaciones:
+    \begin{equation*}
+    \begin{matrix}
+    a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
+    \vdots&  &\vdots& &&  &\vdots \\
+    a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m,
+    \end{matrix}
+    \end{equation*}
+
+    \noindent con incógnitas $\lambda_1,\ldots, \lambda_n$ tiene solución.
+\end{observacion*}
+
+
+\begin{ejemplo*} Demostrar que $(5,12,5)$  es combinación lineal de los vectores $(1,-5,2), (0,1,-1), (1,2,-1)$. Planteamos la ecuación:
+    \begin{align*}
+        (5,12,5) &= \lambda_1(1,-5,2)+\lambda_2 (0,1,-1)+\lambda_3 (1,2,-1) 
+        \\&= (\lambda_1+\lambda_3,-5\lambda_1+\lambda_2+2\lambda_3,2\lambda_1-\lambda_2-\lambda_3).
+    \end{align*}
+    Por consiguiente,  esta ecuación se resuelve con el siguiente sistema de ecuaciones
+    \begin{align*}
+        \lambda_1+\lambda_3 &= 5 \\
+        -5\lambda_1+\lambda_2+2\lambda_3 &= 12 \\
+        2\lambda_1-\lambda_2-\lambda_3 &= 5.
+    \end{align*}
+    Ahora bien, usando el método de Gauss
+                        \begin{multline*}
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ -5 & 1 & 2 &  12 \\	2 & -1 & -1 &  5  \end{array}\right]
+    \stackrel[F_3 -2F_1]{F_2 + 5F_1}{\longrightarrow} 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & -1 & -3 &  -5  \end{array}\right]
+    \stackrel{F_3+F_1}{\longrightarrow} 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & 0 & 4 & 32  \end{array}\right]
+    \\
+    \stackrel{F_3/4}{\longrightarrow} 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 & 5 \\ 0 & 1 & 7 & 37 \\	0 & 0 & 1& 8  \end{array}\right]
+    \stackrel[F_2 -7F_3]{F_1 - F_3}{\longrightarrow}
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 0 & -3 \\ 0 & 1 & 0 &  -19 \\	0 & 0 & 1& 8  \end{array}\right].
+    \end{multline*}	
+    Luego $\lambda_1= -3$, $\lambda_2 = -19$ y $\lambda_3=8$,  es decir
+    \begin{align*}
+    (5,12,5) &= -3(1,-5,2)-19 (0,1,-1)+8 (1,2,-1).
+    \end{align*}
+\end{ejemplo*}
+
+\vskip .4cm 
+    \begin{teorema}
+    Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_k \in V$. Entonces
+    $$
+    W = \{\lambda_1v_1+\cdots+\lambda_kv_k: \lambda_1,\ldots,\lambda_k \in \K \}
+    $$
+    es un subespacio vectorial. Es decir,  el conjunto de las combinaciones lineales de $v_1,\ldots,v_k$ es un subespacio vectorial.
+    \end{teorema}
+    \begin{proof}
+        \begin{enumerate}
+            \item[(a)] Sean $\lambda_1v_1+\cdots+\lambda_kv_k$ y $\mu_1v_1+\cdots+\mu_kv_k$ dos combinaciones lineales de $v_1,\ldots,v_k$, entonces 
+            \begin{align*}
+                (\lambda_1v_1+\cdots+\lambda_kv_k)+(\mu_1v_1+\cdots+\mu_kv_k) &=  \lambda_1v_1+\mu_1v_1+\cdots+\lambda_kv_k+\mu_kv_k\\
+                &= (\lambda_1+\mu_1)v_1+\cdots+(\lambda_k+\mu_k)v_k,
+            \end{align*}
+            que es  una combinación lineal de  $v_1,\ldots,v_k$ y por lo tanto pertenece a $W$.
+            \item[(b)] Si $\lambda \in \K$ y $\lambda_1v_1+\cdots+\lambda_kv_k$  es una combinación lineal de $v_1,\ldots,v_k$,  entonces
+            \begin{align*}
+            \lambda (\lambda_1v_1+\cdots+\lambda_kv_k) &=  \lambda(\lambda_1v_1)+\cdots+\lambda(\lambda_kv_k)\\
+            &= (\lambda\lambda_1)v_1+\cdots+(\lambda\lambda_k)v_k,
+            \end{align*}
+                que es  una combinación lineal de  $v_1,\ldots,v_k$ y por lo tanto pertenece a $W$.
+        \end{enumerate}
+    \end{proof}
+    
+
+
+    \begin{definicion}
+    Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_k \in V$. Al  subespacio vectorial $	W = \{\lambda_1v_1+\cdots+\lambda_kv_k: \lambda_1,\ldots,\lambda_k \in \K \}$ de las combinaciones lineales de $v_1,\ldots,v_k$ se lo denomina \textit{subespacio generado por $v_1,\ldots,v_k$}\index{subespacio generado} y se lo denota  
+    \begin{equation*}
+        \begin{array}{rcll}
+        W &=& \langle v_1,\ldots,v_k \rangle, &\quad \text{ o } \\
+        W &=&  \operatorname{gen}\left\{ v_1,\ldots,v_k\right\} &\quad \text{ o } \\
+        W &=&  \operatorname{span}\left\{ v_1,\ldots,v_k\right\}.&
+        \end{array}
+    \end{equation*}
+    Además, en este caso, diremos que el conjunto $S = \left\{ v_1,\ldots,v_k \right\}$ \textit{genera} al subespacio $W$  o que los vectores $v_1,\ldots,v_k$ \textit{generan} $W$.
+    
+\end{definicion}
+
+\vskip.5cm
+
+        \begin{teorema}
+            Sea $V$ un espacio vectorial sobre $\K$. Entonces la intersección de subespacios vectoriales es un subespacio vectorial. 
+        \end{teorema}
+    \begin{proof}
+        Sea $\{W_i \}_{i \in I}$ una familia   de subespacios vectoriales y sea 
+        $$W = \bigcap_{i\in I} W_i,$$
+        entonces
+        \begin{enumerate}
+            \item[(a)] si $w_1,w_2 \in W$, tenemos que $w_1, w_2 \in W_i$ para todo $i \in I$, luego, como $W_i$ es subespacio vectorial,  $w_1+ w_2 \in W_i$ para todo $i \in I$, por lo tanto $w_1+ w_2 \in W$;
+            \item[(b)] si  $\lambda \in \K$ y $w \in W$,  $w \in W_i$ para todo $i \in I$ y, por lo tanto, $cw \in W_i$ para todo $i \in I$. En consecuencia $w \in W$.
+        \end{enumerate}
+    \end{proof}
+        
+        
+        \begin{obs*}
+            Si $V$ es un $\K$-espacio vectorial, $S$ y $T$ subespacios de $V$, entonces $S \cup T$ no es necesariamente un subespacio de $V$. En efecto, consideremos en $\R^2$ los subespacios 
+            $S = \R(1,0)$ y $T = \R(0,1)$. 	Observamos que $(1,0)\in  S$ y $(0,1) \in  T$; luego, ambos  pertenecen a $S \cup T$. Pero $(1,0) + (0,1) = (1,1) \not\in S \cup T$, puesto que $(1,1) \not\in S$ y $(1,1) \not\in T$.
+        \end{obs*}
+    
+    \begin{teorema}
+        Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_k \in V$. Entonces,  la intersección de todos los subespacios vectoriales que contienen  a $v_1,\ldots,v_k$ es igual a $\langle v_1,\ldots,v_k \rangle$.	
+    \end{teorema}	
+    \begin{proof}
+        Denotemos $W_1 = \langle v_1,\ldots,v_k \rangle$ y $W_2$ la intersección de todos los subespacios vectoriales que contienen  a $v_1,\ldots,v_k$. Probaremos que  $W_1 = W_2$ con la doble inclusión,  es decir probando que $W_1 \subseteq W_2$ y  $W_2 \subseteq W_1$.
+        
+        ($W_1 \subseteq W_2$). Sea $W$  subespacio vectorial que contiene $v_1,\ldots,v_k$. Como $W$ es subespacio,  entonces  $W$ contiene a cualquier combinación lineal de los $v_1,\ldots,v_k$, por lo tanto $W$ contiene a $W_1$. Es decir, cualquier subespacio que contiene a $v_1,\ldots,v_k$,  también contiene a  $W_1$, por lo tanto la intersección de todos los subespacios que  contienen a $v_1,\ldots,v_k$, contiene a $W_1$. Luego $W_2 \supseteq W_1$.
+        
+        ($W_2 \subseteq W_1$). $W_1$ es un subespacio que contiene a $v_1,\ldots,v_k$, por lo tanto  la intersección de todos los subespacios que  contienen a $v_1,\ldots,v_k$  está contenida en $W_1$. Es decir, $W_2 \subseteq W_1$.
+    \end{proof}
+        
+        
+    \begin{definicion} Sea $V$ un espacio vectorial sobre $\K$ y sean $S_1,\ldots,S_k$ subconjuntos  de $V$.
+        definimos 
+        \begin{equation*}
+            S_1+  \cdots +S_k := \left\{s_1+\cdots+s_k: s_i \in S_i, 1 \le i \le k \right\},
+        \end{equation*}
+        el conjunto \textit{suma de los  $S_1,\ldots,S_k$.}
+    \end{definicion}	
+
+    \begin{teorema}
+         Sea $V$ un espacio vectorial sobre $\K$ y sean $W_1,\ldots,W_k$ subespacios  de $V$. Entonces $W= W_1+\cdots+W_k$ es un subespacio de $V$.
+    \end{teorema}
+    \begin{proof}
+        Sean $v = v_1+\cdots+v_k$ y $w = w_1+\cdots+w_k$ en $W$ y $\lambda \in \K$. Entonces
+        \begin{enumerate}[label=(\alph*),ref=\alph*]
+            \item $v+w =  (v_1+w_1)+\cdots+(v_k+w_k) \in W_1+\cdots+W_k$, pues como $W_i$ es subespacio de $V$, tenemos que $v_i+w_i \in W_i$.
+            \item  $\lambda v = \lambda(v_1+\cdots+v_k) = \lambda v_1+\cdots+\lambda v_k \in W_1+\cdots+W_k$, pues como $W_i$ es subespacio de $V$, tenemos que $\lambda v_i \in W_i$.
+        \end{enumerate}
+    \end{proof}
+
+    \begin{proposicion}
+        Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_r$ elementos de   de $V$. Entonces
+        \begin{equation*}
+            \langle v_1,\ldots,v_r \rangle = \langle v_1 \rangle+ \cdots + \langle v_r \rangle.
+        \end{equation*}
+    \end{proposicion}
+    \begin{proof}
+        Probemos el resultado viendo que los dos conjuntos se incluyen mutuamente.
+        
+        ($\subseteq$) Sea $w \in \langle v_1,\ldots,v_r \rangle$, luego $w = \lambda_1 v_1 +\cdots+ \lambda_r v_r$. Como $ \lambda_i v_i \in \langle v_i \rangle$, $1 \le i \le r$ ,  tenemos que  $w \in \langle v_1 \rangle+ \cdots + \langle v_r \rangle$.  En  consecuencia, $\langle v_1,\ldots,v_r \rangle \subseteq \langle v_1 \rangle+ \cdots + \langle v_r \rangle$. 
+        
+        ($\supseteq$) Si $w \in \langle v_1 \rangle+ \cdots + \langle v_r \rangle$, entonces $w = w_1 + \cdots+w_r$ con $w_i \in \langle v_i\rangle$ para todo $i$. Por lo tanto, $w_i = \lambda_i v_i$ para algún $\lambda_i \in \K$ y  $w = \lambda_1 v_1 +\cdots+ \lambda_r v_r \in \langle v_1,\ldots,v_r \rangle $. En  consecuencia, $\langle v_1 \rangle+ \cdots + \langle v_r \rangle \subseteq \langle v_1,\ldots,v_r \rangle$. 
+    \end{proof}
+
+
+
+        
+
+
+
+    \begin{ejemplo*}\label{ejemplos2} Veremos una serie de ejemplos de subespacios,  suma e intersección de subespacios.
+        \begin{enumerate}
+            \item\label{ejemplos2-1} Sea $\K = \C$ y $V= \C^5$. Consideremos los vectores
+            \begin{equation*}
+                v_1 = (1,2,0,3,0), \qquad v_2 = (0,0,1,4,0), \qquad v_3 = (0,0,0,0,1),
+            \end{equation*}
+            y sea $W= \langle v_1,v_2,v_3 \rangle$. 
+            
+            Ahora bien, $w \in W$, si y sólo si $w = \lambda_1 v_1+\lambda_2 v_2+\lambda_3 v_3$, con $\lambda_1,\lambda_2,\lambda_3 \in \C$. Es decir
+            \begin{align*}
+                w &= \lambda_1 (1,2,0,3,0)+\lambda_2 (0,0,1,4,0)+\lambda_3 (0,0,0,0,1) \\
+                &=  (\lambda_1,2\lambda_1,0,3\lambda_1,0)+ (0,0,\lambda_2,4\lambda_2,0)+ (0,0,0,0,\lambda_3) \\ &=(\lambda_1,2\lambda_1,\lambda_2,3\lambda_1+4\lambda_2,\lambda_3)
+            \end{align*} 
+            Luego,  también podríamos escribir
+            \begin{equation*}
+                W = \left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
+            \end{equation*}
+            
+            \item Sea $V = M_2(\C)$ y sean 
+            \begin{equation*}
+                W_1 = \left\{\begin{bmatrix} x_1&x_2\\x_3&0 \end{bmatrix}: x_1,x_2,x_3 \in \C \right\}, 
+                \qquad W_2 = \left\{\begin{bmatrix} y_1&0\\0&y_2 \end{bmatrix}: y_1,y_2 \in \C \right\}.
+            \end{equation*} 
+            Es claro que cada uno de estos conjuntos es un subespacio, pues,
+            $$
+            W_1 = \C \begin{bmatrix} 1&0\\0&0 \end{bmatrix} +
+            \C \begin{bmatrix} 0&1\\0&0 \end{bmatrix} +
+            \C \begin{bmatrix} 1&0\\0&0 \end{bmatrix}, \quad 
+            W_2 = \C \begin{bmatrix} 1&0\\0&0 \end{bmatrix} +
+            \C \begin{bmatrix} 0&0\\0&1 \end{bmatrix}. 
+            $$
+            Entonces, $W_1 + W_2 = V$. En  efecto, sea 
+            $\begin{bmatrix} a&b\\c&d\end{bmatrix} \in V$, entonces
+            $$
+            \begin{bmatrix} a&b\\c&d\end{bmatrix} =  \begin{bmatrix} x_1&x_2\\x_3&0 \end{bmatrix} + 
+            \begin{bmatrix} y_1&0\\0&y_2 \end{bmatrix} =
+            \begin{bmatrix} x_1+y_1&x_2\\x_3&y_2 \end{bmatrix},
+            $$
+            y esto se cumple  tomando $x_1 = a, y_1 =0,  x_2 = b, x_3= c, y_2 =d$.
+            
+            Por otro lado
+            \begin{align*}
+                W_1 \cap W_2 &= \left\{\begin{bmatrix} a&b\\c&d\end{bmatrix}:  \begin{bmatrix} a&b\\c&d\end{bmatrix} \in W_1, \begin{bmatrix} a&b\\c&d\end{bmatrix} \in W_2\right\} \\
+                &= \left\{\begin{bmatrix} a&b\\c&d\end{bmatrix}:  \begin{matrix}
+                (a =x_1, b = x_2, c = x_3,d =0)\wedge \\(a = y_1, b=c=0, d= y_2)
+                \end{matrix} \right\} \\
+                &= \left\{\begin{bmatrix} a&0\\0&0\end{bmatrix}:  a \in \C\right\} .
+            \end{align*}
+        \end{enumerate}
+    \end{ejemplo*}
+
+    Finalmente, daremos la definición de espacio fila y espacio columna de una matriz, definiciones  que veremos posteriormente son de importancia en la teoría. 
+
+    \begin{definicion}\label{espacio-fila-columna}
+        Sea $A = [a_{ij}] \in M_{m \times n}(\K)$. El \textit{vector fila $i$} es el vector  $(a_{i1},\ldots,a_{in}) \in \K^n$. El \textit{espacio fila}\index{matriz!espacio fila} de $A$ es el subespacio de $\K^n$ generado por los $m$ vectores fila de $A$.  De forma análoga, se define  el vector columna $j$ al vector $(a_{1j},\ldots,a_{mj}) \in \K^m$ y  el \textit{espacio columna}\index{matriz!espacio columna} de $A$ es el subespacio de $\K^m$ generado por los $n$ vectores columna de $A$.  
+    \end{definicion}
+
+    \begin{ejemplo*}
+        Sea
+        $$
+        A = \begin{bmatrix}
+        1&2&0&3&0\\ 0&0&1&4&0 \\0&0&0&0&1
+        \end{bmatrix} \in \C^{3 \times 5},
+        $$
+        entonces, por definición, el espacio fila es el subespacio generados por las filas de la matriz: 
+        $$
+        W = \la  (1,2,0,3,0), (0,0,1,4,0), (0,0,0,0,1) \ra_\C.
+        $$ 
+        También, como vimos en \ref{ejemplos2-1} del ejemplo de la p. \pageref{ejemplos2}, el espacio fila puede ser caracterizado de forma implícita:
+        \begin{align*}
+        W =\left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
+        \end{align*}
+    \end{ejemplo*}
+\end{section}		
+        
+\begin{section}{Bases y dimensi\'on}\label{seccion-bases-y-dimension}
+    \begin{definicion}
+        Sea $V$ un espacio vectorial sobre $\K$. Un subconjunto $S$ de $V$ se dice \textit{linealmente dependiente}\index{linealmente dependiente} (o simplemente, \textit{LD} o \textit{dependiente}) si existen vectores distintos $v_1,\ldots,v_n \in S$  y escalares $\lambda_1,\ldots,\lambda_n$ de $\K$, no todos nulos, tales que 	
+        \begin{equation*}
+            \lambda_1v_1+\cdots+\lambda_nv_n=0.
+        \end{equation*}
+        Un conjunto que no es linealmente dependiente se dice \textit{linealmente independiente}\index{linealmente independiente} (o simplemente, \textit{LI} o \textit{independiente}).
+        
+        Si el conjunto $S$ tiene solo un número finito de vectores $v_1,\ldots,v_n$, se dice,
+        a veces, que los $v_1,\ldots,v_n$ son LD (o LI), en vez de decir
+        que $S$ es LD (o LI, respectivamente).
+        
+    \end{definicion}
+
+\begin{observacion*} Por definición, un conjunto $S = \left\{v_1,\ldots,v_n \right\}$ es independiente si se cumple cualquiera de las dos afirmaciones siguientes:
+	
+	\begin{itemize}
+		\item[(LI-1)]\label{LT-1} $\forall\,\lambda_1,\ldots,\lambda_n$ en $\K$ tal que $\lambda_i \ne 0$ para algún $i$,  entonces  $\lambda_1v_1+\cdots+\lambda_nv_n\not=0$, o , 
+		\item[(LI-2)]\label{LT-2} si $\lambda_1,\ldots,\lambda_n$ en $\K$ tales que $\lambda_1v_1+\cdots+\lambda_nv_n=0$,  entonces $0=\lambda_1=\cdots=\lambda_n$.
+	\end{itemize}
+
+
+    El enunciado (LI-1) se deduce intuitivamente negando  la definición de linealmente dependiente y el resultado (LI-2) es el contrarrecíproco  de (LI-1).
+    
+    
+Para los interesados, lo anterior es un ejercicio de lógica: ser LD se puede enunciar 
+\begin{equation*}\label{eq-ld}
+    (\exists \lambda_1,\ldots,\lambda_n: (\exists i: \lambda_i \ne 0) \wedge (\lambda_1v_1+\cdots+\lambda_nv_n=0 )).
+\tag{LD}
+\end{equation*}
+
+Recordar que $\neg(\exists \lambda: P \wedge Q) \,\equiv\, (\forall \lambda: \neg P \vee \neg Q)$ y  que  $\neg P \vee \neg Q\,\equiv\, P \Rightarrow \neg Q$. Luego  la negación de (\ref{eq-ld}), es decir ser LI, es 
+\begin{equation*}\label{eq-li-1}
+    (\forall \lambda_1,\ldots,\lambda_n:  (\exists i: \lambda_i \ne 0) \Rightarrow \lambda_1v_1+\cdots+\lambda_nv_n\ne 0). \tag{LI-1}
+\end{equation*}
+
+Como $(P \Rightarrow Q) \equiv (\neg Q \Rightarrow \neg P)$, el contrarrecíproco, la propiedad (\ref{eq-li-1})  es equivalente a
+\begin{equation*}
+(\forall \lambda_1,\ldots,\lambda_n:  (\lambda_1v_1+\cdots+\lambda_nv_n=0 ) \Rightarrow (\forall i: \lambda_i = 0)). \tag{LI-2}
+\end{equation*}
+    
+\end{observacion*}
+
+\vskip .2cm
+
+Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la definición.
+\begin{enumerate}
+    \item Todo conjunto que contiene un conjunto linealmente dependiente es linealmente dependiente.
+    \item  Todo subconjunto de un conjunto linealmente independiente es linealmente independiente.
+    \item  Todo conjunto que contiene el vector $0$ es linealmente dependiente; en efecto, $1.0 = 0$.
+\end{enumerate}
+
+\begin{ejemplo*}
+    En $\R^3$  los vectores $(1,-1,1)$ y $(-1,1,1)$ son LI, pues si $\lambda_1(1,-1,1)+\lambda_2(-1,1,1) =0$,  entonces $0= (\lambda_1,-\lambda_1,\lambda_1)+(-\lambda_2,\lambda_2,\lambda_2) =  (\lambda_1-\lambda_2,-\lambda_1+\lambda_2,\lambda_1+\lambda_2)$, y esto es cierto si 
+    \begin{equation*}
+        \begin{array}{rcl}
+        \lambda_1-\lambda_2 &=& 0 \\
+        -\lambda_1+\lambda_2 &=& 0 \\
+        \lambda_1+\lambda_2 &=& 0 
+        \end{array}.
+    \end{equation*} 
+    Luego $\lambda_1 = \lambda_2$ y $\lambda_1 = -\lambda_2$, por lo tanto $\lambda_1 = \lambda_2 =0$. Es decir,  hemos visto que 
+    $$
+    \lambda_1(1,-1,1)+\lambda_2(-1,1,1) =0 \quad \Rightarrow \quad\lambda_1 = \lambda_2 =0,
+    $$
+    y, por lo tanto,  $(1,-1,1)$ y $(-1,1,1)$ son LI.
+\end{ejemplo*}
+
+\begin{ejemplo*} Sea $\K$  cuerpo. En $\K^3$ los vectores
+    \begin{align*}
+    v_1 &= (\;\;3,\;0,-3) \\
+    v_2 &= (-1,\;1,\;\;2) \\
+    v_3 &= (\;\;4,\;2,-2) \\
+    v_4 &= (\;\;2,\;1,\,\;\;1)
+    \end{align*}
+    
+    son linealmente dependientes, pues
+    $$
+    2v_1+2v_2 -v_3 +0.v_4 =0.
+    $$
+    Por otro lado, los vectores
+    \begin{align*}
+    e_1 &= (1,0,0) \\
+    e_2 &= (0,1,0) \\
+    e_3 &= (0,0,1) 
+    \end{align*}
+    son linealmente independientes.
+\end{ejemplo*}
+
+
+\begin{observacion*}
+    En  general,  en $\K^m$, si queremos determinar si  $v_1,\ldots,v_n$ es LI, planteamos la ecuación  
+    \begin{equation*}
+    \lambda_1v_1+\cdots+\lambda_nv_n=(0,\ldots,0),
+    \end{equation*}
+    que, viéndola coordenada a coordenada, es equivalente a un sistema de $m$ ecuaciones lineales con  $n$ incógnitas (que son $\lambda_1,\ldots,\lambda_n$). Si  la única solución es la trivial entonces $v_1,\ldots,v_n$ es LI. Si hay alguna solución no trivial, entonces $v_1,\ldots,v_n$ es LD. 
+\end{observacion*}
+ 
+ \begin{definicion}
+     Sea $V$ un espacio vectorial. Una \textit{base}\index{base de un espacio vectorial} de $V$ es un conjunto $\mathcal B \subseteq V$ tal que
+     \begin{enumerate}
+         \item $\mathcal B$ genera a $V$, y
+         \item $\mathcal B$ es LI.
+     \end{enumerate}
+      El espacio $V$ es de \textit{dimensión finita}\index{dimensión finita} si tiene una base finita,  es decir con  un número finito de elementos.
+ \end{definicion}
+
+
+
+\begin{ejemplo*}[{\textsc{Base canónica de $\K^n$}}] Sea el espacio vectorial $\K^n$ y sean
+    \begin{equation*}
+    \begin{array}{rcl}
+    e_1 &=& (1,0,0,\ldots,0) \\
+    e_2 &=& (0,1,0,\ldots,0) \\
+    &&\qquad.\,.\,.\,.\,.\,.\,\\ 
+    e_n&=& (0,0,0,\ldots,1)
+    \end{array}
+    \end{equation*}
+    ($e_i$ es el vector con todas sus coordenadas iguales a cero,  excepto  la coordenada $i$ que vale 1). Entonces veamos que  $e_1,\ldots,e_n$ es una base de $\K^n$.
+    \begin{enumerate}
+        \item Si $(x_1,\ldots,x_n) \in \K^n$,  entonces
+        $$
+        (x_1,\ldots,x_n) = x_1e_1+\cdots+x_ne_n.
+        $$
+        Por lo tanto, $e_1,\ldots,e_n$ genera a  $\K^n$.
+        \item Si 
+        $$
+        x_1e_1+\cdots+x_ne_n =0,
+        $$
+        entonces
+        \begin{align*}
+            (0,\ldots,0) &= x_1(1,0,\ldots,0)+ x_2(0,1,\ldots,0)+\cdots+x_n(0,0,\ldots,1)\\ 
+            &=  (x_1,0,\ldots,0)+(0,x_2,\ldots,0)+\cdots+(0,0,\ldots,x_n)\\ &= (x_1,x_2,\ldots,x_n).
+        \end{align*}
+        Luego, $x_1= x_2=\cdots=x_n =0$ y por lo tanto $e_1,\ldots,e_n$ es LI.
+        
+        Para $1 \le i \le n$, al vector $e_i$ se lo denomina el \textit{$i$-ésimo vector canónico}  y a la base $\mathcal B_n = \left\{e_1,\ldots,e_n \right\}$ se la denomina la \textit{base canónica}\index{base canónica} de $\K^n$. 
+        
+        
+    \end{enumerate}
+\end{ejemplo*}
+ 
+ 
+ \begin{ejemplo*}
+     Sea $P$ una matriz $n \times n$ invertible con elementos en el cuerpo $\K$. Entonces si $C_1,\ldots,C_n$ son los vectores columna de $P$ (ver definición  \ref{espacio-fila-columna}), estos forman una base de $\K^n$. Eso se verá como sigue. Si $X = (x_1,\ldots,x_n) \in \K^n$, lo podemos ver como columna y 
+     $$
+     PX=x_1C_1+\cdots+x_nC_n.
+     $$
+     Como $PX=0$ tiene solo la solución trivial $X= 0$, se sigue que $\{C_1,\ldots,C_n\}$ es un conjunto linealmente independiente. ¿Por qué generan $\K^n$? Sea $Y \in \K^n$, si $X = P^{-1} Y$, entonces $Y = PX$, esto es
+     $$
+     Y=x_1C_1+\cdots+x_nC_n.
+     $$
+     Así, $\{C_1,\ldots,C_n\}$ es una base de $\K^n$.
+ \end{ejemplo*}
+
+
+\begin{ejemplo*}
+    Sea $\K_n[x]$  el conjunto de polinomios de grado menor  que $n$ con coeficientes en $\K$:
+    $$
+    \K_n[x] = \left\{a_0 + a_1 x + a_2x^2+\cdots+a_{n-1}x^{n-1}: a_0,\ldots,a_{n-1} \in \K  \right\}.
+    $$
+    Entonces $1,x,x^2,\ldots,x^n$  es una base de $\K_n[x]$. Es claro que los $1,x,x^2,\ldots,x^n$ generan $\K_n[x]$. Por otro lado, si  $\lambda_0 + \lambda_1 x + \lambda_2x^2+\cdots+\lambda_{n-1}x^{n-1} =0$, tenemos que $\lambda_0=\lambda_1 = \lambda_2 =\cdots =\lambda_{n-1} =0$.
+\end{ejemplo*}
+
+\begin{ejemplo*}[\textsc{Base canónica de $M_{m \times n}(\K)$}] 
+    Sean $1 \le i \le m$, $1\le j \le m$ y $E_{ij} \in M_{m \times n}(\K)$ definida por
+    \begin{equation*}
+        [E_{ij}]_{kl} = \left\{ 
+        \begin{array}{lll}
+        1& &\text{si $i=k$ y $j=l$,} \\
+        0& &\text{otro caso}. 
+        \end{array}
+         \right.
+    \end{equation*}
+    Es decir $E_{ij}$  es la matriz cuyas entradas son todas iguales a 0,  excepto la entrada $ij$ que vale 1. En el caso $2 \times 2$  tenemos la matrices
+    \begin{equation*}
+        E_{11} = \begin{bmatrix} 1&0\\0&0\end{bmatrix}, \quad
+        E_{12} = \begin{bmatrix} 0&1\\0&0\end{bmatrix}, \quad
+        E_{21} = \begin{bmatrix} 0&0\\1&0\end{bmatrix}, \quad
+        E_{22} = \begin{bmatrix} 0&0\\0&1\end{bmatrix}.
+    \end{equation*}
+    Volviendo al caso general,  es claro que si $A= [a_{ij}] \in M_{m \times n}(\K)$,  entonces
+    \begin{equation}\label{base-canonica-matrices}
+        A = \sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}E_{ij},
+    \end{equation}
+    luego $\{E_{ij} \}_{1 \le i \le m, 1\le j \le n}$ genera $M_{m \times n}(\K)$. También, por la ecuación (\ref{base-canonica-matrices}), es claro que si $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}E_{ij}=0$,  entonces $a_{ij}=0$ para todo $i$ y $j$. Luego,  $\{E_{ij} \}_{1 \le i \le m, 1\le j \le n}$ es LI. 
+    
+    Concluyendo,  $\{E_{ij} \}_{1 \le i \le m, 1\le j \le n}$ es una base de  $M_{m \times n}(\K)$ y se la denomina la \textit{base canónica} de  $M_{m \times n}(\K)$.
+\end{ejemplo*}
+
+\begin{observacion*}
+    ¿Todo espacio vectorial tiene una base? La respuesta es \textit{sí}. Sin embargo, la demostración de este hecho no es sencilla y requiere de herramientas de la teoría de conjuntos,  en particular del Lema de Zorn. El lector interesado podrá ver el artículos sobre bases de un espacio vectorial en la Wikipedia:  
+    \href{https://es.wikipedia.org/wiki/Base\_(álgebra)}{https://es.wikipedia.org/wiki/Base\_(álgebra)} y una demostración de la existencia de bases para cualquer espacio vectorial en  
+    \href{http://fernandorevilla.es/blog/2014/06/22/existencia-de-base-en-todo-espacio-vectorial/}{http://fernandorevilla.es/blog/2014/06/22/existencia-de-base-en-todo-espacio-vectorial}.
+
+    Más allá, de la dificultad en la demostración, supondremos siempre que todo espacio vectorial tiene una base. 
+\end{observacion*}
+
+Si $S$ es un conjunto finito denotemos $|S|$  al \textit{cardinal} de  $S$ es decir, la cantidad de elementos de $S$. 
+
+\begin{teorema}\label{indep-menorigual-gen}
+    Sea $V$ un espacio vectorial generado por un conjunto finito de vectores $w_1,\ldots,w_m$. Entonces todo conjunto independiente de vectores de $V$ es finito y  contiene a lo más $m$ elementos. 
+\end{teorema}
+\begin{proof} Sea $V = \la w_1,\ldots,w_m\ra$ y  $S \subset V$.   El  enunciado del teorema es equivalente a decir:
+    $$
+    \text{si }S \text{ es LI } \Rightarrow |S| \le m.
+    $$
+    Para demostrar este teorema es suficiente probar el contrarrecíproco del enunciado, es decir:
+    $$
+    \text{si }|S| > m \Rightarrow S \text{ es LD},
+    $$
+    o, dicho  de otra forma, todo subconjunto $S$ de $V$ que contiene más de $m$ vectores es linealmente dependiente. Sea $S$ un tal conjunto,  entonces $S = \{v_1,\ldots,v_n\}$ con $n >m$.  Como  $w_1,\ldots,w_m$ generan $V$, existen escalares $a_{ij}$ en $\K$ tales que
+    \begin{equation*}
+        v_j = \sum_{i=1}^{m}a_{ij}w_i, \qquad (1 \le j \le n).
+    \end{equation*}
+    Probaremos ahora que existen $x_1,\ldots,x_n \in \K$ no todos nulos, tal que $x_1v_1 + \cdots+x_nv_n =0$. Ahora bien, para cualesquiera $x_1,\ldots,x_n \in \K$ tenemos
+
+
+    \begin{align*}
+        x_1v_1 + \cdots+x_nv_n &= \sum_{j=1}^{n} x_jv_j& \\
+        & = \sum_{j=1}^{n}x_j \sum_{i=1}^{m}a_{ij}w_i& \\
+        & = \sum_{j=1}^{n} \sum_{i=1}^{m}(x_ja_{ij})w_i& \\ 
+        & = \sum_{i=1}^{m}(\sum_{j=1}^{n} x_ja_{ij})w_i.&  (*)
+    \end{align*}
+    
+    Si cada coeficiente que multiplica a cada $w_i$ es nulo, entonces $  x_1v_1 + \cdots+x_nv_n=0$. Vamos a ver ahora que existen $x_,\ldots,x_n$ no todos nulos tal que los coeficientes que multiplica a $w_i$  en ($*$) sean todos nulos. Esto se debe a que el sistema de ecuaciones
+    \begin{equation*}
+        \sum_{j=1}^{n} x_ja_{ij} = 0, \qquad (1 \le i \le m) 
+    \end{equation*}
+    tiene $m$ ecuaciones  y $n > m$ incógnitas, luego, por el teorema \ref{soluciones-m-menor-n}, existen escalares $x_1,\ldots,x_n \in \K$ no todos nulos, tal que $\sum_{j=1}^{n} x_ja_{ij} = 0$, ($1 \le i \le m$) y, por $(*)$
+    \begin{align*}
+        x_1v_1 + \cdots+x_nv_n &=  \sum_{i=1}^{m}(\sum_{j=1}^{n} x_ja_{ij})w_i = \sum_{i=1}^{m}0\cdot w_i =0,
+    \end{align*}
+    con algún $x_i \ne 0$. Esto quiere decir que los $v_1,\ldots,v_n$ son LD.
+\end{proof}
+
+
+\begin{corolario}
+    Si $V$ es un espacio vectorial de dimensión finita, entonces dos bases cualesquiera de $V$ tienen el mismo número de elementos.
+\end{corolario}
+\begin{proof}
+        Como $V$ es de dimensión finita, tiene una base finita $\mathcal B$  de $m$ vectores, es decir,  $\mathcal B$ es base de $V$ y  $|\mathcal B| = m.$
+        Sea $\mathcal B'$  otra base de $V$, como $\mathcal B$  genera $V$ y  $\mathcal B'$ es  un conjunto LI, entonces, por el teorema anterior, $|\mathcal B'| \le m$. Sea $n = |\mathcal B'|$,  entonces $n \le m$. Por otro lado $\mathcal B'$ es base y, por lo tanto,  genera $V$ y  $\mathcal B$ es LI, luego, por el teorema anterior nuevamente,  $m \le n$, y en consecuencia $m=n$.
+\end{proof}
+
+Hemos demostrado, si $V$  es un espacio vectorial de dimensión finita y $\mathcal B,\mathcal B' $ dos bases de $V$,  entonces $|\mathcal B|=|\mathcal B'|$. Esto nos permite hacer la siguiente definición. 
+
+
+\begin{definicion}
+    Sea $V$ espacio vectorial de dimensión finita. Diremos que $n$  es \textit{la dimensión de $V$}\index{dimensión de un espacio vectorial} y  denotaremos $\dim V =n$,  si existe una base de $V$  de $n$  vectores. Si $V = \{0\}$,  entonces definimos $\dim V =0$.
+\end{definicion}
+
+
+
+
+
+\begin{ejemplo*} Sean $m,n \in \mathbb N$. 
+    \begin{enumerate}
+        \item $\dim \K^n= n$, pues  la base canónica tiene $n$ elementos.
+        \item $\dim M_{m \times n}(\K) = mn$, pues la base canónica de $M_{m \times n}(\K)$ tiene $mn$  elementos.  
+        \item $\dim \K_n[x] =n$, pues $1,x,x^2,\ldots,x^{n-1}$ es una base.   
+    \end{enumerate}
+\end{ejemplo*}
+        
+        
+        \begin{corolario}
+            Sea $V$ un espacio vectorial de dimensión finita y sea $n = \dim V$. 
+            Entonces
+            \begin{enumerate}
+                \item cualquier subconjunto de $V$ con más de $n$ vectores es linealmente
+                dependiente;
+                \item ningún subconjunto de $V$ con menos de $n$ vectores puede generar $V$.
+            \end{enumerate} 
+        \end{corolario}
+    \begin{proof}
+        \begin{enumerate}
+            \item Sea $\{v_1,\ldots,v_n\}$ una base de $V$, entonces $v_1,\ldots,v_n$ generan $V$, luego, por el teorema \ref{indep-menorigual-gen}, cualquier subconjunto de $V$ que contenga más de $n$ vectores es LD.
+            \item Sea $S$  subconjunto de $V$ con $m < n$ vectores. Si $S$  genera $V$,  entonces todo subconjunto de más de $m$  vectores es LD (teorema \ref{indep-menorigual-gen}), por lo tanto, un subconjunto de $n$ vectores es LD. En  consecuencia, no puede haber una base de $n$  elementos, lo cual contradice la hipótesis.
+        \end{enumerate} 
+    \end{proof}
+
+    \begin{lema}\label{lem-li+vec=li}
+        Sea $S$ un subconjunto LI de un espacio vectorial $V$. Suponga que $w$ es un vector de $V$ que no pertenece al subespacio generado por $S$. Entonces $S \cup \{w\}$ es LI.
+    \end{lema}
+    \begin{proof}
+        Suponga que $v_1,\ldots,v_n$  son vectores distintos de $S$ y sean $\lambda_i,\lambda \in \K$  tales que
+        \begin{equation}\label{eq-dep-lin}
+            \lambda_1 v_1 + \cdots + \lambda_n v_n + \lambda w =0 .
+        \end{equation}
+        Debemos probar que $\lambda_i=0$, $1 \le i \le n$, y $\lambda =0$.
+        Supongamos que $\lambda \ne 0$, entonces podemos dividir la ecuación por $\lambda$ y haciendo  pasaje de término  obtenemos
+        $$
+        w = \left(-\frac{\lambda_1}{\lambda}\right) v_1 + \cdots   \left(-\frac{\lambda_n}{\lambda}\right) v_n.
+        $$
+        Luego $w$ estaría  en el subespacio generado por $S$, lo cual contradice la hipótesis. 
+        
+        Por  lo tanto $\lambda =0$ y, en consecuencia  
+        $$
+        \lambda_1 v_1 + \cdots + \lambda_n v_n =0.
+        $$ 
+        Como $S$ es un conjunto linealmente independiente, todo $\lambda_i = 0$. 
+    \end{proof}
+
+
+
+    \begin{teorema}\label{completar-bases}
+    Sea $V$ espacio vectorial de dimensión finita $n$ y $S_0$ un subconjunto LI de $V$. Entonces $S_0$  es finito  y existen $w_1,\ldots,w_m$ vectores en  $V$ tal que  $S_0 \cup \{w_1,\ldots,w_m\}$ es una base de $V$. 
+\end{teorema}
+\begin{proof}
+    Se extiende $S_0$ a una base de $V$, como sigue. Si $S_0$ genera $V$, entonces $S_0$ es una base de $V$ y está demostrado. Si $S_0$ no genera $V$, por el lema anterior se halla un vector $w_1$ en $V$ tal que el conjunto $S_1 = S_0 \cup \{v_1\}$ es independiente.			
+    Si $S_1$ genera $V$, está demostrado. Si no, se aplica el lema para obtener un vector $w_2$ en $V$ tal que el conjunto $S_2 = S_1 \cup \{w_2\} = S_0 \cup \{w_1,w_2\}$ es independiente. Si se continúa de este modo, entonces (y en no más de $\dim V$ de etapas) se llega a un conjunto 
+    $$
+    S_m =  S_0 \cup \{w_1,\ldots,w_m\}
+    $$
+    que es independiente y que genera $V$ (si no, continuamos), por lo tanto $S_m$ es base de $V$. 
+\end{proof}
+
+Es decir, todo subconjunto LI de un espacio vectorial de dimensión finita se puede completar a una base.  
+
+    \begin{corolario}
+        Sea $W$ es un subespacio de un espacio vectorial de dimensión finita $n$ y $S_0$ un subconjunto LI de $W$. Entonces, $S_0$ se puede completar a una base de $W$. 
+    \end{corolario}
+    \begin{proof}
+        Como $S_0$ es un conjunto linealmente independiente de $W$, entonces $S_0$ es también un subconjunto linealmente independiente de $V$; como $V$ es de dimensión finita, $S_0$ no tiene más de $n$ elementos y por lo tanto es finito.
+        
+        Como $W$ es un espacio vectorial, aplicando el teorema anterior completamos a una base de $W$. 
+    \end{proof}
+
+    \begin{corolario}
+        Sea $V$ espacio vectorial de dimensión finita y $V \ne \{0\}$, entonces $\dim V >0$.
+    \end{corolario}
+    \begin{proof}
+        Como $V \ne \{0\}$,  existe $v \in V$ con $v \ne 0$. Entonces, $S_0 = \{v\}$ es LI, pues $\lambda v =0 \Rightarrow \lambda =0$. Por el teorema anterior, $S_0$ se extiende a una base $\mathcal B$. Como $|\mathcal B| \ge |S_0| =1$, tenemos que $\dim V >0$.    
+    \end{proof}
+    
+    \begin{corolario}\label{dimw-menor-dimv}
+        Si $W$ es un subespacio propio de un espacio vectorial de dimensión finita $V$, entonces $W$ es de dimensión finita y  $\dim W < \dim V$.
+    \end{corolario}
+    \begin{proof} Si $W = \{0\}$, entonces $\dim W = 0$,  como $W \subsetneq V$,  tenemos que $V$  es no nulo y por lo tanto $\dim W = 0 < \dim V$. 
+        
+
+        Si  $W \ne \{0\}$,  sea $S$ subconjunto LI de $W$. Claramente $S$ también es LI en $V$ y por lo tanto $|S| < \dim(V)$. El axioma de buena ordenación nos garantiza que existe  $S$ subconjunto LI de $W$ con $|S|$ máximo. 
+        
+        Veamos que $S$ genera $W$. Si $S$ no generara a $W$,  entonces existiría $w \in W$ y $w\not\in \la S\ra$. Como $S$  es LI,  por lema \ref{lem-li+vec=li}, $S \cup \{w\}$ es LI,  está incluido en $W$ y tiene cardinal mayor a $S$. Esto es un absurdo por la maximalidad de $S$.
+        
+        Por lo tanto $S$ es un conjunto LI  que genera $W$,  es decir, $S$  es una base de $W$. 
+        
+        Como $W$ es un subespacio propio de $V$ existe un vector $v$ en $V$ que
+        no está en $W$. Agregando $v$ a la base $S$ de $W$ se obtiene un subconjunto
+        LI de $V$ (lema \ref{lem-li+vec=li}). Así, $\dim W < \dim V$.
+    \end{proof}
+
+    \begin{comment}
+    
+    \begin{corolario}
+     En un espacio vectorial V de dimensión finita todo conjunto linealmente independiente de vectores es parte de una base.
+    \end{corolario}
+    \begin{proof}
+        Sea $S$ un conjunto LI en $V$, por el teorema \ref{completar-bases}, existen $v_1,\ldots,v_m$ tal que  $S \cup \{v_1,\ldots,v_m\}$ es una base de $V$. 
+    \end{proof}
+
+    \begin{corolario}
+        Sea A una matriz $n \times n$ sobre el cuerpo $\K$, y suponga que los vectores fila de $A$ forman un conjunto linealmente independiente de vectores de $\K^n$. Entonces $A$ es invertible.
+    \end{corolario}
+    \begin{proof}
+        Sean $v_1,\ldots,v_n$ los  vectores fila de $A$, y sea $W = \langle v_1,\ldots,v_n \rangle$.  Como los $v_1,\ldots,v_n$ son linealmente independientes, la dimensión de $W$ es $n$. Por el corolario  \ref{dimw-menor-dimv} se tiene 	que $W$ no es propio y por lo tanto $W = \K^n$.  Luego existen escalares $b_{ij}$ en $\K$ tales que
+        $$
+        e_i = \sum_{j=1}^{n} b_{ij} v_j, \qquad 1 \le i \le n
+        $$
+        donde $\{e_1, e_2,\ldots ,e_n\}$ es la base canónica de $\K^n$. 
+        Como $v_j= (a_{j1},\ldots,a_{jn})$,  tenemos
+        \begin{align*}
+            e_i &= \sum_{j=1}^{n} b_{ij} (a_{j1},\ldots,a_{jn}) \\
+            &=  (\sum_{j=1}^{n} b_{ij}a_{j1},\ldots,\sum_{j=1}^{n} b_{ij}a_{jn}).
+        \end{align*}
+        
+        Así, para la matriz $B= [b_{ij}]$ se tiene
+        $$
+        BA=\Id.
+        $$
+    \end{proof}
+    
+    \end{comment}
+
+Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conjunto LI se puede extender a una base. Veremos ahora que dado un conjunto finito de generadores,  existe un subconjunto que es una base. 
+
+
+\begin{teorema}\label{gen->base}
+    Sea $V \ne 0$ espacio vectorial y $S$ un conjunto finito de generadores de $V$,  entonces existe un subconjunto $\mathcal B$  de $S$ que es una base.  
+\end{teorema} 
+\begin{proof}
+    Sea
+    $$
+    C = \{|R|: R \subseteq S \;\wedge\; R \text{ es LI}\}.
+    $$
+    Como $V$ no es nulo  y $S$ genera $V$, $C \ne \emptyset$. $C$  es un subconjunto no vacío de  $\mathbb N$,  acotado superiormente por $|S|$ y por lo tanto tiene máximo. Sea $n$ el máximo de $C$ entonces existe  $\mathcal B \subseteq S$ tal que $|\mathcal B| =n$  y $\mathcal B$ es LI. Veremos que $\mathcal B$  es una base. Para ello, como $\mathcal B $ es LI, sólo falta ver que $\mathcal B$ genera a $V$. 
+    
+    Supongamos que existe $v \in S$ tal que $ v \not\in \langle \mathcal B \rangle$. Por el lema \ref{lem-li+vec=li},  entonces  $\mathcal B \cup \{v\}$ es LI y este subconjunto LI de $S$ tiene $n+1$  elementos, lo cual contradice la maximalidad de $n$. Es claro entonces, que $v \in S \Rightarrow v \in \mathcal B$,  es decir $S \subset \langle B \rangle$. Como $S \subset \langle B \rangle$,  entonces
+    $V = \langle S \rangle \subset \langle B \rangle$, es decir $V =  \langle B \rangle$.
+\end{proof}
+
+
+    \begin{teorema}
+        Si $W_1$, y $W_2$ son subespacios de dimensión finita de un espacio vectorial, entonces $W_1+ W_2$ es de dimensión finita y 
+        $$ \dim (W_1 + W_2) = \dim W_1 + \dim W_2 - \dim (W_1 \cap W_2).$$
+    \end{teorema}
+    \begin{proof}
+         El  conjunto $W_1 \cap W_2$  es un subespacio de $W_1$ y $W_2$ y por lo tanto un espacio vectorial de dimensión finita. Sea  $u_1,\ldots,u_k$ una base de $W_1 \cap W_2$, por el teorema \ref{completar-bases},  existen $v_1,\ldots,v_n$ vectores en $W_1$ y $w_1,\ldots,w_m$ vectores en $W_2$  tal que
+         $$
+         \{u_1,\ldots,u_k,v_1,\ldots,v_n\}\quad  \text{es una base de $W_1$,}
+         $$
+          y
+          $$
+         \{u_1,\ldots,u_k,w_1,\ldots,w_m\}\quad \text{es una base de $W_2$.}
+         $$
+        Es claro que, el subespacio $W_1+ W_2$ es generado por los vectores 
+        $$
+        u_1,\ldots,u_k,v_1,\ldots,v_n,w_1,\ldots,w_m.
+        $$
+        Veamos que estos  vectores forman un conjunto independiente. En efecto, suponga que
+        \begin{equation}\label{tres-sumas}
+            \sum \lambda_i u_i + \sum \gamma_i v_i + \sum \mu_i w_i =0,
+        \end{equation}
+        luego
+        $$
+        \sum \mu_i w_i = - \sum \lambda_i u_i - \sum \gamma_i v_i.
+        $$
+        Por  lo tanto, $\sum \mu_i w_i \in (W_1 \cap W_2) + W_1 = W_1$. Es  decir,  $\sum \mu_i w_i \in W_2$ y $\sum \mu_i w_i \in W_1$, por lo tanto $\sum \mu_i w_i \in (W_1 \cap W_2)$, y entonces
+        $$
+        \sum \mu_i w_i  = \sum \alpha_i u_i \Rightarrow 0 = \sum \alpha_i u_i - \sum \mu_i w_i .
+        $$
+        Como $\{u_1,\ldots,u_k,w_1,\ldots,w_m\}$ es una base y por lo tanto LI, tenemos que $0=\alpha_i=\mu_j$, para todo $i,j$. Por lo tanto, por (\ref{tres-sumas}), 
+        \begin{equation}\label{dos-sumas}
+        \sum \lambda_i u_i + \sum \gamma_i v_i  =0.
+        \end{equation}
+        Como $ \{u_1,\ldots,u_k,v_1,\ldots,v_n\}$  es una base de $W_1$,  tenemos que también $0=\lambda_i = \gamma_j$ para todo $i,j$. Luego  $0=\lambda_i = \gamma_j = \mu_r$, para cualesquiera $i,j,r$ y por lo tanto $u_1,\ldots,u_k,v_1,\ldots,v_n,w_1,\ldots,w_m$ es LI y  como  generaban a  $W_1+W_2$ resultan ser una base de $W_1+W_2$, por lo tanto $\dim (W_1+W_2) = k+n+m$.
+        
+        Finalmente,
+        \begin{align*}
+            \dim W_1 + \dim W_2&= (k+n)+(k+m) \\&	=k+(k+n+m)\\ &=  \dim (W_1 \cap W_2) + \dim (W_1 + W_2) .
+        \end{align*}
+    \end{proof}
+    \end{section}
+
+
+
+    
+    \begin{section}{Dimensiones de subespacios}\label{seccion-dimensiones-de-subespacios}
+        
+            
+        Dada $A \in M_{m\times n}(\K)$,  ya hemos visto que  las soluciones del sistema $AX=0$ forman un subespacio vectorial. Sea $R $ la MERF equivalente por filas a $A$ y $r$ la cantidad de filas no nulas de $R$. Ahora bien, cada fila no nula está asociada  a una  variable principal y las  $n-r$ variables restantes son variables libres  que generan  todas las soluciones.
+        El  hecho de que tenemos $n-r$ variables libres no dice que hay $n-r$ vectores LI que generan $W$, y por lo tanto,  $\dim W = n-r$. Esto lo veremos en el ejemplo que sigue. La demostración de hecho mencionado más arriba se verá en el capítulo correspondiente  a transformaciones lineales (capítulo \ref{chap-trans-lin}).
+        
+        \begin{ejemplo*}
+            Encontrar una base del subespacio 
+            $$
+            W = \left\{(x,y,z,w) \in \mathbb{R}: \quad\begin{array}{rcl}
+            x-y -3z +\;\;w &=& 0 \\ y +5z +3w &=& 0
+            \end{array} \right\}.
+            $$
+        \end{ejemplo*}
+        \begin{proof}[Solución]
+            $W$  está definido implícitamente y usando el método de Gauss podemos describirlo paramétricamente, pues:
+            \begin{equation*}
+            \begin{bmatrix}1&-1&-3&1 \\ 0&1&5&3  \end{bmatrix}
+            \stackrel{F_1+F_2}{\longrightarrow} 
+            \begin{bmatrix}1&0&2&4 \\ 0&1&5&3  \end{bmatrix}.
+            \end{equation*}
+            Por lo tanto, el sistema de ecuaciones que define $W$ es equivalente a 
+            \begin{equation*}
+            \begin{array}{rcl}
+            x  +2z +4w &=& 0 \\ y +5z +3w &=& 0,
+            \end{array}
+            \end{equation*}
+            es decir 
+            \begin{equation*}
+            \begin{array}{rcl}
+            x  &=& -2z - 4w  \\ y &=& -5z -3w ,
+            \end{array}
+            \end{equation*}
+            y entonces 
+            \begin{align*}
+            W &= \left\{(-2z -4w,-5z -3w,z,w) : z,w\in \mathbb{R} \right\} \\
+            &= \left\{(-2,-5,1,0)z+(-4, -3,0,1)w : z,w\in \mathbb{R} \right\}\\
+            &= \langle (-2,-5,1,0),(-4, -3,0,1)\rangle.
+            \end{align*}
+            Concluimos entonces que $(-2,-5,1,0),(-4, -3,0,1)$  es una base de $W$ y, por lo tanto,  su dimensión es 2.
+        \end{proof}
+
+        \begin{teorema}
+            Sean $A$ matriz $m \times n$ con coeficientes en $\K$, $P$ matriz $m\times m$ invertible y $B =PA$. Entonces el el espacio fila de $A$ es igual al espacio fila de $B$.
+        \end{teorema}
+        \begin{proof}
+            Sea $A= [a_{ij}]$, $P =[p_{ij}]$ y $B = [b_{ij}]$. Como  $B= PA$, tenemos que la fila $i$ de $B$ es
+            \begin{align*}
+                (b_{i1},\ldots,b_{in})&= (F_i(P).C_1(A),\ldots,F_i(P).C_n(A)) \\
+                &= (\sum_{j=1}^{m} p_{ij}a_{j1}, \ldots, \sum_{j=1}^{m} p_{ij}a_{jn}) \\
+                &= \sum_{j=1}^{m} p_{ij}(a_{j1}, \ldots,a_{jn}).
+            \end{align*}
+        Luego, cada vector fila de $B$ se puede obtener como combinación lineal de los vectores fila de $A$, y por lo tanto el espacio fila de $B$ está incluido en el espacio fila de $A$. 
+        
+        Ahora bien, como $P$ invertible, podemos multiplicar por $P^{-1}$ a izquierda la fórmula $B= PA$, y obtenemos $P^{-1}B = P^{-1}P A = A$. Haciendo el mismo razonamiento que arriba concluimos que  también el espacio fila de $A$ está incluido en el espacio fila de $B$ y por lo tanto son iguales. 
+        \end{proof}
+    
+    \begin{corolario}\label{subesp-merf}
+            Sean $A$ matriz $m \times n$ y $R$ la MRF equivalente por filas a $A$. Entonces, el espacio fila de $A$ es igual al espacio fila de $R$ y las filas no nulas de $R$ forman una base del espacio fila de $A$. 
+    \end{corolario}
+    \begin{proof}
+        $R=PA$, donde $P$ es una matriz $m \times m$ invertible, luego, por el teorema anterior, el espacio fila de $A$  es igual al espacio fila de $R$. Calculemos ahora cual es la dimensión del espacio fila de $R$. Veamos que filas no nulas de $R$ son LI. 
+        
+        Recordemos  que por definición de MRF cada fila no nula comienza con un 1 y en esa coordenada  todas las demás filas tienen un 0, por lo tanto una combinación lineal no trivial resulta en un vector no nulo: si $v$ es una fila no nula de $R$, con el 1 principal en la coordinada $i$ y $\lambda \ne0$,  entonces $\lambda v$ vale $\lambda$ en la posición $i$ y esta coordenada no puede ser anulada por la combinación de otras filas.  
+    \end{proof}
+
+    \begin{corolario}\label{inv-impl-filasgen}
+            Sean $A$ matriz $n \times n$. Entonces, $A$ es invertible si y sólo si las filas de $A$ son una base de $\K^n$.
+    \end{corolario}
+    \begin{proof}
+        Si $A$ es invertible entonces la MERF de $A$ es la identidad, por lo tanto  el espacio fila de $A$ genera $\K^n$.
+        
+        Por otro lado, si el espacio fila de $A$  genera $\K^n$, el espacio fila de  la  MERF es $\K^n$ y por lo tanto  la MERF de $A$ es la identidad y en consecuencia $A$ es invertible.
+        
+        Hemos probado que $A$ es invertible si y sólo si las $n$ filas de $A$ generan $\K^n$. Como $\dim \K^n = n$,  todo conjunto de $n$ generadores es una base. 
+    \end{proof}
+    
+    
+    El  corolario  \ref{subesp-merf} nos provee un método para encontrar una base de un  subespacio de $\K^n$ generado por $m$ vectores: si $v_1,\ldots,v_m \in \K^n$ y $W = \langle v_1,\ldots,v_m\rangle$, consideramos la matriz 
+    $$
+    A = \begin{bmatrix}
+    v_1 \\ v_2 \\ \vdots \\ v_m
+    \end{bmatrix}
+    $$
+    donde las filas son los vectores $v_1,\ldots,v_m$. Luego calculamos $R$, una MRF equivalente por filas a $A$, y si $R$ tiene $r$ filas no nulas, las $r$ filas no nulas son una base de $W$ y, por consiguiente, $\dim W = r$. 
+    
+    \begin{ejemplo*}\label{ej-4.5}
+        Encontrar una base  de $W= \langle (1,0,1), (1,-1,0), (5,-3,2)\rangle$. 
+    \end{ejemplo*}
+    \begin{proof}[Solución]
+        Formemos la matriz cuyas filas son los vectores que generan $W$,  es decir 
+        $$
+        A = \begin{bmatrix} 1&0&1 \\ 1&-1&0 \\ 5&-3&2 \end{bmatrix}.
+        $$
+        Entonces
+        \begin{equation*}
+        \begin{bmatrix}1&0&1 \\ 1&-1&0 \\ 5&-3&2  \end{bmatrix}
+        \underset{F_3-5F_1}{\stackrel{F_2- F_1}{\longrightarrow}} 
+        \begin{bmatrix}1&0&1 \\ 0&-1&-1 \\ 0&-3&-3\end{bmatrix}
+        \stackrel{-F_2}{\longrightarrow} 
+        \begin{bmatrix}1&0&1 \\ 0&1&1 \\ 0&-3&-3\end{bmatrix}
+        \stackrel{F_3 - 3F_2}{\longrightarrow}
+        \begin{bmatrix}1&0&1 \\ 0&1&1 \\ 0&0&0\end{bmatrix}.
+        \end{equation*}
+        Por lo tanto, $\dim W =2$ y $(1,0,1), (0,1,1)$ es una base de  $W$.
+    \end{proof}
+    
+    El método que nos provee el corolario  \ref{subesp-merf} nos permite encontrar una base de un subespacio vectorial de $\K^n$ a partir de un conjunto de generadores del subespacio. Como vimos en el teorema \ref{gen->base},  en todo conjunto finito de generadores existe un subconjunto que es una base. El siguiente teorema nos permite encontrar uno de tales subconjuntos. 
+
+    
+    \begin{teorema}
+        Sea $v_1,\ldots, v_r$ vectores en $\K^n$ y $W = \langle  v_1,\ldots, v_r \rangle$. Sea $A$ la matriz formada por las filas $v_1,\ldots, v_r$ y $R$ una MRF equivalente por filas a $A$ que se obtiene sin el uso de permutaciones de filas (ver observación \ref{metodo-merf}). Si $i_1,i_2,\ldots,i_s$ son las filas no nulas de $R$,  entonces $v_{i_1},v_{i_2},\ldots,v_{i_s}$ es una base de $W$.
+    \end{teorema}
+    \begin{proof}
+        Se hará por inducción sobre $r$. 
+        
+        Si $r = 1$ es trivial ver que vale la afirmación. 
+        
+        Supongamos que tenemos el resultado probado para $r-1$ (hipótesis inductiva).
+    	
+        Sea $W' = \langle  v_1,\ldots, v_{r-1} \rangle$ y sea $A'$ la matriz formada por las $r-1$ filas $v_1,\ldots, v_{r-1}$. 		
+        Sea $R'$ la MRF equivalente por filas a $A'$ que se obtiene sin usar permutaciones de filas. Por hipótesis inductiva, si $i_1,i_2,\ldots,i_s$ son las filas no nulas de $R'$,  entonces $v_{i_1},v_{i_2},\ldots,v_{i_s}$ es una base de $W'$.
+        
+        Sea
+        \begin{equation*}
+            R_0 = \begin{bmatrix}
+            R' \\ v_r
+            \end{bmatrix}.
+        \end{equation*}
+        Si $v_r \in W'$, entonces  $v_{i_1},v_{i_2},\ldots,v_{i_s}$ es una base de $W$ y 
+        \begin{equation*}
+        R = \begin{bmatrix}
+        R' \\ 0
+        \end{bmatrix}
+        \end{equation*}
+        es la MRF de $A$.
+        
+        Si $v_r \not\in W'$, entonces  $v_{i_1},v_{i_2},\ldots,v_{i_s}, v_r$ es una base de $W$ (lema \ref{lem-li+vec=li}) y la MRF de $A$ tiene la última fila no nula.  
+    \end{proof}
+
+
+    \begin{ejemplo*}
+        Sea $S = \{(1,0,1),(1,-1,0), (5,-3,2)\}$ y $W = \langle S\rangle$. Encontrar una base de $W$ que sea un subconjunto de $S$. 
+    \end{ejemplo*}
+    \begin{proof}[Solución] Hemos visto en el ejemplo de la p. \pageref{ej-4.5} que una  MRF de $A$  es 
+        \begin{equation*}
+            \begin{bmatrix} 1&0&1\\0&1&1\\0&0&0 \end{bmatrix},
+        \end{equation*}
+        y que la misma se obtiene sin usar permutaciones. Esta matriz tiene las dos primeras filas no nulas, por lo tanto, $\{(1,0,1),(1,-1,0)\}$ es una base de $W$.
+    \end{proof}
+
+Finalmente, terminaremos esta sección con un teorema que resume algunas equivalencias respecto a matrices invertibles.
+
+\begin{teorema}
+    Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces son equivalentes
+    \begin{enumerate} 
+        \item $A$ es invertible.
+        \item $A$  es equivalente por filas a $\Id_n$.
+        \item $A$ es producto de matrices elementales.
+        \item El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
+        \item El sistema homogéneo $AX=0$ tiene una única solución trivial.
+        \item $\det A \ne 0$.
+        \item Las filas de $A$ son LI.
+        \item Las columnas de $A$ son LI.
+    \end{enumerate}
+\end{teorema}
+\begin{proof} Por teoremas \ref{mtrx-inv-equiv} y  \ref{mtrx-inv-equiv2}, tenemos que 	(1) $\Leftrightarrow$ 	(2) $\Leftrightarrow$ 	(3) $\Leftrightarrow$ 	(4) $\Leftrightarrow$ 	(5).
+    
+    (1) $\Leftrightarrow$ (6). Por teorema \ref{mtrx-inv-equiv3}.
+    
+    (1) $\Leftrightarrow$ (7). Por corolario \ref{inv-impl-filasgen}.
+    
+    (1) $\Leftrightarrow$ (8). $A$ invertible $\Leftrightarrow$ $A^\t$ invertible $\Leftrightarrow$  las filas de $A^\t$ son LI $\Leftrightarrow$  las columnas de $A$ son LI. 
+\end{proof}
+    
+    \end{section}
+
+
+
+    \end{chapter}

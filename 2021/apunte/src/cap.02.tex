@@ -1,0 +1,3297 @@
+
+    \begin{chapter}{Sistemas lineales}\label{chap-sist-lin}
+        
+        En  este capítulo estudiaremos en forma sistemática los sistemas de ecuaciones lineales,  es decir las soluciones de un conjunto finito de ecuaciones  donde la relación entre las incógnitas se expresa en forma lineal.  
+        
+        
+        \begin{section}{Sistemas de ecuaciones lineales}\label{seccion-sistemas-de-ecuaciones-lineales}
+  
+        
+            El problema a resolver será el siguiente: buscamos números  $x_1,\ldots,x_n$ en el cuerpo $\K$ ($= \R$ o $\C$)  que satisfagan las siguientes condiciones
+            \begin{equation}\label{sist-eq}
+            \begin{matrix}
+            a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+            \vdots&  &\vdots& &&  &\vdots \\
+            a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
+            \end{matrix}
+            \end{equation}
+            donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$.
+            
+            Llamaremos a (\ref{sist-eq}) un \textit{sistema de $m$ ecuaciones lineales con $n$ incógnitas.}\index{sistema de ecuaciones lineales} A una  $n$-tupla $(x_1,\ldots,x_n)$ de elementos de $\K^n$ que satisface cada una de las ecuaciones de  (\ref{sist-eq}) la llamaremos una \textit{solución del sistema}. Si $y_1 = \cdots = y_m=0$, el sistema se llamará \textit{homogéneo.} En caso contrario el sistema se denominará \textit{no homogéneo.}\index{sistema de ecuaciones lineales!homogéneo}\index{sistema de ecuaciones lineales!no  homogéneo}
+            
+            \begin{ejemplo*}
+                Los siguientes son sistemas de 2 ecuaciones lineales con 2 incógnitas:
+                \begin{equation*}
+                \begin{matrix}
+                \text{(1)} & 
+                \begin{matrix}
+                2x_1 + 8x_2 &= 0 &  \\
+                2x_1 + x_2 &=  1& 
+                \end{matrix} &\quad&
+                \text{(2)} & 
+                \begin{matrix}
+                2x_1 + x_2 &= 0 &  \\
+                2x_1 - x_2 &=  1& 
+                \end{matrix} &\quad&
+                \text{(3)} & 
+                \begin{matrix}
+                2x_1 + x_2 &= 1 &  \\
+                4x_1 +2 x_2 &=  2& 
+                \end{matrix} 
+                \end{matrix}
+                \end{equation*}
+            \end{ejemplo*} 
+            
+            \begin{ejemplo}\label{ej-sist-1}
+                Resolvamos ahora un sistema de ecuaciones homogéneo sencillo:
+                \begin{equation*}
+                \begin{matrix}
+                {\footnotesize\circled{1}}&\qquad& 2x_1 -x_2 + x_3 &=& 0 \\
+                {\footnotesize\circled{2}}&\qquad& x_1 + 3x_2 + 4x_3 &=& 0.
+                \end{matrix}
+                \end{equation*}
+            \end{ejemplo}
+            \begin{proof}[Solución]
+                Observar que $(0,0,0)$ es solución. Busquemos otras soluciones manipulado las ecuaciones.
+                \begin{align*}
+                \begin{matrix}
+                &\text{Si  hacemos}&-2\,{\footnotesize\circled{2}} +  {\footnotesize\circled{1}}& \text{obtenemos:} & & {\footnotesize\circled{$1^\prime$}}&  -7x_2 - 7x_3&=&0 &\;\Rightarrow\;& x_2 &=& -x_3\\
+                &\text{Si  hacemos}&3 \,{\footnotesize\circled{1}} + {\footnotesize\circled{2}}& \text{obtenemos:} && {\footnotesize\circled{$2^\prime$}}& 7x_1 + 7x_3&=&0&\;\Rightarrow\;& x_1 &=& -x_3,
+                \end{matrix}
+                \end{align*}
+                y esto nos dice que las soluciones son de la forma $\{(-x_3,-x_3, x_3): x_3 \in \R \}$, por ejemplo $(-1,-1,1)$ es solución y $(1,2,3)$ no es solución.
+            \end{proof}
+            
+                
+            En  el ejemplo anterior hemos encontrado soluciones por \textit{eliminación de incógnitas},  es decir multiplicando por constantes adecuadas  ciertas ecuaciones y sumándolas hemos eliminado en  {\footnotesize\circled{$1$}} a $x_1$ y en  {\footnotesize\circled{$2$}} a $x_2$, con lo cual la solución del sistema se deduce inmediatamente por pasaje de término.   
+            
+            \begin{ejemplo}\label{ej-sist-2}
+                    Encontrar las soluciones $(x,y,z)$ del sistema de ecuaciones:
+                    \begin{equation*}
+                    \begin{matrix}
+                    {\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & =& 1 \\
+                    {\footnotesize{\footnotesize\circled{2}}}&\qquad&x& -3y & +3z & =&2 \\
+                    {\footnotesize{\footnotesize\circled{3}}}&\qquad&2x& -y & +5z & =&3
+                    \end{matrix} \tag{S1}
+                    \end{equation*}
+                    Es decir, queremos encontrar los números reales $x$, $y$ y $z$ que satisfagan las ecuaciones anteriores.
+                
+            \end{ejemplo}
+                
+                \begin{proof}[Solución]
+                    Veremos que la única solución es $(x,y,z)=(-1,0,1)$.  El  método que usaremos, similar al del ejemplo anterior,  será el de eliminación de variables o incógnitas: vemos  en el sistema que queremos resolver 8 variables, algunas repetidas. Trataremos de eliminar en cada ecuación la mayor cantidad de variables posibles de tal forma de llegar a una formulación equivalente del sistema que nos de inmediatamente la solución. 
+
+    Supongamos que $(x,y,z)$ es una solución de nuestro sistema. Entonces también vale que: 
+    \begin{equation*}
+    \begin{matrix}
+    &{\footnotesize{\footnotesize\circled{2}}}&\qquad&x& -3y & +3z & = & 2 \\
+    (-1)\cdot&{\footnotesize{\footnotesize\circled{1}}}&\qquad(-1)\cdot&(x &  & +2z) & = &(-1)\cdot1 \\
+    \hline
+    &{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = & 1  
+    \end{matrix}
+    \end{equation*}
+    
+     
+    Por lo tanto $(x,y,z)$ también es solución del sistema
+    \begin{equation*}
+    \begin{matrix}
+    {\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & = 1 \\
+    {\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = 1   \\
+    {\footnotesize{\footnotesize\circled{3}}}&\qquad&2x& -y & +5z & =3
+    \end{matrix}\tag{S2}
+    \end{equation*}
+ 
+
+
+ 
+Dado que $(x,y,z)$ es solución del sistema (S2),  entonces también vale que:
+\begin{equation*}
+\begin{matrix}
+&{\footnotesize{\footnotesize\circled{3}}}&\qquad&&2x& -y & +5z & = &3 \\
+(-2)\cdot&{\footnotesize{\footnotesize\circled{1}}}&\qquad&(-2)\cdot&(x &  & +2z) & = &(-2)\cdot1 \\
+\hline
+&{\footnotesize{\footnotesize\circled{3'}}}&\qquad&& & -y & + z & = & 1  
+\end{matrix}
+\end{equation*}
+ 
+
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+{\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & = 1 \\
+{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = 1   \\
+{\footnotesize{\footnotesize\circled{3'}}}&\qquad&& -y & +z & =1
+\end{matrix}\tag{S3}
+\end{equation*}
+ 
+
+ 
+Dado que $(x,y,z)$ es solución del sistema (S3), entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = & 1 \\
+(-3)\cdot&{\footnotesize{\footnotesize\circled{3'}}}&\qquad&(-3)\cdot&( -y & +z) & = &(-3)\cdot1 \\
+\hline
+&{\footnotesize{\footnotesize\circled{2''}}}&\qquad&&   & -2z & = & -2  
+\end{matrix}
+\end{equation*}
+
+ 
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+&    & -2z & = -2\\
+& -y & +z & =1 
+\end{matrix}
+\qquad\mbox{equivalentemente}\qquad
+\begin{matrix}
+x &  & +2z & = 1 \\
+&    & z & = 1\\
+& -y & +z & =1 
+\end{matrix}
+\end{equation*}
+ 
+
+ 
+Dado $(x,y,z)$ es solución del sistema
+\begin{equation*}
+\begin{matrix}
+{\footnotesize{\footnotesize\circled{1}}}&x &  & +2z & = 1 \\
+{\footnotesize{\footnotesize\circled{2''}}}&&    & z & = 1 \\
+{\footnotesize{\footnotesize\circled{3'}}}&& -y & +z & =1
+\end{matrix}\tag{S4}
+\end{equation*}
+o equivalentemente 
+\begin{equation*}
+\begin{matrix}
+{\footnotesize{\footnotesize\circled{1}}}&x &  & +2z & = 1 \\
+{\footnotesize{\footnotesize\circled{3'}}}&& -y & +z & =1\\
+{\footnotesize{\footnotesize\circled{2''}}}&&    & z & = 1 
+\end{matrix}\tag{S5}
+\end{equation*}
+
+Entonces también vale que: 
+\begin{center}
+\begin{tabular}{rrr}
+    {\footnotesize{\footnotesize\circled{1}}}&$x  +2z$  = & 1 \\
+    $(-2)\cdot${\footnotesize{\footnotesize\circled{2''}}}&$(-2)\cdot$(\quad\;\;\;$z$ ) = &$(-2)\cdot 1$ \\
+    \hline
+    {\footnotesize{\footnotesize\circled{1'}}}  &$x$\qquad\; = & $-1$    
+\end{tabular}\quad\; y \quad\;
+\begin{tabular}{rrr}
+    {\footnotesize{\footnotesize\circled{3'}}}&$-y  +z$  = & 1 \\
+    $(-1)\cdot${\footnotesize{\footnotesize\circled{2''}}}&$(-1)\cdot$(\quad\;\;\;$z$ ) = &$(-1)\cdot 1$ \\
+    \hline
+    {\footnotesize{\footnotesize\circled{3''}}}  &$-y$\quad\; = & $0$    
+\end{tabular}
+\end{center}
+
+
+
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  &  & =& -1 \\
+& -y &  & =&0 \\
+&    & z & =& 1
+\end{matrix} \tag{S6}
+\end{equation*}
+ o equivalentemente
+\begin{equation*}
+\begin{matrix}
+    x & =& -1 \\
+    y & =&0 \\
+    z & =& 1
+    \end{matrix}\tag{S7}
+\end{equation*}
+
+
+ 
+
+ 
+En resumen, supusimos que $(x,y,z)$ es una solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+x& -3y & +3z & =2 \\
+2x& -y & +3z & =1
+\end{matrix}
+\end{equation*}
+
+y probamos que 
+\begin{equation*}
+x=-1\quad y=0,\quad z=1. 
+\end{equation*}
+                \end{proof}
+
+
+
+
+Tanto en el ejemplo \ref{ej-sist-1} como en el ejemplo \ref{ej-sist-2} eliminamos variables usando alguna de las siguientes operaciones entre ecuaciones:
+    \begin{enumerate}
+        \item[E1.] multiplicar una ecuación por una constante no nula,  
+        \item[E2.] sumar a una ecuación una constante por otra, y
+        \item[E3.] permutar ecuaciones.  
+    \end{enumerate}
+    Veremos en  las secciones siguientes que estas operaciones son ``reversibles'' y que con ellas podemos reducir todo sistema de ecuaciones a uno cuyas soluciones son obvias. 
+    
+    
+\begin{ejemplo*}
+Así como  haciendo operaciones del tipo E1, E2 y E3  en la ecuaciones del ejemplo \ref{ej-sist-2}   llegamos de 
+    
+    \begin{equation*}
+    \begin{matrix}
+    x &  & +2z & =& 1 \\
+    x& -3y & +3z & =&2 \\
+    2x& -y & +5z & =&3
+    \end{matrix}
+    \qquad \text{ a } 
+    \qquad 
+    \begin{matrix}x&=&-1\\ y&=&0 \\ z&=&1,
+    \end{matrix}
+    \end{equation*}
+haciendo  las ``operaciones inversas'' (que son del mismo tipo)  podemos llegar de  
+\begin{equation*}
+\begin{matrix}x&=&-1\\ y&=&0 \\ z&=&1.
+\end{matrix}
+\qquad \text{ a } 
+\qquad 
+\begin{matrix}
+x &  & +2z & =& 1 \\
+x& -3y & +3z & =&2 \\
+2x& -y & +5z & =&3
+\end{matrix}.
+\end{equation*}
+Luego,  ambos sistemas son  tienen las mismas soluciones.
+
+\end{ejemplo*}
+
+
+\end{section}
+
+
+
+
+     \begin{section}{Equivalencia de sistemas de ecuaciones lineales}\label{seccion-equivalencia-de-sistemas-de-ecuaciones-lineales}
+
+            Dado el sistema
+            \begin{equation}\label{sist-eq-2}
+            \begin{matrix}
+            a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+            \vdots&  &\vdots& &&  &\vdots \\
+            a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
+            \end{matrix}
+            \end{equation}
+            donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$, si multiplicamos cada ecuación por $c_i$ ($1 \le i \le m$) y sumamos miembro a miembro obtenemos
+            \begin{equation*}
+            \sum_{i=1}^m c_i(a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n) = \sum_i c_iy_i.
+            \end{equation*}
+            Expandiendo la ecuación y tomando como factor común los $x_j$ ($1 \le j \le n$) obtenemos la ecuación
+            \begin{multline*}
+            (c_{1}a_{11} + c_2a_{21}+ \cdots + c_ma_{m1})x_1 + \cdots +  	(c_{1}a_{1n} + c_2a_{2n}+ \cdots + c_ma_{mn})x_n = \\ = 	c_{1}y_{1} + c_2y_{2}+ \cdots + c_my_{m},
+            \end{multline*}
+            o,  escrito de otra forma, 
+            \begin{equation}\label{comb-lin-eq}
+            \left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +  	\left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}	c_{i}y_{i},
+            \end{equation}
+            la cual es una \textit{combinación lineal} de las ecuaciones dadas en (\ref{sist-eq-2}). Observar que la ecuación (\ref{comb-lin-eq}),  es  una ecuación lineal con $n$ incógnitas, es decir  es del mismo tipo que cada una de las ecuaciones que componen el sistema de ecuaciones original.
+            
+            \begin{proposicion}\label{sist-impl}
+                Sean $c_1,\ldots,c_m$ en $\K$. Si $(x_1,\ldots,x_n) \in \K^n$  es solución del sistema de ecuaciones
+                \begin{equation*}
+                \begin{matrix}
+                a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+                \vdots&  &\vdots& &&  &\vdots \\
+                a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m.
+                \end{matrix}
+                \end{equation*}
+                 entonces $(x_1,\ldots,x_n)$ también es solución de la ecuación
+                 \begin{equation*}
+                 \left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +  	\left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}	c_{i}y_{i},
+                 \end{equation*}
+            \end{proposicion}
+            \begin{proof}
+                Por hipótesis
+                \begin{equation*}
+                a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n = y_i,\; \text{ para } 1 \le i \le m.
+                \end{equation*}
+                Luego, 
+                \begin{equation*}
+                \sum_{i=1}^m c_i(a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n) = \sum_i c_iy_i
+                \end{equation*}
+                y  esta, como vimos, es otra escritura de la ecuación (\ref{comb-lin-eq}).
+            \end{proof}
+            
+            La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas. En principio, no es cierto que si obtenemos un sistema de ecuaciones por combinaciones lineales de otro sistema, ambos tengan las mismas soluciones   (por ejemplo, hacer combinaciones lineales triviales con todos los coeficientes iguales a 0).
+        
+            \begin{definicion}
+            Decimos que dos sistemas de ecuaciones lineales son \textit{equivalentes}\index{sistemas lineales equivalentes} si cada ecuación de un sistema es combinación lineal del otro.
+            \end{definicion}
+            
+            
+            \begin{teorema}\label{sistemas-equiv}
+                Dos sistemas de ecuaciones lineales equivalentes tienen las mismas soluciones.
+            \end{teorema}
+            \begin{proof}
+                Sea 
+                \begin{equation}\label{sist-01} \tag{*}
+                \begin{matrix}
+                a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+                \vdots&  &\vdots& &&  &\vdots \\
+                a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
+                \end{matrix}
+                \end{equation}
+                equivalente a
+                \begin{equation}\label{sist-02} \tag{**}
+                \begin{matrix}
+                b_{11}x_1& + &b_{12}x_2& + &\cdots& + &b_{1n}x_n &= &z_1\\
+                \vdots&  &\vdots& &&  &\vdots \\
+                b_{k1}x_1& + &b_{k2}x_2& + &\cdots& + &b_{kn}x_n &=&z_k,
+                \end{matrix}.
+                \end{equation}
+                En particular, las ecuaciones  de (\ref{sist-02}) se obtienen a partir de combinaciones lineales de las ecuaciones del sistema  (\ref{sist-01}). Luego, por proposición \ref{sist-impl}, si  $(x_1,\ldots,x_n)$  es solución de  (\ref{sist-01}), también será solución de cada una de las ecuaciones de (\ref{sist-02}) y por lo tanto solución  del sistema. 
+                
+                Recíprocamente, como también las ecuaciones  de (\ref{sist-01}) se obtienen a partir de combinaciones lineales de las ecuaciones del sistema  (\ref{sist-02}), toda solución  de 	
+                (\ref{sist-02}) es solución de  (\ref{sist-01}).
+            \end{proof}
+            
+
+            \begin{observacion*}
+                La equivalencia de sistemas lineales es una relación de equivalencia,  en particular  vale la propiedad transitiva: si el sistema (A) es equivalente al sistema (B) y  el sistema (B)  es equivalente al sistema (C),  entonces (A) es equivalente a (C). Esto nos permite, ir paso a paso para eliminar las incógnitas. 
+            \end{observacion*}
+
+    
+            \begin{ejemplo*}
+                Encontrar las soluciones del siguiente sistema de ecuaciones
+                \begin{equation*}\label{sist-000} \tag{S0}
+                \begin{matrix}
+                {\footnotesize\circled{1}}&\qquad& 2x_1 &+&4x_2 &-& 6x_3 &=& 0 \\
+                {\footnotesize\circled{2}}&\qquad& 3x_1 &-& x_2 &+& 5x_3 &=& 0.
+                \end{matrix}
+                \end{equation*}
+            \end{ejemplo*}
+            \begin{proof}[Solución]
+                Si reemplazamos la ecuación ${\footnotesize\circled{1}}$ por ${\footnotesize\circled{1}}/2$, obtenemos el sistema
+                \begin{align*}\label{sist-001} \tag{S1}
+                \begin{matrix}
+                {\footnotesize\circled{$1^\prime$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+                {\footnotesize\circled{$2^\prime$}}&\qquad 3x_1 &-& x_2 &+& 5x_3 &=& 0.
+                \end{matrix}
+                \end{align*}
+                Reemplazando {\footnotesize\circled{$2^\prime$}} por ${\footnotesize\circled{$2^\prime$}}-3{\footnotesize\circled{$1^\prime$}}$, obtenemos
+                \begin{align*}\label{sist-002} \tag{S2}
+                \begin{matrix}
+                {\footnotesize\circled{$1^{\prime\prime}$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+                {\footnotesize\circled{$2^{\prime\prime}$}}&\qquad &-&7 x_2 &+& 14x_3 &=& 0.
+                \end{matrix}
+                \end{align*} 
+                Reemplazando {\footnotesize\circled{$2^{\prime\prime}$}} por ${\footnotesize{\footnotesize\circled{$2^{\prime\prime}$}}}/(-7)$, obtenemos
+                \begin{align*}\label{sist-003} \tag{S3}
+                \begin{matrix}
+                {\footnotesize\circled{$1^{\prime\prime\prime}$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+                {\footnotesize\circled{$2^{\prime\prime\prime}$}}&\qquad && x_2 &-& 2x_3 &=& 0.
+                \end{matrix}
+                \end{align*} 
+                Reemplazando {\footnotesize\circled{$1^{\prime\prime\prime}$}} por ${\footnotesize\circled{$1^{\prime\prime\prime}$}}-2{\footnotesize\circled{$2^{\prime\prime\prime}$}}$, obtenemos
+                \begin{align*}\label{sist-004} \tag{S4}
+                \begin{matrix}
+                {\footnotesize\circled{$1^{\prime\prime\prime\prime}$}}&\qquad x_1 && &+& x_3 &=& 0 \\
+                {\footnotesize\circled{$2^{\prime\prime\prime\prime}$}}&\qquad && x_2 &-& 2x_3 &=& 0.
+                \end{matrix}
+                \end{align*} 
+                
+                Luego $x_1 = -x_3$ y $x_2 = 2x_3$, y esto nos dice que las soluciones son de la forma $\{(-x_3,2x_3, x_3): x_3 \in \R \}$.
+                
+                Por otro lado, observar que 
+                \begin{itemize}
+                    \item a partir de (\ref{sist-004}) podemos obtener (\ref{sist-003}) reemplazando {\footnotesize\circled{$1^{\prime\prime\prime\prime}$}} por ${\footnotesize\circled{$1^{\prime\prime\prime\prime}$}}+2 \,{\footnotesize\circled{$2^{\prime\prime\prime\prime}$}}$;
+                    \item a partir de (\ref{sist-003}) podemos obtener (\ref{sist-002}) reemplazando {\footnotesize\circled{$2^{\prime\prime\prime}$}} por $-7\,{\footnotesize\circled{$2^{\prime\prime\prime}$}}$;
+                    \item a partir de (\ref{sist-002}) podemos obtener (\ref{sist-001}) reemplazando {\footnotesize\circled{$2^{\prime\prime}$}} por ${\footnotesize\circled{$2^{\prime\prime}$}}+3\, {\footnotesize\circled{$1^{\prime\prime}$}}$;
+                    \item a partir de (\ref{sist-001}) podemos obtener (\ref{sist-000}) reemplazando \circled{$1^{\prime}$} por $2\,\circled{$1^{\prime}$}$.
+                \end{itemize}
+                
+                Es decir los sistemas  (\ref{sist-000}) y (\ref{sist-004}) son equivalentes y por lo tanto  tienen las mismas soluciones.  Como el conjunto de soluciones de (\ref{sist-004}) es $\{(-x_3,2x_3, x_3): x_3 \in \R \}$,  éste también es el conjunto de soluciones del sistema original. 
+            \end{proof}
+            
+            \begin{ejemplo*}
+                Encontrar las soluciones del siguiente sistema de ecuaciones
+                \begin{equation*}
+                \begin{matrix}
+                {\footnotesize\circled{1}}&\qquad& 2x_1 &-&x_2 &+& x_3 &=& 1 \\
+                {\footnotesize\circled{2}}&\qquad& x_1 &+& 3x_2 &+& 3x_3 &=&  2 \\
+                \circled{3}&\qquad& x_1 &+& &+& 2x_3 &=&   1 .
+                \end{matrix}
+                \end{equation*}
+                (observar que en $\circled{3}$ el coeficiente de $x_2$ es cero.)
+            \end{ejemplo*}
+            \begin{proof}[Solución] Si
+                \begin{align*}
+                \begin{matrix*}[l]
+                &\text{reemplazamos {\footnotesize\circled{1}} por }&{\footnotesize\circled{1}}-2\,{\footnotesize\circled{2}} + & \text{obtenemos:} &\quad& {\footnotesize\circled{$1^\prime$}}&\; -7x_2 - 5x_3&=&-3, \\
+                &\text{reemplazamos {\footnotesize\circled{2}} por }&{\footnotesize\circled{2}}+3 \,{\footnotesize\circled{1}}& \text{obtenemos:} &\quad& {\footnotesize\circled{$2^\prime$}}&\; 7x_1 + 6x_3&=& 5, \\
+                &\text{no cambiamos}&\circled{3} & \text{y obtenemos:} &\quad& \circled{$3^\prime$}&\; x_1 + 2x_3&=& 1.
+                \end{matrix*}
+                \end{align*}
+                Ahora reemplazando  ${\footnotesize\circled{$2^\prime$}}$ por  $ {\footnotesize\circled{$2^\prime$}}- 7\, {\footnotesize\circled{$1^\prime$}}$, obtenemos $- 8x_3= -2$, que es equivalente a que $x_3 = \frac14$. Por lo tanto, obtenemos el sistema
+                \begin{align*}
+                \begin{matrix*}[r]
+                {\footnotesize\circled{$1^{\prime\prime}$}}&\qquad -7x_2 - 5x_3&=&-3 \\
+                {\footnotesize\circled{$2^{\prime\prime}$}}&\qquad x_3&=& \frac14 \\
+                \circled{$3^{\prime\prime}$}&\qquad x_1 + 2x_3&=& 1 ,
+                \end{matrix*}
+                \end{align*}
+                Luego, reemplazando $x_3$ por $\frac14$ y  despejando en  {\footnotesize\circled{$1^{\prime\prime}$}} y {\footnotesize\circled{$2^{\prime\prime}$}}:
+                \begin{align*}
+                \begin{matrix*}[r]
+                {\footnotesize\circled{$1^{\prime\prime\prime}$}}&\qquad -7x_2 &=&-3 +5\frac14 \\
+                {\footnotesize\circled{$2^{\prime\prime\prime}$}}&\qquad x_3&=& \frac14 \\
+                \circled{$3^{\prime\prime\prime}$}&\qquad x_1 &=& 1 -2\frac14.
+                \end{matrix*}
+                \end{align*}
+                Por lo tanto, $x_1 = \frac12$, $x_2 = \frac14$, $x_3 = \frac14$. 
+            \end{proof}
+            
+
+        \end{section}
+        
+
+        
+        
+        \begin{section}{Matrices}\label{seccion-matrices}
+            
+
+            \vskip .4cm En  esta sección introduciremos el concepto de matriz y veremos un sistema de ecuaciones se puede describir en el lenguaje de las matrices. También veremos que sistemas de ecuaciones lineales equivalentes se corresponden con matrices equivalentes por filas. Esto nos permitirá,  en la próxima sección, explicitar en forma clara y concisa el  método de Gauss.  
+            
+            Debemos tener claro que el lenguaje de las matrices en el contexto de esta sección, no es más que una notación más cómoda para el problema de resolver sistemas de ecuaciones lineales.  
+            
+            Estudiaremos la solución de un sistema de ecuaciones lineales 
+            \begin{equation}\label{sist-eq-hom}
+            \begin{matrix}
+            a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+            \vdots&  &\vdots& &&  &\vdots \\
+            a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m.
+            \end{matrix}
+            \end{equation}
+            Observemos que podemos escribir los coeficientes de  las fórmulas de la izquierda en  un arreglo rectangular de $m$ filas y $n$ columnas:
+            \begin{equation}\label{matriz}
+            A = \begin{bmatrix}
+            a_{11}& a_{12}& \cdots &a_{1n} \\
+            \vdots&\vdots  &  &\vdots \\
+            a_{m1} &a_{m2}&\cdots &a_{mn}
+            \end{bmatrix}
+            \end{equation} 
+            También  podemos escribir los $x_1,\ldots,x_n$ e $y_1,\ldots,y_n$ como \textit{matriz columna}
+            \begin{equation}\label{matriz-columna}
+            X = \begin{bmatrix}
+            x_1 \\
+            \vdots \\
+            x_{n}
+            \end{bmatrix}, \qquad
+            Y = \begin{bmatrix}
+            y_1 \\
+            \vdots \\
+            y_{m}
+            \end{bmatrix}
+            \end{equation}
+            
+            
+            \begin{definicion} Sea $\K$ cuerpo. Una \textit{matriz}\index{matriz} $m \times  n$ o de \textit{orden $m \times  n$} es un arreglo rectangular de elementos de $\K$ con $m$ filas y $n$ columnas. A cada elemento de la matriz la llamamos \textit{entrada} o \textit{coeficiente}. Si $A$ es una matriz $m \times  n$, denotamos $[A]_{ij}$ la entrada que se ubica en la fila $i$ y la columna $j$. Al conjunto de matrices de orden $m \times  n$ con entradas en $\K$ lo denotamos $M_{m\times n}(\K)$, o simplemente $M_{m\times n}$ si $\K$  está sobreentendido. 
+            \end{definicion}
+            
+            \begin{observacion*}
+                Más formalmente, podemos ver una matriz como un elemento del producto cartesiano $(\K^n)^m$, es decir como $m$-tuplas donde en cada coordenada hay una $n$-tupla. Esta es la forma usual de describir una matriz en los lenguajes de programación modernos. 
+            \end{observacion*}
+            
+            \begin{ejemplo*}
+                El siguiente es un ejemplo de una matriz $2 \times 3$:
+                \begin{equation*}
+                A = \begin{bmatrix}
+                2& -1& 4 \\
+                -3 &0&1
+                \end{bmatrix}
+                \end{equation*} .
+            \end{ejemplo*}
+            
+            Usualmente escribiremos a una matriz $m \times  n$   con entradas  $[A]_{ij} = a_{ij}$ como en (\ref{matriz}). A esta matriz también la podemos denotar como $A = [a_{ij}]$. Dos matrices $A = [a_{ij}]$ y $B = [b_{ij}]$, de orden $m \times n$, son iguales si $a_{ij} = b_{ij}$ para todo $i = 1,\ldots,m$  y $j = 1,\ldots,n$. Es decir, dos matrices son iguales si los elementos que ocupan la misma posición en ambas matrices coinciden.
+            
+            Como hicimos al comienzo de la sección, a un sistema de $m$ ecuaciones con $n$ incógnitas le asignaremos una matriz $m \times  n$  lo cual nos permitirá trabajar en forma más cómoda y, como veremos en la próxima sección,  podremos resolver los sistemas de ecuaciones lineales en forma algorítmica, realizando operaciones elementales por fila en las matrices correspondientes. 
+            
+            Sean
+            $$
+                A = \begin{bmatrix}
+            a_{11}& a_{12}& \cdots &a_{1n} \\
+            \vdots&\vdots  &  &\vdots \\
+            a_{m1} &a_{m2}&\cdots &a_{mn}
+            \end{bmatrix}, \quad 
+            X = \begin{bmatrix}
+            x_1 \\ \vdots \\ x_n
+            \end{bmatrix}\quad \text{ e } \quad
+            Y = \begin{bmatrix}
+            y_1 \\ \vdots \\ y_m
+            \end{bmatrix}.
+            $$
+
+            Entonces, podemos escribir el sistema de ecuaciones (\ref{sist-eq-hom}) como
+        
+            \begin{equation}\label{sist-eq-2}
+                A = \begin{bmatrix}
+                a_{11}& a_{12}& \cdots &a_{1n} \\
+                \vdots&\vdots  &  &\vdots \\
+                a_{m1} &a_{m2}&\cdots &a_{mn}
+                \end{bmatrix}
+                \begin{bmatrix}
+                x_1  \\ \vdots \\  x_n
+                \end{bmatrix} = 
+                \begin{bmatrix}
+                y_1 \\ \vdots \\ y_m
+                \end{bmatrix}.
+            \end{equation}
+            
+             En forma resumida:
+            \begin{equation}\label{sis-eq-hom-2}
+            AX = Y.
+            \end{equation}
+            Más adelante, veremos que esta notación tiene un sentido algebraico (el término de la izquierda es un ``producto de matrices'').
+            
+            \begin{subsection}{Operaciones elementales por fila}
+                Sea $A = [a_{ij}]$ una matriz $m \times  n$,  entonces la fila $i$ es 
+                $$
+                \begin{bmatrix} a_{i1}& a_{i2}& \cdots &a_{in} 	\end{bmatrix},
+                $$
+                y la denotamos $F_i(A)$ o simplemente $F_i$ si $A$ está sobreentendido. Si $c\in \K$,  entonces 
+                $$
+                cF_i = \begin{bmatrix} ca_{i1}& ca_{i2}& \cdots &ca_{in} 	\end{bmatrix}
+                $$
+                y
+                $$
+                F_r + F_s = \begin{bmatrix} a_{r1}+a_{s1}& a_{i2}+a_{s2}& \cdots &a_{in}+a_{sn} 	\end{bmatrix}.
+                $$ 
+                Diremos que la fila $i$ es nula si 
+                $$
+                F_i = \begin{bmatrix} 0& 0& \cdots &0 	\end{bmatrix},
+                $$
+                
+                \begin{definicion}
+                    Sea $A = [a_{ij}]$ una matriz $m \times  n$, diremos que $e$ es una  \textit{operación elemental por fila}\index{operación elemental por fila} si aplicada a la matriz $A$ se obtiene  $e(A)$ de la siguiente manera:
+                    \begin{enumerate}
+                        \item[E1.]\label{elem-1} multiplicando la fila $r$ por una constante $c\not=0$, o
+                        \item[E2.]\label{elem-2} cambiando la fila $F_r$ por $F_r + tF_s$ con $r\not=s$, para algún $t \in \K$, o
+                        \item[E3.]\label{elem-3} permutando la fila $r$ por la fila $s$.   
+                    \end{enumerate}
+                    E1, E2 y E3 son tres tipos de operaciones elementales, más precisamente sea 
+                    \begin{equation*}
+                    A = \begin{bmatrix} 
+                    F_1 \\  \vdots \\	F_m
+                    \end{bmatrix},
+                    \end{equation*} entonces 
+                    \begin{enumerate}
+                        \item[E1.] si multiplicamos la fila $r$ por $c \not=0$, 
+                        $$ e(A) = \begin{bmatrix} 
+                        F_1 \\ 	\vdots \\ cF_r \\ \vdots \\	F_m
+                        \end{bmatrix} $$ con $c \not=0$, o
+                        \item[E2.] si $r\not=s$, multiplicamos la fila $s$ por  $t \in \K$ y la sumamos a la fila $r$, 
+                        $$ e(A)= \begin{bmatrix} 
+                        F_1 \\  \vdots \\ F_r + t F_s\\ \vdots \\	F_m
+                        \end{bmatrix}.$$
+                        \item[E3.] La última operación elemental es  permutar la fila $r$ por la fila $s$:
+                        $$
+                        A= \begin{bmatrix} 
+                        F_1 \\ 	\vdots \\ F_r \\ \vdots \\ F_s\\ \vdots \\	F_m
+                        \end{bmatrix} \quad \Rightarrow \quad
+                        e(A)= \begin{bmatrix} 
+                        F_1 \\ 	\vdots \\ F_s \\ \vdots \\ F_r\\ \vdots \\	F_m
+                        \end{bmatrix}.$$
+                    \end{enumerate}
+                \end{definicion} 
+
+                Podemos describir en forma más compacta una operación elemental por fila de la matriz $A=[a_{ij}]$.
+                \begin{enumerate}
+                    \item[E1.] Multiplicar la fila $r$ por $c \not=0$
+                    $$
+                    e(A)_{ij} = \left\{ \begin{matrix}
+                    a_{ij}& \quad &\text{si $i\not=r$} \\
+                    ca_{ij}& \quad &\text{si $i=r$}
+                    \end{matrix}\right.
+                    $$
+                    \item[E2.] Si $r\not=s$, multiplicar la fila $s$ por $t \in \K$ y sumarla a la fila $r$
+                    $$
+                    e(A)_{ij} = \left\{ \begin{matrix}
+                    a_{ij}& \quad &\text{si $i\not=r$} \\
+                    a_{rj} + t a_{sj}& \quad &\text{si $i=r$}
+                    \end{matrix}\right.
+                    $$
+                    con $t \in \K$.
+                    \item[E3.] Permutar la fila $r$ por la fila $s$
+                    $$
+                    e(A)_{ij} = \left\{ \begin{matrix}
+                    a_{ij}& \quad &\text{si $i\not=r,s$}
+                    \\ a_{sj}& \quad &\text{si $i=r$}
+                    \\ a_{rj}& \quad &\text{si $i=s$}
+                    \end{matrix}\right.
+                    $$
+                \end{enumerate} 
+                
+                \vskip .5cm 
+                \begin{ejemplo*}
+                    Sea 
+                    $$
+                    A = 
+                    \begin{bmatrix}
+                    2&1\\-1&0\\4&-5
+                    \end{bmatrix}.
+                    $$
+                    Ejemplificaremos las operaciones elementales
+                    
+                    E1. Multipliquemos la fila 2 por -2, obtenemos
+                    $$
+                    e(A) = 
+                    \begin{bmatrix}
+                    2&1\\2&0\\4&-5
+                    \end{bmatrix}.
+                    $$
+                    
+                    E2. Sumemos a la fila 3 dos veces la fila 1,
+                    $$
+                    e(A) = 
+                    \begin{bmatrix}
+                    2&1\\-1&0\\8&-3
+                    \end{bmatrix}.
+                    $$
+                    
+                    E3. Permutemos la fila 2 con la fila 3.
+                    $$
+                    e(A) = 
+                    \begin{bmatrix}
+                    2&1\\4&-5\\-1&0
+                    \end{bmatrix}.
+                    $$
+                \end{ejemplo*}
+                
+                Una característica importante de las operaciones elementales es que cada una tiene como ``inversa'' otra operación elemental. 
+                
+                \begin{teorema}\label{op-elem}
+                    A cada operación elemental por fila $e$ le corresponde otra operación elemental $e^\prime$ (del mismo tipo que $e$) tal que $e^\prime(e(A)) = A$ y $e(e^\prime(A)) = A$. En otras palabras, la operación inversa de una operación elemental es otra operación elemental del mismo tipo.  
+                \end{teorema}
+                \begin{proof} \
+                    \begin{enumerate}
+                        \item[E1.] La operación inversa de multiplicar la fila $r$ por $c\not=0$ es multiplicar la misma fila por $1/r$.
+                        \item[E2.] La operación inversa de multiplicar la fila $s$ por  $t \in \K$ y sumarla a la fila $r$ es multiplicar  la fila $s$ por  $-t \in \K$ y sumarla a la fila $r$.
+                        \item[E3.] La operación inversa de permutar la fila $r$ por la fila $s$ es la misma operación.
+                    \end{enumerate}
+                \end{proof}
+                
+                \begin{definicion} 
+                    Sean $A$ y $B$ dos matrices $m \times n$. Diremos que $B$ es \textit{equivalente por filas}\index{matrices equivalentes por filas} a $A$, si $B$ se puede obtener de $A$ por un número finito de operaciones elementales por fila. 
+                \end{definicion}
+            
+
+                \begin{obs*} Denotamos $A \sim B$, si $B$ es equivalente a $A$ por filas. Entonces esta relación es una \textit{relación de equivalencia}\index{relación de equivalencia}, es decir es reflexiva, simétrica y transitiva. En  nuestro caso, sean $A$, $B$ y $C$ matrices $m \times n$, entonces ``$\sim$'' cumple: 
+                    \begin{enumerate}
+                        \item  $A \sim A$ (reflexiva), 
+                        \item $A \sim B$, entonces $B \sim A$ (simétrica), y
+                        \item si $A \sim B$ y $B \sim C$, entonces $A \sim C$.   
+                    \end{enumerate}
+                    Claramente ``$\sim$'' es reflexiva (admitamos que no hacer nada es una equivalencia por filas). 
+                    
+                    Si podemos obtener $B$ de $A$ por operaciones elementales por fila, entonces, 
+                    $$
+                    B = e_k(e_{k-1}(\cdots(e_1(A)))\cdots),
+                    $$
+                    con $e_1,\ldots,e_k$ operaciones elementales por fila. Por el teorema \ref{op-elem},  tenemos $e'_1,\ldots,e'_{k-1},e'_k$ operaciones elementales inversas de  $e_1,\ldots,e_{k-1},e_k$, respectivamente. Luego, 
+                    $$
+                    A = e'_1(e'_{2}(\cdots(e'_k(B)))\cdots).
+                    $$
+                    Es decir, podemos  obtener $A$ de $B$ por operaciones elementales por fila, luego ``$\sim$'' es simétrica. Observar que para obtener $A$ a partir de $B$ tenemos que hacer las operaciones inversas en orden inverso. 
+                    
+                    Finalmente,   si podemos obtener $B$ de $A$ por operaciones elementales por fila y  podemos obtener $C$ de $B$ por operaciones elementales por fila, entonces podemos obtener $C$ de $A$ por operaciones elementales por fila (haciendo las primeras operaciones y luego las otras).
+                \end{obs*}
+                
+                \begin{ejemplo*}
+                    Veamos que la matriz 
+                    \begin{equation*}
+                    A= 	\begin{bmatrix}
+                    3 & 9 & 6 \\ 4&8&4 \\ 0&2&2
+                    \end{bmatrix}
+                    \end{equation*}
+                    es equivalente por fila a la matriz
+                    \begin{equation*}
+                    B = \begin{bmatrix}
+                    1&0&-1 \\ 0&0&0\\  0&-1&-1
+                    \end{bmatrix}.
+                    \end{equation*}
+                        \end{ejemplo*}
+                    
+                    \begin{proof}[Solución]				
+                    Hasta ahora, no hemos aprendido ningún algoritmo o método que nos lleve una matriz a otra por operaciones elementales por fila, pero no es difícil, en este caso, encontrar una forma de llevar la matriz $A$ a la matriz $B$:
+                    \begin{multline*}
+                    \begin{bmatrix}
+                    3 & 9 & 6 \\ 4&8&4 \\ 0&2&2
+                    \end{bmatrix} \stackrel{F_1/3}{\longrightarrow}
+                    \begin{bmatrix}
+                    1 & 3 & 2 \\ 4&8&4 \\ 0&2&2
+                    \end{bmatrix} \stackrel{F_2 -4F_1}{\longrightarrow}
+                    \begin{bmatrix}
+                    1 & 3 & 2 \\ 0&-4&-4 \\ 0&2&2
+                    \end{bmatrix} \stackrel{F_2/4}{\longrightarrow}
+                    \\
+                    \stackrel{F_2/4}{\longrightarrow}  \begin{bmatrix}
+                    1 & 3 & 2 \\ 0&-1&-1 \\ 0&2&2 
+                    \end{bmatrix} \stackrel{F_1 + 3F_2}{\longrightarrow} 
+                    \begin{bmatrix}
+                    1 & 0& -1 \\ 0&-1&-1 \\ 0&2&2 
+                    \end{bmatrix} \stackrel{F_3 + 2F_2}{\longrightarrow} 
+                    \begin{bmatrix}
+                    1 & 0& -1 \\ 0&-1&-1 \\ 0&0&0 
+                    \end{bmatrix} \stackrel{F_3\leftrightarrow F_2}{\longrightarrow} 
+                    \begin{bmatrix}
+                    1 & 0& -1 \\ 0&0&0\\  0&-1&-1 
+                    \end{bmatrix}.
+                    \end{multline*}
+                    
+                    Comprobamos fácilmente la propiedad reflexiva, pues podemos llegar de la matriz $B$ a la matriz $A$ haciendo, sucesivamente, la operaciones inversas en orden inverso:
+                    \begin{multline*}
+                    \begin{bmatrix}1 & 0& -1 \\ 0&0&0\\  0&-1&-1 \end{bmatrix}
+                    \stackrel{F_3\leftrightarrow F_2}{\longrightarrow} 
+                    \begin{bmatrix}1 & 0& -1 \\ 0&-1&-1 \\ 0&0&0 \end{bmatrix}
+                    \stackrel{F_3 - 2F_2}{\longrightarrow} 
+                    \begin{bmatrix}1 & 0& -1 \\ 0&-1&-1 \\ 0&2&2 \end{bmatrix} 
+                    \stackrel{F_1 - 3F_2}{\longrightarrow}
+                    \\ \stackrel{F_1 - 3F_2}{\longrightarrow}
+                    \begin{bmatrix}1 & 3 & 2 \\ 0&-1&-1 \\ 0&2&2 \end{bmatrix}
+                    \stackrel{4F_2}{\longrightarrow} 
+                    \begin{bmatrix}1 & 3 & 2 \\ 0&-4&-4 \\ 0&2&2 \end{bmatrix} 
+                    \stackrel{F_2 +4F_1}{\longrightarrow} 
+                    \begin{bmatrix} 1 & 3 & 2 \\ 4&8&4 \\ 0&2&2\end{bmatrix} 
+                    \stackrel{3F_1}{\longrightarrow} 
+                    \begin{bmatrix} 3 & 9 & 6 \\ 4&8&4 \\ 0&2&2 \end{bmatrix}.
+                    \end{multline*}
+                \end{proof}
+
+                \begin{definicion}
+                    Consideremos un sistema como en (\ref{sist-eq-hom}) y sea  $A$ la matriz correspondiente al sistema. La \textit{matriz  ampliada}\index{sistema de ecuaciones lineales!matriz  ampliada} del sistema es 
+                    \begin{equation}\label{mtrx-ampliada}
+                    A' = \left[\begin{array}{@{}*{3}{c}|c@{}}
+                    a_{11} & \cdots & a_{1n} &  y_1 \\
+                    a_{21} & \cdots & a_{2n} &  y_2 \\
+                    \vdots &  & \vdots  &  \vdots  \\
+                    a_{m1} & \cdots & a_{mn} &  y_m 
+                    \end{array}\right]
+                    \end{equation}
+                    que también podemos denotar
+                    \begin{equation*}
+                    A' = [A | Y].
+                    \end{equation*}
+                \end{definicion}
+                
+                
+                \begin{teorema}\label{th-equiv-op-elem} Sea $[A | Y]$ la matriz ampliada de un sistema no homogéneo y sea $[B | Z]$ una matriz que se obtiene a partir de $[A | Y]$ por medio de operaciones elementales. Entonces, los sistemas correspondientes a $[A | Y]$ y  $[B | Z]$ tienen las mismas soluciones. 
+            \end{teorema}
+            \begin{proof}
+                 Supongamos que $[B | Z]$ se obtiene por una operación elemental por fila a partir de $[A | Y]$,  entonces las ecuaciones de $[B | Z]$ son combinaciones lineales de las ecuaciones de $[A | Y]$. Como toda operación elemental por fila tiene inversa, podemos obtener $[A | Y]$ a partir de $[B | Z]$ y por lo tanto las ecuaciones de $[A | Y]$ son combinaciones lineales de las ecuaciones de $[B | Z]$. Es decir $[A | Y]$ y $[B | Z]$ determinan sistemas de ecuaciones lineales equivalentes y por lo tanto tiene las mismas soluciones (teorema \ref{sistemas-equiv}).
+                 
+                 En el caso que $[B | Z]$ se obtenga a partir $[A | Y]$ haciendo varias operaciones elementales,  se aplica el razonamiento de arriba las veces que sea necesario. 
+            \end{proof}
+                
+                \begin{ejemplo*}\label{ejemplo2.11}
+                    Resolvamos el siguiente sistema:
+                    \begin{align}\label{sist-eq-01}
+                    \begin{split}
+                    2x_1 - x_2 + x_3 + 2x_4 &= 2 \\
+                    x_1 - 4x_2 -x_4 &=1 \\
+                    2x_1 +6x_2 -x_3 +3x_4 &= 0,  
+                    \end{split}
+                    \end{align}
+                    para  $x_i \in \R$ ($1 \le i \le 4$). 
+                
+                    
+                    La matriz ampliada  correspondiente a este sistema de ecuaciones es 
+                    $$
+                    \left[\begin{array}{@{}*{4}{c}|c@{}} 
+                     2& -1&1& 2&2 \\ 1&-4 &0&-1&1 \\ 2&6&-1&3&0 \end{array}\right].
+                    $$
+                    Encontraremos una matriz que nos dará un sistema de ecuaciones equivalente, pero con soluciones mucho más evidentes:
+                    \begin{multline*}
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  2& -1&1& 2&2 \\ 1&-4 &0&-1&1 \\ 2&6&-1&3&0 \end{array}\right]
+                    \stackrel{F_1\leftrightarrow F_2}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 2& -1&1& 2&2 \\ 2&6&-1&3&0 \end{array}\right]
+                    \stackrel{F_2-2 F_1}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 2&6&-1&3&0 \end{array}\right]
+                    \\
+                    \stackrel{F_3-2 F_1}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&14&-1&5&-2 \end{array}\right] 
+                    \stackrel{F_3-2 F_2}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&0&-3&-3&-2 \end{array}\right] 
+                    \stackrel{F_3/(-3)}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&0&1&1&\frac{2}{3} \end{array}\right]
+                    \\
+                    \stackrel{F_2- F_3}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&0& 3&-\frac{2}{3} \\ 0&0&1&1&\frac{2}{3} \end{array}\right]
+                    \stackrel{F_2/7}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1\\ 0& 1&0& \frac37&-\frac{2}{21}\\ 0&0&1&1&\frac{2}{3}\end{array}\right]
+                    \stackrel{F_1 +4F_2}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}} 1&0&0&\frac{5}{7}&\frac{13}{21}\\0&1&0&\frac37&-\frac{2}{21} \\ 0&0&1&1&\frac{2}{3}\end{array}\right].
+                    \end{multline*}
+                    Volvamos a las ecuaciones: el nuevo sistema de ecuaciones, equivalente al original, es
+                    \begin{align*}
+                    x_1 +\frac{5}{7}x_4 &= \frac{13}{21} \\
+                    x_2 + \frac{3}{7}x_4 &=-\frac{2}{21} \\
+                    x_3 +x_4 &= \frac{2}{3}, 
+                    \end{align*}
+                    luego 
+                    \begin{align*}
+                    x_1  &=-\frac{5}{7}x_4 + \frac{13}{21}\\
+                    x_2  &=- \frac{3}{7}x_4 -\frac{2}{21} \\
+                    x_3  &= -x_4+\frac{2}{3}. 
+                    \end{align*}
+                    Por lo tanto, el conjunto de soluciones del sistema de ecuaciones (\ref{sist-eq-01}) es
+                    $$
+                    \left\{(-\frac{5}{7}t+ \frac{13}{21},\,- \frac{3}{7}t-\frac{2}{21},\, -t+\frac{2}{3},\,t): t \in \R \right\}.
+                    $$
+                    Luego, el sistema tiene infinitas soluciones parametrizadas por una variable $t \in \R$.
+                \end{ejemplo*}
+                
+                
+                \begin{ejemplo*}
+                    Consideremos ahora el siguiente sistema sobre los números complejos:
+                    \begin{align}\label{sist-eq-03}
+                    \begin{split}
+                    2x_1 +i x_2 &= 0 \\
+                    -ix_1 +3x_2  &=0 \\
+                    x_1 +2x_2  &= 0.
+                    \end{split}
+                    \end{align}
+                    Al ser un sistema homogéneo $x_1=x_2 = 0$ es solución. Veamos si hay otras soluciones: 
+                    \begin{multline*}
+                    \begin{bmatrix} 2&i \\ -i&3 \\ 1&2 \end{bmatrix}
+                    \stackrel{F_1\leftrightarrow F_3}{\longrightarrow} 
+                    \begin{bmatrix} 1&2 \\ -i&3 \\ 2&i \end{bmatrix}
+                    \stackrel{F_2+iF_1}{\longrightarrow} 
+                    \begin{bmatrix} 1&2 \\ 0&3+2i \\ 2&i \end{bmatrix}
+                    \stackrel{F_3-2F_1}{\longrightarrow} 
+                    \begin{bmatrix} 1&2 \\ 0&3+2i \\ 0&-4+i \end{bmatrix}
+                    \\
+                    \stackrel{F_2/(3+2i)}{\longrightarrow} 
+                    \begin{bmatrix} 1&2 \\ 0&1 \\ 0&-4+i \end{bmatrix}
+                    \stackrel{F_3-(-4+i)F_2}{\longrightarrow} 
+                    \begin{bmatrix} 1&2 \\ 0&1 \\ 0&0 \end{bmatrix}
+                    \stackrel{F_1-2F_2}{\longrightarrow} 
+                    \begin{bmatrix} 1&0 \\ 0&1 \\ 0&0 \end{bmatrix}.
+                    \end{multline*}
+                    Luego  el sistema (\ref{sist-eq-03}) es equivalente al sistema  $x_1=x_2 = 0$, que resulta ser la única solución.
+                \end{ejemplo*}
+            \end{subsection} 
+        
+
+
+        
+        \end{section}
+    
+    
+    
+            \begin{section}{M\'etodo de Gauss }\label{seccion-metodo-de-gauss} Ahora avanzaremos en una forma sistemática para hallar todas las soluciones de un sistema de ecuaciones.
+    
+            
+            \begin{subsection}{Matrices reducidas por filas} 
+                
+                \begin{definicion}
+                    Una matriz $A$ de $m \times n$ se llama \textit{reducida por filas}\index{matriz!reducida por filas} o \textit{MRF}\index{MRF} si 
+                    \begin{enumerate}
+                        \item[(a)] la primera entrada no nula de una fila de $A$ es 1. Este 1 es llamado \textit{1 principal}\index{1 principal de una MRF}.
+                        \item[(b)] Cada columna de $A$ que contiene un  1 principal tiene todos los otros elementos iguales a 0. 
+                    \end{enumerate} 
+                Una matriz $A$ de $m \times n$ es \textit{escalón reducida por fila}\index{matriz!escalón reducida por fila} o \textit{MERF}\index{MERF} si,  es  MRF y
+                \begin{enumerate}
+                    \item[\textit{c})] todas las filas cuyas entradas son todas iguales a cero están al final de la matriz, y
+                    \item[\textit{d})] en dos filas consecutivas no nulas el 1 principal de la fila inferior está más a la derecha que el 1 principal de la fila superior. 
+                \end{enumerate}
+                
+                \end{definicion} 
+                
+                \begin{ejemplo*} Las siguientes matrices son MRF, pero  no MERF:
+                    \begin{equation*}
+                    \begin{bmatrix}1 & 0& -1 \\  0&0&0\\ 0&1&3 \end{bmatrix}\;  \text{no cumple (c),} \qquad
+                    \begin{bmatrix} 0&1&3 \\1 & 0& -1\\  0&0&0 \end{bmatrix}\; \text{no cumple (d).} \qquad
+                    \end{equation*}
+                    Las siguientes matrices, no son MRF:
+                    \begin{equation*}
+                    \begin{bmatrix}1 & 0& 1 \\ 0&2&3\\  0&0&0 \end{bmatrix}\; \text{no cumple (a),} \qquad
+                    \begin{bmatrix}1 & 0& -1 \\ 0&1&3\\  0&0&1 \end{bmatrix}\; \text{no cumple (b)}. 
+                    \end{equation*}
+                    Las siguientes son MERF:
+                    \begin{equation*}
+                    \begin{bmatrix} 1&0&0&2 \\ 0&1&0&5 \\ 0&0&1&4\end{bmatrix}, \qquad
+                    \begin{bmatrix} 1&0&0 \\ 0&1&0 \\ 0&0&0\end{bmatrix}, \qquad
+                    \begin{bmatrix} 0&0 \\ 0&0\end{bmatrix}, \qquad
+                    \begin{bmatrix} 0&1&2&0&1 \\ 0&0&0&1&0 \\ 0&0&0&0&0 \\ 0&0&0&0&0\end{bmatrix}.
+                    \end{equation*}
+                \end{ejemplo*}
+                
+                
+                En general una matriz  MERF tiene la forma
+                \begin{equation}\label{merf-general}
+                \begin{bmatrix}
+                0& \cdots & 1 & *&0&* &* &0& * &*\\
+                0& \cdots &0 &\cdots & 1& *  & * & 0& * &*\\
+                \vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
+                0& \cdots &0& \cdots & 0&\cdots &\cdots & 1& * &* \\
+                0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0 \\
+                \vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
+                0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0
+                \end{bmatrix}
+                \end{equation}
+                
+                \begin{definicion}
+                    Sea $\Id_n$ la matriz  $n \times n$ definida 
+                    \begin{equation*}
+                    [\Id_n]_{ij} = \left\{ \begin{matrix}
+                    1 && \text{si $i=j$,}\\
+                    0 && \text{si $i\not=j$,}
+                    \end{matrix}\right.\qquad \text{ o bien }\qquad \Id_n =
+                    \begin{bmatrix}
+                    1 & 0 & \cdots & 0 \\
+                    0 & 1 & \cdots & 0 \\
+                    \vdots & \vdots & \ddots & \vdots \\
+                    0 & 0 & \cdots & 1
+                    \end{bmatrix}
+                    \end{equation*}
+                    (la matriz cuadrada con 1's en la diagonal y 0's en las otras entradas). Llamaremos a $\Id_n$ la \textit{matriz identidad $n \times n$}\index{matriz!identidad $n \times n$}.
+                \end{definicion}
+                
+                Observar que $\Id_n$ es una matriz escalón reducida por fila.
+                
+                \begin{teorema}\label{th-merf}
+                    Toda matriz $m \times n$ sobre $\K$ es equivalente por fila a una matriz escalón reducida por fila.
+                \end{teorema}
+                \begin{proof}[Demostración (*)]
+                    Sea $A = [a_{ij}]$ una matriz $m \times n$. Trabajaremos fila por fila, de la primera a la última, de tal forma de ir encontrando matrices equivalentes por fila en cada paso, con ciertas características que ya detallaremos. Cuando terminemos llegaremos a una MRF.  
+                    
+                    Si la primera fila es nula pasamos a la segunda fila. Si la primera fila no es nula sea $a_{1k}$ la primera entrada no nula, es decir
+                    \begin{equation*}
+                    A = \begin{bmatrix}
+                    0 & \cdots & 0 & a_{1k} & \cdots & a_{1n} \\
+                    a_{21}& \cdots & a_{2,k-1} & a_{2k} & \cdots & a_{2n} \\
+                    \vdots&  &  &  &  & \vdots \\
+                    a_{m1}& \cdots & a_{m,k-1} & a_{mk} & \cdots & a_{mn} \\
+                    \end{bmatrix}.
+                    \end{equation*} 
+                    Esta matriz es equivalente por fila a $A_1$ donde $A_1$ se obtiene dividiendo la fila 1 por $a_{1k}$. Luego 
+                    \begin{equation*}
+                    A_1 = \begin{bmatrix}
+                    0 & \cdots & 0 & 1 & \cdots & a_{1n} \\
+                    a_{21}& \cdots & a_{2,k-1} & a_{2k} & \cdots & a_{2n} \\
+                    \vdots&  &  &  &  & \vdots \\
+                    a_{m1}& \cdots & a_{m,k-1} & a_{mk} & \cdots & a_{mn} \\
+                    \end{bmatrix}
+                    \end{equation*}
+                    (donde los nuevos $a_{1j}$ son  los originales divididos por $a_{1k}$).  
+                    
+                    Haciendo $m-1$ equivalencias por fila (reemplazamos $F_i$ por $F_i - a_{ik}F_1$) podemos hacer nulas todas las entradas debajo del  1 principal y obtener la matriz equivalente por fila
+                    \begin{equation*}
+                    A_2 = \begin{bmatrix}
+                    0 & \cdots & 0 & 1 & \cdots & a_{1n} \\
+                    a_{21}& \cdots & a_{2,k-1} & 0 & \cdots & a_{2n} \\
+                    \vdots&  &  &  &  & \vdots \\
+                    a_{m1}& \cdots & a_{m,k-1} &0 & \cdots & a_{mn} \\
+                    \end{bmatrix}
+                    \end{equation*}
+                    (obviamente los nuevos $a_{ij}$ están transformados por las equivalencias).
+                    
+                    El mismo procedimiento que hicimos arriba lo podemos hacer en la fila 2,  de tal forma que la fila 2 es cero u obtenemos otro 1 principal y todas las demás entradas de la columna donde se encuentra el 1 principal son nulas. 
+                    
+                    Repitiendo este procedimiento en todas las filas hasta la última, obtenemos que cada fila es, o bien 0, o bien la primera entrada no nula es  1 y todas las entradas en la misma columna de este 1 principal son nulas.   Esto, claramente, nos dice que hemos obtenido una matriz reducida por fila.  
+                    
+                 Finalmente, intercambiando filas podemos entonces obtener una matriz escalón reducida por fila.
+
+                    
+                \end{proof}
+                
+                El procedimiento que usamos en la demostración del teorema anterior nos da un algoritmo para obtener una MERF a partir de una matriz arbitraria.
+                
+                \begin{observacion}[\textsc{Método para reducir a MERF}] \label{metodo-merf}  
+                    \
+                                    
+                \begin{enumerate}
+                    \item \label{paso-0} Nos ubicamos en la primera fila.
+                    \item \label{paso-1} Si la fila es 0 y no es la última, pasar a la fila siguiente.
+                    \item \label{paso-2} Si la fila no es 0, 
+                    \begin{enumerate}
+                        \item si el primera entrada no nula está en  la columna $k$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale 1),
+                        \item con operaciones elementales del tipo $F_r+ tF_s$ hacer 0  todas las entradas en la columna $k$ (menos la de la columna actual).    
+                    \end{enumerate}
+                    \item \label{paso-3} Si la fila es la última, pasar al (\ref{paso-4}). Si la fila no es la última, pasar a la fila siguiente e ir al paso (\ref{paso-1}).  
+                    \item \label{paso-4} Permutar las filas hasta obtener una MERF. 
+                \end{enumerate}
+            \end{observacion}
+                
+                
+                \begin{ejemplo*} Ejemplifiquemos con la matriz que aparece en el ejemplo de la p. \pageref{ejemplo2.11},  es decir con la matriz
+                    $$
+                    \begin{bmatrix} 2& -1&1& 2 \\ 1&-4 &0&-1 \\ 2&6&-1&3 \end{bmatrix}.
+                    $$
+                    Siguiendo estrictamente el algoritmo:
+                    \begin{multline*}
+                    \begin{bmatrix*}[r] 2& -1&1& 2 \\ 1&-4 &0&-1 \\ 2&6&-1&3 \end{bmatrix*}
+                    \stackrel{F_1/2}{\longrightarrow} 
+                    \begin{bmatrix*}[r] 1& -\frac12&\frac12& 1 \\ 1&-4 &0&-1 \\ 2&6&-1&3 \end{bmatrix*}
+                    \underset{F_3-2F_1}{\stackrel{F_2- F_1}{\longrightarrow}} 
+                    \begin{bmatrix*}[r] 1& -\frac12&\frac12& 1 \\ 0&-\frac72 &-\frac12&-2 \\ 0&7&-2&1 \end{bmatrix*}
+                    \\
+                    \stackrel{F_2/(-\frac72)}{\longrightarrow} 
+                    \begin{bmatrix*}[r] 1& -\frac12&\frac12& 1 \\ 0&1 &\frac17&\frac47 \\ 0&7&-2&1 \end{bmatrix*}
+                    \underset{F_3-7F_2}{\stackrel{F_1 +\frac12 F_2}{\longrightarrow}} 
+                    \begin{bmatrix*}[r] 1& 0&\frac47& \frac97 \\ 0&1 &\frac17&\frac47 \\ 0&0&-3&-3 \end{bmatrix*}
+                    \\
+                    \stackrel{F_3/(-3)}{\longrightarrow} 
+                    \begin{bmatrix*}[r] 1& 0&\frac47& \frac97 \\ 0&1 &\frac17&\frac47 \\ 0&0&1&1 \end{bmatrix*}
+                    \underset{F_2-\frac17F_3}{\stackrel{F_1 -\frac47 F_3}{\longrightarrow}} 
+                    \begin{bmatrix*}[r] 1& 0&0& \frac{5}7 \\ 0&1 &0&\frac37 \\ 0&0&1&1 \end{bmatrix*}.
+                    \end{multline*}
+                    Observemos que llegamos a la misma matriz que en el ejemplo mencionado, pese a que hicimos otras operaciones elementales.
+                \end{ejemplo*}
+                
+
+                
+            
+                
+    
+                
+                Llevar una matriz a una matriz  escalón reducida por fila equivalente nos provee un método para encontrar todas las soluciones de sistemas de ecuaciones homogéneos.
+                
+                \begin{ejemplo*}
+                    Supongamos que queremos encontrar las soluciones del sistema $AX = 0$ donde $A$ es una matriz $4 \times 5$ y que $A$ es equivalente por filas a la matriz
+                    \begin{equation*}
+                    \begin{bmatrix} 1&0&0&2&-3 \\ 0&1&0&0&-5 \\ 0&0&1&-1&2 \\ 0&0&0&0&0\end{bmatrix}.
+                    \end{equation*} 
+                    Entonces el sistema de ecuaciones original, de 4 ecuaciones y 5 incógnitas,  es equivalente al sistema
+                    \begin{equation*}
+                    \begin{matrix*}[r]
+                    x_1 +2x_4 -3x_5 &= 0 \\ x_2 -5x_5 &= 0 \\ x_3-x_4+2x_5 &= 0
+                    \end{matrix*} 
+                    \qquad \Rightarrow \qquad 
+                    \begin{matrix*}[l]
+                    x_1  &= -2x_4 +3x_5 \\ x_2  &= 5x_5 \\ x_3 &= x_4-2x_5
+                    \end{matrix*}. 
+                    \end{equation*}
+                    Por  lo tanto el conjunto de soluciones del sistema es
+                    \begin{equation*}
+                    \{(-2s +3t,  5t,  s-2t, s, t): s,t \in \R\}
+                    \end{equation*}
+                \end{ejemplo*}   
+            \end{subsection}
+            
+            
+            \begin{subsection}{M\'etodo de Gauss} Consideremos el siguiente sistema no homogéneo de $m$ ecuaciones lineales con $n$ incógnitas:
+                \begin{equation*}
+                \begin{matrix}
+                a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+                \vdots&  &\vdots& &&  &\vdots \\
+                a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_n
+                \end{matrix}
+                \end{equation*}
+                con $a_{ij} \in \K$. Sea $[A | Y]$ la matriz asociada a este sistema. Mediante operaciones elementales de fila obtenemos una matriz $[B|Z]$, donde $B$ es matriz escalón reducida por fila (teorema \ref{th-merf}). Por el teorema \ref{th-equiv-op-elem} los sistemas de ecuaciones $AX=Y$ y $BX=Z$ tiene las mismas soluciones. 
+                
+                
+                 Veamos ahora formalmente cuales son las soluciones del sistema $BX=Z$. Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros 1's en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
+                \begin{equation}
+                \begin{matrix}
+                &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&= &z_1\\
+                &x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j&= &z_2\\
+                & \vdots& &  &\vdots \\
+                &x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j&= &z_r\\
+                &&  &0&= &z_{r+1}\\
+                &&  &\vdots &\\
+                &&  &0&= &z_{m}.\\
+                \end{matrix}
+                \end{equation}  
+                y, por lo tanto, el sistema tiene solución si y solo si  $z_{r+1} = \cdots = z_m =0$ y en ese caso las soluciones son: 
+                \begin{equation}
+                \begin{matrix}\label{sist-eq-hom-merf0}
+                x_{k_1} &= z_1-\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j\\
+                x_{k_2} &= z_2-\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j\\
+                \vdots& \vdots \\
+                x_{k_r}  &= z_r-\textstyle\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j
+                \end{matrix}.
+                \end{equation} 
+                Llamaremos a  $x_{k_1}, x_{k_2}, \ldots, x_{k_r}$ las \textit{variables principales}\index{sistema de ecuaciones lineales!variables principales} del sistema  y  las $n-r$ variables restantes son las \textit{variables libres}.\index{sistema de ecuaciones lineales!variables libres} Es claro entonces que variando de forma arbitraria todas las variables libres obtenemos todas las soluciones del sistema.
+                
+                 Las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones (\ref{sist-eq-hom-merf0}) y $x_i \in \K$ para $x_i$ libre. 
+                
+                El método anterior es denominado \textit{método de Gauss.}\index{sistema de ecuaciones lineales!método de Gauss} 
+
+                En particular,  hemos probado:
+                
+                \begin{teorema}\label{inf-sol}
+                    Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Si $A$ es equivalente por filas a  $B$ una  MERF y $B$ tiene filas nulas, entonces si el sistema $AX=Y$ tiene solución,  tiene infinitas soluciones. 
+                \end{teorema}
+                \begin{proof}
+                    Sea $r$  el número de filas no nulas de $B$, como $B$ tiene filas nulas,  entonces $r<n$. Como el sistema tiene solución y $r<n$  hay al menos una variable libre. Esto implica que hay infinitas soluciones. 
+                    
+                    Por ser $A$ y $B$ equivalentes por fila, $AX=Y$ y $BX=Z$ tienen las mismas soluciones y, por consiguiente, $AX=Y$ tiene infinitas soluciones. 
+                \end{proof}
+                
+                \begin{teorema}\label{soluciones-m-menor-n}
+                    Sea $A$ una matriz $m \times n$ con  $m < n$ e $Y$ matriz $m \times 1$ . Entonces, si el sistema de ecuaciones lineales $AX=Y$ tiene solución, tiene infinitas soluciones.
+                \end{teorema}
+                \begin{proof}
+                    La matriz $A$ es equivalente por fila a una matriz $B$ escalón reducida por fila 
+                    y $B$ tiene $r$ filas no nulas con $r \le m <n$. Como el sistema tiene solución y $r<n$  hay al menos una variable libre. Por lo tanto, $BX=Z$ (y $AX=Y$) tienen infinitas soluciones.
+                \end{proof}
+                
+                \begin{lema}\label{lem-mtrx-merf-id}
+                    Sea $R$ una matriz $n \times n$ escalón reducida por fila tal que no tiene filas nulas. Entonces $R=\Id_n$. 
+                \end{lema}
+                \begin{proof}
+                    Como  $R$ es reducida por fila y no tiene filas nulas, cada fila tiene  un 1 en alguna entrada y en la columna donde está el 1 todos las otras entradas son nulas, por  lo tanto hay $n$ 1's principales distribuidos en $n$ columnas. Concluyendo: hay un 1 por columna y en esa columna todas las demás entradas son nulas. 
+                    
+                    Ahora bien como $R$ es una MERF, la primera fila contiene el 1 que está más a la izquierda, que no puede estar en otra ubicación que no sea la primera (pues si no la primera columna sería nula). Con el mismo razonamiento vemos que en la segunda fila hay un 1 en la columna 2 y en general en la fila $k$-ésima hay un 1 en la columna $k$. Luego $R=\Id_n$.
+                \end{proof}			
+                
+                \begin{teorema}
+                    Sea $A$ una matriz $n \times n$. Entonces, $A$ es equivalente por filas a la matriz $\Id_n$  si y sólo si el sistema $AX = Y$ tiene un única solución. 
+                \end{teorema}
+                \begin{proof}
+                    ($\Rightarrow$) Como $A$ es equivalente por filas a la matriz $\Id_n$, las soluciones de $AX =Y$ son las mismas que las de $\Id_nX=Z$, para algún $Z$. Ahora bien,  en la fila $i$ de la matriz $\Id_n$ tenemos $[\Id_n]_{ii} =1$ y las otras entradas son cero, luego la ecuación correspondiente a esa fila es $x _i =0$, y esto ocurre en todas las filas, luego el sistema de ecuaciones es
+                    \begin{align*}
+                    x_1 &=z_1 \\ x_2 &= z_2 \\ \vdots \\ x_n &= z_n
+                    \end{align*}
+                    cuya única solución es la solución trivial.
+                    
+                    ($\Leftarrow$) Sea $R$ la matriz escalón reducida por filas asociada a $A$. Por hipótesis, $AX=Y$ tiene una sola solución y  por lo tanto $RX=Z$, para algún $Z$, tiene una sola solución. Luego, no hay variables libres, es decir hay $n$ filas no nulas en $R$, como $R$ tiene $n$ filas, lo anterior implica que $R$ no tiene filas nulas. Entonces, por el lema anterior, $R=\Id_n$.
+                \end{proof}
+        
+            
+            
+            
+                \begin{ejemplo*} Resolvamos el sistema
+                    \begin{align*}
+                    x_1 -2x_2 + x_3  &= 1\\
+                    2x_1 +x_2 + x_3  &= 2\\
+                    5x_2 - x_3  &= 0.
+                    \end{align*}
+                    La matriz  aumentada correspondiente a este sistema es
+                    \begin{equation*}
+                     \left[\begin{array}{@{}*{3}{r}|r@{}} 
+                     1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\ 0 & 5 & -1 &  0 
+                    \end{array}\right]
+                    \end{equation*}
+                    apliquemos el método de Gauss:
+                    \begin{multline*}
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\	0 & 5 & -1 &  0  \end{array}\right]
+                    \stackrel{F_2 - 2F_1}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\	0 & 5 & -1 &  0  \end{array}\right]
+                    \stackrel{F_3-F_1}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\	0 & 0 & 0 & 0  \end{array}\right]
+                    \\
+                    \stackrel{F_2/5}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 1 & -1/5 &  0 \\	0 & 0 & 0 &  0  \end{array}\right]
+                    \stackrel{F_1+2 F_2}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & 0 & 3/5 & 1 \\ 0 & 1 & -1/5 &  0 \\	0 & 0 & 0 &  0  \end{array}\right].
+                    \end{multline*}	
+                    Luego,  el sistema se reduce  a
+                    \begin{align*}
+                    x_1  + 3/5x_3  &= 1\\
+                    x_2 -1/5 x_3  &= 0.
+                    \end{align*}
+                    Es decir, 
+                    \begin{align*}
+                    x_1    &= - 3/5x_3 + 1\\
+                    x_2   &= 1/5 x_3.
+                    \end{align*}
+                    En consecuencia,  las soluciones de esta ecuación son
+                    \begin{equation*}
+                    \left\{(-\frac{3}5s + 1, \frac15 s, s ): s \in \K \right\}.
+                    \end{equation*}
+                \end{ejemplo*} 
+                
+                \end{subsection}
+            
+            
+        \end{section}
+        
+        
+        
+        
+        
+        
+        
+        
+        \begin{section}{\'Algebra de matrices}\label{seccion-algebra-de-matrices}
+            
+            Ahora estudiaremos propiedades algebraicas de las matrices,  en particular veremos que dado $n\in \mathbb N$, entonces podemos definir una suma y un producto en el conjunto de matrices $n \times n$ con la propiedad de que estas operaciones satisfacen muchos de los axiomas que definen a  $\mathbb Z$.  
+            
+            
+            \begin{subsection}{Algunos tipos de matrices}
+                
+                \textbf{Matriz cuadrada.} Es aquella que tiene igual número de filas que de columnas, es decir si es una matriz $n \times n$ para algún $n \in\mathbb N$. En ese caso, se dice que la matriz es de orden $n$. Por ejemplo, la matriz
+                \begin{equation*}
+                A= \begin{bmatrix}
+                1&3&0\\-1&4&7\\-2&0&1
+                \end{bmatrix}
+                \end{equation*}
+                es cuadrada de orden 3.
+                
+                Denotaremos el conjunto de todas las matrices cuadradas\index{matriz!cuadrada} de orden $n$ con entradas en $\K$ por $M_n(\K)$ o simplemente $M_n$ si $\K$  está sobreentendido. Así, en el 	ejemplo anterior $A \in M_3$.
+                
+                Los elementos de la \textit{diagonal principal} de una matriz\index{matriz!diagonal principal}\index{diagonal principal de una matriz} cuadrada son aquellos que están situados
+                en la diagonal que va desde la esquina superior izquierda hasta la inferior derecha. En otras
+                palabras, la diagonal principal de una matriz $A=[a_{ij}]$ está formada por los elementos
+                $a_{11},a_{22},\ldots,a_{nn}$.  En el ejemplo anterior la diagonal principal está compuesta por los elementos: $a_{11} = 1$, $a_{22} = 4$ , $a_{33} = 1$.
+
+                \textbf{Matriz diagonal y matriz escalar.} Una matriz cuadrada, $A=[a_{ij}]$ de orden $n$, es \textit{diagonal}\index{matriz!diagonal} si $a_{ij}  =0$ , para $i \not= j$ . Es decir, si todos los elementos situados fuera de la diagonal principal son cero. Por ejemplo, la siguiente matriz es diagonal:
+                \begin{equation}
+                \begin{bmatrix}
+                2&0&0&0\\0&-1&0&0\\0&0&5&0\\0&0&0&3
+                \end{bmatrix}.
+                \end{equation}
+                
+                Un matriz $n \times n$  es \textit{escalar}\index{matriz!escalar} si  es diagonal y todos los elementos de la diagonal son iguales, por ejemplo, en el caso $4 \times 4$ las matrices escalares son 
+                
+                \begin{equation}
+                \begin{bmatrix}
+                c&0&0&0\\0&c&0&0\\0&0&c&0\\0&0&0&c
+                \end{bmatrix},
+                \end{equation}
+                con $c \in \K$.
+                
+                \textbf{Matriz unidad o identidad.} Esta matriz ya la hemos definido anteriormente. Recordemos que es una matriz diagonal cuya diagonal principal está compuesta de 1's. 
+                
+                Más adelante veremos que la matriz identidad, respecto a la multiplicación de matrices, juega un papel similar al número 1 respecto a la multiplicación de números reales o enteros (elemento neutro del producto).
+                
+                \textbf{Matriz nula}. La \textit{matriz nula}\index{matriz!nula} de orden $m\times n$, denotada $0_{m \times n}$ o simplemente $0$ si $m$ y $n$ están sobreentendidos,  es la  matriz $m \times n$ cuyas entradas son todas nulas ($=0$). 
+                
+                Por ejemplo, la matriz nula $2 \times 3$ es
+                \begin{equation*}
+                \begin{bmatrix} 0&0&0\\ 0&0&0\end{bmatrix}.
+                \end{equation*}
+                Veremos luego que la matriz nula juega un papel similar al número 0 en el álgebra de matrices (elemento neutro de la suma).  
+                
+                \textbf{Matriz triangular.} Una matriz cuadrada es \textit{triangular superior} o \textit{escalón}\index{matriz!triangular superior}\index{matriz!escalón} si todos los elementos situados por debajo de la diagonal principal son cero. Por ejemplo, la siguiente matriz es triangular superior:
+                \begin{equation}
+                \begin{bmatrix}
+                2&-1&3&1\\0&-1&0&2\\0&0&5&1\\0&0&0&3
+                \end{bmatrix}.
+                \end{equation}
+                Análogamente, una matriz cuadrada es \textit{triangular inferior}\index{matriz!triangular inferior} si todos los elementos situados por encima de la diagonal principal son cero. Un matriz triangular (superior o inferior) se dice \textit{estricta}\index{matriz!triangular inferior estricta}\index{matriz!triangular superior estricta} si la diagonal principal es 0.
+                
+                En forma más precisa, sea $A =[a_{ij}]\in M_n(\K)$,  entonces
+                \begin{itemize}
+                    \item $A$ es \textit{triangular superior} (\textit{triangular superior estricta}) si $a_{ij} =0$ para $i < j$ (respectivamente $i \le j$),
+                    \item $A$ es \textit{triangular inferior} (\textit{triangular inferior estricta}) si $a_{ij} =0$ para $i > j$ (respectivamente $i \ge j$).
+                \end{itemize}
+                
+                Por  ejemplo, cualquier matriz diagonal es triangular superior y también triangular inferior. 
+                
+                No es difícil comprobar que si $R$ es una matriz cuadrada $n \times n$  que es una MERF,  entonces $R$  es triangular superior. 
+                
+             
+            \end{subsection}
+            
+            
+            \begin{subsection}{Suma  de matrices}
+                Sean $A=[a_{ij}]$, $B=[b_{ij}]$ matrices  $m \times n$. La matriz $C= [a_{ij} + b_{ij}]$ de orden $m \times n$,  es decir la matriz cuyo valor en la posición $ij$ es  $a_{ij} + b_{ij}$, es llamada \textit{la suma de las matrices $A$ y $B$}\index{suma de matrices} y se denota $A+B$. En otras palabras, la suma de dos matrices es la matriz que resulta de sumar ``coordenada a coordenada'' ambas matrices. 
+                
+                Veamos un ejemplo, consideremos las siguientes matrices:
+                \begin{equation*}
+                A = \begin{bmatrix} -1&3&5 \\ 2&0&-1  \end{bmatrix}, \qquad
+                B = \begin{bmatrix} 5&2&-3 \\ 0&-1&1  \end{bmatrix}, \qquad
+                M = \begin{bmatrix} 2&1&-3 \\ 3&0&-1 \\ 0&8&5 \end{bmatrix}.
+                \end{equation*}
+                Las matrices $A$ y $B$ son de orden $2 \times 3$, mientras la matriz $M$ es cuadrada de orden 3. Por tanto, no podemos calcular la suma de $A$ y $M$ y tampoco la suma de $B$ y $M$, en cambio, sí podemos sumar $A$ y $B$ ya que tienen el mismo orden. Esto es,
+                \begin{equation*}
+                A + B = \begin{bmatrix} -1&3&5 \\ 2&0&-1  \end{bmatrix}+
+                \begin{bmatrix} 5&2&-3 \\ 0&-1&1  \end{bmatrix} =
+                \begin{bmatrix} -1+5&3+2&5-3 \\ 2+0&0-1&-1+1  \end{bmatrix}=
+                \begin{bmatrix} 4&5&2 \\ 2&-1&0  \end{bmatrix}
+                \end{equation*}
+                
+                
+                Dadas $A$, $B$ y $C$ matrices $m \times n$, podemos deducir fácilmente las siguientes propiedades de la suma de matrices de matrices:
+                \begin{itemize}
+                    \item Conmutativa: $A + B = B + A$,
+                    \item Asociativa: $A + (B + C) = (A + B) + C$,
+                    \item Elemento neutro (la matriz nula): $A + 0 = 0 + A = A$,
+                    \item Elemento opuesto: existe una matriz $-A$ de orden $m \times n$ tal que  $A + (-A) = (-A) + A = 0$.
+                \end{itemize}
+                Debemos explicitar la matriz opuesta: si $A = [a_{ij}]$,  entonces $-A = [-a_{ij}]$. Usualmente denotaremos $A + (-B)$ como $A-B$ y $(-A)+B$ como $-A+B$. 
+                
+                La demostración de las propiedades anteriores se deduce de que las mismas propiedades valen coordenada a coordenada y se dejan a cargo del lector. 
+            \end{subsection}		
+            
+            \begin{subsection}{Multiplicaci\'on de matrices}\index{producto de matrices} \index{multiplicación de matrices} Sean $A=[a_{ij}]$ matriz $m \times n$ y 		 $B=[b_{ij}]$ matriz $n \times p$, entonces $C=[c_{ij}]$ matriz $m \times p$  es el \textit{producto} de $A$ y $B$, si 
+                \begin{equation}\label{mtrx-mult}
+                c_{ij} = a_{i1}b_{1j}+a_{i2}b_{2j}+\cdots+a_{in}b_{nj}= \sum_{k=1}^{n}a_{ik}b_{kj}.
+                \end{equation}
+                Es decir, los elementos que ocupan la posición $ij$ en la matriz producto, se obtienen sumando 	los productos que resultan de multiplicar los elementos de la fila $i$ en la primera matriz por los
+                elementos de la columna $j$ de la segunda matriz. Al producto de $A$ por $B$ lo denotamos $AB$. 
+
+                Es muy importante recalcar que por la definición, se puede multiplicar una matriz $m \times n$ por una matriz $r \times p$, sólo si $n=r$ y en ese caso, la multiplicación resulta ser una matriz $m \times p$. 
+
+                Podemos visualizar la multiplicación así:
+                \begin{align*}
+                    \left[
+                    \begin{array}{cccc}
+                        a_{11} & a_{12} & \cdots & a_{1n}\\ 
+                        a_{21} & a_{22} & \cdots & a_{2n}\\
+                        \vdots & \vdots & & \vdots\\
+                        \textcolor{red}{a_{i1}} & \textcolor{red}{a_{i2}} & \cdots & \textcolor{red}{a_{in}}\\  
+                        \vdots & \vdots & & \vdots\\
+                        a_{m1} & a_{m2} & \cdots & a_{mn}
+                    \end{array}
+                    \right] 
+                    \cdot
+                    \left[
+                    \begin{array}{ccc}
+                        \cdots & \textcolor{blue}{b_{1j}} & \cdots\\ 
+                        \cdots & \textcolor{blue}{b_{2j}} & \cdots\\
+                        & \textcolor{blue}{\vdots} & \\
+                        \cdots & \textcolor{blue}{b_{nj}} & \cdots 
+                    \end{array}
+                    \right]
+                    =
+                    \left[
+                    \begin{array}{ccc}
+                        &\vdots&\\
+                        \cdots&\sum_{k=1}^n\textcolor{red}{a_{ik}}\cdot
+                        \textcolor{blue}{b_{kj}}&\cdots\\
+                        &\vdots&
+                    \end{array}
+                    \right]
+                \end{align*} 
+
+                \begin{obs}\label{mtrx-filasxcols}
+                     Sean $A=[a_{ij}]$ matriz $m \times n$ y $B=[b_{ij}]$ matriz $n \times p$, entonces si 
+                     multiplicamos la matriz que se forma con la fila $i$ de $A$ por la matriz que determina la columna $j$ de $B$, obtenemos el coeficiente $ij$ de $AB$.
+                    Esquemáticamente
+                    \begin{equation*}
+                    \begin{bmatrix} a_{i1}& a_{i2}& \cdots &a_{in}\end{bmatrix}
+                    \begin{bmatrix} b_{1j}\\ b_{2j}\\ \vdots \\b_{nj}\end{bmatrix} =  \sum_{k=1}^{n}a_{ik}b_{kj} = c_{ij}.
+                    \end{equation*}
+                    Por lo tanto diremos a veces, que el coeficiente $ij$ de la matriz $AB$ es la fila $i$ de $A$ por la columna $j$ de $B$. 
+                    
+                    El lector recordará el producto escalar definido en  el capítulo \ref{chap-vectores} y notará que el coeficiente $ij$ de $AB$ es el producto escalar de la fila $i$ de A por la columna $j$ de B, ambos pensados como vectores. 
+                \end{obs}	
+                
+                \begin{ejemplo*}
+                    Si 
+                    \begin{equation*}
+                        A = \begin{bmatrix}1&0\\-3&1\end{bmatrix}, \qquad B = \begin{bmatrix}5&-1&2\\15&4&8\end{bmatrix},
+                    \end{equation*}
+                    como $A$ es $2 \times 2$ y $B$ es $2 \times 3$, la matriz $AB$ será $2 \times 3$ y  aplicando la regla (\ref{mtrx-mult}), obtenemos:
+                    \begin{equation*}
+                        AB = \begin{bmatrix}1\times  5 + 0\times 15&1\times (-1) + 0\times 4&1\times 2 + 0\times 8
+                            \\-3\times 5 + 1\times 15&-3\times (-1) + 1\times 4&-3\times 2 + 1\times 8
+                        \end{bmatrix} =
+                        \begin{bmatrix} 5 &-1 &2 
+                            \\ 0 &7 &2
+                        \end{bmatrix}.
+                    \end{equation*}
+                    Observemos que, debido a nuestra definición, no es posible multiplicar $B$ por $A$, pues no está definido multiplicar una matriz $2 \times 3$ por una $2 \times 2$.
+                \end{ejemplo*}
+                     
+                
+                Hay casos, como veremos en el siguiente ejemplo, en los que se pueden calcular ambos productos aunque se obtienen resultados diferentes. Consideremos las siguientes matrices:
+                \begin{equation*}
+                A = \begin{bmatrix}2&1\\-3&1\end{bmatrix}, \qquad 
+                B = \begin{bmatrix}1&3\\-1&1\end{bmatrix}
+                \end{equation*}
+                Entonces, por un lado,
+                \begin{equation*}
+                AB = \begin{bmatrix}2&1\\-3&1\end{bmatrix}
+                \begin{bmatrix}1&3\\-1&1\end{bmatrix} =
+                \begin{bmatrix}1&7\\-4&-8\end{bmatrix}, 
+                \end{equation*}
+                y por otro lado,
+                \begin{equation*}
+                BA = \begin{bmatrix}1&3\\-1&1\end{bmatrix} \begin{bmatrix}2&1\\-3&1\end{bmatrix}
+                =\begin{bmatrix}-7&4\\-5&0\end{bmatrix}.
+                \end{equation*}
+                
+                Según se pudo comprobar a través del ejemplo anterior, la multiplicación de matrices
+                no cumple la propiedad conmutativa. Veamos algunas propiedades que sí cumple esta operación:
+                \begin{itemize}
+                    \item Asociativa: 
+                    \begin{equation*}
+                    A (B C) = (A B) C, \quad\forall\, A \in M_{m \times n}, \;B \in M_{n \times p}, \;C  \in M_{p \times q},
+                    \end{equation*}
+                    
+                    \item Elemento neutro: si  $A$ es matriz $m \times n$,  entonces
+                    \begin{equation*}
+                    A\Id_{n} = A = \Id_{m}A,
+                    \end{equation*}
+                    \item Distributiva:
+                    \begin{equation*}
+                    A(B + C) = AB + AC,\qquad \forall\, A \in M_{m \times n}, \;B, C \in M_{n \times p},
+                    \end{equation*}
+                    y
+                    \begin{equation*}
+                    (A+ B)C = AC + BC,\qquad \forall\, A, B \in M_{m \times n}, \; C \in M_{n \times p}.
+                    \end{equation*}
+                \end{itemize}	
+                
+                Como en el caso de la suma,  la demostración las propiedades anteriores se deja a cargo del lector. 
+                
+                En virtud de estas propiedades y de las anteriores de la suma de matrices, resulta que el conjunto $(M_n ,+,.)$  de las matrices cuadradas de orden $n$, respecto a las dos leyes de composición interna, ``+'' y ``·'', tiene estructura de anillo unitario no conmutativo (ver \href{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}) . 
+                
+                Cuando las matrices son cuadradas podemos multiplicarlas por si mismas y  definimos,  de forma análoga a lo que ocurre en los productos de números, la potencia de una matriz: sea $A$ matriz $n \times n$, y sea $m \in \mathbb N$ entonces
+                \begin{equation*}
+                A^0 = \Id_{n}, \quad A^m = A^{m-1}A,		
+                \end{equation*}
+                es decir $A^m$ es multiplicar $A$ consigo mismo $m$-veces.  
+                
+                \begin{observacion}\label{obs-mult-matrices-diagonales}
+                    Un  caso especial de multiplicación es la multiplicación por matrices diagonales. Sea $n \in \mathbb N$ y 
+                \begin{equation*}
+                    \operatorname{diag}(d_1,d_2,\ldots,d_n) := \begin{bmatrix}
+                    d_1 & 0 & \cdots &0 \\
+                    0 & d_2 & \cdots &0 \\
+                    \vdots & \vdots & \ddots &\vdots \\
+                    0 & 0 & \cdots & d_n 
+                    \end{bmatrix}
+                \end{equation*}
+                matriz $n \times n$ diagonal con valor $d_i$  en la posición $ii$,  entonces si $A$ es matriz $n \times p$,  con la multiplicación a izquierda de la matriz diagonal por $A$  se obtiene la matriz que en la fila $i$ tiene a la fila $i$ de $A$ multiplicada por $d_i$.  Es decir,
+                \begin{equation*}
+                \begin{bmatrix}
+                d_1 & 0 & \cdots &0 \\
+                0 & d_2 & \cdots &0 \\
+                \vdots & \vdots & \ddots &\vdots \\
+                0 & 0 & \cdots & d_n 
+                \end{bmatrix}
+                \begin{bmatrix}
+                a_{11} & a_{12} & \cdots &a_{1p} \\
+                a_{21} & a_{22} & \cdots &a_{2p}\\
+                \vdots & \vdots & \ddots &\vdots \\
+                a_{n1} & a_{n2} & \cdots & a_{np} 
+                \end{bmatrix}
+                =
+                \begin{bmatrix}
+                d_1a_{11} & d_1a_{12} & \cdots &d_1a_{1p} \\
+                d_2a_{21} & d_2a_{22} & \cdots &d_2a_{2p}\\
+                \vdots & \vdots & \ddots &\vdots \\
+                d_n a_{n1} & d_n a_{n2} & \cdots & d_n a_{np} 
+                \end{bmatrix}.
+                \end{equation*}
+                Esto es claro, pues si denotamos $D = \operatorname{diag}(d_1,d_2,\ldots,d_n)$, el coeficiente $ij$  de $DA$ es la fila $i$ de $D$ por la columna $j$ de $A$, es decir
+                $$
+                [DA]_{ij} = 0.a_{1j}+\cdots + 0.a_{i-1,j}+d_i.a_{ij}+0.a_{i+1,j}+\cdots + 0.a_{nj} = d_ia_{ij}. 
+                $$
+                Observar que en el caso de que $D$ sea una matriz escalar (es decir $d_1=d_2=\cdots=d_n$), $DA$ es multiplicar por el mismo número todos los coeficientes de $A$. En particular, en este caso, si $A$  es $n \times n$,  $DA = AD$.
+                 
+                
+                
+                 Si $B$ es $m \times n$, el lector podrá comprobar que 
+                 \begin{equation*}
+                     B\,\operatorname{diag}(d_1,d_2,\ldots,d_n) = \begin{bmatrix}
+                         d_1C_1& d_2C_2& \cdots &d_nC_n
+                     \end{bmatrix},
+                 \end{equation*} 
+                 donde $C_1,C_2,\ldots,C_n$ son las columnas de $B$.
+                 
+                 Finalmente,  de lo visto más arriba respecto a la multiplicación por una matriz diagonal obtenemos:
+                 \begin{equation*}
+                    \begin{bmatrix}
+                        d_1 & 0 & \cdots &0 \\
+                        0 & d_2 & \cdots &0 \\
+                        \vdots & \vdots & \ddots &\vdots \\
+                        0 & 0 & \cdots & d_n 
+                        \end{bmatrix}^k =
+                        \begin{bmatrix}
+                            d_1^k & 0 & \cdots &0 \\
+                            0 & d_2^k & \cdots &0 \\
+                            \vdots & \vdots & \ddots &\vdots \\
+                            0 & 0 & \cdots & d_n^k 
+                            \end{bmatrix} ,
+                 \end{equation*}
+                 para $k \in \mathbb N$.
+                
+                \end{observacion}
+
+                Otras observaciones importantes: 
+                
+                \begin{itemize}
+                    \item multiplicar cualquier matriz por la matriz nula resulta la matriz nula,
+                    \item existen divisores de cero: en general, $AB = 0$ no implica que $A = 0$ o $B = 0$  o,  lo que es lo mismo, el producto de matrices no nulas puede resultar en una matriz nula. Por
+                    ejemplo,
+                    \begin{equation*}
+                    \begin{bmatrix}1&0\\2&0\end{bmatrix} \begin{bmatrix}0&0\\8&1\end{bmatrix} = \begin{bmatrix}0&0\\0&0\end{bmatrix}.
+                    \end{equation*}
+                    \item En general no se cumple la propiedad cancelativa: si $A\not=0$ y  $AB = AC$ no necesariamente se cumple que $B = C$. Por
+                    ejemplo,
+                    \begin{equation*}
+                    \begin{bmatrix}2&0\\4&0\end{bmatrix}=
+                    \begin{bmatrix}1&0\\2&0\end{bmatrix} \begin{bmatrix}2&0\\8&1\end{bmatrix} =
+                    \begin{bmatrix}1&0\\2&0\end{bmatrix} \begin{bmatrix}2&0\\5&3\end{bmatrix}
+                    \end{equation*}
+                    \item No se cumple la fórmula del binomio: 	sean $A, B$ matrices $n \times n$, entonces		
+                    \begin{align*}
+                    (A+B)^2 &= (A+B)(A+B) \\&= A(A+B) + B(A+B) \\&= AA + AB + BA + BB \\&= A^2 + AB + BA + B^2,
+                    \end{align*}
+                    y  esta última expresión puede no ser  igual a $A^2 + 2AB + B^2$ ya que el producto de matrices no es conmutativo (en general). 
+                \end{itemize}
+        \end{subsection}
+        
+        
+        \begin{subsection}{Multiplicaci\'on de una matriz por un escalar} Otra operación importante es la multiplicación de una matriz por un elemento de $\K$: sea $A=[a_{ij}]$ matriz $m \times n$ y $c \in \K$,  entonces el producto de $c$ por $A$ es la matriz
+            $$
+            cA=[ca_{ij}].
+            $$ 
+        Por ejemplo, 
+        $$
+        2\begin{bmatrix*}[r]
+        -1& 0& 3 & 4\\
+        5& 1& -2 & 1\\
+        3& 2& 1 & -3
+        \end{bmatrix*} =
+        \begin{bmatrix*}[r]
+        -2& 0& 6& 8\\
+        10& 2& -4 & 2\\
+        6& 4& 2 & -6
+        \end{bmatrix*}.
+        $$
+        
+        Observar que multiplicar por $c$ una matriz $m \times n$,  es lo mismo que multiplicar por la matriz escalar $m \times m$ con los coeficientes de la diagonal iguales a $c$,  es decir
+        \begin{equation}
+            cA = \begin{bmatrix*}[r]
+            c     &     0& \cdots & 0\\
+            0     &     c& \cdots & 0\\
+            \vdots&\vdots&  \ddots      &\vdots\\
+            0     &    0  & \cdots & c
+            \end{bmatrix*}
+             \begin{bmatrix}
+            a_{11}&a_{12}& \cdots & & a_{1n}\\
+            a_{21}&a_{22}& \cdots & &a_{2n}\\
+            \vdots&\vdots&  & &\vdots\\
+            a_{m1}&a_{m2}& \cdots & & a_{mn}
+            \end{bmatrix} =
+             \begin{bmatrix}
+            ca_{11}&ca_{12}& \cdots & & ca_{1n}\\
+            ca_{21}&ca_{22}& \cdots & &ca_{2n}\\
+            \vdots&\vdots&  & &\vdots\\
+            ca_{m1}&ca_{m2}& \cdots & & ca_{mn}
+            \end{bmatrix}
+        \end{equation}
+        
+        Debido a esta observación y a las propiedades del producto de matrices, se cumple lo siguiente:
+            \begin{align*}
+             c(A B) = (cA) B,\qquad &\forall\, c \in \K,  A \in M_{m \times n}, \;B \in M_{n \times p}, \\
+             (cd)A = c(dA),  \qquad &\forall\, c,d \in \K,  A \in M_{m \times n},, \\
+            1.A = A ,\qquad&\forall\, c \in \K, A \in M_{m \times n}\\
+            c(A + B) = cA + cB,\qquad& \forall\, c \in \K, A,B \in M_{m \times n}, \\
+            (c+ d)A = cA + dA,\qquad& \forall\, c,d \in \K, \; A \in M_{m \times n}.
+            \end{align*}
+            
+            Si $A$ es $n \times n$,  entonces $DA = AD$ cuando $D$  es una matriz escalar. Por lo tanto
+            \begin{align*}
+            c(A B) = (cA) B = A(cB),\qquad &\forall\, c \in \K,  A \in M_{n \times n}, \;B \in M_{n \times n}.
+            \end{align*} 
+
+        \end{subsection}
+            
+            
+        \end{section}
+        
+        \begin{section}{Matrices elementales}\label{seccion-matrices-elementales}
+            Veremos ahora la relación entre el álgebra de matrices y la solución de sistemas de ecuaciones lineales. 
+            
+            Primero recordemos que dado un sistema de $m$  ecuaciones lineales con $n$ incógnitas
+            \begin{equation}\label{sist-eq-gen-3}
+            \begin{matrix} 
+            a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+            \vdots&  &\vdots& &&  &\vdots \\
+            a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
+            \end{matrix}
+            \end{equation}
+            donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$. Si denotamos
+            \begin{equation*}
+            A = \begin{bmatrix}
+            a_{11}& a_{12}& \cdots &a_{1n} \\
+            \vdots&\vdots  &  &\vdots \\
+            a_{m1} &a_{m2}&\cdots &a_{mn}\end{bmatrix},\qquad
+            X = \begin{bmatrix}
+            x_1 \\ \vdots \\ x_n 
+            \end{bmatrix},
+            \qquad 
+            Y = \begin{bmatrix}
+            y_1 \\ \vdots \\ y_n
+            \end{bmatrix},
+            \end{equation*}
+            entonces 
+            \begin{equation*}
+            AX = \begin{bmatrix}
+            a_{11}& a_{12}& \cdots &a_{1n} \\
+            \vdots&\vdots  &  &\vdots \\
+            a_{m1} &a_{m2}&\cdots &a_{mn}\end{bmatrix} \begin{bmatrix} 
+            x_1 \\ \vdots \\ x_n 
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+            a_{11}x_1+ a_{12}x_2+ \cdots +a_{1n}x_n \\
+            \vdots \\
+            a_{m1}x_1 +a_{m2}x_2+\cdots +a_{mn}x_n\end{bmatrix} =
+            \begin{bmatrix}
+            y_1 \\ \vdots \\ y_n
+            \end{bmatrix} = Y
+            \end{equation*}
+            (producto de matrices). Es decir, la notación antes utilizada es consistente con el, ahora definido, producto de matrices.  
+            
+            \begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz!elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $\Id_m$.
+            \end{definicion}
+            
+            \begin{ejemplo*} Veamos cuales son las matrices elementales  $2 \times 2$:
+                \begin{enumerate}
+                    \item Si $c \not=0$, multiplicar por  $c$ la primera fila y multiplicar $c$ por la segunda fila son, respectivamente,
+                    \begin{equation*}
+                    \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}\;\text{ y }\; \begin{bmatrix} 1& 0\\ 0&c\end{bmatrix},
+                    \end{equation*}
+                    \item si  $c \in \K$, sumar a la fila 2 la fila 1 multiplicada por $c$ o sumar a la fila 1 la fila 2 multiplicada por $c$ son, respectivamente,
+                    \begin{equation*}
+                    \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}\;\text{ y }\; \begin{bmatrix} 1& c\\ 0&1\end{bmatrix}.
+                    \end{equation*}
+                    \item Finalmente, intercambiando la fila 1 por la fila 2 obtenemos la matriz
+                    \begin{equation*}
+                    \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
+                    \end{equation*}
+                \end{enumerate}
+            \end{ejemplo*}
+
+            En el caso de matrices $m \times m$ tampoco es difícil encontrar las matrices elementales:
+            \begin{enumerate}
+                \item Si $c \not=0$, multiplicar por  $c$ la fila $k$ de la matriz identidad, resulta en la matriz elemental que tiene todos 1's en la diagonal, excepto en la posición $k,k$ donde vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
+                \begin{equation}\label{elem-tipo-1}
+                a_{ij} = \left\{ 
+                \begin{matrix*}[l]
+                1 &\text{si $i=j$ e $i\ne k$,}\\
+                c &\text{si $i=j=k$,} \\
+                0 \quad&\text{si $i \ne j$.}
+                \end{matrix*}\right.
+                \end{equation}
+                Gráficamente,
+                \begin{align*}
+                &\begin{matrix}
+                {}^{}&{}^{}&{}^{}&{}^{}&{}^{}&\overset{k}{\downarrow}&{}^{}&{}^{}&{}^{}
+                \end{matrix} \\
+                \begin{matrix}
+                {}^{}\\
+                {}^{}\\
+                \overset{k}{\to}\\
+                {}^{}\\
+                {}^{}
+                \end{matrix}
+                &\begin{bmatrix}
+                1 & 0 &  &\cdots & 0  \\
+                \vdots  & \ddots  & & & \vdots \\
+                0 & \cdots &c &\cdots &0 \\
+                \vdots  &   & &\ddots & \vdots \\
+                0  & \cdots  & &\cdots & 1
+                \end{bmatrix}
+                \end{align*}
+                \item si  $c \in \K$, sumar a la fila $r$  la fila $s$ multiplicada por $c$, resulta en la matriz elemental que tiene todos 1's en la diagonal, y todos los demás coeficientes son 0,  excepto en la fila  $r$ y columna $s$ donde  vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
+                \begin{equation}\label{elem-tipo-2}
+                a_{ij} = \left\{ 
+                \begin{matrix*}[l]
+                1 &\text{si $i=j$}\\
+                c &\text{si $i=r$, $j=s$,} \\
+                0 \quad&\text{otro caso.}
+                \end{matrix*}\right.
+                \end{equation}
+                Gráficamente, 
+                \begin{align*}
+                &\begin{matrix}
+                {}^{}&{}^{}&{}^{}&{}^{}&{}^{}&\overset{r}{\downarrow}&{}^{}&{}^{}&{}^{}{}^{}\overset{s}{\downarrow}&{}^{}
+                \end{matrix} \\
+                \begin{matrix}
+                {}^{}\\{}^{}\\
+                \overset{r}{\to}\\
+                {}^{}\\
+                {}^{}\\
+                {}^{}
+                \end{matrix}
+                &\begin{bmatrix}
+                1 & 0 &  &\cdots &&& 0  \\
+                \vdots  & \ddots  & & &&& \vdots \\
+                0 & \cdots &1 &\cdots&c&\cdots &0 \\
+                \vdots  &   & &\ddots &&& \vdots \\
+                \vdots  &   & & &\ddots&& \vdots \\
+                0  & \cdots  & &\cdots &&& 1
+                \end{bmatrix}
+                \end{align*}
+                
+                
+                \item Finalmente, intercambiar la fila $r$ por la fila $s$ resulta ser
+                \begin{equation}\label{elem-tipo-3}
+                a_{ij} = \left\{ 
+                \begin{matrix*}[l]
+                1 &\text{si ($i=j$, $i \ne r$, $i \ne s$) o ($i=r$, $j=s$) o ($i=s$, $j=r$) }\\
+                0 \quad&\text{otro caso.}
+                \end{matrix*}\right.
+                \end{equation}
+                    Gráficamente, 
+                \begin{align*}
+                &\begin{matrix}
+                {}^{}&{}^{}&{}^{}&{}^{}&{}^{}&\overset{r}{\downarrow}&{}^{}&{}^{}&{}^{}{}^{}\overset{s}{\downarrow}&{}^{}
+                \end{matrix} \\
+                \begin{matrix}
+                {}^{}\\{}^{}\\
+                \overset{r}{\to}\\
+                {}^{}\\
+                \overset{s}{\to}\\{}^{}\\
+                {}^{}
+                \end{matrix}
+                &\begin{bmatrix}
+                1 & \cdots &  &\cdots &&\cdots& 0  \\
+                \vdots  & \ddots  & & &&& \vdots \\
+                0 & \cdots &0 &\cdots&1&\cdots &0 \\
+                \vdots  &   & &\ddots &&& \vdots \\
+                0  & \cdots  &1 &\cdots &0& \cdots& 0 \\
+                \vdots  &   & & &&\ddots& \vdots \\
+                0  & \cdots  & &\cdots &&\cdots& 1
+                \end{bmatrix}
+                \end{align*}
+            \end{enumerate}
+            
+            Veamos ahora que, dada una matriz $A$,   hacer una operación elemental en $A$ es igual a multiplicar $A$ a izquierda por una matriz elemental. Más precisamente:
+            
+            \begin{teorema}\label{th-mrtx-elem}
+                Sea $e$ una operación elemental por fila y sea $E$ la matriz elemental $E=e(\Id)$. Entonces $e(A) = EA$.
+            \end{teorema}
+            \begin{proof}
+                Hagamos la prueba para matrices $2 \times 2$. La prueba en general es similar, pero requiere de un complicado manejo de índices.
+                \begin{enumerate}
+                    \item[E1.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(\Id_2)$ resulta en la matriz elemental:
+                    \begin{equation*}
+                    E= \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}.
+                    \end{equation*}
+                    Ahora bien,
+                    \begin{align*}
+                    E A&=\begin{bmatrix} c& 0\\ 0&1\end{bmatrix}
+                    \begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} \\
+                    &\qquad= 
+                    \begin{bmatrix} 
+                    c\,.\,a_{11} + 0 \,.\,a_{21}&c\,.\,a_{12}+0\,.\,a_{22}\\
+                    0\,.\,a_{11} + 1 \,.\,a_{21}&0\,.\,a_{12}+1\,.\,a_{22}\end{bmatrix} 
+                    =
+                    \begin{bmatrix} 
+                    c\,.\,a_{11}&c\,.\,a_{12}\\
+                    a_{21}&a_{22}\end{bmatrix} = e(A).
+                    \end{align*}
+                    De forma análoga se demuestra en el caso que la operación elemental sea  multiplicar la segunda fila por $c$.
+                    
+                    \item[E2.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(\Id_2)$ resulta en la matriz elemental: 
+                    \begin{equation*}
+                    E=\begin{bmatrix} 1& 0\\ c&1\end{bmatrix}.
+                    \end{equation*}
+                    Luego 
+                    \begin{equation*}
+                    EA= \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}	\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
+                    \begin{bmatrix} 
+                    a_{11} &a_{12}\\
+                    c\,.\,a_{11} + a_{21}&c\,.\,a_{12}+a_{22}\end{bmatrix} = e(A).
+                    \end{equation*}
+                    La demostración es análoga si la operación elemental es sumar a la fila 1 la fila 2 multiplicada por $c$.
+                    
+                    \item[E3.]  Finalmente, sea $e$ la operación elemental que intercambia la fila 1 por la fila 2. Entonces,  $E:=e(\Id_2)$ es la matriz 
+                    \begin{equation*}
+                    E=\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
+                    \end{equation*}
+                    Luego
+                    \begin{equation*}
+                    EA= \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}	\begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
+                    \begin{bmatrix}
+                    a_{21} &a_{22}\\
+                    a_{11} &a_{12}\end{bmatrix} = e(A).
+                    \end{equation*}
+                \end{enumerate}
+                
+    
+            \end{proof}
+            
+            
+            
+            
+            \begin{corolario}\label{coro-mrtx-elem}
+                Sean $A$ y $B$ matrices $m \times n$. Entonces $B$ equivalente por filas a $A$ si y sólo si $B=PA$ donde $P$ es  producto de matrices elementales. Más aún, si $B = e_k(e_{k-1}(\cdots(e_1(A))\cdots))$ con $e_1,e_2,\ldots,e_k$ operaciones elementales de fila y $E_i=e_i(\Id)$ para $i=1,\ldots,k$,  entonces $B =  E_kE_{k-1}\cdots E_1A$.
+            \end{corolario}
+            \begin{proof} 
+                \
+                
+                ($\Rightarrow$) Si $B$ equivalente por filas a $A$  existen operaciones elementales $e_1,\ldots,e_k$ tal que $B = e_k(e_{k-1}(\cdots(e_1(A))\cdots))$, más formalmente
+                \begin{equation*}
+                \text{si } A_1 = e_1(A)\text{ y } A_i = e_i(A_{i-1})\text{ para }i=2,\ldots,k\text{, entonces } e_k(A_{k-1})= B.
+                \end{equation*}
+                Sea $E_i = e_i(\Id_m)$, entonces, por el teorema anterior $A_1= E_1A$ y $A_i = E_iA_{i-1}$ ($i=2,\ldots,k$). Por  lo tanto $B=E_kA_{k-1}$, en otras palabras $B =  E_kE_{k-1}\cdots E_1A$, luego $P = E_kE_{k-1}\cdots E_1$.
+                
+                ($\Leftarrow$) Si $B= PA$, con  $P = E_kE_{k-1}\cdots E_1$ donde $E_i=e_i(\Id_m)$ es una matriz elemental,  entonces
+                $$
+                B = PA = E_kE_{k-1}\cdots E_1A \stackrel{\text{Teor. \ref{th-mrtx-elem}}}{=\joinrel=}  e_k(e_{k-1}(\cdots(e_1(A))\cdots)). 
+                $$
+                Por lo tanto, $B$ es equivalente por filas a $A$.
+            \end{proof} 
+            
+        \end{section}
+        
+        \begin{section}{Matrices invertibles}\label{seccion-matrices-invertibles}
+            \begin{definicion} Sea $A$ una  matriz $n \times n$ con coeficientes en $\K$. Una matriz $B \in M_{n\times n}(\K)$  es \textit{inversa  de $A$}\index{matriz!inversa} si $BA=AB=\Id_n$. En  ese caso,  diremos que  $A$ es \textit{invertible}.\index{matriz!invertible}
+            \end{definicion}
+            
+            \begin{ejemplo*}
+                La matriz $\begin{bmatrix} 2&-1\\0&1\end{bmatrix}$ tiene inversa 
+                $\begin{bmatrix} \frac12&\frac12\\0&1\end{bmatrix}$ pues es fácil comprobar que 
+                \begin{equation*}
+                \begin{bmatrix} 2&-1\\0&1\end{bmatrix}
+                \begin{bmatrix} \frac12&\frac12\\0&1\end{bmatrix} =
+                \begin{bmatrix} 1&0\\0&1\end{bmatrix}\quad\text{ y } \quad
+                \begin{bmatrix} \frac12&\frac12\\0&1\end{bmatrix} 
+                \begin{bmatrix} 2&-1\\0&1\end{bmatrix}=
+                \begin{bmatrix} 1&0\\0&1\end{bmatrix}.
+                \end{equation*}
+            \end{ejemplo*}
+ 
+            \begin{proposicion}
+                Sea $A  \in M_{n\times n}(\K)$, 
+                \begin{enumerate}
+                    \item	sean $B, C \in M_{n \times n}(\K)$ tales que $BA =\Id_n$ y $AC = \Id_n$, entonces $B=C$;
+                    \item  si $A$ invertible la inversa es única.
+                \end{enumerate}
+            \end{proposicion}
+            \begin{proof} (1)
+                \begin{equation*}
+                B = B\Id_n = B(AC) = (BA)C = \Id_nC = C.
+                \end{equation*}
+                
+                (2) Sean $B$ y $C$ inversas de $A$, es decir $BA=AB=\Id_n$ y  $CA=AC=\Id_n$. En particular, $BA=\Id_n$ y $AC= \Id_n$, luego, por (1), $B=C$.  
+            \end{proof}
+            
+            
+            
+            \begin{definicion}
+                Sea $A\in M_{n\times n}(\K)$ invertible. A la única matriz inversa de $A$ la llamamos \textit{la matriz inversa de $A$} y la denotamos $A^{-1}$.
+            \end{definicion}
+            
+            Veremos más adelante que si una matriz $n \times n$ admite una inversa a izquierda,  es decir si existe $B$ tal que $BA=\Id_n$, entonces la matriz es invertible. Lo mismo vale si $A$  admite inversa a derecha.
+            
+            \begin{ejemplo*}
+                Sea $A$ la matriz 
+                \begin{equation*}
+                \begin{bmatrix} 2&1&-2\\ 1&1&-2\\ -1&0&1
+                \end{bmatrix}.
+                \end{equation*}
+                Entonces,  $A$ es invertible y su inversa es
+                \begin{equation*}
+                A^{-1} = \begin{bmatrix} 1&-1&0\\ 1&0&2\\ 1&-1&1
+                \end{bmatrix}.
+                \end{equation*}
+                Esto se resuelve comprobando que $AA^{-1}=\Id_3$ (por lo dicho más arriba es innecesario comprobar que $A^{-1}A=\Id_3$).
+            \end{ejemplo*} 
+            
+            \begin{observacion*}
+                No toda matriz tiene inversa, por ejemplo  la  matriz nula (cuyos coeficientes son todos iguales a $0$) no tiene inversa pues $0\,.\, A= 0 \not= \Id$.  También existen matrices no nulas no invertibles,  por ejemplo la matriz 
+                \begin{equation*}
+                A = \begin{bmatrix} 2&1\\ 0&0\end{bmatrix}
+                \end{equation*}
+                no tiene inversa.
+                Si  multiplicamos a $A$ por una cualquier matriz  $B =[b_{ij}]$ obtenemos
+                \begin{equation*}
+                AB = \begin{bmatrix} 2&1\\ 0&0\end{bmatrix}
+                \begin{bmatrix} b_{11}&b_{12}\\ b_{21}&b_{22}\end{bmatrix} =
+                \begin{bmatrix} 2b_{11}+b_{21}&2b_{12}+b_{22}\\0 &0\end{bmatrix}.
+                \end{equation*}
+                Luego $AB$, al tener una fila idénticamente nula, no puede ser nunca la identidad. 
+            \end{observacion*}
+            
+            
+            
+            \begin{teorema}\label{th-prod-inv-impl-inv}
+                Sean $A$ y $B$ matrices $n \times n$ con coeficientes en $\K$. Entonces
+                \begin{enumerate}
+                    \item \label{inv-itm1} si $A$ invertible,  entonces $A^{-1}$  es invertible y su inversa es $A$,  es decir $(A^{-1})^{-1}=A$;
+                    \item \label{inv-itm2} si $A$ y $B$ son invertibles, entonces $AB$ es invertible y $(AB)^{-1} = B^{-1}A^{-1}$.
+                \end{enumerate}
+            \end{teorema}
+                \begin{proof}
+                    \ref{inv-itm1} La inversa a izquierda de $A^{-1}$ es $A$, pues $AA^{-1}=\Id_n$. Análogamente, la inversa a derecha de $A^{-1}$ es $A$, pues $A^{-1}A = \Id_n$. Concluyendo: $A$  es la inversa de $A^{-1}$.
+                    
+                    \ref{inv-itm2} Simplemente debemos comprobar que $B^{-1}A^{-1}$ es inversa a izquierda y derecha de $AB$:
+                    \begin{equation*}
+                    (B^{-1}A^{-1})AB = B^{-1}(A^{-1}A)B = B^{-1}\Id_nB =B^{-1}B = \Id_n,
+                    \end{equation*}
+                    y,  análogamente,
+                    \begin{equation*}
+                    AB(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = A\Id_nA^{-1} =AA^{-1} = \Id_n.
+                    \end{equation*} 
+                \end{proof}
+            
+            
+            \begin{observacion*}
+                Si $A_1,\ldots,A_k$  son invertibles,  entonces $A_1\ldots A_k$ es invertible y su inversa es  $$(A_1\ldots A_k)^{-1} = A_k^{-1}\ldots A_1^{-1} .$$
+                El resultado es una generalización del punto (2) del teorema anterior y su demostración se hace por inducción en $k$ (usando (2)  del teorema anterior). Se deja como ejercicio al lector. 
+            \end{observacion*}
+            
+            \begin{observacion*}
+                La suma de matrices invertibles no necesariamente es invertible, por ejemplo $A+ (-A)= 0$ que no es invertible. 
+            \end{observacion*}	
+            
+            
+            \begin{teorema}\label{th-elmental-impl-invertible}
+                Una matriz elemental es invertible.
+            \end{teorema}
+            \begin{proof}
+                Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ por la operación elemental $e$. Se $e_1$ la operación elemental inversa (teorema \ref{op-elem}) y $E_1 = e_1(\Id_n)$. Entonces 
+                \begin{align*}
+                EE_1 &= e(e_1(\Id_n)) = \Id_n \\
+                E_1E &= e_1(e(\Id_n)) = \Id_n.
+                \end{align*}
+                Luego  $E_1 = E^{-1}$. 
+            \end{proof}	
+            
+            
+            \begin{ejemplo*}
+                Es fácil encontrar explícitamente la matriz inversa de una matríz elemental, por ejemplo, en el caso $2 \times 2$ tenemos:
+                \begin{enumerate}
+                    \item Si $c \not=0$,
+                    \begin{equation*}
+                    \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}^{-1}=\begin{bmatrix} 1/c& 0\\ 0&1\end{bmatrix}
+                    \;\text{ y }\; \begin{bmatrix} 1& 0\\ 0&c\end{bmatrix}^{-1}=\begin{bmatrix} 1& 0\\ 0&1/c\end{bmatrix},
+                    \end{equation*}
+                    \item si  $c \in \K$, ,
+                    \begin{equation*}
+                    \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}^{-1}=\begin{bmatrix} 1& 0\\ -c&1\end{bmatrix}
+                    \;\text{ y }\; \begin{bmatrix} 1& c\\ 0&1\end{bmatrix}^{-1}=\begin{bmatrix} 1& -c\\ 0&1\end{bmatrix}.
+                    \end{equation*}
+                    \item Finalmente, 
+                    \begin{equation*}
+                    \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix} ^{-1}= 	\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
+                    \end{equation*}
+                \end{enumerate}
+            En  el caso general tenemos:
+            
+            (1) 
+            \begin{align*}
+            &\begin{matrix}
+            {}^{}&{}^{}&{}^{}&{}^{}&{}^{}&\overset{k}{\downarrow}&{}^{}&{}^{}&{}^{}
+            \end{matrix} \\
+            \text{La inversa de \quad}\begin{matrix}
+            {}^{}\\
+            {}^{}\\
+            \overset{k}{\to}\\
+            {}^{}\\
+            {}^{}
+            \end{matrix}
+            &\begin{bmatrix}
+            1 & 0 &  &\cdots & 0  \\
+            \vdots  & \ddots  & & & \vdots \\
+            0 & \cdots &c &\cdots &0 \\
+            \vdots  &   & &\ddots & \vdots \\
+            0  & \cdots  & &\cdots & 1
+            \end{bmatrix}
+            \text{\quad es \quad}
+            \begin{bmatrix}
+            1 & 0 &  &\cdots & 0  \\
+            \vdots  & \ddots  & & & \vdots \\
+            0 & \cdots &1/c &\cdots &0 \\
+            \vdots  &   & &\ddots & \vdots \\
+            0  & \cdots  & &\cdots & 1
+            \end{bmatrix}
+            \end{align*}
+            
+            (2)
+            \begin{align*}
+            &\begin{matrix}
+            {}^{}&{}^{}&{}^{}&{}^{}&{}^{}&\overset{r}{\downarrow}&{}^{}&{}^{}&{}^{}{}^{}\overset{s}{\downarrow}&{}^{}
+            \end{matrix} \\
+            \text{La inversa de \quad}\begin{matrix}
+            {}^{}\\{}^{}\\
+            \overset{r}{\to}\\
+            {}^{}\\
+            {}^{}\\
+            {}^{}
+            \end{matrix}
+            &\begin{bmatrix}
+            1 & 0 &  &\cdots &&& 0  \\
+            \vdots  & \ddots  & & &&& \vdots \\
+            0 & \cdots &1 &\cdots&c&\cdots &0 \\
+            \vdots  &   & &\ddots &&& \vdots \\
+            \vdots  &   & & &\ddots&& \vdots \\
+            0  & \cdots  & &\cdots &&& 1
+            \end{bmatrix}
+            \text{\quad es \quad}
+            \begin{bmatrix}
+            1 & 0 &  &\cdots &&& 0  \\
+            \vdots  & \ddots  & & &&& \vdots \\
+            0 & \cdots &1 &\cdots&-c&\cdots &0 \\
+            \vdots  &   & &\ddots &&& \vdots \\
+            \vdots  &   & & &\ddots&& \vdots \\
+            0  & \cdots  & &\cdots &&& 1
+            \end{bmatrix}
+            \end{align*}
+            
+            (3)
+            
+            \begin{align*}
+            &\begin{matrix}
+            {}^{}&{}^{}&{}^{}&{}^{}&{}^{}&\overset{r}{\downarrow}&{}^{}&{}^{}&{}^{}{}^{}\overset{s}{\downarrow}&{}^{}
+            \end{matrix} \\
+            \text{La inversa de \quad}\begin{matrix}
+            {}^{}\\{}^{}\\
+            \overset{r}{\to}\\
+            {}^{}\\
+            \overset{s}{\to}\\{}^{}\\
+            {}^{}
+            \end{matrix}
+            &\begin{bmatrix}
+            1 & \cdots &  &\cdots &&\cdots& 0  \\
+            \vdots  & \ddots  & & &&& \vdots \\
+            0 & \cdots &0 &\cdots&1&\cdots &0 \\
+            \vdots  &   & &\ddots &&& \vdots \\
+            0  & \cdots  &1 &\cdots &0& \cdots& 0 \\
+            \vdots  &   & & &&\ddots& \vdots \\
+            0  & \cdots  & &\cdots &&\cdots& 1
+            \end{bmatrix}
+            \text{\quad es la misma matriz.\quad}
+            \end{align*}
+        
+                        
+        
+    
+\end{ejemplo*}
+        
+        
+            
+            
+            \begin{teorema}\label{mtrx-inv-equiv} Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Las siguientes afirmaciones son equivalentes
+                \begin{enumerate}
+                    \item[\textit{i})] $A$ es invertible,
+                    \item[\textit{ii})] $A$  es equivalente por filas a $\Id_n$, 
+                    \item[\textit{iii})] $A$ es producto de matrices elementales.
+                \end{enumerate}
+            \end{teorema}
+            \begin{proof}
+                \
+
+                
+                \textit{i}) $\Rightarrow$ \textit{ii})\; Sea $R$ la matriz escalón reducida por fila equivalente por filas a $A$. Entonces,  existen $E_1,\ldots,E_k$ matrices elementales tal que $E_1,\ldots,E_kA = R$. Como las matrices elementales son invertibles, el producto de matrices elementales es invertible, luego  $E_1,\ldots,E_k$ es invertible y por lo tanto $R=E_1,\ldots,E_kA$ es invertible. 
+                
+                Recordemos que las matrices escalón reducidas por fila si tienen filas nulas, ellas se encuentran al final.  Ahora bien,  si la última fila de $R$ es nula entonces,  $RB$ tiene la última fila nula también y por lo tanto no puede ser igual a la identidad, es decir, en ese caso $R$ no es invertible, lo cual produce un absurdo. Concluyendo: la última fila (la fila $n$) de $R$ no es nula y como es MERF, $R$ no tiene filas nulas. Por lo tanto $R=\Id_n$ (lema \ref{lem-mtrx-merf-id}) y,  entonces, $A$ es equivalente por filas a $\Id_n$. 
+                
+                \textit{ii}) $\Rightarrow$ \textit{iii})\; Como $A$  es equivalente por filas a $\Id_n$, al ser la equivalencia por filas una relación de equivalencia,  tenemos que $\Id_n$ es equivalente por filas a $A$, es decir  existen $E_1,\ldots,E_k$ matrices elementales, tales que $E_1E_2,\ldots,E_k\Id_n = A$. Por lo tanto, $A =E_1E_2,\ldots,E_k$ producto de matrices elementales.
+                
+                \textit{iii}) $\Rightarrow$ \textit{i}) \; Sea $A = E_1E_2,\ldots,E_k$ donde $E_i$  es una matriz elemental ($i=1,\ldots,k$). Como cada $E_i$ es invertible,  el producto de ellos es invertible,  por lo tanto $A$ es invertible.
+            \end{proof}	
+            
+            \begin{corolario}
+                Sean $A$ y $B$ matrices $m \times n$. Entonces,   $B$ es equivalente por filas a $A$ si y sólo si existe matriz invertible $P$ de orden $m \times m$ tal que $B =PA$ . 
+            \end{corolario}
+            \begin{proof}
+                
+                \
+                
+                ($\Rightarrow$) $B$ es equivalente por filas a $A$,  luego existe $P$ matriz producto de matrices elementales tal que $B =PA$. Como cada matriz elemental es invertible (teorema \ref{th-elmental-impl-invertible}) y el producto de matrices invertibles es invertible (teorema  \ref{th-prod-inv-impl-inv}\ref{inv-itm2}), se deduce que $P$ es invertible. 
+                
+                ($\Leftarrow$) Sea  $P$  matriz invertible tal que $B =PA$. Como $P$ es invertible, por el teorema anterior, $P$ es producto de matrices elementales, luego $B =PA$ es equivalente por filas a $A$.
+            \end{proof}	
+            
+            \begin{corolario}\label{mtrx-inv-gauss}
+                Sea $A$ matriz $n \times n$. Sean $e_1,\ldots,e_k$ las operaciones elementales por filas que reducen a $A$  a una MERF y esta MERF es la identidad,  es decir $e_1(e_{2}(\cdots(e_k(A))\cdots)) =\Id_n$. Entonces, $A$ invertible y  las mismas operaciones elementales aplicadas a $\Id_n$ nos llevan a $A^{-1}$,  es decir $e_1(e_{2}(\cdots(e_k(\Id_n))\cdots)) =A^{-1}$.
+            \end{corolario}
+            \begin{proof} Por el teorema anterior, al ser $A$ equivalente por filas a la identidad, $A$ es invertible.  
+                Sean las matrices elementales  $E_i = e_i(\Id_n)$ para $i=1,\ldots,k$,  entonces (ver corolario \ref{coro-mrtx-elem}) $E_1E_2\ldots E_kA = \Id_n$, por lo tanto, multiplicando por $A^{-1}$ a derecha en ambos miembros,    
+                \begin{align*}
+                E_1E_2\ldots E_kA A^{-1}&= \Id_nA^{-1} \quad \Leftrightarrow \\
+                E_1E_2\ldots E_k\Id_n&= A^{-1} \quad \Leftrightarrow \\
+                e_1(e_{2}(\cdots(e_k(\Id_n))\cdots)) &=A^{-1}.
+                \end{align*}
+            \end{proof}
+            
+            Este último corolario nos provee un método sencillo para calcular la inversa de una matriz $A$ (invertible). Primero,  encontramos $R = \Id_n$ la MERF  equivalente por filas a $A$, luego, aplicando la mismas operaciones elementales a $\Id_n$, obtenemos la inversa de $A$. Para facilitar el cálculo es  conveniente comenzar con $A$ e $\Id_n$ e ir aplicando paralelamente las operaciones elementales por fila. Veamos un ejemplo.
+
+            \begin{ejemplo*}
+                Calculemos la inversa (si tiene) de 
+                \begin{equation*}
+                A=\begin{bmatrix}2&-1\\1&3 \end{bmatrix}.
+                \end{equation*}
+            \end{ejemplo*}
+            \begin{proof}[Solución] Por lo que ya hemos demostrado 1) si $A$ tiene inversa es reducible por filas a la identidad, 2) las operaciones que llevan a $A$ a la identidad, llevan también la identidad  a $A^{-1}$. Luego  trataremos de reducir por filas a $A$ y todas las operaciones elementales las haremos en paralelo partiendo de la matriz identidad:
+                %$$
+                %\left[\begin{array}{@{}*{4}{c}|c@{}}
+                %1 & 0 & 3 & -1 & 0 \\
+                %0 & 1 & 1 & -1 & 0 \\
+                %0 & 0 & 0 & 0 & 0 \\
+                %\end{array}\right]
+                %$$
+                \begin{align*}
+                [A|\Id] &= \left[\begin{array}{cc|cc}2&-1 &  1&0\\1&3& 0&1\end{array}\right] 
+                \stackrel{F_1\leftrightarrow F_2}{\longrightarrow} 
+                \left[\begin{array}{cc|cc}1&3& 0&1\\2&-1 &  1&0 \end{array}\right]
+                \stackrel{F_2-2 F_1}{\longrightarrow}
+                \left[\begin{array}{cc|cc}1&3& 0&1\\0&-7 &  1&-2 \end{array}\right]
+                \stackrel{F_2/(-7)}{\longrightarrow}\\
+                &\quad\longrightarrow 
+                \left[\begin{array}{cc|cc}1&3& 0&1\\0&1 &  -\frac17&\frac27\end{array}\right]
+                \stackrel{F_1-3 F_2}{\longrightarrow}
+                \left[\begin{array}{cc|cc}1&0&  \frac37&\frac17\\0&1 &  -\frac17&\frac27 \end{array}\right].
+                \end{align*}
+                Luego, como $A$ se reduce por filas a la identidad, $A$ es invertible y su inversa es  
+                \begin{equation*}
+                A^{-1}=\begin{bmatrix}\frac37&\frac17\\-\frac17&\frac27 \end{bmatrix}.
+                \end{equation*}
+                El lector desconfiado  podrá comprobar, haciendo el producto de matrices, que $AA^{-1} = A^{-1}A=\Id_2$.
+            \end{proof}
+            
+            
+            \begin{teorema}\label{mtrx-inv-equiv2} 
+                Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces,  las siguientes afirmaciones son equivalentes. 
+                \begin{enumerate}
+                    \item[\textit{i})] $A$ es invertible.
+                    \item[\textit{ii})] El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
+                    \item[\textit{iii})] El sistema homogéneo $AX=0$ tiene una única solución trivial.
+                \end{enumerate}
+            \end{teorema}
+            \begin{proof}
+                
+                \
+                
+                \textit{i}) $\Rightarrow$  \textit{ii}) Sea $X_0$ solución del sistema $AX=Y$, luego
+                \begin{equation*}
+                AX_0=Y  \quad \Rightarrow \quad  A^{-1}AX_0 = A^{-1}Y  \quad \Rightarrow \quad  X_0 = A^{-1}Y.
+                \end{equation*}
+                Es decir, $X_0$ es único (siempre igual  a $A^{-1}Y$).  
+                
+                
+                \textit{ii}) $\Rightarrow$  \textit{iii}) Es trivial, tomando $Y =0$.
+                
+                
+                
+                \textit{iii}) $\Rightarrow$  \textit{i}) Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ invertible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por teorema \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=\Id_n$. Luego $A$ es equivalente por filas a $\Id_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es invertible. 			
+                
+            \end{proof}
+            
+            \begin{corolario}
+                Sea $A$ una matriz $n \times n$ con coeficientes  en $\K$. Si $A$ tiene inversa a izquierda,  es decir si existe $B$ matriz $n \times n$ tal que $BA=\Id_n$,   entonces $A$ es invertible.  Lo mismo vale si $A$ tiene inversa a derecha. 
+            \end{corolario}	
+            \begin{proof}
+                Supongamos que  $A$ tiene inversa a izquierda y  que $B$ sea la inversa a izquierda,  es decir $BA=\Id_n$. El sistema $AX=0$ tiene una única solución, pues $AX_0=0 \Rightarrow BAX_0=B0 \Rightarrow X_0=0$. Luego, $A$  es invertible (y su inversa es $B$). 
+                
+                Supongamos que  $A$ tiene inversa a derecha y  que $C$ sea la inversa a derecha, es decir $AC=\Id$. Por lo demostrado más arriba, $C$ es invertible y su inversa es $A$, es decir $AC=\Id$ y $CA=\Id$, luego $A$  es invertible. 
+            \end{proof}	
+            
+            
+            
+            Terminaremos la  sección calculando algunas matrices inversas usando el corolario  \ref{mtrx-inv-gauss}. 
+            
+            \begin{ejemplo*}
+                Calcular la inversa (si tiene) de la matriz $A=\begin{bmatrix}
+                1&-1&2\\ 3&2&4\\ 0&1&-2
+                \end{bmatrix}$. 
+            \end{ejemplo*}
+            \begin{proof}[Solución]
+                %\left[\begin{array}{cc|cc}2&-1 &  1&0\\1&3& 0&1\end{array}\right] 
+                \begin{align*} 
+                &\left[\begin{array}{rrr|rrr}	1&-1&2&1&0&0\\ 3&2&4&0&1&0\\ 0&1&-2&0&0&1 \end{array}\right]
+                \stackrel{F_2-3 F_1}{\longrightarrow}
+                \left[\begin{array}{rrr|rrr}	1&-1&2
+                &1&0&0\\ 0&5&-2&-3&1&0\\ 0&1&-2&0&0&1 \end{array}\right]
+                \stackrel{F_2\leftrightarrow F_3}{\longrightarrow} \\
+                &\longrightarrow 
+                \left[\begin{array}{rrr|rrr}	1&-1&2&1&0&0\\ 0&1&-2&0&0&1 \\ 0&5&-2&-3&1&0 \end{array}\right]
+                \stackrel{F_1 + F_2}{\longrightarrow}
+                \left[\begin{array}{rrr|rrr}	1&0&0&1&0&1\\ 0&1&-2&0&0&1 \\ 0&5&-2&-3&1&0 \end{array}\right]
+                \stackrel{F_3-5F_2}{\longrightarrow} \\
+                &\longrightarrow
+                \left[\begin{array}{rrr|rrr}	1&0&0&1&0&1\\ 0&1&-2&0&0&1 \\ 0&0&8&-3&1&-5 \end{array}\right]
+                \stackrel{F_3/8}{\longrightarrow}
+                \left[\begin{array}{rrr|rrr}	1&0&0&1&0&1\\ 0&1&-2&0&0&1 \\ 0&0&1&-\frac38&\frac18&-\frac58 \end{array}\right]
+                \stackrel{F_2+2F_3}{\longrightarrow} \\
+                &\longrightarrow
+                \left[\begin{array}{rrr|rrr}	1&0&0&1&0&1\\ 0&1&0&-\frac34&\frac14&-\frac14 \\ 0&0&1&-\frac38&\frac18&-\frac58 \end{array}\right].
+                \end{align*}
+                
+                Por lo tanto 
+                \begin{equation*}
+                A^{-1} = 	\begin{bmatrix*}[r]	1&0&1\\ -\frac34&\frac14&-\frac14 \\ -\frac38&\frac18&-\frac58 \end{bmatrix*}
+                \end{equation*}
+            \end{proof}
+            
+            \begin{ejemplo*}\label{inv-2x2-0}
+                Dados $a,b,c,d \in \mathbb R$, determinar cuando la matriz $A = \begin{bmatrix*} a&b\\c&d\end{bmatrix*}$  es invertible y en ese caso,  cual es su inversa. 
+            \end{ejemplo*}
+            \begin{proof}[Solución] Para poder aplicar el método de Gauss, debemos ir haciendo casos. 
+                
+                1) Supongamos que  $a\not=0$, entonces 
+                \begin{equation*}
+                \begin{bmatrix}a&b\\c&d\end{bmatrix} \stackrel{F_1/a}{\longrightarrow}
+                \begin{bmatrix}1&\dfrac{b}{a}\\[6pt]c&d\end{bmatrix} \stackrel{F_2 -cF_1}{\longrightarrow}
+                \begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&d- c\dfrac{b}{a}\end{bmatrix} =
+                \begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&\dfrac{ad-bc}{a}\end{bmatrix}
+                \end{equation*}   
+                Si $ad-bc=0$,  entonces la matriz se encuentra reducida por filas y la última fila es $0$, luego en ese caso no es invertible.  Si $ad-bc\not=0$, entonces
+                \begin{equation*}
+                \begin{bmatrix}1&\dfrac{b}{a}\\[8pt]0&\dfrac{ad-bc}{a}\end{bmatrix} \stackrel{a/(ad-bc)\,F_2}{\longrightarrow}
+                \begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&1\end{bmatrix}
+                \stackrel{F1-b/a\,F_2}{\longrightarrow}
+                \begin{bmatrix}1&0\\0&1\end{bmatrix}.
+                \end{equation*} 
+                Luego, en el caso $a\not=0$, $ad-bc\not=0$ hemos reducido por filas la matriz $A$  a la identidad y por lo tanto $A$  es invertible. Además, podemos encontrar $A^{-1}$ aplicando a $\Id$ las mismas operaciones elementales que reducían $A$ a la identidad:
+                \begin{align*}
+                \begin{bmatrix}1&0\\0&1\end{bmatrix} 
+                &\stackrel{F_1/a}{\longrightarrow}
+                \begin{bmatrix}\dfrac1a&0\\[8pt]0&1\end{bmatrix} 
+                \stackrel{F_2 -cF_1}{\longrightarrow}
+                \begin{bmatrix*}[r]\dfrac1a&0\\[8pt]-\dfrac{c}{a}&1\end{bmatrix*}
+                \stackrel{a/(ad-bc)\,F_2}{\longrightarrow}
+                \begin{bmatrix*}[c]\dfrac1a&0\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*}
+                \stackrel{F1-b/a\,F_2}{\longrightarrow}
+                \\&\longrightarrow			
+                \begin{bmatrix*}[c]\dfrac1a+\dfrac{bc}{a(ad-bc)}&-\dfrac{b}{ad-bc}\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*} 
+                =
+                \begin{bmatrix*}[c]\dfrac{d}{ad-bc}&-\dfrac{b}{ad-bc}\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*} .
+                \end{align*}  
+                Concluyendo, en el caso $a\not=0$, $ad-bc\not=0$, $A$  es invertible y 
+                \begin{equation}\label{inv-2x2}
+                A^{-1} = \dfrac{1}{ad-bc}
+                \begin{bmatrix*}[c]d&-b\\-c&a\end{bmatrix*}.
+                \end{equation}
+                
+                2) Estudiemos el caso $a=0$. Primero observemos que si $c=0$ o $b=0$ , entonces la matriz no es invertible, pues en ambos casos nos quedan matrices que no pueden ser reducidas por fila a la identidad. Luego la matriz puede ser invertible si $bc\not=0$ y en este caso la reducción por filas es:
+                \begin{equation*}
+                \begin{bmatrix}0&b\\c&d\end{bmatrix} \stackrel{F_1\leftrightarrow F_2}{\longrightarrow}
+                \begin{bmatrix}c&d\\0&b\end{bmatrix} \stackrel{F_1/c}{\longrightarrow}
+                \begin{bmatrix}1&\dfrac{d}{c}\\[6pt]0&b\end{bmatrix} \stackrel{F_2/b}{\longrightarrow}
+                \begin{bmatrix}1&\dfrac{d}{c}\\[6pt]0&1\end{bmatrix}
+                \stackrel{F_1 - d/c F_2}{\longrightarrow}
+                \begin{bmatrix}1&0\\0&1\end{bmatrix}.
+                \end{equation*}   
+                Luego $A$  es invertible y aplicando estas mismas operaciones elementales a la identidad  obtenemos la inversa:
+                \begin{equation*}
+                \begin{bmatrix}1&0\\0&1\end{bmatrix} \stackrel{F_1\leftrightarrow F_2}{\longrightarrow}
+                \begin{bmatrix}0&1\\1&0\end{bmatrix} \stackrel{F_1/c}{\longrightarrow}
+                \begin{bmatrix}0&\dfrac{1}{c}\\[6pt]1&0\end{bmatrix} \stackrel{F_2/b}{\longrightarrow}
+                \begin{bmatrix}0&\dfrac{1}{c}\\[6pt]\dfrac{1}{b}&0\end{bmatrix}
+                \stackrel{F_1 - d/c F_2}{\longrightarrow}
+                \begin{bmatrix}-\dfrac{d}{bc}&\dfrac{1}{c}\\[6pt]\dfrac{1}{b}&0\end{bmatrix}.
+                \end{equation*}  
+                Luego, en el caso  que $a=0$, entonces $A$ invertible si  $b c\not=0$ y su inversa es
+                \begin{equation*}
+                A^{-1} = \begin{bmatrix}-\dfrac{d}{bc}&\dfrac{1}{c}\\[6pt]\dfrac{1}{b}&0\end{bmatrix} = 
+                \dfrac{1}{-bc}
+                \begin{bmatrix*}[c]d&-b\\-c&0\end{bmatrix*}.
+                \end{equation*}
+                Es decir, la expresión de la inversa es igual a (\ref{inv-2x2}) (considerando que  $a=0$).
+                
+                Reuniendo los dos casos:  $A$ es invertible si $a\not=0$ y  $ad-bc\not=0$ o si $a=0$ y $bc\not=0$, pero esto es lógicamente equivalente a pedir solamente  $ad-bc\not=0$, es decir
+                \begin{equation*}
+                (a\not=0 \wedge ad-bc\not=0) \vee (a=0 \wedge bc\not=0)\; \Leftrightarrow\; ad-bc\not=0
+                \end{equation*}
+                (ejercicio).
+                
+                Resumiendo, $\begin{bmatrix*} a&b\\c&d\end{bmatrix*}$ es invertible  $\Leftrightarrow ad-bc\not=0$  y en ese caso,  su inversa viene dada por 
+                \begin{equation}
+                \begin{bmatrix*} a&b\\c&d\end{bmatrix*}^{-1} =  \dfrac{1}{ad-bc}
+                \begin{bmatrix*}[c]d&-b\\-c&a\end{bmatrix*}
+                \end{equation} 
+
+                Veremos en la próxima sección que el uso de determinantes permitirá establecer la generalización de este resultado para matrices $n \times n$ con $n\ge 1$.
+                
+            \end{proof}
+            
+        \end{section}
+        
+        
+    \begin{section}{Determinante}\label{seccion-determinate}
+    El determinante puede ser pensado como una función que a cada matriz cuadrada $n \times n$ con coeficientes en $\K$,  le asocia un elemento de $\K$. En  esta sección veremos como se define esta función y algunas propiedades de la misma. Algunas  demostraciones se omitirán, pues se pondrá énfasis en los usos del determinante y no tanto en sus propiedades teóricas. Las demostraciones faltantes se pueden ver en el Apéndice \ref{apend.Determinante}.
+    
+    El determinante, permite, entre otras cosas, 
+    \begin{itemize}
+        \item determinar si  una matriz cuadrada es invertible,
+        \item dar una fórmula cerrada para la inversa de una matriz invertible.
+    \end{itemize}
+    Como consecuencia de lo anterior, el determinante permite determinar si un sistema de $n$  ecuaciones lineales con $n$ incógnitas admite una única solución o no, y en el caso de que exista una única solución, dar una fórmula cerrada de esa solución. 
+    
+    Una forma de definir determinante es con una fórmula cerrada que usa el \textit{grupo de permutaciones.}\index{grupo de permutaciones} Esta forma de definir determinante está fuera del alcance de este curso. La forma  que usaremos nosotros para definir determinante es mediante una definición recursiva: para calcular el determinante de una matriz $n \times n$, usaremos el cálculo  del determinante para matrices $n-1 \times n-1$,  que a su vez se calcula usando el determinante de matrices $n-2 \times n-2$ y así sucesivamente hasta llegar al caso base, que es el caso  de matrices $1 \times 1$.
+
+    \vskip .3cm
+
+    \begin{definicion} Sea $A \in M_n(\K)$. Sean  $i, j$ tal que  $1 \le i,j \le n$. Entonces
+        $A(i|j)$ es la matriz $n-1 \times n-1$ que se obtiene eliminando la fila $i$ y la columna $j$ de $A$.
+    \end{definicion}
+    
+    \begin{ejemplo*}
+        Sea $A= \begin{bmatrix}1&-1&3\\4&2&-5 \\ 0&7&3\end{bmatrix}$,  entonces
+        \begin{equation*}
+        A(1|1)= \begin{bmatrix} 2&-5 \\ 7&3\end{bmatrix}, \qquad
+        A(2|3)= \begin{bmatrix} 1&-1\\0&7\end{bmatrix}, \qquad
+        A(3|1)= \begin{bmatrix} -1&3\\2&-5 \end{bmatrix}.
+        \end{equation*}
+    \end{ejemplo*}		
+
+    \vskip .3cm
+
+    \begin{definicion}
+        Sea $n \in \mathbb N$ y $A =[a_{ij}] \in M_n(\K)$ , entonces el \textit{determinante de $A$}\index{determinante}, denotado $\det(A)$ se define como:
+        \begin{enumerate}
+            \item[(1)] si $n=1$,  $\det([a]) =a$;
+            \item[($n$)] si $n >1$, 
+            \begin{align*}
+            \det(A) &=  a_{11}\det A(1|1) - a_{21}\det A(2|1) + \cdots + (-1)^{1+n}  a_{n1}\det A(n|1) \\
+            &= \sum_{i=1}^{n} (-1)^{1+i}  a_{i1}\det A(i|1).
+            \end{align*}
+        \end{enumerate}
+        Si  $1 \le i,j \le n$, al número $\det A(i|j)$ se lo llama el \textit{menor $i,j$ de $A$}\index{menores de una matriz}\index{matriz!menores} y a $C^A_{ij}:= (-1)^{i+j} \det A(i|j)$ se lo denomina  el \textit{cofactor $i,j$ de $A$.}\index{cofactores de una matriz}\index{matriz!cofactores} Si la matriz $A$ está sobreentendida se denota, a veces, $C_{ij} := C^A_{ij}$.
+    \end{definicion}
+    
+    Observemos, que con las definiciones introducidas  tenemos
+    \begin{equation}\label{def-determinante}
+    \det(A) = \sum_{i=1}^{n}  a_{i1}C^A_{i1}.
+    \end{equation}
+    A este cálculo  se lo denomina \textit{calculo del determinante por desarrollo por la primera columna}, debido  a que usamos los coeficientes de la primera columna,  multiplicados por los cofactores correspondientes. A veces, para simplificar,  denotaremos
+    $$
+    |A| := \det A.
+    $$
+    
+    \begin{obs*}[\textsc{Determinantes $\mathbf{2 \times 2}$}] Calculemos el determinante de las matrices $2 \times 2$. Sea 
+        $$A=\begin{bmatrix}a&b\\c&d\end{bmatrix},$$  entonces
+        $$
+        \det A = a \det [d] - c \det [b] = ad-bc.
+        $$
+        
+       Cuando estudiamos la matrices invertibles $2\times 2$ (ejemplo de p. \pageref{inv-2x2-0}), vimos que $A$ es invertible si y solo si $ ad-bc \not=0$,  es decir 
+        \begin{equation}
+        \text{\textit{$A$ es invertible si y solo si $ \det A \not=0$.}}
+        \end{equation}
+        Este resultado se generaliza para matrices $n \times n$. Más aún, la fórmula (\ref{inv-2x2}),  que aquí reescribimos como
+        \begin{equation*}
+            A^{-1} = \dfrac{1}{\det(A)}
+            \begin{bmatrix*}[c]C_{11}&C_{12}\\C_{21}&C_{22}\end{bmatrix*},
+        \end{equation*} se generaliza también para matrices cuadradas de cualquier dimensión (ver el corolario \ref{cor-inv-x-det}).
+    \end{obs*}
+    
+    
+    \begin{observacion*}[{\textsc{Determinantes $\mathbf{3 \times 3}$}}]  Calculemos el determinante de las matrices $3 \times 3$. Sea 
+        $$A=\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{bmatrix},$$  entonces
+        \begin{align*}
+        \det A &= a_{11}\left|\begin{matrix}a_{22}&a_{23}\\a_{32}&a_{33}\end{matrix}\right|
+        - a_{21}\left|\begin{matrix}a_{12}&a_{13}\\a_{32}&a_{33}\end{matrix}\right|
+        + a_{31}\left|\begin{matrix}a_{12}&a_{13}\\a_{22}&a_{23}\end{matrix}\right|\\
+        &= a_{11}(a_{22}a_{33}- a_{23}a_{32})
+        - a_{21}(a_{12}a_{33}-a_{13}a_{32}) 
+        + a_{31}(a_{12}a_{23} - a_{13}a_{22}) \\
+        &=a_{11}a_{22}a_{33}- a_{11}a_{23}a_{32} 
+        - a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
+        - a_{13}a_{22}a_{31}.	
+        \end{align*}
+        
+        Observar que  el determinante de una matriz $3 \times 3$ es una sumatoria de seis términos cada uno de los cuales es de la forma $\pm a_{1\,i_1}a_{2\,i_2}a_{3\,i_3}$ e $i_1i_2i_3$ puede ser cualquier permutación de $123$. La fórmula 
+        \begin{equation}\label{det3x3}
+        \det A =a_{11}a_{22}a_{33}- a_{11}a_{23}a_{32} 
+        - a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
+        - a_{13}a_{22}a_{31},
+        \end{equation} 
+        no es fácil de recordar, pero existe un procedimiento sencillo que nos permite obtenerla y es el siguiente: 
+        \begin{enumerate}
+            \item a la matriz original le agregamos las dos primeras filas al final, 
+            \item ``sumamos''  cada producto de las diagonales descendentes y ``restamos'' cada producto de las diagonales ascendentes.
+        \end{enumerate}
+            
+        %prueba y otra 
+        \begin{equation}
+        \begin{tikzpicture}[baseline=(A.center)]
+        \tikzset{node style ge/.style={circle}}
+        \tikzset{BarreStyle/.style =   {opacity=.4,line width=0.5 mm,line cap=round,color=#1}}
+        \tikzset{SignePlus/.style =   {above left,,opacity=1}}
+        \tikzset{SigneMoins/.style =   {below left,,opacity=1}}
+        % les matrices
+        \matrix (A) [matrix of math nodes, nodes = {node style ge},,column sep=0 mm] 
+        { a_{11} & a_{12} & a_{13}  \\
+            a_{21} & a_{22} & a_{23}  \\
+            a_{31} & a_{32} & a_{33}  \\
+            a_{11} & a_{12} & a_{13} \\
+            a_{21} & a_{22} & a_{13}\\
+        };
+        
+        \draw [BarreStyle=blue] (A-1-1.north west) node[SignePlus=blue] {$+$} to (A-3-3.south east) ;
+        \draw [BarreStyle=blue] (A-2-1.north west) node[SignePlus=blue] {$+$} to (A-4-3.south east) ;
+        \draw [BarreStyle=blue] (A-3-1.north west) node[SignePlus=blue] {$+$} to (A-5-3.south east) ;
+        \draw [BarreStyle=red]  (A-3-1.south west) node[SigneMoins=red] {$-$} to (A-1-3.north east);
+        \draw [BarreStyle=red]  (A-4-1.south west) node[SigneMoins=red] {$-$} to (A-2-3.north east);
+        \draw [BarreStyle=red]  (A-5-1.south west) node[SigneMoins=red] {$-$} to (A-3-3.north east);
+        \end{tikzpicture}
+        \end{equation}
+        
+        Es decir,
+        \begin{enumerate}
+            \item[(a)]  se suman  $a_{11}a_{22}a_{33}$, $a_{21}a_{32}a_{13}$, $a_{31}a_{12}a_{23}$,  y
+            \item[(b)]  se restan  $a_{31}a_{22}a_{13}$,  $a_{11}a_{32}a_{23}$,  $a_{21}a_{12}a_{33}$. 
+        \end{enumerate}
+    \end{observacion*}
+    
+    \begin{ejemplo*}
+        Calcular el determinante de 
+        $$ A = \begin{bmatrix}1&-2&2\\3&-1&1\\2&5&4\end{bmatrix}.$$
+        
+        La forma más sencilla es ampliando la matriz y calculando:
+        \begin{equation*}
+        \begin{tikzpicture}[baseline=(A.center)]
+        \tikzset{node style ge/.style={circle}}
+        \tikzset{BarreStyle/.style =   {opacity=.4,line width=0.5 mm,line cap=round,color=#1}}
+        \tikzset{SignePlus/.style =   {above left,,opacity=1}}
+        \tikzset{SigneMoins/.style =   {below left,,opacity=1}}
+        % les matrices
+        \matrix (A) [matrix of math nodes, nodes = {node style ge},,column sep=0 mm] 
+        { 1&-2&2  \\
+            3&-1&1  \\
+            2&5&4  \\
+            1&-2&2 \\
+            3&-1&1\\
+        };
+        
+        \draw [BarreStyle=blue] (A-1-1.north west) node[SignePlus=blue] {$+$} to (A-3-3.south east) ;
+        \draw [BarreStyle=blue] (A-2-1.north west) node[SignePlus=blue] {$+$} to (A-4-3.south east) ;
+        \draw [BarreStyle=blue] (A-3-1.north west) node[SignePlus=blue] {$+$} to (A-5-3.south east) ;
+        \draw [BarreStyle=red]  (A-3-1.south west) node[SigneMoins=red] {$-$} to (A-1-3.north east);
+        \draw [BarreStyle=red]  (A-4-1.south west) node[SigneMoins=red] {$-$} to (A-2-3.north east);
+        \draw [BarreStyle=red]  (A-5-1.south west) node[SigneMoins=red] {$-$} to (A-3-3.north east);
+        \end{tikzpicture}.
+        \end{equation*}
+        Luego 
+        \begin{equation*}
+        \begin{matrix*}[l]
+        \det A &= 1\times (-1) \times 4 \quad\;\,\,+ 3\times5 \times2\quad\;+ 2\times (-2) \times 1\\
+        &\quad- 2\times (-1) \times 2\quad - 1 \times 5 \times 1 \quad - 3 \times (-2) \times 4\\
+        &= -4+ 30 -4 +4 -5 +24 \\
+        &= 35.
+        \end{matrix*}
+        \end{equation*}
+    \end{ejemplo*}
+    
+    \begin{obs*}
+        La regla para calcular el determinante de matrices $3 \times 3$ \textbf{\large no} se aplica a matrices $n \times n$ con $n \ne 3$.
+    \end{obs*}
+    
+    \begin{comment}
+        \begin{proposicion}
+        Sea $A \in M_n(\K)$ matriz triangular  cuyos elementos en la diagonal son $d_1,\ldots,d_n$. Entonces $\det A = d_1.d_2.\ldots d_n$.
+        \end{proposicion}
+        \begin{proof} Si $A$ es triangular superior podemos demostrar el resultado por inducción sobre $n$: es claro que si $n=1$,  es decir si $A = [d_1]$, el determinante vale $d_1$. Por otro lado, si $n>1$,  observemos que $A(1|1)$ es también triangular superior con valores $d_2,\ldots,d_n$  en la diagonal principal. Entonces,  usamos la definición de la fórmula (\ref{def-determinante}) y observamos que el desarrollo por la primera  columna solo tiene un término, pues esta columna solo tiene un coeficiente no nulo, el $d_1$ en la primera posición. Por lo tanto, 
+        \begin{equation*}
+        \det(A) = d_1 \det(A(1|1)) \stackrel{\text{(HI)}}{=} d_1.(d_2.\ldots.d_n).
+        \end{equation*}
+        
+        En  el caso  que  $A$ sea triangular inferior también lo demostraremos por inducción. El caso $n=1$ es trivial. Si $n >1$, observemos que  $A(1|1)$ es también triangular inferior con valores $d_2,\ldots,d_n$  en la diagonal principal y si $i >1$, $A(i|1)$ es triangular inferior con el primer valor en la diagonal igual a 0. Por hipótesis inductiva $\det(A(1|1)) = d_2.\ldots.d_n$ y si $i >1$, $\det(A(i|1)) = 0\times \ldots = 0$, por lo tanto 
+        \begin{equation*}
+        \det(A) = d_1 \det(A(1|1))+ \sum_{i=2}^{n} a_{i1}\det(A(i|1)) =  d_1.(d_2.\ldots.d_n) + 0.
+        \end{equation*} 
+        \end{proof}
+    \end{comment}
+
+    \begin{proposicion}\label{det-triang-sup}
+    Sea $A \in M_n(\K)$ matriz triangular  superior cuyos elementos en la diagonal son $d_1,\ldots,d_n$. Entonces $\det A = d_1.d_2.\ldots d_n$.
+    \end{proposicion}
+    \begin{proof} Podemos demostrar el resultado por inducción sobre $n$: es claro que si $n=1$,  es decir si $A = [d_1]$, el determinante vale $d_1$. Por otro lado, si $n>1$,  observemos que $A(1|1)$ es también triangular superior con valores $d_2,\ldots,d_n$  en la diagonal principal. Entonces,  usamos la definición de la fórmula (\ref{def-determinante}) y observamos que el desarrollo por la primera  columna solo tiene un término, pues esta columna solo tiene un coeficiente no nulo, el $d_1$ en la primera posición. Por lo tanto, 
+        \begin{equation*}
+        \det(A) = d_1 \det(A(1|1)) \stackrel{\text{(HI)}}{=} d_1.(d_2.\ldots.d_n).
+        \end{equation*}
+    \end{proof}
+    
+    \begin{corolario}
+        $det \Id_n = 1$.
+    \end{corolario}
+    \begin{proof}
+        Se deduce del hecho que $\Id_n$  es triangular superior y todo coeficiente de la diagonal principal vale 1.
+    \end{proof}
+    
+    \begin{corolario}\label{cor-det-merf}
+        Si $R$ es una MERF, entonces 
+        \begin{align*}
+        \det R = \left\{ \begin{matrix*}[l]
+        1 \;&\text{si $R$ no tiene filas nulas,}\\
+        0&\text{si $R$ tiene filas nulas.}
+        \end{matrix*}\right.  
+        \end{align*}
+    \end{corolario}
+    \begin{proof}
+        Si $R$ no tiene filas nulas es igual a $\Id_n$ (lema \ref{lem-mtrx-merf-id}), luego $\det R = 1$. En general, $R$ es una matriz triangular superior y si tiene alguna fila nula $r$, entonces el coeficiente en la diagonal de la fila $r$ es igual a $0$ y por lo tanto 	$\det R = 0$.
+    \end{proof}
+
+    \begin{ejemplo*} Veamos,  en el caso de una matriz $A= [a_{ij}]$ de orden  $2 \times 2$ que ocurre con el determinante cuando hacemos una operación elemental. 
+            \begin{enumerate}
+            \item Si $c \not=0$, multiplicar por  $c$ la primera fila y multiplicar $c$ por la segunda fila obtenemos, respectivamente,
+            \begin{equation*}
+            e(A) = \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix}\;\text{ y }\; e(A) = \begin{bmatrix} a_{11}& a_{12}\\ ca_{21}&ca_{22}\end{bmatrix},
+            \end{equation*}
+            luego 
+            \begin{equation*}
+            \det \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}\;\text{ y }\;\det \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}. 
+            \end{equation*}
+            Por lo tanto,  en ambos casos, $\det e(A) = c \det A$. 
+            \item Sea  $c \in \K$, si sumamos a la fila 2 la fila 1 multiplicada por $c$ o sumamos a la fila 1  la fila 2 multiplicada por $c$ obtenemos, respectivamente,
+            \begin{equation*}
+            e(A) = \begin{bmatrix} a_{11}& a_{12}\\ a_{21}+ ca_{11}&a_{22}+ ca_{12}\end{bmatrix}\;\text{ y }\; 
+            e(A) = \begin{bmatrix} a_{11} + ca_{21}& a_{12} + ca_{22}\\ a_{21}&a_{22}\end{bmatrix}.
+            \end{equation*}
+            Por lo tanto, 
+            \begin{align*}
+                \det \begin{bmatrix} a_{11}& a_{12}\\ a_{21}+ ca_{11}&a_{22}+ ca_{12}\end{bmatrix} &=
+                a_{11}(a_{22}+ ca_{12})- a_{12}( a_{21}+ ca_{11}) \\
+                &= a_{11}a_{22}+ ca_{11}a_{12}- a_{12} a_{21}- ca_{12} a_{11}\\
+                &= a_{11}a_{22}- a_{12} a_{21} \\
+                &= \det A.
+            \end{align*}
+            En  el otro caso también se comprueba que $\det e(A) = \det A$. 
+            \item Finalmente, intercambiando la fila 1 por la fila 2 obtenemos la matriz
+            \begin{equation*}
+            e(A)=\begin{bmatrix} a_{21}& a_{22}\\ a_{11}&a_{12}\end{bmatrix},
+            \end{equation*}
+            por lo tanto 
+            \begin{equation*}
+            \det e(A)= \det \begin{bmatrix} a_{21}& a_{22}\\ a_{11}&a_{12}\end{bmatrix} = a_{21}a_{12} - a_{22}a_{11} = -\det A.
+            \end{equation*}
+        \end{enumerate}
+    \end{ejemplo*}
+    
+    Todos los resultado del ejemplo anterior se pueden generalizar. 
+    
+    \begin{teorema} \label{det-prop-fundamentales}
+        Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
+        \begin{enumerate}
+            \item Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ multiplicando la fila $r$ por $c$, es decir $A  \stackrel{cF_r}{\longrightarrow} B$, entonces $\det B = c \det A$.
+            \item  Sea $c \in \K$, $r \ne s$ y $B$ la matriz que se obtiene de $A$ sumando a la fila $r$ la fila $s$ multiplicada por $c$, es decir  $A  \stackrel{F_r + cF_s}{\longrightarrow} B$, entonces $\det B = \det A$.
+            \item Sea $r \ne s$ y sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow}B$, entonces $\det B = -\det A$.
+            
+        \end{enumerate}
+    \end{teorema}
+    \begin{proof}
+        Ver  los teoremas \ref{th-E1}, \ref{th-E3}, \ref{th-E2} y  sus demostraciones.
+    \end{proof}
+
+    
+    
+    Este resultado nos permite calcular el determinante de matrices elementales.
+    
+    
+    
+    
+    \begin{corolario}\label{det-mtrx-elem} Sea $n \in \mathbb N$ y $c \in \K$. Sean $1 \le r,s \le n$,  con $r \ne s$.
+        \begin{enumerate}
+            \item Si $c \not=0$, la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, tiene determinante igual a $c$.
+            \item Sea $r \ne s$. La matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$  la fila $s$ multiplicada por $c$, tiene determinante $1$.
+            \item Finalmente, si $r \ne s$, la matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$ tiene determinante $-1$.
+        \end{enumerate}	
+    \end{corolario} 
+    \begin{proof}
+        Se deduce fácilmente del teorema anterior y del hecho de que $det \Id_n =1$.			
+    \end{proof}
+    
+    
+    \begin{corolario}\label{det-filas-iguales} Sea $A  \in M_n(\K)$.
+        \begin{enumerate}
+            \item Si $A$ tiene dos filas iguales,  entonces $\det A=0$.
+            \item Si $A$ tiene una fila nula, entonces $\det A =0$.
+        \end{enumerate}
+    \end{corolario}
+    \begin{proof}
+        (1) Sea $A$ matriz donde $F_r = F_s$ con $r\ne s$. Luego, intercambiando la fila $r$ por la fila $s$ obtenemos la misma matriz. Es decir $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} (3), tenemos entonces que $\det A = - \det A$, por lo tanto  $\det A =0$. 
+        
+        (2) Sea $F_r$ una fila nula de $A$, por lo tanto multiplicar por 2 esa fila no cambia la matriz. Es decir $A  \stackrel{2F_r}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} (1), tenemos entonces que $\det A = 2\det A$, por lo tanto  $\det A =0$.
+    \end{proof}
+    
+    
+    
+    \begin{teorema} \label{mtrx-inv-equiv3} Sean $A,B \in M_n(\K)$, entonces
+        \begin{enumerate}
+            \item $A$ invertible si y solo si  $\det(A)\ne0$.
+            \item $\det (A B) = \det(A)\det(B)$. 
+        \end{enumerate}
+    \end{teorema}
+\begin{proof}
+    Ver el teoremas \ref{th-det-matriz-invertible} y \ref{th-dem-detAB} y .
+\end{proof}
+
+    \begin{corolario}  Sean $A,B \in M_n(\K)$, entonces
+        \begin{enumerate}
+            \item si $A$ invertible $\det(A^{-1}) = \det(A)^{-1}$,
+            \item $\det (AB) = \det(BA)$.
+            \end{enumerate}
+    \end{corolario} 
+    \begin{proof} 
+
+        1. Por teorema \ref{mtrx-inv-equiv3}, $\det(AA^{-1}) = \det(A)\det(A^{-1})$. Como $AA^{-1} = \Id_n$, entonces $1 =\det(\Id_n) =  \det(AA^{-1}) = \det(A)\det(A^{-1})$. Por lo tanto  $\det(A^{-1}) = 1/\det(A)$.
+
+        2.  
+        $\det (AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)$.
+    \end{proof}
+
+    \begin{definicion}\label{def-transpuesta-simetrica}
+        Sea $A$ una matriz $m \times n$ con coeficientes en $\K$. La \textit{transpuesta}\index{matriz!transpuesta} de $A$, denotada $A^\t$, es la matriz  $n \times m$ que en la fila $i$ y columna $j$ tiene el coeficiente $[A]_{ji}$. Es decir
+        \begin{equation*}
+        [A^\t]_{ij} = [A]_{ji}.
+        \end{equation*} 
+        Si $A$ es una matriz $n \times n$, diremos que es \textit{simétrica}\index{matriz!simétrica} si $A^\t = A$. 
+    \end{definicion}
+    
+    \begin{ejemplo*} Si
+        $$A=\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{bmatrix},$$ 
+        entonces
+        $$A^\t=\begin{bmatrix}a_{11}&a_{21}&a_{31}\\a_{12}&a_{22}&a_{32}\\a_{13}&a_{23}&a_{33}\end{bmatrix}.$$ 
+    \end{ejemplo*}
+    
+    \begin{ejemplo*}
+        Si $$A=\begin{bmatrix}1&2\\3&4\\5&6\end{bmatrix},$$ 
+        entonces
+        $$A^\t=\begin{bmatrix}1&3&5\\2&4&6\end{bmatrix}.$$ 
+    \end{ejemplo*}
+    
+    
+    En  general $A^\t$ es la matriz cuyas filas son las columnas de $A$ y viceversa. 
+    
+    \begin{ejemplo*}
+        Si 
+        \begin{equation*}
+            A=\begin{bmatrix}1&2&3\\2&-1&4\\3&4&7\end{bmatrix},
+        \end{equation*}
+        entonces $A^\t =A$, es decir  $A$ es simétrica.
+    \end{ejemplo*}
+    
+    \begin{proposicion}\label{prop-matriz-transpuesta} Sea $A$ matriz $m \times n$.
+        \begin{enumerate}
+            \item $(A^\t)^\t = A$.
+            \item  Si $B$ matriz $n \times k$,  entonces
+            \begin{equation*}
+            (AB)^\t = B^\t A^\t.
+            \end{equation*} 
+            \item  Sea $A$ matriz $n \times n$, entonces, $A$ invertible si y sólo si  $A^\t$ es invertible y  en ese caso $(A^\t)^{-1} = (A^{-1})^\t$.
+        \end{enumerate}
+    \end{proposicion}
+    \begin{proof}
+        (1) 	$[(A^\t)^\t]_{ij} = [A^\t]_{ji} = [A]_{ij}$. 
+
+        (2)	Por definición de transpuesta $(AB)^\t$ es una matriz $k \times m$.  Ahora observemos  que $B^\t$  es una matriz $k \times n$ y $A^\t$ es $n \times m$, luego tiene sentido multiplicar $B^\t$ por $A^\t$ y se obtiene también  una matriz  $k \times m$. La demostración de la proposición se hace comprobando que el coeficiente $ij$ de $(AB)^\t$ es igual al coeficiente $ij$ de $B^\t A^\t$ y se deja como ejercicio para el lector. 
+        
+        (3) 
+        \begin{align*}
+            \text{$A$ invertible } &\Leftrightarrow \text{existe $B$ matriz $n \times n$ tal que $AB = \Id_n = BA$} \\
+            &\Leftrightarrow (AB)^\t = \Id^\t_n = (BA)^\t\\
+            &\Leftrightarrow B^\t A^\t = \Id_n = A^\t B^\t\\
+            &\Leftrightarrow \text{$B^\t$ es  la inversa de $A^\t$}. 
+        \end{align*}
+        Es decir, $A$ invertible si y sólo si  $A^\t$ es invertible y si $B = A^{-1}$, entonces  $(A^\t)^{-1} = B^\t$.
+    \end{proof}
+    
+    Observar que por inducción no es complicado probar que si $A_1,\ldots, A_k$ son matrices,  entonces 
+    \begin{equation*}
+    (A_1\ldots A_k)^\t = A_k^\t\ldots A_1^\t.
+    \end{equation*}
+    
+    \begin{ejemplo*} Veamos las transpuesta de las matrices elementales  $2 \times 2$.
+        \begin{enumerate}
+            \item Si $c \not=0$, multiplicar por  $c$ la primera fila y multiplicar $c$ por la segunda fila son, respectivamente,
+            \begin{equation*}
+            E = \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}\;\text{ y }\; E = \begin{bmatrix} 1& 0\\ 0&c\end{bmatrix},
+            \end{equation*}
+            por lo tanto $E^\t$ es la misma matriz en ambos casos. 
+            \item si  $c \in \K$, sumar a la fila 2 la fila 1 multiplicada por $c$ o sumar a la fila 1 la fila 2 multiplicada por $c$ son, respectivamente,
+            \begin{equation*}
+            E_1 = \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}\;\text{ y }\; E_2 = \begin{bmatrix} 1& c\\ 0&1\end{bmatrix},
+            \end{equation*}
+            por lo tanto 
+            \begin{equation*}
+            E_1^\t = \begin{bmatrix} 1& c\\ 0&1\end{bmatrix} = E_2 \;\text{ y }\; E_2^\t = \begin{bmatrix} 1& 0\\ c&1\end{bmatrix} =E_1,
+            \end{equation*}
+            \item Finalmente, intercambiando la fila 1 por la fila 2 obtenemos la matriz
+            \begin{equation*}
+            E = \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix},
+            \end{equation*}
+            por lo tanto $E^\t =E$
+        \end{enumerate}
+    \end{ejemplo*}
+    
+
+\begin{obs*}
+    En  el caso  de matrices $2 \times 2$ podemos comprobar fácilmente que $\det A^\t = \det A$:
+    $$
+    \det A^\t = \det \begin{bmatrix} a_{11} & a_{21} \\ a_{12}& a_{22}\end{bmatrix} = 
+    a_{11}a_{22} - a_{21}a_{12} = \det A. 
+    $$
+\end{obs*}
+
+También vale este resultado para matrices $n \times n$.
+
+\begin{teorema}\label{det-a-trans} Sea $A \in M_n(\K)$,  entonces 
+    $\det(A) = \det(A^\t)$
+\end{teorema}
+\begin{proof}
+    Ver el teorema \ref{th-det-a-trans-app}.
+\end{proof}
+    
+    El resultado anterior permite obtener resultados nuevos del cálculo de determinante a partir de resultados vistos anteriormente. 
+    
+    
+    \begin{proposicion}\label{det-triang-inf}
+    Sea $A \in M_n(\K)$ matriz triangular  inferior cuyos elementos en la diagonal son $d_1,\ldots,d_n$. Entonces $\det A = d_1.d_2.\ldots d_n$.
+    \end{proposicion}
+    \begin{proof}
+        Si $A$ es triangular inferior con elementos en la diagonal $d_1,\ldots,d_n$,  entonces $A^\t$ es triangular superior con  elementos en la diagonal $d_1,\ldots,d_n$. Por la proposición \ref{det-triang-sup}, $\det A^\t = d_1\ldots d_n$. Por el teorema  \ref{det-a-trans} obtenemos el resultado. 
+    \end{proof}
+
+
+    
+    \begin{teorema}\label{det-opr-col}
+        Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
+        \begin{enumerate}
+            \item Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ multiplicando la columna $r$ por $c$, entonces $\det B = c \det A$.
+            \item  Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ sumando a la columna $r$ la columna $s$ multiplicada por $c$, entonces $\det B = \det A$.
+            \item Sea $B$ la matriz que se obtiene de $A$ permutando la columna $r$ con la fila $s$, entonces $\det B = -\det A$.
+        \end{enumerate}
+    \end{teorema}
+    \begin{proof}
+        Las operaciones por columna del enunciado se traducen a operaciones por fila de la matriz $A^\t$. Luego, aplicando los resultados del teorema  \ref{det-prop-fundamentales} y usando el hecho de que $\det(A) = \det(A^\t)$ y $\det(B) = \det(B^\t)$ en cada caso, se deduce el corolario. 
+    \end{proof}
+    
+    \begin{corolario} Sea $A  \in M_n(\K)$.
+        \begin{enumerate}
+            \item Si $A$ tiene dos columnas iguales,  entonces $\det A=0$.
+            \item Si $A$ tiene una columna nula, entonces $\det A =0$.
+        \end{enumerate}
+    \end{corolario}
+    \begin{proof}
+        (1) Si $A$ tiene dos columnas iguales,  entonces $A^\t$ tiene dos filas iguales, luego, por corolario \ref{det-filas-iguales} (1),  $\det A^\t =0$ y por lo tanto $\det A=0$.
+        
+        (2) Si $A$ tiene una columna nula,  entonces $A^\t$ tiene una fila nula, luego, \ref{det-filas-iguales} (2), $\det A^\t =0$ y por lo tanto $\det A=0$.
+    \end{proof}
+    
+        El siguiente teorema nos dice  que es posible calcular el determinante desarrollándolo por cualquier fila o cualquier columna. 
+    
+    
+    \begin{teorema} \label{th-expancion-cofactores} El determinante de una matriz $A$ de orden $n \times n$ puede ser calculado por la expansión de los cofactores en  cualquier columna o cualquier fila. Más específicamente, 
+        \begin{enumerate}
+            \item si usamos la expansión por la $j$-ésima columna, $1 \le j \le n$, tenemos
+            \begin{align*}
+            \det A &= \sum_{i=1}^{n} a_{ij} C_{ij} \\
+            & = a_{1j}C_{1j}+a_{2j}C_{2j}+\cdots+a_{nj}C_{nj}.
+            \end{align*} 
+            \item si usamos la expansión por la $i$-ésima fila, $1 \le i \le n$, tenemos
+            \begin{align*}
+            \det A &= \sum_{j=1}^{n} a_{ij} C_{ij} \\
+            & = a_{i1}C_{i1}+a_{i2}C_{i2}+\cdots+a_{in}C_{in};
+            \end{align*} 
+        \end{enumerate}
+    \end{teorema}
+\begin{proof}
+    Ver la demostración de el teorema  \ref{th-dessarrollo-por-columnas}.
+\end{proof}
+
+
+
+
+\end{section}	
+
+
+\begin{section}{Autovalores y autovectores}\label{seccion-autovalores-y-autovectores-de-matrices}
+
+
+    La multiplicación de una matriz por  un vector es una transformación lineal, las cuales veremos en el capítulo \ref{chap-trans-lin}, y estas juegan un rol muy importante en toda la matemática, pasando por el álgebra, el análisis, la geometría, etc.  Como ya vimos, es sencillo multiplicar a izquierda por matrices diagonales:
+    \begin{equation*}
+        \begin{bmatrix}
+            d_1 & 0 & \cdots &0 \\
+            0 & d_2 & \cdots &0 \\
+            \vdots & \vdots & \ddots &\vdots \\
+            0 & 0 & \cdots & d_n 
+            \end{bmatrix}
+        \begin{bmatrix}
+            x_1\\x_2 \\\vdots \\x_n
+        \end{bmatrix}
+        = \begin{bmatrix}
+            d_1x_1\\d_2x_2 \\\vdots \\d_nx_n
+        \end{bmatrix}
+    \end{equation*} 
+    (ver observación \ref{obs-mult-matrices-diagonales}). En particular,  si $e_i$  es el vector columna  que tiene un $1$ en la fila $i$ y todas las demás filas iguales a $0$,  entonces
+    \begin{equation*}
+        \begin{bmatrix}
+            d_1 & 0 & \cdots &0 \\
+            0 & d_2 & \cdots &0 \\
+            \vdots & \vdots & \ddots &\vdots \\
+            0 & 0 & \cdots & d_n 
+            \end{bmatrix}
+        e_i
+        = d_ie_i
+    \end{equation*} 
+    y esta propiedad caracteríza las matrices diagonales, es decir una matriz $D$ es diagonal si  y solo si $De_i =d_ie_i$ para $1 \le i \le n$. Dicho de  otra forma una matriz es diagonal si y solo si  al aplicarla sobre algún $e_i$ obtenemos un múltiplo de $e_i$. 
+
+    Aunque no siempre es posible caracterizar una matriz $A$  por los vectores $v$ que  al aplicarle $A$  obtenemos un múltiplo de $v$,  el estudio de este tipo de vectores  resulta importante para obtener información de la matriz y propiedades de la misma.  
+    
+    
+
+
+    \begin{definicion}
+        Sea $A\in\K^{n\times n}$. Se dice que {$\lambda\in\K$} es un \textit{autovalor}\index{autovalor de una matriz} de $A$ y si existe \textit{$v\in\K^{n}$} no nulo tal que 
+        \begin{align*}
+        Av=\lambda v .
+        \end{align*}
+        En ese caso decimos que $v$  es un \textit{autovector}\index{autovector de una matriz} asociado a $\lambda$
+        \end{definicion}
+
+        \begin{observacion*} Nada impide, por definición, que un autovalor pueda valer $0$, pero un autovector \textit{nunca} puede ser $0$. 
+        \end{observacion*}
+
+        \begin{ejemplo*}
+        $1$ es un autovalor de $\Id_n$ y todo $v\in\K^n$ es un autovector asociado a $1$ pues
+        \begin{align*}
+        \Id_n v= v 
+        \end{align*}
+        \end{ejemplo*}
+        
+        \begin{ejemplo*}
+        $0$ es un autovalor de  
+        $\left[\begin{array}{cc}
+                    0&1\\0&0
+                    \end{array}
+        \right]$
+        y $\left[\begin{array}{c}
+                    1\\0
+                    \end{array}
+        \right]$ es un autovector asociado a $0$ pues
+        \begin{align*}
+        \left[\begin{array}{cc}
+                    0&1\\0&0
+                    \end{array}
+        \right]
+        \left[
+        \begin{array}{c}
+        1\\0 
+        \end{array}
+        \right]
+        =
+        \left[
+        \begin{array}{c}
+        0\\0 
+        \end{array}
+        \right]=
+        0\left[
+        \begin{array}{c}
+        1\\0 
+        \end{array}
+        \right]
+        \end{align*}
+        \end{ejemplo*}
+
+        \begin{observacion*}
+        La existencia de autovalores dependen del cuerpo donde estamos trabajando. 
+        Por ejemplo sea $A \in \R^{n\times n}$,  definida por 
+        $$A=
+        \begin{bmatrix}
+            0&-1\\1&0
+        \end{bmatrix}
+        .$$ 
+        Entonces,  $A$ no tiene autovalores reales. Veamos por qué.
+        \begin{equation}\label{eq-no-aut-1}
+            \begin{bmatrix}
+                0&-1\\1&0
+            \end{bmatrix}
+            \begin{bmatrix}
+                x_1\\x_2
+            \end{bmatrix} =
+            \begin{bmatrix}
+                -x_2\\x_1
+            \end{bmatrix}
+        \end{equation}
+        Si $\lambda$ fuera un autovalor y $\begin{bmatrix}x_1\\x_2\end{bmatrix}$ fuera autovector, tendríamos
+        \begin{equation}\label{eq-no-aut-2}
+            \begin{bmatrix}
+                0&-1\\1&0
+            \end{bmatrix}
+            \begin{bmatrix}
+                x_1\\x_2
+            \end{bmatrix} =
+            \begin{bmatrix}
+                \lambda x_1\\\lambda x_2
+            \end{bmatrix}.
+        \end{equation}
+        Luego, por (\ref{eq-no-aut-1}) y (\ref{eq-no-aut-2}), $-x_2 = \lambda x_1$ y $x_1 = \lambda x_2$,  entonces   $-x_2 = \lambda x_1 = \lambda^2 x_2$. Si  $\lambda \ne0$,  entonces $\lambda^2 >0$, y eso implica que $x_2=0$ y  en consecuencia $x_1=0$. Si $\lambda=0$, también $x_1=x_2 =0$. Es decir, en ambos casos $\begin{bmatrix}x_1\\x_2\end{bmatrix} = \begin{bmatrix}0\\0\end{bmatrix} $ y no es autovector.
+
+        Veremos más adelante que si permitimos autovalores complejos entonces esta matriz tiene  autovalores.
+        \end{observacion*}
+
+        \begin{definicion}
+        
+        Dado $i\in\{1, ..., n\}$, como ya vimos se denota \textit{$e_i$} al vector columna de $\K^n$ cuyas coordenadas son todas ceros excepto la coordenada $i$ que es un $1$
+        \begin{align*}
+        e_i=\left[
+        \begin{array}{c}
+        0\\ \vdots\\1\\ \vdots\\0
+        \end{array}
+        \right]
+        \end{align*}
+        El conjunto $\{e_1, ..., e_n\}$ se llama \textit{base canónica}\index{base canónica} de $\K^n$.
+        \end{definicion}
+
+        \begin{ejemplo*}
+        En $\K^3$ la base canónica es  $
+        e_1=\left[
+        \begin{array}{c}
+        1\\0\\0
+        \end{array}
+        \right]$, $
+        e_2=\left[
+        \begin{array}{c}
+        0\\1\\0
+        \end{array}
+        \right]$, 
+        $
+        e_3=\left[
+        \begin{array}{c}
+        0\\0\\1
+        \end{array}
+        \right]
+        $
+        \end{ejemplo*}
+
+        \begin{ejemplo*}
+        Sea $D\in\K^{n\times n}$ una matriz diagonal con entradas $\lambda_1$, $\lambda_2$, ..., $\lambda_n$. Entonces $e_i$ es un autovector con autovalor $\lambda_i$  $\,\forall\, i\in\{1, ..., n\}$
+        \end{ejemplo*}
+
+        
+         El conjunto de todos los autovectores con un mismo autovalor es \textit{invariante por la suma y la multiplicación por escalares.}	En particular los múltiplos de un autovector son autovectores con el mismo autovalor.
+             
+         \vskip .2cm
+        \begin{definicion}
+        Sea $A\in\K^{n\times n}$ y $\lambda\in\K$ un autovalor de $A$. El \textit{autoespacio}\index{autoespacio} asociado a $\lambda$ es
+        $$
+        V_\lambda=
+        \{v\in\K^n\mid Av=\lambda v\}.
+        $$
+        Es decir, \textit{$V_\lambda$} es el conjunto  formado por todos los autovectores asociados a $\lambda$ y el vector nulo.
+        \end{definicion}
+
+        \begin{teorema} Sea $A$ matriz $n \times n$ y $\lambda \in \K$. 
+        Si $v, w $ pertenecen a $V_\lambda$, el autoespacio de $A$ asociado a $\lambda$, entonces $v+tw \in V_\lambda$ para cualquier $\t \in \K$. 
+        \end{teorema}
+        
+        \begin{proof}
+         $$
+        A(v+tw)=Av+tAw=\lambda v+t\lambda w=\lambda(v+tw).
+        $$
+        \end{proof}
+        
+        \begin{proposicion} Sea $A$ matriz  $n \times n$ y $v,w \in \K^n$ autovectores con autovalores $\lambda, \mu \in \K$,  respectivamente. Entonces.  $\lambda \ne \mu$ implica que $v \ne w$. Es decir,  autovectores con autovalores distintos son distintos.
+        \end{proposicion}
+        
+       \begin{proof}
+        Supongamos que $v = w$,  entonces  $Av=\lambda v$ y $Av=\mu v$. Luego, $\lambda v=\mu v$ y por lo tanto 
+        $$
+        (\lambda-\mu) v=
+        \left[
+        \begin{array}{c}
+        (\lambda-\mu)v_1\\ \vdots\\(\lambda-\mu)v_n
+        \end{array}
+        \right]
+        =
+        \left[
+        \begin{array}{c}
+        0\\ \vdots\\0
+        \end{array}
+        \right]
+        $$
+        
+        Como $v\neq0$ por ser autovector, alguna de sus coordenadas es no nula. Entonces $\lambda-\mu$ tiene que ser $0$ o dicho de otro modo $\lambda=\mu$, lo cual es un absurdo.
+       \end{proof}
+        
+        
+        \begin{problema*}
+        Hallar los autovalores de $A\in\K^{n\times n}$ y para cada autovalor, describir explícitamente el autoespacio asociado.
+    \end{problema*}
+        
+        \begin{itemize}
+            \item En otras palabras nos preguntamos que $\lambda\in\K$ y  que $v\in\K^{n}$ satisfacen
+            $$
+            Av=\lambda v
+            \Longleftrightarrow
+            Av-\lambda v=0
+            \Longleftrightarrow
+            (A-\lambda \Id)v=0 .
+            $$
+            \item La última igualdad es un sistema de ecuaciones lineales. Queremos ver entonces si existe un $v\in\K^{n}$ no nulo que sea solución del sistema homogéneo
+            \begin{equation*}
+                (A-\lambda \Id)X=0.\tag{*}
+            \end{equation*}
+            \item  Un  sistema $BX =0$ tiene solución no trivial sii $\det(B)=0$. Por lo tanto (*) tiene  solución no trivial si y sólo si 
+            $$
+            \det(A-\lambda \Id)=0.
+            $$ 
+        \end{itemize}
+        
+        Estos sencillos pasos demuestran  lo siguiente.
+
+        \begin{proposicion}
+        $\lambda\in\K$ es un autovalor de $A$ y $v\in\K^n$ es un autovector asociado a $\lambda$ si y sólo si
+    
+        \begin{itemize}
+         \item $\det(A-\lambda \Id)=0$
+         \item $v$ es solución del sistema homogéneo $(A-\lambda \Id)X=0$
+        \end{itemize}
+    \end{proposicion}
+
+        Esta es casi la respuesta a nuestro problema. Para dar una respuesta más operativa introducimos el siguiente polinomio.
+         
+        \begin{definicion}
+        
+        Sea $A\in\K^{n\times n}$. El \textit{polinomio característico}\index{polinomio característico} de $A$ es
+        \begin{align*}
+        \chi_A(x)=\det(A-x \Id)
+        \end{align*}
+        \end{definicion}
+
+        \begin{ejemplo*}
+        El polinomio  característico de $\Id_n$ es 
+        \begin{align*}
+        \chi_{\Id_n}(x)=(1-x)^n 
+        \end{align*}
+        \end{ejemplo*} \vskip -.6cm
+        \begin{proof}
+            $\Id-x \Id=(1-x)\Id$ es una matriz diagonal con $(1-x)$ en todas las entradas de la diagonal. Entonces el determinante es el producto de la diagonal. 
+        \end{proof}
+
+        
+     
+        En general,  si $A = [a_{ij}]$ matriz $n \times n$, tenemos que
+            \begin{equation*}
+            \chi_A(x) = \det(A- x\,\Id) = \det
+            \begin{bmatrix}
+            a_{11}-x&a_{12}&\cdots&a_{1n}\\
+            a_{21}&a_{22}-x&\cdots&a_{2n}\\
+            \vdots&\vdots&\ddots&\vdots\\
+            a_{n1}&a_{n2}&\cdots&a_{nn}-x\\
+            \end{bmatrix}
+            \end{equation*} 
+            y el polinomio característico de $A$ es un polinomio  de grado $n$,  más precisamente  
+            $$
+            \chi_A(x) =(-1)^nx^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
+            $$ 
+            Esto se puede demostrar por inducción. 
+            
+     
+    
+    
+    
+         
+        
+        
+        \begin{ejemplo*}
+        El polinomio  característico de 
+        $
+        A=
+        \left[
+        \begin{array}{cc}
+        0&1\\0&0 
+        \end{array}
+        \right]
+        $ es 
+        $
+        \chi_{A}(x)=x^2
+        $
+        
+        \end{ejemplo*}\vskip -.8cm 
+        \begin{ejemplo*}
+        Si
+        $
+        A=
+        \left[
+        \begin{array}{cc}
+        a&b\\c&d 
+        \end{array}
+        \right]
+        $, entonces $ \chi_{A}(x)=(a-x)(d-x)-bc $.
+        \end{ejemplo*}
+
+        \begin{proof}
+            $A-x \Id=\left[
+        \begin{array}{cc}
+        a-x&b\\c&d-x 
+        \end{array}
+        \right]$ y usamos la fórmula del determinante de una $2\times 2$. 
+        \end{proof}\vskip.4cm
+
+        \begin{proposicion}\label{autovalores}
+                Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico de $A$. 
+            \end{proposicion}
+            \begin{proof}${}^{}$
+                \begin{tabular}{rl}
+        $\lambda$ es autovalor &$\Leftrightarrow$ existe $v \ne 0$ tal que $Av = \lambda v$ \\
+                    &\\
+                    &$\Leftrightarrow$ $0 = Av-\lambda v  =   Av-\lambda \Id v =  (A-\lambda \Id)v$ \\
+                    &\\
+                    &$\Leftrightarrow$ $(A-\lambda \Id)X=0$ tiene solución no trivial \\
+                    &\\
+                    &$\Leftrightarrow$ $\chi_A(\lambda) = \det(A-\lambda \Id) =0$ \\
+                    &\\
+                    &$\Leftrightarrow$ $\lambda$ es raíz del polinomio característico.  
+                \end{tabular}
+                 
+            
+            \end{proof}
+        
+         
+        
+     
+        \begin{observacion*} Sea $A\in \K^{n \times n}$, entonces podemos aplicar el siguiente método para encontrar autovalores y autovectores de $A$.
+            \begin{enumerate}
+                \item Calcular $\chi_A(x) =\det(A-x \Id{})$,
+                \vskip .2cm
+                \item Encontrar las raíces $\lambda_1,\ldots,\lambda_k$ de $\chi_A(x)$.
+                
+                \noindent No siempre es posible hacerlo, pues no hay una fórmula o método general para encontrar las raíces de polinomios de grado 5 o superior.
+                \vskip .2cm
+                \item Para cada $i$ con $1 \le i \le k$ resolver el sistema de ecuaciones lineales:
+                \begin{equation*}
+                    (A-\lambda_i \Id)X = 0.
+                \end{equation*}
+                Las soluciones no triviales  de este sistema son los autovectores con autovalor $\lambda_i$.
+            \end{enumerate}
+        \end{observacion*}
+     
+        \vskip .4cm
+         
+        \begin{ejemplo*}
+            Encontrar autovalores y autovectores de la matriz 
+            \begin{equation*}
+                A=\begin{bmatrix}
+                    3&-2 \\ 1&0
+                \end{bmatrix}.
+            \end{equation*}
+        \end{ejemplo*}
+        \vskip -.8cm
+        
+        \begin{proof}[Solución]${}^{}$
+            \begin{enumerate}
+                \item  $            \chi_A(x)= \det\left[\begin{matrix}
+                3-x& -2 \\ 1 & -x
+                \end{matrix} \right]= x^2 -3x +2   =(x -1)(x -2)$.
+                \vskip .2cm
+                \item Los autovalores de $A$ son las raíces de  $\chi_A(x)$: $1$ y $2$.
+                \vskip .2cm
+                \item Debemos resolver los sistemas de ecuaciones:
+                \begin{equation*}
+                    (A - \Id)X = 0,\qquad (A - 2 \Id)X = 0.
+                \end{equation*}
+            \end{enumerate}
+        
+     
+    
+     
+        Es decir,  debemos resolver los sistemas
+        \begin{align*}
+            \begin{bmatrix} 3 - 1&-2 \\ 1&-1\end{bmatrix}
+            \begin{bmatrix}	x_1\\x_2\end{bmatrix}
+            =
+            \begin{bmatrix}	0\\0\end{bmatrix}
+            \quad &\text{o, equivalentemente,} \quad 
+            \begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix}
+            \begin{bmatrix}	x_1\\x_2\end{bmatrix}
+            =
+            \begin{bmatrix}	0\\0\end{bmatrix} \tag{S1}
+            \\
+            &
+            \\
+            \begin{bmatrix}	3 - 2&-2 \\ 1&-2\end{bmatrix}
+            \begin{bmatrix}	x_1\\x_2\end{bmatrix}
+            =
+            \begin{bmatrix}	0\\0\end{bmatrix}
+            \quad &\text{o, equivalentemente,} \quad 
+            \begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix}
+            \begin{bmatrix}	x_1\\x_2\end{bmatrix}
+            =
+            \begin{bmatrix}	0\\0\end{bmatrix} \tag{S2}
+        \end{align*}
+
+        (S1)\quad $\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix} \stackrel{F_1 -2F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-1 \end{bmatrix}$  $\Rightarrow$ $x_1-x_2=0$ $\Rightarrow$ $(t,t)$ es solución. 
+
+        (S2)\quad  $\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix} \stackrel{F_2 -F_1}{\longrightarrow} \begin{bmatrix}1&-2 \\ 0&0\end{bmatrix}$  $\Rightarrow$ $x_1-2x_2=0$ $\Rightarrow$ $(2t,t)$ es solución. 
+    
+     
+    
+    
+     De lo anterior concluimos:
+        
+            \begin{itemize}
+                \item Los autovalores de $A$ son $1$ y $2$.
+                \item El auto espacio correspondiente al  autovalor $1$ es
+            \begin{equation*}
+                V_1 = \{t(1,1): t \in \R\}.
+            \end{equation*}
+            \item El auto espacio correspondiente al  autovalor $2$ es
+            \begin{equation*}
+                V_2 = \{t(2,1): t \in \R\}.
+            \end{equation*}
+            \end{itemize}
+    
+            
+        \end{proof}
+    
+
+    
+        \begin{ejemplo*}
+         Sea $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix} \in \R^2$. Encontrar los autovalores \textit{reales} de $A$.    
+        \end{ejemplo*}
+        \begin{proof}[Solución]
+            $A-x \Id= \begin{bmatrix}-x&-1\\1&-x\end{bmatrix}$, luego
+            \begin{align*}
+                \chi_A(x)=x^2+1.
+                \end{align*}
+ 
+                
+            El polinomio no tiene raíces reales, por lo tanto no existen autovalores reales (obviamente no hay autovectores).
+        \end{proof}
+
+        Sin embargo si nos dicen 
+        \begin{center}
+            \textit{Encontrar autovalores y autovectores complejos de la matriz  $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix}$}, 
+        \end{center}
+        la respuesta va a ser diferente. 
+
+        Lo  que ocurre es que 
+        \begin{align*}
+        \chi_A(x)=x^2+1=(x+i)(x-i),
+        \end{align*}
+        y este polinomio \textit{sí} tiene raíces complejas: $i$ y $-i$, por lo tanto  $i$ y $-i$ son los autovalores de $A$.
+
+        Averigüemos los autovalores planteando los sistemas de ecuaciones correspondientes,  es decir $A- \lambda \Id x =0$ para $\lambda=i, -i$:
+
+        \begin{align*}
+            \begin{bmatrix}  - i& -1\\ 1&-i\end{bmatrix}
+            \begin{bmatrix}	x_1\\x_2\end{bmatrix}
+            =
+            \begin{bmatrix}	0\\0\end{bmatrix},
+             \tag{S1}
+            \\
+            &
+            \\
+            \begin{bmatrix}	i&-1 \\ 1&i\end{bmatrix}
+            \begin{bmatrix}	x_1\\x_2\end{bmatrix}
+            =
+            \begin{bmatrix}	0\\0\end{bmatrix}.
+             \tag{S2}
+        \end{align*}
+        
+        Resolvamos los sistemas:
+
+        (S1)\quad $\begin{bmatrix}  - i& -1\\ 1&-i\end{bmatrix} \stackrel{F_1 +i F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-i \end{bmatrix}$  $\Rightarrow$ $x_1-i x_2=0$ $\Rightarrow$ $(i\omega ,\omega)$ es solución ($\omega \in \C$). 
+   
+        (S2)\quad  $\begin{bmatrix}	i&-1 \\ 1&i\end{bmatrix} \stackrel{F_1 -i F_2}{\longrightarrow} \begin{bmatrix}0&0 \\  1&i\end{bmatrix}$  $\Rightarrow$ $x_1+i x_2=0$ $\Rightarrow$ $(-i \omega,\omega)$ es solución ($\omega \in \C$).
+
+
+        Luego $A$ tiene dos autovalores, $i$ y $-i$, y 
+      \begin{equation*}
+          V_i = \left\{ \omega(i,1): \omega\in \C \right\}, \qquad  V_{-i} = \left\{ \omega(-i,1): \omega\in \C \right\}.
+      \end{equation*} 
+        
+         
+     
+        Nunca está de más comprobar los resultados:
+    
+        \begin{align*}
+            \begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}i\\1\end{bmatrix} &= \begin{bmatrix}-1\\i\end{bmatrix} = i \begin{bmatrix}i\\1\end{bmatrix}.\\
+            \\
+            \begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}-i\\1\end{bmatrix} &= \begin{bmatrix}-1\\-i\end{bmatrix} = (-i) \begin{bmatrix}-i\\1\end{bmatrix}.
+        \end{align*}
+    
+    
+    
+\end{section}	
+    \end{chapter}
+

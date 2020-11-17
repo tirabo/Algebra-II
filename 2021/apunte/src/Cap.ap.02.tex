@@ -1,0 +1,290 @@
+      
+    \begin{chapter}{Funciones polin\'omicas} 
+    
+    En este apéndice se definirán las funciones polinómicas y se mostrarán algunas de sus propiedades fundamentales. Trabajaremos sobre $\K$  cuerpo con $\K=\R$ o $\K=\C$. 
+    
+    \begin{section}{Definici\'on de funciones polin\'omicas}\label{seccion-definicion-polinomios}
+        
+    
+    \begin{definicion}
+            Una función $f: \K \to \K$ es \textit{polinomial} o \textit{polinómica} o directamente decimos que $f$  es  un \textit{polinomio}, si existen $a_0,a_1,\ldots,a_n \in \K$ tal que
+            \begin{equation}\label{eq-funcion-polinomica}
+                f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0 
+            \end{equation}
+            para todo $x \in \K$. En  este caso  diremos que  \textit{$f$ tiene grado $\le n$.}
+    \end{definicion}
+
+    Estaríamos tentados en decir que  una función polinómica como en (\ref{eq-funcion-polinomica}) con $a_n\ne0$ tiene grado $n$, pero debemos ser cuidadosos pues todavía no sabemos si la escritura de una función polinómica es única. Es  decir,  existe la posibilidad de $f$  se escriba de otra forma y por lo tanto el coeficiente más significativo sea diferente. Veremos más adelante que esto no puede ocurrir. 
+    
+    Sea $f$ un polinomio. Si $c$ es un número tal que $f (c) = 0$, entonces llamamos a \textit{$c$ una raíz de $f$}. Veremos en un momento que un polinomio distinto de cero puede tener solo un número finito de raíces, y daremos un límite para la cantidad de estas raíces.
+    
+    \begin{ejemplo*}
+        Sea $f (x) = x^2 - 3x + 2$. Entonces $f(1)=0$ y por lo tanto, 1 es una raíz de $f$.
+        Además, $f (2) = 0$. Por lo tanto, 2 es también una raíz de $f$.
+    \end{ejemplo*}
+
+    \begin{ejemplo*}
+        Sean $a,b,c \in \R$ y  $f(x) = ax^2 + bx + c$, un polinomio en $\R$.  Si $b^2 - 4 ac = 0$, entonces el polinomio tiene una raíz real, que es
+        \begin{equation*}
+            -\frac{b}{2a}.
+        \end{equation*}
+        Si $b^2 - 4 ac > 0$, entonces el polinomio tiene dos raíces reales distintas que son
+        \begin{equation*}
+            \frac{-b + \sqrt{b^2 - 4 ac}}{2a}\quad \text{ y }\quad \frac{-b - \sqrt{b^2 - 4 ac}}{2a}. 
+        \end{equation*}
+        En el caso que $b^2 - 4 ac < 0$ el polinomio no tiene raíces reales. 
+    \end{ejemplo*}
+    
+    \begin{teorema}\label{th-fact-raiz}
+         Sea $f$ un polinomio de grado $\le n$ y sea $c$ una raíz. Entonces existe un polinomio $g$ de grado $\le n - 1$ tal que para todo $x$ se cumple
+         \begin{equation*}
+             f (x) = (x - c) g (x).
+         \end{equation*}
+    \end{teorema}
+    \begin{proof} Escribamos $f(x)$ en función de las potencias de  $x$:
+    \begin{equation*}
+        f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0.
+    \end{equation*}
+     Veremos a continuación que $f$ puede también escribirse en potencias de $x-c$: escribamos 
+     \begin{equation*}
+         x = (x-c)+ c,
+     \end{equation*}
+     luego 
+     \begin{equation*}
+     f(x) = a_n((x-c)+ c)^n + a_{n-1}((x-c)+ c)^{n-1}+\cdots + a_1((x-c)+ c) +a_0.
+     \end{equation*}
+     Expandiendo las potencias de los binomios $((x-c)+ c)^k$ ($1 \le k \le n$),  obtenemos
+     \begin{equation*}
+     f(x) = b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c) +b_0,
+     \end{equation*}
+     para ciertos $b_0, b_1,\ldots ,b_n \in \K$. Como $f(c) = 0$,  entonces $0=f(c)=b_0$,  luego 
+     \begin{align*}
+         f(x) &= b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c) \\
+         &= (x-c)(b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1) \\
+         &=(x-c)g(x),
+     \end{align*}
+     con $g(x) =b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1$,  que es una función polinómica de grado $\le n-1$, y vemos que nuestro teorema está probado.
+    \end{proof}
+        
+    El polinomio $f$ es el \textit{polinomio nulo} si $f(x)=0$ para toda $x \in \K$. Si $f$ es el polinomio nulo,  denotamos $f =0$. 
+        
+    \begin{teorema}\label{th-pol-raiz}
+        Sea $f$ un polinomio de grado $\le n$ tal que
+        \begin{equation*}
+        f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0,
+        \end{equation*}
+        y  $a_n \ne 0$. Entonces $f$ tiene a lo  más  $n$ raíces. 
+    \end{teorema}
+    \begin{proof} 
+        Lo probaremos haciendo inducción sobre $n$. 
+        
+        Si $n=0$, $a_0 \ne 0$, es decir  $f(x)=a_0\ne 0$, que es lo que teníamos que probar ($f$ no tiene raíces). 
+        
+        
+        Sea $n>0$. Sea $c$ raíz de $f$. Por  el teorema \ref{th-fact-raiz},  
+        \begin{equation*}
+        f(x) = (x-c)g(x),
+        \end{equation*}
+        con 
+        \begin{equation*}
+        g(x) = b_{n-1}x^{n-1} + \cdots + b_1x +b_0.
+        \end{equation*}
+        Es claro que $b_{n-1} = a_n \ne 0$ y por lo tanto, por hipótesis inductiva, $g(x)$ tiene a lo más $n-1$ raíces. Ahora bien 
+        \begin{equation*}
+            0 =f(x) = (x-c)g(x) \quad \Leftrightarrow \quad x-c=0 \text{ o } g(x) =0.
+        \end{equation*} 
+        Es decir $x$ es raíz de $f$ si y solo si $x=c$ o $x$ es raíz de $g$. Como $g$ tiene a lo más $n-1$ raíces,  $f$ tiene a lo más $n$ raíces.
+        
+        
+        
+        
+        \begin{comment}
+            Sea 
+            \begin{equation*}
+            f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0.
+            \end{equation*}
+            Probaremos, haciendo inducción en $n$, que
+            \begin{equation}\label{eq-desc-rai}
+            f(x) = (x-c_1)(x-c_2)\cdots(x-c_k)h_k,
+            \end{equation} 
+            donde $k \le n$ y $h_k$ no tiene raíces. Observar que  esto implica  que si $f(c)=0$, entonces
+            \begin{equation*}
+            0 = (c-c_1)(c-c_2)\cdots(c-c_k)h_k(c).
+            \end{equation*}
+            Por lo tanto algunos de los factores es igual a 0. Como $h_k(c) \ne 0$ ($h_k$ no tiene raíces),  entonces $c=c_i$ para algún $i$. Luego, las raíces de $f$ son $c_1,\ldots,c_k$ con $k \le n$, lo cual implica el enunciado del teorema. 
+            
+            Probemos  entonces (\ref{eq-desc-rai}).
+            
+            Si $n=0$, como $f$ no es nulo, $f(x)=a_0\ne 0$, que es lo que teníamos que probar. 
+            
+            Sea $n >0$. Supongamos que el resultado es cierto para los polinomios de grado  $\le n-1$ (hipótesis inductiva). Si $f$ no tiene raíces, está probado nuestro enunciado. En  caso contrario existe $c_1 \in \K$ tal que $f(c_1) =0$. Por el teorema \ref{th-fact-raiz}, 
+            \begin{equation*}
+            f(x) = (x-c_1)h_1(x)
+            \end{equation*}
+            con $h_1$ un polinomio de grado $\le n-1$. Luego, por hipótesis inductiva
+            \begin{equation*}
+            h_1(x) = (x-d_1)(x-d_2)\cdots(x-d_r)g_r,
+            \end{equation*} 
+            con $r \le n-1$ y $g_r$ que no tiene raíces. Entonces,
+            \begin{equation*}
+            f(x) = (x-c_1)(x-d_1)(x-d_2)\cdots(x-d_r)g_r,
+            \end{equation*}
+            con $r \le n-1$ y $g_r$ que no tiene raíces. Esto es equivalente a (\ref{eq-desc-rai}).   
+        \end{comment}
+        
+    \end{proof}
+                        
+    \begin{corolario}
+        Sea $f$ un polinomio y 
+        \begin{equation*}
+            f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0,
+        \end{equation*}
+        con $a_n \ne 0$.  Entonces $n$ y $a_0,\ldots,a_n$ están determinados de forma única.
+    \end{corolario}
+    \begin{proof}
+        Debemos ver que si 
+        \begin{equation*}
+        f(x) = b_mx^m + b_{m-1}x^{m-1}+\cdots + b_1x +b_0,
+        \end{equation*}
+        con $b_m \ne 0$, entonces $m=n$ y $a_i=b_i$ para $1 \le i \le n$. 
+        
+        Supongamos que $m \le n$ (el caso $n \le m$ es similar), entonces definiendo $b_k=0$ para $m < k \le n$, tenemos que
+        \begin{equation*}
+        f(x) = b_nx^n + b_{n-1}x^{n-1}+\cdots + b_1x +b_0.
+        \end{equation*}
+        Por lo tanto si 
+        \begin{equation}\label{eq-h-igual-f-g}
+            h(x) = (a_n- b_n)x^n + (a_{n-1}-b_{n-1})x^{n-1}+\cdots + (a_{1}-b_{1})x +(a_{0}-b_{0}), 
+        \end{equation}
+        tenemos  que $h(x)= f(x)-f(x)=0$,  es un polinomio que admite infinitas raíces. 
+        Supongamos  que algún coeficiente de la expresión (\ref{eq-h-igual-f-g}) de $h$ sea no nulo. Sea $k$  el máximo coeficiente de la expresión (\ref{eq-h-igual-f-g}) no nulo. Por el teorema   \ref{th-pol-raiz}, $h$ no  puede tener más de $k$ raíces, absurdo pues hemos dicho que tenía infinitas. El absurdo vino de suponer que algún $a_i-b_i$ era no nulo. Por lo tanto $a_i -b_i=0$ para $0 \le i \le n$,  es decir $a_i=b_i$ para $1 \le i \le n$. 
+        
+        
+    \end{proof}
+
+    Este corolario nos dice que la escritura de un polinomio $f$ como 
+    \begin{equation*}
+    f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0,
+    \end{equation*}
+    con $a_n \ne 0$, es única. Diremos entonces que $n$ es el  \textit{grado} de $f$ y lo denotaremos $\operatorname{gr}(f)=n$. En  el caso del polinomio 0, el grado no está definido y se usa la convención $\operatorname{gr}(0)=-\infty$. 
+    
+    Diremos también que  $a_0,\ldots,a_n$ son los \textit{coeficientes} de $f$, $a_0$ es el \textit{término constante} de $f$ y $a_n$  el \textit{coeficiente principal.} 
+
+    Observemos que si $f$ y $g$ son polinomios con   
+    \begin{equation*}
+    f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_nx^n +\cdots + b_1x +b_0,
+    \end{equation*}
+    entonces como $ax^i + b x^i = (a+b)x^i$, tenemos que $f+g$ es un polinomio definido por 
+    \begin{equation*}
+    (f + g)(x) = (a_n+b_n)x^n + \cdots + (a_1+b_1)x +(a_0+b_0).
+    \end{equation*}
+    Por otro  lado,  debido  a que $(ax^i)(bx^j) = abx^{i+j}$, el producto de dos polinomios también es un polinomio. Más precisamente,
+    
+    \begin{proposicion}
+        Sean $f$ y $g$ polinomios de grado $n$ y $m$,  respectivamente. Entonces $fg$ es un  polinomio de grado $n+m$
+    \end{proposicion}
+    \begin{proof}
+        Sean 
+        \begin{equation*}
+        f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_mx^m +\cdots + b_1x +b_0,
+        \end{equation*}
+        con $a_n, b_m \ne 0$. Entonces, debido a que $x^ix^j = x^{i+j}$, 
+        \begin{equation}
+            (fg)(x) = a_nb_m x^{n+m} + h(x),
+         \end{equation}
+        con $h(x)$ un polinomio de grado menor a $n+m$. Por lo tanto, el coeficiente principal de $fg$ es $a_nb_m \ne 0$ y,  entonces, $fg$ tiene grado $n+m$.
+    \end{proof}
+
+    
+        
+    \begin{ejemplo*} Sean $f(x) = 4x^3 - 3x^2 + x + 2$ y $g(x) = x^2 + 1$. Entonces,
+        \begin{align*}
+            (f+g)(x) &= (4+0)x^3 +(-3 +1)x^2 + (1+0)x + (2+1)\\
+            &= 4x^3 - 2x^2 + x + 3,
+        \end{align*}
+        y
+        \begin{align*}
+        (fg)(x) &= (4x^3 - 3x^2 + x + 2)(x^2 + 1)\\
+        &= (4x^3 - 3x^2 + x + 2)x^2 + (4x^3 - 3x^2 + x + 2)1\\
+        &= 4x^5 - 3x^4 + x^3 + 2x^2 + 4x^3 - 3x^2 + x + 2 \\
+        &= 4x^5 - 3x^4 + 5x^3 - x^2 + x + 2
+        \end{align*}
+    \end{ejemplo*}
+    
+
+    \end{section}
+
+    \begin{section}{Divisi\'on de polinomios}\label{seccion-division-de-polinomios} Si $f$ y $g$ son polinomios,  entonces no necesariamente la función $f/g$ está bien definida en todo punto y puede que tampoco sea un polinomio. Cuando trabajamos con enteros, en cursos anteriores,  probamos la existencia del algoritmo de división, más precisamente.
+        
+        \textit{Sean $n$, $d$ enteros positivos. Entonces existe un entero $r$ tal que
+            $0 \le  r <d$  un entero $q \ge 0$ tal que
+            } 
+        \begin{equation*}
+            n = qd + r.
+        \end{equation*}
+    
+    Ahora describiremos un procedimiento análogo para polinomios.
+
+    \textit{\textbf{Algoritmo de División.} Sean $f$ y $g$ polinomios distintos de cero. Entonces existen polinomios $q$, $r$ tales que $\operatorname{gr}(r) < \operatorname{gr}(g)$ y tales que}
+    \begin{equation*}
+        f (x) = q (x) g (x) + r (x).
+    \end{equation*}
+    A $q(x)$ lo llamamos el \textit{cociente} de la \textit{división polinomial} y  a $r(x)$ lo llamamos el \textit{resto}  de la división polinomial. 
+    
+    No veremos aquí la demostración del algoritmo de división, basta decir que es muy similar a  la demostración del algoritmo de división para números enteros. En los siguientes ejemplos se verá como se calculan el cociente y resto de la división polinomial. 
+
+    \begin{ejemplo*} Sean $f(x) = 4x^3 - 3x^2 + x + 2$ y $g(x) = x^2 + 1$. Para encontrar la división polinomial, debemos multiplicar por un monomio $ax^k$ a $g(x)$ de tal forma que el coeficiente principal de  $ax^kg(x)$ sea igual al coeficiente principal de $f(x)$. En este caso, multiplicamos a $g(x)$ por $4x$ y nos queda 
+    \begin{equation*}
+        f(x) = 4xg(x) + r_1(x) = (4x^3 +4x)+(-3x^2-3x +2)
+    \end{equation*}
+    Ahora,  con $r_1(x)=-3x^2-3x +2$ hacemos el mismo procedimiento,  es decir multiplicamos por $-3$  a $g(x)$ y vemos que es lo que "falta":
+    \begin{equation*}
+        r_1(x) = (-3)g(x) +r(x) = (-3x^2 -3) + (-3x+5).
+    \end{equation*}
+    Como $r(x) = -3x+5$ tiene grado menor que 2, tenemos que
+    \begin{align*}
+    f(x) &= 4xg(x) + r_1(x)\\ &=4xg(x) + (-3)g(x) +r(x)\\& = (4x-3)g(x)+r(x).
+    \end{align*}
+    Es decir, 
+    \begin{equation*}
+    f(x) = q(x)g(x)+r(x),
+    \end{equation*}
+    con $q(x) =4x-3$ y $r(x) = -3x+5$. 
+    
+    Observemos que se puede hacer un esquema parecido a  la división de números enteros, el cual nos facilita el cálculo:
+    \begin{equation*}
+        \polylongdiv{4x^3 - 3x^2 + x + 2}{ x^2 + 1}
+    \end{equation*}
+\end{ejemplo*}
+
+\begin{ejemplo*}
+    Sean
+    \begin{equation*}
+        f (x) = 2x^4 - 3x^2 + 1 \quad \text{ y } \quad g (x) = x^2 - x + 3.
+    \end{equation*}
+    Deseamos encontrar $q (x)$ y $r (x)$ como en el algoritmo de Euclides. Haciendo la división como en el ejercicio anterior:
+    \begin{equation*}
+    \polylongdiv{2x^4 +0x^3- 3x^2 +0x+ 1}{x^2 - x + 3}
+    \end{equation*}
+    Es decir $q(x) = 2x^2+2x-7$ y $r(x)= -13x+22$.
+\end{ejemplo*}
+
+Observemos que el algoritmo de división nos dice que si dividimos un polinomio por uno de grado 1,  entonces el resto es una constante (que puede ser 0). Más aún:
+
+\begin{teorema}[Teorema del  resto] Sea $f$ polinomio y $c \in \K$. Entonces,  el resto de dividir $f$ por $x-c$ es $f(c)$. 
+\end{teorema}
+\begin{proof} Por  el algoritmo de Euclides
+    \begin{equation*}
+        f(x) = q(x)(x-c) + r,
+    \end{equation*}
+    con $r$ de grado $<1$,  es decir $r \in \K$.  Ahora bien
+    \begin{equation*}
+    f(c) = q(c)(c-c) + r = r,
+    \end{equation*}
+    luego $f(c)$  es el resto de dividir $f$ por $x-c$. 
+\end{proof}
+
+Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, luego por teorema del resto $ f(x)=q(x)(x-c)$. 
+        
+    \end{section}	
+    \end{chapter}	

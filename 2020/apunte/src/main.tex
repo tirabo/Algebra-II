@@ -7640,15 +7640,22 @@ Luego,
             Ahora bien,  $v_1,\ldots,v_n$ son  LI, por lo tanto todos los coeficientes de la ecuación anterior son nulos, es decir $x_i-y_i=0$ para $1 \le i \le n$ y entonces $x_i = y_i$ para $1 \le i \le n$.
         \end{proof}
     
-    La proposición anterior permite asociar a cada vector una $n$-tupla: sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, si $v \in V$ y $$v =   x_1v_1 + \cdots +x_nv_n,$$  entonces \textit{$x_i$ es la coordenada $i$-ésima de $v$} y denotamos
+    La proposición anterior permite, dada una base ordenada,  asociar a cada vector una $n$-tupla que serán la coordenadas del vector en esa base.
+    
+    \begin{definicion}
+    sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, si $v \in V$ y $$v =   x_1v_1 + \cdots +x_nv_n,$$  entonces \textit{$x_i$ es la coordenada $i$-ésima de $v$} y denotamos
     $$
-    v = (x_1,\ldots,x_n)_{\mathcal B}.
+    [v]_\mathcal{B} = (x_1,\ldots,x_n).
     $$
-    También nos será útil describir a $v$ como una matriz $n \times 1$: \textit{la matriz de $v$  en la base  $\mathcal{B}$}  es
+    También nos será útil describir a $v$ como una matriz $n \times 1$ y en ese caso hablaremos de \textit{la matriz de $v$  en la base  $\mathcal{B}$}:
     $$
     [v]_\mathcal{B} = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}.
     $$
-    
+    (Usamos la misma notación).
+    \end{definicion}
+
+
+
     \begin{ejemplo*}
         Sea $\mathcal B = \{(1,-1),(2,3)\}$ base ordenada de $\R^2$. Encontrar las coordenadas  de $(1,0)$ y $(0,1)$ en la base $\mathcal B$.
     \end{ejemplo*}
