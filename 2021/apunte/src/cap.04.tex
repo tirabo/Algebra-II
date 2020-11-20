@@ -1278,7 +1278,7 @@ Luego,
                     \end{equation*}
                 \end{observacion*}
             
-            \begin{proposicion} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
+            \begin{proposicion}\label{prop-matriz-de-tv} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
             \begin{equation}\label{matriz-de-tl-2}
             [T]_{\mathcal B \mathcal B'} [v]_{\mathcal B} = [T(v)]_{\mathcal B'}, \quad \forall \,v \in V.
             \end{equation}	
@@ -1460,50 +1460,26 @@ Luego,
         
         La fórmula (\ref{eq-cambio de base})  es importante por si misma y debemos recordarla.
 
-
-        La matriz $P =[\Id]_{\mathcal B' \mathcal B} $ del teorema anterior es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base}de la base $\mathcal B'$  a la base $\mathcal B$. 
+        \begin{definicion}
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\mathcal B$ y $\mathcal B'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\mathcal B' \mathcal B}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\mathcal B'$  a la base $\mathcal B$. 
+        \end{definicion}
         
-        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\mathcal B$ y $\mathcal B'$,  y dadas las coordenadas de $v$ en la base  $\mathcal B'$ es decir la matriz columna $[v]_\mathcal B'$ ¿Cómo averiguamos las coordenadas de $v$  en la base $\mathcal B$? La respuesta la da la siguiente proposición. 
+        
+        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\mathcal B$ y $\mathcal B'$,  y dadas las coordenadas de $v$ en la base  $\mathcal B'$ es decir la matriz columna $[v]_{\mathcal B'}$ ¿Cómo averiguamos las coordenadas de $v$  en la base $\mathcal B$? La respuesta la da la siguiente observación. 
 
-
-        \begin{proposicion}
+        \begin{observacion*}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\mathcal B$, $\mathcal B'$  bases ordenadas de $V$ y $P$ la matriz de cambio de base de $\mathcal B'$ a $\mathcal B$. Entonces 
             \begin{equation*}
-                [v]_{\mathcal B} = P [v]_{\mathcal B'}, \quad \forall v \in V.
+                [v]_{\mathcal B} = P\, [v]_{\mathcal B'}, \quad \forall v \in V.
             \end{equation*}
-        \end{proposicion}
+        \end{observacion*}
         \begin{proof}
-            Sean $\mathcal B = \{v_1,\ldots,v_n \}$, y $\mathcal B' = \{w_1,\ldots,w_n \}$. Entonces  $v= \sum_{i=1}^n a_i v_i$ y $v = \sum_{i=1}^n b_i w_i$ para algunos $a_i$ y $b_i$ en $\K$. Por lo tanto,  debemos probar que
-            \begin{align*}
-                \begin{bmatrix}
-                    a_1 \\ a_2 \\ \vdots \\a_n
-                \end{bmatrix}
-                =
-                    \begin{bmatrix}
-                        p_{11} & \cdots& p_{1n}\\
-                        p_{21} & \cdots & p_{2n} \\ 
-                        \vdots & & \vdots \\
-                        p_{n1} & \cdots & p_{nn}
-                    \end{bmatrix}
-                    \begin{bmatrix}
-                        b_1 \\ b_2 \\ \vdots \\b_n
-                    \end{bmatrix}.
-            \end{align*}
-            donde $p_{ij} = [P]_{ij}$,  o lo que es lo mismo  $a_i = \sum_{j=1}^n p_{ij} b_j$, ($1 \le i \le n$).
-
-            Ahora bien, $P =[\Id]_{\mathcal B' \mathcal B} $, por lo tanto 
-            \begin{equation*}
-                w_j = \sum_{i=1}^n p_{ij} v_i , \qquad (1 \le j \le n).
-            \end{equation*}
-            Entonces,
-            \begin{align*}
-                v &= \sum_{i=1}^n b_j w_j \\
-                &= \sum_{i=1}^n b_j(\sum_{i=1}^n p_{ij} v_i) \\
-                &= \sum_{i=1}^n \sum_{i=1}^n p_{ij}b_j v_i \\
-                &= \sum_{i=1}^n (\sum_{i=1}^n p_{ij}b_j) v_i. 
-            \end{align*}
-            Es decir $v = \sum_{i=1}^n (\sum_{i=1}^n p_{ij}b_j) v_i$. Como  $v= \sum_{i=1}^n a_i v_i$, debido a la unicidad de escritura de vectores en bases ordenadas obtenemos que  $a_i = \sum_{j=1}^n p_{ij} b_j$ que es lo que queríamos probar. 
+            Como $P =[\Id]_{\mathcal B' \mathcal B} $,  por la proposición \ref{prop-matriz-de-tv} tenemos que 
+            $$
+            P\,[v]_{\mathcal B'}  = [\Id]_{\mathcal B' \mathcal B}  [v]_{\mathcal B'} = [\Id (v)]_{\mathcal B} = [v]_{\mathcal B}.
+            $$
         \end{proof}
+       
     
         El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
         bases ordenadas de $V$, entonces $[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}P$, para $P$ una matriz invertible. Por lo tanto, 
@@ -1517,8 +1493,7 @@ Luego,
         \end{definicion}
         \end{section}
     
-    
-    
+       
     
     
     
@@ -1950,9 +1925,12 @@ Luego,
         
     
 
-\begin{section}{Diagonalizaci\'on de matrices simétricas}\label{seccion-diagonalizacion-de-simetricas}
+\begin{section}{Operadores simétricos en $\R^n$}\label{seccion-operadores-simetricos-rn}
     
-
+    \begin{definicion}
+        Sea $T$ un operador lineal  en $\R^n$,  diremos que $T$ es un \textit{operador simétrico} si la matriz de $T$  en la base canónica es simétrica, es decir si 
+        $[T]_{\mathcal{C}}^{\t} = [T]_{\mathcal{C}}$
+    \end{definicion}
     
     
     Observar, como ya hemos visto anteriormente,  que en $\R^n$ el producto escalar es 
@@ -1964,76 +1942,41 @@ Luego,
         \la x,y \ra = x^\t y.
     \end{equation*}
     
-    Recordemos que una matriz es simétrica si $A^\t =A$. 
+Sea $T:\R^n \to \R^n$ un operador simétrico y $A$ la matriz asociada a  $T$,  es decir $A = [T]_{\mathcal{C}}$,  donde $\mathcal{C}$  es la base canónica. Si trabajamos en las coordenadas canónicas es claro que $T(x) = Ax$ y debido a esto a menudo intercambiaremos  $T$ por $A$ y viceversa.  
+
+\begin{definicion}
+    Sea $V$  espacio vectorial y  $T: V \to V$ operador lineal. Sea $U \subset V$ subespacio de $V$. Diremos que $U$  es  \textit{invariante por $T$} si $T(U) := \{T(v): v \in U\} \subset U$. 
+\end{definicion}
+
     
-\begin{proposicion}
-    Si $A$ es una matriz $n \times n$ simétrica, entonces 
+\begin{proposicion}\label{prop-t-simetrico-autoadjunto}
+    Si $T$ es un operador simétrico, entonces 
     \begin{enumerate}[label=\emph{\alph*})]
         \item 
         \begin{equation*}
-        \la Ax,y \ra =  \la x,Ay \ra .
+        \la Tx,y \ra =  \la x,Ty \ra .
         \end{equation*}
-        \item Si $W$ un subespacio de $\R^n$ invariante por $A$, entonces $W^\perp$ es invariante por $A$.
+        \item Si $W$ un subespacio de $\R^n$ invariante por $T$, entonces $W^\perp$ es invariante por $T$.
     \end{enumerate}
 \end{proposicion}
-\begin{proof}
-    Notar que
+\begin{proof} Sea $A=[T]_{\mathcal{C}}$. 
+
+
+    (a) Notar que
     \begin{equation*}
     \la Ax,y \ra = (Ax)^\t y = x^\t A^\t y  = x^\t A y = \la x,Ay \ra 
     \end{equation*}
+
+    (b)  Sea $u \in W^\perp$,  debemos ver que $Au \in W^\perp$,  es decir que $\la Au,w\ra =0$ para todo $w \in W$. Ahora bien,
+    \begin{equation*}
+        \la Au,w\ra =(Au)^\t w = u^\t A^\t w =u^\t A w = u^\t (A w) = \la u, Aw\ra=0.  
+    \end{equation*}
+    La última igualdad es válida pues $u \in W^\perp$ y  como $w \in W$, por hipótesis $Aw \in W$.
 \end{proof}
     
     
-    
-    \begin{proposicion}\label{wperpinv}
-        Sea $A$ matriz simétrica $n \times n$ y $W$ un subespacio de $\R^n$ invariante por $A$, entonces $W^\perp$ es invariante por $A$.
-    \end{proposicion}
-    \begin{proof}
-        Sea $u \in W^\perp$,  debemos ver que $Au \in W^\perp$,  es decir que $\la Au,w\ra =0$ para todo $w \in W$. Ahora bien,
-        \begin{equation*}
-            \la Au,w\ra =(Au)^\t w = u^\t A^\t w =u^\t A w = u^\t (A w) = \la u, Aw\ra=0.  
-        \end{equation*}
-        La última igualdad es válida pues $u \in W^\perp$ y  como $w \in W$, por hipótesis $Aw \in W$.
-    \end{proof}
-    
-    
-    
-     \begin{comment}
-         \begin{proposicion} Sean $A$ y $B$ dos matrices simétricas. Entonces, $AB$  es simétrica si y sólo  si $A$ y $B$ conmutan. 
-         \end{proposicion}
-         \begin{proof}
-         ($\Rightarrow$) Como $AB$ es simétrica, tenemos que $AB = (AB)^\t$. Por proposición \ref{prop-matriz-transpuesta} tenemos que  $(AB)^\t = B^\t A^\t$, y  como $A,B$ son simétricas, $B^\t A^\t = BA$. 
-         Reconstruyendo las igualdades tenemos
-         $$
-         AB = (AB)^\t = B^\t A^\t = BA,
-         $$
-         es decir, $A$ y $B$ conmutan.
-         
  
-         
-         ($\Leftarrow$)  
-         $$
-         (AB)^\t = B^\t A^\t = BA=AB.
-         $$
-         \end{proof}
-         
-         
-         \begin{ejemplo*}
-         Sean 
-         \begin{equation*}
-         A = \begin{bmatrix} 1&0\\0&2 \end{bmatrix} \quad \text{ y } \quad B = \begin{bmatrix}0&1\\1&0\end{bmatrix}.
-         \end{equation*}
-         Tanto $A$ como $B$ son matrices simétricas. Sin embargo, 
-         \begin{align*}
-         AB = \begin{bmatrix}0&1\\2&0\end{bmatrix} 
-         \end{align*}
-         no es simétrica. Esto ocurre, pues $A$ y $B$ no conmutan. 
-         \end{ejemplo*}
-         
-     \end{comment}
-
- 
-    Veremos ahora que una matriz simétrica es diagonalizable, es decir que hay una base de autovectores del operador asociado a la matriz o, equivalentemente, existe matriz $P$ invertible tal que $P^{-1}AP$ es diagonal. 
+    Veremos ahora que un operador simétrico, o equivalentemente, una matriz simétrica, es diagonalizable, es decir que hay una base de autovectores del operador o, equivalentemente, que existe una matriz $P$ invertible tal que $P^{-1}AP$ es diagonal. 
     
     Usaremos el siguiente resultado sin demostración.
     
@@ -2074,9 +2017,9 @@ Luego,
     \end{obs}
     
     \begin{teorema}\label{th-existe-autovalor-simetrica}
-        Sea $A$ matriz simétrica $n \times n$, con coeficientes reales. Entonces existe $\lambda \in \R$ autovalor de $A$.   
+        Sea $T$ un operador simétrico de $\R^n$. Entonces existe $\lambda \in \R$ autovalor real de $T$.   
     \end{teorema}
-    \begin{proof} Extendamos $A$  a una transformación lineal de $A: \mathbb{C}^n \to \mathbb{C}^n$ de manera natural (con el producto de matrices). Sea $\chi_A$ el polinomio característico de $A$. Por el teorema fundamental  del álgebra, existe $\lambda \in \mathbb{C}$ tal que $\chi_A(\lambda)=0$. Luego existe $x \in \mathbb{C}^n$, no nulo,  tal que $Ax = \lambda x$.  Veremos que $\lambda$ es un número real. Por un lado, como $A$ tiene coeficientes reales, tenemos que $A = \overline{A}$ y entonces:
+    \begin{proof} Sea $A = [T]_{\mathcal{C}}$. Extendamos $T$  a una transformación lineal de $T: \mathbb{C}^n \to \mathbb{C}^n$ de manera natural, con el producto de matrices $T(x) = Ax$ con $x \in \C^n$. Sea $\chi_A$ el polinomio característico de $A$. Por el teorema fundamental  del álgebra, existe $\lambda \in \mathbb{C}$ tal que $\chi_A(\lambda)=0$. Luego existe $x \in \mathbb{C}^n$, no nulo,  tal que $Ax = \lambda x$.  Veremos que $\lambda$ es un número real. Por un lado, como $A$ tiene coeficientes reales, tenemos que $A = \overline{A}$ y entonces:
         \begin{equation*}
         x^\t A\overline{x} = x^\t \overline{A}\overline{x} =x^\t\overline{Ax} =x^\t\overline{\lambda x} = \overline{\lambda} x^\t\overline{x} = \overline{\lambda} ||x||^2 .
         \end{equation*}
@@ -2084,11 +2027,11 @@ Luego,
         \begin{equation*}
         x^\t A\overline{x} = x^\t A^t\overline{x}= (A x)^\t\overline{x} = (\lambda x)^\t\overline{x} = \lambda x^\t\overline{x} = \lambda ||x||^2. 
         \end{equation*}
-    Por lo tanto, $\lambda = \overline{\lambda}$, lo cual nos dice que ${\lambda} \in \R$.  Es decir, tenemos un vector $x \in \C^n$ y $\lambda \in \R$, tal que $Ax=\lambda x$. Si  $x = v +iw$ con $v,w \in \R^n$, entonces 
+    Por lo tanto, $\lambda = \overline{\lambda}$, lo cual nos dice que ${\lambda} \in \R$.  Es decir, existe un vector $x \in \C^n$ no nulo y $\lambda \in \R$, tal que $Ax=\lambda x$. Si  $x = v +iw$ con $v,w \in \R^n$, entonces 
         \begin{equation*}
         \lambda v + i \lambda w = \lambda x = Ax = Av + i Aw.
         \end{equation*}
-    Como $A$ es una matriz real $Av,Aw \in \R^n$ y como $\lambda \in \R$, tenemos que $Av = \lambda v$ y $Aw = \lambda w$, luego hay al menos un autovector en $\R^n$ con autovalor $\lambda \in \R$. 
+    Como $A$ es una matriz real $Av,Aw \in \R^n$ y como $\lambda \in \R$, tenemos que $Av = \lambda v$ y $Aw = \lambda w$ Como $x = v + iw$ es no nulo,  entonces o $v$ o $w$ son no nulos y por  lo tanto  hay al menos un autovector en $\R^n$ con autovalor $\lambda \in \R$. 
     \end{proof}
     
  
@@ -2097,12 +2040,14 @@ Luego,
         
     \begin{teorema}[Teorema espectral]\index{Teorema espectral} Sea $A$ matriz simétrica $n \times n$. Entonces existe $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $\R^n$ de autovectores de $A$.
     \end{teorema}
-    \begin{proof}[Idea de la demostración]		
+    \begin{proof}[Idea de la demostración (*)]		
         Se hará por inducción en $n= \dim(V)$.
         
         Si $n=1$ es trivial. 
         
-        Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por el teorema  \ref{th-existe-autovalor-simetrica} existe $\lambda \in \R$ y $x \in \R^n$ tal que $Ax = \lambda x$. Si $u_n = x/||x||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W =\la u_n \ra$. Entonces, puede verse que $W^\perp$ es invariante por $A$. De esta forma, podemos considerar entonces a  $A$ como una transformación lineal de $W^\perp$ a $W^\perp$. No es difícil verificar que el producto interno canónico es un producto interno en $W^\perp$ y que $A$ es una matriz simétrica con este producto interno restringido.  
+        Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por el teorema  \ref{th-existe-autovalor-simetrica} existe $\lambda \in \R$ y $x \in \R^n$ tal que $Ax = \lambda x$. Si $u_n = x/||x||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W =\la u_n \ra$. Entonces $W$ es invariante y por proposición \ref{prop-t-simetrico-autoadjunto} tenemos que $W^\perp$ es invariante por $A$. De esta forma, podemos considerar entonces a  $A$ como una transformación lineal de $W^\perp$ a $W^\perp$. 
+        
+        No es difícil verificar que el producto interno canónico es un producto interno en $W^\perp$ y que $A:W^\perp \to W^\perp$ es una matriz simétrica con este producto interno restringido.  
         
         Como $\dim(W^\perp) = n-1$, por hipótesis inductiva existe   $\{u_1,\ldots,u_{n-1}\}$ una BON de $W^\perp$ de autovectores de $A: W^\perp \to W^\perp$. Es claro entonces que $\mathcal{U} = \{u_1,\ldots,u_n\}$  una BON de $\R^n$ de autovectores de $A$. 
     \end{proof}
