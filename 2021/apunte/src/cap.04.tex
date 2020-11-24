@@ -1312,6 +1312,28 @@ Luego,
             \end{equation}
             De las ecuaciones (\ref{eq-45}) y (\ref{eq-46}) se deduce la formula (\ref{matriz-de-tl-2}).
         \end{proof}
+
+        \begin{corolario}\label{cor-cambio-de-base}
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\mathcal B$, $\mathcal B'$  bases ordenadas de $V$. Entonces 
+            \begin{equation*}
+                [v]_{\mathcal B} = [\Id]_{\mathcal B' \mathcal B}\, [v]_{\mathcal B'}, \quad \forall v \in V.
+            \end{equation*}
+        \end{corolario}
+        \begin{proof}
+            Por la proposición \ref{prop-matriz-de-tv} tenemos que 
+            $$
+            [\Id]_{\mathcal B' \mathcal B}  [v]_{\mathcal B'} = [\Id (v)]_{\mathcal B} = [v]_{\mathcal B}.
+            $$
+        \end{proof}
+
+        \begin{definicion}
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\mathcal B$ y $\mathcal B'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\mathcal B' \mathcal B}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\mathcal B'$  a la base $\mathcal B$. 
+        \end{definicion}
+
+        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\mathcal B$ y $\mathcal B'$,  y dadas las coordenadas de $v$ en la base  $\mathcal B'$ es decir la matriz columna $[v]_{\mathcal B'}$, tenemos, por corolario \ref{cor-cambio-de-base}, que
+        \begin{equation*}
+            [v]_{\mathcal B} =P\, [v]_{\mathcal B'}, \quad \forall v \in V.
+        \end{equation*}
         
         \begin{teorema}[*]
             Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y $\mathcal B = \{v_1,\ldots,v_n\}$ y $\mathcal B' = \{w_1,\ldots,w_m\}$ dos bases  ordenadas de $V$ y $W$ respectivamente. Entonces 
@@ -1363,13 +1385,13 @@ Luego,
     
         
         
-        \begin{teorema}\label{th-5.5}
+        \begin{teorema}\label{th-producto-de-matrices-bases}
             Sean $V$, $W$ y $Z$ espacios vectoriales de dimensión finita sobre el cuerpo $\K$; sean $T: V \to W$ y $U: W \to Z$  transformaciones lineales.  Si $\mathcal B$, $\mathcal B'$ y $\mathcal B''$ son bases ordenadas de los espacios $V$, $W$ y $Z$, respectivamente, entonces
             \begin{equation}
                 [UT]_{\mathcal B\mathcal B''} = 	[U]_{\mathcal B'\mathcal B''} 	[T]_{\mathcal B\mathcal B'}.  
             \end{equation} 
         \end{teorema}
-        \begin{proof}
+        \begin{proof} 
             Sean
             \begin{equation*}
                  \mathcal B = \{v_1,\ldots,v_n\},\quad\mathcal B' = \{w_1,\ldots,w_m\},\quad  \mathcal B''= \{z_1,\ldots,z_l\}
@@ -1395,6 +1417,15 @@ Luego,
             \end{equation*}
         \end{proof}	
             
+        \begin{corolario}\label{cor-inversa-matriz-cambio-de-base} Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\mathcal B$ y $\mathcal B'$ bases ordenadas de $V$. La matriz de cambio de base  $P =[\Id]_{\mathcal B' \mathcal B}$ es invertible y su  inversa es $P^{-1} =[\Id]_{\mathcal B \mathcal B'}$
+        \end{corolario}
+        \begin{proof}
+            \begin{equation*}
+                P^{-1} P =[\Id]_{\mathcal B \mathcal B'}[\Id]_{\mathcal B' \mathcal B} = [\Id]_{\mathcal B'} = \Id.
+            \end{equation*}
+        \end{proof}
+    
+
         \begin{corolario}\label{cor-5.6} Sean $V$ espacio vectorial de dimensión finita, $\mathcal B = \{v_1,\ldots,v_n\}$ base ordenada de $V$ y $T,U: V \to V$ operadores lineales. Entonces
             \begin{enumerate}
                 \item\label{itm-cor-cambio-1} $[UT]_{\mathcal B} = [U]_{\mathcal B} [T]_{\mathcal B}$.
@@ -1424,16 +1455,16 @@ Luego,
     
     
             
-        \begin{teorema}[Matriz de cambio de base]\label{th-cambio-de-base}
+        \begin{teorema}\label{th-cambio-de-base}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean
             $$
             \mathcal B = \{v_1,\ldots,v_n \}, \qquad \mathcal B' = \{w_1,\ldots,w_n \}
             $$
-            bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces existe $P$ una  matriz invertible  $n \times n$ tal que 
+            bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces, si $P$ es la matriz de cambio de base de $\mathcal B'$ a $\mathcal B$, se cumple que  
             \begin{equation*}
             [T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}  P.
             \end{equation*}
-            Más aún, $P = [\Id]_{\mathcal B' \mathcal B}$ y $P^{-1} = [\Id]_{\mathcal B \mathcal B'}$ ,  donde $\Id$ al  operador  identidad de $V$. Es decir
+            Es decir
             \begin{equation}\label{eq-cambio de base}
                 [T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B}.
             \end{equation}
@@ -1441,46 +1472,15 @@ Luego,
         \begin{proof} Tenemos que $T = \Id T$ y $T =T  \Id$, luego 
             \begin{align*}
                 [T]_{\mathcal B'\mathcal B'} &=  [\Id T]_{\mathcal B'\mathcal B'}& \qquad& \\
-                &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-5.5}})  \\
+                &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-producto-de-matrices-bases}})  \\
                 &= [\Id]_{\mathcal B \mathcal B'} [T \Id]_{\mathcal B' \mathcal B}& &\\
-                &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B\mathcal B} [\Id]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-5.5}}).
+                &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B\mathcal B} [\Id]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-producto-de-matrices-bases}}) \\
+                &=P^{-1}[T]_{\mathcal B\mathcal B}P& &(\text{corolario \ref{cor-inversa-matriz-cambio-de-base}}).
             \end{align*} 
-            
-            Por lo tanto  $ [T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B}$.
-            
-            Falta probar que $[\Id]_{\mathcal B \mathcal B'}$  es el inverso de  $[\Id]_{\mathcal B' \mathcal B}$. Ahora bien,
-            \begin{align*}
-                [\Id]_{\mathcal B \mathcal B'} [\Id]_{\mathcal B' \mathcal B}&= [\Id]_{\mathcal B \mathcal B} = \Id,\\
-                [\Id]_{\mathcal B' \mathcal B} [\Id]_{\mathcal B \mathcal B'}&= [\Id]_{\mathcal B' \mathcal B'} = \Id.
-            \end{align*}
         \end{proof}
     
-    
-        
-        
         La fórmula (\ref{eq-cambio de base})  es importante por si misma y debemos recordarla.
 
-        \begin{definicion}
-            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\mathcal B$ y $\mathcal B'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\mathcal B' \mathcal B}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\mathcal B'$  a la base $\mathcal B$. 
-        \end{definicion}
-        
-        
-        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\mathcal B$ y $\mathcal B'$,  y dadas las coordenadas de $v$ en la base  $\mathcal B'$ es decir la matriz columna $[v]_{\mathcal B'}$ ¿Cómo averiguamos las coordenadas de $v$  en la base $\mathcal B$? La respuesta la da la siguiente observación. 
-
-        \begin{observacion*}
-            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\mathcal B$, $\mathcal B'$  bases ordenadas de $V$ y $P$ la matriz de cambio de base de $\mathcal B'$ a $\mathcal B$. Entonces 
-            \begin{equation*}
-                [v]_{\mathcal B} = P\, [v]_{\mathcal B'}, \quad \forall v \in V.
-            \end{equation*}
-        \end{observacion*}
-        \begin{proof}
-            Como $P =[\Id]_{\mathcal B' \mathcal B} $,  por la proposición \ref{prop-matriz-de-tv} tenemos que 
-            $$
-            P\,[v]_{\mathcal B'}  = [\Id]_{\mathcal B' \mathcal B}  [v]_{\mathcal B'} = [\Id (v)]_{\mathcal B} = [v]_{\mathcal B}.
-            $$
-        \end{proof}
-       
-    
         El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
         bases ordenadas de $V$, entonces $[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}P$, para $P$ una matriz invertible. Por lo tanto, 
         \begin{equation*}
@@ -1491,12 +1491,7 @@ Luego,
         \begin{definicion} 
                 Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. El \textit{determinante de $T$}\index{determinante de una transformación lineal} es el determinante de la matriz de $T$ en alguna base de $V$.  
         \end{definicion}
-        \end{section}
-    
-       
-    
-    
-    
+        \end{section}    
     
         \begin{section}{Operadores diagonalizables}\label{seccion-autovalores-y-autovectores-de-una-tl}
         Vimos en la sección  \ref{seccion-autovalores-y-autovectores-de-matrices} la definición de autovalores y autovectores de una matriz. Por otro lado,  en la sección \ref{seccion-matriz-de-una-tl} vimos que dada una base podemos asignarle a cada transformación lineal una matriz. En  esta sección veremos,  entro otros temas,  los autovalores y autovectores desde una perspectiva de las transformaciones lineales. Por lo dicho anteriormente  verán que muchos conceptos y demostraciones se repiten o son similares al caso de la matrices. 
