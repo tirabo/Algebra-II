@@ -497,7 +497,7 @@ La demostración es trivial pero por ahora no la haremos.
 
 
 
-\subsection*{\large $\S$ Ejercicios}   
+\subsection*{$\S$ Ejercicios}   
 \begin{enumerate}
     \item Dados $v = (-1, 2-0)$, $w = (2,-3,-1)$ y $u = (1,-1,1)$, calcular:
     \begin{enumerate}
@@ -669,7 +669,7 @@ La demostración es trivial pero por ahora no la haremos.
         \end{ejemplo*}
         
 
-        \subsection*{\large $\S$ Ejercicios}
+        \subsection*{$\S$ Ejercicios}
         \begin{enumerate}
             
             \item Calcular los siguientes productos escalares. %\langle v , w  \rangle
@@ -881,8 +881,34 @@ Una de las desigualdades más notables referentes a la norma de un vector es la 
     \end{equation*}
     y la igualdad se cumple sólo cuando $w$ es múltiplo de $v$. 
 \end{proposicion}
-\begin{proof}
-    Ejercicio. 
+\begin{proof}[Demostración] Podemos probar  este resultado en base a una demostración ``geométrica'' basada en el hecho de que $|\cos\theta| \le 1 $ y usando la ecuación $\ref{eq-cos-theta}$.
+    
+La demostración formal de la desigualdad triangular se verá en el capítulo \ref{chap-esp-prod-int}. 
+\begin{comment}
+   Sea $v= (x_1,\ldots,x_n)$ y $w = (y_1,,\ldots,y_n)$. Luego $v+w = (x_1+ y_1,\ldots, x_n + y_n)$. Debemos probar entonces que
+    \begin{equation*}
+    \sqrt{\sum (x_i+ y_i)^2} \le  \sqrt{\sum x_i^2} + \sqrt{\sum y_i^2},
+    \end{equation*}
+    (todas las sumatoria sobre $i$). Si elevamos al cuadrado obtenemos:
+    \begin{align*}
+        \sum (x_i+ y_i)^2 &\le\sum x_i^2  + \sum y_i^2+ 2\sqrt{\sum x_i^2}\sqrt{\sum y_i^2}\\
+        &\Updownarrow\\
+        \sum  x_i^2+ y_i^2 + 2x_iy_i &\le \sum  x_i^2+ y_i^2 + 2\sqrt{\sum x_i^2}\sqrt{\sum y_i^2}\\
+        &\Updownarrow\\
+        \sum x_iy_i &\le \sqrt{\sum x_i^2}\sqrt{\sum y_i^2}.
+    \end{align*}
+    Si elevamos al cuadrado de nuevo obtenemos que
+    \begin{equation*}
+        ||v+w|| \le ||v||+||w|| \quad \Leftrightarrow \quad   (\sum x_iy_i)^2 \le \sum x_i^2\sum y_i^2.
+    \end{equation*}
+
+    Ahora bien
+    \begin{align*}
+        (\sum_i x_iy_i)^2  &= \sum_{i,j} x_iy_ix_jy_j \\
+        &= \sum_i   x_iy_i x_iy_i + \sum_{i \ne j}  x_iy_ix_jy_j \\
+        &= \sum_i   x_i^2y_i^2  +2 \sum_{i < j}  x_iy_ix_jy_j
+    \end{align*}
+\end{comment} 
 \end{proof}
 
 La desigualdad triangular expresa en forma algebraica el resultado, más conocido, ``en todo triángulo, un lado es menor que la suma de los otros dos'', que graficamos a continuación.
@@ -917,7 +943,7 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
 
 
 
-    \subsection*{\large $\S$ Ejercicios}
+    \subsection*{$\S$ Ejercicios}
 
 \begin{enumerate}
 
@@ -1041,7 +1067,7 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
         \end{center}
 
         
-    \subsection*{\Large $\S$ Ejercicios}
+    \subsection*{$\S$ Ejercicios}
     
     \begin{enumerate}
 
@@ -1376,7 +1402,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 	
 
 
-    \subsection*{\large $\S$ Ejercicios}
+    \subsection*{$\S$ Ejercicios}
     
     \begin{enumerate}
 
@@ -1571,7 +1597,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         \end{align*}
     \end{ejemplo*}
 
-    \subsection*{\large $\S$ Ejercicios}
+    \subsection*{$\S$ Ejercicios}
     
     \begin{enumerate}
 
