@@ -1,310 +1,89 @@
-% PDFLaTeX
-\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
-%%%---------------------------------------------------
+\documentclass[a4paper,12pt,twoside,spanish,reqno,dottedtoc]{scrbook}
+\usepackage[spanish,es-lcroman,es-nodecimaldot]{babel}
 
-\setlength{\parindent}{1.8em} % Sangría al inicio de párrafo
-\setlength{\parskip}{0.8em} % espacio entre párrafo y párrafo
-\renewcommand{\baselinestretch}{1.05} % espacio entre linea y linea dentro de un párrafo
-\usepackage[a4paper, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+\input{classicthesis-config}
 
-%\renewcommand{\familydefault}{\sfdefault} % la font por default es sans serif
-%\usepackage[T1]{fontenc}
+\input{config-definiciones}
 
-% Para hacer el  indice en linea de comando hacer 
-% makeindex main
-
-%% En http://www.tug.org/pracjourn/2006-1/hartke/hartke.pdf hay ejemplos de packages de fonts libres.
-%% En https://tug.org/FontCatalogue/ hay un catalogo de fonts
-%% En https://tug.org/FontCatalogue/mathfonts.html catalogo de fonts con math support
-%\usepackage{pxfonts}
-%\usepackage[varg]{txfonts}
-%\usepackage{ccfonts}
-%\usepackage[math]{iwona}
-\usepackage[math]{kurier} %++
-%\usepackage{cmbright} %++
-
-
-%\usepackage{classicthesis}
-
-\usepackage{etex}
-\usepackage{t1enc}
-\usepackage{latexsym}
-\usepackage[utf8]{inputenc}
-\usepackage{verbatim}
-\usepackage{multicol}
-\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
-\usepackage{amsthm}
-\usepackage{calc}         % From LaTeX distribution
-\usepackage{graphicx}     % From LaTeX distribution
-\usepackage{ifthen}
-\input{random.tex}        
-\usepackage{subfigure} 
-\usepackage{tikz}
-\usetikzlibrary{arrows}
-\usetikzlibrary{matrix}
-\usepackage{mathtools}
-\usepackage{stackrel}
-\usepackage{enumitem}
-\usepackage{tkz-graph}
-%\usepackage{makeidx}
-\usepackage{hyperref}
-\hypersetup{
-	colorlinks=true,
-	linkcolor=blue,
-	filecolor=magenta,      
-	urlcolor=cyan,
-}
-\usepackage{hypcap}
-\usepackage{nicematrix} %https://ctan.dcc.uchile.cl/macros/latex/contrib/nicematrix/nicematrix.pdf
-
-
-\usepackage[spanish,es-nodecimaldot]{babel}
-\tikzset{
-	every picture/.append style={
-		execute at begin picture={\deactivatequoting},
-		execute at end picture={\activatequoting}
-	}
-}
-\usetikzlibrary{decorations.pathreplacing,angles,quotes}
-\usetikzlibrary{shapes.geometric}
-
-
-
-\usepackage{polynom}
-
-\polyset{%
-	style=B,
-	delims={(}{)},
-	div=:
-}
-\numberwithin{equation}{section}
-\renewcommand\labelitemi{$\circ$}
-\setlist[enumerate, 1]{label={(\arabic*)}}
-\setlist[enumerate, 2]{label=\emph{\alph*)}}
-
-\setcounter{MaxMatrixCols}{20}
-
-%% \theoremstyle{plain} %% This is the default
-%\oddsidemargin 0.0in \evensidemargin -1.0cm \topmargin 0in
-%\headheight .3in \headsep .2in \footskip .2in
-%\setlength{\textwidth}{16cm} %ancho para apunte
-%\setlength{\textheight}{21cm} %largo para apunte
-%\leftmargin 2.5cm
-%\rightmargin 2.5cm
-%\topmargin 0.5 cm
-
-
-
-%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tolerance=10000
-%\renewcommand{\baselinestretch}{1.3}
-%\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
-
-%% CONTROLADORES DE.
-% Tamaño de la hoja de impresión.
-% Tamaños de los laterales del documento. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% \theoremstyle{plain} %% This is the default
-%\oddsidemargin 0.0in \evensidemargin -1.0cm \topmargin 0in
-%\headheight .3in \headsep .2in \footskip .2in
-%\setlength{\textwidth}{16cm} %ancho para apunte
-%\setlength{\textheight}{21cm} %largo para apunte
-%%%%\leftmargin 2.5cm
-%%%%\rightmargin 2.5cm
-%\topmargin 0.5 cm
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CONTROLADORES DE ESTILO %%%
-%%%--------------------------------------------------------------------------
-%%% CAPÍTULOS 
-%%%--------------------------------------------------------------------------
-\usepackage{titlesec}%--
-\newcommand{\hsp}{\hspace{15pt}}
-\titleformat{\chapter}[hang]{\huge\bfseries}{{
-\fontsize{6em}{6em}\selectfont
-\thechapter}\hsp%\textcolor{}%
-{\vrule height 4em width 3pt}\hsp}{0pt}{\huge\bfseries}
-
-%--------------------------------------------------------------------------
-%--------------------------------------------------------------------------
-% SECCIONES 
-%--------------------------------------------------------------------------
-\usepackage{titlesec}
-\titleformat{\section}[frame]{\normalfont}%
-{\filright\footnotesize\enspace \large {\large SECCIÓN \thesection} \enspace}%
-{16pt}{\huge\bfseries\filcenter}
-%%%--------------------------------------------------------------------------	
-%-------------------------------
-%% INTRA TEXTO                %%
-\usepackage{setspace}
-%\setlength{\parindent}{0,7cm}% tamaño de sangría.
-\setlength{\parskip}{0.3cm} % separación entre párrafos.
-%\renewcommand{\baselinestretch}{0.90}% separación del interlineado
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\end{comment}
-%%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-\renewcommand{\thesection}{\thechapter.\arabic{section}}
-\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
-
-% para numbering ver: https://www.math.uh.edu/~torok/math_6298/latex/numbering.html
-
-%INICIO: Esquema de numeración hasta 2020
-%\newtheorem{teorema}{Teorema}[section]
-%\newtheorem{proposicion}[teorema]{Proposici\'on}
-%\newtheorem{corolario}[teorema]{Corolario}
-%\newtheorem{lema}[teorema]{Lema}
-%\newtheorem{propiedad}[teorema]{Propiedad}
-%
-%\theoremstyle{definition}
-%\newtheorem{definicion}{Definici\'on}[section]
-%\newtheorem{ejemplo}{Ejemplo}[section]
-%\newtheorem{resultado}{Resultado}[section]
-%\newtheorem{problema}{Problema}[section]
-%\newtheorem{ejercicio}{Ejercicio}[section]
-%\newtheorem{ejerciciof}{}[section]
-%
-%\theoremstyle{remark}
-%\newtheorem{observacion}{Observaci\'on}[section]
-%\newtheorem{obs}{Observaci\'on}[section]
-%\newtheorem{nota}{Nota}[section]
-%\newtheorem{conclusion}{Conclusión}[section]
-%FIN: Esquema de numeración hasta 2020
-
-%INICIO: Esquema de numeración desde 2021 (ver: https://www.math.uh.edu/~torok/math_6298/latex/numbering.html)
-
-
-\renewenvironment{proof}[1][\proofname]% environment name
-{% begin code
-	\par\vskip -.2cm%
-	\textsc{#1. }%
-}%
-{%
-	\hfill\qed\vskip .4cm}% end code
-
-
-\newtheorem{teorema}{Teorema}[section]
-\newtheorem{proposicion}[teorema]{Proposici\'on}
-\newtheorem{corolario}[teorema]{Corolario}
-\newtheorem{lema}[teorema]{Lema}
-\newtheorem{propiedad}[teorema]{Propiedad}
-
-\theoremstyle{definition}
-\newtheorem{definicion}[teorema]{Definici\'on}
-\newtheorem{ejemplo}[teorema]{Ejemplo}
-\newtheorem{resultado}[teorema]{Resultado}
-\newtheorem{problema}[teorema]{Problema}
-\newtheorem{ejercicio}[teorema]{Ejercicio}
-\newtheorem{ejerciciof}[teorema]{}
-
-\theoremstyle{remark}
-\newtheorem{observacion}[teorema]{Observaci\'on}
-\newtheorem{obs}[teorema]{Observaci\'on}
-\newtheorem{nota}[teorema]{Nota}
-\newtheorem{conclusion}[teorema]{Conclusión}
-% sin numero
-\newtheorem*{ejemplo*}{Ejemplo}
-\newtheorem*{resultado*}{Resultado}
-\newtheorem*{problema*}{Problema}
-\newtheorem*{ejercicio*}{Ejercicio}
-\newtheorem*{ejerciciof*}{}
-\newtheorem*{observacion*}{Observaci\'on}
-\newtheorem*{obs*}{Observaci\'on}
-\newtheorem*{nota*}{Nota}
-\newtheorem*{conclusion*}{Conclusión}
-%FIN: Esquema de numeración desde 2021
-
-\renewcommand{\partname }{Parte }
-\renewcommand{\indexname}{Indice }
-\renewcommand{\figurename }{Figura }
-\renewcommand{\tablename }{Tabla }
-\renewcommand{\proofname}{Demostraci\'on}
-\renewcommand{\appendixname }{}
-\renewcommand{\contentsname }{Contenidos }
-\renewcommand{\chaptername }{}
-\renewcommand{\bibname }{Bibliograf\'\i a }
-
-
-\setcounter{MaxMatrixCols}{20}
-
-\newcommand{\Id}{\operatorname{Id}}
-\newcommand{\img}{\operatorname{Im}}
-\newcommand{\nuc}{\operatorname{Nu}}
-\newcommand\im{\operatorname{Im}}
-\renewcommand\nu{\operatorname{Nu}}
-\newcommand{\la}{\langle}
-\newcommand{\ra}{\rangle}
-\renewcommand{\t}{{\operatorname{t}}}
-\renewcommand{\sin}{{\,\operatorname{sen}}}
-\newcommand{\Q}{\mathbb Q}
-\newcommand{\R}{\mathbb R}
-\newcommand{\C}{\mathbb C}
-\newcommand{\K}{\mathbb K}
-\newcommand{\F}{\mathbb F}
-\newcommand{\Z}{\mathbb Z}
-\newcommand{\sen}{\operatorname{sen}}
-\newcommand \circled[1]{\tikz[baseline=(char.base)]{
-		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
-
-\makeindex
 \begin{document}
 	%\baselineskip=0.55truecm %original
 	%\baselineskip=0.43truecm
 	
 	\pagenumbering{roman}
 	
-	\title{Álgebra II / Álgebra - Notas del teórico  \\ Año 2020 - 2º Cuatrimestre  \\ FAMAF  - UNC 
-		\\ ${}^{}$ 
-		\\  Versión: \today
-	}
+	\begin{titlepage}
+		
+		\begin{addmargin}[-1cm]{-3cm}
+			\begin{center}
+				\large
+				
+				\hfill
+				\vfill
+				
+				\begingroup
+				\color{Maroon}\spacedallcaps{\'Algebra II / \'Algebra - Notas del te\'orico } \\ \bigskip % Thesis title
+				\endgroup
+				
+				\spacedlowsmallcaps{Silvina Riveros,  Alejandro Tiraboschi y Agust\'in Garc\'ia  Iglesias.} % Your name
+				
+				\vfill
+				
+		
+				
+				Año 2021   \\ FAMAF  - UNC\\ \medskip % Thesis subtitle
+				%\myDegree \\
+				%\myDepartment \\
+				%\myFaculty \\
+				%\myUni \\ \bigskip
+				
+				%\today % Time and version
+				
+				\vfill
+				
+			\end{center}
+		\end{addmargin}
+		
+	\end{titlepage}
 	
-	\maketitle
+
+	\pdfbookmark[1]{Autores y derechos}{Autores y derechos} % Bookmark name visible in a PDF viewer
+
+	%----------------------------------------------------------------------------------------
 	
-	\newpage
+	\begingroup
+
+	\let\clearpage\relax
+	\let\cleardoublepage\relax
+	\let\cleardoublepage\relax
 	
-	\author{
-		${}^{}$
-		\\${}^{}$
-		\\${}^{}$
-		\center{\textbf{AUTORES/COLABORADORES}} \\${}^{}$\\ 
-		\flushleft 
-		\begin{itemize}
-			\item \textbf{Obra original:}  Silvina Riveros,  Alejandro Tiraboschi y Agustín García  Iglesias. 
-			\item \textbf{Colaboración: } -.   
-			\item \textbf{Correcciones y sugerencias:} -. 
-		\end{itemize}
-	}
+	\chapter*{Leer}
 	
-	%\author{A. L. Tiraboschi}
 	
-	%\address{FaMAF}
-	%\subjclass{47A56, 47A10; Secondary 47A55, 47A70, 47A68, 47B15}
-	%\date{July 19, 1992}
-	%\translator{H. H. McFaden}
+
+	${}^{}$\\
+	{\flushleft 
+		Este material es distribuido bajo la licencia Creative Commons} \\
+	{\center \textbf{Atribución--CompartirIgual 4.0 Internacional}}
+	\\ 
+	\center  lo cual significa 
+	\\
+	\flushleft
+	- En cualquier explotación de la obra autorizada por la licencia será necesario reconocer los autores, colaboradores, etc.\\
+	- La distribución de la obra u obras derivadas se debe hacer con una licencia igual a la que regula la obra original.\\
+	${}^{}$
+	\\
+	Los detalles de la licencia pueden encontrarse en \href{https://creativecommons.org/licenses/by/4.0/deed.es}{Creative Commons}
+	\vskip 1cm 
+	\endgroup
+
 	
-	\vskip 2cm 
-	\thanks{
-		\center{\textbf{LEER}} \\
-		${}^{}$\\
-		{\flushleft 
-			Este material es distribuido bajo la licencia Creative Commons} \\
-		{\center \textbf{Atribución--CompartirIgual 4.0 Internacional}}
-		\\ 
-		\center  lo cual significa 
-		\\
-		\flushleft
-		- En cualquier explotación de la obra autorizada por la licencia será necesario reconocer los autores, colaboradores, etc.\\
-		- La distribución de la obra u obras derivadas se debe hacer con una licencia igual a la que regula la obra original.\\
-		${}^{}$
-		\\
-		Los detalles de la licencia pueden encontrarse en \href{https://creativecommons.org/licenses/by/4.0/deed.es}{Creative Commons}
-	}
 	
-	\tableofcontents 
+	 
+	%%% INICIO: Tabla de contenidos
+	\pagestyle{scrheadings} % Show chapter titles as headings
+	\cleardoublepage\include{classicthesis-contents} % Contents, list of figures/tables/listings and acronyms
+	\cleardoublepage
+	%%% FIN: Tabla de contenidos
 	
 	\pagenumbering{arabic}
 	
@@ -342,45 +121,48 @@
 	\noindent Resolución de ecuaciones lineales. Matrices. Operaciones elementales. Matriz inversa. Espacios vectoriales sobre $\mathbb R$ y $\mathbb C$. Subespacios. Independencia lineal. Bases y dimensión Rectas y planos en $\mathbb R^n$. Transformaciones lineales y matrices. Isomorfismos. Cambio de bases. Núcleo e imagen de transformaciones lineales. Rango fila y columna. Determinante de una matriz. Cálculo y propiedades básicas. Espacios con producto interno. Desigualdad de Cauchy-Schwartz. Desigualdad triangular. Teorema de Pitágoras. Ortonormalización de Gram-Schmidt. Ecuaciones de rectas y planos en $\mathbb R^n$. Distancias. Introducción a vectores y valores propios. Aplicaciones. Diagonalización de matrices simétricas.
 	\pagenumbering{roman}
 	
-	\maketitle
-	
+
 	\pagenumbering{arabic}
 	
 	\setcounter{chapter}{0}
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% CAP1 =================
-    \input{Cap.01.tex}
-%%%=======================
-%%%=======================
-%%% CAP2 =================
-    \input{Cap.02.tex}
-%%%=======================
-%%%=======================
-%%% CAP3 =================
-   \input{Cap.03.tex}
-%%%=======================
-%%%=======================
-%%% CAP4 =================
-    \input{Cap.04.tex}
-%%%=======================
-%%%=======================
-%%% CAP5 =================
-    \input{Cap.05.tex}
-%%%=======================
-\appendix
-\setcounter{chapter}{0}
-%%%=======================
-%%% CAP6 =================
-    \input{Cap.ap.01.tex}
-%%%=======================
-%%%=======================
-%%% CAP7 =================
-    \input{Cap.ap.02.tex}
-%%%=======================
-%%%=======================
-%%% CAP8 =================
-    \input{Cap.ap.03.tex}
-%%%=======================
-%%%=======================
-\printindex
+	%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\cleardoublepage
+	\part{Vectores y sistemas lineales en $\mathbb R^n$} 
+	%%% CAP1 =================
+	\input{Cap.01.tex}
+	%%%=======================
+	%%%=======================
+	%%% CAP2 =================
+	\input{Cap.02.tex}
+	%%%=======================
+	%%%=======================
+	\part{Álgebra lineal} 
+	%%% CAP3 =================
+	\input{Cap.03.tex}
+	%%%=======================
+	%%%=======================
+	%%% CAP4 =================
+	\input{Cap.04.tex}
+	%%%=======================
+	%%%=======================
+	%%% CAP5 =================
+	\input{Cap.05.tex}
+	%%%=======================
+	\appendix
+	\part{Ap\'endices} 
+	\setcounter{chapter}{0}
+	%%%=======================
+	%%% CAP6 =================
+	\input{Cap.ap.01.tex}
+	%%%=======================
+	%%%=======================
+	%%% CAP7 =================
+	\input{Cap.ap.02.tex}
+	%%%=======================
+	%%%=======================
+	%%% CAP8 =================
+	\input{Cap.ap.03.tex}
+	%%%=======================
+	%%%=======================
+%	\printindex
 \end{document}

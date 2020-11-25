@@ -1277,7 +1277,7 @@ Luego,
                         [T]_{\mathcal C_n\mathcal C_m} =A.
                     \end{equation*}
                 \end{observacion*}
-            
+    
             \begin{proposicion}\label{prop-matriz-de-tv} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
             \begin{equation}\label{matriz-de-tl-2}
             [T]_{\mathcal B \mathcal B'} [v]_{\mathcal B} = [T(v)]_{\mathcal B'}, \quad \forall \,v \in V.
@@ -1294,12 +1294,12 @@ Luego,
             $$
             Ahora bien,
             \begin{multline*}
-                T(v) = T(\sum_{j=1}^{n}x_jv_j) = \sum_{j=1}^{n}x_jT(v_j) =  \sum_{j=1}^{n}\sum_{i=1}^{m} a_{ij} w_i = \sum_{i=1}^{m} (\sum_{j=1}^{n}a_{ij}) w_i =\\
-                = ( \sum_{j=1}^{n}a_{1j})w_1+(\sum_{j=1}^{n}a_{2j})w_2+\cdots+(\sum_{j=1}^{n}a_{mj})w_m
+                T(v) = T(\sum_{j=1}^{n}x_jv_j) = \sum_{j=1}^{n}x_jT(v_j) =  \sum_{j=1}^{n}x_j\sum_{i=1}^{m} a_{ij} w_i = \sum_{i=1}^{m} (\sum_{j=1}^{n}x_ja_{ij}) w_i =\\
+                = ( \sum_{j=1}^{n}x_ja_{1j})w_1+(\sum_{j=1}^{n}x_ja_{2j})w_2+\cdots+(\sum_{j=1}^{n}x_ja_{mj})w_m
             \end{multline*}
             y, por lo tanto,
             \begin{equation}\label{eq-45}
-            [T(v)]_{\mathcal B'} = \begin{bmatrix}  \sum_{j=1}^{n}a_{1j}\\\sum_{j=1}^{n}a_{2j}\\ \vdots\\\sum_{j=1}^{n}a_{mj}\end{bmatrix}.
+            [T(v)]_{\mathcal B'} = \begin{bmatrix}  \sum_{j=1}^{n}x_ja_{1j}\\\sum_{j=1}^{n}x_ja_{2j}\\ \vdots\\\sum_{j=1}^{n}x_ja_{mj}\end{bmatrix}.
             \end{equation}
             Por otro lado, 
             \begin{equation}\label{eq-46}
@@ -1308,7 +1308,7 @@ Luego,
             \\a_{21} &a_{22}&\cdots & a_{2n}\\ \vdots &\vdots&& \vdots \\ a_{m1} &a_{m2}& \cdots & a_{mn}\end{bmatrix}
             \begin{bmatrix} x_1\\x_2\\ \vdots\\x_n\end{bmatrix}
             =
-            \begin{bmatrix}  \sum_{j=1}^{n}a_{1j}\\\sum_{j=1}^{n}a_{2j}\\ \vdots\\\sum_{j=1}^{n}a_{mj}\end{bmatrix}.
+            \begin{bmatrix}  \sum_{j=1}^{n}a_{1j}x_j\\\sum_{j=1}^{n}a_{2j}x_j\\ \vdots\\\sum_{j=1}^{n}a_{mj}x_j\end{bmatrix}.
             \end{equation}
             De las ecuaciones (\ref{eq-45}) y (\ref{eq-46}) se deduce la formula (\ref{matriz-de-tl-2}).
         \end{proof}
