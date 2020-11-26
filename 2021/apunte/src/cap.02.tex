@@ -187,8 +187,6 @@ Entonces también vale que:
 \end{tabular}
 \end{center}
 
-
-
 Por lo tanto $(x,y,z)$ también es solución del sistema
 \begin{equation*}
 \begin{matrix}
@@ -206,10 +204,6 @@ x &  &  & =& -1 \\
     \end{matrix}\tag{S7}
 \end{equation*}
 
-
- 
-
- 
 En resumen, supusimos que $(x,y,z)$ es una solución del sistema
 \begin{equation*}
 \begin{matrix}
@@ -223,10 +217,7 @@ y probamos que
 \begin{equation*}
 x=-1\quad y=0,\quad z=1. 
 \end{equation*}
-                \end{proof}
-
-
-
+\end{proof}
 
 Tanto en el ejemplo \ref{ej-sist-1} como en el ejemplo \ref{ej-sist-2} eliminamos variables usando alguna de las siguientes operaciones entre ecuaciones:
     \begin{enumerate}
@@ -271,9 +262,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 \end{section}
 
 
-
-
-     \begin{section}{Equivalencia de sistemas de ecuaciones lineales}\label{seccion-equivalencia-de-sistemas-de-ecuaciones-lineales}
+\begin{section}{Equivalencia de sistemas de ecuaciones lineales}\label{seccion-equivalencia-de-sistemas-de-ecuaciones-lineales}
 
             Dado el sistema
             \begin{equation}\label{sist-eq-2}
@@ -733,11 +722,11 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \end{bmatrix} \stackrel{F_2 -4F_1}{\longrightarrow}
                     \begin{bmatrix}
                     1 & 3 & 2 \\ 0&-4&-4 \\ 0&2&2
-                    \end{bmatrix} \stackrel{F_2/4}{\longrightarrow}
-                    \\
+                    \end{bmatrix}                    
                     \stackrel{F_2/4}{\longrightarrow}  \begin{bmatrix}
                     1 & 3 & 2 \\ 0&-1&-1 \\ 0&2&2 
-                    \end{bmatrix} \stackrel{F_1 + 3F_2}{\longrightarrow} 
+                    \end{bmatrix} \\
+                    \stackrel{F_1 + 3F_2}{\longrightarrow} 
                     \begin{bmatrix}
                     1 & 0& -1 \\ 0&-1&-1 \\ 0&2&2 
                     \end{bmatrix} \stackrel{F_3 + 2F_2}{\longrightarrow} 
@@ -756,7 +745,6 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \begin{bmatrix}1 & 0& -1 \\ 0&-1&-1 \\ 0&0&0 \end{bmatrix}
                     \stackrel{F_3 - 2F_2}{\longrightarrow} 
                     \begin{bmatrix}1 & 0& -1 \\ 0&-1&-1 \\ 0&2&2 \end{bmatrix} 
-                    \stackrel{F_1 - 3F_2}{\longrightarrow}
                     \\ \stackrel{F_1 - 3F_2}{\longrightarrow}
                     \begin{bmatrix}1 & 3 & 2 \\ 0&-1&-1 \\ 0&2&2 \end{bmatrix}
                     \stackrel{4F_2}{\longrightarrow} 
@@ -815,13 +803,14 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \left[\begin{array}{@{}*{4}{c}|c@{}}  2& -1&1& 2&2 \\ 1&-4 &0&-1&1 \\ 2&6&-1&3&0 \end{array}\right]
                     \stackrel{F_1\leftrightarrow F_2}{\longrightarrow} 
                     \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 2& -1&1& 2&2 \\ 2&6&-1&3&0 \end{array}\right]
+                    \\
                     \stackrel{F_2-2 F_1}{\longrightarrow} 
                     \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 2&6&-1&3&0 \end{array}\right]
-                    \\
                     \stackrel{F_3-2 F_1}{\longrightarrow} 
                     \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&14&-1&5&-2 \end{array}\right] 
+                    \\
                     \stackrel{F_3-2 F_2}{\longrightarrow} 
-                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&0&-3&-3&-2 \end{array}\right] 
+                    \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&0&-3&-3&-2 \end{array}\right]  
                     \stackrel{F_3/(-3)}{\longrightarrow} 
                     \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&1& 4&0 \\ 0&0&1&1&\frac{2}{3} \end{array}\right]
                     \\
@@ -829,6 +818,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1 \\ 0& 7&0& 3&-\frac{2}{3} \\ 0&0&1&1&\frac{2}{3} \end{array}\right]
                     \stackrel{F_2/7}{\longrightarrow} 
                     \left[\begin{array}{@{}*{4}{c}|c@{}}  1&-4 &0&-1&1\\ 0& 1&0& \frac37&-\frac{2}{21}\\ 0&0&1&1&\frac{2}{3}\end{array}\right]
+                    \\
                     \stackrel{F_1 +4F_2}{\longrightarrow} 
                     \left[\begin{array}{@{}*{4}{c}|c@{}} 1&0&0&\frac{5}{7}&\frac{13}{21}\\0&1&0&\frac37&-\frac{2}{21} \\ 0&0&1&1&\frac{2}{3}\end{array}\right].
                     \end{multline*}
@@ -1298,12 +1288,11 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 M = \begin{bmatrix} 2&1&-3 \\ 3&0&-1 \\ 0&8&5 \end{bmatrix}.
                 \end{equation*}
                 Las matrices $A$ y $B$ son de orden $2 \times 3$, mientras la matriz $M$ es cuadrada de orden 3. Por tanto, no podemos calcular la suma de $A$ y $M$ y tampoco la suma de $B$ y $M$, en cambio, sí podemos sumar $A$ y $B$ ya que tienen el mismo orden. Esto es,
-                \begin{equation*}
-                A + B = \begin{bmatrix} -1&3&5 \\ 2&0&-1  \end{bmatrix}+
-                \begin{bmatrix} 5&2&-3 \\ 0&-1&1  \end{bmatrix} =
-                \begin{bmatrix} -1+5&3+2&5-3 \\ 2+0&0-1&-1+1  \end{bmatrix}=
-                \begin{bmatrix} 4&5&2 \\ 2&-1&0  \end{bmatrix}
-                \end{equation*}
+                \begin{align*}
+                A + B &= \begin{bmatrix} -1&3&5 \\ 2&0&-1  \end{bmatrix}+ \begin{bmatrix} 5&2&-3 \\ 0&-1&1  \end{bmatrix} \\
+                &=  \begin{bmatrix} -1+5&3+2&5-3 \\ 2+0&0-1&-1+1  \end{bmatrix} \\
+                &=  \begin{bmatrix} 4&5&2 \\ 2&-1&0  \end{bmatrix}
+                \end{align*}
                 
                 
                 Dadas $A$, $B$ y $C$ matrices $m \times n$, podemos deducir fácilmente las siguientes propiedades de la suma de matrices de matrices:
@@ -1431,7 +1420,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 
                 Como en el caso de la suma,  la demostración las propiedades anteriores se deja a cargo del lector. 
                 
-                En virtud de estas propiedades y de las anteriores de la suma de matrices, resulta que el conjunto $(M_n ,+,.)$  de las matrices cuadradas de orden $n$, respecto a las dos leyes de composición interna, ``+'' y ``·'', tiene estructura de anillo unitario no conmutativo (ver \href{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}) . 
+                En virtud de estas propiedades y de las anteriores de la suma de matrices, resulta que el conjunto $(M_n ,+,.)$  de las matrices cuadradas de orden $n$, respecto a las dos leyes de composición interna, ``+'' y ``·'', tiene estructura de anillo unitario no conmutativo.
+                
+                Ver \href{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}. 
                 
                 Cuando las matrices son cuadradas podemos multiplicarlas por si mismas y  definimos,  de forma análoga a lo que ocurre en los productos de números, la potencia de una matriz: sea $A$ matriz $n \times n$, y sea $m \in \mathbb N$ entonces
                 \begin{equation*}
@@ -1616,14 +1607,14 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
             \end{bmatrix},
             \end{equation*}
             entonces 
-            \begin{equation*}
-            AX = \begin{bmatrix}
+            \begin{align*}
+            AX &= \begin{bmatrix}
             a_{11}& a_{12}& \cdots &a_{1n} \\
             \vdots&\vdots  &  &\vdots \\
             a_{m1} &a_{m2}&\cdots &a_{mn}\end{bmatrix} \begin{bmatrix} 
             x_1 \\ \vdots \\ x_n 
-            \end{bmatrix}
-            =
+            \end{bmatrix} \\
+            &=
             \begin{bmatrix}
             a_{11}x_1+ a_{12}x_2+ \cdots +a_{1n}x_n \\
             \vdots \\
@@ -1631,7 +1622,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
             \begin{bmatrix}
             y_1 \\ \vdots \\ y_n
             \end{bmatrix} = Y
-            \end{equation*}
+            \end{align*}
             (producto de matrices). Es decir, la notación antes utilizada es consistente con el, ahora definido, producto de matrices.  
             
             \begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz!elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $\Id_m$.
@@ -2465,23 +2456,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
         La regla para calcular el determinante de matrices $3 \times 3$ \textbf{\large no} se aplica a matrices $n \times n$ con $n \ne 3$.
     \end{obs*}
     
-    \begin{comment}
-        \begin{proposicion}
-        Sea $A \in M_n(\K)$ matriz triangular  cuyos elementos en la diagonal son $d_1,\ldots,d_n$. Entonces $\det A = d_1.d_2.\ldots d_n$.
-        \end{proposicion}
-        \begin{proof} Si $A$ es triangular superior podemos demostrar el resultado por inducción sobre $n$: es claro que si $n=1$,  es decir si $A = [d_1]$, el determinante vale $d_1$. Por otro lado, si $n>1$,  observemos que $A(1|1)$ es también triangular superior con valores $d_2,\ldots,d_n$  en la diagonal principal. Entonces,  usamos la definición de la fórmula (\ref{def-determinante}) y observamos que el desarrollo por la primera  columna solo tiene un término, pues esta columna solo tiene un coeficiente no nulo, el $d_1$ en la primera posición. Por lo tanto, 
-        \begin{equation*}
-        \det(A) = d_1 \det(A(1|1)) \stackrel{\text{(HI)}}{=} d_1.(d_2.\ldots.d_n).
-        \end{equation*}
-        
-        En  el caso  que  $A$ sea triangular inferior también lo demostraremos por inducción. El caso $n=1$ es trivial. Si $n >1$, observemos que  $A(1|1)$ es también triangular inferior con valores $d_2,\ldots,d_n$  en la diagonal principal y si $i >1$, $A(i|1)$ es triangular inferior con el primer valor en la diagonal igual a 0. Por hipótesis inductiva $\det(A(1|1)) = d_2.\ldots.d_n$ y si $i >1$, $\det(A(i|1)) = 0\times \ldots = 0$, por lo tanto 
-        \begin{equation*}
-        \det(A) = d_1 \det(A(1|1))+ \sum_{i=2}^{n} a_{i1}\det(A(i|1)) =  d_1.(d_2.\ldots.d_n) + 0.
-        \end{equation*} 
-        \end{proof}
-    \end{comment}
-
-    \begin{proposicion}\label{det-triang-sup}
+   \begin{proposicion}\label{det-triang-sup}
     Sea $A \in M_n(\K)$ matriz triangular  superior cuyos elementos en la diagonal son $d_1,\ldots,d_n$. Entonces $\det A = d_1.d_2.\ldots d_n$.
     \end{proposicion}
     \begin{proof} Podemos demostrar el resultado por inducción sobre $n$: es claro que si $n=1$,  es decir si $A = [d_1]$, el determinante vale $d_1$. Por otro lado, si $n>1$,  observemos que $A(1|1)$ es también triangular superior con valores $d_2,\ldots,d_n$  en la diagonal principal. Entonces,  usamos la definición de la fórmula (\ref{def-determinante}) y observamos que el desarrollo por la primera  columna solo tiene un término, pues esta columna solo tiene un coeficiente no nulo, el $d_1$ en la primera posición. Por lo tanto, 
@@ -2561,12 +2536,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
         Ver  los teoremas \ref{th-E1}, \ref{th-E3}, \ref{th-E2} y  sus demostraciones.
     \end{proof}
 
-    
-    
     Este resultado nos permite calcular el determinante de matrices elementales.
-    
-    
-    
     
     \begin{corolario}\label{det-mtrx-elem} Sea $n \in \mathbb N$ y $c \in \K$. Sean $1 \le r,s \le n$,  con $r \ne s$.
         \begin{enumerate}
@@ -3065,52 +3035,23 @@ También vale este resultado para matrices $n \times n$.
             $$ 
             Esto se puede demostrar por inducción. 
             
-     
-    
-    
-    
-         
-        
-        
         \begin{ejemplo*}
         El polinomio  característico de 
-        $
-        A=
-        \left[
-        \begin{array}{cc}
-        0&1\\0&0 
-        \end{array}
-        \right]
-        $ es 
-        $
-        \chi_{A}(x)=x^2
-        $
-        
-        \end{ejemplo*}\vskip -.8cm 
-        \begin{ejemplo*}
-        Si
-        $
-        A=
-        \left[
-        \begin{array}{cc}
-        a&b\\c&d 
-        \end{array}
-        \right]
-        $, entonces $ \chi_{A}(x)=(a-x)(d-x)-bc $.
+        $A=\begin{bmatrix} 0&1\\0&0 \end{bmatrix}$ es  $\chi_{A}(x)=x^2$.
         \end{ejemplo*}
 
-        \begin{proof}
-            $A-x \Id=\left[
-        \begin{array}{cc}
-        a-x&b\\c&d-x 
-        \end{array}
-        \right]$ y usamos la fórmula del determinante de una $2\times 2$. 
-        \end{proof}\vskip.4cm
+        \begin{ejemplo*} Si $A=\begin{bmatrix}a&b\\c&d \end{bmatrix}$, entonces $\chi_{A}(x)=(a-x)(d-x)-bc $.
+        \end{ejemplo*}
+        \begin{proof}  $A-x \Id=\begin{bmatrix} a-x&b\\c&d-x \end{bmatrix}$ y usamos la fórmula del determinante de una matriz $2\times 2$. 
+        \end{proof}
 
         \begin{proposicion}\label{autovalores}
                 Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico de $A$. 
             \end{proposicion}
-            \begin{proof}${}^{}$
+            \begin{proof}
+                
+                \
+
                 \begin{tabular}{rl}
         $\lambda$ es autovalor &$\Leftrightarrow$ existe $v \ne 0$ tal que $Av = \lambda v$ \\
                     &\\
@@ -3122,8 +3063,8 @@ También vale este resultado para matrices $n \times n$.
                     &\\
                     &$\Leftrightarrow$ $\lambda$ es raíz del polinomio característico.  
                 \end{tabular}
-                 
-            
+
+                \ 
             \end{proof}
         
          

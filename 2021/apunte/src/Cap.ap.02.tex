@@ -94,44 +94,6 @@
             0 =f(x) = (x-c)g(x) \quad \Leftrightarrow \quad x-c=0 \text{ o } g(x) =0.
         \end{equation*} 
         Es decir $x$ es raíz de $f$ si y solo si $x=c$ o $x$ es raíz de $g$. Como $g$ tiene a lo más $n-1$ raíces,  $f$ tiene a lo más $n$ raíces.
-        
-        
-        
-        
-        \begin{comment}
-            Sea 
-            \begin{equation*}
-            f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0.
-            \end{equation*}
-            Probaremos, haciendo inducción en $n$, que
-            \begin{equation}\label{eq-desc-rai}
-            f(x) = (x-c_1)(x-c_2)\cdots(x-c_k)h_k,
-            \end{equation} 
-            donde $k \le n$ y $h_k$ no tiene raíces. Observar que  esto implica  que si $f(c)=0$, entonces
-            \begin{equation*}
-            0 = (c-c_1)(c-c_2)\cdots(c-c_k)h_k(c).
-            \end{equation*}
-            Por lo tanto algunos de los factores es igual a 0. Como $h_k(c) \ne 0$ ($h_k$ no tiene raíces),  entonces $c=c_i$ para algún $i$. Luego, las raíces de $f$ son $c_1,\ldots,c_k$ con $k \le n$, lo cual implica el enunciado del teorema. 
-            
-            Probemos  entonces (\ref{eq-desc-rai}).
-            
-            Si $n=0$, como $f$ no es nulo, $f(x)=a_0\ne 0$, que es lo que teníamos que probar. 
-            
-            Sea $n >0$. Supongamos que el resultado es cierto para los polinomios de grado  $\le n-1$ (hipótesis inductiva). Si $f$ no tiene raíces, está probado nuestro enunciado. En  caso contrario existe $c_1 \in \K$ tal que $f(c_1) =0$. Por el teorema \ref{th-fact-raiz}, 
-            \begin{equation*}
-            f(x) = (x-c_1)h_1(x)
-            \end{equation*}
-            con $h_1$ un polinomio de grado $\le n-1$. Luego, por hipótesis inductiva
-            \begin{equation*}
-            h_1(x) = (x-d_1)(x-d_2)\cdots(x-d_r)g_r,
-            \end{equation*} 
-            con $r \le n-1$ y $g_r$ que no tiene raíces. Entonces,
-            \begin{equation*}
-            f(x) = (x-c_1)(x-d_1)(x-d_2)\cdots(x-d_r)g_r,
-            \end{equation*}
-            con $r \le n-1$ y $g_r$ que no tiene raíces. Esto es equivalente a (\ref{eq-desc-rai}).   
-        \end{comment}
-        
     \end{proof}
                         
     \begin{corolario}

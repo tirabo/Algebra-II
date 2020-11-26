@@ -1,10 +1,13 @@
 \documentclass[a4paper,12pt,twoside,spanish,reqno,dottedtoc]{scrbook}
 \usepackage[spanish,es-lcroman,es-nodecimaldot]{babel}
 
+\usepackage{imakeidx}  
+\makeindex  
+
 \input{classicthesis-config}
 
 \input{config-definiciones}
-
+\tolerance=10000
 \begin{document}
 	%\baselineskip=0.55truecm %original
 	%\baselineskip=0.43truecm
@@ -90,7 +93,7 @@
 	\chapter*{Prefacio} 
 	
 	
-	Las siguientes notas se han utilizado para el dictado del curso ``Álgebra II / Álgebra'' del primer año de las licenciaturas y profesorados de FAMAF. 	Han sido las notas principales en el dictado del año 2018 y 2020, y se limitan casi exclusivamente al contenido dictado en el curso. Las partes señaladas con (*) y los apéndices son optativos.
+	Las siguientes notas se han utilizado para el dictado del curso ``Álgebra II / Álgebra / Álgebra Lineal'' del primer año de las licenciaturas y profesorados de FAMAF. 	Han sido las notas principales en el dictado del año 2018 y 2020, y se limitan casi exclusivamente al contenido dictado en el curso. Las partes señaladas con (*) y los apéndices son optativos.
 	
 	Estas notas están basadas principalmente en \textit{Apuntes de Álgebra II - Año 2005} de Silvina Riveros y han sido revisadas, modificadas y ampliadas por Alejandro Tiraboschi  y Agustín García Iglesias. 
 	
@@ -108,8 +111,13 @@
 	
 	Otra bibliografía de interés:
 	\begin{enumerate}
-		\item [-] \textit{Álgebra Lineal.}  Autor: Serge Lang. Año: 1976. Editorial: Fondo Educativo Interamericano. Ficha en biblioteca de FAMAF: \href{http://bit.ly/2stBTzs}{http://bit.ly/2stBTzs}
-		\item [-] \textit{Álgebra Lineal.} Autores: Kenneth Hoffman y Ray Kunze.  Año: 1973. Editorial: Prentice Hall. Ficha en biblioteca de FAMAF:  \href{http://bit.ly/2tn3eRc}{http://bit.ly/2tn3eRc}
+		\item [-] \textit{Álgebra Lineal.}  Autor: Serge Lang. Año: 1976. Editorial: Fondo Educativo Interamericano. 
+		
+		Ficha en biblioteca de FAMAF: \href{http://bit.ly/2stBTzs}{http://bit.ly/2stBTzs}
+		
+		\item [-] \textit{Álgebra Lineal.} Autores: Kenneth Hoffman y Ray Kunze.  Año: 1973. Editorial: Prentice Hall. 
+		
+		Ficha en biblioteca de FAMAF:  \href{http://bit.ly/2tn3eRc}{http://bit.ly/2tn3eRc}
 	\end{enumerate}
 	
 	
@@ -164,5 +172,7 @@
 	\input{Cap.ap.03.tex}
 	%%%=======================
 	%%%=======================
-%	\printindex
+	\part{\'Indice} 
+	\addcontentsline{toc}{chapter}{Indice  alfabético}
+\printindex
 \end{document}

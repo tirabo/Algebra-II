@@ -3,7 +3,9 @@
     
     \begin{section}{Cuerpos}\label{seccion-cuerpos}
         
-        En el cuatrimestre pasado se ha visto el concepto de cuerpo, del cual haremos un repaso (ver también  \href{https://es.wikipedia.org/wiki/Cuerpo\_(matemáticas)}{https://es.wikipedia.org/wiki/Cuerpo\_(matemáticas)}).
+        En el cuatrimestre pasado se ha visto el concepto de cuerpo, del cual haremos un repaso.
+        
+        (Ver también  \href{https://es.wikipedia.org/wiki/Cuerpo\_(matemáticas)}{https://es.wikipedia.org/wiki/Cuerpo\_(matemáticas)}).
         
         
         \begin{definicion}
@@ -112,10 +114,11 @@
         (a+ ib)(a-ib) = aa -b(-b) = a^2 + b^2 \in \R. 
         \end{equation*}
         Supongamos que $a+ib\ne0$,  encontremos  a partir  de las reglas de adición y multiplicación la inversa de $z$. Sea $c+id$ tal que $(a+ib)(c+id)=1$, luego
-        \begin{equation*}
-        c + id = \frac{1}{a+ib} = \frac{1}{a+ib}\,\frac{a-ib}{a-ib} = \frac{a-ib}{(a+ib)(a-ib)} = 
-        \frac{a-ib}{ a^2 + b^2} = \frac{a}{ a^2 + b^2} - i\frac{b}{ a^2 + b^2}
-        \end{equation*}  
+        \begin{align*}
+        c + id &= \frac{1}{a+ib} = \frac{1}{a+ib}\,\frac{a-ib}{a-ib} = \frac{a-ib}{(a+ib)(a-ib)} = 
+        \frac{a-ib}{ a^2 + b^2} \\
+        &= \frac{a}{ a^2 + b^2} - i\frac{b}{ a^2 + b^2}
+        \end{align*}  
         (observar que como $a+ib\ne0$,  entonces $a^2 + b^2 >0$.)
         
         Usando lo anterior,  y un poco más de trabajo, obtenemos
@@ -275,8 +278,10 @@
             $z_1 = r_1(\cos(\theta_1)+i\sin(\theta_1))$, $z_2 = r_2(\cos(\theta_2)+i\sin(\theta_2))$, luego
             \begin{align*}
             z_1z_2 &= r_1r_2(\cos(\theta_1)+i\sin(\theta_1))(\cos(\theta_2)+i\sin(\theta_2)) \\
-            &= r_1r_2(\cos(\theta_1)\cos(\theta_2)+i\cos(\theta_1)\sin(\theta_2)+i\sin(\theta_1)\cos(\theta_2)+i^2\sin(\theta_1)\sin(\theta_2)) \\
-            &= r_1r_2((\cos(\theta_1)\cos(\theta_2)-\sin(\theta_1)\sin(\theta_2))+i(\sin(\theta_1)\cos(\theta_2) +\cos(\theta_1)\sin(\theta_2))) \\
+            &= r_1r_2(\cos(\theta_1)\cos(\theta_2)+i\cos(\theta_1)\sin(\theta_2)+i\sin(\theta_1)\cos(\theta_2) \\
+            &\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+i^2\sin(\theta_1)\sin(\theta_2)) \\
+            &= r_1r_2((\cos(\theta_1)\cos(\theta_2)-\sin(\theta_1)\sin(\theta_2))+i(\sin(\theta_1)\cos(\theta_2)\\
+            &\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \qquad\qquad +\cos(\theta_1)\sin(\theta_2))) \\
             &\overset{(*)}= r_1r_2(\cos(\theta_1+\theta_2) + i\sin(\theta_1+\theta_2)) =  r_1r_2e^{i(\theta_1+ \theta_2)}.
             \end{align*}
             La igualdad ($*$) se debe a las tradicionales fórmulas trigonométrica del coseno y  seno de la suma de ángulos.

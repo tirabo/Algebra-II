@@ -883,20 +883,20 @@ Luego,
                 Sean $v,v' \in V$ y $\lambda \in \K$, entonces
                 \begin{equation*}
                 \begin{array}{rlll}
-                    (T + S)(\lambda v + v') &= T(\lambda v + v') + S(\lambda v + v')&\qquad&\text{(definición de $T+S$)} \\
+                    (T + S)(\lambda v + v') &= T(\lambda v + v') + S(\lambda v + v')&\qquad&\text{(def. de $T+S$)} \\
                     &= \lambda T(v) + T(v') + \lambda S(v) + S(v')& &\text{($T$ y $S$ lineales)}\\
                     &= \lambda (T(v) +S(v)) + T(v') + S(v')&&\text{}\\
-                    &= \lambda ((T+S)(v)) + (T + S) (v')& &\text{(definición de $T+S$)}\\
-                    &= \lambda(T + S)(v) +(T + S) (v')&&\text{(definición de $\lambda(T + S)$)}.
+                    &= \lambda ((T+S)(v)) + (T + S) (v')& &\text{(def. de $T+S$)}\\
+                    &= \lambda(T + S)(v) +(T + S) (v')&&\text{(def. de $\lambda(T + S)$)}.
                 \end{array}
                 \end{equation*}
                 que dice que $T + U$ es una transformación lineal. En forma análoga, si $\mu \in \K$, 
                 \begin{equation*}
                 \begin{array}{rlll}
-                (\mu T)(\lambda v + v') &= \mu T(\lambda v + v')&\qquad&\text{(definición de $\mu T$)} \\
+                (\mu T)(\lambda v + v') &= \mu T(\lambda v + v')&\qquad&\text{(def. de $\mu T$)} \\
                 &= \mu \lambda T(v) + \mu T(v') &\qquad&\text{($T$ lineal)}\\
                 &=  \lambda \mu T(v) + \mu T(v')&\qquad&\text{}\\
-                &= \lambda (\mu T)(v) + (\mu T)(v') &\qquad&\text{(definición de $\mu T$)}.
+                &= \lambda (\mu T)(v) + (\mu T)(v') &\qquad&\text{(def.de $\mu T$)}.
                 \end{array}
                 \end{equation*}
                 que dice que $\mu T$ es una transformación lineal.
@@ -915,10 +915,10 @@ Luego,
         \begin{proof} Sean $v, v' \in V$ y $\lambda \in \K$, entonces
             \begin{equation*}
             \begin{array}{rlll}
-                (U\circ T)(\lambda v + v') &= U(T(\lambda v + v'))&\qquad&\text{(definición de composición)} \\
+                (U\circ T)(\lambda v + v') &= U(T(\lambda v + v'))&\qquad&\text{(def. de composición)} \\
                  &= U(\lambda T( v) + T(v'))&\qquad&\text{($T$ lineal)} \\
                  &= \lambda U(T( v)) + U(T(v'))&\qquad&\text{($U$ lineal)} \\
-                 &= \lambda (U\circ T)( v) + (U\circ T)(v')&\qquad&\text{(definición de composición)}. \\
+                 &= \lambda (U\circ T)( v) + (U\circ T)(v')&\qquad&\text{(def. de composición)}. \\
             \end{array}
             \end{equation*}
             
@@ -1073,140 +1073,9 @@ Luego,
         $$
     \end{proof}
     
-    \begin{comment}
-    
-    \begin{teorema}
-            Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $	\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces existe una única matriz $P$ de orden $n \times n$, invertible, tal que para todo $v \in V$
-            \begin{enumerate}
-                \item\label{itm-coor-sum} $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y
-                \item\label{itm-coor-prod} $[v]_\mathcal{B'} = P^{-1}[v]_\mathcal{B}$.
-            \end{enumerate} 
-            Las columnas de $P$ están dadas por
-            $$
-            C_j = [v'_j]_\mathcal{B},\qquad 1 \le j \le n,
-            $$
-            es decir, los coeficientes de la columna $j$ de $P$ son las coordenadas de $v'_j$ en la base $\mathcal{B}$. 
-    \end{teorema}
-    \begin{proof} \ref{itm-coor-sum} Tenemos
-        \begin{align*}
-            v &=   x_1v_1 + \cdots +x_nv_n, \\
-            v &=  x'_1v'_1 + \cdots +x'_nv'_n.
-        \end{align*}
-         También podemos escribir cada $v'_j$ en coordenadas respecto a $\mathcal B$:
-         $$
-         v'_j =  p_{1j}v_1 + \cdots +p_{nj}v_n, \qquad  1 \le j \le n.
-         $$ 
-        Luego, 
-        \begin{align*}
-             \sum_{i=1}^{n}x_iv_i &=  \sum_{j=1}^{n}x'_jv'_j \\
-            &=  \sum_{j=1}^{n}x'_j(\sum_{i=1}^{n}p_{ij}v_i) \\
-            &=  \sum_{i=1}^{n}\sum_{j=1}^{n}x'_jp_{ij}v_i \\
-            &=  \sum_{i=1}^{n}(\sum_{j=1}^{n}p_{ij}x'_j)v_i.			
-        \end{align*}
-        Es decir, $x_i = \sum_{j=1}^{n}p_{ij}x'_j$. Por lo tanto, si $P = [p_{ij}]$ tenemos que
-        $$
-        \begin{bmatrix}x_1 \\ x_2\\ \vdots \\ x_n\end{bmatrix} = 
-        \begin{bmatrix}p_{11} &p_{12} & \ldots & p_{1n} \\p_{21} &p_{22} & \ldots & p_{2n} \\ \vdots &\vdots && \vdots\\ p_{n1} &p_{n2} & \ldots & p_{nn}\end{bmatrix}
-         \begin{bmatrix}x'_1 \\ x'_2\\ \vdots \\ x'_n\end{bmatrix}.
-        $$
-        
-        Veamos que $P$  es invertible: sea $(x_1,\ldots,x_n)$ solución del sistema de ecuaciones $PX =0$. Eso implica que si $v =\sum x_i v'_i$,  entonces $P[v]_{\mathcal B'}=0$.     Eso quiere decir que el vector  escrito en la base $\mathcal B$ tiene coordenadas $0$,  es decir $v = \sum 0. v_i =0$ y entonces $v = \sum 0. v'_i$ por la unicidad de escritura. Por lo tanto, la única solución del sistema $PX=0$ es 0 y en consecuencia $P$  es invertible.
-        
-        \ref{itm-coor-prod}  Como $P$ es invertible, multiplicamos por $P^{-1}$  a izquierda la ecuación $[v]_\mathcal{B} = P[v]_\mathcal{B'}$ y obtenemos el resultado.
-    \end{proof}
-
-    Observemos que, por simetría,  los coeficientes de la columna $j$ de $P^{-1}$ son las coordenadas de $v_j$ en la base $\mathcal{B'}$. 
-    
-    \begin{definicion} 
-        Sea $V$  espacio vectorial de dimensión $n$  sobre el cuerpo $\K$, 	y sean $\mathcal{B} = \{v_1,\ldots,v_n\}$ y $\mathcal{B'} = \{v'_1,\ldots,v'_n\}$ bases ordenadas de $V$. Entonces la matriz
-        $$
-        P = \begin{bmatrix}
-         C_1 &C_2 &\cdots &C_n
-        \end{bmatrix}
-        $$
-        con 
-        $$
-            C_j = [v'_j]_\mathcal{B},\qquad 1 \le j \le n,
-        $$
-        es la matriz de \textit{cambio de coordenadas}\index{cambio de coordenadas} de la base $\mathcal{B'}$  a la base $\mathcal{B}$.
-    \end{definicion}
-    
-    
-    \begin{ejemplo*}
-         $\mathcal{B} = \{v_1,v_2,v_3 \}=\{(1,0,-1),(1,1,1),(1,0,0) \}$ en $\R^3$.
-        \begin{enumerate}
-            \item\label{itm-ejem-coor-1} Probar que $\mathcal{B}$ es una base de $\R^3$, y 
-            \item\label{itm-ejem-coor-2} encontrar las coordenadas del vector  $(2,3,5)$ respecto a la base  $\mathcal{B}$. 
-        \end{enumerate}
-    \end{ejemplo*}
-\begin{proof}[Solución]
-    \ref{itm-ejem-coor-1} Sea $A$ la matriz cuyas filas son los vectores de $\mathcal{B}$ :
-    $$
-    A = \begin{bmatrix} 1&0&-1\\1&1&1\\1&0&0	\end{bmatrix}.
-    $$
-    Entonces,  calculando el determinante  por desarrollo de la última fila, obtenemos
-    $$
-    \det A = 1.(-1)^{3+1}. 
-    \left| \begin{matrix} 0&-1\\1&1	\end{matrix} \right| = 1.1.1 =1.
-    $$ 
-    Por  lo tanto $A$ es invertible y en consecuencia el espacio fila de $A$ es $\R^3$. Como $\mathcal{B}$ es un conjunto de 3  generadores de  $\R^3$, $\mathcal{B}$ es base.
-    
-    \ref{itm-ejem-coor-2} Si $x_1,x_2,x_3$  son las coordenadas de $(2,3,5)$ respecto a la base  $\mathcal{B}$, entonces
-    $$
-    (2,3,5) = x_1(1,0,-1)+x_2(1,1,1)+x_3(1,0,0)
-    $$
-    y esto es un sistema de tres ecuaciones y tres incógnitas.  Resolviendo este sistema encontramos la solución buscada. 
-    
-    Sin embargo,  nos interesa conocer una solución que sirva para cualquier vector, no solo para $(2,3,5)$, es decir buscamos la matriz $P = [p_{ij}]$ de cambio de coordenadas de la base canónica a la base $\mathcal B$. En particular,  esta matriz cumple 
-    $$
-    \begin{bmatrix} x_1\\x_2\\x_3 \end{bmatrix} = 
-    \begin{bmatrix}p_{11} &p_{12}& p_{13} \\p_{21} &p_{22} & p_{23}\\ p_{31} &p_{32}& p_{33}\end{bmatrix}
-    \begin{bmatrix} 2\\3\\5 \end{bmatrix}.
-    $$
-    con $(x_1,x_2,x_3)_{\mathcal B} = (2,3,5)$.
-    
-    
-    Ahora bien, sabemos que $P^{-1}$ es la matriz cuya columna $j$ es la matriz de $v_j$ en la base canónica (fácil de calcular) y luego calculamos su inversa que es $P$.
-    
-    Por lo dicho en el párrafo anterior, $P^{-1}$  es la matriz cuya  columna $1$ es $(1,0,-1)$,  la columna $2$ es $(1,1,1)$ y la columna $3$ es $(1,0,0)$, luego 
-    $$
-    P^{-1} = \begin{bmatrix} 1&1&1\\0&1&0\\-1&1&0	\end{bmatrix}.
-    $$ 
-    Encontremos su inversa,
-        \begin{multline*} 
-    \left[\begin{array}{rrr|rrr}	1&1&1&1&0&0\\ 0&1&0&0&1&0\\ -1&1&0&0&0&1 \end{array}\right]
-    \stackrel{F_3+ F_1}{\longrightarrow}
-    \left[\begin{array}{rrr|rrr}	1&1&1&1&0&0\\ 0&1&0&0&1&0\\ 0&2&1&1&0&1 \end{array}\right]
-    \underset{F_3-2F_2}{\stackrel{F_1 - F_2}{\longrightarrow}}\\
-    \longrightarrow 
-    \left[\begin{array}{rrr|rrr}	1&0&1&1&-1&0\\ 0&1&0&0&1&0\\ 0&0&1&1&-2&1 \end{array}\right]
-    \stackrel{F_1 - F_3}{\longrightarrow}
-    \left[\begin{array}{rrr|rrr}	1&0&0&0&1&-1\\ 0&1&0&0&1&0\\ 0&0&1&1&-2&1 \end{array}\right]
-    .
-    \end{multline*}
-    Entonces 
-    $$
-    P = \left[\begin{array}{rrr}	0&1&-1\\ 0&1&0\\ 1&-2&1 \end{array}\right]
-    $$
-    y 
-    $$
-    \left[\begin{array}{rrr}	0&1&-1\\ 0&1&0\\ 1&-2&1 \end{array}\right]
-    \left[\begin{array}{r} 2\\3\\5 \end{array}\right] = 
-    \left[\begin{array}{r} -2\\3\\1 \end{array}\right].
-    $$
-    Por  lo tanto las coordenadas de   $(2,3,5)$ respecto a la base  $\mathcal{B}$ son $(-2,3,1)_{\mathcal B}$ o,  equivalentemente, 
-    $$
-    (2,3,5) = -2(1,0,-1)+3(1,1,1)+(1,0,0).
-    $$
-    
-      
-\end{proof}
-\end{comment}
     \end{section}
 
 
-
-    
         \begin{section}{Matriz de una transformaci\'on lineal}\label{seccion-matriz-de-una-tl}
             Sea $V$ un espacio vectorial de dimensión $n$ sobre el cuerpo $\K$, y sea $W$ un espacio vectorial de dimensión $m$ sobre $\K$. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_m\}$ una base ordenada de $W$. Si $T$ es cualquier 		transformación lineal de $V$ en $W$, entonces $T$ está determinada por su efecto sobre los vectores $v_j$, puesto que todo vector de $V$ es combinación lineal de ellos. Cada uno de los $n$ vectores $Tv_j$ se expresa de manera única 	como combinación lineal
             \begin{equation}\label{matriz-de-T-1}
@@ -1655,25 +1524,6 @@ Luego,
             $$
         \end{ejemplo}
         
-    \begin{comment}
-        \begin{ejemplo*}
-        Sea
-        $$ 
-        A=\begin{bmatrix}1&2&1\\ 6&-1&0\\ -1&-2&-1\end{bmatrix},
-        $$
-        entonces el  polinomio característico de $A$ es
-        $$
-        \det \begin{bmatrix}1-x&2&1\\ 6&-1-x&0\\ -1&-2&-1-x\end{bmatrix} = -x^3 - x^2 + 12 x.
-        $$
-        Es posible factorizar esta expresión y obtenemos
-        $$
-        \chi_A(x) = -x(x-3)(x+4).
-        $$
-        \end{ejemplo*}
-    \end{comment}	
-        
-    
-
         
         \begin{proposicion}\label{autovalores}
             Sea $V$ espacio vectorial de dimensión $n$ y sea $T: V \to V$ lineal. Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico.  
@@ -1722,9 +1572,11 @@ Luego,
         \begin{bmatrix} 0\\0 \\0\end{bmatrix},
         \end{equation*}  
         para $\lambda =0, 2,-3$. Resolviendo estos tres sistemas, obtenemos que 
-        \begin{equation*}
-            V_0 = \{(y,y,0): y \in \R \},\quad V_2 = \{(-2z,-z,z): z \in \R \},\quad V_{-3} = \{(-2z,-2z,z): z \in \R \}. 
-        \end{equation*}
+        \begin{align*}
+            V_0&= \{(y,y,0): y \in \R \},\\ 
+            V_2 &= \{(-2z,-z,z): z \in \R \},\\ 
+            V_{-3} &= \{(-2z,-2z,z): z \in \R \}. 
+        \end{align*}
         Por lo tanto, $\{(1,1,0), (-2,-1,1), (-2,-2,1)\}$ es una base de autovectores de la transformación lineal. 
         \end{ejemplo*}
         

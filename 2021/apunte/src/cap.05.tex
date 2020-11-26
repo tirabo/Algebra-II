@@ -141,23 +141,24 @@
         \begin{proposicion}
             ${}^{}$
             \begin{enumerate}
-                \item Teorema de Pitágoras: si $u\perp v$, entonces $||u+v||^2 = ||u||^2 + ||v||^2$.
-                \item Ley del Paralelogramo: $||u+v||^2+ ||u-v||^2 = 2||u||^2 + 2||v||^2$.
+                \item\label{it.pitagoras} Teorema de Pitágoras: si $u\perp v$, entonces $||u+v||^2 = ||u||^2 + ||v||^2$.
+                \item\label{it.paralelogramo} Ley del Paralelogramo: $||u+v||^2+ ||u-v||^2 = 2||u||^2 + 2||v||^2$.
             \end{enumerate}
         \end{proposicion}
         \begin{proof} Ambas demostraciones se hacen desarrollando las fórmulas y usando las propiedades del producto escalar.
             
-            \textit{Demostración de 1.}
-            \begin{equation*}
-            ||u+v||^2 = \la u+v, u+v\ra = \la u, u+v\ra+\la v, u+v\ra = \la u, u\ra+\la u, v\ra+\la v, u\ra+\la v, v\ra.
-            \end{equation*} 
+            \textit{Demostración de \ref{it.pitagoras}.}
+            \begin{align*}
+            ||u+v||^2 &= \la u+v, u+v\ra = \la u, u+v\ra+\la v, u+v\ra \\
+            &= \la u, u\ra+\la u, v\ra+\la v, u\ra+\la v, v\ra.
+            \end{align*} 
             Las igualdades de arriba se deben a la bilinealidad del producto interno. 
             Ahora bien,  como $u\perp v$,  tenemos que $0 = \la u, v\ra=\la v, u\ra$, luego
             \begin{equation*}
             ||u+v||^2 = \la u, u\ra+ \la v, v\ra =  ||u||^2 + ||v||^2.
             \end{equation*} 
             
-            \textit{Demostración de 2.}
+            \textit{Demostración de \ref{it.paralelogramo}.}
             \begin{align*}
             ||u+v||^2+ ||u-v||^2 &= \la u+v, u+v\ra + \la u-v, u-v\ra \\
             &= \la u, u\ra+2\la u, v\ra+\la v, v\ra + \la u, u\ra-2\la u, v\ra+\la v, v\ra \\
@@ -546,7 +547,8 @@
             Ahora bien,
             \begin{align*}
             \la v,(R^* + S^*)(w)\ra &= \la v,R^*(w) + S^*(w)\ra =  \la v,R^*(w) \ra+\la v, S^*(w)\ra \\
-            &=  \la R(v),w \ra+\la S(v), w\ra =  \la R(v) + S(v), w\ra =  \la (R+S)(v), w\ra .
+            &=  \la R(v),w \ra+\la S(v), w\ra =  \la R(v) + S(v), w\ra \\
+            &=  \la (R+S)(v), w\ra .
             \end{align*}
 
             \ref{adj3}. 
@@ -790,9 +792,10 @@
             
             
             ($\Leftarrow$) Sea $v \in V$. Debemos ver que $ \la T(v),v \ra \ge 0$.  Sea $\mathcal{U} = \{u_1,\ldots,u_n\}$  una BON de $V$ de autovectores de $T$, entonces $v = \sum_i a_i u_i$, luego
-            $$
-             \la T(v),v \ra  =  \la T(\sum_i a_i u_i),\sum_j a_j u_j \ra =  \la \sum_i \lambda_i a_i u_i,\sum_j a_j u_j \ra  =  \sum_i\sum_j\lambda_i a_ia_j\la  u_i,  u_j \ra = \sum_i\lambda_i a_i^2.
-            $$ 
+            \begin{align*}
+                \la T(v),v \ra  &=  \la T(\sum_i a_i u_i),\sum_j a_j u_j \ra =  \la \sum_i \lambda_i a_i u_i,\sum_j a_j u_j \ra \\ 
+                &=  \sum_i\sum_j\lambda_i a_ia_j\la  u_i,  u_j \ra = \sum_i\lambda_i a_i^2.    
+            \end{align*}
             Como por hipótesis $\lambda_i \ge 0$, tenemos que $\sum_i\lambda_i a_i^2\ge 0$, por lo tanto $ \la T(v),v \ra \ge 0$.
             
             La segunda afirmación se prueba de manera totalmente análoga (cambiando $\ge$ por $>$).
@@ -968,7 +971,7 @@
             \begin{align*}
                 v \in \nu(T^*T) &\Rightarrow T^*T(v) = 0& & \\
                 &\Rightarrow T(v) \in \nu(T^*) && \\
-                &\Rightarrow T(v) \in \im(T)^\perp &&\text{(pues $\nu(T^*) = \im(T)^\perp$  por teorema \ref{rel-adj-ort})} \\
+                &\Rightarrow T(v) \in \im(T)^\perp &&\text{($\nu(T^*) = \im(T)^\perp$  por teo. \ref{rel-adj-ort})} \\
                 &\Rightarrow T(v) \in \im(T) \cap \im(T)^\perp&&\\
                 &\Rightarrow T(v) = 0 &&\\
                 &\Rightarrow v \in \nu(T). &&
@@ -1249,11 +1252,8 @@
         De acuerdo al teorema de los valores singulares,existen bases ortonormales $\{v_1,\ldots,v_n\}$ y $\{w_1,\ldots,w_n\}$  de $V$ tales que $Tv_i = \lambda_i w_i$,  $T^*w_i = \lambda_i v_i$, con $\lambda_i >0$ para $i=1,\ldots,r$. Además $Tv_i = 0$,  $T^*w_i = 0$ para $r < i \le n$. Reordenando las bases, podemos suponer que $\lambda_1 \ge \lambda_{2} \ge \cdots \ge \lambda_{r}>0$. 
         
         Sean
-        \begin{align}
-        %U = \begin{bmatrix}
-        %w_1^{\t} \\ \vdots \\ w_m^{\t}
-        %\end{bmatrix},\qquad 
-        U = \begin{bmatrix}
+        \begin{align*}
+        U &= \begin{bmatrix}
         w_1 & \cdots &  w_m
         \end{bmatrix},\qquad 
         \Sigma = \begin{bmatrix}
@@ -1264,11 +1264,11 @@
         0 & 0 & \cdots & 0 & 0 & \cdots & 0 \\ 
         \vdots & \vdots & \ddots & \vdots & \vdots & \ddots & \vdots \\ 
         0 & 0 & \cdots & 0 & 0 & \cdots & 0 
-        \end{bmatrix},\qquad
-        V = \begin{bmatrix}
+        \end{bmatrix},\\
+        V &= \begin{bmatrix}
         v_1 & \cdots & v_n
         \end{bmatrix}. 
-        \end{align}
+        \end{align*}
         
         
         

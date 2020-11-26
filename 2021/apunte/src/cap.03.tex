@@ -4,9 +4,6 @@
     \begin{chapter}{Espacios vectoriales}\label{chap-esp-vect} En este capítulo estudiaremos en forma general las combinaciones lineales sobre conjuntos abstractos.
         En el primer capítulo desarrollamos el método de Gauss para la resolución de sistemas de ecuaciones lineales. En el método de Gauss se usan sistemáticamente las combinaciones lineales de las filas de una matriz. Podemos ver estas filas como elementos de $\K^n$  y nuestro primer impulso para el estudio de las combinaciones lineales sería trabajar en este contexto, es decir  en $\K^n$.  Sin embargo, muchos de los resultados sobre combinaciones lineales en $\K^n$ son aplicables también a conjuntos más generales y de gran utilidad en la matemática. Por lo tanto, en este capítulo nuestros ``espacios vectoriales'' (espacios donde pueden hacerse combinaciones lineales de vectores) serán espacios abstractos, pero usualmente haremos referencia a los espacios vectoriales ``concretos'' (los $\K^n$) que ya conocemos. 
         
-
-        
-
         
         \begin{section}{Definici\'on y ejemplos de espacios vectoriales}\label{seccion-definicion-de-espacios-vectoriales}
             
@@ -50,7 +47,9 @@
                 \begin{equation*}
                 V = \{(x_1,x_2,\ldots,x_n): x_i \in \K, 1 \le i \le n \} = \K^n.
                 \end{equation*}	
-                Entonces $V$ es espacio vectorial con las siguientes operaciones: si $(x_1,x_2,\ldots,x_n) \in \K^n$, $(y_1,y_2,\ldots,y_n) \in K^n$, $\lambda \in \K$
+                Entonces $V$ es espacio vectorial con las operaciones siguientes.
+                
+                Si $(x_1,x_2,\ldots,x_n) \in \K^n$, $(y_1,y_2,\ldots,y_n) \in K^n$, $\lambda \in \K$
                 \begin{enumerate}
                     \item[(\textit{a})] $(x_1,x_2,\ldots,x_n)+ (y_1,y_2,\ldots,y_n) = (x_1+y_1,x_2+y_2,\ldots,x_n+y_n)$,
                     \item[(\textit{b})] $\lambda(x_1,x_2,\ldots,x_n) = (\lambda x_1,\lambda x_2,\ldots,\lambda x_n)$.
@@ -385,20 +384,19 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     es un subespacio vectorial. Es decir,  el conjunto de las combinaciones lineales de $v_1,\ldots,v_k$ es un subespacio vectorial.
     \end{teorema}
     \begin{proof}
-        \begin{enumerate}
-            \item[(a)] Sean $\lambda_1v_1+\cdots+\lambda_kv_k$ y $\mu_1v_1+\cdots+\mu_kv_k$ dos combinaciones lineales de $v_1,\ldots,v_k$, entonces 
+     Sean $\lambda_1v_1+\cdots+\lambda_kv_k$ y $\mu_1v_1+\cdots+\mu_kv_k$ dos combinaciones lineales de $v_1,\ldots,v_k$, entonces 
             \begin{align*}
                 (\lambda_1v_1+\cdots+\lambda_kv_k)+(\mu_1v_1+\cdots+\mu_kv_k) &=  \lambda_1v_1+\mu_1v_1+\cdots+\lambda_kv_k+\mu_kv_k\\
                 &= (\lambda_1+\mu_1)v_1+\cdots+(\lambda_k+\mu_k)v_k,
             \end{align*}
             que es  una combinación lineal de  $v_1,\ldots,v_k$ y por lo tanto pertenece a $W$.
-            \item[(b)] Si $\lambda \in \K$ y $\lambda_1v_1+\cdots+\lambda_kv_k$  es una combinación lineal de $v_1,\ldots,v_k$,  entonces
+
+            Ahora, si $\lambda \in \K$ y $\lambda_1v_1+\cdots+\lambda_kv_k$  es una combinación lineal de $v_1,\ldots,v_k$,  entonces
             \begin{align*}
             \lambda (\lambda_1v_1+\cdots+\lambda_kv_k) &=  \lambda(\lambda_1v_1)+\cdots+\lambda(\lambda_kv_k)\\
             &= (\lambda\lambda_1)v_1+\cdots+(\lambda\lambda_k)v_k,
             \end{align*}
                 que es  una combinación lineal de  $v_1,\ldots,v_k$ y por lo tanto pertenece a $W$.
-        \end{enumerate}
     \end{proof}
     
 
@@ -661,11 +659,11 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
     que, viéndola coordenada a coordenada, es equivalente a un sistema de $m$ ecuaciones lineales con  $n$ incógnitas (que son $\lambda_1,\ldots,\lambda_n$). Si  la única solución es la trivial entonces $v_1,\ldots,v_n$ es LI. Si hay alguna solución no trivial, entonces $v_1,\ldots,v_n$ es LD. 
 \end{observacion*}
  
- \begin{definicion}
+ \begin{definicion}\label{def-base}
      Sea $V$ un espacio vectorial. Una \textit{base}\index{base de un espacio vectorial} de $V$ es un conjunto $\mathcal B \subseteq V$ tal que
      \begin{enumerate}
-         \item $\mathcal B$ genera a $V$, y
-         \item $\mathcal B$ es LI.
+         \item\label{it.genera} $\mathcal B$ genera a $V$, y
+         \item\label{it.li} $\mathcal B$ es LI.
      \end{enumerate}
       El espacio $V$ es de \textit{dimensión finita}\index{dimensión finita} si tiene una base finita,  es decir con  un número finito de elementos.
  \end{definicion}
@@ -682,13 +680,14 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
     \end{array}
     \end{equation*}
     ($e_i$ es el vector con todas sus coordenadas iguales a cero,  excepto  la coordenada $i$ que vale 1). Entonces veamos que  $e_1,\ldots,e_n$ es una base de $\K^n$.
-    \begin{enumerate}
-        \item Si $(x_1,\ldots,x_n) \in \K^n$,  entonces
+    
+    Probemos que $e_1,\ldots,e_n$ genera  $\K^n$: si $(x_1,\ldots,x_n) \in \K^n$,  entonces
         $$
         (x_1,\ldots,x_n) = x_1e_1+\cdots+x_ne_n.
         $$
         Por lo tanto, $e_1,\ldots,e_n$ genera a  $\K^n$.
-        \item Si 
+        
+        Probemos que $e_1,\ldots,e_n$ es LI: si 
         $$
         x_1e_1+\cdots+x_ne_n =0,
         $$
@@ -700,9 +699,6 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
         Luego, $x_1= x_2=\cdots=x_n =0$ y por lo tanto $e_1,\ldots,e_n$ es LI.
         
         Para $1 \le i \le n$, al vector $e_i$ se lo denomina el \textit{$i$-ésimo vector canónico}  y a la base $\mathcal B_n = \left\{e_1,\ldots,e_n \right\}$ se la denomina la \textit{base canónica}\index{base canónica} de $\K^n$. 
-        
-        
-    \end{enumerate}
 \end{ejemplo*}
  
  
@@ -914,38 +910,6 @@ Es decir, todo subconjunto LI de un espacio vectorial de dimensión finita se pu
         no está en $W$. Agregando $v$ a la base $S$ de $W$ se obtiene un subconjunto
         LI de $V$ (lema \ref{lem-li+vec=li}). Así, $\dim W < \dim V$.
     \end{proof}
-
-    \begin{comment}
-    
-    \begin{corolario}
-     En un espacio vectorial V de dimensión finita todo conjunto linealmente independiente de vectores es parte de una base.
-    \end{corolario}
-    \begin{proof}
-        Sea $S$ un conjunto LI en $V$, por el teorema \ref{completar-bases}, existen $v_1,\ldots,v_m$ tal que  $S \cup \{v_1,\ldots,v_m\}$ es una base de $V$. 
-    \end{proof}
-
-    \begin{corolario}
-        Sea A una matriz $n \times n$ sobre el cuerpo $\K$, y suponga que los vectores fila de $A$ forman un conjunto linealmente independiente de vectores de $\K^n$. Entonces $A$ es invertible.
-    \end{corolario}
-    \begin{proof}
-        Sean $v_1,\ldots,v_n$ los  vectores fila de $A$, y sea $W = \langle v_1,\ldots,v_n \rangle$.  Como los $v_1,\ldots,v_n$ son linealmente independientes, la dimensión de $W$ es $n$. Por el corolario  \ref{dimw-menor-dimv} se tiene 	que $W$ no es propio y por lo tanto $W = \K^n$.  Luego existen escalares $b_{ij}$ en $\K$ tales que
-        $$
-        e_i = \sum_{j=1}^{n} b_{ij} v_j, \qquad 1 \le i \le n
-        $$
-        donde $\{e_1, e_2,\ldots ,e_n\}$ es la base canónica de $\K^n$. 
-        Como $v_j= (a_{j1},\ldots,a_{jn})$,  tenemos
-        \begin{align*}
-            e_i &= \sum_{j=1}^{n} b_{ij} (a_{j1},\ldots,a_{jn}) \\
-            &=  (\sum_{j=1}^{n} b_{ij}a_{j1},\ldots,\sum_{j=1}^{n} b_{ij}a_{jn}).
-        \end{align*}
-        
-        Así, para la matriz $B= [b_{ij}]$ se tiene
-        $$
-        BA=\Id.
-        $$
-    \end{proof}
-    
-    \end{comment}
 
 Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conjunto LI se puede extender a una base. Veremos ahora que dado un conjunto finito de generadores,  existe un subconjunto que es una base. 
 
@@ -1166,23 +1130,23 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
 \begin{teorema}
     Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces son equivalentes
     \begin{enumerate} 
-        \item $A$ es invertible.
-        \item $A$  es equivalente por filas a $\Id_n$.
-        \item $A$ es producto de matrices elementales.
-        \item El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
-        \item El sistema homogéneo $AX=0$ tiene una única solución trivial.
-        \item $\det A \ne 0$.
-        \item Las filas de $A$ son LI.
-        \item Las columnas de $A$ son LI.
+        \item\label{it.inv-1} $A$ es invertible.
+        \item\label{it.inv-2} $A$  es equivalente por filas a $\Id_n$.
+        \item\label{it.inv-3} $A$ es producto de matrices elementales.
+        \item\label{it.inv-4} El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
+        \item\label{it.inv-5} El sistema homogéneo $AX=0$ tiene una única solución trivial.
+        \item\label{it.inv-6} $\det A \ne 0$.
+        \item\label{it.inv-7} Las filas de $A$ son LI.
+        \item\label{it.inv-8} Las columnas de $A$ son LI.
     \end{enumerate}
 \end{teorema}
-\begin{proof} Por teoremas \ref{mtrx-inv-equiv} y  \ref{mtrx-inv-equiv2}, tenemos que 	(1) $\Leftrightarrow$ 	(2) $\Leftrightarrow$ 	(3) $\Leftrightarrow$ 	(4) $\Leftrightarrow$ 	(5).
+\begin{proof} Por teoremas \ref{mtrx-inv-equiv} y  \ref{mtrx-inv-equiv2}, tenemos que 	\ref{it.inv-1}$\Leftrightarrow$ 	\ref{it.inv-2} $\Leftrightarrow$ 	\ref{it.inv-3} $\Leftrightarrow$ 	\ref{it.inv-4} $\Leftrightarrow$ 	\ref{it.inv-5}.
     
-    (1) $\Leftrightarrow$ (6). Por teorema \ref{mtrx-inv-equiv3}.
+    \ref{it.inv-1} $\Leftrightarrow$ \ref{it.inv-6}. Por teorema \ref{mtrx-inv-equiv3}.
     
-    (1) $\Leftrightarrow$ (7). Por corolario \ref{inv-impl-filasgen}.
+    \ref{it.inv-1} $\Leftrightarrow$ \ref{it.inv-7}. Por corolario \ref{inv-impl-filasgen}.
     
-    (1) $\Leftrightarrow$ (8). $A$ invertible $\Leftrightarrow$ $A^\t$ invertible $\Leftrightarrow$  las filas de $A^\t$ son LI $\Leftrightarrow$  las columnas de $A$ son LI. 
+    \ref{it.inv-1} $\Leftrightarrow$ \ref{it.inv-8}. $A$ invertible $\Leftrightarrow$ $A^\t$ invertible $\Leftrightarrow$  las filas de $A^\t$ son LI $\Leftrightarrow$  las columnas de $A$ son LI. 
 \end{proof}
     
     \end{section}

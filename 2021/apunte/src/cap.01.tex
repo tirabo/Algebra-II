@@ -1295,7 +1295,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         \begin{ejemplo*}
             Encontrar una representación paramétrica para la recta que contiene los puntos $(1, - 3, 1)$ y $(- 2,4,5)$.
         \end{ejemplo*}	
-        \begin{proof}[Solución] Llamemos $v = (1, - 3, 1)$ y $u =(- 2,4,5)$. Entonces $u-v = (- 2,4,5) - (1,-3,1) = (-3,7,4)$ y la representación paramétrica de la recta que pasa por $u$ y $v$  es 
+        \begin{proof}[Solución] Llamemos $v = (1, - 3, 1)$ y $u =(- 2,4,5)$. Entonces $$u-v = (- 2,4,5) - (1,-3,1) = (-3,7,4)$$ y la representación paramétrica de la recta que pasa por $u$ y $v$  es 
         \begin{equation*}
             X (t) = v + t(u-v) = (1, -3,1) + t (-3, 7, 4),\quad t\in \R.
         \end{equation*}
@@ -1542,12 +1542,17 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
             \begin{equation*}
             P = \{(2s-t +1,s,t): s,t \in \R\}. 
             \end{equation*}
-            Observemos que $(2s-t +1,s,t) = (1,0,0) + (2s-t,s,t)= (1,0,0) + (2s,s,0) + (-t,0,t) = (1,0,0) + s(2,1,0) + t(-1,0,1) $, por lo tanto, podemos también escribir
+            Observemos que 
+            \begin{align*}
+                (2s-t +1,s,t) &= (1,0,0) + (2s-t,s,t)\\
+                &= (1,0,0) + (2s,s,0) + (-t,0,t)\\
+                & = (1,0,0) + s(2,1,0) + t(-1,0,1),
+            \end{align*}
+            por lo tanto, podemos también escribir
             \begin{equation*}
             P = \{(1,0,0) + s(2,1,0) + t(-1,0,1): s,t \in \R\}. 
             \end{equation*}
             Cualquiera de las formas paramétricas de describir $P$  es correcta, pero la última es la que se utiliza para definir formalmente el plano en forma paramétrica. 
-            
         \end{ejemplo*}
     
     \begin{definicion}
@@ -1624,15 +1629,14 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         \vskip .2cm
         
         
-    \item ¿Cuáles de las siguientes rectas cortan al plano $\pi_3$ del  ejercicio \ref{ej-planos-c})?
+    \item ¿Cuáles de las siguientes rectas cortan al plano $\pi_3$ del  ejercicio \ref{ej-planos} \ref{ej-planos-c}?
         Describir la intersección en cada caso.
-        \begin{align*}
-        &(a) \ \{w: w=(3,2,1)+t(1,1,1)\}, && (b) \  \{w: w=(1,-1,1)+t(1,2,-1)\}, \\
-        &(c)\  \{w: w=(-1,0,-1)+t(1,2,-1)\}, && (d) \  \{w: w=(1,-2,1)+t(2,-1,1)\}.
-        \end{align*}
-        
-     
-
+        \begin{enumerate}
+            \item $\{w: w=(3,2,1)+t(1,1,1)\}$,
+            \item $\{w: w=(1,-1,1)+t(1,2,-1)\}$,
+            \item $\{w: w=(-1,0,-1)+t(1,2,-1)\}$, 
+            \item $\{w: w=(1,-2,1)+t(2,-1,1)\}$.
+        \end{enumerate}
 \end{enumerate}
 
 
@@ -1823,10 +1827,6 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
       \end{equation*}
 \end{proof}
 
- 
 \end{section}
 
-
-
-
-    \end{chapter}
+\end{chapter}
