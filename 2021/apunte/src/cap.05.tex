@@ -224,7 +224,7 @@
             
         \end{observacion}
         
-        \begin{proposicion}[Desigualdad de Schwarz] Sean $u, v\in \R^n$. Entonces 
+        \begin{proposicion}[Desigualdad de Cauchy-Schwarz]\label{prop-cauchy-schwarz} Sean $u, v\in \R^n$. Entonces 
             $$|\la u, v \ra| \le ||u||||v||.$$
         \end{proposicion}
         \begin{proof} Primero daremos una demostración basada en los resultados geométricos vistos en el capítulo \ref{chap-vectores}, luego,  el lector interesado, podrá leer una demostración algebraica del resultado. 
@@ -263,15 +263,10 @@
             $$
             ||u + v||^2 \le (||u|| + ||v||)^2
             $$
-            desarrollando  el lado izquierdo de la desigualdad  como $\la u+v, u+v \ra$ y el lado derecho por el cálculo del binomio al cuadrado. Luego usar la desigualdad de Schwarz.
+            desarrollando  el lado izquierdo de la desigualdad  como $\la u+v, u+v \ra$ y el lado derecho por el cálculo del binomio al cuadrado. Luego usar la desigualdad de Cauchy-Schwarz.
         \end{proof}
         
-        
-  
-        
         Ahora vamos a demostrar el proceso de ortonormalización de Gram-Schmidt, que consta de  un algoritmo que permite pasar de una base cualquiera $\{v_1,\ldots, v_n\}$ de $\R^n$ a una base ortonormal $\{u_1,\ldots, u_n\}$, con la importante propiedad de que, para $m$ con  $1 \le m \le n$, el subespacio generado por los vectores $\{u_1,\ldots, u_m\}$ es el mismo que el subespacio generado por los vectores $\{v_1,\ldots, v_m\}$.
-        
-    
 
         
         La idea del proceso es sencillo para dos vectores: sean  $v_1,v_2 \in \R^n$ no  nulos y no proporcionales, vimos en la observación \ref{obs-proyeccion-ort} que  los vectores
@@ -750,7 +745,7 @@
             
             Si $n=1$ es trivial. 
             
-            Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por le teorema  \ref{th-existe-autovalor-autoadjunta} existe $\lambda \in \R$ y $v \in V$ tal que $Av = \lambda v$. Si $u_n = v/||v||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W = \la u \ra$. Entonces por  corolario \ref{wperpinv}, $W^\perp$ es invariante. Podemos considerar entonces a  $T$ como una transformación lineal de $W^\perp$ a $W^\perp$. Como $\dim(W^\perp) = n-1$, por hipótesis inductiva existe   $\{u_1,\ldots,u_{n-1}\}$ una BON de $W^\perp$ de autovectores de $T: W^\perp \to W^\perp$. Es claro entonces que $\mathcal{U} = \{u_1,\ldots,u_n\}$  una BON de $V$ de autovectores de $T:V \to V$. 
+            Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por el teorema  \ref{th-existe-autovalor-autoadjunta} existe $\lambda \in \R$ y $v \in V$ tal que $Av = \lambda v$. Si $u_n = v/||v||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W = \la u \ra$. Entonces por  corolario \ref{wperpinv}, $W^\perp$ es invariante. Podemos considerar entonces a  $T$ como una transformación lineal de $W^\perp$ a $W^\perp$. Como $\dim(W^\perp) = n-1$, por hipótesis inductiva existe   $\{u_1,\ldots,u_{n-1}\}$ una BON de $W^\perp$ de autovectores de $T: W^\perp \to W^\perp$. Es claro entonces que $\mathcal{U} = \{u_1,\ldots,u_n\}$  una BON de $V$ de autovectores de $T:V \to V$. 
         \end{proof}
         
         

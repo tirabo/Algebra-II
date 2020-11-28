@@ -1791,39 +1791,8 @@ Luego,
     
 Sea $T:\R^n \to \R^n$ un operador simétrico y $A$ la matriz asociada a  $T$,  es decir $A = [T]_{\mathcal{C}}$,  donde $\mathcal{C}$  es la base canónica. Si trabajamos en las coordenadas canónicas es claro que $T(x) = Ax$ y debido a esto a menudo intercambiaremos  $T$ por $A$ y viceversa.  
 
-\begin{definicion}
-    Sea $V$  espacio vectorial y  $T: V \to V$ operador lineal. Sea $U \subset V$ subespacio de $V$. Diremos que $U$  es  \textit{invariante por $T$} si $T(U) := \{T(v): v \in U\} \subset U$. 
-\end{definicion}
-
-    
-\begin{proposicion}\label{prop-t-simetrico-autoadjunto}
-    Si $T$ es un operador simétrico, entonces 
-    \begin{enumerate}[label=\emph{\alph*})]
-        \item 
-        \begin{equation*}
-        \la Tx,y \ra =  \la x,Ty \ra .
-        \end{equation*}
-        \item Si $W$ un subespacio de $\R^n$ invariante por $T$, entonces $W^\perp$ es invariante por $T$.
-    \end{enumerate}
-\end{proposicion}
-\begin{proof} Sea $A=[T]_{\mathcal{C}}$. 
-
-
-    (a) Notar que
-    \begin{equation*}
-    \la Ax,y \ra = (Ax)^\t y = x^\t A^\t y  = x^\t A y = \la x,Ay \ra 
-    \end{equation*}
-
-    (b)  Sea $u \in W^\perp$,  debemos ver que $Au \in W^\perp$,  es decir que $\la Au,w\ra =0$ para todo $w \in W$. Ahora bien,
-    \begin{equation*}
-        \la Au,w\ra =(Au)^\t w = u^\t A^\t w =u^\t A w = u^\t (A w) = \la u, Aw\ra=0.  
-    \end{equation*}
-    La última igualdad es válida pues $u \in W^\perp$ y  como $w \in W$, por hipótesis $Aw \in W$.
-\end{proof}
-    
-    
  
-    Veremos ahora que un operador simétrico, o equivalentemente, una matriz simétrica, es diagonalizable, es decir que hay una base de autovectores del operador o, equivalentemente, que existe una matriz $P$ invertible tal que $P^{-1}AP$ es diagonal. 
+    Veremos ahora que un operador simétrico $T$, o equivalentemente, una matriz $A$ simétrica, tiene al menos un autovalor. En el capítulo \ref{chap-esp-prod-int}, en la sección \ref{secccion-operadores-autoadjuntos}, veremos que este resultado implicará que $T$ es diagonalizable, es decir que hay una base de autovectores del operador o, equivalentemente, que existe una matriz $P$ invertible tal que $P^{-1}AP$ es diagonal. 
     
     Usaremos el siguiente resultado sin demostración.
     
@@ -1883,21 +1852,11 @@ Sea $T:\R^n \to \R^n$ un operador simétrico y $A$ la matriz asociada a  $T$,  e
     
  
     
-    El siguiente resultado, el \textit{teorema espectral}, requiere para su demostración una generalización del resultado anterior para espacios de producto interno  de dimensión finita y matrices (transformaciones lineales)  simétricas respecto a este producto interno. Todos estos conceptos y resultados son generalizaciones sencillas, pero llevan algún tiempo desarrollarlas y el lector interesado las puede ver en la sección \ref{secccion-operadores-autoadjuntos}. La demostración que daremos del teorema espectral se hará por inducción en la dimensión del espacio y utiliza en el paso inductivo la generalización del teorema \ref{th-existe-autovalor-simetrica}.   
+    El siguiente resultado, el \textit{teorema espectral}, requiere para su demostración una generalización del resultado anterior para espacios de producto interno  de dimensión finita y matrices (transformaciones lineales)  simétricas respecto a este producto interno. Todos estos conceptos y resultados son generalizaciones sencillas, pero llevan algún tiempo desarrollarlas y el lector interesado las puede ver en la sección \ref{secccion-operadores-autoadjuntos}. 
         
     \begin{teorema}[Teorema espectral]\index{Teorema espectral} Sea $A$ matriz simétrica $n \times n$. Entonces existe $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $\R^n$ de autovectores de $A$.
     \end{teorema}
-    \begin{proof}[Idea de la demostración (*)]		
-        Se hará por inducción en $n= \dim(V)$.
-        
-        Si $n=1$ es trivial. 
-        
-        Supongamos que vale  para $n-1$ con $n >1$, y  probaremos el resultado para $n$. Por el teorema  \ref{th-existe-autovalor-simetrica} existe $\lambda \in \R$ y $x \in \R^n$ tal que $Ax = \lambda x$. Si $u_n = x/||x||$, $u_n$ tiene norma 1 y  cumple también que $Au_n = \lambda u_n$. Sea $W =\la u_n \ra$. Entonces $W$ es invariante y por proposición \ref{prop-t-simetrico-autoadjunto} tenemos que $W^\perp$ es invariante por $A$. De esta forma, podemos considerar entonces a  $A$ como una transformación lineal de $W^\perp$ a $W^\perp$. 
-        
-        No es difícil verificar que el producto interno canónico es un producto interno en $W^\perp$ y que $A:W^\perp \to W^\perp$ es una matriz simétrica con este producto interno restringido.  
-        
-        Como $\dim(W^\perp) = n-1$, por hipótesis inductiva existe   $\{u_1,\ldots,u_{n-1}\}$ una BON de $W^\perp$ de autovectores de $A: W^\perp \to W^\perp$. Es claro entonces que $\mathcal{U} = \{u_1,\ldots,u_n\}$  una BON de $\R^n$ de autovectores de $A$. 
-    \end{proof}
+
 
     \begin{corolario}
          Sea $A$ matriz simétrica $n \times n$, entonces $A$ es diagonalizable.

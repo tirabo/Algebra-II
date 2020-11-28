@@ -823,9 +823,9 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
         \cos (\alpha_1)\cos(\alpha_2)+  \sen(\alpha_1)\sen(\alpha_2) = \cos(\alpha_1- \alpha_2).
         \end{equation}
         Es decir, 
-        \begin{equation*}
+        \begin{equation}
         \langle v_1,v_2 \rangle =   ||v_1|| \,  ||v_2|| \cos (\alpha_1-\alpha_2), 
-        \end{equation*}
+        \end{equation}
         y precisamente, $\theta =  \alpha_1-\alpha_2$ es el ángulo comprendido entre  $v_1$ y $v_2$.
         
         Esto se puede generalizar a $\R^3$  y ahí en vez de la fórmula (\ref{eq-ley-cosenos}) se debe usar la ley esférica de los cosenos. Los resultados se puede generalizar a  $\R^n$ y  en general vale  que si $v_1, v_2 \in \R^n$,  entonces el ángulo comprendido entre $v_1$ y $v_2$ es 
@@ -833,7 +833,9 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
         \theta = 	\operatorname{arcos}\left(\frac{\langle v_1 , v_2 \rangle}{||v_1|| \,  ||v_2|| }\right).
         \end{equation}  
         
-        
+ 
+
+
         Terminaremos esta sección dando la noción de  distancia entre dos vectores o dos puntos. 
         
         \begin{definicion}
@@ -881,9 +883,14 @@ Una de las desigualdades más notables referentes a la norma de un vector es la 
     \end{equation*}
     y la igualdad se cumple sólo cuando $w$ es múltiplo de $v$. 
 \end{proposicion}
-\begin{proof}[Demostración] Podemos probar  este resultado en base a una demostración ``geométrica'' basada en el hecho de que $|\cos\theta| \le 1 $ y usando la ecuación $\ref{eq-cos-theta}$.
-    
-La demostración formal de la desigualdad triangular se verá en el capítulo \ref{chap-esp-prod-int}. 
+\begin{proof}[Demostración] Podemos probar  este resultado en base a una demostración ``geométrica'' basada en el hecho de que $|\cos\theta| \le 1 $ y luego utilizando la ecuación $\ref{eq-cos-theta}$. Más formalmente en el capítulo  \ref{chap-esp-prod-int} se verá que 
+$$
+\langle v_1,v_2 \rangle  \le   ||v_1|| \,  ||v_2||
+$$
+(proposición \ref{prop-cauchy-schwarz}, desigualdad de Cauchy-Schwarz) y de esta desigualdad se deduce fácilmente la desigualdad triangular probando que
+$$
+||v+w||^2 \le (||v||+||w||)^2.
+$$
 \begin{comment}
    Sea $v= (x_1,\ldots,x_n)$ y $w = (y_1,,\ldots,y_n)$. Luego $v+w = (x_1+ y_1,\ldots, x_n + y_n)$. Debemos probar entonces que
     \begin{equation*}
@@ -975,7 +982,7 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
      
     \item Sean $v,w\in \mathbb R^2$, probar usando  solo la definición explícita del producto escalar en $\mathbb R^2$ que 
     \begin{equation*}
-        |\langle v , w  \rangle| \le ||v||\,||w|| \qquad \text{(Desigualdad de Schwarz).}
+        |\langle v , w  \rangle| \le ||v||\,||w|| \qquad \text{(Desigualdad de Cauchy-Schwarz).}
     \end{equation*}
     [Ayuda: elevar al cuadrado y aplicar la definición.]
    
@@ -1744,15 +1751,16 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         \begin{align*}
          w&= v - \frac{\la v,w_1\ra}{\la w_1,w_1\ra}w_1- \frac{\la v,w_2\ra}{\la w_2,w_2\ra}w_2 - \cdots - \frac{\la v,w_{k}\ra}{\la w_{k},w_{k}\ra}w_{k},
         \end{align*}
-        satisface que $\la w, w_i\ra =0$ para $0 \le i \le k$.
+        satisface que $w\perp w_i$ para $1 \le i \le k$.
     \end{proposicion} 
     \begin{proof}
-        Simplemente debemos calcular  $\la w, w_i\ra$,  utilizando el hecho de que el producto escalar es una forma bilineal. 
+        Simplemente debemos calcular  $\la w, w_i\ra$,  aplicando el hecho de que el producto escalar es una forma bilineal. 
         \begin{align*}
         \la w, w_i \ra &= \la  v - \sum_{j = 1}^{k} \frac{\la v,w_{j}\ra}{\la w_{j},w_{j}\ra}w_{j} , w_i \ra 
         = \la v, w_i\ra -  \sum_{j = 1}^{k} \frac{\la v,w_{j}\ra}{\la w_{j},w_{j}\ra}\la w_{j} , w_i \ra \\
         &=  \la v, w_i\ra -  \la v, w_i\ra = 0.
         \end{align*}
+        La penúltima igualdad se debe al corolario \ref{cor-gm-rn-1}.
     \end{proof}
 
 \begin{obs*} Si el $w$  resultante de la proposición anterior es no nulo,  entonces el conjunto  $\{w_1,\ldots,w_k,w\}$ es un conjunto de vectores ortogonales entre si. Por lo tanto, podemos partir de un vector no  nulo e inductivamente ir encontrando  conjuntos cada vez más grandes de vectores ortogonales entre si. De esta forma, al final del proceso, podremos obtener una base ortogonal. 
@@ -1804,7 +1812,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
     Dar la ecuación implícita de $P$.
 \end{ejemplo*}
 \begin{proof}[Solución]
-    En  este tipo de problemas también es útil el proceso de ortogonalización de Gram-Schmidt. Consideremos $w_1 = (1,1,0)$ y $v =(1,1,1)$,  entonces por Gram-Schmidt obtenemos $w_2$ ortogonal a $w_1$:
+    Para  este tipo de problemas también es útil el proceso de ortogonalización de Gram-Schmidt. Consideremos $w_1 = (1,1,0)$ y $v =(1,1,1)$,  entonces por Gram-Schmidt obtenemos $w_2$ ortogonal a $w_1$:
     \begin{align*}
         w_2 &= v - \frac{\la v,w_1\ra}{\la w_1,w_1\ra}w_1  = (1,1,1) - \frac{\la (1,1,1),(1,1,0)\ra}{||(1,1,0)||^2}(1,1,0) \\
         &=  (1,1,1) - (1,1,0) \\
