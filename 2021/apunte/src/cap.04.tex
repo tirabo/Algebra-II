@@ -321,7 +321,7 @@
                 y  como $(-2,1,0),(-3,0,1)$ son LI, tenemos que forman una base del núcleo. 
             \end{proof}
         
-        La expresión (\ref{forma-parametrica-2}),  que depende de dos parámetros ($s$ y $t$) que son independientes entre ellos, es llamada la \textit{descripción paramétrica} del núcleo	
+        La expresión \eqref{forma-parametrica-2},  que depende de dos parámetros ($s$ y $t$) que son independientes entre ellos, es llamada la \textit{descripción paramétrica} del núcleo	
         \end{ejemplo*}
 
         Todas las transformaciones lineales entre $\R^n$ y $\R^m$ son de la forma ``multiplicar por una matriz''. Más aún,  toda transformación lineal entre espacios vectoriales de dimensión finita se puede expresar de esta forma. Así que analizaremos un poco más en detalle este tipo de transformaciones.
@@ -599,7 +599,7 @@ Luego,
             \text{\textit{rango columna }} (A) = \dim V - \text{\textit{nulidad}}(T). 
             \end{equation}
             
-            Obviamente, las igualdades (\ref{rangofila=n-nulT}) y (\ref{rangocolumna=n-nulT}) implican 
+            Obviamente, las igualdades \eqref{rangofila=n-nulT} y \eqref{rangocolumna=n-nulT} implican 
             $$
         \text{\textit{rango fila }} (A) = \text{\textit{rango  columna }} (A).
         $$
@@ -794,7 +794,7 @@ Luego,
             
         \begin{teorema}
             Sean $V,W$ espacios vectoriales de dimensión  finita sobre $\K$ tal que $\dim V = \dim W$. Sea $T: V \to W$ transformación lineal. Entonces,  son equivalentes:
-            \begin{enumerate}[label=(\alph*),ref=\alph*]
+            \begin{enumerate}[label=\textit{\alph*)},ref=\textit{\alph*)}]
                 \item\label{a-dimV=dimW} $T$ es un  isomorfismo.
                 \item\label{b-dimV=dimW} $T$ es monomorfismo.
                 \item\label{c-dimV=dimW} $T$ es epimorfismo.
@@ -804,21 +804,18 @@ Luego,
         \begin{proof}[Demostración (*)] Sea $n = \dim V = \dim W$.
             
             
-            (\ref{a-dimV=dimW}) $\Rightarrow$ (\ref{b-dimV=dimW}). Como $T$ es isomorfismo,  es biyectiva y por lo tanto inyectiva.
+            \ref{a-dimV=dimW} $\Rightarrow$ \ref{b-dimV=dimW}. Como $T$ es isomorfismo,  es biyectiva y por lo tanto inyectiva.
             
-            (\ref{b-dimV=dimW}) $\Rightarrow$ (\ref{c-dimV=dimW}). $T$ monomorfismo,  entonces $nulidad(T) = 0$ (proposición \ref{inyectiva-sii-nuT=0}). Luego, como  $rango(T) +nulidad(T) = \dim V$,  tenemos que $rango(T) = \dim V$. Como $\dim V = \dim W$, tenemos que $\dim \img(T) = \dim W$ y por lo tanto $\img(T) = \dim W$. En  consecuencia, $T$ es suryectiva.
+            \ref{b-dimV=dimW} $\Rightarrow$ 
+            \ref{c-dimV=dimW}. $T$ monomorfismo,  entonces $nulidad(T) = 0$ (proposición \ref{inyectiva-sii-nuT=0}. Luego, como  $rango(T) +nulidad(T) = \dim V$,  tenemos que $rango(T) = \dim V$. Como $\dim V = \dim W$, tenemos que $\dim \img(T) = \dim W$ y por lo tanto $\img(T) = \dim W$. En  consecuencia, $T$ es suryectiva.
             
-            (\ref{c-dimV=dimW}) $\Rightarrow$ (\ref{a-dimV=dimW}). $T$ es suryectiva, entonces $rango(T) = n$, luego  $nulidad(T) = 0$, por lo tanto $\nuc(T)=0$ y en consecuencia $T$ es inyectiva. Como $T$ es suryectiva e inyectiva  es un isomorfismo. 
+            \ref{c-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}. $T$ es suryectiva, entonces $rango(T) = n$, luego  $nulidad(T) = 0$, por lo tanto $\nuc(T)=0$ y en consecuencia $T$ es inyectiva. Como $T$ es suryectiva e inyectiva  es un isomorfismo. 
             
+            Hasta aquí probamos que \ref{a-dimV=dimW}, (ref{b-dimV=dimW} y \ref{c-dimV=dimW} son equivalentes, luego si probamos que \ref{a-dimV=dimW}, \ref{b-dimV=dimW} o \ref{c-dimV=dimW}$\Rightarrow$ \ref{d-dimV=dimW} y que \ref{d-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}, \ref{b-dimV=dimW} o \ref{c-dimV=dimW}, estaría probado el teorema. 
             
+            \ref{a-dimV=dimW} $\Rightarrow$ \ref{d-dimV=dimW}. Sea $\{v_1,\ldots,v_n \}$  una base de $V$,  entonces $\{v_1,\ldots,v_n \}$ es LI y  genera $V$. Por proposición \ref{prop-T-mono-sii-li-2-li}, tenemos que $\{T(v_1),\ldots,T(v_n) \}$ es LI y  genera $W$, por lo tanto $\{T(v_1),\ldots,T(v_n) \}$ es una base de $W$.
             
-            Hasta aquí probamos que (\ref{a-dimV=dimW}), (\ref{b-dimV=dimW}) y (\ref{c-dimV=dimW}) son equivalentes, luego si probamos que (\ref{a-dimV=dimW}), (\ref{b-dimV=dimW}) o (\ref{c-dimV=dimW}) $\Rightarrow$ (\ref{d-dimV=dimW}) y que (\ref{d-dimV=dimW}) $\Rightarrow$ (\ref{a-dimV=dimW}), (\ref{b-dimV=dimW}) o (\ref{c-dimV=dimW}), estaría probado el teorema. 
-            
-          		
-            
-            (\ref{a-dimV=dimW}) $\Rightarrow$ (\ref{d-dimV=dimW}). Sea $\{v_1,\ldots,v_n \}$  una base de $V$,  entonces $\{v_1,\ldots,v_n \}$ es LI y  genera $V$. Por proposición \ref{prop-T-mono-sii-li-2-li}, tenemos que $\{T(v_1),\ldots,T(v_n) \}$ es LI y  genera $W$, por lo tanto $\{T(v_1),\ldots,T(v_n) \}$ es una base de $W$.
-            
-            (\ref{d-dimV=dimW}) $\Rightarrow$ (\ref{a-dimV=dimW}). Como $T$ de una base es una base,  entonces $T$  de un conjunto LI es un conjunto LI y $T$ de un conjunto de generadores de $V$  es un conjunto de generadores de $W$. Por lo tanto, por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es monomorfismo y epimorfismo, luego $T$ es un isomorfismo. 	
+            \ref{d-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}. Como $T$ de una base es una base,  entonces $T$  de un conjunto LI es un conjunto LI y $T$ de un conjunto de generadores de $V$  es un conjunto de generadores de $W$. Por lo tanto, por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es monomorfismo y epimorfismo, luego $T$ es un isomorfismo. 	
         \end{proof}
     
         \begin{corolario}
@@ -1082,7 +1079,7 @@ Luego,
                 Tv_j = \sum_{i=1}^{m} a_{ij} w_i
             \end{equation}
             de los $w_i$. Los escalares $a_{1j},\ldots,a_{mj}$ son las coordenadas de $Tv_j$ en la base ordenada $\mathcal B'$. Por consiguiente, la transformación $T$ está determinada por los
-            $mn$ escalares $a_{ij}$ mediante la expresión (\ref{matriz-de-T-1}). 
+            $mn$ escalares $a_{ij}$ mediante la expresión \eqref{matriz-de-T-1}. 
             
             \begin{definicion} Sean $V$ y $W$ espacios vectoriales de dimensión finita con bases ordenadas $\mathcal B = \{v_1,\ldots,v_n\}$  y $\mathcal B' = \{w_1,\ldots,w_m\}$, respectivamente. Sea $T: V \to W$ una transformación lineal tal que 
                 \begin{equation*}\label{matriz-de-T-1}
@@ -1179,7 +1176,7 @@ Luego,
             =
             \begin{bmatrix}  \sum_{j=1}^{n}a_{1j}x_j\\\sum_{j=1}^{n}a_{2j}x_j\\ \vdots\\\sum_{j=1}^{n}a_{mj}x_j\end{bmatrix}.
             \end{equation}
-            De las ecuaciones (\ref{eq-45}) y (\ref{eq-46}) se deduce la formula (\ref{matriz-de-tl-2}).
+            De las ecuaciones \eqref{eq-45}) y \eqref{eq-46} se deduce la formula \eqref{matriz-de-tl-2}.
         \end{proof}
 
         \begin{corolario}\label{cor-cambio-de-base}
@@ -1241,7 +1238,7 @@ Luego,
                 [\lambda T+ T']_{\mathcal B \mathcal B'} = [\lambda a_{ij}+ a'_{ij}] =
                 \lambda[T]_{\mathcal B \mathcal B'}+ [T']_{\mathcal B \mathcal B'}
             \end{equation*}
-            y hemos probado (\ref{kappa-lineal}) y, en consecuencia, $\kappa$  es lineal.
+            y hemos probado \eqref{kappa-lineal} y, en consecuencia, $\kappa$  es lineal.
             
             
             Definamos ahora la inversa de $\kappa$: sea $A = [a_{ij}]$ matriz $m \times n$ y sea $T: V \to W$ la única transformación lineal que satisface, para $1 \le j \le n$, que
@@ -1348,7 +1345,7 @@ Luego,
             \end{align*} 
         \end{proof}
     
-        La fórmula (\ref{eq-cambio de base})  es importante por si misma y debemos recordarla.
+        La fórmula \eqref{eq-cambio de base}  es importante por si misma y debemos recordarla.
 
         El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
         bases ordenadas de $V$, entonces $[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}P$, para $P$ una matriz invertible. Por lo tanto, 
@@ -1369,8 +1366,8 @@ Luego,
         \begin{equation}\label{eq-auto-49}
             T(v_i) = \lambda_i v_i,\qquad 1\le i \le n. 
         \end{equation}
-        En  general, los operadores diagonalizables permiten hacer cálculos sobre ellos en forma sencilla, por ejemplo el núcleo del  operador definido por (\ref{eq-auto-49}) es $\nuc(T)=\langle v_i: \lambda_i =0 \rangle$ y  su imagen es $\img(T)=\langle v_i: \lambda_i \not=0 \rangle$ (vermos la demostración de estos resultado más adelante). 
-        Otra propiedad importante de los operadores diagonalizables es que la matriz de la transformación lineal en una base adecuada es diagonal (de allí viene el nombre de diagonalizable). En  el caso del  operador definido por (\ref{eq-auto-49}) tenemos que
+        En  general, los operadores diagonalizables permiten hacer cálculos sobre ellos en forma sencilla, por ejemplo el núcleo del  operador definido por \eqref{eq-auto-49} es $\nuc(T)=\langle v_i: \lambda_i =0 \rangle$ y  su imagen es $\img(T)=\langle v_i: \lambda_i \not=0 \rangle$ (vermos la demostración de estos resultado más adelante). 
+        Otra propiedad importante de los operadores diagonalizables es que la matriz de la transformación lineal en una base adecuada es diagonal (de allí viene el nombre de diagonalizable). En  el caso del  operador definido por \eqref{eq-auto-49} tenemos que
         $$
         [T]_{\mathcal B} = 
         \begin{bmatrix}
@@ -1383,7 +1380,7 @@ Luego,
         $$
         
         
-        No todo operador lineal es diagonalizable y no es inmediato, ni sencillo, de la definición de un operador lineal decidir si es diagonalizable o no. En esta sección veremos herramientas para estudiar un operador lineal $T$ y su posible diagonalización. La ecuación (\ref{eq-auto-49}) sugiere se estudien los vectores que son transformados por $T$ en múltiplos de sí mismos.
+        No todo operador lineal es diagonalizable y no es inmediato, ni sencillo, de la definición de un operador lineal decidir si es diagonalizable o no. En esta sección veremos herramientas para estudiar un operador lineal $T$ y su posible diagonalización. La ecuación \eqref{eq-auto-49} sugiere se estudien los vectores que son transformados por $T$ en múltiplos de sí mismos.
         
         \begin{definicion}
             Sea $V$ un espacio vectorial sobre el cuerpo $\K$ y sea $T$ un operador lineal sobre $V$. Un \textit{valor propio}\index{valor propio} o \textit{autovalor}\index{autovalor} de $T$ es un escalar $\lambda$ de $\K$ tal que existe un vector no nulo $v \in V$ con $T(v) = \lambda v$. Si $\lambda$ es un autovalor de $T$, entonces
@@ -1592,7 +1589,7 @@ Luego,
             T(v) =  \lambda_{k+1}x_{k+1} v_{k+1}+\cdots+ \lambda_nx_n v_n.
         \end{equation}
         Luego, $T(v) =0$ si y sólo si $x_{k+1} = \cdots = x_n=0$, y esto se cumple si y solo si $v =  x_1v_1 + \cdots+ x_k v_k$,  es decir $v \in \langle v_i: \lambda_i =0 \rangle$. 
-        También es claro por la ecuación (\ref{eq-av-01}) que 
+        También es claro por la ecuación \eqref{eq-av-01} que 
         \begin{align*}
             \img(T) &= \{\lambda_{k+1}x_{k+1} v_{k+1}+\cdots+ \lambda_nx_n v_n: x_i \in \K \} \\
             &=\{\mu_{k+1} v_{k+1}+\cdots+ \mu_n v_n: \mu_i \in \K \}\\
@@ -1686,7 +1683,7 @@ Luego,
                 T(v)  =\lambda_1v_1+\lambda_2v_2\cdots+\lambda_kv_k
             \end{equation} 
             
-            Veamos que $V_{\lambda_i} = <v_{i1},\ldots,v_{id_i}>$ para $1 \le i \le k$. Es claro que  $<v_{i1},\ldots,v_{id_i}> \subset V_{\lambda_i}$. Probemos  ahora que,  $V_{\lambda_i} \subset <v_{i1},\ldots,v_{id_i}>$: si  $v \in V_{\lambda_i}$,  entonces $T(v)$ es como en (\ref{eq-desc-vectores-propios}) y, por lo tanto, si $v_j \ne 0$ para $j\not=i$ entonces $T(v) \ne \lambda_j v$, lo que contradice la hipótesis. Es decir $v = v_i \in <v_{i1},\ldots,v_{id_i}>$. Hemos probado que    $V_{\lambda_i} = <v_{i1},\ldots,v_{id_i}>$ y como $v_{i1},\ldots,v_{id_i}$ son LI, entonces $\dim V_{\lambda_i} = d_i$.
+            Veamos que $V_{\lambda_i} = <v_{i1},\ldots,v_{id_i}>$ para $1 \le i \le k$. Es claro que  $<v_{i1},\ldots,v_{id_i}> \subset V_{\lambda_i}$. Probemos  ahora que,  $V_{\lambda_i} \subset <v_{i1},\ldots,v_{id_i}>$: si  $v \in V_{\lambda_i}$,  entonces $T(v)$ es como en \eqref{eq-desc-vectores-propios} y, por lo tanto, si $v_j \ne 0$ para $j\not=i$ entonces $T(v) \ne \lambda_j v$, lo que contradice la hipótesis. Es decir $v = v_i \in <v_{i1},\ldots,v_{id_i}>$. Hemos probado que    $V_{\lambda_i} = <v_{i1},\ldots,v_{id_i}>$ y como $v_{i1},\ldots,v_{id_i}$ son LI, entonces $\dim V_{\lambda_i} = d_i$.
             
             Por otro lado, la matriz de $T$ en la base $\mathcal{B}$ tiene la forma
             \begin{equation*}

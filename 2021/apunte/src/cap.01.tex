@@ -597,7 +597,7 @@ La demostración es trivial pero por ahora no la haremos.
         \begin{equation}\label{eq-v-escalar-v}
             \langle v , v \rangle = x_1^2 + x_2^2 + \cdots + x_n^2.
         \end{equation}
-        Como $x_i^2 \ge 0$ para todo $i$,  entonces $\langle v , v \rangle \ge 0$. Además, es claro que si $v$ tiene todas las coordenadas iguales a 0,  entonces  $\langle v , v \rangle =0$. En  el caso que $v\not=0$, entonces,  existe algún $i$  tal que  $x_i \ne 0$, por lo tanto $x_i^2>0$ y por la ecuación (\ref{eq-v-escalar-v}), tenemos que  $\langle v , v \rangle>0$.
+        Como $x_i^2 \ge 0$ para todo $i$,  entonces $\langle v , v \rangle \ge 0$. Además, es claro que si $v$ tiene todas las coordenadas iguales a 0,  entonces  $\langle v , v \rangle =0$. En  el caso que $v\not=0$, entonces,  existe algún $i$  tal que  $x_i \ne 0$, por lo tanto $x_i^2>0$ y por la ecuación \eqref{eq-v-escalar-v}, tenemos que  $\langle v , v \rangle>0$.
     \end{proof}
 
         Por  la propiedad \ref{prop-P1} diremos que el producto escalar es \textit{simétrico}, por las propiedades  \ref{prop-P2} y \ref{prop-P3} diremos que es una \textit{forma bilineal} y, finalmente, por la propiedad \ref{prop-P4} diremos que es \textit{definido positivo.} 
@@ -828,7 +828,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
         \end{equation}
         y precisamente, $\theta =  \alpha_1-\alpha_2$ es el ángulo comprendido entre  $v_1$ y $v_2$.
         
-        Esto se puede generalizar a $\R^3$  y ahí en vez de la fórmula (\ref{eq-ley-cosenos}) se debe usar la ley esférica de los cosenos. Los resultados se puede generalizar a  $\R^n$ y  en general vale  que si $v_1, v_2 \in \R^n$,  entonces el ángulo comprendido entre $v_1$ y $v_2$ es 
+        Esto se puede generalizar a $\R^3$  y ahí en vez de la fórmula \eqref{eq-ley-cosenos} se debe usar la ley esférica de los cosenos. Los resultados se puede generalizar a  $\R^n$ y  en general vale  que si $v_1, v_2 \in \R^n$,  entonces el ángulo comprendido entre $v_1$ y $v_2$ es 
         \begin{equation}\label{eq-ang-comprendido}
         \theta = 	\operatorname{arcos}\left(\frac{\langle v_1 , v_2 \rangle}{||v_1|| \,  ||v_2|| }\right).
         \end{equation}  
@@ -1133,11 +1133,11 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
     
     No es difícil dar una definición que englobe todas las rectas posibles del plano:
     
-    \begin{definicion}[Definición general de la recta] Sean  $a,b,c \in \R$ y tal que $a,b$ no son simultáneamente $0$. La \textit{recta con ecuación implícita}\index{recta} \index{recta!ecuación implícita}
+    \begin{definicion}[Definición general de la recta] Sean  $a,b,c \in \R$ y tal que $a,b$ no son simultáneamente $0$. La \textit{recta con ecuación implícita}\index{recta en $\R^2$} \index{recta en $\R^2$!ecuación implícita}
     \begin{equation}\label{eq-implicita-de-la-recta}
         ax +by =c,
     \end{equation}
-    es el conjunto de puntos $(x,y)$ en $\R^2$ que satisfacen la ecuación (\ref{eq-implicita-de-la-recta}).  Es decir, si denotamos $L$  a la recta,
+    es el conjunto de puntos $(x,y)$ en $\R^2$ que satisfacen la ecuación \eqref{eq-implicita-de-la-recta}.  Es decir, si denotamos $L$  a la recta,
     \begin{equation*}
         L = \{ (x,y)\in \R^2: ax +by =c\}.
     \end{equation*}
@@ -1241,7 +1241,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
     \begin{equation}\label{eq-ecuacion-parametrica-recta}
     X(t) =v +tw, \quad \text{para $t \in \R$.} 
     \end{equation} 
-    En  el espacio $\R^2$, diremos que (\ref{eq-ecuacion-parametrica-recta}) es la \textit{ecuación paramétrica} o la \textit{representación paramétrica}\index{recta!ecuación paramétrica} de la recta $L$ que pasa por el punto $v$ y es paralela a $w \ne 0$.
+    En  el espacio $\R^2$, diremos que \eqref{eq-ecuacion-parametrica-recta} es la \textit{ecuación paramétrica} o la \textit{representación paramétrica}\index{recta en $\R^2$!ecuación paramétrica} de la recta $L$ que pasa por el punto $v$ y es paralela a $w \ne 0$.
         
 
 
@@ -1276,7 +1276,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         \begin{equation}\label{eq-segmento-parametrico}
             S(t) = v + t(u-v)\quad  \text{con}\quad 0 \le t \le 1.
         \end{equation}
-        Observar que en tiempo 0, $S(0) = v$ y  en tiempo 1, $S(1)= v + (u-v)= u$. Como $t$ ``va'' de 0 a 1,  el móvil va de $v$ a $u$,  en linea recta. %En  el lenguaje de vectores afines, (\ref{eq-segmento-parametrico}) es \textit{la ecuación paramétrica del vector $\overrightarrow{vu}$}.
+        Observar que en tiempo 0, $S(0) = v$ y  en tiempo 1, $S(1)= v + (u-v)= u$. Como $t$ ``va'' de 0 a 1,  el móvil va de $v$ a $u$,  en linea recta. %En  el lenguaje de vectores afines, \eqref{eq-segmento-parametrico} es \textit{la ecuación paramétrica del vector $\overrightarrow{vu}$}.
         
         Extendiendo a ambos lados el segmento, podemos describir la recta que pasa por $v$ y $u$ por la ecuación paramétrica (fig. \ref{fig-recta-entre-puntos})
         \begin{equation*}
@@ -1334,17 +1334,17 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
             \end{equation*}
              Es decir, si  miramos cada coordenada, 
             \begin{equation}\label{eq-par-des-ej}
-            x = 2 - t, \qquad\quad y = 1 + 5t. \qquad\quad\tag{*}
+            x = 2 - t, \qquad\quad y = 1 + 5t.
             \end{equation}
             Despejando $t$ de la primera ecuación obtenemos $t = 2-x$. Reemplazando este valor de $t$  en la segunda ecuación obtenemos $y = 1 + 5t=1 + 5(2-x)t= y = 11- 5x$, luego
             \begin{equation}\label{eq-impl-rec-ej}
-                5x + y = 11,\tag{**}
+                5x + y = 11,
             \end{equation}
             que es la ecuación implícita de la recta.
             
             \end{proof}	
             
-            Esta eliminación de $t$ muestra que cada par $(x, y)$ que satisface la representación paramétrica (\ref{eq-par-des-ej}) para algún valor de $t$ también satisface la ecuación (\ref{eq-impl-rec-ej}).
+            Esta eliminación de $t$ muestra que cada par $(x, y)$ que satisface la representación paramétrica \eqref{eq-par-des-ej} para algún valor de $t$ también satisface la ecuación \eqref{eq-impl-rec-ej}.
             
             Recíprocamente, de la ecuación implícita podemos obtener la representación paramétrica. 
             
@@ -1493,7 +1493,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
         \begin{equation}\label{eq-p0-plano-2}
         P_0 = \{w: \la w,u \ra=0\}.
         \end{equation}
-        De las ecuaciones (\ref{eq-p0-plano-1}) y  (\ref{eq-p0-plano-2}) deducimos que 
+        De las ecuaciones \eqref{eq-p0-plano-1} y  \eqref{eq-p0-plano-2} deducimos que 
         \begin{equation*}
             v \in P \Leftrightarrow v-v_0 \in P_0 \Leftrightarrow \la v-v_0,u \ra=0,
         \end{equation*}
@@ -1746,7 +1746,7 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
 
 
   
-    \begin{proposicion}[Proceso de ortogonalización de Gram-Schmidt]\label{th-gram-scmidt-rn}
+    \begin{proposicion}[Proceso de ortogonalización de Gram-Schmidt]\label{th-gram-scmidt-rn}\index{Gram-Schmidt}
         Sean $\{w_1,\ldots,w_k\}$ tales que $w_i$  es no nulo y  $w_i \perp w_j$ si $i\ne j$. Sea $v \in \R^n$. Entonces
         \begin{align*}
          w&= v - \frac{\la v,w_1\ra}{\la w_1,w_1\ra}w_1- \frac{\la v,w_2\ra}{\la w_2,w_2\ra}w_2 - \cdots - \frac{\la v,w_{k}\ra}{\la w_{k},w_{k}\ra}w_{k},

@@ -17,7 +17,7 @@
             \end{equation}
             donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$.
             
-            Llamaremos a (\ref{sist-eq}) un \textit{sistema de $m$ ecuaciones lineales con $n$ incógnitas.}\index{sistema de ecuaciones lineales} A una  $n$-tupla $(x_1,\ldots,x_n)$ de elementos de $\K^n$ que satisface cada una de las ecuaciones de  (\ref{sist-eq}) la llamaremos una \textit{solución del sistema}. Si $y_1 = \cdots = y_m=0$, el sistema se llamará \textit{homogéneo.} En caso contrario el sistema se denominará \textit{no homogéneo.}\index{sistema de ecuaciones lineales!homogéneo}\index{sistema de ecuaciones lineales!no  homogéneo}
+            Llamaremos a \eqref{sist-eq} un \textit{sistema de $m$ ecuaciones lineales con $n$ incógnitas.}\index{sistema de ecuaciones lineales} A una  $n$-tupla $(x_1,\ldots,x_n)$ de elementos de $\K^n$ que satisface cada una de las ecuaciones de  \eqref{sist-eq} la llamaremos una \textit{solución del sistema}. Si $y_1 = \cdots = y_m=0$, el sistema se llamará \textit{homogéneo.} En caso contrario el sistema se denominará \textit{no homogéneo.}\index{sistema de ecuaciones lineales!homogéneo}\index{sistema de ecuaciones lineales!no  homogéneo}
             
             \begin{ejemplo*}
                 Los siguientes son sistemas de 2 ecuaciones lineales con 2 incógnitas:
@@ -284,7 +284,8 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
             \begin{equation}\label{comb-lin-eq}
             \left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +  	\left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}	c_{i}y_{i},
             \end{equation}
-            la cual es una \textit{combinación lineal} de las ecuaciones dadas en (\ref{sist-eq-2}). Observar que la ecuación (\ref{comb-lin-eq}),  es  una ecuación lineal con $n$ incógnitas, es decir  es del mismo tipo que cada una de las ecuaciones que componen el sistema de ecuaciones original.
+            la cual es una \textit{combinación lineal} de las ecuaciones dadas en \eqref{sist-eq-2}. 
+            Observar que la ecuación \eqref{comb-lin-eq},  es  una ecuación lineal con $n$ incógnitas, es decir  es del mismo tipo que cada una de las ecuaciones que componen el sistema de ecuaciones original.
             
             \begin{proposicion}\label{sist-impl}
                 Sean $c_1,\ldots,c_m$ en $\K$. Si $(x_1,\ldots,x_n) \in \K^n$  es solución del sistema de ecuaciones
@@ -309,7 +310,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \begin{equation*}
                 \sum_{i=1}^m c_i(a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n) = \sum_i c_iy_i
                 \end{equation*}
-                y  esta, como vimos, es otra escritura de la ecuación (\ref{comb-lin-eq}).
+                y  esta, como vimos, es otra escritura de la ecuación \eqref{comb-lin-eq}.
             \end{proof}
             
             La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas. En principio, no es cierto que si obtenemos un sistema de ecuaciones por combinaciones lineales de otro sistema, ambos tengan las mismas soluciones   (por ejemplo, hacer combinaciones lineales triviales con todos los coeficientes iguales a 0).
@@ -339,10 +340,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 b_{k1}x_1& + &b_{k2}x_2& + &\cdots& + &b_{kn}x_n &=&z_k,
                 \end{matrix}.
                 \end{equation}
-                En particular, las ecuaciones  de (\ref{sist-02}) se obtienen a partir de combinaciones lineales de las ecuaciones del sistema  (\ref{sist-01}). Luego, por proposición \ref{sist-impl}, si  $(x_1,\ldots,x_n)$  es solución de  (\ref{sist-01}), también será solución de cada una de las ecuaciones de (\ref{sist-02}) y por lo tanto solución  del sistema. 
+                En particular, las ecuaciones  de \eqref{sist-02} se obtienen a partir de combinaciones  lineales de las ecuaciones del sistema  \eqref{sist-01}. Luego, por proposición \ref{sist-impl}, si  $(x_1,\ldots,x_n)$  es solución de  \eqref{sist-01}, también será solución de cada una de las ecuaciones de \eqref{sist-02} y por lo tanto solución  del sistema. 
                 
-                Recíprocamente, como también las ecuaciones  de (\ref{sist-01}) se obtienen a partir de combinaciones lineales de las ecuaciones del sistema  (\ref{sist-02}), toda solución  de 	
-                (\ref{sist-02}) es solución de  (\ref{sist-01}).
+                Recíprocamente, como también las ecuaciones  de \eqref{sist-01} se obtienen a partir de     combinaciones lineales de las ecuaciones del sistema  \eqref{sist-02}, toda solución  de    \eqref{sist-02} es solución de   \eqref{sist-01}.
             \end{proof}
             
 
@@ -394,13 +394,15 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 
                 Por otro lado, observar que 
                 \begin{itemize}
-                    \item a partir de (\ref{sist-004}) podemos obtener (\ref{sist-003}) reemplazando {\footnotesize\circled{$1^{\prime\prime\prime\prime}$}} por ${\footnotesize\circled{$1^{\prime\prime\prime\prime}$}}+2 \,{\footnotesize\circled{$2^{\prime\prime\prime\prime}$}}$;
-                    \item a partir de (\ref{sist-003}) podemos obtener (\ref{sist-002}) reemplazando {\footnotesize\circled{$2^{\prime\prime\prime}$}} por $-7\,{\footnotesize\circled{$2^{\prime\prime\prime}$}}$;
-                    \item a partir de (\ref{sist-002}) podemos obtener (\ref{sist-001}) reemplazando {\footnotesize\circled{$2^{\prime\prime}$}} por ${\footnotesize\circled{$2^{\prime\prime}$}}+3\, {\footnotesize\circled{$1^{\prime\prime}$}}$;
-                    \item a partir de (\ref{sist-001}) podemos obtener (\ref{sist-000}) reemplazando \circled{$1^{\prime}$} por $2\,\circled{$1^{\prime}$}$.
+                    \item a partir de \eqref{sist-004} podemos obtener \eqref{sist-003} reemplazando {\footnotesize\circled{$1^{\prime\prime\prime\prime}$}} por ${\footnotesize\circled{$1^{\prime\prime\prime\prime}$}}+2 \,{\footnotesize\circled{$2^{\prime\prime\prime\prime}$}}$;
+                    \item a partir de \eqref{sist-003} podemos obtener \eqref{sist-002} reemplazando {\footnotesize\circled{$2^{\prime\prime\prime}$}} por $-7\,{\footnotesize\circled{$2^{\prime\prime\prime}$}}$;
+                    \item a partir de \eqref{sist-002} podemos obtener \eqref{sist-001} reemplazando {\footnotesize\circled{$2^{\prime\prime}$}} por ${\footnotesize\circled{$2^{\prime\prime}$}}+3\, {\footnotesize\circled{$1^{\prime\prime}$}}$;
+                    \item a partir de \eqref{sist-001} podemos obtener \eqref{sist-000} reemplazando \circled{$1^{\prime}$} por $2\,\circled{$1^{\prime}$}$.
                 \end{itemize}
                 
-                Es decir los sistemas  (\ref{sist-000}) y (\ref{sist-004}) son equivalentes y por lo tanto  tienen las mismas soluciones.  Como el conjunto de soluciones de (\ref{sist-004}) es $\{(-x_3,2x_3, x_3): x_3 \in \R \}$,  éste también es el conjunto de soluciones del sistema original. 
+                Es decir los sistemas  \eqref{sist-000} y 
+                \eqref{sist-004} son equivalentes y por lo tanto  tienen las mismas soluciones.  Como el conjunto de soluciones de 
+                \eqref{sist-004} es $\{(-x_3,2x_3, x_3): x_3 \in \R \}$,  éste también es el conjunto de soluciones del sistema original. 
             \end{proof}
             
             \begin{ejemplo*}
@@ -502,7 +504,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \end{equation*} .
             \end{ejemplo*}
             
-            Usualmente escribiremos a una matriz $m \times  n$   con entradas  $[A]_{ij} = a_{ij}$ como en (\ref{matriz}). A esta matriz también la podemos denotar como $A = [a_{ij}]$. Dos matrices $A = [a_{ij}]$ y $B = [b_{ij}]$, de orden $m \times n$, son iguales si $a_{ij} = b_{ij}$ para todo $i = 1,\ldots,m$  y $j = 1,\ldots,n$. Es decir, dos matrices son iguales si los elementos que ocupan la misma posición en ambas matrices coinciden.
+            Usualmente escribiremos a una matriz $m \times  n$   con entradas  $[A]_{ij} = a_{ij}$ como en \eqref{matriz}. A esta matriz también la podemos denotar como $A = [a_{ij}]$. Dos matrices $A = [a_{ij}]$ y $B = [b_{ij}]$, de orden $m \times n$, son iguales si $a_{ij} = b_{ij}$ para todo $i = 1,\ldots,m$  y $j = 1,\ldots,n$. Es decir, dos matrices son iguales si los elementos que ocupan la misma posición en ambas matrices coinciden.
             
             Como hicimos al comienzo de la sección, a un sistema de $m$ ecuaciones con $n$ incógnitas le asignaremos una matriz $m \times  n$  lo cual nos permitirá trabajar en forma más cómoda y, como veremos en la próxima sección,  podremos resolver los sistemas de ecuaciones lineales en forma algorítmica, realizando operaciones elementales por fila en las matrices correspondientes. 
             
@@ -521,7 +523,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \end{bmatrix}. 
             \end{equation*}
                 
-            Entonces, podemos escribir el sistema de ecuaciones (\ref{sist-eq-hom}) como
+            Entonces, podemos escribir el sistema de ecuaciones \eqref{sist-eq-hom} como
         
             \begin{equation}\label{sist-eq-2}
                 A = \begin{bmatrix}
@@ -757,7 +759,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \end{proof}
 
                 \begin{definicion}
-                    Consideremos un sistema como en (\ref{sist-eq-hom}) y sea  $A$ la matriz correspondiente al sistema. La \textit{matriz  ampliada}\index{sistema de ecuaciones lineales!matriz  ampliada} del sistema es 
+                    Consideremos un sistema como en \eqref{sist-eq-hom} y sea  $A$ la matriz correspondiente al sistema. La \textit{matriz  ampliada}\index{sistema de ecuaciones lineales!matriz  ampliada} del sistema es 
                     \begin{equation}\label{mtrx-ampliada}
                     A' = \left[\begin{array}{@{}*{3}{c}|c@{}}
                     a_{11} & \cdots & a_{1n} &  y_1 \\
@@ -834,7 +836,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     x_2  &=- \frac{3}{7}x_4 -\frac{2}{21} \\
                     x_3  &= -x_4+\frac{2}{3}. 
                     \end{align*}
-                    Por lo tanto, el conjunto de soluciones del sistema de ecuaciones (\ref{sist-eq-01}) es
+                    Por lo tanto, el conjunto de soluciones del sistema de ecuaciones \eqref{sist-eq-01} es
                     $$
                     \left\{(-\frac{5}{7}t+ \frac{13}{21},\,- \frac{3}{7}t-\frac{2}{21},\, -t+\frac{2}{3},\,t): t \in \R \right\}.
                     $$
@@ -868,7 +870,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \stackrel{F_1-2F_2}{\longrightarrow} 
                     \begin{bmatrix} 1&0 \\ 0&1 \\ 0&0 \end{bmatrix}.
                     \end{multline*}
-                    Luego  el sistema (\ref{sist-eq-03}) es equivalente al sistema  $x_1=x_2 = 0$, que resulta ser la única solución.
+                    Luego  el sistema \eqref{sist-eq-03} es equivalente al sistema  $x_1=x_2 = 0$, que resulta ser la única solución.
                 \end{ejemplo*}
             \end{subsection} 
         
@@ -1009,7 +1011,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                         \item si el primera entrada no nula está en  la columna $k$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale 1),
                         \item con operaciones elementales del tipo $F_r+ tF_s$ hacer 0  todas las entradas en la columna $k$ (menos la de la columna actual).    
                     \end{enumerate}
-                    \item \label{paso-3} Si la fila es la última, pasar al (\ref{paso-4}). Si la fila no es la última, pasar a la fila siguiente e ir al paso (\ref{paso-1}).  
+                    \item \label{paso-3} Si la fila es la última, pasar al \eqref{paso-4}. Si la fila no es la última, pasar a la fila siguiente e ir al paso \eqref{paso-1}.  
                     \item \label{paso-4} Permutar las filas hasta obtener una MERF. 
                 \end{enumerate}
             \end{observacion}
@@ -1105,7 +1107,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \end{equation} 
                 Llamaremos a  $x_{k_1}, x_{k_2}, \ldots, x_{k_r}$ las \textit{variables principales}\index{sistema de ecuaciones lineales!variables principales} del sistema  y  las $n-r$ variables restantes son las \textit{variables libres}.\index{sistema de ecuaciones lineales!variables libres} Es claro entonces que variando de forma arbitraria todas las variables libres obtenemos todas las soluciones del sistema.
                 
-                 Las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones (\ref{sist-eq-hom-merf0}) y $x_i \in \K$ para $x_i$ libre. 
+                 Las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones \eqref{sist-eq-hom-merf0} y $x_i \in \K$ para $x_i$ libre. 
                 
                 El método anterior es denominado \textit{método de Gauss.}\index{sistema de ecuaciones lineales!método de Gauss} 
 
@@ -1366,7 +1368,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                     \begin{equation*}
                         A = \begin{bmatrix}1&0\\-3&1\end{bmatrix}, \qquad B = \begin{bmatrix}5&-1&2\\15&4&8\end{bmatrix},
                     \end{equation*}
-                    como $A$ es $2 \times 2$ y $B$ es $2 \times 3$, la matriz $AB$ será $2 \times 3$ y  aplicando la regla (\ref{mtrx-mult}), obtenemos:
+                    como $A$ es $2 \times 2$ y $B$ es $2 \times 3$, la matriz $AB$ será $2 \times 3$ y  aplicando la regla \eqref{mtrx-mult}, obtenemos:
                     \begin{equation*}
                         AB = \begin{bmatrix}1\times  5 + 0\times 15&1\times (-1) + 0\times 4&1\times 2 + 0\times 8
                             \\-3\times 5 + 1\times 15&-3\times (-1) + 1\times 4&-3\times 2 + 1\times 8
@@ -2265,7 +2267,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 \dfrac{1}{-bc}
                 \begin{bmatrix*}[c]d&-b\\-c&0\end{bmatrix*}.
                 \end{equation*}
-                Es decir, la expresión de la inversa es igual a (\ref{inv-2x2}) (considerando que  $a=0$).
+                Es decir, la expresión de la inversa es igual a \eqref{inv-2x2} (considerando que  $a=0$).
                 
                 Reuniendo los dos casos:  $A$ es invertible si $a\not=0$ y  $ad-bc\not=0$ o si $a=0$ y $bc\not=0$, pero esto es lógicamente equivalente a pedir solamente  $ad-bc\not=0$, es decir
                 \begin{equation*}
@@ -2347,7 +2349,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
         \begin{equation}
         \text{\textit{$A$ es invertible si y solo si $ \det A \not=0$.}}
         \end{equation}
-        Este resultado se generaliza para matrices $n \times n$. Más aún, la fórmula (\ref{inv-2x2}),  que aquí reescribimos como
+        Este resultado se generaliza para matrices $n \times n$. Más aún, la fórmula \eqref{inv-2x2},  que aquí reescribimos como
         \begin{equation*}
             A^{-1} = \dfrac{1}{\det(A)}
             \begin{bmatrix*}[c]C_{11}&C_{12}\\C_{21}&C_{22}\end{bmatrix*},
@@ -2459,7 +2461,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
    \begin{proposicion}\label{det-triang-sup}
     Sea $A \in M_n(\K)$ matriz triangular  superior cuyos elementos en la diagonal son $d_1,\ldots,d_n$. Entonces $\det A = d_1.d_2.\ldots d_n$.
     \end{proposicion}
-    \begin{proof} Podemos demostrar el resultado por inducción sobre $n$: es claro que si $n=1$,  es decir si $A = [d_1]$, el determinante vale $d_1$. Por otro lado, si $n>1$,  observemos que $A(1|1)$ es también triangular superior con valores $d_2,\ldots,d_n$  en la diagonal principal. Entonces,  usamos la definición de la fórmula (\ref{def-determinante}) y observamos que el desarrollo por la primera  columna solo tiene un término, pues esta columna solo tiene un coeficiente no nulo, el $d_1$ en la primera posición. Por lo tanto, 
+    \begin{proof} Podemos demostrar el resultado por inducción sobre $n$: es claro que si $n=1$,  es decir si $A = [d_1]$, el determinante vale $d_1$. Por otro lado, si $n>1$,  observemos que $A(1|1)$ es también triangular superior con valores $d_2,\ldots,d_n$  en la diagonal principal. Entonces,  usamos la definición de la fórmula \eqref{def-determinante} y observamos que el desarrollo por la primera  columna solo tiene un término, pues esta columna solo tiene un coeficiente no nulo, el $d_1$ en la primera posición. Por lo tanto, 
         \begin{equation*}
         \det(A) = d_1 \det(A(1|1)) \stackrel{\text{(HI)}}{=} d_1.(d_2.\ldots.d_n).
         \end{equation*}
@@ -2873,7 +2875,7 @@ También vale este resultado para matrices $n \times n$.
                 \lambda x_1\\\lambda x_2
             \end{bmatrix}.
         \end{equation}
-        Luego, por (\ref{eq-no-aut-1}) y (\ref{eq-no-aut-2}), $-x_2 = \lambda x_1$ y $x_1 = \lambda x_2$,  entonces   $-x_2 = \lambda x_1 = \lambda^2 x_2$. Si  $\lambda \ne0$,  entonces $\lambda^2 >0$, y eso implica que $x_2=0$ y  en consecuencia $x_1=0$. Si $\lambda=0$, también $x_1=x_2 =0$. Es decir, en ambos casos $\begin{bmatrix}x_1\\x_2\end{bmatrix} = \begin{bmatrix}0\\0\end{bmatrix} $ y no es autovector.
+        Luego, por \eqref{eq-no-aut-1} y \eqref{eq-no-aut-2}, $-x_2 = \lambda x_1$ y $x_1 = \lambda x_2$,  entonces   $-x_2 = \lambda x_1 = \lambda^2 x_2$. Si  $\lambda \ne0$,  entonces $\lambda^2 >0$, y eso implica que $x_2=0$ y  en consecuencia $x_1=0$. Si $\lambda=0$, también $x_1=x_2 =0$. Es decir, en ambos casos $\begin{bmatrix}x_1\\x_2\end{bmatrix} = \begin{bmatrix}0\\0\end{bmatrix} $ y no es autovector.
 
         Veremos más adelante que si permitimos autovalores complejos entonces esta matriz tiene  autovalores.
         \end{observacion*}

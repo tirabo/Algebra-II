@@ -229,7 +229,7 @@
         \end{proposicion}
         \begin{proof} Primero daremos una demostración basada en los resultados geométricos vistos en el capítulo \ref{chap-vectores}, luego,  el lector interesado, podrá leer una demostración algebraica del resultado. 
         
-        \textit{Demostración 1.} Esta demostración es válida para el producto escalar en $\R^n$. La fórmula (\ref{eq-cos-theta}) nos dice que 
+        \textit{Demostración 1.} Esta demostración es válida para el producto escalar en $\R^n$. La fórmula \eqref{eq-cos-theta} nos dice que 
         \begin{equation*}
             \la u, v \ra = ||u||||v||\cos(\theta)
         \end{equation*}
@@ -279,7 +279,7 @@
         
         
         
-        \begin{proposicion}[Proceso de ortogonalización de Gram-Schmidt]
+        \begin{proposicion}[Proceso de ortogonalización de Gram-Schmidt]\index{Gram-Schmidt}
             Sea $\{v_1,\ldots,v_n\}$ una base de $\R^n$. Entonces existe una base ortogonal $\{w_1,\ldots, w_n\}$ tal que el subespacio generado por los vectores $\{w_1,\ldots, w_m\}$ es el mismo que el subespacio generado por $\{v_1,\ldots, v_m\}$ ($1\le m \le n$). Explícitamente, la base es
             \begin{align}
             w_1 &= v_1, \tag{1} \\
@@ -401,9 +401,9 @@
         \begin{equation*}
             T^*(w_i) = \sum_{j=1}^{n} \la w_i,Tv_j\ra v_j,
         \end{equation*}
-        y extendemos linealmente a una transformación lineal $T^*: W \to V$. Claramente $T^*$   está bien definida y es lineal (por definición).  La unicidad está garantizada por la ecuación (\ref{eq-transp}).  
+        y extendemos linealmente a una transformación lineal $T^*: W \to V$. Claramente $T^*$   está bien definida y es lineal (por definición).  La unicidad está garantizada por la ecuación \eqref{eq-transp}.  
         
-        Finalmente,  debemos comprobar que se verifica la ecuación (\ref{eq-adjunta}): sean  $w \in W$ y $v \in V$, entonces $w = \sum_{i=1}^{m} \la w_i,w\ra w_i$ y $v = \sum_{j=1}^{n} \la v_j,v\ra v_j$. Reemplazando en  la ecuación (\ref{eq-adjunta}) $w$ y $v$ por su desarrollo en las bases se obtiene la igualdad. Para el lector curioso, a continuación desarrollamos la demostración:
+        Finalmente,  debemos comprobar que se verifica la ecuación \eqref{eq-adjunta}: sean  $w \in W$ y $v \in V$, entonces $w = \sum_{i=1}^{m} \la w_i,w\ra w_i$ y $v = \sum_{j=1}^{n} \la v_j,v\ra v_j$. Reemplazando en  la ecuación \eqref{eq-adjunta} $w$ y $v$ por su desarrollo en las bases se obtiene la igualdad. Para el lector curioso, a continuación desarrollamos la demostración:
         \begin{align*}
             \la v,T^*w\ra &= 	\la v, T^*(\sum_{i=1}^{m} \la w_i,w\ra w_i) \ra\\
              &= \la v, \sum_{i=1}^{m} \la w_i,w\ra T^*(w_i) \ra\\
@@ -586,17 +586,17 @@
 
            \ref{itm-imt*-nutp}
             \begin{align*}
-                \im(T^*) = (\im(T^*)^{\perp})^{\perp} \stackrel{(\ref{itm-nut*-imtp})}{=}    \nu(T^{**})^{\perp} = \nu(T)^{\perp}.
+                \im(T^*) = (\im(T^*)^{\perp})^{\perp} \stackrel{\ref{itm-nut*-imtp}}{=}    \nu(T^{**})^{\perp} = \nu(T)^{\perp}.
             \end{align*}
 
           \ref{itm-nut-imt*p}
             \begin{align*}
-                \nu(T) = \nu(T^{**}) \stackrel{(\ref{itm-nut*-imtp})}{=}  \im(T^*)^\perp.
+                \nu(T) = \nu(T^{**}) \stackrel{\ref{itm-nut*-imtp}}{=}  \im(T^*)^\perp.
             \end{align*}
 
            \ref{itm-imt-nut*p}
             \begin{align*}
-                \im(T) = \im(T)^{\perp\perp}  \stackrel{(\ref{itm-nut*-imtp})}{=}  \nu(T^*)^\perp.
+                \im(T) = \im(T)^{\perp\perp}  \stackrel{\ref{itm-nut*-imtp}}{=}  \nu(T^*)^\perp.
             \end{align*}
         \end{proof}
         
@@ -811,7 +811,7 @@
         \begin{proof}
             Sea $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de autovectores de $T$  con  autovalores $\lambda_1,\ldots,\lambda_n$.
             
-            Reordenemos la BON de tal forma que $\lambda_1,\ldots,\lambda_k$ sean no nulos y   $\lambda_{k+1},\ldots,\lambda_n$ sean cero. Sea $v \in V$, entonces $v = \sum_i a_i u_i$ y $T(v) = \sum_{i=1}^k \lambda_ia_i u_i$.  Por la ecuación (\ref{tvv}) tenemos  que 
+            Reordenemos la BON de tal forma que $\lambda_1,\ldots,\lambda_k$ sean no nulos y   $\lambda_{k+1},\ldots,\lambda_n$ sean cero. Sea $v \in V$, entonces $v = \sum_i a_i u_i$ y $T(v) = \sum_{i=1}^k \lambda_ia_i u_i$.  Por la ecuación \eqref{tvv} tenemos  que 
             $$
             \la T(v),v \ra  = \sum_{i=1}^n\lambda_i a_i^2 = \sum_{i=1}^k\lambda_i a_i^2.
             $$
@@ -1018,7 +1018,7 @@
             \end{equation}
             Como $\lambda_i \ne 0$ para $1 \le i \le r$, tenemos que $\{T(v_1),\ldots,T(v_r)\}$ es un conjunto ortogonal y si definimos $w_i = T(v_i)/\lambda_i$ ($1 \le i \le r$), entonces $\{w_1,\ldots,w_r\}$ es un conjunto ortonormal de $W$. Podemos completar este conjunto a una base y por  Gram-Schmidt y  normalización obtenemos $\{w_1,\ldots,w_m\}$ un conjunto ortonormal de $W$ que además cumple  que $T(v_i) = \lambda_i w_i$ para   $1 \le i \le r$.
             
-            Por otro lado,  de la ecuación (\ref{eq-sing}) obtenemos que 
+            Por otro lado,  de la ecuación \eqref{eq-sing} obtenemos que 
             $$
             ||T(v_i)||^2 = \la T(v_i),T(v_i) \ra = \lambda_i^2||v_i||^2 = 0, \qquad i>r
             $$     

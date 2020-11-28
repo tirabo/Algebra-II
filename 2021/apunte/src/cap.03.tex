@@ -592,12 +592,12 @@ Para los interesados, lo anterior es un ejercicio de lógica: ser LD se puede en
 \tag{LD}
 \end{equation*}
 
-Recordar que $\neg(\exists \lambda: P \wedge Q) \,\equiv\, (\forall \lambda: \neg P \vee \neg Q)$ y  que  $\neg P \vee \neg Q\,\equiv\, P \Rightarrow \neg Q$. Luego  la negación de (\ref{eq-ld}), es decir ser LI, es 
+Recordar que $\neg(\exists \lambda: P \wedge Q) \,\equiv\, (\forall \lambda: \neg P \vee \neg Q)$ y  que  $\neg P \vee \neg Q\,\equiv\, P \Rightarrow \neg Q$. Luego  la negación de \eqref{eq-ld}, es decir ser LI, es 
 \begin{equation*}\label{eq-li-1}
     (\forall \lambda_1,\ldots,\lambda_n:  (\exists i: \lambda_i \ne 0) \Rightarrow \lambda_1v_1+\cdots+\lambda_nv_n\ne 0). \tag{LI-1}
 \end{equation*}
 
-Como $(P \Rightarrow Q) \equiv (\neg Q \Rightarrow \neg P)$, el contrarrecíproco, la propiedad (\ref{eq-li-1})  es equivalente a
+Como $(P \Rightarrow Q) \equiv (\neg Q \Rightarrow \neg P)$, el contrarrecíproco, la propiedad \eqref{eq-li-1}  es equivalente a
 \begin{equation*}
 (\forall \lambda_1,\ldots,\lambda_n:  (\lambda_1v_1+\cdots+\lambda_nv_n=0 ) \Rightarrow (\forall i: \lambda_i = 0)). \tag{LI-2}
 \end{equation*}
@@ -744,7 +744,7 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
     \begin{equation}\label{base-canonica-matrices}
         A = \sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}E_{ij},
     \end{equation}
-    luego $\{E_{ij} \}_{1 \le i \le m, 1\le j \le n}$ genera $M_{m \times n}(\K)$. También, por la ecuación (\ref{base-canonica-matrices}), es claro que si $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}E_{ij}=0$,  entonces $a_{ij}=0$ para todo $i$ y $j$. Luego,  $\{E_{ij} \}_{1 \le i \le m, 1\le j \le n}$ es LI. 
+    luego $\{E_{ij} \}_{1 \le i \le m, 1\le j \le n}$ genera $M_{m \times n}(\K)$. También, por la ecuación \eqref{base-canonica-matrices}, es claro que si $\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}E_{ij}=0$,  entonces $a_{ij}=0$ para todo $i$ y $j$. Luego,  $\{E_{ij} \}_{1 \le i \le m, 1\le j \le n}$ es LI. 
     
     Concluyendo,  $\{E_{ij} \}_{1 \le i \le m, 1\le j \le n}$ es una base de  $M_{m \times n}(\K)$ y se la denomina la \textit{base canónica} de  $M_{m \times n}(\K)$.
 \end{ejemplo*}
@@ -958,7 +958,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
         $$
         \sum \mu_i w_i  = \sum \alpha_i u_i \Rightarrow 0 = \sum \alpha_i u_i - \sum \mu_i w_i .
         $$
-        Como $\{u_1,\ldots,u_k,w_1,\ldots,w_m\}$ es una base y por lo tanto LI, tenemos que $0=\alpha_i=\mu_j$, para todo $i,j$. Por lo tanto, por (\ref{tres-sumas}), 
+        Como $\{u_1,\ldots,u_k,w_1,\ldots,w_m\}$ es una base y por lo tanto LI, tenemos que $0=\alpha_i=\mu_j$, para todo $i,j$. Por lo tanto, por \eqref{tres-sumas}, 
         \begin{equation}\label{dos-sumas}
         \sum \lambda_i u_i + \sum \gamma_i v_i  =0.
         \end{equation}
