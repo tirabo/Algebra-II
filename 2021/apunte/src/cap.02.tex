@@ -46,20 +46,21 @@
                 Resolvamos ahora un sistema de ecuaciones homogéneo sencillo:
                 \begin{equation*}
                 \begin{matrix}
-                {\footnotesize\circled{1}}&\qquad& 2x_1 -x_2 + x_3 &=& 0 \\
-                {\footnotesize\circled{2}}&\qquad& x_1 + 3x_2 + 4x_3 &=& 0.
+                \text{\footnotesize\circled{1}}&\qquad& 2x_1 -x_2 + x_3 &=& 0 \\
+                \text{\footnotesize\circled{2}}&\qquad& x_1 + 3x_2 + 4x_3 &=& 0.
                 \end{matrix}
                 \end{equation*}
             \end{ejemplo}
             \begin{proof}[Solución]
                 Observar que $(0,0,0)$ es solución. Busquemos otras soluciones manipulado las ecuaciones.
-                \begin{align*}
-                \begin{matrix}
-                &\text{Si  hacemos}&-2\,{\footnotesize\circled{2}} +  {\footnotesize\circled{1}}& \text{obtenemos:} & & {\footnotesize\circled{$1^\prime$}}&  -7x_2 - 7x_3&=&0 &\;\Rightarrow\;& x_2 &=& -x_3\\
-                &\text{Si  hacemos}&3 \,{\footnotesize\circled{1}} + {\footnotesize\circled{2}}& \text{obtenemos:} && {\footnotesize\circled{$2^\prime$}}& 7x_1 + 7x_3&=&0&\;\Rightarrow\;& x_1 &=& -x_3,
-                \end{matrix}
-                \end{align*}
-                y esto nos dice que las soluciones son de la forma $\{(-x_3,-x_3, x_3): x_3 \in \R \}$, por ejemplo $(-1,-1,1)$ es solución y $(1,2,3)$ no es solución.
+
+                Si  hacemos $-2$ \footnotesize\circled{2} $+$  {\footnotesize\circled{1}}, obtenemos: 
+                $$ -7x_2 - 7x_3 = 0 \;\Rightarrow\; x_2 = -x_3.$$
+                
+                Si  hacemos $3$ {\footnotesize\circled{1}} $+$ {\footnotesize\circled{2}}, obtenemos: 
+                $$ 7x_1 + 7x_3 = 0 \;\Rightarrow\;  x_1  =  -x_3.$$
+                
+                Esto nos dice que las soluciones son de la forma $\{(-x_3,-x_3, x_3): x_3 \in \R \}$, por ejemplo $(-1,-1,1)$ es solución y $(1,2,3)$ no es solución.
             \end{proof}
             
                 
@@ -69,9 +70,9 @@
                     Encontrar las soluciones $(x,y,z)$ del sistema de ecuaciones:
                     \begin{equation*}
                     \begin{matrix}
-                    {\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & =& 1 \\
-                    {\footnotesize{\footnotesize\circled{2}}}&\qquad&x& -3y & +3z & =&2 \\
-                    {\footnotesize{\footnotesize\circled{3}}}&\qquad&2x& -y & +5z & =&3
+                    \text{\footnotesize\circled{1}}&\qquad&x &  & +2z & =& 1 \\
+                    \text{\footnotesize\circled{2}}&\qquad&x& -3y & +3z & =&2 \\
+                    \text{\footnotesize\circled{3}}&\qquad&2x& -y & +5z & =&3
                     \end{matrix} \tag{S1}
                     \end{equation*}
                     Es decir, queremos encontrar los números reales $x$, $y$ y $z$ que satisfagan las ecuaciones anteriores.
@@ -84,20 +85,20 @@
     Supongamos que $(x,y,z)$ es una solución de nuestro sistema. Entonces también vale que: 
     \begin{equation*}
     \begin{matrix}
-    &{\footnotesize{\footnotesize\circled{2}}}&\qquad&x& -3y & +3z & = & 2 \\
-    (-1)\cdot&{\footnotesize{\footnotesize\circled{1}}}&\qquad(-1)\cdot&(x &  & +2z) & = &(-1)\cdot1 \\
+    &\text{\footnotesize\circled{2}}&\qquad&x& -3y & +3z & = & 2 \\
+    (-1)&\text{\footnotesize\circled{1}}&\qquad(-1)&(x &  & +2z) & = &(-1)\cdot1 \\
     \hline
-    &{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = & 1  
+    &\text{\footnotesize\circled{2}}&\qquad&& -3y & +z & = & 1  
     \end{matrix}
     \end{equation*}
-    
+    (a la ecuación que modificamos le asignamos el mismo número).
      
     Por lo tanto $(x,y,z)$ también es solución del sistema
     \begin{equation*}
     \begin{matrix}
-    {\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & = 1 \\
-    {\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = 1   \\
-    {\footnotesize{\footnotesize\circled{3}}}&\qquad&2x& -y & +5z & =3
+        \text{\footnotesize\circled{1}}&\qquad&x &  & +2z & = 1 \\
+        \text{\footnotesize\circled{2}}&\qquad&& -3y & +z & = 1   \\
+        \text{\footnotesize\circled{3}}&\qquad&2x& -y & +5z & =3
     \end{matrix}\tag{S2}
     \end{equation*}
  
@@ -107,10 +108,10 @@
 Dado que $(x,y,z)$ es solución del sistema (S2),  entonces también vale que:
 \begin{equation*}
 \begin{matrix}
-&{\footnotesize{\footnotesize\circled{3}}}&\qquad&&2x& -y & +5z & = &3 \\
-(-2)\cdot&{\footnotesize{\footnotesize\circled{1}}}&\qquad&(-2)\cdot&(x &  & +2z) & = &(-2)\cdot1 \\
+& \text{\footnotesize\circled{3}}&\qquad&&2x& -y & +5z & = &3 \\
+(-2)& \text{\footnotesize\circled{1}}&\qquad&(-2)&(x &  & +2z) & = &(-2)\cdot1 \\
 \hline
-&{\footnotesize{\footnotesize\circled{3'}}}&\qquad&& & -y & + z & = & 1  
+& \text{\footnotesize\circled{3}}&\qquad&& & -y & + z & = & 1  
 \end{matrix}
 \end{equation*}
  
@@ -118,9 +119,9 @@ Dado que $(x,y,z)$ es solución del sistema (S2),  entonces también vale que:
 Por lo tanto $(x,y,z)$ también es solución del sistema
 \begin{equation*}
 \begin{matrix}
-{\footnotesize{\footnotesize\circled{1}}}&\qquad&x &  & +2z & = 1 \\
-{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = 1   \\
-{\footnotesize{\footnotesize\circled{3'}}}&\qquad&& -y & +z & =1
+    \text{\footnotesize\circled{1}}&\qquad&x &  & +2z & = 1 \\
+    \text{\footnotesize\circled{2}}&\qquad&& -3y & +z & = 1   \\
+    \text{\footnotesize\circled{3}}&\qquad&& -y & +z & =1
 \end{matrix}\tag{S3}
 \end{equation*}
  
@@ -129,27 +130,27 @@ Por lo tanto $(x,y,z)$ también es solución del sistema
 Dado que $(x,y,z)$ es solución del sistema (S3), entonces también vale que: 
 \begin{equation*}
 \begin{matrix}
-&{\footnotesize{\footnotesize\circled{2'}}}&\qquad&& -3y & +z & = & 1 \\
-(-3)\cdot&{\footnotesize{\footnotesize\circled{3'}}}&\qquad&(-3)\cdot&( -y & +z) & = &(-3)\cdot1 \\
+& \text{\footnotesize\circled{2}}&\qquad&& -3y & +z & = & 1 \\
+(-3)& \text{\footnotesize\circled{3}}&\qquad&(-3)&( -y & +z) & = &(-3)\cdot1 \\
 \hline
-&{\footnotesize{\footnotesize\circled{2''}}}&\qquad&&   & -2z & = & -2  
+& \text{\footnotesize\circled{2}}&\qquad&&   & -2z & = & -2  
 \end{matrix}
 \end{equation*}
 
  
 Por lo tanto $(x,y,z)$ también es solución del sistema
 \begin{equation*}
-\begin{matrix}
-x &  & +2z & = 1 \\
-&    & -2z & = -2\\
-& -y & +z & =1 
-\end{matrix}
-\qquad\mbox{equivalentemente}\qquad
-\begin{matrix}
-x &  & +2z & = 1 \\
-&    & z & = 1\\
-& -y & +z & =1 
-\end{matrix}
+    \begin{cases}
+        x  +2z  &= 1 \\
+ -2z & = -2\\
+ -y  +z & =1 
+    \end{cases},
+\qquad\mbox{o equivalentemente}\qquad
+\begin{cases}
+x +2z & = 1 \\
+ z & = 1\\
+ -y  +z & =1 
+\end{cases}
 \end{equation*}
  
 
@@ -157,62 +158,43 @@ x &  & +2z & = 1 \\
 Dado $(x,y,z)$ es solución del sistema
 \begin{equation*}
 \begin{matrix}
-{\footnotesize{\footnotesize\circled{1}}}&x &  & +2z & = 1 \\
-{\footnotesize{\footnotesize\circled{2''}}}&&    & z & = 1 \\
-{\footnotesize{\footnotesize\circled{3'}}}&& -y & +z & =1
+    \text{\footnotesize\circled{1}}&x &  & +2z & = 1 \\
+    \text{\footnotesize\circled{2}}&&    & z & = 1 \\
+    \text{\footnotesize\circled{3}}&& -y & +z & =1
 \end{matrix}\tag{S4}
 \end{equation*}
-o equivalentemente 
+o equivalentemente, intercambiando la 2º y 3º ecuación,  
 \begin{equation*}
 \begin{matrix}
-{\footnotesize{\footnotesize\circled{1}}}&x &  & +2z & = 1 \\
-{\footnotesize{\footnotesize\circled{3'}}}&& -y & +z & =1\\
-{\footnotesize{\footnotesize\circled{2''}}}&&    & z & = 1 
+    \text{\footnotesize\circled{1}}&x &  & +2z & = 1 \\
+    \text{\footnotesize\circled{2}}&& -y & +z & =1\\
+    \text{\footnotesize\circled{3}}&&    & z & = 1 
 \end{matrix}\tag{S5}
 \end{equation*}
 
-Entonces también vale que: 
-\begin{center}
-\begin{tabular}{rrr}
-    {\footnotesize{\footnotesize\circled{1}}}&$x  +2z$  = & 1 \\
-    $(-2)\cdot${\footnotesize{\footnotesize\circled{2''}}}&$(-2)\cdot$(\quad\;\;\;$z$ ) = &$(-2)\cdot 1$ \\
-    \hline
-    {\footnotesize{\footnotesize\circled{1'}}}  &$x$\qquad\; = & $-1$    
-\end{tabular}\quad\; y \quad\;
-\begin{tabular}{rrr}
-    {\footnotesize{\footnotesize\circled{3'}}}&$-y  +z$  = & 1 \\
-    $(-1)\cdot${\footnotesize{\footnotesize\circled{2''}}}&$(-1)\cdot$(\quad\;\;\;$z$ ) = &$(-1)\cdot 1$ \\
-    \hline
-    {\footnotesize{\footnotesize\circled{3''}}}  &$-y$\quad\; = & $0$    
-\end{tabular}
-\end{center}
-
-Por lo tanto $(x,y,z)$ también es solución del sistema
+ Haciendo {\footnotesize\circled{1}} $- 2$ {\footnotesize\circled{3}} y {\footnotesize\circled{2}} $-$ {\footnotesize\circled{3}}, obtenemos 
 \begin{equation*}
-\begin{matrix}
-x &  &  & =& -1 \\
-& -y &  & =&0 \\
-&    & z & =& 1
-\end{matrix} \tag{S6}
-\end{equation*}
- o equivalentemente
-\begin{equation*}
-\begin{matrix}
-    x & =& -1 \\
-    y & =&0 \\
-    z & =& 1
-    \end{matrix}\tag{S7}
+    \begin{cases}
+        x  & = -1 \\
+        -y  & =0 \\
+        z & = 1
+    \end{cases} 
+    \qquad \Rightarrow\qquad
+    \begin{cases}
+        x & = -1 \\
+    y & =0 \\
+    z & = 1
+    \end{cases}
 \end{equation*}
 
 En resumen, supusimos que $(x,y,z)$ es una solución del sistema
 \begin{equation*}
-\begin{matrix}
-x &  & +2z & = 1 \\
-x& -3y & +3z & =2 \\
-2x& -y & +3z & =1
-\end{matrix}
+\begin{cases}
+    x  +2z & = 1 \\
+    x -3y  +3z & =2 \\
+    2x -y  +3z & =1
+\end{cases}
 \end{equation*}
-
 y probamos que 
 \begin{equation*}
 x=-1\quad y=0,\quad z=1. 
@@ -254,7 +236,7 @@ x& -3y & +3z & =&2 \\
 2x& -y & +5z & =&3
 \end{matrix}.
 \end{equation*}
-Luego,  ambos sistemas son  tienen las mismas soluciones.
+Luego,  ambos sistemas tienen las mismas soluciones.
 
 \end{ejemplo*}
 
@@ -348,45 +330,45 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 
             \begin{observacion*}
                 La equivalencia de sistemas lineales es una relación de equivalencia,  en particular  vale la propiedad transitiva: si el sistema (A) es equivalente al sistema (B) y  el sistema (B)  es equivalente al sistema (C),  entonces (A) es equivalente a (C). Esto nos permite, ir paso a paso para eliminar las incógnitas. 
-            \end{observacion*}
+            \end{observacion*} 
 
     
             \begin{ejemplo*}
                 Encontrar las soluciones del siguiente sistema de ecuaciones
                 \begin{equation*}\label{sist-000} \tag{S0}
                 \begin{matrix}
-                {\footnotesize\circled{1}}&\qquad& 2x_1 &+&4x_2 &-& 6x_3 &=& 0 \\
-                {\footnotesize\circled{2}}&\qquad& 3x_1 &-& x_2 &+& 5x_3 &=& 0.
+                \text{{\footnotesize\circled{1}}}&\qquad& 2x_1 &+&4x_2 &-& 6x_3 &=& 0 \\
+                \text{{\footnotesize\circled{2}}}&\qquad& 3x_1 &-& x_2 &+& 5x_3 &=& 0.
                 \end{matrix}
                 \end{equation*}
             \end{ejemplo*}
             \begin{proof}[Solución]
-                Si reemplazamos la ecuación ${\footnotesize\circled{1}}$ por ${\footnotesize\circled{1}}/2$, obtenemos el sistema
+                Si reemplazamos la ecuación {\footnotesize\circled{1}} por {\footnotesize\circled{1}}$/2$, obtenemos el sistema
                 \begin{align*}\label{sist-001} \tag{S1}
                 \begin{matrix}
-                {\footnotesize\circled{$1^\prime$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
-                {\footnotesize\circled{$2^\prime$}}&\qquad 3x_1 &-& x_2 &+& 5x_3 &=& 0.
+                \text{\footnotesize\circled{1}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+                \text{\footnotesize\circled{2}}&\qquad 3x_1 &-& x_2 &+& 5x_3 &=& 0.
                 \end{matrix}
                 \end{align*}
-                Reemplazando {\footnotesize\circled{$2^\prime$}} por ${\footnotesize\circled{$2^\prime$}}-3{\footnotesize\circled{$1^\prime$}}$, obtenemos
+                (a la ecuación que modificamos le asignamos el mismo número). Reemplazando  \text{\footnotesize\circled{2}} por  \text{\footnotesize\circled{2}}$\,-3$ \text{\footnotesize\circled{1}}, obtenemos
                 \begin{align*}\label{sist-002} \tag{S2}
                 \begin{matrix}
-                {\footnotesize\circled{$1^{\prime\prime}$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
-                {\footnotesize\circled{$2^{\prime\prime}$}}&\qquad &-&7 x_2 &+& 14x_3 &=& 0.
+                    \text{\footnotesize\circled{1}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+                    \text{\footnotesize\circled{2}}&\qquad &-&7 x_2 &+& 14x_3 &=& 0.
                 \end{matrix}
                 \end{align*} 
-                Reemplazando {\footnotesize\circled{$2^{\prime\prime}$}} por ${\footnotesize{\footnotesize\circled{$2^{\prime\prime}$}}}/(-7)$, obtenemos
+                Reemplazando \text{\footnotesize\circled{2}} por \text{\footnotesize\circled{2}}$/(-7)$, obtenemos
                 \begin{align*}\label{sist-003} \tag{S3}
                 \begin{matrix}
-                {\footnotesize\circled{$1^{\prime\prime\prime}$}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
-                {\footnotesize\circled{$2^{\prime\prime\prime}$}}&\qquad && x_2 &-& 2x_3 &=& 0.
+                    \text{\footnotesize\circled{1}}&\qquad x_1 &+&2x_2 &-& 3x_3 &=& 0 \\
+                    \text{\footnotesize\circled{2}}&\qquad && x_2 &-& 2x_3 &=& 0.
                 \end{matrix}
                 \end{align*} 
-                Reemplazando {\footnotesize\circled{$1^{\prime\prime\prime}$}} por ${\footnotesize\circled{$1^{\prime\prime\prime}$}}-2{\footnotesize\circled{$2^{\prime\prime\prime}$}}$, obtenemos
+                Reemplazando \text{\footnotesize\circled{1}} por \text{\footnotesize\circled{1}} $-2$ \text{\footnotesize\circled{2}}, obtenemos
                 \begin{align*}\label{sist-004} \tag{S4}
                 \begin{matrix}
-                {\footnotesize\circled{$1^{\prime\prime\prime\prime}$}}&\qquad x_1 && &+& x_3 &=& 0 \\
-                {\footnotesize\circled{$2^{\prime\prime\prime\prime}$}}&\qquad && x_2 &-& 2x_3 &=& 0.
+                    \text{\footnotesize\circled{1}}&\qquad x_1 && &+& x_3 &=& 0 \\
+                    \text{\footnotesize\circled{2}}&\qquad && x_2 &-& 2x_3 &=& 0.
                 \end{matrix}
                 \end{align*} 
                 
@@ -394,10 +376,10 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 
                 Por otro lado, observar que 
                 \begin{itemize}
-                    \item a partir de \eqref{sist-004} podemos obtener \eqref{sist-003} reemplazando {\footnotesize\circled{$1^{\prime\prime\prime\prime}$}} por ${\footnotesize\circled{$1^{\prime\prime\prime\prime}$}}+2 \,{\footnotesize\circled{$2^{\prime\prime\prime\prime}$}}$;
-                    \item a partir de \eqref{sist-003} podemos obtener \eqref{sist-002} reemplazando {\footnotesize\circled{$2^{\prime\prime\prime}$}} por $-7\,{\footnotesize\circled{$2^{\prime\prime\prime}$}}$;
-                    \item a partir de \eqref{sist-002} podemos obtener \eqref{sist-001} reemplazando {\footnotesize\circled{$2^{\prime\prime}$}} por ${\footnotesize\circled{$2^{\prime\prime}$}}+3\, {\footnotesize\circled{$1^{\prime\prime}$}}$;
-                    \item a partir de \eqref{sist-001} podemos obtener \eqref{sist-000} reemplazando \circled{$1^{\prime}$} por $2\,\circled{$1^{\prime}$}$.
+                    \item a partir de \eqref{sist-004} podemos obtener \eqref{sist-003} reemplazando {\footnotesize\circled{1}} por {\footnotesize\circled{1}} $+2$ {\footnotesize\circled{2}};
+                    \item a partir de \eqref{sist-003} podemos obtener \eqref{sist-002} reemplazando {\footnotesize\circled{2}} por $-7$ {\footnotesize\circled{2}};
+                    \item a partir de \eqref{sist-002} podemos obtener \eqref{sist-001} reemplazando {\footnotesize\circled{2}} por {\footnotesize\circled{2}} $+3$ {\footnotesize\circled{1}};
+                    \item a partir de \eqref{sist-001} podemos obtener \eqref{sist-000} reemplazando  {\footnotesize\circled{1}} por $2$  {\footnotesize\circled{1}}.
                 \end{itemize}
                 
                 Es decir los sistemas  \eqref{sist-000} y 
@@ -409,37 +391,52 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 Encontrar las soluciones del siguiente sistema de ecuaciones
                 \begin{equation*}
                 \begin{matrix}
-                {\footnotesize\circled{1}}&\qquad& 2x_1 &-&x_2 &+& x_3 &=& 1 \\
-                {\footnotesize\circled{2}}&\qquad& x_1 &+& 3x_2 &+& 3x_3 &=&  2 \\
-                \circled{3}&\qquad& x_1 &+& &+& 2x_3 &=&   1 .
+                \text{\footnotesize\circled{1}}&\qquad& 2x_1 &-&x_2 &+& x_3 &=& 1 \\
+                \text{\footnotesize\circled{2}}&\qquad& x_1 &+& 3x_2 &+& 3x_3 &=&  2 \\
+                \text{\footnotesize\circled{3}}&\qquad& x_1 &+& &+& 2x_3 &=&   1 .
                 \end{matrix}
                 \end{equation*}
-                (observar que en $\circled{3}$ el coeficiente de $x_2$ es cero.)
+                (observar que en {\footnotesize\circled{3}} el coeficiente de $x_2$ es cero.)
             \end{ejemplo*}
             \begin{proof}[Solución] Si
                 \begin{align*}
                 \begin{matrix*}[l]
-                &\text{reemplazamos {\footnotesize\circled{1}} por }&{\footnotesize\circled{1}}-2\,{\footnotesize\circled{2}} + & \text{obtenemos:} &\quad& {\footnotesize\circled{$1^\prime$}}&\; -7x_2 - 5x_3&=&-3, \\
-                &\text{reemplazamos {\footnotesize\circled{2}} por }&{\footnotesize\circled{2}}+3 \,{\footnotesize\circled{1}}& \text{obtenemos:} &\quad& {\footnotesize\circled{$2^\prime$}}&\; 7x_1 + 6x_3&=& 5, \\
-                &\text{no cambiamos}&\circled{3} & \text{y obtenemos:} &\quad& \circled{$3^\prime$}&\; x_1 + 2x_3&=& 1.
+                &\text{reemplazamos {\footnotesize\circled{1}} por }&\text{\footnotesize\circled{1}}-2\,\text{\footnotesize\circled{3}}  & \text{obtenemos:} & &\; -x_2 - 3x_3&=&-1, \\
+                &\text{reemplazamos {\footnotesize\circled{2}} por }&\text{\footnotesize\circled{2}} - \text{\footnotesize\circled{3}}& \text{obtenemos:} & &\; 3x_2 + x_3&=& 1.
                 \end{matrix*}
                 \end{align*}
-                Ahora reemplazando  ${\footnotesize\circled{$2^\prime$}}$ por  $ {\footnotesize\circled{$2^\prime$}}- 7\, {\footnotesize\circled{$1^\prime$}}$, obtenemos $- 8x_3= -2$, que es equivalente a que $x_3 = \frac14$. Por lo tanto, obtenemos el sistema
-                \begin{align*}
-                \begin{matrix*}[r]
-                {\footnotesize\circled{$1^{\prime\prime}$}}&\qquad -7x_2 - 5x_3&=&-3 \\
-                {\footnotesize\circled{$2^{\prime\prime}$}}&\qquad x_3&=& \frac14 \\
-                \circled{$3^{\prime\prime}$}&\qquad x_1 + 2x_3&=& 1 ,
-                \end{matrix*}
-                \end{align*}
-                Luego, reemplazando $x_3$ por $\frac14$ y  despejando en  {\footnotesize\circled{$1^{\prime\prime}$}} y {\footnotesize\circled{$2^{\prime\prime}$}}:
-                \begin{align*}
-                \begin{matrix*}[r]
-                {\footnotesize\circled{$1^{\prime\prime\prime}$}}&\qquad -7x_2 &=&-3 +5\frac14 \\
-                {\footnotesize\circled{$2^{\prime\prime\prime}$}}&\qquad x_3&=& \frac14 \\
-                \circled{$3^{\prime\prime\prime}$}&\qquad x_1 &=& 1 -2\frac14.
-                \end{matrix*}
-                \end{align*}
+                El sistema es ahora
+                \begin{equation*}
+                    \begin{matrix}
+                    \text{\footnotesize\circled{1}}&\qquad&  &-&x_2 &-&3 x_3 &=& -1 \\
+                    \text{\footnotesize\circled{2}}&\qquad&  && 3x_2 &+& x_3 &=& 1 \\
+                    \text{\footnotesize\circled{3}}&\qquad& x_1 &+& &+& 2x_3 &=&   1 .
+                    \end{matrix}
+                    \end{equation*}
+                Ahora, reemplazando  {\footnotesize\circled{2}} por  {\footnotesize\circled{2}} $+3$ {\footnotesize\circled{1}}, obtenemos
+                \begin{equation*}
+                    \begin{matrix}
+                    \text{\footnotesize\circled{1}}&\qquad&  &-&x_2 &-&3 x_3 &=& -1 \\
+                    \text{\footnotesize\circled{2}}&\qquad&  &&  && -8x_3 &=& -2 \\
+                    \text{\footnotesize\circled{3}}&\qquad& x_1 &+& &+& 2x_3 &=&   1 .
+                    \end{matrix}
+                \end{equation*}
+                Dividiendo por $-8$ la ecuación  {\footnotesize\circled{2}}, obtenemos
+                \begin{equation*}
+                    \begin{matrix}
+                    \text{\footnotesize\circled{1}}&\qquad&  &-&x_2 &-&3 x_3 &=& -1 \\
+                    \text{\footnotesize\circled{2}}&\qquad&  &&  && x_3 &=& \frac14 \\
+                    \text{\footnotesize\circled{3}}&\qquad& x_1 &+& &+& 2x_3 &=&   1 .
+                    \end{matrix}
+                \end{equation*} 
+                Finalmente, si reemplazamos {\footnotesize\circled{1}} por {\footnotesize\circled{1}} $+ 3$ {\footnotesize\circled{2}} y {\footnotesize\circled{3}} por  {\footnotesize\circled{3}} $-2$ {\footnotesize\circled{3}}, obtenemos 
+                \begin{equation*}
+                    \begin{matrix}
+                    \text{\footnotesize\circled{1}}&\qquad&  -x_2  &=& -\frac14 \\
+                    \text{\footnotesize\circled{2}}&\qquad&  x_3 &=& \frac14 \\
+                    \text{\footnotesize\circled{3}}&\qquad& x_1  &=&   \frac12 .
+                    \end{matrix}
+                \end{equation*} 
                 Por lo tanto, $x_1 = \frac12$, $x_2 = \frac14$, $x_3 = \frac14$. 
             \end{proof}
             
@@ -2489,19 +2486,23 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 
     \begin{ejemplo*} Veamos,  en el caso de una matriz $A= [a_{ij}]$ de orden  $2 \times 2$ que ocurre con el determinante cuando hacemos una operación elemental. 
             \begin{enumerate}
-            \item Si $c \not=0$, multiplicar por  $c$ la primera fila y multiplicar $c$ por la segunda fila obtenemos, respectivamente,
+            \item Si $c \not=0$, sean $e$ y $e'$ las  operaciones elementales multiplicar por  $c$ la primera fila y multiplicar $c$ por la segunda fila, respectivamente. Entonces,
             \begin{equation*}
-            e(A) = \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix}\;\text{ y }\; e(A) = \begin{bmatrix} a_{11}& a_{12}\\ ca_{21}&ca_{22}\end{bmatrix},
+            e(A) = \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix}\;\text{ y }\; e'(A) = \begin{bmatrix} a_{11}& a_{12}\\ ca_{21}&ca_{22}\end{bmatrix},
             \end{equation*}
             luego 
             \begin{equation*}
-            \det \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}\;\text{ y }\;\det \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}. 
+                \det e = \det \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}\
             \end{equation*}
-            Por lo tanto,  en ambos casos, $\det e(A) = c \det A$. 
+            y
+            \begin{equation*}
+              \det e' =  \det \begin{bmatrix} a_{11}& a_{12}\\ ca_{21}&ca_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}. 
+            \end{equation*}
+            Por lo tanto, $\det e(A) =\det e'(A) = c \det A$. 
             \item Sea  $c \in \K$, si sumamos a la fila 2 la fila 1 multiplicada por $c$ o sumamos a la fila 1  la fila 2 multiplicada por $c$ obtenemos, respectivamente,
             \begin{equation*}
             e(A) = \begin{bmatrix} a_{11}& a_{12}\\ a_{21}+ ca_{11}&a_{22}+ ca_{12}\end{bmatrix}\;\text{ y }\; 
-            e(A) = \begin{bmatrix} a_{11} + ca_{21}& a_{12} + ca_{22}\\ a_{21}&a_{22}\end{bmatrix}.
+            e'(A) = \begin{bmatrix} a_{11} + ca_{21}& a_{12} + ca_{22}\\ a_{21}&a_{22}\end{bmatrix}.
             \end{equation*}
             Por lo tanto, 
             \begin{align*}
@@ -2511,7 +2512,7 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
                 &= a_{11}a_{22}- a_{12} a_{21} \\
                 &= \det A.
             \end{align*}
-            En  el otro caso también se comprueba que $\det e(A) = \det A$. 
+            Luego,  $\det e(A) = \det A$. Análogamente,   $\det e'(A) = \det A$. 
             \item Finalmente, intercambiando la fila 1 por la fila 2 obtenemos la matriz
             \begin{equation*}
             e(A)=\begin{bmatrix} a_{21}& a_{22}\\ a_{11}&a_{12}\end{bmatrix},
@@ -2528,9 +2529,9 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
     \begin{teorema} \label{det-prop-fundamentales}
         Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
         \begin{enumerate}
-            \item Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ multiplicando la fila $r$ por $c$, es decir $A  \stackrel{cF_r}{\longrightarrow} B$, entonces $\det B = c \det A$.
-            \item  Sea $c \in \K$, $r \ne s$ y $B$ la matriz que se obtiene de $A$ sumando a la fila $r$ la fila $s$ multiplicada por $c$, es decir  $A  \stackrel{F_r + cF_s}{\longrightarrow} B$, entonces $\det B = \det A$.
-            \item Sea $r \ne s$ y sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow}B$, entonces $\det B = -\det A$.
+            \item\label{det-prop-fundamentales-1} Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ multiplicando la fila $r$ por $c$, es decir $A  \stackrel{cF_r}{\longrightarrow} B$, entonces $\det B = c \det A$.
+            \item \label{det-prop-fundamentales-2} Sea $c \in \K$, $r \ne s$ y $B$ la matriz que se obtiene de $A$ sumando a la fila $r$ la fila $s$ multiplicada por $c$, es decir  $A  \stackrel{F_r + cF_s}{\longrightarrow} B$, entonces $\det B = \det A$.
+            \item\label{det-prop-fundamentales-3} Sea $r \ne s$ y sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow}B$, entonces $\det B = -\det A$.
             
         \end{enumerate}
     \end{teorema}
@@ -2554,14 +2555,14 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
     
     \begin{corolario}\label{det-filas-iguales} Sea $A  \in M_n(\K)$.
         \begin{enumerate}
-            \item Si $A$ tiene dos filas iguales,  entonces $\det A=0$.
-            \item Si $A$ tiene una fila nula, entonces $\det A =0$.
+            \item\label{cor-det-1} Si $A$ tiene dos filas iguales,  entonces $\det A=0$.
+            \item\label{cor-det-2} Si $A$ tiene una fila nula, entonces $\det A =0$.
         \end{enumerate}
     \end{corolario}
     \begin{proof}
-        (1) Sea $A$ matriz donde $F_r = F_s$ con $r\ne s$. Luego, intercambiando la fila $r$ por la fila $s$ obtenemos la misma matriz. Es decir $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} (3), tenemos entonces que $\det A = - \det A$, por lo tanto  $\det A =0$. 
+        \ref{cor-det-1} Sea $A$ matriz donde $F_r = F_s$ con $r\ne s$. Luego, intercambiando la fila $r$ por la fila $s$ obtenemos la misma matriz. Es decir $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} \ref{det-prop-fundamentales-3}, tenemos entonces que $\det A = - \det A$, por lo tanto  $\det A =0$. 
         
-        (2) Sea $F_r$ una fila nula de $A$, por lo tanto multiplicar por 2 esa fila no cambia la matriz. Es decir $A  \stackrel{2F_r}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} (1), tenemos entonces que $\det A = 2\det A$, por lo tanto  $\det A =0$.
+        \ref{cor-det-2} Sea $F_r$ una fila nula de $A$, por lo tanto multiplicar por 2 esa fila no cambia la matriz. Es decir $A  \stackrel{2F_r}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} \ref{det-prop-fundamentales-1}, tenemos entonces que $\det A = 2\det A$, por lo tanto  $\det A =0$.
     \end{proof}
     
     
@@ -2578,15 +2579,15 @@ Luego,  ambos sistemas son  tienen las mismas soluciones.
 
     \begin{corolario}  Sean $A,B \in M_n(\K)$, entonces
         \begin{enumerate}
-            \item si $A$ invertible $\det(A^{-1}) = \det(A)^{-1}$,
-            \item $\det (AB) = \det(BA)$.
+            \item\label{cor-det-inversa} si $A$ invertible $\det(A^{-1}) = \det(A)^{-1}$,
+            \item\label{cor-det-prod} $\det (AB) = \det(BA)$.
             \end{enumerate}
     \end{corolario} 
     \begin{proof} 
 
-        1. Por teorema \ref{mtrx-inv-equiv3}, $\det(AA^{-1}) = \det(A)\det(A^{-1})$. Como $AA^{-1} = \Id_n$, entonces $1 =\det(\Id_n) =  \det(AA^{-1}) = \det(A)\det(A^{-1})$. Por lo tanto  $\det(A^{-1}) = 1/\det(A)$.
+        \ref{cor-det-inversa}  Por teorema \ref{mtrx-inv-equiv3}, $\det(AA^{-1}) = \det(A)\det(A^{-1})$. Como $AA^{-1} = \Id_n$, entonces $1 =\det(\Id_n) =  \det(AA^{-1}) = \det(A)\det(A^{-1})$. Por lo tanto  $\det(A^{-1}) = 1/\det(A)$.
 
-        2.  
+        \ref{cor-det-prod}
         $\det (AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)$.
     \end{proof}
 
