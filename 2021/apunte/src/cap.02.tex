@@ -1839,16 +1839,16 @@ Luego,  ambos sistemas tienen las mismas soluciones.
             \begin{proposicion}
                 Sea $A  \in M_{n\times n}(\K)$, 
                 \begin{enumerate}
-                    \item	sean $B, C \in M_{n \times n}(\K)$ tales que $BA =\Id_n$ y $AC = \Id_n$, entonces $B=C$;
-                    \item  si $A$ invertible la inversa es única.
+                    \item\label{inv_mtrx_1}	sean $B, C \in M_{n \times n}(\K)$ tales que $BA =\Id_n$ y $AC = \Id_n$, entonces $B=C$;
+                    \item\label{inv_mtrx_2}  si $A$ invertible la inversa es única.
                 \end{enumerate}
             \end{proposicion}
-            \begin{proof} (1)
+            \begin{proof} \ref{inv_mtrx_1}
                 \begin{equation*}
                 B = B\Id_n = B(AC) = (BA)C = \Id_nC = C.
                 \end{equation*}
                 
-                (2) Sean $B$ y $C$ inversas de $A$, es decir $BA=AB=\Id_n$ y  $CA=AC=\Id_n$. En particular, $BA=\Id_n$ y $AC= \Id_n$, luego, por (1), $B=C$.  
+                \ref{inv_mtrx_2} Sean $B$ y $C$ inversas de $A$, es decir $BA=AB=\Id_n$ y  $CA=AC=\Id_n$. En particular, $BA=\Id_n$ y $AC= \Id_n$, luego, por \ref{inv_mtrx_1}, $B=C$.  
             \end{proof}
             
             
@@ -2049,22 +2049,22 @@ Luego,  ambos sistemas tienen las mismas soluciones.
             
             \begin{teorema}\label{mtrx-inv-equiv} Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Las siguientes afirmaciones son equivalentes
                 \begin{enumerate}
-                    \item[\textit{i})] $A$ es invertible,
-                    \item[\textit{ii})] $A$  es equivalente por filas a $\Id_n$, 
-                    \item[\textit{iii})] $A$ es producto de matrices elementales.
+                    \item\label{teo-inv-1} $A$ es invertible,
+                    \item\label{teo-inv-2} $A$  es equivalente por filas a $\Id_n$, 
+                    \item\label{teo-inv-3} $A$ es producto de matrices elementales.
                 \end{enumerate}
             \end{teorema}
             \begin{proof}
                 \
 
                 
-                \textit{i}) $\Rightarrow$ \textit{ii})\; Sea $R$ la matriz escalón reducida por fila equivalente por filas a $A$. Entonces,  existen $E_1,\ldots,E_k$ matrices elementales tal que $E_1,\ldots,E_kA = R$. Como las matrices elementales son invertibles, el producto de matrices elementales es invertible, luego  $E_1,\ldots,E_k$ es invertible y por lo tanto $R=E_1,\ldots,E_kA$ es invertible. 
+                \ref{teo-inv-1} $\Rightarrow$ \ref{teo-inv-2}\; Sea $R$ la matriz escalón reducida por fila equivalente por filas a $A$. Entonces,  existen $E_1,\ldots,E_k$ matrices elementales tal que $E_1,\ldots,E_kA = R$. Como las matrices elementales son invertibles, el producto de matrices elementales es invertible, luego  $E_1,\ldots,E_k$ es invertible y por lo tanto $R=E_1,\ldots,E_kA$ es invertible. 
                 
                 Recordemos que las matrices escalón reducidas por fila si tienen filas nulas, ellas se encuentran al final.  Ahora bien,  si la última fila de $R$ es nula entonces,  $RB$ tiene la última fila nula también y por lo tanto no puede ser igual a la identidad, es decir, en ese caso $R$ no es invertible, lo cual produce un absurdo. Concluyendo: la última fila (la fila $n$) de $R$ no es nula y como es MERF, $R$ no tiene filas nulas. Por lo tanto $R=\Id_n$ (lema \ref{lem-mtrx-merf-id}) y,  entonces, $A$ es equivalente por filas a $\Id_n$. 
                 
-                \textit{ii}) $\Rightarrow$ \textit{iii})\; Como $A$  es equivalente por filas a $\Id_n$, al ser la equivalencia por filas una relación de equivalencia,  tenemos que $\Id_n$ es equivalente por filas a $A$, es decir  existen $E_1,\ldots,E_k$ matrices elementales, tales que $E_1E_2,\ldots,E_k\Id_n = A$. Por lo tanto, $A =E_1E_2,\ldots,E_k$ producto de matrices elementales.
+                \ref{teo-inv-2} $\Rightarrow$ \ref{teo-inv-3}\; Como $A$  es equivalente por filas a $\Id_n$, al ser la equivalencia por filas una relación de equivalencia,  tenemos que $\Id_n$ es equivalente por filas a $A$, es decir  existen $E_1,\ldots,E_k$ matrices elementales, tales que $E_1E_2,\ldots,E_k\Id_n = A$. Por lo tanto, $A =E_1E_2,\ldots,E_k$ producto de matrices elementales.
                 
-                \textit{iii}) $\Rightarrow$ \textit{i}) \; Sea $A = E_1E_2,\ldots,E_k$ donde $E_i$  es una matriz elemental ($i=1,\ldots,k$). Como cada $E_i$ es invertible,  el producto de ellos es invertible,  por lo tanto $A$ es invertible.
+                \ref{teo-inv-3} $\Rightarrow$ \ref{teo-inv-1} \; Sea $A = E_1E_2,\ldots,E_k$ donde $E_i$  es una matriz elemental ($i=1,\ldots,k$). Como cada $E_i$ es invertible,  el producto de ellos es invertible,  por lo tanto $A$ es invertible.
             \end{proof}	
             
             \begin{corolario}
@@ -2074,7 +2074,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                 
                 \
                 
-                ($\Rightarrow$) $B$ es equivalente por filas a $A$,  luego existe $P$ matriz producto de matrices elementales tal que $B =PA$. Como cada matriz elemental es invertible (teorema \ref{th-elmental-impl-invertible}) y el producto de matrices invertibles es invertible (teorema  \ref{th-prod-inv-impl-inv}\ref{inv-itm2}), se deduce que $P$ es invertible. 
+                ($\Rightarrow$) $B$ es equivalente por filas a $A$,  luego existe $P$ matriz producto de matrices elementales tal que $B =PA$. Como cada matriz elemental es invertible (teorema \ref{th-elmental-impl-invertible}) y el producto de matrices invertibles es invertible (teorema  \ref{th-prod-inv-impl-inv} \ref{inv-itm2}), se deduce que $P$ es invertible. 
                 
                 ($\Leftarrow$) Sea  $P$  matriz invertible tal que $B =PA$. Como $P$ es invertible, por el teorema anterior, $P$ es producto de matrices elementales, luego $B =PA$ es equivalente por filas a $A$.
             \end{proof}	
@@ -2111,10 +2111,9 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                 [A|\Id] &= \left[\begin{array}{cc|cc}2&-1 &  1&0\\1&3& 0&1\end{array}\right] 
                 \stackrel{F_1\leftrightarrow F_2}{\longrightarrow} 
                 \left[\begin{array}{cc|cc}1&3& 0&1\\2&-1 &  1&0 \end{array}\right]
-                \stackrel{F_2-2 F_1}{\longrightarrow}
-                \left[\begin{array}{cc|cc}1&3& 0&1\\0&-7 &  1&-2 \end{array}\right]
-                \stackrel{F_2/(-7)}{\longrightarrow}\\
-                &\quad\longrightarrow 
+                \stackrel{F_2-2 F_1}{\longrightarrow}\\
+                &\left[\begin{array}{cc|cc}1&3& 0&1\\0&-7 &  1&-2 \end{array}\right]
+                \stackrel{F_2/(-7)}{\longrightarrow} 
                 \left[\begin{array}{cc|cc}1&3& 0&1\\0&1 &  -\frac17&\frac27\end{array}\right]
                 \stackrel{F_1-3 F_2}{\longrightarrow}
                 \left[\begin{array}{cc|cc}1&0&  \frac37&\frac17\\0&1 &  -\frac17&\frac27 \end{array}\right].
@@ -2129,28 +2128,28 @@ Luego,  ambos sistemas tienen las mismas soluciones.
             
             \begin{teorema}\label{mtrx-inv-equiv2} 
                 Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces,  las siguientes afirmaciones son equivalentes. 
-                \begin{enumerate}
-                    \item[\textit{i})] $A$ es invertible.
-                    \item[\textit{ii})] El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
-                    \item[\textit{iii})] El sistema homogéneo $AX=0$ tiene una única solución trivial.
+                \begin{enumerate}[label=\textit{\roman*)}, ref=\textit{\roman*)}]
+                    \item\label{equiv-inv-1} $A$ es invertible.
+                    \item\label{equiv-inv-2} El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$. 
+                    \item\label{equiv-inv-3} El sistema homogéneo $AX=0$ tiene una única solución trivial.
                 \end{enumerate}
             \end{teorema}
             \begin{proof}
-                
+
                 \
-                
-                \textit{i}) $\Rightarrow$  \textit{ii}) Sea $X_0$ solución del sistema $AX=Y$, luego
+
+                \ref{equiv-inv-1} $\Rightarrow$  \ref{equiv-inv-2} Sea $X_0$ solución del sistema $AX=Y$, luego
                 \begin{equation*}
                 AX_0=Y  \quad \Rightarrow \quad  A^{-1}AX_0 = A^{-1}Y  \quad \Rightarrow \quad  X_0 = A^{-1}Y.
                 \end{equation*}
                 Es decir, $X_0$ es único (siempre igual  a $A^{-1}Y$).  
                 
                 
-                \textit{ii}) $\Rightarrow$  \textit{iii}) Es trivial, tomando $Y =0$.
+                \ref{equiv-inv-2} $\Rightarrow$  \ref{equiv-inv-3} Es trivial, tomando $Y =0$.
                 
                 
                 
-                \textit{iii}) $\Rightarrow$  \textit{i}) Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ invertible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por teorema \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=\Id_n$. Luego $A$ es equivalente por filas a $\Id_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es invertible. 			
+                \ref{equiv-inv-3} $\Rightarrow$  \ref{equiv-inv-1} Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ invertible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por teorema \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=\Id_n$. Luego $A$ es equivalente por filas a $\Id_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es invertible. 			
                 
             \end{proof}
             
@@ -2624,20 +2623,20 @@ Luego,  ambos sistemas tienen las mismas soluciones.
     
     \begin{proposicion}\label{prop-matriz-transpuesta} Sea $A$ matriz $m \times n$.
         \begin{enumerate}
-            \item $(A^\t)^\t = A$.
-            \item  Si $B$ matriz $n \times k$,  entonces
+            \item\label{transpuesta-1} $(A^\t)^\t = A$.
+            \item\label{transpuesta-2}  Si $B$ matriz $n \times k$,  entonces
             \begin{equation*}
             (AB)^\t = B^\t A^\t.
             \end{equation*} 
-            \item  Sea $A$ matriz $n \times n$, entonces, $A$ invertible si y sólo si  $A^\t$ es invertible y  en ese caso $(A^\t)^{-1} = (A^{-1})^\t$.
+            \item\label{transpuesta-3}  Sea $A$ matriz $n \times n$, entonces, $A$ invertible si y sólo si  $A^\t$ es invertible y  en ese caso $(A^\t)^{-1} = (A^{-1})^\t$.
         \end{enumerate}
     \end{proposicion}
     \begin{proof}
-        (1) 	$[(A^\t)^\t]_{ij} = [A^\t]_{ji} = [A]_{ij}$. 
+        \ref{transpuesta-1} 	$[(A^\t)^\t]_{ij} = [A^\t]_{ji} = [A]_{ij}$. 
 
-        (2)	Por definición de transpuesta $(AB)^\t$ es una matriz $k \times m$.  Ahora observemos  que $B^\t$  es una matriz $k \times n$ y $A^\t$ es $n \times m$, luego tiene sentido multiplicar $B^\t$ por $A^\t$ y se obtiene también  una matriz  $k \times m$. La demostración de la proposición se hace comprobando que el coeficiente $ij$ de $(AB)^\t$ es igual al coeficiente $ij$ de $B^\t A^\t$ y se deja como ejercicio para el lector. 
+        \ref{transpuesta-2}	Por definición de transpuesta $(AB)^\t$ es una matriz $k \times m$.  Ahora observemos  que $B^\t$  es una matriz $k \times n$ y $A^\t$ es $n \times m$, luego tiene sentido multiplicar $B^\t$ por $A^\t$ y se obtiene también  una matriz  $k \times m$. La demostración de la proposición se hace comprobando que el coeficiente $ij$ de $(AB)^\t$ es igual al coeficiente $ij$ de $B^\t A^\t$ y se deja como ejercicio para el lector. 
         
-        (3) 
+        \ref{transpuesta-3} 
         \begin{align*}
             \text{$A$ invertible } &\Leftrightarrow \text{existe $B$ matriz $n \times n$ tal que $AB = \Id_n = BA$} \\
             &\Leftrightarrow (AB)^\t = \Id^\t_n = (BA)^\t\\
@@ -2719,14 +2718,14 @@ También vale este resultado para matrices $n \times n$.
     
     \begin{corolario} Sea $A  \in M_n(\K)$.
         \begin{enumerate}
-            \item Si $A$ tiene dos columnas iguales,  entonces $\det A=0$.
-            \item Si $A$ tiene una columna nula, entonces $\det A =0$.
+            \item\label{det-1} Si $A$ tiene dos columnas iguales,  entonces $\det A=0$.
+            \item\label{det-2} Si $A$ tiene una columna nula, entonces $\det A =0$.
         \end{enumerate}
     \end{corolario}
     \begin{proof}
-        (1) Si $A$ tiene dos columnas iguales,  entonces $A^\t$ tiene dos filas iguales, luego, por corolario \ref{det-filas-iguales} (1),  $\det A^\t =0$ y por lo tanto $\det A=0$.
+        \ref{det-1} Si $A$ tiene dos columnas iguales,  entonces $A^\t$ tiene dos filas iguales, luego, por corolario \ref{det-filas-iguales} \ref{cor-det-1},  $\det A^\t =0$ y por lo tanto $\det A=0$.
         
-        (2) Si $A$ tiene una columna nula,  entonces $A^\t$ tiene una fila nula, luego, \ref{det-filas-iguales} (2), $\det A^\t =0$ y por lo tanto $\det A=0$.
+        \ref{det-2} Si $A$ tiene una columna nula,  entonces $A^\t$ tiene una fila nula, luego, \ref{det-filas-iguales} \ref{cor-det-2}, $\det A^\t =0$ y por lo tanto $\det A=0$.
     \end{proof}
     
         El siguiente teorema nos dice  que es posible calcular el determinante desarrollándolo por cualquier fila o cualquier columna. 

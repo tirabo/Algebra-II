@@ -227,19 +227,7 @@
         \begin{proposicion}[Desigualdad de Cauchy-Schwarz]\label{prop-cauchy-schwarz} Sean $u, v\in \R^n$. Entonces 
             $$|\la u, v \ra| \le ||u||||v||.$$
         \end{proposicion}
-        \begin{proof} Primero daremos una demostración basada en los resultados geométricos vistos en el capítulo \ref{chap-vectores}, luego,  el lector interesado, podrá leer una demostración algebraica del resultado. 
-        
-        \textit{Demostración 1.} Esta demostración es válida para el producto escalar en $\R^n$. La fórmula \eqref{eq-cos-theta} nos dice que 
-        \begin{equation*}
-            \la u, v \ra = ||u||||v||\cos(\theta)
-        \end{equation*}
-        donde $\theta$ es el ángulo comprendido entre $u$ y $v$. Como $|\cos(\theta)| \le 1$,  tenemos
-        \begin{equation*}
-            |\la u, v \ra| = ||u||\,||v||\,|\cos(\theta)| \le  ||u||\,||v||.
-        \end{equation*}
-        
-            
-        \textit{Demostración 2 ($*$).}
+        \begin{proof} 
             Sea $c = \displaystyle\frac{\la u,v\ra}{\la u,u\ra} = \frac{\la u,v\ra}{||u||^2}$, entonces, por la observación \ref{obs-proyeccion-ort}, tenemos que  $ v-cu$ es ortogonal a $u$. Ahora bien, 
             \begin{equation*}
                 v = (v - cu) + cu   
@@ -523,9 +511,9 @@
             \end{enumerate} 
         \end{proposicion}
         \begin{proof}
-            \ref{adj0}. Es trivial.
+            \ref{adj0} Es trivial.
             
-            \ref{adj1}. Por definición de adjunta $(cR)^*$ es la única transformación lineal tal que
+            \ref{adj1} Por definición de adjunta $(cR)^*$ es la única transformación lineal tal que
             $$
             \la cR(v),w\ra = \la v,(cR)^*(w)\ra, \quad \forall v,w \in V.
             $$
@@ -535,7 +523,7 @@
             $$
             Es decir $(cR)^* = cR^*$.
             
-            \ref{adj2}. Como en el caso anterior, debemos demostrar que  $R^* + S^*$ es la única transformación lineal tal que
+            \ref{adj2} Como en el caso anterior, debemos demostrar que  $R^* + S^*$ es la única transformación lineal tal que
             $$ 
             \la (R+S)(v),w\ra = \la v,(R^* + S^*)(w)\ra, \quad \forall v,w \in V.
             $$
@@ -546,14 +534,14 @@
             &=  \la (R+S)(v), w\ra .
             \end{align*}
 
-            \ref{adj3}. 
+            \ref{adj3} 
             \begin{align*}
             \la v,(S^*R^*)(w)\ra &= \la v, S^*(R^*(w))\ra =  \la S(v),R^*(w) \ra \\
             &=  \la R(S(v)),w \ra =  \la (RS)(v), w\ra .
             \end{align*}
             Por lo tanto  $(RS)^* = S^*R^*$.
             
-            \ref{adj4}. Por definición de adjunta de $R^*$, tenemos que $ (R^*)^*=R^{**}$  es la única transformación lineal tal que 
+            \ref{adj4} Por definición de adjunta de $R^*$, tenemos que $ (R^*)^*=R^{**}$  es la única transformación lineal tal que 
             $$
             \la R^*(v), w\ra = \la v, R^{**}(w)\ra  , \; \forall\, v,w \in V.
             $$ 

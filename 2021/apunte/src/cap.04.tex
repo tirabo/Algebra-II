@@ -14,8 +14,8 @@
         
             \begin{obs*}
                 $T:V \to W$ es transformación lineal si y sólo si
-                \begin{enumerate}
-                    \item[({a})]  $T(\lambda v+v') = \lambda T(v)+ T(v')$, para $v,v' \in V$, $\lambda \in \K$.
+                \begin{enumerate}[label=\textit{\alph*)}, ref=\textit{\alph*)}]
+                    \item $T(\lambda v+v') = \lambda T(v)+ T(v')$, para $v,v' \in V$, $\lambda \in \K$.
                 \end{enumerate}
             Algunas veces usaremos esto último para comprobar si una aplicación de $V$ en $W$ es una transformación lineal. 
             \end{obs*}
@@ -495,17 +495,17 @@ Luego,
         \begin{teorema}\label{rang+nul=dimV}
                  Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal. Suponga que $V$ es de dimensión finita. Entonces 
                  $$
-                 rango (T) + nulidad (T) = \dim V.
+                 \dim (\im T) + \dim (\nuc T) = \dim V.
                  $$
         \end{teorema}
         \begin{proof} Sean 
             \begin{align*}
                 n &= \dim V \\
-                k &= \dim(\nuc T) = nulidad(T).  
+                k &= \dim(\nuc T).  
             \end{align*}
             Entonces debemos probar  que 
             $$
-            n-k = \dim(\img T) = rango(T).
+            n-k = \dim(\img T).
             $$
              Sea $\{v_1,\ldots,v_k \}$ una base de $\nuc T$. Existen vectores $\{v_{k+1},\ldots,v_n \}$, en $V$ tales que $\{v_1,\ldots,v_n \}$ es una base de $V$. Para probar el teorema, demostraremos que 
              $\{Tv_{k+1},\ldots,Tv_n \}$ es una base para la imagen de $T$. 
@@ -1176,7 +1176,7 @@ Luego,
             =
             \begin{bmatrix}  \sum_{j=1}^{n}a_{1j}x_j\\\sum_{j=1}^{n}a_{2j}x_j\\ \vdots\\\sum_{j=1}^{n}a_{mj}x_j\end{bmatrix}.
             \end{equation}
-            De las ecuaciones \eqref{eq-45}) y \eqref{eq-46} se deduce la formula \eqref{matriz-de-tl-2}.
+            De las ecuaciones \eqref{eq-45} y \eqref{eq-46} se deduce la formula \eqref{matriz-de-tl-2}.
         \end{proof}
 
         \begin{corolario}\label{cor-cambio-de-base}
@@ -1300,15 +1300,15 @@ Luego,
             \end{enumerate}
         \end{corolario}
         \begin{proof}
-            \ref{itm-cor-cambio-1}. Es inmediato del teorema anterior tomado $\mathcal B' =\mathcal B'' = \mathcal B$. 
+            \ref{itm-cor-cambio-1} Es inmediato del teorema anterior tomado $\mathcal B' =\mathcal B'' = \mathcal B$. 
             
-            \ref{itm-cor-cambio-2}. $\Id(v_i) = v_i$ y por lo tanto
+            \ref{itm-cor-cambio-2} $\Id(v_i) = v_i$ y por lo tanto
             \begin{equation*}
                 [\Id]_{\mathcal B} = \begin{bmatrix} 1&0&\cdots&0 \\0&1&\cdots&0\\\vdots&&&\vdots\\0&0&\cdots&1 	\end{bmatrix} = \Id.
             \end{equation*}
             
             
-            \ref{itm-cor-cambio-3}. $\Id = T T^{-1}$, luego
+            \ref{itm-cor-cambio-3} $\Id = T T^{-1}$, luego
             \begin{equation*}
                 \Id = [\Id]_{\mathcal B} =  [T T^{-1}]_{\mathcal B} =  [T]_{\mathcal B} [T^{-1}]_{\mathcal B}.
             \end{equation*}

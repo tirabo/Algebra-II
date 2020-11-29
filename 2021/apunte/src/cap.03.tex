@@ -8,9 +8,9 @@
         \begin{section}{Definici\'on y ejemplos de espacios vectoriales}\label{seccion-definicion-de-espacios-vectoriales}
             
             \begin{definicion}\label{def-esp-vect} Sea $\K$ cuerpo. Un \textit{espacio vectorial}\index{espacio vectorial} sobre $\K$ o un \textit{$\K$-espacio vectorial }, consiste de  un  conjunto $V$ no vacío, cuyos elementos son llamados \textit{vectores}, junto a  '$+$' y '$.$' tal que
-                \begin{enumerate}
-                    \item[(\textit{a})] '$+\colon V\times V\to V$' es una operación, llamada \textit{adición} o  \textit{suma de vectores,}\index{suma de vectores} tal que a dos vectores $v,w \in V$ les asigna otro vector $v+w \in V$,
-                    \item[(\textit{b})]  '$.
+                \begin{enumerate}[label=\textit{\alph*)}, ref=\textit{\alph*)}]
+                    \item '$+\colon V\times V\to V$' es una operación, llamada \textit{adición} o  \textit{suma de vectores,}\index{suma de vectores} tal que a dos vectores $v,w \in V$ les asigna otro vector $v+w \in V$,
+                    \item  '$.
                      \colon \K\times V\to V$' es una operación tal que a $\lambda \in \K$ y $v \in V$ le asigna el vector $\lambda.v$ (o simplemente $\lambda v$).  '$.$' es llamada  el \textit{producto por escalares}.
                      
                 \end{enumerate}	 
@@ -50,9 +50,9 @@
                 Entonces $V$ es espacio vectorial con las operaciones siguientes.
                 
                 Si $(x_1,x_2,\ldots,x_n) \in \K^n$, $(y_1,y_2,\ldots,y_n) \in K^n$, $\lambda \in \K$
-                \begin{enumerate}
-                    \item[(\textit{a})] $(x_1,x_2,\ldots,x_n)+ (y_1,y_2,\ldots,y_n) = (x_1+y_1,x_2+y_2,\ldots,x_n+y_n)$,
-                    \item[(\textit{b})] $\lambda(x_1,x_2,\ldots,x_n) = (\lambda x_1,\lambda x_2,\ldots,\lambda x_n)$.
+                \begin{enumerate}[label=\textit{\alph*)}, ref=\textit{\alph*)}]
+                    \item $(x_1,x_2,\ldots,x_n)+ (y_1,y_2,\ldots,y_n) = (x_1+y_1,x_2+y_2,\ldots,x_n+y_n)$,
+                    \item $\lambda(x_1,x_2,\ldots,x_n) = (\lambda x_1,\lambda x_2,\ldots,\lambda x_n)$.
                 \end{enumerate}
                 Observar que las sumas y productos son coordenada a coordenada y, por lo tanto, en cada coordenada son sumas y productos en $\K$.
                 
@@ -168,7 +168,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
             \end{proposicion}
             \begin{proof} Tanto la prueba de (1), como la de (2) son similares a la demostración de que $0.a=0$  en $\mathbb Z$ (o en  $\R$).
                  
-                (1) Como $0$ es el elemento neutro de la suma en $V$, entonces $0 = 0 +0$, luego 
+                \ref{c*0=0} Como $0$ es el elemento neutro de la suma en $V$, entonces $0 = 0 +0$, luego 
                 \begin{equation*}
                     \begin{array}{rllll}
                     \lambda.0 &=& \lambda.(0+0)&\quad&\text{(propiedad distributiva $\Rightarrow$)}  \\
@@ -179,11 +179,11 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
                     \end{array}
                 \end{equation*}
                 
-                (2) Análoga a (1).
+                \ref{0*c=0} Análoga a \ref{c*0=0}.
                 
-                (3) Supongamos que  $\lambda.v=0$ y  $\lambda \ne 0$, entonces, por (1), $ \lambda^{-1}(\lambda.v)=0$, pero $\lambda^{-1}(\lambda.v) = (\lambda^{-1}\lambda).v = 1.v = v$. Luego $0=v$,  que contradice la hipótesis. El absurdo vino de suponer que $\lambda \ne 0$.
+                \ref{c*v=0} Supongamos que  $\lambda.v=0$ y  $\lambda \ne 0$, entonces, por (1), $ \lambda^{-1}(\lambda.v)=0$, pero $\lambda^{-1}(\lambda.v) = (\lambda^{-1}\lambda).v = 1.v = v$. Luego $0=v$,  que contradice la hipótesis. El absurdo vino de suponer que $\lambda \ne 0$.
                 
-                (4)  $(-1).v +v = (-1).v +1.v = (-1+1).v$,  esto último es por la propiedad distributiva. Ahora bien $(-1+1).v = 0.v \overset{(2)}{=} 0$. Es decir   $(-1).v +v = 0$ y por lo tanto  $(-1).v$ es el opuesto de $v$ (que es $-v$).  
+                \ref{-1*v=-v}  $(-1).v +v = (-1).v +1.v = (-1+1).v$,  esto último es por la propiedad distributiva. Ahora bien $(-1+1).v = 0.v \overset{(2)}{=} 0$. Es decir   $(-1).v +v = 0$ y por lo tanto  $(-1).v$ es el opuesto de $v$ (que es $-v$).  
             
             \end{proof}
    
@@ -192,16 +192,16 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 \begin{section}{Subespacios vectoriales}\label{seccion-subespacios-vectoriales}
     \begin{definicion}
         Sea $V$ un espacio vectorial sobre $\K$. diremos que $W \subset V$ es \textit{subespacio de $V$}\index{subespacio} si $W \not= \emptyset$ y
-        \begin{enumerate}
-            \item[(a)] si para cualesquiera $w_1,w_2 \in W$, se cumple que $w_1+w_2 \in W$ y
-            \item[(b)] si $\lambda \in \K$ y  $w \in W$, entonces $\lambda w \in W$.
+        \begin{enumerate}[label=\textit{\alph*)},ref=\textit{\alph*)}]
+            \item\label{def-sub-a} si para cualesquiera $w_1,w_2 \in W$, se cumple que $w_1+w_2 \in W$ y
+            \item\label{def-sub-b} si $\lambda \in \K$ y  $w \in W$, entonces $\lambda w \in W$.
         \end{enumerate}
     \end{definicion}
 
-    \begin{observacion}\label{obs-0-en-subespacio} Si $W$ subespacio de $V$,  entonces $0 \in W$: como  $W \ne \emptyset$, tomo  cualquier $w \in W$ y  por (a) tenemos que $0.w \in W$. Ya vimos en la proposición \ref{prop-basicas-ev}\ref{0*c=0}  que $0.w =0$ y por lo tanto $0 \in W$. 
+    \begin{observacion} \label{obs-0-en-subespacio} Si $W$ subespacio de $V$,  entonces $0 \in W$: como  $W \ne \emptyset$, tomo  cualquier $w \in W$ y  por \ref{def-sub-a} tenemos que $0\cdot w \in W$. Ya vimos en la proposición \ref{prop-basicas-ev} \ref{0*c=0}  que $0 \cdot w =0$ y por lo tanto $0 \in W$. 
     \end{observacion}
 
-    \begin{observacion}\label{obs-opuesto-en-subespacio} Si $W$ subespacio de $V$ y $w \in W$,  entonces $-w \in W$: hemos visto (proposición \ref{prop-basicas-ev}\ref{-1*v=-v}) que  $(-1)w=-w $, luego por (b) de la definición de subespacio $-w \in W$.
+    \begin{observacion}\label{obs-opuesto-en-subespacio} Si $W$ subespacio de $V$ y $w \in W$,  entonces $-w \in W$: hemos visto (proposición \ref{prop-basicas-ev} \ref{-1*v=-v}) que  $(-1)w=-w $, luego por \ref{def-sub-b} de la definición de subespacio $-w \in W$.
     \end{observacion}
 
     \begin{teorema}
@@ -460,7 +460,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     \end{teorema}
     \begin{proof}
         Sean $v = v_1+\cdots+v_k$ y $w = w_1+\cdots+w_k$ en $W$ y $\lambda \in \K$. Entonces
-        \begin{enumerate}[label=(\alph*),ref=\alph*]
+        \begin{enumerate}[label=\textit{\alph*)},ref=\textit{\alph*)}]
             \item $v+w =  (v_1+w_1)+\cdots+(v_k+w_k) \in W_1+\cdots+W_k$, pues como $W_i$ es subespacio de $V$, tenemos que $v_i+w_i \in W_i$.
             \item  $\lambda v = \lambda(v_1+\cdots+v_k) = \lambda v_1+\cdots+\lambda v_k \in W_1+\cdots+W_k$, pues como $W_i$ es subespacio de $V$, tenemos que $\lambda v_i \in W_i$.
         \end{enumerate}
@@ -828,15 +828,18 @@ Hemos demostrado, si $V$  es un espacio vectorial de dimensión finita y $\mathc
             Sea $V$ un espacio vectorial de dimensión finita y sea $n = \dim V$. 
             Entonces
             \begin{enumerate}
-                \item cualquier subconjunto de $V$ con más de $n$ vectores es linealmente
+                \item\label{ld-1} cualquier subconjunto de $V$ con más de $n$ vectores es linealmente
                 dependiente;
-                \item ningún subconjunto de $V$ con menos de $n$ vectores puede generar $V$.
+                \item\label{ld-2} ningún subconjunto de $V$ con menos de $n$ vectores puede generar $V$.
             \end{enumerate} 
         \end{corolario}
     \begin{proof}
+
+        \
+        
         \begin{enumerate}
-            \item Sea $\{v_1,\ldots,v_n\}$ una base de $V$, entonces $v_1,\ldots,v_n$ generan $V$, luego, por el teorema \ref{indep-menorigual-gen}, cualquier subconjunto de $V$ que contenga más de $n$ vectores es LD.
-            \item Sea $S$  subconjunto de $V$ con $m < n$ vectores. Si $S$  genera $V$,  entonces todo subconjunto de más de $m$  vectores es LD (teorema \ref{indep-menorigual-gen}), por lo tanto, un subconjunto de $n$ vectores es LD. En  consecuencia, no puede haber una base de $n$  elementos, lo cual contradice la hipótesis.
+            \item[\ref{ld-1}] Sea $\{v_1,\ldots,v_n\}$ una base de $V$, entonces $v_1,\ldots,v_n$ generan $V$, luego, por el teorema \ref{indep-menorigual-gen}, cualquier subconjunto de $V$ que contenga más de $n$ vectores es LD.
+            \item[\ref{ld-1}] Sea $S$  subconjunto de $V$ con $m < n$ vectores. Si $S$  genera $V$,  entonces todo subconjunto de más de $m$  vectores es LD (teorema \ref{indep-menorigual-gen}), por lo tanto, un subconjunto de $n$ vectores es LD. En  consecuencia, no puede haber una base de $n$  elementos, lo cual contradice la hipótesis.
         \end{enumerate} 
     \end{proof}
 
