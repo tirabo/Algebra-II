@@ -9,9 +9,8 @@
             
             \begin{definicion}\label{def-esp-vect} Sea $\K$ cuerpo. Un \textit{espacio vectorial}\index{espacio vectorial} sobre $\K$ o un \textit{$\K$-espacio vectorial }, consiste de  un  conjunto $V$ no vacío, cuyos elementos son llamados \textit{vectores}, junto a  '$+$' y '$.$' tal que
                 \begin{enumerate}[label=\textit{\alph*)}, ref=\textit{\alph*)}]
-                    \item '$+\colon V\times V\to V$' es una operación, llamada \textit{adición} o  \textit{suma de vectores,}\index{suma de vectores} tal que a dos vectores $v,w \in V$ les asigna otro vector $v+w \in V$,
-                    \item  '$.
-                     \colon \K\times V\to V$' es una operación tal que a $\lambda \in \K$ y $v \in V$ le asigna el vector $\lambda.v$ (o simplemente $\lambda v$).  '$.$' es llamada  el \textit{producto por escalares}.
+                    \item $+\colon V\times V\to V$ es una operación, llamada \textit{adición} o  \textit{suma de vectores,}\index{suma de vectores} tal que a dos vectores $v,w \in V$ les asigna otro vector $v+w \in V$,
+                    \item  $\cdot \colon \K\times V\to V$ es una operación tal que a $\lambda \in \K$ y $v \in V$ le asigna el vector $\lambda\cdot v$ (o simplemente $\lambda v$).  La operación '$\cdot$' es llamada  el \textit{producto por escalares}.
                      
                 \end{enumerate}	 
                 Además, estas operaciones deben satisfacer 
@@ -20,7 +19,7 @@
                     \item[\textbf{S2.}] $(v+ w)+ u = v + (w+u)$, para $v,w,u \in V$ (\textit{asociatividad de la suma}),
                     \item[\textbf{S3.}] existe un único vector $0$, llamado \textit{vector cero}, tal que $0+ v = v + 0 =v$, para todo $v \in V$ (\textit{existencia de elemento neutro de la suma}).
                     \item[\textbf{S4.}] Para cada $v \in V$, existe un  único vector $-v$ tal que  $v + (-v) = (-v)+ v =0$ (\textit{existencia de opuesto} o  \textit{inverso aditivo}).
-                    \item[\textbf{P1.}] $1.v=v$ para todo $v \in V$.
+                    \item[\textbf{P1.}] $1\cdot v=v$ para todo $v \in V$.
                     \item[\textbf{P2.}] $\lambda_1(\lambda_2v) = (\lambda_1\lambda_2)v$, para todo $\lambda_1,\lambda_2 \in \K$ y todo $v \in V$.
                     \item[\textbf{D1.}] $\lambda(v+w) = \lambda v +\lambda w$, para todo $\lambda \in \K$ y todo $v,w \in V$ (\textit{propiedad distributiva}).
                     \item[\textbf{D2.}] $(\lambda_1+\lambda_2)v = \lambda_1v + \lambda_2 v$ para todo $\lambda_1,\lambda_2 \in \K$ y todo $v \in V$ (\textit{propiedad distributiva}).
@@ -43,7 +42,7 @@
             $$
             y a menudo diremos que $v-w$ es la \textit{resta} de $v$ menos $w$. 
             
-            \begin{ejemplo*} {\textsc{$\K^n$.}} Sea $\K$ cuerpo, y sea
+            \begin{ejemplo*} {\textsc{$\K^n$.}} Este ejemplo es una generalización de las definiciones \ref{def-suma-en-rn} y \ref{def-producto-escalar-x-rn}. Sea $\K$ cuerpo, y sea
                 \begin{equation*}
                 V = \{(x_1,x_2,\ldots,x_n): x_i \in \K, 1 \le i \le n \} = \K^n.
                 \end{equation*}	
@@ -58,14 +57,14 @@
                 
                 Comprobemos las propiedades necesarias para que $V$ sea un espacio vectorial. Como la suma de vectores y el producto por escalares es coordenada a coordenada, las propiedades se deducirán fácilmente de los axiomas para la suma y el producto en los cuerpos.  Sean $x =  (x_1,\ldots,x_n)$, $y = (y_1,\ldots,y_n)$, $z = (z_1,\ldots,z_n)$ en $V$ y $\lambda, \lambda_1,\lambda_2 \in \K$:
                 \begin{enumerate}
-                    \item[S1.] $x + y = y +x$, pues $x_i + y_i = y_i + x_i$, $1 \le i \le n$.
-                    \item[S2.]  $(x+ y)+ z = x + (y+z)$,  pues $(x_i + y_i) + z_i = x_i + (y_i + z_i)$, $1 \le i \le n$. 
-                    \item[S3.] Sea $0 = (0,\ldots,0)$,  entonces $0+x = (0+x_1,\ldots, 0+x_n) =(x_1,\ldots,x_n) =x$.
-                    \item[S4.] Sea $-x = (-x_1,\ldots,-x_n)$,  entonces $x + (-x) = (x_1-x_1,\ldots,x_n-x_n) =  (0,\ldots,0)$.
-                    \item[P1.] $1.x=(1.x_1,\ldots,1.x_n) = (x_1,\ldots,x_n)=x$.
-                    \item[P2.] $\lambda_1(\lambda_2x) = (\lambda_1\lambda_2)x$ pues $\lambda_1(\lambda_2x_i) =(\lambda_1\lambda_2)x_i$, $1 \le i \le n$.
-                    \item[D1.] $\lambda(x+y) = \lambda x +\lambda y$,  pues $\lambda(x_i+y_i) = \lambda x_i + \lambda y_i$, $1 \le i \le n$.
-                    \item[D2.] $(\lambda_1+\lambda_2)x = \lambda_1x + \lambda_2 x$, pues $ (\lambda_1+\lambda_2)x_i = \lambda_1x_i + \lambda_2 x_i$, $1 \le i \le n$.
+                    \item[\textbf{S1.}] $x + y = y +x$, pues $x_i + y_i = y_i + x_i$, $1 \le i \le n$.
+                    \item[\textbf{S2.}]  $(x+ y)+ z = x + (y+z)$,  pues $(x_i + y_i) + z_i = x_i + (y_i + z_i)$, $1 \le i \le n$. 
+                    \item[\textbf{S3.}] Sea $0 = (0,\ldots,0)$,  entonces $0+x = (0+x_1,\ldots, 0+x_n) =(x_1,\ldots,x_n) =x$.
+                    \item[\textbf{S4.}] Sea $-x = (-x_1,\ldots,-x_n)$,  entonces $x + (-x) = (x_1-x_1,\ldots,x_n-x_n) =  (0,\ldots,0)$.
+                    \item[\textbf{P1.}] $1.x=(1.x_1,\ldots,1.x_n) = (x_1,\ldots,x_n)=x$.
+                    \item[\textbf{P2.}] $\lambda_1(\lambda_2x) = (\lambda_1\lambda_2)x$ pues $\lambda_1(\lambda_2x_i) =(\lambda_1\lambda_2)x_i$, $1 \le i \le n$.
+                    \item[\textbf{D1.}] $\lambda(x+y) = \lambda x +\lambda y$,  pues $\lambda(x_i+y_i) = \lambda x_i + \lambda y_i$, $1 \le i \le n$.
+                    \item[\textbf{D2.}] $(\lambda_1+\lambda_2)x = \lambda_1x + \lambda_2 x$, pues $ (\lambda_1+\lambda_2)x_i = \lambda_1x_i + \lambda_2 x_i$, $1 \le i \le n$.
                 \end{enumerate} 
                 
                 
@@ -94,13 +93,13 @@
                 \begin{equation*}
                 \K[x] = \{a_nx^n + \cdots + a_1x + a_0: n \in \mathbb N_0, a_i \in \K\text{, para } 0\le i \le n  \}
                 \end{equation*}
-                el conjunto de polinomios sobre $\K$. Entonces si $P(x), Q(x) \in \K[x]$, definimos la suma de polinomios de la siguiente manera: sea $P(x) = a_nx^n + \cdots + a_1x + a_0$ y $Q(x)= b_nx^n + \cdots + b_1x + a_0$ (completamos coeficientes con 0 hasta que ambos tengan el mismo $n$), entonces
+                el conjunto de polinomios sobre $\K$. Entonces si $p(x), q(x) \in \K[x]$, definimos la suma de polinomios de la siguiente manera: sea $p(x) = a_nx^n + \cdots + a_1x + a_0$ y $q(x)= b_nx^n + \cdots + b_1x + a_0$ (completamos coeficientes con $0$ hasta que ambos tengan el mismo $n$), entonces
                 \begin{equation*}
-                (P+Q)(x) = (a_n+b_n)x^n + \cdots + (a_1+ b_1)x + (a_0+b_0).
+                (p+q)(x) = (a_n+b_n)x^n + \cdots + (a_1+ b_1)x + (a_0+b_0).
                 \end{equation*}
                 Si $\lambda \in \K$, 
                 \begin{equation*}
-                (\lambda P)(x) = \lambda a_nx^n + \cdots + \lambda a_1x + \lambda a_0.
+                (\lambda p)(x) = \lambda a_nx^n + \cdots + \lambda a_1x + \lambda a_0.
                 \end{equation*}
                 Por ejemplo,
                 \begin{align*}
@@ -130,7 +129,7 @@
                 
                 Con respecto a $\operatorname{C}(\R)$, hemos visto en el primer curso de análisis matemático  que la suma de funciones continuas es una función continua y, por lo tanto, $f+g$ es continua si $f$ y $g$ lo son.  
                 
-                El producto de un escalar $c$ por una función continua $f$,  puede ser visto como el producto de una función que es constante y vale $\lambda $ (y es continua) y la función $f$. Por lo tanto, $\lambda f$ es producto de funciones continuas y, en consecuencia, es una función continua.  Resumiendo,
+                El producto de un escalar $\lambda$ por una función continua $f$,  puede ser visto como el producto de una función que es constante y vale $\lambda $ (y es continua) y la función $f$. Por lo tanto, $\lambda f$ es producto de funciones continuas y, en consecuencia, es una función continua.  Resumiendo,
                 \begin{equation*}
                 f, g \in \operatorname{C}(\R) \Rightarrow f+g \in \operatorname{C}(\R), \qquad \lambda \in \R, f \in \operatorname{C}(\R) \Rightarrow \lambda f \in \operatorname{C}(\R).
                 \end{equation*}
@@ -160,9 +159,9 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 
             \begin{proposicion}\label{prop-basicas-ev} Sea $V$ un espacio vectorial sobre el cuerpo $\K$. Entonces,
                 \begin{enumerate}
-                    \item\label{c*0=0} $\lambda.0=0$, para todo $\lambda \in \K$;
+                    \item\label{c*0=0} $\lambda\cdot 0=0$, para todo $\lambda \in \K$;
                     \item\label{0*c=0} $0.v = 0$, para todo $v \in V$;
-                    \item\label{c*v=0} si $\lambda \in \K$, $v \in V, v\ne 0$ y $\lambda.v=0$,  entonces $\lambda =0$;
+                    \item\label{c*v=0} si $\lambda \in \K$, $v \in V, v\ne 0$ y $\lambda\cdot v=0$,  entonces $\lambda =0$;
                     \item\label{-1*v=-v} $(-1).v = -v$, para todo $v \in V$.
                 \end{enumerate}
             \end{proposicion}
@@ -171,19 +170,19 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
                 \ref{c*0=0} Como $0$ es el elemento neutro de la suma en $V$, entonces $0 = 0 +0$, luego 
                 \begin{equation*}
                     \begin{array}{rllll}
-                    \lambda.0 &=& \lambda.(0+0)&\quad&\text{(propiedad distributiva $\Rightarrow$)}  \\
-                    \lambda.0&=& \lambda.0 + \lambda.0 && \text{(sumando a la izquierda $-\lambda.0$ $\Rightarrow$)} \\
-                \lambda.0 - \lambda.0 &=& \lambda.0 + \lambda.0 -\lambda.0 && \text{(opuesto $\Rightarrow$)}\\
-                    0 &=& \lambda.0 +0  &&\text{(elemento neutro $\Rightarrow$)}\\
-                    0 &=& \lambda.0.
+                    \lambda\cdot 0 &=& \lambda\cdot (0+0)&\quad&\text{(propiedad distributiva $\Rightarrow$)}  \\
+                    \lambda\cdot 0&=& \lambda\cdot 0 + \lambda\cdot 0 && \text{(sumando a la izquierda $-\lambda\cdot 0$ $\Rightarrow$)} \\
+                \lambda\cdot 0 - \lambda\cdot 0 &=& \lambda\cdot 0 + \lambda\cdot 0 -\lambda\cdot 0 && \text{(opuesto $\Rightarrow$)}\\
+                    0 &=& \lambda\cdot 0 +0  &&\text{(elemento neutro $\Rightarrow$)}\\
+                    0 &=& \lambda\cdot 0.
                     \end{array}
                 \end{equation*}
                 
                 \ref{0*c=0} Análoga a \ref{c*0=0}.
                 
-                \ref{c*v=0} Supongamos que  $\lambda.v=0$ y  $\lambda \ne 0$, entonces, por (1), $ \lambda^{-1}(\lambda.v)=0$, pero $\lambda^{-1}(\lambda.v) = (\lambda^{-1}\lambda).v = 1.v = v$. Luego $0=v$,  que contradice la hipótesis. El absurdo vino de suponer que $\lambda \ne 0$.
+                \ref{c*v=0} Supongamos que  $\lambda\cdot v=0$ y  $\lambda \ne 0$, entonces, por (1), $ \lambda^{-1}(\lambda\cdot v)=0$, pero $\lambda^{-1}(\lambda\cdot v) = (\lambda^{-1}\lambda)\cdot v = 1\cdot v = v$. Luego $0=v$,  que contradice la hipótesis. El absurdo vino de suponer que $\lambda \ne 0$.
                 
-                \ref{-1*v=-v}  $(-1).v +v = (-1).v +1.v = (-1+1).v$,  esto último es por la propiedad distributiva. Ahora bien $(-1+1).v = 0.v \overset{(2)}{=} 0$. Es decir   $(-1).v +v = 0$ y por lo tanto  $(-1).v$ es el opuesto de $v$ (que es $-v$).  
+                \ref{-1*v=-v}  $(-1)\cdot v +v = (-1)\cdot v +1\cdot v = (-1+1)\cdot v$,  esto último es por la propiedad distributiva. Ahora bien $(-1+1)\cdot v = 0\cdot v \overset{(2)}{=} 0$. Es decir   $(-1)\cdot v +v = 0$ y por lo tanto  $(-1)\cdot v$ es el opuesto de $v$ (que es $-v$).  
             
             \end{proof}
    
@@ -250,7 +249,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
             \item 	Por otro lado, si $\lambda \in \K$, $\lambda(0,x_2,\ldots,x_n) = (0,\lambda x_2,\ldots,\lambda x_n) \in W$.
         \end{enumerate}
         La demostración para $j >1$ es completamente análoga. 
-        \item El  conjunto $\R[x] = \left\{P(x): P(x) \text{ es polinomio en $\R$ } \right\}$, es subespacio de $\operatorname{F}(\R)$, pues $\R[x] \subset \operatorname{F}(\R)$ y las operaciones de suma y producto por un escalar son cerradas en $\R[x]$.
+        \item El  conjunto $\R[x] = \left\{p(x): p(x) \text{ es polinomio en $\R$ } \right\}$, es subespacio de $\operatorname{F}(\R)$, pues $\R[x] \subset \operatorname{F}(\R)$ y las operaciones de suma y producto por un escalar son cerradas en $\R[x]$.
         \item De forma análoga, el conjunto $\R[x]$ es subespacio de $\operatorname{C}(\R)$,  el espacio de funciones continuas de  $\R$.
         \item Sea $W= \left\{A \in M_n(\K): A^\t = A \right\}$. Es claro que  $A \in W$ si y sólo si $[A]_{ij} = [A]_{ji}$. Veamos que  $W$ es subespacio de $M_n(\K)$: 
         \begin{enumerate}
@@ -277,7 +276,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         Es decir, $W$  es el subconjunto de $\K^n$ de las soluciones del sistema $Ax=0$. Entonces, $W$  es un subespacio de $\K^n$:
         \begin{enumerate}
             \item si $x,y \in W$, es decir si $Ax=0$ y $Ay=0$,  entonces $A(x+y) = Ax + Ay = 0 + 0 = 0$, luego , $x+y \in W$;
-            \item si $\lambda \in \K$ y $x \in W$, entonces $A(\lambda x) = \lambda Ax =\lambda.0 =0$, luego $\lambda x \in W$. 
+            \item si $\lambda \in \K$ y $x \in W$, entonces $A(\lambda x) = \lambda Ax =\lambda\cdot 0 =0$, luego $\lambda x \in W$. 
         \end{enumerate}
     \end{enumerate}
 \end{ejemplo*}
@@ -537,29 +536,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         \end{enumerate}
     \end{ejemplo*}
 
-    Finalmente, daremos la definición de espacio fila y espacio columna de una matriz, definiciones  que veremos posteriormente son de importancia en la teoría. 
-
-    \begin{definicion}\label{espacio-fila-columna}
-        Sea $A = [a_{ij}] \in M_{m \times n}(\K)$. El \textit{vector fila $i$} es el vector  $(a_{i1},\ldots,a_{in}) \in \K^n$. El \textit{espacio fila}\index{matriz!espacio fila} de $A$ es el subespacio de $\K^n$ generado por los $m$ vectores fila de $A$.  De forma análoga, se define  el vector columna $j$ al vector $(a_{1j},\ldots,a_{mj}) \in \K^m$ y  el \textit{espacio columna}\index{matriz!espacio columna} de $A$ es el subespacio de $\K^m$ generado por los $n$ vectores columna de $A$.  
-    \end{definicion}
-
-    \begin{ejemplo*}
-        Sea
-        $$
-        A = \begin{bmatrix}
-        1&2&0&3&0\\ 0&0&1&4&0 \\0&0&0&0&1
-        \end{bmatrix} \in \C^{3 \times 5},
-        $$
-        entonces, por definición, el espacio fila es el subespacio generados por las filas de la matriz: 
-        $$
-        W = \la  (1,2,0,3,0), (0,0,1,4,0), (0,0,0,0,1) \ra_\C.
-        $$ 
-        También, como vimos en \ref{ejemplos2-1} del ejemplo de la p. \pageref{ejemplos2}, el espacio fila puede ser caracterizado de forma implícita:
-        \begin{align*}
-        W =\left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
-        \end{align*}
-    \end{ejemplo*}
-\end{section}		
+    
         
 \begin{section}{Bases y dimensi\'on}\label{seccion-bases-y-dimension}
     \begin{definicion}
@@ -1018,6 +995,29 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
             \end{align*}
             Concluimos entonces que $(-2,-5,1,0),(-4, -3,0,1)$  es una base de $W$ y, por lo tanto,  su dimensión es 2.
         \end{proof}
+
+        
+    \begin{definicion}\label{espacio-fila-columna}
+        Sea $A = [a_{ij}] \in M_{m \times n}(\K)$. El \textit{vector fila $i$} es el vector  $(a_{i1},\ldots,a_{in}) \in \K^n$. El \textit{espacio fila}\index{matriz!espacio fila} de $A$ es el subespacio de $\K^n$ generado por los $m$ vectores fila de $A$.  De forma análoga, se define  el vector columna $j$ al vector $(a_{1j},\ldots,a_{mj}) \in \K^m$ y  el \textit{espacio columna}\index{matriz!espacio columna} de $A$ es el subespacio de $\K^m$ generado por los $n$ vectores columna de $A$.  
+    \end{definicion}
+
+    \begin{ejemplo*}
+        Sea
+        $$
+        A = \begin{bmatrix}
+        1&2&0&3&0\\ 0&0&1&4&0 \\0&0&0&0&1
+        \end{bmatrix} \in \C^{3 \times 5},
+        $$
+        entonces, por definición, el espacio fila es el subespacio generados por las filas de la matriz: 
+        $$
+        W = \la  (1,2,0,3,0), (0,0,1,4,0), (0,0,0,0,1) \ra_\C.
+        $$ 
+        También, como vimos en \ref{ejemplos2-1} del ejemplo de la p. \pageref{ejemplos2}, el espacio fila puede ser caracterizado de forma implícita:
+        \begin{align*}
+        W =\left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
+        \end{align*}
+    \end{ejemplo*}
+\end{section}		
 
         \begin{teorema}
             Sean $A$ matriz $m \times n$ con coeficientes en $\K$, $P$ matriz $m\times m$ invertible y $B =PA$. Entonces el el espacio fila de $A$ es igual al espacio fila de $B$.
