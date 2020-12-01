@@ -11,13 +11,19 @@
 		},
 		{
 			"path": "G:\\Mi unidad\\ALG2-2020\\Tarea"
+		},
+		{
+			"path": "G:\\Mi unidad\\ALG2-2020\\prefinal"
 		}
 	],
 	"settings": {
 		"cSpell.language": "es,es-ES",
 		"cSpell.words": [
 			"determinate",
+			"doto",
 			"ejemplos",
+			"m",
+			"médoto",
 			"permutaciones",
 			"resulatdo",
 			"tirangular"

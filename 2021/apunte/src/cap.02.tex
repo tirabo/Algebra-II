@@ -18,28 +18,26 @@
             donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$.
             
             Llamaremos a \eqref{sist-eq} un \textit{sistema de $m$ ecuaciones lineales con $n$ incógnitas.}\index{sistema de ecuaciones lineales} A una  $n$-tupla $(x_1,\ldots,x_n)$ de elementos de $\K^n$ que satisface cada una de las ecuaciones de  \eqref{sist-eq} la llamaremos una \textit{solución del sistema}. Si $y_1 = \cdots = y_m=0$, el sistema se llamará \textit{homogéneo.} En caso contrario el sistema se denominará \textit{no homogéneo.}\index{sistema de ecuaciones lineales!homogéneo}\index{sistema de ecuaciones lineales!no  homogéneo}
-            
+
             \begin{ejemplo*}
-                Los siguientes son sistemas de 2 ecuaciones lineales con 2 incógnitas:
-                \begin{equation*}
-                \begin{matrix}
-                \text{(1)} & 
-                \begin{matrix}
-                2x_1 + 8x_2 &= 0 &  \\
-                2x_1 + x_2 &=  1& 
-                \end{matrix} &\quad&
-                \text{(2)} & 
-                \begin{matrix}
-                2x_1 + x_2 &= 0 &  \\
-                2x_1 - x_2 &=  1& 
-                \end{matrix} &\quad&
-                \text{(3)} & 
-                \begin{matrix}
-                2x_1 + x_2 &= 1 &  \\
-                4x_1 +2 x_2 &=  2& 
-                \end{matrix} 
-                \end{matrix}
-                \end{equation*}
+                Los siguientes son sistemas de $2$ ecuaciones lineales con $2$ incógnitas:
+                
+                \begin{multicols}{3}
+                    \begin{enumerate}
+                        \item $\begin{matrix*}[l]
+                            2x_1 + 8x_2 &= 0 &  \\
+                            2x_1 + x_2 &=  1& 
+                            \end{matrix*}$
+                        \item $\begin{matrix*}[l]
+                            2x_1 + x_2 &= 0 &  \\
+                            2x_1 - x_2 &=  1& 
+                            \end{matrix*}$
+                        \item $ \begin{matrix*}[l]
+                            2x_1 + x_2 &= 1 &  \\
+                            4x_1 +2 x_2 &=  2& 
+                            \end{matrix*}$
+                    \end{enumerate}
+                \end{multicols}   
             \end{ejemplo*} 
             
             \begin{ejemplo}\label{ej-sist-1}
@@ -202,16 +200,20 @@ x=-1\quad y=0,\quad z=1.
 \end{proof}
 
 Tanto en el ejemplo \ref{ej-sist-1} como en el ejemplo \ref{ej-sist-2} eliminamos variables usando alguna de las siguientes operaciones entre ecuaciones:
-    \begin{enumerate}
-        \item[E1.] multiplicar una ecuación por una constante no nula,  
-        \item[E2.] sumar a una ecuación una constante por otra, y
-        \item[E3.] permutar ecuaciones.  
-    \end{enumerate}
-    Veremos en  las secciones siguientes que estas operaciones son ``reversibles'' y que con ellas podemos reducir todo sistema de ecuaciones a uno cuyas soluciones son obvias. 
+    \begin{enumelem}
+        \item\label{e1-v1} multiplicar una ecuación por una constante no nula,  
+        \item\label{e2-v1} sumar a una ecuación una constante por otra, y
+        \item\label{e3-v1} permutar ecuaciones.  
+    \end{enumelem}
+    
+Cada una de estas operaciones entre ecuaciones es  ``reversible'': en el caso de \ref{e1-v1}, si multiplicamos una ecuación por una constante $c\ne 0$, multiplicando por $1/c$ volvemos a la ecuación original.  En el caso de \ref{e2-v1}, si modificamos la ecuación $i$-ésima sumándole $c$ veces la ecuación $j$-ésima, podemos recuperar el sistema de ecuaciones original, restándole a la ecuación $i$-ésima  $c$ veces la ecuación $j$-ésima. Finalmente, en el caso  de  \ref{e3-v1}, si permutamos la ecuación $i$  con la $j$,  volvemos al sistema original haciendo la misma permutación. 
+
+
+Veremos en las siguientes secciones que con las operaciones \ref{e1-v1}, \ref{e2-v1} y \ref{e3-v1} podemos reducir todo sistema de ecuaciones a uno cuyas soluciones son obvias. Eso es lo que hicimos en el ejemplo \ref{ej-sist-2}.  
     
     
 \begin{ejemplo*}
-Así como  haciendo operaciones del tipo E1, E2 y E3  en la ecuaciones del ejemplo \ref{ej-sist-2}   llegamos de 
+Así como  haciendo operaciones del tipo\ref{e1-v1}, \ref{e2-v1} y \ref{e3-v1}   en la ecuaciones del ejemplo \ref{ej-sist-2}   llegamos de 
     
     \begin{equation*}
     \begin{matrix}
@@ -236,8 +238,6 @@ x& -3y & +3z & =&2 \\
 2x& -y & +5z & =&3
 \end{matrix}.
 \end{equation*}
-Luego,  ambos sistemas tienen las mismas soluciones.
-
 \end{ejemplo*}
 
 
@@ -562,27 +562,27 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                 
                 \begin{definicion}
                     Sea $A = [a_{ij}]$ una matriz $m \times  n$, diremos que $e$ es una  \textit{operación elemental por fila}\index{operación elemental por fila} si aplicada a la matriz $A$ se obtiene  $e(A)$ de la siguiente manera:
-                    \begin{enumerate}
-                        \item[E1.]\label{elem-1} multiplicando la fila $r$ por una constante $c\not=0$, o
-                        \item[E2.]\label{elem-2} cambiando la fila $F_r$ por $F_r + tF_s$ con $r\not=s$, para algún $t \in \K$, o
-                        \item[E3.]\label{elem-3} permutando la fila $r$ por la fila $s$.   
-                    \end{enumerate}
-                    E1, E2 y E3 son tres tipos de operaciones elementales, más precisamente sea 
+                    \begin{enumelem}
+                        \item\label{elem-1} multiplicando la fila $r$ por una constante $c\not=0$, o
+                        \item\label{elem-2} cambiando la fila $F_r$ por $F_r + tF_s$ con $r\not=s$, para algún $t \in \K$, o
+                        \item\label{elem-3} permutando la fila $r$ por la fila $s$.   
+                    \end{enumelem}
+                    \ref{elem-1}, \ref{elem-2} y \ref{elem-1} son las tres operaciones elementales por fila. Veamos más precisamente  el efecto que tienen ellas sobre matrices genéricas. Sea 
                     \begin{equation*}
                     A = \begin{bmatrix} 
                     F_1 \\  \vdots \\	F_m
                     \end{bmatrix},
                     \end{equation*} entonces 
-                    \begin{enumerate}
-                        \item[E1.] si multiplicamos la fila $r$ por $c \not=0$, 
+                    \begin{enumelem}
+                        \item si multiplicamos la fila $r$ por $c \not=0$, 
                         $$ e(A) = \begin{bmatrix} 
                         F_1 \\ 	\vdots \\ cF_r \\ \vdots \\	F_m
                         \end{bmatrix} $$ con $c \not=0$, o
-                        \item[E2.] si $r\not=s$, multiplicamos la fila $s$ por  $t \in \K$ y la sumamos a la fila $r$, 
+                        \item si $r\not=s$, multiplicamos la fila $s$ por  $t \in \K$ y la sumamos a la fila $r$, 
                         $$ e(A)= \begin{bmatrix} 
                         F_1 \\  \vdots \\ F_r + t F_s\\ \vdots \\	F_m
                         \end{bmatrix}.$$
-                        \item[E3.] La última operación elemental es  permutar la fila $r$ por la fila $s$:
+                        \item La última operación elemental es  permutar la fila $r$ por la fila $s$:
                         $$
                         A= \begin{bmatrix} 
                         F_1 \\ 	\vdots \\ F_r \\ \vdots \\ F_s\\ \vdots \\	F_m
@@ -590,19 +590,19 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                         e(A)= \begin{bmatrix} 
                         F_1 \\ 	\vdots \\ F_s \\ \vdots \\ F_r\\ \vdots \\	F_m
                         \end{bmatrix}.$$
-                    \end{enumerate}
+                    \end{enumelem}
                 \end{definicion} 
 
                 Podemos describir en forma más compacta una operación elemental por fila de la matriz $A=[a_{ij}]$.
-                \begin{enumerate}
-                    \item[E1.] Multiplicar la fila $r$ por $c \not=0$
+                \begin{enumelem}
+                    \item Multiplicar la fila $r$ por $c \not=0$
                     $$
                     e(A)_{ij} = \left\{ \begin{matrix}
                     a_{ij}& \quad &\text{si $i\not=r$} \\
                     ca_{ij}& \quad &\text{si $i=r$}
                     \end{matrix}\right.
                     $$
-                    \item[E2.] Si $r\not=s$, multiplicar la fila $s$ por $t \in \K$ y sumarla a la fila $r$
+                    \item Si $r\not=s$, multiplicar la fila $s$ por $t \in \K$ y sumarla a la fila $r$
                     $$
                     e(A)_{ij} = \left\{ \begin{matrix}
                     a_{ij}& \quad &\text{si $i\not=r$} \\
@@ -610,7 +610,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \end{matrix}\right.
                     $$
                     con $t \in \K$.
-                    \item[E3.] Permutar la fila $r$ por la fila $s$
+                    \item Permutar la fila $r$ por la fila $s$
                     $$
                     e(A)_{ij} = \left\{ \begin{matrix}
                     a_{ij}& \quad &\text{si $i\not=r,s$}
@@ -618,7 +618,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \\ a_{rj}& \quad &\text{si $i=s$}
                     \end{matrix}\right.
                     $$
-                \end{enumerate} 
+                \end{enumelem} 
                 
                 \vskip .5cm 
                 \begin{ejemplo*}
@@ -630,30 +630,29 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \end{bmatrix}.
                     $$
                     Ejemplificaremos las operaciones elementales
-                    
-                    E1. Multipliquemos la fila 2 por -2, obtenemos
-                    $$
-                    e(A) = 
-                    \begin{bmatrix}
-                    2&1\\2&0\\4&-5
-                    \end{bmatrix}.
-                    $$
-                    
-                    E2. Sumemos a la fila 3 dos veces la fila 1,
-                    $$
-                    e(A) = 
-                    \begin{bmatrix}
-                    2&1\\-1&0\\8&-3
-                    \end{bmatrix}.
-                    $$
-                    
-                    E3. Permutemos la fila 2 con la fila 3.
-                    $$
-                    e(A) = 
-                    \begin{bmatrix}
-                    2&1\\4&-5\\-1&0
-                    \end{bmatrix}.
-                    $$
+                    \begin{enumelem}
+                        \item Multipliquemos la fila $2$ por $-2$, obtenemos
+                        $$
+                        e(A) = 
+                        \begin{bmatrix}
+                        2&1\\2&0\\4&-5
+                        \end{bmatrix}.
+                        $$
+                        \item Sumemos a la fila $3$ dos veces la fila $1$,
+                        $$
+                        e(A) = 
+                        \begin{bmatrix}
+                        2&1\\-1&0\\8&-3
+                        \end{bmatrix}.
+                        $$
+                        \item Permutemos la fila $2$ con la fila $3$.
+                        $$
+                        e(A) = 
+                        \begin{bmatrix}
+                        2&1\\4&-5\\-1&0
+                        \end{bmatrix}.
+                        $$
+                    \end{enumelem}
                 \end{ejemplo*}
                 
                 Una característica importante de las operaciones elementales es que cada una tiene como ``inversa'' otra operación elemental. 
@@ -662,11 +661,11 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     A cada operación elemental por fila $e$ le corresponde otra operación elemental $e^\prime$ (del mismo tipo que $e$) tal que $e^\prime(e(A)) = A$ y $e(e^\prime(A)) = A$. En otras palabras, la operación inversa de una operación elemental es otra operación elemental del mismo tipo.  
                 \end{teorema}
                 \begin{proof} \
-                    \begin{enumerate}
-                        \item[E1.] La operación inversa de multiplicar la fila $r$ por $c\not=0$ es multiplicar la misma fila por $1/r$.
-                        \item[E2.] La operación inversa de multiplicar la fila $s$ por  $t \in \K$ y sumarla a la fila $r$ es multiplicar  la fila $s$ por  $-t \in \K$ y sumarla a la fila $r$.
-                        \item[E3.] La operación inversa de permutar la fila $r$ por la fila $s$ es la misma operación.
-                    \end{enumerate}
+                    \begin{enumelem}
+                        \item La operación inversa de multiplicar la fila $r$ por $c\not=0$ es multiplicar la misma fila por $1/r$.
+                        \item La operación inversa de multiplicar la fila $s$ por  $t \in \K$ y sumarla a la fila $r$ es multiplicar  la fila $s$ por  $-t \in \K$ y sumarla a la fila $r$.
+                        \item La operación inversa de permutar la fila $r$ por la fila $s$ es la misma operación.
+                    \end{enumelem}
                 \end{proof}
                 
                 \begin{definicion} 
@@ -878,21 +877,21 @@ Luego,  ambos sistemas tienen las mismas soluciones.
     
     
     
-            \begin{section}{M\'etodo de Gauss }\label{seccion-metodo-de-gauss} Ahora avanzaremos en una forma sistemática para hallar todas las soluciones de un sistema de ecuaciones.
+            \begin{section}{Método de eliminación de Gauss }\label{seccion-metodo-de-gauss} Ahora avanzaremos en una forma sistemática para hallar todas las soluciones de un sistema de ecuaciones.
     
             
             \begin{subsection}{Matrices reducidas por filas} 
                 
                 \begin{definicion}
                     Una matriz $A$ de $m \times n$ se llama \textit{reducida por filas}\index{matriz!reducida por filas} o \textit{MRF}\index{MRF} si 
-                    \begin{enumerate}
-                        \item[(a)] la primera entrada no nula de una fila de $A$ es 1. Este 1 es llamado \textit{1 principal}\index{1 principal de una MRF}.
-                        \item[(b)] Cada columna de $A$ que contiene un  1 principal tiene todos los otros elementos iguales a 0. 
+                    \begin{enumerate}[label=\textit{\alph*)}, ref=\textit{\alph*)}]
+                        \item la primera entrada no nula de una fila de $A$ es $1$. Este $1$ es llamado \textit{$1$ principal}\index{$1$ principal de una MRF}.
+                        \item Cada columna de $A$ que contiene un  $1$ principal tiene todos los otros elementos iguales a 0. 
                     \end{enumerate} 
                 Una matriz $A$ de $m \times n$ es \textit{escalón reducida por fila}\index{matriz!escalón reducida por fila} o \textit{MERF}\index{MERF} si,  es  MRF y
-                \begin{enumerate}
-                    \item[\textit{c})] todas las filas cuyas entradas son todas iguales a cero están al final de la matriz, y
-                    \item[\textit{d})] en dos filas consecutivas no nulas el 1 principal de la fila inferior está más a la derecha que el 1 principal de la fila superior. 
+                \begin{enumerate}[resume*]
+                    \item todas las filas cuyas entradas son todas iguales a cero están al final de la matriz, y
+                    \item en dos filas consecutivas no nulas el $1$ principal de la fila inferior está más a la derecha que el $1$ principal de la fila superior. 
                 \end{enumerate}
                 
                 \end{definicion} 
@@ -944,7 +943,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     0 & 0 & \cdots & 1
                     \end{bmatrix}
                     \end{equation*}
-                    (la matriz cuadrada con 1's en la diagonal y 0's en las otras entradas). Llamaremos a $\Id_n$ la \textit{matriz identidad $n \times n$}\index{matriz!identidad $n \times n$}.
+                    (la matriz cuadrada con $1$'s en la diagonal y $0$'s en las otras entradas). Llamaremos a $\Id_n$ la \textit{matriz identidad $n \times n$}\index{matriz!identidad $n \times n$}.
                 \end{definicion}
                 
                 Observar que $\Id_n$ es una matriz escalón reducida por fila.
@@ -964,7 +963,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     a_{m1}& \cdots & a_{m,k-1} & a_{mk} & \cdots & a_{mn} \\
                     \end{bmatrix}.
                     \end{equation*} 
-                    Esta matriz es equivalente por fila a $A_1$ donde $A_1$ se obtiene dividiendo la fila 1 por $a_{1k}$. Luego 
+                    Esta matriz es equivalente por fila a $A_1$ donde $A_1$ se obtiene dividiendo la fila $1$ por $a_{1k}$. Luego 
                     \begin{equation*}
                     A_1 = \begin{bmatrix}
                     0 & \cdots & 0 & 1 & \cdots & a_{1n} \\
@@ -975,7 +974,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \end{equation*}
                     (donde los nuevos $a_{1j}$ son  los originales divididos por $a_{1k}$).  
                     
-                    Haciendo $m-1$ equivalencias por fila (reemplazamos $F_i$ por $F_i - a_{ik}F_1$) podemos hacer nulas todas las entradas debajo del  1 principal y obtener la matriz equivalente por fila
+                    Haciendo $m-1$ equivalencias por fila (reemplazamos $F_i$ por $F_i - a_{ik}F_1$) podemos hacer nulas todas las entradas debajo del  $1$ principal y obtener la matriz equivalente por fila
                     \begin{equation*}
                     A_2 = \begin{bmatrix}
                     0 & \cdots & 0 & 1 & \cdots & a_{1n} \\
@@ -986,34 +985,16 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \end{equation*}
                     (obviamente los nuevos $a_{ij}$ están transformados por las equivalencias).
                     
-                    El mismo procedimiento que hicimos arriba lo podemos hacer en la fila 2,  de tal forma que la fila 2 es cero u obtenemos otro 1 principal y todas las demás entradas de la columna donde se encuentra el 1 principal son nulas. 
+                    El mismo procedimiento que hicimos arriba lo podemos hacer en la fila $2$,  de tal forma que la fila $2$ es cero u obtenemos otro $1$ principal y todas las demás entradas de la columna donde se encuentra el $1$ principal son nulas. 
                     
-                    Repitiendo este procedimiento en todas las filas hasta la última, obtenemos que cada fila es, o bien 0, o bien la primera entrada no nula es  1 y todas las entradas en la misma columna de este 1 principal son nulas.   Esto, claramente, nos dice que hemos obtenido una matriz reducida por fila.  
+                    Repitiendo este procedimiento en todas las filas hasta la última, obtenemos que cada fila es, o bien 0, o bien la primera entrada no nula es  $1$ y todas las entradas en la misma columna de este $1$ principal son nulas.   Esto, claramente, nos dice que hemos obtenido una matriz reducida por fila.  
                     
                  Finalmente, intercambiando filas podemos entonces obtener una matriz escalón reducida por fila.
 
-                    
+                
                 \end{proof}
                 
-                El procedimiento que usamos en la demostración del teorema anterior nos da un algoritmo para obtener una MERF a partir de una matriz arbitraria.
-                
-                \begin{observacion}[\textsc{Método para reducir a MERF}] \label{metodo-merf}  
-                    \
-                                    
-                \begin{enumerate}
-                    \item \label{paso-0} Nos ubicamos en la primera fila.
-                    \item \label{paso-1} Si la fila es 0 y no es la última, pasar a la fila siguiente.
-                    \item \label{paso-2} Si la fila no es 0, 
-                    \begin{enumerate}
-                        \item si el primera entrada no nula está en  la columna $k$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale 1),
-                        \item con operaciones elementales del tipo $F_r+ tF_s$ hacer 0  todas las entradas en la columna $k$ (menos la de la columna actual).    
-                    \end{enumerate}
-                    \item \label{paso-3} Si la fila es la última, pasar al \eqref{paso-4}. Si la fila no es la última, pasar a la fila siguiente e ir al paso \eqref{paso-1}.  
-                    \item \label{paso-4} Permutar las filas hasta obtener una MERF. 
-                \end{enumerate}
-            \end{observacion}
-                
-                
+                          
                 \begin{ejemplo*} Ejemplifiquemos con la matriz que aparece en el ejemplo de la p. \pageref{ejemplo2.11},  es decir con la matriz
                     $$
                     \begin{bmatrix} 2& -1&1& 2 \\ 1&-4 &0&-1 \\ 2&6&-1&3 \end{bmatrix}.
@@ -1041,16 +1022,62 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                 
 
                 
-            
                 
-    
+
+                \begin{subsection}{Método de eliminación de Gauss}\label{elim-gauss} Consideremos el siguiente sistema de $m$ ecuaciones lineales con $n$ incógnitas:
+                    \begin{equation}\label{eq-sistema-no-homogeneo}
+                    \begin{matrix}
+                    a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+                    \vdots&  &\vdots& &&  &\vdots \\
+                    a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_n
+                    \end{matrix}
+                    \end{equation}
+                    
+                    Planteado  matricialmente el sistema es $AX=Y$  y denotamos $[A|Y]$ la matriz ampliada del sistema. El  procedimiento que explicaremos a continuación nos permitirá obtener en forma algorítmica y sencilla las soluciones del sistema \eqref{eq-sistema-no-homogeneo}. 
+                    
+                    Lo primero que debemos hacer es utilizar el algoritmo de la demostración del teorema \ref{th-merf}  para obtener una MERF de $A$, pero aplicándolo a la matriz ampliada. Es decir:  
+
+                \begin{comment}                    
+                    \begin{enumerate}
+                        \item \label{paso-0} Nos ubicamos en la primera fila de $[A|bY]$.
+                        \item \label{paso-1} Si la fila de $A$ es $0$ y no es la última, pasar a la fila siguiente.
+                        \item \label{paso-2} Si la fila de $A$  no es $0$, 
+                        \begin{enumerate}
+                            \item si el primera entrada no nula está en  la columna $k$ de $A$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale $1$),
+                            \item con operaciones elementales del tipo $F_r+ tF_s$ hacer $0$  todas las entradas en la columna $k$ (menos la de la columna actual).    
+                        \end{enumerate}
+                        De esta forma obtenemos una nueva matriz ampliada,  que llamaremos, nuevamente, $[A|Y]$, y pasamos al siguiente paso. 
+                        \item \label{paso-3} Si la fila es la última, pasar al \ref{paso-4}. Si la fila no es la última, pasar a la fila siguiente  e ir al paso \ref{paso-1}.  
+                        \item \label{paso-4} Permutar las filas hasta obtener una MERF de $A$. 
+                    \end{enumerate}
+                \end{comment}
+
+                \begin{enumerate}
+                    \item \label{paso-0} Nos ubicamos en la primera fila de $[A|Y]$.
+                    \item \label{paso-1}  Si la fila es la última, pasar al \ref{paso-4}. Si la fila no es la última, continuar con el procedimiento siguiente. 
+                    \begin{enumerate}
+                        \item \label{paso-1.1}  Si la fila de $A$ es $0$, pasamos a la siguiente fila.
+                        \item \label{paso-1.2} Si la fila de $A$  no es $0$: 
+                        \begin{enumerate}
+                            \item[\textit{i)}] si la primera entrada no nula está en  la columna $k$ de $A$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale $1$),
+                            \item[\textit{ii)}] con operaciones elementales del tipo $F_r+ tF_s$ hacer $0$  todas las entradas en la columna $k$ (menos la de la fila actual). 
+                            \item[\textit{iii)}] Pasamos a la siguiente fila.
+                        \end{enumerate}
+                        De esta forma obtenemos una nueva matriz ampliada,  que llamaremos, nuevamente, $[A|Y]$. 
+                        
+                        Ahora volvemos al comienzo del paso \ref{paso-1}. 
+                    \end{enumerate}
+                    \item \label{paso-4} Permutar las filas hasta obtener una MERF de $A$. 
+                \end{enumerate}
+ 
+                Aplicando los pasos del algoritmo anterior  a la matriz ampliada $[A|Y]$ obtenemos una matriz ampliada $[B|Z]$, con $B$ una MERF. El sistema de ecuaciones asociado a $[B|Z]$ es equivalente al sistema original y de fácil resolución. 
                 
-                Llevar una matriz a una matriz  escalón reducida por fila equivalente nos provee un método para encontrar todas las soluciones de sistemas de ecuaciones homogéneos.
-                
-                \begin{ejemplo*}
-                    Supongamos que queremos encontrar las soluciones del sistema $AX = 0$ donde $A$ es una matriz $4 \times 5$ y que $A$ es equivalente por filas a la matriz
+                El médoto o  algoritmo que hemos utilizado se denomina \textit{eliminación de Gauss} o \textit{eliminación de Gauss-Jordan} o \textit{eliminación gaussiana}. 
+
+
+                \begin{ejemplo*} Supongamos que queremos encontrar las soluciones del sistema $AX = 0$ donde $A$ es una matriz  $4 \times 5$ y que $A$ es equivalente por filas a la matriz MERF
                     \begin{equation*}
-                    \begin{bmatrix} 1&0&0&2&-3 \\ 0&1&0&0&-5 \\ 0&0&1&-1&2 \\ 0&0&0&0&0\end{bmatrix}.
+                    B=\begin{bmatrix} 1&0&0&2&-3 \\ 0&1&0&0&-5 \\ 0&0&1&-1&2 \\ 0&0&0&0&0\end{bmatrix}.
                     \end{equation*} 
                     Entonces el sistema de ecuaciones original, de 4 ecuaciones y 5 incógnitas,  es equivalente al sistema
                     \begin{equation*}
@@ -1068,20 +1095,11 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \end{equation*}
                 \end{ejemplo*}   
             \end{subsection}
-            
-            
-            \begin{subsection}{M\'etodo de Gauss} Consideremos el siguiente sistema no homogéneo de $m$ ecuaciones lineales con $n$ incógnitas:
-                \begin{equation*}
-                \begin{matrix}
-                a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
-                \vdots&  &\vdots& &&  &\vdots \\
-                a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_n
-                \end{matrix}
-                \end{equation*}
-                con $a_{ij} \in \K$. Sea $[A | Y]$ la matriz asociada a este sistema. Mediante operaciones elementales de fila obtenemos una matriz $[B|Z]$, donde $B$ es matriz escalón reducida por fila (teorema \ref{th-merf}). Por el teorema \ref{th-equiv-op-elem} los sistemas de ecuaciones $AX=Y$ y $BX=Z$ tiene las mismas soluciones. 
+
+
+                A partir del sistema de ecuaciones \eqref{eq-sistema-no-homogeneo}, mediante operaciones elementales de fila hemos obtenido  una matriz $[B|Z]$, donde $B$ es matriz escalón reducida por fila (teorema \ref{th-merf}). Por el teorema \ref{th-equiv-op-elem} los sistemas de ecuaciones $AX=Y$ y $BX=Z$ tiene las mismas soluciones. 
                 
-                
-                 Veamos ahora formalmente cuales son las soluciones del sistema $BX=Z$. Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros 1's en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
+                Veamos ahora formalmente cuales son las soluciones del sistema $BX=Z$. Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros $1$'s en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
                 \begin{equation}
                 \begin{matrix}
                 &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&= &z_1\\
@@ -1104,36 +1122,45 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                 \end{equation} 
                 Llamaremos a  $x_{k_1}, x_{k_2}, \ldots, x_{k_r}$ las \textit{variables principales}\index{sistema de ecuaciones lineales!variables principales} del sistema  y  las $n-r$ variables restantes son las \textit{variables libres}.\index{sistema de ecuaciones lineales!variables libres} Es claro entonces que variando de forma arbitraria todas las variables libres obtenemos todas las soluciones del sistema.
                 
-                 Las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones \eqref{sist-eq-hom-merf0} y $x_i \in \K$ para $x_i$ libre. 
-                
-                El método anterior es denominado \textit{método de Gauss.}\index{sistema de ecuaciones lineales!método de Gauss} 
-
-                En particular,  hemos probado:
-                
-                \begin{teorema}\label{inf-sol}
-                    Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Si $A$ es equivalente por filas a  $B$ una  MERF y $B$ tiene filas nulas, entonces si el sistema $AX=Y$ tiene solución,  tiene infinitas soluciones. 
+                 Las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones \eqref{sist-eq-hom-merf0}.
+            
+                \begin{teorema}\label{inf-sol-var-libres}
+                    Sea $AX=Y$ un sistema de $m$ ecuaciones lineales y $n$ incógnitas con coeficientes en $\K$. Entonces
+                    \begin{enumerate}
+                        \item\label{sol-homogeneo} El sistema homogéneo $AX=0$ o bien tiene a $0$ como única solución,  o bien tiene infinitas soluciones. 
+                        \item\label{sol-no-homogeneo} Si $Y \ne 0$,  entonces el sistema  o bien no tiene solución, o bien tiene una solución, o bien tiene infinitas soluciones. 
+                    \end{enumerate} 
                 \end{teorema}
                 \begin{proof}
-                    Sea $r$  el número de filas no nulas de $B$, como $B$ tiene filas nulas,  entonces $r<n$. Como el sistema tiene solución y $r<n$  hay al menos una variable libre. Esto implica que hay infinitas soluciones. 
+                    \ref{sol-homogeneo}  Un  sistema homogéneo siempre tiene a $X=0$ como solución, pues $A0 =0$, y  las soluciones son de la forma dada por la ecuación \eqref{sist-eq-hom-merf0}, donde los $z_i$ son $0$. Si  no hay varables libres, entonces $x_1=x_2= \cdots =x_n =0$ es la única solución. Si hay variables libres,  entonces hay infinitas soluciones (variando las variables libres).  
                     
-                    Por ser $A$ y $B$ equivalentes por fila, $AX=Y$ y $BX=Z$ tienen las mismas soluciones y, por consiguiente, $AX=Y$ tiene infinitas soluciones. 
+                   \ref{sol-no-homogeneo} Si el  sistema tiene solución, las soluciones son de la forma dada por la ecuación \eqref{sist-eq-hom-merf0}. Si  no hay variables libres la solución es única ($x_1=z_1,\ldots,x_n =z_n$). Si hay variables libres,  entonces hay infinitas soluciones.   
                 \end{proof}
                 
-                \begin{teorema}\label{soluciones-m-menor-n}
+                \begin{corolario}\label{inf-sol}
+                    Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Si $A$ es equivalente por filas a  $B$ una  MERF y $B$ tiene filas nulas, entonces
+                    \begin{enumerate}
+                        \item\label{sol-homogeneo-2} El sistema homogéneo $AX=0$ tiene  infinitas soluciones. 
+                        \item\label{sol-no-homogeneo-2} Si $Y \ne 0$,  entonces el sistema  $AX =Y$ o bien no tiene solución, o bien tiene infinitas soluciones.
+                    \end{enumerate} 
+                \end{corolario}
+                \begin{proof} Sea $r$  el número de filas no nulas de $B$, como $B$ tiene filas nulas,  entonces $r<n$ y  hay al menos una variable libre. Esto nos garantiza que de haber solución, hay infinitas soluciones. Por el teorema \ref{inf-sol-var-libres} se deduce el resultado. 
+                \end{proof}
+                
+                \begin{corolario}\label{soluciones-m-menor-n}
                     Sea $A$ una matriz $m \times n$ con  $m < n$ e $Y$ matriz $m \times 1$ . Entonces, si el sistema de ecuaciones lineales $AX=Y$ tiene solución, tiene infinitas soluciones.
-                \end{teorema}
+                \end{corolario}
                 \begin{proof}
-                    La matriz $A$ es equivalente por fila a una matriz $B$ escalón reducida por fila 
-                    y $B$ tiene $r$ filas no nulas con $r \le m <n$. Como el sistema tiene solución y $r<n$  hay al menos una variable libre. Por lo tanto, $BX=Z$ (y $AX=Y$) tienen infinitas soluciones.
+                   El hecho de que $m < n$  nos garantiza que hay variable libres. Luego en caso de habe solución, hay infinitas soluciones. 
                 \end{proof}
                 
                 \begin{lema}\label{lem-mtrx-merf-id}
                     Sea $R$ una matriz $n \times n$ escalón reducida por fila tal que no tiene filas nulas. Entonces $R=\Id_n$. 
                 \end{lema}
                 \begin{proof}
-                    Como  $R$ es reducida por fila y no tiene filas nulas, cada fila tiene  un 1 en alguna entrada y en la columna donde está el 1 todos las otras entradas son nulas, por  lo tanto hay $n$ 1's principales distribuidos en $n$ columnas. Concluyendo: hay un 1 por columna y en esa columna todas las demás entradas son nulas. 
+                    Como  $R$ es reducida por fila y no tiene filas nulas, cada fila tiene  un $1$ en alguna entrada y en la columna donde está el $1$ todos las otras entradas son nulas, por  lo tanto hay $n$ $1$'s principales distribuidos en $n$ columnas. Concluyendo: hay un $1$ por columna y en esa columna todas las demás entradas son nulas. 
                     
-                    Ahora bien como $R$ es una MERF, la primera fila contiene el 1 que está más a la izquierda, que no puede estar en otra ubicación que no sea la primera (pues si no la primera columna sería nula). Con el mismo razonamiento vemos que en la segunda fila hay un 1 en la columna 2 y en general en la fila $k$-ésima hay un 1 en la columna $k$. Luego $R=\Id_n$.
+                    Ahora bien como $R$ es una MERF, la primera fila contiene el $1$ que está más a la izquierda, que no puede estar en otra ubicación que no sea la primera (pues si no la primera columna sería nula). Con el mismo razonamiento vemos que en la segunda fila hay un $1$ en la columna $2$ y en general en la fila $k$-ésima hay un 1 en la columna $k$. Luego $R=\Id_n$.
                 \end{proof}			
                 
                 \begin{teorema}
@@ -1633,11 +1660,11 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \begin{equation*}
                     \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}\;\text{ y }\; \begin{bmatrix} 1& 0\\ 0&c\end{bmatrix},
                     \end{equation*}
-                    \item si  $c \in \K$, sumar a la fila 2 la fila 1 multiplicada por $c$ o sumar a la fila 1 la fila 2 multiplicada por $c$ son, respectivamente,
+                    \item si  $c \in \K$, sumar a la fila $2$ la fila $1$ multiplicada por $c$ o sumar a la fila $1$ la fila $2$ multiplicada por $c$ son, respectivamente,
                     \begin{equation*}
                     \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}\;\text{ y }\; \begin{bmatrix} 1& c\\ 0&1\end{bmatrix}.
                     \end{equation*}
-                    \item Finalmente, intercambiando la fila 1 por la fila 2 obtenemos la matriz
+                    \item Finalmente, intercambiando la fila $1$ por la fila $2$ obtenemos la matriz
                     \begin{equation*}
                     \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
                     \end{equation*}
@@ -1746,8 +1773,8 @@ Luego,  ambos sistemas tienen las mismas soluciones.
             \end{teorema}
             \begin{proof}
                 Hagamos la prueba para matrices $2 \times 2$. La prueba en general es similar, pero requiere de un complicado manejo de índices.
-                \begin{enumerate}
-                    \item[E1.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(\Id_2)$ resulta en la matriz elemental:
+                \begin{enumelem}
+                    \item Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila $2$ le sumarle  la fila $1$ multiplicada por $c$. Entonces. $E:=e(\Id_2)$ resulta en la matriz elemental:
                     \begin{equation*}
                     E= \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}.
                     \end{equation*}
@@ -1766,7 +1793,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \end{align*}
                     De forma análoga se demuestra en el caso que la operación elemental sea  multiplicar la segunda fila por $c$.
                     
-                    \item[E2.] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E:=e(\Id_2)$ resulta en la matriz elemental: 
+                    \item Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila $2$ le sumarle  la fila $1$ multiplicada por $c$. Entonces. $E:=e(\Id_2)$ resulta en la matriz elemental: 
                     \begin{equation*}
                     E=\begin{bmatrix} 1& 0\\ c&1\end{bmatrix}.
                     \end{equation*}
@@ -1777,9 +1804,9 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     a_{11} &a_{12}\\
                     c\,.\,a_{11} + a_{21}&c\,.\,a_{12}+a_{22}\end{bmatrix} = e(A).
                     \end{equation*}
-                    La demostración es análoga si la operación elemental es sumar a la fila 1 la fila 2 multiplicada por $c$.
+                    La demostración es análoga si la operación elemental es sumar a la fila $1$ la fila $2$ multiplicada por $c$.
                     
-                    \item[E3.]  Finalmente, sea $e$ la operación elemental que intercambia la fila 1 por la fila 2. Entonces,  $E:=e(\Id_2)$ es la matriz 
+                    \item  Finalmente, sea $e$ la operación elemental que intercambia la fila $1$ por la fila $2$. Entonces,  $E:=e(\Id_2)$ es la matriz 
                     \begin{equation*}
                     E=\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
                     \end{equation*}
@@ -1790,7 +1817,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     a_{21} &a_{22}\\
                     a_{11} &a_{12}\end{bmatrix} = e(A).
                     \end{equation*}
-                \end{enumerate}
+                \end{enumelem}
                 
     
             \end{proof}
@@ -1904,7 +1931,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                     \begin{equation*}
                     (B^{-1}A^{-1})AB = B^{-1}(A^{-1}A)B = B^{-1}\Id_nB =B^{-1}B = \Id_n,
                     \end{equation*}
-                    y,  análogamente,
+                    y,  análogamente, comprobemos que es inversa a derecha, 
                     \begin{equation*}
                     AB(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = A\Id_nA^{-1} =AA^{-1} = \Id_n.
                     \end{equation*} 
@@ -1913,7 +1940,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
             
             \begin{observacion*}
                 Si $A_1,\ldots,A_k$  son invertibles,  entonces $A_1\ldots A_k$ es invertible y su inversa es  $$(A_1\ldots A_k)^{-1} = A_k^{-1}\ldots A_1^{-1} .$$
-                El resultado es una generalización del punto (2) del teorema anterior y su demostración se hace por inducción en $k$ (usando (2)  del teorema anterior). Se deja como ejercicio al lector. 
+                El resultado es una generalización del punto  \ref{inv-itm2} del teorema anterior y su demostración se hace por inducción en $k$ (usando  \ref{inv-itm2}  del teorema anterior). Se deja como ejercicio al lector. 
             \end{observacion*}
             
             \begin{observacion*}
@@ -2144,12 +2171,9 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                 \end{equation*}
                 Es decir, $X_0$ es único (siempre igual  a $A^{-1}Y$).  
                 
-                
                 \ref{equiv-inv-2} $\Rightarrow$  \ref{equiv-inv-3} Es trivial, tomando $Y =0$.
                 
-                
-                
-                \ref{equiv-inv-3} $\Rightarrow$  \ref{equiv-inv-1} Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ invertible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por teorema \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=\Id_n$. Luego $A$ es equivalente por filas a $\Id_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es invertible. 			
+                \ref{equiv-inv-3} $\Rightarrow$  \ref{equiv-inv-1} Sea $R$ la matriz escalón reducida por filas equivalente a $A$, es decir $R=PA$ con $P$ invertible y $R$ es MERF. Si $R$ tiene una fila nula, entonces por corolario  \ref{inf-sol},  el sistema $AX =0$ tiene más de una solución, lo cual es absurdo.  Por lo tanto, $R$ no tiene filas nulas. Como es una matriz cuadrada y es MERF, tenemos que $R=\Id_n$. Luego $A$ es equivalente por filas a $\Id_n$ y por teorema \ref{mtrx-inv-equiv} se deduce que $A$ es invertible. 			
                 
             \end{proof}
             
@@ -2498,7 +2522,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
               \det e' =  \det \begin{bmatrix} a_{11}& a_{12}\\ ca_{21}&ca_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}. 
             \end{equation*}
             Por lo tanto, $\det e(A) =\det e'(A) = c \det A$. 
-            \item Sea  $c \in \K$, si sumamos a la fila 2 la fila 1 multiplicada por $c$ o sumamos a la fila 1  la fila 2 multiplicada por $c$ obtenemos, respectivamente,
+            \item Sea  $c \in \K$, si sumamos a la fila $2$ la fila $1$ multiplicada por $c$ o sumamos a la fila $1$  la fila $2$ multiplicada por $c$ obtenemos, respectivamente,
             \begin{equation*}
             e(A) = \begin{bmatrix} a_{11}& a_{12}\\ a_{21}+ ca_{11}&a_{22}+ ca_{12}\end{bmatrix}\;\text{ y }\; 
             e'(A) = \begin{bmatrix} a_{11} + ca_{21}& a_{12} + ca_{22}\\ a_{21}&a_{22}\end{bmatrix}.
@@ -2512,7 +2536,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
                 &= \det A.
             \end{align*}
             Luego,  $\det e(A) = \det A$. Análogamente,   $\det e'(A) = \det A$. 
-            \item Finalmente, intercambiando la fila 1 por la fila 2 obtenemos la matriz
+            \item Finalmente, intercambiando la fila $1$ por la fila $2$ obtenemos la matriz
             \begin{equation*}
             e(A)=\begin{bmatrix} a_{21}& a_{22}\\ a_{11}&a_{12}\end{bmatrix},
             \end{equation*}
@@ -2561,7 +2585,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
     \begin{proof}
         \ref{cor-det-1} Sea $A$ matriz donde $F_r = F_s$ con $r\ne s$. Luego, intercambiando la fila $r$ por la fila $s$ obtenemos la misma matriz. Es decir $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} \ref{det-prop-fundamentales-3}, tenemos entonces que $\det A = - \det A$, por lo tanto  $\det A =0$. 
         
-        \ref{cor-det-2} Sea $F_r$ una fila nula de $A$, por lo tanto multiplicar por 2 esa fila no cambia la matriz. Es decir $A  \stackrel{2F_r}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} \ref{det-prop-fundamentales-1}, tenemos entonces que $\det A = 2\det A$, por lo tanto  $\det A =0$.
+        \ref{cor-det-2} Sea $F_r$ una fila nula de $A$, por lo tanto multiplicar por $2$ esa fila no cambia la matriz. Es decir $A  \stackrel{2F_r}{\longrightarrow} A$. Por el teorema \ref{det-prop-fundamentales} \ref{det-prop-fundamentales-1}, tenemos entonces que $\det A = 2\det A$, por lo tanto  $\det A =0$.
     \end{proof}
     
     
@@ -2658,7 +2682,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
             E = \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}\;\text{ y }\; E = \begin{bmatrix} 1& 0\\ 0&c\end{bmatrix},
             \end{equation*}
             por lo tanto $E^\t$ es la misma matriz en ambos casos. 
-            \item si  $c \in \K$, sumar a la fila 2 la fila 1 multiplicada por $c$ o sumar a la fila 1 la fila 2 multiplicada por $c$ son, respectivamente,
+            \item si  $c \in \K$, sumar a la fila $2$ la fila $1$ multiplicada por $c$ o sumar a la fila $1$ la fila $2$ multiplicada por $c$ son, respectivamente,
             \begin{equation*}
             E_1 = \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}\;\text{ y }\; E_2 = \begin{bmatrix} 1& c\\ 0&1\end{bmatrix},
             \end{equation*}
@@ -2666,7 +2690,7 @@ Luego,  ambos sistemas tienen las mismas soluciones.
             \begin{equation*}
             E_1^\t = \begin{bmatrix} 1& c\\ 0&1\end{bmatrix} = E_2 \;\text{ y }\; E_2^\t = \begin{bmatrix} 1& 0\\ c&1\end{bmatrix} =E_1,
             \end{equation*}
-            \item Finalmente, intercambiando la fila 1 por la fila 2 obtenemos la matriz
+            \item Finalmente, intercambiando la fila $1$ por la fila $2$ obtenemos la matriz
             \begin{equation*}
             E = \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix},
             \end{equation*}
