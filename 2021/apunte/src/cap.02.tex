@@ -1020,7 +1020,7 @@ x& -3y & +3z & =&2 \\
                     Observemos que llegamos a la misma matriz que en el ejemplo mencionado, pese a que hicimos otras operaciones elementales.
                 \end{ejemplo*}
                 
-
+            \end{subsection}
                 
                 
 
@@ -1056,25 +1056,23 @@ x& -3y & +3z & =&2 \\
                     \item \label{paso-0} Nos ubicamos en la primera fila de $[A|Y]$.
                     \item \label{paso-1}  Si la fila es la última, pasar al \ref{paso-4}. Si la fila no es la última, continuar con el procedimiento siguiente. 
                     \begin{enumerate}
-                        \item \label{paso-1.1}  Si la fila de $A$ es $0$, pasamos a la siguiente fila.
+                        \item \label{paso-1.1}  Si la fila de $A$ es $0$, pasamos a la siguiente fila y volvemos al comienzo del paso \ref{paso-1}.
                         \item \label{paso-1.2} Si la fila de $A$  no es $0$: 
                         \begin{enumerate}
                             \item[\textit{i)}] si la primera entrada no nula está en  la columna $k$ de $A$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale $1$),
                             \item[\textit{ii)}] con operaciones elementales del tipo $F_r+ tF_s$ hacer $0$  todas las entradas en la columna $k$ (menos la de la fila actual). 
                             \item[\textit{iii)}] Pasamos a la siguiente fila.
                         \end{enumerate}
-                        De esta forma obtenemos una nueva matriz ampliada,  que llamaremos, nuevamente, $[A|Y]$. 
-                        
-                        Ahora volvemos al comienzo del paso \ref{paso-1}. 
+                        De esta forma obtenemos una nueva matriz ampliada,  que llamaremos, nuevamente, $[A|Y]$ y ahora volvemos al comienzo del paso \ref{paso-1}. 
                     \end{enumerate}
                     \item \label{paso-4} Permutar las filas hasta obtener una MERF de $A$. 
                 \end{enumerate}
  
-                Aplicando los pasos del algoritmo anterior  a la matriz ampliada $[A|Y]$ obtenemos una matriz ampliada $[B|Z]$, con $B$ una MERF. El sistema de ecuaciones asociado a $[B|Z]$ es equivalente al sistema original y de fácil resolución. 
+                A partir del sistema de ecuaciones \eqref{eq-sistema-no-homogeneo}, mediante operaciones elementales de fila hemos obtenido  una matriz $[B|Z]$, donde $B$ es matriz escalón reducida por fila. Por el teorema \ref{th-equiv-op-elem} los sistemas de ecuaciones $AX=Y$ y $BX=Z$ tiene las mismas soluciones y el sistema de ecuaciones asociado a $[B|Z]$,  debido a que $B$  es MERF, es de fácil resolución.  
                 
                 El médoto o  algoritmo que hemos utilizado se denomina \textit{eliminación de Gauss} o \textit{eliminación de Gauss-Jordan} o \textit{eliminación gaussiana}. 
 
-
+                \begin{comment}
                 \begin{ejemplo*} Supongamos que queremos encontrar las soluciones del sistema $AX = 0$ donde $A$ es una matriz  $4 \times 5$ y que $A$ es equivalente por filas a la matriz MERF
                     \begin{equation*}
                     B=\begin{bmatrix} 1&0&0&2&-3 \\ 0&1&0&0&-5 \\ 0&0&1&-1&2 \\ 0&0&0&0&0\end{bmatrix}.
@@ -1093,11 +1091,50 @@ x& -3y & +3z & =&2 \\
                     \begin{equation*}
                     \{(-2s +3t,  5t,  s-2t, s, t): s,t \in \R\}
                     \end{equation*}
-                \end{ejemplo*}   
-            \end{subsection}
-
-
-                A partir del sistema de ecuaciones \eqref{eq-sistema-no-homogeneo}, mediante operaciones elementales de fila hemos obtenido  una matriz $[B|Z]$, donde $B$ es matriz escalón reducida por fila (teorema \ref{th-merf}). Por el teorema \ref{th-equiv-op-elem} los sistemas de ecuaciones $AX=Y$ y $BX=Z$ tiene las mismas soluciones. 
+                \end{ejemplo*} 
+            \end{comment}  
+            
+                \begin{ejemplo*} Resolvamos el sistema
+                    \begin{align*}
+                    x_1 -2x_2 + x_3  &= 1\\
+                    2x_1 +x_2 + x_3  &= 2\\
+                    5x_2 - x_3  &= 0.
+                    \end{align*}
+                    La matriz  aumentada correspondiente a este sistema es
+                    \begin{equation*}
+                     \left[\begin{array}{@{}*{3}{r}|r@{}} 
+                     1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\ 0 & 5 & -1 &  0 
+                    \end{array}\right]
+                    \end{equation*}
+                    apliquemos el método de Gauss:
+                    \begin{multline*}
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\	0 & 5 & -1 &  0  \end{array}\right]
+                    \stackrel{F_2 - 2F_1}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\	0 & 5 & -1 &  0  \end{array}\right]
+                    \stackrel{F_3-F_1}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\	0 & 0 & 0 & 0  \end{array}\right]
+                    \\
+                    \stackrel{F_2/5}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 1 & -1/5 &  0 \\	0 & 0 & 0 &  0  \end{array}\right]
+                    \stackrel{F_1+2 F_2}{\longrightarrow} 
+                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & 0 & 3/5 & 1 \\ 0 & 1 & -1/5 &  0 \\	0 & 0 & 0 &  0  \end{array}\right].
+                    \end{multline*}	
+                    Luego,  el sistema se reduce  a
+                    \begin{align*}
+                    x_1  + 3/5x_3  &= 1\\
+                    x_2 -1/5 x_3  &= 0.
+                    \end{align*}
+                    Es decir, 
+                    \begin{align*}
+                    x_1    &= - 3/5x_3 + 1\\
+                    x_2   &= 1/5 x_3.
+                    \end{align*}
+                    En consecuencia,  las soluciones de esta ecuación son
+                    \begin{equation*}
+                    \left\{(-\frac{3}5s + 1, \frac15 s, s ): s \in \K \right\}.
+                    \end{equation*}
+                \end{ejemplo*} 
+                
                 
                 Veamos ahora formalmente cuales son las soluciones del sistema $BX=Z$. Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros $1$'s en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
                 \begin{equation}
@@ -1179,47 +1216,6 @@ x& -3y & +3z & =&2 \\
             
             
             
-                \begin{ejemplo*} Resolvamos el sistema
-                    \begin{align*}
-                    x_1 -2x_2 + x_3  &= 1\\
-                    2x_1 +x_2 + x_3  &= 2\\
-                    5x_2 - x_3  &= 0.
-                    \end{align*}
-                    La matriz  aumentada correspondiente a este sistema es
-                    \begin{equation*}
-                     \left[\begin{array}{@{}*{3}{r}|r@{}} 
-                     1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\ 0 & 5 & -1 &  0 
-                    \end{array}\right]
-                    \end{equation*}
-                    apliquemos el método de Gauss:
-                    \begin{multline*}
-                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\	0 & 5 & -1 &  0  \end{array}\right]
-                    \stackrel{F_2 - 2F_1}{\longrightarrow} 
-                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\	0 & 5 & -1 &  0  \end{array}\right]
-                    \stackrel{F_3-F_1}{\longrightarrow} 
-                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\	0 & 0 & 0 & 0  \end{array}\right]
-                    \\
-                    \stackrel{F_2/5}{\longrightarrow} 
-                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 1 & -1/5 &  0 \\	0 & 0 & 0 &  0  \end{array}\right]
-                    \stackrel{F_1+2 F_2}{\longrightarrow} 
-                    \left[\begin{array}{@{}*{3}{r}|r@{}}1 & 0 & 3/5 & 1 \\ 0 & 1 & -1/5 &  0 \\	0 & 0 & 0 &  0  \end{array}\right].
-                    \end{multline*}	
-                    Luego,  el sistema se reduce  a
-                    \begin{align*}
-                    x_1  + 3/5x_3  &= 1\\
-                    x_2 -1/5 x_3  &= 0.
-                    \end{align*}
-                    Es decir, 
-                    \begin{align*}
-                    x_1    &= - 3/5x_3 + 1\\
-                    x_2   &= 1/5 x_3.
-                    \end{align*}
-                    En consecuencia,  las soluciones de esta ecuación son
-                    \begin{equation*}
-                    \left\{(-\frac{3}5s + 1, \frac15 s, s ): s \in \K \right\}.
-                    \end{equation*}
-                \end{ejemplo*} 
-                
                 \end{subsection}
             
             
@@ -1270,9 +1266,9 @@ x& -3y & +3z & =&2 \\
                 \end{equation}
                 con $c \in \K$.
                 
-                \textbf{Matriz unidad o identidad.} Esta matriz ya la hemos definido anteriormente. Recordemos que es una matriz diagonal cuya diagonal principal está compuesta de 1's. 
+                \textbf{Matriz unidad o identidad.} Esta matriz ya la hemos definido anteriormente. Recordemos que es una matriz diagonal cuya diagonal principal está compuesta de $1$'s. 
                 
-                Más adelante veremos que la matriz identidad, respecto a la multiplicación de matrices, juega un papel similar al número 1 respecto a la multiplicación de números reales o enteros (elemento neutro del producto).
+                Más adelante veremos que la matriz identidad, respecto a la multiplicación de matrices, juega un papel similar al número $1$ respecto a la multiplicación de números reales o enteros (elemento neutro del producto).
                 
                 \textbf{Matriz nula}. La \textit{matriz nula}\index{matriz!nula} de orden $m\times n$, denotada $0_{m \times n}$ o simplemente $0$ si $m$ y $n$ están sobreentendidos,  es la  matriz $m \times n$ cuyas entradas son todas nulas ($=0$). 
                 
@@ -1280,7 +1276,7 @@ x& -3y & +3z & =&2 \\
                 \begin{equation*}
                 \begin{bmatrix} 0&0&0\\ 0&0&0\end{bmatrix}.
                 \end{equation*}
-                Veremos luego que la matriz nula juega un papel similar al número 0 en el álgebra de matrices (elemento neutro de la suma).  
+                Veremos luego que la matriz nula juega un papel similar al número $0$ en el álgebra de matrices (elemento neutro de la suma).  
                 
                 \textbf{Matriz triangular.} Una matriz cuadrada es \textit{triangular superior} o \textit{escalón}\index{matriz!triangular superior}\index{matriz!escalón} si todos los elementos situados por debajo de la diagonal principal son cero. Por ejemplo, la siguiente matriz es triangular superior:
                 \begin{equation}
@@ -1446,9 +1442,10 @@ x& -3y & +3z & =&2 \\
                 
                 Como en el caso de la suma,  la demostración las propiedades anteriores se deja a cargo del lector. 
                 
-                En virtud de estas propiedades y de las anteriores de la suma de matrices, resulta que el conjunto $(M_n ,+,.)$  de las matrices cuadradas de orden $n$, respecto a las dos leyes de composición interna, ``+'' y ``·'', tiene estructura de anillo unitario no conmutativo.
-                
-                Ver \href{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}. 
+                En virtud de estas propiedades y de las anteriores de la suma de matrices, resulta que el conjunto $(M_n ,+,.)$  de las matrices cuadradas de orden $n$, respecto a las dos leyes de composición interna, ``+'' y ``·'', tiene estructura de anillo unitario no conmutativo. En Wikipedia se puede encontrar un artículo al respecto:
+                \begin{center}
+                    \href{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}{ https://es.wikipedia.org/wiki/Anillo\_(matemática)}.     
+                \end{center}
                 
                 Cuando las matrices son cuadradas podemos multiplicarlas por si mismas y  definimos,  de forma análoga a lo que ocurre en los productos de números, la potencia de una matriz: sea $A$ matriz $n \times n$, y sea $m \in \mathbb N$ entonces
                 \begin{equation*}
@@ -1567,8 +1564,8 @@ x& -3y & +3z & =&2 \\
         $$
         
         Observar que multiplicar por $c$ una matriz $m \times n$,  es lo mismo que multiplicar por la matriz escalar $m \times m$ con los coeficientes de la diagonal iguales a $c$,  es decir
-        \begin{equation}
-            cA = \begin{bmatrix*}[r]
+        \begin{align*}
+            cA &= \begin{bmatrix*}[r]
             c     &     0& \cdots & 0\\
             0     &     c& \cdots & 0\\
             \vdots&\vdots&  \ddots      &\vdots\\
@@ -1579,14 +1576,15 @@ x& -3y & +3z & =&2 \\
             a_{21}&a_{22}& \cdots & &a_{2n}\\
             \vdots&\vdots&  & &\vdots\\
             a_{m1}&a_{m2}& \cdots & & a_{mn}
-            \end{bmatrix} =
+            \end{bmatrix}  \\
+            &=
              \begin{bmatrix}
             ca_{11}&ca_{12}& \cdots & & ca_{1n}\\
             ca_{21}&ca_{22}& \cdots & &ca_{2n}\\
             \vdots&\vdots&  & &\vdots\\
             ca_{m1}&ca_{m2}& \cdots & & ca_{mn}
             \end{bmatrix}
-        \end{equation}
+        \end{align*}
         
         Debido a esta observación y a las propiedades del producto de matrices, se cumple lo siguiente:
             \begin{align*}
