@@ -536,7 +536,16 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         \end{enumerate}
     \end{ejemplo*}
 
-    
+    \subsection*{$\S$ Ejercicios}
+    \begin{enumerate}
+        \item Sea $X$ subconjunto de $\R^n$ y  considere el conjunto 
+            $$
+            X^\perp = \{v \in \R^n: v \perp x,\; \, \forall\, x \in X\}. 
+            $$
+            Probar que $X^\perp$  es un subespacio vectorial de $\R^n$. 
+    \end{enumerate}
+
+\end{section}	
         
 \begin{section}{Bases y dimensi\'on}\label{seccion-bases-y-dimension}
     \begin{definicion}
@@ -949,6 +958,16 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
             \dim W_1 + \dim W_2&= (k+n)+(k+m) \\&	=k+(k+n+m)\\ &=  \dim (W_1 \cap W_2) + \dim (W_1 + W_2) .
         \end{align*}
     \end{proof}
+
+
+    \subsection*{$\S$ Ejercicios}
+    \begin{enumerate}
+        \item Sean $u_1,\ldots,u_k$ vectores mutuamente ortogonales en $\R^n$,  es decir $u_i \perp u_j$  si $i \ne j$. Probar que  $\{u_1,\ldots,u_k\}$ es un conjunto LI.
+        \item 
+        Sea $\mathcal B =\{u_1,\ldots,u_n\}\subset \R^n$  una base ortogonal de $\R^n$ (ver definición \ref{def-bo}),  es decir $\mathcal B$  es un conjunto de $n$ vectores mutuamente ortogonales. Probar  que $\mathcal B$ es una base en el sentido de la definición \ref{def-base}.   
+    \end{enumerate}
+
+
     \end{section}
 
 
@@ -1017,7 +1036,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
         W =\left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
         \end{align*}
     \end{ejemplo*}
-\end{section}		
+	
 
         \begin{teorema}
             Sean $A$ matriz $m \times n$ con coeficientes en $\K$, $P$ matriz $m\times m$ invertible y $B =PA$. Entonces el el espacio fila de $A$ es igual al espacio fila de $B$.

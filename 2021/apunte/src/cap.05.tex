@@ -210,8 +210,35 @@
             \end{equation*}
             son ortogonales.
             \begin{figure}[h]
-            	\centering
-                falta
+                \centering
+                \begin{tikzpicture}[scale=1.2]
+                \draw[thick,->] (-3.0,0) -- (4.0,0) node[right] {$x$}; % eje x
+                \draw[thick,->] (0,-1) -- (0,3) node[above] {$y$}; % eje y
+                %\foreach \x in {-2,...,3}
+                %\draw (\x,3pt) -- (\x,-3pt);
+                %\foreach \y in {0,...,2}
+                %\draw (3pt,\y) -- (-3pt,\y) ;
+                % vector u
+                %\draw[fill] (3,1) circle [radius=0.05];
+                \node [right] at (4,1) {$u$};
+                \draw[very thick, ->] (0,0) -- (3.96,0.96);
+                % vector v
+                %\draw[fill] (1,2) circle [radius=0.05];
+                \draw[very thick,->] (0,0) -- (1.5,3);
+                \node [above] at (0.9,2) {$v$};
+                % flecha punteada de w a v
+                \draw [domain=13.5:62] plot ({cos(\x)}, {sin(\x)});
+                \node [above] at (0.6,0.13) {$\theta$};
+                \draw[->, very thick,red] (0,0) -- (36/17,9/17);
+                \node [anchor=north west] at (-0.1+36/17,0.1+9/17) {$\operatorname{pr}_u(v)$};
+                \draw[->, very thick,red] (0,0) -- (-9.5/17,42/17);
+                % vector v - w
+               %+--- \draw[fill] (-2,1) circle [radius=0.05];
+                % punteada de v-w  a v
+                \draw[dashed] (-9.5/17,42/17) -- (1.5,3);	
+                \draw[dashed] (36/17,9/17) -- (1.5,3);	
+                
+                \end{tikzpicture}
                 \caption{Proyección de $v$ en $u$ cuando $||v||=1$.}\label{fig-proyeccion-ort}
             \end{figure}
         
