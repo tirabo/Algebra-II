@@ -19,6 +19,7 @@
 	"settings": {
 		"cSpell.language": "es,es-ES",
 		"cSpell.words": [
+			"'olo",
 			"determinate",
 			"doto",
 			"ejemplos",
@@ -26,6 +27,8 @@
 			"médoto",
 			"permutaciones",
 			"resulatdo",
+			"s",
+			"s\\'olo",
 			"tirangular"
 		],
 		"cSpell.enabled": true,
