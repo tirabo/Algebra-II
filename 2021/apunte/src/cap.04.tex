@@ -49,9 +49,9 @@
             2x_1 - x_3 \\ -x_1+3x_2+x_3
             \end{bmatrix}.
             $$
-            Es decir,  si $\mathcal C_n$  es la báse canónica de $\K^n$ y $[x]_{\mathcal C_3}$ es la matriz de $x$ en la base canónica,  entonces 
+            Es decir,  si $\cC_n$  es la báse canónica de $\K^n$ y $[x]_{\cC_3}$ es la matriz de $x$ en la base canónica,  entonces 
             $$
-            A.[x]_{\mathcal C_3} = [T(x)]_{\mathcal C_2}.
+            A.[x]_{\cC_3} = [T(x)]_{\cC_2}.
             $$ 
             \end{ejemplo*}
         
@@ -213,7 +213,7 @@
         El teorema \ref{th-tl-definida-en-base} es muy elemental, pero por su importancia ha sido presentado
         detalladamente. 
         
-            \begin{ejemplo*} Usando el teorema \ref{th-tl-definida-en-base}, podemos demostrar la observación \ref{obs-tl-1.5} de la siguiente manera: sea  $\mathcal C_n = \{e_1,\ldots,e_n\}$ es la base canónica de $\K^n$ y  sea  $T: \K^n \to \K^m$ la única transformación lineal tal que 
+            \begin{ejemplo*} Usando el teorema \ref{th-tl-definida-en-base}, podemos demostrar la observación \ref{obs-tl-1.5} de la siguiente manera: sea  $\cC_n = \{e_1,\ldots,e_n\}$ es la base canónica de $\K^n$ y  sea  $T: \K^n \to \K^m$ la única transformación lineal tal que 
             \begin{equation*}
             T(e_j)  = (a_{1j},\, \ldots\,,a_{mj} ), \quad j=1,\ldots,n
             \end{equation*}	
@@ -731,9 +731,9 @@ Luego,
         \begin{proof} 
 
          ($\Rightarrow$) 
-           Sea $ \mathcal B$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición \ref{prop-T-mono-sii-li-2-li}, $T(\mathcal B)$ es LI y genera $W$,  es decir,  es base de $W$.
+           Sea $ \cB$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición \ref{prop-T-mono-sii-li-2-li}, $T(\cB)$ es LI y genera $W$,  es decir,  es base de $W$.
 
-           ($\Leftarrow$) Sea $ \mathcal B$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\mathcal B)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo.
+           ($\Leftarrow$) Sea $ \cB$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\cB)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo.
         \end{proof}
 
         \begin{corolario}
@@ -967,7 +967,7 @@ Luego,
 
 
     \begin{section}{Coordenadas}\label{seccion-coordenadas}
-        Una de las características útiles de una base $\mathcal B$ en un espacio vectorial  $V$ de dimensión $n$ es que permite introducir coordenadas en $V$ en forma análoga a las ``coordenadas naturales'', $x_i$, de un vector $v = (x_l,\ldots, x_n)$ en el espacio $\K^n$. En este esquema, las coordenadas de un vector $v$ en $V$, respecto de la base $\mathcal B$, serán los escalares que sirven para expresar $v$ como combinación lineal de los vectores de la base. En  el caso  de la base canónica $e_1,\ldots,e_n$ de $\K^n$ tenemos
+        Una de las características útiles de una base $\cB$ en un espacio vectorial  $V$ de dimensión $n$ es que permite introducir coordenadas en $V$ en forma análoga a las ``coordenadas naturales'', $x_i$, de un vector $v = (x_l,\ldots, x_n)$ en el espacio $\K^n$. En este esquema, las coordenadas de un vector $v$ en $V$, respecto de la base $\cB$, serán los escalares que sirven para expresar $v$ como combinación lineal de los vectores de la base. En  el caso  de la base canónica $e_1,\ldots,e_n$ de $\K^n$ tenemos
         $$
         v = (x_1,\ldots,x_n) = \sum_{i=1}^{n} x_ie_i.
         $$
@@ -1020,7 +1020,7 @@ Luego,
 
 
     \begin{ejemplo*}
-        Sea $\mathcal B = \{(1,-1),(2,3)\}$ base ordenada de $\R^2$. Encontrar las coordenadas  de $(1,0)$ y $(0,1)$ en la base $\mathcal B$.
+        Sea $\cB = \{(1,-1),(2,3)\}$ base ordenada de $\R^2$. Encontrar las coordenadas  de $(1,0)$ y $(0,1)$ en la base $\cB$.
     \end{ejemplo*}
     \begin{proof}[Solución] Debemos encontrar $x_1, x_2 \in \R$ tal que 
         $$
@@ -1033,11 +1033,11 @@ Luego,
         \end{align*}
         Resolviendo el sistema de ecuaciones obtenemos $x_1 = \frac35$ y $x_2 = \frac15$,  es decir
         $$
-        (1,0) =\; \frac35(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (1,0) = (\;\frac35,\frac15)_{\mathcal B}.
+        (1,0) =\; \frac35(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (1,0) = (\;\frac35,\frac15)_{\cB}.
         $$ 
         De forma análoga podemos ver que
         $$
-        (0,1) = -\frac25(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (0,1) = (-\frac25,\frac15)_{\mathcal B}.
+        (0,1) = -\frac25(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (0,1) = (-\frac25,\frac15)_{\cB}.
         $$
     \end{proof}
     
@@ -1053,41 +1053,44 @@ Luego,
         $$
         v + w = (x_1+y_1)v_1 + \cdots +(x_n+y_n)v_n,
         $$
-        luego
-        $$
-        [v + w]_\mathcal{B} = \begin{bmatrix}x_1+y_1 \\ \vdots \\ x_n+y_n\end{bmatrix}
-        = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}+\begin{bmatrix}y_1 \\ \vdots \\ y_n\end{bmatrix} = [v]_\mathcal{B} +[w]_\mathcal{B}.
-        $$
-        
+        luego,
+        \begin{align*}
+            [v + w]_\mathcal{B} &=(x_1+y_1,\ldots ,x_n+y_n) \\
+            &= (x_1,\ldots, x_n) +(y_1,\ldots , y_n) \\
+            &= [v]_\mathcal{B} +[w]_\mathcal{B}.
+        \end{align*}
+                
         \ref{itm-coor-2} Si $v = x_1v_1 + \cdots +x_nv_n$ y $\ \in \K$, entonces 
         $$
         \lambda v = (\lambda x_1)v_1 + \cdots +(\lambda x_n)v_n,
         $$
-        luego
-        $$
-        [\lambda v ]_\mathcal{B} = \begin{bmatrix}\lambda x_1 \\ \vdots \\ \lambda x_n\end{bmatrix}
-        = \lambda \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix} = \lambda [v]_\mathcal{B}.
-        $$
+        luego,
+        \begin{align*}
+            [\lambda v ]_\mathcal{B} &= (\lambda x_1,\ldots , \lambda x_n )\\
+        &= \lambda (x_1,\ldots ,x_n) \\
+        &= \lambda [v]_\mathcal{B}.
+        \end{align*}
     \end{proof}
+    
     
     \end{section}
 
 
         \begin{section}{Matriz de una transformaci\'on lineal}\label{seccion-matriz-de-una-tl}
-            Sea $V$ un espacio vectorial de dimensión $n$ sobre el cuerpo $\K$, y sea $W$ un espacio vectorial de dimensión $m$ sobre $\K$. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_m\}$ una base ordenada de $W$. Si $T$ es cualquier 		transformación lineal de $V$ en $W$, entonces $T$ está determinada por su efecto sobre los vectores $v_j$, puesto que todo vector de $V$ es combinación lineal de ellos. Cada uno de los $n$ vectores $Tv_j$ se expresa de manera única 	como combinación lineal
+            Sea $V$ un espacio vectorial de dimensión $n$ sobre el cuerpo $\K$, y sea $W$ un espacio vectorial de dimensión $m$ sobre $\K$. Sea $\cB = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\cB' = \{w_1,\ldots,w_m\}$ una base ordenada de $W$. Si $T$ es cualquier 		transformación lineal de $V$ en $W$, entonces $T$ está determinada por su efecto sobre los vectores $v_j$, puesto que todo vector de $V$ es combinación lineal de ellos. Cada uno de los $n$ vectores $Tv_j$ se expresa de manera única 	como combinación lineal
             \begin{equation}\label{matriz-de-T-1}
                 Tv_j = \sum_{i=1}^{m} a_{ij} w_i
             \end{equation}
-            de los $w_i$. Los escalares $a_{1j},\ldots,a_{mj}$ son las coordenadas de $Tv_j$ en la base ordenada $\mathcal B'$. Por consiguiente, la transformación $T$ está determinada por los
+            de los $w_i$. Los escalares $a_{1j},\ldots,a_{mj}$ son las coordenadas de $Tv_j$ en la base ordenada $\cB'$. Por consiguiente, la transformación $T$ está determinada por los
             $mn$ escalares $a_{ij}$ mediante la expresión \eqref{matriz-de-T-1}. 
             
-            \begin{definicion} Sean $V$ y $W$ espacios vectoriales de dimensión finita con bases ordenadas $\mathcal B = \{v_1,\ldots,v_n\}$  y $\mathcal B' = \{w_1,\ldots,w_m\}$, respectivamente. Sea $T: V \to W$ una transformación lineal tal que 
+            \begin{definicion} Sean $V$ y $W$ espacios vectoriales de dimensión finita con bases ordenadas $\cB = \{v_1,\ldots,v_n\}$  y $\cB' = \{w_1,\ldots,w_m\}$, respectivamente. Sea $T: V \to W$ una transformación lineal tal que 
                 \begin{equation*}\label{matriz-de-T-1}
                     Tv_j = \sum_{i=1}^{m} a_{ij} w_i.
                 \end{equation*}
-                A  $A$  La matriz $m \times n$  definida por $[A]_{ij} = a_{ij}$ se la  denomina \textit{la matriz de $T$ respecto a las bases ordenadas $\mathcal B$ y $\mathcal B'$;}\index{matriz!de una transformación lineal} y se la denota 
+                A  $A$  La matriz $m \times n$  definida por $[A]_{ij} = a_{ij}$ se la  denomina \textit{la matriz de $T$ respecto a las bases ordenadas $\cB$ y $\cB'$;}\index{matriz!de una transformación lineal} y se la denota 
                 $$
-                [T]_{\mathcal B \mathcal B'} = A .
+                [T]_{\cB \cB'} = A .
                 $$.
             \end{definicion}
             
@@ -1096,7 +1099,7 @@ Luego,
                 $$
                 T(x,y,z) = (2x+y, 3y, x+4z,z).
                 $$
-                Sean  $B = \{e_1,e_2,e_3\}$ la base canónica de $\R^3$ y  $B' = \{e_1,e_2,e_3,e_4\}$ la base canónica de $\R^4$. Entonces
+                Sean  $\cC_3 = \{e_1,e_2,e_3\}$ la base canónica de $\R^3$ y  $\cC_4 = \{e_1,e_2,e_3,e_4\}$ la base canónica de $\R^4$. Entonces
                 \begin{equation*}
                     \begin{array}{ccccrcrcrcr}
                     T(e_1) & = & (2,0,1,0) & = &  2e_1& + & 0.e_2& + &   e_3& + & 0.e_4  \\
@@ -1106,7 +1109,7 @@ Luego,
                 \end{equation*}
                 Por  lo tanto
                 \begin{equation*}
-                        [T]_{\mathcal B \mathcal B'} =\begin{bmatrix} 2&1&0 \\0&3&0 \\1&0&4 \\0&0&1
+                        [T]_{\cC_3 \cC_4} =\begin{bmatrix} 2&1&0 \\0&3&0 \\1&0&4 \\0&0&1
                     \end{bmatrix}.
                 \end{equation*}
                 Observar que si escribimos los vectores en coordenadas con respecto  a las bases canónicas,  tenemos que 
@@ -1118,7 +1121,7 @@ Luego,
                 \end{equation*}
                 o más formalmente
                 \begin{equation*}
-                    [T]_{\mathcal B \mathcal B'} [v]_{\mathcal B} = [T(v)]_{\mathcal B'}.
+                    [T]_{\cC_3 \cC_4} [v]_{\cC_3} = [T(v)]_{\cC_4}.
                 \end{equation*}
             \end{ejemplo*}
         
@@ -1138,15 +1141,15 @@ Luego,
                 \end{equation}
          	
         
-                Sean  $\mathcal C_n$ y $\mathcal C_m$ las bases canónicas de $\R^n$ y $\R^m$,  respectivamente, entonces 
+                Sean  $\cC_n$ y $\cC_m$ las bases canónicas de $\R^n$ y $\R^m$,  respectivamente, entonces 
                     \begin{equation*}
-                        [T]_{\mathcal C_n\mathcal C_m} =A.
+                        [T]_{\cC_n\cC_m} =A.
                     \end{equation*}
                 \end{observacion*}
     
-            \begin{proposicion}\label{prop-matriz-de-tv} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\mathcal B = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\mathcal B' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
+            \begin{proposicion}\label{prop-matriz-de-tv} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\cB = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\cB' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
             \begin{equation}\label{matriz-de-tl-2}
-            [T]_{\mathcal B \mathcal B'} [v]_{\mathcal B} = [T(v)]_{\mathcal B'}, \quad \forall \,v \in V.
+            [T]_{\cB \cB'} [v]_{\cB} = [T(v)]_{\cB'}, \quad \forall \,v \in V.
             \end{equation}	
             \end{proposicion}
         \begin{proof}
@@ -1156,7 +1159,7 @@ Luego,
             \end{equation*}
             entonces $[T]_{ij} = a_{ij}$. Sea $v \in $,  entonces $v = x_1v_1+\cdots+x_n v_n$ con $x_i \in \K$, por lo tanto 
             $$
-            [v]_{\mathcal B} = \begin{bmatrix} x_1\\ \vdots\\x_n\end{bmatrix}.
+            [v]_{\cB} = \begin{bmatrix} x_1\\ \vdots\\x_n\end{bmatrix}.
             $$
             Ahora bien,
             \begin{multline*}
@@ -1165,11 +1168,11 @@ Luego,
             \end{multline*}
             y, por lo tanto,
             \begin{equation}\label{eq-45}
-            [T(v)]_{\mathcal B'} = \begin{bmatrix}  \sum_{j=1}^{n}x_ja_{1j}\\\sum_{j=1}^{n}x_ja_{2j}\\ \vdots\\\sum_{j=1}^{n}x_ja_{mj}\end{bmatrix}.
+            [T(v)]_{\cB'} = \begin{bmatrix}  \sum_{j=1}^{n}x_ja_{1j}\\\sum_{j=1}^{n}x_ja_{2j}\\ \vdots\\\sum_{j=1}^{n}x_ja_{mj}\end{bmatrix}.
             \end{equation}
             Por otro lado, 
             \begin{equation}\label{eq-46}
-            [T]_{\mathcal B \mathcal B'} [v]_{\mathcal B} = 
+            [T]_{\cB \cB'} [v]_{\cB} = 
             \begin{bmatrix} a_{11} &a_{12}&\cdots & a_{1n}
             \\a_{21} &a_{22}&\cdots & a_{2n}\\ \vdots &\vdots&& \vdots \\ a_{m1} &a_{m2}& \cdots & a_{mn}\end{bmatrix}
             \begin{bmatrix} x_1\\x_2\\ \vdots\\x_n\end{bmatrix}
@@ -1180,35 +1183,35 @@ Luego,
         \end{proof}
 
         \begin{corolario}\label{cor-cambio-de-base}
-            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\mathcal B$, $\mathcal B'$  bases ordenadas de $V$. Entonces 
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\cB$, $\cB'$  bases ordenadas de $V$. Entonces 
             \begin{equation*}
-                [v]_{\mathcal B} = [\Id]_{\mathcal B' \mathcal B}\, [v]_{\mathcal B'}, \quad \forall v \in V.
+                [v]_{\cB} = [\Id]_{\cB' \cB}\, [v]_{\cB'}, \quad \forall v \in V.
             \end{equation*}
         \end{corolario}
         \begin{proof}
             Por la proposición \ref{prop-matriz-de-tv} tenemos que 
             $$
-            [\Id]_{\mathcal B' \mathcal B}  [v]_{\mathcal B'} = [\Id (v)]_{\mathcal B} = [v]_{\mathcal B}.
+            [\Id]_{\cB' \cB}  [v]_{\cB'} = [\Id (v)]_{\cB} = [v]_{\cB}.
             $$
         \end{proof}
 
         \begin{definicion}
-            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\mathcal B$ y $\mathcal B'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\mathcal B' \mathcal B}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\mathcal B'$  a la base $\mathcal B$. 
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\cB$ y $\cB'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\cB' \cB}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\cB'$  a la base $\cB$. 
         \end{definicion}
 
-        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\mathcal B$ y $\mathcal B'$,  y dadas las coordenadas de $v$ en la base  $\mathcal B'$ es decir la matriz columna $[v]_{\mathcal B'}$, tenemos, por corolario \ref{cor-cambio-de-base}, que
+        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\cB$ y $\cB'$,  y dadas las coordenadas de $v$ en la base  $\cB'$ es decir la matriz columna $[v]_{\cB'}$, tenemos, por corolario \ref{cor-cambio-de-base}, que
         \begin{equation*}
-            [v]_{\mathcal B} =P\, [v]_{\mathcal B'}, \quad \forall v \in V.
+            [v]_{\cB} =P\, [v]_{\cB'}, \quad \forall v \in V.
         \end{equation*}
         
         \begin{teorema}[*]
-            Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y $\mathcal B = \{v_1,\ldots,v_n\}$ y $\mathcal B' = \{w_1,\ldots,w_m\}$ dos bases  ordenadas de $V$ y $W$ respectivamente. Entonces 
+            Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y $\cB = \{v_1,\ldots,v_n\}$ y $\cB' = \{w_1,\ldots,w_m\}$ dos bases  ordenadas de $V$ y $W$ respectivamente. Entonces 
             $$
             \kappa: L(V,W) \to M_{m \times n}(\K)
             $$
             definida
             $$
-            T \mapsto [T]_{\mathcal B \mathcal B'},
+            T \mapsto [T]_{\cB \cB'},
             $$
             es un isomorfismos de espacios vectoriales. 
         \end{teorema}
@@ -1217,7 +1220,7 @@ Luego,
             
             Sean $T,T' \in L(V,W)$ y $\lambda \in \K$, veamos que $\kappa(\lambda T+ T') = \lambda \kappa(T)+ \kappa(T')$,  es decir
             \begin{equation}\label{kappa-lineal}
-                [\lambda T+ T']_{\mathcal B \mathcal B'} = \lambda[T]_{\mathcal B \mathcal B'}+ [T']_{\mathcal B \mathcal B'}.
+                [\lambda T+ T']_{\cB \cB'} = \lambda[T]_{\cB \cB'}+ [T']_{\cB \cB'}.
             \end{equation}
             Para $1 \le j \le n$, sean 
             \begin{equation*}
@@ -1225,7 +1228,7 @@ Luego,
             \end{equation*}
             es  decir
             \begin{equation*}
-            [T]_{\mathcal B \mathcal B'} =	[a_{ij}] \qquad\text{ y } \qquad [T']_{\mathcal B \mathcal B'} =	[a'_{ij}],
+            [T]_{\cB \cB'} =	[a_{ij}] \qquad\text{ y } \qquad [T']_{\cB \cB'} =	[a'_{ij}],
             \end{equation*}
             entonces
             \begin{align*}
@@ -1235,8 +1238,8 @@ Luego,
             \end{align*}
             por lo tanto
             \begin{equation*}
-                [\lambda T+ T']_{\mathcal B \mathcal B'} = [\lambda a_{ij}+ a'_{ij}] =
-                \lambda[T]_{\mathcal B \mathcal B'}+ [T']_{\mathcal B \mathcal B'}
+                [\lambda T+ T']_{\cB \cB'} = [\lambda a_{ij}+ a'_{ij}] =
+                \lambda[T]_{\cB \cB'}+ [T']_{\cB \cB'}
             \end{equation*}
             y hemos probado \eqref{kappa-lineal} y, en consecuencia, $\kappa$  es lineal.
             
@@ -1252,15 +1255,15 @@ Luego,
         
         
         \begin{teorema}\label{th-producto-de-matrices-bases}
-            Sean $V$, $W$ y $Z$ espacios vectoriales de dimensión finita sobre el cuerpo $\K$; sean $T: V \to W$ y $U: W \to Z$  transformaciones lineales.  Si $\mathcal B$, $\mathcal B'$ y $\mathcal B''$ son bases ordenadas de los espacios $V$, $W$ y $Z$, respectivamente, entonces
+            Sean $V$, $W$ y $Z$ espacios vectoriales de dimensión finita sobre el cuerpo $\K$; sean $T: V \to W$ y $U: W \to Z$  transformaciones lineales.  Si $\cB$, $\cB'$ y $\cB''$ son bases ordenadas de los espacios $V$, $W$ y $Z$, respectivamente, entonces
             \begin{equation}
-                [UT]_{\mathcal B\mathcal B''} = 	[U]_{\mathcal B'\mathcal B''} 	[T]_{\mathcal B\mathcal B'}.  
+                [UT]_{\cB\cB''} = 	[U]_{\cB'\cB''} 	[T]_{\cB\cB'}.  
             \end{equation} 
         \end{teorema}
         \begin{proof} 
             Sean
             \begin{equation*}
-                 \mathcal B = \{v_1,\ldots,v_n\},\quad\mathcal B' = \{w_1,\ldots,w_m\},\quad  \mathcal B''= \{z_1,\ldots,z_l\}
+                 \cB = \{v_1,\ldots,v_n\},\quad\cB' = \{w_1,\ldots,w_m\},\quad  \cB''= \{z_1,\ldots,z_l\}
             \end{equation*}
             y
             \begin{equation*}
@@ -1268,7 +1271,7 @@ Luego,
             \end{equation*}
             Es decir 
             $$
-            [T]_{\mathcal B\mathcal B'} = [a_{ij}]\qquad \text{y} \qquad [U]_{\mathcal B'\mathcal B''} = [b_{ij}]. 
+            [T]_{\cB\cB'} = [a_{ij}]\qquad \text{y} \qquad [U]_{\cB'\cB''} = [b_{ij}]. 
             $$
             Entonces
             \begin{align*}
@@ -1277,46 +1280,46 @@ Luego,
                 &=  \sum_{i=1}^m a_{ij} \sum_{k=1}^l b_{ki} z_k \\
                 &= \sum_{k=1}^l(\sum_{i=1}^m  b_{ki}a_{ij})  z_k.
             \end{align*}
-            Luego el coeficiente $kj$ de la matriz $[UT]_{\mathcal B\mathcal B''}$ es $\sum_{i=1}^m  b_{ki}a_{ij}$ que es igual a la fila $k$ de $[U]_{\mathcal B'\mathcal B''}$ por la columna $j$ de  $[T]_{\mathcal B\mathcal B'}$,  en símbolos,  si $A= 	[T]_{\mathcal B\mathcal B'}$, $B = 	[U]_{\mathcal B'\mathcal B''}$ y $C = 	[UT]_{\mathcal B\mathcal B''}$, entonces
+            Luego el coeficiente $kj$ de la matriz $[UT]_{\cB\cB''}$ es $\sum_{i=1}^m  b_{ki}a_{ij}$ que es igual a la fila $k$ de $[U]_{\cB'\cB''}$ por la columna $j$ de  $[T]_{\cB\cB'}$,  en símbolos,  si $A= 	[T]_{\cB\cB'}$, $B = 	[U]_{\cB'\cB''}$ y $C = 	[UT]_{\cB\cB''}$, entonces
             \begin{equation*}
                 [C]_{kj} = \sum_{i=1}^m  b_{ki}a_{ij} = F_k(B)C_j(A) = [BA]_{kj}.
             \end{equation*}
         \end{proof}	
             
-        \begin{corolario}\label{cor-inversa-matriz-cambio-de-base} Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\mathcal B$ y $\mathcal B'$ bases ordenadas de $V$. La matriz de cambio de base  $P =[\Id]_{\mathcal B' \mathcal B}$ es invertible y su  inversa es $P^{-1} =[\Id]_{\mathcal B \mathcal B'}$
+        \begin{corolario}\label{cor-inversa-matriz-cambio-de-base} Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\cB$ y $\cB'$ bases ordenadas de $V$. La matriz de cambio de base  $P =[\Id]_{\cB' \cB}$ es invertible y su  inversa es $P^{-1} =[\Id]_{\cB \cB'}$
         \end{corolario}
         \begin{proof}
             \begin{equation*}
-                P^{-1} P =[\Id]_{\mathcal B \mathcal B'}[\Id]_{\mathcal B' \mathcal B} = [\Id]_{\mathcal B'} = \Id.
+                P^{-1} P =[\Id]_{\cB \cB'}[\Id]_{\cB' \cB} = [\Id]_{\cB'} = \Id.
             \end{equation*}
         \end{proof}
     
 
-        \begin{corolario}\label{cor-5.6} Sean $V$ espacio vectorial de dimensión finita, $\mathcal B = \{v_1,\ldots,v_n\}$ base ordenada de $V$ y $T,U: V \to V$ operadores lineales. Entonces
+        \begin{corolario}\label{cor-5.6} Sean $V$ espacio vectorial de dimensión finita, $\cB = \{v_1,\ldots,v_n\}$ base ordenada de $V$ y $T,U: V \to V$ operadores lineales. Entonces
             \begin{enumerate}
-                \item\label{itm-cor-cambio-1} $[UT]_{\mathcal B} = [U]_{\mathcal B} [T]_{\mathcal B}$.
-                \item\label{itm-cor-cambio-2} Si $\Id: V \to V$  es el operador identidad, entonces $[\Id]_{\mathcal B} =\Id$,  donde $\Id$  es la matriz identidad $n \times n$.
-                \item\label{itm-cor-cambio-3} Si $T$  es invertible,  entonces $[T]_{\mathcal B}$  es una matriz invertible y  $$[T^{-1}]_{\mathcal B} = [T]_{\mathcal B}^{-1}.$$
+                \item\label{itm-cor-cambio-1} $[UT]_{\cB} = [U]_{\cB} [T]_{\cB}$.
+                \item\label{itm-cor-cambio-2} Si $\Id: V \to V$  es el operador identidad, entonces $[\Id]_{\cB} =\Id$,  donde $\Id$  es la matriz identidad $n \times n$.
+                \item\label{itm-cor-cambio-3} Si $T$  es invertible,  entonces $[T]_{\cB}$  es una matriz invertible y  $$[T^{-1}]_{\cB} = [T]_{\cB}^{-1}.$$
             \end{enumerate}
         \end{corolario}
         \begin{proof}
-            \ref{itm-cor-cambio-1} Es inmediato del teorema anterior tomado $\mathcal B' =\mathcal B'' = \mathcal B$. 
+            \ref{itm-cor-cambio-1} Es inmediato del teorema anterior tomado $\cB' =\cB'' = \cB$. 
             
             \ref{itm-cor-cambio-2} $\Id(v_i) = v_i$ y por lo tanto
             \begin{equation*}
-                [\Id]_{\mathcal B} = \begin{bmatrix} 1&0&\cdots&0 \\0&1&\cdots&0\\\vdots&&&\vdots\\0&0&\cdots&1 	\end{bmatrix} = \Id.
+                [\Id]_{\cB} = \begin{bmatrix} 1&0&\cdots&0 \\0&1&\cdots&0\\\vdots&&&\vdots\\0&0&\cdots&1 	\end{bmatrix} = \Id.
             \end{equation*}
             
             
             \ref{itm-cor-cambio-3} $\Id = T T^{-1}$, luego
             \begin{equation*}
-                \Id = [\Id]_{\mathcal B} =  [T T^{-1}]_{\mathcal B} =  [T]_{\mathcal B} [T^{-1}]_{\mathcal B}.
+                \Id = [\Id]_{\cB} =  [T T^{-1}]_{\cB} =  [T]_{\cB} [T^{-1}]_{\cB}.
             \end{equation*}
              Análogamente, $\Id = T^{-1} T$, luego
             \begin{equation*}
-            \Id = [\Id]_{\mathcal B} =  [T^{-1} T]_{\mathcal B} =  [T^{-1}]_{\mathcal B} [T]_{\mathcal B}. 
+            \Id = [\Id]_{\cB} =  [T^{-1} T]_{\cB} =  [T^{-1}]_{\cB} [T]_{\cB}. 
             \end{equation*}
-            Por  lo tanto $[T]_{\mathcal B}^{-1} = [T^{-1}]_{\mathcal B}$.
+            Por  lo tanto $[T]_{\cB}^{-1} = [T^{-1}]_{\cB}$.
         \end{proof}	
     
     
@@ -1324,33 +1327,33 @@ Luego,
         \begin{teorema}\label{th-cambio-de-base}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean
             $$
-            \mathcal B = \{v_1,\ldots,v_n \}, \qquad \mathcal B' = \{w_1,\ldots,w_n \}
+            \cB = \{v_1,\ldots,v_n \}, \qquad \cB' = \{w_1,\ldots,w_n \}
             $$
-            bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces, si $P$ es la matriz de cambio de base de $\mathcal B'$ a $\mathcal B$, se cumple que  
+            bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces, si $P$ es la matriz de cambio de base de $\cB'$ a $\cB$, se cumple que  
             \begin{equation*}
-            [T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}  P.
+            [T]_{\cB'} = P^{-1}[T]_{\cB}  P.
             \end{equation*}
             Es decir
             \begin{equation}\label{eq-cambio de base}
-                [T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B}.
+                [T]_{\cB'} = [\Id]_{\cB \cB'} [T]_{\cB} [\Id]_{\cB' \cB}.
             \end{equation}
         \end{teorema}
         \begin{proof} Tenemos que $T = \Id T$ y $T =T  \Id$, luego 
             \begin{align*}
-                [T]_{\mathcal B'\mathcal B'} &=  [\Id T]_{\mathcal B'\mathcal B'}& \qquad& \\
-                &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-producto-de-matrices-bases}})  \\
-                &= [\Id]_{\mathcal B \mathcal B'} [T \Id]_{\mathcal B' \mathcal B}& &\\
-                &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B\mathcal B} [\Id]_{\mathcal B' \mathcal B}& &(\text{teorema \ref{th-producto-de-matrices-bases}}) \\
-                &=P^{-1}[T]_{\mathcal B\mathcal B}P& &(\text{corolario \ref{cor-inversa-matriz-cambio-de-base}}).
+                [T]_{\cB'\cB'} &=  [\Id T]_{\cB'\cB'}& \qquad& \\
+                &= [\Id]_{\cB \cB'} [T]_{\cB' \cB}& &(\text{teorema \ref{th-producto-de-matrices-bases}})  \\
+                &= [\Id]_{\cB \cB'} [T \Id]_{\cB' \cB}& &\\
+                &= [\Id]_{\cB \cB'} [T]_{\cB\cB} [\Id]_{\cB' \cB}& &(\text{teorema \ref{th-producto-de-matrices-bases}}) \\
+                &=P^{-1}[T]_{\cB\cB}P& &(\text{corolario \ref{cor-inversa-matriz-cambio-de-base}}).
             \end{align*} 
         \end{proof}
     
         La fórmula \eqref{eq-cambio de base}  es importante por si misma y debemos recordarla.
 
-        El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\mathcal B$, $\mathcal B'$ 
-        bases ordenadas de $V$, entonces $[T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}P$, para $P$ una matriz invertible. Por lo tanto, 
+        El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\cB$, $\cB'$ 
+        bases ordenadas de $V$, entonces $[T]_{\cB'} = P^{-1}[T]_{\cB}P$, para $P$ una matriz invertible. Por lo tanto, 
         \begin{equation*}
-            \det([T]_{\mathcal B'}) = \det(P^{-1}[T]_{\mathcal B}  P) =  \det([T]_{\mathcal B}  PP^{-1}) =  \det([T]_{\mathcal B}). 
+            \det([T]_{\cB'}) = \det(P^{-1}[T]_{\cB}  P) =  \det([T]_{\cB}  PP^{-1}) =  \det([T]_{\cB}). 
         \end{equation*}
         Es decir,  el determinante de la matriz de $T$ en cualquier base siempre es igual.
         
@@ -1362,14 +1365,14 @@ Luego,
         \begin{section}{Operadores diagonalizables}\label{seccion-autovalores-y-autovectores-de-una-tl}
         Vimos en la sección  \ref{seccion-autovalores-y-autovectores-de-matrices} la definición de autovalores y autovectores de una matriz. Por otro lado,  en la sección \ref{seccion-matriz-de-una-tl} vimos que dada una base podemos asignarle a cada transformación lineal una matriz. En  esta sección veremos,  entro otros temas,  los autovalores y autovectores desde una perspectiva de las transformaciones lineales. Por lo dicho anteriormente  verán que muchos conceptos y demostraciones se repiten o son similares al caso de la matrices. 
         
-        Sea $V$ espacio vectorial de dimensión finita. Un operador lineal en $V$ es \textit{diagonalizable}\index{matriz!diagonalizable}  si existe una base ordenada $\mathcal B= \{v_1,\ldots,v_n\}$ de $V$ y $\lambda_1,\ldots,\lambda_n \in \K$ tal que 
+        Sea $V$ espacio vectorial de dimensión finita. Un operador lineal en $V$ es \textit{diagonalizable}\index{matriz!diagonalizable}  si existe una base ordenada $\cB= \{v_1,\ldots,v_n\}$ de $V$ y $\lambda_1,\ldots,\lambda_n \in \K$ tal que 
         \begin{equation}\label{eq-auto-49}
             T(v_i) = \lambda_i v_i,\qquad 1\le i \le n. 
         \end{equation}
         En  general, los operadores diagonalizables permiten hacer cálculos sobre ellos en forma sencilla, por ejemplo el núcleo del  operador definido por \eqref{eq-auto-49} es $\nuc(T)=\langle v_i: \lambda_i =0 \rangle$ y  su imagen es $\img(T)=\langle v_i: \lambda_i \not=0 \rangle$ (vermos la demostración de estos resultado más adelante). 
         Otra propiedad importante de los operadores diagonalizables es que la matriz de la transformación lineal en una base adecuada es diagonal (de allí viene el nombre de diagonalizable). En  el caso del  operador definido por \eqref{eq-auto-49} tenemos que
         $$
-        [T]_{\mathcal B} = 
+        [T]_{\cB} = 
         \begin{bmatrix}
         \lambda_1&0&0&\cdots&0 \\
         0&\lambda_2&0&\cdots&0\\
@@ -1507,9 +1510,9 @@ Luego,
                 \begin{bmatrix} x\\y\\z \end{bmatrix} =
                 \begin{bmatrix} 10x-10y+6z\\8x -8y +6z \\-5x+5y-3z\end{bmatrix}.
             \end{equation*}
-            Es decir,  si $\mathcal C$ es la base canónica de $\R^3$, 
+            Es decir,  si $\cC$ es la base canónica de $\R^3$, 
             $$ 
-            [T]_{\mathcal C}=\begin{bmatrix}10&-10&6\\8& -8& 6\\-5& 5& -3\end{bmatrix}.
+            [T]_{\cC}=\begin{bmatrix}10&-10&6\\8& -8& 6\\-5& 5& -3\end{bmatrix}.
             $$
             Entonces el  polinomio característico de $T$ es
             $$
@@ -1668,7 +1671,7 @@ Luego,
                  para  $i=1, \ldots, k$.
         \end{proposicion}
         \begin{proof}[Demostración ($*$)]
-            $T$ es un operador lineal diagonalizable y $\lambda_1,\ldots,\lambda_k$ los valores propios distintos de $T$. Entonces existe una base ordenada $\mathcal B$ con respecto a la cual $T$ está representado por una matriz diagonal; es decir, los elementos de la diagonal son los escalares $\lambda_j$ cada uno de los cuales se repite un cierto número de veces. Más específicamente, si
+            $T$ es un operador lineal diagonalizable y $\lambda_1,\ldots,\lambda_k$ los valores propios distintos de $T$. Entonces existe una base ordenada $\cB$ con respecto a la cual $T$ está representado por una matriz diagonal; es decir, los elementos de la diagonal son los escalares $\lambda_j$ cada uno de los cuales se repite un cierto número de veces. Más específicamente, si
              $v_{j1},\ldots,v_{jd_j}$ son los vectores en $\mathcal{B}$ con autovalor $\lambda_j$ ($1 \le j \le k$),  reordenamos la base de tal forma que primero estén los autovectores con autovalor $\lambda_1$, a continuación los de autovalor $\lambda_2$, etc.: 
             \begin{equation*}
                 \mathcal{B} = \{v_{11},\ldots,v_{1d_1},\ldots,v_{k1},\ldots,v_{kd_k}\}. 

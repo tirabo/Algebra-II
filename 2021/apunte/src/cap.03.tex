@@ -646,10 +646,10 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
 \end{observacion*}
  
  \begin{definicion}\label{def-base}
-     Sea $V$ un espacio vectorial. Una \textit{base}\index{base de un espacio vectorial} de $V$ es un conjunto $\mathcal B \subseteq V$ tal que
+     Sea $V$ un espacio vectorial. Una \textit{base}\index{base de un espacio vectorial} de $V$ es un conjunto $\cB \subseteq V$ tal que
      \begin{enumerate}
-         \item\label{it.genera} $\mathcal B$ genera a $V$, y
-         \item\label{it.li} $\mathcal B$ es LI.
+         \item\label{it.genera} $\cB$ genera a $V$, y
+         \item\label{it.li} $\cB$ es LI.
      \end{enumerate}
       El espacio $V$ es de \textit{dimensión finita}\index{dimensión finita} si tiene una base finita,  es decir con  un número finito de elementos.
  \end{definicion}
@@ -665,7 +665,7 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
     e_n&=& (0,0,0,\ldots,1)
     \end{array}
     \end{equation*}
-    ($e_i$ es el vector con todas sus coordenadas iguales a cero,  excepto  la coordenada $i$ que vale 1). Entonces veamos que  $e_1,\ldots,e_n$ es una base de $\K^n$.
+    ($e_i$ es el vector con todas sus coordenadas iguales a cero,  excepto  la coordenada $i$ que vale 1). Entonces veamos que  $\{e_1,\ldots,e_n\}$ es una base de $\K^n$.
     
     Probemos que $e_1,\ldots,e_n$ genera  $\K^n$: si $(x_1,\ldots,x_n) \in \K^n$,  entonces
         $$
@@ -684,7 +684,7 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
         \end{align*}
         Luego, $x_1= x_2=\cdots=x_n =0$ y por lo tanto $e_1,\ldots,e_n$ es LI.
         
-        Para $1 \le i \le n$, al vector $e_i$ se lo denomina el \textit{$i$-ésimo vector canónico}  y a la base $\mathcal B_n = \left\{e_1,\ldots,e_n \right\}$ se la denomina la \textit{base canónica}\index{base canónica} de $\K^n$. 
+        Para $1 \le i \le n$, al vector $e_i$ se lo denomina el \textit{$i$-ésimo vector canónico}  y a la base $\cC_n = \left\{e_1,\ldots,e_n \right\}$ se la denomina la \textit{base canónica}\index{base canónica} de $\K^n$. 
 \end{ejemplo*}
  
  
@@ -786,11 +786,11 @@ Si $S$ es un conjunto finito denotemos $|S|$  al \textit{cardinal} de  $S$ es de
     Si $V$ es un espacio vectorial de dimensión finita, entonces dos bases cualesquiera de $V$ tienen el mismo número de elementos.
 \end{corolario}
 \begin{proof}
-        Como $V$ es de dimensión finita, tiene una base finita $\mathcal B$  de $m$ vectores, es decir,  $\mathcal B$ es base de $V$ y  $|\mathcal B| = m.$
-        Sea $\mathcal B'$  otra base de $V$, como $\mathcal B$  genera $V$ y  $\mathcal B'$ es  un conjunto LI, entonces, por el teorema anterior, $|\mathcal B'| \le m$. Sea $n = |\mathcal B'|$,  entonces $n \le m$. Por otro lado $\mathcal B'$ es base y, por lo tanto,  genera $V$ y  $\mathcal B$ es LI, luego, por el teorema anterior nuevamente,  $m \le n$, y en consecuencia $m=n$.
+        Como $V$ es de dimensión finita, tiene una base finita $\cB$  de $m$ vectores, es decir,  $\cB$ es base de $V$ y  $|\cB| = m.$
+        Sea $\cB'$  otra base de $V$, como $\cB$  genera $V$ y  $\cB'$ es  un conjunto LI, entonces, por el teorema anterior, $|\cB'| \le m$. Sea $n = |\cB'|$,  entonces $n \le m$. Por otro lado $\cB'$ es base y, por lo tanto,  genera $V$ y  $\cB$ es LI, luego, por el teorema anterior nuevamente,  $m \le n$, y en consecuencia $m=n$.
 \end{proof}
 
-Hemos demostrado, si $V$  es un espacio vectorial de dimensión finita y $\mathcal B,\mathcal B' $ dos bases de $V$,  entonces $|\mathcal B|=|\mathcal B'|$. Esto nos permite hacer la siguiente definición. 
+Hemos demostrado, si $V$  es un espacio vectorial de dimensión finita y $\cB,\cB' $ dos bases de $V$,  entonces $|\cB|=|\cB'|$. Esto nos permite hacer la siguiente definición. 
 
 
 \begin{definicion}
@@ -880,7 +880,7 @@ Es decir, todo subconjunto LI de un espacio vectorial de dimensión finita se pu
         Sea $V$ espacio vectorial de dimensión finita y $V \ne \{0\}$, entonces $\dim V >0$.
     \end{corolario}
     \begin{proof}
-        Como $V \ne \{0\}$,  existe $v \in V$ con $v \ne 0$. Entonces, $S_0 = \{v\}$ es LI, pues $\lambda v =0 \Rightarrow \lambda =0$. Por el teorema anterior, $S_0$ se extiende a una base $\mathcal B$. Como $|\mathcal B| \ge |S_0| =1$, tenemos que $\dim V >0$.    
+        Como $V \ne \{0\}$,  existe $v \in V$ con $v \ne 0$. Entonces, $S_0 = \{v\}$ es LI, pues $\lambda v =0 \Rightarrow \lambda =0$. Por el teorema anterior, $S_0$ se extiende a una base $\cB$. Como $|\cB| \ge |S_0| =1$, tenemos que $\dim V >0$.    
     \end{proof}
     
     \begin{corolario}\label{dimw-menor-dimv}
@@ -904,16 +904,16 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
 
 
 \begin{teorema}\label{gen->base}
-    Sea $V \ne 0$ espacio vectorial y $S$ un conjunto finito de generadores de $V$,  entonces existe un subconjunto $\mathcal B$  de $S$ que es una base.  
+    Sea $V \ne 0$ espacio vectorial y $S$ un conjunto finito de generadores de $V$,  entonces existe un subconjunto $\cB$  de $S$ que es una base.  
 \end{teorema} 
 \begin{proof}
     Sea
     $$
     C = \{|R|: R \subseteq S \;\wedge\; R \text{ es LI}\}.
     $$
-    Como $V$ no es nulo  y $S$ genera $V$, $C \ne \emptyset$. $C$  es un subconjunto no vacío de  $\mathbb N$,  acotado superiormente por $|S|$ y por lo tanto tiene máximo. Sea $n$ el máximo de $C$ entonces existe  $\mathcal B \subseteq S$ tal que $|\mathcal B| =n$  y $\mathcal B$ es LI. Veremos que $\mathcal B$  es una base. Para ello, como $\mathcal B $ es LI, sólo falta ver que $\mathcal B$ genera a $V$. 
+    Como $V$ no es nulo  y $S$ genera $V$, $C \ne \emptyset$. $C$  es un subconjunto no vacío de  $\mathbb N$,  acotado superiormente por $|S|$ y por lo tanto tiene máximo. Sea $n$ el máximo de $C$ entonces existe  $\cB \subseteq S$ tal que $|\cB| =n$  y $\cB$ es LI. Veremos que $\cB$  es una base. Para ello, como $\cB $ es LI, sólo falta ver que $\cB$ genera a $V$. 
     
-    Supongamos que existe $v \in S$ tal que $ v \not\in \langle \mathcal B \rangle$. Por el lema \ref{lem-li+vec=li},  entonces  $\mathcal B \cup \{v\}$ es LI y este subconjunto LI de $S$ tiene $n+1$  elementos, lo cual contradice la maximalidad de $n$. Es claro entonces, que $v \in S \Rightarrow v \in \mathcal B$,  es decir $S \subset \langle B \rangle$. Como $S \subset \langle B \rangle$,  entonces
+    Supongamos que existe $v \in S$ tal que $ v \not\in \langle \cB \rangle$. Por el lema \ref{lem-li+vec=li},  entonces  $\cB \cup \{v\}$ es LI y este subconjunto LI de $S$ tiene $n+1$  elementos, lo cual contradice la maximalidad de $n$. Es claro entonces, que $v \in S \Rightarrow v \in \cB$,  es decir $S \subset \langle B \rangle$. Como $S \subset \langle B \rangle$,  entonces
     $V = \langle S \rangle \subset \langle B \rangle$, es decir $V =  \langle B \rangle$.
 \end{proof}
 
@@ -964,7 +964,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
     \begin{enumex}
         \item Sean $u_1,\ldots,u_k$ vectores mutuamente ortogonales en $\R^n$,  es decir $u_i \perp u_j$  si $i \ne j$. Probar que  $\{u_1,\ldots,u_k\}$ es un conjunto LI.
         \item 
-        Sea $\mathcal B =\{u_1,\ldots,u_n\}\subset \R^n$  una base ortogonal de $\R^n$ (ver definición \ref{def-bo}),  es decir $\mathcal B$  es un conjunto de $n$ vectores mutuamente ortogonales. Probar  que $\mathcal B$ es una base en el sentido de la definición \ref{def-base}.   
+        Sea $\cB =\{u_1,\ldots,u_n\}\subset \R^n$  una base ortogonal de $\R^n$ (ver definición \ref{def-bo}),  es decir $\cB$  es un conjunto de $n$ vectores mutuamente ortogonales. Probar  que $\cB$ es una base en el sentido de la definición \ref{def-base}.   
     \end{enumex}
 
 
