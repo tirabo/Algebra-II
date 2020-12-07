@@ -440,6 +440,24 @@ x& -3y & +3z & =&2 \\
                 Por lo tanto, $x_1 = \frac12$, $x_2 = \frac14$, $x_3 = \frac14$. 
             \end{proof}
             
+            \subsection*{$\S$ Ejercicios}
+
+            \begin{enumex}
+                \item Encontrar las soluciones de los siguientes sistemas de ecuaciones haciendo combinaciones lineales de ecuaciones (operaciones  \ref{e1-v1}, \ref{e2-v1} y \ref{e3-v1}).
+                \begin{equation*}
+                    \begin{cases}
+                        x+y+z &= 1 \\
+                        x+2y-z&=-2 \\
+                        x-y+6z &= 3
+                    \end{cases},\qquad\qquad
+                    \begin{cases}
+                        3x +2 y + z &=0 \\
+                        x+y+z &= 0 \\
+                        2x +y &=0
+                    \end{cases}. 
+                \end{equation*}
+
+            \end{enumex}
 
         \end{section}
         
@@ -673,7 +691,7 @@ x& -3y & +3z & =&2 \\
                 \end{definicion}
             
 
-                \begin{obs*} Denotamos $A \sim B$, si $B$ es equivalente a $A$ por filas. Entonces esta relación es una \textit{relación de equivalencia}\index{relación de equivalencia}, es decir es reflexiva, simétrica y transitiva. En  nuestro caso, sean $A$, $B$ y $C$ matrices $m \times n$, entonces ``$\sim$'' cumple: 
+                \begin{observacion*} Denotamos $A \sim B$, si $B$ es equivalente a $A$ por filas. Entonces esta relación es una \textit{relación de equivalencia}\index{relación de equivalencia}, es decir es reflexiva, simétrica y transitiva. En  nuestro caso, sean $A$, $B$ y $C$ matrices $m \times n$, entonces ``$\sim$'' cumple: 
                     \begin{enumerate}
                         \item  $A \sim A$ (reflexiva), 
                         \item $A \sim B$, entonces $B \sim A$ (simétrica), y
@@ -692,7 +710,7 @@ x& -3y & +3z & =&2 \\
                     Es decir, podemos  obtener $A$ de $B$ por operaciones elementales por fila, luego ``$\sim$'' es simétrica. Observar que para obtener $A$ a partir de $B$ tenemos que hacer las operaciones inversas en orden inverso. 
                     
                     Finalmente,   si podemos obtener $B$ de $A$ por operaciones elementales por fila y  podemos obtener $C$ de $B$ por operaciones elementales por fila, entonces podemos obtener $C$ de $A$ por operaciones elementales por fila (haciendo las primeras operaciones y luego las otras).
-                \end{obs*}
+                \end{observacion*}
                 
                 \begin{ejemplo*}
                     Veamos que la matriz 
@@ -1136,7 +1154,9 @@ x& -3y & +3z & =&2 \\
                 \end{ejemplo*} 
                 
                 
-                Veamos ahora formalmente cuales son las soluciones del sistema $BX=Z$. Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros $1$'s en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
+                Veamos ahora formalmente cuales son en forma genérica las soluciones del sistema $BX=Z$. 
+                
+                Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros $1$'s en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
                 \begin{equation}
                 \begin{matrix}
                 &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&= &z_1\\
@@ -1212,20 +1232,9 @@ x& -3y & +3z & =&2 \\
                     
                     ($\Leftarrow$) Sea $R$ la matriz escalón reducida por filas asociada a $A$. Por hipótesis, $AX=Y$ tiene una sola solución y  por lo tanto $RX=Z$, para algún $Z$, tiene una sola solución. Luego, no hay variables libres, es decir hay $n$ filas no nulas en $R$, como $R$ tiene $n$ filas, lo anterior implica que $R$ no tiene filas nulas. Entonces, por el lema anterior, $R=\Id_n$.
                 \end{proof}
-        
-            
-            
-            
                 \end{subsection}
             
-            
         \end{section}
-        
-        
-        
-        
-        
-        
         
         
         \begin{section}{\'Algebra de matrices}\label{seccion-algebra-de-matrices}
@@ -1602,6 +1611,36 @@ x& -3y & +3z & =&2 \\
 
         \end{subsection}
             
+        \subsection*{$\S$ Ejercicios}
+        \begin{enumex}
+            \item\label{matriz-de-bloques} (Matrices  de bloques)  Si $k_1, k_2 \in \N$ y $A_{ij} \in \K^{k_i \times k_j}$, para $i,j=1,2$, entonces podemos combinar esas matrices en la matriz cuadrada
+            $$
+            A = \begin{bmatrix} A_{11}&A_{12}\\A_{21}&A_{22}  \end{bmatrix} \in \K^{(k_1 + k_2) \times (k_1 + k_2)}. 
+            $$ 
+            Diremos entonces que \textit{$A$ es una matriz de bloques  $k_1,k_2$.}
+            
+            Probar las siguientes fórmula para matrices de bloques:
+            \begin{enumex}
+                \item \begin{equation*}
+                    \begin{bmatrix} A_{11}&A_{12}\\A_{21}&A_{22}  \end{bmatrix} + 
+                    \begin{bmatrix} B_{11}&B_{12}\\B_{21}&B_{22}  \end{bmatrix} =
+                    \begin{bmatrix} A_{11} + B_{11} & A_{12} + B_{12} \\ 
+                        A_{21} + B_{21} & A_{22} + B_{22} \end{bmatrix}. 
+                \end{equation*}
+                \item \begin{equation*}
+                    \begin{bmatrix} A_{11}&A_{12}\\A_{21}&A_{22}  \end{bmatrix}
+                    \begin{bmatrix} B_{11}&B_{12}\\B_{21}&B_{22}  \end{bmatrix} =
+                    \begin{bmatrix} A_{11}B_{11}+A_{12}B_{21} & A_{11}B_{12}+A_{12}B_{22} \\ 
+                        A_{21}B_{11}+A_{22}B_{21} & A_{21}B_{12}+A_{22}B_{22} \end{bmatrix}. 
+                \end{equation*}
+                \item Si $c \in \K$,
+                \begin{equation*}
+                   c \begin{bmatrix} A_{11}&A_{12}\\A_{21}&A_{22}  \end{bmatrix} =
+                     \begin{bmatrix} cA_{11}&cA_{12}\\cA_{21}&cA_{22}  \end{bmatrix}
+                \end{equation*}
+            \end{enumex}
+            
+        \end{enumex}
             
         \end{section}
         
@@ -1649,9 +1688,9 @@ x& -3y & +3z & =&2 \\
             \end{align*}
             (producto de matrices). Es decir, la notación antes utilizada es consistente con el, ahora definido, producto de matrices.  
             
-            \begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz!elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $\Id_m$.
+            \begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz!elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $\Id_m$. Sea $E$ una matriz elemental tal que $E= e(\Id)$ con $e$ una operación elemental. Diremos que \textit{$E$ es de tipo E1} si $e$ es de tipo \ref{elem-1}, \textit{de tipo E2} si $e$ es de tipo \ref{elem-2} y \textit{de tipo E3} si $e$ es de tipo \ref{elem-3}.
             \end{definicion}
-            
+
             \begin{ejemplo*} Veamos cuales son las matrices elementales  $2 \times 2$:
                 \begin{enumerate}
                     \item Si $c \not=0$, multiplicar por  $c$ la primera fila y multiplicar $c$ por la segunda fila son, respectivamente,
@@ -1842,6 +1881,24 @@ x& -3y & +3z & =&2 \\
                 Por lo tanto, $B$ es equivalente por filas a $A$.
             \end{proof} 
             
+            \subsection*{$\S$ Ejercicios}
+            \begin{enumex}
+                \item\label{matriz-de-permutacion} Una \textit{matriz de permutación} es una matriz cuadrada donde cada fila y  cada columna tiene  un $1$ y todas las demás entradas son $0$. 
+                \begin{enumex}
+                    \item Calcular   
+                    $$
+                    \begin{bmatrix} 0&1&0 \\ 1&0&0\\ 0&0&1 \end{bmatrix} 
+                    \begin{bmatrix} x_1 \\ x_2\\ x_3 \end{bmatrix}, \qquad 
+                    \begin{bmatrix} 0&0&1&0 \\ 1&0&0&0\\ 0&0&0&1 \\0&1&0&0 \end{bmatrix} 
+                    \begin{bmatrix} x_1 \\ x_2\\ x_3 \\x_4 \end{bmatrix}.
+                    $$
+                    (observar que,  justamente, las matrices de permutación permutan las coordenadas de un vector).
+                    \item Escribir todas la matrices de permutación $3\times 3$. Mostrar que si $A$ es una matriz $3 \times 3$ y $P$ una matriz de permutación $3 \times 3$,  entonces $PA$ es una matriz que tiene las filas de $A$ permutadas.  
+                    \item Probar que toda matriz de permutación es producto de matrices elementales de tipo E3. 
+                \end{enumex}
+                  
+            \end{enumex}
+
         \end{section}
         
         \begin{section}{Matrices invertibles}\label{seccion-matrices-invertibles}
@@ -1984,7 +2041,8 @@ x& -3y & +3z & =&2 \\
             &\begin{matrix}
             {}^{}&{}^{}&{}^{}&{}^{}&{}^{}&\overset{k}{\downarrow}&{}^{}&{}^{}&{}^{}
             \end{matrix} \\
-            \text{La inversa de \quad}\begin{matrix}
+            \text{La inversa de \quad}
+            \begin{matrix}
             {}^{}\\
             {}^{}\\
             \overset{k}{\to}\\
@@ -2013,7 +2071,8 @@ x& -3y & +3z & =&2 \\
             &\begin{matrix}
             {}^{}&{}^{}&{}^{}&{}^{}&{}^{}&\overset{r}{\downarrow}&{}^{}&{}^{}&{}^{}{}^{}\overset{s}{\downarrow}&{}^{}
             \end{matrix} \\
-            \text{La inversa de \quad}\begin{matrix}
+            \text{La inversa de \quad}
+            \begin{matrix}
             {}^{}\\{}^{}\\
             \overset{r}{\to}\\
             {}^{}\\
@@ -2027,8 +2086,10 @@ x& -3y & +3z & =&2 \\
             \vdots  &   & &\ddots &&& \vdots \\
             \vdots  &   & & &\ddots&& \vdots \\
             0  & \cdots  & &\cdots &&& 1
-            \end{bmatrix}
-            \text{\quad es \quad}
+            \end{bmatrix}\qquad\qquad\quad
+        \end{align*}
+        \begin{equation*}
+            \text{es \qquad}
             \begin{bmatrix}
             1 & 0 &  &\cdots &&& 0  \\
             \vdots  & \ddots  & & &&& \vdots \\
@@ -2036,8 +2097,10 @@ x& -3y & +3z & =&2 \\
             \vdots  &   & &\ddots &&& \vdots \\
             \vdots  &   & & &\ddots&& \vdots \\
             0  & \cdots  & &\cdots &&& 1
-            \end{bmatrix}
-            \end{align*}
+            \end{bmatrix}. 
+        \end{equation*}
+            
+            
             
             (3)
             
@@ -2303,6 +2366,32 @@ x& -3y & +3z & =&2 \\
                 
             \end{proof}
             
+            \subsection*{$\S$ Ejercicios}
+
+            \begin{enumex}
+                \item Sea $A = \begin{bmatrix}
+                    a_{11} & a_{12} \\ 0 & a_{22}
+                \end{bmatrix}$ con $a_{11}$ y $a_{22}$ no nulos. Probar que $A$ es invertible y que 
+                $$
+                A^{-1} = \begin{bmatrix}
+                    a_{11}^{-1} &  a_{11}^{-1} a_{12}  a_{22}^{-1} \\
+                    0 &  a_{22}^{-1}
+                \end{bmatrix}. 
+                $$
+                \item Sea $A$ la matriz de bloques $k,r \in \N$
+                $$
+                A = \begin{bmatrix}
+                    A_{11} & A_{12} \\ 0 & A_{22}
+                \end{bmatrix},
+                $$
+                donde $A_{11}$ y $A_{22}$  son invertibles (ver sección \ref{seccion-algebra-de-matrices},  ejercicio \ref{matriz-de-bloques}). Probar que $A$ es invertible y  que
+                $$
+                A^{-1} = \begin{bmatrix}
+                    A_{11}^{-1} &  A_{11}^{-1} A_{12}  A_{22}^{-1} \\
+                    0 &  A_{22}^{-1}
+                \end{bmatrix}. 
+                $$
+            \end{enumex}
         \end{section}
         
         
@@ -2357,7 +2446,7 @@ x& -3y & +3z & =&2 \\
     |A| := \det A.
     $$
     
-    \begin{obs*}[\textsc{Determinantes $\mathbf{2 \times 2}$}] Calculemos el determinante de las matrices $2 \times 2$. Sea 
+    \begin{observacion*}[\textsc{Determinantes $\mathbf{2 \times 2}$}] Calculemos el determinante de las matrices $2 \times 2$. Sea 
         $$A=\begin{bmatrix}a&b\\c&d\end{bmatrix},$$  entonces
         $$
         \det A = a \det [d] - c \det [b] = ad-bc.
@@ -2372,29 +2461,30 @@ x& -3y & +3z & =&2 \\
             A^{-1} = \dfrac{1}{\det(A)}
             \begin{bmatrix*}[c]C_{11}&C_{12}\\C_{21}&C_{22}\end{bmatrix*},
         \end{equation*} se generaliza también para matrices cuadradas de cualquier dimensión (ver el corolario \ref{cor-inv-x-det}).
-    \end{obs*}
+    \end{observacion*}
     
     
     \begin{observacion*}[{\textsc{Determinantes $\mathbf{3 \times 3}$}}]  Calculemos el determinante de las matrices $3 \times 3$. Sea 
         $$A=\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{bmatrix},$$  entonces
-        \begin{align*}
-        \det A &= a_{11}\left|\begin{matrix}a_{22}&a_{23}\\a_{32}&a_{33}\end{matrix}\right|
+        \begin{multline*}
+        \det A = a_{11}\left|\begin{matrix}a_{22}&a_{23}\\a_{32}&a_{33}\end{matrix}\right|
         - a_{21}\left|\begin{matrix}a_{12}&a_{13}\\a_{32}&a_{33}\end{matrix}\right|
         + a_{31}\left|\begin{matrix}a_{12}&a_{13}\\a_{22}&a_{23}\end{matrix}\right|\\
-        &= a_{11}(a_{22}a_{33}- a_{23}a_{32})
+        = a_{11}(a_{22}a_{33}- a_{23}a_{32})
         - a_{21}(a_{12}a_{33}-a_{13}a_{32}) 
         + a_{31}(a_{12}a_{23} - a_{13}a_{22}) \\
-        &=a_{11}a_{22}a_{33}- a_{11}a_{23}a_{32} 
-        - a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
-        - a_{13}a_{22}a_{31}.	
-        \end{align*}
+        =a_{11}a_{22}a_{33}- a_{11}a_{23}a_{32} 
+        - a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ \\
+       a_{12}a_{23}a_{31} - a_{13}a_{22}a_{31}.	
+        \end{multline*}
+
         
         Observar que  el determinante de una matriz $3 \times 3$ es una sumatoria de seis términos cada uno de los cuales es de la forma $\pm a_{1\,i_1}a_{2\,i_2}a_{3\,i_3}$ e $i_1i_2i_3$ puede ser cualquier permutación de $123$. La fórmula 
-        \begin{equation}\label{det3x3}
+        \begin{multline}\label{det3x3}
         \det A =a_{11}a_{22}a_{33}- a_{11}a_{23}a_{32} 
-        - a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
+        - a_{12}a_{21}a_{33}+ \\ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
         - a_{13}a_{22}a_{31},
-        \end{equation} 
+        \end{multline} 
         no es fácil de recordar, pero existe un procedimiento sencillo que nos permite obtenerla y es el siguiente: 
         \begin{enumerate}
             \item a la matriz original le agregamos las dos primeras filas al final, 
@@ -2472,9 +2562,14 @@ x& -3y & +3z & =&2 \\
         \end{equation*}
     \end{ejemplo*}
     
-    \begin{obs*}
+    \begin{observacion*}
         La regla para calcular el determinante de matrices $3 \times 3$ \textbf{\large no} se aplica a matrices $n \times n$ con $n \ne 3$.
-    \end{obs*}
+    \end{observacion*}
+
+
+    \begin{observacion*}
+        Observemos que para calcular el determinante usando la definición,  en el primer paso recursivo hacemos una sumatoria de $n$ términos,  donde cada uno  es $\pm a_{i1}$ por un un determinante de orden $n-1$, lo cual implicará,  en cada término calcular una sumatoria con $n-1$ términos,  donde cada uno es $\pm a_{i2}$ por un un determinante de orden $n-2$. Es decir después del segundo paso tenemos $n(n-1)$  sumandos y cada uno es de la forma $\pm a_{i1}a_{k2}$ por un determinante de orden $n-2$. Siguiendo con este razonamiento, concluimos que para calcular el determinante debemos hacer una sumatoria de $n!$ términos (y cada uno de ellos es $\pm$ un producto  de  $n$ $a_{ij}$'s).    Teniendo esto en cuenta concluimos que para calcular el determinante por definición  hacen falta, al menos, hacer $n!$  operaciones. Para $n$ grandes (por ejemplo $n > 200$) esto es y será imposible para cualquier computadora. Como veremos en el corolario  \ref{cor-det-merf} hay maneras mucho más eficientes de calcular el determinante. 
+    \end{observacion*}
     
    \begin{proposicion}\label{det-triang-sup}
     Sea $A \in M_n(\K)$ matriz triangular  superior cuyos elementos en la diagonal son $d_1,\ldots,d_n$. Entonces $\det A = d_1.d_2.\ldots d_n$.
@@ -2572,8 +2667,7 @@ x& -3y & +3z & =&2 \\
     \begin{proof}
         Se deduce fácilmente del teorema anterior y del hecho de que $det \Id_n =1$.			
     \end{proof}
-    
-    
+     
     \begin{corolario}\label{det-filas-iguales} Sea $A  \in M_n(\K)$.
         \begin{enumerate}
             \item\label{cor-det-1} Si $A$ tiene dos filas iguales,  entonces $\det A=0$.
@@ -2598,7 +2692,7 @@ x& -3y & +3z & =&2 \\
     Ver el teoremas \ref{th-det-matriz-invertible} y \ref{th-dem-detAB} y .
 \end{proof}
 
-    \begin{corolario}  Sean $A,B \in M_n(\K)$, entonces
+    \begin{corolario}\label{cor-det-propiedades}  Sean $A,B \in M_n(\K)$, entonces
         \begin{enumerate}
             \item\label{cor-det-inversa} si $A$ invertible $\det(A^{-1}) = \det(A)^{-1}$,
             \item\label{cor-det-prod} $\det (AB) = \det(BA)$.
@@ -2611,6 +2705,32 @@ x& -3y & +3z & =&2 \\
         \ref{cor-det-prod}
         $\det (AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)$.
     \end{proof}
+
+    \begin{observacion*} Del  corolorario \ref{cor-det-propiedades} \ref{cor-det-prod} se deduce fácilmente,  por inducción, que si $A_1, \ldots, A_k$ son matrices $n \times n$,  y $A =  A_1 \cdots A_k$, entonces
+    \begin{equation}\label{eq-prod-det}
+        \det(A) =\det(A_1)\det(A_2) \ldots \det(A_k).
+    \end{equation}
+        
+    \end{observacion*}
+    
+    \begin{corolario}\label{cor-det-merf}
+        Sea $A$ matriz $n \times n$ y $E_1,E_2,\ldots,E_t$ matrices elementales tal que $E_tE_{t-1} \ldots E_1A$ es una MERF. Entonces,  si la MERF tiene filas nulas, $\det(A) =0$; si la MERF no tiene filas nulas 
+        $$
+        \det(A) = \det(E_1)^{-1}\det(E_2)^{-1}\ldots \det(E_t)^{-1}.
+        $$ 
+    \end{corolario}
+    \begin{proof}
+        Sea $R=E_1E_2\ldots E_tA$ la MERF de $A$.  Entonces,  por \eqref{eq-prod-det}, tenemos
+        \begin{equation*}
+            \det(R) = \det(E_1)\det(E_2)\ldots \det(E_t) \det(A).
+        \end{equation*}
+        Por lo tanto, 
+        \begin{equation*}
+            \det(A) = \det(E_1)^{-1}\det(E_2)^{-1}\ldots \det(E_t)^{-1}\det(R). \tag{*}
+        \end{equation*}
+        Ahora bien, si $R$ tiene una fila nula, entonces su determinante es $0$ (corolario \ref{det-filas-iguales} \ref{cor-det-2}) y por lo tanto $\det(A) =0$. Si $R$ no tiene filas nulas, entonces $R = \Id$, por lo tanto $\det(R)= 1$ y el resultado se deduce inmediatamente de (*).
+    \end{proof}
+
 
     \begin{definicion}\label{def-transpuesta-simetrica}
         Sea $A$ una matriz $m \times n$ con coeficientes en $\K$. La \textit{transpuesta}\index{matriz!transpuesta} de $A$, denotada $A^\t$, es la matriz  $n \times m$ que en la fila $i$ y columna $j$ tiene el coeficiente $[A]_{ji}$. Es decir
@@ -2697,13 +2817,13 @@ x& -3y & +3z & =&2 \\
     \end{ejemplo*}
     
 
-\begin{obs*}
+\begin{observacion*}
     En  el caso  de matrices $2 \times 2$ podemos comprobar fácilmente que $\det A^\t = \det A$:
     $$
     \det A^\t = \det \begin{bmatrix} a_{11} & a_{21} \\ a_{12}& a_{22}\end{bmatrix} = 
     a_{11}a_{22} - a_{21}a_{12} = \det A. 
     $$
-\end{obs*}
+\end{observacion*}
 
 También vale este resultado para matrices $n \times n$.
 
@@ -2771,7 +2891,49 @@ También vale este resultado para matrices $n \times n$.
     Ver la demostración de el teorema  \ref{th-dessarrollo-por-columnas}.
 \end{proof}
 
-
+\subsection*{$\S$ Ejercicios}
+\begin{enumex}
+    \item  Sea $A \in \R^{n \times n}$.
+    \begin{enumex}
+        \item Probar que $\det(-A) = (-1)^n \det(A)$. 
+        \item Diremos que $A$  es \textit{antisimétrica} si $A^\t = -A$. Probar que si $n$  es impar y $A$ antisimétrica,  entonces $\det(A) =0$.
+    \end{enumex}   
+    \item  Sea $A \in \R^{n \times n}$. Diremos que $A$  es \textit{ortogonal} si $A^\t = A^{-1}$.
+    \begin{enumex}
+        \item Probar que $\det(-A) = \pm 1$. 
+        \item Dar un ejemplo de una matriz ortogonal con $\det(A) = -1$. 
+        \item Probar que $A$ es ortogonal si y solo si  existe una $\cB = \{u_1,\ldots,u_n\}$ BON  tal que $A = [u_1 \, \cdots \, u_n]$ . Ver la sección  \ref{seccion-bases-ortonormales-rn} para la definición de BON.
+    \end{enumex}   
+    \item En  este ejercicio trabajaremos  con matrices de bloques $r,s$ es decir matrices del tipo 
+    $$
+    \begin{bmatrix} A &B \\ C & D \end{bmatrix}
+    $$ 
+    con $A \in \K^{r \times r}$ ,  $B \in \K^{r \times s}$ ,  $C \in \K^{s \times r}$ y  $D \in \K^{s \times s}$ (ver sección  \ref{seccion-algebra-de-matrices},  ejercicio \ref{matriz-de-bloques}). En  este contexto, probaremos paso a paso que 
+     \begin{equation}\label{det-matriz-bloques-triang}
+        \det \begin{bmatrix} A &B \\ 0 & C \end{bmatrix} = \det(A)\det(C).
+     \end{equation}
+    \begin{enumex}
+        \item Probar que 
+        $$
+        \det \begin{bmatrix} A &0 \\ 0 & B \end{bmatrix} = \det(A)\det(B).
+        $$
+        \item Sea $C \in \K^{s \times s}$  y sea $R$ la MERF de $C$ tal que $C = E_1\ldots E_k R$ donde $E_i$  es una matriz elemental. Probar que 
+        $$
+        \begin{bmatrix} A &B \\ 0 & C \end{bmatrix} =  \begin{bmatrix} \Id  &0 \\ 0 & E_1\end{bmatrix} \cdots \begin{bmatrix} \Id  &0 \\ 0 & E_k \end{bmatrix} \begin{bmatrix} A  &B \\ 0 & R \end{bmatrix}.
+        $$
+        \item Usando la notación y el resultado del ítem anterior, probar que 
+        $$
+        \det \begin{bmatrix} A &B \\ 0 & C \end{bmatrix} = \det(E_1) \ldots \det(E_k) \det \begin{bmatrix} A  &B \\ 0 & R \end{bmatrix}.
+        $$ 
+        \item Si $C$ invertible, probar que
+        $$
+        \det \begin{bmatrix} A &B \\ 0 & C \end{bmatrix} = \det(C)  \det \begin{bmatrix} A  &B \\ 0 & \Id \end{bmatrix}.
+        $$ 
+        \item Probar que 
+        $$\det\begin{bmatrix} A  &B \\ 0 & \Id \end{bmatrix}= \det\begin{bmatrix} A  &0 \\ 0 & \Id \end{bmatrix}.$$
+        \item Probar \eqref{det-matriz-bloques-triang}. 
+    \end{enumex}
+\end{enumex}
 
 
 \end{section}	
