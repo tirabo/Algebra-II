@@ -1104,10 +1104,9 @@
                  \vskip .3cm
                  
                  \begin{observacion*}
-                     En  general, la regla de Cramer no es utilizada para resolver sistemas  de ecuaciones. El  método de Gauss, además de ser mucho más rápido, tiene el beneficio de ser un método que abarca más casos y nos da más información que la regla de Cramer. Por ejemplo,  el método de Gauss también funciona para matrices no invertibles, mientras que la regla de Cramer no. Más aún, el método de Gauss se puede utilizar para resolver sistemas con matrices no cuadradas (es decir, sistemas de ecuaciones con números no iguales de variables y ecuaciones), mientras que la regla de Cramer no.
-                     
-                     Con respecto a la velocidad  de resolución, para matrices $n \times n$ el método de Gauss requiere ``alrededor de $n^3$ operaciones'', mientras que la regla de Cramer requiere ``alrededor de $n^4$ operaciones'', haciendo el primer método $n$ veces más rápido que el segundo. En  lenguaje técnico, el método de Gauss tiene complejidad $O(n^3)$ y la regla de Cramer complejidad $O(n^4)$ (ver
-                     \href{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}) 
+                    La regla de Cramer implementada de una manera ingenua es ineficiente computacionalmente para sistemas de más de dos o tres ecuaciones. En el caso de $n$ ecuaciones con $n$ incógnitas, requiere el cálculo de $n+1$ determinantes, mientras que el  método de eliminación de Gauss o eliminación gaussiana produce el resultado con la misma complejidad computacional que el cálculo de un solo determinante. La regla de Cramer también puede ser numéricamente inestable, incluso para sistemas $2 \times 2$. Sin embargo, recientemente se ha demostrado que la regla de Cramer se puede implementar en el tiempo $O(n^3)$, que es comparable a los métodos más usados de resolución de sistemas de ecuaciones lineales, como ser la eliminación gaussiana
+                    (ver \href{https://en.wikipedia.org/wiki/Cramer's\_rule}{https://en.wikipedia.org/wiki/Cramer's\_rule} y 
+                    \href{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}). 
                  \end{observacion*}
                  
              \end{section}

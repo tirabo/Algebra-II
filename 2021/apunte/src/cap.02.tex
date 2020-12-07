@@ -2369,26 +2369,26 @@ x& -3y & +3z & =&2 \\
             \subsection*{$\S$ Ejercicios}
 
             \begin{enumex}
-                \item Sea $A = \begin{bmatrix}
-                    a_{11} & a_{12} \\ 0 & a_{22}
-                \end{bmatrix}$ con $a_{11}$ y $a_{22}$ no nulos. Probar que $A$ es invertible y que 
+                \item Sea $\begin{bmatrix}
+                    a & b \\ 0 &c
+                \end{bmatrix}$ con $a$ y $c$ no nulos. Probar que esta matriz es invertible y que su inversa es 
                 $$
-                A^{-1} = \begin{bmatrix}
-                    a_{11}^{-1} &  a_{11}^{-1} a_{12}  a_{22}^{-1} \\
-                    0 &  a_{22}^{-1}
+                \begin{bmatrix}
+                    a^{-1} &  a^{-1} b  c^{-1} \\
+                    0 &  c^{-1}
                 \end{bmatrix}. 
                 $$
-                \item Sea $A$ la matriz de bloques $k,r \in \N$
+                \item Sea la matriz de bloques $k,r \in \N$
                 $$
-                A = \begin{bmatrix}
-                    A_{11} & A_{12} \\ 0 & A_{22}
-                \end{bmatrix},
+                 \begin{bmatrix}
+                    A & B \\ 0 & C
+                \end{bmatrix}.
                 $$
-                donde $A_{11}$ y $A_{22}$  son invertibles (ver sección \ref{seccion-algebra-de-matrices},  ejercicio \ref{matriz-de-bloques}). Probar que $A$ es invertible y  que
+                Es decir $A \in \K^{k \times k}$, $B \in \K^{k \times r}$ y $C \in \K^{r \times r}$ (ver sección \ref{seccion-algebra-de-matrices} ejercicio \ref{matriz-de-bloques}). Si $A$ y $C$ son invertibles probar que la matriz de bloques es invertible y su inversa es 
                 $$
-                A^{-1} = \begin{bmatrix}
-                    A_{11}^{-1} &  A_{11}^{-1} A_{12}  A_{22}^{-1} \\
-                    0 &  A_{22}^{-1}
+                \begin{bmatrix}
+                    A^{-1} &  A^{-1} B  C^{-1} \\
+                    0 &  C^{-1}
                 \end{bmatrix}. 
                 $$
             \end{enumex}
