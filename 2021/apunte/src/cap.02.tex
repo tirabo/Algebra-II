@@ -240,6 +240,25 @@ x& -3y & +3z & =&2 \\
 \end{equation*}
 \end{ejemplo*}
 
+\subsection*{$\S$ Ejercicios}
+\begin{enumex}
+    \item Usando operaciones del tipo  \ref{e1-v1}, \ref{e2-v1} y \ref{e3-v1} reducir los siguientes sistemas de ecuaciones lineales a  sistemas más sencillos (que permitan conocer las soluciones) y mostrar como podemos recuperar los sistemas originales.
+\begin{multicols}{2}
+    \begin{enumex}
+        \item $\begin{cases}
+            x+y+z &= 1 \\
+            x+2y-z&=-2 \\
+            x-y+6z &= 3
+        \end{cases}$,
+        \item $\begin{cases}
+            3x +2 y + z &=0 \\
+            x+y+z &= 0 \\
+            2x +y &=0
+        \end{cases}$.
+    \end{enumex}
+\end{multicols}
+\end{enumex}
+
 
 \end{section}
 
@@ -443,20 +462,31 @@ x& -3y & +3z & =&2 \\
             \subsection*{$\S$ Ejercicios}
 
             \begin{enumex}
-                \item Encontrar las soluciones de los siguientes sistemas de ecuaciones haciendo combinaciones lineales de ecuaciones (operaciones  \ref{e1-v1}, \ref{e2-v1} y \ref{e3-v1}).
-                \begin{equation*}
-                    \begin{cases}
-                        x+y+z &= 1 \\
-                        x+2y-z&=-2 \\
-                        x-y+6z &= 3
-                    \end{cases},\qquad\qquad
-                    \begin{cases}
-                        3x +2 y + z &=0 \\
-                        x+y+z &= 0 \\
-                        2x +y &=0
-                    \end{cases}. 
-                \end{equation*}
-
+                \item Encontrar las soluciones de los siguientes sistemas de ecuaciones realizando operaciones del tipo \ref{e1-v1}, \ref{e2-v1} y \ref{e3-v1}.
+                \begin{multicols}{2}
+                    \begin{enumex}
+                        \item $\begin{cases}
+                            5x +2y&= 2 \\
+                             2x+y-z&=0 \\
+                         2x+3y-z &= 3
+                         \end{cases}$\,,
+                         \item $\begin{cases}
+                             x -y + 5z&= \sqrt2 \\
+                              \sqrt5x+z&=\sqrt3 \\[.1cm]
+                          \displaystyle\frac25x+3y+2z &= \displaystyle\frac52
+                          \end{cases}$\,,
+                          \item $\begin{cases}
+                            3x - y + 7z &=1 \\
+                            5x +z &=2
+                        \end{cases}$\,, 
+                          \item $\begin{cases}
+                              x +2 y -3z -t &=0 \\
+                              -3 y +2z +6t &=-8 \\
+                              -3x - y +3z +t &=0 \\
+                              2x +3 y +23z -t &=-8 
+                          \end{cases}$\,. 
+                    \end{enumex}
+                \end{multicols}    
             \end{enumex}
 
         \end{section}
@@ -888,6 +918,18 @@ x& -3y & +3z & =&2 \\
                 \end{ejemplo*}
             \end{subsection} 
         
+            \subsection*{$\S$ Ejercicios}
+            \begin{enumex}
+                \item Mostrar, en los siguientes casos, que la matriz $A$ es equivalente por filas a la  matriz $B$.
+                \begin{enumex}
+                    \item 
+                    $A = \begin{bmatrix}1& -5& 8\\1& -2& 1\\2& -1& -5\end{bmatrix}$, \quad 
+                    $B= \begin{bmatrix}0& 2& 0\\1& 0& 0\\0& 0& 1\end{bmatrix}$.
+                    \item 
+                    $A = \begin{bmatrix}-1& -2& 5& 4\\3& 6& 0& 1\\4& 8& -6& -3\\-1& -2& 2& 1\end{bmatrix}$, \quad 
+                    $B= \begin{bmatrix}1& 2& 0& 0\\0& 0& 0& 0\\0& 0& 0& 1\\0& 0& 1& 0\end{bmatrix}$.
+                \end{enumex}
+            \end{enumex}
 
 
         
@@ -1233,7 +1275,59 @@ x& -3y & +3z & =&2 \\
                     ($\Leftarrow$) Sea $R$ la matriz escalón reducida por filas asociada a $A$. Por hipótesis, $AX=Y$ tiene una sola solución y  por lo tanto $RX=Z$, para algún $Z$, tiene una sola solución. Luego, no hay variables libres, es decir hay $n$ filas no nulas en $R$, como $R$ tiene $n$ filas, lo anterior implica que $R$ no tiene filas nulas. Entonces, por el lema anterior, $R=\Id_n$.
                 \end{proof}
                 \end{subsection}
+
+                \subsection*{$\S$ Ejercicios}
+                \begin{enumex}
+                    \item  Usar el método de eliminación de Gauss para resolver los siguientes sistemas.
+                    \begin{multicols}{2}
+                        \begin{enumex}
+                            \item \; $\begin{cases}
+                                x + y &= 2 \\
+                                x- y &= 0
+                            \end{cases}$
+                            \item \; $\begin{cases}
+                                x - z &=4 \\
+                                2x + y &= 1
+                            \end{cases}$
+                            \item \; $\begin{cases}
+                                3x -2y &= 2 \\
+                                6x +y  &= \displaystyle\frac12
+                            \end{cases}$
+                            \item \; $\begin{cases}
+                                2x - y &= -1 \\
+                                x +3 y -z  &= 5 \\
+                                y+2z &= 5 
+                            \end{cases}$
+                            \item \; $\begin{cases}
+                                2 y + z &= 0 \\
+                                2x- y + z &= 0 \\
+                                -2x -y &=0
+                            \end{cases}$
+                        \end{enumex}
+                    \end{multicols}
+
+                    \item 
+                    Encontrar la MERF  correspondiente a cada una de las siguientes matrices. 
+                    \begin{multicols}{2}
+                        \begin{enumex}
+                        \item $\begin{bmatrix}
+                            2&1\\1&3
+                        \end{bmatrix}$
+                        \item $\begin{bmatrix}
+                            1&3&1\\2&0&4\\-1&-3&-3
+                        \end{bmatrix}$
+                        \item $\begin{bmatrix}
+                            1&0&3&1&2\\1&4&2&1&5\\3&4&8&1&2
+                        \end{bmatrix}$
+                        \item $\begin{bmatrix}
+                            0&1&3&2\\0&0&5&6\\1&5&1&5
+                        \end{bmatrix}$
+                        \end{enumex}
+                    \end{multicols}
+                \end{enumex}
             
+
+               
         \end{section}
         
         
@@ -1613,6 +1707,70 @@ x& -3y & +3z & =&2 \\
             
         \subsection*{$\S$ Ejercicios}
         \begin{enumex}
+            \item Calcule las siguientes operaciones de matrices.
+            \begin{multicols}{2}
+                \begin{enumex}
+                    \item $\begin{bmatrix} 2&1&4\\5&-6&7 \end{bmatrix}+
+                    \begin{bmatrix} 1&1&1\\0&2&-2 \end{bmatrix}$,
+                    \item $3 \begin{bmatrix}
+                        4&3&2\\-4&8&1
+                    \end{bmatrix}$,
+                    \item $\begin{bmatrix}
+                        2&1\\0&3
+                    \end{bmatrix} + 3 \begin{bmatrix}
+                        2&1\\-1&0
+                    \end{bmatrix}$,
+                    \item $4\begin{bmatrix}
+                        2&-1\\1&2
+                    \end{bmatrix} + 3  \begin{bmatrix} 1&1\\0&2 \end{bmatrix}$. 
+                \end{enumex}
+            \end{multicols}
+
+            \item Calcule las siguientes operaciones de matrices o diga ``no está definida''.
+            \begin{multicols}{2}
+                \begin{enumex}
+                    \item $4\cdot \begin{bmatrix}
+                        2&-1\\1&2
+                    \end{bmatrix}  \begin{bmatrix} 1&1\\0&2 \end{bmatrix}$,
+                    \item $\begin{bmatrix}
+                        2&1\\0&3
+                    \end{bmatrix}  \left(3 \begin{bmatrix}
+                        2&1\\-1&0
+                    \end{bmatrix}\right)$,
+                    \item $\begin{bmatrix} 2&1&4\\5&-6&7 \end{bmatrix}
+                    \begin{bmatrix} 1&1&1\\0&2&-2\\-3&2&1 \end{bmatrix}$,
+                    \item $3 \begin{bmatrix}
+                        4&3&2\\-4&8&1
+                    \end{bmatrix}\begin{bmatrix}
+                        2&1\\-1&0
+                    \end{bmatrix}$. 
+                \end{enumex}
+            \end{multicols}
+
+            \item Sean
+            $$
+            A= \begin{bmatrix} 1&-1\\ 3&-2 \end{bmatrix},\qquad
+            B= \begin{bmatrix} 5&2\\ 4&4 \end{bmatrix},\qquad
+            C= \begin{bmatrix} -2&3\\ -4&1 \end{bmatrix}.
+            $$
+            Calcular 
+            \begin{multicols}{4}
+                \begin{enumex}
+                    \item $AB$, 
+                    \item $(AB)C$,
+                    \item $BC$,
+                    \item $A(BC)$.
+                \end{enumex}
+            \end{multicols}
+
+            \item De lel tamaño del producto $AB$ o diga ``no está definido'' para:
+            \begin{enumex}
+                \item $A$ una matriz $2 \times 2$ y $B$ una matriz $2 \times 4$,
+                \item $A$ una matriz $3 \times 3$ y $B$ una matriz $3 \times 3$,
+                \item $A$ una matriz $3 \times 10$ y $B$ una matriz $10 \times 2$,
+                \item $A$ una matriz $3 \times 2$ y $B$ una matriz $3 \times 2$.
+            \end{enumex}
+
             \item\label{matriz-de-bloques} (Matrices  de bloques)  Si $k_1, k_2 \in \N$ y $A_{ij} \in \K^{k_i \times k_j}$, para $i,j=1,2$, entonces podemos combinar esas matrices en la matriz cuadrada
             $$
             A = \begin{bmatrix} A_{11}&A_{12}\\A_{21}&A_{22}  \end{bmatrix} \in \K^{(k_1 + k_2) \times (k_1 + k_2)}. 
@@ -1883,6 +2041,30 @@ x& -3y & +3z & =&2 \\
             
             \subsection*{$\S$ Ejercicios}
             \begin{enumex}
+                \item Sea 
+                $$
+                A = \begin{bmatrix}
+                    1&2&1 \\2&3&1 \\7&11&4
+                \end{bmatrix}.
+                $$
+                Multiplicar por matrices elementales la matriz $A$ hasta obtener la matriz identidad.
+
+                \item Expresar 
+                $$
+                \begin{bmatrix}
+                    1&0 \\ -3&3
+                \end{bmatrix}
+                $$
+                como producto de dos matrices elementales. 
+
+                \item Expresar 
+                $$
+                \begin{bmatrix}
+                    1&2&0 \\ 2&-1&0 \\3&1&2
+                \end{bmatrix}
+                $$
+                como producto de matrices elementales.
+
                 \item\label{matriz-de-permutacion} Una \textit{matriz de permutación} es una matriz cuadrada donde cada fila y  cada columna tiene  un $1$ y todas las demás entradas son $0$. 
                 \begin{enumex}
                     \item Calcular   
@@ -2312,8 +2494,7 @@ x& -3y & +3z & =&2 \\
                 \begin{bmatrix*}[r]\dfrac1a&0\\[8pt]-\dfrac{c}{a}&1\end{bmatrix*}
                 \stackrel{a/(ad-bc)\,F_2}{\longrightarrow}
                 \begin{bmatrix*}[c]\dfrac1a&0\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*}
-                \stackrel{F1-b/a\,F_2}{\longrightarrow}
-                \\&\longrightarrow			
+                \\& \stackrel{F1-b/a\,F_2}{\longrightarrow}		
                 \begin{bmatrix*}[c]\dfrac1a+\dfrac{bc}{a(ad-bc)}&-\dfrac{b}{ad-bc}\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*} 
                 =
                 \begin{bmatrix*}[c]\dfrac{d}{ad-bc}&-\dfrac{b}{ad-bc}\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*} .
@@ -2369,6 +2550,34 @@ x& -3y & +3z & =&2 \\
             \subsection*{$\S$ Ejercicios}
 
             \begin{enumex}
+                \item Encontrar la inversa de las siguientes matrices.
+                \begin{multicols}{2}
+                    \begin{enumex}
+                        \item $\begin{bmatrix}
+                            -3&-2\\3&3
+                        \end{bmatrix}$\,,
+                        \item $\begin{bmatrix}
+                            1&0&1\\ 0&1&1\\ 1&1&1
+                        \end{bmatrix}$\,,
+                        \item $\begin{bmatrix}
+                            1&3&1 \\ 3&2&5\\ 2&2&2
+                        \end{bmatrix}$\,,
+                        \item $\begin{bmatrix}
+                            3&2&1&2\\ 7&5&2&5\\ 0&0&9&4\\ 0&0&11&5
+                        \end{bmatrix}$\,. 
+                    \end{enumex}   
+                \end{multicols}
+
+                \item\label{matrices-semejantes} Sean $A$, $B$ dos matrices cuadradas del mismo tamaño. Decimos que $A$ es \textit{semejante} a $B$ si existe una matriz invertible $T$ tal que $B = T A T^{-1}$. Suponga
+                este es el caso. Probar:
+                \begin{enumex}
+                    \item $B$ es semejante a $A$.
+                    \item Sea $C$ otra matriz cuadrada del mismo tamaño que $A$. Si  $B$ es semejante a $C$, entonces $A$  es semejante a $C$.
+                    \item $A$ es invertible si y solo si $B$ es invertible.
+                    \item Suponga que $A^n = 0$ y que $T$ es una matriz invertible del mismo tamaño que $A$.
+                    Muestre que $(TAT^{-1})^n= O$.
+                \end{enumex}
+                
                 \item Sea $\begin{bmatrix}
                     a & b \\ 0 &c
                 \end{bmatrix}$ con $a$ y $c$ no nulos. Probar que esta matriz es invertible y que su inversa es 
@@ -2714,23 +2923,47 @@ x& -3y & +3z & =&2 \\
     \end{observacion*}
     
     \begin{corolario}\label{cor-det-merf}
-        Sea $A$ matriz $n \times n$ y $E_1,E_2,\ldots,E_t$ matrices elementales tal que $E_tE_{t-1} \ldots E_1A$ es una MERF. Entonces,  si la MERF tiene filas nulas, $\det(A) =0$; si la MERF no tiene filas nulas 
+        Sea $A$ matriz $n \times n$ y $E_1,E_2,\ldots,E_t$ matrices elementales tal que $E_tE_{t-1} \ldots E_1A =B$. Entonces, 
+        \begin{equation}\label{det-elemen-mrf}
+            \det(A) = \det(E_1)^{-1}\det(E_2)^{-1}\ldots \det(E_t)^{-1}\det(B). 
+        \end{equation}
+        En particular,  si $B$ tiene filas nulas, $\det(A) =0$ y  si $B$ es MERF y no tiene filas nulas 
         $$
         \det(A) = \det(E_1)^{-1}\det(E_2)^{-1}\ldots \det(E_t)^{-1}.
         $$ 
     \end{corolario}
     \begin{proof}
-        Sea $R=E_1E_2\ldots E_tA$ la MERF de $A$.  Entonces,  por \eqref{eq-prod-det}, tenemos
+       Por \eqref{eq-prod-det}, tenemos
         \begin{equation*}
-            \det(R) = \det(E_1)\det(E_2)\ldots \det(E_t) \det(A).
+            \det(B) = \det(E_1)\det(E_2)\ldots \det(E_t) \det(A).
         \end{equation*}
         Por lo tanto, 
         \begin{equation*}
-            \det(A) = \det(E_1)^{-1}\det(E_2)^{-1}\ldots \det(E_t)^{-1}\det(R). \tag{*}
+            \det(A) = \det(E_1)^{-1}\det(E_2)^{-1}\ldots \det(E_t)^{-1}\det(B).
         \end{equation*}
-        Ahora bien, si $R$ tiene una fila nula, entonces su determinante es $0$ (corolario \ref{det-filas-iguales} \ref{cor-det-2}) y por lo tanto $\det(A) =0$. Si $R$ no tiene filas nulas, entonces $R = \Id$, por lo tanto $\det(R)= 1$ y el resultado se deduce inmediatamente de (*).
+        Ahora bien, si $B$ tiene una fila nula, entonces su determinante es $0$ (corolario \ref{det-filas-iguales} \ref{cor-det-2}) y por lo tanto $\det(A) =0$. Si $B$ es MERF y no tiene filas nulas, entonces $B = \Id$, por lo tanto $\det(B)= 1$ y el resultado se deduce inmediatamente de \eqref{det-elemen-mrf}.
     \end{proof}
 
+    El resultado anterior nos permite calcular determinantes reduciendo la matriz original a una matriz donde es más sencillo  calcular el determinate (por ejemplo, triangular). Esta reducción puede hacerse multiplicando por matrices elementales o,  equivalentemente,  realizando operaciones elementales de fila. 
+
+    \begin{ejemplo*}
+        Calcular el determinante de $A= \begin{bmatrix}
+            1&1&2\\2&3&1\\3&4&-5
+        \end{bmatrix}$.
+    \end{ejemplo*}
+    \begin{proof}[Solución] Mediante operaciones elementales de fila encontremos una matriz $B$ equivalente a  $A$ que sea triangular superior y apliquemos el corolario anterior,  sabiendo  que por proposición \ref{det-triang-sup} el determinante de $B$ es el producto de las entradas diagonales.  
+        \begin{align*}
+            A= \begin{bmatrix} 1&1&2\\2&3&1\\3&4&-5 \end{bmatrix}
+            \stackrel{F_2-2F_1}{\stackrel{F_3-3F_1}{\longrightarrow}}
+            \begin{bmatrix} 1&1&2\\0&1&-3\\0&1&-11 \end{bmatrix}
+            \stackrel{F_3-F_2}{\longrightarrow}
+            \begin{bmatrix} 1&1&2\\0&1&-3\\0&0&-8 \end{bmatrix} =B.
+        \end{align*} 
+    Como las operaciones elementales utilizadas (de tipo \ref{elem-2}) no cambian el determinante (teorema \ref{det-prop-fundamentales}), tenemos que
+    $$
+    \det(A) = \det(B) = 1 \cdot 1 \cdot (-8) = -8.
+    $$ 
+    \end{proof}
 
     \begin{definicion}\label{def-transpuesta-simetrica}
         Sea $A$ una matriz $m \times n$ con coeficientes en $\K$. La \textit{transpuesta}\index{matriz!transpuesta} de $A$, denotada $A^\t$, es la matriz  $n \times m$ que en la fila $i$ y columna $j$ tiene el coeficiente $[A]_{ji}$. Es decir
@@ -2893,6 +3126,23 @@ También vale este resultado para matrices $n \times n$.
 
 \subsection*{$\S$ Ejercicios}
 \begin{enumex}
+    \item Calcular el determinante de las siguientes matrices.
+    \begin{multicols}{2}
+        \begin{enumex}
+            \item $A=\begin{bmatrix}
+                1&-1\\-2&1 
+            \end{bmatrix}$\,,
+            \item $B=\begin{bmatrix}
+                1&1&2\\0&3&1\\3&4&-5
+            \end{bmatrix}$\,,
+            \item $C=\begin{bmatrix}
+                0&1&0&0\\2&0&0&0\\0&0&0&3\\0&0&1&0
+            \end{bmatrix}$\,,
+            \item $D=\begin{bmatrix}
+                0&0&3&3\\3&0&1&2\\1&0&2&4\\2&1&3&2
+            \end{bmatrix}$\,.
+        \end{enumex}
+    \end{multicols}
     \item  Sea $A \in \R^{n \times n}$.
     \begin{enumex}
         \item Probar que $\det(-A) = (-1)^n \det(A)$. 
@@ -2900,10 +3150,11 @@ También vale este resultado para matrices $n \times n$.
     \end{enumex}   
     \item  Sea $A \in \R^{n \times n}$. Diremos que $A$  es \textit{ortogonal} si $A^\t = A^{-1}$.
     \begin{enumex}
-        \item Probar que $\det(-A) = \pm 1$. 
+        \item Probar que $\det(A) = \pm 1$. 
         \item Dar un ejemplo de una matriz ortogonal con $\det(A) = -1$. 
         \item Probar que $A$ es ortogonal si y solo si  existe una $\cB = \{u_1,\ldots,u_n\}$ BON  tal que $A = [u_1 \, \cdots \, u_n]$ . Ver la sección  \ref{seccion-bases-ortonormales-rn} para la definición de BON.
     \end{enumex}   
+    \item Sea $P$ una matriz de permutación $n \times n$ (ver sección \ref{seccion-matrices-elementales}, ejercicio \ref{matriz-de-permutacion}). Probar que $P$  es invertible y que $P^{-1} = P^\t$. 
     \item En  este ejercicio trabajaremos  con matrices de bloques $r,s$ es decir matrices del tipo 
     $$
     \begin{bmatrix} A &B \\ C & D \end{bmatrix}
@@ -2933,6 +3184,7 @@ También vale este resultado para matrices $n \times n$.
         $$\det\begin{bmatrix} A  &B \\ 0 & \Id \end{bmatrix}= \det\begin{bmatrix} A  &0 \\ 0 & \Id \end{bmatrix}.$$
         \item Probar \eqref{det-matriz-bloques-triang}. 
     \end{enumex}
+
 \end{enumex}
 
 
@@ -3417,7 +3669,45 @@ También vale este resultado para matrices $n \times n$.
             \begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}-i\\1\end{bmatrix} &= \begin{bmatrix}-1\\-i\end{bmatrix} = (-i) \begin{bmatrix}-i\\1\end{bmatrix}.
         \end{align*}
     
-    
+        \subsection*{$\S$ Ejercicios}
+       
+        \begin{enumex}
+            \item Para cada una de las siguientes matrices calcule el polinomio característico, los autovalores y los autoespacios correspondientes.
+            \begin{multicols}{4}
+                \begin{enumex}
+                    \item $\begin{bmatrix} 10&-9 \\4 &-2\end{bmatrix}$,
+                    \item $\begin{bmatrix} 1&2 \\ 4&3\end{bmatrix}$,
+                    \item $\begin{bmatrix} 0&3 \\7 &0\end{bmatrix}$,
+                    \item $\begin{bmatrix} 0&0 \\0 &0\end{bmatrix}$,
+                    \item $\begin{bmatrix} 1&0 \\ 0&1\end{bmatrix}$.
+                \end{enumex}
+            \end{multicols}
+            
+            \item Para cada una de las siguientes matrices calcule el polinomio característico, los autovalores y los autoespacios correspondientes.
+            \begin{multicols}{3}
+                \begin{enumex}
+                    \item $\begin{bmatrix} 3&-2&0 \\-2 &3&0\\0&0&5\end{bmatrix}$,
+                    \item $\begin{bmatrix} 0&1&0 \\ 0&0&1\\4&-17&8 \end{bmatrix}$.
+                \end{enumex}
+            \end{multicols}
+            
+            \item   Sean $A$, $B$ matrices $n \times n$. Probar que si $A$ es semejante a $B$ (ver sección \ref{seccion-matrices-invertibles}) ejercicio \ref{matrices-semejantes}),  entonces $A$ y $B$ tienen los mismos autovalores.  
+            \item\label{matriz-n2=0} Sea $N$ una matriz compleja $2 \times 2$ tal que $N^2 =0$. Probar que, o bien $N=0$, o bien $N$  es semejante a 
+            $$
+            \begin{bmatrix}
+                0&0\\1&0
+            \end{bmatrix}.
+            $$ 
+            \item Usar el resultado del ejercicio \ref{matriz-n2=0} para probar lo siguiente: si $A$ es una matriz compleja $2 \times 2$ ,  entonces $A$ es semejante sobre $\C$ a una de las dos matrices siguientes:
+            $$
+            \begin{bmatrix}
+                a&0\\0&b
+            \end{bmatrix}\qquad
+            \begin{bmatrix}
+                a&0\\1&a
+            \end{bmatrix}. 
+            $$
+        \end{enumex}
     
 \end{section}	
     \end{chapter}

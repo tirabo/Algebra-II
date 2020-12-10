@@ -183,8 +183,39 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
                 \ref{c*v=0} Supongamos que  $\lambda\cdot v=0$ y  $\lambda \ne 0$, entonces, por (1), $ \lambda^{-1}(\lambda\cdot v)=0$, pero $\lambda^{-1}(\lambda\cdot v) = (\lambda^{-1}\lambda)\cdot v = 1\cdot v = v$. Luego $0=v$,  que contradice la hipótesis. El absurdo vino de suponer que $\lambda \ne 0$.
                 
                 \ref{-1*v=-v}  $(-1)\cdot v +v = (-1)\cdot v +1\cdot v = (-1+1)\cdot v$,  esto último es por la propiedad distributiva. Ahora bien $(-1+1)\cdot v = 0\cdot v \overset{(2)}{=} 0$. Es decir   $(-1)\cdot v +v = 0$ y por lo tanto  $(-1)\cdot v$ es el opuesto de $v$ (que es $-v$).  
-            
             \end{proof}
+
+            \subsection*{$\S$ Ejercicios}
+            \begin{enumex}
+                \item Sea $V$  un espacio vectorial y $v,w$  dos elementos en $V$. Probar que si $v+w =v$,  entonces $w=0$.
+                \item ¿Cuál de los siguientes conjuntos (con al suma y multiplicación por escalares usuales)  es un $\R$-espacio vectorial?
+                \begin{multicols}{2}
+                    \begin{enumex}
+                        \item $\{(x_1,x_2)\in\R^2: x_1=x_2 \}$,
+                        \item $\{(x_1,x_2)\in\R^2: x_1^2 + x_2^2 = 1 \}$,
+                        \item $\{(x_1,x_2)\in\R^2: x_1 \ge x_2\}$,
+                        \item $\{(x_1,x_2)\in\R^2: 2x_1 +x_2 =0\}$.
+                    \end{enumex}
+                    
+                \end{multicols}
+                \item Sea
+                $$
+                \K[x,y] := \left\{\sum_{i=0}^m\sum_{j=0}^n a_{ij}x^iy^j: m,n \in \N_0, a_{ij} \in \K\right\}.
+                $$ 
+                Definir en $\K[x,y]$ la suma y multiplicación por constantes, de tal forma que sea un espacio vectorial. El espacio vectorial $\K[x,y]$ es denominado  el conjunto de \textit{polinomios en dos variables}.
+
+                \item Una función $f:\R \to \R$ es \textit{impar} si $f(-x) = -f(x)$, $\forall x \in \R$. Sea $\operatorname{C}^{(i)}(\R) \subset \operatorname{C}(\R)$  el conjunto de funciones continuas e impares de $\R$ en $\R$. Probar que  $\operatorname{C}^{(i)}(\R)$ con la suma de funciones y el producto por escalares usuales es un espacio vectorial. 
+                \item\label{ejercicio-r-a-los-nat} Sea 
+                $$
+                \R^\N := \{(t_1,t_2,t_3, \ldots): t_i \in \R, i \in \N\}
+                $$
+                el conjunto de sucesiones de  números reales. Probar que con la suma coordenada a coordenada y la multiplicación por escalares coordenada a coordenada $\R^\N$ es un espacio vectorial.
+                \item\label{ejercicio-r-a-los-(nat)} Sea 
+                $$
+                \R^{(\N)} := \{(t_1,t_2,t_3, \ldots): t_i \in \R \,\wedge \, |t_i \ne 0| <\infty\}
+                $$
+                el conjunto de sucesiones de \textit{finitas} de números reales. Probar que con la suma coordenada a coordenada y la multiplicación por escalares coordenada a coordenada $\R^{(\N)}$ es un espacio vectorial. 
+            \end{enumex} 
    
 \end{section}
     
@@ -538,11 +569,38 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 
     \subsection*{$\S$ Ejercicios}
     \begin{enumex}
+
+        \item Probar que los siguientes subconjunto de $\R^2$ son subespacios.
+        \begin{enumex}
+            \item El conjunto de las $(x,y)$  tales que $x = y$.
+            \item El conjunto de las $(x,y)$  tales que $x - y = 0$.
+            \item El conjunto de las $(x,y)$  tales que $x + 4y = 0$.
+        \end{enumex}
+        \item Probar que toda recta que pasa por  el origen en $\R^2$ es un subespacio de $\R^2$. 
+        \item Probar que los siguientes subconjunto de $\R^3$ son subespacios.
+        \begin{enumex}
+            \item El conjunto de las $(x,y,z)$  tales que $x + y + z = 0$.
+            \item El conjunto de las $(x,y,z)$  tales que $x = y$ y $2y = z$.
+            \item El conjunto de las $(x,y,z)$  tales que $x + y = 3z$.
+        \end{enumex}
+        \item Probar que toda plano que pasa por  el origen en $\R^3$ es un subespacio de $\R^3$. 
+        \item Una \textit{recta en $\R^3$}  esta definida por
+        $$
+        L := \{(x,y,z) \in \R^3: ax +by +cz =d\; \wedge\; a'x +b'y +c'z =d' \}
+        $$ 
+        para ciertos  coeficientes $a,b,c,d \in \R$ no todos nulos,  $a',b',c',d' \in \R$ no todos nulos y tal que $(a',b',c')$ no sea múltiplo de $(a,b,c)$ . Diremos que la recta $L$ \textit{pasa por el origen} si $d=d`=0$.
+        
+        Probar que toda recta que pasa por el origen en $\R^3$ es un subespacio de $\R^3$. 
+
         \item Sea $X$ subconjunto de $\R^n$ y  considere el conjunto 
             $$
             X^\perp = \{v \in \R^n: v \perp x,\; \, \forall\, x \in X\}. 
             $$
-            Probar que $X^\perp$  es un subespacio vectorial de $\R^n$. 
+            \begin{enumex}
+                \item Probar que $X^\perp$  es un subespacio vectorial de $\R^n$. 
+                \item Probar que $(X^\perp)^\perp \supseteq X$.
+            \end{enumex}
+            
     \end{enumex}
 
 \end{section}	
@@ -965,6 +1023,11 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
         \item Sean $u_1,\ldots,u_k$ vectores mutuamente ortogonales en $\R^n$,  es decir $u_i \perp u_j$  si $i \ne j$. Probar que  $\{u_1,\ldots,u_k\}$ es un conjunto LI.
         \item 
         Sea $\cB =\{u_1,\ldots,u_n\}\subset \R^n$  una base ortogonal de $\R^n$ (ver definición \ref{def-bo}),  es decir $\cB$  es un conjunto de $n$ vectores mutuamente ortogonales. Probar  que $\cB$ es una base en el sentido de la definición \ref{def-base}.   
+        \item Sea $e_i$ en $\R^\N$ y $\R^{(\N)}$ definido como el vector que tiene el coeficiente $1$  en la coordenada $i$  y todas las demás coordenadas iguales a $0$ (ver sección \ref{seccion-definicion-de-espacios-vectoriales}, ejercicios \ref{ejercicio-r-a-los-nat} y \ref{ejercicio-r-a-los-(nat)}).
+        
+        Probar que $\cB = \{e_i: i \in \N\}$ es una base de  $\R^{(\N)}$.
+
+        ¿Es $\cB$ una base de  $\R^\N$?
     \end{enumex}
 
 
