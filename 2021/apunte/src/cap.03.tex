@@ -198,11 +198,11 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
                     \end{enumex}
                     
                 \end{multicols}
-                \item Sea
+                \item\label{ejercicio-polinomios-en-2-variables} Sea
                 $$
                 \K[x,y] := \left\{\sum_{i=0}^m\sum_{j=0}^n a_{ij}x^iy^j: m,n \in \N_0, a_{ij} \in \K\right\}.
                 $$ 
-                Definir en $\K[x,y]$ la suma y multiplicación por constantes, de tal forma que sea un espacio vectorial. El espacio vectorial $\K[x,y]$ es denominado  el conjunto de \textit{polinomios en dos variables}.
+                Definir en $\K[x,y]$ la suma y multiplicación por constantes, de tal forma que sea un espacio vectorial. Un  elemento $p(x,y) \in \K[x,y]$ se dice que es un  \textit{polinomio en dos variables con coeficientes en $\K$}.
 
                 \item Una función $f:\R \to \R$ es \textit{impar} si $f(-x) = -f(x)$, $\forall x \in \R$. Sea $\operatorname{C}^{(i)}(\R) \subset \operatorname{C}(\R)$  el conjunto de funciones continuas e impares de $\R$ en $\R$. Probar que  $\operatorname{C}^{(i)}(\R)$ con la suma de funciones y el producto por escalares usuales es un espacio vectorial. 
                 \item\label{ejercicio-r-a-los-nat} Sea 
@@ -600,7 +600,25 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
                 \item Probar que $X^\perp$  es un subespacio vectorial de $\R^n$. 
                 \item Probar que $(X^\perp)^\perp \supseteq X$.
             \end{enumex}
-            
+        \item\label{ejercicio-subespacios-polinomios} Consideremos $\K[x]$  el espacio vectorial de los polinomios con coeficientes en $\K$. Sean $t_1,\ldots,t_k \in \K$. Probar que 
+        $$
+         W = \{p \in \K[x]: p(t_1)=0, \ldots, p(t_k) =0\}
+        $$
+        es un subespacio de $\K[x]$.
+        \item\label{ejercicio-suma-directa} Sea $V$ un espacio vectorial y $U,W$  subespacios de $V$. Diremos que $V$  es \textit{suma directa} de $U$ y $W$,  y denotaremos
+        $$
+        V = U \oplus W,
+        $$
+        si $V = U+W$ y $U \cap W =0$. 
+            \begin{enumex}
+                \item Demostrar que   $V = U \oplus W$ si y solo si para todo $v \in V$  existen únicos $u \in U$, $w \in W$ tal que $v=u+w$. 
+                \item Demostrar que si $V = U \oplus W$,  Entonces
+                $$
+                \dim V = \dim U + \dim W.
+                $$
+            \end{enumex}
+         
+        \item  Sea $V = \K^3$. Sea $W$ el subespacio generado por $(1, 0, 0)$, y sea $U$ el subespacio generado por $(1, 1, 0)$ y $(0, 1, 1)$. Demuestre que $V = W \oplus U$.
     \end{enumex}
 
 \end{section}	
@@ -613,23 +631,22 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         \end{equation*}
         Un conjunto que no es linealmente dependiente se dice \textit{linealmente independiente}\index{linealmente independiente} (o simplemente, \textit{LI} o \textit{independiente}).
         
-        Si el conjunto $S$ tiene solo un número finito de vectores $v_1,\ldots,v_n$, se dice,
-        a veces, que los $v_1,\ldots,v_n$ son LD (o LI), en vez de decir
+        Si el conjunto $S$ tiene solo un número finito de vectores $v_1,\ldots,v_n$, diremos, para simplificar, que los $v_1,\ldots,v_n$ son LD (o LI), en vez de decir
         que $S$ es LD (o LI, respectivamente).
         
     \end{definicion}
 
-\begin{observacion*} Por definición, un conjunto $S = \left\{v_1,\ldots,v_n \right\}$ es independiente si se cumple cualquiera de las dos afirmaciones siguientes:
+ Por definición, un conjunto $S = \left\{v_1,\ldots,v_n \right\}$ es independiente si se cumple cualquiera de las dos afirmaciones siguientes:
 	
-	\begin{itemize}
-		\item[(LI-1)]\label{LT-1} $\forall\,\lambda_1,\ldots,\lambda_n$ en $\K$ tal que $\lambda_i \ne 0$ para algún $i$,  entonces  $\lambda_1v_1+\cdots+\lambda_nv_n\not=0$, o , 
-		\item[(LI-2)]\label{LT-2} si $\lambda_1,\ldots,\lambda_n$ en $\K$ tales que $\lambda_1v_1+\cdots+\lambda_nv_n=0$,  entonces $0=\lambda_1=\cdots=\lambda_n$.
-	\end{itemize}
+ \begin{enumerate}[label=(LI $\arabic*$), ref=(LI $\arabic*$)]
+		\item\label{LI 1} $\forall\,\lambda_1,\ldots,\lambda_n$ en $\K$ tal que $\lambda_i \ne 0$ para algún $i$,  entonces  $\lambda_1v_1+\cdots+\lambda_nv_n\not=0$, o , 
+		\item\label{LI 2} si $\lambda_1,\ldots,\lambda_n$ en $\K$ tales que $\lambda_1v_1+\cdots+\lambda_nv_n=0$,  entonces $0=\lambda_1=\cdots=\lambda_n$.
+	\end{enumerate}
 
 
-    El enunciado (LI-1) se deduce intuitivamente negando  la definición de linealmente dependiente y el resultado (LI-2) es el contrarrecíproco  de (LI-1).
+    El enunciado \ref{LI 1} se deduce intuitivamente negando  la definición de linealmente dependiente y el resultado \ref{LI 2} es el contrarrecíproco  de \ref{LI 1}.
     
-    
+\begin{observacion*}
 Para los interesados, lo anterior es un ejercicio de lógica: ser LD se puede enunciar 
 \begin{equation*}\label{eq-ld}
     (\exists \lambda_1,\ldots,\lambda_n: (\exists i: \lambda_i \ne 0) \wedge (\lambda_1v_1+\cdots+\lambda_nv_n=0 )).
@@ -638,17 +655,17 @@ Para los interesados, lo anterior es un ejercicio de lógica: ser LD se puede en
 
 Recordar que $\neg(\exists \lambda: P \wedge Q) \,\equiv\, (\forall \lambda: \neg P \vee \neg Q)$ y  que  $\neg P \vee \neg Q\,\equiv\, P \Rightarrow \neg Q$. Luego  la negación de \eqref{eq-ld}, es decir ser LI, es 
 \begin{equation*}\label{eq-li-1}
-    (\forall \lambda_1,\ldots,\lambda_n:  (\exists i: \lambda_i \ne 0) \Rightarrow \lambda_1v_1+\cdots+\lambda_nv_n\ne 0). \tag{LI-1}
+    (\forall \lambda_1,\ldots,\lambda_n:  (\exists i: \lambda_i \ne 0) \Rightarrow \lambda_1v_1+\cdots+\lambda_nv_n\ne 0). \tag{LI $1$}
 \end{equation*}
 
 Como $(P \Rightarrow Q) \equiv (\neg Q \Rightarrow \neg P)$, el contrarrecíproco, la propiedad \eqref{eq-li-1}  es equivalente a
 \begin{equation*}
-(\forall \lambda_1,\ldots,\lambda_n:  (\lambda_1v_1+\cdots+\lambda_nv_n=0 ) \Rightarrow (\forall i: \lambda_i = 0)). \tag{LI-2}
+(\forall \lambda_1,\ldots,\lambda_n:  (\lambda_1v_1+\cdots+\lambda_nv_n=0 ) \Rightarrow (\forall i: \lambda_i = 0)). \tag{LI $2$}
 \end{equation*}
     
 \end{observacion*}
 
-\vskip .2cm
+\vskip .4cm
 
 Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la definición.
 \begin{enumerate}
@@ -883,7 +900,7 @@ Hemos demostrado, si $V$  es un espacio vectorial de dimensión finita y $\cB,\c
         
         \begin{enumerate}
             \item[\ref{ld-1}] Sea $\{v_1,\ldots,v_n\}$ una base de $V$, entonces $v_1,\ldots,v_n$ generan $V$, luego, por el teorema \ref{indep-menorigual-gen}, cualquier subconjunto de $V$ que contenga más de $n$ vectores es LD.
-            \item[\ref{ld-1}] Sea $S$  subconjunto de $V$ con $m < n$ vectores. Si $S$  genera $V$,  entonces todo subconjunto de más de $m$  vectores es LD (teorema \ref{indep-menorigual-gen}), por lo tanto, un subconjunto de $n$ vectores es LD. En  consecuencia, no puede haber una base de $n$  elementos, lo cual contradice la hipótesis.
+            \item[\ref{ld-2}] Sea $S$  subconjunto de $V$ con $m < n$ vectores. Si $S$  genera $V$,  entonces todo subconjunto de más de $m$  vectores es LD (teorema \ref{indep-menorigual-gen}), por lo tanto, un subconjunto de $n$ vectores es LD. En  consecuencia, no puede haber una base de $n$  elementos, lo cual contradice la hipótesis.
         \end{enumerate} 
     \end{proof}
 
@@ -969,7 +986,9 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
     $$
     C = \{|R|: R \subseteq S \;\wedge\; R \text{ es LI}\}.
     $$
-    Como $V$ no es nulo  y $S$ genera $V$, $C \ne \emptyset$. $C$  es un subconjunto no vacío de  $\mathbb N$,  acotado superiormente por $|S|$ y por lo tanto tiene máximo. Sea $n$ el máximo de $C$ entonces existe  $\cB \subseteq S$ tal que $|\cB| =n$  y $\cB$ es LI. Veremos que $\cB$  es una base. Para ello, como $\cB $ es LI, sólo falta ver que $\cB$ genera a $V$. 
+    Como $V$ no es nulo  y $S$ genera $V$, $S$ contiene algún vector no nulo, que obviamente es LI, Luego, $C \ne \emptyset$. Ahora bien, $C$  es un subconjunto no vacío de  $\mathbb N$ y  acotado superiormente por $|S|$,  entonces por el axioma de buena ordenación tiene máximo. 
+    
+    Sea $n$ el máximo de $C$ entonces existe  $\cB \subseteq S$ tal que $|\cB| =n$  y $\cB$ es LI. Veremos que $\cB$  es una base. Para ello, como $\cB $ es LI, sólo falta ver que $\cB$ genera a $V$. 
     
     Supongamos que existe $v \in S$ tal que $ v \not\in \langle \cB \rangle$. Por el lema \ref{lem-li+vec=li},  entonces  $\cB \cup \{v\}$ es LI y este subconjunto LI de $S$ tiene $n+1$  elementos, lo cual contradice la maximalidad de $n$. Es claro entonces, que $v \in S \Rightarrow v \in \cB$,  es decir $S \subset \langle B \rangle$. Como $S \subset \langle B \rangle$,  entonces
     $V = \langle S \rangle \subset \langle B \rangle$, es decir $V =  \langle B \rangle$.
@@ -1020,10 +1039,34 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
 
     \subsection*{$\S$ Ejercicios}
     \begin{enumex}
+        \item Determinar si cada uno de los siguiente conjuntos es una base de $\R^3$.
+            \begin{enumex}
+                \item $S_1 = \{(1,2,3),(3,2,1),(0,0,1)\}$,
+                \item $S_2 = \{(1,2,3),(3,2,1)\}$,
+                \item $S_3 = \{(0,2,-1),(1,1,1),(2,5,0)\}$,
+                \item $S_4 = \{(0,2,-1),(1,1,1),(1,3,0)\}$.
+            \end{enumex}
+        \item  Determine si los siguientes subconjuntos de $\K[x]$  son LI y en caso de serlo extender a una base.
+            \begin{enumex}
+                \item $U_1 = \{x, x^2+2x, x^2+3x+1, x^3 \}$,
+                \item $U_2 = \{1, x, x+x^2 , x^2+x^3 \}$,
+                \item $U_3 = \{1, x^2+x, x^2+x, x^3 \}$.
+            \end{enumex}
+        \item Encuentre una base para cada uno de estos subespacios del espacio $\K_4[x]$ de los polinomios de grado menor o igual a $3$.
+            \begin{enumex}
+                \item El subespacio de polinomios $p (x)$ en $\K_4[x]$ tal que $p (7) = 0$.
+                \item El subespacio de polinomios $p (x)$ tal que $p (7) = 0$ y $p (5) = 0$.
+                \item El subespacio de polinomios $p (x)$ tal que $p (7) = 0$, $p (5) = 0$ y $p (3) = 0$.
+                \item El espacio de polinomios $p (x)$ tal que $p (7) = 0$, $p (5) = 0$, $p (3) = 0$.
+        y p (1) = 0
+            \end{enumex}
+     
+        \item Probar  que los polinomios $p_1 = x^5 + x^4$, $p_2 = x^5+7x^3$ , $p_3 = x^5+ 1$, $p_4 = x^5 + 3x$ son LI en $K_6[x]$ (polinomios de grado menor que $6$) y extender $\{ p_1 , p_2 , p_3 , p_4 \}$ a una base de $K_6[x]$.
+        \item Sean $\K[x,y]$ los polinomios en $2$ variables con coeficientes en $\K$ (ver sección \ref{seccion-definicion-de-espacios-vectoriales},  ejercicio \ref{ejercicio-polinomios-en-2-variables}). Encontrar una base de $\K[x,y]$. 
         \item Sean $u_1,\ldots,u_k$ vectores mutuamente ortogonales en $\R^n$,  es decir $u_i \perp u_j$  si $i \ne j$. Probar que  $\{u_1,\ldots,u_k\}$ es un conjunto LI.
         \item 
         Sea $\cB =\{u_1,\ldots,u_n\}\subset \R^n$  una base ortogonal de $\R^n$ (ver definición \ref{def-bo}),  es decir $\cB$  es un conjunto de $n$ vectores mutuamente ortogonales. Probar  que $\cB$ es una base en el sentido de la definición \ref{def-base}.   
-        \item Sea $e_i$ en $\R^\N$ y $\R^{(\N)}$ definido como el vector que tiene el coeficiente $1$  en la coordenada $i$  y todas las demás coordenadas iguales a $0$ (ver sección \ref{seccion-definicion-de-espacios-vectoriales}, ejercicios \ref{ejercicio-r-a-los-nat} y \ref{ejercicio-r-a-los-(nat)}).
+        \item Sea $e_i$ en $\R^\N$ y $\R^{(\N)}$ definido como el vector que tiene el coeficiente $1$  en la coordenada $i$  y todas las demás coordenadas iguales a $0$ (para la definición de  $\R^\N$ y $\R^{(\N)}$ ver sección \ref{seccion-definicion-de-espacios-vectoriales}, ejercicios \ref{ejercicio-r-a-los-nat} y \ref{ejercicio-r-a-los-(nat)}).
         
         Probar que $\cB = \{e_i: i \in \N\}$ es una base de  $\R^{(\N)}$.
 
@@ -1234,6 +1277,25 @@ Finalmente, terminaremos esta sección con un teorema que resume algunas equival
     \ref{it.inv-1} $\Leftrightarrow$ \ref{it.inv-8}. $A$ invertible $\Leftrightarrow$ $A^\t$ invertible $\Leftrightarrow$  las filas de $A^\t$ son LI $\Leftrightarrow$  las columnas de $A$ son LI. 
 \end{proof}
     
+\subsection*{$\S$ Ejercicios}
+    \begin{enumex}
+        \item Encontrar una base del espacio fila de la matriz 
+        $$
+        \begin{bmatrix}
+            2&0&3&4\\ 0&1&1&-1 \\ 3&1&0&2 \\ 1&0&-4&1
+        \end{bmatrix}.
+        $$
+        \item En  los siguientes casos, encontrar un subconjunto de $S$ que sea base de $\la S \ra$.
+            \begin{enumex}
+                \item $S= \{(1,2,1), (3,2,-2), (1,1,0), (0,1,1)\}$.
+                \item $S= \{(0,-2,4,1), (1,-1,1,1),(-4, -1, 3, 0), (2,-1,1,1)\}$.
+                \item $S= \{(3,-1,4,1)$, $(-1, 0, 8, 0)$, $(1,-1,2,1)$, $(2, -1, 12, 1)$, 
+                
+                \qquad$(2,-1,0,1)\}$.
+            \end{enumex}
+        \item Encontrar una base de $\K_5[x]$ tal que todos los elementos de la base sean  polinomios mónicos de grado $4$. 
+        \item En una matriz $4 \times 5$,  cuál conjunto es LD ¿el conjunto de filas o el conjunto de columnas?
+    \end{enumex}
     \end{section}
 
 
