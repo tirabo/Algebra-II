@@ -2568,14 +2568,12 @@ x& -3y & +3z & =&2 \\
                     \end{enumex}   
                 \end{multicols}
 
-                \item\label{matrices-semejantes} Sean $A$, $B$ dos matrices cuadradas del mismo tamaño. Decimos que $A$ es \textit{semejante} a $B$ si existe una matriz invertible $T$ tal que $B = T A T^{-1}$. Suponga
-                este es el caso. Probar:
+                \item\label{matrices-semejantes} Sean $A$, $B$ dos matrices cuadradas del mismo tamaño. Decimos que $A$ es \textit{semejante} a $B$ si existe una matriz invertible $P$ tal que $B = P^{-1} A P$. Suponga que $A$ es semejante a $B$, probar:
                 \begin{enumex}
                     \item $B$ es semejante a $A$.
                     \item Sea $C$ otra matriz cuadrada del mismo tamaño que $A$. Si  $B$ es semejante a $C$, entonces $A$  es semejante a $C$.
                     \item $A$ es invertible si y solo si $B$ es invertible.
-                    \item Suponga que $A^n = 0$ y que $T$ es una matriz invertible del mismo tamaño que $A$.
-                    Muestre que $(TAT^{-1})^n= O$.
+                    \item Suponga que $A^n = 0$. Probar que $B^n=0$.
                 \end{enumex}
                 
                 \item Sea $\begin{bmatrix}
@@ -3154,6 +3152,7 @@ También vale este resultado para matrices $n \times n$.
         \item Dar un ejemplo de una matriz ortogonal con $\det(A) = -1$. 
         \item Probar que $A$ es ortogonal si y solo si  existe una $\cB = \{u_1,\ldots,u_n\}$ BON  tal que $A = [u_1 \, \cdots \, u_n]$ . Ver la sección  \ref{seccion-bases-ortonormales-rn} para la definición de BON.
     \end{enumex}   
+
     \item Sea $P$ una matriz de permutación $n \times n$ (ver sección \ref{seccion-matrices-elementales}, ejercicio \ref{matriz-de-permutacion}). Probar que $P$  es invertible y que $P^{-1} = P^\t$. 
     \item En  este ejercicio trabajaremos  con matrices de bloques $r,s$ es decir matrices del tipo 
     $$
@@ -3185,6 +3184,33 @@ También vale este resultado para matrices $n \times n$.
         \item Probar \eqref{det-matriz-bloques-triang}. 
     \end{enumex}
 
+        
+    \item\label{ejercicio-area-de un paralelogramo} Sean $v,w$ dos elementos no nulos de $\R^2$ tal que uno no es múltiplo del otro. El conjunto de elementos de $\R^2$ 
+    $$
+    PL(v,w) := \left\{ t_1 v + t_2 w: 0 \le t_1 \le 1, \quad 0 \le t_2 \le 1 \right\}
+    $$
+    se llama el \textit{paralelogramo generado por $v$ y $w$}. 
+    
+    Probaremos, paso a paso, que el área del paralelogramo generado por $v$ y $w$ es $\pm\det\begin{bmatrix} v \\ w \end{bmatrix}$ y usaremos para ello una mezcla de argumentos geométricos y algebraicos. 
+    \begin{enumex}
+        \item Sea $v = (a,b)$ y $w = (c,0)$ probar que el área del paralelogramo generado por $v$ y $w$ (un paralelogramo horizontal) es 
+        $$
+        |bc| = \det\begin{bmatrix}
+            a&b\\c&0
+        \end{bmatrix}. 
+        $$
+        Es decir,  es base $\times$ altura. 
+        \item Sea $\theta$  es el ángulo comprendido entre $v =(a,b)$ y $w = (c,d)$. Usando la fórmula de $\cos(\theta)$  que se obtiene por el producto escalar,  demostrar  que
+        $$
+        |\sin(\theta)| = \left|\frac{ad-bd}{||v||||w||}\right|.
+        $$
+        \item Teniendo en cuenta la propiedad de que  el área de un paralelogramo es la longitud de la base por la altura probar que 
+        $$
+        \text{Área de $PL((a,b),(c,d))$} \quad = \quad  \left|\det\begin{bmatrix}
+            a&b\\ c&d
+        \end{bmatrix}\right|. 
+        $$
+    \end{enumex}
 \end{enumex}
 
 
@@ -3691,7 +3717,7 @@ También vale este resultado para matrices $n \times n$.
                 \end{enumex}
             \end{multicols}
             
-            \item   Sean $A$, $B$ matrices $n \times n$. Probar que si $A$ es semejante a $B$ (ver sección \ref{seccion-matrices-invertibles}) ejercicio \ref{matrices-semejantes}),  entonces $A$ y $B$ tienen los mismos autovalores.  
+            \item   Sean $A$, $B$ matrices $n \times n$. Probar que si $A$ es semejante a $B$ (ver sección \ref{seccion-matrices-invertibles}, ejercicio \ref{matrices-semejantes}),  entonces $A$ y $B$ tienen los mismos autovalores.  
             \item\label{matriz-n2=0} Sea $N$ una matriz compleja $2 \times 2$ tal que $N^2 =0$. Probar que, o bien $N=0$, o bien $N$  es semejante a 
             $$
             \begin{bmatrix}

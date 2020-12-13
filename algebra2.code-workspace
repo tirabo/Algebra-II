@@ -14,6 +14,9 @@
 		},
 		{
 			"path": "G:\\Mi unidad\\ALG2-2020\\prefinal"
+		},
+		{
+			"path": "G:\\Mi unidad\\ALG2-2020\\finales"
 		}
 	],
 	"settings": {
@@ -23,15 +26,19 @@
 			"determinate",
 			"doto",
 			"ejemplos",
+			"elmento",
 			"m",
 			"médoto",
 			"mónicos",
+			"n",
 			"nicos",
 			"permutaciones",
 			"resulatdo",
 			"s",
 			"s\\'olo",
-			"tirangular"
+			"tirangular",
+			"trabsformaci",
+			"trabsformación"
 		],
 		"cSpell.enabled": true,
 		"cSpell.allowCompoundWords": true,

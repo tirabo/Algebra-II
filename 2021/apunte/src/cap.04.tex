@@ -259,6 +259,56 @@
             \end{equation*}
         \end{ejemplo*}
         
+        \subsection*{$\S$ Ejercicios}
+        \begin{enumex}
+            \item Determine en los siguientes casos si $T$  es una transformación lineal.
+            \begin{enumex}
+                \item $T: \R^3 \to \R^2$ definida por $T(x, y, z) = (x, z)$.
+                \item $T: \R^4 \to R^4$ definida por $T(X) = -X$.
+                \item $T: \R^3  \to \R^3$ definida por $T(X) = X + (0, -1, 0)$.
+                \item $T: \R^2  \to \R^2$ definida por $T(x, y) = (2x + y, y)$.
+                \item $T: \R^2  \to \R^2$ definida por $T(x, y) = (2x, y - x)$.
+                \item $T: \R^2  \to \R^2$ definida por $T(x, y) = (y, x)$.
+                \item $T: \R^2 \to \R$ definida por $T(x, y) = xy$
+            \end{enumex}
+            \item Sea $T: V \to W$ una transformación lineal. Sean $u,v$ elemento de $V$, y sea  $T(u)=w$. Probas que si $T(v) =0$, entonces $T(u+v)=w$.
+            
+            \item  Sea $T: V \to W$ una transformación lineal. Sea $U$ el subconjunto de elementos $u \in V$ tales que $T (u) = 0$. Supongamos que $w \in W$ y existe $v_0\in  V$ tal que $T (v_0) = w$. Demuestre que el conjunto de elementos $v \in V$ que satisface $T (v) = w$ es $v_0+ U$.
+            
+            \item Sean $V, W$ dos espacios vectoriales y $T: V \to W$ una transformación lineal. Sean $w_1,\ldots,w_n$ elementos de $W$ que son linealmente independientes, y sean $v_1,\ldots, v_n$ elementos de $V$ tal que $T(v_i) = w_i$ para $i = 1, \ldots, n$. Demostrar que $v_1,\ldots, v_n$ son linealmente independientes.
+            
+            \item Sea $T: \R^n \to \R^n$ un operador lineal. Diremos que $T$  es una  \textit{isometría} si $||T(v)|| = ||v||$ para todo $v \in \R^n$. 
+            \begin{enumex}
+                \item Probar que las rotaciones y reflexiones en $\R^2$ son isometrías. 
+                \item Probar que si $T$ es una isometría,  entonces
+                $$
+                \langle T(v), T(w) \rangle = \langle v,w \rangle \; \text{ para todo } \; v,w \in \R^n.  
+                $$
+                [Ayuda: usar la identidad de polarización  vista en el ejercicio \ref{ejercicio-identidad-de-polarizacion} de la sección \ref{secccion-norma-de-un-vector}].
+            \end{enumex}
+            
+            
+            \item Sea $V$ un espacio vectorial sobre $\R$, y sean $v, w \in V$ con $w \ne 0$. La \textit{recta que pasa por $v$ y es paralela a $w$} se define como el conjunto de todos los elementos $v + tw$ con $t\in \R$.
+            El \textit{segmento de recta entre $v$ y $v + w$} se define como el conjunto de todos los elementos
+            $$
+            v + tw \qquad  \text{ con } \qquad  0\le t \le 1. 
+            $$
+            Sea $T: V \to U$ una transformación lineal. Muestre que la imagen por $T$  de un segmento de recta en $V$ es un segmento de recta en $U$. ¿Entre qué puntos?
+            
+            Pruebe que la imagen de una recta por $T$  es o bien una recta  o bien un punto.
+            
+            \item Sea $V$ un espacio vectorial y $v_1,v_2$  dos elementos de $V$ que linealmente independientes. El conjunto de elementos de $V$ 
+            $$
+            \left\{ t_1v_1 + t_2v_2: 0 \le t_1 \le 1, \quad 0 \le t_2 \le 1 \right\}
+            $$
+            se llama el \textit{paralelogramo generado por $v_1$ y $v_2$}. 
+            \begin{enumex}
+                \item Sea $T: V \to W$ transformación lineal, $v_1,v_2$  dos elementos de $V$ que son linealmente independientes y  tales que $T(v_1),T(v_2)$  son linealmente independientes. Probar que la imagen por $T$ del paralelogramo generado por $v_1$ y $v_2$ es el paralelogramo generado por $T(v_1)$ y $T(v_2)$. 
+                \item Sea $T: \R^2 \to R^2$ una isometría  y $v,w$ vectores en $\R^2$ que son LI. Probar que el área del paralelogramo generado  por $v,w$ es igual al área del paralelogramo generado por $T(v),T(w)$ (ver ejercicio \ref{ejercicio-area-de un paralelogramo} de la sección \ref{seccion-determinate}).  
+            \end{enumex}   
+        \end{enumex}
+
+
         \end{section}
     
     
@@ -691,7 +741,7 @@ Luego,
             $$
             0 = T(v) = T(\lambda_1v_1+\cdots + \lambda_{n}v_n) = \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n).
             $$
-            Como $\{v_1,\ldots,v_n \}$ es LI, por hipótesis, $\{T(v_1),\ldots,T(v_n)\}$ es LI y, por lo tanto, $\lambda_1,\ldots,\lambda_n$ son todos nulos. Luego $v=0$. Es decir probamos  que el núcleo de $T$ es 0, luego por proposición \ref{inyectiva-sii-nuT=0}, $T$ es monomorfismo. 
+            Como $\{v_1,\ldots,v_n \}$ es LI, por hipótesis, $\{T(v_1),\ldots,T(v_n)\}$ es LI y, por lo tanto, $\lambda_1,\ldots,\lambda_n$ son todos nulos. Luego $v=0$. Es decir probamos  que el núcleo de $T$ es $0$, luego por proposición \ref{inyectiva-sii-nuT=0}, $T$ es monomorfismo. 
 
         \ref{itm-T-mono-sii} ($\Leftarrow$ \textit{alternativa}) Sea $v \in V$ tal que $T(v)=0$.	Si $v\neq 0$, entonces $\{v\}$ es un conjunto LI en $V$. Luego, $\{T(v)\}$ es un conjunto LI en $W$ y por lo tanto $T(v)\neq 0$. Así, si $T(v)=0$ entonces $v=0$ y por lo tanto $T$ es un monomorfismo.
               
@@ -1360,6 +1410,18 @@ Luego,
         \begin{definicion} 
                 Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. El \textit{determinante de $T$}\index{determinante de una transformación lineal} es el determinante de la matriz de $T$ en alguna base de $V$.  
         \end{definicion}
+
+        \subsection*{$\S$ Ejercicios} 
+
+        \begin{enumex}
+            \item Sea $T: V \to V$ un operador lineal y sean $\cB, \cB'$ dos bases ordenadas de $V$. 
+                \begin{enumex}
+                    \item Probar que $[T]_\cB$ y $[T]_{\cB'}$  son matrices semejantes (para la definición de matrices semejantes ver sección \ref{seccion-matrices-invertibles}, ejercicio \ref{matrices-semejantes}). 
+                    \item Probar que si $A$ es es la matriz de $T$  en la base $\cB$ y $B$ es semejante a $A$,  entonces existe una base ordenada $\mathcal{D}$ tal que $[T]_{\mathcal{D}}=B$.  
+                \end{enumex}
+        \end{enumex}
+
+
         \end{section}    
     
         \begin{section}{Operadores diagonalizables}\label{seccion-autovalores-y-autovectores-de-una-tl}
