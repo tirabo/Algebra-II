@@ -3148,9 +3148,9 @@ También vale este resultado para matrices $n \times n$.
     \end{enumex}   
     \item  Sea $A \in \R^{n \times n}$. Diremos que $A$  es \textit{ortogonal} si $A^\t = A^{-1}$.
     \begin{enumex}
-        \item Probar que $\det(A) = \pm 1$. 
+        \item Probar que si $A$ es ortogonal, entonces $\det(A) = \pm 1$. 
         \item Dar un ejemplo de una matriz ortogonal con $\det(A) = -1$. 
-        \item Probar que $A$ es ortogonal si y solo si  existe una $\cB = \{u_1,\ldots,u_n\}$ BON  tal que $A = [u_1 \, \cdots \, u_n]$ . Ver la sección  \ref{seccion-bases-ortonormales-rn} para la definición de BON.
+        \item Probar que $A$ es ortogonal si y solo si  existe una $\cB = \{u_1,\ldots,u_n\}$ BON de $\R^n$ tal que $A = [u_1 \, \cdots \, u_n]$ . Ver la sección  \ref{seccion-bases-ortonormales-rn} para la definición de BON.
     \end{enumex}   
 
     \item Sea $P$ una matriz de permutación $n \times n$ (ver sección \ref{seccion-matrices-elementales}, ejercicio \ref{matriz-de-permutacion}). Probar que $P$  es invertible y que $P^{-1} = P^\t$. 
@@ -3158,7 +3158,7 @@ También vale este resultado para matrices $n \times n$.
     $$
     \begin{bmatrix} A &B \\ C & D \end{bmatrix}
     $$ 
-    con $A \in \K^{r \times r}$ ,  $B \in \K^{r \times s}$ ,  $C \in \K^{s \times r}$ y  $D \in \K^{s \times s}$ (ver sección  \ref{seccion-algebra-de-matrices},  ejercicio \ref{matriz-de-bloques}). En  este contexto, probaremos paso a paso que 
+    con $A \in \K^{r \times r}$ ,  $B \in \K^{r \times s}$ ,  $C \in \K^{s \times r}$ y  $D \in \K^{s \times s}$ (ver sección  \ref{seccion-algebra-de-matrices},  ejercicio \ref{matriz-de-bloques}). En  este contexto, probaremos, paso a paso, que 
      \begin{equation}\label{det-matriz-bloques-triang}
         \det \begin{bmatrix} A &B \\ 0 & C \end{bmatrix} = \det(A)\det(C).
      \end{equation}
@@ -3181,13 +3181,14 @@ También vale este resultado para matrices $n \times n$.
         $$ 
         \item Probar que 
         $$\det\begin{bmatrix} A  &B \\ 0 & \Id \end{bmatrix}= \det\begin{bmatrix} A  &0 \\ 0 & \Id \end{bmatrix}.$$
+        [Ayuda: las operaciones elementales de fila de tipo E1 no cambian el determinanate.]
         \item Probar \eqref{det-matriz-bloques-triang}. 
     \end{enumex}
 
         
     \item\label{ejercicio-area-de un paralelogramo} Sean $v,w$ dos elementos no nulos de $\R^2$ tal que uno no es múltiplo del otro. El conjunto de elementos de $\R^2$ 
     $$
-    PL(v,w) := \left\{ t_1 v + t_2 w: 0 \le t_1 \le 1, \quad 0 \le t_2 \le 1 \right\}
+    \left\{ t_1 v + t_2 w: 0 \le t_1 \le 1, \quad 0 \le t_2 \le 1 \right\}
     $$
     se llama el \textit{paralelogramo generado por $v$ y $w$}. 
     
@@ -3204,12 +3205,22 @@ También vale este resultado para matrices $n \times n$.
         $$
         |\sin(\theta)| = \left|\frac{ad-bd}{||v||||w||}\right|.
         $$
-        \item Teniendo en cuenta la propiedad de que  el área de un paralelogramo es la longitud de la base por la altura probar que 
+        \item Teniendo en cuenta la propiedad de que  el área de un paralelogramo es la longitud de la base por la altura probar que el a´rea del paralelogramo generado por $(a,b)$, $(c,d)$ es
         $$
-        \text{Área de $PL((a,b),(c,d))$} \quad = \quad  \left|\det\begin{bmatrix}
+        A \quad = \quad  \left|\det\begin{bmatrix}
             a&b\\ c&d
         \end{bmatrix}\right|. 
         $$
+        \begin{observacion*} El volumen  de un paralelepípedo determinado por $3$ vectores $v_1=(a_1, a_2, a_3)$, $v_2= (b_1, b_2, b_3)$, $v_3= (c_1, c_2, c_3)$ también está dado por la fórmula 
+            $$
+            V = \left| \det \begin{bmatrix}
+                a_1 & a_2 & a_3 \\
+                b_1 & b_2 & b_3 \\
+                c_1 & c_2 & c_3
+         \end{bmatrix} \right|.
+            $$
+            La fórmula se generaliza a todas las dimensiones $n \ge 2$. 
+        \end{observacion*}
     \end{enumex}
 \end{enumex}
 
