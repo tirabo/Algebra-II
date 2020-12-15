@@ -341,10 +341,10 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         v &= (i-1)v_1 + v_2 + v_3.  
     \end{align*}
     
-    \item Sean $(0,1,0)$, $(0,1,1)$ en $\C^3$ ¿es $(1,1,0)$ combinación lineal de $(0,1,0)$, $(0,1,1)$? La respuesta es no, pues si 
-    $$
-    (1,1,0) = \lambda_1(0,1,0)+ \lambda_2(0,1,1) = (0,\lambda_1,0)+ (0,\lambda_2,\lambda_2) = (0,\lambda_1+\lambda_2,\lambda_2),
-    $$ 
+    \item Sean $(0,1,0)$, $(0,1,1)$ en $\C^3$ ¿es $(1,1,0)$ combinación lineal de $(0,1,0)$, $(0,1,1)$? La respuesta es no, pues si $(1,1,0) = \lambda_1(0,1,0)+ \lambda_2(0,1,1)$, entonces
+   \begin{align*}
+       (1,1,0) &= \lambda_1(0,1,0)+ \lambda_2(0,1,1) = (0,\lambda_1,0)+ (0,\lambda_2,\lambda_2) \\&= (0,\lambda_1+\lambda_2,\lambda_2),
+   \end{align*}
     luego, la primera coordenada nos dice que $1=0$, lo cual es absurdo. Por lo tanto,  no existe un par $\lambda_1,\lambda_2 \in \K$ tal que  $(1,1,0) = \lambda_1(0,1,0)+ (0,1,1)$.
     
 \end{enumerate}
@@ -781,7 +781,7 @@ Las siguientes afirmaciones son consecuencias fácilmente deducibles  de la defi
     $$
     \K_n[x] = \left\{a_0 + a_1 x + a_2x^2+\cdots+a_{n-1}x^{n-1}: a_0,\ldots,a_{n-1} \in \K  \right\}.
     $$
-    Entonces $1,x,x^2,\ldots,x^n$  es una base de $\K_n[x]$. Es claro que los $1,x,x^2,\ldots,x^n$ generan $\K_n[x]$. Por otro lado, si  $\lambda_0 + \lambda_1 x + \lambda_2x^2+\cdots+\lambda_{n-1}x^{n-1} =0$, tenemos que $\lambda_0=\lambda_1 = \lambda_2 =\cdots =\lambda_{n-1} =0$.
+    Entonces $1,x,x^2,\ldots,x^{n-1}$  es una base de $\K_n[x]$. Es claro que los $1,x,x^2,\ldots,x^{n-1}$ generan $\K_n[x]$. Por otro lado, si  $\lambda_0 + \lambda_1 x + \lambda_2x^2+\cdots+\lambda_{n-1}x^{n-1} =0$, tenemos que $\lambda_0=\lambda_1 = \lambda_2 =\cdots =\lambda_{n-1} =0$.
 \end{ejemplo*}
 
 \begin{ejemplo*}[\textsc{Base canónica de $M_{m \times n}(\K)$}] 
@@ -1137,7 +1137,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
         $$
         W = \la  (1,2,0,3,0), (0,0,1,4,0), (0,0,0,0,1) \ra_\C.
         $$ 
-        También, como vimos en \ref{ejemplos2-1} del ejemplo de la p. \pageref{ejemplos2}, el espacio fila puede ser caracterizado de forma implícita:
+        También, como vimos en \ref{ejemplos2-1} del ejemplo de la página \pageref{ejemplos2}, el espacio fila puede ser caracterizado de forma implícita:
         \begin{align*}
         W =\left\{(x_1,x_2,x_3,x_4,x_5)\in \C^5: x_2 = 2x_1, x_4 = 3x_1+4x_3 \right\}.
         \end{align*}
@@ -1246,7 +1246,7 @@ Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conj
     \begin{ejemplo*}
         Sea $S = \{(1,0,1),(1,-1,0), (5,-3,2)\}$ y $W = \langle S\rangle$. Encontrar una base de $W$ que sea un subconjunto de $S$. 
     \end{ejemplo*}
-    \begin{proof}[Solución] Hemos visto en el ejemplo de la p. \pageref{ej-4.5} que una  MRF de $A$  es 
+    \begin{proof}[Solución] Hemos visto en el ejemplo de la página \pageref{ej-4.5} que una  MRF de $A$  es 
         \begin{equation*}
             \begin{bmatrix} 1&0&1\\0&1&1\\0&0&0 \end{bmatrix},
         \end{equation*}

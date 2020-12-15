@@ -12,13 +12,13 @@
                 \end{enumerate}
             \end{definicion}
         
-            \begin{obs*}
+            \begin{observacion*}
                 $T:V \to W$ es transformación lineal si y sólo si
                 \begin{enumerate}[label=\textit{\alph*)}, ref=\textit{\alph*)}]
                     \item $T(\lambda v+v') = \lambda T(v)+ T(v')$, para $v,v' \in V$, $\lambda \in \K$.
                 \end{enumerate}
             Algunas veces usaremos esto último para comprobar si una aplicación de $V$ en $W$ es una transformación lineal. 
-            \end{obs*}
+            \end{observacion*}
             
             \begin{ejemplo*}
                 Si $V$ es cualquier espacio vectorial, la transformación identidad $\Id$, definida por $\Id v = v$ ($v \in V$), es una transformación lineal de $V$ en $V$. La transformación cero $0$, definida por $0v = 0$, es una transformación lineal de $V$ en $V$.
@@ -74,65 +74,6 @@
                 \end{align*}
             \end{comment}
             \end{proof}
-            
-            
-            \begin{ejemplo}[\textsc{Transformaciones de $\R^2$ en $\R^2$}] Las rotaciones y reflexiones en $\R^2$ son transformaciones lineales. Sea $\theta \in \R$ tal que  $0 \le \theta \le 2\pi$,  definimos
-                \begin{equation*}
-                    \begin{array}{llll}
-                    R_\theta:&\R^2 &\to &\R^2 \\
-                    &(x,y) &\mapsto & (x \cos\theta - y \sin\theta, y\cos\theta+ x\sin\theta)
-                    \end{array}
-                \end{equation*}
-                Observemos que si escribimos el vector $(x,y)$  en coordenadas polares,  es decir  si 
-                $$
-                (x,y)= r(\cos\alpha,\sin\alpha),\quad r> 0, \; 0 \le \alpha < 2\pi, 
-                $$
-                entonces
-                \begin{align*}
-                    R_\theta(x,y) &= R_\theta(r\cos\alpha,r\sin\alpha) \\
-                    &= (r\cos\alpha \cos\theta - r\sin\alpha \sin\theta, r\sin\alpha\cos\theta+ r\cos\alpha\sin\theta) \\
-                    &= (r\cos(\alpha+\theta) , r\sin(\alpha+\theta)) \\
-                    &= r(\cos(\alpha+\theta) , \sin(\alpha+\theta)).
-                \end{align*}
-                Por lo tanto $R_\theta(x,y)$ es el vector $(x,y)$ rotado $\theta$ grados en sentido antihorario y en consecuencia  $R_\theta$ es denominada la \textit{rotación antihoraria en $\theta$ radianes}. No es difícil verificar que $R_\theta$ es una transformación lineal. 
-                
-                
-                    \begin{figure}[h]
-                    	\centering	
-                    \begin{tikzpicture}[scale=5]
-                    \draw[->] (-0.1,0)  -- (1.1,0) node(xline)[right]	{$x$};
-                    \draw[->] (0,-0.1) -- (0,1.1) node(yline)[above] {$y$};
-                    \draw[->] (0,0) -- (0.5,0.866) node(yline)[above] {$R_{\theta}(v)$};
-                    \draw[->] (0.9238,0.3826) arc[start angle=22.5, end angle=60, radius=1 ];
-                    \draw[->] (0,0) -- (0.9238,0.3826) node(yline)[right] {$v$};
-                    \draw[->] (0.7,0) arc[start angle=0, end angle=22.5, radius=0.7 ];
-                    \draw[->] (0.9238/2,0.3826/2) arc[start angle=22.5, end angle=60, radius=0.5 ];
-                    \node [right] at (0.3,0.3) {$\theta$};
-                    \node [right] at (0.59,0.12) {$\alpha$};
-                    \draw (1,1pt) -- (1,-1pt);
-                    \node [right] at (0.95,-0.07) {$r$};
-                    % Lines
-                    \end{tikzpicture}
-                    \caption{Rotación  $\theta$ grados. }
-                    \label{rotacion-theta}
-                \end{figure}
-                
-                
-                
-                Otras transformaciones lineales importantes de $\R^2$ en $\R^2$ son 
-                $$
-                S_h(x,y) = (x,-y) \quad \text{ y } \quad S_v(x,y) = (-x,y).
-                $$
-                La primera es la reflexión en el eje $x$ y la segunda la reflexión en el eje $y$. Las siguientes afirmaciones se comprueban algebraicamente en forma sencilla, pero nos podemos convencer de ellas por su interpretación geométrica:
-                \begin{equation*}
-                \begin{array}{ll}
-                R_\theta \circ R_\varphi = R_{\theta +\varphi}, \quad &\text{(rotar $\varphi$ y $\theta$ $=$  rotar $\theta+\varphi$)} \\
-                R_{\pi/2} \circ S_h \circ R_{-\pi/2} = S_v&
-                \end{array}
-                \end{equation*}
-                
-            \end{ejemplo}
-    
         
             \begin{ejemplo*}
             Sea $V = \R[x]$ el espacio vectorial de los polinomios con coeficientes reales. Definimos $D:V \to V$, por
@@ -146,15 +87,15 @@
             Además  $D$  es lineal, pues $(f+g)' = f' + g'$ y $(\lambda f)' = \lambda f'$, para$f,g$ funciones derivables y $\lambda \in \R$.
             \end{ejemplo*} 
         
-        \begin{obs*}	Sean $V$ y $W$ dos espacios vectoriales sobre el cuerpo $\K$ y 	 $T:V \to W$			un transformación lineal. Entonces $T(0) =0$
-        \end{obs*}
+        \begin{observacion*}	Sean $V$ y $W$ dos espacios vectoriales sobre el cuerpo $\K$ y 	 $T:V \to W$			un transformación lineal. Entonces $T(0) =0$
+        \end{observacion*}
         \begin{proof} $T(0) = T(0+0) = T(0) + T(0)$, por lo tanto 
             \begin{align*}
                 -T(0) + T(0) = -T(0) + T(0)+T(0) \;\Rightarrow\; 0 = 0 +T(0) \;\Rightarrow\; 0= T(0).
             \end{align*}
         \end{proof}
         
-        \begin{obs*}
+        \begin{observacion*}
             Las transformaciones lineales preservan  combinaciones lineales, es decir si $T:V \to W$ es una transformación lineal, $ v_1,\ldots,v_k \in V$ y $\lambda_1, \ldots+ \lambda_k \in \K$,  entonces
             $$
             T(\lambda_1 v_1 + \cdots+ \lambda_k v_k) = \lambda_1 T(v_1) + \cdots+ \lambda_k T(v_k).
@@ -165,7 +106,7 @@
             $$
             El caso general se demuestra por inducción. 
         
-        \end{obs*}
+        \end{observacion*}
         
         
         \begin{teorema}\label{th-tl-definida-en-base}
@@ -271,41 +212,20 @@
                 \item $T: \R^2  \to \R^2$ definida por $T(x, y) = (y, x)$.
                 \item $T: \R^2 \to \R$ definida por $T(x, y) = xy$
             \end{enumex}
-            \item Sea $T: V \to W$ una transformación lineal. Sean $u,v$ elemento de $V$, y sea  $T(u)=w$. Probas que si $T(v) =0$, entonces $T(u+v)=w$.
+            \item Sea $T: V \to W$ una transformación lineal. Sean $u,v$ elemento de $V$, y sea  $T(u)=w$. Probar que si $T(v) =0$, entonces $T(u+v)=w$.
+            
+            \item ¿Existe una transformación lineal $T: \R^3 \to \R^2$ tal que $T(-1,1,1) = (1,0)$ y $T(1,1,1) = (0,1)$ y 
+                \begin{enumex}
+                    \item $T(0,1,1) = (1,1)$?
+                    \item $T(0,1,1) = (\frac12,\frac12)$?
+                    \item $T(1,0,0) = (1,1)$?
+                \end{enumex} 
             
             \item  Sea $T: V \to W$ una transformación lineal. Sea $U$ el subconjunto de elementos $u \in V$ tales que $T (u) = 0$. Supongamos que $w \in W$ y existe $v_0\in  V$ tal que $T (v_0) = w$. Demuestre que el conjunto de elementos $v \in V$ que satisface $T (v) = w$ es $v_0+ U$.
             
             \item Sean $V, W$ dos espacios vectoriales y $T: V \to W$ una transformación lineal. Sean $w_1,\ldots,w_n$ elementos de $W$ que son linealmente independientes, y sean $v_1,\ldots, v_n$ elementos de $V$ tal que $T(v_i) = w_i$ para $i = 1, \ldots, n$. Demostrar que $v_1,\ldots, v_n$ son linealmente independientes.
             
-            \item Sea $T: \R^n \to \R^n$ un operador lineal. Diremos que $T$  es una  \textit{isometría} si $||T(v)|| = ||v||$ para todo $v \in \R^n$. 
-            \begin{enumex}
-                \item Probar que las rotaciones y reflexiones en $\R^2$ son isometrías. 
-                \item Probar que si $T$ es una isometría,  entonces
-                $$
-                \langle T(v), T(w) \rangle = \langle v,w \rangle \; \text{ para todo } \; v,w \in \R^n.  
-                $$
-                [Ayuda: usar la identidad de polarización  vista en el ejercicio \ref{ejercicio-identidad-de-polarizacion} de la sección \ref{secccion-norma-de-un-vector}].
-            \end{enumex}
-            
-            
-            \item Sea $V$ un espacio vectorial sobre $\R$, y sean $v, w \in V$ con $w \ne 0$. La \textit{recta que pasa por $v$ y es paralela a $w$} se define como el conjunto de todos los elementos $v + tw$ con $t\in \R$.
-            El \textit{segmento de recta entre $v$ y $v + w$} se define como el conjunto de todos los elementos
-            $$
-            v + tw \qquad  \text{ con } \qquad  0\le t \le 1. 
-            $$
-            Sea $T: V \to U$ una transformación lineal. Muestre que la imagen por $T$  de un segmento de recta en $V$ es un segmento de recta en $U$. ¿Entre qué puntos?
-            
-            Pruebe que la imagen de una recta por $T$  es o bien una recta  o bien un punto.
-            
-            \item Sea $V$ un espacio vectorial y $v_1,v_2$  dos elementos de $V$ que linealmente independientes. El conjunto de elementos de $V$ 
-            $$
-            \left\{ t_1v_1 + t_2v_2: 0 \le t_1 \le 1, \quad 0 \le t_2 \le 1 \right\}
-            $$
-            se llama el \textit{paralelogramo generado por $v_1$ y $v_2$}. 
-            \begin{enumex}
-                \item Sea $T: V \to W$ transformación lineal, $v_1,v_2$  dos elementos de $V$ que son linealmente independientes y  tales que $T(v_1),T(v_2)$  son linealmente independientes. Probar que la imagen por $T$ del paralelogramo generado por $v_1$ y $v_2$ es el paralelogramo generado por $T(v_1)$ y $T(v_2)$. 
-                \item Sea $T: \R^2 \to R^2$ una isometría  y $v,w$ vectores en $\R^2$ que son LI. Probar que el área del paralelogramo generado  por $v,w$ es igual al área del paralelogramo generado por $T(v),T(w)$ (ver ejercicio \ref{ejercicio-area-de un paralelogramo} de la sección \ref{seccion-determinate}).  
-            \end{enumex}   
+           
         \end{enumex}
 
 
@@ -467,10 +387,10 @@ Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2)
    
     Se demuestra fácilmente escribiendo las definiciones de los respectivos subconjuntos.
     \begin{align*}
-    v\in\nu(T)\Leftrightarrow Av=0\Leftrightarrow v\,\mbox{ es solución de $AX=0$.}
+    v\in\nu T\Leftrightarrow Av=0\Leftrightarrow v\,\mbox{ es solución de $AX=0$.}
     \end{align*}
     \begin{align*}
-    b\in\im(T)&\Leftrightarrow\exists v\in\R^n\,\mbox{ tal que } Av=b 
+    b\in\im T&\Leftrightarrow\exists v\in\R^n\,\mbox{ tal que } Av=b 
     \Leftrightarrow\,\mbox{$AX=b$ tienen solución}.
     \end{align*}
 \end{proof}
@@ -523,7 +443,7 @@ Luego,
     \nuc(T) &= \{(x,y,z):x-z=0, y+z =0 \} = \{(s,-s,s):s \in \R \} \\
     &= \{s(1,-1,1):s \in \R \}
     \end{align*}
-    que es la forma paramétrica del $\nu(T)$. Una base del núcleo de $T$  es $\{(1,-1,1)\}$. 
+    que es la forma paramétrica del $\nu T$. Una base del núcleo de $T$  es $\{(1,-1,1)\}$. 
 
 
     En  el sistema (*) las dos primeras ecuaciones no imponen ninguna restricción sobre los $y_i$ (por ejemplo si hacemos $z=0$ resulta $x = 2y_1-y_2$,  $y= -y_1+y_2$). Claramente, las últimas dos ecuaciones sí establecen condiciones sobre los $y_i$ y resulta entonces que   
@@ -659,6 +579,59 @@ Luego,
                 Si $A$ es una matriz $m \times n$ con coeficientes  en $\K$,  entonces el \textit{rango}\index{rango de una matriz}\index{matriz!rango} de $A$ es el rango fila de $A$ (que es igual al rango columna).
         \end{definicion}
         
+        \subsection*{$\S$ Ejercicios}
+        \begin{enumex}
+            \item Determinar bases del núcleo y la imagen de las siguientes transformaciones lineales
+                \begin{enumex}
+                    \item $T: \R^3 \to \R^2$ dada por $T(x,y,z) = (x+y, x+z)$.
+                    \item $S: \R^2 \to \R^3$ dada por $S(x,y) = (0,x-y, 3y)$.
+                \end{enumex}
+            \item Sea $T: \K_3[x] \to \K_4[x]$ dada por $p(x) \mapsto x\cdot p(x)$. ¿Cuáles de los siguientes polinomios se encuentra en $\nu T$? ¿Cuáles en  $\im T$?
+            \begin{multicols}{3}
+                \begin{enumex}
+                    \item $x^3$,
+                    \item $0$, 
+                    \item $12x-\frac12 x^3$,
+                    \item $1 +3x^2 -x^3$.
+                \end{enumex}
+            \end{multicols}
+            \item Determinar la dimensión del núcleo de la transformación lineal $T$ en los siguientes casos. 
+                \begin{enumex}
+                    \item $T: \R^5 \to \R^8$ con $\dim(\im T) =5$.
+                    \item  $T: \K_3[x]\to \K_3[x]$ con $\dim(\im T) =1$.
+                    \item  $T: \R^6 \to \R^3$ con $T$ epimorfismo.
+                    \item $T: \R^{3 \times 3} \to \R^{3 \times 3}$ con $T$ epimorfismo.
+                \end{enumex}
+
+            \item Describir explícitamente una transformación linar de $\R^3$ en $\R^3$ cuya imagen esté generada por $(1,0,-1)$ y $(1,2,2)$. 
+
+            \item Sea $D: \R_n[x] \to \R_n[x]$ la transformación lineal ``derivada de''. Describir el  núcleo de $D$. ¿Cuál es el núcleo de la transformación lineal ``derivada $k$-ésima de''? 
+            \item Sea $T: \R^3 \to \R^3$  definida por
+                $$
+                    T(x,y,z) = (x_1-x_2 +2x_3,2x_1 + x_2, -x_1 -2x_2 + 2x_3). 
+                $$
+                \begin{enumex}
+                    \item Si $(a,b,c)$  en $\R^3$ ¿Cuáles son las condiciones sobre $(a,b,c)$ para que el vector pertenezca a $\im T$? 
+                    \item Encontrar una base de $\im T$. 
+                    \item Si $(a,b,c)$  en $\R^3$ ¿Cuáles son las condiciones sobre $(a,b,c)$ para que el vector pertenezca a $\nu T$? 
+                    \item Encontrar una base de $\nu T$. 
+                \end{enumex}
+                \item  Sea $T: \R^4 \to \R^3$ la transformación lineal  definida por
+                $$ T(x_1,x_2,x_3,x_4)  =(3x_1-x_2+x_4,-3x_1 +2x_2+x_3, 3x_1+x_3+2x_4).$$
+                \begin{enumerate}
+                    \item Encontrar una base de $\im T$ y dar su dimensión.
+                    \item Dar la dimensión del núcleo usando el teorema de la dimensión.
+                    \item Extender la base de $\im T$  a una base de $\R^3$.
+                \end{enumerate}
+                
+            \item Sea $V$ sea un espacio vectorial y $T: V \to V$ una transformación lineal. Demuestre que los dos enunciados siguientes sobre $T$ son equivalentes.
+                \begin{enumex}
+                    \item La intersección de $\im T$ y $\nu T$  es el subespacio cero de $V$.
+                    \item Si para $v \in V$, $T (Tv) = 0$, entonces $Tv = 0$.
+                \end{enumex}
+        \end{enumex}
+
+
         \end{section}
     
         \begin{section}{Isomorfismos de espacios vectoriales}\label{seccion-isomorfismos-de-ev}
@@ -668,24 +641,25 @@ Luego,
             \begin{enumerate}
                 \item $T$  es \textit{epimorfismo}\index{epimorfismo} si $T$ es suryectiva, es decir si $\img(T) = W$.
                 \item $T$ es \textit{monomorfismo}\index{monomorfismo} si $T$ es inyectiva (o 1-1),  es decir si dados $v_1,v_2 \in V$ tales que $T(v_1) = T(v_2)$,  entonces $v_1 = v_2$.
+                \item $T$ es \textit{isomorfismo}\index{isomorfismo} si $T$ es suryectiva e inyectiva.
             \end{enumerate}  
         \end{definicion}
     
-        \begin{obs*}
+        \begin{observacion*}
             $T$  es epimorfismo si y sólo si 
             $$
             \text{$T$ es lineal y }\forall\, w \in W, \; \exists v \in V \text{ tal que }T(v)=w.
             $$
-            Esto se deduce inmediatamente de la definiciones de función suryectiva y de $\img(T)$
+            Esto se deduce inmediatamente de la definiciones de función suryectiva y de $\img(T)$.
             
             $T$ es monomorfismo si y sólo si 
             $$
                 \text{$T$ es lineal y }\forall\, v_1,v_2  \in V: \; v_1 \ne v_2 \Rightarrow T(v_1) \not= T(v_2).
             $$ 
             Esto se obtiene aplicando el contrarrecíproco a la definición de función inyectiva.
-        \end{obs*}	
+        \end{observacion*}	
         
-        
+        Observar que $V$ es trivialmente isomorfo a $V$, ya que el operador identidad es un isomorfismo de $V$ sobre $V$. 
             
         \begin{proposicion}\label{inyectiva-sii-nuT=0}
             Sea $T:V \to W$ una transformación lineal. Entonces $T$ es monomorfismo si y sólo si $\nuc(T) =0$.
@@ -701,13 +675,56 @@ Luego,
             Por  lo tanto, $v_1 -v_2 \in \nuc(T)$. Por hipótesis, tenemos que $v_1 -v_2 =0$,  es decir $v_1 = v_2$.
         \end{proof}
         
-        
-        \begin{obs*} Sea $T: V \to W$ transformación lineal, 
+        \begin{ejemplo*}
+            Probaremos que la transformación lineal $T: \R^3  \to \R^3$  dada por 
+            $$
+            T(x,y,z) = (x+z, y-z,-x +3y).
+            $$
+            es un monomorfismo, probando que $\nu(T)=0$.
+            
+           Observemos que  $(x,y,z) \in \nu(T)$ si y solo si $ T(x,y,z) = (0,0,0)$,  es decir si y solo si 
+           \begin{equation*}
+               \begin{cases}
+                   x + z &= 0 \\
+                   y - z &= 0 \\
+                   -x + 3z &=0,
+               \end{cases}
+           \end{equation*}
+           Resolvamos el sistema:
+           \begin{align*}
+               &\begin{bmatrix}
+                1&0&1\\
+                0&1&-1\\
+                -1&0&3
+               \end{bmatrix}
+               \stackrel{F_3+F_1}{\longrightarrow}
+               \begin{bmatrix}
+                1&0&1 \\
+                0&1&-1 \\
+                0&0&4
+               \end{bmatrix}
+                \stackrel{F_3/4}{\longrightarrow}
+                \begin{bmatrix}
+                    1&0&1\\
+                    0&1&-1 \\
+                    0&0&1 
+                \end{bmatrix}
+                \stackrel{F_1-F_3}{\stackrel{F_2 +F_3}{\longrightarrow}}
+                \begin{bmatrix}
+                    1&0&0 \\
+                    0&1&0\\
+                    0&0&1
+                \end{bmatrix}.
+           \end{align*}
+          Luego $(x,y,z) = (0,0,0)$ es la única solución del sistema $ T(x,y,z) = (0,0,0)$ y por lo tanto  $\nu(T)=0$.
+        \end{ejemplo*}
+
+        \begin{observacion*} Sea $T: V \to W$ transformación lineal, 
             \begin{enumerate}
                 \item $T$  es {epimorfismo} si y sólo  si $\img(T) = W$ si  y solo si $rango(T) = \dim W$.
                 \item $T$ es {monomorfismo} si y sólo  si $\nuc(T) = 0$ si y sólo si $nulidad(T) =0$.
             \end{enumerate}  
-        \end{obs*}		
+        \end{observacion*}		
         
         \begin{proposicion}\label{prop-T-mono-sii-li-2-li} Sea $T:V \to W$ transformación lineal. Entonces,
             \begin{enumerate}
@@ -717,82 +734,52 @@ Luego,
         \end{proposicion}
         \begin{proof} Haremos la demostración para el caso de dimensión finita,  pero en el caso general la demostración es similar. 
             
-            
-            \ref{itm-T-mono-sii} ($\Rightarrow$) Sea $\{v_1,\ldots,v_n \}$ un conjunto LI en $V$ y sean  $\lambda_1,\ldots,\lambda_n \in \K$ tales que
-            $$
-            \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n) =0,
-            $$
-            entonces
-            $$
-            0 = T(\lambda_1v_1+\cdots + \lambda_{n}v_n).
-            $$
-            Como $T$  es inyectiva, por proposición \ref{inyectiva-sii-nuT=0}, 
-            $$
-            \lambda_1v_1+\cdots + \lambda_{n}v_n =0,
-            $$
-            lo cual implica que $\lambda_1,\ldots,\lambda_n$ son todos nulos. Por lo tanto,  $T(v_1),\ldots,T(v_n)$ son LI.
-            
-            
-           \ref{itm-T-mono-sii} ($\Leftarrow$) Sea $v \in V$ tal que $T(v)=0$. Veremos que eso implica que $v =0$.  Ahora bien, sea  $\{v_1,\ldots,v_n \}$ una base de $V$,  entonces existen $\lambda_1,\ldots,\lambda_n \in \K$ tales que
-            $$
-            v = \lambda_1v_1+\cdots + \lambda_{n}v_n,
-            $$
-            por lo tanto
-            $$
-            0 = T(v) = T(\lambda_1v_1+\cdots + \lambda_{n}v_n) = \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n).
-            $$
-            Como $\{v_1,\ldots,v_n \}$ es LI, por hipótesis, $\{T(v_1),\ldots,T(v_n)\}$ es LI y, por lo tanto, $\lambda_1,\ldots,\lambda_n$ son todos nulos. Luego $v=0$. Es decir probamos  que el núcleo de $T$ es $0$, luego por proposición \ref{inyectiva-sii-nuT=0}, $T$ es monomorfismo. 
-
+        \ref{itm-T-mono-sii} ($\Rightarrow$) Sea $\{v_1,\ldots,v_n \}$ un conjunto LI en $V$ y sean  $\lambda_1,\ldots,\lambda_n \in \K$ tales que
+        $$
+        \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n) =0,
+        $$
+        entonces
+        $$
+        0 = T(\lambda_1v_1+\cdots + \lambda_{n}v_n).
+        $$
+        Como $T$  es inyectiva, por proposición \ref{inyectiva-sii-nuT=0}, 
+        $$
+        \lambda_1v_1+\cdots + \lambda_{n}v_n =0,
+        $$
+        lo cual implica que $\lambda_1,\ldots,\lambda_n$ son todos nulos. Por lo tanto,  $T(v_1),\ldots,T(v_n)$ son LI.
+        
+        
+        \ref{itm-T-mono-sii} ($\Leftarrow$) Sea $v \in V$ tal que $T(v)=0$. Veremos que eso implica que $v =0$.  Ahora bien, sea  $\{v_1,\ldots,v_n \}$ una base de $V$,  entonces existen $\lambda_1,\ldots,\lambda_n \in \K$ tales que
+        $$
+        v = \lambda_1v_1+\cdots + \lambda_{n}v_n,
+        $$
+        por lo tanto
+        $$
+        0 = T(v) = T(\lambda_1v_1+\cdots + \lambda_{n}v_n) = \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n).
+        $$
+        Como $\{v_1,\ldots,v_n \}$ es LI, por hipótesis, $\{T(v_1),\ldots,T(v_n)\}$ es LI y, por lo tanto, $\lambda_1,\ldots,\lambda_n$ son todos nulos. Luego $v=0$. Es decir probamos  que el núcleo de $T$ es $0$, luego por proposición \ref{inyectiva-sii-nuT=0}, $T$ es monomorfismo. 
+        
         \ref{itm-T-mono-sii} ($\Leftarrow$ \textit{alternativa}) Sea $v \in V$ tal que $T(v)=0$.	Si $v\neq 0$, entonces $\{v\}$ es un conjunto LI en $V$. Luego, $\{T(v)\}$ es un conjunto LI en $W$ y por lo tanto $T(v)\neq 0$. Así, si $T(v)=0$ entonces $v=0$ y por lo tanto $T$ es un monomorfismo.
               
-            \ref{itm-T-epi-sii} ($\Rightarrow$) Sea   $\{v_1,\ldots,v_n \}$ un conjunto de generadores de $V$ y sea  $w \in W$. Como $T$  es epimorfismo, existe $v \in V$ tal que $T(v)=w$. Ahora bien, 
-            $$
-            v = \lambda_1v_1+\cdots + \lambda_{n}v_n,\, \text{ para algún $\lambda_1,\ldots,\lambda_n \in \K$,}
-            $$
-            por lo tanto,
-            $$
-            w =T(v) = T(\lambda_1v_1+\cdots + \lambda_{n}v_n) = \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n).
-            $$ 
-            Es decir,  cualquier $w \in W$ se puede escribir como combinación lineal de los  $T(v_1),\ldots,T(v_n)$ y, por lo tanto,  generan $W$.
-            
-             \ref{itm-T-epi-sii} ($\Leftarrow$) Sea $\{v_1,\ldots,v_n \}$ una base de $V$, por hipótesis $T(v_1),\ldots,T(v_n)$ generan $W$,  es decir dado cualquier $w \in W$,   existen $\lambda_1,\ldots,\lambda_n \in \K$ tales que
-            $$
-            w = \lambda_1T(v_1)+\cdots + \lambda_{n}T(v_n),
-            $$
-            y por lo tanto $w = T(v)$,  con 
-            $$
-            v = \lambda_1v_1+\cdots + \lambda_{n}v_n.
-            $$
+        \ref{itm-T-epi-sii} ($\Rightarrow$) Sea   $\{v_1,\ldots,v_n \}$ un conjunto de generadores de $V$ y sea  $w \in W$. Como $T$  es epimorfismo, existe $v \in V$ tal que $T(v)=w$. Ahora bien, 
+        $$
+        v = \lambda_1v_1+\cdots + \lambda_{n}v_n,\, \text{ para algún $\lambda_1,\ldots,\lambda_n \in \K$,}
+        $$
+        por lo tanto,
+        $$
+        w =T(v) = T(\lambda_1v_1+\cdots + \lambda_{n}v_n) = \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n).
+        $$ 
+        Es decir,  cualquier $w \in W$ se puede escribir como combinación lineal de los  $T(v_1),\ldots,T(v_n)$ y, por lo tanto,  generan $W$.
+        
+            \ref{itm-T-epi-sii} ($\Leftarrow$) Sea $\{v_1,\ldots,v_n \}$ una base de $V$, por hipótesis $T(v_1),\ldots,T(v_n)$ generan $W$,  es decir dado cualquier $w \in W$,   existen $\lambda_1,\ldots,\lambda_n \in \K$ tales que
+        $$
+        w = \lambda_1T(v_1)+\cdots + \lambda_{n}T(v_n),
+        $$
+        y por lo tanto $w = T(v)$,  con 
+        $$
+        v = \lambda_1v_1+\cdots + \lambda_{n}v_n.
+        $$
         \end{proof}
-        
-            
-
-        \begin{definicion}
-            Si $V$ y $W$ son espacios vectoriales sobre el cuerpo $\K$, toda transformación	lineal $T:V \to W$ suryectiva e inyectiva, se dice \textit{isomorfismo}\index{isomorfismo} de $V$ sobre $W$. Si existe un isomorfismo de $V$ sobre $W$, se dice que $V$ es \textit{isomorfo} a $W$ y se denota $V \cong W$.
-        \end{definicion}
-        
-        
-        
-        Observe que $V$ es trivialmente isomorfo a $V$, ya que el operador identidad es un isomorfismo de $V$ sobre $V$. 
-
-        \begin{proposicion}
-            Sea $T:V \to W$ transformación lineal. Entonces $T$ es un isomorfismo si y solo si $T$ de una base de $V$ es una base de $W$.
-        \end{proposicion}
-        \begin{proof} 
-
-         ($\Rightarrow$) 
-           Sea $ \cB$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición \ref{prop-T-mono-sii-li-2-li}, $T(\cB)$ es LI y genera $W$,  es decir,  es base de $W$.
-
-           ($\Leftarrow$) Sea $ \cB$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\cB)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo.
-        \end{proof}
-
-        \begin{corolario}
-            Sean $V$ y $W$ dos  $\K$-espacios vectoriales de dimensión finita tal que $V$ es isomorfo a $W$. Entonces $\dim(V) = \dim(W)$.
-        \end{corolario}
-        \begin{proof}
-        Como $V$  es isomorfo  a $W$,  existe un isomorfismo $T: V \to W$. Por la proposición anterior si $v_1,\ldots,v_n$ es base de $V$,  entonces $T(v_1),\ldots,T(v_n)$ es base de $W$. Por lo tanto, $\dim(V) = n = \dim(W)$.
-        \end{proof}
-
 
         Recordemos que si una función $f: X \to Y$ es suryectiva e inyectiva, es decir biyectiva, existe su inversa, la cual también es biyectiva. La inversa se denota $f^{-1}: Y \to X$ y viene definida por
         $$
@@ -819,11 +806,85 @@ Luego,
             \begin{equation*}
             T^{-1}(\lambda w) = 	T^{-1}(\lambda T(v))  = 	T^{-1}(T(\lambda v)) = (T^{-1}\circ T)(\lambda v) = \lambda v = \lambda  T^{-1}(w). 
             \end{equation*}
-                \end{proof}
-        
-        
+        \end{proof}
+      
+        \begin{ejemplo*}
+            Sea $T: \R^2 \to \C$ definida por $T(a,b) = a+ ib$. Entonces $T$ es un isomorfismo entre $\R$-espacios vectoriales. 
+        \end{ejemplo*}
 
+        \begin{ejemplo}[\textsc{Transformaciones lineales rígidas de $\R^2$ en $\R^2$}] Las rotaciones y reflexiones en $\R^2$ son isomorfismos de  $\R^2$  en  $\R^2$.  Sea $\theta \in \R$ tal que  $0 \le \theta \le 2\pi$,  definimos
+            \begin{equation*}
+                \begin{array}{llll}
+                R_\theta:&\R^2 &\to &\R^2 \\
+                &(x,y) &\mapsto & (x \cos\theta - y \sin\theta, y\cos\theta+ x\sin\theta)
+                \end{array}
+            \end{equation*}
+            Observemos que si escribimos el vector $(x,y)$  en coordenadas polares,  es decir  si 
+            $$
+            (x,y)= r(\cos\alpha,\sin\alpha),\quad r> 0, \; 0 \le \alpha < 2\pi, 
+            $$
+            entonces
+            \begin{align*}
+                R_\theta(x,y) &= R_\theta(r\cos\alpha,r\sin\alpha) \\
+                &= (r\cos\alpha \cos\theta - r\sin\alpha \sin\theta, r\sin\alpha\cos\theta+ r\cos\alpha\sin\theta) \\
+                &= (r\cos(\alpha+\theta) , r\sin(\alpha+\theta)) \\
+                &= r(\cos(\alpha+\theta) , \sin(\alpha+\theta)).
+            \end{align*}
+            Por lo tanto $R_\theta(x,y)$ es el vector $(x,y)$ rotado $\theta$ grados en sentido antihorario y en consecuencia  $R_\theta$ es denominada la \textit{rotación antihoraria en $\theta$ radianes}. No es difícil verificar que $R_\theta$ es una transformación lineal y  que $R_\theta \circ R_{-\theta} = \Id$. Por lo tanto $R_\theta$  es un isomorfismo.  
 
+                \begin{figure}[h]
+                    \centering	
+                \begin{tikzpicture}[scale=5]
+                \draw[->] (-0.1,0)  -- (1.1,0) node(xline)[right]	{$x$};
+                \draw[->] (0,-0.1) -- (0,1.1) node(yline)[above] {$y$};
+                \draw[->] (0,0) -- (0.5,0.866) node(yline)[above] {$R_{\theta}(v)$};
+                \draw[->] (0.9238,0.3826) arc[start angle=22.5, end angle=60, radius=1 ];
+                \draw[->] (0,0) -- (0.9238,0.3826) node(yline)[right] {$v$};
+                \draw[->] (0.7,0) arc[start angle=0, end angle=22.5, radius=0.7 ];
+                \draw[->] (0.9238/2,0.3826/2) arc[start angle=22.5, end angle=60, radius=0.5 ];
+                \node [right] at (0.3,0.3) {$\theta$};
+                \node [right] at (0.59,0.12) {$\alpha$};
+                \draw (1,1pt) -- (1,-1pt);
+                \node [right] at (0.95,-0.07) {$r$};
+                % Lines
+                \end{tikzpicture}
+                \caption{Rotación  $\theta$ grados. }
+                \label{rotacion-theta}
+            \end{figure}
+            
+            
+            
+            Otras transformaciones lineales importantes de $\R^2$ en $\R^2$ son 
+            $$
+            S_h(x,y) = (x,-y) \quad \text{ y } \quad S_v(x,y) = (-x,y).
+            $$
+            La primera es la reflexión en el eje $x$ y la segunda la reflexión en el eje $y$. Claramente $S_h^2 = S_v^2 = \Id$ y por lo tanto ambos son isomorfismos. 
+            
+            Las siguientes afirmaciones se comprueban algebraicamente en forma sencilla, pero nos podemos convencer de ellas por su interpretación geométrica:
+            \begin{align}
+            &R_\theta \circ R_\varphi = R_{\theta +\varphi}, \label{comp-rotacion}\\
+            &R_{\pi/2} \circ S_h \circ R_{-\pi/2} = S_v\label{reflexion-h-v}.
+            \end{align}
+            La fórmula \eqref{comp-rotacion} nos dice que rotar $\varphi$ radianes y luego rotar $\theta$ radianes es lo mismo que  rotar $\theta+\varphi$ radianes. La fórmula \eqref{reflexion-h-v} nos dice que rotar $-90^\circ$, luego  hacer una reflexión horizontal y luego rotar $90^\circ$ es lo mismo que hacer una reflexión vertical. 
+        \end{ejemplo}
+
+        \begin{proposicion}
+            Sea $T:V \to W$ transformación lineal. Entonces $T$ es un isomorfismo si y solo si $T$ de una base de $V$ es una base de $W$.
+        \end{proposicion}
+        \begin{proof} 
+
+         ($\Rightarrow$) 
+           Sea $ \cB$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición \ref{prop-T-mono-sii-li-2-li}, $T(\cB)$ es LI y genera $W$,  es decir,  es base de $W$.
+
+           ($\Leftarrow$) Sea $ \cB$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\cB)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo.
+        \end{proof}
+
+        \begin{corolario}
+            Sean $V$ y $W$ dos  $\K$-espacios vectoriales de dimensión finita tal que $V$ es isomorfo a $W$. Entonces $\dim(V) = \dim(W)$.
+        \end{corolario}
+        \begin{proof}
+        Como $V$  es isomorfo  a $W$,  existe un isomorfismo $T: V \to W$. Por la proposición anterior si $v_1,\ldots,v_n$ es base de $V$,  entonces $T(v_1),\ldots,T(v_n)$ es base de $W$. Por lo tanto, $\dim(V) = n = \dim(W)$.
+        \end{proof}
 
         \begin{ejercicio*} 
             Sean $V$, $W$ y $Z$ espacios vectoriales sobre el cuerpo $\K$ y sean $T:V \to W$, $S:W \to Z$ isomorfismos. Entonces, 
@@ -832,15 +893,8 @@ Luego,
                 \item 	$(S\circ T)^{-1} = T^{-1}\circ S^{-1}$.
             \end{enumerate}
         \end{ejercicio*}
-        
-        
-
 
         Como ya se ha dicho, $V$ es isomorfo a $V$ vía la identidad. Por  el teorema anterior, si $V$ es isomorfo a $W$,  entonces $W$ es isomorfo a $V$. Por  el ejercicio anterior, si $V$ es isomorfo a $W$ y $W$ es isomorfo a $Z$, entonces $V$ es isomorfo a $Z$. En resumen, el isomorfismo es una relación de equivalencia sobre la clase de espacios vectoriales. Si existe un isomorfismo de $V$ sobre $W$, se dirá a veces que \textit{$V$ y $W$ son isomorfos}, en vez de que $V$ es isomorfo a $W$. Ello no será motivo de confusión porque $V$ es isomorfo a $W$, si, y solo si, $W$ es isomorfo a $V$.	
-            
-        
-   
-            
             
         \begin{teorema}
             Sean $V,W$ espacios vectoriales de dimensión  finita sobre $\K$ tal que $\dim V = \dim W$. Sea $T: V \to W$ transformación lineal. Entonces,  son equivalentes:
@@ -903,6 +957,79 @@ Luego,
     \end{equation*}	 
         
     \end{ejemplo*}
+    
+    \subsection*{$\S$ Ejercicios}
+
+    \begin{enumex}
+        \item Probar que la transformación lineal $T: \R^4 \to \R^{2 \times 2}$  definida
+        $$
+        (a,b,c,d) \mapsto \begin{bmatrix}
+            c&a+d\\ b&d
+        \end{bmatrix}
+        $$
+        es un isomorfismo. 
+        \item Probar que la transformación lineal $T: \R_2[x] \to \R^{2}$  definida
+        $$
+        a+bx \mapsto (a-b,b)
+        $$
+        es un isomorfismo. 
+        \item Sea $T: \R^2 \to \R^{2}$ definida
+        $$
+        T(x, y) = (3x - y, 4x + 2y).
+        $$
+        Probar que $T$ es un isomorfismo y calcular $T^{-1}$.
+        \item ¿Para que $n$ los siguientes subespacios son isomorfos a $\R^n$?
+        \begin{enumex}
+            \item $\R_5[x]$.
+            \item $\R_2[x]$.
+            \item $\R^{2 \times 3}$.
+            \item El plano $2x-y+z=0$ en $\R^3$.
+        \end{enumex}
+        \item Dar en forma explícita un isomorfismo de $\R_3[x]$ a $\R^3$ tal que
+        $$
+        1 +x^2 \mapsto (1,1,0), \qquad 2-x \mapsto (1, -1, 1).
+        $$
+        \item Sea $L: V \to V$ una transformación lineal tal que $L^2 + 2L + \Id = O$. Demuestre que $L$ es invertible.
+        \item\label{ejercicio-isometria} Sea $T: \R^n \to \R^n$ un operador lineal. Diremos que $T$  es una  \textit{isometría} si $||T(v)|| = ||v||$ para todo $v \in \R^n$. 
+            \begin{enumex}
+                \item Probar que las rotaciones y reflexiones en $\R^2$ son isometrías. 
+                \item Probar que una isometría es un isomorfismo y  que la inversa también es una isometría.
+                \item Probar que si $T$ es una isometría,  entonces
+                $$
+                \langle T(v), T(w) \rangle = \langle v,w \rangle \; \text{ para todo } \; v,w \in \R^n.  
+                $$
+                [Ayuda: usar la identidad de polarización  vista en el ejercicio \ref{ejercicio-identidad-de-polarizacion} de la sección \ref{secccion-norma-de-un-vector}].
+            \end{enumex}
+            
+            \item Usando el isomorfismo entre $\R^2$ y $\C$, $(a,b)\mapsto a + ib$,  podemos pensar a las isometrías del plano como funciones de $\C$ en $\C$.
+            \begin{enumex}
+                \item  Probar que la reflexión horizontal  $S_h: \C \to \C$ es $S_h(z) = \overline{z}$. 
+                \item Sea $T: \C \to \C$ una isometría. Probar que $T(1) =e^{i\theta}$, para algún $\theta$ tal que $0 \le \theta < 2\pi$. 
+                \item Sea $T: \C \to \C$ una isometría tal que $T(1) =1$. Probar que, o bien $T = \Id$, o  bien $T = S_h$.
+                \item  Sea $T: \C \to \C$ una isometría tal que $T(1) = e^{i\theta}$. Probar que, o bien $T = R_\theta$, o  bien $T = R_\theta \circ S_h$.
+                \item Probar  que $S_v = R_\pi \circ S_h$. 
+            \end{enumex}
+
+            \item Sea $V$ un espacio vectorial sobre $\R$, y sean $v, w \in V$ con $w \ne 0$. La \textit{recta que pasa por $v$ y es paralela a $w$} se define como el conjunto de todos los elementos $v + tw$ con $t\in \R$.
+            El \textit{segmento de recta entre $v$ y $v + w$} se define como el conjunto de todos los elementos
+            $$
+            v + tw \qquad  \text{ con } \qquad  0\le t \le 1. 
+            $$
+            Sea $T: V \to U$ una transformación lineal. Muestre que la imagen por $T$  de un segmento de recta en $V$ es un segmento de recta en $U$. ¿Entre qué puntos?
+            
+            Pruebe que la imagen de una recta por $T$  es o bien una recta  o bien un punto.
+            
+            \item Sea $V$ un espacio vectorial y $v_1,v_2$  dos elementos de $V$ que linealmente independientes. El conjunto de elementos de $V$ 
+            $$
+            \left\{ t_1v_1 + t_2v_2: 0 \le t_1 \le 1, \quad 0 \le t_2 \le 1 \right\}
+            $$
+            se llama el \textit{paralelogramo generado por $v_1$ y $v_2$}. 
+            \begin{enumex}
+                \item Sea $T: V \to W$ transformación lineal, $v_1,v_2$  dos elementos de $V$ que son linealmente independientes y  tales que $T(v_1),T(v_2)$  son linealmente independientes. Probar que la imagen por $T$ del paralelogramo generado por $v_1$ y $v_2$ es el paralelogramo generado por $T(v_1)$ y $T(v_2)$. 
+                \item Sea $T: \R^2 \to R^2$ una isometría  y $v,w$ vectores en $\R^2$ que son LI. Probar que el área del paralelogramo generado  por $v,w$ es igual al área del paralelogramo generado por $T(v),T(w)$ (ver ejercicio \ref{ejercicio-area-de un paralelogramo} de la sección \ref{seccion-determinate}).  
+            \end{enumex}   
+    \end{enumex}
+
     
         \end{section}
     
@@ -1006,7 +1133,40 @@ Luego,
     
     El contenido de este lema, y algunos otros resultados  sobre composición de funciones de un conjunto en si mismo (como ser la asociatividad), dicen que el espacio vectorial $L(V, V)$, junto con la operación de composición, es lo que se conoce tomo una  álgebra asociativa sobre $\K$,  con identidad (ver \href{https://es.wikipedia.org/wiki/Álgebra\_asociativa}{https://es.wikipedia.org/wiki/Álgebra\_asociativa}). 
     
-    
+        \subsection*{$\S$ Ejercicios}
+
+        \begin{enumex}
+            \item Sean $T,S, R: \R^3 \to \R^3$ definidas
+            \begin{align*}
+                T(x,y,z) &= (x-z, y+z, -x+y), \\
+                S(x,y,z) &= (2x-y+z, y+3z, -2x+2y-z), \\
+                R(x,y,z) &= (3x-y+z, 4y+3z, -x+3y).
+            \end{align*}
+            Calcular
+            \begin{multicols}{4}
+                \begin{enumex}
+                    \item $T \circ S$.
+                    \item $S \circ R$.
+                    \item $(T \circ S) \circ R$.
+                    \item $T \circ( S\circ R$).
+                \end{enumex}
+            \end{multicols}
+            \item Sea $T: \R^n \to \R^n$ una transformación lineal. Diremos que $T$ es \textit{nilpotente} si existe $k \in \N$ tal que $T^k =0$. 
+            
+            Sea $T$ nilpotente, definimos
+            $$
+            e^T := \sum_{i=0}^\infty \frac1{i!}T^i.
+            $$
+            (Observar que $e^T$ está bien definido por ser $T$ nilpotente). 
+            \begin{enumex}
+                \item Sea $T$ nilpotente. Probar que $e^T$ es invertible y su inversa es $e^{-T}$. 
+                \item Sean $T, S$ nilpotentes y tales que $TS=ST$. Probar que $T+S$ es nilpotente y que
+                $$
+                e^{T}e^{S}= e^{T+S}.
+                $$
+            \end{enumex}
+            
+        \end{enumex}
 
         \end{section}
 
@@ -1098,30 +1258,34 @@ Luego,
             \item\label{itm-coor-2} $[\lambda v]_\mathcal{B} = \lambda[v]_\mathcal{B}$, para $\lambda \in \K$ y $v \in V$.
         \end{enumerate}
     \end{proposicion} 
-    \begin{proof}
-        \ref{itm-coor-1} Si $v = x_1v_1 + \cdots +x_nv_n$ y $w = y_1v_1 + \cdots +y_nv_n$, entonces 
-        $$
-        v + w = (x_1+y_1)v_1 + \cdots +(x_n+y_n)v_n,
-        $$
-        luego,
-        \begin{align*}
-            [v + w]_\mathcal{B} &=(x_1+y_1,\ldots ,x_n+y_n) \\
-            &= (x_1,\ldots, x_n) +(y_1,\ldots , y_n) \\
-            &= [v]_\mathcal{B} +[w]_\mathcal{B}.
-        \end{align*}
-                
-        \ref{itm-coor-2} Si $v = x_1v_1 + \cdots +x_nv_n$ y $\ \in \K$, entonces 
-        $$
-        \lambda v = (\lambda x_1)v_1 + \cdots +(\lambda x_n)v_n,
-        $$
-        luego,
-        \begin{align*}
-            [\lambda v ]_\mathcal{B} &= (\lambda x_1,\ldots , \lambda x_n )\\
-        &= \lambda (x_1,\ldots ,x_n) \\
-        &= \lambda [v]_\mathcal{B}.
-        \end{align*}
+    \begin{proof}${}^{}$
+        \begin{enumerate}
+            \item[\ref{itm-coor-1}] Si $v = x_1v_1 + \cdots +x_nv_n$ y $w = y_1v_1 + \cdots +y_nv_n$, entonces 
+            $$
+            v + w = (x_1+y_1)v_1 + \cdots +(x_n+y_n)v_n,
+            $$
+            luego,
+            \begin{align*}
+                [v + w]_\mathcal{B} &=(x_1+y_1,\ldots ,x_n+y_n) \\
+                &= (x_1,\ldots, x_n) +(y_1,\ldots , y_n) \\
+                &= [v]_\mathcal{B} +[w]_\mathcal{B}.
+            \end{align*}
+                    
+            \item[\ref{itm-coor-2}] Si $v = x_1v_1 + \cdots +x_nv_n$ y $\ \in \K$, entonces 
+            $$
+            \lambda v = (\lambda x_1)v_1 + \cdots +(\lambda x_n)v_n,
+            $$
+            luego,
+            \begin{align*}
+                [\lambda v ]_\mathcal{B} &= (\lambda x_1,\ldots , \lambda x_n )\\
+            &= \lambda (x_1,\ldots ,x_n) \\
+            &= \lambda [v]_\mathcal{B}.
+            \end{align*}
+        \end{enumerate}
     \end{proof}
     
+    \subsection*{$\S$ Ejercicios}
+
     
     \end{section}
 
@@ -1132,7 +1296,7 @@ Luego,
                 Tv_j = \sum_{i=1}^{m} a_{ij} w_i
             \end{equation}
             de los $w_i$. Los escalares $a_{1j},\ldots,a_{mj}$ son las coordenadas de $Tv_j$ en la base ordenada $\cB'$. Por consiguiente, la transformación $T$ está determinada por los
-            $mn$ escalares $a_{ij}$ mediante la expresión \eqref{matriz-de-T-1}. 
+            $m\cdot n$ escalares $a_{ij}$ mediante la expresión \eqref{matriz-de-T-1}. 
             
             \begin{definicion} Sean $V$ y $W$ espacios vectoriales de dimensión finita con bases ordenadas $\cB = \{v_1,\ldots,v_n\}$  y $\cB' = \{w_1,\ldots,w_m\}$, respectivamente. Sea $T: V \to W$ una transformación lineal tal que 
                 \begin{equation*}\label{matriz-de-T-1}
@@ -1141,7 +1305,8 @@ Luego,
                 A  $A$  La matriz $m \times n$  definida por $[A]_{ij} = a_{ij}$ se la  denomina \textit{la matriz de $T$ respecto a las bases ordenadas $\cB$ y $\cB'$;}\index{matriz!de una transformación lineal} y se la denota 
                 $$
                 [T]_{\cB \cB'} = A .
-                $$.
+                $$
+                Si $T: V \to V$ una transformación lineal y $\cB$ es una base ordenada de $V$,  a la matriz $[T]_{\cB \cB}$ también se la denota $[T]_{\cB}$.
             \end{definicion}
             
             \begin{ejemplo*}

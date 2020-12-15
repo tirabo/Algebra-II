@@ -52,34 +52,33 @@
 \setlist[enumerate, 2]{label=\emph{\alph*)}}
 \setcounter{MaxMatrixCols}{20}
 
- 
+
 \newtheorem{teorema}{Teorema}[section]
 \newtheorem{proposicion}[teorema]{Proposici\'on}
 \newtheorem{corolario}[teorema]{Corolario}
 \newtheorem{lema}[teorema]{Lema}
 \newtheorem{propiedad}[teorema]{Propiedad}
-
-\theoremstyle{definition}
+\theoremstyle{definition} %en negrita y letra estándar
 \newtheorem{definicion}[teorema]{Definici\'on}
+
+\theoremstyle{remark} % en itálica
+\newtheorem{observacion}[teorema]{Observaci\'on}
+\newtheorem{obs}[teorema]{Observaci\'on}
+\newtheorem{nota}[teorema]{Nota}
 \newtheorem{ejemplo}[teorema]{Ejemplo}
 \newtheorem{resultado}[teorema]{Resultado}
 \newtheorem{problema}[teorema]{Problema}
 \newtheorem{ejercicio}[teorema]{Ejercicio}
 \newtheorem{ejerciciof}[teorema]{}
-
-\theoremstyle{remark}
-\newtheorem{observacion}[teorema]{Observaci\'on}
-\newtheorem{obs}[teorema]{Observaci\'on}
-\newtheorem{nota}[teorema]{Nota}
 % sin numero
+\newtheorem*{observacion*}{Observaci\'on}
+\newtheorem*{obs*}{Observaci\'on}
+\newtheorem*{nota*}{Nota}
 \newtheorem*{ejemplo*}{Ejemplo}
 \newtheorem*{resultado*}{Resultado}
 \newtheorem*{problema*}{Problema}
 \newtheorem*{ejercicio*}{Ejercicio}
 \newtheorem*{ejerciciof*}{}
-\newtheorem*{observacion*}{Observaci\'on}
-\newtheorem*{obs*}{Observaci\'on}
-\newtheorem*{nota*}{Nota}
 
 \newlist{enumelem}{enumerate}{10} 
 \setlist[enumelem]{label=\textit{E\arabic*.},ref=\textit{E\arabic*}}
