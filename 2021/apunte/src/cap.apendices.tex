@@ -9,7 +9,9 @@
         
         
         \begin{definicion}
-            Un  conjunto $\K$ es un \textit{cuerpo}\index{cuerpo} si es un anillo de división conmutativo, es decir, un anillo conmutativo con unidad en el que todo elemento distinto de cero es invertible respecto del producto. Por tanto,  un cuerpo es un conjunto $\K$ en el que se han definido dos operaciones, '$+$' y '$\cdot$', llamadas \textit{adición} y \textit{multiplicación} respectivamente, que cumplen las siguientes propiedades. En la siguiente lista de axiomas $a$, $b$, $c$ denotan elementos arbitrarios de $\K$, y $0$ y $1$ denotan elementos especiales de $\K$ que cumplen las propiedades especificadas más abajo.
+            Un  conjunto $\K$ es un \textit{cuerpo}\index{cuerpo} si es un anillo de división conmutativo, es decir, un anillo conmutativo con unidad en el que todo elemento distinto de cero es invertible respecto del producto. Por tanto,  un cuerpo es un conjunto $\K$ en el que se han definido dos operaciones, '$+$' y '$\cdot$', llamadas \textit{adición} y \textit{multiplicación} respectivamente, que cumplen las propiedades  \textbf{I1},$\ldots$, \textbf{I7} que se listan más abajo. 
+            
+            Sean  $a$, $b$, $c$ elementos arbitrarios de $\K$, y $0$ y $1$ dos  elementos especiales de $\K$. Entonces se satisfacen:
             \begin{enumerate}
                 \item[\textbf{I1.}] $a+b$ y $a\cdot b$ pertenecen a ${\K}$.
                 \item[\textbf{I2.}] {\em Conmutatividad.}\, $a+b = b+a$; $ab=ba$. 
@@ -71,17 +73,33 @@
         \begin{align*}
         0\cdot 0&=0, & 0\cdot 1&=0, & 1\cdot 0&=0, & 1\cdot 1&=1.
         \end{align*}
-        Dejamos como ejercicio para el lector comprobar que estas operaciones así definidas satisfacen los axiomas \textbf{I1.} a \textbf{I7.} y por lo tanto $\F_2$ es un cuerpo, con dos elementos.
+        Dejamos como ejercicio para el lector comprobar que estas operaciones así definidas satisfacen los axiomas \textbf{I1} a \textbf{I7} y por lo tanto $\F_2$ es un cuerpo, con dos elementos.
         
-        \begin{obs*}
-            El lector suspicaz reconocerá en estas operaciones a la suma y el producto definidos en el conjunto $\Z_2=\{\overline{0},\overline{1}\}$ de congruencias módulo 2  definido en Álgebra 1/Matemática Discreta I. En efecto, resultados desarrollados en ese curso permiten demostrar que los conjuntos $\Z_p$, con $p$ primo, son ejemplos de cuerpos, en este caso con $p$ elementos.
-        \end{obs*}
+        \begin{observacion*}
+            El lector suspicaz reconocerá en estas operaciones a la suma y el producto definidos en el conjunto $\Z_2=\{0,1\}$ de congruencias módulo 2  definido en Álgebra I / Matemática Discreta I. En efecto, resultados desarrollados en ese curso permiten demostrar que los conjuntos $\Z_p$, con $p$ primo, son ejemplos de cuerpos, en este caso con $p$ elementos.
+        \end{observacion*}
+
+        \begin{ejemplo*}
+            Sea $p$ un número primo y
+            $$
+            \Z_p = \{0,1,\ldots, p-1\}
+            $$
+            el conjunto de restos de dividir por $p$. Definimos suma y producto en $\Z_p$ de la siguiente manera: sean $a,b \in \Z_p$,  entonces  
+            \begin{equation*}
+                \begin{array}{llllll}
+                    a+b &= c\quad &\text{ si }\quad &a+b \equiv c \; (\operatorname{mod}p) \quad&\wedge\quad&0 \le c \le p-1,\\
+                    a \cdot b &= d\quad &\text{ si }\quad &a\cdot b \equiv d \; (\operatorname{mod}p) &\wedge& 0 \le d \le p-1.
+                \end{array} 
+            \end{equation*}
+            No es complicado, usando lo que conocemos de congruencia, probar que $\Z_p$  es un cuerpo. La única propiedad cuya prueba no es obvia es  \textbf{I7}, la existencia de inverso. Esta propiedad se deduce del teorema que enuncia la existencia de soluciones  de la ecuación lineal de congruencia. 
+           
+        \end{ejemplo*}
         
     \end{subsection}
     
     
     \begin{section}{N\'umeros complejos}\label{seccion-numeros-complejos}
-        La ecuación polinómica $x^2 + 1 =0$ (¿cuál es el número que elevado  al cuadrado y adicionado 1 da 0?) no tiene solución dentro del cuerpo de los números reales,  pues todos sabemos que  $x^2 \ge 0$ para todo $x \in \R$ y por lo tanto $x^2 + 1 >0$ $\forall\; x \in \R$. Podemos extender $\R$ a otro cuerpo,  de tal forma que \textit{toda} ecuación polinómica con coeficientes en $\R$ tenga solución. 
+        La ecuación polinómica $x^2 + 1 =0$ (¿cuál es el número que elevado  al cuadrado y adicionado $1$ da $0$?) no tiene solución dentro del cuerpo de los números reales,  pues todos sabemos que  $x^2 \ge 0$ para todo $x \in \R$ y por lo tanto $x^2 + 1 >0$ $\forall\; x \in \R$. Sin embargo, podemos extender $\R$ a otro cuerpo,  de tal forma que \textit{toda} ecuación polinómica con coeficientes en $\R$ tenga solución. 
         
         \begin{definicion} 
             Los \textit{números complejos}\index{números complejos} es el conjunto $\C$  de los pares ordendados $(a,b)$,  denotados $a+ib$, con $a, b$  en $\R$, con las operaciones '$+$' y '$\cdot$', definidas
@@ -237,10 +255,13 @@
             Determinar el número complejo $2- 3i + \displaystyle\frac{i}{1-i}$.
         \end{ejercicio*}
         \begin{proof}[Solución] 
-            El  ejercicio nos pide que escribamos el número en el formato $a + bi$. En general, para eliminar un cociente donde el divisor tiene parte imaginaria no nula, multiplicamos arriba y abajo por el conjugado del divisor, como $z\overline{z} \in \R$, obtenemos un divisor real. En  el ejemplo: 
+            El  ejercicio nos pide que escribamos el número en el formato $a + bi$, con $a,b \in \R$. En general, para eliminar un cociente donde el divisor tiene parte imaginaria no nula, multiplicamos arriba y abajo por el conjugado del divisor, como $z\overline{z} \in \R$, obtenemos un divisor real. En  el ejemplo: 
             \begin{align*}
-            2+ 3i + \frac{i}{1-i} &= 2+3i +\frac{i}{1-i}\times\frac{1+i}{1+i}  = 2+3i +\frac{i(1+i)}{(1-i)(1+i)}\\ 
-            &=  2+3i +\frac{i-1}{2} = 2+3i +\frac{i}{2}-\frac{1}{2} =\frac{3}{2}+i\frac{7}{2}
+            2+ 3i + \frac{i}{1-i} &= 2+3i +\frac{i}{1-i}\cdot\frac{1+i}{1+i}\\
+            &= 2+3i +\frac{i(1+i)}{(1-i)(1+i)}\\ 
+            &=  2+3i +\frac{i-1}{2} \\
+            &= 2+3i +\frac{i}{2}-\frac{1}{2} \\
+            &=\frac{3}{2}+i\frac{7}{2}
             \end{align*}
         \end{proof}
         
@@ -299,7 +320,7 @@
                 &=  \sum_{k=0}^{\infty} \frac{1}{(2k)!}(i\theta)^{2k}  + \sum_{k=0}^{\infty} \frac{1}{(2k+1)!}(i\theta)^{2k+1}. \tag{*}
             \end{align*}
         
-        No es difícil ver que $i^{2k} = (-1)^k$ y por lo tanto $i^{2k+1} = i^{2k}\cdot i = (-1)^ki $. Por lo tanto, por (*), 
+        No es difícil ver que $i^{2k} = (-1)^k$ y por lo tanto $i^{2k+1} = i^{2k}\cdot i = (-1)^ki $. Luego, por (*), 
         \begin{align*}
             e^{i\theta} &=  \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!}\theta^{2k}  + i\sum_{k=0}^{\infty} \frac{ (-1)^k}{(2k+1)!}\theta^{2k+1} \\
             &=\cos(\theta) + i \sen(\theta), 
@@ -312,9 +333,7 @@
         \begin{equation}
             e^{i\pi} -1 =0.
         \end{equation}
-        Esta última expresión es denominada la \emph{identidad de Euler}\index{identidad de Euler} y es considerada una de las fórmulas más relevantes de la matemática, pues comprende las cinco constantes matemáticas más importantes. 
-        
-        Las cinco constantes son:
+        Esta última expresión es denominada la \emph{identidad de Euler}\index{identidad de Euler} y es considerada una de las fórmulas más relevantes de la matemática, pues comprende las cinco constantes matemáticas más importantes: 
         \begin{enumerate}
             \item El número \boldmath${0}$.
             \item El numero \boldmath${1}$.
@@ -568,7 +587,7 @@
         Es decir $q(x) = 2x^2+2x-7$ y $r(x)= -13x+22$.
     \end{ejemplo*}
     
-    Observemos que el algoritmo de división nos dice que si dividimos un polinomio por uno de grado 1,  entonces el resto es una constante (que puede ser 0). Más aún:
+    Observemos que el algoritmo de división nos dice que si dividimos un polinomio por uno de grado $1$,  entonces el resto es una constante (que puede ser $0$). Más aún:
     
     \begin{teorema}[Teorema del  resto] Sea $f$ polinomio y $c \in \K$. Entonces,  el resto de dividir $f$ por $x-c$ es $f(c)$. 
     \end{teorema}
@@ -1104,7 +1123,7 @@
                  \vskip .3cm
                  
                  \begin{observacion*}
-                    La regla de Cramer implementada de una manera ingenua es ineficiente computacionalmente para sistemas de más de dos o tres ecuaciones. En el caso de $n$ ecuaciones con $n$ incógnitas, requiere el cálculo de $n+1$ determinantes, mientras que el  método de eliminación de Gauss o eliminación gaussiana produce el resultado con la misma complejidad computacional que el cálculo de un solo determinante. La regla de Cramer también puede ser numéricamente inestable, incluso para sistemas $2 \times 2$. Sin embargo, recientemente se ha demostrado que la regla de Cramer se puede implementar en el tiempo $O(n^3)$, que es comparable a los métodos más usados de resolución de sistemas de ecuaciones lineales, como ser la eliminación gaussiana
+                    La regla de Cramer implementada de una manera ingenua es ineficiente computacionalmente para sistemas de más de dos o tres ecuaciones. En el caso de $n$ ecuaciones con $n$ incógnitas, requiere el cálculo de $n+1$ determinantes, mientras que el  método de eliminación de Gauss o eliminación gaussiana produce el resultado con la misma complejidad computacional que el cálculo de un solo determinante. La regla de Cramer también puede ser numéricamente inestable, incluso para sistemas $2 \times 2$. Sin embargo, recientemente se ha demostrado que la regla de Cramer se puede implementar en el tiempo $O(n^3)$, que es comparable a los métodos más utilizados para la obtención de soluciones de sistemas de ecuaciones lineales, como ser la eliminación gaussiana
                     (ver \href{https://en.wikipedia.org/wiki/Cramer's\_rule}{https://en.wikipedia.org/wiki/Cramer's\_rule} y 
                     \href{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}). 
                  \end{observacion*}

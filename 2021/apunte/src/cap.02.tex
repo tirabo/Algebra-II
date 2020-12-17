@@ -21,23 +21,23 @@
 
             \begin{ejemplo*}
                 Los siguientes son sistemas de $2$ ecuaciones lineales con $2$ incógnitas:
-                
-                \begin{multicols}{3}
                     \begin{enumerate}
+                        \begin{minipage}{0.3\textwidth}
                         \item $\begin{matrix*}[l]
                             2x_1 + 8x_2 &= 0 &  \\
                             2x_1 + x_2 &=  1& 
-                            \end{matrix*}$
+                            \end{matrix*}$\end{minipage}
+                            \begin{minipage}{0.3\textwidth}
                         \item $\begin{matrix*}[l]
                             2x_1 + x_2 &= 0 &  \\
                             2x_1 - x_2 &=  1& 
-                            \end{matrix*}$
+                            \end{matrix*}$\end{minipage}
+                            \begin{minipage}{0.3\textwidth}
                         \item $ \begin{matrix*}[l]
                             2x_1 + x_2 &= 1 &  \\
                             4x_1 +2 x_2 &=  2& 
-                            \end{matrix*}$
+                            \end{matrix*}$\end{minipage}
                     \end{enumerate}
-                \end{multicols}   
             \end{ejemplo*} 
             
             \begin{ejemplo}\label{ej-sist-1}
@@ -52,7 +52,7 @@
             \begin{proof}[Solución]
                 Observar que $(0,0,0)$ es solución. Busquemos otras soluciones manipulado las ecuaciones.
 
-                Si  hacemos $-2$ \footnotesize\circled{2} $+$  {\footnotesize\circled{1}}, obtenemos: 
+                Si  hacemos $-2$ {\footnotesize\circled{2}} $+$  {\footnotesize\circled{1}}, obtenemos: 
                 $$ -7x_2 - 7x_3 = 0 \;\Rightarrow\; x_2 = -x_3.$$
                 
                 Si  hacemos $3$ {\footnotesize\circled{1}} $+$ {\footnotesize\circled{2}}, obtenemos: 
@@ -243,20 +243,20 @@ x& -3y & +3z & =&2 \\
 \subsection*{$\S$ Ejercicios}
 \begin{enumex}
     \item Usando operaciones del tipo  \ref{e1-v1}, \ref{e2-v1} y \ref{e3-v1} reducir los siguientes sistemas de ecuaciones lineales a  sistemas más sencillos (que permitan conocer las soluciones) y mostrar como podemos recuperar los sistemas originales.
-\begin{multicols}{2}
     \begin{enumex}
+        \begin{minipage}{0.4\textwidth}
         \item $\begin{cases}
             x+y+z &= 1 \\
             x+2y-z&=-2 \\
             x-y+6z &= 3
-        \end{cases}$,
+        \end{cases}$,\end{minipage}
+        \begin{minipage}{0.4\textwidth}
         \item $\begin{cases}
             3x +2 y + z &=0 \\
             x+y+z &= 0 \\
             2x +y &=0
-        \end{cases}$.
+        \end{cases}$.\end{minipage}
     \end{enumex}
-\end{multicols}
 \end{enumex}
 
 
@@ -463,30 +463,37 @@ x& -3y & +3z & =&2 \\
 
             \begin{enumex}
                 \item Encontrar las soluciones de los siguientes sistemas de ecuaciones realizando operaciones del tipo \ref{e1-v1}, \ref{e2-v1} y \ref{e3-v1}.
-                \begin{multicols}{2}
                     \begin{enumex}
-                        \item $\begin{cases}
-                            5x +2y&= 2 \\
-                             2x+y-z&=0 \\
-                         2x+3y-z &= 3
-                         \end{cases}$\,,
-                         \item $\begin{cases}
-                             x -y + 5z&= \sqrt2 \\
-                              \sqrt5x+z&=\sqrt3 \\[.1cm]
-                          \displaystyle\frac25x+3y+2z &= \displaystyle\frac52
-                          \end{cases}$\,,
-                          \item $\begin{cases}
-                            3x - y + 7z &=1 \\
-                            5x +z &=2
-                        \end{cases}$\,, 
-                          \item $\begin{cases}
-                              x +2 y -3z -t &=0 \\
-                              -3 y +2z +6t &=-8 \\
-                              -3x - y +3z +t &=0 \\
-                              2x +3 y +23z -t &=-8 
-                          \end{cases}$\,. 
-                    \end{enumex}
-                \end{multicols}    
+                        \begin{minipage}{0.4\textwidth}
+                            \item $\begin{cases}
+                                5x +2y&= 2 \\
+                                 2x+y-z&=0 \\
+                             2x+3y-z &= 3
+                             \end{cases}$\,,
+                        \end{minipage}
+                        \begin{minipage}{0.4\textwidth}
+                            \item $\begin{cases}
+                                x -y + 5z&= \sqrt2 \\
+                                 \sqrt5x+z&=\sqrt3 \\[.1cm]
+                             \displaystyle\frac25x+3y+2z &= \displaystyle\frac52
+                             \end{cases}$\,,
+                        \end{minipage}
+    
+                        \begin{minipage}{0.4\textwidth}
+                            \item $\begin{cases}
+                                3x - y + 7z &=1 \\
+                                5x +z &=2
+                            \end{cases}$\,, 
+                        \end{minipage}
+                        \begin{minipage}{0.4\textwidth}
+                            \item $\begin{cases}
+                                x +2 y -3z -t &=0 \\
+                                -3 y +2z +6t &=-8 \\
+                                -3x - y +3z +t &=0 \\
+                                2x +3 y +23z -t &=-8 
+                            \end{cases}$\,. 
+                        \end{minipage}
+                    \end{enumex} 
             \end{enumex}
 
         \end{section}
@@ -1279,51 +1286,66 @@ x& -3y & +3z & =&2 \\
                 \subsection*{$\S$ Ejercicios}
                 \begin{enumex}
                     \item  Usar el método de eliminación de Gauss para resolver los siguientes sistemas.
-                    \begin{multicols}{2}
                         \begin{enumex}
-                            \item \; $\begin{cases}
-                                x + y &= 2 \\
-                                x- y &= 0
-                            \end{cases}$
-                            \item \; $\begin{cases}
-                                x - z &=4 \\
-                                2x + y &= 1
-                            \end{cases}$
-                            \item \; $\begin{cases}
-                                3x -2y &= 2 \\
-                                6x +y  &= \displaystyle\frac12
-                            \end{cases}$
-                            \item \; $\begin{cases}
-                                2x - y &= -1 \\
-                                x +3 y -z  &= 5 \\
-                                y+2z &= 5 
-                            \end{cases}$
+                            \begin{minipage}{0.4\textwidth}
+                                \item \; $\begin{cases}
+                                    x + y &= 2 \\
+                                    x- y &= 0
+                                \end{cases}$
+                            \end{minipage}
+                            \begin{minipage}{0.4\textwidth}
+                                \item \; $\begin{cases}
+                                    x - z &=4 \\
+                                    2x + y &= 1
+                                \end{cases}$ 
+                            \end{minipage}
+        
+                            \begin{minipage}{0.4\textwidth}
+                                \item \; $\begin{cases}
+                                    3x -2y &= 2 \\
+                                    6x +y  &= \displaystyle\frac12
+                                \end{cases}$
+                            \end{minipage}
+                            \begin{minipage}{0.4\textwidth}
+                               \item \; $\begin{cases}
+                                    2x - y &= -1 \\
+                                    x +3 y -z  &= 5 \\
+                                    y+2z &= 5 
+                                \end{cases}$
+                            \end{minipage}
+
                             \item \; $\begin{cases}
                                 2 y + z &= 0 \\
                                 2x- y + z &= 0 \\
                                 -2x -y &=0
                             \end{cases}$
                         \end{enumex}
-                    \end{multicols}
 
                     \item 
                     Encontrar la MERF  correspondiente a cada una de las siguientes matrices. 
-                    \begin{multicols}{2}
                         \begin{enumex}
-                        \item $\begin{bmatrix}
-                            2&1\\1&3
-                        \end{bmatrix}$
-                        \item $\begin{bmatrix}
-                            1&3&1\\2&0&4\\-1&-3&-3
-                        \end{bmatrix}$
-                        \item $\begin{bmatrix}
-                            1&0&3&1&2\\1&4&2&1&5\\3&4&8&1&2
-                        \end{bmatrix}$
-                        \item $\begin{bmatrix}
-                            0&1&3&2\\0&0&5&6\\1&5&1&5
-                        \end{bmatrix}$
+                            \begin{minipage}{0.4\textwidth}
+                                \item $\begin{bmatrix}
+                                    2&1\\1&3
+                                \end{bmatrix}$
+                            \end{minipage}
+                            \begin{minipage}{0.4\textwidth}
+                                \item $\begin{bmatrix}
+                                    1&3&1\\2&0&4\\-1&-3&-3
+                                \end{bmatrix}$
+                            \end{minipage}
+
+                            \begin{minipage}{0.4\textwidth}
+                                \item $\begin{bmatrix}
+                                    1&0&3&1&2\\1&4&2&1&5\\3&4&8&1&2
+                                \end{bmatrix}$
+                            \end{minipage}
+                            \begin{minipage}{0.4\textwidth}
+                                \item $\begin{bmatrix}
+                                    0&1&3&2\\0&0&5&6\\1&5&1&5
+                                \end{bmatrix}$
+                            \end{minipage}
                         \end{enumex}
-                    \end{multicols}
                 \end{enumex}
             
 
@@ -1708,44 +1730,58 @@ x& -3y & +3z & =&2 \\
         \subsection*{$\S$ Ejercicios}
         \begin{enumex}
             \item Calcule las siguientes operaciones de matrices.
-            \begin{multicols}{2}
                 \begin{enumex}
+                    \begin{minipage}{0.45\textwidth}
                     \item $\begin{bmatrix} 2&1&4\\5&-6&7 \end{bmatrix}+
                     \begin{bmatrix} 1&1&1\\0&2&-2 \end{bmatrix}$,
+                    \end{minipage}
+                    \begin{minipage}{0.4\textwidth}
                     \item $3 \begin{bmatrix}
                         4&3&2\\-4&8&1
                     \end{bmatrix}$,
+                    \end{minipage}
+
+                    \begin{minipage}{0.45\textwidth}
                     \item $\begin{bmatrix}
                         2&1\\0&3
                     \end{bmatrix} + 3 \begin{bmatrix}
                         2&1\\-1&0
                     \end{bmatrix}$,
+                    \end{minipage}
+                    \begin{minipage}{0.4\textwidth}
                     \item $4\begin{bmatrix}
                         2&-1\\1&2
                     \end{bmatrix} + 3  \begin{bmatrix} 1&1\\0&2 \end{bmatrix}$. 
+                    \end{minipage}
                 \end{enumex}
-            \end{multicols}
 
             \item Calcule las siguientes operaciones de matrices o diga ``no está definida''.
-            \begin{multicols}{2}
                 \begin{enumex}
+                    \begin{minipage}{0.45\textwidth}
                     \item $4\cdot \begin{bmatrix}
                         2&-1\\1&2
                     \end{bmatrix}  \begin{bmatrix} 1&1\\0&2 \end{bmatrix}$,
+                \end{minipage}
+                \begin{minipage}{0.4\textwidth}
                     \item $\begin{bmatrix}
                         2&1\\0&3
                     \end{bmatrix}  \left(3 \begin{bmatrix}
                         2&1\\-1&0
                     \end{bmatrix}\right)$,
+                \end{minipage}
+
+                \begin{minipage}{0.45\textwidth}
                     \item $\begin{bmatrix} 2&1&4\\5&-6&7 \end{bmatrix}
                     \begin{bmatrix} 1&1&1\\0&2&-2\\-3&2&1 \end{bmatrix}$,
+                \end{minipage}
+                \begin{minipage}{0.4\textwidth}
                     \item $3 \begin{bmatrix}
                         4&3&2\\-4&8&1
                     \end{bmatrix}\begin{bmatrix}
                         2&1\\-1&0
                     \end{bmatrix}$. 
+                \end{minipage}
                 \end{enumex}
-            \end{multicols}
 
             \item Sean
             $$
@@ -1754,14 +1790,16 @@ x& -3y & +3z & =&2 \\
             C= \begin{bmatrix} -2&3\\ -4&1 \end{bmatrix}.
             $$
             Calcular 
-            \begin{multicols}{4}
                 \begin{enumex}
-                    \item $AB$, 
-                    \item $(AB)C$,
-                    \item $BC$,
-                    \item $A(BC)$.
+                    \begin{minipage}{0.2\textwidth}
+                    \item $AB$, \end{minipage}
+                    \begin{minipage}{0.2\textwidth}
+                    \item $(AB)C$,\end{minipage}
+                    \begin{minipage}{0.2\textwidth}
+                    \item $BC$,\end{minipage}
+                    \begin{minipage}{0.2\textwidth}
+                    \item $A(BC)$.\end{minipage}
                 \end{enumex}
-            \end{multicols}
 
             \item De lel tamaño del producto $AB$ o diga ``no está definido'' para:
             \begin{enumex}
@@ -2551,22 +2589,29 @@ x& -3y & +3z & =&2 \\
 
             \begin{enumex}
                 \item Encontrar la inversa de las siguientes matrices.
-                \begin{multicols}{2}
                     \begin{enumex}
+                        \begin{minipage}{0.4\textwidth}
                         \item $\begin{bmatrix}
                             -3&-2\\3&3
                         \end{bmatrix}$\,,
+                    \end{minipage}
+                    \begin{minipage}{0.4\textwidth}
                         \item $\begin{bmatrix}
                             1&0&1\\ 0&1&1\\ 1&1&1
                         \end{bmatrix}$\,,
+                    \end{minipage}
+
+                    \begin{minipage}{0.4\textwidth}
                         \item $\begin{bmatrix}
                             1&3&1 \\ 3&2&5\\ 2&2&2
                         \end{bmatrix}$\,,
+                    \end{minipage}
+                    \begin{minipage}{0.4\textwidth}
                         \item $\begin{bmatrix}
                             3&2&1&2\\ 7&5&2&5\\ 0&0&9&4\\ 0&0&11&5
                         \end{bmatrix}$\,. 
-                    \end{enumex}   
-                \end{multicols}
+                    \end{minipage}
+                    \end{enumex}
 
                 \item\label{matrices-semejantes} Sean $A$, $B$ dos matrices cuadradas del mismo tamaño. Decimos que $A$ es \textit{semejante} a $B$ si existe una matriz invertible $P$ tal que $B = P^{-1} A P$. Suponga que $A$ es semejante a $B$, probar:
                 \begin{enumex}
@@ -3125,22 +3170,29 @@ También vale este resultado para matrices $n \times n$.
 \subsection*{$\S$ Ejercicios}
 \begin{enumex}
     \item Calcular el determinante de las siguientes matrices.
-    \begin{multicols}{2}
         \begin{enumex}
+            \begin{minipage}{0.4\textwidth}
             \item $A=\begin{bmatrix}
                 1&-1\\-2&1 
             \end{bmatrix}$\,,
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
             \item $B=\begin{bmatrix}
                 1&1&2\\0&3&1\\3&4&-5
             \end{bmatrix}$\,,
+        \end{minipage}
+
+        \begin{minipage}{0.4\textwidth}
             \item $C=\begin{bmatrix}
                 0&1&0&0\\2&0&0&0\\0&0&0&3\\0&0&1&0
             \end{bmatrix}$\,,
+        \end{minipage}
+        \begin{minipage}{0.4\textwidth}
             \item $D=\begin{bmatrix}
                 0&0&3&3\\3&0&1&2\\1&0&2&4\\2&1&3&2
             \end{bmatrix}$\,.
+        \end{minipage}
         \end{enumex}
-    \end{multicols}
     \item  Sea $A \in \R^{n \times n}$.
     \begin{enumex}
         \item Probar que $\det(-A) = (-1)^n \det(A)$. 
@@ -3710,23 +3762,32 @@ También vale este resultado para matrices $n \times n$.
        
         \begin{enumex}
             \item Para cada una de las siguientes matrices calcule el polinomio característico, los autovalores y los autoespacios correspondientes.
-            \begin{multicols}{4}
                 \begin{enumex}
+                \begin{minipage}{0.25\textwidth}
                     \item $\begin{bmatrix} 10&-9 \\4 &-2\end{bmatrix}$,
+                \end{minipage}
+                \begin{minipage}{0.25\textwidth}
                     \item $\begin{bmatrix} 1&2 \\ 4&3\end{bmatrix}$,
+                \end{minipage}
+                \begin{minipage}{0.25\textwidth}
                     \item $\begin{bmatrix} 0&3 \\7 &0\end{bmatrix}$,
+                \end{minipage}
+
+                \begin{minipage}{0.25\textwidth}
                     \item $\begin{bmatrix} 0&0 \\0 &0\end{bmatrix}$,
+                \end{minipage}
+                \begin{minipage}{0.25\textwidth}
                     \item $\begin{bmatrix} 1&0 \\ 0&1\end{bmatrix}$.
+                \end{minipage}
                 \end{enumex}
-            \end{multicols}
             
             \item Para cada una de las siguientes matrices calcule el polinomio característico, los autovalores y los autoespacios correspondientes.
-            \begin{multicols}{3}
                 \begin{enumex}
-                    \item $\begin{bmatrix} 3&-2&0 \\-2 &3&0\\0&0&5\end{bmatrix}$,
-                    \item $\begin{bmatrix} 0&1&0 \\ 0&0&1\\4&-17&8 \end{bmatrix}$.
+                    \begin{minipage}{0.3\textwidth}
+                    \item $\begin{bmatrix} 3&-2&0 \\-2 &3&0\\0&0&5\end{bmatrix}$,\end{minipage}
+                    \begin{minipage}{0.3\textwidth}
+                    \item $\begin{bmatrix} 0&1&0 \\ 0&0&1\\4&-17&8 \end{bmatrix}$.\end{minipage}
                 \end{enumex}
-            \end{multicols}
             
             \item   Sean $A$, $B$ matrices $n \times n$. Probar que si $A$ es semejante a $B$ (ver sección \ref{seccion-matrices-invertibles}, ejercicio \ref{matrices-semejantes}),  entonces $A$ y $B$ tienen los mismos autovalores.  
             \item\label{matriz-n2=0} Sea $N$ una matriz compleja $2 \times 2$ tal que $N^2 =0$. Probar que, o bien $N=0$, o bien $N$  es semejante a 

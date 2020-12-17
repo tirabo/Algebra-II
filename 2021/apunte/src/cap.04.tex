@@ -587,14 +587,21 @@ Luego,
                     \item $S: \R^2 \to \R^3$ dada por $S(x,y) = (0,x-y, 3y)$.
                 \end{enumex}
             \item Sea $T: \K_3[x] \to \K_4[x]$ dada por $p(x) \mapsto x\cdot p(x)$. ¿Cuáles de los siguientes polinomios se encuentra en $\nu T$? ¿Cuáles en  $\im T$?
-            \begin{multicols}{3}
                 \begin{enumex}
-                    \item $x^3$,
-                    \item $0$, 
-                    \item $12x-\frac12 x^3$,
-                    \item $1 +3x^2 -x^3$.
+                    \begin{minipage}{0.3\textwidth}
+                        \item $x^3$,
+                    \end{minipage}
+                    \begin{minipage}{0.3\textwidth}
+                        \item $0$, 
+                    \end{minipage}
+
+                    \begin{minipage}{0.3\textwidth}
+                        \item $12x-\frac12 x^3$,
+                    \end{minipage}
+                    \begin{minipage}{0.4\textwidth}
+                        \item $1 +3x^2 -x^3$.
+                    \end{minipage}
                 \end{enumex}
-            \end{multicols}
             \item Determinar la dimensión del núcleo de la transformación lineal $T$ en los siguientes casos. 
                 \begin{enumex}
                     \item $T: \R^5 \to \R^8$ con $\dim(\im T) =5$.
@@ -1143,14 +1150,16 @@ Luego,
                 R(x,y,z) &= (3x-y+z, 4y+3z, -x+3y).
             \end{align*}
             Calcular
-            \begin{multicols}{4}
                 \begin{enumex}
-                    \item $T \circ S$.
-                    \item $S \circ R$.
-                    \item $(T \circ S) \circ R$.
-                    \item $T \circ( S\circ R$).
+                    \begin{minipage}{0.19\textwidth}
+                    \item $T \circ S$.\end{minipage}
+                    \begin{minipage}{0.19\textwidth}
+                    \item $S \circ R$.\end{minipage}
+                    \begin{minipage}{0.22\textwidth}
+                    \item $(T \circ S) \circ R$.\end{minipage}
+                    \begin{minipage}{0.2\textwidth}
+                    \item $T \circ( S\circ R$).\end{minipage}
                 \end{enumex}
-            \end{multicols}
             \item Sea $T: \R^n \to \R^n$ una transformación lineal. Diremos que $T$ es \textit{nilpotente} si existe $k \in \N$ tal que $T^k =0$. 
             
             Sea $T$ nilpotente, definimos
@@ -1285,7 +1294,28 @@ Luego,
     \end{proof}
     
     \subsection*{$\S$ Ejercicios}
+    \begin{enumex}
+        \item Dar las coordenadas de la matriz
+        $A=\begin{bmatrix}1&2\\3&4\end{bmatrix} \in \mathbb{K}^{2\times 2} $ en la base ordenada
+        $$
+        \mathcal{B}=\left\{
+        \begin{bmatrix} 0&1\\0&0 \end{bmatrix},
+        \begin{bmatrix} 0&0\\0&1 \end{bmatrix},
+        \begin{bmatrix} 1&0\\0&0 \end{bmatrix},
+        \begin{bmatrix} 0&0\\1&0 \end{bmatrix}
+            \right\}.
+        $$
+        Más generalmente, dar las coordenadas de cualquier matriz $\begin{bmatrix} a&b\\c&d \end{bmatrix}$ en la base $\mathcal{B}$.
 
+        \item Dar las coordenadas del polinomio $p(x) = -1+10x+2x^2\in\mathbb{K}_3[x]$ en la base ordenada $$\mathcal{B}=\{1,1+x,1+x+x^2\}.$$
+
+        \item
+        \begin{enumex}
+            \item Dar una base ordenada del subespacio $W=\{(x,y,z)\in\mathbb{K}^3\mid x-y+2z=0\}$.
+            \item Dar las coordenadas de $w=(1,-1,-1)$ en la base que haya dado en el item anterior.
+            \item Dado $(x,y,z)\in W$, dar las coordenadas de $(x,y,z)$ en la base que haya calculado en el item (a).
+        \end{enumex}
+    \end{enumex}
     
     \end{section}
 
@@ -1576,9 +1606,56 @@ Luego,
                 Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. El \textit{determinante de $T$}\index{determinante de una transformación lineal} es el determinante de la matriz de $T$ en alguna base de $V$.  
         \end{definicion}
 
-        \subsection*{$\S$ Ejercicios} 
-
+        \subsection*{$\S$ Ejercicios}
         \begin{enumex}
+             \item Sean $V,W$ espacios vectoriales, $\cB =\{v_1,v_2\}$ base de $V$ y $\cB' =\{w_1,w_2,w_3\}$ base de $W$. Sea $T:V \to W$ una transformación lineal tal que
+            \begin{align*}
+                T(v_1) &=  3w_1-2w_2 -w_3 \\
+                T(v_2) &=  5w_1 +2w_3.
+            \end{align*}
+            Calcular $[T]_{\cB\cB'}$.
+            \item  En cada uno  de los siguientes casos calcular $[\Id_3]_{\cB\cB'}$. 
+            \begin{enumex}\vskip -.5cm
+                \begin{minipage}{0.01\textwidth}
+                    \item ${}^{}$
+                \end{minipage}
+                \begin{minipage}{0.5\textwidth}
+                    \begin{equation*}
+                        \begin{array}{lll}
+                            \cB &=&\{(1, 1,0), (-1, 1, 1), (0, 1, 2)\}, \\
+                            \cB' &=&\{(2, 1, 1), (0, 0, 1), ( -1, 1, 1)\}.
+                        \end{array}
+                    \end{equation*}
+                \end{minipage}
+                \vskip -.5cm
+                \begin{minipage}{0.01\textwidth}
+                    \item ${}^{}$
+                \end{minipage}
+                \begin{minipage}{0.5\textwidth}
+                    \begin{equation*}
+                        \begin{array}{lll}
+                            \cB &=&\{(3, 2,1), (0, -2,5), (1,1, 2)\}, \\
+                            \cB' &=&\{(2, 1, 1), (0, 0, 1), ( -1, 1, 1)\}.
+                        \end{array}
+                    \end{equation*}
+                \end{minipage}
+            \end{enumex}
+            \item Calcular la matriz de cambio de base de $\cB$ a $\cD$ en los siguientes casos. 
+            \begin{enumex}
+                \begin{minipage}{0.4\textwidth}
+                    \item $\cB = \{ e_1,e_2\}$, $\cD = \{e_2,e_1\}$.
+                \end{minipage}
+                \begin{minipage}{0.4\textwidth}
+                    \item $\cB = \{e_1,e_2 \}$, $\cD = \{(1,2),(1,4) \}$.
+                \end{minipage}
+            
+                    \item $\cB = \{(1,2),(1,4) \}$, $\cD =\{e_1,e_2 \}$.
+
+                    \item $\cB = \{(-1,1),(2,2)  \}$, $\cD = \{(0,4),(1,3)  \}$.
+ 
+            \end{enumex}
+            \item  Sea $L: V \to V$ una transformación lineal. Se  $\cB =\{v_1,\ldots,v_n\}$ una base de $V$. Suponga que existen números $c_1,\ldots,c_n$ tal que $T(v_i) = c_iv_i$ para $i=1,\ldots,n$. Describa $[L]_{\cB}$.
+            
             \item Sea $T: V \to V$ un operador lineal y sean $\cB, \cB'$ dos bases ordenadas de $V$. 
                 \begin{enumex}
                     \item Probar que $[T]_\cB$ y $[T]_{\cB'}$  son matrices semejantes (para la definición de matrices semejantes ver sección \ref{seccion-matrices-invertibles}, ejercicio \ref{matrices-semejantes}). 
