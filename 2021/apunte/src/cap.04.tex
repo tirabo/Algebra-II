@@ -1160,15 +1160,16 @@ Luego,
                     \begin{minipage}{0.2\textwidth}
                     \item $T \circ( S\circ R$).\end{minipage}
                 \end{enumex}
-            \item Sea $T: \R^n \to \R^n$ una transformación lineal. Diremos que $T$ es \textit{nilpotente} si existe $k \in \N$ tal que $T^k =0$. 
-            
-            Sea $T$ nilpotente, definimos
-            $$
-            e^T := \sum_{i=0}^\infty \frac1{i!}T^i.
-            $$
-            (Observar que $e^T$ está bien definido por ser $T$ nilpotente). 
+            \item Sea $T: V \to V$ una transformación lineal. Diremos que $T$ es \textit{nilpotente} si existe $k \in \N$ tal que $T^k =0$. 
             \begin{enumex}
-                \item Sea $T$ nilpotente. Probar que $e^T$ es invertible y su inversa es $e^{-T}$. 
+                \item Probar que si $T$ es nilpotente y $T^k=0$,  entonces $T^n = 0$ para $n \ge k$. 
+                \item Sea $T$ nilpotente. Definimos
+                $$
+                e^T := \sum_{i=0}^\infty \frac1{i!}T^i.
+                $$
+                (Observar que $e^T$ está bien definido por ser $T$ nilpotente). 
+                
+                Probar que $e^T$ es invertible y su inversa es $e^{-T}$. 
                 \item Sean $T, S$ nilpotentes y tales que $TS=ST$. Probar que $T+S$ es nilpotente y que
                 $$
                 e^{T}e^{S}= e^{T+S}.
@@ -1696,7 +1697,7 @@ Luego,
                 \item la colección de todos los $v \in V$ tal que $T(v) = \lambda v$  se llama \textit{espacio propio}\index{espacio propio} o \textit{autoespacio}\index{autoespacio} 	asociado a $\lambda$. 
             \end{enumerate}
             
-            Los valores propios se llaman también a menudo raíces características, eigenvalores. valores característicos o valores espectrales. Nosotros usaremos, preferentemente, ``autovalores''.
+            Los valores propios se llaman también a menudo raíces características, eigenvalores. valores característicos o valores espectrales. En  el caso de vectores propios o autovectores, también hay varias denominaciones. Nosotros usaremos, preferentemente, ``autovalores'' y ``autovectores''.
             
             Sea ahora $\lambda \in \K$, definimos
             $$
@@ -2069,7 +2070,40 @@ Luego,
             \end{equation*}
         \end{ejemplo*}
     
-        
+        \subsection*{$\S$ Ejercicios}
+
+        \begin{enumex}
+            \item Sea $T: \R^n \to \R^n$ definida 
+            $$
+            T(x_1,x_2,\ldots,x_n) =(a_1x_1,a_2x_2,\ldots, a_nx_n).
+            $$
+            \begin{enumex}
+                \item ¿Cuál es el polinomio característico de $T$?
+                \item ¿Cuáles son los autovalores y los autoespacios?
+            \end{enumex}
+            \item Sea $T: \R^n \to \R^n$ definida 
+            $$
+            T(x_1,x_2,\ldots,x_n) =(a_{11}x_1,a_{21} x_1+ a_{22}x_2,\ldots,\sum_{k=1}^ia_{ik}x_k,\ldots).
+            $$
+            (El  término $\sum_{k=1}^ia_{ik}x_k$ está ubicado en la coordenada $i$-ésima).
+            \begin{enumex}
+                \item Encontrar la matriz de $T$  en la base canónica.
+                \item ¿Cuál es el polinomio característico de $T$?
+                \item ¿Cuáles son los autovalores y los autoespacios?
+            \end{enumex}
+            \item Sea $T: V \to V$ un operador lineal invertible. Probar que si $\lambda$ es autovalor de $T$,  entonces $\lambda \ne =0$ y $\lambda^{-1}$  es autovalor de $T^{-1}$.
+            \item Sea $T: V \to V$ un operador lineal, y sea ${v_1,\ldots,v_n}$ una base de V que consta de autovectores que tienen autovalores distintos. Demostrar que cualquier autovector de $T$ es un múltiplo escalar de algún $v_i$.
+            \item $T: V \to V$ un operador lineal, sean $\lambda, \mu$ dos autovalores distintos de $T$ y sean $\cB_\lambda$ y $\cB_\mu$ bases de  $V_\lambda$ y $V_\mu$, respectivamente. 
+            
+            Probar que $\cB_\lambda \cup \cB_\mu$ es una base de $V_\lambda + V_\mu$. 
+            \item Sea $T: V \to V$ un operador lineal diagonalizable con dos autovalores  $\lambda, \mu$ . Probar que $V$  es suma directa de los autoespacios $V_{\lambda}$  y $V_\mu$,  es decir
+            $$
+            V = V_{\lambda} \oplus V_{\mu}.
+            $$
+            (La definición de suma directa se encuentra en la sección \ref{seccion-subespacios-vectoriales},  ejercicio \ref{ejercicio-suma-directa}).  
+
+            \item Sean $T,S: V \to V$ dos operadores lineales. Probar que $T\circ S$ y $S \circ T$ tienen los mismos autovalores.  
+        \end{enumex}
         \end{section}
     
     
@@ -2216,6 +2250,31 @@ Sea $T:\R^n \to \R^n$ un operador simétrico y $A$ la matriz asociada a  $T$,  e
         
     \end{ejemplo*}
     
+    \subsection*{$\S$ Ejercicios}
+    \begin{enumex}
+       \item Encontrar los autovalores de las siguientes matrices.
+       \begin{enumex}
+        \begin{minipage}{0.3\textwidth}
+            \item $\begin{bmatrix} 2&-1\\-1&2 \end{bmatrix}$,
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \item $\begin{bmatrix} 1&1\\1&0 \end{bmatrix}$.
+        \end{minipage}
+       \end{enumex}
+       \item Encontrar los autovalores de las siguientes matrices.
+       \begin{enumex}
+        \begin{minipage}{0.3\textwidth}
+            \item $\begin{bmatrix} 1&-1&0\\-1&2&-1 \\0&-1&1\end{bmatrix}$,
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \item $\begin{bmatrix} 2&-1&0\\-1&2&-1\\0&-1&2 \end{bmatrix}$.
+        \end{minipage}
+       \end{enumex}
+        \item Sea $A: V \to V$ un operador  lineal simétrico. Sean $v_1, v_2$ autovalores de $A$ con autovalores $\lambda_1, \lambda_2$ respectivamente. Si $\lambda_1 \ne \lambda_2$, demostrar que $v_1$ es perpendicular a $v_2$.
+        \item Sea $A: V \to V$ un operador  lineal simétrico. Si $A$ solo tiene un autovalor propio, demostrar que toda base ortogonal de $V$ consta de autovectores de $A$.
+        \item  Sea $A: V \to V$ un operador  lineal simétrico. Sea $\dim V = n$, y suponga que hay $n$ autovalores  distintos de $A$. Demostrar que sus autovectores forman una base ortogonal de $V$.
+    \end{enumex}
+
     \end{section}
 
         
