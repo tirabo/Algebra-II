@@ -1026,7 +1026,7 @@ Luego,
             
             Pruebe que la imagen de una recta por $T$  es o bien una recta  o bien un punto.
             
-            \item Sea $V$ un espacio vectorial y $v_1,v_2$  dos elementos de $V$ que linealmente independientes. El conjunto de elementos de $V$ 
+            \item Sea $V$ un espacio vectorial y $v_1,v_2$  dos elementos de $V$ linealmente independientes. El conjunto de subconjunto de $V$ definido: 
             $$
             \left\{ t_1v_1 + t_2v_2: 0 \le t_1 \le 1, \quad 0 \le t_2 \le 1 \right\}
             $$
@@ -1656,7 +1656,32 @@ Luego,
  
             \end{enumex}
             \item  Sea $L: V \to V$ una transformación lineal. Se  $\cB =\{v_1,\ldots,v_n\}$ una base de $V$. Suponga que existen números $c_1,\ldots,c_n$ tal que $T(v_i) = c_iv_i$ para $i=1,\ldots,n$. Describa $[L]_{\cB}$.
-            
+            \item  Decidir si existe un monomorfismo $T:\mathbb{R}^3\longrightarrow\mathbb{R}^{2\times 2}$ tal que
+            \begin{align*}
+            T(0,1,-1) = \begin{bmatrix}
+                            1 & 1 \\
+                            0 & 0
+                        \end{bmatrix},\qquad
+            & T(2,1,1) = \begin{bmatrix}
+                            0 & 0 \\
+                            1 & 0
+                        \end{bmatrix}.
+            \end{align*}
+            En caso de no existir justificar por qué no existe. En caso de existir, además calcular la matriz $[T]_{\mathcal{C}\mathcal{B}}$, donde $\mathcal{C}$ y $\mathcal{B}$ son las bases ordenadas canónicas de $\mathbb{R}^3$ y
+            $\mathbb{R}^{2\times 2}$, respectivamente.
+            \item  Decidir si existe un epimorfismo  $T:\mathbb{R}^3\longrightarrow\mathbb{R}^{2\times 2}$ tal que
+            \begin{align*}
+            T(1,-1,1) = \begin{bmatrix}
+                            0 & 1 \\
+                            1 & 0
+                        \end{bmatrix},\qquad
+            & T(0,1,-1) = \begin{bmatrix}
+                            0 & 0 \\
+                            0 & 1
+                            \end{bmatrix}.
+            \end{align*}
+            En caso de no existir justificar por qué no existe. En caso de existir, además calcular la matriz $[T]_{\mathcal{C}\mathcal{B}}$, donde $\mathcal{C}$ y $\mathcal{B}$ son las bases ordenadas canónicas de $\mathbb{R}^3$ y
+            $\mathbb{R}^{2\times 2}$, respectivamente.
             \item Sea $T: V \to V$ un operador lineal y sean $\cB, \cB'$ dos bases ordenadas de $V$. 
                 \begin{enumex}
                     \item Probar que $[T]_\cB$ y $[T]_{\cB'}$  son matrices semejantes (para la definición de matrices semejantes ver sección \ref{seccion-matrices-invertibles}, ejercicio \ref{matrices-semejantes}). 
@@ -2073,6 +2098,15 @@ Luego,
         \subsection*{$\S$ Ejercicios}
 
         \begin{enumex}
+            \item  Sea $T: \R^3 \to \R^3$ definida
+            $$
+            T(x,y,z) = (x+2y+4z, 2x+y-4z, 3z).
+            $$
+            \begin{enumerate}
+                \item Encontrar los autovalores de $T$.
+                \item Encontrar  bases de los autoespacios de $T$.
+                \item Determinar si $T$  es diagonalizable.
+            \end{enumerate}
             \item Sea $T: \R^n \to \R^n$ definida 
             $$
             T(x_1,x_2,\ldots,x_n) =(a_1x_1,a_2x_2,\ldots, a_nx_n).
@@ -2101,8 +2135,21 @@ Luego,
             V = V_{\lambda} \oplus V_{\mu}.
             $$
             (La definición de suma directa se encuentra en la sección \ref{seccion-subespacios-vectoriales},  ejercicio \ref{ejercicio-suma-directa}).  
-
+            
+            \item Sea $V$ espacio vectorial de dimensión finita. $S:V \to V$ una aplicación lineal. Diremos que $S$ es un \textit{involución} si $S^2 = \Id$.
+	
+			Sea $S: V \to V$ una involución. Entonces los conjuntos
+			$$
+			V_1 =\{v\in V:S(v)=v\}, \qquad V_{-1} =\{v\in V:S(v)=-v\}
+			$$ 
+			son subespacios vectoriales y 
+			$$
+			V = V_1 \oplus V_{-1}.
+            $$
+            
             \item Sean $T,S: V \to V$ dos operadores lineales. Probar que $T\circ S$ y $S \circ T$ tienen los mismos autovalores.  
+            
+          
         \end{enumex}
         \end{section}
     
@@ -2271,7 +2318,7 @@ Sea $T:\R^n \to \R^n$ un operador simétrico y $A$ la matriz asociada a  $T$,  e
         \end{minipage}
        \end{enumex}
         \item Sea $A: V \to V$ un operador  lineal simétrico. Sean $v_1, v_2$ autovalores de $A$ con autovalores $\lambda_1, \lambda_2$ respectivamente. Si $\lambda_1 \ne \lambda_2$, demostrar que $v_1$ es perpendicular a $v_2$.
-        \item Sea $A: V \to V$ un operador  lineal simétrico. Si $A$ solo tiene un autovalor propio, demostrar que toda base ortogonal de $V$ consta de autovectores de $A$.
+        \item Sea $A: V \to V$ un operador  lineal simétrico. Si $A$ tiene solo un autovalor propio, demostrar que toda base ortogonal de $V$ consta de autovectores de $A$.
         \item  Sea $A: V \to V$ un operador  lineal simétrico. Sea $\dim V = n$, y suponga que hay $n$ autovalores  distintos de $A$. Demostrar que sus autovectores forman una base ortogonal de $V$.
     \end{enumex}
 
