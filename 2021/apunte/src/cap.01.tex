@@ -224,11 +224,11 @@
                 \node [right] at (2,3) {$(2,3)$};
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (1,4);
                 \node [above] at (1,4) {$(1,4)$};
-                \draw[fill] (-1,1) circle [radius=0.04];
-                \draw[fill] (2,3) circle [radius=0.04];
-                \draw[fill] (1,4) circle [radius=0.04];
-                \draw[-] (-1,1) -- (1,4);
-                \draw[-] (2,3) -- (1,4);
+                %\draw[fill] (-1,1) circle [radius=0.04];
+                %\draw[fill] (2,3) circle [radius=0.04];
+                %\draw[fill] (1,4) circle [radius=0.04];
+                \draw[-,loosely dotted, thick] (1,4) -- (-1,1);
+                \draw[-,loosely dotted, thick] (1,4) -- (2,3);
             \end{tikzpicture}
             \caption{Ejemplo de la ley del paralelogramo.}\label{fig-ley-del-paralelogramo}
         \end{figure} 
@@ -249,17 +249,17 @@
                 \draw (\x,3pt) -- (\x,-3pt);
                 \foreach \y in {0,...,2}
                 \draw (3pt,\y) -- (-3pt,\y) ;
-                \draw[fill] (3,1) circle [radius=0.04];
+                %\draw[fill] (3,1) circle [radius=0.04];
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (3,1);
                 \node [right] at (3,1) {$v$};
-                \draw[fill] (1,2) circle [radius=0.04];
+                %\draw[fill] (1,2) circle [radius=0.04];
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (1,2);
                 \node [above] at (0.9,2) {$w$};
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (4,3);
                 \node [above] at (4,3) {$v+w$};
-                \draw[fill] (4,3) circle [radius=0.04];
-                \draw[-] (3,1) -- (4,3);
-                \draw[-] (1,2) -- (4,3);
+                %\draw[fill] (4,3) circle [radius=0.04];
+                \draw[-,loosely dotted, thick] (4,3) -- (3,1);
+                \draw[-,loosely dotted, thick] (4,3) -- (1,2);
             \end{tikzpicture}
             \caption{La ley del paralelogramo.}\label{fig-ley-del-paralelogramo-2}
         \end{figure}
@@ -326,21 +326,22 @@
         \foreach \y in {0,...,2}
         \draw (3pt,\y) -- (-3pt,\y) ;
         % vector w
-        \draw[fill] (3,1) circle [radius=0.05];
+        %\draw[fill] (3,1) circle [radius=0.05];
         \node [right] at (3,1) {$w$};
         \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (3,1);
         % vector v
-        \draw[fill] (1,2) circle [radius=0.05];
+        %\draw[fill] (1,2) circle [radius=0.05];
         \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (1,2);
         \node [above] at (0.9,2) {$v$};
         % flecha punteada de w a v
-        \draw[-{Latex[black,length=3.0mm,width=2.0mm]},dashed,thick](3,1) -- (1,2);
+        \draw[-{Latex[black,length=3.0mm,width=2.0mm]},loosely dotted,thick](3,1) -- (1,2);
         % vector v - w
-        \draw[fill] (-2,1) circle [radius=0.05];
+        %\draw[fill] (-2,1) circle [radius=0.05];
         \node [above] at (-2,1) {$v-w$};
         \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (-2,1);	
         % punteada de v-w  a v
-        \draw[dashed] (-2,1) -- (1,2);	
+        \draw[-,loosely dotted, thick]  (1,2) -- (-2,1);	
+        %\draw[dashed,thick] (1,2) -- (-2,1);	
         \end{tikzpicture}
         \caption{Resta de vectores.}\label{fig-resta-de-vectores}
     \end{figure}
@@ -386,16 +387,12 @@
                 \draw (\x,3pt) -- (\x,-3pt);
                 \foreach \y in {-1,...,5}
                 \draw (3pt,\y) -- (-3pt,\y) ;
-                \draw[very thick, -] (0,0) -- (1,2);
-                \node [right] at (1.1,1.9) {$v=(1,2)$};
-                \draw[very thick, -] (0,0) -- (3,6);
-                \node [right] at (3.1,5.9) {$3v=(3,6)$};
-                \draw[very thick, -] (0,0) -- (0.5,1);
-                \node [right] at (0.6,0.9) {$\frac12v=(0. 5,1)$};
-                \draw[fill] (0,0) circle [radius=0.07];
-                \draw[fill] (0.5,1) circle [radius=0.07];
-                \draw[fill] (3,6) circle [radius=0.07];
-                \draw[fill] (1,2) circle [radius=0.07];
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (1,2);
+                \node [right] at (1.0,1.8) {$v=(1,2)$};
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (3,6) node[right] {$3v=(3,6)$};
+                %\node [right] at (3.1,5.8) {$3v=(3,6)$};
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (0.5,1);
+                \node [right] at (0.5,0.8) {$\frac12v=(0. 5,1)$};
                 \node [right] at (1.8,-1.5) {(a)};
                 \end{tikzpicture}
                 &\qquad &
@@ -406,16 +403,12 @@
                 \draw (\x,3pt) -- (\x,-3pt);
                 \foreach \y in {-5,...,5}
                 \draw (3pt,\y) -- (-3pt,\y) ;
-                \draw[very thick, -] (0,0) -- (1,2);
-                \node [right] at (1.1,1.9) {$v$};
-                \draw[very thick, -] (0,0) -- (3,6);
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (1,2);
+                \node [right] at (1,1.8) {$v$};
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (3,6);
                 \node [right] at (3.1,5.9) {$3v$};
-                \draw[very thick, -] (0,0) -- (-3,-6);
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (-3,-6);
                 \node [right] at (-3.0,-5.9) {$-3v$};
-                \draw[fill] (0,0) circle [radius=0.12];
-                \draw[fill] (-3,-6) circle [radius=0.12];
-                \draw[fill] (3,6) circle [radius=0.12];
-                \draw[fill] (1,2) circle [radius=0.12];
                 \node [right] at (-0.2,-7) {(b)};
                 \end{tikzpicture}
             \end{tabular}
@@ -736,12 +729,12 @@ La demostración es trivial pero por ahora no la haremos.
         \begin{tikzpicture}
         \draw[thick,->] (0,0) coordinate (O) -- (3,0);
         \draw[thick,->] (O) -- (0,4);
-        \node[inner sep=1.5pt,fill,circle,label={60:$(x,y)$}] at (2,3) (point) {};
-        \draw[very thick] (0,0) -- (point);
+        \node [right] at (1.9,3.3) {$(x,y)$};
+        \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (2,3);
         %\draw (1.8,0) -- ++(0,0.2) -- ++(0.2,0);
-        \draw[dashed] (2,0) coordinate (pointx) -- (point); 
+        \draw[dashed] (2,0) -- (2,3); 
         \draw[decoration={brace,mirror,raise=5pt},decorate]
-        (2,0) -- node[right=6pt] {$y$} (point);
+        (2,0) -- node[right=6pt] {$y$} (2,3);
         \draw[decoration={brace,mirror,raise=5pt},decorate]
         (0,0) -- node[below=6pt] {$x$} (2,0); 
         \draw[decoration={brace,raise=5pt},decorate]
@@ -841,7 +834,7 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
 
 \begin{figure}[h]
 	\centering
-    \begin{tikzpicture}[scale=0.8]
+    \begin{tikzpicture}[scale=1.2]
     \draw[thick,->] (-3.0,0) -- (4.0,0) node[right] {$x$}; % eje x
     \draw[thick,->] (0,-1) -- (0,3) node[above] {$y$}; % eje y
     \foreach \x in {-2,...,3}
@@ -849,21 +842,21 @@ El producto escalar no sólo es útil para definir la longitud de un vector,  si
     \foreach \y in {0,...,2}
     \draw (3pt,\y) -- (-3pt,\y) ;
     % vector w
-    \draw[fill] (3,1) circle [radius=0.05];
+    %\draw[fill] (3,1) circle [radius=0.05];
     \node [right] at (3,1) {$w$};
     \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (3,1);
     % vector v
-    \draw[fill] (1,2) circle [radius=0.05];
+    %\draw[fill] (1,2) circle [radius=0.05];
     \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (1,2);
-    \node [above] at (0.9,2) {$v$};
+    \node [above] at (1,2) {$v$};
     % flecha punteada de w a v
-    \draw[-, thick,blue] (3,1) -- (1.055,1.965);
+    \draw[-, thick,blue] (3,1) -- (1,2);
     % vector v - w
-    \draw[fill] (-2,1) circle [radius=0.05];
-    \node [above] at (-2,1) {$v-w$};
+    %\draw[fill] (-2,1) circle [radius=0.05];
+    \node [above] at (-2,1) {$v-w$\;};
     \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (-2,1);	
     % punteada de v-w  a v
-    \draw[dashed] (-2,1) -- (1,2);	
+    \draw[loosely dotted,thick]  (1,2) -- (-2,1);	
     \end{tikzpicture}
     \caption{Distancia de $v$ a $w$.}\label{fig-distancia-de-vectores}
 \end{figure}
@@ -916,28 +909,28 @@ $$
 La desigualdad triangular expresa en forma algebraica el resultado, más conocido, ``en todo triángulo, un lado es menor que la suma de los otros dos'', que graficamos a continuación.
 
 \begin{center}
-        \begin{tikzpicture}[scale=1.0]
+        \begin{tikzpicture}[scale=1.5]
         \draw[thick,->] (-3.0,0) -- (4.0,0) node[right] {$x$}; % eje x
         \draw[thick,->] (0,-1) -- (0,3) node[above] {$y$}; % eje y
         \foreach \x in {-2,...,3}
         \draw (\x,3pt) -- (\x,-3pt);
         \foreach \y in {0,...,2}
         \draw (3pt,\y) -- (-3pt,\y) ;
-        \draw[-] (0,0) -- (3,1);
+        %\draw[fill] (4,3) circle [radius=0.05];
+        %\draw[fill] (1,2) circle [radius=0.05];
+        %\draw[fill] (3,1) circle [radius=0.05];
+        %\draw[fill] (0,0) circle [radius=0.05];
+        \draw[-{Latex[black,length=3.0mm,width=2.0mm]},thick] (0,0) -- (3,1);
         \node [right] at (3,1) {$v$};
-        \draw[very thick,-,blue] (0,0) -- (1,2);
+        \draw[-{Latex[black,length=3.0mm,width=2.0mm]},thick,blue] (0,0) -- (1,2);
         \node [above] at (0.9,2) {$w$};
-        \draw[very thick,-,blue] (0,0) -- (4,3);
+        \draw[-{Latex[black,length=3.0mm,width=2.0mm]},thick,blue] (0,0) -- (4,3);
         \node [above] at (4,3) {$v+w$};
-        \draw[fill] (4,3) circle [radius=0.05];
-        \draw[fill] (1,2) circle [radius=0.05];
-        \draw[fill] (3,1) circle [radius=0.05];
-        \draw[fill] (0,0) circle [radius=0.05];
-        \draw[-] (3,1) -- (4,3);
-        \draw[very thick,-,blue] (1,2) -- (4,3);
-        \node [right,blue] at (-0.1,1.7) {{\footnotesize$||w||$}};
-        \node [right,blue] at (2.4,1.6) {{\footnotesize$||v+w||$}};
-        \node [right, blue] at (2.1,2.8) {{\footnotesize$||v||$}};
+        \draw[-,loosely dotted,thick] (3,1) -- (4,3);
+        \draw[thick,-,blue] (1,2) -- (4,3);
+        \node [right,blue] at (0.1,1.4) {{\footnotesize$||w||$}};
+        \node [right,blue] at (2.0,1.4) {{\footnotesize$||v+w||$}};
+        \node [right, blue] at (2.1,2.65) {{\footnotesize$||v||$}};
         \end{tikzpicture}
 \end{center}
     
@@ -993,12 +986,11 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
         En  esta sección veremos el concepto de vector afín, que nos servirá  para entender más geométricamente los conceptos de rectas y planos en $\R^2$ y $\R^3$,  respectivamente (secciones \ref{seccion-rectas-en-r2} y \ref{seccion-planos-en-r3}). 
         \begin{figure}[h]
         	\centering
-            \begin{tikzpicture}[scale=0.5]
+            \begin{tikzpicture}[scale=1]
             \draw[thick,-] (-1,0) -- (4,0);
             \draw[thick,-] (0,-1) -- (0,3);
             \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0.7,1) -- (3,2) node[right]{$w$};
             \node[inner sep=1.5pt,fill,circle] at (0.7,1) {};
-            \node[inner sep=1.5pt,fill,circle] at (3,2) {};
             \node[left] at (0.7,0.8){$v$};
             \end{tikzpicture}
             \caption{Un vector afín.}
@@ -1016,15 +1008,15 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
             \draw[thick,-] (0,-1) -- (0,3);
             \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0.7,1) -- (3,2) node[right]{\;$w$};
             \node[inner sep=1.5pt,fill,circle] at (0.7,1) {};
-            \node[inner sep=1.5pt,fill,circle] at (3,2) {};
+            %\node[inner sep=1.5pt,fill,circle] at (3,2) {};
             \node[left] at (0.7,0.8){$v$};
             \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0.7-1.5,1+0.9) -- (3-1.5,2+0.9) node[right]{\;$q$};
             \node[inner sep=1.5pt,fill,circle] at (0.7-1.5,1+0.9) {};
-            \node[inner sep=1.5pt,fill,circle] at (3-1.5,2+0.9) {};
+            %\node[inner sep=1.5pt,fill,circle] at (3-1.5,2+0.9) {};
             \node[left] at (0.7-1.5,0.8+0.9){$p$};
             \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (3-0.7,2-1) node[right]{\;$w-v=q-p$};
             \node[inner sep=1.5pt,fill,circle] at (0,0) {};
-            \node[inner sep=1.5pt,fill,circle] at (2.3,1) {};
+            %\node[inner sep=1.5pt,fill,circle] at (2.3,1) {};
             \end{tikzpicture}
             \caption{Dos vectores equivalentes.}
             \label{fig-vectores-equivalerntes}
@@ -1043,16 +1035,16 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
         
         \begin{center}
             \begin{tabular}{lcl}
-                \begin{tikzpicture}[scale=0.8]
+                \begin{tikzpicture}[scale=1]
                 \draw[thick,-] (-1,0) -- (4,0);
                 \draw[thick,-] (0,-1) -- (0,3);
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0.5*0.7,0.5*1) -- (0.5*3,0.5*2) node[right]{\;$w$};
                 \node[inner sep=1.5pt,fill,circle] at (0.5*0.7,0.5*1) {};
-                \node[inner sep=1.5pt,fill,circle] at (0.5*3,0.5*2) {};
+               %\node[inner sep=1.5pt,fill,circle] at (0.5*3,0.5*2) {};
                 \node[below] at (0.5*0.7,0.5*0.8){$v$};
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0.7-1.5,1+0.9) -- (3-1.5,2+0.9) node[right]{\;$q$};
                 \node[inner sep=1.5pt,fill,circle] at (0.7-1.5,1+0.9) {};
-                \node[inner sep=1.5pt,fill,circle] at (3-1.5,2+0.9) {};
+                %\node[inner sep=1.5pt,fill,circle] at (3-1.5,2+0.9) {};
                 \node[left] at (0.7-1.5,0.8+0.9){$p$};
                
                 \end{tikzpicture} & 
@@ -1062,11 +1054,11 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
                 \draw[thick,-] (0,-1) -- (0,3);
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (-1.5*0.7+4,-1.5*1+3.5) -- (-1.5*3+4,-1.5*2+3.5) node[left]{\;$w$};
                 \node[inner sep=1.5pt,fill,circle] at (-1.5*0.7+4,-1.5*1+3.5) {};
-                \node[inner sep=1.5pt,fill,circle] at (-1.5*3+4,-1.5*2+3.5) {};
+                %\node[inner sep=1.5pt,fill,circle] at (-1.5*3+4,-1.5*2+3.5) {};
                 \node[right] at (-1.5*0.7+4,-1.5*0.8+3.5){$v$};
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0.7-1.5,1+0.9) -- (3-1.5,2+0.9) node[right]{\;$q$};
                 \node[inner sep=1.5pt,fill,circle] at (0.7-1.5,1+0.9) {};
-                \node[inner sep=1.5pt,fill,circle] at (3-1.5,2+0.9) {};
+                %\node[inner sep=1.5pt,fill,circle] at (3-1.5,2+0.9) {};
                 \node[left] at (0.7-1.5,0.8+0.9){$p$};
                 
                 \end{tikzpicture}
@@ -1107,7 +1099,7 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
         \foreach \x in {1,...,3} \draw (\x,3pt) -- (\x,-3pt) node[anchor=north] {\x};
         \foreach \y in {-1,...,-1} \draw (3pt,\y) -- (-3pt,\y) node[anchor=east] {\y}; 
         \foreach \y in {1,...,2} \draw (3pt,\y) -- (-3pt,\y) node[anchor=east] {\y}; 
-        \draw[scale=1,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{0.5*\x +1});
+        \draw[scale=1,domain=-3:3,smooth,variable=\x,blue,thick] plot ({\x},{0.5*\x +1});
         \end{tikzpicture}
         \caption{La recta $y = \frac12x +1$.}
         \label{fig-recta-funcion}
@@ -1123,7 +1115,7 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
         \foreach \x in {1,...,3} \draw (\x,3pt) -- (\x,-3pt) node[anchor=north] {\x};
         \foreach \y in {-1,...,-1} \draw (3pt,\y) -- (-3pt,\y) node[anchor=east] {\y}; 
         \foreach \y in {1,...,2} \draw (3pt,\y) -- (-3pt,\y) node[anchor=east] {\y}; 
-        \draw[scale=1,domain=-2:3,smooth,variable=\x,blue] plot ({2.5},{\x});
+        \draw[scale=1,domain=-2:3,smooth,variable=\x,blue,thick] plot ({2.5},{\x});
         \end{tikzpicture}
         \caption{La recta $x=2.5$.}
         \label{fig-recta-vertical}
@@ -1181,9 +1173,8 @@ La desigualdad triangular expresa en forma algebraica el resultado, más conocid
         \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (\wx-\vx,\wy-\vy) node[right]{$v-v_0$};
         \draw[thick,blue,-] (\vx- \tab*\vx + \tab*\wx ,\vy - \tab*\vy + \tab*\wy) --  (\vx- \taa*\vx + \taa*\wx ,\vy - \taa*\vy + \taa*\wy);
         \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (\tw*\vy-\tw*\wy,\tw*\wx-\tw*\vx) node[left]{$(a,b)$};
-        \draw[dashed, thick,-] (0,0) -- (\rr,\ss);
-        \draw[dashed, thick,-] (0,0) -- (\rr,\ss);
-        \draw[dashed, thick,-] (\rrm,\ssm) -- (0,0);
+        \draw[loosely dotted, thick,-] (0,0) -- (\rr,\ss);
+        \draw[loosely dotted, thick,-] (\rrm,\ssm) -- (0,0);
         %\draw[dashed,thick] (0,0) (\tw*\wx,\tw*\wy) -- (\vx+\tw*\wx,\vy+\tw*\wy+0.1);
         %\node[inner sep=1.5pt,fill,circle,blue] at (\vx+\tw*\wx+0.04*\wx,\vy+\tw*\wy+0.04*\wy)  {};
         %\node[right] at (\vx+\tw*\wx,\vy+\tw*\wy+0.1){$v+tw$};
@@ -1257,13 +1248,13 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
             \draw[thick,-] (-4,0) -- (4,0);
             \draw[thick,-] (0,-1) -- (0,3);
             \draw[thick,blue,-] (\vx+1.5*\wx,\vy+1.5*\wy) -- (\vx-1*\wx,\vy-1*\wy);
-            %\node[inner sep=1.5pt,fill,circle] at (\vx,\vy) {};
-            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (\vx,\vy) node[above]{$v$};
-            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (\wx,\wy) node[above]{\;$w$};
-            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},dashed, thick] (0,0) -- (\tw*\wx,\tw*\wy) node[left]{$tw$};
-            \draw[dashed,thick] (0,0) (\tw*\wx,\tw*\wy) -- (\vx+\tw*\wx,\vy+\tw*\wy+0.1);
             \node[inner sep=1.5pt,fill,circle,blue] at (\vx+\tw*\wx+0.04*\wx,\vy+\tw*\wy+0.04*\wy)  {};
             \node[right] at (\vx+\tw*\wx,\vy+\tw*\wy+0.1){$v+tw$};
+            \node[inner sep=1.5pt,fill,circle,blue] at (\vx,\vy) {};
+            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (\vx,\vy) node[above]{$v$};
+            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (\wx,\wy) node[above]{\;$w$};
+            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},loosely dotted, thick] (0,0) -- (\tw*\wx,\tw*\wy) node[left]{$tw$};
+            \draw[loosely dotted,thick] (\tw*\wx,\tw*\wy) -- (\vx+\tw*\wx,\vy+\tw*\wy+0.1);
             \end{tikzpicture}
             \caption{Una recta en el plano.}
             \label{fig-recta-parametrica}
@@ -1285,13 +1276,11 @@ Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales q
             \begin{tikzpicture}
             \draw[thick,-] (-4,0) -- (4,0);
             \draw[thick,-] (0,-1) -- (0,2);
-            \draw[blue,-] (-4,2) -- (4,-0.5);
-            \node[inner sep=1.5pt,fill,circle,blue] at (-4 + 8/4,2 -2.5/4) {};
-            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (-4 + 8/4,2 -2.5/4) node[above]{$u$};
-            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (-4 + 2.5*8/4,2 -2.5*2.5/4) node[above]{$v$};
-            \node[inner sep=1.5pt,fill,circle,blue] at (-4 + 2.5*8/4,2 -2.5*2.5/4)  {};
-            \draw[thick,blue,-] (-4 + 8/4,2 -2.5/4) -- (-4 + 2.5*8/4,2 -2.5*2.5/4);
-            \draw[thick,blue,-] (-4,2) -- (4,-0.5);
+            \draw[thick,blue,-] (-4,3) -- (4,-1.5);
+            \node[inner sep=1.5pt,fill,circle,blue] at (-3 ,2.4375) {};
+            \node[inner sep=1.5pt,fill,circle,blue] at (0.5,0.46875)  {};
+            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (-3 ,2.4375) node[above]{$u$};
+            \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (0.5,0.46875) node[above]{$v$};
             \end{tikzpicture}
             \caption{La recta que pasa por $v$ y $u$.}
             \label{fig-recta-entre-puntos}
