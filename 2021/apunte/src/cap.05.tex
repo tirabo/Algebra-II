@@ -224,22 +224,22 @@
                 % vector u
                 %\draw[fill] (3,1) circle [radius=0.05];
                 \node [right] at (4,1) {$u$};
-                \draw[very thick, ->] (0,0) -- (3.96,0.96);
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (3.96,0.96);
                 % vector v
                 %\draw[fill] (1,2) circle [radius=0.05];
-                \draw[very thick,->] (0,0) -- (1.5,3);
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick] (0,0) -- (1.5,3);
                 \node [above] at (0.9,2) {$v$};
                 % flecha punteada de w a v
                 \draw [domain=13.5:62] plot ({cos(\x)}, {sin(\x)});
                 \node [above] at (0.6,0.13) {$\theta$};
-                \draw[->, very thick,red] (0,0) -- (36/17,9/17);
+                \draw[-{Latex[red,length=3.0mm,width=2.0mm]},very thick, red] (0,0) -- (36/17,9/17);
                 \node [anchor=north west] at (-0.1+36/17,0.1+9/17) {$\operatorname{pr}_u(v)$};
-                \draw[->, very thick,red] (0,0) -- (-9.5/17,42/17);
+                \draw[-{Latex[red,length=3.0mm,width=2.0mm]},very thick, red] (0,0) -- (-9.5/17,42/17);
                 % vector v - w
                %+--- \draw[fill] (-2,1) circle [radius=0.05];
                 % punteada de v-w  a v
-                \draw[dashed] (-9.5/17,42/17) -- (1.5,3);	
-                \draw[dashed] (36/17,9/17) -- (1.5,3);	
+                \draw[loosely dotted, thick] (-9.5/17,42/17) -- (1.5,3);	
+                \draw[loosely dotted, thick] (36/17,9/17) -- (1.5,3);	
                 
                 \end{tikzpicture}
                 \caption{Proyección de $v$ en $u$ cuando $||v||=1$.}\label{fig-proyeccion-ort}
@@ -400,7 +400,7 @@
     
 	\begin{section}{Suma directa de subespacios y proyecciones  (*)}
 		
-		En esta sección se define la descomposición de un espacio vectorial como suma directa de dos subespacios. Se muestra que esa descomposición equivale a a definir un operador idempotente en el espacio, al cual llamaremos \textit{proyección}.
+		En esta sección se define la descomposición de un espacio vectorial como suma directa des subespacios. Cuando el espacio vectorial es suma directa de dos subespacios, se muestra que esa descomposición equivale a a definir un operador idempotente en el espacio, al cual llamaremos \textit{proyección}. 
 		
 		\medskip
 		

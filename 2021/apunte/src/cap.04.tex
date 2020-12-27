@@ -844,9 +844,9 @@ Luego,
                 \begin{tikzpicture}[scale=5]
                 \draw[->] (-0.1,0)  -- (1.1,0) node(xline)[right]	{$x$};
                 \draw[->] (0,-0.1) -- (0,1.1) node(yline)[above] {$y$};
-                \draw[->] (0,0) -- (0.5,0.866) node(yline)[above] {$R_{\theta}(v)$};
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},thick] (0,0) -- (0.5,0.866) node(yline)[above] {$R_{\theta}(v)$};
                 \draw[->] (0.9238,0.3826) arc[start angle=22.5, end angle=60, radius=1 ];
-                \draw[->] (0,0) -- (0.9238,0.3826) node(yline)[right] {$v$};
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},thick] (0,0) -- (0.9238,0.3826) node(yline)[right] {$v$};
                 \draw[->] (0.7,0) arc[start angle=0, end angle=22.5, radius=0.7 ];
                 \draw[->] (0.9238/2,0.3826/2) arc[start angle=22.5, end angle=60, radius=0.5 ];
                 \node [right] at (0.3,0.3) {$\theta$};
@@ -2125,7 +2125,7 @@ Luego,
                 \item ¿Cuál es el polinomio característico de $T$?
                 \item ¿Cuáles son los autovalores y los autoespacios?
             \end{enumex}
-            \item Sea $T: V \to V$ un operador lineal invertible. Probar que si $\lambda$ es autovalor de $T$,  entonces $\lambda \ne =0$ y $\lambda^{-1}$  es autovalor de $T^{-1}$.
+            \item Sea $T: V \to V$ un operador lineal invertible. Probar que si $\lambda$ es autovalor de $T$,  entonces $\lambda \ne 0$ y $\lambda^{-1}$  es autovalor de $T^{-1}$.
             \item Sea $T: V \to V$ un operador lineal, y sea ${v_1,\ldots,v_n}$ una base de V que consta de autovectores que tienen autovalores distintos. Demostrar que cualquier autovector de $T$ es un múltiplo escalar de algún $v_i$.
             \item $T: V \to V$ un operador lineal, sean $\lambda, \mu$ dos autovalores distintos de $T$ y sean $\cB_\lambda$ y $\cB_\mu$ bases de  $V_\lambda$ y $V_\mu$, respectivamente. 
             
@@ -2317,9 +2317,9 @@ Sea $T:\R^n \to \R^n$ un operador simétrico y $A$ la matriz asociada a  $T$,  e
             \item $\begin{bmatrix} 2&-1&0\\-1&2&-1\\0&-1&2 \end{bmatrix}$.
         \end{minipage}
        \end{enumex}
-        \item Sea $A: V \to V$ un operador  lineal simétrico. Sean $v_1, v_2$ autovalores de $A$ con autovalores $\lambda_1, \lambda_2$ respectivamente. Si $\lambda_1 \ne \lambda_2$, demostrar que $v_1$ es perpendicular a $v_2$.
-        \item Sea $A: V \to V$ un operador  lineal simétrico. Si $A$ tiene solo un autovalor propio, demostrar que toda base ortogonal de $V$ consta de autovectores de $A$.
-        \item  Sea $A: V \to V$ un operador  lineal simétrico. Sea $\dim V = n$, y suponga que hay $n$ autovalores  distintos de $A$. Demostrar que sus autovectores forman una base ortogonal de $V$.
+        \item Sea $A: \R^n \to \R^n$ un operador  lineal simétrico. Sean $v_1, v_2$ autovalores de $A$ con autovalores $\lambda_1, \lambda_2$ respectivamente. Si $\lambda_1 \ne \lambda_2$, demostrar que $v_1$ es perpendicular a $v_2$.
+        \item Sea $A: \R^n \to \R^n$ un operador  lineal simétrico. Si $A$ tiene solo un autovalor propio, demostrar que toda base ortogonal de $\R^n$ consta de autovectores de $A$.
+        \item  Sea $A: \R^n \to \R^n$ un operador  lineal simétrico. Suponga que hay $n$ autovalores  distintos de $A$. Demostrar que sus autovectores forman una base ortogonal de $\R^n$.
     \end{enumex}
 
     \end{section}

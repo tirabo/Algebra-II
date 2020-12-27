@@ -249,15 +249,12 @@
                 \draw (\x,3pt) -- (\x,-3pt);
                 \foreach \y in {0,...,2}
                 \draw (3pt,\y) -- (-3pt,\y) ;
-                %\draw[fill] (3,1) circle [radius=0.04];
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (3,1);
                 \node [right] at (3,1) {$v$};
-                %\draw[fill] (1,2) circle [radius=0.04];
-                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (1,2);
+                \draw[-Latex,very thick]  (0,0) -- (1,2);
                 \node [above] at (0.9,2) {$w$};
                 \draw[-{Latex[black,length=3.0mm,width=2.0mm]},very thick]  (0,0) -- (4,3);
                 \node [above] at (4,3) {$v+w$};
-                %\draw[fill] (4,3) circle [radius=0.04];
                 \draw[-,loosely dotted, thick] (4,3) -- (3,1);
                 \draw[-,loosely dotted, thick] (4,3) -- (1,2);
             \end{tikzpicture}
