@@ -355,22 +355,29 @@
 
 
           
-    \begin{chapter}{Funciones polin\'omicas} 
+    \begin{chapter}{Funciones polinómicas} 
     
         En este apéndice se definirán las funciones polinómicas y se mostrarán algunas de sus propiedades fundamentales. Trabajaremos sobre $\K$  cuerpo con $\K=\R$ o $\K=\C$. 
         
-        \begin{section}{Definici\'on de funciones polin\'omicas}\label{seccion-definicion-polinomios}
+        \begin{section}{Definición de funciones polinómicas}\label{seccion-definicion-polinomios}
             
         
         \begin{definicion}
-                Una función $f: \K \to \K$ es \textit{polinomial} o \textit{polinómica} o directamente decimos que $f$  es  un \textit{polinomio}, si existen $a_0,a_1,\ldots,a_n \in \K$ tal que
+                Una función $f: \K \to \K$ es \textit{polinomial} o \textit{polinómica} o directamente decimos que $f$  es  un \textit{polinomio}\index{polinomio}, si existen $a_0,a_1,\ldots,a_n \in \K$ tal que
                 \begin{equation}\label{eq-funcion-polinomica}
                     f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0 
                 \end{equation}
-                para todo $x \in \K$. En  este caso  diremos que  \textit{$f$ tiene grado $\le n$.}
+                para todo $x \in \K$. En este caso  diremos que  \textit{$f$ tiene grado $\le n$.} Si $a_n \ne 0$ diremos que \textit{$f$ tiene grado $n$} y  se denota $\operatorname{gr}(f)=n$.
+
+                En  el caso del polinomio $0$, el grado no está definido y se usa la convención $\operatorname{gr}(0)=-\infty$. 
+        
+                Diremos también que  $a_0,\ldots,a_n$ son los \textit{coeficientes} de $f$, $a_0$ es el \textit{término constante} de $f$ y $a_n$  el \textit{coeficiente principal.} 
         \end{definicion}
-    
-        Estaríamos tentados en decir que  una función polinómica como en \eqref{eq-funcion-polinomica} con $a_n\ne0$ tiene grado $n$, pero debemos ser cuidadosos pues todavía no sabemos si la escritura de una función polinómica es única. Es  decir,  existe la posibilidad de $f$  se escriba de otra forma y por lo tanto el coeficiente más significativo sea diferente. Veremos más adelante que esto no puede ocurrir. 
+        
+        \begin{obs}
+            Para la definición formal de función polinómica o polinomio deberíamos ser más cuidadosos, pues en realidad no sabemos a priori si la escritura de una función polinómica es única. Es  decir,  existe la posibilidad de $f$  se escriba de otra forma y,  en particular, el coeficiente más significativo sea diferente. No es muy complicado demostrar que esto no puede ocurrir, pero no lo haremos en este apunte. 
+        \end{obs}
+        
         
         Sea $f$ un polinomio. Si $c$ es un número tal que $f (c) = 0$, entonces llamamos a \textit{$c$ una raíz de $f$}. Veremos en un momento que un polinomio distinto de cero puede tener solo un número finito de raíces, y daremos un límite para la cantidad de estas raíces.
         
@@ -425,14 +432,16 @@
         El polinomio $f$ es el \textit{polinomio nulo} si $f(x)=0$ para toda $x \in \K$. Si $f$ es el polinomio nulo,  denotamos $f =0$. 
             
         \begin{teorema}\label{th-pol-raiz}
-            Sea $f$ un polinomio de grado $\le n$ tal que
+            Sea $f$ un polinomio de grado $n \ge 0$, entonces $f$ tiene a lo  más  $n$ raíces. 
+        \end{teorema}
+        \begin{proof} 
+            Sea  
             \begin{equation*}
             f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0,
             \end{equation*}
-            y  $a_n \ne 0$. Entonces $f$ tiene a lo  más  $n$ raíces. 
-        \end{teorema}
-        \begin{proof} 
-            Lo probaremos haciendo inducción sobre $n$. 
+            con $an \ne 0$.
+
+            Probaremos el resultado haciendo inducción sobre $n$. 
             
             Si $n=0$, $a_0 \ne 0$, es decir  $f(x)=a_0\ne 0$, que es lo que teníamos que probar ($f$ no tiene raíces). 
             
@@ -451,7 +460,8 @@
             \end{equation*} 
             Es decir $x$ es raíz de $f$ si y solo si $x=c$ o $x$ es raíz de $g$. Como $g$ tiene a lo más $n-1$ raíces,  $f$ tiene a lo más $n$ raíces.
         \end{proof}
-                            
+        
+        \begin{comment}
         \begin{corolario}
             Sea $f$ un polinomio y 
             \begin{equation*}
@@ -487,7 +497,7 @@
         con $a_n \ne 0$, es única. Diremos entonces que $n$ es el  \textit{grado} de $f$ y lo denotaremos $\operatorname{gr}(f)=n$. En  el caso del polinomio 0, el grado no está definido y se usa la convención $\operatorname{gr}(0)=-\infty$. 
         
         Diremos también que  $a_0,\ldots,a_n$ son los \textit{coeficientes} de $f$, $a_0$ es el \textit{término constante} de $f$ y $a_n$  el \textit{coeficiente principal.} 
-    
+    \end{comment}
         Observemos que si $f$ y $g$ son polinomios con   
         \begin{equation*}
         f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_nx^n +\cdots + b_1x +b_0,
@@ -496,7 +506,11 @@
         \begin{equation*}
         (f + g)(x) = (a_n+b_n)x^n + \cdots + (a_1+b_1)x +(a_0+b_0).
         \end{equation*}
-        Por otro  lado,  debido  a que $(ax^i)(bx^j) = abx^{i+j}$, el producto de dos polinomios también es un polinomio. Más precisamente,
+        Por otro  lado,  debido  a que $(ax^i)(bx^j) = abx^{i+j}$, el producto de dos polinomios también es un polinomio y el cálculo de los coeficientes de $fg$  se hace aplicando la propiedad distributiva. Más precisamente,
+        \begin{equation*}
+            (fg)(x) = a_nb_m x^{n+m} + (a_{n-1}b_m + a_nb_{m-1})X^{m+n-1} + \cdots. 
+         \end{equation*}
+        
         
         \begin{proposicion}
             Sean $f$ y $g$ polinomios de grado $n$ y $m$,  respectivamente. Entonces $fg$ es un  polinomio de grado $n+m$
@@ -506,11 +520,11 @@
             \begin{equation*}
             f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_mx^m +\cdots + b_1x +b_0,
             \end{equation*}
-            con $a_n, b_m \ne 0$. Entonces, debido a que $x^ix^j = x^{i+j}$, 
+            con $a_n, b_m \ne 0$. Entonces,
             \begin{equation}
                 (fg)(x) = a_nb_m x^{n+m} + h(x),
              \end{equation}
-            con $h(x)$ un polinomio de grado menor a $n+m$. Por lo tanto, el coeficiente principal de $fg$ es $a_nb_m \ne 0$ y,  entonces, $fg$ tiene grado $n+m$.
+            con $h(x)$ un polinomio de grado menor a $n+m$. Por lo tanto, el coeficiente principal de $fg$ es $a_nb_m \ne 0$ y,  en consecuencia $fg$ tiene grado $n+m$.
         \end{proof}
     
         
@@ -532,7 +546,7 @@
     
         \end{section}
     
-        \begin{section}{Divisi\'on de polinomios}\label{seccion-division-de-polinomios} Si $f$ y $g$ son polinomios,  entonces no necesariamente la función $f/g$ está bien definida en todo punto y puede que tampoco sea un polinomio. Cuando trabajamos con enteros, en cursos anteriores,  probamos la existencia del algoritmo de división, más precisamente.
+        \begin{section}{División de polinomios}\label{seccion-division-de-polinomios} Si $f$ y $g$ son polinomios,  entonces no necesariamente la función $f/g$ está bien definida en todo punto y puede que tampoco sea un polinomio. Cuando trabajamos con enteros, en cursos anteriores,  probamos la existencia del algoritmo de división, más precisamente.
             
             \textit{Sean $n$, $d$ enteros positivos. Entonces existe un entero $r$ tal que
                 $0 \le  r <d$  un entero $q \ge 0$ tal que
@@ -605,6 +619,63 @@
     Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, luego por teorema del resto $ f(x)=q(x)(x-c)$. 
             
         \end{section}	
+
+    \begin{section}{Multiplicación de polinomios por FFT}\label{seccion-fft}
+
+        Como vimos en la sección \ref{seccion-definicion-polinomios} el producto de polinomios se calcula usando  que $x^ix^j = x^{i+j}$ y la propiedad distributiva. Si un polinomio tiene grado $n$ y el otro  tiene grado $m$,  entonces son necesarias $nm$ multiplicaciones de coeficientes (``todos contra todos''). 
+        
+        También puede plantearse de esta forma:  si necesitamos multiplicar polinomios de grado $n$  entonces la multiplicación de dos polinomios requiere $n^2$ multiplicaciones. Como la multiplicación es la operación más costosa del procedimiento, podemos decir  que  multiplicar dos polinomios de grado $n$ requiere \textit{alrededor de  $n^2$ operaciones.}
+
+        Este nivel de complejidad ($n^2$) parece ser razonable a nivel computacional, pero  si los polinomios a multiplicar tiene grados muy altos puede ser necesario contar con métodos más rápidos, o que requieran menos operaciones. En  esta sección mostraremos la multiplicación de polinomios usando  la transformada rápida de Fourier (FFT) y mostraremos que usando este método se puede multiplicar dos polinomios de grado $n$ en \textit{alrededor de  $n\log_2(n)$ operaciones.}  
+
+        El  método se puede aplicar a cualquier grado, pero es mucho más fácil de explicar cuando el grado de los polinomios es una potencia de $2$. Como todo $n$ cumple que para algún $k$, $2^{k-1} < n \le 2^k$ es claro como podemos extender el método a cualquier polinomio. Por lo tanto, de ahora en más consideraremos polinomios de grado $n = 2^k$. 
+
+        La primero observación importante es que todo polinomio de grado  $n$  está determinado por $n+1$ valores que toma.
+
+        \begin{proposicion}
+            Sa $f$ un polinomio de grado  $n$ y $x_0,\ldots,x_{n} \in \R$ todos distintos entre sí. Sea $y_i = f(x_i)$, $0 \le i \le n$. Si $g$ polinomio de grado $n$ tal que $g(x_i) = y_i$ con  $0 \le i \le n$, entonces se cumple que $g=f$.
+        \end{proposicion}
+        \begin{proof} Sea $h = f- g$,  es claro que $\operatorname{gr}(h) \le n$. Si $h \ne 0$, por la proposición \ref{th-pol-raiz}, $h$ tiene a lo más $n$ raíces. Sin embargo $h(x_i)= f(x_i)-g(x_i) = y_i -y_i =0$,  es decie $h$ tiene al menos $n+1$ raíces. Esto provoca un absurdo que vino de suponer que $h \ne 0$. Por lo tanto,  $h=0$ y en consecuencia $f=g$.   
+        \end{proof}
+
+    Hay muchas formas de reconstruir un polinomio de grado $n$ a partir de $n+1$ valores que toma y una de las más conocidas es el \textit{método de interpolación de Lagrange}. En  forma precisa, no es demasiado complicado probar que  
+            \begin{equation*}
+                f(x) = \sum_{i=0}^n y_il_i(x),
+            \end{equation*} 
+            donde los $l_i(x)$ son los llamados \textit{polinomios de Lagrange}:
+            \begin{equation*}
+                l_i(x) = \prod_{j=0, j \ne i}^n \frac{x-x_j}{x_i -x_j}.
+            \end{equation*}   
+    
+        El método de interpolación de Lagrange es interesante por lo sencillo de su implementación, sin embargo,  nosotros veremos ahora otro forma de reconstruir el polinomio original basada en la elección adecuada de los $x_i$ y multiplicación de matrices. 
+        
+
+        Observemos que podemos calcular los valores que toma un polinomio usando el lenguaje de las matrices de la siguiente forma: 
+        \begin{equation*}
+            \begin{bmatrix}
+                f(x_0) \\f(x_1) \\ \vdots \\f(x_n) 
+            \end{bmatrix}
+            = 
+            \begin{bmatrix}
+                1 & x_0 & x_0^2 & \cdots & x_0^{n} \\
+                1 & x_1 & x_1^2 & \cdots & x_1^{n} \\ \vdots \\
+                1 & x_n & x_n^2 & \cdots & x_n^{n} 
+            \end{bmatrix}
+            \begin{bmatrix}
+                a_0 \\a_1 \\ \vdots \\a_n 
+            \end{bmatrix}
+        \end{equation*}
+
+
+        
+
+
+
+
+
+
+        
+    \end{section}
         \end{chapter}	
 
         
