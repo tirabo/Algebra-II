@@ -620,27 +620,245 @@
             
         \end{section}	
 
-    \begin{section}{Multiplicación de polinomios por FFT}\label{seccion-fft}
+        \end{chapter}	
 
-        Como vimos en la sección \ref{seccion-definicion-polinomios} el producto de polinomios se calcula usando  que $x^ix^j = x^{i+j}$ y la propiedad distributiva. Si un polinomio tiene grado $n$ y el otro  tiene grado $m$,  entonces son necesarias $nm$ multiplicaciones de coeficientes (``todos contra todos''). 
+    \begin{chapter}{Multiplicación de polinomios por FFT}\label{apend.FFT}
+    
+
+        Como vimos en \ref{seccion-definicion-polinomios} el producto de polinomios se calcula usando  que $x^ix^j = x^{i+j}$ y la propiedad distributiva. Si un polinomio tiene grado $n$ y el otro  tiene grado $m$,  entonces son necesarias $nm$ multiplicaciones de coeficientes (``todos contra todos''). 
         
         También puede plantearse de esta forma:  si necesitamos multiplicar polinomios de grado $n$  entonces la multiplicación de dos polinomios requiere $n^2$ multiplicaciones. Como la multiplicación es la operación más costosa del procedimiento, podemos decir  que  multiplicar dos polinomios de grado $n$ requiere \textit{alrededor de  $n^2$ operaciones.}
 
-        Este nivel de complejidad ($n^2$) parece ser razonable a nivel computacional, pero  si los polinomios a multiplicar tiene grados muy altos puede ser necesario contar con métodos más rápidos, o que requieran menos operaciones. En  esta sección mostraremos la multiplicación de polinomios usando  la transformada rápida de Fourier (FFT) y mostraremos que usando este método se puede multiplicar dos polinomios de grado $n$ en \textit{alrededor de  $n\log_2(n)$ operaciones.}  
+        Este nivel de complejidad ($n^2$) parece ser razonable a nivel computacional, pero  si los polinomios a multiplicar tiene grados muy altos puede ser necesario contar con métodos más rápidos, o que requieran menos operaciones. En  este apéndice mostraremos la multiplicación de polinomios usando  la transformada rápida de Fourier (FFT) y mostraremos que usando este método se puede multiplicar dos polinomios de grado $n$ en \textit{alrededor de  $n\log_2(n)$ operaciones.}  
 
-        El  método se puede aplicar a cualquier grado, pero es mucho más fácil de explicar cuando el grado de los polinomios es una potencia de $2$. Como todo $n$ cumple que para algún $k$, $2^{k-1} < n \le 2^k$ es claro como podemos extender el método a cualquier polinomio. Por lo tanto, de ahora en más consideraremos polinomios de grado $n = 2^k$. 
+        El  método se puede aplicar a cualquier grado, pero es mucho más fácil de explicar cuando el grado de los polinomios es una potencia de $2$  menos $1$. Como todo $n$ cumple que para algún $k$, $2^{k-1} \le n < 2^k$ es claro como podemos extender el método a cualquier polinomio. Por lo tanto, de ahora en más consideraremos polinomios de grado menor que $n$ donde  $n = 2^k$. 
 
-        La primero observación importante es que todo polinomio de grado  $n$  está determinado por $n+1$ valores que toma.
+\begin{section}{Representación de polinomios por valores}
+    
+        La primero observación importante es que todo polinomio de grado  $<n$  está determinado por $n$ valores que toma.
 
-        \begin{proposicion}
-            Sa $f$ un polinomio de grado  $n$ y $x_0,\ldots,x_{n} \in \R$ todos distintos entre sí. Sea $y_i = f(x_i)$, $0 \le i \le n$. Si $g$ polinomio de grado $n$ tal que $g(x_i) = y_i$ con  $0 \le i \le n$, entonces se cumple que $g=f$.
+        \begin{proposicion}\label{prop-polinomios-por-valor}
+            Sa $f$ un polinomio de grado  menor  que $n$ y $x_0,\ldots,x_{n-1} \in \R$ todos distintos entre sí. Sea $y_i = f(x_i)$, $0 \le i < n$. Si $g$ polinomio de grado menor que $n$ tal que $g(x_i) = y_i$ con  $0 \le i < n$, entonces se cumple que $g=f$.
         \end{proposicion}
-        \begin{proof} Sea $h = f- g$,  es claro que $\operatorname{gr}(h) \le n$. Si $h \ne 0$, por la proposición \ref{th-pol-raiz}, $h$ tiene a lo más $n$ raíces. Sin embargo $h(x_i)= f(x_i)-g(x_i) = y_i -y_i =0$,  es decie $h$ tiene al menos $n+1$ raíces. Esto provoca un absurdo que vino de suponer que $h \ne 0$. Por lo tanto,  $h=0$ y en consecuencia $f=g$.   
+        \begin{proof} Sea $h = f- g$,  es claro que $\operatorname{gr}(h) < n$. Si $h \ne 0$, por la proposición \ref{th-pol-raiz}, $h$ tiene a lo más $n-1$ raíces. Sin embargo $h(x_i)= f(x_i)-g(x_i) = y_i -y_i =0$,  es decir $h$ tiene al menos $n$ raíces. Esto provoca un absurdo que vino de suponer que $h \ne 0$. Por lo tanto,  $h=0$ y en consecuencia $f=g$.   
         \end{proof}
 
-    Hay muchas formas de reconstruir un polinomio de grado $n$ a partir de $n+1$ valores que toma y una de las más conocidas es el \textit{método de interpolación de Lagrange}. En  forma precisa, no es demasiado complicado probar que  
+        \begin{definicion} Sea $n \in \N$ y $X = [x_0,\ldots,x_{n-1}]$  un conjunto ordenado de $n$ puntos distintos. Si 
+            $$
+            f(x) = a_0 + a_1 x+ a_2 x^2 + \cdots  + a_{n-1}x^{n-1}
+            $$
+        un polinomio de grado menor que $n$, diremos que $[a_0,a_1,\ldots, a_{n-1}]$  es la \textit{representación por coeficientes} de $f$ y que $[f(x_0),f(x_1),\ldots,f(x_{n-1})]$ es la \textit{representación por valores} de $f$ (respecto a $X$).
+        \end{definicion}
+
+        Debido a la proposición \ref{prop-polinomios-por-valor} es claro que una representación por valores de un polinomio lo determina unívocamente. La transformada de Fourier rápida es un método eficiente para calcular la representación por valores de un polinomio a partir de la representación por coeficientes. El mismo método pero con una pequeña modificación nos devuelve la representación por coeficientes a partir  de una representación por valores. Ahora bien ¿para qué nos sirve  esto para multiplicar polinomios? La respuesta la da la proposición siguiente. Este resultado se basa en la sencilla idea que si $x_0$ es un número,  entonces $(fg)(x_0) = f(x_0)g(x_0)$, es decir calcular el producto de dos polinomios representados por valores conlleva un número de operaciones similares a la cantidad de valores evaluados. 
+        
+        \begin{proposicion}  Sea $n \in \N$ y $X = [x_0,\ldots,x_{2n-1}]$  un conjunto ordenado de $2n$ puntos distintos y sean $f,g$ polinomios de grado menor que  $n$ con representación  por valores $[y_0,y_1,\ldots,y_{2n-1}]$ y $[z_0,z_1,\ldots,z_{2n-1}]$, respectivamente. Entonces la representación por valores de $fg$ es $[y_0z_0,y_1z_1,\ldots,y_{2n-1}z_{2n-1}]$  
+        \end{proposicion}
+        \begin{proof}
+            Como $y_i = f(x_i)$, $z_i = g(x_i)$,  es claro  que $(fg)(x_i) = f(x_i)g(x_i) = y_iz_i$. Como $\operatorname{gr}(f), \operatorname{gr}(g) < n$,  entonces $\operatorname{gr}(fg) < 2n$ y  por lo tanto $[y_0z_0,y_1z_1,\ldots,y_{2n-1}z_{2n-1}]$ determina unívocamente $fg$. 
+        \end{proof}
+
+        La idea entonces para multiplicar polinomios usando la transformada rápida de Fourier es:  sean $f$, $g$ polinomios de grado $<n$,
+        \begin{enumerate}
+            \item Calcular $\operatorname{FFT}(f)$ y $\operatorname{FFT}(g)$ (del orden de $2n\operatorname{log}_2(2n)$ operaciones). Esto nos devuelve una representación por valor de $f$ y $g$.
+            \item Calcular  la representación por valor de $fg$ haciendo el producto coordenada a coordenada de las representaciones por valor de $f$ y $g$ (del orden de $2n$ operaciones)  .
+            \item Calcular $\operatorname{IFFT}(fg)$, la inversa de $\operatorname{FFT}$, que devuelve la representación por coeficientes de $fg$ (del orden de $2n\operatorname{log}_2(2n)$ operaciones).
+        \end{enumerate}
+
+        Implementando lo anterior, la cantidad de operaciones para multiplicar dos polinomios de grado $<n$  es $n \log_2(n)$ (salvo suma y multiplicación por constantes), que en la práctica y para $n$ grande es \textit{mucho} menor que $n^2$, el número de operaciones requeridas si se hiciera la multiplicación de la forma usual. 
+
+    \end{section}
+
+        \begin{section}{Transformada rápida de Fourier} La FFT se calcula en forma recursiva y su implementación se basa en varias ideas ingeniosas que describiremos a lo largo de esta sección. 
+
+        Observemos que podemos calcular los valores que toma un polinomio usando el lenguaje de las matrices de la siguiente forma: sea $X = \{x_0, x_1, \ldots, x_{n-1}\}$ y $f(x) = \sum_{k=0}^{n-1} a_kx^k$ un polinomio de grado menor que $n$,  entonces para $0 \le i \le n-1$, 
+        \begin{equation*}
+            \begin{bmatrix}
+                1 & x_i & x_i^2 & \cdots & x_i^{n-1}
+            \end{bmatrix}
+            \begin{bmatrix}
+                a_0 \\a_1 \\ \vdots \\a_{n-1} 
+            \end{bmatrix} = \left[ \sum_{k=0}^{n-1} a_kx_i^k\right] = [f(x_i)].
+        \end{equation*}
+        Podemos juntar las $n$ ecuaciones anteriores en una matriz:
+        \begin{equation*}
+            \begin{bmatrix}
+                f(x_0) \\f(x_1) \\ \vdots \\f(x_{n-1}) 
+            \end{bmatrix}
+            = 
+            \begin{bmatrix}
+                1 & x_0 & x_0^2 & \cdots & x_0^{n-1} \\
+                1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\ \vdots \\
+                1 & x_n & x_n^2 & \cdots & x_n^{n-1} 
+            \end{bmatrix}
+            \begin{bmatrix}
+                a_0 \\a_1 \\ \vdots \\a_{n-1} 
+            \end{bmatrix}.
+        \end{equation*}
+    
+
+
+        \begin{ejemplo*} Ejemplificaremos el caso $n=4$. Es  decir, vamos a evaluar un polinomio $f(x) = a_0 + a_1 x + a_2x^2 + a_3x^3$, de grado menor igual a  $3$, en $4$ puntos. Esto en el esquema tradicional conllevaría $12$ multiplicaciones: multiplicar $a_1$ por $x$,  $a_2$ por $x^2$ y $a_3$ por $x^3$, variando $x$  en $4$ puntos. Veremos que con el método  de la transformada rápida de Fourier podremos obtener la representación de $f$ por valores con muchas menos multiplicaciones. 
+        
+        La idea de este cálculo es elegir estos 4 puntos de una manera especial de tal forma que nos permitirá,  mediante algunos procedimientos, reducir el número de operaciones. 
+
+        Lo primero que debemos hacer es considerar que el polinomio puede aplicarse a los números complejos y  los $4$ puntos que vamos a elegir no estarán sobre la recta real sino sobre la circunferencia de radio  $1$: $1$, $i$, $-1$ y $-i$. 
+        
+        Ahora procedemos a escribir  $f $ como suma de una función par, digamos $f_+$, y una impar, digamos $f_-$. Es decir:
+        $$
+        f = f_+ + f_-,$$
+        con 
+        $$ f_+(x) = a_0 + a_2x^2 \quad  \text{ y } \quad f_-(x) = a_1 + a_3x^3.
+        $$
+        Si definimos 
+        $$
+        \overline{f}_+(x) = a_0 + a_2 x, \quad \text{ y } \quad \overline{f}_-(x) = a_1 + a_3 x,
+        $$
+        obtenemos entonces que 
+        \begin{equation*}
+            f(x) = \overline{f}_+(x^2) + x \overline{f}_-(x^2).
+        \end{equation*}
+        Luego,
+        \begin{equation}
+            \begin{matrix*}[l]
+                f(1) &=& \overline{f}_+(1)& + & &\overline{f}_-(1), \\
+                f(i) &=& \overline{f}_+(-1)& +&  i&\overline{f}_-(-1), \\
+                f(-1) &=& \overline{f}_+(1)& -&  &\overline{f}_-(1), \\
+                f(-i) &=& \overline{f}_+(-1) &-&i & \overline{f}_-(-1).
+            \end{matrix*} \tag{*}
+        \end{equation}
+        Las funciones $\overline{f}_+$ y $\overline{f}_-$ son de grado $1$ y requieren solo una multiplicación para ser calculadas. Por (*), para calcular la representación por valores de $f$, solo debemos calcular $\overline{f}_\pm(\pm1)$,  es decir esto nos lleva $4$ multiplicaciones. Finalmente,  debemos  calcular $ i \cdot \overline{f}_-(-1)$  que es una multiplicación más. 
+
+        Concluyendo: con $5$ multiplicaciones,  en vez de $12$, pudimos calcular la representación de $f$ por valores.
+    \end{ejemplo*}
+
+    ¿Como generalizamos el ejemplo anterior? Una de las claves del ejemplo anterior es que comenzamos trabajando en $n=4$ valores y redujimos  el cálculo a $n/2=2$ valores. Veamos como hacemos esto en general.   
+
+    Sea  $f$  es una función, entonces se puede obtener como la suma de una función par y una función impar: 
+    $$
+    f(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2},  
+    $$
+    luego si
+    $$
+    f_+ := \frac{f(x) + f(-x)}{2}, \quad \text{y} \quad f_-(x):= \frac{f(x) - f(-x)}{2},  
+    $$  
+    tenemos que $f = f_+ + f_-$ donde $f_+$ es una función par ($f_+(-x) = f_+(x), \forall x$) y   $f_-$ es una función impar ($f_-(-x) = -f_-(x), \forall x$).
+    
+    En  el caso que $f(x)= a_0 + a_1x + \cdots + a_{n-1}x^{n-1}$ sea un polinomio tenemos:
+    $$
+    f_+(x) = a_0 + a_2 x^2 + a_4 x^4 + \cdots + , \qquad f_-(x) = a_1x + a_3 x^3 + a_5 x^5 + \cdots
+    $$
+    Luego  si definimos 
+    \begin{align*}
+        \overline{f}_+(x) &= a_0 + a_2 x^1 + a_4 x^2 + \cdots = \sum_{i<n/2} a_{2i}x^i \\
+        \overline{f}_-(x) &= a_1 + a_3 x^1 + a_5 x^2 + \cdots= \sum_{i<n/2} a_{2i+1}x^i, 
+    \end{align*}
+    obtenemos que 
+    \begin{equation*}
+        f(x) = \overline{f}_+(x^2) + x \overline{f}_-(x^2).
+    \end{equation*}
+
+    Ahora bien,  hemos reducido el cálculo de $f(x)$ de grado $<n$ al cálculo de dos funciones de grado $< n/2$, pero no ganaremos nada si no elegimos cuidadosamente los valores de $x$, tal como lo  hicimos en el ejemplo. 
+
+    \begin{definicion}
+        Dado $n \in \N$, se llama \textit{raíz $n$-ésima de la unidad} a cualquiera de los números complejos que satisfacen la ecuación 
+        $$
+        z^n = 1.
+        $$ 
+        Para cada $n$, las $n$ diferentes raíces $n$-ésimas de la unidad son:
+        $$
+        e^{2 \pi i k/n} \;\text{ donde }\;  k = 0, 1, 2, \ldots, n-1.
+        $$
+        Denotemos $w_k = e^{2 \pi i k/n}$, para $ k = 0, 1, 2, \ldots, n-1$. 
+    \end{definicion}
+
+    \begin{observacion}\label{obs-raices-unidad-div-2} Si $n$ par,  y $w_k$ son las raíces $n$-ésimas de la unidad ($ 0 \le k <n$),  entonces 
+    $$
+    \{w_k^2: 0 \le k < {n}/{2}\}
+    $$
+    es el conjunto de las $n/2$-ésimas  raíces de la unidad.  
+    \end{observacion}
+
+
+    Sea $n$ par, entonces para $0 \le k <n/2$ y observemos que 
+    \begin{equation*}
+        \begin{matrix*}[l]
+            w_k^2 &= e^{\frac{4k\pi i}{n}}   \\
+            w_{k+ n/2}^2 &= e^{\frac{4(k+n/2)\pi i}{n}}= e^{\frac{4k\pi i}{n}}e^{2\pi i}= w_k^2.
+        \end{matrix*} 
+    \end{equation*}
+    Por lo tanto,  el cálculo de 
+    $$
+    f(w_k) = \overline{f}_+(w_k^2) + w_k \overline{f}_-(w_k^2), \quad \text{para $0 \le k < n$,}
+    $$
+    se reduce a calcular
+    $$
+    \overline{f}_+(w_k^2) \quad\text{ y }\quad  \overline{f}_-(w_k^2), \quad \text{para $0 \le k < n/2$,}
+    $$
+    y luego  calcular $f(w_k)$ ($0 \le k <n$) a partir de esos valores. Más explícitamente:
+    \begin{equation}
+        \begin{matrix*}[l]
+            f(w_0) &=& \overline{f}_+(w_0^2) + w_k \overline{f}_-(w_0^2), \\[0.2cm]
+            f(w_1) &=& \overline{f}_+(w_1^2) + w_k \overline{f}_-(w_1^2), \\
+            &\,\vdots&\\
+            f(w_{\frac{n}{2}-1}) &=& \overline{f}_+(w_{\frac{n}{2}-1}^2) + w_{\frac{n}{2}-1} \overline{f}_-(w_{\frac{n}{2}-1}^2), \\[0.3cm]
+            f(w_{\frac{n}{2}}) &=& \overline{f}_+(w_{0}^2) + w_{\frac{n}{2}} \overline{f}_-(w_{0}^2), \\[0.2cm]
+            f(w_{\frac{n}{2}+1}) &=& \overline{f}_+(w_{1}^2) + w_{\frac{n}{2}+1} \overline{f}_-(w_{1}^2), \\[0.2cm]
+            &\,\vdots&\\
+            f(w_{n-1}) &=& \overline{f}_+(w_{\frac{n}{2}-1}^2) + w_{n-1} \overline{f}_-(w_{\frac{n}{2}-1}^2).
+        \end{matrix*} \tag{**}
+    \end{equation}
+    Observemos que la ecuación (**) es el caso general de la ecuación (*).
+
+    Por lo tanto, hemos reducido el cálculo de la representación de $f$ por las raíces $n$-ésimas de la unidad al cálculo de la representación de $\overline{f}_+$ y $\overline{f}_-$ por las raíces $n/2$-ésimas de la unidad.
+    
+    Repitiendo el razonamiento  que hicimos para $f$  a  $\overline{f}_+$ y $\overline{f}_-$ podemos calcular la representación de $f$ por valores en forma recursiva ($n = 2^m$ y observación \ref{obs-raices-unidad-div-2}).
+    
+    El ahorro de operaciones que se obtiene, como ya dijimos, al calcular de esta forma la representación de $f$ por $n$ valores se debe a que reducimos ese cálculo al cálculo de la representación de  dos funciones por $n/2$ valores. Se puede probar entonces que el cálculo de la representación de $f$ por $n$ valores conlleva alrededor $n\log_2(n)$ operaciones.
+
+    El algoritmo es sencillo de programar. La siguiente sería una implementación en Python,  con algo de pseudocódigo. . 
+    
+    
+\vskip .4cm
+{%\centering
+\begin{minipage}{0.95\textwidth}
+\noindent \textsc{Transformada rápida de Fourier}
+\vskip .2cm
+\begin{small}
+\begin{verbatim}
+def FFT(f):
+    # pre: f = [a_0, a_1, ..., a_(n-1)], n = 2**m
+    # post: devuelve ft = [f(w_0), f(w_1), ..., f(w_(n-1))]
+    n = len(f)
+    if n == 1:
+        ft = 1
+    else:
+        w = e**(2*pi/n)
+        f_p, f_i = f[::2], f[1::2] # coeficientes pares e impares
+        ft_p, ft_i = FFT(f_p), FFT(f_i)
+        ft = [0] * n # lista de longitud n con 0's
+        for j in range(n // 2):
+            ft[j] = ft_p[j] + w**j * ft_i[j]
+            ft[j + n // 2] = ft_p[j] - w**j * ft_i[j]
+    return ft   
+\end{verbatim}
+\end{small}
+\end{minipage}
+}
+
+\vskip .4cm
+
+
+
+
+\end{section}
+
+\begin{section}{La antitransformada de Fourier}
+            
+
+    Hay muchas formas de reconstruir un polinomio de grado $k$ a partir de $k+1$ valores que toma y una de las más conocidas es el \textit{método de interpolación de Lagrange}. En  forma precisa, no es demasiado complicado probar que  
             \begin{equation*}
-                f(x) = \sum_{i=0}^n y_il_i(x),
+                f(x) = \sum_{i=0}^k y_il_i(x),
             \end{equation*} 
             donde los $l_i(x)$ son los llamados \textit{polinomios de Lagrange}:
             \begin{equation*}
@@ -648,35 +866,11 @@
             \end{equation*}   
     
         El método de interpolación de Lagrange es interesante por lo sencillo de su implementación, sin embargo,  nosotros veremos ahora otro forma de reconstruir el polinomio original basada en la elección adecuada de los $x_i$ y multiplicación de matrices. 
-        
-
-        Observemos que podemos calcular los valores que toma un polinomio usando el lenguaje de las matrices de la siguiente forma: 
-        \begin{equation*}
-            \begin{bmatrix}
-                f(x_0) \\f(x_1) \\ \vdots \\f(x_n) 
-            \end{bmatrix}
-            = 
-            \begin{bmatrix}
-                1 & x_0 & x_0^2 & \cdots & x_0^{n} \\
-                1 & x_1 & x_1^2 & \cdots & x_1^{n} \\ \vdots \\
-                1 & x_n & x_n^2 & \cdots & x_n^{n} 
-            \end{bmatrix}
-            \begin{bmatrix}
-                a_0 \\a_1 \\ \vdots \\a_n 
-            \end{bmatrix}
-        \end{equation*}
-
+    
+\end{section}
 
         
-
-
-
-
-
-
-        
-    \end{section}
-        \end{chapter}	
+    \end{chapter}
 
         
         \begin{chapter}{Determinante}\label{apend.Determinante}
