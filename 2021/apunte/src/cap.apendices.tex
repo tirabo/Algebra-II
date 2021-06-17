@@ -629,7 +629,7 @@
         
         También puede plantearse de esta forma:  si necesitamos multiplicar polinomios de grado $n$  entonces la multiplicación de dos polinomios requiere $n^2$ multiplicaciones. Como la multiplicación es la operación más costosa del procedimiento, podemos decir  que  multiplicar dos polinomios de grado $n$ requiere \textit{alrededor de  $n^2$ operaciones.}
 
-        Este nivel de complejidad ($n^2$) parece ser razonable a nivel computacional, pero  si los polinomios a multiplicar tiene grados muy altos puede ser necesario contar con métodos más rápidos, o que requieran menos operaciones. En  este apéndice mostraremos la multiplicación de polinomios usando  la transformada rápida de Fourier (FFT) y mostraremos que usando este método se puede multiplicar dos polinomios de grado $n$ en \textit{alrededor de  $n\log_2(n)$ operaciones.}  
+        Este nivel de complejidad ($n^2$) parece ser razonable a nivel computacional, pero  si los polinomios a multiplicar tiene grados muy altos puede ser necesario contar con métodos más rápidos, o que requieran menos operaciones. En  este apéndice mostraremos la multiplicación de polinomios usando la trasformada de Fourier discreta implementándola con la transformada rápida de Fourier (FFT) y mostraremos que usando este método se puede multiplicar dos polinomios de grado $n$ en \textit{alrededor de  $n\log_2(n)$ operaciones.}  
 
         El  método se puede aplicar a cualquier grado, pero es mucho más fácil de explicar cuando el grado de los polinomios es una potencia de $2$  menos $1$. Como todo $n$ cumple que para algún $k$, $2^{k-1} \le n < 2^k$ es claro como podemos extender el método a cualquier polinomio. Por lo tanto, de ahora en más consideraremos polinomios de grado menor que $n$ donde  $n = 2^k$. 
 
@@ -667,6 +667,10 @@
 
         Implementando lo anterior, la cantidad de operaciones para multiplicar dos polinomios de grado $<n$  es $n \log_2(n)$ (salvo suma y multiplicación por constantes), que en la práctica y para $n$ grande es \textit{mucho} menor que $n^2$, el número de operaciones requeridas si se hiciera la multiplicación de la forma usual. 
 
+    \end{section}
+
+    \begin{section}{Transformada de Fourier discreta} 
+        
     \end{section}
 
         \begin{section}{Transformada rápida de Fourier} La FFT se calcula en forma recursiva y su implementación se basa en varias ideas ingeniosas que describiremos a lo largo de esta sección. 
