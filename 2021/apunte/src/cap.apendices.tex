@@ -461,43 +461,7 @@
             Es decir $x$ es raíz de $f$ si y solo si $x=c$ o $x$ es raíz de $g$. Como $g$ tiene a lo más $n-1$ raíces,  $f$ tiene a lo más $n$ raíces.
         \end{proof}
         
-        \begin{comment}
-        \begin{corolario}
-            Sea $f$ un polinomio y 
-            \begin{equation*}
-                f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0,
-            \end{equation*}
-            con $a_n \ne 0$.  Entonces $n$ y $a_0,\ldots,a_n$ están determinados de forma única.
-        \end{corolario}
-        \begin{proof}
-            Debemos ver que si 
-            \begin{equation*}
-            f(x) = b_mx^m + b_{m-1}x^{m-1}+\cdots + b_1x +b_0,
-            \end{equation*}
-            con $b_m \ne 0$, entonces $m=n$ y $a_i=b_i$ para $1 \le i \le n$. 
-            
-            Supongamos que $m \le n$ (el caso $n \le m$ es similar), entonces definiendo $b_k=0$ para $m < k \le n$, tenemos que
-            \begin{equation*}
-            f(x) = b_nx^n + b_{n-1}x^{n-1}+\cdots + b_1x +b_0.
-            \end{equation*}
-            Por lo tanto si 
-            \begin{equation}\label{eq-h-igual-f-g}
-                h(x) = (a_n- b_n)x^n + (a_{n-1}-b_{n-1})x^{n-1}+\cdots + (a_{1}-b_{1})x +(a_{0}-b_{0}), 
-            \end{equation}
-            tenemos  que $h(x)= f(x)-f(x)=0$,  es un polinomio que admite infinitas raíces. 
-            Supongamos  que algún coeficiente de la expresión \eqref{eq-h-igual-f-g} de $h$ sea no nulo. Sea $k$  el máximo coeficiente de la expresión \eqref{eq-h-igual-f-g} no nulo. Por el teorema   \ref{th-pol-raiz}, $h$ no  puede tener más de $k$ raíces, absurdo pues hemos dicho que tenía infinitas. El absurdo vino de suponer que algún $a_i-b_i$ era no nulo. Por lo tanto $a_i -b_i=0$ para $0 \le i \le n$,  es decir $a_i=b_i$ para $1 \le i \le n$. 
-            
-            
-        \end{proof}
-    
-        Este corolario nos dice que la escritura de un polinomio $f$ como 
-        \begin{equation*}
-        f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0,
-        \end{equation*}
-        con $a_n \ne 0$, es única. Diremos entonces que $n$ es el  \textit{grado} de $f$ y lo denotaremos $\operatorname{gr}(f)=n$. En  el caso del polinomio 0, el grado no está definido y se usa la convención $\operatorname{gr}(0)=-\infty$. 
-        
-        Diremos también que  $a_0,\ldots,a_n$ son los \textit{coeficientes} de $f$, $a_0$ es el \textit{término constante} de $f$ y $a_n$  el \textit{coeficiente principal.} 
-    \end{comment}
+
         Observemos que si $f$ y $g$ son polinomios con   
         \begin{equation*}
         f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_nx^n +\cdots + b_1x +b_0,
@@ -509,7 +473,7 @@
         Por otro  lado,  debido  a que $(ax^i)(bx^j) = abx^{i+j}$, el producto de dos polinomios también es un polinomio y el cálculo de los coeficientes de $fg$  se hace aplicando la propiedad distributiva. Más precisamente,
         \begin{equation*}
             (fg)(x) = a_nb_m x^{n+m} + (a_{n-1}b_m + a_nb_{m-1})X^{m+n-1} + \cdots. 
-         \end{equation*}
+        \end{equation*}
         
         
         \begin{proposicion}
@@ -523,7 +487,7 @@
             con $a_n, b_m \ne 0$. Entonces,
             \begin{equation}
                 (fg)(x) = a_nb_m x^{n+m} + h(x),
-             \end{equation}
+            \end{equation}
             con $h(x)$ un polinomio de grado menor a $n+m$. Por lo tanto, el coeficiente principal de $fg$ es $a_nb_m \ne 0$ y,  en consecuencia $fg$ tiene grado $n+m$.
         \end{proof}
     
@@ -621,7 +585,7 @@
         \end{section}	
 
         \end{chapter}	
-
+\begin{comment}
     \begin{chapter}{Multiplicación de polinomios por FFT}\label{apend.FFT}
     
 
@@ -875,7 +839,7 @@ def FFT(f):
 
         
     \end{chapter}
-
+\end{comment}
         
         \begin{chapter}{Determinante}\label{apend.Determinante}
             En  el apéndice se harán las demostraciones de los resultados correspondientes a la sección de determinantes (sección  \ref{seccion-determinate}).

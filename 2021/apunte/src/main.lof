@@ -13,11 +13,63 @@
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Representación gráfica de los números complejos. \relax }}{13}{figure.Alph1.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces La recta real y algunos números enteros.\relax }}{5}{figure.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces Ejemplos de la representación gráfica de los números complejos. \relax }}{13}{figure.Alph1.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Representación gráfica de los puntos $(2,1)$, $(-1,2.5)$ y $(-2.5,-2.5)$ en $\PazoBB R^2$.\relax }}{5}{figure.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3}{\ignorespaces Representación gráfica del punto $v = (3.5,\tmspace +\thinmuskip {.1667em}3,\tmspace +\thinmuskip {.1667em}2.5)$ en $\PazoBB R^3$. \relax }}{6}{figure.1.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4}{\ignorespaces Ejemplo de la ley del paralelogramo.\relax }}{9}{figure.1.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5}{\ignorespaces La ley del paralelogramo.\relax }}{10}{figure.1.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6}{\ignorespaces La ley del paralelogramo.\relax }}{10}{figure.1.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7}{\ignorespaces El opuesto de un vector.\relax }}{11}{figure.1.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8}{\ignorespaces Resta de vectores.\relax }}{11}{figure.1.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9}{\ignorespaces Vectores canónicos en $\PazoBB R^3$.\relax }}{16}{figure.1.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {10}{\ignorespaces $r= \sqrt {x^2 + y^2}$.\relax }}{18}{figure.1.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {11}{\ignorespaces $w= \sqrt {x^2 + y^2}$, $r = \sqrt {w^2 + z^2} = \sqrt {x^2 + y^2 +z^2}$.\relax }}{18}{figure.1.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {12}{\ignorespaces Distancia de $v$ a $w$.\relax }}{20}{figure.1.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {13}{\ignorespaces Un vector afín.\relax }}{22}{figure.1.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {14}{\ignorespaces Dos vectores equivalentes.\relax }}{22}{figure.1.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {15}{\ignorespaces La recta $y = \frac 12x +1$.\relax }}{23}{figure.1.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {16}{\ignorespaces La recta $x=2.5$.\relax }}{24}{figure.1.16}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {17}{\ignorespaces Una recta en el plano.\relax }}{25}{figure.1.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {18}{\ignorespaces Una recta en el plano.\relax }}{26}{figure.1.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {19}{\ignorespaces La recta que pasa por $v$ y $u$.\relax }}{26}{figure.1.19}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {20}{\ignorespaces El plano $P$ y $u$, un vector perpendicular al plano.\relax }}{30}{figure.1.20}%
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
+\defcounter {refsection}{0}\relax 
+\ttl@tocsep 
+\defcounter {refsection}{0}\relax 
+\ttl@tocsep 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {21}{\ignorespaces Rotación $\theta $ grados. \relax }}{152}{figure.4.21}%
+\defcounter {refsection}{0}\relax 
+\ttl@tocsep 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {22}{\ignorespaces Proyección de $v$ en $u$ cuando $||v||=1$.\relax }}{189}{figure.5.22}%
+\defcounter {refsection}{0}\relax 
+\ttl@tocsep 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {23}{\ignorespaces Representación gráfica de los números complejos. \relax }}{223}{figure.Alph1.23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {24}{\ignorespaces Ejemplos de la representación gráfica de los números complejos. \relax }}{223}{figure.Alph1.24}%
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
 \defcounter {refsection}{0}\relax 
