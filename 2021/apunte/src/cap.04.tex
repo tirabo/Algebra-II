@@ -814,12 +814,14 @@ Luego,
             T^{-1}(\lambda w) = 	T^{-1}(\lambda T(v))  = 	T^{-1}(T(\lambda v)) = (T^{-1}\circ T)(\lambda v) = \lambda v = \lambda  T^{-1}(w). 
             \end{equation*}
         \end{proof}
-      
+
         \begin{ejemplo*}
             Sea $T: \R^2 \to \C$ definida por $T(a,b) = a+ ib$. Entonces $T$ es un isomorfismo entre $\R$-espacios vectoriales. 
         \end{ejemplo*}
 
-        \begin{ejemplo}[\textsc{Transformaciones lineales rígidas de $\R^2$ en $\R^2$}] Las rotaciones y reflexiones en $\R^2$ son isomorfismos de  $\R^2$  en  $\R^2$.  Sea $\theta \in \R$ tal que  $0 \le \theta \le 2\pi$,  definimos
+        \begin{ejemplo}\label{ejemplo-transformaciones-rigidas-del-plano}(\textsc{Transformaciones lineales rígidas de $\R^2$ en $\R^2$.}) Veremos a continuación que las rotaciones y reflexiones son isomorfismos de  $\R^2$  en  $\R^2$.  
+            
+        Sea $\theta \in \R$ tal que  $0 \le \theta \le 2\pi$,  definimos la transformación lineal
             \begin{equation*}
                 \begin{array}{llll}
                 R_\theta:&\R^2 &\to &\R^2 \\
@@ -837,7 +839,7 @@ Luego,
                 &= (r\cos(\alpha+\theta) , r\sin(\alpha+\theta)) \\
                 &= r(\cos(\alpha+\theta) , \sin(\alpha+\theta)).
             \end{align*}
-            Por lo tanto $R_\theta(x,y)$ es el vector $(x,y)$ rotado $\theta$ grados en sentido antihorario y en consecuencia  $R_\theta$ es denominada la \textit{rotación antihoraria en $\theta$ radianes}. No es difícil verificar que $R_\theta$ es una transformación lineal y  que $R_\theta \circ R_{-\theta} = \Id$. Por lo tanto $R_\theta$  es un isomorfismo.  
+            Por lo tanto $R_\theta(x,y)$ es el vector $(x,y)$ rotado $\theta$ grados en sentido antihorario y en consecuencia  $R_\theta$ es denominada la \textit{rotación antihoraria en $\theta$ radianes}. No es difícil verificar que  $R_\theta \circ R_{-\theta} = \Id$ y, en consecuencia,  $R_\theta$  es un isomorfismo.  
 
                 \begin{figure}[h]
                     \centering	
@@ -997,6 +999,12 @@ Luego,
         1 +x^2 \mapsto (1,1,0), \qquad 2-x \mapsto (1, -1, 1).
         $$
         \item Sea $L: V \to V$ una transformación lineal tal que $L^2 + 2L + \Id = O$. Demuestre que $L$ es invertible.
+        \item Usando el isomorfismo entre $\R^2$ y $\C$, $(a,b)\mapsto a + ib$,  podemos pensar a las transformaciones rígidas del plano del ejemplo \ref{ejemplo-transformaciones-rigidas-del-plano}) como funciones de $\C$ en $\C$.
+            \begin{enumex}
+                \item  Probar que la reflexión horizontal  $S_h: \C \to \C$ es $S_h(z) = \overline{z}$. 
+                \item Probar que $R_\theta(z) = e^{i\theta}z$ (producto de números complejos). 
+                \item Probar que la reflexión vertical $S_v$  es $S_v = R_\pi \circ S_h$. 
+            \end{enumex}
         \item\label{ejercicio-isometria} Sea $T: \R^n \to \R^n$ un operador lineal. Diremos que $T$  es una  \textit{isometría} si $||T(v)|| = ||v||$ para todo $v \in \R^n$. 
             \begin{enumex}
                 \item Probar que las rotaciones y reflexiones en $\R^2$ son isometrías. 
@@ -1010,13 +1018,10 @@ Luego,
             
             \item Usando el isomorfismo entre $\R^2$ y $\C$, $(a,b)\mapsto a + ib$,  podemos pensar a las isometrías del plano como funciones de $\C$ en $\C$.
             \begin{enumex}
-                \item  Probar que la reflexión horizontal  $S_h: \C \to \C$ es $S_h(z) = \overline{z}$. 
                 \item Sea $T: \C \to \C$ una isometría. Probar que $T(1) =e^{i\theta}$, para algún $\theta$ tal que $0 \le \theta < 2\pi$. 
                 \item Sea $T: \C \to \C$ una isometría tal que $T(1) =1$. Probar que, o bien $T = \Id$, o  bien $T = S_h$.
                 \item  Sea $T: \C \to \C$ una isometría tal que $T(1) = e^{i\theta}$. Probar que, o bien $T = R_\theta$, o  bien $T = R_\theta \circ S_h$.
-                \item Probar  que $S_v = R_\pi \circ S_h$. 
             \end{enumex}
-
             \item Sea $V$ un espacio vectorial sobre $\R$, y sean $v, w \in V$ con $w \ne 0$. La \textit{recta que pasa por $v$ y es paralela a $w$} se define como el conjunto de todos los elementos $v + tw$ con $t\in \R$.
             El \textit{segmento de recta entre $v$ y $v + w$} se define como el conjunto de todos los elementos
             $$
@@ -1726,13 +1731,13 @@ Luego,
                 \item la colección de todos los $v \in V$ tal que $T(v) = \lambda v$  se llama \textit{espacio propio}\index{espacio propio} o \textit{autoespacio}\index{autoespacio} 	asociado a $\lambda$. 
             \end{enumerate}
             
-            Los valores propios se llaman también a menudo raíces características, eigenvalores. valores característicos o valores espectrales. En  el caso de vectores propios o autovectores, también hay varias denominaciones. Nosotros usaremos, preferentemente, ``autovalores'' y ``autovectores''.
+            Los valores propios se llaman también a menudo raíces características, eigenvalores, valores característicos o valores espectrales. En  el caso de vectores propios o autovectores, también hay varias denominaciones. Nosotros usaremos, preferentemente, ``autovalores'' y ``autovectores''.
             
             Sea ahora $\lambda \in \K$, definimos
             $$
             V_\lambda := \{v \in V: Tv = \lambda v \}.
             $$
-            Observar que $V_\lambda \ne 0$ si y sólo si $\lambda$ es autovalor y en ese caso $V_\lambda$  es el autoespacio asociado a $\lambda$. 
+            Observar que $V_\lambda \ne 0$ si y sólo si $\lambda$ es autovalor y en ese caso $V_\lambda$  es el \textit{autoespacio asociado a $\lambda$}. 
         \end{definicion}
         
         
@@ -1791,28 +1796,21 @@ Luego,
         
         Recordemos que si $T$  es una transformación lineal, el determinante de $T$  se define como el determinante de la matriz de la transformación lineal en una base dada y que este determinante no depende de la base.    
         
-        \begin{definicion}
-            Sea $A \in M_n(\K)$   el \textit{polinomio característico}\index{polinomio característico} de $A$ es $$\chi_A(x) = \det(A-x \Id),$$ donde $x$ es una indeterminada. 
-            
-            Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal, el  \textit{polinomio característico de $T$} es $\chi_T(x) = \det(T- x \Id)$.
+        \begin{definicion}            
+            Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal, el  \textit{polinomio característico de $T$} es $\chi_T(x) = \det(x \Id-T)$.
         \end{definicion}
-    
-            
-        En general,  si $A = [a_{ij}]$ matriz $n \times n$, tenemos que
-        \begin{equation}
-        \chi_A(x) = \det(A- x\Id) = \det
+
+        Es decir si $A = [a_{ij}]$, matriz $n \times n$, es la matriz de $T$ es una base dada, i.e. $A = [T]_{\mathcal B}$, para $\mathcal B$  base ordenada de $V$, entonces
+        \begin{equation*}
+        \chi_T(x) = \chi_A(x) = \det(x\Id -A) = \det
         \begin{bmatrix}
-        a_{11}-x&a_{12}&\cdots&a_{1n}\\
-        a_{21}&a_{22}-x&\cdots&a_{2n}\\
+        x-a_{11}&-a_{12}&\cdots&-a_{1n}\\
+        -a_{21}&x-a_{22}&\cdots&-a_{2n}\\
         \vdots&\vdots&\ddots&\vdots\\
-        a_{n1}&a_{n2}&\cdots&a_{nn}-x\\
-        \end{bmatrix}
-        \end{equation} 
-        y el polinomio característico de $A$ es un polinomio  de grado $n$,  más precisamente  
-        $$
-        \chi_A(x) =(-1)^nx^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
-        $$ 
-        Esto se puede demostrar fácilmente por inducción. 
+        -a_{n1}&-a_{n2}&\cdots&x-a_{nn}
+        \end{bmatrix}.
+        \end{equation*} 
+    
         
         \begin{ejemplo*}
             Sea $T: \R^2 \to \R^2$ y su matriz en la base canónica es
@@ -1823,10 +1821,10 @@ Luego,
             \end{equation*}
         entonces
         \begin{equation*}
-                 \det \begin{bmatrix}
-                a-x & b \\ c &d-x
+            \det \begin{bmatrix}
+                x-a & -b \\ -c &x-d
                 \end{bmatrix} = 
-                (a-x)(d-x) - bc = x^2 -(a+d)x + (ad -bc).
+                (x-a)(x-d) - bc = x^2 -(a+d)x + (ad -bc).
         \end{equation*}
         Es decir,
         $$
@@ -1850,11 +1848,11 @@ Luego,
             $$
             Entonces el  polinomio característico de $T$ es
             $$
-            \det \begin{bmatrix}10-x&-10&6\\8& -8-x& 6\\-5& 5& -3-x\end{bmatrix} = -x^3  - x^2 + 6 x .
+            \det \begin{bmatrix}x-10&10&-6\\-8& x+8& -6\\5& -5& x+3\end{bmatrix} = x^3  + x^2 - 6 x .
             $$
             Es posible factorizar esta expresión y obtenemos
             $$
-            \chi_A(x) = -x (x-2)(x+3).
+            \chi_T(x) = x (x-2)(x+3).
             $$
         \end{ejemplo}
         
@@ -1866,11 +1864,11 @@ Luego,
             
             ($\Rightarrow$) Si $\lambda$ es autovalor, entonces existe $v \in V$, no nulo, tal que $Tv = \lambda v$, luego 
             $$
-            0 = \lambda Tv -v  =   Tv - \lambda \Id v =  (T-\lambda \Id)v.
+            0 = \lambda v -Tv  =   \lambda \Id v - Tv  =  (\lambda \Id-T)v.
             $$
-            Por lo tanto, $T-\lambda \Id$ no es invertible, lo cual implica que $0 = \det(T-\lambda \Id) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
+            Por lo tanto, $\lambda \Id-T$ no es invertible, lo cual implica que $0 = \det(\lambda \Id-T) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
             
-            ($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(T-\lambda \Id)$, entonces $T-\lambda \Id$ no es una transformación lineal  invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$ tal que $(T-\lambda \Id)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
+            ($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(\lambda \Id-T)$, entonces $\lambda \Id_T$ no es una transformación lineal  invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$, $v \ne 0$,  tal que $(\lambda \Id_T)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
         \end{proof}
         
         Repetimos ahora algunos conceptos ya expresados al comienzo de la sección. 
@@ -1897,11 +1895,11 @@ Luego,
 
         Ya vimos que  el  polinomio característico de esta aplicación es 
         $$
-        \chi_A(t) = t (t-2)(t+3).
+        \chi_T(x) = x (x-2)(x+3).
         $$
-        Luego, por 	proposición \ref{autovalores}, los autovalores de $A$ son $0$, $2$ y $-3$. Debido al corolario \ref{cor-aut-li} existe una base de autovectores de $T$. Veamos cuales son. Si $\lambda$ autovalor de $T$, para encontrar los autovectores con autovalor $\lambda$  debemos resolver la ecuación $Tv -\lambda v=0 $,  en este caso sería
+        Luego, por 	proposición \ref{autovalores}, los autovalores de $A$ son $0$, $2$ y $-3$. Debido al corolario \ref{cor-aut-li} existe una base de autovectores de $T$. Veamos cuales son. Si $\lambda$ autovalor de $T$, para encontrar los autovectores con autovalor $\lambda$  debemos resolver la ecuación $\lambda v-Tv=0 $,  en este caso sería
         \begin{equation*}
-        \begin{bmatrix}10- \lambda &-10&6\\8& -8- \lambda & 6\\-5& 5& -3- \lambda \end{bmatrix}
+        \begin{bmatrix}\lambda-10 &10&-6\\-8&  \lambda +8& -6\\5& -5& \lambda +3  \end{bmatrix}
         \begin{bmatrix} x\\y\\z \end{bmatrix} =
         \begin{bmatrix} 0\\0 \\0\end{bmatrix},
         \end{equation*}  
@@ -1941,7 +1939,7 @@ Luego,
             Por la proposición \ref{autovalores}, los autovalores de $T$  son las raíces del polinomio característico,  es decir las raíces de 
             $$
             \chi_T(\lambda)= \det\left[\begin{matrix}
-            -\lambda& 1 \\ 1 & -\lambda
+            \lambda& -1 \\ -1 & \lambda
             \end{matrix} \right]= \lambda^2 -1  =(\lambda -1)(\lambda +1). 
             $$
             Luego los autovalores son $1$ y $-1$. Para hallar un autovector con autovalor $1$ debemos resolver la ecuación $T(x,y) = (x,y)$. Ahora bien, 
@@ -1955,7 +1953,7 @@ Luego,
             Luego $\mathcal{B} = \{(1,1),(1,-1) \}$  es una base de $\R^2$ de autovectores de  $T$.
         \end{proof}
         
-        No todas la matrices son diagonalizables,  como veremos en el ejemplo a continuación. 
+        No todas las transformaciones lineales son diagonalizables,  como veremos en el ejemplo a continuación. 
         
         
         \begin{ejemplo*}
@@ -1970,8 +1968,8 @@ Luego,
             Por la proposición \ref{autovalores}, los autovalores de $T$  son las raíces del polinomio característico,  es decir las raíces de 
             $$
             \det\left[\begin{matrix}
-            2-x & -1 \\ 1 & 4-x
-            \end{matrix} \right] = (2-x)(4-x)+1 = x^2 -6x + 9 = 
+            x-2 & 1 \\ -1 & x-4
+            \end{matrix} \right] = (x-2)(x-4)+1 = x^2 -6x + 9 = 
             (x -3)^2. 
             $$
             Es decir el  único autovalor posible es 3.
@@ -1983,30 +1981,30 @@ Luego,
             tiene solución. Esta ecuación es equivalente a 
             \begin{equation*}
                 \begin{array}{rcll}
-                (2x-y,x+4y)&=&(3 x, 3 y)\quad &\Rightarrow \\
-                2x-y = 3 x&,& x+4y = 3y \quad &\Rightarrow \\
-                -y =  x&,& x = -y \quad &\Rightarrow \\
+                (2x-y,x+4y)&=&(3 x, 3 y)\quad &\Leftrightarrow \\
+                2x-y = 3 x&,& x+4y = 3y \quad &\Leftrightarrow \\
+                -y =  x&,& x = -y \quad &\Leftrightarrow \\
                 y &=&  -x \quad &
                 \end{array}
             \end{equation*}
-            Luego $V_3 = \{(x,-x): x \in \R \}$ que es de dimensión 1.  	
+            Luego $V_3 = \{(x,-x): x \in \R \}$ que es de dimensión 1 y por lo tanto no hay una base de autovectores.  	
             
         \end{proof}
     
         \begin{proposicion}
-             Sea $T$ un operador lineal diagonalizable sobre un espacio vectorial $V$ de dimensión finita. Sean $\lambda_1,\ldots,\lambda_k$ los autovalores distintos de $T$. Entonces,  el  polinomio característico de $T$ es
-                 $$
-                 \chi_T(x) = (\lambda_1 -x)^{d_1}\ldots(\lambda_k- x)^{d_k}
-                 $$
-                 con
-                 $$
-                 d_i =  \dim V_{\lambda_i},
-                 $$
-                 para  $i=1, \ldots, k$.
+        Sea $T$ un operador lineal diagonalizable sobre un espacio vectorial $V$ de dimensión finita. Sean $\lambda_1,\ldots,\lambda_k$ los autovalores distintos de $T$. Entonces,  el  polinomio característico de $T$ es
+        $$
+            \chi_T(x) = (x-\lambda_1)^{d_1}\ldots(x-\lambda_k)^{d_k}
+        $$
+        con
+        $$
+            d_i =  \dim V_{\lambda_i},
+        $$
+        para  $i=1, \ldots, k$.
         \end{proposicion}
         \begin{proof}[Demostración ($*$)]
             $T$ es un operador lineal diagonalizable y $\lambda_1,\ldots,\lambda_k$ los valores propios distintos de $T$. Entonces existe una base ordenada $\cB$ con respecto a la cual $T$ está representado por una matriz diagonal; es decir, los elementos de la diagonal son los escalares $\lambda_j$ cada uno de los cuales se repite un cierto número de veces. Más específicamente, si
-             $v_{j1},\ldots,v_{jd_j}$ son los vectores en $\mathcal{B}$ con autovalor $\lambda_j$ ($1 \le j \le k$),  reordenamos la base de tal forma que primero estén los autovectores con autovalor $\lambda_1$, a continuación los de autovalor $\lambda_2$, etc.: 
+            $v_{j1},\ldots,v_{jd_j}$ son los vectores en $\mathcal{B}$ con autovalor $\lambda_j$ ($1 \le j \le k$),  reordenamos la base de tal forma que primero estén los autovectores con autovalor $\lambda_1$, a continuación los de autovalor $\lambda_2$, etc.: 
             \begin{equation*}
                 \mathcal{B} = \{v_{11},\ldots,v_{1d_1},\ldots,v_{k1},\ldots,v_{kd_k}\}. 
             \end{equation*}
@@ -2030,7 +2028,7 @@ Luego,
             \end{equation*}
             donde $\Id_j$ es la matriz identidad $d_j \times d_j$. Luego,  el polinomio característico de $T$ es el producto
             \begin{align*}
-                (\lambda_1 -x)^{d_1}\ldots(\lambda_k- x)^{d_k}.
+                (x-\lambda_1)^{d_1}\ldots(x-\lambda_k)^{d_k}.
             \end{align*}
         \end{proof}
     
@@ -2045,46 +2043,45 @@ Luego,
             El  polinomio característico de $A$ es
             \begin{equation*}
                 \chi_A(x) = \det \begin{bmatrix}
-                    5-x &-6 &-6\\ -1& 4-x& 2\\3 &-6& -4-x
+                    x-5 &6 &6\\ 1& x-4& -2\\-3 &6& x+4
                 \end{bmatrix} 
-                = -x^3 + 5 x^2 - 8 x + 4 = -(x-2)^2(x-1).
+                = x^3 - 5 x^2 + 8 x - 4 = (x-2)^2(x-1).
             \end{equation*}
-            ¿Cuáles son las dimensiones de los espacios de los vectores propios asociados
-            con los dos valores propios? Se deben resolver las ecuaciones asociadas a las matrices
+            ¿Cuáles son las dimensiones de los espacios de los vectores propios asociados con los dos valores propios? Se deben resolver las ecuaciones asociadas a las matrices
             \begin{equation*}
-            A - 2 \Id = 
+            2 \Id -A = 
             \begin{bmatrix}
-            3 &-6 &-6\\ -1& 2& 2\\3 &-6& -6
+            -3 &6 &6\\ 1& -2& -2\\-3 &6& 6
             \end{bmatrix} 
             \end{equation*}
             y 
             \begin{equation*}
-            A -\Id= 
+            \Id-A= 
             \begin{bmatrix}
-            4 &-6 &-6\\ -1& 3& 2\\3 &-6& -5
+            -4 &6 &6\\ 1& -3& -2\\-3 &6& 5
             \end{bmatrix}.
             \end{equation*}
-            Las soluciones de estos sistemas son los autoespacios de autovalor 2 y 1 respectivamente. En  el primer caso, 
+            Las soluciones de estos sistemas son los autoespacios de autovalor $2$ y $1$ respectivamente. En  el primer caso, 
             \begin{equation*}
-            \begin{bmatrix} 3 &-6 &-6\\ -1& 2& 2\\3 &-6& -6 \end{bmatrix}
+            \begin{bmatrix} -3 &6 &6\\ 1& -2& -2\\-3 &6& 6 \end{bmatrix}
             \underset{F_3+3F_2}{\stackrel{F_1+3 F_2}{\longrightarrow}} 
-            \begin{bmatrix} 0 &0 &0\\ -1& 2& 2\\0 &0& 0 \end{bmatrix}.
+            \begin{bmatrix} 0 &0 &0\\ 1& -2& -2\\0 &0& 0 \end{bmatrix}.
             \end{equation*}
-            Luego,  la solución del sistema asociado a $A-2\Id$ es 
+            Luego,  la solución del sistema asociado a $2\Id-A$ es 
             $$
             V_2 = \{(2y+2z,y,z): y,z \in \R\} = <(2,1,0),(2,0,1)>
             $$
-            cuya dimensión es 2. 
+            cuya dimensión es $2$. 
             
             Por otro lado, 
             \begin{equation*}
-            \begin{bmatrix}4 &-6 &-6\\ -1& 3& 2\\3 &-6& -5 	\end{bmatrix}
+            \begin{bmatrix}-4 &6 &6\\ 1& -3& -2\\-3 &6& 5 	\end{bmatrix}
             \underset{F_3+3F_2}{\stackrel{F_1+4 F_2}{\longrightarrow}} 
-            \begin{bmatrix}0 &6 &2\\ -1& 3& 2\\0 &3& 1 	\end{bmatrix}
+            \begin{bmatrix}0 &-6 &-2\\ 1& -3& -2\\0 &-3& -1 	\end{bmatrix}
             \underset{F_2-F_3}{\stackrel{F_1-2 F_3}{\longrightarrow}}
-            \begin{bmatrix}0 &0 &0\\ -1& 0& 1\\0 &3& 1 	\end{bmatrix}.
+            \begin{bmatrix}0 &0 &0\\ 1& 0& -1\\0 &-3& -1 	\end{bmatrix}.
             \end{equation*}
-            Luego,  la solución del sistema asociado a  $A-\Id$ es 
+            Luego,  la solución del sistema asociado a  $\Id-A$ es 
             $$
             V_1 = \{(z,-\frac13z,z): z \in \R\} = <(1,-\frac13,1)>.
             $$
@@ -2259,9 +2256,9 @@ Sea $T:\R^n \to \R^n$ un operador simétrico y $A$ la matriz asociada a  $T$,  e
         Como es una matriz simétrica sabemos que es diagonalizable, es decir tiene una base de autovectores. 
         El polinomio característicos es
         \begin{equation*}
-            \chi_A(x) = \det  \begin{bmatrix} 2-x&-1&0\\-1&2-x&-1\\0&-1&2-x \end{bmatrix} =	-x^3 + 6 x^2 - 10 x + 4.
+            \chi_A(x) = \det  \begin{bmatrix} x-2&1&0\\1&x-2&-1\\0&1&x-2 \end{bmatrix} =	x^3 - 6 x^2 + 10 x - 4.
         \end{equation*}
-        Ahora bien, las raíces de $-x^3 + 6 x^2 - 10 x + 4 $  son 
+        Ahora bien, las raíces de $x^3 - 6 x^2 + 10 x - 4$  son 
         \begin{align*}
             \lambda_1 &= 2 + \sqrt 2 \\
             \lambda_2 &= 2 \\
