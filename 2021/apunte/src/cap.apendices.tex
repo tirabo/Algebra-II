@@ -61,42 +61,39 @@
         a\cdot 0 = 0,
         \end{equation*}
         todas reglas familiares de la aritmética elemental.
-    \end{section}
     
-    
-    \begin{subsection}{Un cuerpo finito}
-        A modo de ejemplo, y para entrenar la intuición de que un cuerpo no necesariamente tiene un número infinito de elementos, consideremos el conjunto con dos elementos $\F_2=\{0,1\}$. Definimos la suma $+\colon\F_2\times \F_2\to \F_2$ mediante la regla
-        \begin{align*}
-        0+0&=0, & 0+1&=1, & 1+0&=1, & 1+1&=0
-        \end{align*}
-        y el producto $\cdot \colon\F_2\times \F_2\to \F_2$ como 
-        \begin{align*}
-        0\cdot 0&=0, & 0\cdot 1&=0, & 1\cdot 0&=0, & 1\cdot 1&=1.
-        \end{align*}
-        Dejamos como ejercicio para el lector comprobar que estas operaciones así definidas satisfacen los axiomas \textbf{I1} a \textbf{I7} y por lo tanto $\F_2$ es un cuerpo, con dos elementos.
-        
-        \begin{observacion*}
-            El lector suspicaz reconocerá en estas operaciones a la suma y el producto definidos en el conjunto $\Z_2=\{0,1\}$ de congruencias módulo 2  definido en Álgebra I / Matemática Discreta I. En efecto, resultados desarrollados en ese curso permiten demostrar que los conjuntos $\Z_p$, con $p$ primo, son ejemplos de cuerpos, en este caso con $p$ elementos.
-        \end{observacion*}
+        \begin{subsection}{Un cuerpo finito}
+            A modo de ejemplo, y para entrenar la intuición de que un cuerpo no necesariamente tiene un número infinito de elementos, consideremos el conjunto con dos elementos $\F_2=\{0,1\}$. Definimos la suma $+\colon\F_2\times \F_2\to \F_2$ mediante la regla
+            \begin{align*}
+            0+0&=0, & 0+1&=1, & 1+0&=1, & 1+1&=0
+            \end{align*}
+            y el producto $\cdot \colon\F_2\times \F_2\to \F_2$ como 
+            \begin{align*}
+            0\cdot 0&=0, & 0\cdot 1&=0, & 1\cdot 0&=0, & 1\cdot 1&=1.
+            \end{align*}
+            Dejamos como ejercicio para el lector comprobar que estas operaciones así definidas satisfacen los axiomas \textbf{I1} a \textbf{I7} y por lo tanto $\F_2$ es un cuerpo, con dos elementos.
+            
+            \begin{observacion*}
+                El lector suspicaz reconocerá en estas operaciones a la suma y el producto definidos en el conjunto $\Z_2=\{0,1\}$ de congruencias módulo 2  definido en Álgebra I / Matemática Discreta I. En efecto, resultados desarrollados en ese curso permiten demostrar que los conjuntos $\Z_p$, con $p$ primo, son ejemplos de cuerpos, en este caso con $p$ elementos.
+            \end{observacion*}
 
-        \begin{ejemplo*}
-            Sea $p$ un número primo y
-            $$
-            \Z_p = \{0,1,\ldots, p-1\}
-            $$
-            el conjunto de restos de dividir por $p$. Definimos suma y producto en $\Z_p$ de la siguiente manera: sean $a,b \in \Z_p$,  entonces  
-            \begin{equation*}
-                \begin{array}{llllll}
-                    a+b &= c\quad &\text{ si }\quad &a+b \equiv c \; (\operatorname{mod}p) \quad&\wedge\quad&0 \le c \le p-1,\\
-                    a \cdot b &= d\quad &\text{ si }\quad &a\cdot b \equiv d \; (\operatorname{mod}p) &\wedge& 0 \le d \le p-1.
-                \end{array} 
-            \end{equation*}
-            No es complicado, usando lo que conocemos de congruencia, probar que $\Z_p$  es un cuerpo. La única propiedad cuya prueba no es obvia es  \textbf{I7}, la existencia de inverso. Esta propiedad se deduce del teorema que enuncia la existencia de soluciones  de la ecuación lineal de congruencia. 
-           
-        \end{ejemplo*}
-        
-    \end{subsection}
-    
+            \begin{ejemplo*}
+                Sea $p$ un número primo y
+                $$
+                \Z_p = \{0,1,\ldots, p-1\}
+                $$
+                el conjunto de restos de dividir por $p$. Definimos suma y producto en $\Z_p$ de la siguiente manera: sean $a,b \in \Z_p$,  entonces  
+                \begin{equation*}
+                    \begin{array}{llllll}
+                        a+b &= c\quad &\text{ si }\quad &a+b \equiv c \; (\operatorname{mod}p) \quad&\wedge\quad&0 \le c \le p-1,\\
+                        a \cdot b &= d\quad &\text{ si }\quad &a\cdot b \equiv d \; (\operatorname{mod}p) &\wedge& 0 \le d \le p-1.
+                    \end{array} 
+                \end{equation*}
+                No es complicado, usando lo que conocemos de congruencia, probar que $\Z_p$  es un cuerpo. La única propiedad cuya prueba no es obvia es  \textbf{I7}, la existencia de inverso. Esta propiedad se deduce del teorema que enuncia la existencia de soluciones  de la ecuación lineal de congruencia. 
+            \end{ejemplo*}
+            
+        \end{subsection}
+    \end{section}
     
     \begin{section}{N\'umeros complejos}\label{seccion-numeros-complejos}
         La ecuación polinómica $x^2 + 1 =0$ (¿cuál es el número que elevado  al cuadrado y adicionado $1$ da $0$?) no tiene solución dentro del cuerpo de los números reales,  pues todos sabemos que  $x^2 \ge 0$ para todo $x \in \R$ y por lo tanto $x^2 + 1 >0$ $\forall\; x \in \R$. Sin embargo, podemos extender $\R$ a otro cuerpo,  de tal forma que \textit{toda} ecuación polinómica con coeficientes en $\R$ tenga solución. 
@@ -158,7 +155,7 @@
         
         
         \begin{figure}[h]
-        	\centering
+            \centering
             \begin{tikzpicture}
             \draw[->] (-4.0,0) -- (4.0,0) node[right] {}; % eje x
             \draw[->] (0,-3) -- (0,3) node[above] {}; % eje y
@@ -171,14 +168,12 @@
             \draw [dashed] (0,1.5) -- (2.5,1.5);
             \draw [dashed] (2.5,0) -- (2.5,1.5);
             \end{tikzpicture}
-            
-            
             \caption{Representación gráfica de los números complejos. }
         \end{figure}
         
         
         \begin{figure}[h]
-        	\centering
+            \centering
             \begin{tikzpicture}
             \draw[->] (-4.0,0) -- (4.0,0) node[right] {}; % eje x
             \draw[->] (0,-3) -- (0,3) node[above] {}; % eje y
@@ -207,8 +202,6 @@
             \draw [dashed] (0,-2.5) -- (-2.5,-2.5);
             \draw [dashed] (-2.5,0) -- (-2.5,-2.5);
             \end{tikzpicture}
-            
-            
             \caption{Ejemplos de la representación gráfica de los números complejos. }
         \end{figure}
         
@@ -235,22 +228,21 @@
                 \item  $\overline{z+w} = \overline{z} + \overline{w}$.
                 \item\label{itm-cmplx}  $\overline{zw} = \overline{z}\;  \overline{w}$.
             \end{enumerate}
-            \begin{proof}
-                Son comprobaciones rutinarias. Para ejemplificar, hagamos la demostración  de \ref{itm-cmplx}.
-                
-                Si $z = a + bi$ y $w = c +di$, entonces $(a+bi) (c+di) = (ac -bd) + (ad+bc)i$. Por lo tanto,
-                \begin{equation*}
-                \overline{zw} = (ac -bd) - (ad+bc)i.
-                \end{equation*} 
-                Como $\overline{z} = a - bi$ y $\overline{w} = c -di$,
-                \begin{equation*}
-                \overline{z}\;  \overline{w} = (ac -(-b)(-d)) + (a(-d)+b(-c) )i = (ac -bd) - (ad+bc)i.
-                \end{equation*} 
-                Por lo tanto $	\overline{zw} = \overline{z}\;  \overline{w}$.
-            \end{proof}	
         \end{proposicion}
-        
-        
+        \begin{proof}
+            Son comprobaciones rutinarias. Para ejemplificar, hagamos la demostración  de \ref{itm-cmplx}.
+            
+            Si $z = a + bi$ y $w = c +di$, entonces $(a+bi) (c+di) = (ac -bd) + (ad+bc)i$. Por lo tanto,
+            \begin{equation*}
+            \overline{zw} = (ac -bd) - (ad+bc)i.
+            \end{equation*} 
+            Como $\overline{z} = a - bi$ y $\overline{w} = c -di$,
+            \begin{equation*}
+            \overline{z}\;  \overline{w} = (ac -(-b)(-d)) + (a(-d)+b(-c) )i = (ac -bd) - (ad+bc)i.
+            \end{equation*} 
+            Por lo tanto $	\overline{zw} = \overline{z}\;  \overline{w}$.
+        \end{proof}	
+
         \begin{ejercicio*}
             Determinar el número complejo $2- 3i + \displaystyle\frac{i}{1-i}$.
         \end{ejercicio*}
@@ -320,58 +312,53 @@
                 &=  \sum_{k=0}^{\infty} \frac{1}{(2k)!}(i\theta)^{2k}  + \sum_{k=0}^{\infty} \frac{1}{(2k+1)!}(i\theta)^{2k+1}. \tag{*}
             \end{align*}
         
-        No es difícil ver que $i^{2k} = (-1)^k$ y por lo tanto $i^{2k+1} = i^{2k}\cdot i = (-1)^ki $. Luego, por (*), 
-        \begin{align*}
-            e^{i\theta} &=  \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!}\theta^{2k}  + i\sum_{k=0}^{\infty} \frac{ (-1)^k}{(2k+1)!}\theta^{2k+1} \\
-            &=\cos(\theta) + i \sen(\theta), 
-        \end{align*}
-        recuperando así  la fórmula \eqref{eq-formula-de-euler}, llamada \emph{fórmula de Euler.}\index{fórmula de Euler} Observemos que especializando la fórmula en $\pi$ obtenemos 
-        \begin{equation*}
-                e^{i\pi} = \cos(\pi) + i\sin(\pi) = -1.
-        \end{equation*}
-        Escrito de otra forma
-        \begin{equation}
-            e^{i\pi} -1 =0.
-        \end{equation}
-        Esta última expresión es denominada la \emph{identidad de Euler}\index{identidad de Euler} y es considerada una de las fórmulas más relevantes de la matemática, pues comprende las cinco constantes matemáticas más importantes: 
-        \begin{enumerate}
-            \item El número \boldmath${0}$.
-            \item El numero \boldmath${1}$.
-            \item El número \boldmath${\pi}$, número irracional  que es la relación entre la circunferencia de un círculo y su diámetro. Es aproximadamente $3.14159\ldots$.
-            \item El número \boldmath${e}$, también un número irracional. Es la base de los logaritmos naturales y surge naturalmente a través del estudio del interés compuesto y el cálculo. El número $e$ está presente en una gran cantidad de ecuaciones importantes. Es aproximadamente $2.71828\ldots$.
-            \item El número \boldmath$i$, el más fundamental de los números imaginarios.
-            
-        \end{enumerate}
-        
-        
+            No es difícil ver que $i^{2k} = (-1)^k$ y por lo tanto $i^{2k+1} = i^{2k}\cdot i = (-1)^ki $. Luego, por (*), 
+            \begin{align*}
+                e^{i\theta} &=  \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!}\theta^{2k}  + i\sum_{k=0}^{\infty} \frac{ (-1)^k}{(2k+1)!}\theta^{2k+1} \\
+                &=\cos(\theta) + i \sen(\theta), 
+            \end{align*}
+            recuperando así  la fórmula \eqref{eq-formula-de-euler}, llamada \emph{fórmula de Euler.}\index{fórmula de Euler} Observemos que especializando la fórmula en $\pi$ obtenemos 
+            \begin{equation*}
+                    e^{i\pi} = \cos(\pi) + i\sin(\pi) = -1.
+            \end{equation*}
+            Escrito de otra forma
+            \begin{equation}
+                e^{i\pi} -1 =0.
+            \end{equation}
+            Esta última expresión es denominada la \emph{identidad de Euler}\index{identidad de Euler} y es considerada una de las fórmulas más relevantes de la matemática, pues comprende las cinco constantes matemáticas más importantes: 
+            \begin{enumerate}
+                \item El número \boldmath${0}$.
+                \item El numero \boldmath${1}$.
+                \item El número \boldmath${\pi}$, número irracional  que es la relación entre la circunferencia de un círculo y su diámetro. Es aproximadamente $3.14159\ldots$.
+                \item El número \boldmath${e}$, también un número irracional. Es la base de los logaritmos naturales y surge naturalmente a través del estudio del interés compuesto y el cálculo. El número $e$ está presente en una gran cantidad de ecuaciones importantes. Es aproximadamente $2.71828\ldots$.
+                \item El número \boldmath$i$, el más fundamental de los números imaginarios.
+            \end{enumerate}
         \end{observacion*}
         
-        
-        
     \end{section}	
-    \end{chapter}
+\end{chapter}
 
 
 
 
-          
-    \begin{chapter}{Funciones polinómicas} 
-    
+
+\begin{chapter}{Funciones polinómicas} 
+
         En este apéndice se definirán las funciones polinómicas y se mostrarán algunas de sus propiedades fundamentales. Trabajaremos sobre $\K$  cuerpo con $\K=\R$ o $\K=\C$. 
         
-        \begin{section}{Definición de funciones polinómicas}\label{seccion-definicion-polinomios}
+    \begin{section}{Definición de funciones polinómicas}\label{seccion-definicion-polinomios}
             
         
         \begin{definicion}
-                Una función $f: \K \to \K$ es \textit{polinomial} o \textit{polinómica} o directamente decimos que $f$  es  un \textit{polinomio}\index{polinomio}, si existen $a_0,a_1,\ldots,a_n \in \K$ tal que
-                \begin{equation}\label{eq-funcion-polinomica}
-                    f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0 
-                \end{equation}
-                para todo $x \in \K$. En este caso  diremos que  \textit{$f$ tiene grado $\le n$.} Si $a_n \ne 0$ diremos que \textit{$f$ tiene grado $n$} y  se denota $\operatorname{gr}(f)=n$.
+            Una función $f: \K \to \K$ es \textit{polinomial} o \textit{polinómica} o directamente decimos que $f$  es  un \textit{polinomio}\index{polinomio}, si existen $a_0,a_1,\ldots,a_n \in \K$ tal que
+            \begin{equation}\label{eq-funcion-polinomica}
+                f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0 
+            \end{equation}
+            para todo $x \in \K$. En este caso  diremos que  \textit{$f$ tiene grado $\le n$.} Si $a_n \ne 0$ diremos que \textit{$f$ tiene grado $n$} y  se denota $\operatorname{gr}(f)=n$.
 
-                En  el caso del polinomio $0$, el grado no está definido y se usa la convención $\operatorname{gr}(0)=-\infty$. 
-        
-                Diremos también que  $a_0,\ldots,a_n$ son los \textit{coeficientes} de $f$, $a_0$ es el \textit{término constante} de $f$ y $a_n$  el \textit{coeficiente principal.} 
+            En  el caso del polinomio $0$, el grado no está definido y se usa la convención $\operatorname{gr}(0)=-\infty$. 
+    
+            Diremos también que  $a_0,\ldots,a_n$ son los \textit{coeficientes} de $f$, $a_0$ es el \textit{término constante} de $f$ y $a_n$  el \textit{coeficiente principal.} 
         \end{definicion}
         
         \begin{obs}
@@ -399,34 +386,34 @@
         \end{ejemplo*}
         
         \begin{teorema}\label{th-fact-raiz}
-             Sea $f$ un polinomio de grado $\le n$ y sea $c$ una raíz. Entonces existe un polinomio $g$ de grado $\le n - 1$ tal que para todo $x$ se cumple
-             \begin{equation*}
-                 f (x) = (x - c) g (x).
-             \end{equation*}
+            Sea $f$ un polinomio de grado $\le n$ y sea $c$ una raíz. Entonces existe un polinomio $g$ de grado $\le n - 1$ tal que para todo $x$ se cumple
+            \begin{equation*}
+                f (x) = (x - c) g (x).
+            \end{equation*}
         \end{teorema}
         \begin{proof} Escribamos $f(x)$ en función de las potencias de  $x$:
-        \begin{equation*}
-            f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0.
-        \end{equation*}
-         Veremos a continuación que $f$ puede también escribirse en potencias de $x-c$: escribamos 
-         \begin{equation*}
-             x = (x-c)+ c,
-         \end{equation*}
-         luego 
-         \begin{equation*}
-         f(x) = a_n((x-c)+ c)^n + a_{n-1}((x-c)+ c)^{n-1}+\cdots + a_1((x-c)+ c) +a_0.
-         \end{equation*}
-         Expandiendo las potencias de los binomios $((x-c)+ c)^k$ ($1 \le k \le n$),  obtenemos
-         \begin{equation*}
-         f(x) = b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c) +b_0,
-         \end{equation*}
-         para ciertos $b_0, b_1,\ldots ,b_n \in \K$. Como $f(c) = 0$,  entonces $0=f(c)=b_0$,  luego 
-         \begin{align*}
-             f(x) &= b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c) \\
-             &= (x-c)(b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1) \\
-             &=(x-c)g(x),
-         \end{align*}
-         con $g(x) =b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1$,  que es una función polinómica de grado $\le n-1$, y vemos que nuestro teorema está probado.
+            \begin{equation*}
+                f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0.
+            \end{equation*}
+            Veremos a continuación que $f$ puede también escribirse en potencias de $x-c$: escribamos 
+            \begin{equation*}
+                x = (x-c)+ c,
+            \end{equation*}
+            luego 
+            \begin{equation*}
+            f(x) = a_n((x-c)+ c)^n + a_{n-1}((x-c)+ c)^{n-1}+\cdots + a_1((x-c)+ c) +a_0.
+            \end{equation*}
+            Expandiendo las potencias de los binomios $((x-c)+ c)^k$ ($1 \le k \le n$),  obtenemos
+            \begin{equation*}
+            f(x) = b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c) +b_0,
+            \end{equation*}
+            para ciertos $b_0, b_1,\ldots ,b_n \in \K$. Como $f(c) = 0$,  entonces $0=f(c)=b_0$,  luego 
+            \begin{align*}
+                f(x) &= b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c) \\
+                &= (x-c)(b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1) \\
+                &=(x-c)g(x),
+            \end{align*}
+            con $g(x) =b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1$,  que es una función polinómica de grado $\le n-1$, y vemos que nuestro teorema está probado.
         \end{proof}
             
         El polinomio $f$ es el \textit{polinomio nulo} si $f(x)=0$ para toda $x \in \K$. Si $f$ es el polinomio nulo,  denotamos $f =0$. 
@@ -460,15 +447,14 @@
             \end{equation*} 
             Es decir $x$ es raíz de $f$ si y solo si $x=c$ o $x$ es raíz de $g$. Como $g$ tiene a lo más $n-1$ raíces,  $f$ tiene a lo más $n$ raíces.
         \end{proof}
-        
 
         Observemos que si $f$ y $g$ son polinomios con   
         \begin{equation*}
-        f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_nx^n +\cdots + b_1x +b_0,
+            f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_nx^n +\cdots + b_1x +b_0,
         \end{equation*}
         entonces como $ax^i + b x^i = (a+b)x^i$, tenemos que $f+g$ es un polinomio definido por 
         \begin{equation*}
-        (f + g)(x) = (a_n+b_n)x^n + \cdots + (a_1+b_1)x +(a_0+b_0).
+            (f + g)(x) = (a_n+b_n)x^n + \cdots + (a_1+b_1)x +(a_0+b_0).
         \end{equation*}
         Por otro  lado,  debido  a que $(ax^i)(bx^j) = abx^{i+j}$, el producto de dos polinomios también es un polinomio y el cálculo de los coeficientes de $fg$  se hace aplicando la propiedad distributiva. Más precisamente,
         \begin{equation*}
@@ -491,8 +477,6 @@
             con $h(x)$ un polinomio de grado menor a $n+m$. Por lo tanto, el coeficiente principal de $fg$ es $a_nb_m \ne 0$ y,  en consecuencia $fg$ tiene grado $n+m$.
         \end{proof}
     
-        
-            
         \begin{ejemplo*} Sean $f(x) = 4x^3 - 3x^2 + x + 2$ y $g(x) = x^2 + 1$. Entonces,
             \begin{align*}
                 (f+g)(x) &= (4+0)x^3 +(-3 +1)x^2 + (1+0)x + (2+1)\\
@@ -500,16 +484,16 @@
             \end{align*}
             y
             \begin{align*}
-            (fg)(x) &= (4x^3 - 3x^2 + x + 2)(x^2 + 1)\\
-            &= (4x^3 - 3x^2 + x + 2)x^2 + (4x^3 - 3x^2 + x + 2)1\\
-            &= 4x^5 - 3x^4 + x^3 + 2x^2 + 4x^3 - 3x^2 + x + 2 \\
-            &= 4x^5 - 3x^4 + 5x^3 - x^2 + x + 2
+                (fg)(x) &= (4x^3 - 3x^2 + x + 2)(x^2 + 1)\\
+                &= (4x^3 - 3x^2 + x + 2)x^2 + (4x^3 - 3x^2 + x + 2)1\\
+                &= 4x^5 - 3x^4 + x^3 + 2x^2 + 4x^3 - 3x^2 + x + 2 \\
+                &= 4x^5 - 3x^4 + 5x^3 - x^2 + x + 2
             \end{align*}
         \end{ejemplo*}
-        
-    
+
         \end{section}
-    
+
+
         \begin{section}{División de polinomios}\label{seccion-division-de-polinomios} Si $f$ y $g$ son polinomios,  entonces no necesariamente la función $f/g$ está bien definida en todo punto y puede que tampoco sea un polinomio. Cuando trabajamos con enteros, en cursos anteriores,  probamos la existencia del algoritmo de división, más precisamente.
             
             \textit{Sean $n$, $d$ enteros positivos. Entonces existe un entero $r$ tal que
@@ -585,19 +569,19 @@
         \end{section}	
 
         \end{chapter}	
-\begin{comment}
-    \begin{chapter}{Multiplicación de polinomios por FFT}\label{apend.FFT}
+
+\begin{chapter}{Multiplicación de polinomios por FFT}\label{apend.FFT}
     
 
-        Como vimos en \ref{seccion-definicion-polinomios} el producto de polinomios se calcula usando  que $x^ix^j = x^{i+j}$ y la propiedad distributiva. Si un polinomio tiene grado $n$ y el otro  tiene grado $m$,  entonces son necesarias $nm$ multiplicaciones de coeficientes (``todos contra todos''). 
+    Como vimos en \ref{seccion-definicion-polinomios} el producto de polinomios se calcula usando  que $x^ix^j = x^{i+j}$ y la propiedad distributiva. Si un polinomio tiene grado $n$ y el otro  tiene grado $m$,  entonces son necesarias $nm$ multiplicaciones de coeficientes (``todos contra todos''). 
         
-        También puede plantearse de esta forma:  si necesitamos multiplicar polinomios de grado $n$  entonces la multiplicación de dos polinomios requiere $n^2$ multiplicaciones. Como la multiplicación es la operación más costosa del procedimiento, podemos decir  que  multiplicar dos polinomios de grado $n$ requiere \textit{alrededor de  $n^2$ operaciones.}
+    También puede plantearse de esta forma:  si necesitamos multiplicar polinomios de grado $n$  entonces la multiplicación de dos polinomios requiere $n^2$ multiplicaciones. Como la multiplicación es la operación más costosa del procedimiento, podemos decir  que  multiplicar dos polinomios de grado $n$ requiere \textit{alrededor de  $n^2$ operaciones.}
 
-        Este nivel de complejidad ($n^2$) parece ser razonable a nivel computacional, pero  si los polinomios a multiplicar tiene grados muy altos puede ser necesario contar con métodos más rápidos, o que requieran menos operaciones. En  este apéndice mostraremos la multiplicación de polinomios usando la trasformada de Fourier discreta implementándola con la transformada rápida de Fourier (FFT) y mostraremos que usando este método se puede multiplicar dos polinomios de grado $n$ en \textit{alrededor de  $n\log_2(n)$ operaciones.}  
+    Este nivel de complejidad ($n^2$) parece ser razonable a nivel computacional, pero  si los polinomios a multiplicar tiene grados muy altos puede ser necesario contar con métodos más rápidos, o que requieran menos operaciones. En  este apéndice mostraremos la multiplicación de polinomios usando la trasformada de Fourier discreta implementándola con la transformada rápida de Fourier (FFT) y mostraremos que usando este método se puede multiplicar dos polinomios de grado $n$ en \textit{alrededor de  $n\log_2(n)$ operaciones.}  
 
-        El  método se puede aplicar a cualquier grado, pero es mucho más fácil de explicar cuando el grado de los polinomios es una potencia de $2$  menos $1$. Como todo $n$ cumple que para algún $k$, $2^{k-1} \le n < 2^k$ es claro como podemos extender el método a cualquier polinomio. Por lo tanto, de ahora en más consideraremos polinomios de grado menor que $n$ donde  $n = 2^k$. 
+    El  método se puede aplicar a cualquier grado, pero es mucho más fácil de explicar cuando el grado de los polinomios es $2^k -1$  para algún $k \in \N$. Como todo $n$ cumple que para algún $k$, $2^{k-1} \le n < 2^k$ es claro como podemos extender el método a cualquier polinomio. Por lo tanto, de ahora en más consideraremos polinomios de grado menor que $n$ donde  $n = 2^k$. 
 
-\begin{section}{Representación de polinomios por valores}
+    \begin{section}{Representación de polinomios por valores}
     
         La primero observación importante es que todo polinomio de grado  $<n$  está determinado por $n$ valores que toma.
 
@@ -838,532 +822,518 @@ def FFT(f):
 \end{section}
 
         
-    \end{chapter}
-\end{comment}
+\end{chapter}
         
-        \begin{chapter}{Determinante}\label{apend.Determinante}
-            En  el apéndice se harán las demostraciones de los resultados correspondientes a la sección de determinantes (sección  \ref{seccion-determinate}).
-            
-            \begin{section}{Determinantes}\label{seccion-determinantes-demostraciones}
-                
-            Lo primero que veremos será la demostración del  teorema \ref{det-prop-fundamentales}. Los tres resultados de ese teorema los demostraremos en forma separada: serán los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3}.
-            
-            
-            \begin{teorema} \label{th-E1}
-                Sea $A  \in M_n(\K)$ y sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ multiplicando la fila $r$ por $c$, es decir $A  \stackrel{cF_r}{\longrightarrow} B$, entonces $\det B = c \det A$.
-            \end{teorema}
-            \begin{proof}
-                Si multiplicamos la fila $r$ por $c$ obtenemos
-                \begin{equation*}
-                B = \begin{bmatrix}
-                a_{11}&a_{12}&\cdots&a_{1n}\\
-                \vdots&&\ddots&\vdots \\
-                ca_{r1}&ca_{r2}&\cdots&ca_{rn} \\
-                \vdots&&\ddots&\vdots \\
-                a_{n1}&&\cdots&a_{nn}
-                \end{bmatrix}.
-                \end{equation*}
-                Observemos que al hacer el desarrollo por la primera columna obtenemos
-                \begin{equation*}
-                |B| = \sum_{i=1}^{r-1}  a_{i1}C^B_{1i} + ca_{r1}C^B_{r1} + \sum_{i=r+1}^{n}  a_{i1}C^B_{1i}.
-                \end{equation*}
-                Ahora bien, si $i \ne r$, la matriz $B(i|1)$ es la matriz   $A(i|1)$ con una fila multiplicada por $c$, luego $|B(i|1)| = c|A(i|1)|$ y, en consecuencia $C^B_{i1} = c\,C^A_{i1}$. Además, $B(r|1) = A(r|1)$, luego  $C^B_{r1} = C^A_{r1}$. Por lo tanto, reemplazando en la ecuación anterior $C^B_{i1}$ por $c\,C^A_{i1}$ si $i\ne r$ y $C^B_{r1}$ por $C^A_{r1}$, obtenemos
-                \begin{equation*}
-                |B| = \sum_{i=1}^{r-1}  a_{i1}c\,C^A_{1i} + ca_{r1}C^A_{r1} + \sum_{i=r+1}^{n}  a_{i1}cC^A_{1i} = c|A|.
-                \end{equation*}
-            \end{proof}
-            
-    
-                
-            \begin{lema}\label{lema-E2} Sean $A,B,C$ matrices $n \times n$ tal que
-                \begin{equation*}
-                A= \begin{bmatrix}
-                a_{11}&a_{12}&\cdots&a_{1n}\\
-                \vdots&\vdots&&\vdots \\
-                a_{r1}&a_{r2}&\cdots&a_{rn} \\
-                \vdots&\vdots&&\vdots \\
-                a_{n1}&a_{n2}&\cdots&a_{nn}
-                \end{bmatrix}, 
-                \quad B=  \begin{bmatrix}
-                a_{11}&a_{12}&\cdots&a_{1n}\\
-                \vdots&\vdots&&\vdots \\
-                b_{r1}&b_{r2}&\cdots&b_{rn} \\
-                \vdots&\vdots&&\vdots \\
-                a_{n1}&a_{n2}&\cdots&a_{nn}
-                \end{bmatrix}
-                \end{equation*}	
-                y
-                \begin{equation*}
-                C= \begin{bmatrix}
-                a_{11}&a_{12}&\cdots&a_{1n}\\
-                \vdots&\vdots&&\vdots \\
-                a_{r1}+b_{r1}&a_{r2}+b_{r2}&\cdots&a_{rn}+b_{rn} \\
-                \vdots&\vdots&&\vdots \\
-                a_{n1}&a_{n2}&\cdots&a_{nn}
-                \end{bmatrix}.
-                \end{equation*}
-                Es decir $B$ es igual a $A$ pero con la fila $r$ cambiada y $C$ es como $A$ y $B$ excepto en la fila $r$ donde cada coeficiente el la suma del de $A$ y $B$ correspondiente. Entonces $\det(C) = \det(A)+ \det(B)$.
-            \end{lema}
-            \begin{proof} Se hará por inducción en $n$. Para $n=1$, del resultado se reduce a probar que $\det[a+b] = \det[a]+ \det[b]$, lo cual es trivial, pues el determinante en matrices $1 \times 1$  es la identidad. 
-                
-                Primero consideremos el caso $r = 1$. En  este caso tenemos que  $A(1|1) =B(1|1) = C(1|1)$, pues en la única fila que difieren las matrices es en la primera. Además, si $i>1$,  $A(i|1)$,  $B(i|1)$ y $C(i|1)$ son iguales, excepto que difieren en la primera fila donde los coeficientes de $C(i|1)$ son la suma de los de  $A(i|1)$ y  $B(i|1)$,  entonces, por hipótesis inductiva, 
-                $\det C(i|1) = \det A(i|1) + \det B(i|1)$. Concluyendo, tenemos que
-                \begin{align*}
-                \det A(1|1) &=\det B(1|1) =\det  C(1|1),&& \\ \det C(i|1) &= \det A(i|1) + \det B(i|1), \qquad i>1&&,
-                \end{align*}
-                lo cual implica que 
-                \begin{align*}
-                C^C_{11}&= C^A_{11} = C^B_{11} ,&& \\ C^C_{i1} &= C^A_{i1} + C^B_{i1}, \qquad i>1&&.
-                \end{align*}
-                Luego
-                \begin{align*}
-                \det C &= (a_{11}+b_{11}) C^C_{11} + \sum_{i=2}^{n} a _{i1}C^C_{i1} \\
-                &= a_{11} C^C_{11} + b_{11}  C^C_{11}+ \sum_{i=2}^{n} a _{i1}( C^A_{i1} + C^B_{i1}) \\
-                &= a_{11} C^A_{11} + b_{11}  C^B_{11}+ \sum_{i=2}^{n} a _{i1}( C^A_{i1} + C^B_{i1}) \\
-                &= a_{11} C^A_{11} +\sum_{i=2}^{n} a _{i1}C^A_{i1} + b_{11}  C^B_{11}+ \sum_{i=2}^{n} a _{i1} C^B_{i1}\\
-                &= \det A + \det B.
-                \end{align*}
-                
-                El caso $r >1$ se demuestra de manera similar o,  si se prefiere, puede usarse el teorema \ref{th-E3}, observando que la permutación entre la fila $1$ y la fila $r$ cambia el signo del determinante.  
-            \end{proof}
+\begin{chapter}{Determinante}\label{apend.Determinante}
+    En  el apéndice se harán las demostraciones de los resultados correspondientes a la sección de determinantes (sección  \ref{seccion-determinate}).
+
+    \begin{section}{Determinantes}\label{seccion-determinantes-demostraciones}
         
-            \begin{teorema}\label{th-E2}
-                Sea $A  \in M_n(\K)$. Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ sumando a la fila $r$ la fila $s$ multiplicada por $c$, es decir  $A  \stackrel{F_r + cF_s}{\longrightarrow} B$, entonces $\det B = \det A$.
-            \end{teorema}
-            \begin{proof}
-                $A$ y $B$ difieren solo en la fila $r$, donde los coeficientes de $B$ son los los de $A$ más $c$ por los de la fila $s$. Luego si 
-                \begin{equation*}
-                A = \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_r \\ \vdots \\ F_n \end{bmatrix}, \qquad 
-                B = \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_r + cF_s \\ \vdots \\ F_n \end{bmatrix},\qquad 
-                A'= \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ cF_s \\ \vdots \\ F_n \end{bmatrix},
-                \end{equation*}
-                el lema anterior nos dice que 
-                \begin{equation}
-                \det B = \det A + \det A'.
-                \end{equation}
-                Ahora bien, por teorema \ref{th-E1}, 
-                $$
-                \det A' = c \left| \begin{matrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_s \\ \vdots \\ F_n \end{matrix} \right|,
-                $$
-                y este último determinante es cero, debido a que la matriz tiene dos filas iguales. Luego,  $\det B = \det A$. 
-            \end{proof}
+        Lo primero que veremos será la demostración del  teorema \ref{det-prop-fundamentales}. Los tres resultados de ese teorema los demostraremos en forma separada: serán los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3}.
+
+
+        \begin{teorema} \label{th-E1}
+            Sea $A  \in M_n(\K)$ y sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ multiplicando la fila $r$ por $c$, es decir $A  \stackrel{cF_r}{\longrightarrow} B$, entonces $\det B = c \det A$.
+        \end{teorema}
+        \begin{proof}
+            Si multiplicamos la fila $r$ por $c$ obtenemos
+            \begin{equation*}
+            B = \begin{bmatrix}
+            a_{11}&a_{12}&\cdots&a_{1n}\\
+            \vdots&&\ddots&\vdots \\
+            ca_{r1}&ca_{r2}&\cdots&ca_{rn} \\
+            \vdots&&\ddots&\vdots \\
+            a_{n1}&&\cdots&a_{nn}
+            \end{bmatrix}.
+            \end{equation*}
+            Observemos que al hacer el desarrollo por la primera columna obtenemos
+            \begin{equation*}
+            |B| = \sum_{i=1}^{r-1}  a_{i1}C^B_{1i} + ca_{r1}C^B_{r1} + \sum_{i=r+1}^{n}  a_{i1}C^B_{1i}.
+            \end{equation*}
+            Ahora bien, si $i \ne r$, la matriz $B(i|1)$ es la matriz   $A(i|1)$ con una fila multiplicada por $c$, luego $|B(i|1)| = c|A(i|1)|$ y, en consecuencia $C^B_{i1} = c\,C^A_{i1}$. Además, $B(r|1) = A(r|1)$, luego  $C^B_{r1} = C^A_{r1}$. Por lo tanto, reemplazando en la ecuación anterior $C^B_{i1}$ por $c\,C^A_{i1}$ si $i\ne r$ y $C^B_{r1}$ por $C^A_{r1}$, obtenemos
+            \begin{equation*}
+            |B| = \sum_{i=1}^{r-1}  a_{i1}c\,C^A_{1i} + ca_{r1}C^A_{r1} + \sum_{i=r+1}^{n}  a_{i1}cC^A_{1i} = c|A|.
+            \end{equation*}
+        \end{proof}
+
+
             
-            \begin{teorema} \label{th-E3}
-                Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
-                Sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} B$, entonces $\det B = -\det A$.
-            \end{teorema}
-            \begin{proof}
-                Primero probaremos el teorema bajo el supuesto de que la fila $1$ es permutada con la fila $k$, para $k > 1$. Esto será suficiente para probar el teorema, puesto que intercambiar las filas $k$ y $k_ 0$ es equivalente a realizar tres permutaciones de filas: primero intercambiamos las filas $1$ y $k$, luego las filas $1$ y $k_{0}$, y finalmente intercambiando las filas $1$ y $k$. Cada permutación cambia el signo del determinante y al ser tres permutaciones,  el intercambio de la fila $k$ con la fila $k_0$ cambia el signo.
-                
-                
-                La prueba es por inducción en $n$. El caso base $n = 1$ es completamente trivial.
-                (O, si lo prefiere, puede tomar $n = 2$ como el caso base, y el teorema es
-                fácilmente probado usando la fórmula para el determinante de una matriz $2 \times 2$).
-                Las definiciones de los determinantes de $A$ y $B$ son:
-                \begin{equation*}
-                \det(A) = \sum_{i=1}^{n}  a_{i1}C^A_{i1} \quad \text{ y } \quad \det(B) = \sum_{i=1}^{n}  b_{i1}C^B_{i1}.
-                \end{equation*}
-                
-                
-                Supongamos primero que $i \ne 1, k$. En este caso, está claro que $A(i|1)$ y $B(i|1)$ son iguales, excepto que dos filas se intercambian. Por lo tanto, por hipótesis inductiva $C^A_{i1} = -C^B_{i1}$. Ya que también $a_{i1} = b_{i1}$, tenemos entonces que
-                \begin{equation}\label{det-perm-01}
-                a_{i1}C^A_{i1} = - b_{i1}C^B_{i1}, \quad \text{ para } i\ne 1,k.
-                \end{equation}
-                
-                Queda por considerar los términos $i = 1$ y $i = k$. Nosotros afirmamos que
-                \begin{equation}\label{det-perm-02}
-                -	a_{k1}C^A_{k1} =  b_{11}C^B_{11}  \quad \text{ y } \quad - a_{11}C^A_{11} = b_{k1}C^B_{k1}. 
-                \end{equation}
-                Si probamos esto, entonces 
-                \begin{align*}
-                \det(A) &= \sum_{i=1}^{n}  a_{i1}C^A_{i1} \\
-                &= a_{11}C^A_{11} +  \sum_{i=2}^{k-1}  a_{i1}C^A_{i1} + a_{k1}C^A_{k1} + \sum_{i=k+1}^{n}  a_{i1}C^A_{i1}\qquad \text{\eqref{det-perm-01} y \eqref{det-perm-02}} \\
-                &= -b_{k1}C^B_{k1} - \sum_{i=2}^{k-1}  b_{i1}C^B_{i1} - b_{11}C^B_{11} - \sum_{i=k+1}^{n}  b_{i1}C^B_{i1}  \\
-                &= - \sum_{i=1}^{n}  b_{i1}C^B_{i1} =- \det(B).
-                \end{align*}
-                Luego el teorema está probado. Por lo tanto debemos probar \eqref{det-perm-02}. Por simetría, basta probar la primera identidad de \eqref{det-perm-02},  es decir  que $	a_{k1}C^A_{k1} = - b_{11}C^B_{11}$. 
-                
-                Para esto, primero debemos observar que $a_{k1} = b_{11}$, por lo tanto sólo hace falta probar que $-C^A_{k1} = C^B_{11}$. En segundo lugar, debemos tener  en cuenta que $B(1|1)$ se obtiene de $A(k|1)$ reordenando las filas $1,2,\ldots, k -1$  de $A(k|1)$ en el orden $2,3, \ldots, k-1,1$. Este reordenamiento puede hacerse permutando la fila $1$ con la fila $2$, luego permutando esa fila con la fila $3$, etc., terminando con una permutación con la fila $k-1$. Esto es un total de $k - 2$  permutaciones de fila. Asi que, por hipótesis inductiva,
-                \begin{align*}
-                \det(B(1|1)) &= (-1)^{k-2}\det(A(k|1)) = (-1)^{k}\det(A(k|1))\\ 
-                &= - (-1)^{k+1}\det(A(k|1)), 
-                \end{align*}
-                es decir $C^B_{11} = -C^A_{k1}$. Esto completa la demostración del teorema.
-            \end{proof}
+        \begin{lema}\label{lema-E2} Sean $A,B,C$ matrices $n \times n$ tal que
+            \begin{equation*}
+            A= \begin{bmatrix}
+            a_{11}&a_{12}&\cdots&a_{1n}\\
+            \vdots&\vdots&&\vdots \\
+            a_{r1}&a_{r2}&\cdots&a_{rn} \\
+            \vdots&\vdots&&\vdots \\
+            a_{n1}&a_{n2}&\cdots&a_{nn}
+            \end{bmatrix}, 
+            \quad B=  \begin{bmatrix}
+            a_{11}&a_{12}&\cdots&a_{1n}\\
+            \vdots&\vdots&&\vdots \\
+            b_{r1}&b_{r2}&\cdots&b_{rn} \\
+            \vdots&\vdots&&\vdots \\
+            a_{n1}&a_{n2}&\cdots&a_{nn}
+            \end{bmatrix}
+            \end{equation*}	
+            y
+            \begin{equation*}
+            C= \begin{bmatrix}
+            a_{11}&a_{12}&\cdots&a_{1n}\\
+            \vdots&\vdots&&\vdots \\
+            a_{r1}+b_{r1}&a_{r2}+b_{r2}&\cdots&a_{rn}+b_{rn} \\
+            \vdots&\vdots&&\vdots \\
+            a_{n1}&a_{n2}&\cdots&a_{nn}
+            \end{bmatrix}.
+            \end{equation*}
+            Es decir $B$ es igual a $A$ pero con la fila $r$ cambiada y $C$ es como $A$ y $B$ excepto en la fila $r$ donde cada coeficiente el la suma del de $A$ y $B$ correspondiente. Entonces $\det(C) = \det(A)+ \det(B)$.
+        \end{lema}
+        \begin{proof} Se hará por inducción en $n$. Para $n=1$, del resultado se reduce a probar que $\det[a+b] = \det[a]+ \det[b]$, lo cual es trivial, pues el determinante en matrices $1 \times 1$  es la identidad. 
+            
+            Primero consideremos el caso $r = 1$. En  este caso tenemos que  $A(1|1) =B(1|1) = C(1|1)$, pues en la única fila que difieren las matrices es en la primera. Además, si $i>1$,  $A(i|1)$,  $B(i|1)$ y $C(i|1)$ son iguales, excepto que difieren en la primera fila donde los coeficientes de $C(i|1)$ son la suma de los de  $A(i|1)$ y  $B(i|1)$,  entonces, por hipótesis inductiva, 
+            $\det C(i|1) = \det A(i|1) + \det B(i|1)$. Concluyendo, tenemos que
+            \begin{align*}
+            \det A(1|1) &=\det B(1|1) =\det  C(1|1),&& \\ \det C(i|1) &= \det A(i|1) + \det B(i|1), \qquad i>1&&,
+            \end{align*}
+            lo cual implica que 
+            \begin{align*}
+            C^C_{11}&= C^A_{11} = C^B_{11} ,&& \\ C^C_{i1} &= C^A_{i1} + C^B_{i1}, \qquad i>1&&.
+            \end{align*}
+            Luego
+            \begin{align*}
+            \det C &= (a_{11}+b_{11}) C^C_{11} + \sum_{i=2}^{n} a _{i1}C^C_{i1} \\
+            &= a_{11} C^C_{11} + b_{11}  C^C_{11}+ \sum_{i=2}^{n} a _{i1}( C^A_{i1} + C^B_{i1}) \\
+            &= a_{11} C^A_{11} + b_{11}  C^B_{11}+ \sum_{i=2}^{n} a _{i1}( C^A_{i1} + C^B_{i1}) \\
+            &= a_{11} C^A_{11} +\sum_{i=2}^{n} a _{i1}C^A_{i1} + b_{11}  C^B_{11}+ \sum_{i=2}^{n} a _{i1} C^B_{i1}\\
+            &= \det A + \det B.
+            \end{align*}
+            
+            El caso $r >1$ se demuestra de manera similar o,  si se prefiere, puede usarse el teorema \ref{th-E3}, observando que la permutación entre la fila $1$ y la fila $r$ cambia el signo del determinante.  
+        \end{proof}
+
+        \begin{teorema}\label{th-E2}
+            Sea $A  \in M_n(\K)$. Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ sumando a la fila $r$ la fila $s$ multiplicada por $c$, es decir  $A  \stackrel{F_r + cF_s}{\longrightarrow} B$, entonces $\det B = \det A$.
+        \end{teorema}
+        \begin{proof}
+            $A$ y $B$ difieren solo en la fila $r$, donde los coeficientes de $B$ son los los de $A$ más $c$ por los de la fila $s$. Luego si 
+            \begin{equation*}
+            A = \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_r \\ \vdots \\ F_n \end{bmatrix}, \qquad 
+            B = \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_r + cF_s \\ \vdots \\ F_n \end{bmatrix},\qquad 
+            A'= \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ cF_s \\ \vdots \\ F_n \end{bmatrix},
+            \end{equation*}
+            el lema anterior nos dice que 
+            \begin{equation}
+            \det B = \det A + \det A'.
+            \end{equation}
+            Ahora bien, por teorema \ref{th-E1}, 
+            $$
+            \det A' = c \left| \begin{matrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_s \\ \vdots \\ F_n \end{matrix} \right|,
+            $$
+            y este último determinante es cero, debido a que la matriz tiene dos filas iguales. Luego,  $\det B = \det A$. 
+        \end{proof}
+
+        \begin{teorema} \label{th-E3}
+            Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
+            Sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} B$, entonces $\det B = -\det A$.
+        \end{teorema}
+        \begin{proof}
+            Primero probaremos el teorema bajo el supuesto de que la fila $1$ es permutada con la fila $k$, para $k > 1$. Esto será suficiente para probar el teorema, puesto que intercambiar las filas $k$ y $k_ 0$ es equivalente a realizar tres permutaciones de filas: primero intercambiamos las filas $1$ y $k$, luego las filas $1$ y $k_{0}$, y finalmente intercambiando las filas $1$ y $k$. Cada permutación cambia el signo del determinante y al ser tres permutaciones,  el intercambio de la fila $k$ con la fila $k_0$ cambia el signo.
+            
+            
+            La prueba es por inducción en $n$. El caso base $n = 1$ es completamente trivial.
+            (O, si lo prefiere, puede tomar $n = 2$ como el caso base, y el teorema es
+            fácilmente probado usando la fórmula para el determinante de una matriz $2 \times 2$).
+            Las definiciones de los determinantes de $A$ y $B$ son:
+            \begin{equation*}
+            \det(A) = \sum_{i=1}^{n}  a_{i1}C^A_{i1} \quad \text{ y } \quad \det(B) = \sum_{i=1}^{n}  b_{i1}C^B_{i1}.
+            \end{equation*}
+            
+            
+            Supongamos primero que $i \ne 1, k$. En este caso, está claro que $A(i|1)$ y $B(i|1)$ son iguales, excepto que dos filas se intercambian. Por lo tanto, por hipótesis inductiva $C^A_{i1} = -C^B_{i1}$. Ya que también $a_{i1} = b_{i1}$, tenemos entonces que
+            \begin{equation}\label{det-perm-01}
+            a_{i1}C^A_{i1} = - b_{i1}C^B_{i1}, \quad \text{ para } i\ne 1,k.
+            \end{equation}
+            
+            Queda por considerar los términos $i = 1$ y $i = k$. Nosotros afirmamos que
+            \begin{equation}\label{det-perm-02}
+            -	a_{k1}C^A_{k1} =  b_{11}C^B_{11}  \quad \text{ y } \quad - a_{11}C^A_{11} = b_{k1}C^B_{k1}. 
+            \end{equation}
+            Si probamos esto, entonces 
+            \begin{align*}
+            \det(A) &= \sum_{i=1}^{n}  a_{i1}C^A_{i1} \\
+            &= a_{11}C^A_{11} +  \sum_{i=2}^{k-1}  a_{i1}C^A_{i1} + a_{k1}C^A_{k1} + \sum_{i=k+1}^{n}  a_{i1}C^A_{i1}\qquad \text{\eqref{det-perm-01} y \eqref{det-perm-02}} \\
+            &= -b_{k1}C^B_{k1} - \sum_{i=2}^{k-1}  b_{i1}C^B_{i1} - b_{11}C^B_{11} - \sum_{i=k+1}^{n}  b_{i1}C^B_{i1}  \\
+            &= - \sum_{i=1}^{n}  b_{i1}C^B_{i1} =- \det(B).
+            \end{align*}
+            Luego el teorema está probado. Por lo tanto debemos probar \eqref{det-perm-02}. Por simetría, basta probar la primera identidad de \eqref{det-perm-02},  es decir  que $	a_{k1}C^A_{k1} = - b_{11}C^B_{11}$. 
+            
+            Para esto, primero debemos observar que $a_{k1} = b_{11}$, por lo tanto sólo hace falta probar que $-C^A_{k1} = C^B_{11}$. En segundo lugar, debemos tener  en cuenta que $B(1|1)$ se obtiene de $A(k|1)$ reordenando las filas $1,2,\ldots, k -1$  de $A(k|1)$ en el orden $2,3, \ldots, k-1,1$. Este reordenamiento puede hacerse permutando la fila $1$ con la fila $2$, luego permutando esa fila con la fila $3$, etc., terminando con una permutación con la fila $k-1$. Esto es un total de $k - 2$  permutaciones de fila. Asi que, por hipótesis inductiva,
+            \begin{align*}
+            \det(B(1|1)) &= (-1)^{k-2}\det(A(k|1)) = (-1)^{k}\det(A(k|1))\\ 
+            &= - (-1)^{k+1}\det(A(k|1)), 
+            \end{align*}
+            es decir $C^B_{11} = -C^A_{k1}$. Esto completa la demostración del teorema.
+        \end{proof}
             
         \begin{observacion*}
             Del resultado anterior se deduce fácilmente que si una matriz tiene dos filas iguales entonces su determinante es 0. Esto se debe a que, intercambiando las dos filas iguales obtenemos la misma matriz, pero calculando el determinante con el teorema anterior vemos que cambia de signo y el único número en $\K$ que es igual a su opuesto es el 0. 
         \end{observacion*}
     
-    \begin{corolario}\label{cor-det-elemental} Consideremos matrices elementales en $\K^{n \times n}$. 
-        \begin{enumerate}
-            \item\label{cor-det-E1} Sea $E$ la matriz elemental que se obtiene  multiplicando por $c\ne 0$ la matriz $\Id_n$.  Entonces $\det(E) = c$. 
-            \item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$  sumando $c$ veces $F_r$  a $F_s$ ($r\ne s$).  Entonces $det(E) = 1$.
-            \item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ de permutando la $F_r$ con  $F_s$ ($r\ne s$).  Entonces $\det(E)=-1$. 
-        \end{enumerate}
-    \end{corolario}
+        \begin{corolario}\label{cor-det-elemental} Consideremos matrices elementales en $\K^{n \times n}$. 
+            \begin{enumerate}
+                \item\label{cor-det-E1} Sea $E$ la matriz elemental que se obtiene  multiplicando por $c\ne 0$ la matriz $\Id_n$.  Entonces $\det(E) = c$. 
+                \item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$  sumando $c$ veces $F_r$  a $F_s$ ($r\ne s$).  Entonces $det(E) = 1$.
+                \item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ de permutando la $F_r$ con  $F_s$ ($r\ne s$).  Entonces $\det(E)=-1$. 
+            \end{enumerate}
+        \end{corolario}
+        \begin{proof}
+            Se  demuestra trivialmente considerando que en todos los casos $E=e(\Id_n)$ donde $e$  es una operación elemental por fila,  considerando  que $\det(\Id_n)=1$  y aplicando los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3},  según corresponda.
+        \end{proof}
     
-    \begin{proof}
-        Se  demuestra trivialmente considerando que en todos los casos $E=e(\Id_n)$ donde $e$  es una operación elemental por fila,  considerando  que $\det(\Id_n)=1$  y aplicando los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3},  según corresponda.
-    \end{proof}
-    
-             A continuación veremos que el determinante del producto de matrices es el producto de los determinantes de las matrices. 
-             
-             \begin{teorema}\label{det-elem-por-mtrx} Sea $A  \in M_n(\K)$ y $E$ una matriz elemental $n \times n$. Entonces
-                 \begin{equation}\label{det-prod-elem-matr}
-                 \det (EA) = \det E \det A.
-                 \end{equation}  
-             \end{teorema}
-             \begin{proof} 
-                En todos los casos $EA = e(A)$ donde $e$  es una operación elemental por fila (teorema \ref{th-mrtx-elem}). 
-                
-                
-                 (1) Si $c \not=0$, y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, luego
-                 \begin{equation*}
-                     det(EA) = det(e(A)) \stackrel{\text{Teor. }\ref{th-E1}}{=} c \cdot det(A)  \stackrel{\text{Cor. }\ref{cor-det-elemental}.\ref{cor-det-E1}}{=} det(E) det(A). 
-                 \end{equation*}
-                 
-                 
-                 (2) Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$  la fila $s$ multiplicada por $c$, entonces $\det E =1$. Por  otro lado  $\det(EA) = \det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
-                 
-                 (3) Finalmente, si $E$ es la matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$, entonces $\det E=-1$. Por  otro lado  $\det(EA) = -\det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
-             \end{proof}
-             
-             \begin{corolario}\label{coro-det-prod-elem-mtrx}
-                 Sea $A  \in M_n(\K)$ y $E_1,\ldots,E_k$ matrices elementales $n \times n$. Entonces
-                 \begin{equation*}
-                 \det (E_kE_{k-1}\ldots E_1A) = \det (E_k) \det (E_{k-1})\ldots \det (E_1) \det (A).
-                 \end{equation*}  
-             \end{corolario}
-             \begin{proof}
-                 Por  la aplicación reiterada del teorema \ref{det-elem-por-mtrx} tenemos, 
-                 \begin{equation*}
-                 \begin{matrix*}[l]
-                 \det (E_kE_{k-1}\ldots E_1A) &= \det (E_k) \det(E_{k-1}\ldots E_1 A) \\
-                 &= \det( E_k) \det(E_{k-1})\det(E_{k-2}\ldots E_1A) \\
-                 &\qquad\quad \vdots \\
-                 & = \det( E_k) \det(E_{k-1})\det(E_{k-2})\ldots \det(E_1) \det(A).
-                 \end{matrix*}		
-                 \end{equation*}
-             \end{proof}
-             
-    
-    
-             \begin{teorema}\label{th-det-matriz-invertible}
-                $A \in \K^{n \times n}$ es invertible si y solo si $\det(A) \ne 0$.
-            \end{teorema}
-            \begin{proof}
-                ($\Rightarrow$)  $A$ invertible, luego por el  teorema \ref{mtrx-inv-equiv}, $A$ es producto de matrices elementales, es decir  $A = E_1 E_2 \cdots E_k$  donde $E_1, E_2, \ldots, E_k$ son matrices elementales. 
-                
-                Por el corolario anterior,  $\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)$. Como el determinante de matrices elementales es distinto de cero, $$\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)\ne 0.$$
-        
-                ($\Leftarrow$) Sean $E_1, E_2, \ldots, E_k$ matrices elementales tales que $R = E_1 E_2 \cdots E_k A$ y $R$ es MERF. Luego,
-                \begin{equation*}
-                    \det(R) = \det(E_1) \det(E_2) \cdots \det(E_k) \det(A). 
-                \end{equation*}
-                Como los determinantes de matrices  elementales son no nulos
-        \begin{equation*}
-            \frac{\det(R)}{\det(E_1) \det(E_2) \cdots \det(E_k) } = \det(A). \tag{*}
-        \end{equation*}
-    
-        
-        Supongamos que $R$ no es la identidad.  Entonces, por el corolario \ref{cor-det-merf}, $\det(R) =0$,  por lo tanto, $\det(A)=0$, lo cual contradice la hipótesis y llegamos a un absurdo. 
-    
-        Esto implica que  $R= \Id_n$ y en consecuencia  $A$ es equivalente por filas a $\Id_n$ y por lo tanto  invertible.
-            \end{proof}
-             
-        
-             \begin{teorema}\label{th-dem-detAB}  Sean $A,B \in M_n(\K)$,  entonces
-            $$\det (A B) = \det(A)\det(B).$$
-             \end{teorema}
-             \begin{proof} 	Separemos la prueba en dos casos  $A$ es invertible  y  $A$ no es invertible.
-    
-                \textit{$A$ invertible.} Entonces $A= E_1\cdots E_k$ producto de matrices elementales. Por lo tanto  $AB =  E_1\cdots E_kB$, luego por el corolario \ref{coro-det-prod-elem-mtrx}  $\det(AB) =  \det(E_1)\cdots \det(E_k)\det(B) = \det(A)\det(B)$. 
-                
-                \textit{$A$ no invertible.}  Entonces $A$  es equivalente por filas a una MERF $R$ con la última fila nula. Es decir $R =E_1\cdots E_kA$ y $R$ tiene la última fila nula, por  lo tanto $A=  E_k^{-1}E_{k-1}^{-1}\ldots E_1^{-1}R$. 
-                
-                Como $R$ tiene la última fila nula, no es difícil ver que  $RB$ tiene tiene también la última fila nula y por lo tanto $\det(RB)=0$. Luego 
-                 $$
-                 \det(AB) = \det( E_k^{-1}) \ldots \det(E_1^{-1})\det(RB) =0.
-                 $$
-                 Como  $\det(A)=0$, tenemos también qure 
-                 $$
-                 \det(A)\det(B) =0.
-                 $$  
-             \end{proof}
-             
-             Haremos ahora la demostración del teorema \ref{det-a-trans}. 
-             
-             \begin{teorema}
-                 Sea $E$ matriz elemental, entonces $E^\t$ es matriz elemental del mismo tipo y $\det(E) = \det(E^\t)$.
-             \end{teorema}
-             \begin{proof}
-                 Si $c \not=0$ y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, es claro que $E^t = E$ y por lo tanto 	$\det(E) = \det(E^\t)$.
-                 
-                 Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$ la fila $s$ multiplicada por $c \in \K$,  entonces  $E^\t$  es la matriz elemental que se obtiene de sumar a la fila $s$ de $\Id_n$ la fila $r$ multiplicada por $c$. Luego,   $\det(E) = \det(E^\t) = 1$.
-                 
-                 Finalmente, si $E$ es la  matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$,entonces $E^\t = E$ y por lo tanto $\det(E) = \det(E^\t)$.
-             \end{proof}
-             
-    
-             
-             \begin{teorema}\label{th-det-a-trans-app} 
-                 Sea $A \in M_n(\K)$,  entonces 
-                 $\det(A) = \det(A^\t)$
-             \end{teorema}
-             \begin{proof}
-                 Si $A$ es invertible, entonces  $A = E_kE_{k-1}\ldots E_1$ con $E_i$ elemental, por lo tanto $\det(A) = \det( E_k)\det(E_{k-1})\ldots \det(E_1)$. Luego,
-                 \begin{align*}
-                 \det(A^\t) &= \det(E_1^\t \ldots E_k^\t) = \det(E_1^\t) \ldots \det(E_k^\t) = 
-                 \det(E_1) \ldots \det(E_k) \\&= \det(A).
-                 \end{align*}
-                 Si $A$ no es invertible, entonces $A^\t$ no es invertible y en ese caso $\det(A) = \det(A^\t)=0$.
-             \end{proof}
-             
-             Finalmente,  demostremos el teorema \ref{th-expancion-cofactores}.
-        
-             \begin{teorema}\label{th-dessarrollo-por-columnas} El determinante de una matriz $A$ de orden $n \times n$ puede ser calculado por la expansión de los cofactores en  cualquier columna o cualquier fila. Más específicamente, 
-                 \begin{enumerate}
-                     \item\label{itm-des-col-1} si usamos la expansión por la $j$-ésima columna, $1 \le j \le n$, tenemos
-                     \begin{align*}
-                     \det A &= \sum_{i=1}^{n} a_{ij} C_{ij} \\
-                     & = a_{1j}C_{1j}+a_{2j}C_{2j}+\cdots+a_{nj}C_{nj}.
-                     \end{align*} 
-                     \item\label{itm-des-col-2} si usamos la expansión por la $i$-ésima fila, $1 \le i \le n$, tenemos
-                     \begin{align*}
-                     \det A &= \sum_{j=1}^{n} a_{ij} C_{ij} \\
-                     & = a_{i1}C_{i1}+a_{i2}C_{i2}+\cdots+a_{in}C_{in};
-                     \end{align*} 
-                 \end{enumerate}
-             \end{teorema}
-             \begin{proof} \ref{itm-des-col-1} Primero hagamos la demostración para $j=2$,  es decir para el desarrollo por la segunda columna.  Escribamos $A$ en función de sus columnas,  es decir 
-                 $$
-                 A = \begin{bmatrix}C_1& C_2&C_3 &\cdots& C_n\end{bmatrix},
-                 $$
-                 donde $C_k$  es la columna $k$ de $A$.
-                 Sea $B=[b_{ij}]$ la matriz definida por
-                 $$
-                 B = \begin{bmatrix} C_2 &C_1 &C_3 &\cdots &C_n\end{bmatrix}.
-                 $$
-                 Entonces, $\det(B) = -\det(A)$. Por otro lado, por la definición de determinante, 
-                 \begin{align*}
-                 \det(B) &=   \sum_{i=1}^{n} b_{i1} C^B_{i1} \\
-                 &= \sum_{i=1}^{n} b_{i1} (-1)^{i+1}B(i|1) \\
-                 & = \sum_{i=1}^{n} a_{i2} (-1)^{i+1}B(i|1).
-                 \end{align*} 
-                 Ahora bien, es claro que $B(i|1) = A(i|2)$, por lo tanto 
-                 $$
-                 \det(B)  = \sum_{i=1}^{n} a_{i2} (-1)^{i+1}A(i|2) = - \sum_{i=1}^{n} a_{i2} C_{i2}.
-                 $$
-                 Es decir, $\det(A) = -\det(B)= \sum_{i=1}^{n} a_{i2} C_{i2}$.
-                 
-                 El caso $j>2$  se demuestra de forma similar: si $B$ es la matriz
-                 $$
-                 B = \begin{bmatrix} C_j &C_1 &C_2 &\cdots& C_{j-1}&C_{j+1}&\cdots &C_n\end{bmatrix}.
-                 $$        
-                 entonces $\det(B)=(-1)^{j-1}\det(A)$, pues son necesarios $j-1$ permutaciones para recuperar la matriz $A$ (es decir, llevar la columna $j$ a su lugar).
-                 %que se obtiene de $A$ permutando la columna $1$ por la columna $j$,  entonces $\det(B) = -\det(A)$. 
-                 Como $B(i|1) = A(i|j)$,  desarrollando por la primera columna el determinante de $B$ obtenemos el resultado.  
-                 
-                 
-                 \ref{itm-des-col-2} Observemos primero que $A^\t(j|i) = A(i|j)^\t$, por lo tanto, si calculamos $\det(A^\t)$ por desarrollo por columna $i$, obtenemos 
-                 \begin{align*}
-                 \det A = \det(A^\t)&=\sum_{j=1}^{n} [A^\t]_{ji} (-1)^{i+j}\det (A^\t(j|i)) \\
-                 &=  \sum_{j=1}^{n} a_{ij} (-1)^{i+j}\det (A(i|j)^\t) \\
-                 &= \sum_{j=1}^{n} a_{ij} (-1)^{i+j}\det (A(i|j)).
-                 \end{align*}
-                 
-                 
-             \end{proof}
-             
-             
-            \end{section}
-        
-             
-             
-             \begin{section}{Regla de Cramer}\label{seccion-regla-de-cramer} Veremos ahora que la inversa de una matriz invertible se puede escribir en términos de determinantes de algunas matrices relacionadas y esto, junto a otros resultados, nos permitirá resolver ecuaciones lineales con $n$-variables y $n$-incógnitas cuya matriz asociada es invertible.  
-                 
-                 \begin{teorema} \label{th-cof-01}
-                     Sea $A$ matriz $n \times n$, entonces
-                     \begin{align*}
-                     \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} A &= 
-                     \begin{bmatrix} 0 & \cdots& 0 & \det A & 0 &\cdots  & 0 \end{bmatrix}. \\
-                     &\hspace{3cm} \uparrow i
-                     \end{align*}
-                     Es decir, la matriz fila formada por los cofactores correspondientes a la columna  $i$ multiplicada por la matriz $A$ es igual a la matriz fila con valor $\det A$ en la posición $i$ y 0 en las otras posiciones.	 
-                 \end{teorema}
-                 \begin{proof}
-                     Si $C_j$ denota la matriz formada por la columna $j$ de $A$ debemos probar que
-                     $$
-                     \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j = \sum_{k=1}^{n} a_{kj}C_{ki} = \left\{ \begin{matrix*}[l] \det(A) &\text{si $j = i$}  \\ 0 &\text{si $j \ne i$.}\end{matrix*}\right.
-                     $$ 
-                     Ahora bien,
-                     \begin{align*}
-                     \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_i = \sum_{j=1}^{n} C_{ji}a_{ji},
-                     \end{align*}
-                     y esto último no es más que el cálculo del determinante por desarrollo de la  columna $i$,  es decir,  es igual a $\det(A)$.
-                     
-                     Para ver el caso $i \ne j$, primero observemos que si 
-                     \begin{align*}
-                     B &= \begin{bmatrix} C_1 & C_2&\cdots &C_j& \cdots &C_j & \cdots &C_{n-1}& C_{n}\end{bmatrix}, \\
-                     &\hspace{3.2cm} \uparrow i \hspace{1.2cm} \uparrow j
-                     \end{align*}
-                     es decir, $B$ es la matriz $A$ donde reemplazamos la columna $i$ por la columna $j$, entonces como $B$ tiene dos columnas iguales, $\det(B) =0$. Por lo tanto, si calculamos el determinante de $B$ por el desarrollo en la columna $i$, obtenemos
-                     \begin{equation} \label{eq-cof}
-                     0 = \det(B) = \sum_{k=1}^{n} a_{kj}C_{ki}.
-                     \end{equation}
-                     Por otro lado, 
-                     \begin{align*}
-                     \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j = \sum_{k=1}^{n} C_{ki}a_{kj},
-                     \end{align*}
-                     luego, por la ecuación \eqref{eq-cof} tenemos que 
-                     $$
-                     \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j =0
-                     $$
-                     si $i \ne j$.
-                     
-                 \end{proof}
-                 
-                 \begin{definicion} Sea $A$ matriz $n \times n$, la \textit{matriz de cofactores}\index{matriz!de cofactores} es la matriz cuyo coeficiente $ij$ vale $C_{ij}$. La matriz de cofactores de $A$  se denota $\operatorname{cof}(A)$. La \textit{matriz adjunta de A} es $\operatorname{adj}(A) = \operatorname{cof}(A)^\t$.
-                 \end{definicion}
-                 
-                 \begin{teorema} Sea $A$ matriz $n \times n$,  entonces
-                     \begin{equation*}
-                     \operatorname{adj}(A)\cdot A = \det(A)\Id_n.
-                     \end{equation*}
-                 \end{teorema}
-                 \begin{proof}
-                     Observar que la fila $i$ de $\operatorname{adj}(A)$ es $\begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix}$. Por lo tanto, la fila $i$ de $\operatorname{adj}(A)\cdot A$ es
-                     $$
-                     \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} A,
-                     $$ 
-                     que por el teorema \ref{th-cof-01} es una matriz fila con el valor $\det A$ en la posición $i$ y todos los demás coeficientes iguales a 0. Luego
-                     \begin{align*}
-                        \operatorname{adj}(A)\cdot A &= 
-                        \begin{bmatrix} C_{11} & C_{21} & \cdots & C_{n1}\\
-                        C_{12} & C_{22} & \cdots & C_{n2} \\
-                        \vdots & \vdots & \ddots & \vdots \\
-                        C_{1n} & C_{2n} & \cdots & C_{nn}\end{bmatrix}\cdot  A\\
-                        & = 
-                        \begin{bmatrix}\det A & 0 & \cdots & 0\\
-                        0 & \det A & \cdots & 0 \\
-                        \vdots & \vdots & \ddots & \vdots \\
-                        0 & 0 & \cdots & \det A\end{bmatrix} \\
-                        &= \det(A) \Id_n
-                     \end{align*}
-                 \end{proof}
-                 
-                 \begin{corolario}\label{cor-inv-x-det}
-                     Si $A$  es invertible,  entonces 
-                     \begin{equation*}
-                     A^{-1} = \frac{1}{\det A} \operatorname{adj}A.
-                     \end{equation*}
-                 \end{corolario}
-                 \begin{proof}
-                     \begin{equation*}
-                     \frac{1}{\det A} \operatorname{adj}A\cdot A = \frac{1}{\det A}\det A \Id_n = \Id_n.
-                     \end{equation*}
-                 \end{proof}
-                 
-                 
-                 
-                 \begin{teorema}[Regla de Cramer]\index{regla de Cramer} Sea $AX=Y$ un sistema de ecuaciones tal que $A \in M_n(\K)$ es invertible. Entonces, el sistema tiene una única solución $(x_1,\ldots,,x_n)$ con 
-                     \begin{equation*}
-                     x_j = \frac{\det A_j}{\det A},\qquad j=1,\ldots,n,
-                     \end{equation*}
-                     donde $A_j$ es la matriz $n \times n$ que se obtiene de $A$ remplazando la columna $j$ de
-                     $A$ por $Y$.
-                 \end{teorema}
-                 \begin{proof}
-                     Haremos la demostración para matrices $3 \times 3$. La demostración en el caso general es completamente análoga. 
-                     
-                     Como $A$  es invertible, existe $A^{-1}$ y multiplicamos la ecuación a izquierda por $A^{-1}$ y obtenemos que $A^{-1}A X = A^{-1}Y$,  es decir $X = A^{-1}Y$ y esta es la única solución. Luego
-                     \begin{align*}
-                     A^{-1}Y & = \frac{1}{\det A}
-                     \begin{bmatrix} C_{11} & C_{21} & C_{31}\\
-                     C_{12} & C_{22} &  C_{32} \\
-                     C_{13} & C_{23} & C_{33}\end{bmatrix}
-                     \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix} \\
-                     &= \frac{1}{\det A}\begin{bmatrix} y_1C_{11}+  y_2C_{21} + y_3C_{31}\\
-                     y_1C_{12}+  y_2C_{22}+   y_3C_{32} \\
-                     y_1C_{13}+  y_2C_{23}+  y_3C_{33}\end{bmatrix} \tag{$*$}
-                     \end{align*}
-                     Ahora bien,  $y_1C_{11}+  y_2C_{21}+   y_3C_{31}$ es el cálculo de determinante por desarrollo de la primera columna de la matriz 
-                     $$
-                     \begin{bmatrix}
-                     y_1 & a_{12} & a_{13} \\y_2 & a_{22} & a_{23} \\y_1 & a_{32} & a_{33} 
-                     \end{bmatrix},
-                     $$
-                     y,  de forma análoga, el segundo y tercer coeficiente de la matriz ($*$) son el determinante de las matrices $3 \times 3$ que se obtienen de $A$ remplazando la columna $2$ y $3$, respectivamente, de
-                     $A$ por $Y$. Es decir
-                     \begin{align*}
-                     \begin{bmatrix} x_1\\
-                     x_2 \\
-                     x_3\end{bmatrix} = A^{-1}Y & = \frac{1}{\det A}\begin{bmatrix} \det A_1\\
-                     \det A_2 \\
-                     \det A_3 \end{bmatrix} = \begin{bmatrix} \frac{\det A_1}{\det A}\\
-                     \frac{\det A_2}{\det A} \\
-                     \frac{\det A_3}{\det A}\end{bmatrix},
-                     \end{align*}
-                     luego $x_j = \displaystyle\frac{\det A_j}{\det A}$ para $j =1,2,3$.
-                 \end{proof}
-                 
-                 \begin{ejemplo*}
-                     Resolvamos usando la regla de Cramer el siguiente sistema:
-                     \begin{align*}
-                     x_1 + x_2 - x_3 &= 6 \\
-                     3x_1 -2 x_2 + x_3 &= -5 \\ 
-                     x_1 +3 x_2 - 2x_3 &= 14.
-                     \end{align*}
-                     La matriz asociada al sistema es 
-                     $$
-                     A= \begin{bmatrix}
-                     1 &1  &-1 \\
-                     3 &-2  &1 \\ 
-                     1 &3 &-2
-                     \end{bmatrix}.
-                     $$
-                     Luego 
-                     $$
-                     A_1 = \begin{bmatrix}
-                     6 &1  &-1 \\
-                     -5 &-2  &1 \\ 
-                     14 &3 &-2
-                     \end{bmatrix}, \quad
-                     A_2 = \begin{bmatrix}
-                     1 &6  &-1 \\
-                     3 &-5  &1 \\ 
-                     1 &14 &-2
-                     \end{bmatrix}, \quad
-                     A_2 = \begin{bmatrix}
-                     1 &1  &6 \\
-                     3 &-2  &-5 \\ 
-                     1 &3 &14
-                     \end{bmatrix},
-                     $$
-                     y
-                     $$
-                     \det A = -3,\qquad\det A_1 = -3,\qquad \det A_2 = -9,\qquad \det A_3=6.
-                     $$
-                     Por lo tanto,
-                     \begin{align*}
-                     x_1 &= \frac{\det A_1}{\det A} = \frac{-3}{-3} = 1 \\
-                     x_2 &= \frac{\det A_2}{\det A} = \frac{-9}{-3} = 3\\
-                     x_3 &= \frac{\det A_3}{\det A} = \frac{6}{-3} = -2.
-                     \end{align*} 
-                 \end{ejemplo*}
-                 
-                 \vskip .3cm
-                 
-                 \begin{observacion*}
-                    La regla de Cramer implementada de una manera ingenua es ineficiente computacionalmente para sistemas de más de dos o tres ecuaciones. En el caso de $n$ ecuaciones con $n$ incógnitas, requiere el cálculo de $n+1$ determinantes, mientras que el  método de eliminación de Gauss o eliminación gaussiana produce el resultado con la misma complejidad computacional que el cálculo de un solo determinante. Sin embargo, recientemente se ha demostrado que la regla de Cramer se puede implementar en el tiempo $O(n^3)$, que es comparable a los métodos más utilizados para la obtención de soluciones de sistemas de ecuaciones lineales, como ser la eliminación gaussiana
-                    (ver \href{https://en.wikipedia.org/wiki/Cramer's\_rule}{https://en.wikipedia.org/wiki/Cramer's\_rule} y 
-                    \href{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}). 
+        A continuación veremos que el determinante del producto de matrices es el producto de los determinantes de las matrices. 
 
-                    Sin embargo, la regla de Cramer tiene propiedades numéricas muy pobres, por lo que no es adecuada para resolver incluso sistemas pequeños de forma fiable, a menos que las operaciones se realicen en aritmética racional con precisión ilimitada.
-                 \end{observacion*}
-                 
-             \end{section}
-        \end{chapter}
-        
+        \begin{teorema}\label{det-elem-por-mtrx} Sea $A  \in M_n(\K)$ y $E$ una matriz elemental $n \times n$. Entonces
+            \begin{equation}\label{det-prod-elem-matr}
+            \det (EA) = \det E \det A.
+            \end{equation}  
+        \end{teorema}
+        \begin{proof} 
+            En todos los casos $EA = e(A)$ donde $e$  es una operación elemental por fila (teorema \ref{th-mrtx-elem}). 
+            
+            
+            (1) Si $c \not=0$, y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, luego
+            \begin{equation*}
+                det(EA) = det(e(A)) \stackrel{\text{Teor. }\ref{th-E1}}{=} c \cdot det(A)  \stackrel{\text{Cor. }\ref{cor-det-elemental}.\ref{cor-det-E1}}{=} det(E) det(A). 
+            \end{equation*}
+            
+            
+            (2) Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$  la fila $s$ multiplicada por $c$, entonces $\det E =1$. Por  otro lado  $\det(EA) = \det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
+            
+            (3) Finalmente, si $E$ es la matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$, entonces $\det E=-1$. Por  otro lado  $\det(EA) = -\det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
+        \end{proof}
+
+        \begin{corolario}\label{coro-det-prod-elem-mtrx}
+            Sea $A  \in M_n(\K)$ y $E_1,\ldots,E_k$ matrices elementales $n \times n$. Entonces
+            \begin{equation*}
+            \det (E_kE_{k-1}\ldots E_1A) = \det (E_k) \det (E_{k-1})\ldots \det (E_1) \det (A).
+            \end{equation*}  
+        \end{corolario}
+        \begin{proof}
+            Por  la aplicación reiterada del teorema \ref{det-elem-por-mtrx} tenemos, 
+            \begin{equation*}
+            \begin{matrix*}[l]
+            \det (E_kE_{k-1}\ldots E_1A) &= \det (E_k) \det(E_{k-1}\ldots E_1 A) \\
+            &= \det( E_k) \det(E_{k-1})\det(E_{k-2}\ldots E_1A) \\
+            &\qquad\quad \vdots \\
+            & = \det( E_k) \det(E_{k-1})\det(E_{k-2})\ldots \det(E_1) \det(A).
+            \end{matrix*}		
+            \end{equation*}
+        \end{proof}
+
+        \begin{teorema}\label{th-det-matriz-invertible}
+            $A \in \K^{n \times n}$ es invertible si y solo si $\det(A) \ne 0$.
+        \end{teorema}
+        \begin{proof}
+            ($\Rightarrow$)  $A$ invertible, luego por el  teorema \ref{mtrx-inv-equiv}, $A$ es producto de matrices elementales, es decir  $A = E_1 E_2 \cdots E_k$  donde $E_1, E_2, \ldots, E_k$ son matrices elementales. 
+            
+            Por el corolario anterior,  $\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)$. Como el determinante de matrices elementales es distinto de cero, $$\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)\ne 0.$$
     
+            ($\Leftarrow$) Sean $E_1, E_2, \ldots, E_k$ matrices elementales tales que $R = E_1 E_2 \cdots E_k A$ y $R$ es MERF. Luego,
+            \begin{equation*}
+                \det(R) = \det(E_1) \det(E_2) \cdots \det(E_k) \det(A). 
+            \end{equation*}
+            Como los determinantes de matrices  elementales son no nulos
+            \begin{equation*}
+                \frac{\det(R)}{\det(E_1) \det(E_2) \cdots \det(E_k) } = \det(A). \tag{*}
+            \end{equation*}
+        
+            
+            Supongamos que $R$ no es la identidad.  Entonces, por el corolario \ref{cor-det-merf}, $\det(R) =0$,  por lo tanto, $\det(A)=0$, lo cual contradice la hipótesis y llegamos a un absurdo. 
+        
+            Esto implica que  $R= \Id_n$ y en consecuencia  $A$ es equivalente por filas a $\Id_n$ y por lo tanto  invertible.
+        \end{proof}
+    
+        \begin{teorema}\label{th-dem-detAB}  Sean $A,B \in M_n(\K)$,  entonces
+        $$\det (A B) = \det(A)\det(B).$$
+        \end{teorema}
+        \begin{proof} Separemos la prueba en dos casos  $A$ es invertible  y  $A$ no es invertible.
+
+            \textit{$A$ invertible.} Entonces $A= E_1\cdots E_k$ producto de matrices elementales. Por lo tanto  $AB =  E_1\cdots E_kB$, luego por el corolario \ref{coro-det-prod-elem-mtrx}  $\det(AB) =  \det(E_1)\cdots \det(E_k)\det(B) = \det(A)\det(B)$. 
+            
+            \textit{$A$ no invertible.}  Entonces $A$  es equivalente por filas a una MERF $R$ con la última fila nula. Es decir $R =E_1\cdots E_kA$ y $R$ tiene la última fila nula, por  lo tanto $A=  E_k^{-1}E_{k-1}^{-1}\ldots E_1^{-1}R$. 
+            
+            Como $R$ tiene la última fila nula, no es difícil ver que  $RB$ tiene tiene también la última fila nula y por lo tanto $\det(RB)=0$. Luego 
+            $$
+            \det(AB) = \det( E_k^{-1}) \ldots \det(E_1^{-1})\det(RB) =0.
+            $$
+            Como  $\det(A)=0$, tenemos también qure 
+            $$
+            \det(A)\det(B) =0.
+            $$  
+        \end{proof}
+
+        Haremos ahora la demostración del teorema \ref{det-a-trans}. 
+
+        \begin{teorema}
+            Sea $E$ matriz elemental, entonces $E^\t$ es matriz elemental del mismo tipo y $\det(E) = \det(E^\t)$.
+        \end{teorema}
+        \begin{proof}
+            Si $c \not=0$ y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, es claro que $E^t = E$ y por lo tanto 	$\det(E) = \det(E^\t)$.
+            
+            Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$ la fila $s$ multiplicada por $c \in \K$,  entonces  $E^\t$  es la matriz elemental que se obtiene de sumar a la fila $s$ de $\Id_n$ la fila $r$ multiplicada por $c$. Luego,   $\det(E) = \det(E^\t) = 1$.
+            
+            Finalmente, si $E$ es la  matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$,entonces $E^\t = E$ y por lo tanto $\det(E) = \det(E^\t)$.
+        \end{proof}
+
+        \begin{teorema}\label{th-det-a-trans-app} 
+            Sea $A \in M_n(\K)$,  entonces 
+            $\det(A) = \det(A^\t)$
+        \end{teorema}
+        \begin{proof}
+            Si $A$ es invertible, entonces  $A = E_kE_{k-1}\ldots E_1$ con $E_i$ elemental, por lo tanto $\det(A) = \det( E_k)\det(E_{k-1})\ldots \det(E_1)$. Luego,
+            \begin{align*}
+            \det(A^\t) &= \det(E_1^\t \ldots E_k^\t) = \det(E_1^\t) \ldots \det(E_k^\t) = 
+            \det(E_1) \ldots \det(E_k) \\&= \det(A).
+            \end{align*}
+            Si $A$ no es invertible, entonces $A^\t$ no es invertible y en ese caso $\det(A) = \det(A^\t)=0$.
+        \end{proof}
+        
+        Finalmente,  demostremos el teorema \ref{th-expancion-cofactores}.
+    
+        \begin{teorema}\label{th-dessarrollo-por-columnas} El determinante de una matriz $A$ de orden $n \times n$ puede ser calculado por la expansión de los cofactores en  cualquier columna o cualquier fila. Más específicamente, 
+            \begin{enumerate}
+                \item\label{itm-des-col-1} si usamos la expansión por la $j$-ésima columna, $1 \le j \le n$, tenemos
+                \begin{align*}
+                \det A &= \sum_{i=1}^{n} a_{ij} C_{ij} \\
+                & = a_{1j}C_{1j}+a_{2j}C_{2j}+\cdots+a_{nj}C_{nj}.
+                \end{align*} 
+                \item\label{itm-des-col-2} si usamos la expansión por la $i$-ésima fila, $1 \le i \le n$, tenemos
+                \begin{align*}
+                \det A &= \sum_{j=1}^{n} a_{ij} C_{ij} \\
+                & = a_{i1}C_{i1}+a_{i2}C_{i2}+\cdots+a_{in}C_{in};
+                \end{align*} 
+            \end{enumerate}
+        \end{teorema}
+        \begin{proof} \ref{itm-des-col-1} Primero hagamos la demostración para $j=2$,  es decir para el desarrollo por la segunda columna.  Escribamos $A$ en función de sus columnas,  es decir 
+            $$
+            A = \begin{bmatrix}C_1& C_2&C_3 &\cdots& C_n\end{bmatrix},
+            $$
+            donde $C_k$  es la columna $k$ de $A$.
+            Sea $B=[b_{ij}]$ la matriz definida por
+            $$
+            B = \begin{bmatrix} C_2 &C_1 &C_3 &\cdots &C_n\end{bmatrix}.
+            $$
+            Entonces, $\det(B) = -\det(A)$. Por otro lado, por la definición de determinante, 
+            \begin{align*}
+            \det(B) &=   \sum_{i=1}^{n} b_{i1} C^B_{i1} \\
+            &= \sum_{i=1}^{n} b_{i1} (-1)^{i+1}B(i|1) \\
+            & = \sum_{i=1}^{n} a_{i2} (-1)^{i+1}B(i|1).
+            \end{align*} 
+            Ahora bien, es claro que $B(i|1) = A(i|2)$, por lo tanto 
+            $$
+            \det(B)  = \sum_{i=1}^{n} a_{i2} (-1)^{i+1}A(i|2) = - \sum_{i=1}^{n} a_{i2} C_{i2}.
+            $$
+            Es decir, $\det(A) = -\det(B)= \sum_{i=1}^{n} a_{i2} C_{i2}$.
+            
+            El caso $j>2$  se demuestra de forma similar: si $B$ es la matriz
+            $$
+            B = \begin{bmatrix} C_j &C_1 &C_2 &\cdots& C_{j-1}&C_{j+1}&\cdots &C_n\end{bmatrix}.
+            $$        
+            entonces $\det(B)=(-1)^{j-1}\det(A)$, pues son necesarios $j-1$ permutaciones para recuperar la matriz $A$ (es decir, llevar la columna $j$ a su lugar).
+            %que se obtiene de $A$ permutando la columna $1$ por la columna $j$,  entonces $\det(B) = -\det(A)$. 
+            Como $B(i|1) = A(i|j)$,  desarrollando por la primera columna el determinante de $B$ obtenemos el resultado.  
+            
+            
+            \ref{itm-des-col-2} Observemos primero que $A^\t(j|i) = A(i|j)^\t$, por lo tanto, si calculamos $\det(A^\t)$ por desarrollo por columna $i$, obtenemos 
+            \begin{align*}
+            \det A = \det(A^\t)&=\sum_{j=1}^{n} [A^\t]_{ji} (-1)^{i+j}\det (A^\t(j|i)) \\
+            &=  \sum_{j=1}^{n} a_{ij} (-1)^{i+j}\det (A(i|j)^\t) \\
+            &= \sum_{j=1}^{n} a_{ij} (-1)^{i+j}\det (A(i|j)).
+            \end{align*}
+        \end{proof}
+        
+    \end{section}
+
+    \begin{section}{Regla de Cramer}\label{seccion-regla-de-cramer} Veremos ahora que la inversa de una matriz invertible se puede escribir en términos de determinantes de algunas matrices relacionadas y esto, junto a otros resultados, nos permitirá resolver ecuaciones lineales con $n$-variables y $n$-incógnitas cuya matriz asociada es invertible.  
+                
+        \begin{teorema} \label{th-cof-01}
+            Sea $A$ matriz $n \times n$, entonces
+            \begin{align*}
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} A &= 
+            \begin{bmatrix} 0 & \cdots& 0 & \det A & 0 &\cdots  & 0 \end{bmatrix}. \\
+            &\hspace{3cm} \uparrow i
+            \end{align*}
+            Es decir, la matriz fila formada por los cofactores correspondientes a la columna  $i$ multiplicada por la matriz $A$ es igual a la matriz fila con valor $\det A$ en la posición $i$ y 0 en las otras posiciones.	 
+        \end{teorema}
+        \begin{proof}
+            Si $C_j$ denota la matriz formada por la columna $j$ de $A$ debemos probar que
+            $$
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j = \sum_{k=1}^{n} a_{kj}C_{ki} = \left\{ \begin{matrix*}[l] \det(A) &\text{si $j = i$}  \\ 0 &\text{si $j \ne i$.}\end{matrix*}\right.
+            $$ 
+            Ahora bien,
+            \begin{align*}
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_i = \sum_{j=1}^{n} C_{ji}a_{ji},
+            \end{align*}
+            y esto último no es más que el cálculo del determinante por desarrollo de la  columna $i$,  es decir,  es igual a $\det(A)$.
+            
+            Para ver el caso $i \ne j$, primero observemos que si 
+            \begin{align*}
+            B &= \begin{bmatrix} C_1 & C_2&\cdots &C_j& \cdots &C_j & \cdots &C_{n-1}& C_{n}\end{bmatrix}, \\
+            &\hspace{3.2cm} \uparrow i \hspace{1.2cm} \uparrow j
+            \end{align*}
+            es decir, $B$ es la matriz $A$ donde reemplazamos la columna $i$ por la columna $j$, entonces como $B$ tiene dos columnas iguales, $\det(B) =0$. Por lo tanto, si calculamos el determinante de $B$ por el desarrollo en la columna $i$, obtenemos
+            \begin{equation} \label{eq-cof}
+            0 = \det(B) = \sum_{k=1}^{n} a_{kj}C_{ki}.
+            \end{equation}
+            Por otro lado, 
+            \begin{align*}
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j = \sum_{k=1}^{n} C_{ki}a_{kj},
+            \end{align*}
+            luego, por la ecuación \eqref{eq-cof} tenemos que 
+            $$
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j =0
+            $$
+            si $i \ne j$.
+            
+        \end{proof}
+        
+        \begin{definicion} Sea $A$ matriz $n \times n$, la \textit{matriz de cofactores}\index{matriz!de cofactores} es la matriz cuyo coeficiente $ij$ vale $C_{ij}$. La matriz de cofactores de $A$  se denota $\operatorname{cof}(A)$. La \textit{matriz adjunta de A} es $\operatorname{adj}(A) = \operatorname{cof}(A)^\t$.
+        \end{definicion}
+        
+        \begin{teorema} Sea $A$ matriz $n \times n$,  entonces
+            \begin{equation*}
+            \operatorname{adj}(A)\cdot A = \det(A)\Id_n.
+            \end{equation*}
+        \end{teorema}
+        \begin{proof}
+            Observar que la fila $i$ de $\operatorname{adj}(A)$ es $\begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix}$. Por lo tanto, la fila $i$ de $\operatorname{adj}(A)\cdot A$ es
+            $$
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} A,
+            $$ 
+            que por el teorema \ref{th-cof-01} es una matriz fila con el valor $\det A$ en la posición $i$ y todos los demás coeficientes iguales a 0. Luego
+            \begin{align*}
+                \operatorname{adj}(A)\cdot A &= 
+                \begin{bmatrix} C_{11} & C_{21} & \cdots & C_{n1}\\
+                C_{12} & C_{22} & \cdots & C_{n2} \\
+                \vdots & \vdots & \ddots & \vdots \\
+                C_{1n} & C_{2n} & \cdots & C_{nn}\end{bmatrix}\cdot  A\\
+                & = 
+                \begin{bmatrix}\det A & 0 & \cdots & 0\\
+                0 & \det A & \cdots & 0 \\
+                \vdots & \vdots & \ddots & \vdots \\
+                0 & 0 & \cdots & \det A\end{bmatrix} \\
+                &= \det(A) \Id_n
+            \end{align*}
+        \end{proof}
+        
+        \begin{corolario}\label{cor-inv-x-det}
+            Si $A$  es invertible,  entonces 
+            \begin{equation*}
+            A^{-1} = \frac{1}{\det A} \operatorname{adj}A.
+            \end{equation*}
+        \end{corolario}
+        \begin{proof}
+            \begin{equation*}
+            \frac{1}{\det A} \operatorname{adj}A\cdot A = \frac{1}{\det A}\det A \Id_n = \Id_n.
+            \end{equation*}
+        \end{proof}
+        
+        
+        
+        \begin{teorema}[Regla de Cramer]\index{regla de Cramer} Sea $AX=Y$ un sistema de ecuaciones tal que $A \in M_n(\K)$ es invertible. Entonces, el sistema tiene una única solución $(x_1,\ldots,,x_n)$ con 
+            \begin{equation*}
+            x_j = \frac{\det A_j}{\det A},\qquad j=1,\ldots,n,
+            \end{equation*}
+            donde $A_j$ es la matriz $n \times n$ que se obtiene de $A$ remplazando la columna $j$ de
+            $A$ por $Y$.
+        \end{teorema}
+        \begin{proof}
+            Haremos la demostración para matrices $3 \times 3$. La demostración en el caso general es completamente análoga. 
+            
+            Como $A$  es invertible, existe $A^{-1}$ y multiplicamos la ecuación a izquierda por $A^{-1}$ y obtenemos que $A^{-1}A X = A^{-1}Y$,  es decir $X = A^{-1}Y$ y esta es la única solución. Luego
+            \begin{align*}
+            A^{-1}Y & = \frac{1}{\det A}
+            \begin{bmatrix} C_{11} & C_{21} & C_{31}\\
+            C_{12} & C_{22} &  C_{32} \\
+            C_{13} & C_{23} & C_{33}\end{bmatrix}
+            \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix} \\
+            &= \frac{1}{\det A}\begin{bmatrix} y_1C_{11}+  y_2C_{21} + y_3C_{31}\\
+            y_1C_{12}+  y_2C_{22}+   y_3C_{32} \\
+            y_1C_{13}+  y_2C_{23}+  y_3C_{33}\end{bmatrix} \tag{$*$}
+            \end{align*}
+            Ahora bien,  $y_1C_{11}+  y_2C_{21}+   y_3C_{31}$ es el cálculo de determinante por desarrollo de la primera columna de la matriz 
+            $$
+            \begin{bmatrix}
+            y_1 & a_{12} & a_{13} \\y_2 & a_{22} & a_{23} \\y_1 & a_{32} & a_{33} 
+            \end{bmatrix},
+            $$
+            y,  de forma análoga, el segundo y tercer coeficiente de la matriz ($*$) son el determinante de las matrices $3 \times 3$ que se obtienen de $A$ remplazando la columna $2$ y $3$, respectivamente, de
+            $A$ por $Y$. Es decir
+            \begin{align*}
+            \begin{bmatrix} x_1\\
+            x_2 \\
+            x_3\end{bmatrix} = A^{-1}Y & = \frac{1}{\det A}\begin{bmatrix} \det A_1\\
+            \det A_2 \\
+            \det A_3 \end{bmatrix} = \begin{bmatrix} \frac{\det A_1}{\det A}\\
+            \frac{\det A_2}{\det A} \\
+            \frac{\det A_3}{\det A}\end{bmatrix},
+            \end{align*}
+            luego $x_j = \displaystyle\frac{\det A_j}{\det A}$ para $j =1,2,3$.
+        \end{proof}
+        
+        \begin{ejemplo*}
+            Resolvamos usando la regla de Cramer el siguiente sistema:
+            \begin{align*}
+            x_1 + x_2 - x_3 &= 6 \\
+            3x_1 -2 x_2 + x_3 &= -5 \\ 
+            x_1 +3 x_2 - 2x_3 &= 14.
+            \end{align*}
+            La matriz asociada al sistema es 
+            $$
+            A= \begin{bmatrix}
+            1 &1  &-1 \\
+            3 &-2  &1 \\ 
+            1 &3 &-2
+            \end{bmatrix}.
+            $$
+            Luego 
+            $$
+            A_1 = \begin{bmatrix}
+            6 &1  &-1 \\
+            -5 &-2  &1 \\ 
+            14 &3 &-2
+            \end{bmatrix}, \quad
+            A_2 = \begin{bmatrix}
+            1 &6  &-1 \\
+            3 &-5  &1 \\ 
+            1 &14 &-2
+            \end{bmatrix}, \quad
+            A_2 = \begin{bmatrix}
+            1 &1  &6 \\
+            3 &-2  &-5 \\ 
+            1 &3 &14
+            \end{bmatrix},
+            $$
+            y
+            $$
+            \det A = -3,\qquad\det A_1 = -3,\qquad \det A_2 = -9,\qquad \det A_3=6.
+            $$
+            Por lo tanto,
+            \begin{align*}
+            x_1 &= \frac{\det A_1}{\det A} = \frac{-3}{-3} = 1 \\
+            x_2 &= \frac{\det A_2}{\det A} = \frac{-9}{-3} = 3\\
+            x_3 &= \frac{\det A_3}{\det A} = \frac{6}{-3} = -2.
+            \end{align*} 
+        \end{ejemplo*}
+        
+        \vskip .3cm
+        
+        \begin{observacion*}
+            La regla de Cramer implementada de una manera ingenua es ineficiente computacionalmente para sistemas de más de dos o tres ecuaciones. En el caso de $n$ ecuaciones con $n$ incógnitas, requiere el cálculo de $n+1$ determinantes, mientras que el  método de eliminación de Gauss o eliminación gaussiana produce el resultado con la misma complejidad computacional que el cálculo de un solo determinante. Sin embargo, recientemente se ha demostrado que la regla de Cramer se puede implementar en el tiempo $O(n^3)$, que es comparable a los métodos más utilizados para la obtención de soluciones de sistemas de ecuaciones lineales, como ser la eliminación gaussiana
+            (ver \href{https://en.wikipedia.org/wiki/Cramer's\_rule}{https://en.wikipedia.org/wiki/Cramer's\_rule} y 
+            \href{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}). 
+
+            Sin embargo, la regla de Cramer tiene propiedades numéricas muy pobres, por lo que no es adecuada para resolver incluso sistemas pequeños de forma fiable, a menos que las operaciones se realicen en aritmética racional con precisión ilimitada.
+        \end{observacion*}
+        
+    \end{section}
+\end{chapter}
