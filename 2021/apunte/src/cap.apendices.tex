@@ -1,4 +1,3 @@
-
 \begin{chapter}{N\'umeros complejos}\label{chap-num-compl}
     
     \begin{section}{Cuerpos}\label{seccion-cuerpos}
@@ -342,8 +341,65 @@
                 \item El número \boldmath$i$, el más fundamental de los números imaginarios.
             \end{enumerate}
         \end{observacion*}
-        
     \end{section}	
+    
+    \begin{section}{Raíces de la unidad en $\C$}
+
+        \begin{definicion}
+            Dado $n \in \N$, se llama \textit{raíz $n$-ésima de la unidad} a cualquiera de los números complejos que satisfacen la ecuación 
+            $$
+            z^n = 1.
+            $$ 
+        \end{definicion}
+
+        Si $z$  es una raíz $n$-ésima de la unidad,  entonces $z^n=1$ y por lo tanto $|z|^n = 1$. Como $|z|\ge 0$,  es claro que  $|z|=1$. Esto implica, además,  que $z =  e^{2 \pi i r}$. Como, nuevamente,   $z^n=1$ tenemos que $ e^{2 \pi i nr}=1$,  es decir,  $nr$ es entero, por lo tanto $r = k/n$ para k  entero. Concluimos que para cada $n$, las $n$ diferentes raíces $n$-ésimas de la unidad son:
+        $$
+        e^{2 \pi i k/n} \;\text{ donde }\;  k = 0, 1, 2, \ldots, n-1.
+        $$
+
+        Se dice que una raíz $n$-ésima de la unidad es \textit{primitiva} si no es una raíz $m$-ésima de la unidad para alguna $m$ más pequeña, es decir, si
+        $$
+        z^{n}=1\quad \text{and}\quad z^{m}\neq 1\text{ for } m=1,2,3,\ldots ,n-1.
+        $$
+
+        Si $n$ es un número primo, todas las raíces $n$-ésimas de la unidad, excepto $1$, son primitivas. En  realidad,  el resultado es más general.
+
+        \begin{proposicion}
+            Sea $z$ raíz $n$-ésima primitiva de la unidad y $m \in \N$.
+            \begin{enumerate}
+                \item\label{item-primitiva-1} Si $z^m=1$,  entonces $n|m$.
+                \item\label{item-primitiva-2} $z^m$  es raíz $n$-ésima primitiva de la unidad si y solo si $m$ y $n$  son coprimos.
+            \end{enumerate}
+            
+        \end{proposicion}
+        \begin{proof}
+            \ref{item-primitiva-1} Sea $m = n\cdot q + r$ con $0 \le r < n$, entonces $$1 = z^m = z^{n\cdot q + r} = (z^{n})^qz^r = 1 \cdot z^r = z^r.$$ Como $r<n$ y $z$ primitiva, concluimos que $r=0$ y por consiguiente $n|m$.
+
+            \ref{item-primitiva-2} Sea $d = \operatorname{mcd}(m, n)$. 
+            
+            ($\Rightarrow$) Observar que tanto $n/d$ como $m/d$ son enteros, luego
+            $$
+            (z^m)^{\frac{n}{d}} = z^{\frac{mn}{d}} = z^{\frac{m}{d}n} = (z^n)^{\frac{m}{d}} = 1. 
+            $$
+            Como por hipótesis $z^m$ es primitiva, por \ref{item-primitiva-1}, $n | (n/d)$, luego $d=1$. 
+
+            ($\Leftarrow$) Sea $t$ tal que $(z^m)^t = 1$,  entonces $z^{mt} =1$. Por \ref{item-primitiva-1}, $n | mt$, como por hipótesis $m$ y $n$ son coprimos obtenemos que $n |t$ y por lo tanto $t \ge n$. En consecuencia, $z^m$  es raíz $n$-ésima primitiva de la unidad. 
+        \end{proof}
+
+        \begin{observacion*} Remarcaremos algunas propiedades básicas relacionadas con las raíces $n$-ésimas de la unidad. 
+            \begin{enumerate}
+                \item Si $z$ es una raíz $n$-ésima primitiva de la unidad y $m$  entero coprimo con $n$, entonces ${z}^m$ también lo es.  Por consiguiente, si denotamos $w = z^m$, entonces 
+                $$
+                w^0, w^1,\ldots,w^{n-1} 
+                $$ 
+                son las $n$ raíces $n$-ésimas de la unidad.
+                \item Sea $z$ es una raíz $n$-ésima de la unidad, como $z\overline{z} = |z| =1$ y $zz^{n-1} = z^n = 1$,  deducimos que $\overline{z} = z^{n-1}$. Si $z$  es primitiva,  como $n-1$ y $n$ son coprimos, deducimos que $\overline{z}$  también es una raíz $n$-ésima primitiva de la unidad.  
+            \end{enumerate}
+        \end{observacion*}
+
+
+        
+    \end{section}
 \end{chapter}
 
 
@@ -641,7 +697,7 @@
         La discretización de teoremas análogos al teorema \ref{th-series-de-fourier} que nos permitan trabajar con computadoras ha llevado a los matemáticos a definir la transformada de Fourier discreta.
 
         \begin{definicion}
-            La \textit{transformada de Fourier discreta} transforma una secuencia de $n$ números complejos $f_0, f_1, \ldots, f_{n-1}$ en otra secuencia de $n$ números complejos:
+            La \textit{transformada de Fourier discreta}\index{transformada de Fourier discreta} transforma una secuencia de $n$ números complejos $f_0, f_1, \ldots, f_{n-1}$ en otra secuencia de $n$ números complejos:
             \begin{equation*}
                 c_k = \sum_{j=0}^{n-1} f_j e^{-2\pi i j {k}/{n}}\qquad (0 \le k \le n-1).
             \end{equation*}
@@ -676,10 +732,10 @@
         $$
         e^{2 \pi i k/n} \;\text{ donde }\;  k = 0, 1, 2, \ldots, n-1.
         $$
-        Si denotamos $w = e^{2 \pi i/n}$, entonces 
+        Observar que si $z$ es una raíz de la unidad, entonces $\overline{z}$ también lo es y $z\overline{z} =1$.  Por consiguiente, los $e^{-2 \pi i k/n}$ con $0 \le k \le n-1$ forman también el conjunto de raíces $n$-ésimas de la unidad. Es decir, si denotamos $w = e^{-2 \pi i/n}$, entonces 
         $$
         w^0, w^1,\ldots,w^{n-1} 
-        $$ son las $n$ raíces $n$-ésimas de la unidad. Observar que si $z$ es una raíz de la unidad, entonces $\overline{z}$ también lo es y $z\overline{z} =1$.  
+        $$ son las $n$ raíces $n$-ésimas de la unidad.
 
         Sea
         \begin{equation*}
@@ -702,7 +758,7 @@
             \begin{equation*}
                 F \overline{F} = \overline{F}F = nI_n\quad\text{ o,  equivalentemente, }\quad F^{-1} = \frac{1}{n}  \overline{F}.  
             \end{equation*}
-            Además, la transformada de Fourier discreta de la secuencia de números complejos $f = (f_0,\ldots,f_{n-1})$ es $c = \displaystyle\frac{1}{n} \overline{F}f$.
+            Además, la transformada de Fourier discreta de la secuencia de números complejos $f = (f_0,\ldots,f_{n-1})$ es $c = {F}f$.
         \end{teorema}
         \begin{proof}
             Probemos primero que $F \overline{F} = nI_n$. Observemos que el producto de la fila $j + 1 $ con la fila de $F$ con la columna $k +  1$ de $\overline{F}$  ($0 \le j, k < n$) es 
@@ -720,35 +776,35 @@
             \begin{equation*}
                 \begin{bmatrix}
                     1 & 1 & 1 & \cdots & 1 \\
-                    1 & \overline{w} & \overline{w}^2 & \cdots & \overline{w}^{n-1} \\
-                    1 & \overline{w}^2 & \overline{w}^4 & \cdots & \overline{w}^{2(n-1)} 
+                    1 & {w} & {w}^2 & \cdots & {w}^{n-1} \\
+                    1 & {w}^2 & {w}^4 & \cdots & {w}^{2(n-1)} 
                     \\ \vdots & &  &  &\vdots \\
-                    1 & \overline{w}^{n-1} &\overline{w}^{2(n-1)} & \cdots & \overline{w}^{(n-1)^2} 
+                    1 & {w}^{n-1} &{w}^{2(n-1)} & \cdots & {w}^{(n-1)^2} 
                 \end{bmatrix}
                 \begin{bmatrix}
                     f_0\\ f_1 \\ f_2 \\ \vdots\\  f_{n-1}
                 \end{bmatrix}
                 =
                 \begin{bmatrix*}[l]
-                    \sum_{j=0}^{n-1} f_j\\ \sum_{j=0}^{n-1} \overline w^jf_j\\ \sum_{j=0}^{n-1}  \overline w^{2j}f_j \\ \vdots\\  \sum_{j=0}^{n-1} \overline w^{(n-1)j}f_j
+                    \sum_{j=0}^{n-1} f_j\\ \sum_{j=0}^{n-1}  w^jf_j\\ \sum_{j=0}^{n-1}   w^{2j}f_j \\ \vdots\\  \sum_{j=0}^{n-1}  w^{(n-1)j}f_j
                 \end{bmatrix*} =
                 \begin{bmatrix}
                     c_0\\ c_1 \\ c_2 \\ \vdots\\  c_{n-1}
                 \end{bmatrix}.
             \end{equation*}
-            Reacomodando cada sumatoria y considerando que $ \overline w = e^{-2 \pi i/n}$ obtenemos
+            Reacomodando cada sumatoria y considerando que $  w = e^{-2 \pi i/n}$ obtenemos
             \begin{equation*}
                 c_k = \sum_{j=0}^{n-1} f_j e^{-2\pi i j {k}/{n}},
             \end{equation*}
             para $0 \le k \le n-1$, que es lo que queríamos probar.
         \end{proof}
 
-        La matriz $F$ se la llama la \textit{matriz de Fourier} y, por lo visto en el teorema anterior, la transformada de Fourier discreta de $f$ es $c = F^{-1}f=\overline{F}f/n$. 
+        La matriz $F$ se la llama la \textit{matriz de Fourier} y, por lo visto en el teorema anterior, la transformada de Fourier discreta de $f$ es $c = Ff$. 
 
         En  base al teorema podemos dar una definición equivalente de la transformada de Fourier discreta y definir la antitransformada. 
         
         \begin{definicion}
-            Sea $F$ la matriz de Fourier $n \times n$. Sea  $f = (f_0,\ldots,f_{n-1}), \in \C^n$, entonces la \textit{transformada de Fourier discreta (DFT)} de $f$ es $c = F^{-1}f$. La \textit{transformada inversa de Fourier discreta (IDFT)} de $c = (c_0,\ldots,c_{n-1}) \in \C^n$ es $Fc$.  
+            Sea $F$ la matriz de Fourier $n \times n$. Sea  $f = (f_0,\ldots,f_{n-1}), \in \C^n$, entonces la \textit{transformada de Fourier discreta (DFT)} de $f$ es $c = Ff$. La \textit{transformada inversa de Fourier discreta (IDFT)} de $c = (c_0,\ldots,c_{n-1}) \in \C^n$ es $F^{-1}c$.  
         \end{definicion}
 
         \subsection*{Convolución discreta} 
@@ -758,7 +814,7 @@
         \begin{definicion}
             Sean $f = (f_0,\ldots, f_{n-1})$ y $g = (g_0,\ldots, g_{n-1})$ dos vectores en $\C^n$,  entonces la  \textit{convolución} de $f$ y $g$ es 
             \begin{equation*}
-                f * g = \left(\sum_{j+k \,\equiv\, 0\, (n)} f_jq_k, \sum_{j+k \,\equiv\, 1\, (n)} f_jq_k, \ldots, \sum_{j+k\, \equiv\, n-1 \,(n)} f_jq_k\right).
+                f * g = \left(\sum_{j+k \,\equiv\, 0\, (n)} f_jg_k, \sum_{j+k \,\equiv\, 1\, (n)} f_jg_k, \ldots, \sum_{j+k\, \equiv\, n-1 \,(n)} f_jg_k\right).
             \end{equation*}
         \end{definicion}
 
@@ -787,9 +843,9 @@
 
 
         \begin{teorema}\label{th-prod-convolucion-dft}
-            Sean $f,g \in \C^n$ y  sean $c= F^{-1}f$, $d = F^{-1}g$, las transformadas de Fourier discretas de $f$ y $g$ respectivamente, entonces
+            Sean $f,g \in \C^n$ y  sean $c= Ff$, $d = Fg$, las transformadas de Fourier discretas de $f$ y $g$ respectivamente, entonces
             \begin{equation}\label{eq-regla-de-convolucion-2}
-                f * g = n\,  F(cd),
+                f * g = n\,  F^{-1}(cd),
             \end{equation}
             donde $cd$  indica el producto coordenada a coordenada de $c$ por $d$. 
         \end{teorema}
@@ -809,9 +865,9 @@
             \begin{align*}
                 c = (c_0, c_1, \ldots, c_{n-1}) \quad \text{ y } \quad d = (d_0, d_1, \ldots, d_{n-1})
             \end{align*}
-            las representaciones de $f$ y $g$, respectivamente, por valores respecto al conjunto $X = \{1, e^{-2\pi i /{n}},e^{-2\pi i 2/{n}}, \ldots,e^{-2\pi i {(n-1)}/{n}} \}$. Es decir, $c = F^{-1}f$ y $d = F^{-1}g$,  luego el producto $f$ y $g$ como funciones polinómicas tiene coeficientes
+            las representaciones de $f$ y $g$, respectivamente, por valores respecto al conjunto $X = \{1, e^{-2\pi i /{n}},e^{-2\pi i 2/{n}}, \ldots,e^{-2\pi i {(n-1)}/{n}} \}$. Es decir, $c = Ff$ y $d = Fg$,  luego el producto $f$ y $g$ como funciones polinómicas tiene coeficientes
             \begin{equation*}
-                f * g = n\,  F(cd). 
+                f * g = n\,  F^{-1}(cd). 
             \end{equation*}
             Observar que el hecho de que $F$ sea invertible y  que al aplicar transformada discreta de Fourier a un polinomio se obtiene una representación por valores del mismo, junto al teorema \ref{th-prod-convolucion-dft}, hacen que no sea necesario utilizar la proposición \ref{prop-mult-por-valor} para calcular el producto de dos polinomios utilizando la representación por valores. 
         \end{ejemplo*}
@@ -849,18 +905,9 @@
 
         \begin{ejemplo*} Ejemplificaremos el caso $n=4$. Es  decir, calcularemos la transformada de Fourier discreta para polinomios de grado menor o igual a $3$. Sea $f(x) = f_0 + f_1 x + f_2x^2 + f_3x^3$, calcular $F^{-1}f$ directamente conllevaría $12$ multiplicaciones: multiplicar la fila $2$ de $F^{-1}$ por $f$, la fila3 por $f$ y y fila $4$ por $f$ (multiplicar por la fila $1$ no implica agregar multiplicaciones). Veremos que con el método  de la transformada rápida de Fourier podremos obtener la representación de $f$ por valores con muchas menos multiplicaciones. 
         
-            Como $n=4$ las raíces cuartas de la unidad son $1$, $i$, $-1$, $-i$ y   la matriz $F$  es
+            Como $n=4$ las raíces cuartas de la unidad $e^{-2\pi k/4}$ ($0 \le k < 4$) son $1$, $-i$, $-1$, $i$ y la matriz $F$  es
             \begin{equation*}
                 F=\begin{bmatrix}
-                    1 & 1 & 1 & 1 \\
-                    1 & i & -1 & -i \\
-                    1 & -1 & 1 &  -1\\
-                    1 & -i & -1 &  i
-                \end{bmatrix}
-            \end{equation*}
-            y 
-            \begin{equation*}
-                4F^{-1}=\begin{bmatrix}
                     1 & 1 & 1 & 1 \\
                     1 & -i & -1 & i \\
                     1 & -1 & 1 &  -1\\
@@ -868,8 +915,7 @@
                 \end{bmatrix}
             \end{equation*}
             
-            La transformada de Fourier discreta aplicada a $f$ se hace calculando $F^{-1}f = (\overline{F}/n)f$ y  devuelve  $f(1)$, $f(-i)$, $f(-1)$, $f(i)$,  que son los valores que interesan. 
-            
+            La transformada de Fourier discreta aplicada a $f$ se hace calculando $Ff$ y  devuelve  $f(1)$, $f(-i)$, $f(-1)$, $f(i)$,  que son los valores que interesan. 
             
             Ahora procedemos a escribir  $f $ como suma de una función par $f_+$, y una impar $f_-$. Es decir:
             $$
@@ -927,46 +973,45 @@
 
         Ahora bien,  hemos reducido el cálculo de $f(x)$ de grado $<n$ al cálculo de dos funciones de grado $< n/2$, pero veremos a continuación que la ganancia en el tiempo del cálculo se obtiene debido a que los valores donde calculamos $f$ son raíces de la unidad.    
 
-        \begin{observacion}\label{obs-raices-unidad-div-2} Si $n$ par y $w = e^{2\pi i /n}$,  entonces $1, w, w^2,\ldots, w^{n-1}$ las raíces $n$-ésimas de la unidad,  y
+        \begin{observacion}\label{obs-raices-unidad-div-2} Si $n$ par y $w = e^{-2\pi i /n}$,  entonces $1, w, w^2,\ldots, w^{n-1}$ son las raíces $n$-ésimas de la unidad,  y
             $$
             \{(w^2)^k: 0 \le k < {n}/{2}\}
             $$
-            es el conjunto de las $n/2$-ésimas  raíces de la unidad. Más aún, si denotamos $u = \overline{w}= e^{-2\pi i /n}$, entonces  $1, u, u^2,\ldots, u^{n-1}$ es también el conjunto de raíces $n$-ésimas de la unidad y $1, {u^2}, (u^2)^2,\ldots, (u^2)^{n-1}$ es el conjunto de las $n/2$-ésimas  raíces de la unidad.
+            es el conjunto de las $n/2$-ésimas  raíces de la unidad. 
         \end{observacion}
 
         Por  la fórmula \eqref{eq-par-mas-impar},
         $$
-        f(u^k) = \tilde{f}_+((u^2)^k) + u^k \tilde{f}_-((u^2)^k), \quad \text{para $0 \le k < n$,}
+        f(w^k) = \tilde{f}_+((w^2)^k) + w^k \tilde{f}_-((w^2)^k), \quad \text{para $0 \le k < n$,}
         $$
         
         Sea $n$ par, entonces para $0 \le k <n/2$ y observemos que 
         \begin{equation*}
             \begin{matrix*}[l]
-                (u^2)^k &= e^{-\frac{4k\pi i}{n}}   \\
-                (u^2)^{k+ n/2} &= e^{-\frac{4(k+n/2)\pi i}{n}}= e^{-\frac{4k\pi i}{n}}e^{-2\pi i}= (u^2)^k
+                (w^2)^k &= e^{-\frac{4k\pi i}{n}}   \\
+                (w^2)^{k+ n/2} &= e^{-\frac{4(k+n/2)\pi i}{n}}= e^{-\frac{4k\pi i}{n}}e^{-2\pi i}= (w^2)^k
             \end{matrix*}. 
         \end{equation*}
         Entonces
         \begin{equation*}
             \begin{matrix*}[l]
-                f(u^k) &=& \tilde{f}_+((u^2)^k) + u^k \tilde{f}_-((u^2)^k),& \quad &\text{para $0 \le k < n/2$,} \\
-                f(u^{k+n/2}) &=& \tilde{f}_+((u^2)^k) - u^{k} \tilde{f}_-((u^2)^k),& \quad &\text{para $0 \le k < n/2$.}
+                f(w^k) &=& \tilde{f}_+((w^2)^k) + w^k \tilde{f}_-((w^2)^k),& \quad &\text{para $0 \le k < n/2$,} \\
+                f(w^{k+n/2}) &=& \tilde{f}_+((w^2)^k) - w^{k} \tilde{f}_-((w^2)^k),& \quad &\text{para $0 \le k < n/2$.}
             \end{matrix*} \tag{*}
         \end{equation*}
-    En la segunda formula utilizamos que $u^{k + n/2}= -u^k$. Entonces, calcular $f(u^k)$ para $0 \le k < n$ se reduce a calcular 
-    $$
-    \tilde{f}_+((u^2)^k) \quad\text{ y }\quad  \tilde{f}_-((u^2)^k), \quad \text{para $0 \le k < n/2$,}
-    $$
-    y  luego  aplicar las fórmulas (*). 
-    
-    Por lo tanto, hemos reducido de la transformada de Fourier discreta de $f$  cálculo de la transformada de Fourier discreta de $\tilde{f}_+$ y $\tilde{f}_-$.
-    
-    Repitiendo el razonamiento  que hicimos para $f$  a  $\tilde{f}_+$ y $\tilde{f}_-$ podemos calcular la transformada de Fourier discreta de $f$ en forma recursiva ($n = 2^m$ y observación \ref{obs-raices-unidad-div-2}).
-    
-    El ahorro de operaciones que se obtiene, como ya dijimos, al calcular de esta forma la representación de $f$ por $n$ valores se debe a que reducimos ese cálculo al cálculo de la representación de  dos funciones por $n/2$ valores. Se puede probar entonces que el cálculo de la transformada de Fourier discreta de $f$ conlleva alrededor $n\log_2(n)$ operaciones.
+        En la segunda formula utilizamos que $w^{k + n/2}= -w^k$. Entonces, calcular $f(w^k)$ para $0 \le k < n$ se reduce a calcular 
+        $$
+        \tilde{f}_+(u^k) \quad\text{ y }\quad  \tilde{f}_-(u^k), \quad \text{para $0 \le k < n/2$,}
+        $$
+        donde $u= w^2$, y  luego  aplicar las fórmulas (*).
+        
+        Por lo tanto, hemos reducido de la transformada de Fourier discreta de $f$  cálculo de la transformada de Fourier discreta de $\tilde{f}_+$ y $\tilde{f}_-$.
+        
+        Repitiendo el razonamiento  que hicimos para $f$  a  $\tilde{f}_+$ y $\tilde{f}_-$ podemos calcular la transformada de Fourier discreta de $f$ en forma recursiva ($n = 2^m$ y observación \ref{obs-raices-unidad-div-2}).
+        
+        El ahorro de operaciones que se obtiene, como ya dijimos, al calcular de esta forma la representación de $f$ por $n$ valores se debe a que reducimos ese cálculo al cálculo de la representación de  dos funciones por $n/2$ valores. Se puede probar entonces que el cálculo de la transformada de Fourier discreta de $f$ conlleva alrededor $n\log_2(n)$ operaciones.
 
-    El algoritmo es sencillo de programar. La siguiente sería una implementación en Python,  con algo de pseudocódigo.
-    
+        El algoritmo es sencillo de programar. La siguiente sería una implementación en Python,  con algo de pseudocódigo.
     
 \vskip .4cm
 {%\centering
@@ -977,37 +1022,128 @@
 \begin{verbatim}
 def FFT(f):
     # pre: f = [f_0, f_1, ..., f_(n-1)], n = 2**k (k >= 0)
-    # post: devuelve c = [f(u**0), f(u**1), ..., f(u**(n-1))]
-    #       donde u = e**(-2*pi*i/n) 
+    # post: devuelve c = [f(w**0), f(w**1), ..., f(w**(n-1))]
+    #       donde w = e**(-2*pi*i/n) 
     n = len(f)
     if n == 1:
         c = 1
     else:
-        u = e**(-2*pi*1j/n)
+        w = e**(-2*pi*1j/n)
         f_p, f_i = f[::2], f[1::2] # coeficientes pares e impares
         c_p, c_i = FFT(f_p), FFT(f_i)
         c = [0] * n # lista de longitud n con 0's
         for j in range(n // 2):
-            c[j] = c_p[j] + u**j * c_i[j]
-            c[j + n // 2] = c_p[j] - u**j * c_i[j]
+            c[j] = c_p[j] + w**j * c_i[j]
+            c[j + n // 2] = c_p[j] - w**j * c_i[j]
     return c
 \end{verbatim}
 \end{small}
 \end{minipage}
 }
 \vskip .4cm
-\begin{observacion*}
-    Observar que el algoritmo se aplica a cualquier secuencia $f=  (f_0, f_1, \ldots, f_{n-1})$ donde  no necesariamente los $f_j$ deben ser los coeficientes de un polinomio. En  todos los casos se obtiene $c= F^{-1}f$, la transformada discreta de Fourier. 
-\end{observacion*}
+        \begin{observacion*}
+            Observar que el algoritmo se aplica a cualquier secuencia $f=  (f_0, f_1, \ldots, f_{n-1})$ donde  no necesariamente los $f_j$ deben ser los coeficientes de un polinomio. En  todos los casos se obtiene $c= Ff$, la transformada discreta de Fourier. 
+        \end{observacion*}
+
+
+        Una de las características interesantes de esta teoría es que la transformada inversa de Fourier discreta se calcula de forma muy parecida a la la transformada de Fourier discreta, pues $F^{-1}$  es la matriz $F$ conjugada y multiplicada por una constante. El pseudocódigo correspondiente es muy similar, donde sólamente se cambia la raíz de la unidad $w = e^{-2\pi i /n}$ por $w = (1/n)e^{2\pi i /n}$. 
+
 \vskip .4cm
+{%\centering
+\begin{minipage}{0.95\textwidth}
+\noindent \textsc{Transformada rápida de Fourier inversa}
+\vskip .2cm
+\begin{small}
+\begin{verbatim}
+def IFFT(f):
+    # pre: c = [c_0, c_1, ..., c_(n-1)], n = 2**k (k >= 0)
+    # post: devuelve F**(-1)c
+    n = len(f)
+    if n == 1:
+        c = 1
+    else:
+        w = (1/n)*e**(2*pi*1j/n)
+        f_p, f_i = f[::2], f[1::2] # coeficientes pares e impares
+        c_p, c_i = IFFT(f_p), IFFT(f_i)
+        c = [0] * n # lista de longitud n con 0's
+        for j in range(n // 2):
+            c[j] = c_p[j] + w**j * c_i[j]
+            c[j + n // 2] = c_p[j] - w**j * c_i[j]
+    return c
+\end{verbatim}
+        \end{small}
+        \end{minipage}
+        }\vskip .4cm
+
+            \begin{ejemplo*}[Multiplicación de polinomios con FFT] Explicitaremos el procedimiento completo para multiplicar dos polinomios usando FFT. 
+                
+                Sean 
+                \begin{align*}
+                    f(x) &=  f_0 x^0  +  f_1 x^1 +  \cdots +  f_{k-1}x^{r-1} +f_kx^r,\\
+                    g(x) &=  g_0 x^0  +  g_1 x^1 +  \cdots +  g_{k-1}x^{s-1} +g_kx^s., 
+                \end{align*}
+                dos polinomios complejos de grado menor que $2^{k-1}$. Sea $n = 2^k$. 
+                \begin{itemize}
+                    \item Asociamos a  $f$ y $g$ dos $n$-uplas
+                    \begin{align*}
+                        f &=  (f_0, f_1, \ldots, f_{n-2}, f_{n-1}),\\
+                        g &=  (g_0, g_1, \ldots, g_{n-2}, g_{n-1}), 
+                    \end{align*}
+                    completando con $0$'s cuando sea necesario.
+                    \item Calculamos $c = FFT(f)$, $d=FFT(g)$ y $h = IFFT(cd)$.
+                    \item Entonces, 
+                    \begin{equation*}
+                        fg(x) = h_0 x^0  +  h_1 x^1 +  \cdots +  h_{n-2}x^{n-2} +f_{n-1}x^{n-1}.
+                    \end{equation*}
+                \end{itemize}
 
 
-
-
-\end{section}
-
-\begin{section}{La antitransformada de Fourier}
             
+            \end{ejemplo*}
+
+            \begin{ejemplo*}[Multiplicación entera con FFT]
+                Otro ejemplo algebraico interesante de esta teoría es la multiplicación de números enteros. Lo observación es que el producto de enteros es también por convolución y una forma de ver esto es observando que esta multiplicación es un caso especial de la multiplicación de polinomios.  Efectivamente,  sean $m$, $n$ números enteros,  entonces sus desarrollos en base $10$ son
+                \begin{align*}
+                    m &=  f_0 10^0  +  f_1 10^1 +  \cdots +  f_{k-1}10^{k-1} +f_k10^k,\\
+                    n &=  g_0 10^0  +  g_1 10^1 +  \cdots +  g_{k-1}10^{k-1} +g_k10^k. 
+                \end{align*}
+                Luego,  si definimos los polinomios 
+                \begin{align*}
+                    f(x) &=  f_0 x^0  +  f_1 x^1 +  \cdots +  f_{k-1}x^{k-1} +f_kx^k,\\
+                    g(x) &=  g_0 x^0  +  g_1 x^1 +  \cdots +  g_{k-1}x^{k-1} +g_kx^k., 
+                \end{align*}
+                obtenemos
+                \begin{equation*}
+                    m \cdot n = (fg)(10).
+                \end{equation*}
+                Es decir el producto de dos números enteros se ``reduce'' a multiplicar dos polinomios y especializarlos en  $10$. 
+                
+                
+                Sin embargo, como ya sabemos, no es necesario usar polinomios para calcular ese producto. Hagamos un ejemplo, multipliquemos $123$ y $456$, esto nos va a dar un número de $5$ dígitos, por lo tanto completamos con $0$'s para conseguir $5$-uplas y luego hacemos convolución:
+                \begin{small}
+                \begin{align*}
+                    (3,2,1,0,0)*(6,5,4,0,0) &= (3\cdot 6,\, 3\cdot  5 + 2\cdot 6 ,\, 3\cdot 4 +  2\cdot 5+ 1\cdot 6,\, 2\cdot 4 + 1 \cdot 5,\,1 \cdot 4)\\
+                    &= (18,\, 15 + 12,\, 12 +10 +6,\, 8 +5,\, 4)  \\
+                    &= (18, 27, 28, 13, 4).
+                \end{align*}
+                \end{small}
+                El lector reconocerá en la segunda linea de la ecuación anterior las sumas que nos quedan en las columnas cuando multiplicamos con el método habitual. El resultado es, entonces, 
+                \begin{equation*}
+                    18+ 27 \cdot 10 + 28 \cdot 10^2 +  13\cdot 10^3 + 4 \cdot 10^4 = 56088.
+                \end{equation*}
+                El problema es que la $5$-upla que representa el resultado tiene entradas mayores que $9$ y por lo tanto no corresponde a un desarrollo en base $10$. Lo  que debemos hacer es ``pasar'' lo que sobra, como hacemos siempre:
+                \begin{align*}
+                    (18, 27, 28, 13, 4) &= (8,1 + 27, 28, 13, 4)\\
+                    &= (8,28, 28, 13, 4)  \\
+                    &= (8,8, 30, 13, 4)  \\
+                    &= (8,8, 0, 16, 4)  \\
+                    &= (8,8, 0, 6, 5).  \\
+                \end{align*}
+                Así hemos recuperado el valor de la multiplicación. 
+
+                El procedimiento completo para multiplicar dos enteros utilizando FFT es muy similar al que se utiliza para multiplicar polinomios. Métodos basados en FFT para multiplicar enteros, de los cuales el más conocido el algoritmo de Schönhage–Strassen, son utilizados para ser aplicados a problemas matemáticos muy específicos.
+
+            \end{ejemplo*}
 
     
     
@@ -1017,7 +1153,7 @@ def FFT(f):
 \end{chapter}
         
 \begin{chapter}{Determinante}\label{apend.Determinante}
-    En  el apéndice se harán las demostraciones de los resultados correspondientes a la sección de determinantes (sección  \ref{seccion-determinate}).
+    En  el apéndice se harán las demostraciones de los resultados correspondientes a la sección de determinantes (sección  \ref{seccion-determinante}).
 
     \begin{section}{Determinantes}\label{seccion-determinantes-demostraciones}
         
@@ -1174,7 +1310,7 @@ def FFT(f):
             \begin{enumerate}
                 \item\label{cor-det-E1} Sea $E$ la matriz elemental que se obtiene  multiplicando por $c\ne 0$ la matriz $\Id_n$.  Entonces $\det(E) = c$. 
                 \item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$  sumando $c$ veces $F_r$  a $F_s$ ($r\ne s$).  Entonces $det(E) = 1$.
-                \item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ de permutando la $F_r$ con  $F_s$ ($r\ne s$).  Entonces $\det(E)=-1$. 
+                \item\label{cor-det-E3} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ de permutando la $F_r$ con  $F_s$ ($r\ne s$).  Entonces $\det(E)=-1$. 
             \end{enumerate}
         \end{corolario}
         \begin{proof}
