@@ -72,7 +72,7 @@
             
         
         
-        \begin{proposicion} Sean   $x,y \in \R^n$. Entonces, 
+        \begin{proposicion} Sea $V$  un $\R$-espacio vectorial con producto interno $\la \,,\,\ra$ y sean  $x,y \in V$. Entonces, 
             \begin{enumerate}
                 \item\label{prop-pi-2} Si $c \in \R$, tenemos $||cx|| = |c|||x||$.
                 \item\label{prop-pi-3} $||x+y||^2 = ||x||^2 + ||y||^2 + 2\la x,y\ra$. 
@@ -88,8 +88,8 @@
             \begin{align*}
                 ||u+v||^2 &= \la u+v,u+v\ra\\
                 &= \la u,u+v\ra+ \la v,u+v\ra  \\
-                &\overset{(\ref{prop-P2-2})}{=} \la u,u\ra+ \la u,v\ra+\la v,u\ra+ \la v,v\ra  \\
-                &\overset{(\ref{prop-P1-2})}{=} \la u,u\ra+ 2\la u,v\ra+ \la v,v\ra  \\
+                &\stackrel{(\ref{prop-P2-2})}{=} \la u,u\ra+ \la u,v\ra+\la v,u\ra+ \la v,v\ra  \\
+                &\stackrel{(\ref{prop-P1-2})}{=} \la u,u\ra+ 2\la u,v\ra+ \la v,v\ra  \\
                 &=||u||^2 + ||v||^2 + 2\la u,v\ra.
             \end{align*}
             
@@ -100,47 +100,9 @@
         
         Recordemos que dos vectores $x,y$  de $\R^n$ son perpendiculares u ortogonales si $\la x,y\ra =0$, lo cual era denotado $x \perp y$. 
         
-        \begin{definicion} Sea $X \subset \R^n$, diremos que $X$ es un \textit{conjunto ortogonal} si $v\perp w$ para $v,w \in X$, $v\not= w$. Diremos que $X$ es un \textit{conjunto ortonormal} si $X$ es ortogonal y todos los vectores de $X$ son  \textit{unitarios}\index{vector unitario} (es decir $||v|| =1$ para $v \in X$).
+        \begin{definicion}  Sea $V$  un $\R$-espacio vectorial con producto interno $\la \,,\,\ra$  y  sean $x,y \in V$ no nulos. Diremos que $x$ e $y$  son \textit{perpendiculares}\index{vectores perpendiculares} u  \textit{ortogonales}\index{vectores ortogonales}, y lo denotamos  $x \perp y$, si $\la x,,y\ra =0$. 
         \end{definicion}
-    
-        
-        \begin{proposicion}\label{ortogonal->ortonormal}
-            Sea  $$X = \{v_1,\ldots,v_r \} \subset \R^n$$ un conjunto ortogonal. Sea 
-            \begin{equation*}
-                X' =  \left\{\frac{v_1}{||v_1||},\ldots,\frac{v_r}{||v_r||} \right\}.
-            \end{equation*}
-            Entonces $X'$ es  un conjunto ortonormal. 
-        \end{proposicion}
-        \begin{proof}
-            Para demostrar esto debemos ver que dos vectores distintos de $X'$ son ortogonales y que cada vector de $X'$ es de norma 1.
-            
-            Sea $i \ne j$, entonces
-            \begin{equation*}
-            \la \frac{v_i}{||v_i||} | \frac{v_j}{||v_j||}\ra = \frac{1}{||v_i||||v_j||} \la v_i | v_j\ra = 0.
-            \end{equation*}
-            Por otro lado,
-            \begin{equation*}
-            \la \frac{v_i}{||v_i||} | \frac{v_i}{||v_i||}\ra = \frac{1}{||v_i||^2} \la v_i | v_i\ra=  \frac{1}{||v_i||^2}||v_i||^2 =1.
-            \end{equation*}
-        \end{proof}	
-            
-            
-            
-        
-        
-        \medskip
-        
-        \begin{teorema}\label{th-ortogonal-implica-li} Sea $X \subset \R^n$ un conjunto  ortogonal. Entonces $X$ es LI. 
-        \end{teorema}
-        \begin{proof} Sea $X =\{v_1,\ldots,v_r \}$ y sea $a_1,\ldots,a_r$ en $F$ tales que  $\sum_{i=1}^r a_iv_i =0$. Entonces,  dado $j$ con $1 \le j \le r$,  tenemos 
-            $$
-            0=\la\sum_{i=1}^r a_iv_i ,v_j \ra = \sum_{i=1}^r a_i\la v_i ,v_j \ra = a_j\la v_j ,v_j \ra = a_j||v_j||^2.
-            $$
-            Como $X$  es un conjunto ortogonal,  $||v_j|| >0$, luego $a_j =0$ para cualquier $j$. Es decir hemos probado que todos los coeficientes de la suma son cero y por lo tanto $X$  es LI.
-        \end{proof}
-        
-        
-        
+
         \begin{proposicion}
             ${}^{}$
             \begin{enumerate}
@@ -168,46 +130,13 @@
             &=  2||u||^2 + 2||v||^2.
             \end{align*}
         \end{proof}
-        
-        \begin{definicion} Si $X \subset \R^n$ es ortogonal (ortonormal) y es base, diremos que $X$ es una \textit{base ortogonal} (resp. \textit{base ortonormal}) o diremos que $X$ es \textit{BO} (resp. \textit{BON}).\index{base ortogonal}\index{base ortonormal}
-        \end{definicion}
-        
-        \begin{ejemplo*} ${}^{}$
-            \begin{enumerate}
-                \item La base canónica de $\R^n$ es ortonormal. 
-                \item Si $u=(1,1)$, $v=(1,-1)$, entonces $u,v$ es una base ortogonal.  
-            \end{enumerate}
-        \end{ejemplo*}
-        
-        \begin{proposicion} Sea $ X = \{v_1,\ldots,v_n\}$ una base ortogonal, entonces 
-            \begin{equation*}
-                X' = \left\{\frac{v_1}{||v_1||},\ldots,\frac{v_n}{||v_n||} \right\}
-            \end{equation*}
-            es una base ortonormal.
-        \end{proposicion}
-        \begin{proof}
-            Hemos probado en la proposición \ref{ortogonal->ortonormal} que $X'$ es un conjunto ortonormal.  Por  teorema \ref{th-ortogonal-implica-li}. $X'$ es un conjunto LI.   Veamos ahora que es $X'$ genera a $V$. 
-            
-            Sea $v \in V$, como $X$  es base de  $V$, en particular genera a $V$, luego existen $a_i \in R$, tal que  $v = \sum_i a_i v_i$. Luego
-            $$
-            v = \sum_i a_i v_i = \sum_i a_i \frac{||v_i||}{||v_i||} v_i = \sum_i (a_i ||v_i||) \frac{v_i}{||v_i||}.
-            $$
-            Luego $X'$ es un conjunto de generadores de $V$. 
-        \end{proof}
-        \begin{ejemplo*} 
-            \begin{enumerate}
-                \item Si $u=(1,1)$, $v=(1,-1)$, entonces $||u||=||v|| = \sqrt{2}$ y $(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}),(\frac{1}{\sqrt{2}},\frac{-1}{\sqrt{2}})$ es una base ortonormal.  
-            \end{enumerate}
-        \end{ejemplo*}
-        
-        \medskip
-        
+
         \begin{observacion}\label{obs-proyeccion-ort}
-            No es difícil ver en un dibujo que 
+            No es difícil ver en un dibujo que  para vectores en $\R^2$ o $\R^3$ 
             \begin{equation*}
                 \operatorname{pr}_u(v) := \frac{\la u|v\ra}{\la u|u\ra}u
             \end{equation*}
-             es la proyección de $v$ en $u$ y que   $(v - \operatorname{pr}(v)) \perp u$. Es decir,   los vectores
+            es la proyección de $v$ en $u$ y que   $(v - \operatorname{pr}(v)) \perp u$. Es decir,   los vectores
             \begin{equation*}
                     u, \quad   v - \frac{\la u|v\ra}{\la u|u\ra}u,
             \end{equation*}
@@ -236,7 +165,7 @@
                 \node [anchor=north west] at (-0.1+36/17,0.1+9/17) {$\operatorname{pr}_u(v)$};
                 \draw[-{Latex[red,length=3.0mm,width=2.0mm]},very thick, red] (0,0) -- (-9.5/17,42/17);
                 % vector v - w
-               %+--- \draw[fill] (-2,1) circle [radius=0.05];
+                %+--- \draw[fill] (-2,1) circle [radius=0.05];
                 % punteada de v-w  a v
                 \draw[loosely dotted, thick] (-9.5/17,42/17) -- (1.5,3);	
                 \draw[loosely dotted, thick] (36/17,9/17) -- (1.5,3);	
@@ -246,7 +175,7 @@
             \end{figure}
         
         
-            Esto,  además de la interpretación geométrica, lo podemos demostrar algebraicamente:
+            Esto,  además de la interpretación geométrica, lo podemos demostrar algebraicamente para $v,w$ vectores en $V$, espacio con producto interno, y  tal que $v, w$ son LI:
             \begin{equation*}
             \la v - \frac{\la u,v\ra}{\la u,u\ra} u , u \ra =
             \la v , u \ra  -\frac{\la u,v\ra}{\la u,u\ra}\la u , u \ra =  \la v , u \ra -  \la u , v \ra =0.
@@ -254,7 +183,7 @@
             
         \end{observacion}
         
-        \begin{proposicion}[Desigualdad de Cauchy-Schwarz]\label{prop-cauchy-schwarz} Sean $u, v\in \R^n$. Entonces 
+        \begin{proposicion}[Desigualdad de Cauchy-Schwarz]\label{prop-cauchy-schwarz} Sea $V$  un $\R$-espacio vectorial con producto interno $\la \,,\,\ra$ y sean $u, v\in V$. Entonces 
             $$|\la u, v \ra| \le ||u||||v||.$$
         \end{proposicion}
         \begin{proof} 
@@ -273,32 +202,108 @@
             $$
         \end{proof}
         
-        \begin{teorema}[Desigualdad triangular] Sean $u, v\in \R^n$, entonces 
-            $$||u + v|| \le ||u|| + ||v||	$$
+        \begin{teorema}[Desigualdad triangular] Sea $V$  un $\R$-espacio vectorial con producto interno $\la \,,\,\ra$ y sean $u, v\in V$, entonces 
+            \begin{equation} \label{eq-desigualdad-triangular}
+                ||u + v|| \le ||u|| + ||v||
+            \end{equation}
         \end{teorema}
         \begin{proof}
-            Probar 
-            $$
-            ||u + v||^2 \le (||u|| + ||v||)^2
-            $$
-            desarrollando  el lado izquierdo de la desigualdad  como $\la u+v, u+v \ra$ y el lado derecho por el cálculo del binomio al cuadrado. Luego usar la desigualdad de Cauchy-Schwarz.
+            Desarrollamos el lado izquierdo de la desigualdad \eqref{eq-desigualdad-triangular} como $\la u+v, u+v \ra$:
+            \begin{align*}
+                \la u+v, u+v \ra &= \la u, u \ra + \la u, v \ra +\la v, u \ra +\la v, v \ra \\
+                &= ||u||^2+ \la u, v \ra +\la v, u \ra +||v||^2\\
+                &\stackrel{(\ref{prop-P1-2})}{=} ||u||^2+ 2\la u, v \ra +||v||^2.
+            \end{align*}
+            Por  Cauchy-Schwarz, $2\la u, v \ra \le 2||u||\,||v||$ y por lo tanto\begin{equation*}
+                ||u + v||^2 \le ||u||^2+2||u||\,||v|| +||v||^2 = (||u||+||v||)^2,
+            \end{equation*}
+            de donde se deduce el resultado. 
         \end{proof}
         
-        Ahora vamos a demostrar el proceso de ortonormalización de Gram-Schmidt, que consta de  un algoritmo que permite pasar de una base cualquiera $\{v_1,\ldots, v_n\}$ de $\R^n$ a una base ortonormal $\{u_1,\ldots, u_n\}$, con la importante propiedad de que, para $m$ con  $1 \le m \le n$, el subespacio generado por los vectores $\{u_1,\ldots, u_m\}$ es el mismo que el subespacio generado por los vectores $\{v_1,\ldots, v_m\}$.
+        \begin{definicion} Sea $X \subset V$, diremos que $X$ es un \textit{conjunto ortogonal} si $v\perp w$ para $v,w \in X$, $v\not= w$. Diremos que $X$ es un \textit{conjunto ortonormal} si $X$ es ortogonal y todos los vectores de $X$ son  \textit{unitarios}\index{vector unitario} (es decir $||v|| =1$ para $v \in X$).
+        \end{definicion}
+        
+        \begin{proposicion}\label{ortogonal->ortonormal} Sea $V$  un $\R$-espacio vectorial con producto interno $\la \,,\,\ra$ y sea  
+            $$X = \{v_1,\ldots,v_r \} \subset V$$ 
+            un conjunto ortogonal. Sea 
+            \begin{equation*}
+                X' =  \left\{\frac{v_1}{||v_1||},\ldots,\frac{v_r}{||v_r||} \right\}.
+            \end{equation*}
+            Entonces $X'$ es  un conjunto ortonormal. 
+        \end{proposicion}
+        \begin{proof}
+            Para demostrar esto debemos ver que dos vectores distintos de $X'$ son ortogonales y que cada vector de $X'$ es de norma 1.
+            
+            Sea $i \ne j$, entonces
+            \begin{equation*}
+            \la \frac{v_i}{||v_i||} | \frac{v_j}{||v_j||}\ra = \frac{1}{||v_i||||v_j||} \la v_i | v_j\ra = 0.
+            \end{equation*}
+            Por otro lado,
+            \begin{equation*}
+            \la \frac{v_i}{||v_i||} | \frac{v_i}{||v_i||}\ra = \frac{1}{||v_i||^2} \la v_i | v_i\ra=  \frac{1}{||v_i||^2}||v_i||^2 =1.
+            \end{equation*}
+        \end{proof}	
+            
+            
+            
+        
+        
+        \medskip
+        
+        \begin{teorema}\label{th-ortogonal-implica-li} Sea $V$  un $\R$-espacio vectorial con producto interno $\la \,,\,\ra$ y sea $X \subset V$ un conjunto  ortogonal. Entonces $X$ es LI. 
+        \end{teorema}
+        \begin{proof} Sea $X =\{v_1,\ldots,v_r \}$ y sea $a_1,\ldots,a_r$ en $\R$ tales que  $\sum_{i=1}^r a_iv_i =0$. Entonces,  dado $j$ con $1 \le j \le r$,  tenemos 
+            $$
+            0=\la\sum_{i=1}^r a_iv_i ,v_j \ra = \sum_{i=1}^r a_i\la v_i ,v_j \ra = a_j\la v_j ,v_j \ra = a_j||v_j||^2.
+            $$
+            Como $X$  es un conjunto ortogonal,  $||v_j|| >0$, luego $a_j =0$ para cualquier $j$. Es decir hemos probado que todos los coeficientes de la suma son cero y por lo tanto $X$  es LI.
+        \end{proof}
+        
 
         
-        La idea del proceso es sencillo para dos vectores: sean  $v_1,v_2 \in \R^n$ no  nulos y no proporcionales, vimos en la observación \ref{obs-proyeccion-ort} que  los vectores
+        \begin{definicion} Sea $V$  un $\R$-espacio vectorial con producto interno $\la \,,\,\ra$. Si $X \subset V$ es ortogonal (ortonormal) y es base, diremos que $X$ es una \textit{base ortogonal} (resp. \textit{base ortonormal}) o diremos que $X$ es \textit{BO} (resp. \textit{BON}).\index{base ortogonal}\index{base ortonormal}
+        \end{definicion}
+        
+        \begin{ejemplo*} ${}^{}$
+            \begin{enumerate}
+                \item La base canónica de $\R^n$ es ortonormal. 
+                \item Si $u=(1,1)$, $v=(1,-1)$, entonces $u,v$ es una base ortogonal de $\R^2$.  
+            \end{enumerate}
+        \end{ejemplo*}
+        
+        \begin{proposicion} Sea $ X = \{v_1,\ldots,v_n\}$ una base ortogonal, entonces 
+            \begin{equation*}
+                X' = \left\{\frac{v_1}{||v_1||},\ldots,\frac{v_n}{||v_n||} \right\}
+            \end{equation*}
+            es una base ortonormal.
+        \end{proposicion}
+        \begin{proof}
+            Hemos probado en la proposición \ref{ortogonal->ortonormal} que $X'$ es un conjunto ortonormal.  Por  teorema \ref{th-ortogonal-implica-li}. $X'$ es un conjunto LI.   Veamos ahora que es $X'$ genera a $V$. 
+            
+            Sea $v \in V$, como $X$  es base de  $V$, en particular genera a $V$, luego existen $a_i \in R$, tal que  $v = \sum_i a_i v_i$. Luego
+            $$
+            v = \sum_i a_i v_i = \sum_i a_i \frac{||v_i||}{||v_i||} v_i = \sum_i (a_i ||v_i||) \frac{v_i}{||v_i||}.
+            $$
+            Luego $X'$ es un conjunto de generadores de $V$. 
+        \end{proof}
+        \begin{ejemplo*} 
+            Si $u=(1,1)$, $v=(1,-1)$, entonces $||u||=||v|| = \sqrt{2}$ y $(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}),(\frac{1}{\sqrt{2}},\frac{-1}{\sqrt{2}})$ es una base ortonormal.  
+            
+        \end{ejemplo*}
+        \vskip .2cm
+        Sea $V$  un $\R$-espacio vectorial de con producto interno $\la \,,\,\ra$ ¿existe una base ortogonal de $V$? Si $\dim(V) < \infty$  la respuesta es afirmativa y esto se deducirá del proceso de ortonormalización de Gram-Schmidt que veremos a continuación. 
+
+        El proceso de ortonormalización de Gram-Schmidt, consta de  un algoritmo que permite pasar de una base cualquiera $\{v_1,\ldots, v_n\}$ de $V$ a una base ortonormal $\{u_1,\ldots, u_n\}$, con la importante propiedad de que, para $m$ con  $1 \le m \le n$, el subespacio generado por los vectores $\{u_1,\ldots, u_m\}$ es el mismo que el subespacio generado por los vectores $\{v_1,\ldots, v_m\}$.
+        
+        La idea del proceso es sencillo para dos vectores: sean  $v_1,v_2 \in V$ no  nulos y no proporcionales, vimos en la observación \ref{obs-proyeccion-ort} que  los vectores
         \begin{equation*}
             w_1 = v_1, \quad w_2 = v_2 - \operatorname{pr}_{v_1}(v_2) = v_2 - \frac{\la v_1,v_2\ra}{\la v_1,v_1\ra}v_1
         \end{equation*}
         son ortogonales. Ahora bien, $v_1 = w_1$ y $v_2  = \frac{\la v_1,v_2\ra}{\la v_1,v_1\ra}w_1 + w_2$, luego  $w_1,w_2$ generan el mismo subespacio que $v_1,v_2$. Concluyendo, dados  $v_1,v_2$ dos vectores LI, $w_1,w_2$ son dos vectores ortogonales que generan el mismo subespacio. Para $n >2$ la idea es similar. 
         
-  
-        
-        
-        
         \begin{proposicion}[Proceso de ortogonalización de Gram-Schmidt]\index{Gram-Schmidt}
-            Sea $\{v_1,\ldots,v_n\}$ una base de $\R^n$. Entonces existe una base ortogonal $\{w_1,\ldots, w_n\}$ tal que el subespacio generado por los vectores $\{w_1,\ldots, w_m\}$ es el mismo que el subespacio generado por $\{v_1,\ldots, v_m\}$ ($1\le m \le n$). Explícitamente, la base es
+            Sea $V$  un $\R$-espacio vectorial de con producto interno $\la \,,\,\ra$ y tal que $\dim(V) = n < \infty$. 
+            Sea $\{v_1,\ldots,v_n\}$ una base de $V$. Entonces existe una base ortogonal $\{w_1,\ldots, w_n\}$ de $V$ tal que el subespacio generado por los vectores $\{w_1,\ldots, w_m\}$ es el mismo que el subespacio generado por $\{v_1,\ldots, v_m\}$ ($1\le m \le n$). Explícitamente, la base es
             \begin{align}
             w_1 &= v_1, \tag{1} \\
             w_2 &= v_2 - \frac{\la v_2,w_1\ra}{\la w_1,w_1\ra}w_1, \tag{2}\\
@@ -341,7 +346,7 @@
         
 
         
-        \begin{observacion*} Sea $W$ subespacio de $\R^n$, entonces existe una base ortogonal de $W$. Esto se deduce del proceso de ortogonalización de Gram-Schmidt: sea $v_1,\ldots,v_k$ una base de $W$ y completamos a $v_{1},\ldots,v_n$ una base de $\R^n$. Por Gram-Schmidt obtenemos una BO $w_{1},\ldots,w_n$ tal que el subespacio generado  por $w_{1},\ldots,w_i$ es igual al subespacio generado por $v_{1},\ldots,v_i$ para $1 \le i \le n$. En  particular $W = \la v_{1},\ldots,v_k \ra =  \la w_{1},\ldots,w_k \ra$ y por lo tanto  $w_{1},\ldots,w_k$ es una BON de $W$.
+        \begin{observacion*} Sea $W$ subespacio de $V$, entonces existe una base ortogonal de $W$. Esto se deduce del proceso de ortogonalización de Gram-Schmidt: sea $v_1,\ldots,v_k$ una base de $W$ y completamos a $v_{1},\ldots,v_n$ una base de $V$. Por Gram-Schmidt obtenemos una BO $w_{1},\ldots,w_n$ tal que el subespacio generado  por $w_{1},\ldots,w_i$ es igual al subespacio generado por $v_{1},\ldots,v_i$ para $1 \le i \le n$. En  particular $W = \la v_{1},\ldots,v_k \ra =  \la w_{1},\ldots,w_k \ra$ y por lo tanto  $w_{1},\ldots,w_k$ es una BON de $W$.
             
         En la práctica, dada una base $v_1,\ldots,v_k$ de $W$,  con los primeros $k$ pasos del proceso de ortogonalización de Gram-Schmidt obtenemos $ w_{1},\ldots,w_k $ una base ortogonal de $W$.
         \end{observacion*}
@@ -353,7 +358,7 @@
                 w_1 &= (1,2,-1),  \\
                 w_2 &= (-2,-1,0) - \frac{\la (-2,-1,0),w_1\ra}{\la w_1,w_1\ra}w_1,
                 \end{align*}
-                es una base ortogonal de $W$. Calculemos 
+                es una base ortogonal de $W$. Calculemos: 
                 \begin{align*}
                     w_2  &= (-2,-1,0) - \frac{\la (-2,-1,0),(1,2,-1)\ra}{\la(1,2,-1),(1,2,-1)\ra}(1,2,-1)\\
                     &= (-2,-1,0) - \frac{-4}{6}(1,2,-1) \\
@@ -368,16 +373,11 @@
                 
             \end{proof}  
         \end{ejemplo*}
-        
 
-        
-        \begin{definicion}  Sean $U, W$ subespacios de $\R^n$. Diremos que \textit{$U$ es ortogonal a $W$} y denotaremos $U \perp W$ si  para todo $u \in U$ y para todo $w \in W$ tenemos que $ \la u,w\ra =0$. 
-            
-            Si $X$ es subconjunto de $\R^n$,  definimos 
-            $$
-            X^\perp := \{u \in \R^n: \la u,x\ra = 0, \forall\, x \in X\} = \{u \in \R^n: \la u,X\ra = 0\}.
-            $$ 
-        \end{definicion}
+        Sea $V$  un $\R$-espacio vectorial de con producto interno $\la \,,\,\ra$ Si $X$ es subconjunto de $\R^n$,  definimos 
+        $$
+        X^\perp := \{u \in \R^n: \la u,x\ra = 0, \forall\, x \in X\} = \{u \in \R^n: \la u,X\ra = 0\}.
+        $$ 
         
         \begin{proposicion}
             Sea  $X \subset \R^n$, entonces $X^\perp$  es un subespacio de $\R^n$.
@@ -392,7 +392,9 @@
         \begin{definicion}
             Sea $\R^n$ espacio vectorial con producto interno $\la \;,\;\ra$ y sea $X$ subconjunto de $\R^n$. Diremos que $X^\perp$ es el  \textit{subespacio  ortogonal a $X$ en $\R^n$}.   
         \end{definicion}
-        
+
+        % \begin{definicion}  Sean $U, W$ subespacios de $\R^n$. Diremos que \textit{$U$ es ortogonal a $W$} y denotaremos $U \perp W$ si  para todo $u \in U$ y para todo $w \in W$ tenemos que $ \la u,w\ra =0$. 
+        % \end{definicion}
     
     \end{section}
 
@@ -892,7 +894,7 @@
             Si  $T: V \to V$ una transformación lineal autoadjunta y $W$ un subespacio de $V$ invariante por $T$, entonces $W^\perp$ es invariante por $T$.
         \end{corolario}
         
-        \begin{observacion}label{5.8}
+        \begin{observacion}\label{5.8}
             Sea $V$ espacio vectorial  sobre $\R$, $\la\;,\;\ra$ un producto interno y $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $V$. Si $x,y \in V$ con $x = \sum x_iu_i$ y $y = \sum y_i u_i$, entonces
             $$
             \la x,y\ra = \sum_i\sum_j \la x_i,y_j\ra = \sum_i x_iy_i.
@@ -931,7 +933,9 @@
         \begin{observacion*} La recíproca del teorema anterior también es válida: si $\mathcal{U} = \{u_1,\ldots,u_n\}$ es una BON de $V$ de autovectores de $T$, entonces $T$ es autoadjunto. Esto se debe a que la matriz de $T$ en la base $\mathcal{U}$ es diagonal y por lo tanto simétrica (ver proposición \ref{auto-impl-sim}). También se puede demostrar directamente dando $v,w \in V$, escribiendo cada uno en términos de la base y viendo que 
             $\la T(v),w\ra = \la v,T(w) \ra$.
         \end{observacion*}
-        
+
+        \begin{definicion}  Sea $V$ espacio vectorial  sobre $\R$, $\la\;,\;\ra$ un producto interno y sean $U, W$ subespacios de $V$. Diremos que \textit{$U$ es ortogonal a $W$} y denotaremos $U \perp W$ si  para todo $u \in U$ y para todo $w \in W$ tenemos que $ \la u,w\ra =0$. 
+        \end{definicion}
         
         \begin{proposicion}\label{desc-ort}
             Sea $T: V \to V$ autoadjunto.  Si $\lambda_1, \ldots,\lambda_k$ son los autovalores de $T$,  entonces 
