@@ -1,5 +1,5 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\babel@toc {spanish}{}
+\babel@toc {spanish}{}\relax 
 \defcounter {refsection}{0}\relax 
 \deactivateaddvspace 
 \defcounter {refsection}{0}\relax 
@@ -17,7 +17,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2}{\ignorespaces Representación gráfica de los puntos $(2,1)$, $(-1,2.5)$ y $(-2.5,-2.5)$ en $\PazoBB R^2$.\relax }}{5}{figure.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Representación gráfica del punto $v = (3.5,\tmspace +\thinmuskip {.1667em}3,\tmspace +\thinmuskip {.1667em}2.5)$ en $\PazoBB R^3$. \relax }}{6}{figure.1.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Representación gráfica del punto $v = (3.5,\,3,\,2.5)$ en $\PazoBB R^3$. \relax }}{6}{figure.1.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4}{\ignorespaces Ejemplo de la ley del paralelogramo.\relax }}{9}{figure.1.4}%
 \defcounter {refsection}{0}\relax 
@@ -78,3 +78,5 @@
 \ttl@tocsep 
 \defcounter {refsection}{0}\relax 
 \ttl@tocsep 
+\defcounter {refsection}{0}\relax 
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
