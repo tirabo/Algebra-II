@@ -1,0 +1,1546 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage[utf8]{inputenc}%esto permite (en Windows) escribir directamente 
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,arrows,babel,decorations.pathreplacing}
+\usepackage{verbatim} 
+\usepackage{xcolor} 
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{mathtools}
+\usepackage{xcolor}
+
+%\setbeamertemplate{background}[grid][step=8 ] 
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+
+\renewcommand{\figurename }{Figura}
+
+
+\setbeamercolor{block}{fg=red, bg=red!40!white}
+\setbeamercolor{block example}{use=structure,fg=black,bg=white!20!white}
+
+\renewenvironment{block}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{alertblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{red!80!black}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{exampleblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+
+\newenvironment{exercise}[1]% environment name
+{% begin code
+	\par\vspace{\baselineskip}\noindent
+	\textbf{Ejercicio (#1)}\begin{itshape}%
+		\par\vspace{\baselineskip}\noindent\ignorespaces
+	}%
+	{% end code
+	\end{itshape}\ignorespacesafterend
+}
+
+
+\newenvironment{definicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Definición}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{observacion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Observación}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejemplo}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejemplo}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejercicio}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejercicio}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{proof}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+%prueba
+
+\newenvironment{demostracion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{idea}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Idea de la demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{solucion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Solución}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{lema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Lema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{proposicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Proposición}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{teorema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Teorema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+\newenvironment{corolario}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Corolario}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{propiedad}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Propiedad}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{conclusion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Conclusión}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nc}{\newcommand}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+\nc{\RR}{{\mathbb R}} \nc{\CC}{{\mathbb C}} \nc{\ZZ}{{\mathbb Z}}
+\nc{\FF}{{\mathbb F}} \nc{\NN}{{\mathbb N}} \nc{\QQ}{{\mathbb Q}}
+\nc{\PP}{{\mathbb P}} \nc{\DD}{{\mathbb D}} \nc{\Sn}{{\mathbb S}}
+\nc{\uno}{\mathbb{1}} \nc{\BB}{{\mathbb B}} \nc{\An}{{\mathbb A}}
+
+\nc{\ba}{\mathbf{a}} \nc{\bb}{\mathbf{b}} \nc{\bt}{\mathbf{t}}
+\nc{\bB}{\mathbf{B}}
+
+\nc{\cP}{\mathcal{P}} \nc{\cU}{\mathcal{U}} \nc{\cX}{\mathcal{X}}
+\nc{\cE}{\mathcal{E}} \nc{\cS}{\mathcal{S}} \nc{\cA}{\mathcal{A}}
+\nc{\cC}{\mathcal{C}} \nc{\cO}{\mathcal{O}} \nc{\cQ}{\mathcal{Q}}
+\nc{\cB}{\mathcal{B}} \nc{\cJ}{\mathcal{J}} \nc{\cI}{\mathcal{I}}
+\nc{\cM}{\mathcal{M}} \nc{\cK}{\mathcal{K}}
+
+\nc{\fD}{\mathfrak{D}} \nc{\fI}{\mathfrak{I}} \nc{\fJ}{\mathfrak{J}}
+\nc{\fS}{\mathfrak{S}} \nc{\gA}{\mathfrak{A}}
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+
+
+
+
+%%%%%%%%%%%%%%%%%yetter drinfield
+\newcommand{\ydg}{{}_{\ku G}^{\ku G}\mathcal{YD}}
+\newcommand{\ydgdual}{{}_{\ku^G}^{\ku^G}\mathcal{YD}}
+\newcommand{\ydf}{{}_{\ku F}^{\ku F}\mathcal{YD}}
+\newcommand{\ydgx}{{}_{\ku \Gx}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydgxy}{{}_{\ku \Gy}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydixq}{{}_{\ku \ixq}^{\ku \ixq}\mathcal{YD}}
+
+\newcommand{\ydl}{{}^H_H\mathcal{YD}}
+\newcommand{\ydll}{{}_{K}^{K}\mathcal{YD}}
+\newcommand{\ydh}{{}^H_H\mathcal{YD}}
+\newcommand{\ydhdual}{{}^{H^*}_{H^*}\mathcal{YD}}
+
+
+\newcommand{\ydha}{{}^H_A\mathcal{YD}}
+\newcommand{\ydhhaa}{{}^{\Hx}_{\Ay}\mathcal{YD}}
+
+
+\newcommand{\wydh}{\widehat{{}^H_H\mathcal{YD}}}
+\newcommand{\ydvh}{{}^{\ac(V)}_{\ac(V)}\mathcal{YD}}
+\newcommand{\ydrh}{{}^{R\# H}_{R\# H}\mathcal{YD}}
+\newcommand{\ydho}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}}
+\newcommand{\ydhsw}{{}^{H^{\sw}}_{H^{\sw}}\mathcal{YD}}
+
+\newcommand{\ydhlf}{{}^H_H\mathcal{YD}_{\text{loc fin}}}
+\newcommand{\ydholf}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}_{\text{loc fin}}}
+
+\nc{\yd}{\mathcal{YD}}
+
+\newcommand{\ydsn}{{}^{\ku{\Sn_n}}_{\ku{\Sn_n}}\mathcal{YD}}
+\newcommand{\ydsnd}{{}^{\ku^{\Sn_n}}_{\ku^{\Sn_n}}\mathcal{YD}}
+\nc{\ydSn}[1]{{}^{\Sn_{#1}}_{\Sn_{#1}}\yd}
+\nc{\ydSndual}[1]{{}^{\ku^{\Sn_{#1}}}_{\ku^{\Sn_{#1}}}\yd}
+\newcommand{\ydstres}{{}^{\ku^{\Sn_3}}_{\ku^{\Sn_3}}\mathcal{YD}}
+%%%%%%%%%%%%%%%%%yetter drinfield
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+\newcommand\Irr{\operatorname{Irr}}
+\newcommand\id{\operatorname{id}}
+\newcommand\ad{\operatorname{ad}}
+\newcommand\Ad{\operatorname{Ad}}
+\newcommand\Ext{\operatorname{Ext}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\gr{\operatorname{gr}}
+\newcommand\grdual{\operatorname{gr-dual}}
+\newcommand\Gr{\operatorname{Gr}}
+\newcommand\co{\operatorname{co}}
+\newcommand\car{\operatorname{car}}
+\newcommand\rk{\operatorname{rg}}
+\newcommand\ord{\operatorname{ord}}
+\newcommand\cop{\operatorname{cop}}
+\newcommand\End{\operatorname{End}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\Alg{\operatorname{Alg}}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\Int{\operatorname{Int}}
+\newcommand\Id{\operatorname{Id}}
+\newcommand\qAut{\operatorname{qAut}}
+\newcommand\Map{\operatorname{Map}}
+\newcommand\Jac{\operatorname{Jac}}
+\newcommand\Rad{\operatorname{Rad}}
+\newcommand\Rep{\operatorname{Rep}}
+\newcommand\Ker{\operatorname{Ker}}
+\newcommand\Img{\operatorname{Im}}
+\newcommand\Ind{\operatorname{Ind}}
+\newcommand\Comod{\operatorname{Comod}}
+\newcommand\Reg{\operatorname{Reg}}
+\newcommand\Pic{\operatorname{Pic}}
+\newcommand\textitb{\operatorname{Emb}}
+\newcommand\op{\operatorname{op}}
+\newcommand\Perm{\operatorname{Perm}}
+\newcommand\Res{\operatorname{Res}}
+\newcommand\res{\operatorname{res}}
+\newcommand{\sop}{\operatorname{Supp}}
+\newcommand\Cent{\operatorname{Cent}}
+\newcommand\sgn{\operatorname{sgn}}
+\nc{\GL}{\operatorname{GL}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+\nc{\D}{\Delta} 
+\nc{\e}{\varepsilon}
+\nc{\adl}{\ad_\ell}
+\nc{\ot}{\otimes}
+\nc{\Ho}{H_0} 
+\nc{\GH}{G(H)} 
+\nc{\coM}{\mathcal{M}^\ast(2,k)} 
+\nc{\PH}{\cP(H)}
+\nc{\Ftwist}{\overset{\curvearrowright}F}
+\nc{\rep}{{\mathcal Rep}(H)}
+\newcommand{\deltad}{_*\delta}
+\newcommand{\B}{\mathfrak{B}}
+\newcommand{\wB}{\widehat{\mathfrak{B}}}
+\newcommand{\Cg}[1]{C_{G}(#1)}
+\nc{\hmh}{{}_H\hspace{-1pt}{\mathcal M}_H}
+\nc{\hm}{{}_H\hspace{-1pt}{\mathcal M}}
+\renewcommand{\_}[1]{_{\left[ #1 \right]}}
+\renewcommand{\^}[1]{^{\left[ #1 \right]}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+\nc{\im}{\mathtt{i}}
+\renewcommand{\Re}{{\rm Re}}
+\renewcommand{\Im}{{\rm Im}}
+\nc{\Tr}{\mathrm{Tr}} 
+\nc{\cark}{char\,k} 
+\nc{\ku}{\Bbbk} 
+\newcommand{\fd}{finite dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+\newcommand{\xij}[1]{x_{(#1)}}
+\newcommand{\yij}[1]{y_{(#1)}}
+\newcommand{\Xij}[1]{X_{(#1)}}
+\newcommand{\dij}[1]{\delta_{#1}}
+\newcommand{\aij}[1]{a_{(#1)}}
+\newcommand{\hij}[1]{h_{(#1)}}
+\newcommand{\gij}[1]{g_{(#1)}}
+\newcommand{\eij}[1]{e_{(#1)}}
+\newcommand{\fij}[1]{f_{#1}}
+\newcommand{\tij}[1]{t_{(#1)}}
+\newcommand{\Tij}[1]{T_{(#1)}}
+\newcommand{\mij}[1]{m_{(#1)}}
+\newcommand{\Lij}[1]{L_{(#1)}}
+\newcommand{\mdos}[2]{m_{(#1)(#2)}}
+\newcommand{\mtres}[3]{m_{(#1)(#2)(#3)}}
+\newcommand{\mcuatro}{m_{\textsf{top}}}
+\newcommand{\trid}{\triangleright}
+\newcommand{\link}{\sim_{\ba}}
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+
+
+%%%%%%%%%%%beaamer%%%%%%%%%%%%%%%%%
+% Header: Secciones una arriba de la otra.
+% \usetheme{Copenhagen}
+% \usetheme{Warsaw}
+
+% Header: Secciones una al lado de la otra. Feo footer.
+% Los circulitos del header son medio chotos tambien.
+% \usetheme[compress]{Ilmenau}
+% Muy bueno: difuminado, sin footer:
+%\usetheme{Frankfurt}
+% agrego footer como el de Copenhagen.
+%\useoutertheme[footline=authortitle,subsection=false]{miniframes}
+
+
+
+
+\title[Clase 9 - Álgebra de matrices 1]{Álgebra/Álgebra II \\ Clase 9 - Álgebra de matrices 1}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+}
+\date[29/09/2020]{29 de septiembre de 2020}
+
+%\titlegraphic{\includegraphics[width=0.2\textwidth]{logo_gimp100.pdf}}
+
+% Converted to PDF using ImageMagick:
+% # convert logo_gimp100.png logo_gimp100.pdf
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+
+\begin{frame}{Resumen}
+	
+	Los objetivos de esta clase son:
+	\vskip.4cm\pause
+	\begin{itemize}
+		\item Familiarizarse con la notación de subíndices para las entradas de matrices.\pause
+		\item Mostrar algunas matrices notables y algunos tipos de matrices importantes  en la teoría.\pause
+		\item Definir la suma y multiplicación de matrices y  la multiplicación de matrices por escalares.\pause
+		\item Estudiar las propiedades más importantes de la suma y multiplicación de matrices y de la multiplicación de matrices por escalares.  .
+	\end{itemize}
+	\pause
+	\vskip .4cm
+	
+	El tema de esta clase es esencialmente el contenido de la sección 2.5 del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
+	
+\end{frame}
+
+\begin{frame}{Matrices}
+	
+	Recordemos: sea $\K$ cuerpo.
+	
+	\begin{itemize}
+		\item Una  matriz $A$ es un elemento de  $(\K^n)^m$ que se escribe con $m$-filas y $n$ columnas
+		\begin{equation*}
+			A = \begin{bmatrix}
+				a_{11}& a_{12}& \cdots &a_{1n} \\
+				\vdots&\vdots  &  &\vdots \\
+				a_{m1} &a_{m2}&\cdots &a_{mn}
+			\end{bmatrix}
+		\end{equation*} 
+		\pause
+		\item  A cada elemento de la matriz la llamamos \textit{entrada} o \textit{coeficiente}.
+		\pause
+		\item Si $A$ es una matriz $m \times  n$, denotamos $[A]_{ij}$ la entrada que se ubica en la fila $i$ y la columna $j$. En  la matriz de arriba $[A]_{ij} = a_{ij}$.
+		\pause
+		\item  Al conjunto de matrices de orden $m \times  n$ con entradas en $\K$ lo denotamos $\K^{m \times n}$, o  $M_{m\times n}(\K)$, o simplemente $M_{m\times n}$.
+	\end{itemize}
+		
+\end{frame}
+
+
+
+\begin{frame}{Matriz cuadrada}
+	
+
+		Una matriz {$A\in\K^{n\times n}$} se dice \textit{cuadrada de orden $n$} porque tiene igual cantidad de filas que de columnas.\pause
+
+	\begin{align*}
+		A=
+		\left[
+		\begin{array}{ccccccc}
+			a_{11} & a_{12} & \cdots & & &  & a_{1n}\\ 
+			a_{21} & a_{22} & \cdots & & &  & a_{2n}\\
+			\vdots & \vdots & \ddots & & &  & \vdots\\
+			& &  & & &  \\
+			& &  & & &  \\
+			a_{n1} & a_{n2} & \cdots & & & & a_{nn}\\ 
+		\end{array}
+		\right]
+	\end{align*}
+	
+	\
+	
+	Los elementos de la \textit{diagonal principal} son $a_{ii}$ con $1\leq i\leq n$
+\end{frame}
+
+
+\begin{frame}{Matriz cuadrada: ejemplos}
+	
+
+
+\begin{align*}
+	A&=
+	\begin{bmatrix}
+		5 & -1 & 3 & 4\\ 
+		0 & 0 & 1 & 0\\
+		1&-2 & 7 & 5 \\
+		-1&2 & 128 & -20 \\
+	\end{bmatrix}
+	\\
+&
+	\\
+	B&=
+	\begin{bmatrix}
+		5 &  3 & 4\\ 
+		0 & 0  & 0\\
+		1& 7 & 5 \\
+	\end{bmatrix}
+	\\
+&
+	\\
+	C&=
+	\begin{bmatrix}
+		1
+	\end{bmatrix}
+\end{align*}
+\vskip 1cm
+
+\end{frame}
+
+
+
+\begin{frame}{Matriz diagonal}
+	
+	Una matriz cuadrada $D$ de orden $n$ se dice \textit{diagonal} si todas las entradas fuera de la diagonal son nulas.
+	
+	\pause
+	\begin{align*}
+		D=
+		\left[
+		\begin{array}{ccccccc}
+			d_1 & 0 & \cdots & & &  & 0\\ 
+			0 & d_2 & 0& \cdots & &  & 0\\
+			\vdots & 0 & \ddots & & &  & \vdots\\
+			& \vdots &  & & & &  \\
+			& &  & & &  \ddots&0\\
+			0 & 0 & \cdots & & & 0 & d_{n}\\ 
+		\end{array}
+		\right]
+	\end{align*}
+	\pause
+	Las entradas de $D$ se pueden describir como sigue 
+	$$
+	[D]_{ij}=\begin{cases}
+		d_i&\mbox{si $i=j$}\\ 
+		0&\mbox{si $i\neq j$}
+	\end{cases}
+	$$
+\end{frame}
+
+
+\begin{frame}{Matriz diagonal:  ejemplos }
+	
+	\begin{align*}
+		A&=
+		\begin{bmatrix}
+			5 & 0 & 0 & 0\\ 
+			0 & 1 & 0& 0\\
+			0&0 & -5 & 0 \\
+			0&0& 0 & -20 \\
+		\end{bmatrix}
+		\\
+	&
+		\\
+		B&=
+		\begin{bmatrix}
+			5 &  0 & 0\\ 
+			0 & 0  & 0\\
+			0& 0 & 7 \\
+		\end{bmatrix}
+		\\
+	&
+		\\
+		C&=
+		\begin{bmatrix}
+			1
+		\end{bmatrix}
+	\end{align*}
+
+	\vskip 1cm
+\end{frame}
+
+
+
+\begin{frame}{Matriz escalar}
+
+Una matriz cuadrada $E$ de orden $n$ se dice \textit{escalar} si  es diagonal y todos los elementos de la diagonal son iguales, por ejemplo, en el caso $4 \times 4$ las matrices escalares son 
+
+\begin{equation*}
+	E=\begin{bmatrix}
+		c&0&0&0\\0&c&0&0\\0&0&c&0\\0&0&0&c
+	\end{bmatrix},
+\end{equation*}
+con $c \in \K$.
+
+\vskip .2cm
+\pause
+Las entradas de $E$ se pueden describir como sigue 
+$$
+[E]_{ij}=\begin{cases}
+	c&\mbox{si $i=j$}\\ 
+	0&\mbox{si $i\neq j$}
+\end{cases}
+$$
+\end{frame}
+
+\begin{frame}{Matriz escalar:  ejemplos }
+	
+	\begin{align*}
+		A&=
+		\begin{bmatrix}
+			2 & 0 & 0 & 0\\ 
+			0 & 2 & 0& 0\\
+			0&0 & 2 & 0 \\
+			0&0& 0 & 2 \\
+		\end{bmatrix}
+		\\
+	&
+		\\
+		B&=
+		\begin{bmatrix}
+			5 &  0 & 0\\ 
+			0 & 5  & 0\\
+			0& 0 & 5 \\
+		\end{bmatrix}
+		\\
+	&
+		\\
+		C&=
+		\begin{bmatrix}
+			1
+		\end{bmatrix}
+	\end{align*}
+
+	\vskip 1cm
+\end{frame}
+
+\begin{frame}{Matriz identidad}
+	
+	La matriz diagonal de orden $n$ con todos unos en la diagonal se llama \textit{matriz identidad de orden $n$} y se denota \textit{$\Id_n$}.\pause
+	
+	
+	\begin{align*}
+		\Id_n=
+		\left[
+		\begin{array}{ccccccc}
+			1 & 0 & \cdots & & &  & 0\\ 
+			0 & 1 & \cdots & & &  & 0\\
+			\vdots & \vdots & \ddots & & &  & \vdots\\
+			& &  & & &  \\
+			& &  & & &  \\
+			0 & 0 & \cdots & & & & 1\\ 
+		\end{array}
+		\right]
+	\end{align*}
+	\pause
+	Las entradas de $\Id_n$ se pueden describir como sigue 
+	$$
+	[\Id_n]_{ij}=\begin{cases}
+		1&\mbox{si $i=j$}\\ 
+		0&\mbox{si $i\neq j$}
+	\end{cases}
+	$$
+	
+	A veces escribiremos simplemente \textit{$\Id$}, omitiendo el sub\'indice $n$.
+\end{frame}
+
+\begin{frame}{Matriz nula}
+	
+	La \textit{matriz nula de orden $m\times n$} es la matriz cuyas entradas son todas ceros. Se la denota \textit{$0$}.
+	\pause
+	
+	\begin{align*}
+		0=
+		\left[
+		\begin{array}{ccccccc}
+			0 & 0 & \cdots & & &  & 0\\ 
+			0 & 0 & \cdots & & &  & 0\\
+			\vdots & \vdots & \ddots & & &  & \vdots\\
+			& &  & & &  \\
+			& &  & & &  \\
+			0 & 0 & \cdots & & & & 0\\ 
+		\end{array}
+		\right]
+	\end{align*}
+	\pause
+	Las entradas de $0$ se pueden describir como sigue 
+	$$
+	[0]_{ij}=0\quad\forall i,j
+	$$
+\end{frame}
+
+\begin{frame}{Matriz triangular superior}
+	
+	Una matriz cuadrada cuyas entradas por debajo de la diagonal principal son cero se llama \textit{matriz triangular superior}.
+	
+	
+	\begin{align*}
+		A=
+		\left[
+		\begin{array}{ccccccc}
+			a_{11} & a_{12} & \cdots & & &  & a_{1n}\\ 
+			0 & a_{22} & \cdots & & &  & a_{2n}\\
+			\vdots & 0 & \ddots & & &  & \vdots\\
+			& \vdots &  & & &&  \\
+			& &  & & &\ddots& \vdots \\
+			0 & 0 & \cdots & & & 0& a_{nn}\\ 
+		\end{array}
+		\right]
+	\end{align*}
+	
+	\
+	
+	En f\'ormula, $A$ es triangular superior si $a_{ij}=0$ para todo $i<j$.
+\end{frame}
+
+\begin{frame}{Matriz triangular superior:  ejemplos }
+	
+	\begin{align*}
+		A&=
+		\begin{bmatrix}
+			2 & 1 & 0 & 7\\ 
+			0 & -1 & -4& 5\\
+			0&0 & 5 & 3 \\
+			0&0& 0 & 3 \\
+		\end{bmatrix}
+		\\
+	&
+		\\
+		B&=
+		\begin{bmatrix}
+			5 &  3 & 2\\ 
+			0 & 1  & 1\\
+			0& 0 & -1 \\
+		\end{bmatrix}
+		\\
+	&
+		\\
+		C&=
+		\begin{bmatrix}
+			1
+		\end{bmatrix}
+	\end{align*}
+
+	\vskip 1cm
+\end{frame}
+
+\begin{frame}{Matriz triangular inferior}
+	
+	Una matriz cuadrada cuyas entradas por encima de la diagonal principal son cero se llama \textit{matriz triangular inferior}.
+	
+	
+	\begin{align*}
+		A=
+		\left[
+		\begin{array}{ccccccc}
+			a_{11} & 0 & \cdots & & &  & 0\\ 
+			a_{21} & a_{22} & 0& \cdots & &  & 0\\
+			\vdots & \vdots & \ddots & & &  & \vdots\\
+			& &  & & &  &\\
+			& &  & & & \ddots & 0  \\
+			a_{n1} & a_{n2} & \cdots & & & \cdots & a_{nn}\\ 
+		\end{array}
+		\right]
+	\end{align*}
+	
+	\
+	
+	En f\'ormula, $A$ es triangular inferior si $a_{ij}=0$ para todo $i>j$.
+\end{frame}
+
+
+\begin{frame}{Suma de matrices}
+	
+	\begin{definicion}
+		Sean $A,B\in\K^{m\times n}$, la \textit{suma $A+B$} es la matriz que resulta de sumar ``coordenada a coordenada'' las matrices $A$ y $B$. 
+		\vskip .2cm\pause
+		
+		En s\'imbolos,
+		\begin{align*}
+			A+B\in\K^{m\times n}\quad\mbox{con }\quad
+			[A+B]_{ij}=[A]_{ij}+ [B]_{ij}.
+		\end{align*}
+	\end{definicion}
+	
+	\pause
+	
+	
+	
+	\begin{ejemplo}
+		Si 
+		$
+		A=\left[
+		\begin{array}{rrr}
+			1&2&3\\
+			4&5&6
+		\end{array}
+		\right]
+		$ 
+		y
+		$
+		B=\left[
+		\begin{array}{rrr}
+			10&20&30\\
+			40&50&60
+		\end{array}
+		\right]
+		$
+		entonces
+		$$
+		A+B=\left[
+			\begin{array}{rrr}
+				1+10&2+20&3+30\\
+				4+40&5+50&6+60
+			\end{array}
+			\right]=
+			\left[
+		\begin{array}{rrr}
+			11&22&33\\
+			44&55&66
+		\end{array}
+		\right]
+		$$
+	\end{ejemplo}
+	
+\end{frame}
+
+\begin{frame}
+	Podemos visualizar la suma de matrices as\'i:
+	\begin{align*}
+		\left[
+		\begin{array}{ccccccc}
+			a_{11} & a_{12} & \cdots & & &  & a_{1n}\\ 
+			a_{21} & a_{22} & \cdots & & &  & a_{2n}\\
+			\vdots & \vdots & \ddots & & &  & \vdots\\
+			& &  & & &  \\
+			& &  & & &  \\
+			a_{m1} & a_{m2} & \cdots & & & & a_{mn}\\ 
+		\end{array}
+		\right] 
+		+
+		\left[
+		\begin{array}{ccccccc}
+			b_{11} & b_{12} & \cdots & & &  & b_{1n}\\ 
+			b_{21} & b_{22} & \cdots & & &  & b_{2n}\\
+			\vdots & \vdots & \ddots & & &  & \vdots\\
+			& &  & & &  \\
+			& &  & & &  \\
+			b_{m1} & b_{m2} & \cdots & & & & b_{mn}\\ 
+		\end{array}
+		\right]
+		\\
+		\\
+		=
+		\left[
+		\begin{array}{ccccccc}
+			a_{11}+b_{11} & a_{12}+b_{12} & \cdots & & &  & a_{1n}+b_{1n}\\ 
+			a_{21}+b_{21} & a_{22}+b_{22} & \cdots & & &  & a_{2n}+b_{2n}\\
+			\vdots & \vdots & \ddots & & &  & \vdots\\
+			& &  & & &  \\
+			& &  & & &  \\
+			a_{m1}+b_{m1} & a_{m2}+b_{m2} & \cdots & & & & a_{mn}+b_{mn}\\ 
+		\end{array}
+		\right]
+	\end{align*}
+\end{frame}
+
+\begin{frame}{Propiedades de la suma de matrices}
+	
+	La suma de matrices satisface las mismas propiedades que la suma de números reales y complejos (y  enteros). 
+	\pause
+	\begin{block}{Proposici\'on}
+		Si $A,B,C$ son matrices $m\times n$, entonces
+		\vskip .3cm
+		\begin{tabular}{rll}
+			\textbf{\color{blue}S1.} & $A+B=B+A$& \textit{(conmutatividad de la suma)} \\
+			\textbf{\color{blue}S2.} &$A+(B+C)=(A+B)+C$\qquad& \textit{(asociatividad de la suma)} \\
+			\textbf{\color{blue}S3.} &$A+0=A$ &\textit{(elemento neutro)} \\
+			\textbf{\color{blue}S4.} &$A+(-A)=0$ &\textit{(existencia de opuesto)}
+		\end{tabular}
+		\vskip .1cm
+		{\;}\qquad\;\; donde
+		\begin{equation*}
+		-A=
+		\left[
+		\begin{array}{cccc}
+			-a_{11} & \cdots & -a_{1n}\\ 
+			\vdots & \ddots & \vdots\\
+			-a_{m1} & \cdots & -a_{mn}  
+		\end{array}
+		\right] 
+		\end{equation*}
+	\end{block}
+
+
+
+
+\end{frame}
+
+
+\begin{frame}
+	\begin{block}{Notacion}\pause
+		\begin{itemize}
+			\item Debido a la propiedad  asociativa podemos eliminar los paréntesis en una suma, es decir , denotaremos
+			\begin{equation*}
+				A+B+C := A+(B+C)=(A+B)+C.
+			\end{equation*}\pause
+			\item Usualmente denotaremos 
+			\begin{align*}
+				A-B &:= A + (-B), \\
+				-A+B&:= (-A)+B 
+			\end{align*}
+		
+		\end{itemize}
+		
+	\end{block}
+
+
+	\vskip .9cm
+
+	
+\end{frame}
+
+
+\begin{frame}
+	
+		La demostración de las propiedades anteriores se deduce de que las mismas propiedades valen coordenada a coordenada en $\K$. 
+		\vskip .2cm\pause
+		Demostraremos la asociatividad  y las  otras propiedades se dejan a cargo del lector.
+	\vskip .3cm \pause
+	\begin{block}{Demostración de la asociatividad}
+		Queremos ver que las matrices $A+(B+C)$ y $(A+B)+C$ son iguales. O sea, que cada una de sus coordenadas son iguales. Esto es cierto por lo siguiente:\pause
+		\begin{multline*}
+			[A+(B+C)]_{ij}=[A]_{ij}+[B+C]_{ij}=
+			[A]_{ij}+\biggl([B]_{ij}+[C]_{ij}\biggr)
+			\\
+			=\biggl([A]_{ij}+[B]_{ij}\biggr)+[C]_{ij}
+			=[A+B]_{ij}+[C]_{ij}=[(A+B)+C]_{ij}
+		\end{multline*}
+	 \qed
+	\end{block}
+
+
+\end{frame}
+
+\begin{frame}{Producto de matrices}
+	
+\begin{definicion}
+	Sean $A\in\K^{m\times n}$ y $B\in\K^{n\times p}$.
+	
+	El \textit{producto $A\cdot B$} es una matriz de orden $m\times p$ cuyas entradas son definidas por la siguiente f\'ormula
+	\begin{align*}
+		[A\cdot B]_{ij}=\sum_{k=1}^n[A]_{ik}\cdot  [B]_{kj}.
+	\end{align*}
+\end{definicion}
+		
+\pause
+		Podemos visualizar la multiplicaci\'on as\'i:
+
+	
+
+		\begin{align*}
+			\left[
+			\begin{array}{cccc}
+				\vdots & \vdots &  & \vdots\\
+				\alert{a_{i1}} & \alert{a_{i2}} & \alert{\cdots} & \alert{a_{in}}\\
+				\vdots & \vdots &  & \vdots
+			\end{array}
+			\right] 
+			\cdot
+			\left[
+			\begin{array}{ccc}
+				\cdots & \textcolor{blue}{b_{1j}} & \cdots\\ 
+				\cdots & \textcolor{blue}{b_{2j}} & \cdots\\
+				& \textcolor{blue}{\vdots} & \\
+				\cdots & \textcolor{blue}{b_{nj}} & \cdots 
+			\end{array}
+			\right]
+			=
+			\left[
+			\begin{array}{ccc}
+				&\vdots&\\
+				\cdots&\sum_{k=1}^n\alert{a_{ik}}\cdot
+				\textcolor{blue}{b_{kj}}&\cdots\\
+				&\vdots&
+			\end{array}
+			\right]
+		\end{align*} 
+
+	
+\end{frame}
+
+\begin{frame}
+	
+	\textit{Es muy importante recalcar que por la definición, se puede multiplicar una matriz $m \times n$ por una matriz $r \times p$, sólo si $n=r$ y en ese caso, la multiplicación resulta ser una matriz $m \times p$.} 
+	\pause
+	\vskip .2cm
+	
+	\begin{ejemplo}	Si 
+		\begin{equation*}
+				A = \begin{bmatrix}1&0\\-3&1\end{bmatrix}, \qquad B = \begin{bmatrix}5&-1&2\\15&4&8\end{bmatrix},
+	\end{equation*}
+como $A$ es $2 \cdot 2$ y $B$ es $2 \cdot 3$, la matriz $AB$ será $2 \cdot 3$. \pause Obtenemos:
+\begin{equation*}
+AB = \begin{bmatrix}1\cdot  5 + 0\cdot 15&1\cdot (-1) + 0\cdot 4&1\cdot 2 + 0\cdot 8
+	\\-3\cdot 5 + 1\cdot 15&-3\cdot (-1) + 1\cdot 4&-3\cdot 2 + 1\cdot 8
+\end{bmatrix} =
+\begin{bmatrix} 5 &-1 &2 
+	\\ 0 &7 &2
+\end{bmatrix}.
+\end{equation*}
+\pause
+Observemos que, debido a nuestra definición, no es posible multiplicar $B$ por $A$, pues no está definido multiplicar una matriz $2 \times 3$ por una $2 \times 2$.
+	\end{ejemplo}
+\end{frame}
+
+\begin{frame}
+	
+	
+	\begin{exampleblock}{Ejemplo}
+		Si 
+		$
+		A=\left[
+		\begin{array}{rrr}
+			{1}&{2}&{3}\\
+			{4}&{5}&{6}
+		\end{array}
+		\right]
+		$ 
+		y
+		$
+		B=\left[
+		\begin{array}{rr}
+			{1}&{2}\\
+			{3}&{4}\\
+			{5}&{6}
+		\end{array}
+		\right]
+		$
+		\pause entonces
+		$$
+		A\cdot B=\left[
+		\begin{array}{rr}
+			{1}\cdot {1}+{2}\cdot {3}+{3}\cdot {5}&
+			{1}\cdot {2}+{2}\cdot {4}+
+			{3}\cdot {6}\\
+			{4}\cdot {1}+
+			{5}\cdot {3}+
+			{6}\cdot {5}&
+			{4}\cdot{2}+{5}\cdot {4}+
+			{6}\cdot {6}
+		\end{array}
+		\right]
+		=
+		\left[
+		\begin{array}{cc}
+			22&28\\
+			49&64
+		\end{array}
+		\right]
+		$$
+		En este caso: 
+		\begin{align*}
+			[A\cdot B]_{12}&=\sum_{k=1}^n[A]_{1k}\cdot  [B]_{k2}\\
+			&=[A]_{11}\cdot [B]_{12}+ [A]_{12}\cdot [B]_{22}+[A]_{13}\cdot [B]_{32} \\
+			&={1}\cdot {2}+{2}\cdot {4}+
+			{3}\cdot {6}\\
+			&=28
+		\end{align*}
+	\end{exampleblock}
+	
+	
+\end{frame}
+
+\begin{frame}
+	
+		 \begin{observacion}
+		 	Sean $A=[a_{ij}]$ matriz $m \times n$ y $B=[b_{ij}]$ matriz $n \times p$, entonces si 
+		 	multiplicamos la matriz que se forma con la fila $i$ de $A$ por la matriz que determina la columna $j$ de $B$, obtenemos el coeficiente $ij$ de $AB$.\pause
+		 	Esquemáticamente
+		 	\begin{equation*}
+		 		\begin{bmatrix} a_{i1}& a_{i2}& \cdots &a_{in}\end{bmatrix}\cdot
+		 		\begin{bmatrix} b_{1j}\\ b_{2j}\\ \vdots \\b_{nj}\end{bmatrix} =  \sum_{k=1}^{n}a_{ik}b_{kj} = c_{ij}.
+		 	\end{equation*}\pause
+		 	Por lo tanto diremos a veces, que el coeficiente $ij$ de la matriz $AB$ es \textit{la fila $i$ de $A$ por la columna $j$ de $B$}. 
+		 	\pause
+		 	O,  con abuso de notación, 
+		 	\begin{equation*}
+				F_i(A) \cdot  C_j(B) = \la F_i(A), C_j(B)\ra
+			 \end{equation*}
+			 (producto escalar).  
+		 \end{observacion}
+\end{frame}
+
+
+
+\begin{frame}{Propiedades del producto de matrices}
+	
+ Las propiedades más básicas del producto de matrices son las siguientes.
+ \pause
+	\begin{block}{Proposici\'on}
+	
+		
+		\begin{enumerate}
+
+			\item Si $A\in\K^{m\times n}$,  entonces
+			\begin{equation*}
+				A\cdot\Id_n=\Id_m\cdot A=A. \tag{\textit{elemento neutro}}
+			\end{equation*}
+
+			\pause
+			\item	Si $A\in\K^{m\times n}$, $B\in\K^{n\times p}$ y $C\in\K^{p\times q}$  entonces 
+			\begin{equation*}
+				A\cdot(B\cdot C)=(A\cdot B)\cdot C. \tag{\textit{asociativa}}
+			\end{equation*}
+			\pause
+		
+		\item Si $A\in\K^{m\times n}$ y $B,C\in\K^{n\times p}$ entonces
+		\begin{equation*}
+			A\cdot(B+ C)=A\cdot B+A\cdot C. \tag{\textit{distributiva}} 
+		\end{equation*}
+		
+		\pause
+		\item  Si $A,B\in\K^{m\times n}$ y $C\in\K^{n\times p}$ entonces
+		\begin{equation*}
+			(A+B)\cdot C=A\cdot C+B\cdot C.  \tag{\textit{distributiva}} 
+		\end{equation*}
+
+
+	\end{enumerate}
+
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	
+	La demostraciones de estas propiedades son rutinarias. Probaremos la ley asociativa y la propiedad de existencia de elemento neutro. Las leyes distributivas las dejamos a cargo del lector.
+	\pause
+	
+	\begin{block}{Demostración: 1 - $\Id$  es el elemento neutro del producto}
+		Notemos que las entradas de la matriz  $\Id_k$ son determinadas de la siguiente manera
+		$$
+		[\Id_k]_{ij}=\begin{cases}
+			1 & \mbox{si $i=j$}\\
+			0 & \mbox{si $i\neq j$}
+		\end{cases}
+		$$
+		porque son todas ceros salvo en la diagonal (donde el n\'umero de fila y columna coinciden).\pause Entonces
+		\begin{align*}
+			[A\cdot\Id_n]_{ij}=\sum_{k=1}^n[A]_{ik}\cdot[\Id_n]_{kj}=[A]_{ij}\cdot1=[A]_{ij}
+			\\
+			[\Id_m\cdot A]_{ij}=\sum_{k=1}^m[\Id_n]_{ik}\cdot [A]_{kj}=1\cdot[A]_{ij}=[A]_{ij}
+		\end{align*}\qed
+	\end{block}
+
+
+	
+	
+\end{frame}
+
+
+\begin{frame}
+		
+\begin{block}{Demostración: 2 - ley asociativa}
+	Para probar ver la asociatividad tenemos que verificar que todas las entradas de $A\cdot(B\cdot C)$ y $(A\cdot B)\cdot C$ son iguales.\pause
+%{\footnotesize
+\begin{align*}
+	&[A\cdot(B\cdot C)]_{ij}=\sum_{k=1}^n [A]_{ik}\cdot[B\cdot C]_{kj}=
+	\sum_{k=1}^n [A]_{ik}\cdot
+	\biggl(
+	\sum_{l=1}^p[B]_{kl}\cdot [C]_{lj}
+	\biggr)
+	\\
+	&=\sum_{k=1}^n\sum_{l=1}^p [A]_{ik}\cdot
+	[B]_{kl}\cdot [C]_{lj}=
+	\sum_{l=1}^p\sum_{k=1}^n [A]_{ik}\cdot
+	[B]_{kl}\cdot [C]_{lj}
+	=
+	\\
+	&
+	=\sum_{l=1}^p\biggl(\sum_{k=1}^n [A]_{ik}\cdot[B]_{kl}\biggr)\cdot [C]_{lj}
+	=
+	\sum_{l=1}^n[A\cdot B]_{il}\cdot [C]_{lj}
+	=[(A\cdot B)\cdot C]_{ij}
+\end{align*}\qed
+\end{block}
+	
+\end{frame}
+
+\begin{frame}{Propiedades que  \textit{no} valen en general}
+	Veamos ahora algunas propiedades que no valen \textit{en general} cuando multiplicamos matrices. Es decir, daremos contraejemplos.
+	\pause
+	\begin{alertblock}{El producto no es conmutativo}\pause
+		\begin{align*}
+			\left[
+			\begin{array}{cc}
+				1&2\\
+				3&4
+			\end{array}
+			\right]
+			\cdot
+			\left[
+			\begin{array}{cc}
+				5&6\\
+				7&8
+			\end{array}
+			\right]
+			\neq
+			\left[
+			\begin{array}{cc}
+				5&6\\
+				7&8
+			\end{array}
+			\right]
+			\cdot
+			\left[
+			\begin{array}{cc}
+				1&2\\
+				3&4
+			\end{array}
+			\right]
+		\end{align*}
+	\end{alertblock}
+	\pause
+	\begin{alertblock}{Multiplicar matrices no nulas puede dar cero}\pause
+		\begin{align*}
+			\left[
+			\begin{array}{cc}
+				1&1\\
+				1&1
+			\end{array}
+			\right]
+			\cdot
+			\left[
+			\begin{array}{cc}
+				-1&-1\\
+				1&1
+			\end{array}
+			\right]
+			=
+			\left[
+			\begin{array}{cc}
+				0&0\\
+				0&0
+			\end{array}
+			\right]
+		\end{align*}
+	\end{alertblock}
+	
+
+\end{frame}
+
+
+\begin{frame}
+	
+		\begin{observacion}
+				Cuando las matrices son cuadradas podemos multiplicarlas por si mismas y  definimos,  de forma análoga a lo que ocurre en los productos de números, la potencia de una matriz: sea $A$ matriz $m \times m$, y sea $k \in \mathbb N$ entonces
+			\begin{equation*}
+				A^0 = \Id_{m}, \quad A^k = A^{k-1}A,		
+			\end{equation*}
+			es decir $A^k$ es multiplicar $A$ consigo mismo $k$-veces.  
+		\end{observacion}\pause
+	
+		\begin{alertblock}{Elevar al cuadrado u otra potencia puede dar cero}\pause
+		\begin{equation*}
+			\left[
+			\begin{array}{cc}
+				0&1\\
+				0&0
+			\end{array}
+			\right]^2
+			=
+			\left[
+			\begin{array}{cc}
+				0&1\\
+				0&0
+			\end{array}
+			\right]
+			\cdot
+			\left[
+			\begin{array}{cc}
+				0&1\\
+				0&0
+			\end{array}
+			\right]
+			=
+			\left[
+			\begin{array}{cc}
+				0&0\\
+				0&0
+			\end{array}
+			\right]
+		\end{equation*}
+		. 
+	\end{alertblock}
+	
+	
+
+\end{frame}
+
+\begin{frame}
+
+		\begin{alertblock}{No se cumple la propiedad cancelativa}\pause
+			Si $A\not=0$ y  $AB = AC$ no necesariamente se cumple que $B = C$. Por
+			ejemplo,
+			\begin{equation*}
+				\begin{bmatrix}2&0\\4&0\end{bmatrix}=
+				\begin{bmatrix}1&0\\2&0\end{bmatrix} \begin{bmatrix}2&0\\8&1\end{bmatrix} =
+				\begin{bmatrix}1&0\\2&0\end{bmatrix} \begin{bmatrix}2&0\\5&3\end{bmatrix}
+			\end{equation*}
+		\end{alertblock}
+		\pause
+	\begin{alertblock}{No se cumple la fórmula del binomio}\pause
+		Sean $A, B$ matrices $m \times m$, entonces		
+		\begin{align*}
+			(A+B)^2 &= (A+B)(A+B) \\&= A(A+B) + B(A+B) \\&= AA + AB + BA + BB \\&= A^2 + AB + BA + B^2,
+		\end{align*}
+		y  esta última expresión puede no ser  igual a $A^2 + 2AB + B^2$ ya que el producto de matrices no es conmutativo (en general). 
+	\end{alertblock}
+		
+\end{frame}
+
+
+
+\begin{frame}{Multiplicación por la matriz 0}
+	
+		La multiplicación por la matriz nula resulta en otra matriz nula. 
+			\vskip .3cm\pause
+		Es decir, $0\cdot A=A\cdot 0=0$ para toda matriz $A$:
+		\begin{align*}
+			[0\cdot A]_{ij}=\sum_{k}[0]_{ik}\cdot[A]_{kj} 
+			=\sum_{k}0\cdot[A]_{kj}=0\\
+			[A\cdot 0]_{ij}=\sum_{k}[A]_{ik}\cdot[0]_{kj} 
+			=\sum_{k}[A]_{ik}\cdot 0=0
+		\end{align*}
+
+
+\vskip 2.5cm
+\end{frame}
+
+\begin{frame}{Multiplicación por matrices diagonales}
+	
+	
+		
+		Sea 
+		$
+		D=
+		\left[
+		\begin{array}{cccc}
+			d_1&0&\cdots&0\\ 
+			0&d_2&\cdots&0\\
+			\cdots&\cdots&\ddots&\vdots\\
+			0&0&\cdots&d_m
+		\end{array}
+		\right]
+		$
+		y $A=[a_{ij}]\in\K^{m\times n}$\pause entonces
+		$$
+		[DA]_{ij}=\sum_{k=1}^m[D]_{ik}\cdot[A]_{kj}=[D]_{ii}[A]_{ij}=d_ia_{ij}
+		$$
+		y por lo tanto $DA=(d_ia_{ij})\in\K^{m\times n}$, $\Rightarrow$
+		\pause
+		\begin{equation*}
+			DA=\left[
+			\begin{array}{cccc}
+				d_1F_1\\ 
+				d_2F_2\\
+				\vdots\\
+				d_mF_m
+			\end{array}
+			\right]
+		\end{equation*}
+
+\end{frame}
+
+
+\begin{frame}
+La anterior es la multiplicación \textit{a izquierda} por una matriz diagonal. \pause
+
+\vskip.4cm
+
+La multiplicación \textit{a derecha} viene dada por: si $A=[a_{ij}]\in\K^{n\times m}$, entonces
+$$
+[AD]_{ij}=\sum_{k=1}^m[A]_{ik}\cdot[D]_{kj}=[A]_{ij}[D]_{jj}=d_ja_{ij}
+$$
+y por lo tanto $AD=[d_ja_{ij}]\in\K^{n\times m}$, $\Rightarrow$
+\pause
+\begin{equation*}
+	AD=\left[
+	\begin{array}{cccc}
+		d_1C_1&d_2C_2&\cdots&d_mC_m\\ 
+	\end{array}
+	\right]
+\end{equation*}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}{Multiplicación de una matriz por un escalar}
+	Sea $A\in\K^{m\times n}$ y $c\in\K$. La matriz \textit{$cA$} es la matriz que se obtiene multiplicando todas las entradas de $A$ por $c$. En símbolos,
+	$$
+	cA\in\K^{m\times n}\quad\mbox{con}\quad[cA]_{ij}=c[A]_{ij}
+	$$
+	\pause
+	\vskip .3cm
+	
+	\begin{exampleblock}{Ejemplo}
+		Si 
+		$
+		A=\left[
+		\begin{array}{rrr}
+			1&2&3\\
+			4&5&6
+		\end{array}
+		\right]
+		$ 
+		y
+		$
+		c=10
+		$
+		entonces
+		$$
+		10A=\left[
+		\begin{array}{rrr}
+			10&20&30\\
+			40&50&60
+		\end{array}
+		\right]
+		$$
+		En este caso: $[cA]_{12}=10[A]_{12}=20$.
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\pause
+	\begin{observacion}
+		Observar que multiplicar por $c$ una matriz $m \times n$,  es lo mismo que multiplicar por la matriz escalar $m \times m$ con los coeficientes de la diagonal iguales a $c$.
+	\end{observacion}
+	
+	
+	\begin{observacion}
+		Debido a la observación anterior y a las propiedades del producto de matrices, se cumple: s
+				\vskip .3cm\pause
+		\begin{tabular}{rll}
+			\textbf{\color{blue}P1.} & $1.A = A$,& \textit{} \\
+			\textbf{\color{blue}P2.} &$(cd)A = c(dA)$,\qquad& \textit{} \\
+			\textbf{\color{blue}D1.} &$c(A + B) = cA + cB$, &\textit{(propiedad distributiva)} \\
+			\textbf{\color{blue}D2.} &$(c+ d)A = cA + dA$. &\textit{(propiedad distributiva)}
+		\end{tabular}
+		
+		
+	\end{observacion}
+\end{frame}
+
+
+\begin{frame}
+	
+
+		 El hecho de que  para  $A, B, C \in \K^{m \times n}$, y $c,d \in\K$  se satisfagan las propiedades: 
+		 \vskip .6cm
+		 \begin{tabular}{rll}
+			\textbf{\color{blue}S1.} & $A+B=B+A$& \textit{(conmutatividad de la suma)} \\
+			\textbf{\color{blue}S2.} &$A+(B+C)=(A+B)+C$\qquad& \textit{(asociatividad de la suma)} \\
+			\textbf{\color{blue}S3.} &$A+0=A$ &\textit{(elemento neutro)} \\
+			\textbf{\color{blue}S4.} &$A+(-A)=0$ &\textit{(existencia de opuesto)} \\
+			\textbf{\color{blue}P1.} & $1.A = A$,& \textit{} \\
+			\textbf{\color{blue}P2.} &$(cd)A = c(dA)$,\qquad& \\
+			\textbf{\color{blue}D1.} &$c(A + B) = cA + cB$, &\textit{(propiedad distributiva)} \\
+			\textbf{\color{blue}D2.} &$(c+ d)A = cA + dA$. &\textit{(propiedad distributiva)}
+		\end{tabular}
+		\vskip .4cm
+		nos dice que $\K^{m \times n}$ es un \textit{espacio vectorial}. 
+		\vskip .6cm
+		\begin{itemize}
+			\item  Observar que no difiere mucho  de $\K^n$ (que cumplía las mismas propiedades).
+		\end{itemize}
+		
+		
+		
+		 
+\end{frame}
+
+
+
+
+
+\begin{frame}
+	
+	Observar que $\K^{n \times n}$ (las matrices \textit{cuadradas}  $n \times n$) satisface las siguientes propiedades: si $A,B,C \in \K^{n \times n}$ y $c,d \in \K$, entonces\vskip .2cm\vskip .2cm\pause
+		\begin{tabular}{rll}
+		\textbf{\color{blue}S1.} & $A+B=B+A$& \textit{(conmutatividad de la suma)} \\
+		\textbf{\color{blue}S2.} &$A+(B+C)=(A+B)+C$\qquad& \textit{(asociatividad de la suma)} \\
+		\textbf{\color{blue}S3.} &$A+0=A$ &\textit{(elemento neutro)} \\
+		\textbf{\color{blue}S4.} &$A+(-A)=0$ &\textit{(existencia de opuesto)} \\
+		\textbf{\color{blue}P1.} & $1.A = A$,& \textit{} \\
+		\textbf{\color{blue}P2.} &$(cd)A = c(dA)$,\qquad& \textit{} \\
+		\textbf{\color{blue}P3.} & $\Id \cdot A = A = A \cdot \Id$,&\textit{(elemento neutro)}\\
+		\textbf{\color{blue}P4.}&$c(AB) = (cA)B = A(cB)$,& \textit{(conmutatividad $\times$ escalares)} \\
+		\textbf{\color{blue}P5.}& $A(BC) = (AB)C$,&\textit{(asociatividad)}\\
+		\textbf{\color{blue}D1.} &$c(A + B) = cA + cB$, &\textit{(propiedad distributiva)} \\
+		\textbf{\color{blue}D2.} &$(c+ d)A = cA + dA$. &\textit{(propiedad distributiva)} \\
+		\textbf{\color{blue}D3.}& $C(A + B) = CA + CB$,&\textit{(distributividad)}\\
+		\textbf{\color{blue}D4.}&$(A+B)C = AB + AC$.&\textit{(distributividad)}
+		\end{tabular}
+		\vskip .2cm
+	Estas propiedades nos dicen que  $\K^{n \times n}$  es una  \textit{$\K$-álgebra asociativa con unidad.}
+\vskip .2cm
+	\color{red}{[\textbf{¡Solo para matrices cuadradas!}]}
+	
+	
+\end{frame}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

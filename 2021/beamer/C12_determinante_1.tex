@@ -1,0 +1,1338 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         
+\usepackage{graphicx}     
+\usepackage{ifthen}
+%\usepackage{makeidx}
+\input{random.tex}        
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usepackage[customcolors]{hf-tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools}
+\usepackage{stackrel}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usepackage{polynom}
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+\renewcommand\labelitemi{$\circ$}
+
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+%\include{definiciones}
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\renewcommand{\figurename }{Figura}
+
+
+
+
+\renewenvironment{block}[1]%%% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{alertblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{red!80!black}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{exampleblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+
+\newenvironment{exercise}[1]% environment name
+{% begin code
+	\par\vspace{\baselineskip}\noindent
+	\textbf{Ejercicio (#1)}\begin{itshape}%
+		\par\vspace{\baselineskip}\noindent\ignorespaces
+	}%
+	{% end code
+	\end{itshape}\ignorespacesafterend
+}
+
+
+\newenvironment{definicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Definición}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{observacion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Observación}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejemplo}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejemplo}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejercicio}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejercicio}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{proof}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{demostracion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{idea}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Idea de la demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{solucion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Solución}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{lema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Lema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{proposicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Proposición}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{teorema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Teorema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+\newenvironment{corolario}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Corolario}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{propiedad}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Propiedad}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{conclusion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Conclusión}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nc}{\newcommand}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+\nc{\RR}{{\mathbb R}} \nc{\CC}{{\mathbb C}} \nc{\ZZ}{{\mathbb Z}}
+\nc{\FF}{{\mathbb F}} \nc{\NN}{{\mathbb N}} \nc{\QQ}{{\mathbb Q}}
+\nc{\PP}{{\mathbb P}} \nc{\DD}{{\mathbb D}} \nc{\Sn}{{\mathbb S}}
+\nc{\uno}{\mathbb{1}} \nc{\BB}{{\mathbb B}} \nc{\An}{{\mathbb A}}
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand\sgn{\operatorname{sgn}}
+
+
+
+
+\title[Clase 12 - Determinante 1]{Álgebra/Álgebra II \\ Clase 12 - Determinante 1}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+}
+\date[08/10/2020]{8 de octubre de 2020}
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Resumen}
+	En esta clase veremos 
+
+	\vskip .4cm\pause
+
+	\begin{itemize}
+		\item La definición  de determinante de una matriz cuadrada.\pause
+		\item Cálculo de determinantes $2 \times 2$ y $3 \times 3$.\pause
+		\item Determinantes de matrices triangulares y diagonales.\pause
+		\item Cálculo de determinante de matrices $n \times n$ utilizando operaciones elementales por fila.
+	\end{itemize}
+
+	\vskip .4cm
+	\pause
+	El tema de esta clase  está contenido de la sección la sección 2.8  del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
+\end{frame}
+
+
+\begin{frame}{Introducción}
+
+    El \textit{determinante} es una función que a cada matriz cuadrada $n \times n$ con coeficientes en $\K$,  le asocia un elemento de $\K$.\pause
+\vskip .8cm
+	\begin{center}
+        \begin{tikzpicture}
+        \draw (-1.3,0) node {$\det:$};
+        \draw (0,0) node {$\K^n \times \K^n$};
+        \draw[thick,->] (1,0) -- (5,0) ;
+        \draw (6,0) node {$\K$};
+        \draw (0,-1) node {$[a_{ij}]$};
+        \draw[thick,->] (1,-1) -- (5,-1) ;
+        \draw (6,-1) node {$\det([a_{ij}])$};
+		\end{tikzpicture}
+	\end{center} 
+
+    \vskip 1cm
+
+\end{frame}
+
+
+
+
+\begin{frame}{Formas de definir determinante}
+    \pause
+\begin{itemize}
+
+    \item Una forma de definir determinante es con una fórmula cerrada que usa el \textit{grupo de permutaciones.} Esta forma de definir determinante está fuera del alcance de este curso. 
+    \vskip .2cm\pause
+    \item  La forma  que usaremos nosotros para definir determinante es mediante una definición recursiva.\vskip .2cm\pause
+    \item Es decir para calcular el determinante de una matriz $n \times n$, usaremos el cálculo  del determinante para matrices $n-1 \times n-1$, \vskip .2cm\pause
+    \begin{itemize}
+        \item[$\circ$] que a su vez se calcula usando el determinante de matrices $n-2 \times n-2$ \vskip .2cm
+        \begin{itemize}\pause
+            \item [$\circ$] y así sucesivamente hasta llegar al caso base, que es el caso  de matrices $1 \pause\times 1$.
+        \end{itemize}
+    \end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+
+El determinante, permite, entre otras cosas \pause
+\vskip .3cm
+\begin{itemize}
+    \item determinar si  una matriz cuadrada es invertible,\pause
+    \item dar una fórmula cerrada para la inversa de una matriz invertible.\pause
+\end{itemize}
+
+
+\vskip .4cm
+
+
+Para la definición del determinante de una matriz cuadrada $A$ usaremos \textit{submatrices} de la matriz $A$. 
+\pause
+\vskip .3cm
+\begin{definicion}
+Sea $A\in\K^{n\times n}$ y sean $i,j$ tales que $1\leq i,j\leq n$. Entonces 
+$${A(i|j)}\in\K^{n-1\times n-1}$$ es la matriz que se obtine eliminando la fila $i$ y la columna $j$ de $A$. 
+\end{definicion}
+
+
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\begin{equation*}
+    \begin{tikzpicture}
+        \draw (-5,0) node {$A(i|j)=$};
+    \end{tikzpicture}
+    \left[\begin{tikzpicture}[baseline=(A.center)]
+    \tikzset{node style ge/.style={circle}}
+    \tikzset{BarreStyle/.style =   {opacity=.4,line width=4 mm,line cap=round,color=#1}}
+    \tikzset{SignePlus/.style =   {above left,,opacity=1}}
+    \tikzset{SigneMoins/.style =   {below left,,opacity=1}}
+    % les matrices
+    
+    \matrix (A) [matrix of math nodes, nodes = {node style ge},,column sep=0 mm] 
+    { a_{11} & \cdots & \cdots & a_{1j} & \cdots & a_{1n}\\
+    \vdots & && \vdots & & \vdots\\
+    a_{i1} & \cdots& \cdots & a_{ij}& \cdots & a_{in}\\  
+    \vdots & && \vdots & & \vdots\\
+    \vdots & && \vdots & & \vdots\\
+    a_{m1} & \cdots& \cdots & a_{mj} & \cdots & a_{mn}\\
+    };
+    \draw [BarreStyle=blue] (A-3-1.west)  to (A-3-6.east) ;
+    \draw [BarreStyle=red]  (A-1-4.north) to (A-6-4.south);
+    \end{tikzpicture}
+    \right]
+\end{equation*}
+(tacho  la fila $i$ y la columna $j$.)
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+
+Más precisamente, 
+\vskip.4cm
+\begin{equation*}
+    {A(i|j)}=\left[
+\begin{array}{cccrlcc}
+ a_{11} & \cdots& \cdots & a_{1j-1} & a_{1j+1} & \cdots & a_{1n}\\
+ \vdots & && \vdots\;\;\; {}^{}& {}^{}\;\;\;\vdots  & & \vdots\\
+  a_{i-11} & \cdots& \cdots & a_{i-1j-1} & a_{i-1j+1} & \cdots & a_{i-1n}\\  
+a_{i+11} & \cdots& \cdots & a_{i+1j-1} & a_{i+1j+1}& \cdots & a_{i+1n}\\
+ \vdots & & &\vdots \;\;\; {}^{} & {}^{}\;\;\;\vdots  & & \vdots\\
+ \vdots & & &\vdots \;\;\; {}^{} & {}^{}\;\;\;\vdots  & & \vdots\\
+ a_{m1} & \cdots& \cdots & a_{mj-1} &a_{mj+1} & \cdots & a_{mn}\\ 
+\end{array}
+\right]
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+
+    \begin{exampleblock}{Ejemplos}
+Si 
+$A=
+\left[
+\begin{array}{ccc}
+ 1 & 2 & 3\\
+ 4 & 5 & 6\\
+ 7 & 8 & 9
+\end{array}
+\right]
+$, entonces 
+$A(1|2)=
+\left[
+\begin{array}{cc}
+4 & 6\\
+ 7 & 9
+\end{array}
+\right] 
+$, $A(1|1)=
+\left[
+\begin{array}{cc}
+5 & 6\\
+ 8 & 9
+\end{array}
+\right]
+$.
+\pause
+\vskip .9cm
+Si 
+$A=
+\begin{bmatrix}
+    -1 & 3 & 2 & 5\\
+     -2& 7 &  2& 6&\\
+     -3&  2&  1& 11&\\
+     -4&  5&  3& -3&
+\end{bmatrix}
+$, entonces 
+$A(3|2)=
+\begin{bmatrix}
+    -1 &  2 & 5\\
+     -2&   2& 6&\\
+     -4&   3& -3&
+\end{bmatrix}
+$.
+\end{exampleblock}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\begin{exampleblock}{Definición}
+Sea $n\in\NN$ y $A=[a_{ij}]\in\K^{n\times n}$, entonces el {determinante de $A$}, denotado {$\det(A)$} ó {$|A|$}, se define como
+\vskip .2cm
+\begin{enumerate}
+ \item Si $n=1$, $\det A=a_{11}$
+ \item Si $n>1$, 
+ \begin{align*}
+    \det A&=  a_{11}\det A(1|1) - a_{21}\det A(2|1) + \cdots + (-1)^{1+n}  a_{n1}\det A(n|1),
+\end{align*}\pause
+o
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\hfsetfillcolor{airforceblue!30}
+\hfsetbordercolor{blue!10}
+\begin{equation*}
+    \tikzmarkin{b}(0.2,-0.6)(-0.2,0.8)  \det A=   \sum_{i=1}^{n} (-1)^{1+i}\,a_{i1}\,\det A(i|1).
+    \tikzmarkend{b}
+\end{equation*}
+
+   
+\end{enumerate}
+\end{exampleblock}
+
+\vskip .2cm
+
+
+\end{frame}
+
+
+
+\begin{frame}
+    
+
+    Si  $1 \le i,j \le n$, 
+    \vskip 0.2cm
+    \begin{itemize}
+        \item  $\det A(i|j)$ :  \textit{menor $i,j$ de $A$}.\pause
+        \item  $C_{ij}:= (-1)^{i+j} \det A(i|j)$ : \textit{cofactor $i,j$ de $A$.} 
+        
+        Luego 
+        \begin{equation*}
+            \det A = \sum_{i=1}^{n} \,a_{i1}\,C_{i1} .
+        \end{equation*}
+    \end{itemize}
+
+    \vskip 0.6cm
+Este es el \textit{cálculo del determinante por desarrollo de la primera columna} pues para calcular el determinante estamos usando los coeficientes de la primera columna: $$a_{11}, a_{21}, a_{31}, \ldots, a_{n1}.$$
+
+
+
+
+
+\vskip 2cm
+\end{frame}
+
+\begin{frame}{Determinante $2\times 2$}
+
+    Calculemos el determinante de las matrices $2 \times 2$. Sea 
+    $$A=\begin{bmatrix}a&b\\c&d\end{bmatrix},$$  \pause entonces
+    \begin{align*}
+        \det A &= a \det [d] - c \det [b] \\
+        &= ad-bc.
+    \end{align*}
+    \vskip .1cm 
+    \pause
+    \begin{exampleblock}{Observación}
+        Si 
+        $A=
+        \left[
+        \begin{array}{cc}
+        a_{11}&a_{12}\\a_{21}&a_{22}
+        \end{array}
+        \right]
+        $, entonces 
+        $\det(A)=a_{11} a_{22} - a_{12}a_{21}$
+        \end{exampleblock}
+(solo es notación),
+    
+\end{frame}
+
+
+
+
+\begin{frame}
+    \begin{exampleblock}{Ejemplo}
+        Si 
+        $A=
+        \left[
+        \begin{array}{cc}
+        1&2\\3&4
+        \end{array}
+        \right]
+        $, entonces 
+        $\det(A)=1\cdot 4-2\cdot 3=-2$
+        \end{exampleblock}
+        \vskip .8cm    
+    
+    \pause
+    
+\begin{exampleblock}{Ejemplo}
+    Si 
+    $$A=
+    \left[
+    \begin{array}{cc}
+    \operatorname{cos}\theta&
+    -\operatorname{sen}\theta\\
+    \operatorname{sen}\theta&
+    \operatorname{cos}\theta
+    \end{array}
+    \right]
+    ,$$ 
+    entonces
+    $$
+    \det(A)=\operatorname{cos}^2\theta+\operatorname{sen}^2\theta=1.
+    $$
+    \end{exampleblock}
+    
+
+ 
+
+\end{frame}
+
+
+\begin{frame}
+    Hemos visto en la clase anterior que $A \in \R^{2 \times 2}$ es invertible si y solo si $ ad-bc \not=0$,  es decir 
+    \begin{equation*}
+    \text{\textit{$A$ es invertible si y solo si $ \det A \not=0$.}}
+    \end{equation*}
+   
+    \vskip .2cm\pause
+    Más aún, la fórmula de la inversa de $A$ es
+    \begin{equation*}
+        A^{-1} = \dfrac{1}{\det(A)}
+        \begin{bmatrix}
+            d&c\\b&a
+        \end{bmatrix}.
+    \end{equation*} \pause
+    Se puede reescribir como
+    \begin{equation*}
+        A^{-1} = \dfrac{1}{\det(A)}
+        \begin{bmatrix*}[c]C_{11}&C_{12}\\C_{21}&C_{22}\end{bmatrix*}.
+    \end{equation*} 
+    \vskip .4cm\pause
+    Esta fórmula se puede generalizar a matrices $n \times n$.
+
+\end{frame}
+
+
+
+\begin{frame}{Determinantes ${3 \times 3}$.}
+
+Sea 
+\begin{equation*}
+A=\begin{bmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{bmatrix},
+\end{equation*}
+entonces
+\pause
+
+\begin{multline*}
+    \det A = a_{11}\left|\begin{matrix}a_{22}&a_{23}\\a_{32}&a_{33}\end{matrix}\right|
+    - a_{21}\left|\begin{matrix}a_{12}&a_{13}\\a_{32}&a_{33}\end{matrix}\right|
+    + a_{31}\left|\begin{matrix}a_{12}&a_{13}\\a_{22}&a_{23}\end{matrix}\right|\\
+    = a_{11}(a_{22}a_{33}- a_{23}a_{32})
+    - a_{21}(a_{12}a_{33}-a_{13}a_{32}) 
+    + a_{31}(a_{12}a_{23} - a_{13}a_{22}) \\
+    =
+    a_{11}a_{22}a_{33}- a_{11}a_{23}a_{32} 
+    - a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
+    - a_{13}a_{22}a_{31}.
+\end{multline*}
+		
+		
+	
+\end{frame}
+
+\begin{frame}
+
+    \begin{observacion}
+    Observar que  el determinante de una matriz $3 \times 3$ es una sumatoria de seis términos cada uno de los cuales es de la forma $\pm a_{1\,i_1}a_{2\,i_2}a_{3\,i_3}$ e $i_1i_2i_3$ puede ser cualquier permutación de $123$. 
+    \vskip .2cm\pause
+    Es decir 
+    \begin{equation*}
+        |A| = \sum_{\sigma \in \mathbb S_3} \pm a_{1\,\sigma(1)}a_{2\,\sigma(2)}a_{3\,\sigma(3)},
+    \end{equation*}
+    donde $\mathbb S_3$ son las permutaciones de 3 elementos. 
+    \end{observacion}
+
+    \pause
+
+
+    \vskip .4cm
+
+    La fórmula 
+		\begin{equation*}
+		|A| =a_{11}a_{22}a_{33}- a_{11}a_{23}a_{32} 
+		- a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
+		- a_{13}a_{22}a_{31},
+		\end{equation*} 
+        no es fácil de recordar, pero existe un procedimiento sencillo que nos permite obtenerla.
+        
+        \vskip 1cm
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+     Cálculo de $|A|$:
+		\begin{enumerate}
+			\item a la matriz original le agregamos las dos primeras filas al final, \pause
+            \item sumamos  cada ``producto'' de las diagonales descendentes y \pause
+            \item restamos cada ``producto'' de las diagonales ascendentes.\pause
+		\end{enumerate}
+			
+		%prueba y otra 
+		\begin{equation*}
+		\begin{tikzpicture}[baseline=(A.center)]
+		\tikzset{node style ge/.style={circle}}
+		\tikzset{BarreStyle/.style =   {opacity=.4,line width=0.5 mm,line cap=round,color=#1}}
+		\tikzset{SignePlus/.style =   {above left,,opacity=1}}
+		\tikzset{SigneMoins/.style =   {below left,,opacity=1}}
+		% les matrices
+		\matrix (A) [matrix of math nodes, nodes = {node style ge},,column sep=0 mm] 
+		{ a_{11} & a_{12} & a_{13}  \\
+			a_{21} & a_{22} & a_{23}  \\
+			a_{31} & a_{32} & a_{33}  \\
+			a_{11} & a_{12} & a_{13} \\
+			a_{21} & a_{22} & a_{13}\\
+		};
+		
+		\draw [BarreStyle=blue] (A-1-1.north west) node[SignePlus=blue] {$+$} to (A-3-3.south east) ;
+		\draw [BarreStyle=blue] (A-2-1.north west) node[SignePlus=blue] {$+$} to (A-4-3.south east) ;
+		\draw [BarreStyle=blue] (A-3-1.north west) node[SignePlus=blue] {$+$} to (A-5-3.south east) ;
+		\draw [BarreStyle=red]  (A-3-1.south west) node[SigneMoins=red] {$-$} to (A-1-3.north east);
+		\draw [BarreStyle=red]  (A-4-1.south west) node[SigneMoins=red] {$-$} to (A-2-3.north east);
+		\draw [BarreStyle=red]  (A-5-1.south west) node[SigneMoins=red] {$-$} to (A-3-3.north east);
+		\end{tikzpicture}
+		\end{equation*}
+		
+		
+\end{frame}
+
+\begin{frame}
+    Es decir,
+		\begin{enumerate}
+			\item[(a)]  se suman  $a_{11}a_{22}a_{33}$, $a_{21}a_{32}a_{13}$, $a_{31}a_{12}a_{23}$,  y
+			\item[(b)]  se restan  $a_{31}a_{22}a_{13}$,  $a_{11}a_{32}a_{23}$,  $a_{21}a_{12}a_{33}$, 
+        \end{enumerate}
+        \pause
+        obteniéndose nuevamente 
+
+        \begin{equation*}
+            |A| =a_{11}a_{22}a_{33}- a_{11}a_{23}a_{32} 
+            - a_{12}a_{21}a_{33}+ a_{13}a_{21}a_{32}+ a_{12}a_{23}a_{31}
+            - a_{13}a_{22}a_{31}.
+            \end{equation*} 
+
+        \vskip 2cm
+
+        
+\end{frame}
+
+\begin{frame}[fragile]
+
+\begin{exampleblock}{Ejemplo}
+Si 
+$$A=
+\left[
+\begin{array}{ccc}
+1&2&3\\
+4&5&6\\
+7&8&9
+\end{array}
+\right].
+$$ \pause
+Calculamos:
+\begin{equation*}
+    \begin{tikzpicture}[baseline=(A.center)]
+    \tikzset{node style ge/.style={circle}}
+    \tikzset{BarreStyle/.style =   {opacity=.4,line width=0.5 mm,line cap=round,color=#1}}
+    \tikzset{SignePlus/.style =   {above left,,opacity=1}}
+    \tikzset{SigneMoins/.style =   {below left,,opacity=1}}
+    % les matrices
+    \matrix (A) [matrix of math nodes, nodes = {node style ge},,column sep=0 mm]
+    { 1&2&3\\
+    4&5&6\\
+    7&8&9\\
+    1&2&3\\
+    4&5&6\\
+    };
+    
+    \draw [BarreStyle=blue] (A-1-1.north west) to (A-3-3.south east) ;
+    \draw [BarreStyle=blue] (A-2-1.north west) to (A-4-3.south east) ;
+    \draw [BarreStyle=blue] (A-3-1.north west) to (A-5-3.south east) ;
+    \draw [BarreStyle=red]  (A-3-1.south west) to (A-1-3.north east);
+    \draw [BarreStyle=red]  (A-4-1.south west) to (A-2-3.north east);
+    \draw [BarreStyle=red]  (A-5-1.south west) to (A-3-3.north east);
+    \draw (1.8,1.45) node {$- 7\cdot 5\cdot 3$};
+    \draw (1.8,0.90) node {$- 1\cdot 8\cdot 6 $};
+    \draw (1.8,0.35) node {$ - 4\cdot 2\cdot 9$};
+    \draw (1.8,-0.20) node {$+1\cdot 5\cdot 9 $};
+    \draw (1.8,-0.85) node {$+ 4\cdot 8\cdot 3 $};
+    \draw (1.8,-1.45) node {$+ 7\cdot 2\cdot 6 $};
+    \end{tikzpicture}
+    \end{equation*}
+  
+    Entonces  $\det(A) =45+96+84-105-48-72=0$.
+
+
+
+\end{exampleblock}
+
+\end{frame}
+
+
+
+\begin{frame}
+
+\begin{ejemplo}
+\end{ejemplo}
+
+Calculemos el determinante de una matriz $4\times 4$
+
+\begin{align*}
+\left|
+\begin{array}{cccc}
+1&1&1&1\\
+1&2&3&0\\
+0&1&2&3\\
+2&2&1&1
+\end{array}
+\right|
+=&1\left|
+\begin{array}{ccc}
+2&3&0\\
+1&2&3\\
+2&1&1
+\end{array}
+\right|
+-1
+\left|
+\begin{array}{ccc}
+1&1&1\\
+1&2&3\\
+2&1&1
+\end{array}
+\right|
+\\
+&\qquad\qquad\qquad\qquad
++0
+\left|
+\begin{array}{ccc}
+1&1&1\\
+2&3&0\\
+2&1&1
+\end{array}
+\right|
+-2
+\left|
+\begin{array}{ccc}
+1&1&1\\
+2&3&0\\
+1&2&3
+\end{array}
+\right|
+\\
+=&13-3+0-8\\
+=&2.
+\end{align*}
+
+
+\end{frame}
+
+\begin{frame}
+
+\begin{alertblock}{Observación}
+
+Las fórmulas para $n=2$ y $n=3$ es un caso particular de la fórmula 
+
+$$
+\det(A)=\sum_{\sigma\in\mathbb{S}_n}\sgn(\sigma)\, a_{1\sigma(1)}\,a_{2\sigma(2)}\cdots a_{n\sigma(n)}
+$$
+
+válida para todo $n$, la cual tiene $n!$ términos.
+
+
+\
+
+
+($\mathbb{S}_n$ es el conjunto de permutaciones de $\{1, ..., n\}$ y $\sgn:\mathbb{S}_n\rightarrow\{1,-1\}$ es una función, llamada \textit{función signo}.)
+ 
+\end{alertblock}
+\vskip 1.5 cm
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{block}{Observación}
+    \pause
+    \begin{itemize}
+        \item Del modo que lo presentamos, el determinante no es más que una fórmula que le aplicamos a una matriz. Pero aquí sólo estamos viendo el producto final de años y años de estudio.
+        \vskip .2cm\pause
+        \item  De hecho, el determinante existió antes que las matrices y se lo utilizaba para ``determinar'' cuando un sistema de $n$ ecuaciones con $n$ incógnitas tiene solución única (si y sólo si el determinante es no nulo). 
+        \vskip .2cm\pause
+        \item También tiene otras aplicaciones.
+        \vskip .2cm\pause
+        \item  Pueden googlear ``determinante'' para saber más o leer la página de Wikipedia.
+    \end{itemize}
+
+
+
+\end{block}
+ 
+\end{frame}
+
+\begin{frame}
+
+Viendo la fórmula del determinante
+$$
+\det(A)=a_{11}\det A(1|1) - a_{21}\det A(2|1) + \cdots + (-1)^{1+n}  a_{n1}\det A(n|1)
+$$
+notamos que mientras más ceros tenga la primera columna (o sea, más $a_{i1}$'s iguales a $0$), menos cuentas deberemos hacer.
+
+\
+
+Por ejemplo, si $A$ es triangular superior o una MERF.
+\end{frame}
+
+\begin{frame}{Determinante de una matriz triangular superior}
+
+\begin{block}{Proposición}
+El determinante de una matriz triangular superior es el producto de los elementos de la diagonal
+\begin{align*}
+\left|
+\begin{array}{ccccccc}
+a_{11}& a_{12} & \cdots & & &  & a_{1n}\\ 
+0 & a_{22} & \cdots & & &  & a_{2n}\\
+ \vdots & 0 & \ddots & & &  & \vdots\\
+  & \vdots &  & & &&  \\
+ & &  & & &\ddots& \vdots \\
+ 0 & 0 & \cdots & & & 0& a_{nn}\\ 
+\end{array}
+\right|={a_{11}\cdot a_{22}\cdots a_{nn}}
+\end{align*}
+\end{block}
+
+(esto aplica también a las matrices diagonal)
+
+\end{frame}
+
+
+\begin{frame}
+
+        \begin{proof} Podemos demostrar el resultado por inducción sobre $n$. 
+            \vskip .2cm\pause
+        Si $n=1$,  es decir si $A = [a_{11}]$, el determinante vale $a_{11}$. 
+        \vskip .2cm\pause
+        Sea $n>1$,  observemos que $A(1|1)$ es también triangular superior con valores $a_{22},\ldots,a_{nn}$  en la diagonal principal. Por HI:
+        $$
+        \det(A(1|1)) = a_{22}.\ldots.a_{nn}.
+        $$
+        \vskip .2cm\pause
+        Por definición de determinante observamos que el desarrollo por la primera  columna solo tiene un término ($a_{11}$) en la primera posición. 
+        \vskip .2cm\pause
+        Por lo tanto, 
+            \begin{equation*}
+            \det(A) = a_{11} \det(A(1|1)) \stackrel{\text{(HI)}}{=} a_{11}.(a_{22}.\ldots.a_{nn}).
+            \end{equation*}
+            \qed 
+        \end{proof}
+        
+\end{frame}
+
+\begin{frame}{Casos particulares}
+    \pause
+\begin{block}{Corolario 1}
+\center{$\det(\Id_n)=1$} 
+\end{block}
+\pause
+\begin{block}{Corolario 2}
+Si $R\in\K^{n\times n}$ es una MERF, entonces
+$$
+\det(R)=\begin{cases}
+         1&\mbox{si $R$ no tiene filas nulas}\\
+         0&\mbox{si $R$ tiene filas nulas}
+        \end{cases}
+$$
+\end{block}
+
+\vspace{3cm}
+
+
+\end{frame}
+
+
+\begin{frame}
+
+Volvamos a la fórmula del determinante
+$$
+\det(A)=a_{11}\det A(1|1) - a_{21}\det A(2|1) + \cdots + (-1)^{1+n}  a_{n1}\det A(n|1)
+$$
+y a la observación de que con más ceros en la primera columna menos cuentas deberemos hacer.
+\pause
+
+\
+
+Con las operaciones elementales por filas podemos anular las entradas no nulas como lo hacíamos para transformar una matriz en MERF.
+\pause
+
+
+\
+
+Entonces deberíamos analizar como estas operaciones afectan en el cálculo del determinante. 
+
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Teorema E1}{\em
+
+Sea $A\in\K^{n\times n}$ y $c\in\K$ no nulo. Sea
+$$
+A \stackrel{{cF_i}}{\longrightarrow} B,
+$$ 
+ entonces 
+{$$\det(B)=c\det(A).$$}
+}
+\end{block}
+\vskip -.6cm\pause
+\begin{exampleblock}{Ejemplo (verificar cuentas)}
+$$
+A=\begin{bmatrix}
+    1&2\\3&4 
+\end{bmatrix}
+\stackrel{{10F_1}}{\longrightarrow}
+B=\begin{bmatrix}
+10&20\\3&4 
+\end{bmatrix},
+$$
+\vskip .1cm
+y
+\vskip .1cm
+$$
+\det
+\begin{bmatrix}
+10&20\\3&4 
+\end{bmatrix}
+=-20
+=10\det
+\begin{bmatrix}
+1&2\\3&4 
+\end{bmatrix}.
+$$
+\end{exampleblock}
+
+
+\end{frame}
+
+
+\begin{frame}
+
+    \begin{block}{Teorema E2}{\em
+
+Sean $A\in\K^{n\times n}$ y $ 1 \le s , t \le n$ con $s\ne t$. Sea $t\in\K$ y 
+$$
+A \stackrel{{F_r+tF_s}}{\longrightarrow} B,
+$$
+entonces 
+{$$\det(B)=\det(A).$$}
+}
+\end{block}
+\vskip -.6cm\pause
+\begin{exampleblock}{Ejemplo (verificar cuentas)}
+$$
+A=\begin{bmatrix}
+    1&2\\3&4 
+\end{bmatrix}
+\stackrel{{F_2+10F_1}}{\longrightarrow}
+B=\begin{bmatrix}
+1&2\\13&24 
+\end{bmatrix},
+$$
+
+\vskip .2cm
+y
+\vskip .2cm
+
+
+$$
+\det
+\begin{bmatrix}
+    1&2\\13&24 
+\end{bmatrix}
+=-2
+=\det
+\begin{bmatrix}
+1&2\\3&4 
+\end{bmatrix}.
+$$
+\end{exampleblock}
+
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Teorema E3}{\em
+
+Sean $A\in\K^{n\times n}$. Sea 
+$$
+A \stackrel{{F_r \leftrightarrow F_s}}{\longrightarrow} B,
+$$
+entonces
+{$$\det(B)=-\det(A)$$}
+}
+\end{block}
+\vskip -.6cm\pause
+\begin{exampleblock}{Ejemplo (verificar cuentas)}
+$$
+A=\begin{bmatrix}
+    1&2\\3&4 
+\end{bmatrix}
+\stackrel{{F_2 \leftrightarrow F_1}}{\longrightarrow}
+B=\begin{bmatrix}
+    3&4\\ 1&2
+\end{bmatrix},
+$$
+
+\vskip .2cm
+y
+\vskip .2cm
+
+
+$$
+\det
+\begin{bmatrix}
+    3&4 \\1&2
+\end{bmatrix}
+=2
+=-\det
+\begin{bmatrix}
+1&2\\3&4 
+\end{bmatrix}.
+$$
+\end{exampleblock}
+
+
+
+
+
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{block}{Observación}\pause
+        \begin{itemize}
+            \item  En todos los casos $\det(B)=k\det(A)$ para algún $k\in\K$ no nulo.\pause
+            \vskip .3cm
+            \item  A partir de lo anterior podemos plantear una estrategia general para calcular el determinante.
+        \end{itemize}\pause
+    \end{block}
+    \vskip .6cm
+
+\begin{proposicion}
+    Sea $A$ matriz $n \times n$ y $C$ matriz que se obtiene de $A$ a partir de operaciones elementales de fila. Luego $\det(C) = k \det(A)$, para $k \ne 0$ en $\K$.
+\end{proposicion}
+
+\vskip 2cm
+
+
+\end{frame}
+
+\begin{frame}
+
+
+
+\begin{exampleblock}{Estrategia para calcular el determinante de $A\in\K^{n\times n}$}
+    \pause
+\begin{enumerate}
+ \item Realizando $\ell$ operaciones elementales de fila obtenemos a partir de $A$  una matriz triangular superior $C$.\pause
+ 
+ \item Luego, 
+ $$
+ \det(C)=k_\ell\cdots k_1\det(A)
+ $$\pause
+ 
+ \item Como $C$  es triangular superior, el determinante de $C$ es el producto de la diagonal.
+ 
+ \item Entonces, podemos despejar
+ $$
+ {\det(A)=\frac{1}{k_\ell\cdots k_1}\det(C)}
+ $$
+\end{enumerate}
+\end{exampleblock}
+
+
+
+
+
+\end{frame}
+
+\begin{frame}
+\begin{exampleblock}{Problema}
+Calcular el determinante de  
+$
+A=\left[
+\begin{array}{rrr}
+0&2&3\\
+2&-1&7\\
+1&3&0
+\end{array}
+\right]
+$
+\end{exampleblock}
+\pause
+\begin{solucion}\pause
+
+Primero, le aplicamos operaciones elementales a $A$ hasta obtener una matriz triangular superior.
+
+\begin{align*}
+A=&\left[
+\begin{array}{rrr}
+0&2&3\\
+2&-1&7\\
+1&3&0
+\end{array}
+\right]
+\overset{{F_1\leftrightarrow F_3}}{\longrightarrow}
+\left[
+\begin{array}{rrr}
+1&3&0\\
+2&-1&7\\
+0&2&3
+\end{array}
+\right]
+\overset{{F_2-2F_1}}{\longrightarrow}
+\left[
+\begin{array}{rrr}
+1&3&0\\
+0&-7&7\\
+0&2&3
+\end{array}
+\right]
+\\
+\\
+&
+\overset{{-\frac{1}{7}F_2}}{\longrightarrow}
+\left[
+\begin{array}{rrr}
+1&3&0\\
+0&1&-1\\
+0&2&3
+\end{array}
+\right]
+\overset{{F_3-2F_2}}{\longrightarrow}
+\left[
+\begin{array}{rrr}
+1&3&0\\
+0&1&-1\\
+0&0&5
+\end{array}
+\right]=C
+\end{align*}
+
+
+\end{solucion}
+
+\end{frame}
+
+\begin{frame}
+
+Entonces 
+
+$$C=e_4(e_3(e_2(e_1(A))))$$
+
+donde $e_1$, $e_2$, $e_3$ y $e_4$ denotan las operaciones elementales aplicadas en cada paso
+Ahora calculamos el determinante de $C$ usando Teoremas Ei:
+\pause
+\begin{align*}
+5&=\det \left[
+\begin{array}{rrr}
+1&3&0\\
+0&1&-1\\
+0&0&5
+\end{array}
+\right]
+=\det\left(e_4(e_3(e_2(e_1(A))))\right)
+\end{align*}
+{Donde $e_4 = F_3-2F_2$, $e_3 = -\frac{1}{7}F_2$, $e_2 = F_2-2F_1$, $e_1 =F_1\leftrightarrow F_3$,}
+
+
+\end{frame}
+
+
+\begin{frame}
+
+    Luego, 
+
+    \begin{align*}
+        5&\quad\;= \det\left(e_4(e_3(e_2(e_1(A))))\right)\\
+        \\
+        &\stackrel{\text{Teorema E2}}{=}\det\left(e_3(e_2(e_1(A)))\right)
+        \stackrel{\text{Teorema E1}}{=}-\frac{1}{7}\det\left(e_2(e_1(A))\right)
+        \\
+        \\
+        &\stackrel{\text{Teorema E2}}{=}
+        -\frac{1}{7}\det\left(e_1(A)\right)
+        \stackrel{\text{Teorema E3}}{=}-\frac{1}{7}\cdot(-1)\cdot\det\left(A\right)
+        \end{align*}
+
+\vskip.4cm
+\pause
+De esta igualdad podemos despejar $\det(A)$
+
+$$
+{\det A=7\cdot 5=35.}
+$$
+
+\qed
+
+\end{frame}
+
+
+\begin{frame}
+
+La próxima clase veremos resultados de suma utilidad:
+
+\vskip .8cm
+\pause
+\begin{block}{Teorema}
+Sean $A$ y $B$ matrices $n\times n$. Entonces\pause
+\vskip .3cm
+\begin{enumerate}
+ \item $\det(AB)=\det(A)\det(B)$
+ \pause
+ \vskip .3cm
+ 
+ \item $A$ es invertible si y sólo si $\det(A)\neq0$
+ \vskip .3cm
+ \pause
+ \item Si $A$ invertible, $\displaystyle \det(A^{-1})=\frac{1}{\det(A)}$.  
+\end{enumerate}
+
+ 
+\end{block}
+
+\vskip 2cm
+\end{frame}
+
+
+
+\end{document}
+

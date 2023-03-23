@@ -1,0 +1,522 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+%\usepackage{makeidx}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usepackage[customcolors]{hf-tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools}
+\usepackage{stackrel}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usepackage{polynom}
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate]{label={(\arabic*)}}
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand{\im}{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand\sgn{\operatorname{sgn}}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\figurename }{Figura}
+
+\include{definiciones}
+
+\setlength{\parskip}{.2cm} % espacio entre párrafo y párrafo
+\setlist{itemsep=.15cm}
+
+
+\title[Clase 22 - Transformaciones lineales 3]{Álgebra/Álgebra II \\ Clase 22 - Transformaciones lineales 3}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+} 
+\date[17/11/2020]{17 de noviembre de 2020}
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+    Hoy estudiaremoas transformaciones lineales inyectivas, sobreyectivas y biyectivas.
+
+    \vskip .4cm\pause
+    Este tipo de transformaciones nos dan información acerca de dimensiones, generadores y conjuntos LI.
+    \vskip .4cm\pause
+    Sea $T: V \to W$ lineal. Hoy veremos, entre otros resultados:\pause
+    \begin{itemize}
+        \item $T$  es inyectiva $\;\Leftrightarrow\;$ $\nu T=0$  $\;\Leftrightarrow\;$ $\dim\nu T=0$.\pause
+        \item $T$ inyectiva   $\;\Leftrightarrow\;$ $T$ de LI es LI.\pause
+        \item  $T$ sobreyectiva  $\;\Leftrightarrow\;$ $T$ de generadores de $V$ es generadores de $W$.\pause
+        \item $T$ biyectiva $\;\Leftrightarrow\;$ $T$ de base es base. 
+    \end{itemize}
+
+
+    
+
+\end{frame}
+
+
+
+\begin{frame}
+
+   
+   \vskip .3cm
+   \begin{definicion}[4.3.1-4.3.2]
+    Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal.
+    \begin{itemize} \vskip .3cm\pause
+        \item $T$  es \textit{epimorfismo}\index{epimorfismo} si $T$ es suryectiva. \pause
+        
+        Es decir si $\img(T) = W$. \vskip .3cm
+        \item $T$ es \textit{monomorfismo}\index{monomorfismo} si $T$ es inyectiva (o $1-1$).  \pause
+        
+        Es decir,  $T(v_1) = T(v_2)$  $\Rightarrow$ $v_1 = v_2$. \vskip .3cm
+        \item $T$ es un \textit{isomorfismo} si es monomorfismo y epimorfismo (es decir si es inyectiva y suryectiva).
+    \end{itemize}  
+
+\end{definicion}
+    
+  
+    
+    \end{frame}
+
+    
+    \begin{frame}
+    
+        \begin{observacion}[4.3.1]
+            \begin{itemize}
+                \item  $T$  es epimorfismo si y sólo si 
+                $$
+                \text{$T$ es lineal y }\forall\, w \in W, \; \exists v \in V \text{ tal que }T(v)=w.
+                $$\pause
+                Esto se deduce inmediatamente de la definiciones de función suryectiva y de $\img(T)$.
+                \vskip .3cm\pause
+                \item  $T$ es monomorfismo si y sólo si 
+                $$
+                    \text{$T$ es lineal y }\forall\, v_1,v_2  \in V: \; v_1 \ne v_2 \Rightarrow T(v_1) \not= T(v_2).
+                $$ \pause
+                Esto se obtiene aplicando el contrarrecíproco a la definición de función inyectiva.
+
+            \end{itemize}
+        \end{observacion}	
+        
+    
+    \end{frame}
+    
+    \begin{frame}
+        
+            
+        \begin{block}{Proposición 4.3.1}\label{inyectiva-sii-nuT=0}
+            Sea $T:V \to W$ una transformación lineal. Entonces $T$ es monomorfismo si y sólo si $\nuc(T) =0$.
+        \end{block}	\pause
+        \begin{proof} \pause
+            
+            ($\Rightarrow$) Debemos ver que  $T(v)=0$ $\Rightarrow$  $v=0$. 
+            \vskip.2cm
+            $T(v) = 0\;\wedge\; T(0) =0$ \quad$\stackrel{T \text{ mono}}{\Longrightarrow}$\quad $v =0$.
+            \vskip.5cm
+            ($\Leftarrow$) Sean  $v_1,v_2 \in V$ tal que $T(v_1)=T(v_2)$. Entonces 
+            $$
+            0 = T(v_1)- T(v_2) \stackrel{T \text{ lineal}}{=} T(v_1 -v_2)\quad \Rightarrow \quad v_1-v_2 \in \nu(T)= \{0\}.
+            $$
+            Luego,  $v_1 -v_2 =0$,  es decir $v_1 = v_2$.
+        \end{proof}\qed
+        
+    
+        
+    
+    \end{frame}
+
+    \begin{frame}
+        \begin{observacion}[4.3.2] Sea $T: V \to W$ transformación lineal, \pause
+            \begin{enumerate}
+                \item $T$  es {epimorfismo} $\Leftrightarrow$ $\img(T) = W$ $\Leftrightarrow$ $\dim\im(T) = \dim W$.\pause
+                \item $T$ es {monomorfismo} $\Leftrightarrow$ $\nuc(T) = 0$ $\Leftrightarrow$ $\dim\nu(T) =0$.
+            \end{enumerate}  
+        \end{observacion}		
+    
+        \pause
+        \begin{proposicion}[4.3.2]\label{prop-T-mono-sii-li-2-li} Sea $T:V \to W$ transformación lineal. Entonces,
+            \begin{enumerate}\pause
+                \item\label{itm-T-mono-sii} $T$ es monomorfismo si y sólo si $T$ de un conjunto LI  es  LI.\pause
+                \item\label{itm-T-epi-sii} $T$ es epimorfismo si y sólo si $T$ de un conjunto de generadores de $V$ es un conjunto de generadores de $W$.
+            \end{enumerate}
+        \end{proposicion}\pause
+
+        \vskip .2cm
+
+        En  las próximas pantallas veremos la demostración.
+       
+
+    \end{frame}
+    
+
+
+
+    \begin{frame}
+   
+          
+        \ref{itm-T-mono-sii} ($\Rightarrow$) Sea $\{v_1,\ldots,v_n \}$  LI en $V$ y  $\lambda_1,\ldots,\lambda_n \in \K$ tales que
+        $$
+        \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n) =0.
+        $$
+        Debemos probar que $\lambda_1= \lambda_2=\cdots=\lambda_n =0$.
+       \begin{align*}
+           0 &= \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n)&& \text{(hipótesis)}\\\noalign{\vskip .2cm}
+           &= T(\lambda_1v_1+\cdots + \lambda_{n}v_n)&&\text{(linealidad de $T$)} \\\noalign{\vskip .2cm}
+           &\Rightarrow \lambda_1v_1+\cdots + \lambda_{n}v_n =0&& \text{($T$ mono)} \\\noalign{\vskip .2cm}
+           &\Rightarrow \lambda_1= \lambda_2=\cdots=\lambda_n =0&& \text{($\{v_1,\ldots,v_n \}$  LI)} \\
+       \end{align*}
+
+
+       Por lo tanto,  $T(v_1),\ldots,T(v_n)$ son LI.
+        
+        
+       
+
+  
+    \end{frame}
+    
+    \begin{frame}
+
+        \ref{itm-T-mono-sii} ($\Leftarrow$) \;
+        Si  $\nu T = 0$ \; $\Rightarrow$ \; $T$ es mono (proposición p. \ref{inyectiva-sii-nuT=0})
+        \vskip .4cm 
+        Veamos, entonces, que  $\nu T = 0$, es decir:\;  $T(v)=0$ $\Rightarrow$ $v =0$.  
+        \vskip .4cm 
+        Probemos el  contrarecíproco: $v \ne 0$  $\Rightarrow$  $T(v) \ne 0$
+        \begin{align*}
+            v \ne 0 &\Rightarrow v \text{ es LI}&& \\
+            &\Rightarrow T(v)  \text{ es LI}&& \text{(hipótesis)}\\
+            &\Rightarrow T(v)  \ne 0 &&.
+        \end{align*}
+        \vskip .4cm 
+        Luego
+        \begin{align*}
+            \text{($v \ne 0$  $\Rightarrow$  $T(v) \ne 0$)} &\Rightarrow \text{($T(v)=0$ $\Rightarrow$ $v =0$)} \\
+            &\Rightarrow \nu(T) =0 \\
+            &\Rightarrow  \text{ $T$ es mono. }
+        \end{align*}
+
+    \end{frame}
+    
+    
+    \begin{frame}
+    
+  
+          
+        \ref{itm-T-epi-sii} ($\Rightarrow$) Sea   $V = \la v_1,\ldots,v_n \ra$  y  $w \in W$. 
+        \vskip .4cm
+        Debemos ver que $w \in  \la T(v_1),\ldots,T(v_n) \ra$
+        \vskip .4cm
+        Como $T$  es epimorfismo, existe $v \in V$ tal que $T(v)=w$. 
+        
+        \begin{align*}
+            v &=  \lambda_1v_1+\cdots + \lambda_{n}v_n&& \text{($v_1,\ldots,v_n$ genera $V$)}\\
+            &\Downarrow&& \\
+            T(v) &= T(\lambda_1v_1+\cdots + \lambda_{n}v_n) &&\text{(aplicamos $T$)}\\
+            &= \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n) &&\text{($T$ lineal)}\\
+            &\Downarrow&& \\
+            w &=\lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n) &&\text{($w =T(v)$)}\\
+            &\Downarrow&& \\
+            w &\in  \la T(v_1),\ldots,T(v_n) \ra.
+        \end{align*}
+        
+    
+        
+    
+    
+    \end{frame}
+    
+    \begin{frame}
+    
+        \ref{itm-T-epi-sii} ($\Leftarrow$) Debemos ver que: $w \in W$ $\Rightarrow$ existe $v \in V$ tal que $w=T(v)$.
+        \vskip .4cm
+        Sea $\{v_1,\ldots,v_n \}$ una base de $V$. 
+        \vskip .4cm
+        Por hipótesis $T(v_1),\ldots,T(v_n)$ generan $W$.
+        
+        \vskip .4cm
+        Es decir dado cualquier $w \in W$,   existen $\lambda_1,\ldots,\lambda_n \in \K$ tales que
+        $$
+        w = \lambda_1T(v_1)+\cdots + \lambda_{n}T(v_n),
+        $$
+        y por lo tanto 
+        \begin{align*}
+            w &= \lambda_1T(v_1)+\cdots + \lambda_{n}T(v_n)&& \\
+            &=  T(\lambda_1v_1+\cdots + \lambda_{n}v_n)&& \text{($T$ lineal)}\\
+            &= T(v),
+        \end{align*}
+        con 
+        $$
+        v = \lambda_1v_1+\cdots + \lambda_{n}v_n.
+        $$
+
+        \qed
+    \end{frame}
+    
+
+    \begin{frame}
+        
+        \begin{corolario}
+            Sea $T:V \to W$ transformación lineal. Entonces $T$ es un isomorfismo si y solo si $T$ de una base de $V$ es una base de $W$.
+        \end{corolario}\vskip -.4cm\pause
+        \begin{proof} \pause
+            \vskip -.2cm
+         ($\Rightarrow$) 
+           Sea $ \mathcal B$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición 4.3.2, $T(\mathcal B)$ es LI y genera $W$,  es decir,  es base de $W$.
+
+           ($\Leftarrow$) Sea $ \mathcal B$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\mathcal B)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición 4.3.2, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo. \qed
+        \end{proof}
+
+        \begin{corolario}
+            Sean $V$ y $W$ dos  $\K$-espacios vectoriales de dimensión finita tal que $V$ es isomorfo a $W$. Entonces $\dim(V) = \dim(W)$.
+        \end{corolario}
+       
+    
+    
+    \end{frame}
+
+
+
+    
+    \begin{frame}
+    Recordar que si una función es biyectiva entonces se puede definir la función inversa.
+    \vskip .4cm \pause
+    \begin{teorema}[4.3.3]
+    Sea $T:V\longrightarrow W$ un isomorfismo. Entonces la función inversa $$T^{-1}:W\longrightarrow V$$ es también un isomorfismo. 
+    
+    Es decir, $T^{-1}$ es una transformación lineal biyectiva.
+    \end{teorema}
+    \vskip 2cm
+    \end{frame}
+  
+
+    \begin{frame}
+        \begin{proof}
+            Sean $w_1, w_2 \in W$, $\lambda \in \K$,  probemos que $$T^{-1}(w_1+ \lambda w_2) =  T^{-1}(w_1)+ \lambda T^{-1}(w_2).$$ 
+                
+            Sean $v_i = T^{-1}(w_i) $ $\Rightarrow$  $T(v_i) = w_i$.
+
+            \begin{align*}
+                T^{-1}(w_1  + \lambda w_2) &= T^{-1}(T(v_1)+\lambda T(v_2)) &&\text{($w_i= T(v_i)$)}\\\noalign{\vskip.2cm}
+                &= T^{-1}(T(v_1+\lambda v_2)) &&\text{($T$ lineal)}\\\noalign{\vskip.2cm}
+                &=(T^{-1}\circ T)(v_1+\lambda v_2) &&\text{(def de $\circ$)}\\\noalign{\vskip.2cm}
+                &= v_1+\lambda v_2 &&\text{($T^{-1}\circ T =\Id$)}\\\noalign{\vskip.2cm}
+                &= T^{-1}(w_1)+ \lambda T^{-1}(w_2). &&\text{( $v_i = T^{-1}(w_i) $)} \qed \\\noalign{\vskip.2cm}
+            \end{align*}
+           
+        \end{proof}
+       
+    \end{frame}
+
+
+    \begin{frame}
+    
+    \begin{teorema}[4.3.4]\vskip -.2cm
+    Sea $T:V\longrightarrow W$ una transformación lineal con $\dim V=\dim W$. Entonces las siguientes afirmaciones son equivalentes
+    \begin{enumerate}\pause
+        \item\label{a-dimV=dimW} $T$ es un  isomorfismo.\pause
+        \item\label{b-dimV=dimW} $T$ es monomorfismo.\pause
+        \item\label{c-dimV=dimW} $T$ es epimorfismo.\pause
+        \item\label{d-dimV=dimW}  $\{v_1, ..., v_n\}$ base de $V$ \;$\Rightarrow$\; $\{T(v_1), ..., T(v_n)\}$  base de $W$.    
+    \end{enumerate}
+    \pause
+    \end{teorema}
+    \vskip .2cm
+    Vamos a probar 
+    \begin{itemize}
+        \item \ref{a-dimV=dimW} $\Rightarrow$ \ref{b-dimV=dimW} $\Rightarrow$ \ref{c-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW},
+        \item  \ref{a-dimV=dimW} $\Rightarrow$ \ref{d-dimV=dimW} \;$\wedge$\;  \ref{d-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}  
+    \end{itemize}\pause
+    Del primer ítem obtenemos \ref{a-dimV=dimW} $\Leftrightarrow$ \ref{b-dimV=dimW} $\Leftrightarrow$ \ref{c-dimV=dimW}.
+
+    Del segundo ítem obtenemos \ref{a-dimV=dimW} $\Leftrightarrow$ \ref{d-dimV=dimW}.
+    \vskip .2cm
+    Luego \ref{a-dimV=dimW} $\Leftrightarrow$ \ref{b-dimV=dimW} $\Leftrightarrow$ \ref{c-dimV=dimW} $\Leftrightarrow$ \ref{d-dimV=dimW}.
+      
+    \end{frame}
+    
+    \begin{frame}
+       \begin{proof}\pause
+        \ref{a-dimV=dimW} $\Rightarrow$ \ref{b-dimV=dimW}. Obvio, de la definición de  iso. 
+        \vskip .4cm\pause
+        \ref{b-dimV=dimW} $\Rightarrow$ \ref{c-dimV=dimW}. Usaremos el teorema de la dimensión del núcleo y la imagen:
+        \begin{align*}
+            \text{$T$ mono } &\Rightarrow \dim\nu T = 0  && \text{(proposición de p. \ref{inyectiva-sii-nuT=0})} \\
+            &\Rightarrow \dim\im T = \dim V = \dim W  && \text{(teorema de la dimensión)} \\ 
+            &\Rightarrow  \im T = W   && \text{} \\ 
+            &\Rightarrow \text{$T$ epi }&&
+        \end{align*}\vskip -.8cm
+        \begin{align*}\pause
+            \text{\ref{c-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}. $T$ epi } &\Rightarrow  \dim\im T = \dim V = \dim W  &&  \\
+            &\Rightarrow \dim\nu T = 0 && \text{(teorema de la dim.)} \\ 
+            &\Rightarrow  \nu T = 0   && \text{} \\ 
+            &\Rightarrow \text{$T$ mono}&&\text{(proposición de p. \ref{inyectiva-sii-nuT=0})}
+        \end{align*}
+        $T$ epi y $T$ mono $\Rightarrow$ $T$ iso. 
+       \end{proof}
+    \end{frame}
+
+    \begin{frame}
+        \ref{a-dimV=dimW} $\Rightarrow$ \ref{d-dimV=dimW}. Sea $\{v_1,\ldots,v_n \}$  una base de $V$. 
+        \vskip .2cm
+        Entonces $\{v_1,\ldots,v_n \}$ es LI y  genera $V$. 
+        \vskip .2cm
+        \begin{tabular}{lll}
+            Proposición de p. \ref{prop-T-mono-sii-li-2-li}&$\Rightarrow$& $\{T(v_1),\ldots,T(v_n) \}$ es LI \\ \noalign{\vskip .2cm}
+            &&  $\{T(v_1),\ldots,T(v_n) \}$  genera $W$.
+        \end{tabular}
+        \vskip .2cm
+        Por lo tanto $\{T(v_1),\ldots,T(v_n) \}$ es una base de $W$.
+        \vskip .4cm\pause
+        \ref{d-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}. Como $T$ de una base es una base,  entonces 
+        \vskip .2cm
+        \begin{itemize}
+            \item  $T$  de un conjunto LI es un conjunto LI, \vskip .2cm
+            \item $T$ de un conjunto de generadores de $V$  es un conjunto de generadores de $W$. \vskip .2cm
+        \end{itemize}
+        
+        Por lo tanto, por proposición de p. \ref{prop-T-mono-sii-li-2-li}, $T$ es monomorfismo y epimorfismo.
+        \vskip .2cm
+        Luego $T$ es un isomorfismo. 	 \qed
+
+       
+    \end{frame}
+
+
+    
+    \begin{frame}
+    
+    \begin{definicion}[4.3.2]
+    Dos espacios vectoriales $V$ y $W$ se dicen \textit{isomorfos}, en símbolos $V\;{\cong}\; W$, si existe un isomorfismo $T:V\longrightarrow W$
+    \end{definicion}
+    \pause
+    \begin{corolario}[4.3.5 (del teorema 4.3.4)]
+    Sean $V$ y $W$ espacios de vectoriales dimensión finita. Entonces
+    \begin{align*}
+    \dim V=\dim W \quad\Rightarrow\quad V\cong W.
+    \end{align*}
+    \end{corolario}\pause
+    
+    \begin{block}{Idea de la demostración}\pause
+
+    Si $\mathcal B = \{v_1,\ldots,v_n\}$ una base de $V$ y $\mathcal B' = \{w_1,\ldots,w_n\}$ una base de $W$
+    $$
+    T : \mathcal B \to \mathcal B' \quad\text{definida por } T(v_i) = w_i,
+    $$
+    se puede extender a un isomorfismo $T: V \to W$. \qed   
+    \end{block}
+
+
+
+    \end{frame}
+    
+    
+    
+    \begin{frame}
+        \begin{ejemplo*} Recordemos: 
+        $$\K_n[x] = \{a_0+a_1x+\cdots+a_{n-1}x^{n-1}: a_0,a_1, \ldots,a_{n-1} \in \K \}.$$ 
+        Entonces,
+        $$\K_n[x] \cong \K^n.
+        $$ 
+    \end{ejemplo*}\pause
+    \begin{proof}\pause
+        Es  consecuencia inmediata del corolario anterior, pues ambos tienen dimensión $n$. 
+        \vskip .2cm
+        Explícitamente, $1,x,\ldots,x^{n-1}$  es base de $\K_n[x]$ y sea $e_1,\ldots,e_n$ la base canónica  de $\K^n$,  entonces un isomorfismo de $\K_n[x]$ a $\K^n$ viene dado por la única transformación lineal $T:\K_n[x] \to\K^n$ tal que
+        $$
+        T(x^i) = e_{i+1},\qquad i=0,\ldots, n-1. 
+        $$   \qed
+    \end{proof}
+    
+    \end{frame}
+    
+
+    \begin{frame}
+        \frametitle{Resultados MI 1 (a tener en cuenta)}
+
+        Sea $T:V\longrightarrow W$ una transformación lineal con $V$, $W$ de dimensión finita.
+\vskip .6cm\pause
+        \begin{itemize}
+            \item $\{v_1, ..., v_k\}$ genera  $V$ $\;\Rightarrow\;$ $\{T(v_1), ..., T(v_k)\}$ genera  $\im(T)$.\vskip .4cm\pause
+            \item $\dim V=\dim\nu(T)+\dim\im(T)$. \vskip .4cm\pause
+            \item $T$ mono $\Leftrightarrow$ $\nu(T) =0$.\vskip .4cm
+            \item $T$  mono $\Leftrightarrow$ $T$ de  LI  es  LI.\vskip .4cm\pause
+            \item $T$  epi $\Leftrightarrow$ $T$(generadores de $V$) $=$ generadores de $W$. \vskip .4cm\pause
+            \item $T$ iso  $\Leftrightarrow$ $T$(base de $V$) $=$ base de $W$. 
+        \end{itemize}
+    \end{frame}
+
+
+    \begin{frame}
+        \frametitle{Resultados MI 2 (a tener en cuenta)}
+    
+        Si $T: \R^n \to \R^m$, sea $A$ la matriz $m \times n$ asociada a $A$ y $R$ una MRF de $A$.\pause
+        \vskip .6cm
+        \begin{itemize}
+            \item $\nu(T) = \{x: Ax =0\}$, $\im(T) = \{b: Ax=b$, algún $x\}$.\vskip .4cm\pause
+            \item rango fila de $A$ $=$ rango  columna de $A$. \vskip .4cm\pause
+            \item $|$filas no nulas de $A|$ \;$=$\; rg-fil $A$ \;$=$\; rg-col $A$ \;$=$\; $\dim \im(A)$.\vskip .4cm\pause
+            \item $\dim\nu(A)$ \;$=$\;  $|$variables libres de $RX=0|$ \;$=$\; $n-$rg-fil $A$. 
+        \end{itemize}
+    
+    \end{frame}
+\end{document}
+
+
+

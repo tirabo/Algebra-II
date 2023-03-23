@@ -1,0 +1,530 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+%\usepackage{makeidx}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usepackage[customcolors]{hf-tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools}
+\usepackage{stackrel}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usepackage{polynom}
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate]{label={(\arabic*)}}
+%\setbeamertemplate{background}[grid][step=8 ] % cuadriculado
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand{\im}{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand\sgn{\operatorname{sgn}}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\figurename }{Figura}
+
+\include{definiciones}
+
+\newcommand{\nc}{\newcommand}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+
+\nc{\FF}{{\mathbb F}} \nc{\NN}{{\mathbb N}} \nc{\QQ}{{\mathbb Q}}
+\nc{\PP}{{\mathbb P}} \nc{\DD}{{\mathbb D}} \nc{\Sn}{{\mathbb S}}
+\nc{\uno}{\mathbb{1}} \nc{\BB}{{\mathbb B}} \nc{\An}{{\mathbb A}}
+
+\nc{\ba}{\mathbf{a}} \nc{\bb}{\mathbf{b}} \nc{\bt}{\mathbf{t}}
+\nc{\bB}{\mathbf{B}}
+
+\nc{\cP}{\mathcal{P}} \nc{\cU}{\mathcal{U}} \nc{\cX}{\mathcal{X}}
+\nc{\cE}{\mathcal{E}} \nc{\cS}{\mathcal{S}} \nc{\cA}{\mathcal{A}}
+\nc{\cC}{\mathcal{C}} \nc{\cO}{\mathcal{O}} \nc{\cQ}{\mathcal{Q}}
+\nc{\cB}{\mathcal{B}} \nc{\cJ}{\mathcal{J}} \nc{\cI}{\mathcal{I}}
+\nc{\cM}{\mathcal{M}} \nc{\cK}{\mathcal{K}}
+
+\nc{\fD}{\mathfrak{D}} \nc{\fI}{\mathfrak{I}} \nc{\fJ}{\mathfrak{J}}
+\nc{\fS}{\mathfrak{S}} \nc{\gA}{\mathfrak{A}}
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+
+\title[Clase 25 -  Diagonalización]{Álgebra/Álgebra II \\Clase 25 -  Diagonalización}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+} 
+\date[26/11/2020]{26 de noviembre de 2020}
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+
+\begin{frame}
+\begin{itemize}
+	\item Hoy veremos los autovalores y autovectores desde una perspectiva de las transformaciones lineales.
+	\vskip .5cm \pause
+	\item Muchos conceptos y demostraciones se repiten o son similares al caso de la matrices. 
+	\vskip .5cm \pause
+	\item    
+	Sea $V$ espacio vectorial de dimensión finita. Un operador lineal en $V$ es \textit{diagonalizable}  si existe una base ordenada $\mathcal B= \{v_1,\ldots,v_n\}$ de $V$ y $\lambda_1,\ldots,\lambda_n \in \K$ tal que 
+	\begin{equation*}\label{eq-auto-49}
+		T(v_i) = \lambda_i v_i,\qquad 1\le i \le n. 
+	\end{equation*}
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\begin{itemize}
+		\item En  general, los operadores diagonalizables permiten hacer cálculos sobre ellos en forma sencilla, por ejemplo el núcleo del  operador anterior es $\nuc(T)=\langle v_i: \lambda_i =0 \rangle$ y  su imagen es $\img(T)=\langle v_i: \lambda_i \not=0 \rangle$.\pause
+		\vskip .5cm 
+		\item Otra propiedad importante de los operadores diagonalizables es que la matriz de la transformación lineal en una base adecuada es diagonal (de allí viene el nombre de diagonalizable).
+	\end{itemize}	\vskip .5cm \pause
+	$$
+        [T]_{\mathcal B} = 
+        \begin{bmatrix}
+        \lambda_1&0&0&\cdots&0 \\
+        0&\lambda_2&0&\cdots&0\\
+        0&0&\lambda_3&\cdots&0\\
+        \vdots&\vdots&\vdots&&\vdots\\
+        0&0&0&\cdots&\lambda_n
+        \end{bmatrix}.
+        $$
+	\end{frame}
+	
+
+
+
+\begin{frame}
+
+\begin{block}{Definición 3.6.1}
+
+Sea $T:V\longrightarrow V$ una transformación lineal. Un \textit{autovalor de $T$} es un escalar \textit{$\lambda\in\R$} tal que existe un vector no nulo \textit{$v\in V$} con 
+$$T(v)=\lambda v$$
+En tal caso, se dice que \textit{$v$ es un autovector (asociado a $\lambda$)}.\pause
+
+\
+
+El \textit{autoespacio asociado a $\lambda$} es
+\begin{align*}
+V_\lambda=\{v\in V\mid T(v)=\lambda v\}=\{\mbox{autovectores asociados a $\lambda$}\}\cup \{0\} 
+\end{align*}
+\end{block}
+
+
+\end{frame}
+
+
+
+\begin{frame}
+	
+	\begin{block}{Lema}
+		
+		Sea $T:V\longrightarrow V$ una transformación lineal y $\cB$ una base de $V$. Las siguientes afirmaciones son equivalentes\pause
+		\begin{itemize}
+			\item $\lambda\in\R$ y $v\in V$ son autovalor y autovector de $T$\pause
+			\item $v\in\operatorname{Nu}(T-\lambda\Id)$\pause
+			
+			\item $\lambda\in\R$ y $[v]_\cB$ son autovalor y autovector de $[T]_\cB$
+		\end{itemize}
+	\end{block}\pause
+	
+\begin{demostracion}\vskip -.8cm\pause
+	\begin{align*}
+		T(v)=\lambda v&
+		\Leftrightarrow
+		T(v)-\lambda v=(T-\lambda\Id)v=0
+		\\
+		\\
+		T(v)=\lambda v&\Leftrightarrow \lambda[v]_\cB = [\lambda v]_\cB = [T(v)]_\cB=[T]_\cB\,[v]_\cB
+	\end{align*}
+\end{demostracion}	\qed
+	
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Consecuencia}\pause
+		\begin{itemize}
+			\item Para calcular los autovalores y autovectores de una transformación $T$, elegimos una base $\cB$ y calculamos los autovalores y autovectores de $[T]_\cB$.\pause
+			
+			\item 
+			No importa que base elijamos porque $[T]_{\cB'}=P^{-1}[T]_\cB P$ y en el Ejercicio 8 del 1er TP vimos que estas matrices tienen iguales autovalores.  
+		\end{itemize}
+	\end{block} 
+\end{frame}
+
+
+\begin{frame}
+	\begin{block}{Teorema 3.6.1}
+		
+		Sea $T:V\longrightarrow V$ una tranfomación lineal. Entonces $V_\lambda$ es un subespacio vectorial.
+	\end{block}\pause
+	
+	La demostración es como en el caso de matrices. 
+	\pause
+	
+	\
+	
+	
+	Notar que podemos definir $V_\lambda$ para cualquier $\lambda\in\R$. Así, $\lambda$ es autovalor si y sólo si $V_\lambda\neq0$ 
+\end{frame}
+
+
+
+\begin{frame}
+	\begin{block}{Teorema 3.6.2}
+		Sea $T:V\longrightarrow V$ una tranfomación lineal.
+		
+		\vskip .2cm
+		
+		Sean $v_1$, ..., $v_m$ autovectores de $T$ con autovalores $\lambda_1$, ..., $\lambda_m$, respectivamente.
+		
+		\vskip .2cm
+		
+		Si todos los autovalores son distintos, entonces los vectores $v_1$, ..., $v_m$ son LI 
+	\end{block}\pause
+	
+	\begin{demostracion}\pause
+		La demostración es por inducción.
+		
+		\vskip .2cm
+		
+		\textit{Caso base.} Si $m=1$, entonces vale porque los autovectores son no nulos por definición y en tal caso el conjunto $\{v_1\}$ es LI.
+		
+		\vskip .2cm\pause
+		
+		\textit{Paso  inductivo.} Para $m+1$ procedemos como sigue.
+	\end{demostracion}
+	
+	
+\end{frame}
+
+\begin{frame}
+	
+	Sean $c_1, ..., c_{m+1}$ escalares tales que
+	\begin{align*}
+		c_1v_1+\cdots+c_mv_m+c_{m+1}v_{m+1}&=0 \tag{*}
+	\end{align*}\pause\vskip -.8cm
+	\begin{align*}
+		T(*)\quad&\rightsquigarrow  
+		c_1\lambda_1v_1+\cdots+c_m\lambda_mv_m+c_{m+1}\lambda_{m+1}v_{m+1}=0 \\
+		\lambda_{m+1}\cdot (*)\quad&\rightsquigarrow 
+		c_1\lambda_{m+1}v_1+\cdots+c_m\lambda_{m+1}v_m+c_{m+1}\lambda_{m+1}v_{m+1}=0
+	\end{align*}\pause
+	Restando miembro a miembro obtenemos
+	\begin{align*}\pause
+		c_1(\lambda_1-\lambda_{m+1})v_1+\cdots+c_m(\lambda_m-\lambda_{m+1})v_m&=0 
+	\end{align*}\pause
+	Por (HI), $c_i(\lambda_i-\lambda_{m+1})=0$ para todo $1\leq i\leq m$.
+	
+	\vskip .2cm\pause
+	
+	Dado que los autovalores son distintos, $c_i=0$ para todo $1\leq i\leq m$. Por lo tanto $c_{m+1}=0$ y los vectores son LI. \qed
+\end{frame}
+
+
+
+
+
+\begin{frame}
+	\begin{block}{Definición  3.6.3}
+		Sea $V$ un espacio vectorial de dimensión finita y $T:V\longrightarrow V$ una transformación lineal. Se dice que $T$ es \textit{diagonalizable} si $V$ tiene una base formada por autovectores.
+	\end{block}
+	
+	
+\end{frame}
+
+\begin{frame}
+	
+	\begin{block}{Lema}
+		Sea $T:V\longrightarrow V$ una transformación lineal diagonalizable. Sea $\cB=\{v_1, ..., v_n\}$ una base de autovectores de $T$ con autovalores asociados $\lambda_1$, ..., $\lambda_n$. Entonces 
+		\begin{align*}
+			[T]_\cB=
+			\begin{bmatrix}
+				\lambda_1 & 0 & \cdots & & &  & 0\\ 
+				0 & \lambda_2 & 0& \cdots & &  & 0\\
+				\vdots & 0 & \ddots & & &  & \vdots\\
+				& \vdots &  & & & &  \\
+				& &  & & &  \ddots&0\\
+				0 & 0 & \cdots & & & 0 & \lambda_{n}
+			\end{bmatrix}
+		\end{align*}
+	\end{block}
+	
+	En efecto, las columnas de $[T]_\cB$ son los vectores de coordenada
+	\begin{align*}
+		[T(v_i)]_\cB=[\lambda_i v_i]_\cB=\lambda_i[v_i]_\cB
+	\end{align*}
+	y $[v_i]_\cB$ tiene todas entradas $0$ excepto un $1$ en el lugar $i$.
+	
+\end{frame}
+
+\begin{frame}
+	Se preguntarán cómo saber si una transformación lineal es diagonalizable.\pause
+	
+	\
+	
+	La primera respuesta es: calcular todos los autovalores y autovectores.\pause
+	
+	\
+	
+	A continuación veremos algunos criterios a tener en cuenta.\pause
+\end{frame}
+
+\begin{frame}
+	
+	\begin{block}{Corolario 3.6.3}
+		
+		Si $V$ es un espacio vectorial de dimensión $n$ y $T:V\longrightarrow V$ es una transformación lineal con $n$ autovalores distintos entonces $T$ es diagonalizable.
+		
+	\end{block}\pause
+	
+	\begin{demostracion}\pause
+		En efecto, cada autovalor tiene al menos un autovector. 
+	
+	\
+	
+	Elijamos un autovector $v_1$, ..., $v_n$ para cada autovalor.
+	
+	\
+	
+	Por el Teorema 3.6.2 estos vectores son LI. 
+	
+	\
+	
+	Dado que son tantos como la dimensión de $V$ forman una base.
+
+	\qed
+	\end{demostracion}
+	
+\end{frame}
+
+\begin{frame}
+	
+	\begin{corolario}
+		
+		Si $V$ es un espacio vectorial de dimensión  y $T:V\longrightarrow V$ es una transformación lineal con autovalores $\lambda_1$, ..., $\lambda_m$. Si
+		\begin{align*}
+			\dim V=\dim V_{\lambda_1}+\cdots+\dim V_{\lambda_m} 
+		\end{align*}
+		
+		
+	\end{corolario}\pause
+	
+	\begin{demostracion}\pause
+		La demostración es similar a la anterior. 
+	
+	\vskip .3cm
+	
+	Primero elegimos una base para cada autoespacio. 
+	
+	\vskip .3cm
+	
+	Despues vemos que la unión de estas bases es un conjunto LI gracias al Teorema 3.6.2.
+	
+	\vskip .3cm
+	
+	Finalmente la unión es una base de $V$ por l forman una base del espacio total. \qed
+	\end{demostracion}
+	
+\end{frame}
+
+
+\begin{frame}
+	\begin{proposicion} Sea $T: V \to V$ con  $\mathcal{B} = \{v_1,\ldots,v_n \}$  una base de autovectores con autovalores $\lambda_1,\ldots,\lambda_n$. 
+	\vskip .2cm	
+	Entonces $\nuc(T)=\langle v_i: \lambda_i =0 \rangle$ e  $\img(T)=\langle v_i: \lambda_i \not=0 \rangle$.			
+	\end{proposicion}\pause
+	\begin{proof}\pause Reordenemos:  tal que  $\lambda_i =0$ para $1 \le i \le k$ y $\lambda_i \ne 0$ para $k < i \le n$. 
+	$$
+	v \in V \quad \Rightarrow \quad v = x_1v_1 + \cdots+ x_k v_k+ x_{k+1} v_{k+1}+\cdots+ x_n v_n,
+	$$
+	y entonces
+	\begin{equation}\label{eq-av-01}
+		T(v) =  \lambda_{k+1}x_{k+1} v_{k+1}+\cdots+ \lambda_nx_n v_n.
+	\end{equation}
+	Luego 
+	\begin{align*}
+		T(v) =0 \quad &\Leftrightarrow \quad x_{k+1} = \cdots = x_n=0  \quad \Leftrightarrow \quad v =  x_1v_1 + \cdots+ x_k v_k \\
+		\quad &\Leftrightarrow \quad v \in \langle v_i: \lambda_i =0 \rangle. 
+	\end{align*}
+	
+	\end{proof}
+\end{frame}
+
+
+
+\begin{frame}
+	
+	También es claro por la ecuación (\ref{eq-av-01}) que 
+	\begin{align*}
+		\img(T) &= \{\lambda_{k+1}x_{k+1} v_{k+1}+\cdots+ \lambda_nx_n v_n: x_i \in \K \} \\
+		&=\{\mu_{k+1} v_{k+1}+\cdots+ \mu_n v_n: \mu_i \in \K \}\\
+		&= \langle v_i: \lambda_i \not=0 \rangle.
+	\end{align*}
+	\qed
+	\vskip 3cm
+\end{frame}
+
+
+\begin{frame}
+	
+	\begin{exampleblock}{Definición 3.6.2}
+		Sea $V$ un espacio vectorial de dimensión finita y $T:V\longrightarrow V$ una transformación lineal.
+		El \textit{polinomio característico de $T$} es el polinomio característico de la matriz $[T]_\cB$ donde $\cB$ es una base de $V$. Es decir,
+		\begin{align*}
+			\chi_T(x)=\det([T]_\cB-x\Id) 
+		\end{align*}
+	\end{exampleblock}\pause
+	
+	\begin{observacion}
+		Notar que no importa que base usemos para calcular el polinomio característico dado que $[T]_{\cB'}=P^{-1}[T]_{\cB}P$.
+	\end{observacion}
+	
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Proposición 3.6.4}
+		Sea $T:V\longrightarrow V$ una transformación lineal. Entonces
+		$\lambda$ es autovalor de $T$ si y sólo si $\lambda$ es raíz del polinomio característico.
+	\end{block}\pause
+	
+	\begin{block}{Corolario}
+		Sea $T:V\longrightarrow V$ una transformación lineal. Supongamos que 
+		\begin{align*}
+			\chi_T(x)=(-1)^n (x-\lambda_1)^{d_1}\cdots (x-\lambda_m)^{d_m}
+		\end{align*}
+		Entonces 
+		\begin{enumerate}
+			\item $1\leq\dim V_{\lambda_i}\leq d_i$ para todo $i$.
+			\item $T$ es diagonalizable si y sólo si $\dim V_{\lambda_i}=d_i$ para todo $i$.
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	
+	El punto de partida de esta sección es la siguiente simple observación.\pause
+	
+	\begin{observacion}
+		Sea $T:V\longrightarrow W$ una tranfomación lineal. Si conocemos cuanto vale $T(v_i)$ para todos los vectores de una base $\cB=\{v_1, ..., v_n\}$ de $V$, entonces podemos calcular $T(v)$ para todo $v\in V$.
+	\end{observacion} \pause
+	
+	Pues al ser $\cB$ una base, si $v\in V$ entonces $v=x_1v_1+\cdots+ x_nv_n$ y por lo tanto
+	\begin{align*}
+		T(v)=x_1T(v_1)+\cdots+ x_nT(v_n) 
+	\end{align*}
+	
+\end{frame}
+
+\begin{frame}
+	Más aún, una transformación queda determinada por cuanto vale en una base.\pause
+	
+	\begin{block}{Teorema 3.1.1}
+		Sea $V$ un espacio vectorial con base $\cB=\{v_1, ..., v_n\}$.
+		
+		\
+		
+		Sea $W$ un espacio vectorial y $\{w_1, ..., w_n\}$ vectores de $W$.
+		
+		\
+		
+		Entonces existe una única transformación lineal $T:V\longrightarrow W$ tal que $T(v_i)=w_i$ para todo $i$.
+	\end{block}
+	\pause
+
+	
+	Notar que los $w_i$'s pueden ser cualesquiera vectores y se pueden repetir. 
+	
+	\
+
+	\pause
+	Este teorema nos permite construir transformaciones lineales con propiedades específicas (ver los ejercicios del Práctico 9)
+\end{frame}
+
+\begin{frame}
+	
+	\begin{observacion}
+		
+		Lo que nos dice el teorema es que para definir una transformación lineal es suficiente que definamos cuanto vale en una base.
+		\pause
+		
+		\
+		
+		Si bien estamos acostumbrados a definir funciones usando fórmulas en el caso de las transformaciones lineales no es necesario.
+		\pause
+		
+		\
+		
+		Si quisieramos dar una fórmula podemos usar las coordenadas en la base.
+		\pause
+		
+		\
+		
+		Y si estamos en $\R^n$ podemos usar las coordenadas usuales usando la matriz de la transformación y el teorema que nos dice como se relacionan las matrices en distintas bases.
+	\end{observacion}
+	
+	
+\end{frame}
+
+
+
+
+
+\end{document}
+
+
+

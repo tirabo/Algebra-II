@@ -1,0 +1,753 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+%\usepackage{makeidx}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usepackage[customcolors]{hf-tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools}
+\usepackage{stackrel}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usepackage{polynom}
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate]{label={(\arabic*)}}
+%\setbeamertemplate{background}[grid][step=8 ] %cuadriculado
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand{\im}{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand\sgn{\operatorname{sgn}}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\figurename }{Figura}
+
+\include{definiciones}
+
+
+
+
+
+\title[Clase 20 - Transformaciones lineales 1]{Álgebra/Álgebra II \\ Clase 20 - Transformaciones lineales 1}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+} 
+\date[10/11/2020]{10 de noviembre de 2020}
+
+
+
+\begin{document}
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+    \begin{definicion}
+    Una \textit{transformación lineal} entre dos espacios vectoriales $V$ y $W$ es una función $T:V\longrightarrow W$ tal que \pause
+    \begin{enumerate}
+     \item Preserva la suma: 
+     $$
+     T(v+v')=T(v)+T(v')
+     \quad\forall\,v,v'\in V
+     $$\pause
+     \item Preserva el producto por escalares
+     $$
+     T(\lambda v)=\lambda T(v)
+     \quad\forall\,v\in V,\,\lambda\in\R
+     $$ 
+    \end{enumerate}
+    
+    \end{definicion}
+    \pause
+    \begin{observacion}
+        $T:V\longrightarrow W$  es transformación lineal  $\Leftrightarrow$ 
+        $$
+        T(v+\lambda v')=T(v)+\lambda T(v')\quad\forall\,v,v'\in V, \lambda \in \K.
+        $$
+    
+    \end{observacion}
+    
+\end{frame}
+
+\begin{frame}
+
+
+Ya conocemos algunas transformaciones lineales. Por ejemplo:\pause
+\vskip .4cm
+\begin{itemize}
+    \item La derivada: 
+    $$(f+cg)'=f'+cg'$$\pause
+    \item La integral: $$\int_a^b (f+cg) \,dx=\int_a^b f \,dx+ c \int_a^b g \,dx.$$\pause
+    \item La multiplicación por matrices: $$A(v+\lambda v')=Av+\lambda Av'$$
+   \end{itemize}
+
+\
+
+
+\end{frame}
+
+\begin{frame}
+
+Un isomorfismo lineal es una transformación lineal que es biyectiva.
+\pause
+\
+
+
+Por ejemplo,  si definimos 
+\begin{align*}
+&T:\R_{<n}[x]\longrightarrow\R^n,\\ &T(a_{n-1}x^{n-1}+\cdots+a_0)=(a_{n-1}, ...,, a_0) 
+\end{align*}
+
+Esta identificación es un isomorfismo.  
+\vskip .4cm\pause
+Otro isomorfismo que hemos mencionado repetidas veces es 
+\begin{equation*}
+    \begin{array}{rccc}
+        S: &\K^{2 \times 2}& \to &\K^4 \\
+    &\begin{bmatrix}
+        a_{11} & a_{12} \\ a_{21}&a_{22}
+    \end{bmatrix}    &\mapsto &( a_{11}, a_{12}, a_{21},a_{22})
+    \end{array}
+\end{equation*}
+
+\begin{teorema} Sean $V$ y $W$ dos espacios vectoriales de dimensión finita tal que $\dim(V) = \dim(W)$ entonces $V$ y $W$ son isomorfos.
+\end{teorema}
+
+\end{frame}
+
+
+
+\begin{frame}{Ejemplos de transformaciones lineales}
+
+
+
+\begin{ejemplo*}
+        Sea $T : \K^3 \to \K^2$ definida por
+        $$
+        T(x_1,x_2,x_3) = (2x_1 - x_3, -x_1+3x_2+x_3).
+        $$
+        Entonces, $T$  es una transformación lineal. 
+        
+        \vskip .4cm\pause
+
+        La demostración es rutinaria y  parte de un resultado más general. 
+        
+        \vskip .4cm\pause
+
+    Observar que si 
+    $$
+     A = \begin{bmatrix}
+     2&0&-1 \\ -1&3&1
+     \end{bmatrix},
+    $$
+    entonces
+    $$
+    \begin{bmatrix}
+    2&0&-1 \\ -1&3&1
+    \end{bmatrix} 
+    \begin{bmatrix}
+    x_1\\x_2\\x_3
+    \end{bmatrix} =
+    \begin{bmatrix}
+    2x_1 - x_3 \\ -x_1+3x_2+x_3
+    \end{bmatrix}.
+    $$
+ 
+    \end{ejemplo*}   
+
+\end{frame}
+
+\begin{frame}
+    \begin{observacion}\label{obs-tl-1.5} 	Sea $T: \K^n \to \K^m$. En  general si $T(x_1,\ldots,x_n)$ en cada coordenada tiene una combinación lineal de los $x_1,\ldots,x_n$,  entonces $T$ es una transformación lineal. Mas precisamente, si $T$ está definida por
+        \begin{align*}
+        T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )\\
+        &=(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j),
+        \end{align*}
+        con $a_{ij} \in \K$, entonces $T$  es lineal. 
+    \end{observacion}\pause
+    \begin{proof} Ejercicio. \pause Lo  vemos  en  p. \ref{obs-nu-im}. \qed
+    \end{proof}
+\end{frame}
+
+\begin{frame}{Ejemplos (continuado)}
+
+    \begin{ejemplo}
+
+Sea $C^1$ el espacio de funciones derivables. Entonces la derivada es una transformación lineal pues:
+$$
+(f+g)'=f'+g'\quad\mbox{y}\quad
+(\lambda f)'=\lambda f'
+$$
+
+\end{ejemplo}
+
+\pause
+
+\begin{ejemplo}
+
+Sea $V$ un espacio vectorial. La función \textit{identidad $\Id:V\longrightarrow V$},
+$$
+\Id(v)=v\quad\forall\, v\in V,
+$$
+es una transformación lineal. 
+\end{ejemplo}
+\end{frame}
+
+
+\begin{frame}{(contra)Ejemplos}
+\begin{exampleblock}{Ejemplo}
+No todas las funciones son transformaciones lineales. La función $f(x)=x^2$ de $\R$ en $\R$ no es lineal. Probamos esto dando un ejemplo concreto donde no se verifique algunas de las propiedades. Por ejemplo:
+$$
+(1+1)^2=4\neq2= 1^2+1^2.
+$$
+
+
+\end{exampleblock}
+ \vskip 3cm
+\end{frame}
+
+\begin{frame}
+
+
+
+ Podemos dar una definición equivalente de transformación lineal que reúna las dos condiciones en sólo una. 
+ \vskip .4cm
+Algo similar a la definición de subespacio.
+\pause
+\vskip .4cm
+  \begin{definicion}
+
+Una \textit{transformación lineal} entre dos espacios vectoriales $V$ y $W$ es una función $T:V\longrightarrow W$ tal que
+\vskip .2cm
+\begin{itemize}
+ \item $
+ T(\lambda v+v')=\lambda T(v)+T(v')
+ \quad\forall\,v,v'\in V, \lambda\in\R
+ $
+\end{itemize}
+\end{definicion}
+\vskip .4cm
+Podemos usar cualquiera de las dos definiciones para decidir si una función es transformación lineal o no.
+
+
+\end{frame}
+
+
+\begin{frame}
+
+
+\begin{block}{Observación}
+Sea $T:V\longrightarrow W$ una transformación lineal. Entonces $T(0)=0$. \pause
+\end{block}
+\begin{demostracion}
+    \vskip -0.8cm
+\begin{align*}
+T(0)&=T(0+0)&&\\
+T(0)&=T(0)+T(0)&&\text{(linealidad de $T$)}\\
+-T(0) + T(0)&=- T(0) + T(0)+T(0)&&\\
+0&= 0 + T(0) = T(0).&& \\
+\end{align*}\qed 
+\end{demostracion}
+
+\vskip 2cm
+
+\end{frame}
+
+
+\begin{frame}
+
+Entre otras cosas esta propiedad, es útil como ``test'' para verificar si una función \textit{no} es transformación lineal. 
+\pause
+\
+\begin{exampleblock}{Ejemplo}
+Sea $V$ un espacio vectorial y $v_0\in V$ un vector no nulo. Entonces la función $f:V\longrightarrow V$ dada por 
+$$
+f(v)=v+v_0\quad\forall v\in V
+$$
+no es lineal dado que
+$$
+f(0)=0+v_0=v_0\neq0.
+$$
+\end{exampleblock}
+
+
+\end{frame}
+
+\begin{frame}
+\begin{observacion}
+Las transformaciones lineales preservan combinaciones lineales, es decir si $T:V\longrightarrow W$ es una transformación lineal, $v_1, ..., v_k\in V$ y $\lambda_1, ..., \lambda_k\in\R$, entonces
+$$
+T(\lambda_1v_1+\cdots+\lambda_kv_k)=\lambda_1T(v_1)+\cdots+\lambda_kT(v_k)
+$$
+\end{observacion}\pause
+\begin{block}{Esquema de la demostración}\pause
+    La demostración sigue por inducción y aplicando la definición de t. lineal. 
+\begin{itemize}
+    \item \textbf{Caso base.}  $T(\lambda_1v_1)=\lambda_1T(v_1)$. Lo cual es cierto porque es una de las condiciones de la definición de transformación lineal.
+    \item \textbf{Paso inductivo.} 
+    \begin{align*}
+        T(\lambda_1v_1+\cdots+\lambda_kv_k) &= T(\lambda_1v_1)+T(v_2+\cdots+\lambda_kv_k)&&\text{(T es t.l.)}\\
+        &=  \lambda_1T(v_1)+\cdots+\lambda_kT(v_k)&&\text{(C.B. e HI)}
+    \end{align*}
+\end{itemize}
+\qed
+\end{block}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\begin{definicion}
+Sea $T:V\longrightarrow W$ una transformación lineal.
+\begin{itemize}\pause
+\item La \textit{imagen de $T$} es el subconjunto de $W$
+ \begin{align*}
+ \img(T)=\left\{T(v)\mid v\in V\right\}=\left\{w\in W\mid T(v)=w\right\}
+ \end{align*}\pause
+ \item El \textit{núcleo de $T$} es el subconjunto de $V$
+ \begin{align*}
+ \nu(T)=\left\{v\in V\mid T(v)=0\right\}
+ \end{align*}
+\end{itemize}
+\end{definicion}
+\end{frame}
+
+\begin{frame}
+
+\begin{block}{Observación}
+\begin{itemize}\pause
+\item $\img(T)$ se define como la imagen de cualquier función. \pause
+
+\item $\nu(T)$ serían las raíces de la transformación. \pause
+
+\item $\nu(T)$ es definido de forma implícita al igual que la segunda expresión de $\img(T)$. \pause
+
+\item La primera expresión de $\img(T)$ es de forma explícita o paramétrica, donde el parámetro es un vector.
+
+\end{itemize}
+
+\begin{block}{Notación}
+
+    Si $T : V \to W$ transformación lineal denotamos
+$$
+          T(V) := \{T(v): v \in V \} = \im(T).
+$$
+    
+\end{block}
+ 
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+El núcleo y la imagen son importante entre otras cosas por lo siguiente. 
+\vskip .4cm \pause
+\begin{block}{Teorema}
+Sea $T:V\longrightarrow W$ una transformación lineal. Entonces 
+\begin{itemize}\pause
+\item $\img(T)$ es un subespacio vectorial de $W$.\pause
+ \item $\nu(T)$ es un subespacio vectorial de $V$.
+\end{itemize}
+\end{block}
+
+A continuación haremos la demostración.
+\end{frame}
+
+\begin{frame}
+
+    \begin{block}{Demostración: $\nu(T)$ es subespacio}\vskip .4cm\pause
+
+        \begin{itemize}
+            \item  $\nuc(T) \ne \emptyset$ pues $T(0) =0$ y por lo tanto $0 \in \nuc(T)$.\pause
+            \vskip .4cm
+            \item  Si $v,w \in V$ tales que $T(v) =0$ y $T(w)=0$,  entonces,\pause
+            \vskip .4cm
+
+            \begin{itemize}
+                \item  $T(v+w)= T(v)+T(w) =0$  $\Rightarrow$ $v+w \in \nuc(T)$. \vskip .4cm\pause
+
+                \item  Si  $\lambda \in \K$,  entonces $T(\lambda v) = \lambda T(v) = \lambda.0 =0$  $\Rightarrow$  $\lambda v \in \nuc(T)$.
+            \end{itemize}
+        \end{itemize}
+
+    \end{block}
+
+\end{frame}
+
+
+\begin{frame}
+
+    \begin{block}{Demostración: $\im(T)$ es subespacio}\pause
+        \vskip .4cm
+        \begin{itemize}
+            \item  $\im(T) \ne \emptyset$,  pues $0 = T(0) \in \im(T)$.  \vskip .4cm\pause
+            \item   Si $T(v_1),T(v_2) \in \img(T)$ y $\lambda \in \K$,  entonces \vskip .4cm\pause
+            \begin{itemize}
+                \item   $T(v_1) + T(v_2) = T(v_1+v_2) \in \im(T)$. \vskip .4cm\pause
+                \item $\lambda T(v_1) = T(\lambda v_1) \in \im(T)$.
+            \end{itemize}
+        \end{itemize}
+
+    \end{block}
+\end{frame}
+
+
+\begin{frame}
+
+    \begin{lema}
+    Sea $T:V\longrightarrow W$ una transformación lineal con $V$ de dimensión finita. Sea $\{v_1, ..., v_k\}$ una base de $V$. Entonces $\{T(v_1), ..., T(v_k)\}$ genera a $\im(T)$ y por lo tanto $\im(T)$ es de dimensión finita.
+    \end{lema}\pause
+    \begin{proof}\pause
+        Por hipotesis: $V=\langle v_1, ..., v_k\rangle=\left\{\lambda_1v_1+\cdots+\lambda_k v_k\mid \lambda_1, ..., \lambda_k\in\K\right\}$.
+        \begin{align*}
+        \mbox{Luego, }\,\im(T)&=\left\{T(v)\mid v\in V\right\}\\
+        &=\left\{T(\lambda_1v_1+\cdots+\lambda_kv_k)\mid \lambda_1, ..., \lambda_k\in\K\right\}\\
+        &=\left\{\lambda_1T(v_1)+\cdots+\lambda_kT(v_k)\mid \lambda_1, ..., \lambda_k\in\K\right\}\\
+        &=\langle T(v_1), ..., T(v_k)\rangle.
+        \end{align*}
+        Entonces $\im(T)$ es generado por $S=\{T(v_1), ..., T(v_k)\}$. Por Teorema 3.3.9, existe un subconjunto $\mathcal B$ de $S$ que es base de $\im(T)$. En particular, $\im(T)$ es de dimensión finita. \qed     
+    \end{proof}
+    
+    \end{frame}
+
+\begin{frame}
+
+    Sea $T:V\longrightarrow W$ una transformación lineal y supongamos que $V$ es de dimensión finita. 
+
+    \vskip .4cm\pause
+
+    Como $\nu(T)$  es un subespacio de un espacio  dimensión $< \infty$ $\Rightarrow$ $\dim(\nu T)< \infty$. 
+
+    \vskip .4cm\pause
+
+    Por el lema anterior  $\dim(\im T)< \infty$.
+
+    \vskip .4cm
+
+\begin{exampleblock}{Definición}
+Sea $T:V\longrightarrow W$ una transformación lineal y supongamos que $V$ es de dimensión finita. Entonces
+\begin{itemize}\pause
+ \item El \textit{rango de $T$} es la dimensión de $\im(T)$.\pause
+ \item La \textit{nulidad de $T$} es la dimensión de $\nu(T)$.
+\end{itemize}
+
+\end{exampleblock}
+
+
+
+
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+
+Todas las transformaciones lineales entre $\R^n$ y $\R^m$ son de la forma ``multiplicar por una matriz''.
+\pause
+\
+
+Más aún,  toda transformación lineal entre espacios vectoriales de dimensión finita se puede expresar de esta forma.
+\pause
+\
+
+Así que analicemos un poco más en detalle este tipo de transformaciones.
+
+\vskip 3 cm
+\end{frame}
+
+
+\begin{frame}
+
+\begin{block}{Observación}
+Sea $A\in\R^{m\times n}$ y consideramos la función 
+\begin{align*}
+\begin{array}{rccc}
+    T : &\R^n &\to &\R^m \\
+        &v &\mapsto &Av.
+\end{array}
+\end{align*}
+Entonces $T$ es una transformación lineal. \pause
+\end{block}
+\begin{proof}\pause
+    Debemos ver que $T$ respeta suma y producto por escalares.
+\end{proof}
+
+\pause
+Sean $v_1,v_2\in\R^n$ y $\lambda\in\R$ entonces
+\begin{align*}
+T(v_1+\lambda v_2)=A(v_1+\lambda v_2)=
+Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2).
+\end{align*}
+\qed
+
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{definicion}
+        Sea $A\in\R^{m\times n}$ y sea $T$ la transformación lineal 
+        \begin{align*}
+            \begin{array}{rccc}
+                T : &\R^n &\to &\R^m \\
+                    &v &\mapsto &Av.
+            \end{array}
+            \end{align*}\pause
+            Diremos que $T$  es \textit{la transformación lineal asociada a $A$} o  \textit{la transformación lineal inducida por $A$}. 
+            
+            \vskip .4cm\pause
+
+            Muchas veces denotaremos a esta transformación lineal con el mismo símbolo que la matriz, es decir, en este caso con $A$.  
+    \end{definicion}
+    
+\end{frame}
+
+\begin{frame}
+
+\begin{ejemplo*}
+Consideremos la matriz $A=\begin{bmatrix}   1&1&1\\   2&2&2 \end{bmatrix}$.
+
+\vskip .2cm
+
+Entonces si $v =(x,y,z)$, 
+\begin{align*}
+A(v) &= \begin{bmatrix} 1&1&1\\2&2&2 \end{bmatrix} \begin{bmatrix}  x\\y\\z \end{bmatrix}
+= \begin{bmatrix}  x+y+z\\2x+2y+2z \end{bmatrix}           
+\end{align*}
+
+\
+\pause
+En particular,
+$(1,-1,0)\in\nu(A)$ pues 
+\vskip .2cm 
+$A(1,-1,0)=(1 + (-1) +0, 2\cdot 1 + 2 \cdot(-1) + 2 \cdot 0) = (0,0)$
+\vskip .2cm 
+y
+\begin{align*}
+A(1,0,0)&=(1,2)\in\im(A)\\
+A(0,1,\pi)&=(1+\pi,2+2\pi)\in\im(A)
+\end{align*}
+\end{ejemplo*}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+    \begin{observacion}\label{obs-nu-im} 	Sea $T: \K^n \to \K^m$ definida por
+        \begin{align*}
+        T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )
+        \end{align*}
+        con $a_{ij} \in \K$, \pause entonces 
+        \begin{equation*}
+            T(x) = \begin{bmatrix*}
+                a_{11}& a_{12} & \cdots &a_{1n} \\
+                a_{21}& a_{22} & \cdots &a_{2n} \\
+                \vdots&\vdots&\ddots&\vdots \\
+                a_{m1}& a_{m2} & \cdots &a_{mn}
+            \end{bmatrix*}
+            \begin{bmatrix}
+                x_1 \\ x_2 \\ \vdots \\ x_n
+            \end{bmatrix}
+        \end{equation*} 
+        \pause
+        Es decir,  $T$ es la transformación lineal inducida por la matriz $A = [a_{ij}]$. 
+        \vskip .4cm\pause
+        Esto demuestra la observación de la p. \ref{obs-tl-1.5}.
+    \end{observacion}
+\end{frame}
+
+
+\begin{frame}
+
+
+
+\begin{block}{Proposición}
+
+Sea $A\in\R^{m\times n}$ y $T:\R^n\longrightarrow\R^m$ la transformación lineal asociada. Entonces
+\begin{itemize}\pause
+ \item El núcleo de $T$ es el conjunto de soluciones del sistema homogéneo $AX=0$
+ \pause
+ \item La imagen de $T$ es el conjunto de los $b\in\R^m$ para los cuales el sistema $AX=b$ tiene solución
+\end{itemize}
+\end{block}\pause
+\begin{demostracion}\pause
+    
+\end{demostracion}
+Se demuestra fácilmente escribiendo las definiciones de los respectivos subconjuntos.
+\begin{align*}
+v\in\nu(T)\Leftrightarrow Av=0\Leftrightarrow v\,\mbox{ es solución de $AX=0$.}
+\end{align*}
+\begin{align*}
+b\in\im(T)&\Leftrightarrow\exists v\in\R^n\,\mbox{ tal que } Av=b 
+\Leftrightarrow\,\mbox{$AX=b$ tienen solución}.
+\end{align*}
+\qed
+
+
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{ejemplo*}
+        Sea $T: \R^3 \to \R^4$, definida
+        $$
+        T(x,y,z) = (x +y ,\,x +2y +z,\,3y +3z,\,2x +4y +2z).
+        $$
+        \begin{enumerate}
+            \item Describir $\nuc(T)$  en forma paramétrica y dar una base.
+            \item Describir $\img(T)$  en forma paramétrica y  dar una base. 
+        \end{enumerate}
+        \end{ejemplo*}\pause
+        \begin{solucion}\pause
+            La matriz asociada a esta transformación lineal  es 
+            \begin{equation*}
+                A = \begin{bmatrix}
+                1&1&0\\1&2&1\\0&3&3\\2&4&2
+                \end{bmatrix}
+            \end{equation*}
+        \end{solucion}
+        \end{frame}
+
+
+        
+
+        \begin{frame}
+            Debemos encontrar la descripción paramétrica de
+            \begin{align*}
+                \nuc(T) &= \{v=(x,y,z):   A.{v}=0\}\\
+                \img(T) &= \{y= (y_1,y_2,y_3,y_4): \text{ tal que } \exists v \in \R^3, A.{v} = {y}  \}
+                \end{align*}
+           
+          
+            En  ambos casos, la solución depende de resolver el sistema de ecuaciones cuya matriz asociada es $A$:
+            \begin{align*}
+            \left[\begin{array}{@{}*{3}{c}|c@{}}1&1&0&y_1\\1&2&1&y_2\\0&3&3&y_3\\2&4&2&y_4 \end{array}\right]
+            &\underset{F_4-2F_1}{\stackrel{F_2 -F_1}{\longrightarrow}} 
+            \left[\begin{array}{@{}*{3}{c}|c@{}}1&1&0&y_1\\0&1&1&-y_1+y_2\\0&3&3&y_3\\0&2&2&-2y_1 +y_4 \end{array}\right]\\
+            &\underset{F_4-2F_2}{\underset{F_3-3F_2}{\stackrel{F_1 -F_2}{\longrightarrow}} } 
+            \left[\begin{array}{@{}*{3}{c}|c@{}}1&0&-1&2y_1-y_2\\0&1&1&-y_1+y_2\\0&0&0&3y_1-3y_2+y_3\\0&0&0&-2y_2 +y_4 \end{array}\right],
+            \end{align*}
+        \end{frame}
+
+
+        
+
+        \begin{frame}
+            \begin{equation*}\label{eq-gen}
+            T(x,y,z) = (y_1,y_2,y_3,y_4) \quad\Leftrightarrow \quad
+            \begin{array}{rl}
+            x -z &= 2y_1-y_2\\ 
+            y +z &= -y_1+y_2\\
+            0&=3y_1-3y_2+y_3 \\
+            0&= -2y_2 +y_4
+            \end{array}
+            \end{equation*}
+            Si hacemos $y_1 = y_2 = y_3 = y_4 = 0$, entonces las soluciones del sistema describen el núcleo de $T$, es decir
+            \begin{align*}
+            \nuc(T) &= \{(x,y,z):x-z=0, y+z =0 \} = \{(s,-s,s):s \in \R \} \\
+            &= \{s(1,-1,1):s \in \R \}
+            \end{align*}
+            que es la forma paramétrica. 
+            
+            \vskip .4cm 
+            
+            Una base del núcleo de $T$  es $\{(1,-1,1)\}$. 
+        \end{frame}
+
+
+        
+
+        \begin{frame}
+            
+            \begin{equation*}\label{eq-gen}
+                T(x,y,z) = (y_1,y_2,y_3,y_4) \quad\Leftrightarrow \quad
+                \begin{array}{rl}
+                x -z &= 2y_1-y_2\\ 
+                y +z &= -y_1+y_2\\
+                0&=3y_1-3y_2+y_3 \\
+                0&= -2y_2 +y_4
+                \end{array}
+                \end{equation*} 
+            Luego, 
+            \begin{align*}
+                \img(T) &=  \{(y_1,y_2,y_3,y_4): \text{ tal que $0=3y_1-3y_2+y_3$ y $0= -2y_2 +y_4$} \} 
+            \end{align*}
+            
+            
+            Resolviendo este sistema, obtenemos
+            \begin{align*}
+                \img(T) &=  \{(-\frac13 s + \frac12 t, \frac 12 t, s,t): s,t \in \R \}\\
+                &=  \{s(-\frac13,0,1,0)+t(\frac12,\frac12,0,1): s,t \in \R \}
+            \end{align*}
+            .
+            
+            Luego $\{(-\frac13,0,1,0),(\frac12,\frac12,0,1) \}$ es una base de $\img(T)$. \qed
+            
+           
+\end{frame}
+
+
+\end{document}
