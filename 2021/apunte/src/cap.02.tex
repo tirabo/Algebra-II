@@ -577,7 +577,7 @@ x& -3y & +3z & =&2 \\
                 
             Entonces, podemos escribir el sistema de ecuaciones \eqref{sist-eq-hom} como
         
-            \begin{equation}\label{sist-eq-2}
+            \begin{equation}\label{sist-eq-homm-2}
                 A = \begin{bmatrix}
                 a_{11}& a_{12}& \cdots &a_{1n} \\
                 \vdots&\vdots  &  &\vdots \\
@@ -2859,13 +2859,13 @@ x& -3y & +3z & =&2 \\
             e(A) = \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix}\;\text{ y }\; e'(A) = \begin{bmatrix} a_{11}& a_{12}\\ ca_{21}&ca_{22}\end{bmatrix},
             \end{equation*}
             luego 
-            \begin{equation*}
+            \begin{equation*}  
                 \det e = \det \begin{bmatrix} ca_{11}& ca_{12}\\ a_{21}&a_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}\
             \end{equation*}
             y
             \begin{equation*}
               \det e' =  \det \begin{bmatrix} a_{11}& a_{12}\\ ca_{21}&ca_{22}\end{bmatrix} = ca_{11}a_{22} - ca_{12}a_{21}. 
-            \end{equation*}
+            \end{equation*}  
             Por lo tanto, $\det e(A) =\det e'(A) = c \det A$. 
             \item Sea  $c \in \K$, si sumamos a la fila $2$ la fila $1$ multiplicada por $c$ o sumamos a la fila $1$  la fila $2$ multiplicada por $c$ obtenemos, respectivamente,
             \begin{equation*}
@@ -2965,7 +2965,7 @@ x& -3y & +3z & =&2 \\
         
     \end{observacion*}
     
-    \begin{corolario}\label{cor-det-merf}
+    \begin{corolario}\label{cor-det-merf-2}
         Sea $A$ matriz $n \times n$ y $E_1,E_2,\ldots,E_t$ matrices elementales tal que $E_tE_{t-1} \ldots E_1A =B$. Entonces, 
         \begin{equation}\label{det-elemen-mrf}
             \det(A) = \det(E_1)^{-1}\det(E_2)^{-1}\ldots \det(E_t)^{-1}\det(B). 
@@ -3570,7 +3570,7 @@ También vale este resultado para matrices $n \times n$.
         \begin{proof}  $A-x \Id=\begin{bmatrix} x-a&-b\\-c&x-d \end{bmatrix}$ y usamos la fórmula del determinante de una matriz $2\times 2$. 
         \end{proof}
 
-        \begin{proposicion}\label{autovalores}
+        \begin{proposicion}
                 Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico de $A$. 
             \end{proposicion}
             \begin{proof}

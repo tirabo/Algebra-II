@@ -3,7 +3,7 @@
 
     Las propiedades algebraicas de $\R^n$ no son suficientes para hacer frente a ciertas nociones geométricas  como  ángulos, perpendicularidad y longitud. Hemos visto en el  capítulo \ref{chap-vectores} que con la introducción del producto escalar pudimos definir y  trabajar  con estos conceptos. En  este capítulo,  en la sección \ref{seccion-producto-interno},  daremos la definición de \text{producto interno}, que es una generalización del producto escalar a cualquier $\R$-espacio vectorial y veremos que muchas de las propiedades del producto escalar en $\R^n$  se satisfacen para $V$ un $\R$-espacio vectorial con producto interno. ,
     
-    En la sección \ref{seccion-adjunta-de-una-transformacion-lineal} veremos la  definición de \textit{adjunta de una transformación lineal},  que es una generalización de la transpuesta de una matriz. En la sección \ref{secccion-operadores-autoadjuntos} veremos el teorema espectral que dice que  un operador autoadjunto (simétrico) es diagonalizable. La sección termina con una extensión del teorema espectral a cualquier operador en un espacio de producto interno, el llamado  teorema de los valores singulares.  
+    En la sección \ref{seccion-adjunta-de-una-transformacion-lineal} veremos la  definición de \textit{adjunta de una transformación lineal},  que es una generalización de la transpuesta de una matriz. En la sección \ref{secccion-operadores-autoadjuntos} veremos el teorema espectral que dice que  un operador autoadjunto (simétrico) es diagonalizable. La sección   termina con una extensión del teorema espectral a cualquier operador en un espacio de producto interno, el llamado  teorema de los valores singulares.  
     
     Finalmente,  en la sección \ref{seccion-operadores-antisimetrivos-y-ortogonales}, definiremos los operadores \textit{antisimétricos} y \textit{ortogonales}, y estudiaremos algunas propiedades de los mismos. 
     
@@ -60,7 +60,7 @@
         
         \begin{ejemplo*} También  se puede definir un producto interno en un espacio de dimensión infinita, como veremos a continuación.
             
-            Sea $E = C^0([a,b])$ el espacio vectorial cuyos elementos son las funciones continuas $f: [a, b] \to\R$. Se puede definir un producto interno en $E$ de la siguiente manera: sean $f,g \in  C^0([a,b])$,  entonces
+            Sea $E = C^0([a,b])$ el espacio vectorial cuyos elementos son las funciones continuas $f: [a, b] \to\R$. Se puede definir un   producto interno en $E$ de la siguiente manera: sean $f,g \in  C^0([a,b])$,  entonces
             \begin{equation*}
             \la f, g \ra = \int_a^b f(x)g(x) dx.
             \end{equation*}
@@ -604,7 +604,7 @@
         
         \begin{definicion}
             Sean $V, W$ espacios vectoriales de dimensión finita y con producto interno $\la \;,\;\ra$ y $\la \;,\;\ra$ respectivamente. Sea $T: V \to W$ lineal, entonces a la única $T^*: W \to V$ que cumple
-            \begin{equation}\label{eq-adjunta}
+            \begin{equation}\label{eq-adjunta-2}
             \la Tv,w\ra = \la v,T^*w\ra,
             \end{equation}  
             para $v\in V$, $w \in W$ se la denomina la \textit{adjunta de $T$}.\index{adjunta de una transformación lineal}
