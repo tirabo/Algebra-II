@@ -426,7 +426,7 @@
   \end{definicion}
 
   \begin{obs}
-      Para la definición formal de función polinómica o polinomio deberíamos ser más cuidadosos, pues en realidad no sabemos a priori si la escritura de una función polinómica es única. Es  decir,  existe la posibilidad de $f$  se escriba de otra forma y,  en particular, el coeficiente más significativo sea diferente. No es muy complicado demostrar que esto no puede ocurrir, pero no lo haremos en este apunte.
+      Para la definición formal de función polinómica o polinomio deberíamos ser más cuidadosos, pues en realidad no sabemos a priori si la escritura de una función polinómica es única. Es  decir,  existe la posibilidad de $f$  se escriba de otra forma y,  en particular, el coeficiente más significativo sea diferente. No es muy complicado demostrar que esto no puede ocurrir, pero no lo haremos en este documento.
   \end{obs}
 
 
@@ -456,28 +456,28 @@
       \end{equation*}
   \end{teorema}
   \begin{proof} Escribamos $f(x)$ en función de las potencias de  $x$:
-      \begin{equation*}
+      \begin{equation}\label{eq-funcion-polinomica-2}
           f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0.
-      \end{equation*}
-      Veremos a continuación que $f$ puede también escribirse en potencias de $x-c$: escribamos
+      \end{equation}
+      Ahora bien,  escribamos
       \begin{equation*}
           x = (x-c)+ c,
       \end{equation*}
-      luego
+      luego, reemplazando $x$ por $(x-c)+ c$ en la expresión (\refeq{eq-funcion-polinomica-2}), obtenemos
       \begin{equation*}
           f(x) = a_n((x-c)+ c)^n + a_{n-1}((x-c)+ c)^{n-1}+\cdots + a_1((x-c)+ c) +a_0.
       \end{equation*}
-      Expandiendo las potencias de los binomios $((x-c)+ c)^k$ ($1 \le k \le n$),  obtenemos
-      \begin{equation*}
+      Expandiendo las potencias de los binomios $((x-c)+ c)^k$ ($1 \le k \le n$) y haciendo sumas y restas en los grados correspondientes,  obtenemos
+      \begin{equation}\label{eq-funcion-polinomica-3}
           f(x) = b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c) +b_0,
-      \end{equation*}
-      para ciertos $b_0, b_1,\ldots ,b_n \in \K$. Como $f(c) = 0$,  entonces $0=f(c)=b_0$,  luego
+      \end{equation}
+      para ciertos $b_0, b_1,\ldots ,b_n \in \K$. Es decir,  hemos demostrado que $f$ se puede escribir como combinación lineal de potencias de $x-c$. Como $f(c) = 0$,  entonces por la expresión (\refeq{eq-funcion-polinomica-3}) vemos que  $0=f(c)=b_0$,  luego
       \begin{align*}
           f(x) & = b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c)       \\
                & = (x-c)(b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1) \\
                & =(x-c)g(x),
       \end{align*}
-      con $g(x) =b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1$,  que es una función polinómica de grado $\le n-1$, y vemos que nuestro teorema está probado.
+      con $g(x) =b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1$,  que es una función polinómica de grado $\le n-1$, y así queda probado el teorema.
   \end{proof}
 
   El polinomio $f$ es el \textit{polinomio nulo} si $f(x)=0$ para toda $x \in \K$. Si $f$ es el polinomio nulo,  denotamos $f =0$.
@@ -490,7 +490,7 @@
       \begin{equation*}
           f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0,
       \end{equation*}
-      con $an \ne 0$.
+      con $a_n \ne 0$. Luego,  $f$ es un polinomio de grado $n$.
 
       Probaremos el resultado haciendo inducción sobre $n$.
 
@@ -688,7 +688,10 @@
       \begin{equation}\label{eq-serie-de-fourier}
           f(x) = \sum_{ j= -\infty}^\infty c_j e^{2\pi ijx},
       \end{equation}
-      con $c_j \in \C$ para $j \in \Z$.
+      con
+      $$
+      c_0 = \int_0^1 f(x) \, dx \quad \text{ y } \quad c_j = \int_0^1 f(x) e^{-2\pi ijx} \, dx \quad \text{ para } j \ne 0.
+      $$ 
   \end{teorema}
   La demostración del teorema anterior se basa en una generalización a espacios de dimensión infinita de los conceptos de bases ortonormales en un espacio vectorial. Diremos que la serie de la \eqref{eq-serie-de-fourier} es la \textit{serie de Fourier de $f$}.\index{serie de Fourier}
 
@@ -809,7 +812,7 @@
 
   \subsection*{Convolución discreta}
 
-  Ahora bien, ¿por  qué es importante la matriz de Fourier $F$? Una posible explicación es la siguiente: hay un cálculo que aparece constantemente en las aplicaciones y hay dos formas de hacerlo. El método directo se incluye en la definición. El método indirecto usa $F$ y $F^{-1}$ y, aunque es más complicado, se puede implementar para que sea mucho más rápido que el cálculo directo. El cálculo se llama {convolución}, y la regla que permite realizarlo mediante  $F$ y $F^{-1}$ es la {regla de convolución.}
+  Ahora bien, ¿por  qué es importante la matriz de Fourier $F$? Una posible explicación es la siguiente: hay una operción llamada \textit{convolución} que aparece constantemente en las aplicaciones y hay dos formas de hacerla. El método directo se incluye en la definición misma de convolución. Pero  hay un método indirecto que usa $F$ y $F^{-1}$ y aunque es más complicado se puede implementar para que sea mucho más rápido que el cálculo directo. En otras palabras,  la matriz de Fourier es una herramienta para calcular convoluciones.
 
   \begin{definicion}
       Sean $f = (f_0,\ldots, f_{n-1})$ y $g = (g_0,\ldots, g_{n-1})$ dos vectores en $\C^n$,  entonces la  \textit{convolución} de $f$ y $g$ es
@@ -853,9 +856,11 @@
       Se deja a cargo del lector.
   \end{proof}
 
-  La expresión dada por la ecuación  \eqref{eq-regla-de-convolucion-2} se llama la  \textit{regla de convolución.}
-
-  \begin{ejemplo*} Los ejemplos \ref{ejem-dft-polinomios} y \ref{ejem-convolucion-polinomios} y  el teorema \ref{th-prod-convolucion-dft} nos  muestran como podemos obtener  la multiplicación de polinomios utilizando la transformada de Fourier discreta. Aquí haremos un repaso de como hacerlo.
+  La expresión dada por la ecuación  \eqref{eq-regla-de-convolucion-2} se llama la  \textit{regla de convolución},  que escrita de otra forma es
+  \begin{equation}\label{eq-regla-de-convolucion-3}
+    f * g = n\,  F^{-1}(F(f)F(g)).
+    \end{equation}
+  \begin{ejemplo*} El ejemplo \ref{ejem-dft-polinomios} y \ref{ejem-convolucion-polinomios} y  la expresión dada por la ecuación  \eqref{eq-regla-de-convolucion-3} nos  muestran como podemos obtener  la multiplicación de polinomios utilizando la transformada de Fourier discreta. Veamos paso a paso como hacerlo.
 
       Sea $n \in \N$ y $f, g$ dos polinomios complejos de grado $< n/2$. Sean
       \begin{align*}
@@ -867,9 +872,11 @@
       \end{align*}
       las representaciones de $f$ y $g$, respectivamente, por valores respecto al conjunto $X = \{1, e^{-2\pi i /{n}},e^{-2\pi i 2/{n}}, \ldots,e^{-2\pi i {(n-1)}/{n}} \}$. Es decir, $c = Ff$ y $d = Fg$,  luego el producto $f$ y $g$ como funciones polinómicas tiene coeficientes
       \begin{equation*}
-          f * g = n\,  F^{-1}(cd).
+           F^{-1}(cd).
       \end{equation*}
+      \begin{comment}
       Observar que el hecho de que $F$ sea invertible y  que al aplicar transformada discreta de Fourier a un polinomio se obtiene una representación por valores del mismo, junto al teorema \ref{th-prod-convolucion-dft}, hacen que no sea necesario utilizar la proposición \ref{prop-mult-por-valor} para calcular el producto de dos polinomios utilizando la representación por valores.
+      \end{comment}
   \end{ejemplo*}
 
  \end{section}
@@ -1133,13 +1140,12 @@ def IFFT(f):
       \end{equation*}
       El problema es que la $5$-upla que representa el resultado tiene entradas mayores que $9$ y por lo tanto no corresponde a un desarrollo en base $10$. Lo  que debemos hacer es ``pasar'' lo que sobra, como hacemos siempre:
       \begin{align*}
-          (18, 27, 28, 13, 4) & = (8,1 + 27, 28, 13, 4) \\
-                              & = (8,28, 28, 13, 4)     \\
-                              & = (8,8, 30, 13, 4)      \\
-                              & = (8,8, 0, 16, 4)       \\
-                              & = (8,8, 0, 6, 5).       \\
+          (18, 27, 28, 13, 4) & = (8,1 + 27, 28, 13, 4) &=& (8,28, 28, 13, 4) \\
+                              & = (8,8, 2+28, 13, 4)  &=& (8,8, 30, 13, 4)    \\
+                              & = (8,8, 0, 3+13, 4)  &=& (8,8, 0, 16, 4)     \\
+                              & = (8,8, 0, 6, 1+4)   &=& (8,8, 0, 6, 5).    \\
       \end{align*}
-      Así hemos recuperado el valor de la multiplicación.
+      Así hemos recuperado el valor de la multiplicación. Es decir, la convolución de los dígitos de dos números enteros más una serie de ``pasadas'' nos da el resultado de la multiplicación.
 
       El procedimiento completo para multiplicar dos enteros utilizando FFT es muy similar al que se utiliza para multiplicar polinomios. Métodos basados en FFT para multiplicar enteros, de los cuales el más conocido el algoritmo de Schönhage–Strassen, son utilizados para ser aplicados a problemas matemáticos muy específicos.
 
