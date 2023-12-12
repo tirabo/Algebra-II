@@ -810,7 +810,7 @@ x& -3y & +3z & =&2 \\
                 \end{proof}
 
                 \begin{definicion}
-                    Consideremos un sistema como en \eqref{sist-eq-hom} y sea  $A$ la matriz correspondiente al sistema. La \textit{matriz  ampliada}\index{sistema de ecuaciones lineales!matriz  ampliada} del sistema es 
+                    Consideremos un sistema como en \eqref{sist-eq-hom} y sea  $A$ la matriz correspondiente al sistema. La \textit{matriz  ampliada}\index{sistema de ecuaciones lineales!matriz  ampliada} o  \textit{matriz  aumentada}\index{sistema de ecuaciones lineales!matriz  aumentada} del sistema es 
                     \begin{equation}\label{mtrx-ampliada}
                     A' = \left[\begin{array}{@{}*{3}{c}|c@{}}
                     a_{11} & \cdots & a_{1n} &  y_1 \\
@@ -825,6 +825,7 @@ x& -3y & +3z & =&2 \\
                     \end{equation*}
                 \end{definicion}
                 
+                La matriz ampliada $[A | Y]$ es otra forma de representar el sistema de ecuaciones lineales $AX=Y$, con la ventaja de que en la matriz ampliada solo se escriben los coeficientes del sistema y no las variables. Es decir,  es una notación más compacta. 
                 
                 \begin{teorema}\label{th-equiv-op-elem} Sea $[A | Y]$ la matriz ampliada de un sistema no homogéneo y sea $[B | Z]$ una matriz que se obtiene a partir de $[A | Y]$ por medio de operaciones elementales. Entonces, los sistemas correspondientes a $[A | Y]$ y  $[B | Z]$ tienen las mismas soluciones. 
             \end{teorema}
@@ -1167,7 +1168,7 @@ x& -3y & +3z & =&2 \\
                     2x_1 +x_2 + x_3  &= 2\\
                     5x_2 - x_3  &= 0.
                     \end{align*}
-                    La matriz  aumentada correspondiente a este sistema es
+                    La matriz  ampliada  correspondiente a este sistema es
                     \begin{equation*}
                      \left[\begin{array}{@{}*{3}{r}|r@{}} 
                      1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\ 0 & 5 & -1 &  0 
@@ -1393,7 +1394,7 @@ x& -3y & +3z & =&2 \\
                 
                 \textbf{Matriz unidad o identidad.} Esta matriz ya la hemos definido anteriormente. Recordemos que es una matriz diagonal cuya diagonal principal está compuesta de $1$'s. 
                 
-                Más adelante veremos que la matriz identidad, respecto a la multiplicación de matrices, juega un papel similar al número $1$ respecto a la multiplicación de números reales o enteros (elemento neutro del producto).
+                Más adelante veremos que la matriz identidad, respecto a la multiplicación de matrices cuadradas, juega un papel similar al número $1$ respecto a la multiplicación de números reales o enteros (elemento neutro del producto).
                 
                 \textbf{Matriz nula}. La \textit{matriz nula}\index{matriz!nula} de orden $m\times n$, denotada $0_{m \times n}$ o simplemente $0$ si $m$ y $n$ están sobreentendidos,  es la  matriz $m \times n$ cuyas entradas son todas nulas ($=0$). 
                 
@@ -1401,7 +1402,7 @@ x& -3y & +3z & =&2 \\
                 \begin{equation*}
                 \begin{bmatrix} 0&0&0\\ 0&0&0\end{bmatrix}.
                 \end{equation*}
-                Veremos luego que la matriz nula juega un papel similar al número $0$ en el álgebra de matrices (elemento neutro de la suma).  
+                Veremos luego que la matriz nula juega un papel similar al número $0$ en el álgebra de matrices cuadradas (elemento neutro de la suma).  
                 
                 \textbf{Matriz triangular.} Una matriz cuadrada es \textit{triangular superior} o \textit{escalón}\index{matriz!triangular superior}\index{matriz!escalón} si todos los elementos situados por debajo de la diagonal principal son cero. Por ejemplo, la siguiente matriz es triangular superior:
                 \begin{equation}
@@ -1526,7 +1527,7 @@ x& -3y & +3z & =&2 \\
                 \end{ejemplo*}
                      
                 
-                Hay casos, como veremos en el siguiente ejemplo, en los que se pueden calcular ambos productos aunque se obtienen resultados diferentes. Consideremos las siguientes matrices:
+                Como veremos en el siguiente ejemplo, en  el caso de matrices cuadradas se pueden calcular ambos productos, aunque muchas veces se obtienen resultados diferentes. Consideremos las siguientes matrices:
                 \begin{equation*}
                 A = \begin{bmatrix}2&1\\-3&1\end{bmatrix}, \qquad 
                 B = \begin{bmatrix}1&3\\-1&1\end{bmatrix}
