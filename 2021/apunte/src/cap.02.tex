@@ -1409,7 +1409,7 @@ x& -3y & +3z & =&2 \\
                 2&-1&3&1\\0&-1&0&2\\0&0&5&1\\0&0&0&3
                 \end{bmatrix}.
                 \end{equation}
-                Análogamente, una matriz cuadrada es \textit{triangular inferior}\index{matriz!triangular inferior} si todos los elementos situados por encima de la diagonal principal son cero. Un matriz triangular (superior o inferior) se dice \textit{estricta}\index{matriz!triangular inferior estricta}\index{matriz!triangular superior estricta} si la diagonal principal es 0.
+                Análogamente, una matriz cuadrada es \textit{triangular inferior}\index{matriz!triangular inferior} si todos los elementos situados por encima de la diagonal principal son cero. Un matriz triangular (superior o inferior) se dice \textit{estricta}\index{matriz!triangular inferior estricta}\index{matriz!triangular superior estricta} si la diagonal principal es $0$.
                 
                 En forma más precisa, sea $A =[a_{ij}]\in M_n(\K)$,  entonces
                 \begin{itemize}
@@ -1906,7 +1906,7 @@ x& -3y & +3z & =&2 \\
 
             En el caso de matrices $m \times m$ tampoco es difícil encontrar las matrices elementales:
             \begin{enumerate}
-                \item Si $c \not=0$, multiplicar por  $c$ la fila $k$ de la matriz identidad, resulta en la matriz elemental que tiene todos 1's en la diagonal, excepto en la posición $k,k$ donde vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
+                \item Si $c \not=0$, multiplicar por  $c$ la fila $k$ de la matriz identidad, resulta en la matriz elemental que tiene todos $1$'s en la diagonal, excepto en la posición $k,k$ donde vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
                 \begin{equation}\label{elem-tipo-1}
                 a_{ij} = \left\{ 
                 \begin{matrix*}[l]
@@ -1935,7 +1935,7 @@ x& -3y & +3z & =&2 \\
                 0  & \cdots  & &\cdots & 1
                 \end{bmatrix}
                 \end{align*}
-                \item si  $c \in \K$, sumar a la fila $r$  la fila $s$ multiplicada por $c$, resulta en la matriz elemental que tiene todos 1's en la diagonal, y todos los demás coeficientes son 0,  excepto en la fila  $r$ y columna $s$ donde  vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
+                \item si  $c \in \K$, sumar a la fila $r$  la fila $s$ multiplicada por $c$, resulta en la matriz elemental que tiene todos $1$'s en la diagonal, y todos los demás coeficientes son $0$,  excepto en la fila  $r$ y columna $s$ donde  vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
                 \begin{equation}\label{elem-tipo-2}
                 a_{ij} = \left\{ 
                 \begin{matrix*}[l]
@@ -2407,7 +2407,7 @@ x& -3y & +3z & =&2 \\
                 A=\begin{bmatrix}2&-1\\1&3 \end{bmatrix}.
                 \end{equation*}
             \end{ejemplo*}
-            \begin{proof}[Solución] Por lo que ya hemos demostrado 1) si $A$ tiene inversa es reducible por filas a la identidad, 2) las operaciones que llevan a $A$ a la identidad, llevan también la identidad  a $A^{-1}$. Luego  trataremos de reducir por filas a $A$ y todas las operaciones elementales las haremos en paralelo partiendo de la matriz identidad:
+            \begin{proof}[Solución] Por lo que ya hemos demostrado, si $A$ tiene inversa es reducible por filas a la identidad y las operaciones que llevan a $A$ a la identidad, llevan también la identidad  a $A^{-1}$. Luego  trataremos de reducir por filas a $A$ y todas las operaciones elementales las haremos en paralelo partiendo de la matriz identidad:
                 %$$
                 %\left[\begin{array}{@{}*{4}{c}|c@{}}
                 %1 & 0 & 3 & -1 & 0 \\
@@ -2509,7 +2509,7 @@ x& -3y & +3z & =&2 \\
             \end{ejemplo*}
             \begin{proof}[Solución] Para poder aplicar el método de Gauss, debemos ir haciendo casos. 
                 
-                1) Supongamos que  $a\not=0$, entonces 
+                \noindent 1) Supongamos que  $a\not=0$, entonces 
                 \begin{equation*}
                 \begin{bmatrix}a&b\\c&d\end{bmatrix} \stackrel{F_1/a}{\longrightarrow}
                 \begin{bmatrix}1&\dfrac{b}{a}\\[6pt]c&d\end{bmatrix} \stackrel{F_2 -cF_1}{\longrightarrow}
@@ -2543,7 +2543,7 @@ x& -3y & +3z & =&2 \\
                 \begin{bmatrix*}[c]d&-b\\-c&a\end{bmatrix*}.
                 \end{equation}
                 
-                2) Estudiemos el caso $a=0$. Primero observemos que si $c=0$ o $b=0$ , entonces la matriz no es invertible, pues en ambos casos nos quedan matrices que no pueden ser reducidas por fila a la identidad. Luego la matriz puede ser invertible si $bc\not=0$ y en este caso la reducción por filas es:
+                \noindent 2) Estudiemos el caso $a=0$. Primero observemos que si $c=0$ o $b=0$ , entonces la matriz no es invertible, pues en ambos casos nos quedan matrices que no pueden ser reducidas por fila a la identidad. Luego la matriz puede ser invertible si $bc\not=0$ y en este caso la reducción por filas es:
                 \begin{equation*}
                 \begin{bmatrix}0&b\\c&d\end{bmatrix} \stackrel{F_1\leftrightarrow F_2}{\longrightarrow}
                 \begin{bmatrix}c&d\\0&b\end{bmatrix} \stackrel{F_1/c}{\longrightarrow}
