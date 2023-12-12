@@ -2228,6 +2228,16 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/latex-fonts/lasyb10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/eulervm/zeurb10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/eulervm/zeurb7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/eulervm/zeurb7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/eulervm/zeusb10.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/eulervm/zeusb7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/eulervm/zeusb7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/zplmb7t.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/latex-fonts/lasyb10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/eulervm/zeurb10.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/euler/eurb10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm

@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex main"] 1702385632 "main.aux" "main.bbl" "main" 1702386466
+["bibtex main"] 1702387997 "main.aux" "main.bbl" "main" 1702388214
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1643926307 65483 fc69f364ef63c07bf68a2ab4b323f197 ""
-  "classicthesis-contents.aux" 1702386459 5502 21ad984b50f1cc2c07f6c0b202e401e8 "pdflatex"
-  "main-blx.bib" 1702386466 341 26ffd19cc17d46681fd4bc8be67069f0 "pdflatex"
-  "main.aux" 1702386466 77055 c844d01015b400a9d11d9dc688012d58 "pdflatex"
+  "classicthesis-contents.aux" 1702388207 5502 21ad984b50f1cc2c07f6c0b202e401e8 "pdflatex"
+  "main-blx.bib" 1702388213 341 26ffd19cc17d46681fd4bc8be67069f0 "pdflatex"
+  "main.aux" 1702388213 77105 0bbcef921ca428568ed5445af259bdda "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["makeindex main.idx"] 1702385632 "main.idx" "main.ind" "main" 1702386466
-  "main.idx" 1702386465 7286 99c7c8de72eb6ee816d368f8333ab24f "pdflatex"
+["makeindex main.idx"] 1702387286 "main.idx" "main.ind" "main" 1702388214
+  "main.idx" 1702388213 7286 0683890a1c4528945c54e828bd2619ca "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
-["pdflatex"] 1702386458 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2021/apunte/src/main.tex" "main.pdf" "main" 1702386466
+["pdflatex"] 1702388205 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2021/apunte/src/main.tex" "main.pdf" "main" 1702388214
   "/etc/texmf/web2c/texmf.cnf" 1701780632 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2021/apunte/src/main.tex" 1702385359 6330 a5ba1786acdba90e8cd41b30a772e871 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -376,19 +376,19 @@
   "cap.03.tex" 1702385359 81660 ae68eb39510a1c5e1738378c4f25b6e5 ""
   "cap.04.tex" 1702385359 131766 4c7e4dbf6af01f7f76185d41adcc85fe ""
   "cap.05.tex" 1702385359 87192 ef16f3a99996c2aac521e027eedbc43a ""
-  "cap.apendices.tex" 1702386457 100204 27579a162f20313cb0bdf0d7d70019a3 ""
+  "cap.apendices.tex" 1702388202 101488 ee40350fb6e4372ed5798bc4bc74dfb9 ""
   "classicthesis-config.tex" 1702385359 11103 29b877734ab3a096c55b5b4133856f96 ""
-  "classicthesis-contents.aux" 1702386459 5502 21ad984b50f1cc2c07f6c0b202e401e8 "pdflatex"
+  "classicthesis-contents.aux" 1702388207 5502 21ad984b50f1cc2c07f6c0b202e401e8 "pdflatex"
   "classicthesis-contents.tex" 1702385359 3076 8cac29cd0a3e676672aef740c822ba7f ""
   "config-definiciones.tex" 1702385359 3688 5bdecdd9a4e0f329b4568aa419cccfb6 ""
-  "main.aux" 1702386466 77055 c844d01015b400a9d11d9dc688012d58 "pdflatex"
-  "main.bbl" 1702385633 512 66cdc237e4f174d49cccf2a5e2afad50 "bibtex main"
-  "main.ind" 1702386466 6670 e1b3b1f3615d32a5f3c17fb36b1989ba "makeindex main.idx"
-  "main.lof" 1702386466 3155 b638fef0ffd2c7562c4f59f51c5d6d3f "pdflatex"
-  "main.out" 1702386459 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.run.xml" 1702386466 2599 2d6fd16499da12d384742c673c957bd5 "pdflatex"
+  "main.aux" 1702388213 77105 0bbcef921ca428568ed5445af259bdda "pdflatex"
+  "main.bbl" 1702387997 512 66cdc237e4f174d49cccf2a5e2afad50 "bibtex main"
+  "main.ind" 1702388213 6670 2c1ff4d12471225b86f97111e0985821 "makeindex main.idx"
+  "main.lof" 1702388213 3155 b638fef0ffd2c7562c4f59f51c5d6d3f "pdflatex"
+  "main.out" 1702388207 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.run.xml" 1702388213 2599 2d6fd16499da12d384742c673c957bd5 "pdflatex"
   "main.tex" 1702385359 6330 a5ba1786acdba90e8cd41b30a772e871 ""
-  "main.toc" 1702386466 6033 61796f2e045fafc61fa2706e8954f5c3 "pdflatex"
+  "main.toc" 1702388213 6033 06b4a7179c6c3b007c5dcddfc28150e5 "pdflatex"
   (generated)
   "classicthesis-contents.aux"
   "main-blx.bib"

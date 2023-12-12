@@ -149,6 +149,11 @@
         Ejercicio.
     \end{proof}
 
+
+    \begin{observacion}
+        El Teorema Fundamental del Álgebra establece que todo polinomio a coeficientes reales de grado mayor que cero tiene al menos una raíz compleja. Es decir, existe un número complejo donde el polinomio evalúa a cero. Este teorema es muy importante en matemáticas y tiene muchas demostraciones, aunque todas requieren conocimientos matemáticos relativamente avanzados para formalizarlas. Veremos un enunciado preciso del teorema en el apéndice \ref{chap-pol}.
+    \end{observacion}
+
     Hemos definido los números complejos como pares ordenados y como tales es posible representarlos en el plano $\R \times \R$:
 
 
@@ -406,7 +411,7 @@
 
 
 
-\begin{chapter}{Funciones polinómicas}
+\begin{chapter}{Funciones polinómicas}\label{chap-pol}
 
  En este apéndice se definirán las funciones polinómicas y se mostrarán algunas de sus propiedades fundamentales. Trabajaremos sobre $\K$  cuerpo con $\K=\R$ o $\K=\C$.
 
@@ -511,6 +516,16 @@
         \end{equation*}
         Es decir $x$ es raíz de $f$ si y solo si $x=c$ o $x$ es raíz de $g$. Como $g$ tiene a lo más $n-1$ raíces,  $f$ tiene a lo más $n$ raíces.
     \end{proof}
+
+    Ahora bien, ¿todo polinomio tiene al menos una raíz? El siguiente teorema nos garantiza que sí.
+
+    \begin{teorema}[Teorema Fundamental  del Álgebra - TFA]
+        Todo polinomio en una variable de grado $n\ge 1$ con coeficientes reales o complejos tiene por lo menos una raíz (real o compleja).
+    \end{teorema}
+
+    Como ya fue dicho en el apéndice \ref{chap-num-compl}, la demostración de este teorema requiere de herramientas que no están a nuestro alcance en este curso. Una consecuencia importante de este teorema es que todo polinomio de grado $n$ tiene exactamente $n$ raíces (contando multiplicidades), resultado que se demuestra fácilmente por inducción a partir del TFA y el teorema \ref{th-fact-raiz}.
+
+    \vskip .4cm
 
     Observemos que si $f$ y $g$ son polinomios con
     \begin{equation*}
