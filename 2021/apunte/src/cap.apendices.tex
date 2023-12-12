@@ -18,7 +18,7 @@
           \item[\textbf{I4.}] {\em Existencia de elemento neutro.}\, Existen números $0$, $1 \in \K$ con $0\not=1$ tal que $a+0=a$; $a\cdot 1=a$.
           \item[\textbf{I5.}] {\em Distributividad.}\, $a\cdot (b+c)=a\cdot b+a\cdot c$.
           \item[\textbf{I6.}] {\em Existencia del inverso aditivo.}\, Por cada $a$ en ${\K}$ existe un único  $-a$ en ${\K}$ tal que $a+(-a)=0$.
-          \item[\textbf{I7.}] {\em Existencia de inverso multiplicativo.}\, Si $a$ es distinto de 0, existe un único elemento $a^{-1} \in \K$  tal que $a\cdot a^{-1}=1$.
+          \item[\textbf{I7.}] {\em Existencia de inverso multiplicativo.}\, Si $a$ es distinto de $0$, existe un único elemento $a^{-1} \in \K$  tal que $a\cdot a^{-1}=1$.
       \end{enumerate}
   \end{definicion}
 
@@ -73,7 +73,7 @@
       Dejamos como ejercicio para el lector comprobar que estas operaciones así definidas satisfacen los axiomas \textbf{I1} a \textbf{I7} y por lo tanto $\F_2$ es un cuerpo, con dos elementos.
 
       \begin{observacion*}
-          El lector suspicaz reconocerá en estas operaciones a la suma y el producto definidos en el conjunto $\Z_2=\{0,1\}$ de congruencias módulo 2  definido en Álgebra I / Matemática Discreta I. En efecto, resultados desarrollados en ese curso permiten demostrar que los conjuntos $\Z_p$, con $p$ primo, son ejemplos de cuerpos, en este caso con $p$ elementos.
+          El lector suspicaz reconocerá en estas operaciones a la suma y el producto definidos en el conjunto $\Z_2=\{0,1\}$ de congruencias módulo $2$  definido en Álgebra I / Matemática Discreta I. En efecto, resultados desarrollados en ese curso permiten demostrar que los conjuntos $\Z_p$, con $p$ primo, son ejemplos de cuerpos, en este caso con $p$ elementos.
       \end{observacion*}
 
       \begin{ejemplo*}
@@ -433,8 +433,8 @@
   Sea $f$ un polinomio. Si $c$ es un número tal que $f (c) = 0$, entonces llamamos a \textit{$c$ una raíz de $f$}. Veremos en un momento que un polinomio distinto de cero puede tener solo un número finito de raíces, y daremos un límite para la cantidad de estas raíces.
 
   \begin{ejemplo*}
-      Sea $f (x) = x^2 - 3x + 2$. Entonces $f(1)=0$ y por lo tanto, 1 es una raíz de $f$.
-      Además, $f (2) = 0$. Por lo tanto, 2 es también una raíz de $f$.
+      Sea $f (x) = x^2 - 3x + 2$. Entonces $f(1)=0$ y por lo tanto, $1$ es una raíz de $f$.
+      Además, $f (2) = 0$. Por lo tanto, $2$ es también una raíz de $f$.
   \end{ejemplo*}
 
   \begin{ejemplo*}
@@ -585,7 +585,7 @@
       \begin{equation*}
           r_1(x) = (-3)g(x) +r(x) = (-3x^2 -3) + (-3x+5).
       \end{equation*}
-      Como $r(x) = -3x+5$ tiene grado menor que 2, tenemos que
+      Como $r(x) = -3x+5$ tiene grado menor que $2$, tenemos que
       \begin{align*}
           f(x) & = 4xg(x) + r_1(x) \\ &=4xg(x) + (-3)g(x) +r(x)\\& = (4x-3)g(x)+r(x).
       \end{align*}
@@ -1309,7 +1309,7 @@ def IFFT(f):
   \end{proof}
 
   \begin{observacion*}
-      Del resultado anterior se deduce fácilmente que si una matriz tiene dos filas iguales entonces su determinante es 0. Esto se debe a que, intercambiando las dos filas iguales obtenemos la misma matriz, pero calculando el determinante con el teorema anterior vemos que cambia de signo y el único número en $\K$ que es igual a su opuesto es el 0.
+      Del resultado anterior se deduce fácilmente que si una matriz tiene dos filas iguales entonces su determinante es $0$. Esto se debe a que, intercambiando las dos filas iguales obtenemos la misma matriz, pero calculando el determinante con el teorema anterior vemos que cambia de signo y el único número en $\K$ que es igual a su opuesto es el $0$.
   \end{observacion*}
 
   \begin{corolario}\label{cor-det-elemental} Consideremos matrices elementales en $\K^{n \times n}$.
@@ -1496,7 +1496,7 @@ def IFFT(f):
           \begin{bmatrix} 0 & \cdots& 0 & \det A & 0 &\cdots  & 0 \end{bmatrix}.                     \\
                                                                            & \hspace{3cm} \uparrow i
       \end{align*}
-      Es decir, la matriz fila formada por los cofactores correspondientes a la columna  $i$ multiplicada por la matriz $A$ es igual a la matriz fila con valor $\det A$ en la posición $i$ y 0 en las otras posiciones.
+      Es decir, la matriz fila formada por los cofactores correspondientes a la columna  $i$ multiplicada por la matriz $A$ es igual a la matriz fila con valor $\det A$ en la posición $i$ y $0$ en las otras posiciones.
   \end{teorema}
   \begin{proof}
       Si $C_j$ denota la matriz formada por la columna $j$ de $A$ debemos probar que
@@ -1543,7 +1543,7 @@ def IFFT(f):
       $$
           \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} A,
       $$
-      que por el teorema \ref{th-cof-01} es una matriz fila con el valor $\det A$ en la posición $i$ y todos los demás coeficientes iguales a 0. Luego
+      que por el teorema \ref{th-cof-01} es una matriz fila con el valor $\det A$ en la posición $i$ y todos los demás coeficientes iguales a $0$. Luego
       \begin{align*}
           \operatorname{adj}(A)\cdot A & =
           \begin{bmatrix} C_{11} & C_{21} & \cdots & C_{n1} \\
