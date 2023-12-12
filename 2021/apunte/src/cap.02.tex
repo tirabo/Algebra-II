@@ -78,7 +78,7 @@
             \end{ejemplo}
                 
                 \begin{proof}[Solución]
-                    Veremos que la única solución es $(x,y,z)=(-1,0,1)$.  El  método que usaremos, similar al del ejemplo anterior,  será el de eliminación de variables o incógnitas: vemos  en el sistema que queremos resolver 8 variables, algunas repetidas. Trataremos de eliminar en cada ecuación la mayor cantidad de variables posibles de tal forma de llegar a una formulación equivalente del sistema que nos de inmediatamente la solución. 
+                    Veremos que la única solución es $(x,y,z)=(-1,0,1)$.  El  método que usaremos, similar al del ejemplo anterior,  será el de eliminación de variables o incógnitas: vemos  en el sistema que queremos resolver $8$ variables, algunas repetidas: $2$ de la ecuación \text{\footnotesize\circled{1}}, $3$ de la ecuación \text{\footnotesize\circled{2}} y $3$ de la ecuación \text{\footnotesize\circled{3}}. Trataremos de eliminar en cada ecuación la mayor cantidad de variables posibles de tal forma de llegar a una formulación equivalente del sistema que nos de inmediatamente la solución. 
 
     Supongamos que $(x,y,z)$ es una solución de nuestro sistema. Entonces también vale que: 
     \begin{equation*}
@@ -314,7 +314,7 @@ x& -3y & +3z & =&2 \\
                 y  esta, como vimos, es otra escritura de la ecuación \eqref{comb-lin-eq}.
             \end{proof}
             
-            La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas. En principio, no es cierto que si obtenemos un sistema de ecuaciones por combinaciones lineales de otro sistema, ambos tengan las mismas soluciones   (por ejemplo, hacer combinaciones lineales triviales con todos los coeficientes iguales a 0).
+            La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas. En principio, no es cierto que si obtenemos un sistema de ecuaciones por combinaciones lineales de otro sistema, ambos tengan las mismas soluciones   (por ejemplo, hacer combinaciones lineales triviales con todos los coeficientes iguales a $0$).
         
             \begin{definicion}
             Decimos que dos sistemas de ecuaciones lineales son \textit{equivalentes}\index{sistemas lineales equivalentes} si cada ecuación de un sistema es combinación lineal del otro.
@@ -953,7 +953,7 @@ x& -3y & +3z & =&2 \\
                     Una matriz $A$ de $m \times n$ se llama \textit{reducida por filas}\index{matriz!reducida por filas} o \textit{MRF}\index{MRF} si 
                     \begin{enumerate}[label=\textit{\alph*)}, ref=\textit{\alph*)}]
                         \item la primera entrada no nula de una fila de $A$ es $1$. Este $1$ es llamado \textit{$1$ principal}\index{$1$ principal de una MRF}.
-                        \item Cada columna de $A$ que contiene un  $1$ principal tiene todos los otros elementos iguales a 0. 
+                        \item Cada columna de $A$ que contiene un  $1$ principal tiene todos los otros elementos iguales a $0$. 
                     \end{enumerate} 
                 Una matriz $A$ de $m \times n$ es \textit{escalón reducida por fila}\index{matriz!escalón reducida por fila} o \textit{MERF}\index{MERF} si,  es  MRF y
                 \begin{enumerate}[resume*]
@@ -1054,7 +1054,7 @@ x& -3y & +3z & =&2 \\
                     
                     El mismo procedimiento que hicimos arriba lo podemos hacer en la fila $2$,  de tal forma que la fila $2$ es cero u obtenemos otro $1$ principal y todas las demás entradas de la columna donde se encuentra el $1$ principal son nulas. 
                     
-                    Repitiendo este procedimiento en todas las filas hasta la última, obtenemos que cada fila es, o bien 0, o bien la primera entrada no nula es  $1$ y todas las entradas en la misma columna de este $1$ principal son nulas.   Esto, claramente, nos dice que hemos obtenido una matriz reducida por fila.  
+                    Repitiendo este procedimiento en todas las filas hasta la última, obtenemos que cada fila es, o bien $0$, o bien la primera entrada no nula es  $1$ y todas las entradas en la misma columna de este $1$ principal son nulas.   Esto, claramente, nos dice que hemos obtenido una matriz reducida por fila.  
                     
                  Finalmente, intercambiando filas podemos entonces obtener una matriz escalón reducida por fila.
 
@@ -1266,7 +1266,7 @@ x& -3y & +3z & =&2 \\
                 \begin{proof}
                     Como  $R$ es reducida por fila y no tiene filas nulas, cada fila tiene  un $1$ en alguna entrada y en la columna donde está el $1$ todos las otras entradas son nulas, por  lo tanto hay $n$ $1$'s principales distribuidos en $n$ columnas. Concluyendo: hay un $1$ por columna y en esa columna todas las demás entradas son nulas. 
                     
-                    Ahora bien como $R$ es una MERF, la primera fila contiene el $1$ que está más a la izquierda, que no puede estar en otra ubicación que no sea la primera (pues si no la primera columna sería nula). Con el mismo razonamiento vemos que en la segunda fila hay un $1$ en la columna $2$ y en general en la fila $k$-ésima hay un 1 en la columna $k$. Luego $R=\Id_n$.
+                    Ahora bien como $R$ es una MERF, la primera fila contiene el $1$ que está más a la izquierda, que no puede estar en otra ubicación que no sea la primera (pues si no la primera columna sería nula). Con el mismo razonamiento vemos que en la segunda fila hay un $1$ en la columna $2$ y en general en la fila $k$-ésima hay un $1$ en la columna $k$. Luego $R=\Id_n$.
                 \end{proof}			
                 
                 \begin{teorema}
@@ -1366,7 +1366,7 @@ x& -3y & +3z & =&2 \\
                 1&3&0\\-1&4&7\\-2&0&1
                 \end{bmatrix}
                 \end{equation*}
-                es cuadrada de orden 3.
+                es cuadrada de orden $3$.
                 
                 Denotaremos el conjunto de todas las matrices cuadradas\index{matriz!cuadrada} de orden $n$ con entradas en $\K$ por $M_n(\K)$ o simplemente $M_n$ si $\K$  está sobreentendido. Así, en el 	ejemplo anterior $A \in M_3$.
                 

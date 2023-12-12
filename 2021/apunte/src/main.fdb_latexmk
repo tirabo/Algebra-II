@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex main"] 1702387997 "main.aux" "main.bbl" "main" 1702389911
+["bibtex main"] 1702390079 "main.aux" "main.bbl" "main" 1702390463
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1643926307 65483 fc69f364ef63c07bf68a2ab4b323f197 ""
-  "classicthesis-contents.aux" 1702389904 5502 21ad984b50f1cc2c07f6c0b202e401e8 "pdflatex"
-  "main-blx.bib" 1702389910 341 26ffd19cc17d46681fd4bc8be67069f0 "pdflatex"
-  "main.aux" 1702389910 77105 0bbcef921ca428568ed5445af259bdda "pdflatex"
+  "classicthesis-contents.aux" 1702390457 5502 21ad984b50f1cc2c07f6c0b202e401e8 "pdflatex"
+  "main-blx.bib" 1702390463 341 26ffd19cc17d46681fd4bc8be67069f0 "pdflatex"
+  "main.aux" 1702390463 77105 404a1a8415733ef22e5d55088a5c5fa9 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["makeindex main.idx"] 1702387286 "main.idx" "main.ind" "main" 1702389911
-  "main.idx" 1702389910 7286 0683890a1c4528945c54e828bd2619ca "pdflatex"
+["makeindex main.idx"] 1702390079 "main.idx" "main.ind" "main" 1702390463
+  "main.idx" 1702390463 7286 6e77b6b678dd847ca5b3171bb7718de8 "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
-["pdflatex"] 1702389902 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2021/apunte/src/main.tex" "main.pdf" "main" 1702389911
+["pdflatex"] 1702390455 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2021/apunte/src/main.tex" "main.pdf" "main" 1702390463
   "/etc/texmf/web2c/texmf.cnf" 1701780632 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2021/apunte/src/main.tex" 1702385359 6330 a5ba1786acdba90e8cd41b30a772e871 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -372,23 +372,23 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1701780664 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1701780688 2800016 ec8e1385f8f3f50a7458c230af89926c ""
   "cap.01.tex" 1702389902 99920 1441714a3b53b1416c24c5f8f8d3306c ""
-  "cap.02.tex" 1702385359 214292 91cee18183c428f8cea29576ef920bcb ""
+  "cap.02.tex" 1702390455 214464 139e543e78a8da404c096435bf7b358e ""
   "cap.03.tex" 1702385359 81660 ae68eb39510a1c5e1738378c4f25b6e5 ""
   "cap.04.tex" 1702385359 131766 4c7e4dbf6af01f7f76185d41adcc85fe ""
   "cap.05.tex" 1702385359 87192 ef16f3a99996c2aac521e027eedbc43a ""
   "cap.apendices.tex" 1702388202 101488 ee40350fb6e4372ed5798bc4bc74dfb9 ""
   "classicthesis-config.tex" 1702385359 11103 29b877734ab3a096c55b5b4133856f96 ""
-  "classicthesis-contents.aux" 1702389904 5502 21ad984b50f1cc2c07f6c0b202e401e8 "pdflatex"
+  "classicthesis-contents.aux" 1702390457 5502 21ad984b50f1cc2c07f6c0b202e401e8 "pdflatex"
   "classicthesis-contents.tex" 1702385359 3076 8cac29cd0a3e676672aef740c822ba7f ""
   "config-definiciones.tex" 1702385359 3688 5bdecdd9a4e0f329b4568aa419cccfb6 ""
-  "main.aux" 1702389910 77105 0bbcef921ca428568ed5445af259bdda "pdflatex"
-  "main.bbl" 1702387997 512 66cdc237e4f174d49cccf2a5e2afad50 "bibtex main"
-  "main.ind" 1702389910 6670 2c1ff4d12471225b86f97111e0985821 "makeindex main.idx"
-  "main.lof" 1702389910 3155 b638fef0ffd2c7562c4f59f51c5d6d3f "pdflatex"
-  "main.out" 1702389904 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.run.xml" 1702389910 2599 2d6fd16499da12d384742c673c957bd5 "pdflatex"
+  "main.aux" 1702390463 77105 404a1a8415733ef22e5d55088a5c5fa9 "pdflatex"
+  "main.bbl" 1702390079 512 66cdc237e4f174d49cccf2a5e2afad50 "bibtex main"
+  "main.ind" 1702390463 6670 008c936583eacdfbe002b0adc7834d50 "makeindex main.idx"
+  "main.lof" 1702390463 3155 b638fef0ffd2c7562c4f59f51c5d6d3f "pdflatex"
+  "main.out" 1702390456 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.run.xml" 1702390463 2599 2d6fd16499da12d384742c673c957bd5 "pdflatex"
   "main.tex" 1702385359 6330 a5ba1786acdba90e8cd41b30a772e871 ""
-  "main.toc" 1702389910 6033 06b4a7179c6c3b007c5dcddfc28150e5 "pdflatex"
+  "main.toc" 1702390463 6033 06b4a7179c6c3b007c5dcddfc28150e5 "pdflatex"
   (generated)
   "classicthesis-contents.aux"
   "main-blx.bib"
