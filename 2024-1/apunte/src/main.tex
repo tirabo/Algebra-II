@@ -1,0 +1,165 @@
+\documentclass[a4paper,12pt,twoside,spanish,reqno,dottedtoc]{scrbook}
+\usepackage[spanish,es-lcroman,es-nodecimaldot]{babel}
+
+\usepackage{imakeidx}  
+\makeindex  
+\input{classicthesis-config}
+\input{config-definiciones}
+
+\tolerance=10000
+\begin{document}
+    \pagenumbering{roman}
+    
+    \begin{titlepage}
+        
+        \begin{addmargin}[-1cm]{-3cm} 
+            \begin{center} 
+                \large
+                
+                \hfill
+                \vfill
+                
+                \begingroup
+                \color{Maroon}\spacedallcaps{\'Algebra II / \'Algebra - Notas del te\'orico } \\ \bigskip % Thesis title
+                \endgroup
+                
+                \spacedlowsmallcaps{Silvina Riveros,  Alejandro Tiraboschi y Agust\'in Garc\'ia  Iglesias} % Your name
+                
+                \vfill
+                
+        
+                
+                Año 2021   \\ FAMAF  - UNC\\ \medskip % Thesis subtitle
+                %\myDegree \\
+                %\myDepartment \\
+                %\myFaculty \\
+                %\myUni \\ \bigskip
+                
+                %\today % Time and version
+                
+                \vfill
+                
+            \end{center}
+        \end{addmargin}
+        
+    \end{titlepage}
+    
+
+    \pdfbookmark[1]{Autores y derechos}{Autores y derechos} % Bookmark name visible in a PDF viewer
+
+    %----------------------------------------------------------------------------------------
+    
+    \begingroup
+
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    \let\cleardoublepage\relax
+    
+    \chapter*{Leer}
+    
+    
+
+    ${}^{}$\\
+    {\flushleft 
+        Este material es distribuido bajo la licencia Creative Commons} \\
+        \center      \textbf{Atribución--CompartirIgual 4.0 Internacional}
+    \\ 
+    \center  Lo cual significa: 
+    \\
+    \flushleft
+    - En cualquier explotación de la obra autorizada por la licencia será necesario reconocer los autores, colaboradores, etc.\\
+    - La distribución de la obra u obras derivadas se debe hacer con una licencia igual a la que regula la obra original.\\
+    ${}^{}$
+    \\
+    Los detalles de la licencia pueden encontrarse en \href{https://creativecommons.org/licenses/by/4.0/deed.es}{Creative Commons}
+    \vskip 1cm 
+    \endgroup
+
+    
+    
+     
+    %%% INICIO: Tabla de contenidos
+    \pagestyle{scrheadings} % Show chapter titles as headings
+    \cleardoublepage\include{classicthesis-contents} % Contents, list of figures/tables/listings and acronyms
+    \cleardoublepage
+    %%% FIN: Tabla de contenidos
+    
+
+    
+    \chapter*{Prefacio} 
+    
+    
+    Las siguientes notas se han utilizado para el dictado del curso ``Álgebra II / Álgebra / Álgebra Lineal'' del primer año de las licenciaturas y profesorados de FAMAF.     Han sido las notas principales en el dictado del año 2018 y 2020, y se limitan casi exclusivamente al contenido dictado en el curso. Las partes señaladas con (*) y los apéndices son optativos.
+    
+    Estas notas están basadas principalmente en \textit{Apuntes de Álgebra II - Año 2005} de Silvina Riveros y han sido revisadas, modificadas y ampliadas por Alejandro Tiraboschi  y Agustín García Iglesias. 
+    
+    También hemos utilizado como bibliografía de apoyo  los siguientes: 
+    
+    \begin{enumerate}
+
+        \item [-]  Serge Lang: Álgebra Lineal, Fondo Educativo Interamericano (1976). Puede descargarse de:
+ 
+        \href{https://archive.org/details/IntroduccionAlAlgebraLinealSergeLang}{https://archive.org/details/IntroduccionAlAlgebraLinealSergeLang}
+
+    
+        \item [-] \textit{Álgebra Lineal.} Autores: Gabriela Jerónimo, Juan Sabia y Susana Tesauri. Año 2008. Puede descargarse del Departamento de Matemática de la UBA, en la dirección
+        
+        \href{http://mate.dm.uba.ar/~jeronimo/algebra_lineal/AlgebraLineal.pdf}{http://mate.dm.uba.ar/~jeronimo/algebra\_lineal/AlgebraLineal.pdf}
+
+        \item [- ] \textit{Linear Algebra.} Autores: Jim Hefferon. Se descarga en
+        
+        \href{http://joshua.smcvt.edu/linearalgebra/}{http://joshua.smcvt.edu/linearalgebra/}
+
+        \item [-] \textit{Álgebra Lineal.} Autores: Kenneth Hoffman y Ray Kunze.  Año: 1973. Editorial: Prentice Hall. 
+        
+        Ficha en biblioteca de FAMAF:  \href{http://bit.ly/2tn3eRc}{http://bit.ly/2tn3eRc}
+    \end{enumerate}
+    
+    
+    \vskip .5cm
+    \begin{center}
+        \textbf{\large Contenidos mínimos}
+    \end{center}
+    
+    \noindent Resolución de ecuaciones lineales. Matrices. Operaciones elementales. Matriz inversa. Espacios vectoriales sobre $\mathbb R$ y $\mathbb C$. Subespacios. Independencia lineal. Bases y dimensión Rectas y planos en $\mathbb R^n$. Transformaciones lineales y matrices. Isomorfismos. Cambio de bases. Núcleo e imagen de transformaciones lineales. Rango fila y columna. Determinante de una matriz. Cálculo y propiedades básicas. Espacios con producto interno. Desigualdad de Cauchy-Schwartz. Desigualdad triangular. Teorema de Pitágoras. Ortonormalización de Gram-Schmidt. Ecuaciones de rectas y planos en $\mathbb R^n$. Distancias. Introducción a vectores y valores propios. Aplicaciones. Diagonalización de matrices simétricas.
+
+    
+
+    \pagenumbering{arabic}
+    
+    \setcounter{chapter}{0}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+    \cleardoublepage
+    \part{Vectores y sistemas lineales en $\mathbb R^n$} 
+    %%% CAP1 =================
+        \input{cap.01.tex}
+    %%%=======================
+    %%%=======================
+    %%% CAP2 =================
+        \input{cap.02.tex}
+    %%%=======================
+    %%%=======================
+    \part{Álgebra lineal} 
+    %%% CAP3 =================
+        \input{cap.03.tex}
+    %%%=======================
+    %%%=======================
+    %%% CAP4 =================
+        \input{cap.04.tex}
+    %%%=======================
+    %%%=======================
+    %%% CAP5 =================
+        \input{cap.05.tex}
+    %%%=======================
+    \appendix
+    \part{Ap\'endices} 
+    \setcounter{chapter}{0}
+    %%%=======================
+    %%% CAP6 =================
+        \input{cap.apendices.tex}
+    %\input{Cap.ap.01.tex}
+    %%%=======================
+    \part{\'Indice} 
+    \addcontentsline{toc}{chapter}{Indice  alfabético}
+\printindex
+\end{document}

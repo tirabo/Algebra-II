@@ -1,0 +1,1688 @@
+\begin{chapter}{N\'umeros complejos}\label{chap-num-compl}
+
+    \begin{section}{Cuerpos}\label{seccion-cuerpos}
+
+    En el cuatrimestre pasado se ha visto el concepto de cuerpo, del cual haremos un repaso.
+
+    (Ver también \href{https://es.wikipedia.org/wiki/Cuerpo\_(matemáticas)}{https://es.wikipedia.org/wiki/Cuerpo\_(matemáticas)}).
+
+
+    \begin{definicion}
+        Un conjunto $\K$ es un \textit{cuerpo}\index{cuerpo} si es un anillo de división conmutativo, es decir, un anillo conmutativo con unidad en el que todo elemento distinto de cero es invertible respecto del producto. Por tanto, un cuerpo es un conjunto $\K$ en el que se han definido dos operaciones, '$+$' y '$\cdot$', llamadas \textit{adición} y \textit{multiplicación} respectivamente, que cumplen las propiedades \textbf{I1},$\ldots$, \textbf{I7} que se listan más abajo.
+
+        Sean $a$, $b$, $c$ elementos arbitrarios de $\K$, y $0$ y $1$ dos elementos especiales de $\K$. Entonces se satisfacen:
+        \begin{enumerate}
+            \item[\textbf{I1.}] $a+b$ y $a\cdot b$ pertenecen a ${\K}$.
+            \item[\textbf{I2.}] {\em Conmutatividad.}\, $a+b = b+a$; $ab=ba$.
+            \item[\textbf{I3.}] {\em Asociatividad.}\, $(a+b)+c = a+(b+c)$;\; $(a\cdot b)\cdot c = a\cdot (b\cdot c)$.
+            \item[\textbf{I4.}] {\em Existencia de elemento neutro.}\, Existen números $0$, $1 \in \K$ con $0\not=1$ tal que $a+0=a$; $a\cdot 1=a$.
+            \item[\textbf{I5.}] {\em Distributividad.}\, $a\cdot (b+c)=a\cdot b+a\cdot c$.
+            \item[\textbf{I6.}] {\em Existencia del inverso aditivo.}\, Por cada $a$ en ${\K}$ existe un único  $-a$ en ${\K}$ tal que $a+(-a)=0$.
+            \item[\textbf{I7.}] {\em Existencia de inverso multiplicativo.}\, Si $a$ es distinto de $0$, existe un único elemento $a^{-1} \in \K$  tal que $a\cdot a^{-1}=1$.
+        \end{enumerate}
+    \end{definicion}
+
+    Muchas veces denotaremos el producto yuxtaponiendo los elementos,  es decir $ab := a\cdot b$, para $a,b \in \K$. Debido a la ley de asociatividad para la suma (axioma \textbf{I3}) $(a+b)+c$ es igual a $a+(b+c)$ y por lo tanto podemos eliminar los paréntesis sin ambigüedad. Es decir, denotamos
+    $$
+        a+b+c := (a+b)+c = a+(b+c).
+    $$
+    De forma análoga, usaremos la notación
+    $$
+        abc = (ab)c = a(bc).
+    $$
+    Debido a la ley de conmutatividad (axioma \textbf{I2}), es claro que del axioma \textbf{I4} se deduce que  $0+a=a+0=a$ y $1a = a1=a$. Análogamente,  por  \textbf{I2} e  \textbf{I6} obtenemos que  $-a+a =
+        a+(-a)=0$, y por \textbf{I6} que  $a a^{-1} = a^{-1}a=1$.
+
+
+
+    Todos los axiomas corresponden a propiedades familiares de los cuerpos que ya conocemos,  como ser el cuerpo de los números reales, denotado $\R$ y el cuerpo de los números racionales (fracciones),  denotado $\Q$. De ellas pueden deducirse la mayoría de las reglas comunes a los cuerpos. Por ejemplo, podemos \textit{definir} la operación de sustracción diciendo que $a-b$ es lo mismo que $a+(-b)$; y deducir las reglas elementales por ejemplo,
+    \begin{equation*}
+        a-(-b) = a+b, \qquad -(-a) = a.
+    \end{equation*}
+    También podemos deducir
+    \begin{equation*}
+        (ab)^{-1} = a^{-1}b^{-1}
+    \end{equation*}
+    con tal que $a$ y $b$ sean diferentes de cero. Otras reglas útiles incluyen
+    \begin{equation*}
+        -a = (-1)a
+    \end{equation*}
+    y más generalmente
+    \begin{equation*}
+        - (ab) = (-a) b = a  (-b),
+    \end{equation*}
+    y  también
+    \begin{equation*}
+        ab = (-a) (-b),
+    \end{equation*}
+    así como
+    \begin{equation*}
+        a\cdot 0 = 0,
+    \end{equation*}
+    todas reglas familiares de la aritmética elemental.
+
+    \begin{subsection}{Un cuerpo finito}
+        A modo de ejemplo, y para entrenar la intuición de que un cuerpo no necesariamente tiene un número infinito de elementos, consideremos el conjunto con dos elementos $\F_2=\{0,1\}$. Definimos la suma $+\colon\F_2\times \F_2\to \F_2$ mediante la regla
+        \begin{align*}
+            0+0 & =0, & 0+1 & =1, & 1+0 & =1, & 1+1 & =0
+        \end{align*}
+        y el producto $\cdot \colon\F_2\times \F_2\to \F_2$ como
+        \begin{align*}
+            0\cdot 0 & =0, & 0\cdot 1 & =0, & 1\cdot 0 & =0, & 1\cdot 1 & =1.
+        \end{align*}
+        Dejamos como ejercicio para el lector comprobar que estas operaciones así definidas satisfacen los axiomas \textbf{I1} a \textbf{I7} y por lo tanto $\F_2$ es un cuerpo, con dos elementos.
+
+        \begin{observacion*}
+            El lector suspicaz reconocerá en estas operaciones a la suma y el producto definidos en el conjunto $\Z_2=\{0,1\}$ de congruencias módulo $2$  definido en Álgebra I / Matemática Discreta I. En efecto, resultados desarrollados en ese curso permiten demostrar que los conjuntos $\Z_p$, con $p$ primo, son ejemplos de cuerpos, en este caso con $p$ elementos.
+        \end{observacion*}
+
+        \begin{ejemplo*}
+            Sea $p$ un número primo y
+            $$
+                \Z_p = \{0,1,\ldots, p-1\}
+            $$
+            el conjunto de restos de dividir por $p$. Definimos suma y producto en $\Z_p$ de la siguiente manera: sean $a,b \in \Z_p$,  entonces
+            \begin{equation*}
+                \begin{array}{llllll}
+                    a+b       & = c\quad & \text{ si }\quad & a+b \equiv c \; (\operatorname{mod}p) \quad & \wedge\quad & 0 \le c \le p-1, \\
+                    a \cdot b & = d\quad & \text{ si }\quad & a\cdot b \equiv d \; (\operatorname{mod}p)  & \wedge      & 0 \le d \le p-1.
+                \end{array}
+            \end{equation*}
+            No es complicado, usando lo que conocemos de congruencia, probar que $\Z_p$  es un cuerpo. La única propiedad cuya prueba no es obvia es  \textbf{I7}, la existencia de inverso. Esta propiedad se deduce del teorema que enuncia la existencia de soluciones  de la ecuación lineal de congruencia: sea $a \in \mathbb{Z}$, con $0<a\le p$. Entonces $a$ y $p$ coprimos y por el teorema de la ecuación lineal de congruencia  existe $x_0$ tal que $ax \equiv 1 \; (\operatorname{mod}p)$. Más aún, el teorema dice que el conjunto de soluciones de la ecuación es $x_0 + kp$ para $k \in \mathbb{Z}$. Esto nos permite elegir una solución, digamos $a'$, tal que $1 \le a' < p$, y como $aa' \equiv 1 \; (\operatorname{mod}p)$, entonces $a$ tiene inverso $a'$ en $\Z_p$.
+        \end{ejemplo*}
+
+    \end{subsection}
+ \end{section}
+
+ \begin{section}{N\'umeros complejos}\label{seccion-numeros-complejos}
+    La ecuación polinómica $x^2 + 1 =0$ (¿cuál es el número que elevado  al cuadrado y adicionado $1$ da $0$?) no tiene solución dentro del cuerpo de los números reales,  pues todos sabemos que  $x^2 \ge 0$ para todo $x \in \R$ y por lo tanto $x^2 + 1 >0$ $\forall\; x \in \R$. Sin embargo, podemos extender $\R$ a otro cuerpo,  de tal forma que \textit{toda} ecuación polinómica con coeficientes en $\R$ tenga solución.
+
+    \begin{definicion}
+        Los \textit{números complejos}\index{números complejos} es el conjunto $\C$  de los pares ordendados $(a,b)$,  denotados $a+ib$, con $a, b$  en $\R$, con las operaciones '$+$' y '$\cdot$', definidas
+        \begin{align}
+            (a+ib)+ (c+id)      & := (a+c) + i(c+d), \label{sumacompleja}          \\
+            (a+ib) \cdot (c+id) & := (ac -bd) + i(ad+bc). \label{productocomplejo}
+        \end{align}
+        Al número complejo $i = 0 + i\cdot 1$ lo llamamos el \textit{imaginario puro}.  Si $z= a + ib$  es un número complejo,  diremos que $a$ es la \textit{parte real} de $z$ y  la denotamos $a = \operatorname{Re} z$. Por otro lado,  $b$ es la \textit{parte  imaginaria} de $z$ que es denotada $b = \operatorname{Im} z$.
+    \end{definicion}
+
+    Es claro  que $z=a+ib$ es igual a $w = c+id$ si coinciden su parte real e imaginaria, es decir
+    \begin{equation*}
+        a+ bi = c+ di\quad \Leftrightarrow\quad a=c \;\wedge\; b = d.
+    \end{equation*}
+
+    Podemos  ver a $\R$ contenido en $\C$,  con la correspondencia $a \to a + i \cdot 0$ y  observamos que si  nos restringimos a $\R$, tenemos las reglas de adición y  multiplicación usuales.
+
+    La definición de la suma de dos números complejos no debería sorprendernos, pues es la suma ``coordenada a coordenada''. La definición del producto se basa en que deseamos que $i^2 = -1$,  es decir que $i$  sea la solución de la ecuación polinómica $x^2 + 1 =0$,   y que el producto sea distributivo.
+
+    Primero, comprobemos que  $i^2 = -1$. Esto es debido a que
+    \begin{equation*}
+        i^2 = (0 + i\cdot 1)(0 + i\cdot 1) = (0\cdot 0 - 1 \cdot 1) + i(0\cdot 1 + 1 \cdot 0) = -1,
+    \end{equation*}
+    y por lo tanto $i^2 + 1 = -1+1 = 0$.
+
+
+    Sean $0 = 0 + i\cdot 0, 1 = 1 + i\cdot 0 \in \C$,  es fácil comprobar que son los elementos neutros de la suma y el producto,  respectivamente. Por otro lado, si $z = a + ib$,  entonces $-z = -a -ib$ es el opuesto aditivo de $z$.
+    El inverso multiplicativo es un poco más complicado. Primero observemos que dado $a+ib \in \C$,
+    \begin{equation*}
+        (a+ ib)(a-ib) = aa -b(-b) = a^2 + b^2 \in \R.
+    \end{equation*}
+    Supongamos que $a+ib\ne0$,  encontremos  a partir  de las reglas de adición y multiplicación la inversa de $z$. Sea $c+id$ tal que $(a+ib)(c+id)=1$, luego
+    \begin{align*}
+        c + id & = \frac{1}{a+ib} = \frac{1}{a+ib}\,\frac{a-ib}{a-ib} = \frac{a-ib}{(a+ib)(a-ib)} =
+        \frac{a-ib}{ a^2 + b^2}                                                                     \\
+            & = \frac{a}{ a^2 + b^2} - i\frac{b}{ a^2 + b^2}
+    \end{align*}
+    (observar que como $a+ib\ne0$,  entonces $a^2 + b^2 >0$.)
+
+    Usando lo anterior,  y un poco más de trabajo, obtenemos
+
+    \begin{proposicion}
+        Sean $0 = 0 + i\cdot 0, 1 = 1 + i\cdot 0\in \C$. Entonces, $\C$ con las operaciones '$+$' y '$\cdot$', definidas en \eqref{sumacompleja} y
+        \eqref{productocomplejo},  respectivamente, es un cuerpo con elementos neutros $0$ y $1$, y
+        \begin{align*}
+            -(a+ib)     & = -a -ib                                                    \\
+            (a+ib)^{-1} & = 	\frac{a-ib}{ a^2 + b^2}, \qquad \text{para $a+ib \ne 0$}.
+        \end{align*}
+    \end{proposicion}
+    \begin{proof}
+        Ejercicio.
+    \end{proof}
+
+
+    \begin{observacion}
+        El Teorema Fundamental del Álgebra establece que todo polinomio a coeficientes reales de grado mayor que cero tiene al menos una raíz compleja. Es decir, existe un número complejo donde el polinomio evalúa a cero. Este teorema es muy importante en matemáticas y tiene muchas demostraciones, aunque todas requieren conocimientos matemáticos relativamente avanzados para formalizarlas. Veremos un enunciado preciso del teorema en el apéndice \ref{chap-pol}.
+    \end{observacion}
+
+    Hemos definido los números complejos como pares ordenados y como tales es posible representarlos en el plano $\R \times \R$:
+
+
+
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+            \draw[->] (-4.0,0) -- (4.0,0) node[right] {}; % eje x
+            \draw[->] (0,-3) -- (0,3) node[above] {}; % eje y
+            \draw[fill] (2.5,1.5) circle [radius=0.05];
+            \node [right] at (2.5,1.5) {$a+ ib$};
+            \node [below] at (2.5,-3pt) {$a$};
+            \node [left] at (-3pt,1.5) {$b$};
+            \draw (2.5,-3pt) -- (2.5,3pt);
+            \draw (-3pt, 1.5) -- (3pt, 1.5);
+            \draw [dashed] (0,1.5) -- (2.5,1.5);
+            \draw [dashed] (2.5,0) -- (2.5,1.5);
+        \end{tikzpicture}
+        \caption{Representación gráfica de los números complejos. }
+    \end{figure}
+
+
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}
+            \draw[->] (-4.0,0) -- (4.0,0) node[right] {}; % eje x
+            \draw[->] (0,-3) -- (0,3) node[above] {}; % eje y
+            \foreach \x in {-4,...,-1}
+            \draw (\x,3pt) -- (\x,-3pt)
+            node[anchor=north] {\x};
+            \foreach \x in {1,...,4}
+            \draw (\x,3pt) -- (\x,-3pt)
+            node[anchor=north] {\x};
+            \foreach \y in {-3,...,-1}
+            \draw (3pt,\y) -- (-3pt,\y)
+            node[anchor=east] {\y};
+            \foreach \y in {1,...,3}
+            \draw (3pt,\y) -- (-3pt,\y)
+            node[anchor=east] {\y};
+            \draw[fill] (2,1) circle [radius=0.05];
+            \node [right] at (2,1) {$2+ i$};
+            \draw [dashed] (0,1) -- (2,1);
+            \draw [dashed] (2,0) -- (2,1);
+            \draw[fill] (-1,2.5) circle [radius=0.05];
+            \node [left] at (-1,2.5) {$-1+i \,2.5$};
+            \draw [dashed] (0,2.5) -- (-1,2.5);
+            \draw [dashed] (-1,0) -- (-1,2.5);
+            \draw[fill] (-2.5,-2.5) circle [radius=0.05];
+            \node [below] at (-2.5,-2.5) {$-2.5-i\,2.5$};
+            \draw [dashed] (0,-2.5) -- (-2.5,-2.5);
+            \draw [dashed] (-2.5,0) -- (-2.5,-2.5);
+        \end{tikzpicture}
+        \caption{Ejemplos de la representación gráfica de los números complejos. }
+    \end{figure}
+
+    Por el teorema de Pitágoras, la distancia del  número complejo $a+ib$ al $0$ es $\sqrt{a^2+b^2}$.
+
+    \begin{definicion} Sea $z = a + ib \in \C$. El \textit{módulo} de $z$ es
+        \begin{equation*}
+            |z| = \sqrt{a^2+b^2}.
+        \end{equation*}
+        El  \textit{conjugado} de $z$ es
+        \begin{equation*}
+            \bar z = a-ib.
+        \end{equation*}
+    \end{definicion}
+
+    \begin{ejemplo*}
+        $|4+3i| = \sqrt{4^2+3^2} = \sqrt{25} =5$, $\overline{4+3i} = 4-3i$.
+    \end{ejemplo*}
+
+    \begin{proposicion} Sean $z$ y $w$ números complejos.
+        \begin{enumerate}
+            \item $z\bar{z} = |z|^2$.
+            \item Si $z \ne 0$, $z^{-1} = \displaystyle\frac{\overline{z}}{|z|^2}$.
+            \item  $\overline{z+w} = \overline{z} + \overline{w}$.
+            \item\label{itm-cmplx}  $\overline{zw} = \overline{z}\;  \overline{w}$.
+        \end{enumerate}
+    \end{proposicion}
+    \begin{proof}
+        Son comprobaciones rutinarias. Para ejemplificar, hagamos la demostración  de \ref{itm-cmplx}.
+
+        Si $z = a + bi$ y $w = c +di$, entonces $(a+bi) (c+di) = (ac -bd) + (ad+bc)i$. Por lo tanto,
+        \begin{equation*}
+            \overline{zw} = (ac -bd) - (ad+bc)i.
+        \end{equation*}
+        Como $\overline{z} = a - bi$ y $\overline{w} = c -di$,
+        \begin{equation*}
+            \overline{z}\;  \overline{w} = (ac -(-b)(-d)) + (a(-d)+b(-c) )i = (ac -bd) - (ad+bc)i.
+        \end{equation*}
+        Por lo tanto $	\overline{zw} = \overline{z}\;  \overline{w}$.
+    \end{proof}
+
+    \begin{ejercicio*}
+        Determinar el número complejo $2- 3i + \displaystyle\frac{i}{1-i}$.
+    \end{ejercicio*}
+    \begin{proof}[Solución]
+        El  ejercicio nos pide que escribamos el número en el formato $a + bi$, con $a,b \in \R$. En general, para eliminar un cociente donde el divisor tiene parte imaginaria no nula, multiplicamos arriba y abajo por el conjugado del divisor, como $z\overline{z} \in \R$, obtenemos un divisor real. En  el ejemplo:
+        \begin{align*}
+            2+ 3i + \frac{i}{1-i} & = 2+3i +\frac{i}{1-i}\cdot\frac{1+i}{1+i} \\
+                & = 2+3i +\frac{i(1+i)}{(1-i)(1+i)}         \\
+                & =  2+3i +\frac{i-1}{2}                    \\
+                & = 2+3i +\frac{i}{2}-\frac{1}{2}           \\
+                & =\frac{3}{2}+i\frac{7}{2}
+        \end{align*}
+    \end{proof}
+
+
+    \textbf{Un poco de trigonometría}. Recordemos que dado un punto $p=(x,y)$ en el plano, la recta que une el origen con $p$ determina un ángulo $\theta$ con el eje $x$ y entonces
+    \begin{equation*}
+        x = r\sin(\theta) , \qquad y =  r\cos(\theta)
+    \end{equation*}
+    donde $r$ es la longitud del segmento determinado por $(0,0)$ y $(x,y)$. En  el  lenguaje  de los números complejos, si $z = a +bi$ y $\theta$  el ángulo determinado por $z$ y  el eje horizontal, entonces
+    \begin{equation*}
+        a = |z|\sin(\theta) , \qquad b =   |z|\cos(\theta),
+    \end{equation*}
+    es decir
+    \begin{equation}\label{forma-polar}
+        z = |z|(\cos(\theta)+i\sin(\theta)).
+    \end{equation}
+    Si $z \in \C$, la fórmula \eqref{forma-polar} e llamada la \textit{forma polar}\index{forma polar} de $z$ y $\theta$ es llamado  el  \textit{argumento de $z$}.
+
+    \textbf{Notación exponencial.} Otra notación para representar a los números complejos es la \textit{notación exponencial}, \index{notación exponencial}en la cual se denota
+    \begin{equation}\label{eq-formula-de-euler}
+        e^{i\theta} = \cos(\theta) + i\sin(\theta).
+    \end{equation}
+    Por lo tanto si $z \in \C$ y $\theta$  es el argumento de  $z$,
+    \begin{equation*}
+        z = r e^{i\theta}
+    \end{equation*}
+    donde  $r = |z|$. No  perder de vista,  que la notación exponencial no es más que una notación (por ahora).
+
+    \begin{proposicion}
+        Sean $z_1 = r_1 e^{i\theta_1}$, $z_2 = r_2 e^{i\theta_2}$,  entonces
+        $$
+            z_1 z_2 =  r_1r_2 \,e^{i(\theta_1+ \theta_2)}.
+        $$
+    \end{proposicion}
+    \begin{proof}
+        $z_1 = r_1(\cos(\theta_1)+i\sin(\theta_1))$, $z_2 = r_2(\cos(\theta_2)+i\sin(\theta_2))$, luego
+        \begin{align*}
+            z_1z_2 & = r_1r_2(\cos(\theta_1)+i\sin(\theta_1))(\cos(\theta_2)+i\sin(\theta_2))                                      \\
+                & = r_1r_2(\cos(\theta_1)\cos(\theta_2)+i\cos(\theta_1)\sin(\theta_2)+i\sin(\theta_1)\cos(\theta_2)             \\
+                & \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad+i^2\sin(\theta_1)\sin(\theta_2))                 \\
+                & = r_1r_2((\cos(\theta_1)\cos(\theta_2)-\sin(\theta_1)\sin(\theta_2))+i(\sin(\theta_1)\cos(\theta_2)           \\
+                & \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \qquad\qquad +\cos(\theta_1)\sin(\theta_2)))                 \\
+                & \overset{(*)}= r_1r_2(\cos(\theta_1+\theta_2) + i\sin(\theta_1+\theta_2)) =  r_1r_2e^{i(\theta_1+ \theta_2)}.
+        \end{align*}
+        La igualdad ($*$) se debe a las tradicionales fórmulas trigonométrica del coseno y  seno de la suma de ángulos.
+    \end{proof}
+
+
+    \begin{observacion*}[Justificación de la notación exponencial] Los alumnos que conozcan las series de Taylor reconocerán inmediatamente las fórmulas
+        \begin{equation*}
+            e^x = \sum_{n=0}^{\infty} \frac{1}{n!}x^n, \tag{*}
+        \end{equation*}
+        donde $x$ es un número real y
+        \begin{align*}
+            \cos(\theta) & =  \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!}\theta^{2k}       \\
+            \sen(\theta) & = \sum_{k=0}^{\infty} \frac{ (-1)^k}{(2k+1)!}\theta^{2k+1} ,
+        \end{align*}
+        donde $0 \le \theta < 2\pi$. Ahora bien, remplacemos $x$ por $i\theta$ en la fórmula (*) y obtenemos
+        \begin{align*}
+            e^{i\theta} & = \sum_{n=0}^{\infty} \frac{1}{n!}(i\theta)^n \\
+            & =  \sum_{k=0}^{\infty} \frac{1}{(2k)!}(i\theta)^{2k}  + \sum_{k=0}^{\infty} \frac{1}{(2k+1)!}(i\theta)^{2k+1}. \tag{**}
+        \end{align*}
+
+        No es difícil ver que $i^{2k} = (-1)^k$ y por lo tanto $i^{2k+1} = i^{2k}\cdot i = (-1)^ki $. Luego, por (**),
+        \begin{align*}
+            e^{i\theta} & =  \sum_{k=0}^{\infty} \frac{(-1)^k}{(2k)!}\theta^{2k}  + i\sum_{k=0}^{\infty} \frac{ (-1)^k}{(2k+1)!}\theta^{2k+1} \\
+                        & =\cos(\theta) + i \sen(\theta),
+        \end{align*}
+        recuperando así  la fórmula \eqref{eq-formula-de-euler}, llamada \emph{fórmula de Euler.}\index{fórmula de Euler}
+    \end{observacion*}
+
+    \begin{observacion*}[Identidad de Euler]  Observemos que especializando la fórmula de Euler en $\pi$ obtenemos
+        \begin{equation*}
+            e^{i\pi} = \cos(\pi) + i\sin(\pi) = -1.
+        \end{equation*}
+        Escrito de otra forma
+        \begin{equation}
+            e^{i\pi} -1 =0.
+        \end{equation}
+        Esta última expresión es denominada la \emph{identidad de Euler}\index{identidad de Euler} y es considerada una de las fórmulas más relevantes de la matemática, pues comprende las cinco constantes matemáticas más importantes:
+        \begin{enumerate}
+            \item El número \boldmath${0}$.
+            \item El numero \boldmath${1}$.
+            \item El número \boldmath${\pi}$, número irracional  que es la relación entre la circunferencia de un círculo y su diámetro. Es aproximadamente $3.14159\ldots$.
+            \item El número \boldmath${e}$, también un número irracional. Es la base de los logaritmos naturales y surge naturalmente a través del estudio del interés compuesto y el cálculo. El número $e$ está presente en una gran cantidad de ecuaciones importantes. Es aproximadamente $2.71828\ldots$.
+            \item El número \boldmath$i$, el más fundamental de los números imaginarios.
+        \end{enumerate}
+    \end{observacion*}
+\end{section}
+
+\begin{section}{Raíces de la unidad en $\C$}
+
+    \begin{definicion}
+        Dado $n \in \N$, se llama \textit{raíz $n$-ésima de la unidad} a cualquiera de los números complejos que satisfacen la ecuación
+        $$
+            z^n = 1.
+        $$
+    \end{definicion}
+
+    Si $z$  es una raíz $n$-ésima de la unidad,  entonces $z^n=1$ y por lo tanto $|z|^n = 1$. Como $|z|\ge 0$,  es claro que  $|z|=1$. Esto implica, además,  que $z =  e^{2 \pi i r}$. Como, nuevamente,   $z^n=1$ tenemos que $ e^{2 \pi i nr}=1$,  es decir,  $nr$ es entero, por lo tanto $r = k/n$ para k  entero. Concluimos que para cada $n$, las $n$ diferentes raíces $n$-ésimas de la unidad son:
+    $$
+        e^{2 \pi i k/n} \;\text{ donde }\;  k = 0, 1, 2, \ldots, n-1.
+    $$
+
+    Se dice que una raíz $n$-ésima de la unidad es \textit{primitiva} si no es una raíz $m$-ésima de la unidad para alguna $m$ más pequeña, es decir, si
+    $$
+        z^{n}=1\quad \text{and}\quad z^{m}\neq 1\text{ for } m=1,2,3,\ldots ,n-1.
+    $$
+
+    Si $n$ es un número primo, todas las raíces $n$-ésimas de la unidad, excepto $1$, son primitivas. En  realidad,  el resultado es más general.
+
+    \begin{proposicion}
+        Sea $z$ raíz $n$-ésima primitiva de la unidad y $m \in \N$.
+        \begin{enumerate}
+            \item\label{item-primitiva-1} Si $z^m=1$,  entonces $n|m$.
+            \item\label{item-primitiva-2} $z^m$  es raíz $n$-ésima primitiva de la unidad si y solo si $m$ y $n$  son coprimos.
+        \end{enumerate}
+
+    \end{proposicion}
+    \begin{proof}
+        \ref{item-primitiva-1} Sea $m = n\cdot q + r$ con $0 \le r < n$, entonces $$1 = z^m = z^{n\cdot q + r} = (z^{n})^qz^r = 1 \cdot z^r = z^r.$$ Como $r<n$ y $z$ primitiva, concluimos que $r=0$ y por consiguiente $n|m$.
+
+        \ref{item-primitiva-2} Sea $d = \operatorname{mcd}(m, n)$.
+
+        ($\Rightarrow$) Observar que tanto $n/d$ como $m/d$ son enteros, luego
+        $$
+            (z^m)^{\frac{n}{d}} = z^{\frac{mn}{d}} = z^{\frac{m}{d}n} = (z^n)^{\frac{m}{d}} = 1.
+        $$
+        Como por hipótesis $z^m$ es primitiva, por \ref{item-primitiva-1}, $n | (n/d)$, luego $d=1$.
+
+        ($\Leftarrow$) Sea $t$ tal que $(z^m)^t = 1$,  entonces $z^{mt} =1$. Por \ref{item-primitiva-1}, $n | mt$, como por hipótesis $m$ y $n$ son coprimos obtenemos que $n |t$ y por lo tanto $t \ge n$. En consecuencia, $z^m$  es raíz $n$-ésima primitiva de la unidad.
+    \end{proof}
+
+    \begin{observacion*} Remarcaremos algunas propiedades básicas relacionadas con las raíces $n$-ésimas de la unidad.
+        \begin{enumerate}
+            \item Si $z$ es una raíz $n$-ésima primitiva de la unidad y $m$  entero coprimo con $n$, entonces ${z}^m$ también lo es.  Por consiguiente, si denotamos $w = z^m$, entonces
+                $$
+                    w^0, w^1,\ldots,w^{n-1}
+                $$
+                son las $n$ raíces $n$-ésimas de la unidad.
+            \item Sea $z$ es una raíz $n$-ésima de la unidad, como $z\overline{z} = |z| =1$ y $zz^{n-1} = z^n = 1$,  deducimos que $\overline{z} = z^{n-1}$. Si $z$  es primitiva,  como $n-1$ y $n$ son coprimos, deducimos que $\overline{z}$  también es una raíz $n$-ésima primitiva de la unidad.
+        \end{enumerate}
+    \end{observacion*}
+
+
+
+ \end{section}
+\end{chapter}
+
+
+
+
+
+\begin{chapter}{Funciones polinómicas}\label{chap-pol}
+
+ En este apéndice se definirán las funciones polinómicas y se mostrarán algunas de sus propiedades fundamentales. Trabajaremos sobre $\K$  cuerpo con $\K=\R$ o $\K=\C$.
+
+ \begin{section}{Definición de funciones polinómicas}\label{seccion-definicion-polinomios}
+
+
+    \begin{definicion}
+        Una función $f: \K \to \K$ es \textit{polinomial} o \textit{polinómica} o directamente decimos que $f$  es  un \textit{polinomio}\index{polinomio}, si existen $a_0,a_1,\ldots,a_n \in \K$ tal que
+        \begin{equation}\label{eq-funcion-polinomica}
+            f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0
+        \end{equation}
+        para todo $x \in \K$. En este caso  diremos que  \textit{$f$ tiene grado $\le n$.} Si $a_n \ne 0$ diremos que \textit{$f$ tiene grado $n$} y  se denota $\operatorname{gr}(f)=n$.
+
+        En  el caso del polinomio $0$, el grado no está definido y se usa la convención $\operatorname{gr}(0)=-\infty$.
+
+        Diremos también que  $a_0,\ldots,a_n$ son los \textit{coeficientes} de $f$, $a_0$ es el \textit{término constante} de $f$ y $a_n$  el \textit{coeficiente principal.}
+    \end{definicion}
+
+    \begin{obs}
+        Para la definición formal de función polinómica o polinomio deberíamos ser más cuidadosos, pues en realidad no sabemos a priori si la escritura de una función polinómica es única. Es  decir,  existe la posibilidad de $f$  se escriba de otra forma y,  en particular, el coeficiente más significativo sea diferente. No es muy complicado demostrar que esto no puede ocurrir, pero no lo haremos en este documento.
+    \end{obs}
+
+
+    Sea $f$ un polinomio. Si $c$ es un número tal que $f (c) = 0$, entonces llamamos a \textit{$c$ una raíz de $f$}. Veremos en un momento que un polinomio distinto de cero puede tener solo un número finito de raíces, y daremos un límite para la cantidad de estas raíces.
+
+    \begin{ejemplo*}
+        Sea $f (x) = x^2 - 3x + 2$. Entonces $f(1)=0$ y por lo tanto, $1$ es una raíz de $f$.
+        Además, $f (2) = 0$. Por lo tanto, $2$ es también una raíz de $f$.
+    \end{ejemplo*}
+
+    \begin{ejemplo*}
+        Sean $a,b,c \in \R$ y  $f(x) = ax^2 + bx + c$, un polinomio en $\R$.  Si $b^2 - 4 ac = 0$, entonces el polinomio tiene una raíz real, que es
+        \begin{equation*}
+            -\frac{b}{2a}.
+        \end{equation*}
+        Si $b^2 - 4 ac > 0$, entonces el polinomio tiene dos raíces reales distintas que son
+        \begin{equation*}
+            \frac{-b + \sqrt{b^2 - 4 ac}}{2a}\quad \text{ y }\quad \frac{-b - \sqrt{b^2 - 4 ac}}{2a}.
+        \end{equation*}
+        En el caso que $b^2 - 4 ac < 0$ el polinomio no tiene raíces reales.
+    \end{ejemplo*}
+
+    \begin{teorema}\label{th-fact-raiz}
+        Sea $f$ un polinomio de grado $\le n$ y sea $c$ una raíz. Entonces existe un polinomio $g$ de grado $\le n - 1$ tal que para todo $x$ se cumple
+        \begin{equation*}
+            f (x) = (x - c) g (x).
+        \end{equation*}
+    \end{teorema}
+    \begin{proof} Escribamos $f(x)$ en función de las potencias de  $x$:
+        \begin{equation}\label{eq-funcion-polinomica-2}
+            f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0.
+        \end{equation}
+        Ahora bien,  escribamos
+        \begin{equation*}
+            x = (x-c)+ c,
+        \end{equation*}
+        luego, reemplazando $x$ por $(x-c)+ c$ en la expresión (\refeq{eq-funcion-polinomica-2}), obtenemos
+        \begin{equation*}
+            f(x) = a_n((x-c)+ c)^n + a_{n-1}((x-c)+ c)^{n-1}+\cdots + a_1((x-c)+ c) +a_0.
+        \end{equation*}
+        Expandiendo las potencias de los binomios $((x-c)+ c)^k$ ($1 \le k \le n$) y haciendo sumas y restas en los grados correspondientes,  obtenemos
+        \begin{equation}\label{eq-funcion-polinomica-3}
+            f(x) = b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c) +b_0,
+        \end{equation}
+        para ciertos $b_0, b_1,\ldots ,b_n \in \K$. Es decir,  hemos demostrado que $f$ se puede escribir como combinación lineal de potencias de $x-c$. Como $f(c) = 0$,  entonces por la expresión (\refeq{eq-funcion-polinomica-3}) vemos que  $0=f(c)=b_0$,  luego
+        \begin{align*}
+            f(x) & = b_n(x-c)^n + b_{n-1}(x-c)^{n-1}+\cdots + b_1(x-c)       \\
+                 & = (x-c)(b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1) \\
+                 & =(x-c)g(x),
+        \end{align*}
+        con $g(x) =b_n(x-c)^{n-1} + b_{n-1}(x-c)^{n-2}+\cdots + b_1$,  que es una función polinómica de grado $\le n-1$, y así queda probado el teorema.
+    \end{proof}
+
+    El polinomio $f$ es el \textit{polinomio nulo} si $f(x)=0$ para toda $x \in \K$. Si $f$ es el polinomio nulo,  denotamos $f =0$.
+
+    \begin{teorema}\label{th-pol-raiz}
+        Sea $f$ un polinomio de grado $n \ge 0$, entonces $f$ tiene a lo  más  $n$ raíces.
+    \end{teorema}
+    \begin{proof}
+        Sea
+        \begin{equation*}
+            f(x) = a_nx^n + a_{n-1}x^{n-1}+\cdots + a_1x +a_0,
+        \end{equation*}
+        con $a_n \ne 0$. Luego,  $f$ es un polinomio de grado $n$.
+
+        Probaremos el resultado haciendo inducción sobre $n$.
+
+        Si $n=0$, $a_0 \ne 0$, es decir  $f(x)=a_0\ne 0$, que es lo que teníamos que probar ($f$ no tiene raíces).
+
+
+        Sea $n>0$. Sea $c$ raíz de $f$. Por  el teorema \ref{th-fact-raiz},
+        \begin{equation*}
+            f(x) = (x-c)g(x),
+        \end{equation*}
+        con
+        \begin{equation*}
+            g(x) = b_{n-1}x^{n-1} + \cdots + b_1x +b_0.
+        \end{equation*}
+        Es claro que $b_{n-1} = a_n \ne 0$ y por lo tanto, por hipótesis inductiva, $g(x)$ tiene a lo más $n-1$ raíces. Ahora bien
+        \begin{equation*}
+            0 =f(x) = (x-c)g(x) \quad \Leftrightarrow \quad x-c=0 \text{ o } g(x) =0.
+        \end{equation*}
+        Es decir $x$ es raíz de $f$ si y solo si $x=c$ o $x$ es raíz de $g$. Como $g$ tiene a lo más $n-1$ raíces,  $f$ tiene a lo más $n$ raíces.
+    \end{proof}
+
+    Ahora bien, ¿todo polinomio tiene al menos una raíz? El siguiente teorema nos garantiza que sí.
+
+    \begin{teorema}[Teorema Fundamental  del Álgebra - TFA]
+        Todo polinomio en una variable de grado $n\ge 1$ con coeficientes reales o complejos tiene por lo menos una raíz (real o compleja).
+    \end{teorema}
+
+    Como ya fue dicho en el apéndice \ref{chap-num-compl}, la demostración de este teorema requiere de herramientas que no están a nuestro alcance en este curso. Una consecuencia importante de este teorema es que todo polinomio de grado $n$ tiene exactamente $n$ raíces (contando multiplicidades), resultado que se demuestra fácilmente por inducción a partir del TFA y el teorema \ref{th-fact-raiz}.
+
+    \vskip .4cm
+
+    Observemos que si $f$ y $g$ son polinomios con
+    \begin{equation*}
+        f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_nx^n +\cdots + b_1x +b_0,
+    \end{equation*}
+    entonces como $ax^i + b x^i = (a+b)x^i$, tenemos que $f+g$ es un polinomio definido por
+    \begin{equation*}
+        (f + g)(x) = (a_n+b_n)x^n + \cdots + (a_1+b_1)x +(a_0+b_0).
+    \end{equation*}
+    Por otro  lado,  debido  a que $(ax^i)(bx^j) = abx^{i+j}$, el producto de dos polinomios también es un polinomio y el cálculo de los coeficientes de $fg$  se hace aplicando la propiedad distributiva. Más precisamente,
+    \begin{equation*}
+        (fg)(x) = a_nb_m x^{n+m} + (a_{n-1}b_m + a_nb_{m-1})X^{m+n-1} + \cdots.
+    \end{equation*}
+
+
+    \begin{proposicion}
+        Sean $f$ y $g$ polinomios de grado $n$ y $m$,  respectivamente. Entonces $fg$ es un  polinomio de grado $n+m$
+    \end{proposicion}
+    \begin{proof}
+        Sean
+        \begin{equation*}
+            f(x) = a_nx^n + \cdots + a_1x +a_0 \quad\text{ y } \quad g(x) = b_mx^m +\cdots + b_1x +b_0,
+        \end{equation*}
+        con $a_n, b_m \ne 0$. Entonces,
+        \begin{equation}
+            (fg)(x) = a_nb_m x^{n+m} + h(x),
+        \end{equation}
+        con $h(x)$ un polinomio de grado menor a $n+m$. Por lo tanto, el coeficiente principal de $fg$ es $a_nb_m \ne 0$ y,  en consecuencia $fg$ tiene grado $n+m$.
+    \end{proof}
+
+    \begin{ejemplo*} Sean $f(x) = 4x^3 - 3x^2 + x + 2$ y $g(x) = x^2 + 1$. Entonces,
+        \begin{align*}
+            (f+g)(x) & = (4+0)x^3 +(-3 +1)x^2 + (1+0)x + (2+1) \\
+                     & = 4x^3 - 2x^2 + x + 3,
+        \end{align*}
+        y
+        \begin{align*}
+            (fg)(x) & = (4x^3 - 3x^2 + x + 2)(x^2 + 1)                    \\
+                    & = (4x^3 - 3x^2 + x + 2)x^2 + (4x^3 - 3x^2 + x + 2)1 \\
+                    & = 4x^5 - 3x^4 + x^3 + 2x^2 + 4x^3 - 3x^2 + x + 2    \\
+                    & = 4x^5 - 3x^4 + 5x^3 - x^2 + x + 2
+        \end{align*}
+    \end{ejemplo*}
+
+ \end{section}
+
+
+ \begin{section}{División de polinomios}\label{seccion-division-de-polinomios} Si $f$ y $g$ son polinomios,  entonces no necesariamente la función $f/g$ está bien definida en todo punto y puede que tampoco sea un polinomio. Cuando trabajamos con enteros, en cursos anteriores,  probamos la existencia del algoritmo de división, más precisamente.
+
+    \textit{Sean $n$, $d$ enteros positivos. Entonces existe un entero $r$ tal que
+        $0 \le  r <d$  un entero $q \ge 0$ tal que
+    }
+    \begin{equation*}
+        n = qd + r.
+    \end{equation*}
+
+    Ahora describiremos un procedimiento análogo para polinomios.
+
+    \textit{\textbf{Algoritmo de División.} Sean $f$ y $g$ polinomios distintos de cero. Entonces existen polinomios $q$, $r$ tales que $\operatorname{gr}(r) < \operatorname{gr}(g)$ y tales que}
+    \begin{equation*}
+        f (x) = q (x) g (x) + r (x).
+    \end{equation*}
+    A $q(x)$ lo llamamos el \textit{cociente} de la \textit{división polinomial} y  a $r(x)$ lo llamamos el \textit{resto}  de la división polinomial.
+
+    No veremos aquí la demostración del algoritmo de división, basta decir que es muy similar a  la demostración del algoritmo de división para números enteros. En los siguientes ejemplos se verá como se calculan el cociente y resto de la división polinomial.
+
+    \begin{ejemplo*} Sean $f(x) = 4x^3 - 3x^2 + x + 2$ y $g(x) = x^2 + 1$. Para encontrar la división polinomial, debemos multiplicar por un monomio $ax^k$ a $g(x)$ de tal forma que el coeficiente principal de  $ax^kg(x)$ sea igual al coeficiente principal de $f(x)$. En este caso, multiplicamos a $g(x)$ por $4x$ y nos queda
+        \begin{equation*}
+            f(x) = 4xg(x) + r_1(x) = (4x^3 +4x)+(-3x^2-3x +2)
+        \end{equation*}
+        Ahora,  con $r_1(x)=-3x^2-3x +2$ hacemos el mismo procedimiento,  es decir multiplicamos por $-3$  a $g(x)$ y vemos que es lo que "falta":
+        \begin{equation*}
+            r_1(x) = (-3)g(x) +r(x) = (-3x^2 -3) + (-3x+5).
+        \end{equation*}
+        Como $r(x) = -3x+5$ tiene grado menor que $2$, tenemos que
+        \begin{align*}
+            f(x) & = 4xg(x) + r_1(x) \\ &=4xg(x) + (-3)g(x) +r(x)\\& = (4x-3)g(x)+r(x).
+        \end{align*}
+        Es decir,
+        \begin{equation*}
+            f(x) = q(x)g(x)+r(x),
+        \end{equation*}
+        con $q(x) =4x-3$ y $r(x) = -3x+5$.
+
+        Observemos que se puede hacer un esquema parecido a  la división de números enteros, el cual nos facilita el cálculo:
+        \begin{equation*}
+            \polylongdiv{4x^3 - 3x^2 + x + 2}{ x^2 + 1}
+        \end{equation*}
+    \end{ejemplo*}
+
+    \begin{ejemplo*}
+        Sean
+        \begin{equation*}
+            f (x) = 2x^4 - 3x^2 + 1 \quad \text{ y } \quad g (x) = x^2 - x + 3.
+        \end{equation*}
+        Deseamos encontrar $q (x)$ y $r (x)$ como en el algoritmo de Euclides. Haciendo la división como en el ejercicio anterior:
+        \begin{equation*}
+            \polylongdiv{2x^4 +0x^3- 3x^2 +0x+ 1}{x^2 - x + 3}
+        \end{equation*}
+        Es decir $q(x) = 2x^2+2x-7$ y $r(x)= -13x+22$.
+    \end{ejemplo*}
+
+    Observemos que el algoritmo de división nos dice que si dividimos un polinomio por uno de grado $1$,  entonces el resto es una constante (que puede ser $0$). Más aún:
+
+    \begin{teorema}[Teorema del  resto] Sea $f$ polinomio y $c \in \K$. Entonces,  el resto de dividir $f$ por $x-c$ es $f(c)$.
+    \end{teorema}
+    \begin{proof} Por  el algoritmo de Euclides
+        \begin{equation*}
+            f(x) = q(x)(x-c) + r,
+        \end{equation*}
+        con $r$ de grado $<1$,  es decir $r \in \K$.  Ahora bien
+        \begin{equation*}
+            f(c) = q(c)(c-c) + r = r,
+        \end{equation*}
+        luego $f(c)$  es el resto de dividir $f$ por $x-c$.
+    \end{proof}
+
+    Observar que esto  nos da otra prueba del teorema \ref{th-pol-raiz}: $f(c)=0$, luego por teorema del resto $ f(x)=q(x)(x-c)$.
+
+ \end{section}
+
+\end{chapter}
+
+\begin{chapter}{Multiplicación de polinomios por FFT}\label{apend.FFT}
+
+
+ Como vimos en \ref{seccion-definicion-polinomios} el producto de polinomios se calcula usando  que $x^ix^j = x^{i+j}$ y la propiedad distributiva. Si un polinomio tiene grado $n$ y el otro  tiene grado $m$,  entonces son necesarias $nm$ multiplicaciones de coeficientes (``todos contra todos'').
+
+ También puede plantearse de esta forma:  si necesitamos multiplicar polinomios de grado $n$  entonces la multiplicación de dos polinomios requiere $n^2$ multiplicaciones. Como la multiplicación es la operación más costosa del procedimiento, podemos decir  que  multiplicar dos polinomios de grado $n$ requiere \textit{alrededor de  $n^2$ operaciones.}
+
+ Este nivel de complejidad ($n^2$) parece ser razonable a nivel computacional, pero  si los polinomios a multiplicar tiene grados muy altos puede ser necesario contar con métodos más rápidos, o que requieran menos operaciones. En  este apéndice mostraremos la multiplicación de polinomios usando la trasformada de Fourier discreta implementándola con la transformada rápida de Fourier (FFT) y mostraremos que usando este método se puede multiplicar dos polinomios de grado $n$ en \textit{alrededor de  $n\log_2(n)$ operaciones.}
+
+
+
+ \begin{section}{Representación de polinomios por valores}
+
+    La primero observación importante es que todo polinomio de grado  $<n$  está determinado por $n$ valores que toma.
+
+    \begin{proposicion}\label{prop-polinomios-por-valor}
+        Sa $f$ un polinomio de grado  menor  que $n$ y $x_0,\ldots,x_{n-1} \in \R$ todos distintos entre sí. Sea $y_i = f(x_i)$, $0 \le i < n$. Si $g$ polinomio de grado menor que $n$ tal que $g(x_i) = y_i$ con  $0 \le i < n$, entonces se cumple que $g=f$.
+    \end{proposicion}
+    \begin{proof} Sea $h = f- g$,  es claro que $\operatorname{gr}(h) < n$. Si $h \ne 0$, por la proposición \ref{th-pol-raiz}, $h$ tiene a lo más $n-1$ raíces. Sin embargo $h(x_i)= f(x_i)-g(x_i) = y_i -y_i =0$,  es decir $h$ tiene al menos $n$ raíces. Esto provoca un absurdo que vino de suponer que $h \ne 0$. Por lo tanto,  $h=0$ y en consecuencia $f=g$.
+    \end{proof}
+
+    \begin{definicion}\label{def-representacion-por-valores-polinomio} Sea $n \in \N$ y $X = [x_0,\ldots,x_{n-1}]$  un conjunto ordenado de $n$ puntos distintos. Si
+        $$
+            f(x) = a_0 + a_1 x+ a_2 x^2 + \cdots  + a_{n-1}x^{n-1}
+        $$
+        un polinomio de grado menor que $n$, diremos que $[a_0,a_1,\ldots, a_{n-1}]$  es la \textit{representación por coeficientes} de $f$ y que $[f(x_0),f(x_1),\ldots,f(x_{n-1})]$ es la \textit{representación por valores} de $f$ (respecto a $X$).
+    \end{definicion}
+
+    Debido a la proposición \ref{prop-polinomios-por-valor} es claro que una representación por valores de un polinomio lo determina unívocamente. La transformada de Fourier rápida es un método eficiente para calcular la representación por valores de un polinomio a partir de la representación por coeficientes. Modificando levemente  la transformada de Fourier rápida obtenemos la transformada de Fourir inversa que nos permite obtener la representación por coeficientes a partir  de una representación por valores. Ahora bien ¿para qué nos sirve  esto para multiplicar polinomios? La respuesta es que la multiplicación de polinomios usando la representación por valores es muy rápida y este resultado se basa en la sencilla idea que si $x_0$ es un número,  entonces $(fg)(x_0) = f(x_0)g(x_0)$, es decir calcular el producto de dos polinomios representados por valores conlleva un número de operaciones similares a la cantidad de valores evaluados.
+
+    \begin{proposicion} \label{prop-mult-por-valor} Sea $n \in \N$ y $X = [x_0,\ldots,x_{n}]$  un conjunto ordenado de $n$ puntos distintos y sean $f,g$ polinomios de grado menor que  $n/2$ con representación  por valores $[y_0,y_1,\ldots,y_{n}]$ y $[z_0,z_1,\ldots,z_{n}]$, respectivamente. Entonces la representación por valores de $fg$ es $[y_0z_0,y_1z_1,\ldots,y_{n}z_{n}]$
+    \end{proposicion}
+    \begin{proof}
+        Como $y_i = f(x_i)$, $z_i = g(x_i)$,  es claro  que $(fg)(x_i) = f(x_i)g(x_i) = y_iz_i$. Como $\operatorname{gr}(f), \operatorname{gr}(g) < n/2$,  entonces $\operatorname{gr}(fg) < n$ y  por lo tanto $[y_0z_0,y_1z_1,\ldots,y_{n}z_{n}]$ determina unívocamente $fg$.
+    \end{proof}
+
+    La idea entonces para multiplicar polinomios usando la transformada rápida de Fourier es:  sean $f$, $g$ polinomios de grado $<n$,
+    \begin{enumerate}
+        \item Calcular $\operatorname{FFT}(f)$ y $\operatorname{FFT}(g)$ (del orden de $2n\operatorname{log}_2(2n)$ operaciones). Esto nos devuelve una representación por valor de $f$ y $g$.
+        \item Calcular  la representación por valor de $fg$ haciendo el producto coordenada a coordenada de las representaciones por valor de $f$ y $g$ (del orden de $2n$ operaciones)  .
+        \item Calcular $\operatorname{IFFT}(fg)$, la inversa de $\operatorname{FFT}$, que devuelve la representación por coeficientes de $fg$ (del orden de $2n\operatorname{log}_2(2n)$ operaciones).
+    \end{enumerate}
+
+    Implementando lo anterior, la cantidad de operaciones para multiplicar dos polinomios de grado $<n$  es $n \log_2(n)$ (salvo suma y multiplicación por constantes), que en la práctica y para $n$ grande es \textit{mucho} menor que $n^2$, el número de operaciones requeridas si se hiciera la multiplicación de la forma usual.
+
+ \end{section}
+
+ \begin{section}{Transformada de Fourier discreta} La series de Fourier permiten representar una función periódica y continua a trozos como una combinación de funciones armónicas puras. Son usadas en muchas ramas de la ingeniería, además de ser una herramienta sumamente útil en la matemática abstracta. Sus áreas de aplicación incluyen análisis vibratorio, acústica, óptica, procesamiento de imágenes y señales, y compresión de datos.
+
+    \begin{teorema}\label{th-series-de-fourier}
+        Sea $f: \R \to \R$ una función de período $1$ y continua a trozos, entonces podemos escribir de una única forma
+        \begin{equation}\label{eq-serie-de-fourier}
+            f(x) = \sum_{ j= -\infty}^\infty c_j e^{2\pi ijx},
+        \end{equation}
+        con
+        $$
+        c_0 = \int_0^1 f(x) \, dx \quad \text{ y } \quad c_j = \int_0^1 f(x) e^{-2\pi ijx} \, dx \quad \text{ para } j \ne 0.
+        $$ 
+    \end{teorema}
+    La demostración del teorema anterior se basa en una generalización a espacios de dimensión infinita de los conceptos de bases ortonormales en un espacio vectorial. Diremos que la serie de la \eqref{eq-serie-de-fourier} es la \textit{serie de Fourier de $f$}.\index{serie de Fourier}
+
+    Ahora bien, en  el mundo de la computación no es posible trabajar con funciones continuas y series y nos debemos restringir a valores de una función y sumas finitas, respectivamente.
+
+    La discretización de teoremas análogos al teorema \ref{th-series-de-fourier} que nos permitan trabajar con computadoras ha llevado a los matemáticos a definir la transformada de Fourier discreta.
+
+    \begin{definicion}
+        La \textit{transformada de Fourier discreta}\index{transformada de Fourier discreta} transforma una secuencia de $n$ números complejos $f_0, f_1, \ldots, f_{n-1}$ en otra secuencia de $n$ números complejos:
+        \begin{equation*}
+            c_k = \sum_{j=0}^{n-1} f_j e^{-2\pi i j {k}/{n}}\qquad (0 \le k \le n-1).
+        \end{equation*}
+    \end{definicion}
+
+    \begin{ejemplo}\label{ejem-dft-polinomios}
+        Sea $f$ un polinomios de grado $n-1$, $$f = f_0+ f_1x +\cdots + f_{n-1}x^{n-1}.$$ Podemos representar $f$ como una $n$-upla con sus coeficientes:
+        \begin{equation*}
+            f = (f_0, f_1, f_2,\ldots, f_{n-1}).
+        \end{equation*}
+        Observemos que la transformada de Fourier discreta de $f$
+        \begin{equation*}
+            c = (c_0, c_1, c_2,\ldots, c_{n-1})
+        \end{equation*}
+        no es otra cosa que
+        \begin{equation*}
+            c = (f(1), f(e^{-2\pi i/{n}}), f( e^{-2\pi i {2}/{n}}),\ldots, f( e^{-2\pi i {(n-1)}/{n}})).
+        \end{equation*}
+        Es decir la transformada de Fourier discreta de un polinomio $f$  es la representación por valores de $f$ respecto a $X = \{1, e^{-2\pi i /{n}},e^{-2\pi i 2/{n}}, \ldots,e^{-2\pi i {(n-1)}/{n}} \}$ (ver la definición \ref{def-representacion-por-valores-polinomio}).
+    \end{ejemplo}
+
+    Veremos ahora esta definición desde el punto de vista del álgebra lineal.
+
+    \begin{definicion}
+        Dado $n \in \N$, se llama \textit{raíz $n$-ésima de la unidad} a cualquiera de los números complejos que satisfacen la ecuación
+        $$
+            z^n = 1.
+        $$
+    \end{definicion}
+
+    Para cada $n$, las $n$ diferentes raíces $n$-ésimas de la unidad son:
+    $$
+        e^{2 \pi i k/n} \;\text{ donde }\;  k = 0, 1, 2, \ldots, n-1.
+    $$
+    Observar que si $z$ es una raíz de la unidad, entonces $\overline{z}$ también lo es y $z\overline{z} =1$.  Por consiguiente, los $e^{-2 \pi i k/n}$ con $0 \le k \le n-1$ forman también el conjunto de raíces $n$-ésimas de la unidad. Es decir, si denotamos $w = e^{-2 \pi i/n}$, entonces
+    $$
+        w^0, w^1,\ldots,w^{n-1}
+    $$ son las $n$ raíces $n$-ésimas de la unidad.
+
+    Sea
+    \begin{equation*}
+        F = \begin{bmatrix}
+            1 & 1       & 1          & \cdots & 1           \\
+            1 & w       & w^2        & \cdots & w^{n-1}     \\
+            1 & w^2     & w^4        & \cdots & w^{2(n-1)}
+            \\ \vdots & &  &  &\vdots \\
+            1 & w^{n-1} & w^{2(n-1)} & \cdots & w^{(n-1)^2}
+        \end{bmatrix}.
+    \end{equation*}
+    Es decir
+    \begin{equation*}
+        [F]_{jk} = w^{(j-1)(k-1)}.
+    \end{equation*}
+
+
+    \begin{teorema}
+        Para cada $n \in \N$ la matrices $F$ y $\overline{F}$, la matriz conjugada de $F$,   satisfacen
+        \begin{equation*}
+            F \overline{F} = \overline{F}F = nI_n\quad\text{ o,  equivalentemente, }\quad F^{-1} = \frac{1}{n}  \overline{F}.
+        \end{equation*}
+        Además, la transformada de Fourier discreta de la secuencia de números complejos $f = (f_0,\ldots,f_{n-1})$ es $c = {F}f$.
+    \end{teorema}
+    \begin{proof}
+        Probemos primero que $F \overline{F} = nI_n$. Observemos que el producto de la fila $j + 1 $ con la fila de $F$ con la columna $k +  1$ de $\overline{F}$  ($0 \le j, k < n$) es
+        \begin{equation}\label{eq-prod-tr-atr}
+            1\cdot1 + w^j\overline{w}^k + w^{2j}\overline{w}^{2k} + \cdots +  w^{(n-1)j}\overline{w}^{(n-1)k}.
+        \end{equation}
+        Si $j=k$  entonces todos los términos de la suma son $1$ y por lo tanto  la expresión \ref{eq-prod-tr-atr} es igual a $n$. Si $j \not= k$,
+        denotemos $r =  w^j\overline{w}^k$,  entonces la expresión \ref{eq-prod-tr-atr} es igual a la serie geométrica
+        \begin{equation*}
+            1 +  r + r^2+ \cdots +r^{n-1} = \frac{r^n -1}{r -1}.
+        \end{equation*}
+        Ahora bien, como $1 = w^n = \overline{w}^n$, es claro que $r^n = 1$ y  por lo tanto $r^n -1/r -1$ es $0$.
+
+        Para probar la segunda afirmación del teorema multiplicamos la matriz $\overline{F}$ por el vector $f$:
+        \begin{equation*}
+            \begin{bmatrix}
+                1 & 1         & 1            & \cdots & 1             \\
+                1 & {w}       & {w}^2        & \cdots & {w}^{n-1}     \\
+                1 & {w}^2     & {w}^4        & \cdots & {w}^{2(n-1)}
+                \\ \vdots & &  &  &\vdots \\
+                1 & {w}^{n-1} & {w}^{2(n-1)} & \cdots & {w}^{(n-1)^2}
+            \end{bmatrix}
+            \begin{bmatrix}
+                f_0 \\ f_1 \\ f_2 \\ \vdots\\  f_{n-1}
+            \end{bmatrix}
+            =
+            \begin{bmatrix*}[l]
+                \sum_{j=0}^{n-1} f_j\\ \sum_{j=0}^{n-1}  w^jf_j\\ \sum_{j=0}^{n-1}   w^{2j}f_j \\ \vdots\\  \sum_{j=0}^{n-1}  w^{(n-1)j}f_j
+            \end{bmatrix*} =
+            \begin{bmatrix}
+                c_0 \\ c_1 \\ c_2 \\ \vdots\\  c_{n-1}
+            \end{bmatrix}.
+        \end{equation*}
+        Reacomodando cada sumatoria y considerando que $  w = e^{-2 \pi i/n}$ obtenemos
+        \begin{equation*}
+            c_k = \sum_{j=0}^{n-1} f_j e^{-2\pi i j {k}/{n}},
+        \end{equation*}
+        para $0 \le k \le n-1$, que es lo que queríamos probar.
+    \end{proof}
+
+    La matriz $F$ se la llama la \textit{matriz de Fourier} y, por lo visto en el teorema anterior, la transformada de Fourier discreta de $f$ es $c = Ff$.
+
+    En  base al teorema podemos dar una definición equivalente de la transformada de Fourier discreta y definir la antitransformada.
+
+    \begin{definicion}
+        Sea $F$ la matriz de Fourier $n \times n$. Sea  $f = (f_0,\ldots,f_{n-1}), \in \C^n$, entonces la \textit{transformada de Fourier discreta (DFT)} de $f$ es $c = Ff$. La \textit{transformada inversa de Fourier discreta (IDFT)} de $c = (c_0,\ldots,c_{n-1}) \in \C^n$ es $F^{-1}c$.
+    \end{definicion}
+
+    \subsection*{Convolución discreta}
+
+    Ahora bien, ¿por  qué es importante la matriz de Fourier $F$? Una posible explicación es la siguiente: hay una operción llamada \textit{convolución} que aparece constantemente en las aplicaciones y hay dos formas de hacerla. El método directo se incluye en la definición misma de convolución. Pero  hay un método indirecto que usa $F$ y $F^{-1}$ y aunque es más complicado se puede implementar para que sea mucho más rápido que el cálculo directo. En otras palabras,  la matriz de Fourier es una herramienta para calcular convoluciones.
+
+    \begin{definicion}
+        Sean $f = (f_0,\ldots, f_{n-1})$ y $g = (g_0,\ldots, g_{n-1})$ dos vectores en $\C^n$,  entonces la  \textit{convolución} de $f$ y $g$ es
+        \begin{equation*}
+            f * g = \left(\sum_{j+k \,\equiv\, 0\, (n)} f_jg_k, \sum_{j+k \,\equiv\, 1\, (n)} f_jg_k, \ldots, \sum_{j+k\, \equiv\, n-1 \,(n)} f_jg_k\right).
+        \end{equation*}
+    \end{definicion}
+
+    \begin{ejemplo}
+        La convolución entre $(1,2,3)$ y $(4,5,6)$ Es
+        \begin{align*}
+            (1,2,3)*(4,5,6) & = (1 \cdot 4 + 2\cdot 6 + 3\cdot 5, 1\cdot 5+  2\cdot 4 + 3\cdot 6, 1\cdot 6 + 2\cdot 5 + 3\cdot 4) \\ &= (31, 31, 28).
+        \end{align*}
+    \end{ejemplo}
+
+    \begin{ejemplo}\label{ejem-convolucion-polinomios}
+        El ejemplo más notable en el contexto  que estamos estudiando es la multiplicación de polinomios, que puede ser vista como  una convolución. Veamos un caso especial de dos polinomios de grado $2$.
+
+        Multiplicar $f_0 + f_1x + f_2x^2$ por $g_0 + g_1x + g_2x^2$ es exactamente como hacer la convolución, con una diferencia esencial: el producto es un polinomio de grado $4$. y por lo tanto tiene cinco coeficientes, mientras $f$ y $g$ tienen tres. Dado que la convolución produce una secuencia de salida de la misma longitud que las entradas, agregamos dos ceros a la entrada:
+        \begin{equation*}
+            f = (f_0,f_1,f_2,0,0) \quad \text{ y }\quad g = (g_0,g_1,g_2,0,0)
+        \end{equation*}
+        La convolución de $f$ y $g$ (con $n = 5$) es
+        \begin{equation*}
+            f * g = (f_0g_0, f_0g_1 + f_1g_0 , f_0g_2 + f_1g_1+ f_2g_0, f_1g_2 + f_2g_1, f_2g_2 ).
+        \end{equation*}
+        Es claro que con la convolución obtenemos entonces  los coeficientes del producto $fg$.
+
+        Esto se puede generalizar a cualquier grado:  para multiplicar dos polinomios $f$ y $g$ de grado $<n/2$ completamos los coeficientes de cada polinomio  con $0$ hasta grado $n$ y hacemos la convolución. De esa forma obtenemos los coeficientes del polinomio $fg$.
+    \end{ejemplo}
+
+
+    \begin{teorema}\label{th-prod-convolucion-dft}
+        Sean $f,g \in \C^n$ y  sean $c= Ff$, $d = Fg$, las transformadas de Fourier discretas de $f$ y $g$ respectivamente, entonces
+        \begin{equation}\label{eq-regla-de-convolucion-2}
+            f * g = n\,  F^{-1}(cd),
+        \end{equation}
+        donde $cd$  indica el producto coordenada a coordenada de $c$ por $d$.
+    \end{teorema}
+    \begin{proof}
+        Se deja a cargo del lector.
+    \end{proof}
+
+    La expresión dada por la ecuación  \eqref{eq-regla-de-convolucion-2} se llama la  \textit{regla de convolución},  que escrita de otra forma es
+    \begin{equation}\label{eq-regla-de-convolucion-3}
+      f * g = n\,  F^{-1}(F(f)F(g)).
+      \end{equation}
+    \begin{ejemplo*} El ejemplo \ref{ejem-dft-polinomios} y \ref{ejem-convolucion-polinomios} y  la expresión dada por la ecuación  \eqref{eq-regla-de-convolucion-3} nos  muestran como podemos obtener  la multiplicación de polinomios utilizando la transformada de Fourier discreta. Veamos paso a paso como hacerlo.
+
+        Sea $n \in \N$ y $f, g$ dos polinomios complejos de grado $< n/2$. Sean
+        \begin{align*}
+            f = (f_0, f_1, \ldots, f_{n-1}) \quad \text{ y } \quad g = (g_0, g_1, \ldots, g_{n-1})
+        \end{align*}
+        las representaciones por coeficientes de $f$ y $g$ respectivamente (donde, evidentemente, los últimos coeficientes van a ser $0$). Sean
+        \begin{align*}
+            c = (c_0, c_1, \ldots, c_{n-1}) \quad \text{ y } \quad d = (d_0, d_1, \ldots, d_{n-1})
+        \end{align*}
+        las representaciones de $f$ y $g$, respectivamente, por valores respecto al conjunto $X = \{1, e^{-2\pi i /{n}},e^{-2\pi i 2/{n}}, \ldots,e^{-2\pi i {(n-1)}/{n}} \}$. Es decir, $c = Ff$ y $d = Fg$,  luego el producto $f$ y $g$ como funciones polinómicas tiene coeficientes
+        \begin{equation*}
+             F^{-1}(cd).
+        \end{equation*}
+        \begin{comment}
+        Observar que el hecho de que $F$ sea invertible y  que al aplicar transformada discreta de Fourier a un polinomio se obtiene una representación por valores del mismo, junto al teorema \ref{th-prod-convolucion-dft}, hacen que no sea necesario utilizar la proposición \ref{prop-mult-por-valor} para calcular el producto de dos polinomios utilizando la representación por valores.
+        \end{comment}
+    \end{ejemplo*}
+
+ \end{section}
+
+ \begin{section}{Transformada rápida de Fourier} La transformada de Fourier rápida, o FFT por sus siglas en inglés, no es nada más que un método eficiente para calcular la transformada de Fourier discreta. La FFT se calcula en forma recursiva y su implementación se basa en ideas ingeniosas que describiremos a lo largo de esta sección.
+
+    Nosotros la aplicaremos a polinomios de grado arbitrario, pero es mucho más fácil de explicar cuando el grado de los polinomios es $2^k -1$  para algún $k \in \N$. Como todo $j \in \N$ cumple que para algún $k$, $2^{k-1} \le j < 2^k$ es claro que podemos extender el método a cualquier polinomio. Por lo tanto, de ahora en más consideraremos polinomios de grado menor que $n$ donde  $n = 2^k$.
+
+    % Observemos que podemos calcular los valores que toma un polinomio usando el lenguaje de las matrices de la siguiente forma: sea $X = \{x_0, x_1, \ldots, x_{n-1}\}$ y $f(x) = \sum_{k=0}^{n-1} a_kx^k$ un polinomio de grado menor que $n$,  entonces para $0 \le i \le n-1$, 
+    % \begin{equation*}
+    %     \begin{bmatrix}
+    %         1 & x_i & x_i^2 & \cdots & x_i^{n-1}
+    %     \end{bmatrix}
+    %     \begin{bmatrix}
+    %         a_0 \\a_1 \\ \vdots \\a_{n-1} 
+    %     \end{bmatrix} = \left[ \sum_{k=0}^{n-1} a_kx_i^k\right] = [f(x_i)].
+    % \end{equation*}
+    % Podemos juntar las $n$ ecuaciones anteriores en una matriz:
+    % \begin{equation*}
+    %     \begin{bmatrix}
+    %         f(x_0) \\f(x_1) \\ \vdots \\f(x_{n-1}) 
+    %     \end{bmatrix}
+    %     = 
+    %     \begin{bmatrix}
+    %         1 & x_0 & x_0^2 & \cdots & x_0^{n-1} \\
+    %         1 & x_1 & x_1^2 & \cdots & x_1^{n-1} \\ \vdots \\
+    %         1 & x_n & x_n^2 & \cdots & x_n^{n-1} 
+    %     \end{bmatrix}
+    %     \begin{bmatrix}
+    %         a_0 \\a_1 \\ \vdots \\a_{n-1} 
+    %     \end{bmatrix}.
+    % \end{equation*}
+
+    \begin{ejemplo*} Ejemplificaremos el caso $n=4$. Es  decir, calcularemos la transformada de Fourier discreta para polinomios de grado menor o igual a $3$. Sea $f(x) = f_0 + f_1 x + f_2x^2 + f_3x^3$, calcular $F^{-1}f$ directamente conllevaría $12$ multiplicaciones: multiplicar la fila $2$ de $F^{-1}$ por $f$, la fila3 por $f$ y y fila $4$ por $f$ (multiplicar por la fila $1$ no implica agregar multiplicaciones). Veremos que con el método  de la transformada rápida de Fourier podremos obtener la representación de $f$ por valores con muchas menos multiplicaciones.
+
+        Como $n=4$ las raíces cuartas de la unidad $e^{-2\pi k/4}$ ($0 \le k < 4$) son $1$, $-i$, $-1$, $i$ y la matriz $F$  es
+        \begin{equation*}
+            F=\begin{bmatrix}
+                1 & 1  & 1  & 1  \\
+                1 & -i & -1 & i  \\
+                1 & -1 & 1  & -1 \\
+                1 & i  & -1 & -i
+            \end{bmatrix}
+        \end{equation*}
+
+        La transformada de Fourier discreta aplicada a $f$ se hace calculando $Ff$ y  devuelve  $f(1)$, $f(-i)$, $f(-1)$, $f(i)$,  que son los valores que interesan.
+
+        Ahora procedemos a escribir  $f $ como suma de una función par $f_+$, y una impar $f_-$. Es decir:
+        $$
+            f = f_+ + f_-,$$
+        con
+        $$ f_+(x) = a_0 + a_2x^2 \quad  \text{ y } \quad f_-(x) = a_1 + a_3x^3.
+        $$
+        Si definimos
+        $$
+            \tilde{f}_+(x) = a_0 + a_2 x, \quad \text{ y } \quad \tilde{f}_-(x) = a_1 + a_3 x,
+        $$
+        obtenemos entonces que
+        \begin{equation*}
+            f(x) = \tilde{f}_+(x^2) + x \tilde{f}_-(x^2).
+        \end{equation*}
+        Luego,
+        \begin{equation}
+            \begin{matrix*}[l]
+                f(1) &=& \tilde{f}_+(1)& + & &\tilde{f}_-(1), \\
+                f(-i) &=& \tilde{f}_+(-1) &-&i & \tilde{f}_-(-1)\\
+                f(-1) &=& \tilde{f}_+(1)& -&  &\tilde{f}_-(1), \\
+                f(i) &=& \tilde{f}_+(-1)& +&  i&\tilde{f}_-(-1), \\.
+            \end{matrix*} \tag{*}
+        \end{equation}
+        Las funciones $\tilde{f}_+$ y $\tilde{f}_-$ son de grado $1$ y requieren solo una multiplicación para ser calculadas. Por (*), para calcular la representación por valores de $f$, solo debemos calcular $\tilde{f}_\pm(\pm1)$,  es decir esto nos lleva $4$ multiplicaciones. Finalmente,  debemos  calcular $ i \cdot \tilde{f}_-(-1)$  que es una multiplicación más.
+
+        Concluyendo: con $5$ multiplicaciones,  en vez de $12$, pudimos calcular la representación de $f$ por valores o, lo que es lo mismo, la transformada de Fourier discreta.
+    \end{ejemplo*}
+
+    ¿Como generalizamos el ejemplo anterior? Una de las claves del ejemplo anterior es que comenzamos trabajando en $n=4$ valores y redujimos  el cálculo a $n/2=2$ valores. Veamos como hacemos esto en general.
+
+    Sea  $f$  es una función, entonces se puede obtener como la suma de una función par y una función impar:
+    $$
+        f(x) = \frac{f(x) + f(-x)}{2} + \frac{f(x) - f(-x)}{2},
+    $$
+    luego si
+    $$
+        f_+ := \frac{f(x) + f(-x)}{2}, \quad \text{y} \quad f_-(x):= \frac{f(x) - f(-x)}{2},
+    $$
+    tenemos que $f = f_+ + f_-$ donde $f_+$ es una función par ($f_+(-x) = f_+(x), \forall x$) y   $f_-$ es una función impar ($f_-(-x) = -f_-(x), \forall x$).
+
+    En  el caso que $f(x)= a_0 + a_1x + \cdots + a_{n-1}x^{n-1}$ sea un polinomio tenemos:
+    $$
+        f_+(x) = a_0 + a_2 x^2 + a_4 x^4 + \cdots + , \qquad f_-(x) = a_1x + a_3 x^3 + a_5 x^5 + \cdots
+    $$
+    Luego  si definimos
+    \begin{align*}
+        \tilde{f}_+(x) & = a_0 + a_2 x^1 + a_4 x^2 + \cdots = \sum_{i<n/2} a_{2i}x^i   \\
+        \tilde{f}_-(x) & = a_1 + a_3 x^1 + a_5 x^2 + \cdots= \sum_{i<n/2} a_{2i+1}x^i,
+    \end{align*}
+    obtenemos que
+    \begin{equation}\label{eq-par-mas-impar}
+        f(x) = \tilde{f}_+(x^2) + x \tilde{f}_-(x^2).
+    \end{equation}
+
+    Ahora bien,  hemos reducido el cálculo de $f(x)$ de grado $<n$ al cálculo de dos funciones de grado $< n/2$, pero veremos a continuación que la ganancia en el tiempo del cálculo se obtiene debido a que los valores donde calculamos $f$ son raíces de la unidad.
+
+    \begin{observacion}\label{obs-raices-unidad-div-2} Si $n$ par y $w = e^{-2\pi i /n}$,  entonces $1, w, w^2,\ldots, w^{n-1}$ son las raíces $n$-ésimas de la unidad,  y
+        $$
+            \{(w^2)^k: 0 \le k < {n}/{2}\}
+        $$
+        es el conjunto de las $n/2$-ésimas  raíces de la unidad.
+    \end{observacion}
+
+    Por  la fórmula \eqref{eq-par-mas-impar},
+    $$
+        f(w^k) = \tilde{f}_+((w^2)^k) + w^k \tilde{f}_-((w^2)^k), \quad \text{para $0 \le k < n$,}
+    $$
+
+    Sea $n$ par, entonces para $0 \le k <n/2$ y observemos que
+    \begin{equation*}
+        \begin{matrix*}[l]
+            (w^2)^k &= e^{-\frac{4k\pi i}{n}}   \\
+            (w^2)^{k+ n/2} &= e^{-\frac{4(k+n/2)\pi i}{n}}= e^{-\frac{4k\pi i}{n}}e^{-2\pi i}= (w^2)^k
+        \end{matrix*}.
+    \end{equation*}
+    Entonces
+    \begin{equation*}
+        \begin{matrix*}[l]
+            f(w^k) &=& \tilde{f}_+((w^2)^k) + w^k \tilde{f}_-((w^2)^k),& \quad &\text{para $0 \le k < n/2$,} \\
+            f(w^{k+n/2}) &=& \tilde{f}_+((w^2)^k) - w^{k} \tilde{f}_-((w^2)^k),& \quad &\text{para $0 \le k < n/2$.}
+        \end{matrix*} \tag{*}
+    \end{equation*}
+    En la segunda formula utilizamos que $w^{k + n/2}= -w^k$. Entonces, calcular $f(w^k)$ para $0 \le k < n$ se reduce a calcular
+    $$
+        \tilde{f}_+(u^k) \quad\text{ y }\quad  \tilde{f}_-(u^k), \quad \text{para $0 \le k < n/2$,}
+    $$
+    donde $u= w^2$, y  luego  aplicar las fórmulas (*).
+
+    Por lo tanto, hemos reducido de la transformada de Fourier discreta de $f$  cálculo de la transformada de Fourier discreta de $\tilde{f}_+$ y $\tilde{f}_-$.
+
+    Repitiendo el razonamiento  que hicimos para $f$  a  $\tilde{f}_+$ y $\tilde{f}_-$ podemos calcular la transformada de Fourier discreta de $f$ en forma recursiva ($n = 2^m$ y observación \ref{obs-raices-unidad-div-2}).
+
+    El ahorro de operaciones que se obtiene, como ya dijimos, al calcular de esta forma la representación de $f$ por $n$ valores se debe a que reducimos ese cálculo al cálculo de la representación de  dos funciones por $n/2$ valores. Se puede probar entonces que el cálculo de la transformada de Fourier discreta de $f$ conlleva alrededor $n\log_2(n)$ operaciones.
+
+    El algoritmo es sencillo de programar. La siguiente sería una implementación en Python,  con algo de pseudocódigo.
+
+    \vskip .4cm
+        {%\centering
+            \begin{minipage}{0.95\textwidth}
+                \noindent \textsc{Transformada rápida de Fourier}
+                \vskip .2cm
+                \begin{small}
+                    \begin{verbatim}
+def FFT(f):
+      # pre: f = [f_0, f_1, ..., f_(n-1)], n = 2**k (k >= 0)
+      # post: devuelve c = [f(w**0), f(w**1), ..., f(w**(n-1))]
+      #       donde w = e**(-2*pi*i/n) 
+      n = len(f)
+      if n == 1:
+          c = 1
+      else:
+          w = e**(-2*pi*1j/n)
+          f_p, f_i = f[::2], f[1::2] # coeficientes pares e impares
+          c_p, c_i = FFT(f_p), FFT(f_i)
+          c = [0] * n # lista de longitud n con 0's
+          for j in range(n // 2):
+              c[j] = c_p[j] + w**j * c_i[j]
+              c[j + n // 2] = c_p[j] - w**j * c_i[j]
+      return c
+\end{verbatim}
+                \end{small}
+            \end{minipage}
+        }
+    \vskip .4cm
+    \begin{observacion*}
+        Observar que el algoritmo se aplica a cualquier secuencia $f=  (f_0, f_1, \ldots, f_{n-1})$ donde  no necesariamente los $f_j$ deben ser los coeficientes de un polinomio. En  todos los casos se obtiene $c= Ff$, la transformada discreta de Fourier.
+    \end{observacion*}
+
+
+    Una de las características interesantes de esta teoría es que la transformada inversa de Fourier discreta se calcula de forma muy parecida a la la transformada de Fourier discreta, pues $F^{-1}$  es la matriz $F$ conjugada y multiplicada por una constante. El pseudocódigo correspondiente es muy similar, donde sólamente se cambia la raíz de la unidad $w = e^{-2\pi i /n}$ por $w = (1/n)e^{2\pi i /n}$.
+
+    \vskip .4cm
+        {%\centering
+            \begin{minipage}{0.95\textwidth}
+                \noindent \textsc{Transformada rápida de Fourier inversa}
+                \vskip .2cm
+                \begin{small}
+                    \begin{verbatim}
+def IFFT(f):
+      # pre: c = [c_0, c_1, ..., c_(n-1)], n = 2**k (k >= 0)
+      # post: devuelve F**(-1)c
+      n = len(f)
+      if n == 1:
+          c = 1
+      else:
+          w = (1/n)*e**(2*pi*1j/n)
+          f_p, f_i = f[::2], f[1::2] # coeficientes pares e impares
+          c_p, c_i = IFFT(f_p), IFFT(f_i)
+          c = [0] * n # lista de longitud n con 0's
+          for j in range(n // 2):
+              c[j] = c_p[j] + w**j * c_i[j]
+              c[j + n // 2] = c_p[j] - w**j * c_i[j]
+      return c
+\end{verbatim}
+                \end{small}
+            \end{minipage}
+        }\vskip .4cm
+
+    \begin{ejemplo*}[Multiplicación de polinomios con FFT] Explicitaremos el procedimiento completo para multiplicar dos polinomios usando FFT.
+
+        Sean
+        \begin{align*}
+            f(x) & =  f_0 x^0  +  f_1 x^1 +  \cdots +  f_{k-1}x^{r-1} +f_kx^r,  \\
+            g(x) & =  g_0 x^0  +  g_1 x^1 +  \cdots +  g_{k-1}x^{s-1} +g_kx^s.,
+        \end{align*}
+        dos polinomios complejos de grado menor que $2^{k-1}$. Sea $n = 2^k$.
+        \begin{itemize}
+            \item Asociamos a  $f$ y $g$ dos $n$-uplas
+                  \begin{align*}
+                      f & =  (f_0, f_1, \ldots, f_{n-2}, f_{n-1}), \\
+                      g & =  (g_0, g_1, \ldots, g_{n-2}, g_{n-1}),
+                  \end{align*}
+                  completando con $0$'s cuando sea necesario.
+            \item Calculamos $c = FFT(f)$, $d=FFT(g)$ y $h = IFFT(cd)$.
+            \item Entonces,
+                  \begin{equation*}
+                      fg(x) = h_0 x^0  +  h_1 x^1 +  \cdots +  h_{n-2}x^{n-2} +f_{n-1}x^{n-1}.
+                  \end{equation*}
+        \end{itemize}
+
+
+
+    \end{ejemplo*}
+
+    \begin{ejemplo*}[Multiplicación entera con FFT]
+        Otro ejemplo algebraico interesante de esta teoría es la multiplicación de números enteros. Lo observación es que el producto de enteros es también por convolución y una forma de ver esto es observando que esta multiplicación es un caso especial de la multiplicación de polinomios.  Efectivamente,  sean $m$, $n$ números enteros,  entonces sus desarrollos en base $10$ son
+        \begin{align*}
+            m & =  f_0 10^0  +  f_1 10^1 +  \cdots +  f_{k-1}10^{k-1} +f_k10^k, \\
+            n & =  g_0 10^0  +  g_1 10^1 +  \cdots +  g_{k-1}10^{k-1} +g_k10^k.
+        \end{align*}
+        Luego,  si definimos los polinomios
+        \begin{align*}
+            f(x) & =  f_0 x^0  +  f_1 x^1 +  \cdots +  f_{k-1}x^{k-1} +f_kx^k,  \\
+            g(x) & =  g_0 x^0  +  g_1 x^1 +  \cdots +  g_{k-1}x^{k-1} +g_kx^k.,
+        \end{align*}
+        obtenemos
+        \begin{equation*}
+            m \cdot n = (fg)(10).
+        \end{equation*}
+        Es decir el producto de dos números enteros se ``reduce'' a multiplicar dos polinomios y especializarlos en  $10$.
+
+
+        Sin embargo, como ya sabemos, no es necesario usar polinomios para calcular ese producto. Hagamos un ejemplo, multipliquemos $123$ y $456$, esto nos va a dar un número de $5$ dígitos, por lo tanto completamos con $0$'s para conseguir $5$-uplas y luego hacemos convolución:
+        \begin{small}
+            \begin{align*}
+                (3,2,1,0,0)*(6,5,4,0,0) & = (3\cdot 6,\, 3\cdot  5 + 2\cdot 6 ,\, 3\cdot 4 +  2\cdot 5+ 1\cdot 6,\, 2\cdot 4 + 1 \cdot 5,\,1 \cdot 4) \\
+                                        & = (18,\, 15 + 12,\, 12 +10 +6,\, 8 +5,\, 4)                                                                 \\
+                                        & = (18, 27, 28, 13, 4).
+            \end{align*}
+        \end{small}
+        El lector reconocerá en la segunda linea de la ecuación anterior las sumas que nos quedan en las columnas cuando multiplicamos con el método habitual. El resultado es, entonces,
+        \begin{equation*}
+            18+ 27 \cdot 10 + 28 \cdot 10^2 +  13\cdot 10^3 + 4 \cdot 10^4 = 56088.
+        \end{equation*}
+        El problema es que la $5$-upla que representa el resultado tiene entradas mayores que $9$ y por lo tanto no corresponde a un desarrollo en base $10$. Lo  que debemos hacer es ``pasar'' lo que sobra, como hacemos siempre:
+        \begin{align*}
+            (18, 27, 28, 13, 4) & = (8,1 + 27, 28, 13, 4) &=& (8,28, 28, 13, 4) \\
+                                & = (8,8, 2+28, 13, 4)  &=& (8,8, 30, 13, 4)    \\
+                                & = (8,8, 0, 3+13, 4)  &=& (8,8, 0, 16, 4)     \\
+                                & = (8,8, 0, 6, 1+4)   &=& (8,8, 0, 6, 5).    \\
+        \end{align*}
+        Así hemos recuperado el valor de la multiplicación. Es decir, la convolución de los dígitos de dos números enteros más una serie de ``pasadas'' nos da el resultado de la multiplicación.
+
+        El procedimiento completo para multiplicar dos enteros utilizando FFT es muy similar al que se utiliza para multiplicar polinomios. Métodos basados en FFT para multiplicar enteros, de los cuales el más conocido el algoritmo de Schönhage–Strassen, son utilizados para ser aplicados a problemas matemáticos muy específicos.
+
+    \end{ejemplo*}
+
+
+
+ \end{section}
+
+
+\end{chapter}
+
+\begin{chapter}{Determinante}\label{apend.Determinante}
+ En  el apéndice se harán las demostraciones de los resultados correspondientes a la sección de determinantes (sección  \ref{seccion-determinante}).
+
+ \begin{section}{Determinantes}\label{seccion-determinantes-demostraciones}
+
+    Lo primero que veremos será la demostración del  teorema \ref{det-prop-fundamentales}. Los tres resultados de ese teorema los demostraremos en forma separada: serán los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3}.
+
+
+    \begin{teorema} \label{th-E1}
+        Sea $A  \in M_n(\K)$ y sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ multiplicando la fila $r$ por $c$, es decir $A  \stackrel{cF_r}{\longrightarrow} B$, entonces $\det B = c \det A$.
+    \end{teorema}
+    \begin{proof}
+        Si multiplicamos la fila $r$ por $c$ obtenemos
+        \begin{equation*}
+            B = \begin{bmatrix}
+                a_{11}  & a_{12}  & \cdots & a_{1n}  \\
+                \vdots  &         & \ddots & \vdots  \\
+                ca_{r1} & ca_{r2} & \cdots & ca_{rn} \\
+                \vdots  &         & \ddots & \vdots  \\
+                a_{n1}  &         & \cdots & a_{nn}
+            \end{bmatrix}.
+        \end{equation*}
+        Observemos que al hacer el desarrollo por la primera columna obtenemos
+        \begin{equation*}
+            |B| = \sum_{i=1}^{r-1}  a_{i1}C^B_{1i} + ca_{r1}C^B_{r1} + \sum_{i=r+1}^{n}  a_{i1}C^B_{1i}.
+        \end{equation*}
+        Ahora bien, si $i \ne r$, la matriz $B(i|1)$ es la matriz   $A(i|1)$ con una fila multiplicada por $c$, luego $|B(i|1)| = c|A(i|1)|$ y, en consecuencia $C^B_{i1} = c\,C^A_{i1}$. Además, $B(r|1) = A(r|1)$, luego  $C^B_{r1} = C^A_{r1}$. Por lo tanto, reemplazando en la ecuación anterior $C^B_{i1}$ por $c\,C^A_{i1}$ si $i\ne r$ y $C^B_{r1}$ por $C^A_{r1}$, obtenemos
+        \begin{equation*}
+            |B| = \sum_{i=1}^{r-1}  a_{i1}c\,C^A_{1i} + ca_{r1}C^A_{r1} + \sum_{i=r+1}^{n}  a_{i1}cC^A_{1i} = c|A|.
+        \end{equation*}
+    \end{proof}
+
+
+
+    \begin{lema}\label{lema-E2} Sean $A,B,C$ matrices $n \times n$ tal que
+        \begin{equation*}
+            A= \begin{bmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} \\
+                \vdots & \vdots &        & \vdots \\
+                a_{r1} & a_{r2} & \cdots & a_{rn} \\
+                \vdots & \vdots &        & \vdots \\
+                a_{n1} & a_{n2} & \cdots & a_{nn}
+            \end{bmatrix},
+            \quad B=  \begin{bmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} \\
+                \vdots & \vdots &        & \vdots \\
+                b_{r1} & b_{r2} & \cdots & b_{rn} \\
+                \vdots & \vdots &        & \vdots \\
+                a_{n1} & a_{n2} & \cdots & a_{nn}
+            \end{bmatrix}
+        \end{equation*}
+        y
+        \begin{equation*}
+            C= \begin{bmatrix}
+                a_{11}        & a_{12}        & \cdots & a_{1n}        \\
+                \vdots        & \vdots        &        & \vdots        \\
+                a_{r1}+b_{r1} & a_{r2}+b_{r2} & \cdots & a_{rn}+b_{rn} \\
+                \vdots        & \vdots        &        & \vdots        \\
+                a_{n1}        & a_{n2}        & \cdots & a_{nn}
+            \end{bmatrix}.
+        \end{equation*}
+        Es decir $B$ es igual a $A$ pero con la fila $r$ cambiada y $C$ es como $A$ y $B$ excepto en la fila $r$ donde cada coeficiente el la suma del de $A$ y $B$ correspondiente. Entonces $\det(C) = \det(A)+ \det(B)$.
+    \end{lema}
+    \begin{proof} Se hará por inducción en $n$. Para $n=1$, del resultado se reduce a probar que $\det[a+b] = \det[a]+ \det[b]$, lo cual es trivial, pues el determinante en matrices $1 \times 1$  es la identidad.
+
+        Primero consideremos el caso $r = 1$. En  este caso tenemos que  $A(1|1) =B(1|1) = C(1|1)$, pues en la única fila que difieren las matrices es en la primera. Además, si $i>1$,  $A(i|1)$,  $B(i|1)$ y $C(i|1)$ son iguales, excepto que difieren en la primera fila donde los coeficientes de $C(i|1)$ son la suma de los de  $A(i|1)$ y  $B(i|1)$,  entonces, por hipótesis inductiva,
+        $\det C(i|1) = \det A(i|1) + \det B(i|1)$. Concluyendo, tenemos que
+        \begin{align*}
+            \det A(1|1) & =\det B(1|1) =\det  C(1|1), &  & \\ \det C(i|1) &= \det A(i|1) + \det B(i|1), \qquad i>1&&,
+        \end{align*}
+        lo cual implica que
+        \begin{align*}
+            C^C_{11} & = C^A_{11} = C^B_{11} , &  & \\ C^C_{i1} &= C^A_{i1} + C^B_{i1}, \qquad i>1&&.
+        \end{align*}
+        Luego
+        \begin{align*}
+            \det C & = (a_{11}+b_{11}) C^C_{11} + \sum_{i=2}^{n} a _{i1}C^C_{i1}                                           \\
+                   & = a_{11} C^C_{11} + b_{11}  C^C_{11}+ \sum_{i=2}^{n} a _{i1}( C^A_{i1} + C^B_{i1})                    \\
+                   & = a_{11} C^A_{11} + b_{11}  C^B_{11}+ \sum_{i=2}^{n} a _{i1}( C^A_{i1} + C^B_{i1})                    \\
+                   & = a_{11} C^A_{11} +\sum_{i=2}^{n} a _{i1}C^A_{i1} + b_{11}  C^B_{11}+ \sum_{i=2}^{n} a _{i1} C^B_{i1} \\
+                   & = \det A + \det B.
+        \end{align*}
+
+        El caso $r >1$ se demuestra de manera similar o,  si se prefiere, puede usarse el teorema \ref{th-E3}, observando que la permutación entre la fila $1$ y la fila $r$ cambia el signo del determinante.
+    \end{proof}
+
+    \begin{teorema}\label{th-E2}
+        Sea $A  \in M_n(\K)$. Sea $c \in \K$ y $B$ la matriz que se obtiene de $A$ sumando a la fila $r$ la fila $s$ multiplicada por $c$, es decir  $A  \stackrel{F_r + cF_s}{\longrightarrow} B$, entonces $\det B = \det A$.
+    \end{teorema}
+    \begin{proof}
+        $A$ y $B$ difieren solo en la fila $r$, donde los coeficientes de $B$ son los los de $A$ más $c$ por los de la fila $s$. Luego si
+        \begin{equation*}
+            A = \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_r \\ \vdots \\ F_n \end{bmatrix}, \qquad
+            B = \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_r + cF_s \\ \vdots \\ F_n \end{bmatrix},\qquad
+            A'= \begin{bmatrix} F_1 \\ \vdots \\ F_s \\\vdots \\ cF_s \\ \vdots \\ F_n \end{bmatrix},
+        \end{equation*}
+        el lema anterior nos dice que
+        \begin{equation}
+            \det B = \det A + \det A'.
+        \end{equation}
+        Ahora bien, por teorema \ref{th-E1},
+        $$
+            \det A' = c \left| \begin{matrix} F_1 \\ \vdots \\ F_s \\\vdots \\ F_s \\ \vdots \\ F_n \end{matrix} \right|,
+        $$
+        y este último determinante es cero, debido a que la matriz tiene dos filas iguales. Luego,  $\det B = \det A$.
+    \end{proof}
+
+    \begin{teorema} \label{th-E3}
+        Sea $A  \in M_n(\K)$ y sean $1 \le r,s \le n$.
+        Sea $B$ la matriz que se obtiene de $A$ permutando la fila $r$ con la fila $s$, es decir  $A  \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} B$, entonces $\det B = -\det A$.
+    \end{teorema}
+    \begin{proof}
+        Primero probaremos el teorema bajo el supuesto de que la fila $1$ es permutada con la fila $k$, para $k > 1$. Esto será suficiente para probar el teorema, puesto que intercambiar las filas $k$ y $k_ 0$ es equivalente a realizar tres permutaciones de filas: primero intercambiamos las filas $1$ y $k$, luego las filas $1$ y $k_{0}$, y finalmente intercambiando las filas $1$ y $k$. Cada permutación cambia el signo del determinante y al ser tres permutaciones,  el intercambio de la fila $k$ con la fila $k_0$ cambia el signo.
+
+
+        La prueba es por inducción en $n$. El caso base $n = 1$ es completamente trivial.
+        (O, si lo prefiere, puede tomar $n = 2$ como el caso base, y el teorema es
+        fácilmente probado usando la fórmula para el determinante de una matriz $2 \times 2$).
+        Las definiciones de los determinantes de $A$ y $B$ son:
+        \begin{equation*}
+            \det(A) = \sum_{i=1}^{n}  a_{i1}C^A_{i1} \quad \text{ y } \quad \det(B) = \sum_{i=1}^{n}  b_{i1}C^B_{i1}.
+        \end{equation*}
+
+
+        Supongamos primero que $i \ne 1, k$. En este caso, está claro que $A(i|1)$ y $B(i|1)$ son iguales, excepto que dos filas se intercambian. Por lo tanto, por hipótesis inductiva $C^A_{i1} = -C^B_{i1}$. Ya que también $a_{i1} = b_{i1}$, tenemos entonces que
+        \begin{equation}\label{det-perm-01}
+            a_{i1}C^A_{i1} = - b_{i1}C^B_{i1}, \quad \text{ para } i\ne 1,k.
+        \end{equation}
+
+        Queda por considerar los términos $i = 1$ y $i = k$. Nosotros afirmamos que
+        \begin{equation}\label{det-perm-02}
+            -	a_{k1}C^A_{k1} =  b_{11}C^B_{11}  \quad \text{ y } \quad - a_{11}C^A_{11} = b_{k1}C^B_{k1}.
+        \end{equation}
+        Si probamos esto, entonces
+        \begin{align*}
+            \det(A) & = \sum_{i=1}^{n}  a_{i1}C^A_{i1}                                                                                                                                \\
+                    & = a_{11}C^A_{11} +  \sum_{i=2}^{k-1}  a_{i1}C^A_{i1} + a_{k1}C^A_{k1} + \sum_{i=k+1}^{n}  a_{i1}C^A_{i1}\qquad \text{\eqref{det-perm-01} y \eqref{det-perm-02}} \\
+                    & = -b_{k1}C^B_{k1} - \sum_{i=2}^{k-1}  b_{i1}C^B_{i1} - b_{11}C^B_{11} - \sum_{i=k+1}^{n}  b_{i1}C^B_{i1}                                                        \\
+                    & = - \sum_{i=1}^{n}  b_{i1}C^B_{i1} =- \det(B).
+        \end{align*}
+        Luego el teorema está probado. Por lo tanto debemos probar \eqref{det-perm-02}. Por simetría, basta probar la primera identidad de \eqref{det-perm-02},  es decir  que $	a_{k1}C^A_{k1} = - b_{11}C^B_{11}$.
+
+        Para esto, primero debemos observar que $a_{k1} = b_{11}$, por lo tanto sólo hace falta probar que $-C^A_{k1} = C^B_{11}$. En segundo lugar, debemos tener  en cuenta que $B(1|1)$ se obtiene de $A(k|1)$ reordenando las filas $1,2,\ldots, k -1$  de $A(k|1)$ en el orden $2,3, \ldots, k-1,1$. Este reordenamiento puede hacerse permutando la fila $1$ con la fila $2$, luego permutando esa fila con la fila $3$, etc., terminando con una permutación con la fila $k-1$. Esto es un total de $k - 2$  permutaciones de fila. Asi que, por hipótesis inductiva,
+        \begin{align*}
+            \det(B(1|1)) & = (-1)^{k-2}\det(A(k|1)) = (-1)^{k}\det(A(k|1)) \\
+                         & = - (-1)^{k+1}\det(A(k|1)),
+        \end{align*}
+        es decir $C^B_{11} = -C^A_{k1}$. Esto completa la demostración del teorema.
+    \end{proof}
+
+    \begin{observacion*}
+        Del resultado anterior se deduce fácilmente que si una matriz tiene dos filas iguales entonces su determinante es $0$. Esto se debe a que, intercambiando las dos filas iguales obtenemos la misma matriz, pero calculando el determinante con el teorema anterior vemos que cambia de signo y el único número en $\K$ que es igual a su opuesto es el $0$.
+    \end{observacion*}
+
+    \begin{corolario}\label{cor-det-elemental} Consideremos matrices elementales en $\K^{n \times n}$.
+        \begin{enumerate}
+            \item\label{cor-det-E1} Sea $E$ la matriz elemental que se obtiene  multiplicando por $c\ne 0$ la matriz $\Id_n$.  Entonces $\det(E) = c$.
+            \item\label{cor-det-E2} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$  sumando $c$ veces $F_r$  a $F_s$ ($r\ne s$).  Entonces $det(E) = 1$.
+            \item\label{cor-det-E3} Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ de permutando la $F_r$ con  $F_s$ ($r\ne s$).  Entonces $\det(E)=-1$.
+        \end{enumerate}
+    \end{corolario}
+    \begin{proof}
+        Se  demuestra trivialmente considerando que en todos los casos $E=e(\Id_n)$ donde $e$  es una operación elemental por fila,  considerando  que $\det(\Id_n)=1$  y aplicando los teoremas \ref{th-E1}, \ref{th-E2} y \ref{th-E3},  según corresponda.
+    \end{proof}
+
+    A continuación veremos que el determinante del producto de matrices es el producto de los determinantes de las matrices.
+
+    \begin{teorema}\label{det-elem-por-mtrx} Sea $A  \in M_n(\K)$ y $E$ una matriz elemental $n \times n$. Entonces
+        \begin{equation}\label{det-prod-elem-matr}
+            \det (EA) = \det E \det A.
+        \end{equation}
+    \end{teorema}
+    \begin{proof}
+        En todos los casos $EA = e(A)$ donde $e$  es una operación elemental por fila (teorema \ref{th-mrtx-elem}).
+
+
+        (1) Si $c \not=0$, y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, luego
+        \begin{equation*}
+            det(EA) = det(e(A)) \stackrel{\text{Teor. }\ref{th-E1}}{=} c \cdot det(A)  \stackrel{\text{Cor. }\ref{cor-det-elemental}.\ref{cor-det-E1}}{=} det(E) det(A).
+        \end{equation*}
+
+
+        (2) Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$  la fila $s$ multiplicada por $c$, entonces $\det E =1$. Por  otro lado  $\det(EA) = \det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
+
+        (3) Finalmente, si $E$ es la matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$, entonces $\det E=-1$. Por  otro lado  $\det(EA) = -\det(A)$, por lo tanto  $\det(EA) = \det(E)\det(A)$.
+    \end{proof}
+
+    \begin{corolario}\label{coro-det-prod-elem-mtrx}
+        Sea $A  \in M_n(\K)$ y $E_1,\ldots,E_k$ matrices elementales $n \times n$. Entonces
+        \begin{equation*}
+            \det (E_kE_{k-1}\ldots E_1A) = \det (E_k) \det (E_{k-1})\ldots \det (E_1) \det (A).
+        \end{equation*}
+    \end{corolario}
+    \begin{proof}
+        Por  la aplicación reiterada del teorema \ref{det-elem-por-mtrx} tenemos,
+        \begin{equation*}
+            \begin{matrix*}[l]
+                \det (E_kE_{k-1}\ldots E_1A) &= \det (E_k) \det(E_{k-1}\ldots E_1 A) \\
+                &= \det( E_k) \det(E_{k-1})\det(E_{k-2}\ldots E_1A) \\
+                &\qquad\quad \vdots \\
+                & = \det( E_k) \det(E_{k-1})\det(E_{k-2})\ldots \det(E_1) \det(A).
+            \end{matrix*}
+        \end{equation*}
+    \end{proof}
+
+    \begin{teorema}\label{th-det-matriz-invertible}
+        $A \in \K^{n \times n}$ es invertible si y solo si $\det(A) \ne 0$.
+    \end{teorema}
+    \begin{proof}
+        ($\Rightarrow$)  $A$ invertible, luego por el  teorema \ref{mtrx-inv-equiv}, $A$ es producto de matrices elementales, es decir  $A = E_1 E_2 \cdots E_k$  donde $E_1, E_2, \ldots, E_k$ son matrices elementales.
+
+        Por el corolario anterior,  $\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)$. Como el determinante de matrices elementales es distinto de cero, $$\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)\ne 0.$$
+
+        ($\Leftarrow$) Sean $E_1, E_2, \ldots, E_k$ matrices elementales tales que $R = E_1 E_2 \cdots E_k A$ y $R$ es MERF. Luego,
+        \begin{equation*}
+            \det(R) = \det(E_1) \det(E_2) \cdots \det(E_k) \det(A).
+        \end{equation*}
+        Como los determinantes de matrices  elementales son no nulos
+        \begin{equation*}
+            \frac{\det(R)}{\det(E_1) \det(E_2) \cdots \det(E_k) } = \det(A). \tag{*}
+        \end{equation*}
+
+
+        Supongamos que $R$ no es la identidad.  Entonces, por el corolario \ref{cor-det-merf}, $\det(R) =0$,  por lo tanto, $\det(A)=0$, lo cual contradice la hipótesis y llegamos a un absurdo.
+
+        Esto implica que  $R= \Id_n$ y en consecuencia  $A$ es equivalente por filas a $\Id_n$ y por lo tanto  invertible.
+    \end{proof}
+
+    \begin{teorema}\label{th-dem-detAB}  Sean $A,B \in M_n(\K)$,  entonces
+        $$\det (A B) = \det(A)\det(B).$$
+    \end{teorema}
+    \begin{proof} Separemos la prueba en dos casos  $A$ es invertible  y  $A$ no es invertible.
+
+        \textit{$A$ invertible.} Entonces $A= E_1\cdots E_k$ producto de matrices elementales. Por lo tanto  $AB =  E_1\cdots E_kB$, luego por el corolario \ref{coro-det-prod-elem-mtrx}  $\det(AB) =  \det(E_1)\cdots \det(E_k)\det(B) = \det(A)\det(B)$.
+
+        \textit{$A$ no invertible.}  Entonces $A$  es equivalente por filas a una MERF $R$ con la última fila nula. Es decir $R =E_1\cdots E_kA$ y $R$ tiene la última fila nula, por  lo tanto $A=  E_k^{-1}E_{k-1}^{-1}\ldots E_1^{-1}R$.
+
+        Como $R$ tiene la última fila nula, no es difícil ver que  $RB$ tiene tiene también la última fila nula y por lo tanto $\det(RB)=0$. Luego
+        $$
+            \det(AB) = \det( E_k^{-1}) \ldots \det(E_1^{-1})\det(RB) =0.
+        $$
+        Como  $\det(A)=0$, tenemos también qure
+        $$
+            \det(A)\det(B) =0.
+        $$
+    \end{proof}
+
+    Haremos ahora la demostración del teorema \ref{det-a-trans}.
+
+    \begin{teorema}
+        Sea $E$ matriz elemental, entonces $E^\t$ es matriz elemental del mismo tipo y $\det(E) = \det(E^\t)$.
+    \end{teorema}
+    \begin{proof}
+        Si $c \not=0$ y $E$ es la matriz elemental que se obtiene de multiplicar por  $c$ la fila $r$ de $\Id_n$, es claro que $E^t = E$ y por lo tanto 	$\det(E) = \det(E^\t)$.
+
+        Si $E$ es la matriz elemental que se obtiene de sumar a la fila $r$ de $\Id_n$ la fila $s$ multiplicada por $c \in \K$,  entonces  $E^\t$  es la matriz elemental que se obtiene de sumar a la fila $s$ de $\Id_n$ la fila $r$ multiplicada por $c$. Luego,   $\det(E) = \det(E^\t) = 1$.
+
+        Finalmente, si $E$ es la  matriz elemental que se obtiene de intercambiar la fila $r$ por la fila $s$ de $\Id_n$,entonces $E^\t = E$ y por lo tanto $\det(E) = \det(E^\t)$.
+    \end{proof}
+
+    \begin{teorema}\label{th-det-a-trans-app}
+        Sea $A \in M_n(\K)$,  entonces
+        $\det(A) = \det(A^\t)$
+    \end{teorema}
+    \begin{proof}
+        Si $A$ es invertible, entonces  $A = E_kE_{k-1}\ldots E_1$ con $E_i$ elemental, por lo tanto $\det(A) = \det( E_k)\det(E_{k-1})\ldots \det(E_1)$. Luego,
+        \begin{align*}
+            \det(A^\t) & = \det(E_1^\t \ldots E_k^\t) = \det(E_1^\t) \ldots \det(E_k^\t) =
+            \det(E_1) \ldots \det(E_k)                                                     \\&= \det(A).
+        \end{align*}
+        Si $A$ no es invertible, entonces $A^\t$ no es invertible y en ese caso $\det(A) = \det(A^\t)=0$.
+    \end{proof}
+
+    Finalmente,  demostremos el teorema \ref{th-expancion-cofactores}.
+
+    \begin{teorema}\label{th-dessarrollo-por-columnas} El determinante de una matriz $A$ de orden $n \times n$ puede ser calculado por la expansión de los cofactores en  cualquier columna o cualquier fila. Más específicamente,
+        \begin{enumerate}
+            \item\label{itm-des-col-1} si usamos la expansión por la $j$-ésima columna, $1 \le j \le n$, tenemos
+            \begin{align*}
+                \det A & = \sum_{i=1}^{n} a_{ij} C_{ij}                   \\
+                       & = a_{1j}C_{1j}+a_{2j}C_{2j}+\cdots+a_{nj}C_{nj}.
+            \end{align*}
+            \item\label{itm-des-col-2} si usamos la expansión por la $i$-ésima fila, $1 \le i \le n$, tenemos
+            \begin{align*}
+                \det A & = \sum_{j=1}^{n} a_{ij} C_{ij}                   \\
+                       & = a_{i1}C_{i1}+a_{i2}C_{i2}+\cdots+a_{in}C_{in};
+            \end{align*}
+        \end{enumerate}
+    \end{teorema}
+    \begin{proof} \ref{itm-des-col-1} Primero hagamos la demostración para $j=2$,  es decir para el desarrollo por la segunda columna.  Escribamos $A$ en función de sus columnas,  es decir
+        $$
+            A = \begin{bmatrix}C_1& C_2&C_3 &\cdots& C_n\end{bmatrix},
+        $$
+        donde $C_k$  es la columna $k$ de $A$.
+        Sea $B=[b_{ij}]$ la matriz definida por
+        $$
+            B = \begin{bmatrix} C_2 &C_1 &C_3 &\cdots &C_n\end{bmatrix}.
+        $$
+        Entonces, $\det(B) = -\det(A)$. Por otro lado, por la definición de determinante,
+        \begin{align*}
+            \det(B) & =   \sum_{i=1}^{n} b_{i1} C^B_{i1}        \\
+                    & = \sum_{i=1}^{n} b_{i1} (-1)^{i+1}B(i|1)  \\
+                    & = \sum_{i=1}^{n} a_{i2} (-1)^{i+1}B(i|1).
+        \end{align*}
+        Ahora bien, es claro que $B(i|1) = A(i|2)$, por lo tanto
+        $$
+            \det(B)  = \sum_{i=1}^{n} a_{i2} (-1)^{i+1}A(i|2) = - \sum_{i=1}^{n} a_{i2} C_{i2}.
+        $$
+        Es decir, $\det(A) = -\det(B)= \sum_{i=1}^{n} a_{i2} C_{i2}$.
+
+        El caso $j>2$  se demuestra de forma similar: si $B$ es la matriz
+        $$
+            B = \begin{bmatrix} C_j &C_1 &C_2 &\cdots& C_{j-1}&C_{j+1}&\cdots &C_n\end{bmatrix}.
+        $$
+        entonces $\det(B)=(-1)^{j-1}\det(A)$, pues son necesarios $j-1$ permutaciones para recuperar la matriz $A$ (es decir, llevar la columna $j$ a su lugar).
+        %que se obtiene de $A$ permutando la columna $1$ por la columna $j$,  entonces $\det(B) = -\det(A)$. 
+        Como $B(i|1) = A(i|j)$,  desarrollando por la primera columna el determinante de $B$ obtenemos el resultado.
+
+
+        \ref{itm-des-col-2} Observemos primero que $A^\t(j|i) = A(i|j)^\t$, por lo tanto, si calculamos $\det(A^\t)$ por desarrollo por columna $i$, obtenemos
+        \begin{align*}
+            \det A = \det(A^\t) & =\sum_{j=1}^{n} [A^\t]_{ji} (-1)^{i+j}\det (A^\t(j|i)) \\
+                                & =  \sum_{j=1}^{n} a_{ij} (-1)^{i+j}\det (A(i|j)^\t)    \\
+                                & = \sum_{j=1}^{n} a_{ij} (-1)^{i+j}\det (A(i|j)).
+        \end{align*}
+    \end{proof}
+
+ \end{section}
+
+ \begin{section}{Regla de Cramer}\label{seccion-regla-de-cramer} Veremos ahora que la inversa de una matriz invertible se puede escribir en términos de determinantes de algunas matrices relacionadas y esto, junto a otros resultados, nos permitirá resolver ecuaciones lineales con $n$-variables y $n$-incógnitas cuya matriz asociada es invertible.
+
+    \begin{teorema} \label{th-cof-01}
+        Sea $A$ matriz $n \times n$, entonces
+        \begin{align*}
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} A & =
+            \begin{bmatrix} 0 & \cdots& 0 & \det A & 0 &\cdots  & 0 \end{bmatrix}.                     \\
+                                                                             & \hspace{3cm} \uparrow i
+        \end{align*}
+        Es decir, la matriz fila formada por los cofactores correspondientes a la columna  $i$ multiplicada por la matriz $A$ es igual a la matriz fila con valor $\det A$ en la posición $i$ y $0$ en las otras posiciones.
+    \end{teorema}
+    \begin{proof}
+        Si $C_j$ denota la matriz formada por la columna $j$ de $A$ debemos probar que
+        $$
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j = \sum_{k=1}^{n} a_{kj}C_{ki} = \left\{ \begin{matrix*}[l] \det(A) &\text{si $j = i$}  \\ 0 &\text{si $j \ne i$.}\end{matrix*}\right.
+        $$
+        Ahora bien,
+        \begin{align*}
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_i = \sum_{j=1}^{n} C_{ji}a_{ji},
+        \end{align*}
+        y esto último no es más que el cálculo del determinante por desarrollo de la  columna $i$,  es decir,  es igual a $\det(A)$.
+
+        Para ver el caso $i \ne j$, primero observemos que si
+        \begin{align*}
+            B & = \begin{bmatrix} C_1 & C_2&\cdots &C_j& \cdots &C_j & \cdots &C_{n-1}& C_{n}\end{bmatrix}, \\
+              & \hspace{3.2cm} \uparrow i \hspace{1.2cm} \uparrow j
+        \end{align*}
+        es decir, $B$ es la matriz $A$ donde reemplazamos la columna $i$ por la columna $j$, entonces como $B$ tiene dos columnas iguales, $\det(B) =0$. Por lo tanto, si calculamos el determinante de $B$ por el desarrollo en la columna $i$, obtenemos
+        \begin{equation} \label{eq-cof}
+            0 = \det(B) = \sum_{k=1}^{n} a_{kj}C_{ki}.
+        \end{equation}
+        Por otro lado,
+        \begin{align*}
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j = \sum_{k=1}^{n} C_{ki}a_{kj},
+        \end{align*}
+        luego, por la ecuación \eqref{eq-cof} tenemos que
+        $$
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} C_j =0
+        $$
+        si $i \ne j$.
+
+    \end{proof}
+
+    \begin{definicion} Sea $A$ matriz $n \times n$, la \textit{matriz de cofactores}\index{matriz!de cofactores} es la matriz cuyo coeficiente $ij$ vale $C_{ij}$. La matriz de cofactores de $A$  se denota $\operatorname{cof}(A)$. La \textit{matriz adjunta de A} es $\operatorname{adj}(A) = \operatorname{cof}(A)^\t$.
+    \end{definicion}
+
+    \begin{teorema} Sea $A$ matriz $n \times n$,  entonces
+        \begin{equation*}
+            \operatorname{adj}(A)\cdot A = \det(A)\Id_n.
+        \end{equation*}
+    \end{teorema}
+    \begin{proof}
+        Observar que la fila $i$ de $\operatorname{adj}(A)$ es $\begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix}$. Por lo tanto, la fila $i$ de $\operatorname{adj}(A)\cdot A$ es
+        $$
+            \begin{bmatrix} C_{1i} & C_{2i} & \cdots & C_{ni}\end{bmatrix} A,
+        $$
+        que por el teorema \ref{th-cof-01} es una matriz fila con el valor $\det A$ en la posición $i$ y todos los demás coeficientes iguales a $0$. Luego
+        \begin{align*}
+            \operatorname{adj}(A)\cdot A & =
+            \begin{bmatrix} C_{11} & C_{21} & \cdots & C_{n1} \\
+                  C_{12} & C_{22} & \cdots & C_{n2} \\
+                  \vdots & \vdots & \ddots & \vdots \\
+                  C_{1n} & C_{2n} & \cdots & C_{nn}\end{bmatrix}\cdot  A \\
+                                         & =
+            \begin{bmatrix}\det A & 0      & \cdots & 0      \\
+                 0      & \det A & \cdots & 0      \\
+                 \vdots & \vdots & \ddots & \vdots \\
+                 0      & 0      & \cdots & \det A\end{bmatrix}       \\
+                                         & = \det(A) \Id_n
+        \end{align*}
+    \end{proof}
+
+    \begin{corolario}\label{cor-inv-x-det}
+        Si $A$  es invertible,  entonces
+        \begin{equation*}
+            A^{-1} = \frac{1}{\det A} \operatorname{adj}A.
+        \end{equation*}
+    \end{corolario}
+    \begin{proof}
+        \begin{equation*}
+            \frac{1}{\det A} \operatorname{adj}A\cdot A = \frac{1}{\det A}\det A \Id_n = \Id_n.
+        \end{equation*}
+    \end{proof}
+
+
+
+    \begin{teorema}[Regla de Cramer]\index{regla de Cramer} Sea $AX=Y$ un sistema de ecuaciones tal que $A \in M_n(\K)$ es invertible. Entonces, el sistema tiene una única solución $(x_1,\ldots,,x_n)$ con
+        \begin{equation*}
+            x_j = \frac{\det A_j}{\det A},\qquad j=1,\ldots,n,
+        \end{equation*}
+        donde $A_j$ es la matriz $n \times n$ que se obtiene de $A$ remplazando la columna $j$ de
+        $A$ por $Y$.
+    \end{teorema}
+    \begin{proof}
+        Haremos la demostración para matrices $3 \times 3$. La demostración en el caso general es completamente análoga.
+
+        Como $A$  es invertible, existe $A^{-1}$ y multiplicamos la ecuación a izquierda por $A^{-1}$ y obtenemos que $A^{-1}A X = A^{-1}Y$,  es decir $X = A^{-1}Y$ y esta es la única solución. Luego
+        \begin{align*}
+            A^{-1}Y & = \frac{1}{\det A}
+            \begin{bmatrix} C_{11} & C_{21} & C_{31} \\
+                  C_{12} & C_{22} & C_{32} \\
+                  C_{13} & C_{23} & C_{33}\end{bmatrix}
+            \begin{bmatrix} y_1 \\ y_2 \\ y_3 \end{bmatrix}                                      \\
+                    & = \frac{1}{\det A}\begin{bmatrix} y_1C_{11}+  y_2C_{21} + y_3C_{31}  \\
+                                            y_1C_{12}+  y_2C_{22}+   y_3C_{32} \\
+                                            y_1C_{13}+  y_2C_{23}+  y_3C_{33}\end{bmatrix} \tag{$*$}
+        \end{align*}
+        Ahora bien,  $y_1C_{11}+  y_2C_{21}+   y_3C_{31}$ es el cálculo de determinante por desarrollo de la primera columna de la matriz
+        $$
+            \begin{bmatrix}
+                y_1 & a_{12} & a_{13} \\y_2 & a_{22} & a_{23} \\y_1 & a_{32} & a_{33}
+            \end{bmatrix},
+        $$
+        y,  de forma análoga, el segundo y tercer coeficiente de la matriz ($*$) son el determinante de las matrices $3 \times 3$ que se obtienen de $A$ remplazando la columna $2$ y $3$, respectivamente, de
+        $A$ por $Y$. Es decir
+        \begin{align*}
+            \begin{bmatrix} x_1 \\
+                x_2 \\
+                x_3\end{bmatrix} = A^{-1}Y & = \frac{1}{\det A}\begin{bmatrix} \det A_1 \\
+                                                               \det A_2 \\
+                                                               \det A_3\end{bmatrix} = \begin{bmatrix} \frac{\det A_1}{\det A} \\
+                                                                                       \frac{\det A_2}{\det A} \\
+                                                                                       \frac{\det A_3}{\det A}\end{bmatrix},
+        \end{align*}
+        luego $x_j = \displaystyle\frac{\det A_j}{\det A}$ para $j =1,2,3$.
+    \end{proof}
+
+    \begin{ejemplo*}
+        Resolvamos usando la regla de Cramer el siguiente sistema:
+        \begin{align*}
+            x_1 + x_2 - x_3   & = 6   \\
+            3x_1 -2 x_2 + x_3 & = -5  \\
+            x_1 +3 x_2 - 2x_3 & = 14.
+        \end{align*}
+        La matriz asociada al sistema es
+        $$
+            A= \begin{bmatrix}
+                1 & 1  & -1 \\
+                3 & -2 & 1  \\
+                1 & 3  & -2
+            \end{bmatrix}.
+        $$
+        Luego
+        $$
+            A_1 = \begin{bmatrix}
+                6  & 1  & -1 \\
+                -5 & -2 & 1  \\
+                14 & 3  & -2
+            \end{bmatrix}, \quad
+            A_2 = \begin{bmatrix}
+                1 & 6  & -1 \\
+                3 & -5 & 1  \\
+                1 & 14 & -2
+            \end{bmatrix}, \quad
+            A_2 = \begin{bmatrix}
+                1 & 1  & 6  \\
+                3 & -2 & -5 \\
+                1 & 3  & 14
+            \end{bmatrix},
+        $$
+        y
+        $$
+            \det A = -3,\qquad\det A_1 = -3,\qquad \det A_2 = -9,\qquad \det A_3=6.
+        $$
+        Por lo tanto,
+        \begin{align*}
+            x_1 & = \frac{\det A_1}{\det A} = \frac{-3}{-3} = 1  \\
+            x_2 & = \frac{\det A_2}{\det A} = \frac{-9}{-3} = 3  \\
+            x_3 & = \frac{\det A_3}{\det A} = \frac{6}{-3} = -2.
+        \end{align*}
+    \end{ejemplo*}
+
+    \vskip .3cm
+
+    \begin{observacion*}
+        La regla de Cramer implementada de una manera ingenua es ineficiente computacionalmente para sistemas de más de dos o tres ecuaciones. En el caso de $n$ ecuaciones con $n$ incógnitas, requiere el cálculo de $n+1$ determinantes, mientras que el  método de eliminación de Gauss o eliminación gaussiana produce el resultado con la misma complejidad computacional que el cálculo de un solo determinante. Sin embargo, recientemente se ha demostrado que la regla de Cramer se puede implementar en el tiempo $O(n^3)$, que es comparable a los métodos más utilizados para la obtención de soluciones de sistemas de ecuaciones lineales, como ser la eliminación gaussiana
+        (ver \href{https://en.wikipedia.org/wiki/Cramer's\_rule}{https://en.wikipedia.org/wiki/Cramer's\_rule} y
+        \href{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}{ https://es.wikipedia.org/wiki/Eficiencia\_Algorítmica}).
+
+        Sin embargo, la regla de Cramer tiene propiedades numéricas muy pobres, por lo que no es adecuada para resolver incluso sistemas pequeños de forma fiable, a menos que las operaciones se realicen en aritmética racional con precisión ilimitada.
+    \end{observacion*}
+
+ \end{section}
+\end{chapter}

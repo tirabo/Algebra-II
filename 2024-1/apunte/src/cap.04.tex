@@ -1,0 +1,2329 @@
+      
+    \begin{chapter}{Transformaciones lineales}\label{chap-trans-lin}
+        Las transformaciones lineales son las funciones con las que trabajaremos en álgebra lineal. Se trata de funciones entre espacios vectoriales que son compatibles con la estructura,  es decir con la suma y el producto por escalares.
+        
+        
+        \begin{section}{Transformaciones lineales}\label{seccion-transformaciones-lineales}
+            \begin{definicion}
+                Sean $V$ y $W$ dos espacios vectoriales sobre el cuerpo $\K$. Una 				\textit{transformación lineal}\index{transformación lineal} de $V$ en $W$ es una función $T:V \to W$  tal que
+                \begin{enumerate}
+                    \item $T(v+v') = T(v)+ T(v')$, para $v,v' \in V$,
+                    \item $T(\lambda v) = \lambda T(v)$, para $v \in V$, $\lambda \in \K$.
+                \end{enumerate}
+            \end{definicion}
+        
+            \begin{observacion*}
+                $T:V \to W$ es transformación lineal si y sólo si
+                \begin{enumerate}[label=\textit{\alph*)}, ref=\textit{\alph*)}]
+                    \item $T(\lambda v+v') = \lambda T(v)+ T(v')$, para $v,v' \in V$, $\lambda \in \K$.
+                \end{enumerate}
+            Algunas veces usaremos esto último para comprobar si una aplicación de $V$ en $W$ es una transformación lineal. 
+            \end{observacion*}
+            
+            \begin{ejemplo*}
+                Si $V$ es cualquier espacio vectorial, la transformación identidad $\Id$, definida por $\Id v = v$ ($v \in V$), es una transformación lineal de $V$ en $V$. La transformación cero $0$, definida por $0v = 0$, es una transformación lineal de $V$ en $V$.
+            \end{ejemplo*}
+        
+            \begin{ejemplo*}
+                Sea $T : \K^3 \to \K^2$ definida por
+                $$
+                T(x_1,x_2,x_3) = (2x_1 - x_3, -x_1+3x_2+x_3).
+                $$
+                Entonces, $T$  es una transformación lineal. La demostración la veremos en la observación que sigue a este ejemplo. 
+                
+            Observar que si 
+            $$
+             A = \begin{bmatrix}
+             2&0&-1 \\ -1&3&1
+             \end{bmatrix},
+            $$
+            entonces
+            $$
+            \begin{bmatrix}
+            2&0&-1 \\ -1&3&1
+            \end{bmatrix} 
+            \begin{bmatrix}
+            x_1\\x_2\\x_3
+            \end{bmatrix} =
+            \begin{bmatrix}
+            2x_1 - x_3 \\ -x_1+3x_2+x_3
+            \end{bmatrix}.
+            $$
+            Es decir,  si $\cC_n$  es la báse canónica de $\K^n$ y $[x]_{\cC_3}$ es la matriz de $x$ en la base canónica,  entonces 
+            $$
+            A\,[x]_{\cC_3} = [T(x)]_{\cC_2}.
+            $$ 
+            \end{ejemplo*}
+        
+            \begin{obs}\label{obs-tl-1.5} 	Sea $T: \K^n \to \K^m$. En  general si $T(x_1,\ldots,x_n)$ en cada coordenada tiene una combinación lineal de los $x_1,\ldots,x_n$,  entonces $T$ es una transformación lineal. Mas precisamente, si $T$ está definida por
+                \begin{align*}
+                T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )\\
+                &=(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j),
+                \end{align*}
+                con $a_{ij} \in \K$, entonces $T$  es lineal. 
+            \end{obs}
+            \begin{proof} Se puede hacer directamente como ejercicio. También se demuestra más adelante en la observación \ref{obs-nu-im}. 
+            \begin{comment}
+                Sean $(x_1,\cdots,x_n), (y_1,\cdots,y_n) \in \K^n$ y $\lambda \in \K$,  entonces
+                \begin{align*}
+                T(\lambda(x_1,\cdots,x_n)+ (y_1,\cdots,y_n)) &= T(\lambda x_1+y_1,\ldots,\lambda x_n+y_n) \\
+                &= (\sum_{j=1}^n a_{1j} (\lambda x_j+y_j),\ldots,\sum_{j=1}^n a_{mj} (\lambda x_j+y_j)) \\
+                &= (\lambda\sum_{j=1}^n a_{1j} x_j+\sum_{j=1}^n a_{1j} y_j,\ldots,\lambda\sum_{j=1}^n a_{mj} x_j+\sum_{j=1}^n a_{mj} y_j) \\
+                &= \lambda(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j) +(\sum_{j=1}^n a_{1j} y_j,\ldots,\sum_{j=1}^n a_{mj} y_j) \\
+                & =\lambda T(x_1,\cdots,x_n)+ T(y_1,\cdots,y_n).
+                \end{align*}
+            \end{comment}
+            \end{proof}
+        
+            \begin{ejemplo*}
+            Sea $V = \R[x]$ el espacio vectorial de los polinomios con coeficientes reales. Definimos $D:V \to V$, por
+            $$
+            D(P)(x) = P'(x),\quad x \in \R. 
+            $$
+            Observemos primero que la derivada de un polinomio es un polinomio, pues 
+            $$
+            (a_nx^n+ a_{n-1}x^{n-1}+\cdots + a_1 x + a_0)' = na_nx^{n-1}+ (n-1)a_{n-1}x^{n-2}+\cdots + a_1.
+            $$
+            Además  $D$  es lineal, pues $(f+g)' = f' + g'$ y $(\lambda f)' = \lambda f'$, para$f,g$ funciones derivables y $\lambda \in \R$.
+            \end{ejemplo*} 
+        
+        \begin{observacion*}	Sean $V$ y $W$ dos espacios vectoriales sobre el cuerpo $\K$ y 	 $T:V \to W$			un transformación lineal. Entonces $T(0) =0$
+        \end{observacion*}
+        \begin{proof} $T(0) = T(0+0) = T(0) + T(0)$, por lo tanto 
+            \begin{align*}
+                -T(0) + T(0) = -T(0) + T(0)+T(0) \;\Rightarrow\; 0 = 0 +T(0) \;\Rightarrow\; 0= T(0).
+            \end{align*}
+        \end{proof}
+        
+        \begin{observacion*}
+            Las transformaciones lineales preservan  combinaciones lineales, es decir si $T:V \to W$ es una transformación lineal, $ v_1,\ldots,v_k \in V$ y $\lambda_1, \ldots+ \lambda_k \in \K$,  entonces
+            $$
+            T(\lambda_1 v_1 + \cdots+ \lambda_k v_k) = \lambda_1 T(v_1) + \cdots+ \lambda_k T(v_k).
+            $$
+            Observar que el caso $k=2$ se demuestra de la siguiente manera
+            $$
+            T(\lambda_1 v_1 +  \lambda_2 v_2) =T(\lambda_1 v_1) + T(\lambda_2 v_2) =\lambda_1 T(v_1) + \lambda_2T( v_2).
+            $$
+            El caso general se demuestra por inducción. 
+        
+        \end{observacion*}
+        
+        
+        \begin{teorema}\label{th-tl-definida-en-base}
+            Sean $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $\{v_1,\ldots,v_n\}$  una base ordenada de $V$. Sean $W$ un espacio vectorial sobre el mismo cuerpo y $\{w_1,\ldots,w_n\}$, vectores cualesquiera de $W$. Entonces existe una única transformación  lineal $T$ de $V$ en $W$ tal que
+            \begin{equation*}
+            T(v_j) = w_j, \quad j=1,\ldots,n.
+            \end{equation*}
+        \end{teorema}
+            \begin{proof}
+                Recordemos que si $v \in V$,  existen únicos $a_1,\ldots,a_n \in \K$ (las coordenadas de $v$) tal que $$v = a_1v_1 + \cdots+a_n v_n.$$  Luego para este vector $v$  definimos
+                \begin{equation*}
+                    T(v) = a_1w_1 + \cdots+a_n w_n.
+                \end{equation*}
+                Entonces, $T$ es una correspondencia bien definida que asocia a cada vector $v$ 
+                de $V$ un vector $T(v)$ de $W$. De la definición queda claro que $T(v_j) = w_j$ para cada $j$. Para ver que $T$ es lineal, sea
+                \begin{equation*}
+                    w = b_1v_1 + \cdots+b_n v_n,
+                \end{equation*}
+                y sea  $\lambda \in \K$. Ahora
+                \begin{align*}
+                    \lambda v+w &= \lambda(a_1v_1 + \cdots+a_n v_n) + b_1v_1 + \cdots+b_n v_n \\
+                    &= (\lambda a_1+b_1)v_1 + \cdots+(\lambda a_n+b_n)v_n
+                \end{align*}
+                con lo que, por definición
+                \begin{equation*}
+                    T(\lambda v+w) =(\lambda a_1+b_1)w_1 + \cdots+(\lambda a_n+b_n)w_n. 
+                \end{equation*}
+                Por otra parte
+                \begin{align*}
+                \lambda  T(v) + T(w) &= \lambda (a_1w_1 + \cdots+a_n w_n)+b_1w_1 + \cdots+b_n w_n	 \\
+                 &=(\lambda a_1+b_1)w_1 + \cdots+(\lambda a_n+b_n)w_n ,			
+                \end{align*}
+                y así
+                \begin{equation*}
+                    T(\lambda v+w) = 	\lambda  T(v) + T(w).
+                \end{equation*}
+                
+                Finalmente,  debemos probar la unicidad de $T$. Sea $S: V \to W$ transformación lineal tal que $S(v_j) = w_j$ para $1 \le j \le n$. Entonces,  si $v \in V$ un vector arbitrario, $v = \sum_i a_i v_i$ y
+                \begin{equation*}
+                    S(v) = S(\sum_i a_i v_i)\sum_i a_i S( v_i) = \sum_i a_iw_i = 
+                     \sum_i a_i T( v_i) =  T(\sum_i a_i v_i) = T(v)
+                \end{equation*}
+            \end{proof}
+        
+        El teorema \ref{th-tl-definida-en-base} es muy elemental, pero por su importancia ha sido presentado
+        detalladamente. 
+        
+            \begin{ejemplo*} Usando el teorema \ref{th-tl-definida-en-base}, podemos demostrar la observación \ref{obs-tl-1.5} de la siguiente manera: sea  $\cC_n = \{e_1,\ldots,e_n\}$ es la base canónica de $\K^n$ y  sea  $T: \K^n \to \K^m$ la única transformación lineal tal que 
+            \begin{equation*}
+            T(e_j)  = (a_{1j},\, \ldots\,,a_{mj} ), \quad j=1,\ldots,n
+            \end{equation*}	
+            Entonces, 
+            \begin{equation*}
+            T(x_1,\ldots,x_n) = (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n ).
+            \end{equation*}
+            es la transformación lineal resultante.
+        \end{ejemplo*}
+        
+        \begin{ejemplo*}
+            Los vectores
+            \begin{align*}
+                v_1 &= (1,2)\\
+                v_2 &= (3,4)
+            \end{align*}
+            son linealmente independientes y, por tanto, forman una base de $\R^2$. De acuerdo con el teorema \ref{th-tl-definida-en-base}, existe una única transformación lineal de $\R^2$ en $\R^2$ tal que
+            \begin{align*}
+                T(v_1) &= (3,2, 1) \\
+                T(v_2) &= (6, 5,4).
+            \end{align*}
+            Para poder describir $T$ respecto a las coordenadas canónicas debemos calcular $T(e_1)$ y $T(e_2)$,  ahora bien,
+            \begin{align*}
+            (1,0) &= c_{1}(1,2) + c_{2}(3,4)\\
+            (0,1) &= c_{3}(1,2) + c_{4}(3,4)
+            \end{align*}
+            y resolviendo este sistema de cuatro ecuaciones con cuatro incógnitas obtenemos
+            \begin{equation*}
+            \begin{array}{rcrcr}
+            (1,0) &=& -2(1,2) &+ &(3,4)\\
+            (0,1) &=& \displaystyle\frac32(1,2) &- &\displaystyle\frac12(3,4)
+            \end{array}
+            \end{equation*}
+            Luego, 
+                \begin{align*}
+            T(1,0) &= -2T(1,2)+ T(3,4) = -2(3,2, 1)+(6, 5,4) = (0,1,2)\\
+            T(0,1) &= \displaystyle\frac32T(1,2) - \displaystyle\frac12T(3,4) = \displaystyle\frac32(3,2,1) - \displaystyle\frac12(6, 5,4)= (\displaystyle\frac32,\displaystyle\frac12,-\displaystyle\frac12)
+            \end{align*}
+            Entonces
+                \begin{equation*}
+            T(x_1,x_2) = x_1(0,1,2) + x_2		 (\displaystyle\frac32,\displaystyle\frac12,-\displaystyle\frac12)
+            = (\displaystyle\frac32x_2,x_1+\displaystyle\frac12x_2,2x_1-\displaystyle\frac12x_2)
+            \end{equation*}
+        \end{ejemplo*}
+        
+        \subsection*{$\S$ Ejercicios}
+        \begin{enumex}
+            \item Determine en los siguientes casos si $T$  es una transformación lineal.
+            \begin{enumex}
+                \item $T: \R^3 \to \R^2$ definida por $T(x, y, z) = (x, z)$.
+                \item $T: \R^4 \to R^4$ definida por $T(X) = -X$.
+                \item $T: \R^3  \to \R^3$ definida por $T(X) = X + (0, -1, 0)$.
+                \item $T: \R^2  \to \R^2$ definida por $T(x, y) = (2x + y, y)$.
+                \item $T: \R^2  \to \R^2$ definida por $T(x, y) = (2x, y - x)$.
+                \item $T: \R^2  \to \R^2$ definida por $T(x, y) = (y, x)$.
+                \item $T: \R^2 \to \R$ definida por $T(x, y) = xy$
+            \end{enumex}
+            \item Sea $T: V \to W$ una transformación lineal. Sean $u,v$ elemento de $V$, y sea  $T(u)=w$. Probar que si $T(v) =0$, entonces $T(u+v)=w$.
+            
+            \item ¿Existe una transformación lineal $T: \R^3 \to \R^2$ tal que $T(-1,1,1) = (1,0)$ y $T(1,1,1) = (0,1)$ y 
+                \begin{enumex}
+                    \item $T(0,1,1) = (1,1)$?
+                    \item $T(0,1,1) = (\frac12,\frac12)$?
+                    \item $T(1,0,0) = (1,1)$?
+                \end{enumex} 
+            
+            \item  Sea $T: V \to W$ una transformación lineal. Sea $U$ el subconjunto de elementos $u \in V$ tales que $T (u) = 0$. Supongamos que $w \in W$ y existe $v_0\in  V$ tal que $T (v_0) = w$. Demuestre que el conjunto de elementos $v \in V$ que satisface $T (v) = w$ es $v_0+ U$.
+            
+            \item Sean $V, W$ dos espacios vectoriales y $T: V \to W$ una transformación lineal. Sean $w_1,\ldots,w_n$ elementos de $W$ que son linealmente independientes, y sean $v_1,\ldots, v_n$ elementos de $V$ tal que $T(v_i) = w_i$ para $i = 1, \ldots, n$. Demostrar que $v_1,\ldots, v_n$ son linealmente independientes.
+            
+           
+        \end{enumex}
+
+
+        \end{section}
+    
+    
+        \begin{section}{N\'ucleo e imagen de una transformaci\'on lineal}\label{seccion-nucleo-e-imagen-de-una-tl}
+        
+        \begin{definicion}
+            Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal.  Definimos
+            \begin{align*}
+                \img(T) &:= \{w \in W:\text{existe $v \in V$, tal que } T(v)=w\} = \{T(v): v \in V \}, \\
+                \nuc(T) &:= \{v \in V: T(v)=0 \}. 
+            \end{align*}
+            A $\img(T)$ lo llamamos la \textit{imagen}\index{imagen de una trasnformación lineal} de $T$ y a $ \nuc(T)$ el \textit{núcleo}\index{núcleo  de una transformación lineal} de $T$. 
+        \end{definicion}
+        
+        \begin{teorema}
+            Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal; entonces $\img(T) \subset W$ y $\nuc(T) \subset V$ son subespacios vectoriales.
+        \end{teorema}
+        \begin{proof}
+            $\img(T) \ne \emptyset$, pues $0 = T(0) \in \img(T)$. 
+            
+            Si $T(v_1),T(v_2) \in \img(T)$ y $\lambda \in \K$,  entonces $T(v_1) + T(v_2) = T(v_1+v_2) \in \img(T)$ y $\lambda T(v_1) = T(\lambda v_1) \in \img(T)$.
+            
+            
+            $\nuc(T) \ne \emptyset$ pues $T(0) =0$ y por lo tanto $0 \in \nuc(T)$.
+            
+            Si $v,w \in V$ tales que $T(v) =0$ y $T(w)=0$,  entonces, $T(v+w)= T(v)+T(w) =0$. por lo tanto $v+w \in \nuc(T)$. Si  $\lambda \in \K$,  entonces $T(\lambda v) = \lambda T(v) = \lambda.0 =0$, luego  $\lambda v \in \nuc(T)$.
+        \end{proof}
+
+    
+        \begin{definicion}
+            Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal. Supongamos que $V$ es de dimensión finita.
+            \begin{enumerate}
+\item El \textit{rango}\index{rango de una transformación lineal} de $T$ es la dimensión de la imagen de $T$.
+\item La \textit{nulidad}\index{nulidad de una transformación lineal} de $T$ es la dimensión del núcleo  de $T$.
+            \end{enumerate}
+            
+        \end{definicion}
+                
+        \begin{ejemplo*}
+            Sea $T: \R^3 \to \R$, definida
+            $$
+            T(x,y,z) = x +2y +3z.
+            $$
+            Encontrar una base del núcleo y de la imagen.
+            \begin{proof}[Solución]
+                Es claro que como $T$ no es 0, la imagen es todo $\R$ (y por lo tanto cualquier $r\in \R, r \ne 0$ es base de la imagen). 
+                
+                Con respecto al núcleo,  debemos encontrar una base del subespacio
+                $$
+                \nuc(T) = \{(x,y,z): x+2y+3z =0\}.
+                $$
+                Como $x+2y+3z =0 \Leftrightarrow x = -2y-3z$, luego, 
+                \begin{equation}\label{forma-parametrica-2}
+                    \nuc(T) =  \{(-2s-3t,s,t): s,t \in \R\}.
+                \end{equation}
+                Ahora bien, $(-2s-3t,s,t) = s(-2,1,0)+t(-3,0,1)$, por lo tanto 
+                \begin{equation*}
+                \nuc(T) =  <(-2,1,0),(-3,0,1)>,
+                \end{equation*}
+                y  como $(-2,1,0),(-3,0,1)$ son LI, tenemos que forman una base del núcleo. 
+            \end{proof}
+        
+        La expresión \eqref{forma-parametrica-2},  que depende de dos parámetros ($s$ y $t$) que son independientes entre ellos, es llamada la \textit{descripción paramétrica} del núcleo	
+        \end{ejemplo*}
+
+        Todas las transformaciones lineales entre $\R^n$ y $\R^m$ son de la forma ``multiplicar por una matriz''. Más aún,  toda transformación lineal entre espacios vectoriales de dimensión finita se puede expresar de esta forma. Así que analizaremos un poco más en detalle este tipo de transformaciones.
+\begin{observacion}
+Sea $A\in\R^{m\times n}$ y consideramos la función $T$:
+\begin{align*}
+\begin{array}{rccc}
+    T : &\R^n &\to &\R^m \\
+        &v &\mapsto &Av.
+\end{array}
+\end{align*}
+Entonces $T$ es una transformación lineal. 
+\end{observacion}
+\begin{proof}
+    Debemos ver que $T$ respeta suma y producto por escalares.
+Sean $v_1,v_2\in\R^n$ y $\lambda\in\R$ entonces
+\begin{align*}
+T(v_1+\lambda v_2)=A(v_1+\lambda v_2)=
+Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2)
+\end{align*}
+\end{proof}
+
+\begin{definicion}
+    Sea $A\in\R^{m\times n}$ y sea $T$ la transformación lineal 
+    \begin{align*}
+        \begin{array}{rccc}
+            T : &\R^n &\to &\R^m \\
+                &v &\mapsto &Av.
+        \end{array}
+        \end{align*}
+        Diremos que $T$  es \textit{la transformación lineal asociada a $A$} o  \textit{la transformación lineal inducida por $A$}. Muchas veces denotaremos a esta transformación lineal con el mismo símbolo que la matriz, es decir, en este caso con $A$.  
+\end{definicion}
+
+
+
+\begin{ejemplo*}
+    Consideremos la matriz $A=\begin{bmatrix}   1&1&1\\   2&2&2 \end{bmatrix}$.
+    
+
+    
+    Entonces si $v =(x,y,z)$, 
+    \begin{align*}
+    A(v) &= \begin{bmatrix} 1&1&1\\2&2&2 \end{bmatrix} \begin{bmatrix}  x\\y\\z \end{bmatrix}
+    = \begin{bmatrix}  x+y+z\\2x+2y+2z \end{bmatrix}           
+    \end{align*}
+    
+
+    
+    En particular,
+    $(1,-1,0)\in\nu(A)$ pues $A(1,-1,0)=0$ y
+    \begin{align*}
+    A(1,0,0)&=(1,2)\in\im(A)\\
+    A(0,1,\pi)&=(1+\pi,2+2\pi)\in\im(A)
+    \end{align*}
+\end{ejemplo*}
+
+
+\begin{observacion}\label{obs-nu-im} 	Sea $T: \K^n \to \K^m$ definida por
+    \begin{align*}
+    T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )
+    \end{align*}
+    con $a_{ij} \in \K$, entonces 
+    \begin{equation*}
+        T(x) = \begin{bmatrix*}
+            a_{11}& a_{12} & \cdots &a_{1n} \\
+            a_{21}& a_{22} & \cdots &a_{2n} \\
+            \vdots&\vdots&\ddots&\vdots \\
+            a_{m1}& a_{m2} & \cdots &a_{mn}
+        \end{bmatrix*}
+        \begin{bmatrix}
+            x_1 \\ x_2 \\ \vdots \\ x_n
+        \end{bmatrix}
+    \end{equation*} 
+
+    Es decir,  $T$ es la transformación lineal inducida por la matriz $A = [a_{ij}]$. 
+ 
+    Esto, en particular,  demuestra la observación  \ref{obs-tl-1.5}.
+\end{observacion}
+
+
+
+\begin{proposicion}
+
+    Sea $A\in\R^{m\times n}$ y $T:\R^n\longrightarrow\R^m$ la transformación lineal asociada. Entonces
+    \begin{itemize}
+     \item El núcleo de $T$ es el conjunto de soluciones del sistema homogéneo $AX=0$
+     
+     \item La imagen de $T$ es el conjunto de los $b\in\R^m$ para los cuales el sistema $AX=b$ tiene solución
+    \end{itemize}
+    \end{proposicion}
+    \begin{proof}
+        
+   
+    Se demuestra fácilmente escribiendo las definiciones de los respectivos subconjuntos.
+    \begin{align*}
+    v\in\nu T\Leftrightarrow Av=0\Leftrightarrow v\,\mbox{ es solución de $AX=0$.}
+    \end{align*}
+    \begin{align*}
+    b\in\im T&\Leftrightarrow\exists v\in\R^n\,\mbox{ tal que } Av=b 
+    \Leftrightarrow\,\mbox{$AX=b$ tienen solución}.
+    \end{align*}
+\end{proof}
+    
+        
+\begin{ejemplo*}
+        Sea $T: \R^3 \to \R^4$, definida
+        $$
+        T(x,y,z) = (x +y ,\,x +2y +z,\,3y +3z,\,2x +4y +2z).
+        $$
+        \begin{enumerate}
+            \item Describir $\nuc(T)$  en forma paramétrica y dar una base.
+            \item Describir $\img(T)$  en forma paramétrica y  dar una base. 
+        \end{enumerate}
+        \end{ejemplo*}
+\begin{proof}[Solución]
+    La matriz asociada a esta transformación lineal  es 
+    \begin{equation*}
+        A = \begin{bmatrix}
+        1&1&0\\1&2&1\\0&3&3\\2&4&2
+        \end{bmatrix}
+    \end{equation*}
+
+    Debemos encontrar la descripción paramétrica de
+    \begin{align*}
+        \nuc(T) &= \{v=(x,y,z):   A.{v}=0\}\\
+        \img(T) &= \{y= (y_1,y_2,y_3,y_4): \text{ tal que } \exists v \in \R^3, A.{v} = {y}  \}
+        \end{align*}
+
+    En  ambos casos, la solución depende de resolver el sistema de ecuaciones cuya matriz asociada es $A$:
+    \begin{align*}
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1&1&0&y_1\\1&2&1&y_2\\0&3&3&y_3\\2&4&2&y_4 \end{array}\right]
+    &\underset{F_4-2F_1}{\stackrel{F_2 -F_1}{\longrightarrow}} 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1&1&0&y_1\\0&1&1&-y_1+y_2\\0&3&3&y_3\\0&2&2&-2y_1 +y_4 \end{array}\right]\\
+    &\underset{F_4-2F_2}{\underset{F_3-3F_2}{\stackrel{F_1 -F_2}{\longrightarrow}} } 
+    \left[\begin{array}{@{}*{3}{c}|c@{}}1&0&-1&2y_1-y_2\\0&1&1&-y_1+y_2\\0&0&0&3y_1-3y_2+y_3\\0&0&0&-2y_2 +y_4 \end{array}\right].
+    \end{align*}
+Luego, 
+    \begin{equation*}\label{eq-gen}
+    T(x,y,z) = (y_1,y_2,y_3,y_4) \quad\Leftrightarrow \quad
+    \left\{\begin{array}{rl}
+    x -z &= 2y_1-y_2\\ 
+    y +z &= -y_1+y_2\\
+    0&=3y_1-3y_2+y_3 \\
+    0&= -2y_2 +y_4
+    \end{array}\right.\tag{*}
+    \end{equation*}
+    Si hacemos $y_1 = y_2 = y_3 = y_4 = 0$, entonces las soluciones del sistema describen el núcleo de $T$, es decir
+    \begin{align*}
+    \nuc(T) &= \{(x,y,z):x-z=0, y+z =0 \} = \{(s,-s,s):s \in \R \} \\
+    &= \{s(1,-1,1):s \in \R \}
+    \end{align*}
+    que es la forma paramétrica del $\nu T$. Una base del núcleo de $T$  es $\{(1,-1,1)\}$. 
+
+
+    En  el sistema (*) las dos primeras ecuaciones no imponen ninguna restricción sobre los $y_i$ (por ejemplo si hacemos $z=0$ resulta $x = 2y_1-y_2$,  $y= -y_1+y_2$). Claramente, las últimas dos ecuaciones sí establecen condiciones sobre los $y_i$ y resulta entonces que   
+    \begin{align*}
+        \img(T) &=  \{(y_1,y_2,y_3,y_4): \text{ tal que $0=3y_1-3y_2+y_3$ y $0= -2y_2 +y_4$} \} 
+    \end{align*}
+    
+    
+    Resolviendo este sistema, obtenemos
+    \begin{align*}
+        \img(T) &=  \{(-\frac13 s + \frac12 t, \frac 12 t, s,t): s,t \in \R \}\\
+        &=  \{s(-\frac13,0,1,0)+t(\frac12,\frac12,0,1): s,t \in \R \}
+    \end{align*}
+    que es la descripción paramétrica $\img(T)$.  Es claro que  $\{(-\frac13,0,1,0),(\frac12,\frac12,0,1) \}$ es una base de $\img(T)$.
+\end{proof}
+
+        He aquí uno de los resultados más importantes del álgebra lineal.
+        
+        \begin{teorema}\label{rang+nul=dimV}
+                 Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal. Suponga que $V$ es de dimensión finita. Entonces 
+                 $$
+                 \dim (\im T) + \dim (\nuc T) = \dim V.
+                 $$
+        \end{teorema}
+        \begin{proof} Sean 
+            \begin{align*}
+                n &= \dim V \\
+                k &= \dim(\nuc T).  
+            \end{align*}
+            Entonces debemos probar  que 
+            $$
+            n-k = \dim(\img T).
+            $$
+             Sea $\{v_1,\ldots,v_k \}$ una base de $\nuc T$. Existen vectores $\{v_{k+1},\ldots,v_n \}$, en $V$ tales que $\{v_1,\ldots,v_n \}$ es una base de $V$. Para probar el teorema, demostraremos que 
+             $\{Tv_{k+1},\ldots,Tv_n \}$ es una base para la imagen de $T$. 
+             
+              \textit{(1) $\{Tv_{k+1},\ldots,Tv_n \}$ genera la imagen de $T$.} 
+              
+              Si $w \in \img(T)$,  entonces existe $v \in V$ tal que $T(v)=w$, como $\{v_{1},\ldots,v_n \}$ es base de $V$,  existen $\lambda_1,\ldots,\lambda_{n} \in \K$,  tal que $v=  \lambda_1 v_1+ \cdots + \lambda_n v_n$, por lo tanto 
+             \begin{align*}
+                 w &= T(v) \\ 
+                 &=  \lambda_1T( v_1)+ \cdots + \lambda_kT( v_k)+ \lambda_{k+1}T( v_{k+1}) +\cdots+ \lambda_nT( v_n) \\
+                 &=  0+ \cdots + 0+ \lambda_{k+1}T( v_{k+1}) +\cdots+ \lambda_nT( v_n) \\
+                 &=  \lambda_{k+1}T( v_{k+1}) +\cdots+ \lambda_nT( v_n).
+             \end{align*}
+             Por  lo tanto, $\{Tv_{k+1},\ldots,Tv_n \}$ genera la imagen de $T$. 
+             
+             \textit{(2) $\{Tv_{k+1},\ldots,Tv_n \}$ es un conjunto linealmente independiente.}
+             
+             Para ver que  $\{Tv_{k+1},\ldots,Tv_n \}$ es linealmente independiente, suponga que se tienen escalares $\mu_i$ tales que
+             $$
+             \sum_{i=k+1}^n \mu_i Tv_i = 0,
+             $$
+             luego
+             $$
+             0 = \sum_{i=k+1}^n \mu_i Tv_i =   T(\sum_{i=k+1}^n\mu_iv_i).  
+             $$
+             Por lo tanto $v =\sum_{i=k+1}^n \mu_iv_i\in \nuc(T)$. Como  $\{v_1,\ldots,v_k \}$ es una base de $\nuc T$,  existen escalares $\lambda_i$ tales que
+             $$
+             v =  \sum_{i=1}^k \lambda_i v_i,
+             $$
+             es decir
+             $$
+             \sum_{j=k+1}^n \mu_jv_j =  \sum_{i=1}^k \lambda_i v_i.
+             $$
+             Luego
+             \begin{align*}
+                     0 &= \sum_{i=1}^k \lambda_i v_i - (\sum_{j=k+1}^n \mu_jv_j) \\
+                     &= \lambda_1 v_1 + \cdots +\lambda_k v_k - \mu_{k+1}v_{k+1} -\cdots-\mu_nv_n.
+             \end{align*}
+             Como $\{v_1,\ldots,v_n \}$ es una base, y por lo tanto un conjunto LI,  tenemos que  $0=\lambda_1=\cdots=\lambda_k=\mu_{k+1}=\cdots=\mu_n$, y  en particular $0=\mu_{k+1}=\cdots=\mu_n$. Por lo tanto $\{Tv_{k+1},\ldots,Tv_n \}$ es un conjunto linealmente independiente.		  
+        \end{proof}
+        
+    
+        
+        Sea $A$ una matriz $m \times n$ con coeficientes  en $\K$. El  \textit{rango fila}\index{rango  fila} de $A$ es la dimensión del subespacio de $\K^n$ generado por las filas de $A$, es decir la dimensión del espacio fila de $A$. El \textit{rango columna}\index{rango  columna} de $A$  es es la dimensión del subespacio de $\K^m$ generado por las columna de $A$. Un  consecuencia importante del teorema \ref{rang+nul=dimV} es le siguiente resultado. 
+        
+        \begin{teorema}
+            Si $A$ es una matriz $m \times n$ con coeficientes  en $\K$, entonces
+            $$
+            \text{\textit{rango fila }} (A) = \text{\textit{rango  columna }} (A).
+            $$
+        \end{teorema}
+        \begin{proof}
+            Sea $T$ la transformación lineal
+            \begin{equation*}
+                \begin{array}{lllll}
+                &T: &\K^{n \times 1} &\to &\K^{m \times 1} \\
+                &&X &\mapsto &AX.
+                \end{array}
+            \end{equation*}
+            Observar que
+            $$
+            \nuc(T) = \{X \in \K^{n \times 1}: AX=0 \}.
+            $$
+            Es decir $\nuc(T)$  es el subespacio de soluciones del sistema homogéneo $AX=0$. Ahora bien, si $k = \text{\textit{rango fila }} (A)$, ya hemos dicho (capítulo \ref{chap-esp-vect}, sección \ref{seccion-dimensiones-de-subespacios}) que la dimensión del subespacio de soluciones del sistema homogéneo $AX=0$ es $n-k$. Luego
+            \begin{equation}\label{rangofila=n-nulT}
+                \text{\textit{rango fila }} (A) = \dim V - \dim (\nu T). 
+            \end{equation}
+            
+            Por otro lado 
+            $$
+            \img(T) = \{AX: X \in \K^{n \times 1} \}.
+            $$
+            Ahora bien, 
+            $$
+            AX = 
+            \begin{bmatrix} a_{11} x_1 +\cdots a_{1n} x_n \\ \vdots \\ a_{m1} x_1 +\cdots a_{mn} x_n  \end{bmatrix}
+            = 
+            x_1\begin{bmatrix} a_{11} \\ \vdots \\ a_{m1} \end{bmatrix} + \cdots +
+            x_n\begin{bmatrix}  a_{1n}  \\ \vdots \\ a_{mn}  \end{bmatrix}
+            $$
+            Es decir, que la imagen de $T$ es el espacio generado por las columnas de $A$. Por tanto,
+            $$
+            \text{\textit{ rango}}(T) =\text{\textit{ rango  columna }}(A).
+            $$
+            Por  el  teorema \ref{rang+nul=dimV}
+            $$
+            \text{\textit{ rango}}(T) = \dim V -  \dim (\nu T),
+            $$
+            y por lo tanto
+            \begin{equation}\label{rangocolumna=n-nulT}
+            \text{\textit{rango columna }} (A) = \dim V -  \dim (\nu T). 
+            \end{equation}
+            
+            Obviamente, las igualdades \eqref{rangofila=n-nulT} y \eqref{rangocolumna=n-nulT} implican 
+            $$
+        \text{\textit{rango fila }} (A) = \text{\textit{rango  columna }} (A).
+        $$
+        \end{proof}
+    
+        \begin{definicion}
+                Si $A$ es una matriz $m \times n$ con coeficientes  en $\K$,  entonces el \textit{rango}\index{rango de una matriz}\index{matriz!rango} de $A$ es el rango fila de $A$ (que es igual al rango columna).
+        \end{definicion}
+        
+        \subsection*{$\S$ Ejercicios}
+        \begin{enumex}
+            \item Determinar bases del núcleo y la imagen de las siguientes transformaciones lineales
+                \begin{enumex}
+                    \item $T: \R^3 \to \R^2$ dada por $T(x,y,z) = (x+y, x+z)$.
+                    \item $S: \R^2 \to \R^3$ dada por $S(x,y) = (0,x-y, 3y)$.
+                \end{enumex}
+            \item Sea $T: \K_3[x] \to \K_4[x]$ dada por $p(x) \mapsto x\cdot p(x)$. ¿Cuáles de los siguientes polinomios se encuentra en $\nu T$? ¿Cuáles en  $\im T$?
+                \begin{enumex}
+                    \begin{minipage}{0.3\textwidth}
+                        \item $x^3$,
+                    \end{minipage}
+                    \begin{minipage}{0.3\textwidth}
+                        \item $0$, 
+                    \end{minipage}
+
+                    \begin{minipage}{0.3\textwidth}
+                        \item $12x-\frac12 x^3$,
+                    \end{minipage}
+                    \begin{minipage}{0.4\textwidth}
+                        \item $1 +3x^2 -x^3$.
+                    \end{minipage}
+                \end{enumex}
+            \item Determinar la dimensión del núcleo de la transformación lineal $T$ en los siguientes casos. 
+                \begin{enumex}
+                    \item $T: \R^5 \to \R^8$ con $\dim(\im T) =5$.
+                    \item  $T: \K_3[x]\to \K_3[x]$ con $\dim(\im T) =1$.
+                    \item  $T: \R^6 \to \R^3$ con $T$ epimorfismo.
+                    \item $T: \R^{3 \times 3} \to \R^{3 \times 3}$ con $T$ epimorfismo.
+                \end{enumex}
+
+            \item Describir explícitamente una transformación linar de $\R^3$ en $\R^3$ cuya imagen esté generada por $(1,0,-1)$ y $(1,2,2)$. 
+
+            \item Sea $D: \R_n[x] \to \R_n[x]$ la transformación lineal ``derivada de''. Describir el  núcleo de $D$. ¿Cuál es el núcleo de la transformación lineal ``derivada $k$-ésima de''? 
+            \item Sea $T: \R^3 \to \R^3$  definida por
+                $$
+                    T(x,y,z) = (x_1-x_2 +2x_3,2x_1 + x_2, -x_1 -2x_2 + 2x_3). 
+                $$
+                \begin{enumex}
+                    \item Si $(a,b,c)$  en $\R^3$ ¿Cuáles son las condiciones sobre $(a,b,c)$ para que el vector pertenezca a $\im T$? 
+                    \item Encontrar una base de $\im T$. 
+                    \item Si $(a,b,c)$  en $\R^3$ ¿Cuáles son las condiciones sobre $(a,b,c)$ para que el vector pertenezca a $\nu T$? 
+                    \item Encontrar una base de $\nu T$. 
+                \end{enumex}
+                \item  Sea $T: \R^4 \to \R^3$ la transformación lineal  definida por
+                $$ T(x_1,x_2,x_3,x_4)  =(3x_1-x_2+x_4,-3x_1 +2x_2+x_3, 3x_1+x_3+2x_4).$$
+                \begin{enumerate}
+                    \item Encontrar una base de $\im T$ y dar su dimensión.
+                    \item Dar la dimensión del núcleo usando el teorema de la dimensión.
+                    \item Extender la base de $\im T$  a una base de $\R^3$.
+                \end{enumerate}
+                
+            \item Sea $V$ sea un espacio vectorial y $T: V \to V$ una transformación lineal. Demuestre que los dos enunciados siguientes sobre $T$ son equivalentes.
+                \begin{enumex}
+                    \item La intersección de $\im T$ y $\nu T$  es el subespacio cero de $V$.
+                    \item Si para $v \in V$, $T (Tv) = 0$, entonces $Tv = 0$.
+                \end{enumex}
+        \end{enumex}
+
+
+        \end{section}
+    
+        \begin{section}{Isomorfismos de espacios vectoriales}\label{seccion-isomorfismos-de-ev}
+        
+        \begin{definicion}
+            Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal.
+            \begin{enumerate}
+                \item $T$  es \textit{epimorfismo}\index{epimorfismo} si $T$ es suryectiva, es decir si $\img(T) = W$.
+                \item $T$ es \textit{monomorfismo}\index{monomorfismo} si $T$ es inyectiva (o 1-1),  es decir si dados $v_1,v_2 \in V$ tales que $T(v_1) = T(v_2)$,  entonces $v_1 = v_2$.
+                \item $T$ es \textit{isomorfismo}\index{isomorfismo} si $T$ es suryectiva e inyectiva.
+            \end{enumerate}  
+        \end{definicion}
+    
+        \begin{observacion*}
+            $T$  es epimorfismo si y sólo si 
+            $$
+            \text{$T$ es lineal y }\forall\, w \in W, \; \exists v \in V \text{ tal que }T(v)=w.
+            $$
+            Esto se deduce inmediatamente de la definiciones de función suryectiva y de $\img(T)$.
+            
+            $T$ es monomorfismo si y sólo si 
+            $$
+                \text{$T$ es lineal y }\forall\, v_1,v_2  \in V: \; v_1 \ne v_2 \Rightarrow T(v_1) \not= T(v_2).
+            $$ 
+            Esto se obtiene aplicando el contrarrecíproco a la definición de función inyectiva.
+        \end{observacion*}	
+        
+        Observar que $V$ es trivialmente isomorfo a $V$, ya que el operador identidad es un isomorfismo de $V$ sobre $V$. 
+            
+        \begin{proposicion}\label{inyectiva-sii-nuT=0}
+            Sea $T:V \to W$ una transformación lineal. Entonces $T$ es monomorfismo si y sólo si $\nuc(T) =0$.
+        \end{proposicion}	
+        \begin{proof} 
+            
+            ($\Rightarrow$) Debemos ver que  $\nuc(T)=0$,  es decir que si $T(v)=0$,  entonces  $v=0$. Ahora bien,  si $T(v) = 0$, como  $T(0)=0$, tenemos que $T(v)  = T(0)$, y como $T$ es inyectiva, implica que $v =0$.
+            
+            ($\Leftarrow$) Sean  $v_1,v_2 \in V$ tal que $T(v_1)=T(v_2)$. Entonces 
+            $$
+            0 = T(v_1)- T(v_2) = T(v_1 -v_2).
+            $$
+            Por  lo tanto, $v_1 -v_2 \in \nuc(T)$. Por hipótesis, tenemos que $v_1 -v_2 =0$,  es decir $v_1 = v_2$.
+        \end{proof}
+        
+        \begin{ejemplo*}
+            Probaremos que la transformación lineal $T: \R^3  \to \R^3$  dada por 
+            $$
+            T(x,y,z) = (x+z, y-z,-x +3y).
+            $$
+            es un monomorfismo, probando que $\nu(T)=0$.
+            
+           Observemos que  $(x,y,z) \in \nu(T)$ si y solo si $ T(x,y,z) = (0,0,0)$,  es decir si y solo si 
+           \begin{equation*}
+               \begin{cases}
+                   x + z &= 0 \\
+                   y - z &= 0 \\
+                   -x + 3z &=0,
+               \end{cases}
+           \end{equation*}
+           Resolvamos el sistema:
+           \begin{align*}
+               &\begin{bmatrix}
+                1&0&1\\
+                0&1&-1\\
+                -1&0&3
+               \end{bmatrix}
+               \stackrel{F_3+F_1}{\longrightarrow}
+               \begin{bmatrix}
+                1&0&1 \\
+                0&1&-1 \\
+                0&0&4
+               \end{bmatrix}
+                \stackrel{F_3/4}{\longrightarrow}
+                \begin{bmatrix}
+                    1&0&1\\
+                    0&1&-1 \\
+                    0&0&1 
+                \end{bmatrix}
+                \stackrel{F_1-F_3}{\stackrel{F_2 +F_3}{\longrightarrow}}
+                \begin{bmatrix}
+                    1&0&0 \\
+                    0&1&0\\
+                    0&0&1
+                \end{bmatrix}.
+           \end{align*}
+          Luego $(x,y,z) = (0,0,0)$ es la única solución del sistema $ T(x,y,z) = (0,0,0)$ y por lo tanto  $\nu(T)=0$.
+        \end{ejemplo*}
+
+        \begin{observacion*} Sea $T: V \to W$ transformación lineal, 
+            \begin{enumerate}
+                \item $T$  es {epimorfismo} si y sólo  si $\img(T) = W$ si  y solo si $rango(T) = \dim W$.
+                \item $T$ es {monomorfismo} si y sólo  si $\nuc(T) = 0$ si y sólo si $nulidad(T) =0$.
+            \end{enumerate}  
+        \end{observacion*}		
+        
+        \begin{proposicion}\label{prop-T-mono-sii-li-2-li} Sea $T:V \to W$ transformación lineal. Entonces,
+            \begin{enumerate}
+                \item\label{itm-T-mono-sii} $T$ es monomorfismo si y sólo si $T$ de un conjunto LI  es  LI.
+                \item\label{itm-T-epi-sii} $T$ es epimorfismo si y sólo si $T$ de un conjunto de generadores de $V$ es un conjunto de generadores de $W$.
+            \end{enumerate}
+        \end{proposicion}
+        \begin{proof} Haremos la demostración para el caso de dimensión finita,  pero en el caso general la demostración es similar. 
+            
+        \ref{itm-T-mono-sii} ($\Rightarrow$) Sea $\{v_1,\ldots,v_n \}$ un conjunto LI en $V$ y sean  $\lambda_1,\ldots,\lambda_n \in \K$ tales que
+        $$
+        \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n) =0,
+        $$
+        entonces
+        $$
+        0 = T(\lambda_1v_1+\cdots + \lambda_{n}v_n).
+        $$
+        Como $T$  es inyectiva, por proposición \ref{inyectiva-sii-nuT=0}, 
+        $$
+        \lambda_1v_1+\cdots + \lambda_{n}v_n =0,
+        $$
+        lo cual implica que $\lambda_1,\ldots,\lambda_n$ son todos nulos. Por lo tanto,  $T(v_1),\ldots,T(v_n)$ son LI.
+        
+        
+        \ref{itm-T-mono-sii} ($\Leftarrow$) Sea $v \in V$ tal que $T(v)=0$. Veremos que eso implica que $v =0$.  Ahora bien, sea  $\{v_1,\ldots,v_n \}$ una base de $V$,  entonces existen $\lambda_1,\ldots,\lambda_n \in \K$ tales que
+        $$
+        v = \lambda_1v_1+\cdots + \lambda_{n}v_n,
+        $$
+        por lo tanto
+        $$
+        0 = T(v) = T(\lambda_1v_1+\cdots + \lambda_{n}v_n) = \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n).
+        $$
+        Como $\{v_1,\ldots,v_n \}$ es LI, por hipótesis, $\{T(v_1),\ldots,T(v_n)\}$ es LI y, por lo tanto, $\lambda_1,\ldots,\lambda_n$ son todos nulos. Luego $v=0$. Es decir probamos  que el núcleo de $T$ es $0$, luego por proposición \ref{inyectiva-sii-nuT=0}, $T$ es monomorfismo. 
+        
+        \ref{itm-T-mono-sii} ($\Leftarrow$ \textit{alternativa}) Sea $v \in V$ tal que $T(v)=0$.	Si $v\neq 0$, entonces $\{v\}$ es un conjunto LI en $V$. Luego, $\{T(v)\}$ es un conjunto LI en $W$ y por lo tanto $T(v)\neq 0$. Así, si $T(v)=0$ entonces $v=0$ y por lo tanto $T$ es un monomorfismo.
+              
+        \ref{itm-T-epi-sii} ($\Rightarrow$) Sea   $\{v_1,\ldots,v_n \}$ un conjunto de generadores de $V$ y sea  $w \in W$. Como $T$  es epimorfismo, existe $v \in V$ tal que $T(v)=w$. Ahora bien, 
+        $$
+        v = \lambda_1v_1+\cdots + \lambda_{n}v_n,\, \text{ para algún $\lambda_1,\ldots,\lambda_n \in \K$,}
+        $$
+        por lo tanto,
+        $$
+        w =T(v) = T(\lambda_1v_1+\cdots + \lambda_{n}v_n) = \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n).
+        $$ 
+        Es decir,  cualquier $w \in W$ se puede escribir como combinación lineal de los  $T(v_1),\ldots,T(v_n)$ y, por lo tanto,  generan $W$.
+        
+            \ref{itm-T-epi-sii} ($\Leftarrow$) Sea $\{v_1,\ldots,v_n \}$ una base de $V$, por hipótesis $T(v_1),\ldots,T(v_n)$ generan $W$,  es decir dado cualquier $w \in W$,   existen $\lambda_1,\ldots,\lambda_n \in \K$ tales que
+        $$
+        w = \lambda_1T(v_1)+\cdots + \lambda_{n}T(v_n),
+        $$
+        y por lo tanto $w = T(v)$,  con 
+        $$
+        v = \lambda_1v_1+\cdots + \lambda_{n}v_n.
+        $$
+        \end{proof}
+
+        Recordemos que si una función $f: X \to Y$ es suryectiva e inyectiva, es decir biyectiva, existe su inversa, la cual también es biyectiva. La inversa se denota $f^{-1}: Y \to X$ y viene definida por
+        $$
+        f^{-1}(y) = x \Leftrightarrow f(x) =y.
+        $$ 
+        
+        \begin{teorema}
+            Sea $T:V \to W$ un isomorfismo. Entonces $T^{-1}: W \to V$ es lineal y, por lo tanto, también es un isomorfismo.
+        \end{teorema}
+        \begin{proof}
+            \
+            
+            Sean $w_1, w_2 \in W$, probemos que $ T^{-1}(w_1+w_2) =  T^{-1}(w_1)+ T^{-1}(w_2)$. 
+            
+            Sean $v_1 = T^{-1}(w_1) $, $v_2 = T^{-1}(w_2)$. Por lo tanto $T(v_1) = w_1$ y $T(v_2) = w_2$. Ahora bien,
+            \begin{multline*}
+                T^{-1}(w_1+w_2) = 	T^{-1}(T(v_1)+T(v_2))  = 	T^{-1}(T(v_1+v_2)) = \\ =(T^{-1}\circ T)(v_1+v_2) = v_1+v_2 = T^{-1}(w_1)+ T^{-1}(w_2). 
+            \end{multline*}    
+            
+            
+            Sean $w \in W$ y $\lambda  \in \K$, probemos que $T^{-1}(\lambda w) =\lambda  T^{-1}(w)$. 
+            
+            Sea $v = T^{-1}(w)$, entonces
+            \begin{equation*}
+            T^{-1}(\lambda w) = 	T^{-1}(\lambda T(v))  = 	T^{-1}(T(\lambda v)) = (T^{-1}\circ T)(\lambda v) = \lambda v = \lambda  T^{-1}(w). 
+            \end{equation*}
+        \end{proof}
+
+        \begin{ejemplo*}
+            Sea $T: \R^2 \to \C$ definida por $T(a,b) = a+ ib$. Entonces $T$ es un isomorfismo entre $\R$-espacios vectoriales. 
+        \end{ejemplo*}
+
+        \begin{ejemplo}\label{ejemplo-transformaciones-rigidas-del-plano}(\textsc{Transformaciones lineales rígidas de $\R^2$ en $\R^2$.}) Veremos a continuación que las rotaciones y reflexiones son isomorfismos de  $\R^2$  en  $\R^2$.  
+            
+        Sea $\theta \in \R$ tal que  $0 \le \theta \le 2\pi$,  definimos la transformación lineal
+            \begin{equation*}
+                \begin{array}{llll}
+                R_\theta:&\R^2 &\to &\R^2 \\
+                &(x,y) &\mapsto & (x \cos\theta - y \sin\theta, y\cos\theta+ x\sin\theta)
+                \end{array}
+            \end{equation*}
+            Observemos que si escribimos el vector $(x,y)$  en coordenadas polares,  es decir  si 
+            $$
+            (x,y)= r(\cos\alpha,\sin\alpha),\quad r> 0, \; 0 \le \alpha < 2\pi, 
+            $$
+            entonces
+            \begin{align*}
+                R_\theta(x,y) &= R_\theta(r\cos\alpha,r\sin\alpha) \\
+                &= (r\cos\alpha \cos\theta - r\sin\alpha \sin\theta, r\sin\alpha\cos\theta+ r\cos\alpha\sin\theta) \\
+                &= (r\cos(\alpha+\theta) , r\sin(\alpha+\theta)) \\
+                &= r(\cos(\alpha+\theta) , \sin(\alpha+\theta)).
+            \end{align*}
+            Por lo tanto $R_\theta(x,y)$ es el vector $(x,y)$ rotado $\theta$ grados en sentido antihorario y en consecuencia  $R_\theta$ es denominada la \textit{rotación antihoraria en $\theta$ radianes}. No es difícil verificar que  $R_\theta \circ R_{-\theta} = \Id$ y, en consecuencia,  $R_\theta$  es un isomorfismo.  
+
+                \begin{figure}[h]
+                    \centering	
+                \begin{tikzpicture}[scale=5]
+                \draw[->] (-0.1,0)  -- (1.1,0) node(xline)[right]	{$x$};
+                \draw[->] (0,-0.1) -- (0,1.1) node(yline)[above] {$y$};
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},thick] (0,0) -- (0.5,0.866) node(yline)[above] {$R_{\theta}(v)$};
+                \draw[->] (0.9238,0.3826) arc[start angle=22.5, end angle=60, radius=1 ];
+                \draw[-{Latex[black,length=3.0mm,width=2.0mm]},thick] (0,0) -- (0.9238,0.3826) node(yline)[right] {$v$};
+                \draw[->] (0.7,0) arc[start angle=0, end angle=22.5, radius=0.7 ];
+                \draw[->] (0.9238/2,0.3826/2) arc[start angle=22.5, end angle=60, radius=0.5 ];
+                \node [right] at (0.3,0.3) {$\theta$};
+                \node [right] at (0.59,0.12) {$\alpha$};
+                \draw (1,1pt) -- (1,-1pt);
+                \node [right] at (0.95,-0.07) {$r$};
+                % Lines
+                \end{tikzpicture}
+                \caption{Rotación  $\theta$ grados. }
+                \label{rotacion-theta}
+            \end{figure}
+            
+            
+            
+            Otras transformaciones lineales importantes de $\R^2$ en $\R^2$ son 
+            $$
+            S_h(x,y) = (x,-y) \quad \text{ y } \quad S_v(x,y) = (-x,y).
+            $$
+            La primera es la reflexión en el eje $x$ y la segunda la reflexión en el eje $y$. Claramente $S_h^2 = S_v^2 = \Id$ y por lo tanto ambos son isomorfismos. 
+            
+            Las siguientes afirmaciones se comprueban algebraicamente en forma sencilla, pero nos podemos convencer de ellas por su interpretación geométrica:
+            \begin{align}
+            &R_\theta \circ R_\varphi = R_{\theta +\varphi}, \label{comp-rotacion}\\
+            &R_{\pi/2} \circ S_h \circ R_{-\pi/2} = S_v\label{reflexion-h-v}.
+            \end{align}
+            La fórmula \eqref{comp-rotacion} nos dice que rotar $\varphi$ radianes y luego rotar $\theta$ radianes es lo mismo que  rotar $\theta+\varphi$ radianes. La fórmula \eqref{reflexion-h-v} nos dice que rotar $-90^\circ$, luego  hacer una reflexión horizontal y luego rotar $90^\circ$ es lo mismo que hacer una reflexión vertical. 
+        \end{ejemplo}
+
+        \begin{proposicion}
+            Sea $T:V \to W$ transformación lineal. Entonces $T$ es un isomorfismo si y solo si $T$ de una base de $V$ es una base de $W$.
+        \end{proposicion}
+        \begin{proof} 
+
+         ($\Rightarrow$) 
+           Sea $ \cB$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición \ref{prop-T-mono-sii-li-2-li}, $T(\cB)$ es LI y genera $W$,  es decir,  es base de $W$.
+
+           ($\Leftarrow$) Sea $ \cB$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\cB)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo.
+        \end{proof}
+
+        \begin{corolario}
+            Sean $V$ y $W$ dos  $\K$-espacios vectoriales de dimensión finita tal que $V$ es isomorfo a $W$. Entonces $\dim(V) = \dim(W)$.
+        \end{corolario}
+        \begin{proof}
+        Como $V$  es isomorfo  a $W$,  existe un isomorfismo $T: V \to W$. Por la proposición anterior si $v_1,\ldots,v_n$ es base de $V$,  entonces $T(v_1),\ldots,T(v_n)$ es base de $W$. Por lo tanto, $\dim(V) = n = \dim(W)$.
+        \end{proof}
+
+        \begin{ejercicio*} 
+            Sean $V$, $W$ y $Z$ espacios vectoriales sobre el cuerpo $\K$ y sean $T:V \to W$, $S:W \to Z$ isomorfismos. Entonces, 
+            \begin{enumerate}
+                \item $S\circ T:V \to Z$  también es un isomorfismo y
+                \item 	$(S\circ T)^{-1} = T^{-1}\circ S^{-1}$.
+            \end{enumerate}
+        \end{ejercicio*}
+
+        Como ya se ha dicho, $V$ es isomorfo a $V$ vía la identidad. Por  el teorema anterior, si $V$ es isomorfo a $W$,  entonces $W$ es isomorfo a $V$. Por  el ejercicio anterior, si $V$ es isomorfo a $W$ y $W$ es isomorfo a $Z$, entonces $V$ es isomorfo a $Z$. En resumen, el isomorfismo es una relación de equivalencia sobre la clase de espacios vectoriales. Si existe un isomorfismo de $V$ sobre $W$, se dirá a veces que \textit{$V$ y $W$ son isomorfos}, en vez de que $V$ es isomorfo a $W$. Ello no será motivo de confusión porque $V$ es isomorfo a $W$, si, y solo si, $W$ es isomorfo a $V$.	
+            
+        \begin{teorema}
+            Sean $V,W$ espacios vectoriales de dimensión  finita sobre $\K$ tal que $\dim V = \dim W$. Sea $T: V \to W$ transformación lineal. Entonces,  son equivalentes:
+            \begin{enumerate}[label=\textit{\alph*)},ref=\textit{\alph*)}]
+                \item\label{a-dimV=dimW} $T$ es un  isomorfismo.
+                \item\label{b-dimV=dimW} $T$ es monomorfismo.
+                \item\label{c-dimV=dimW} $T$ es epimorfismo.
+                \item\label{d-dimV=dimW} Si $\{v_1,\ldots,v_n \}$ es una base de $V$,  entonces $\{T(v_1),\ldots,T(v_n) \}$ es una base de $W$.
+            \end{enumerate}
+        \end{teorema}
+        \begin{proof}[Demostración (*)] Sea $n = \dim V = \dim W$.
+            
+            
+            \ref{a-dimV=dimW} $\Rightarrow$ \ref{b-dimV=dimW}. Como $T$ es isomorfismo,  es biyectiva y por lo tanto inyectiva.
+            
+            \ref{b-dimV=dimW} $\Rightarrow$ 
+            \ref{c-dimV=dimW}. $T$ monomorfismo,  entonces $nulidad(T) = 0$ (proposición \ref{inyectiva-sii-nuT=0}. Luego, como  $rango(T) +nulidad(T) = \dim V$,  tenemos que $rango(T) = \dim V$. Como $\dim V = \dim W$, tenemos que $\dim \img(T) = \dim W$ y por lo tanto $\img(T) = \dim W$. En  consecuencia, $T$ es suryectiva.
+            
+            \ref{c-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}. $T$ es suryectiva, entonces $rango(T) = n$, luego  $nulidad(T) = 0$, por lo tanto $\nuc(T)=0$ y en consecuencia $T$ es inyectiva. Como $T$ es suryectiva e inyectiva  es un isomorfismo. 
+            
+            Hasta aquí probamos que \ref{a-dimV=dimW}, (ref{b-dimV=dimW} y \ref{c-dimV=dimW} son equivalentes, luego si probamos que \ref{a-dimV=dimW}, \ref{b-dimV=dimW} o \ref{c-dimV=dimW}$\Rightarrow$ \ref{d-dimV=dimW} y que \ref{d-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}, \ref{b-dimV=dimW} o \ref{c-dimV=dimW}, estaría probado el teorema. 
+            
+            \ref{a-dimV=dimW} $\Rightarrow$ \ref{d-dimV=dimW}. Sea $\{v_1,\ldots,v_n \}$  una base de $V$,  entonces $\{v_1,\ldots,v_n \}$ es LI y  genera $V$. Por proposición \ref{prop-T-mono-sii-li-2-li}, tenemos que $\{T(v_1),\ldots,T(v_n) \}$ es LI y  genera $W$, por lo tanto $\{T(v_1),\ldots,T(v_n) \}$ es una base de $W$.
+            
+            \ref{d-dimV=dimW} $\Rightarrow$ \ref{a-dimV=dimW}. Como $T$ de una base es una base,  entonces $T$  de un conjunto LI es un conjunto LI y $T$ de un conjunto de generadores de $V$  es un conjunto de generadores de $W$. Por lo tanto, por proposición \ref{prop-T-mono-sii-li-2-li}, $T$ es monomorfismo y epimorfismo, luego $T$ es un isomorfismo. 	
+        \end{proof}
+    
+        \begin{corolario}
+            Sean $V,W$ espacios vectoriales de dimensión  finita sobre $\K$ tal que $\dim V = \dim W$. Entonces $V$ y $W$ son  isomorfos. 
+        \end{corolario}
+        \begin{proof}
+            Sea $\{v_1,\ldots,v_n \}$ es una base de $V$ y $\{w_1,\ldots,w_n \}$ es una base de $W$. Poe teorema \ref{th-tl-definida-en-base} existe una única transformación lineal $T:V \to W$ tal que
+            \begin{equation*}
+            T(v_i) = w_i, \qquad i=1,\ldots, n.
+            \end{equation*}
+            Por  el teorema anterior, $T$  es un isomorfismo.
+        \end{proof}
+    
+    
+    \begin{ejemplo*} $\K_n[x] = \{a_0+a_1x+\cdots+a_{n-1}x^{n-1}: a_0,a_1, \ldots,a_{n-1} \in \K \}$  es isomorfo a $\K^n$, esto es  consecuencia inmediata del corolario anterior, pues ambos tienen dimensión $n$. Explícitamente, $1,x,\ldots,x^{n-1}$  es base de $\K_n[x]$ y sea $e_1,\ldots,e_n$ la base canónica  de $\K^n$,  entonces un isomorfismo de $\K_n[x]$ a $\K^n$ viene dado por la única transformación lineal $T:\K_n[x] \to\K^n$ tal que
+        $$
+        T(x^i) = e_{i+1},\qquad i=0,\ldots, n-1.
+        $$   
+        
+    \end{ejemplo*}
+
+    \begin{ejemplo*} $M_{m \times n}(\K)$  es isomorfo a $\K^{mn}$. El isomorfismo viene dado por $T: M_{m \times n}(\K) \to \K^{mn}$ tal que
+        $$
+        T(E_{ij}) = e_{(i-1)n+j}, \qquad i=1,\ldots, m,\; j=1,\ldots, n.
+        $$
+    Por  ejemplo, en el caso  $2 \times 2$,
+    \begin{equation*}
+    \begin{array}{llll}
+    \begin{bmatrix} 1&0\\0&0\end{bmatrix} &\mapsto (1,0,0,0) \qquad&
+    \begin{bmatrix} 0&1\\0&0\end{bmatrix} &\mapsto (0,1,0,0) \\
+    &&&\\
+    \begin{bmatrix} 0&0\\1&0\end{bmatrix} &\mapsto (0,0,1,0) &
+    \begin{bmatrix} 0&0\\0&0\end{bmatrix} &\mapsto (0,0,0,1).
+    \end{array}
+    \end{equation*}	 
+        
+    \end{ejemplo*}
+    
+    \subsection*{$\S$ Ejercicios}
+
+    \begin{enumex}
+        \item Probar que la transformación lineal $T: \R^4 \to \R^{2 \times 2}$  definida
+        $$
+        (a,b,c,d) \mapsto \begin{bmatrix}
+            c&a+d\\ b&d
+        \end{bmatrix}
+        $$
+        es un isomorfismo. 
+        \item Probar que la transformación lineal $T: \R_2[x] \to \R^{2}$  definida
+        $$
+        a+bx \mapsto (a-b,b)
+        $$
+        es un isomorfismo. 
+        \item Sea $T: \R^2 \to \R^{2}$ definida
+        $$
+        T(x, y) = (3x - y, 4x + 2y).
+        $$
+        Probar que $T$ es un isomorfismo y calcular $T^{-1}$.
+        \item ¿Para que $n$ los siguientes subespacios son isomorfos a $\R^n$?
+        \begin{enumex}
+            \item $\R_5[x]$.
+            \item $\R_2[x]$.
+            \item $\R^{2 \times 3}$.
+            \item El plano $2x-y+z=0$ en $\R^3$.
+        \end{enumex}
+        \item Dar en forma explícita un isomorfismo de $\R_3[x]$ a $\R^3$ tal que
+        $$
+        1 +x^2 \mapsto (1,1,0), \qquad 2-x \mapsto (1, -1, 1).
+        $$
+        \item Sea $L: V \to V$ una transformación lineal tal que $L^2 + 2L + \Id = O$. Demuestre que $L$ es invertible.
+        \item Usando el isomorfismo entre $\R^2$ y $\C$, $(a,b)\mapsto a + ib$,  podemos pensar a las transformaciones rígidas del plano del ejemplo \ref{ejemplo-transformaciones-rigidas-del-plano}) como funciones de $\C$ en $\C$.
+            \begin{enumex}
+                \item  Probar que la reflexión horizontal  $S_h: \C \to \C$ es $S_h(z) = \overline{z}$. 
+                \item Probar que $R_\theta(z) = e^{i\theta}z$ (producto de números complejos). 
+                \item Probar que la reflexión vertical $S_v$  es $S_v = R_\pi \circ S_h$. 
+            \end{enumex}
+        \item\label{ejercicio-isometria} Sea $T: \R^n \to \R^n$ un operador lineal. Diremos que $T$  es una  \textit{isometría} si $||T(v)|| = ||v||$ para todo $v \in \R^n$. 
+            \begin{enumex}
+                \item Probar que las rotaciones y reflexiones en $\R^2$ son isometrías. 
+                \item Probar que una isometría es un isomorfismo y  que la inversa también es una isometría.
+                \item Probar que si $T$ es una isometría,  entonces
+                $$
+                \langle T(v), T(w) \rangle = \langle v,w \rangle \; \text{ para todo } \; v,w \in \R^n.  
+                $$
+                [Ayuda: usar la identidad de polarización  vista en el ejercicio \ref{ejercicio-identidad-de-polarizacion} de la sección \ref{secccion-norma-de-un-vector}].
+            \end{enumex}
+            
+            \item Usando el isomorfismo entre $\R^2$ y $\C$, $(a,b)\mapsto a + ib$,  podemos pensar a las isometrías del plano como funciones de $\C$ en $\C$.
+            \begin{enumex}
+                \item Sea $T: \C \to \C$ una isometría. Probar que $T(1) =e^{i\theta}$, para algún $\theta$ tal que $0 \le \theta < 2\pi$. 
+                \item Sea $T: \C \to \C$ una isometría tal que $T(1) =1$. Probar que, o bien $T = \Id$, o  bien $T = S_h$.
+                \item  Sea $T: \C \to \C$ una isometría tal que $T(1) = e^{i\theta}$. Probar que, o bien $T = R_\theta$, o  bien $T = R_\theta \circ S_h$.
+            \end{enumex}
+            \item Sea $V$ un espacio vectorial sobre $\R$, y sean $v, w \in V$ con $w \ne 0$. La \textit{recta que pasa por $v$ y es paralela a $w$} se define como el conjunto de todos los elementos $v + tw$ con $t\in \R$.
+            El \textit{segmento de recta entre $v$ y $v + w$} se define como el conjunto de todos los elementos
+            $$
+            v + tw \qquad  \text{ con } \qquad  0\le t \le 1. 
+            $$
+            Sea $T: V \to U$ una transformación lineal. Muestre que la imagen por $T$  de un segmento de recta en $V$ es un segmento de recta en $U$. ¿Entre qué puntos?
+            
+            Pruebe que la imagen de una recta por $T$  es o bien una recta  o bien un punto.
+            
+            \item Sea $V$ un espacio vectorial y $v_1,v_2$  dos elementos de $V$ linealmente independientes. El conjunto de subconjunto de $V$ definido: 
+            $$
+            \left\{ t_1v_1 + t_2v_2: 0 \le t_1 \le 1, \quad 0 \le t_2 \le 1 \right\}
+            $$
+            se llama el \textit{paralelogramo generado por $v_1$ y $v_2$}. 
+            \begin{enumex}
+                \item Sea $T: V \to W$ transformación lineal, $v_1,v_2$  dos elementos de $V$ que son linealmente independientes y  tales que $T(v_1),T(v_2)$  son linealmente independientes. Probar que la imagen por $T$ del paralelogramo generado por $v_1$ y $v_2$ es el paralelogramo generado por $T(v_1)$ y $T(v_2)$. 
+                \item Sea $T: \R^2 \to R^2$ una isometría  y $v,w$ vectores en $\R^2$ que son LI. Probar que el área del paralelogramo generado  por $v,w$ es igual al área del paralelogramo generado por $T(v),T(w)$ (ver ejercicio \ref{ejercicio-area-de un paralelogramo} de la sección \ref{seccion-determinante}).   
+            \end{enumex}   
+    \end{enumex}
+
+    
+        \end{section}
+    
+        \begin{section}{\'Algebra de las transformaciones lineales (*)}\label{seccion-algebra-de-las-transformaciones-lineales}
+            En el estudio de las transformaciones lineales de $V$ en $W$ es de fundamental importancia que el conjunto de estas transformaciones hereda una estructura natural de espacio vectorial. El conjunto de las transformaciones lineales de un espacio $V$ en sí mismo tiene incluso una estructura algebraica mayor, pues la composición ordinaria de funciones da una ``multiplicación'' de tales transformaciones. 
+            
+            
+            Observemos primero que si $X$ conjunto y $W$ espacio vectorial sobre el cuerpo $\K$,  entonces
+            $$
+            F(X,W) := \{f:X\to W\},
+            $$ 
+            es decir el conjunto de funciones de $X$ en $W$ es un espacio vectorial sobre $\K$ con la suma y el producto por escalares definido:
+            \begin{equation*}
+            \begin{array}{rlcl}
+            (f+g)(x) &= f(x)+ g(x),\qquad &f,g& \in F(X,W),\; x \in X\\
+            (\lambda f)(x) &= \lambda f(x), & f& \in F(X,W),\; x \in X, \; \lambda \in \K.
+            \end{array}
+            \end{equation*}
+            La demostración de esto es sencilla y se basa en el hecho que $W$  es un espacio vectorial. 
+            
+            \begin{teorema}
+                Sean $V$ y $W$ espacios vectoriales sobre el cuerpo $\K$ Sean $T,S : V \to W$ transformaciones y $\mu \in \K$. Entonces, $T + S$ y $\mu T$ son transformaciones lineales de $V$ en $W$.
+            \end{teorema}
+            \begin{proof}
+                Sean $v,v' \in V$ y $\lambda \in \K$, entonces
+                \begin{equation*}
+                \begin{array}{rlll}
+                    (T + S)(\lambda v + v') &= T(\lambda v + v') + S(\lambda v + v')&\qquad&\text{(def. de $T+S$)} \\
+                    &= \lambda T(v) + T(v') + \lambda S(v) + S(v')& &\text{($T$ y $S$ lineales)}\\
+                    &= \lambda (T(v) +S(v)) + T(v') + S(v')&&\text{}\\
+                    &= \lambda ((T+S)(v)) + (T + S) (v')& &\text{(def. de $T+S$)}\\
+                    &= \lambda(T + S)(v) +(T + S) (v')&&\text{(def. de $\lambda(T + S)$)}.
+                \end{array}
+                \end{equation*}
+                que dice que $T + U$ es una transformación lineal. En forma análoga, si $\mu \in \K$, 
+                \begin{equation*}
+                \begin{array}{rlll}
+                (\mu T)(\lambda v + v') &= \mu T(\lambda v + v')&\qquad&\text{(def. de $\mu T$)} \\
+                &= \mu \lambda T(v) + \mu T(v') &\qquad&\text{($T$ lineal)}\\
+                &=  \lambda \mu T(v) + \mu T(v')&\qquad&\text{}\\
+                &= \lambda (\mu T)(v) + (\mu T)(v') &\qquad&\text{(def.de $\mu T$)}.
+                \end{array}
+                \end{equation*}
+                que dice que $\mu T$ es una transformación lineal.
+            \end{proof}
+            
+        \begin{corolario}
+            Sean $V$ y $W$ espacios vectoriales sobre el cuerpo $\K$. Entonces, el conjunto de transformaciones lineales de $V$ en $W$ es un subespacio vectorial  de $F(V,W)$. 
+        \end{corolario} 	
+            
+        Se denotará  $L(V,W)$ al espacio vectorial de las transformaciones lineales de $V$ en $W$.
+        
+        \begin{teorema}\label{th-6-hoffman}
+            Sean $V$, $W$ y $Z$ espacios vectoriales sobre el cuerpo $\K$.  Sean $T: V \to W$ y $U: W \to Z$ 
+            transformaciones lineales. Entonces la función compuesta $U\circ T$ definida por $(U\circ T)(v) = U(T(v))$ es una transformación lineal de $V$ en $Z$.
+        \end{teorema} 
+        \begin{proof} Sean $v, v' \in V$ y $\lambda \in \K$, entonces
+            \begin{equation*}
+            \begin{array}{rlll}
+                (U\circ T)(\lambda v + v') &= U(T(\lambda v + v'))&\qquad&\text{(def. de composición)} \\
+                 &= U(\lambda T( v) + T(v'))&\qquad&\text{($T$ lineal)} \\
+                 &= \lambda U(T( v)) + U(T(v'))&\qquad&\text{($U$ lineal)} \\
+                 &= \lambda (U\circ T)( v) + (U\circ T)(v')&\qquad&\text{(def. de composición)}. \\
+            \end{array}
+            \end{equation*}
+            
+        \end{proof}
+        
+        Para simplificar, a veces  denotaremos la composición por yuxtaposición,  es decir $$U\circ T = U T.$$
+        
+        
+        En lo que sigue debemos interesarnos principalmente en transformaciones lineales de un espacio vectorial en sí mismo. Como se tendrá a menudo que 	escribir ``$T$ es una transformación lineal de $V$ en $V$'', se dirá más bien: ``$T$ es un operador lineal sobre $V$''. 
+        
+        \begin{definicion}
+            Si $V$ es un espacio vectorial sobre el cuerpo $\K$, un \textit{operador lineal}\index{operador lineal} sobre $V$ es una transformación lineal de $V$ en $V$.
+        \end{definicion}
+        
+        Cuando  en el teorema \ref{th-6-hoffman}, consideramos $V = W = Z$, tenemos que $U$ y $T$ son opera-
+        dores lineales en el espacio $V$, y por lo tanto la composición $UT$ es también un operador lineal sobre $V$. Así, el espacio $L(V, V)$ tiene una ``multiplicación'' definida por composición. En este caso el operador $TU$ también está definido, y debe observarse que en general $UT \not= TU$, es decir, $UT - TU \not= 0$. Se ha de advertir de manera especial que si $T$ es un operador lineal sobre $V$, entonces se puede componer $T$ con $T$. Se usará para ello la notación $T^2 = TT$, y en general $T^n = T \cdots T$ ($n$ veces) para $n = 1, 2, 3, \ldots$\,  Si $T \ne 0$, se define $T^0 = \Id_V$, el operador identidad.
+            
+        \begin{lema}
+            Sea $V$ un espacio vectorial sobre el cuerpo $\K$; sean $U$, $T$ y $S$ operadores lineales sobre $V$ y sea $\lambda$ un elemento de $\K$. Denotemos $\Id_V$ el operador identidad. Entonces
+            \begin{enumerate}
+                \item\label{itm-op-1} $U = \Id_VU = U\Id_V$,
+                \item\label{itm-op-2} $U(T+S) = UT + US$, $(T+S)U = TU + SU$,
+                \item\label{itm-op-3} $\lambda (UT) = (\lambda U)T = U (\lambda T)$.
+            \end{enumerate}
+        \end{lema}
+        \begin{proof}
+            \ref{itm-op-1} es trivial. 
+            
+            Demostraremos $U(T+S) = UT + US$ de \ref{itm-op-2} y todo lo demás se dejará como ejercicio.
+            Sea $ v \in V$, entonces
+            \begin{align*}
+            U(T+S)(v) &= U((T+S)(v))&\qquad&\text{(definición de composición)} \\
+            &= U(T(v)+S(v))&\qquad&\text{(definición  de $T+S$)} \\
+            &= U(T(v))+U(S(v))&\qquad&\text{($U$ lineal)} \\
+            &= UT(v)+US(v)&\qquad&\text{(definición de composición)}.
+            \end{align*}  
+        \end{proof}	
+    
+    El contenido de este lema, y algunos otros resultados  sobre composición de funciones de un conjunto en si mismo (como ser la asociatividad), dicen que el espacio vectorial $L(V, V)$, junto con la operación de composición, es lo que se conoce tomo una  álgebra asociativa sobre $\K$,  con identidad (ver \href{https://es.wikipedia.org/wiki/Álgebra\_asociativa}{https://es.wikipedia.org/wiki/Álgebra\_asociativa}). 
+    
+        \subsection*{$\S$ Ejercicios}
+
+        \begin{enumex}
+            \item Sean $T,S, R: \R^3 \to \R^3$ definidas
+            \begin{align*}
+                T(x,y,z) &= (x-z, y+z, -x+y), \\
+                S(x,y,z) &= (2x-y+z, y+3z, -2x+2y-z), \\
+                R(x,y,z) &= (3x-y+z, 4y+3z, -x+3y).
+            \end{align*}
+            Calcular
+                \begin{enumex}
+                    \begin{minipage}{0.19\textwidth}
+                    \item $T \circ S$.\end{minipage}
+                    \begin{minipage}{0.19\textwidth}
+                    \item $S \circ R$.\end{minipage}
+                    \begin{minipage}{0.22\textwidth}
+                    \item $(T \circ S) \circ R$.\end{minipage}
+                    \begin{minipage}{0.2\textwidth}
+                    \item $T \circ( S\circ R$).\end{minipage}
+                \end{enumex}
+            \item Sea $T: V \to V$ una transformación lineal. Diremos que $T$ es \textit{nilpotente} si existe $k \in \N$ tal que $T^k =0$. 
+            \begin{enumex}
+                \item Probar que si $T$ es nilpotente y $T^k=0$,  entonces $T^n = 0$ para $n \ge k$. 
+                \item Sea $T$ nilpotente. Definimos
+                $$
+                e^T := \sum_{i=0}^\infty \frac1{i!}T^i.
+                $$
+                (Observar que $e^T$ está bien definido por ser $T$ nilpotente). 
+                
+                Probar que $e^T$ es invertible y su inversa es $e^{-T}$. 
+                \item Sean $T, S$ nilpotentes y tales que $TS=ST$. Probar que $T+S$ es nilpotente y que
+                $$
+                e^{T}e^{S}= e^{T+S}.
+                $$
+            \end{enumex}
+            
+        \end{enumex}
+
+        \end{section}
+
+
+
+
+        
+
+
+    \begin{section}{Coordenadas}\label{seccion-coordenadas}
+        Una de las características útiles de una base $\cB$ en un espacio vectorial  $V$ de dimensión $n$ es que permite introducir coordenadas en $V$ en forma análoga a las ``coordenadas naturales'', $x_i$, de un vector $v = (x_l,\ldots, x_n)$ en el espacio $\K^n$. En este esquema, las coordenadas de un vector $v$ en $V$, respecto de la base $\cB$, serán los escalares que sirven para expresar $v$ como combinación lineal de los vectores de la base. En  el caso  de la base canónica $e_1,\ldots,e_n$ de $\K^n$ tenemos
+        $$
+        v = (x_1,\ldots,x_n) = \sum_{i=1}^{n} x_ie_i.
+        $$
+        por lo tanto $x_i$  es la coordenada $i$-ésima de $v$ respecto a la base canónica. 
+        
+        En  forma análoga veremos que si $v_1,\ldots,v_n$  es una base de $V$,  entonces existe una única forma de  escribir 
+        $$
+        v =  \sum_{i=1}^{n} x_iv_i,
+        $$ 
+        y los valores  $x_i$  serán las \textit{coordenadas de $v$}\index{coordenadas de un vector} en la base dada. 
+        
+        \begin{definicion}
+            Si $V$ es un espacio vectorial de dimensión finita, una \textit{base ordenada}\index{base ordenada} de $V$ es una sucesión finita de vectores linealmente independiente y que genera $V$.
+        \end{definicion}
+        
+        
+        La diferencia entre la definición de ``base'' y la de ``base ordenada'',  es que en la última es  importante el orden de los vectores de la base. Si la sucesión $v_1,\ldots,v_n$ es una base ordenada de $V$, entonces el conjunto $\{v_1,\ldots,v_n\}$ es una base de $V$. La base ordenada es el conjunto, juntamente con el orden dado. Se incurrirá en un pequeño abuso de notación y se escribirá
+        $$
+        \mathcal{B} = \{v_1,\ldots,v_n\}
+        $$
+        diciendo que $\mathcal{B}$ es una base ordenada de $V$.
+        
+        \begin{proposicion}
+            Sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$. Entonces, para cada $v \in V$,  existen únicos $x_1,\ldots,x_n \in \K$ tales que $$v =   x_1v_1 + \cdots +x_nv_n.$$
+        \end{proposicion}
+        \begin{proof}
+            Como $v_1,\ldots,v_n$  generan $V$,  es claro que existen $x_1,\ldots,x_n \in \K$ tales que $v =   x_1v_1 + \cdots +x_nv_n$. Sean $y_1,\ldots,y_n \in \K$ tales que $v =   y_1v_1 + \cdots +y_nv_n$. Veremos que $x_i = y_i$ para $1 \le i \le n$.
+            
+            Como $v =  \sum_{i=1}^{n} x_iv_i$ y $v =  \sum_{i=1}^{n} y_iv_i$,  restando miembro a miembro obtenemos 
+            $$
+            0 =   \sum_{i=1}^{n} (x_i-y_i)v_i.
+            $$
+            Ahora bien,  $v_1,\ldots,v_n$ son  LI, por lo tanto todos los coeficientes de la ecuación anterior son nulos, es decir $x_i-y_i=0$ para $1 \le i \le n$ y entonces $x_i = y_i$ para $1 \le i \le n$.
+        \end{proof}
+    
+    La proposición anterior permite, dada una base ordenada,  asociar a cada vector una $n$-tupla que serán la coordenadas del vector en esa base.
+    
+    \begin{definicion}
+    sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, si $v \in V$ y $$v =   x_1v_1 + \cdots +x_nv_n,$$  entonces \textit{$x_i$ es la coordenada $i$-ésima de $v$} y denotamos
+    $$
+    [v]_\mathcal{B} = (x_1,\ldots,x_n).
+    $$
+    También nos será útil describir a $v$ como una matriz $n \times 1$ y en ese caso hablaremos de \textit{la matriz de $v$  en la base  $\mathcal{B}$}:
+    $$
+    [v]_\mathcal{B} = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}.
+    $$
+    (Usamos la misma notación).
+    \end{definicion}
+
+
+
+    \begin{ejemplo*}
+        Sea $\cB = \{(1,-1),(2,3)\}$ base ordenada de $\R^2$. Encontrar las coordenadas  de $(1,0)$ y $(0,1)$ en la base $\cB$.
+    \end{ejemplo*}
+    \begin{proof}[Solución] Debemos encontrar $x_1, x_2 \in \R$ tal que 
+        $$
+        (1,0) = x_1(1,-1)+ x_2(2,3).
+        $$
+        Es decir 
+        \begin{align*}
+            x_1+ 2x_2 &= 1\\
+            -x_1 + 3x_2 &= 0.
+        \end{align*}
+        Resolviendo el sistema de ecuaciones obtenemos $x_1 = \frac35$ y $x_2 = \frac15$,  es decir
+        $$
+        (1,0) =\; \frac35(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (1,0) = (\;\frac35,\frac15)_{\cB}.
+        $$ 
+        De forma análoga podemos ver que
+        $$
+        (0,1) = -\frac25(1,-1)+ \frac15(2,3)\quad \text{o equivalentemente} \quad (0,1) = (-\frac25,\frac15)_{\cB}.
+        $$
+    \end{proof}
+    
+    \begin{proposicion}\label{vectorbase->lineal}
+        Sea $\mathcal{B}=\{v_1,\ldots,v_n\}$ una base ordenada de $V$ un $\K$-espacio vectorial. Entonces
+        \begin{enumerate}
+            \item\label{itm-coor-1} $[v + w]_\mathcal{B} = [v]_\mathcal{B} +[w]_\mathcal{B}$, para $v,w \in V$,
+            \item\label{itm-coor-2} $[\lambda v]_\mathcal{B} = \lambda[v]_\mathcal{B}$, para $\lambda \in \K$ y $v \in V$.
+        \end{enumerate}
+    \end{proposicion} 
+    \begin{proof}${}^{}$
+        \begin{enumerate}
+            \item[\ref{itm-coor-1}] Si $v = x_1v_1 + \cdots +x_nv_n$ y $w = y_1v_1 + \cdots +y_nv_n$, entonces 
+            $$
+            v + w = (x_1+y_1)v_1 + \cdots +(x_n+y_n)v_n,
+            $$
+            luego,
+            \begin{align*}
+                [v + w]_\mathcal{B} &=(x_1+y_1,\ldots ,x_n+y_n) \\
+                &= (x_1,\ldots, x_n) +(y_1,\ldots , y_n) \\
+                &= [v]_\mathcal{B} +[w]_\mathcal{B}.
+            \end{align*}
+                    
+            \item[\ref{itm-coor-2}] Si $v = x_1v_1 + \cdots +x_nv_n$ y $\ \in \K$, entonces 
+            $$
+            \lambda v = (\lambda x_1)v_1 + \cdots +(\lambda x_n)v_n,
+            $$
+            luego,
+            \begin{align*}
+                [\lambda v ]_\mathcal{B} &= (\lambda x_1,\ldots , \lambda x_n )\\
+            &= \lambda (x_1,\ldots ,x_n) \\
+            &= \lambda [v]_\mathcal{B}.
+            \end{align*}
+        \end{enumerate}
+    \end{proof}
+
+    \begin{observacion*}
+        En la siguiente sección veremos una forma sistemática para hacer \textit{``cambio de coordenadas''}. Es decir,  dadas dos bases ordenadas $\mathcal{B}$, $\mathcal{B}'$ encontraremos una matriz $P \in \R^{n \times n}$ tal que $[v]_{\mathcal{B}} = P [v]_{\mathcal{B}'}$ para todo $v$ en $V$ (corolario \ref{cor-cambio-de-base}).
+    \end{observacion*}
+    
+    \subsection*{$\S$ Ejercicios}
+    \begin{enumex}
+        \item Dar las coordenadas de la matriz
+        $A=\begin{bmatrix}1&2\\3&4\end{bmatrix} \in \mathbb{K}^{2\times 2} $ en la base ordenada
+        $$
+        \mathcal{B}=\left\{
+        \begin{bmatrix} 0&1\\0&0 \end{bmatrix},
+        \begin{bmatrix} 0&0\\0&1 \end{bmatrix},
+        \begin{bmatrix} 1&0\\0&0 \end{bmatrix},
+        \begin{bmatrix} 0&0\\1&0 \end{bmatrix}
+            \right\}.
+        $$
+        Más generalmente, dar las coordenadas de cualquier matriz $\begin{bmatrix} a&b\\c&d \end{bmatrix}$ en la base $\mathcal{B}$.
+
+        \item Dar las coordenadas del polinomio $p(x) = -1+10x+2x^2\in\mathbb{K}_3[x]$ en la base ordenada $$\mathcal{B}=\{1,1+x,1+x+x^2\}.$$
+
+        \item
+        \begin{enumex}
+            \item Dar una base ordenada del subespacio $W=\{(x,y,z)\in\mathbb{K}^3\mid x-y+2z=0\}$.
+            \item Dar las coordenadas de $w=(1,-1,-1)$ en la base que haya dado en el item anterior.
+            \item Dado $(x,y,z)\in W$, dar las coordenadas de $(x,y,z)$ en la base que haya calculado en el item (a).
+        \end{enumex}
+    \end{enumex}
+    
+    \end{section}
+
+
+        \begin{section}{Matriz de una transformaci\'on lineal}\label{seccion-matriz-de-una-tl}
+            Sea $V$ un espacio vectorial de dimensión $n$ sobre el cuerpo $\K$, y sea $W$ un espacio vectorial de dimensión $m$ sobre $\K$. Sea $\cB = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\cB' = \{w_1,\ldots,w_m\}$ una base ordenada de $W$. Si $T$ es cualquier 		transformación lineal de $V$ en $W$, entonces $T$ está determinada por su efecto sobre los vectores $v_j$, puesto que todo vector de $V$ es combinación lineal de ellos. Cada uno de los $n$ vectores $Tv_j$ se expresa de manera única 	como combinación lineal
+            \begin{equation}\label{matriz-de-T-1}
+                Tv_j = \sum_{i=1}^{m} a_{ij} w_i
+            \end{equation}
+            de los $w_i$. Los escalares $a_{1j},\ldots,a_{mj}$ son las coordenadas de $Tv_j$ en la base ordenada $\cB'$. Por consiguiente, la transformación $T$ está determinada por los
+            $m\cdot n$ escalares $a_{ij}$ mediante la expresión \eqref{matriz-de-T-1}. 
+            
+            \begin{definicion} Sean $V$ y $W$ espacios vectoriales de dimensión finita con bases ordenadas $\cB = \{v_1,\ldots,v_n\}$  y $\cB' = \{w_1,\ldots,w_m\}$, respectivamente. Sea $T: V \to W$ una transformación lineal tal que 
+                \begin{equation*}\label{matriz-de-T-1p}
+                    Tv_j = \sum_{i=1}^{m} a_{ij} w_i.
+                \end{equation*}
+                A  $A$  La matriz $m \times n$  definida por $[A]_{ij} = a_{ij}$ se la  denomina \textit{la matriz de $T$ respecto a las bases ordenadas $\cB$ y $\cB'$;}\index{matriz!de una transformación lineal} y se la denota 
+                $$
+                [T]_{\cB \cB'} = A .
+                $$
+                Si $T: V \to V$ una transformación lineal y $\cB$ es una base ordenada de $V$,  a la matriz $[T]_{\cB \cB}$ también se la denota $[T]_{\cB}$.
+            \end{definicion}
+            
+            \begin{ejemplo*}
+                Sea $T: \R^3 \to \R^4$ definida
+                $$
+                T(x,y,z) = (2x+y, 3y, x+4z,z).
+                $$
+                Sean  $\cC_3 = \{e_1,e_2,e_3\}$ la base canónica de $\R^3$ y  $\cC_4 = \{e_1,e_2,e_3,e_4\}$ la base canónica de $\R^4$. Entonces
+                \begin{equation*}
+                    \begin{array}{ccccrcrcrcr}
+                    T(e_1) & = & (2,0,1,0) & = &  2e_1& + & 0.e_2& + &   e_3& + & 0.e_4  \\
+                    T(e_2) & = & (1,3,0,0) & = &   e_1& + &  3e_2& + & 0.e_3& + & 0.e_4  \\
+                    T(e_3) & = & (0,0,4,1) & = & 0.e_1& + & 0.e_2& + &  4e_3& + &   e_4
+                    \end{array}
+                \end{equation*}
+                Por  lo tanto
+                \begin{equation*}
+                        [T]_{\cC_3 \cC_4} =\begin{bmatrix} 2&1&0 \\0&3&0 \\1&0&4 \\0&0&1
+                    \end{bmatrix}.
+                \end{equation*}
+                Observar que si escribimos los vectores en coordenadas con respecto  a las bases canónicas,  tenemos que 
+                \begin{equation*}
+                \begin{bmatrix} 2&1&0 \\0&3&0 \\1&0&4 \\0&0&1
+                \end{bmatrix}
+                \begin{bmatrix} x \\ y \\z\end{bmatrix} = 
+                \begin{bmatrix} 2x+y\\ 3y\\ x+4z\\z\end{bmatrix}
+                \end{equation*}
+                o más formalmente
+                \begin{equation*}
+                    [T]_{\cC_3 \cC_4} [v]_{\cC_3} = [T(v)]_{\cC_4}.
+                \end{equation*}
+            \end{ejemplo*}
+        
+        
+            \begin{observacion*}
+                Recordemos que si  $A = [a_{ij}]$ matriz $m \times n$, el operador lineal asociado a $A$ si se define por 
+                \begin{align*}
+                    \begin{array}{rccc}
+                        T : &\R^n &\to &\R^m \\
+                            &v &\mapsto &Av.
+                    \end{array}.
+                \end{align*}
+                Es decir
+                \begin{equation}
+                    T(x_1,\ldots,x_n):= \begin{bmatrix} a_{11} &\cdots &a_{1n} \\ \vdots &\ddots& \vdots \\a_{m1} &\cdots &a_{mn}
+                    \end{bmatrix}\begin{bmatrix}x_1\\\vdots\\x_n\end{bmatrix}.
+                \end{equation}
+         	
+        
+                Sean  $\cC_n$ y $\cC_m$ las bases canónicas de $\R^n$ y $\R^m$,  respectivamente, entonces 
+                    \begin{equation*}
+                        [T]_{\cC_n\cC_m} =A.
+                    \end{equation*}
+                \end{observacion*}
+    
+            \begin{proposicion}\label{prop-matriz-de-tv} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\cB = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\cB' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
+            \begin{equation}\label{matriz-de-tl-2}
+            [T]_{\cB \cB'} [v]_{\cB} = [T(v)]_{\cB'}, \quad \forall \,v \in V.
+            \end{equation}	
+            \end{proposicion}
+        \begin{proof}
+            Si 
+            \begin{equation*}
+            Tv_j = \sum_{i=1}^{m} a_{ij} w_i
+            \end{equation*}
+            entonces $[T]_{ij} = a_{ij}$. Sea $v \in $,  entonces $v = x_1v_1+\cdots+x_n v_n$ con $x_i \in \K$, por lo tanto 
+            $$
+            [v]_{\cB} = \begin{bmatrix} x_1\\ \vdots\\x_n\end{bmatrix}.
+            $$
+            Ahora bien,
+            \begin{multline*}
+                T(v) = T(\sum_{j=1}^{n}x_jv_j) = \sum_{j=1}^{n}x_jT(v_j) =  \sum_{j=1}^{n}x_j\sum_{i=1}^{m} a_{ij} w_i = \sum_{i=1}^{m} (\sum_{j=1}^{n}x_ja_{ij}) w_i =\\
+                = ( \sum_{j=1}^{n}x_ja_{1j})w_1+(\sum_{j=1}^{n}x_ja_{2j})w_2+\cdots+(\sum_{j=1}^{n}x_ja_{mj})w_m
+            \end{multline*}
+            y, por lo tanto,
+            \begin{equation}\label{eq-45}
+            [T(v)]_{\cB'} = \begin{bmatrix}  \sum_{j=1}^{n}x_ja_{1j}\\\sum_{j=1}^{n}x_ja_{2j}\\ \vdots\\\sum_{j=1}^{n}x_ja_{mj}\end{bmatrix}.
+            \end{equation}
+            Por otro lado, 
+            \begin{equation}\label{eq-46}
+            [T]_{\cB \cB'} [v]_{\cB} = 
+            \begin{bmatrix} a_{11} &a_{12}&\cdots & a_{1n}
+            \\a_{21} &a_{22}&\cdots & a_{2n}\\ \vdots &\vdots&& \vdots \\ a_{m1} &a_{m2}& \cdots & a_{mn}\end{bmatrix}
+            \begin{bmatrix} x_1\\x_2\\ \vdots\\x_n\end{bmatrix}
+            =
+            \begin{bmatrix}  \sum_{j=1}^{n}a_{1j}x_j\\\sum_{j=1}^{n}a_{2j}x_j\\ \vdots\\\sum_{j=1}^{n}a_{mj}x_j\end{bmatrix}.
+            \end{equation}
+            De las ecuaciones \eqref{eq-45} y \eqref{eq-46} se deduce la formula \eqref{matriz-de-tl-2}.
+        \end{proof}
+
+        \begin{corolario}\label{cor-cambio-de-base}
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\cB$, $\cB'$  bases ordenadas de $V$. Entonces 
+            \begin{equation*}
+                [v]_{\cB} = [\Id]_{\cB' \cB}\, [v]_{\cB'}, \quad \forall v \in V.
+            \end{equation*}
+        \end{corolario}
+        \begin{proof}
+            Por la proposición \ref{prop-matriz-de-tv} tenemos que 
+            $$
+            [\Id]_{\cB' \cB}  [v]_{\cB'} = [\Id (v)]_{\cB} = [v]_{\cB}.
+            $$
+        \end{proof}
+
+        \begin{definicion}
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\cB$ y $\cB'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\cB' \cB}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\cB'$  a la base $\cB$. 
+        \end{definicion}
+
+        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\cB$ y $\cB'$,  y dadas las coordenadas de $v$ en la base  $\cB'$ es decir la matriz columna $[v]_{\cB'}$, tenemos, por corolario \ref{cor-cambio-de-base}, que
+        \begin{equation*}
+            [v]_{\cB} =P\, [v]_{\cB'}, \quad \forall v \in V.
+        \end{equation*}
+        
+        \begin{teorema}[*]
+            Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y $\cB = \{v_1,\ldots,v_n\}$ y $\cB' = \{w_1,\ldots,w_m\}$ dos bases  ordenadas de $V$ y $W$ respectivamente. Entonces 
+            $$
+            \kappa: L(V,W) \to M_{m \times n}(\K)
+            $$
+            definida
+            $$
+            T \mapsto [T]_{\cB \cB'},
+            $$
+            es un isomorfismos de espacios vectoriales. 
+        \end{teorema}
+        \begin{proof}[Demostracion]
+            Primero probaremos que $\kappa$  es lineal y luego que tiene inversa.
+            
+            Sean $T,T' \in L(V,W)$ y $\lambda \in \K$, veamos que $\kappa(\lambda T+ T') = \lambda \kappa(T)+ \kappa(T')$,  es decir
+            \begin{equation}\label{kappa-lineal}
+                [\lambda T+ T']_{\cB \cB'} = \lambda[T]_{\cB \cB'}+ [T']_{\cB \cB'}.
+            \end{equation}
+            Para $1 \le j \le n$, sean 
+            \begin{equation*}
+                T(v_j) = \sum_{i=1}^m a_{ij} w_i\qquad \text{ y } \qquad T'(v_j) = \sum_{i=1}^m a'_{ij} w_i,
+            \end{equation*}
+            es  decir
+            \begin{equation*}
+            [T]_{\cB \cB'} =	[a_{ij}] \qquad\text{ y } \qquad [T']_{\cB \cB'} =	[a'_{ij}],
+            \end{equation*}
+            entonces
+            \begin{align*}
+                (\lambda T+ T')(v_j) &= \lambda T(v_j)+ T'(v_j) \\
+                &=\lambda \sum_{i=1}^m a_{ij} w_i+ \sum_{i=1}^m a'_{ij} w_i \\
+                &= \sum_{i=1}^m (\lambda a_{ij}+ a'_{ij}) w_i,
+            \end{align*}
+            por lo tanto
+            \begin{equation*}
+                [\lambda T+ T']_{\cB \cB'} = [\lambda a_{ij}+ a'_{ij}] =
+                \lambda[T]_{\cB \cB'}+ [T']_{\cB \cB'}
+            \end{equation*}
+            y hemos probado \eqref{kappa-lineal} y, en consecuencia, $\kappa$  es lineal.
+            
+            
+            Definamos ahora la inversa de $\kappa$: sea $A = [a_{ij}]$ matriz $m \times n$ y sea $T: V \to W$ la única transformación lineal que satisface, para $1 \le j \le n$, que
+            $$
+            T(v_j) = \sum_{i=1}^m a_{ij} w_i.
+            $$
+            Es claro que esta aplicación tiene dominio en $M_{m \times n}(\K)$ y su imagen está contenida en  $L(V,W)$. Más aún,  es muy sencillo comprobar que es la aplicación inversa a $\kappa$.
+            
+        \end{proof}
+    
+        
+        
+        \begin{teorema}\label{th-producto-de-matrices-bases}
+            Sean $V$, $W$ y $Z$ espacios vectoriales de dimensión finita sobre el cuerpo $\K$; sean $T: V \to W$ y $U: W \to Z$  transformaciones lineales.  Si $\cB$, $\cB'$ y $\cB''$ son bases ordenadas de los espacios $V$, $W$ y $Z$, respectivamente, entonces
+            \begin{equation}
+                [UT]_{\cB\cB''} = 	[U]_{\cB'\cB''} 	[T]_{\cB\cB'}.  
+            \end{equation} 
+        \end{teorema}
+        \begin{proof} 
+            Sean
+            \begin{equation*}
+                 \cB = \{v_1,\ldots,v_n\},\quad\cB' = \{w_1,\ldots,w_m\},\quad  \cB''= \{z_1,\ldots,z_l\}
+            \end{equation*}
+            y
+            \begin{equation*}
+            T(v_j) = \sum_{i=1}^m a_{ij} w_i, \; 1 \le j \le n; \qquad U(w_i) = \sum_{k=1}^l b_{ki} z_k, \; 1 \le i \le m.
+            \end{equation*}
+            Es decir 
+            $$
+            [T]_{\cB\cB'} = [a_{ij}]\qquad \text{y} \qquad [U]_{\cB'\cB''} = [b_{ij}]. 
+            $$
+            Entonces
+            \begin{align*}
+                (UT)(v_j) &= U(\sum_{i=1}^m a_{ij} w_i) \\
+                &=  \sum_{i=1}^m a_{ij} U(w_i) \\
+                &=  \sum_{i=1}^m a_{ij} \sum_{k=1}^l b_{ki} z_k \\
+                &= \sum_{k=1}^l(\sum_{i=1}^m  b_{ki}a_{ij})  z_k.
+            \end{align*}
+            Luego el coeficiente $kj$ de la matriz $[UT]_{\cB\cB''}$ es $\sum_{i=1}^m  b_{ki}a_{ij}$ que es igual a la fila $k$ de $[U]_{\cB'\cB''}$ por la columna $j$ de  $[T]_{\cB\cB'}$,  en símbolos,  si $A= 	[T]_{\cB\cB'}$, $B = 	[U]_{\cB'\cB''}$ y $C = 	[UT]_{\cB\cB''}$, entonces
+            \begin{equation*}
+                [C]_{kj} = \sum_{i=1}^m  b_{ki}a_{ij} = F_k(B)C_j(A) = [BA]_{kj}.
+            \end{equation*}
+        \end{proof}	
+            
+        \begin{corolario}\label{cor-inversa-matriz-cambio-de-base} Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\cB$ y $\cB'$ bases ordenadas de $V$. La matriz de cambio de base  $P =[\Id]_{\cB' \cB}$ es invertible y su  inversa es $P^{-1} =[\Id]_{\cB \cB'}$
+        \end{corolario}
+        \begin{proof}
+            \begin{equation*}
+                P^{-1} P =[\Id]_{\cB \cB'}[\Id]_{\cB' \cB} = [\Id]_{\cB'} = \Id.
+            \end{equation*}
+        \end{proof}
+    
+
+        \begin{corolario}\label{cor-5.6} Sean $V$ espacio vectorial de dimensión finita, $\cB = \{v_1,\ldots,v_n\}$ base ordenada de $V$ y $T,U: V \to V$ operadores lineales. Entonces
+            \begin{enumerate}
+                \item\label{itm-cor-cambio-1} $[UT]_{\cB} = [U]_{\cB} [T]_{\cB}$.
+                \item\label{itm-cor-cambio-2} Si $\Id: V \to V$  es el operador identidad, entonces $[\Id]_{\cB} =\Id$,  donde $\Id$  es la matriz identidad $n \times n$.
+                \item\label{itm-cor-cambio-3} Si $T$  es invertible,  entonces $[T]_{\cB}$  es una matriz invertible y  $$[T^{-1}]_{\cB} = [T]_{\cB}^{-1}.$$
+            \end{enumerate}
+        \end{corolario}
+        \begin{proof}
+            \ref{itm-cor-cambio-1} Es inmediato del teorema anterior tomado $\cB' =\cB'' = \cB$. 
+            
+            \ref{itm-cor-cambio-2} $\Id(v_i) = v_i$ y por lo tanto
+            \begin{equation*}
+                [\Id]_{\cB} = \begin{bmatrix} 1&0&\cdots&0 \\0&1&\cdots&0\\\vdots&&&\vdots\\0&0&\cdots&1 	\end{bmatrix} = \Id.
+            \end{equation*}
+            
+            
+            \ref{itm-cor-cambio-3} $\Id = T T^{-1}$, luego
+            \begin{equation*}
+                \Id = [\Id]_{\cB} =  [T T^{-1}]_{\cB} =  [T]_{\cB} [T^{-1}]_{\cB}.
+            \end{equation*}
+             Análogamente, $\Id = T^{-1} T$, luego
+            \begin{equation*}
+            \Id = [\Id]_{\cB} =  [T^{-1} T]_{\cB} =  [T^{-1}]_{\cB} [T]_{\cB}. 
+            \end{equation*}
+            Por  lo tanto $[T]_{\cB}^{-1} = [T^{-1}]_{\cB}$.
+        \end{proof}	
+    
+    
+            
+        \begin{teorema}\label{th-cambio-de-base}
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean
+            $$
+            \cB = \{v_1,\ldots,v_n \}, \qquad \cB' = \{w_1,\ldots,w_n \}
+            $$
+            bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces, si $P$ es la matriz de cambio de base de $\cB'$ a $\cB$, se cumple que  
+            \begin{equation*}
+            [T]_{\cB'} = P^{-1}[T]_{\cB}  P.
+            \end{equation*}
+            Es decir
+            \begin{equation}\label{eq-cambio de base}
+                [T]_{\cB'} = [\Id]_{\cB \cB'} [T]_{\cB} [\Id]_{\cB' \cB}.
+            \end{equation}
+        \end{teorema}
+        \begin{proof} Tenemos que $T = \Id T$ y $T =T  \Id$, luego 
+            \begin{align*}
+                [T]_{\cB'\cB'} &=  [\Id T]_{\cB'\cB'}& \qquad& \\
+                &= [\Id]_{\cB \cB'} [T]_{\cB' \cB}& &(\text{teorema \ref{th-producto-de-matrices-bases}})  \\
+                &= [\Id]_{\cB \cB'} [T \Id]_{\cB' \cB}& &\\
+                &= [\Id]_{\cB \cB'} [T]_{\cB\cB} [\Id]_{\cB' \cB}& &(\text{teorema \ref{th-producto-de-matrices-bases}}) \\
+                &=P^{-1}[T]_{\cB\cB}P& &(\text{corolario \ref{cor-inversa-matriz-cambio-de-base}}).
+            \end{align*} 
+        \end{proof}
+    
+        La fórmula \eqref{eq-cambio de base}  es importante por si misma y debemos recordarla.
+
+        El teorema \ref{th-cambio-de-base} nos permite definir el determinante de un operador lineal.	Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. Sean  $\cB$, $\cB'$ 
+        bases ordenadas de $V$, entonces $[T]_{\cB'} = P^{-1}[T]_{\cB}P$, para $P$ una matriz invertible. Por lo tanto, 
+        \begin{equation*}
+            \det([T]_{\cB'}) = \det(P^{-1}[T]_{\cB}  P) =  \det([T]_{\cB}  PP^{-1}) =  \det([T]_{\cB}). 
+        \end{equation*}
+        Es decir,  el determinante de la matriz de $T$ en cualquier base siempre es igual.
+        
+        \begin{definicion} 
+                Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $T$ un operador lineal sobre $V$. El \textit{determinante de $T$}\index{determinante de una transformación lineal} es el determinante de la matriz de $T$ en alguna base de $V$.  
+        \end{definicion}
+
+        \subsection*{$\S$ Ejercicios}
+        \begin{enumex}
+             \item Sean $V,W$ espacios vectoriales, $\cB =\{v_1,v_2\}$ base de $V$ y $\cB' =\{w_1,w_2,w_3\}$ base de $W$. Sea $T:V \to W$ una transformación lineal tal que
+            \begin{align*}
+                T(v_1) &=  3w_1-2w_2 -w_3 \\
+                T(v_2) &=  5w_1 +2w_3.
+            \end{align*}
+            Calcular $[T]_{\cB\cB'}$.
+            \item  En cada uno  de los siguientes casos calcular $[\Id_3]_{\cB\cB'}$. 
+            \begin{enumex}\vskip -.5cm
+                \begin{minipage}{0.01\textwidth}
+                    \item ${}^{}$
+                \end{minipage}
+                \begin{minipage}{0.5\textwidth}
+                    \begin{equation*}
+                        \begin{array}{lll}
+                            \cB &=&\{(1, 1,0), (-1, 1, 1), (0, 1, 2)\}, \\
+                            \cB' &=&\{(2, 1, 1), (0, 0, 1), ( -1, 1, 1)\}.
+                        \end{array}
+                    \end{equation*}
+                \end{minipage}
+                \vskip -.5cm
+                \begin{minipage}{0.01\textwidth}
+                    \item ${}^{}$
+                \end{minipage}
+                \begin{minipage}{0.5\textwidth}
+                    \begin{equation*}
+                        \begin{array}{lll}
+                            \cB &=&\{(3, 2,1), (0, -2,5), (1,1, 2)\}, \\
+                            \cB' &=&\{(2, 1, 1), (0, 0, 1), ( -1, 1, 1)\}.
+                        \end{array}
+                    \end{equation*}
+                \end{minipage}
+            \end{enumex}
+            \item Calcular la matriz de cambio de base de $\cB$ a $\cD$ en los siguientes casos. 
+            \begin{enumex}
+                \begin{minipage}{0.4\textwidth}
+                    \item $\cB = \{ e_1,e_2\}$, $\cD = \{e_2,e_1\}$.
+                \end{minipage}
+                \begin{minipage}{0.4\textwidth}
+                    \item $\cB = \{e_1,e_2 \}$, $\cD = \{(1,2),(1,4) \}$.
+                \end{minipage}
+            
+                    \item $\cB = \{(1,2),(1,4) \}$, $\cD =\{e_1,e_2 \}$.
+
+                    \item $\cB = \{(-1,1),(2,2)  \}$, $\cD = \{(0,4),(1,3)  \}$.
+ 
+            \end{enumex}
+            \item  Sea $L: V \to V$ una transformación lineal. Se  $\cB =\{v_1,\ldots,v_n\}$ una base de $V$. Suponga que existen números $c_1,\ldots,c_n$ tal que $T(v_i) = c_iv_i$ para $i=1,\ldots,n$. Describa $[L]_{\cB}$.
+            \item  Decidir si existe un monomorfismo $T:\mathbb{R}^3\longrightarrow\mathbb{R}^{2\times 2}$ tal que
+            \begin{align*}
+            T(0,1,-1) = \begin{bmatrix}
+                            1 & 1 \\
+                            0 & 0
+                        \end{bmatrix},\qquad
+            & T(2,1,1) = \begin{bmatrix}
+                            0 & 0 \\
+                            1 & 0
+                        \end{bmatrix}.
+            \end{align*}
+            En caso de no existir justificar por qué no existe. En caso de existir, además calcular la matriz $[T]_{\mathcal{C}\mathcal{B}}$, donde $\mathcal{C}$ y $\mathcal{B}$ son las bases ordenadas canónicas de $\mathbb{R}^3$ y
+            $\mathbb{R}^{2\times 2}$, respectivamente.
+            \item  Decidir si existe un epimorfismo  $T:\mathbb{R}^3\longrightarrow\mathbb{R}^{2\times 2}$ tal que
+            \begin{align*}
+            T(1,-1,1) = \begin{bmatrix}
+                            0 & 1 \\
+                            1 & 0
+                        \end{bmatrix},\qquad
+            & T(0,1,-1) = \begin{bmatrix}
+                            0 & 0 \\
+                            0 & 1
+                            \end{bmatrix}.
+            \end{align*}
+            En caso de no existir justificar por qué no existe. En caso de existir, además calcular la matriz $[T]_{\mathcal{C}\mathcal{B}}$, donde $\mathcal{C}$ y $\mathcal{B}$ son las bases ordenadas canónicas de $\mathbb{R}^3$ y
+            $\mathbb{R}^{2\times 2}$, respectivamente.
+            \item Sea $T: V \to V$ un operador lineal y sean $\cB, \cB'$ dos bases ordenadas de $V$. 
+                \begin{enumex}
+                    \item Probar que $[T]_\cB$ y $[T]_{\cB'}$  son matrices semejantes (para la definición de matrices semejantes ver sección \ref{seccion-matrices-invertibles}, ejercicio \ref{matrices-semejantes}). 
+                    \item Probar que si $A$ es es la matriz de $T$  en la base $\cB$ y $B$ es semejante a $A$,  entonces existe una base ordenada $\mathcal{D}$ tal que $[T]_{\mathcal{D}}=B$.  
+                \end{enumex}
+        \end{enumex}
+
+
+        \end{section}    
+    
+        \begin{section}{Operadores diagonalizables}\label{seccion-autovalores-y-autovectores-de-una-tl}
+        Vimos en la sección  \ref{seccion-autovalores-y-autovectores-de-matrices} la definición de autovalores y autovectores de una matriz. Por otro lado,  en la sección \ref{seccion-matriz-de-una-tl} vimos que dada una base podemos asignarle a cada transformación lineal una matriz. En  esta sección veremos,  entro otros temas,  los autovalores y autovectores desde una perspectiva de las transformaciones lineales. Por lo dicho anteriormente  verán que muchos conceptos y demostraciones se repiten o son similares al caso de la matrices. 
+        
+        Sea $V$ espacio vectorial de dimensión finita. Un operador lineal en $V$ es \textit{diagonalizable}\index{matriz!diagonalizable}  si existe una base ordenada $\cB= \{v_1,\ldots,v_n\}$ de $V$ y $\lambda_1,\ldots,\lambda_n \in \K$ tal que 
+        \begin{equation}\label{eq-auto-49}
+            T(v_i) = \lambda_i v_i,\qquad 1\le i \le n. 
+        \end{equation}
+        En  general, los operadores diagonalizables permiten hacer cálculos sobre ellos en forma sencilla, por ejemplo el núcleo del  operador definido por \eqref{eq-auto-49} es $\nuc(T)=\langle v_i: \lambda_i =0 \rangle$ y  su imagen es $\img(T)=\langle v_i: \lambda_i \not=0 \rangle$ (vermos la demostración de estos resultado más adelante). 
+        Otra propiedad importante de los operadores diagonalizables es que la matriz de la transformación lineal en una base adecuada es diagonal (de allí viene el nombre de diagonalizable). En  el caso del  operador definido por \eqref{eq-auto-49} tenemos que
+        $$
+        [T]_{\cB} = 
+        \begin{bmatrix}
+        \lambda_1&0&0&\cdots&0 \\
+        0&\lambda_2&0&\cdots&0\\
+        0&0&\lambda_3&\cdots&0\\
+        \vdots&\vdots&\vdots&&\vdots\\
+        0&0&0&\cdots&\lambda_n
+        \end{bmatrix}.
+        $$
+        
+        
+        No todo operador lineal es diagonalizable y no es inmediato, ni sencillo, de la definición de un operador lineal decidir si es diagonalizable o no. En esta sección veremos herramientas para estudiar un operador lineal $T$ y su posible diagonalización. La ecuación \eqref{eq-auto-49} sugiere se estudien los vectores que son transformados por $T$ en múltiplos de sí mismos.
+        
+        \begin{definicion}
+            Sea $V$ un espacio vectorial sobre el cuerpo $\K$ y sea $T$ un operador lineal sobre $V$. Un \textit{valor propio}\index{valor propio} o \textit{autovalor}\index{autovalor} de $T$ es un escalar $\lambda$ de $\K$ tal que existe un vector no nulo $v \in V$ con $T(v) = \lambda v$. Si $\lambda$ es un autovalor de $T$, entonces
+            \begin{enumerate}
+                \item  cualquier  $v \in V$ tal que $T(v) = \lambda v$  se llama un \textit{vector propio}\index{vector propio} o  \textit{autovector}\index{autovector} de $T$ asociado al valor propio $\lambda$;
+                \item la colección de todos los $v \in V$ tal que $T(v) = \lambda v$  se llama \textit{espacio propio}\index{espacio propio} o \textit{autoespacio}\index{autoespacio} 	asociado a $\lambda$. 
+            \end{enumerate}
+            
+            Los valores propios se llaman también a menudo raíces características, eigenvalores, valores característicos o valores espectrales. En  el caso de vectores propios o autovectores, también hay varias denominaciones. Nosotros usaremos, preferentemente, ``autovalores'' y ``autovectores''.
+            
+            Sea ahora $\lambda \in \K$, definimos
+            $$
+            V_\lambda := \{v \in V: Tv = \lambda v \}.
+            $$
+            Observar que $V_\lambda \ne 0$ si y sólo si $\lambda$ es autovalor y en ese caso $V_\lambda$  es el \textit{autoespacio asociado a $\lambda$}. 
+        \end{definicion}
+        
+        
+        \begin{teorema}
+            Sea $V$ un espacio vectorial y sea $T:V \to V$ una aplicación lineal. Sea $\lambda \in \K$ entonces, $V_\lambda$  es subespacio de $V$.
+        \end{teorema}
+        \begin{proof}
+            Sean $v_1,v_2 \in V$ tales que $Tv_1 = \lambda v_1$ y $Tv_2 = \lambda v_2$. Entonces
+            $$
+            T(v_1+v_2) = T(v_1)+ T(v_2) = \lambda v_1 + \lambda v_2 = \lambda (v_1 + v_2),
+            $$
+            es decir si  $v_1,v_2 \in V_\lambda$, probamos que $v_1+v_2 \in V_\lambda$. 
+            
+            Sea ahora $c \in F$, entonces $T(cv_i) = cT(v_1) = c\lambda v_1 = \lambda (cv_1)$. Por lo tanto, si  $v_1\in V_\lambda$ y $c \in F$, probamos que $cv_1 \in V_\lambda$.
+            
+            Esto termina de probar el teorema.
+        \end{proof}
+
+        
+        
+        \begin{teorema}
+            Sea $V$ espacio vectorial y sea $T: V \to V$ una aplicación lineal.  Sean $v_1,\ldots,v_m$ autovectores de $T$, con autovalores $\lambda_1,\ldots,\lambda_m$ respectivamente. Suponga que estos  autovalores son distintos entre si, esto es, $\lambda_i \ne \lambda_j$ si $i \ne j$. Entonces $v_1,\ldots,v_m$ son linealmente independientes.
+        \end{teorema}
+        \begin{proof}
+            Hagamos la demostración por inducción sobre $m$.
+            
+            \textit{Caso base.} Si $m=1$, no hay nada que demostrar puesto que un vector no nulo el LI.
+            
+        
+            
+            \textit{Paso inductivo.} Supongamos que el enunciado es verdadero para el caso $m-1$ con $m>1$, (hipótesis inductiva o HI), y probemos entonces que esto implica que es cierto para $m$. Debemos ver  que si 
+            \begin{equation}
+            c_1v_1+	c_2v_2+ \cdots c_mv_m = 0 \tag{$*$}
+            \end{equation}
+            entonces $c_1 = \cdots c_m = 0$.
+            Multipliquemos $(*)$ por $\lambda_1$, obtenemos:
+            \begin{equation}
+            c_1\lambda_1v_1+ c_2\lambda_1v_2+\cdots c_m\lambda_1v_m = 0. \tag{$**$}
+            \end{equation}
+            También apliquemos $T$ a $(*)$ y obtenemos
+            \begin{equation}
+            c_1\lambda_1v_1+ c_2\lambda_2v_2+\cdots c_m\lambda_mv_m = 0. \tag{$***$}
+            \end{equation}
+            Ahora a $(**)$ le restamos $(***)$ y obtenemos:
+            \begin{equation}
+            c_2(\lambda_1 -\lambda_2)v_2+\cdots c_m(\lambda_1 -\lambda_m)v_m = 0. 	 
+            \end{equation}
+            Como, por hipótesis inductiva, $v_2,\ldots,v_m$ son LI, tenemos que $c_i(\lambda_1 -\lambda_i)=0$ para $i\ge 2$. Como $\lambda_1 -\lambda_i \ne 0$ para $i\ge 2$, obtenemos que $c_i = 0$ para $i\ge 2$. Por $(*)$ eso implica que $c_1=0$ y por lo tanto $c_i=0$ para todo $i$.
+        \end{proof}
+        
+        \begin{corolario}\label{cor-aut-li}
+            Sea $V$ espacio vectorial de dimensión $n$ y sea $T: V \to V$ una aplicación lineal que tiene $n$
+            autovectores $v_1,\ldots, v_n$ cuyos autovalores $\lambda_1,\ldots,\lambda_n$ son distintos entre
+            si. Entonces $\{v_1,\ldots, v_n\}$ es una base de $V$.
+        \end{corolario}
+        
+        Recordemos que si $T$  es una transformación lineal, el determinante de $T$  se define como el determinante de la matriz de la transformación lineal en una base dada y que este determinante no depende de la base.    
+        
+        \begin{definicion}            
+            Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal, el  \textit{polinomio característico de $T$} es $\chi_T(x) = \det(x \Id-T)$.
+        \end{definicion}
+
+        Es decir si $A = [a_{ij}]$, matriz $n \times n$, es la matriz de $T$ es una base dada, i.e. $A = [T]_{\mathcal B}$, para $\mathcal B$  base ordenada de $V$, entonces
+        \begin{equation*}
+        \chi_T(x) = \chi_A(x) = \det(x\Id -A) = \det
+        \begin{bmatrix}
+        x-a_{11}&-a_{12}&\cdots&-a_{1n}\\
+        -a_{21}&x-a_{22}&\cdots&-a_{2n}\\
+        \vdots&\vdots&\ddots&\vdots\\
+        -a_{n1}&-a_{n2}&\cdots&x-a_{nn}
+        \end{bmatrix}.
+        \end{equation*} 
+    
+        
+        \begin{ejemplo*}
+            Sea $T: \R^2 \to \R^2$ y su matriz en la base canónica es
+            \begin{equation*}
+                A = \begin{bmatrix}
+                    a&b\\c&d
+                \end{bmatrix},
+            \end{equation*}
+        entonces
+        \begin{equation*}
+            \det \begin{bmatrix}
+                x-a & -b \\ -c &x-d
+                \end{bmatrix} = 
+                (x-a)(x-d) - bc = x^2 -(a+d)x + (ad -bc).
+        \end{equation*}
+        Es decir,
+        $$
+        \chi_T(x) = x^2 -(a+d)x + (ad -bc).
+        $$ 
+        \end{ejemplo*}
+
+    
+    
+        
+        \begin{ejemplo} \label{ej-autovectores}
+            Consideremos la transformación lineal de $T:\R^3 \to \R^3$  definida por (con abuso de notación incluido)
+            \begin{equation*}
+                T
+                \begin{bmatrix} x\\y\\z \end{bmatrix} =
+                \begin{bmatrix} 10x-10y+6z\\8x -8y +6z \\-5x+5y-3z\end{bmatrix}.
+            \end{equation*}
+            Es decir,  si $\cC$ es la base canónica de $\R^3$, 
+            $$ 
+            [T]_{\cC}=\begin{bmatrix}10&-10&6\\8& -8& 6\\-5& 5& -3\end{bmatrix}.
+            $$
+            Entonces el  polinomio característico de $T$ es
+            $$
+            \det \begin{bmatrix}x-10&10&-6\\-8& x+8& -6\\5& -5& x+3\end{bmatrix} = x^3  + x^2 - 6 x .
+            $$
+            Es posible factorizar esta expresión y obtenemos
+            $$
+            \chi_T(x) = x (x-2)(x+3).
+            $$
+        \end{ejemplo}
+        
+        
+        \begin{proposicion}\label{autovalores}
+            Sea $V$ espacio vectorial de dimensión $n$ y sea $T: V \to V$ lineal. Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico.  
+        \end{proposicion}
+        \begin{proof}${}^{}$
+            
+            ($\Rightarrow$) Si $\lambda$ es autovalor, entonces existe $v \in V$, no nulo, tal que $Tv = \lambda v$, luego 
+            $$
+            0 = \lambda v -Tv  =   \lambda \Id v - Tv  =  (\lambda \Id-T)v.
+            $$
+            Por lo tanto, $\lambda \Id-T$ no es invertible, lo cual implica que $0 = \det(\lambda \Id-T) = \chi_T(\lambda)$. Es decir, $\lambda$ es raíz del polinomio característico. 
+            
+            ($\Leftarrow$) Si $\lambda$ es raíz del polinomio característico, es decir si $0 = \chi_T(\lambda) = \det(\lambda \Id-T)$, entonces $\lambda \Id_T$ no es una transformación lineal  invertible, por lo tanto  su núcleo es no trivial. Es decir existe $v \in V$, $v \ne 0$,  tal que $(\lambda \Id_T)v =0$, luego $Tv =\lambda v$, por lo tanto $v$ es autovector con autovalor $\lambda$.   
+        \end{proof}
+        
+        Repetimos ahora algunos conceptos ya expresados al comienzo de la sección. 
+        
+        \begin{definicion}
+            Sea $V$ espacio vectorial de dimensión finita y sea $T: V \to V$ lineal. Diremos que \textit{$T$ es diagonalizable} si existe una base de $V$ de autovectores de $T$. 
+        \end{definicion}	
+        
+        En el caso que $T$ sea una transformación lineal diagonalizable y $\mathcal{B} = \{v_1,\ldots,v_n \}$ sea una base de autovectores con autovalores $\lambda_1,\ldots,\lambda_n$, entonces
+        $$
+        T(v_i) = \lambda_i v_i, \qquad 1 \le i \le n,
+        $$ 
+        y, por lo tanto, la matriz de $T$ en  la base $\mathcal{B}$ es diagonal, más precisamente
+        $$
+        [T]_\mathcal{B} = \begin{bmatrix}
+        \lambda_1 &0 & \cdots & 0 \\
+        0 & \lambda_2 & \cdots &0 \\
+        \vdots & &\ddots & \vdots \\
+        0 & 0 & \ldots &\lambda_n
+        \end{bmatrix}
+        $$
+        
+        \begin{ejemplo*} Consideremos la transformación lineal de $T:\R^3\to\R^3$  definida en el ejemplo \ref{ej-autovectores}.
+
+        Ya vimos que  el  polinomio característico de esta aplicación es 
+        $$
+        \chi_T(x) = x (x-2)(x+3).
+        $$
+        Luego, por 	proposición \ref{autovalores}, los autovalores de $A$ son $0$, $2$ y $-3$. Debido al corolario \ref{cor-aut-li} existe una base de autovectores de $T$. Veamos cuales son. Si $\lambda$ autovalor de $T$, para encontrar los autovectores con autovalor $\lambda$  debemos resolver la ecuación $\lambda v-Tv=0 $,  en este caso sería
+        \begin{equation*}
+        \begin{bmatrix}\lambda-10 &10&-6\\-8&  \lambda +8& -6\\5& -5& \lambda +3  \end{bmatrix}
+        \begin{bmatrix} x\\y\\z \end{bmatrix} =
+        \begin{bmatrix} 0\\0 \\0\end{bmatrix},
+        \end{equation*}  
+        para $\lambda =0, 2,-3$. Resolviendo estos tres sistemas, obtenemos que 
+        \begin{align*}
+            V_0&= \{(y,y,0): y \in \R \},\\ 
+            V_2 &= \{(-2z,-z,z): z \in \R \},\\ 
+            V_{-3} &= \{(-2z,-2z,z): z \in \R \}. 
+        \end{align*}
+        Por lo tanto, $\{(1,1,0), (-2,-1,1), (-2,-2,1)\}$ es una base de autovectores de la transformación lineal. 
+        \end{ejemplo*}
+        
+        \begin{proposicion} Sea $V$ espacio vectorial de dimensión $n$ y sea $T: V \to V$ lineal tal que tiene una base de autovectores $\mathcal{B} = \{v_1,\ldots,v_n \}$  con autovalores $\lambda_1,\ldots,\lambda_n$. Entonces $\nuc(T)=\langle v_i: \lambda_i =0 \rangle$ e  $\img(T)=\langle v_i: \lambda_i \not=0 \rangle$.			
+        \end{proposicion}
+        \begin{proof} Reordenemos la base de tal forma que  $\lambda_i =0$ para $1 \le i \le k$ y $\lambda_i \ne 0$ para $k < i \le n$. 
+        Todo $v \in V$ se escribe en términos de la base como 
+        $$
+        v = x_1v_1 + \cdots+ x_k v_k+ x_{k+1} v_{k+1}+\cdots+ x_n v_n,\quad (x_i \in \K),
+        $$
+        y entonces
+        \begin{equation}\label{eq-av-01}
+            T(v) =  \lambda_{k+1}x_{k+1} v_{k+1}+\cdots+ \lambda_nx_n v_n.
+        \end{equation}
+        Luego, $T(v) =0$ si y sólo si $x_{k+1} = \cdots = x_n=0$, y esto se cumple si y solo si $v =  x_1v_1 + \cdots+ x_k v_k$,  es decir $v \in \langle v_i: \lambda_i =0 \rangle$. 
+        También es claro por la ecuación \eqref{eq-av-01} que 
+        \begin{align*}
+            \img(T) &= \{\lambda_{k+1}x_{k+1} v_{k+1}+\cdots+ \lambda_nx_n v_n: x_i \in \K \} \\
+            &=\{\mu_{k+1} v_{k+1}+\cdots+ \mu_n v_n: \mu_i \in \K \}\\
+            &= \langle v_i: \lambda_i \not=0 \rangle.
+        \end{align*}
+        \end{proof}
+        
+        \begin{ejemplo*}
+            Sea $T:\R^2 \longrightarrow \R^2$ el operador definido por $T(x,y)=(y,x)$. Probar que $T$ es diagonalizable y encontrar una base de autovectores. 
+        \end{ejemplo*}
+        \begin{proof}
+            Por la proposición \ref{autovalores}, los autovalores de $T$  son las raíces del polinomio característico,  es decir las raíces de 
+            $$
+            \chi_T(\lambda)= \det\left[\begin{matrix}
+            \lambda& -1 \\ -1 & \lambda
+            \end{matrix} \right]= \lambda^2 -1  =(\lambda -1)(\lambda +1). 
+            $$
+            Luego los autovalores son $1$ y $-1$. Para hallar un autovector con autovalor $1$ debemos resolver la ecuación $T(x,y) = (x,y)$. Ahora bien, 
+            $$
+            (x,y) = T(x,y) = (y,x),
+            $$
+            luego $x =y$ y claramente $(1,1)$ es autovector con autovalor $1$.
+            
+            Por otro lado $T(x,y) = -(x,y)$, implica  que $(y,x)            = -(x,y)$, es decir $y = -x$ y claramente podemos elegir $(1,-1)$ como autovector con autovalor $-1$.
+            
+            Luego $\mathcal{B} = \{(1,1),(1,-1) \}$  es una base de $\R^2$ de autovectores de  $T$.
+        \end{proof}
+        
+        No todas las transformaciones lineales son diagonalizables,  como veremos en el ejemplo a continuación. 
+        
+        
+        \begin{ejemplo*}
+            Sea $T:\R^2 \longrightarrow \R^2$ el operador definido por $T(x,y)=(2x-y,x+4y)$. Probar que $T$ tiene un único autovalor $\lambda$ cuyo autoespacio $V_\lambda=\{v\in \R^2: Tv=\lambda v\}$ es de dimensión 1.
+        \end{ejemplo*}
+        \begin{proof} La matriz de  $T$ en la base canónica es 
+            $$
+            A = \begin{bmatrix}
+            2 & -1 \\ 1 & 4
+            \end{bmatrix}. 
+            $$
+            Por la proposición \ref{autovalores}, los autovalores de $T$  son las raíces del polinomio característico,  es decir las raíces de 
+            $$
+            \det\left[\begin{matrix}
+            x-2 & 1 \\ -1 & x-4
+            \end{matrix} \right] = (x-2)(x-4)+1 = x^2 -6x + 9 = 
+            (x -3)^2. 
+            $$
+            Es decir el  único autovalor posible es 3.
+            
+            Debemos ver para que valores  $(x,y)\in \R^2$ se satisface la ecuación
+            $$
+            T(x,y) = 3(x,y).
+            $$
+            tiene solución. Esta ecuación es equivalente a 
+            \begin{equation*}
+                \begin{array}{rcll}
+                (2x-y,x+4y)&=&(3 x, 3 y)\quad &\Leftrightarrow \\
+                2x-y = 3 x&,& x+4y = 3y \quad &\Leftrightarrow \\
+                -y =  x&,& x = -y \quad &\Leftrightarrow \\
+                y &=&  -x \quad &
+                \end{array}
+            \end{equation*}
+            Luego $V_3 = \{(x,-x): x \in \R \}$ que es de dimensión 1 y por lo tanto no hay una base de autovectores.  	
+            
+        \end{proof}
+    
+        \begin{proposicion}
+        Sea $T$ un operador lineal diagonalizable sobre un espacio vectorial $V$ de dimensión finita. Sean $\lambda_1,\ldots,\lambda_k$ los autovalores distintos de $T$. Entonces,  el  polinomio característico de $T$ es
+        $$
+            \chi_T(x) = (x-\lambda_1)^{d_1}\ldots(x-\lambda_k)^{d_k}
+        $$
+        con
+        $$
+            d_i =  \dim V_{\lambda_i},
+        $$
+        para  $i=1, \ldots, k$.
+        \end{proposicion}
+        \begin{proof}[Demostración ($*$)]
+            $T$ es un operador lineal diagonalizable y $\lambda_1,\ldots,\lambda_k$ los valores propios distintos de $T$. Entonces existe una base ordenada $\cB$ con respecto a la cual $T$ está representado por una matriz diagonal; es decir, los elementos de la diagonal son los escalares $\lambda_j$ cada uno de los cuales se repite un cierto número de veces. Más específicamente, si
+            $v_{j1},\ldots,v_{jd_j}$ son los vectores en $\mathcal{B}$ con autovalor $\lambda_j$ ($1 \le j \le k$),  reordenamos la base de tal forma que primero estén los autovectores con autovalor $\lambda_1$, a continuación los de autovalor $\lambda_2$, etc.: 
+            \begin{equation*}
+                \mathcal{B} = \{v_{11},\ldots,v_{1d_1},\ldots,v_{k1},\ldots,v_{kd_k}\}. 
+            \end{equation*}
+            Ahora bien,  si $v \in V$,  entonces 
+            \begin{align*}
+            v &=x_1v_{11}+\cdots+x_{d_1}v_{1d_1}+\cdots+x_nv_{n1}+\cdots+x_{d_n}v_{nd_n} \\
+            &= v_1 + v_2 +\cdots + v_k
+            \end{align*}
+            con $v_i = x_iv_{i1}+\cdots+x_{d_i}v_{id_i} \in V_{\lambda_i}$. Luego
+            \begin{equation}\label{eq-desc-vectores-propios}
+                T(v)  =\lambda_1v_1+\lambda_2v_2\cdots+\lambda_kv_k
+            \end{equation} 
+            
+            Veamos que $V_{\lambda_i} = <v_{i1},\ldots,v_{id_i}>$ para $1 \le i \le k$. Es claro que  $<v_{i1},\ldots,v_{id_i}> \subset V_{\lambda_i}$. Probemos  ahora que,  $V_{\lambda_i} \subset <v_{i1},\ldots,v_{id_i}>$: si  $v \in V_{\lambda_i}$,  entonces $T(v)$ es como en \eqref{eq-desc-vectores-propios} y, por lo tanto, si $v_j \ne 0$ para $j\not=i$ entonces $T(v) \ne \lambda_j v$, lo que contradice la hipótesis. Es decir $v = v_i \in <v_{i1},\ldots,v_{id_i}>$. Hemos probado que    $V_{\lambda_i} = <v_{i1},\ldots,v_{id_i}>$ y como $v_{i1},\ldots,v_{id_i}$ son LI, entonces $\dim V_{\lambda_i} = d_i$.
+            
+            Por otro lado, la matriz de $T$ en la base $\mathcal{B}$ tiene la forma
+            \begin{equation*}
+                \begin{bmatrix}
+                \lambda_1 \Id_1 &0&\cdots&0 \\0&\lambda_2 \Id_2&\cdots&0 \\\vdots&\vdots&&\vdots \\0&0&\cdots&\lambda_n \Id_n 
+                \end{bmatrix}
+            \end{equation*}
+            donde $\Id_j$ es la matriz identidad $d_j \times d_j$. Luego,  el polinomio característico de $T$ es el producto
+            \begin{align*}
+                (x-\lambda_1)^{d_1}\ldots(x-\lambda_k)^{d_k}.
+            \end{align*}
+        \end{proof}
+    
+        \begin{ejemplo*}
+            Sea $T$ un operador lineal sobre $\R^3$  representado en la base ordenada canónica por la matriz
+            \begin{equation*}
+                A = 
+                \begin{bmatrix}
+                5 &-6 &-6\\ -1& 4& 2\\3 &-6& -4
+                \end{bmatrix}.
+            \end{equation*}
+            El  polinomio característico de $A$ es
+            \begin{equation*}
+                \chi_A(x) = \det \begin{bmatrix}
+                    x-5 &6 &6\\ 1& x-4& -2\\-3 &6& x+4
+                \end{bmatrix} 
+                = x^3 - 5 x^2 + 8 x - 4 = (x-2)^2(x-1).
+            \end{equation*}
+            ¿Cuáles son las dimensiones de los espacios de los vectores propios asociados con los dos valores propios? Se deben resolver las ecuaciones asociadas a las matrices
+            \begin{equation*}
+            2 \Id -A = 
+            \begin{bmatrix}
+            -3 &6 &6\\ 1& -2& -2\\-3 &6& 6
+            \end{bmatrix} 
+            \end{equation*}
+            y 
+            \begin{equation*}
+            \Id-A= 
+            \begin{bmatrix}
+            -4 &6 &6\\ 1& -3& -2\\-3 &6& 5
+            \end{bmatrix}.
+            \end{equation*}
+            Las soluciones de estos sistemas son los autoespacios de autovalor $2$ y $1$ respectivamente. En  el primer caso, 
+            \begin{equation*}
+            \begin{bmatrix} -3 &6 &6\\ 1& -2& -2\\-3 &6& 6 \end{bmatrix}
+            \underset{F_3+3F_2}{\stackrel{F_1+3 F_2}{\longrightarrow}} 
+            \begin{bmatrix} 0 &0 &0\\ 1& -2& -2\\0 &0& 0 \end{bmatrix}.
+            \end{equation*}
+            Luego,  la solución del sistema asociado a $2\Id-A$ es 
+            $$
+            V_2 = \{(2y+2z,y,z): y,z \in \R\} = <(2,1,0),(2,0,1)>
+            $$
+            cuya dimensión es $2$. 
+            
+            Por otro lado, 
+            \begin{equation*}
+            \begin{bmatrix}-4 &6 &6\\ 1& -3& -2\\-3 &6& 5 	\end{bmatrix}
+            \underset{F_3+3F_2}{\stackrel{F_1+4 F_2}{\longrightarrow}} 
+            \begin{bmatrix}0 &-6 &-2\\ 1& -3& -2\\0 &-3& -1 	\end{bmatrix}
+            \underset{F_2-F_3}{\stackrel{F_1-2 F_3}{\longrightarrow}}
+            \begin{bmatrix}0 &0 &0\\ 1& 0& -1\\0 &-3& -1 	\end{bmatrix}.
+            \end{equation*}
+            Luego,  la solución del sistema asociado a  $\Id-A$ es 
+            $$
+            V_1 = \{(z,-\frac13z,z): z \in \R\} = <(1,-\frac13,1)>.
+            $$
+            
+            Entonces, una base de autovectores de $T$ podría ser
+            $$
+            \mathcal{B} = \{(2,1,0),(2,0,1),(1,-\frac13,1) \}
+            $$
+            y en esa base la matriz de la transformación lineal es
+            \begin{equation*}
+            [T]_{\mathcal{B}} = \begin{bmatrix}2 &0 &0\\ 0& 2& 0\\0 &0& 1 	\end{bmatrix}.
+            \end{equation*}
+        \end{ejemplo*}
+    
+        \subsection*{$\S$ Ejercicios}
+
+        \begin{enumex}
+            \item  Sea $T: \R^3 \to \R^3$ definida
+            $$
+            T(x,y,z) = (x+2y+4z, 2x+y-4z, 3z).
+            $$
+            \begin{enumerate}
+                \item Encontrar los autovalores de $T$.
+                \item Encontrar  bases de los autoespacios de $T$.
+                \item Determinar si $T$  es diagonalizable.
+            \end{enumerate}
+            \item Sea $T: \R^n \to \R^n$ definida 
+            $$
+            T(x_1,x_2,\ldots,x_n) =(a_1x_1,a_2x_2,\ldots, a_nx_n).
+            $$
+            \begin{enumex}
+                \item ¿Cuál es el polinomio característico de $T$?
+                \item ¿Cuáles son los autovalores y los autoespacios?
+            \end{enumex}
+            \item Sea $T: \R^n \to \R^n$ definida 
+            $$
+            T(x_1,x_2,\ldots,x_n) =(a_{11}x_1,a_{21} x_1+ a_{22}x_2,\ldots,\sum_{k=1}^ia_{ik}x_k,\ldots).
+            $$
+            (El  término $\sum_{k=1}^ia_{ik}x_k$ está ubicado en la coordenada $i$-ésima).
+            \begin{enumex}
+                \item Encontrar la matriz de $T$  en la base canónica.
+                \item ¿Cuál es el polinomio característico de $T$?
+                \item ¿Cuáles son los autovalores y los autoespacios?
+            \end{enumex}
+            \item Sea $T: V \to V$ un operador lineal invertible. Probar que si $\lambda$ es autovalor de $T$,  entonces $\lambda \ne 0$ y $\lambda^{-1}$  es autovalor de $T^{-1}$.
+            \item Sea $T: V \to V$ un operador lineal, y sea ${v_1,\ldots,v_n}$ una base de V que consta de autovectores que tienen autovalores distintos. Demostrar que cualquier autovector de $T$ es un múltiplo escalar de algún $v_i$.
+            \item $T: V \to V$ un operador lineal, sean $\lambda, \mu$ dos autovalores distintos de $T$ y sean $\cB_\lambda$ y $\cB_\mu$ bases de  $V_\lambda$ y $V_\mu$, respectivamente. 
+            
+            Probar que $\cB_\lambda \cup \cB_\mu$ es una base de $V_\lambda + V_\mu$. 
+            \item Sea $T: V \to V$ un operador lineal diagonalizable con dos autovalores  $\lambda, \mu$ . Probar que $V$  es suma directa de los autoespacios $V_{\lambda}$  y $V_\mu$,  es decir
+            $$
+            V = V_{\lambda} \oplus V_{\mu}.
+            $$
+            (La definición de suma directa se encuentra en la sección \ref{seccion-subespacios-vectoriales},  ejercicio \ref{ejercicio-suma-directa}).  
+            
+            \item Sea $V$ espacio vectorial de dimensión finita. $S:V \to V$ una aplicación lineal. Diremos que $S$ es un \textit{involución} si $S^2 = \Id$.
+	
+			Sea $S: V \to V$ una involución. Entonces los conjuntos
+			$$
+			V_1 =\{v\in V:S(v)=v\}, \qquad V_{-1} =\{v\in V:S(v)=-v\}
+			$$ 
+			son subespacios vectoriales y 
+			$$
+			V = V_1 \oplus V_{-1}.
+            $$
+            
+            \item Sean $T,S: V \to V$ dos operadores lineales. Probar que $T\circ S$ y $S \circ T$ tienen los mismos autovalores.  
+            
+          
+        \end{enumex}
+        \end{section}
+    
+    
+        
+    
+
+\begin{section}{Operadores simétricos en $\R^n$}\label{seccion-operadores-simetricos-rn}
+    
+    \begin{definicion}
+        Sea $T$ un operador lineal  en $\R^n$,  diremos que $T$ es un \textit{operador simétrico} si la matriz de $T$  en la base canónica es simétrica, es decir si 
+        $[T]_{\mathcal{C}}^{\t} = [T]_{\mathcal{C}}$
+    \end{definicion}
+    
+    
+    Observar, como ya hemos visto anteriormente,  que en $\R^n$ el producto escalar es 
+    \begin{equation*}
+        \la (x_1,\ldots,x_n),(y_1,\ldots,y_n)  \ra = \sum_i x_iy_i = \begin{bmatrix} x_1& \cdots &x_n\end{bmatrix}\begin{bmatrix} y_1 \\ \vdots \\ y_n \end{bmatrix}.
+    \end{equation*}
+    Es decir, si usamos la convención que un vector en $\R^n$  se escribe como una matriz columna (de $n$ filas y una columna),  tenemos que dados $x,y \in \R^n$, 
+    \begin{equation*}
+        \la x,y \ra = x^\t y.
+    \end{equation*}
+    
+Sea $T:\R^n \to \R^n$ un operador simétrico y $A$ la matriz asociada a  $T$,  es decir $A = [T]_{\mathcal{C}}$,  donde $\mathcal{C}$  es la base canónica. Si trabajamos en las coordenadas canónicas es claro que $T(x) = Ax$ y debido a esto a menudo intercambiaremos  $T$ por $A$ y viceversa.  
+
+ 
+    Veremos ahora que un operador simétrico $T$, o equivalentemente, una matriz $A$ simétrica, tiene al menos un autovalor. En el capítulo \ref{chap-esp-prod-int}, en la sección \ref{secccion-operadores-autoadjuntos}, veremos que este resultado implicará que $T$ es diagonalizable, es decir que hay una base de autovectores del operador o, equivalentemente, que existe una matriz $P$ invertible tal que $P^{-1}AP$ es diagonal. 
+    
+    Usaremos el siguiente resultado sin demostración.
+    
+    \begin{teorema}[Teorema fundamental del álgebra]\label{th-fundamental-del-algebra}
+        Todo polinomio no constante con coeficientes complejos tiene al menos una raíz compleja. Es decir si 
+        \begin{equation*}
+            \text{$p(x) = a_nx^n+ a_{n-1}x^{n-1} +\cdots+a_0$, con $a_i \in \mathbb{C}$,  $a_n\ne 0$ y $n\ge 1$,}
+        \end{equation*}
+        entonces existe $\alpha \in \mathbb{C}$ tal que $p(\alpha)=0$.
+    \end{teorema}
+
+    Pese a llamarse ``Teorema fundamental del álgebra'', este resultado  no suele demostrarse en los cursos de álgebra, pues su demostración requiere del uso de análisis matemático.
+    
+    Si $\alpha$ es raíz de $p$, un polinomio de grado $n$, por  el teorema del resto,  $p(x) = (x-\alpha)p_1(x)$, con  $p_1$ un polinomio de grado $n-1$.  Aplicando inductivamente este procedimiento, podemos deducir:
+    
+    \begin{corolario} Si $p$ es un polinomio de de grado $n\ge 1$ con coeficientes en $\C$,  entonces
+        \begin{equation*}
+            p(x)= c(x-\alpha_1)(x-\alpha_2)\ldots(x-\alpha_n),
+        \end{equation*}
+        con $c,\alpha_i \in \C$.
+    \end{corolario}
+    
+    
+    \begin{obs}\label{5.9} 	Recordemos que si $a+bi \in \mathbb{C}$, $a$ es la \textit{parte real} y $b$ es la \textit{parte imaginaria}. El conjugado $a+b_i$ es $\overline{a +bi} = a-bi$. La conjugación cumple que $\overline{\overline{z}} = z$, $\overline{z +w} = \overline{z}+\overline{w}$ y $\overline{z w} = \overline{z}\,\overline{w}$ ($z,w \in \mathbb{C}$). Recordemos también que $z\overline{z} = |z|^2$.
+        
+        Si $x \in \mathbb{C}^n$,  entonces cada coordenada de $x$ es un número complejo,  es decir $x_i = a_i + ib_i$, con $a_i,b_i \in \R$. Luego si $v = (a_1,\ldots,a_n)$ y $w = (b_1,\ldots,b_n)$, tenemos que  $x = v + wi$  con  $v,w \in \R^n$.  En  este caso, diremos que $v$  es la parte real de $x$ y $w$ la parte imaginaria. También podemos extender la conjugación a $\mathbb{C}^n$ y  $\mathbb{C}^{n \times m}$ coordenada a coordenada y entonces no es difícil verificar que si $A, B \in \mathbb{C}^{n \times m}$
+        \begin{equation*}\overline{\overline{A}} = A,\qquad \overline{A+B} = \overline{A}+\overline{B},
+        \end{equation*}
+        y que si $A\in \mathbb{C}^{n \times m}$, $ B \in \mathbb{C}^{m \times k}$, $\alpha \in \mathbb{C}$, entonces $\overline{\alpha A} =\overline{\alpha}\, \overline{A}$ y además
+        \begin{equation*}\overline{\alpha A B} =\overline{\alpha}\, \overline{A}\,\overline{B} = \overline{A}\,\overline{\alpha B}.
+        \end{equation*} 
+        Notar también que si  $z = (z_1,\ldots,z_n)$, 
+        \begin{equation*}z^\t \, \overline{z} = [ z_1 \, \ldots \, z_n ]
+        {\begin{bmatrix} \overline{z_1} \\\vdots \\\overline{z_n} \end{bmatrix}} = |z_1|^2+\cdots+|z_n|^2,
+        \end{equation*}   
+        que es $>0$ si el vector no es nulo. Denotaremos la expresión de arriba como $||z||^2$.
+        
+    \end{obs}
+    
+    \begin{teorema}\label{th-existe-autovalor-simetrica}
+        Sea $T$ un operador simétrico de $\R^n$. Entonces existe $\lambda \in \R$ autovalor real de $T$.   
+    \end{teorema}
+    \begin{proof} Sea $A = [T]_{\mathcal{C}}$. Extendamos $T$  a una transformación lineal de $T: \mathbb{C}^n \to \mathbb{C}^n$ de manera natural, con el producto de matrices $T(x) = Ax$ con $x \in \C^n$. Sea $\chi_A$ el polinomio característico de $A$. Por el teorema fundamental  del álgebra, existe $\lambda \in \mathbb{C}$ tal que $\chi_A(\lambda)=0$. Luego existe $x \in \mathbb{C}^n$, no nulo,  tal que $Ax = \lambda x$.  Veremos que $\lambda$ es un número real. Por un lado, como $A$ tiene coeficientes reales, tenemos que $A = \overline{A}$ y entonces:
+        \begin{equation*}
+        x^\t A\overline{x} = x^\t \overline{A}\overline{x} =x^\t\overline{Ax} =x^\t\overline{\lambda x} = \overline{\lambda} x^\t\overline{x} = \overline{\lambda} ||x||^2 .
+        \end{equation*}
+    Por otro lado,  como $A$  es simétrica,
+        \begin{equation*}
+        x^\t A\overline{x} = x^\t A^t\overline{x}= (A x)^\t\overline{x} = (\lambda x)^\t\overline{x} = \lambda x^\t\overline{x} = \lambda ||x||^2. 
+        \end{equation*}
+    Por lo tanto, $\lambda = \overline{\lambda}$, lo cual nos dice que ${\lambda} \in \R$.  Es decir, existe un vector $x \in \C^n$ no nulo y $\lambda \in \R$, tal que $Ax=\lambda x$. Si  $x = v +iw$ con $v,w \in \R^n$, entonces 
+        \begin{equation*}
+        \lambda v + i \lambda w = \lambda x = Ax = Av + i Aw.
+        \end{equation*}
+    Como $A$ es una matriz real $Av,Aw \in \R^n$ y como $\lambda \in \R$, tenemos que $Av = \lambda v$ y $Aw = \lambda w$ Como $x = v + iw$ es no nulo,  entonces o $v$ o $w$ son no nulos y por  lo tanto  hay al menos un autovector en $\R^n$ con autovalor $\lambda \in \R$. 
+    \end{proof}
+    
+ 
+    
+    El siguiente resultado, el \textit{teorema espectral}, requiere para su demostración una generalización del resultado anterior para espacios de producto interno  de dimensión finita y matrices (transformaciones lineales)  simétricas respecto a este producto interno. Todos estos conceptos y resultados son generalizaciones sencillas, pero llevan algún tiempo desarrollarlas y el lector interesado las puede ver en la sección \ref{secccion-operadores-autoadjuntos}. 
+        
+    \begin{teorema}[Teorema espectral]\index{teorema espectral} Sea $A$ matriz simétrica $n \times n$. Entonces existe $\mathcal{U} = \{u_1,\ldots,u_n\}$ una BON de $\R^n$ de autovectores de $A$.
+    \end{teorema}
+
+
+    \begin{corolario}
+        Sea $A$ matriz simétrica $n \times n$, entonces $A$ es diagonalizable.
+    \end{corolario}
+
+
+    \begin{ejemplo*} Encontremos autovalores y autovectores de  la matriz
+        \begin{equation*}
+            A = \begin{bmatrix} 2&-1&0\\-1&2&-1\\0&-1&2 \end{bmatrix}.
+        \end{equation*}
+        Como es una matriz simétrica sabemos que es diagonalizable, es decir tiene una base de autovectores. 
+        El polinomio característicos es
+        \begin{equation*}
+            \chi_A(x) = \det  \begin{bmatrix} x-2&1&0\\1&x-2&-1\\0&1&x-2 \end{bmatrix} =	x^3 - 6 x^2 + 10 x - 4.
+        \end{equation*}
+        Ahora bien, las raíces de $x^3 - 6 x^2 + 10 x - 4$  son 
+        \begin{align*}
+            \lambda_1 &= 2 + \sqrt 2 \\
+            \lambda_2 &= 2 \\
+            \lambda_3 &= 2 - \sqrt 2
+        \end{align*}
+        Para averiguar los autovectores debemos plantear las ecuaciones $Ax = \lambda_ix$,  que resultan en los siguiente sistema de ecuaciones
+        \begin{align*}
+        \begin{split}
+        2x_1 - x_2  &= \lambda_i x_1 \\
+        -x_1 + 2x_2 -x_3 &=\lambda_ix_2 \\
+        -x_2 + 2x_3 &= \lambda_ix_3,  
+        \end{split}
+        \end{align*}
+        ($i=1,2,3$),  o equivalentemente,
+        \begin{align*}
+        \begin{split}
+        (2 -\lambda_i)x_1+ x_2  &= 0 \\
+        -x_1 +(2-\lambda_i)x_2  -x_3 &=0 \\
+        -x_2 + (2-\lambda_i)x_3 &= 0,  
+        \end{split}
+        \end{align*}
+        ($i=1,2,3$).
+        En el caso de $\lambda_1= 2 + \sqrt 2$,  resulta
+        \begin{align*}
+        \begin{split}
+        -\sqrt 2x_1+ x_2  &= 0 \\
+        -x_1 -\sqrt 2x_2  -x_3 &=0 \\
+        -x_2 -\sqrt 2x_3 &= 0,  
+        \end{split}
+        \end{align*}
+        cuya solución es $\lambda(1, -\sqrt2, 1)$. Si continuamos resolviendo los sistemas de ecuaciones, podemos encontrar la siguiente base de autovectores:
+        \begin{align*}
+        v_1 &= (1, -\sqrt2, 1) \\		
+        v_2 &= (-1, 0, 1) \\		
+        v_3 &= (1, \sqrt2, 1).
+        \end{align*}
+        
+    \end{ejemplo*}
+    
+    \subsection*{$\S$ Ejercicios}
+    \begin{enumex}
+       \item Encontrar los autovalores de las siguientes matrices.
+       \begin{enumex}
+        \begin{minipage}{0.3\textwidth}
+            \item $\begin{bmatrix} 2&-1\\-1&2 \end{bmatrix}$,
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \item $\begin{bmatrix} 1&1\\1&0 \end{bmatrix}$.
+        \end{minipage}
+       \end{enumex}
+       \item Encontrar los autovalores de las siguientes matrices.
+       \begin{enumex}
+        \begin{minipage}{0.3\textwidth}
+            \item $\begin{bmatrix} 1&-1&0\\-1&2&-1 \\0&-1&1\end{bmatrix}$,
+        \end{minipage}
+        \begin{minipage}{0.3\textwidth}
+            \item $\begin{bmatrix} 2&-1&0\\-1&2&-1\\0&-1&2 \end{bmatrix}$.
+        \end{minipage}
+       \end{enumex}
+        \item Sea $A: \R^n \to \R^n$ un operador  lineal simétrico. Sean $v_1, v_2$ autovalores de $A$ con autovalores $\lambda_1, \lambda_2$ respectivamente. Si $\lambda_1 \ne \lambda_2$, demostrar que $v_1$ es perpendicular a $v_2$.
+        \item Sea $A: \R^n \to \R^n$ un operador  lineal simétrico. Si $A$ tiene solo un autovalor propio, demostrar que toda base ortogonal de $\R^n$ consta de autovectores de $A$.
+        \item  Sea $A: \R^n \to \R^n$ un operador  lineal simétrico. Suponga que hay $n$ autovalores  distintos de $A$. Demostrar que sus autovectores forman una base ortogonal de $\R^n$.
+    \end{enumex}
+
+    \end{section}
+
+        
+    \end{chapter}
