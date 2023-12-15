@@ -1,15 +1,48 @@
-\documentclass[12pt,reqno]{amsart}
-\usepackage{amssymb}
-\usepackage{enumerate}
-\usepackage{amsmath}
-\usepackage{geometry}
-\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
-\usepackage{graphicx}
-\usepackage{fancyhdr}
+% PDFLaTeX
+\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
+%%%---------------------------------------------------
+\usepackage[math]{kurier}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
 \usepackage{multicol}
-\usepackage{enumitem}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+\input{random.tex}   
 \usepackage{tikz}
-\pagestyle{fancy}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usepackage{mathtools}
+\usepackage{stackrel}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+
+\usepackage{enumitem} 
+\usepackage[compatibility=false]{caption} % para usar subcaption
+\usepackage{subcaption} % para poner varias imagenes juntas
+\usetikzlibrary{arrows.meta}
+\usepackage{hyperref}
+\hypersetup{ 
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{hypcap}
+\numberwithin{equation}{section}
+% http://www.texnia.com/archive/enumitem.pdf (para las labels de los enumerate)
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate, 1]{label={(\arabic*)}}
+\setlist[enumerate, 2]{label=\emph{\alph*)}}
+
+
+\newcommand{\rta}{\noindent\textsc{Solución: }} 
 
 \newcommand{\img}{\operatorname{Im}}
 \newcommand{\nuc}{\operatorname{Nu}}
@@ -31,15 +64,23 @@
   \end{array}\right]
 }
 
+%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+%\setlength{\parindent}{0,7cm}% tamaño de sangria.
+\setlength{\parskip}{0,4cm} % separación entre parrafos.
+\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{comment}
+%%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
-
-%\title{Práctico 1}
-
-\noindent {\tiny Álgebra / Álgebra II \hfill Segundo Cuatrimestre 2020}
-
-%\maketitle
-
-\centerline{\Large{Práctico 2}}
+    \baselineskip=0.55truecm %original
+    
+    
+    {\bf \begin{center} Práctico 2 \\ Álgebra  II -- Año 2024/1 \\ FAMAF \end{center}}
 
 \
 
