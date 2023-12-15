@@ -1,37 +1,76 @@
-\documentclass[12pt]{amsart}
-\usepackage{amssymb}
-\usepackage{enumerate}
-\usepackage{amsmath}
-\usepackage{geometry}
-\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
-\usepackage{graphicx}
-\usepackage{fancyhdr}
+% PDFLaTeX
+\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
+%%%---------------------------------------------------
+\usepackage[math]{kurier}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
 \usepackage{multicol}
-\usepackage{enumitem}
-
-\pagestyle{fancy}
-
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+\input{random.tex}   
 \usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usepackage{mathtools}
+\usepackage{stackrel}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+
+\usepackage{enumitem} 
 \usepackage[compatibility=false]{caption} % para usar subcaption
 \usepackage{subcaption} % para poner varias imagenes juntas
-\usepackage[spanish,activeacute,es-lcroman,es-tabla]{babel}
-\usetikzlibrary{babel}
 \usetikzlibrary{arrows.meta}
-\usepackage{amssymb}
+\usepackage{hyperref}
+\hypersetup{ 
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{hypcap}
+\numberwithin{equation}{section}
+% http://www.texnia.com/archive/enumitem.pdf (para las labels de los enumerate)
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate, 1]{label={(\arabic*)}}
+\setlist[enumerate, 2]{label=\emph{\alph*)}}
+
+
+%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+%\setlength{\parindent}{0,7cm}% tamaño de sangria.
+\setlength{\parskip}{0,4cm} % separación entre parrafos.
+\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{comment}
+%%% FIN FORMATOS  
+
+\newcommand{\rta}{\noindent\textsc{Solución: }} 
+\newcommand \Z{{\mathbb Z}}
+\newcommand \C{{\mathbb C}}
+\newcommand \N{{\mathbb N}}
+\newcommand \mcd{\operatorname{mcd}}
+\newcommand \mcm{\operatorname{mcm}}
+
 
 \begin{document}
+    \baselineskip=0.55truecm %original
+    
+    
+    {\bf \begin{center} Práctico 1 \\ Álgebra  II -- Año 2024/1 \\ FAMAF \end{center}}
+    
 
-%\title{Pr\'actico 1}
 
-\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
-
-%\maketitle
-
-\centerline{\Large{Pr\' actico 1}}
-
-\
-
-\centerline{\textsc{Vectores en $\mathbb R^2$ y $\mathbb R^3$}}
+\bigbreak
 
 \centerline{\textsc{Soluciones}}
 
@@ -54,7 +93,7 @@
 
 \
 
-\textsc{Solución:}
+\rta
 
 \begin{enumerate}
 	\item $2v + 3w -5u = 2 \cdot (-1, 2, 0) + 3 \cdot (2,-3,-1) - 5 \cdot (1,-1,1) $
@@ -76,7 +115,7 @@ $ = (-2, 4, 0) + (6,-9,-3) + (-5,5,-5) = \boxed{(-1,0,-8)}$
 
 \
 
-\textsc{Solución:}
+\rta
 
 \begin{enumerate}
   \item $\langle (-1, 2, -0) ,(2,-3,-1) \rangle = (-1) \cdot 2 + 2 \cdot (-3) + 0 \cdot (-1) = -2 + (-6) + 0 = \boxed{-8}$ 
@@ -91,7 +130,7 @@ $ = (-2, 4, 0) + (6,-9,-3) + (-5,5,-5) = \boxed{(-1,0,-8)}$
 	\langle 2v + 3w , -u   \rangle = -2\langle v ,u \rangle -3 \langle w , u  \rangle
 \end{equation*}
 
-\textsc{Solución:} Calculamos ambos miembros por separado.
+\rta Calculamos ambos miembros por separado.
 
 \
 
@@ -119,7 +158,7 @@ $= -2 \cdot ( -1 + (-2) + 0) - 3 \cdot ( 2 + 3 + (-1)) = -2 \cdot (-3) - 3 \cdot
 
 \ 
 
-\textsc{Solución:} Calculamos su producto interno para ver si es nulo.
+\rta Calculamos su producto interno para ver si es nulo.
 
 \begin{enumerate}
 	\item $ \langle (2,3,-1) , (1, -2, -4) \rangle = 2 \cdot 1 + 3 \cdot (-2) + (-1) \cdot (-4) = 2 + (-6) + 4 = \boxed{0} $
@@ -154,7 +193,6 @@ $= -2 \cdot ( -1 + (-2) + 0) - 3 \cdot ( 2 + 3 + (-1)) = -2 \cdot (-3) - 3 \cdot
 \caption{Ejercicio 4.b}
 \end{figure}
 
-\newpage
 
 \item Encontrar 
 \begin{enumerate}
@@ -165,7 +203,7 @@ $= -2 \cdot ( -1 + (-2) + 0) - 3 \cdot ( 2 + 3 + (-1)) = -2 \cdot (-3) - 3 \cdot
 
 \
 
-\textsc{Solución:} 
+\rta 
 
 \begin{enumerate}
 	\item $(4,3)$ es un vector no nulo ortogonal  a $(3,-4)$, pues:
@@ -194,7 +232,7 @@ Luego, si elegimos por ejemplo $a=-3$ y $b=2$ vamos a tener a nuestro candidato 
 &(a) \ (2,3), && (b) \ (t,t^2), & (c) \ (\cos\phi,\operatorname{sen}\phi).
 \end{align*}
 
-\textsc{Solución:} 
+\rta 
 
 \begin{enumerate}
 \item $||(2,3)|| = \sqrt{2^2 + 3^2} = \sqrt{4+9} = \boxed{\sqrt{13}}$
@@ -211,7 +249,7 @@ Luego, si elegimos por ejemplo $a=-3$ y $b=2$ vamos a tener a nuestro candidato 
 &(a) \ v=(2,2), w=(1,0), &&  (b) \  v=(-5,3,1), w=(2,-4,-7).
 \end{align*}
 
-\textsc{Solución:} Para encontrar el ángulo se deben calcular además las normas de los vectores:
+\rta Para encontrar el ángulo se deben calcular además las normas de los vectores:
 
 \begin{enumerate}
 \item $\langle v , w  \rangle = \langle (2,2) , (1,0)  \rangle = 2 \cdot 1 + 1 \cdot 0 = 2 + 0 = \boxed{2}$
@@ -236,7 +274,7 @@ $\theta = \cos^{-1} \left( \dfrac{\langle v,w \rangle}{||v|| \; ||w||} \right) =
 \item Recordar los vectores $e_1$, $e_2$ y $e_3$ dados en la p\'agina 12 del apunte. Sea $v=(x_1,x_2,x_3)\in\mathbb{R}^3$.  Verificar que 
 $$v=x_1e_1+x_2e_2+x_3e_3=\langle v,e_1\rangle e_1+\langle v,e_2\rangle e_2+\langle v,e_3\rangle e_3.$$
 
-\textsc{Solución:} Podemos empezar desde el miembro de la derecha, pasar por el del medio y llegar al de la izquierda aplicando las definiciones y propiedades conocidas:
+\rta Podemos empezar desde el miembro de la derecha, pasar por el del medio y llegar al de la izquierda aplicando las definiciones y propiedades conocidas:
 
 \
 
@@ -271,7 +309,7 @@ $= (x_1,0,0)+(0,x_2,0)+(0,0,x_3) = (x_1+0+0,0+x_2+0,0+0+x_3) = (x_1,x_2,x_3) = \
 	\end{equation*}
 \end{enumerate}
 
-\textsc{Solución:} 
+\rta 
 
 \begin{enumerate}
 \item $\langle \lambda_1 v + \lambda_2 w , u  \rangle \overset{\textbf{P2}}{=} \langle u , \lambda_1 v \rangle + \langle u , \lambda_2 w \rangle \overset{\textbf{P3}}{=} \lambda_1 \langle u,v \rangle + \lambda_2 \langle u,w \rangle \overset{\textbf{P1}}{=} \lambda_1 \langle v,u \rangle + \lambda_2 \langle w,u \rangle$
@@ -300,7 +338,7 @@ En el último paso se utilizó la hipótesis $\langle v , w  \rangle =0$.
 
 \	
 	
-\textsc{Solución:} Vamos a usar la definición de norma y el inciso b) del ejercicio anterior, tomando $\lambda_1 = \lambda_2 = 1$:
+\rta Vamos a usar la definición de norma y el inciso b) del ejercicio anterior, tomando $\lambda_1 = \lambda_2 = 1$:
 
 \
 
@@ -317,7 +355,7 @@ En $\mathbb R^2$ esta igualdad es el \emph{Teorema de Pitágoras}.
 	|\langle v , w  \rangle| \le ||v||\,||w|| \qquad \text{(Desigualdad de Schwarz).}
 \end{equation*}
 
-\textsc{Solución:} Vamos a escribir $v = (v_1 , v_2)$ y $w=(w_1,w_2) $. Veamos la pinta del cuadrado del lado izquierdo:
+\rta Vamos a escribir $v = (v_1 , v_2)$ y $w=(w_1,w_2) $. Veamos la pinta del cuadrado del lado izquierdo:
 
 \begin{equation}\label{cuad_izq}
 \langle v,w \rangle^2 = \langle (v_1,v_2) , (w_1,w_2) \rangle^2 =  (v_1 w_1 + v_2 w_2 )^2
@@ -369,7 +407,7 @@ equivalentes y/o paralelos.
 
 \
 
-\textsc{Solución:} Calulamos las diferencias correspondientes y las analizamos:
+\rta Calulamos las diferencias correspondientes y las analizamos:
 
 \begin{enumerate}
 \item $w - v = (4,3) - (1,-1) = (4-1,3-(-1)) = (3,4)$
@@ -398,7 +436,7 @@ No son equivalente pero si paralelos. Tomando $\lambda=2$ se tiene que $y-x = \l
 
 \
 
-\textsc{Solución:}
+\rta
 
 \begin{enumerate}
  \item Para la descripción paramétrica necesitamos un vector paralelo a $R_1$, es decir, ortogonal a $(1,3)$. Un vector así puede ser el $(3,-1)$, con el que tenemos:
@@ -441,7 +479,7 @@ p+p_1 = (-1,1) + (2,0) = (1,1) &&& -p = (1,-1) \\
 
 \
 
-\textsc{Solución:} Los procedimientos son análogos a los del ejercicio 13. Las gráficas están en la figura \ref{ej13by14}
+\rta Los procedimientos son análogos a los del ejercicio 13. Las gráficas están en la figura \ref{ej13by14}
 
 \begin{enumerate}
 	\item 
@@ -483,7 +521,7 @@ p+p_3 = (-2,1) + (1,0) = (-1,1)	&&& -p = (2,-1) \\
 \end{enumerate}
 
 \begin{figure}[!h]
-\begin{subfigure}{.3\textwidth}
+\begin{subfigure}{.3\textwidth} 
 	\begin{tikzpicture}[scale=0.8]
 		\draw[->] (-1.0,0) -- (4.0,0) node[right] {}; % eje x
 		\draw[->] (0,-2) -- (0,2) node[above] {}; % eje y
@@ -540,7 +578,7 @@ p+p_3 = (-2,1) + (1,0) = (-1,1)	&&& -p = (2,-1) \\
 
 \
 
-\textsc{Solución:} Para el cálculo numérico, notar que las ecuaciones de las tres rectas son de la forma $x+3y = c$ donde $c$ vale 2, 0 y 1 para $R_1$, $R_2$ y $R_3$ respectivamente. Así tendremos por ejemplo que para calcular la intersección $R_1\cap R_2$ tendremos que resolver el sistema:
+\rta Para el cálculo numérico, notar que las ecuaciones de las tres rectas son de la forma $x+3y = c$ donde $c$ vale 2, 0 y 1 para $R_1$, $R_2$ y $R_3$ respectivamente. Así tendremos por ejemplo que para calcular la intersección $R_1\cap R_2$ tendremos que resolver el sistema:
 
 \begin{equation*}
 \left\{\begin{array}{l}
@@ -568,7 +606,7 @@ En conclusión, tenemos $\boxed{ R_1 \cap R_2 = R_1 \cap R_3 = \emptyset }$
 
 \
 
-\textsc{Solución:}
+\rta
 
 \begin{enumerate}
 	\item Debemos despejar la ecuación implícita y reemplazarla en el vector:
@@ -610,7 +648,7 @@ $ \therefore \boxed{ P_2 = \{ (0,-1,0) + s (1,2,0) + t (0,1,1) \; | \; s,t, \in 
 
 \
 
-\textsc{Solución:}
+\rta
 
 \begin{enumerate}
 	\item Llamemos $p_0=(0,0,0)$, $p_1=(1,1,0)$ y $p_2=(1,-2,0)$ a los puntos involucrados. Como $p_0$ es el origen y $p_2$ no es un múltiplo de $p_1$, tenemos que los puntos no son colineales. Luego para la descripción paramétrica basta con elegir uno de ellos y dos parejas distintas cualquiera. Así, por ejemplo podríamos escribir:
@@ -674,7 +712,7 @@ Describir la intersecci{\'o}n en cada caso.
 
 \
 
-\textsc{Solución:} La manera más directa de chequear si una recta interseca a un plano es con la forma normal del plano. Si la dirección de la recta es perpendicular a la dirección normal del plano, la recta es paralela al plano. Luego, o bien toda la recta está contenida en el plano, o bien la recta y el plano tienen intersección vacía.
+\rta La manera más directa de chequear si una recta interseca a un plano es con la forma normal del plano. Si la dirección de la recta es perpendicular a la dirección normal del plano, la recta es paralela al plano. Luego, o bien toda la recta está contenida en el plano, o bien la recta y el plano tienen intersección vacía.
 
 Si una recta no es paralela a un plano, lo corta en un único punto. La manera más fácil de hallar ese punto es reemplazar la parametrización de la recta en la ecuación normal y despejar $t$. Luego, reemplazando $t$ en la parametrización de la recta se encuentra el punto.
 
@@ -740,7 +778,7 @@ El punto de intersección es $(1,-2,1) + 2 (2,-1,1) = \boxed{ ( 5,-4,3 ) }$
 
 \
 
-\textsc{Solución:} 
+\rta 
 
 \begin{enumerate}
  \item Si $(0,0) \in L$, entonces esos valores de $x$ e $y$ deben verificar la ecuación normal de la recta. Es decir, debe suceder $c = ax + by = a\cdot 0 + b \cdot 0 = 0$. Con lo cual debe ser $c=0$ y por lo tanto es el único valor de $c$ con esta propiedad.
@@ -795,7 +833,7 @@ Por lo tanto debe ser $c=0$ y es el único valor con esta propiedad.
 
 \
 
-\textsc{Solución:} 
+\rta 
 
 $\boxed{ \implies }$ Supongo que $(0,0) \in L$, entonces por el ejercicio 19.a) tengo que $c=0$. Si $c=0$, por ejercicio 19.b) tengo que como $q \in L$ entonces $\lambda q \in L$. Luego, por ejercicio 19.c) tengo que como $p \in L$ y $\lambda q \in L$ entonces su suma también: $p + \lambda q \in L$.
 
