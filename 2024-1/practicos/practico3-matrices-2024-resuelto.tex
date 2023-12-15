@@ -1,51 +1,91 @@
-\documentclass[12pt,reqno]{amsart}
+% PDFLaTeX
+\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
+%%%---------------------------------------------------
+\usepackage[math]{kurier}
 
-\usepackage[math]{kurier}  % cambia la font
-%\usepackage{cmbright}   % cambia la font
-\usepackage{amssymb}
-\usepackage{enumerate}
-\usepackage{amsmath}
-\usepackage{geometry}
-\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
-\usepackage{graphicx}
-\usepackage{fancyhdr}
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
 \usepackage{multicol}
-\usepackage{enumitem}
 \usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
 \usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+\input{random.tex}   
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
 \usepackage{mathtools}
 \usepackage{stackrel}
 \usepackage{enumitem}
 \usepackage{tkz-graph}
-%\usepackage{makeidx}
+
+\usepackage{enumitem} 
+\usepackage[compatibility=false]{caption} % para usar subcaption
+\usepackage{subcaption} % para poner varias imagenes juntas
+\usetikzlibrary{arrows.meta}
 \usepackage{hyperref}
-\hypersetup{
+\hypersetup{ 
     colorlinks=true,
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=cyan,
 }
 \usepackage{hypcap}
-\usepackage{nicematrix} %https://ctan.dcc.uchile.cl/macros/latex/contrib/nicematrix/nicematrix.pdf
+\numberwithin{equation}{section}
+% http://www.texnia.com/archive/enumitem.pdf (para las labels de los enumerate)
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate, 1]{label={(\arabic*)}}
+\setlist[enumerate, 2]{label=\emph{\alph*)}}
 
-\pagestyle{fancy}
 
+\newcommand{\rta}{\noindent\textsc{Solución: }} 
 
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+%\setlength{\parindent}{0,7cm}% tamaño de sangria.
+\setlength{\parskip}{0,4cm} % separación entre parrafos.
+\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{comment}
+%%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+    \baselineskip=0.55truecm %original
+    
+    
+    {\bf \begin{center} Práctico 3 \\ Álgebra  II -- Año 2024/1 \\ FAMAF \end{center}}
 
-%\title{Práctico 1}
+%\title{Pr\'actico 1}
 
-\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
-
-%\maketitle
-
-\centerline{\Large{Pr\' actico 3}}
-
-\
 
 \centerline{\textsc{\'Algebra de matrices}}
-
 \subsection*{Ejercicios resueltos}
 
 \begin{enumerate}[topsep=6pt,itemsep=6pt]
@@ -402,10 +442,10 @@ Por lo tanto
 \vskip .6cm
 
 
-\item\label{traza} Si $A$ es una matriz cuadrada $n\times n$, se define la {\it \textbf{traza}} de $A$
+\item\label{traza} Si $A$ es una matriz cuadrada $n\times n$, se define la {\it \textbf{traza}} de $A$ 
 como $\operatorname{Tr}(A)=\displaystyle{\sum_{i=1}^n} a_{ii}$.
 \begin{enumerate}[topsep=5pt,itemsep=5pt]
- \item Calcular la traza de las matrices del ejercicio  \eqref{ej:inversas}.
+ \item Calcular la traza de las matrices del ejercicio  \ref{ej:inversas}. 
  \item\label{ej:traza} Probar que si $A,B\in\mathbb{R}^{n\times n}$ y $c\in\mathbb{R}$ entonces
  \begin{align*}
  \operatorname{Tr}(A+cB)=\operatorname{Tr}(A)+c\operatorname{Tr}(B)

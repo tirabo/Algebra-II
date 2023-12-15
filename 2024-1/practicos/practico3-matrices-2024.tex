@@ -1,55 +1,109 @@
-\documentclass[12pt]{amsart}
-\usepackage{amssymb}
-\usepackage{enumerate}
-\usepackage{amsmath}
-\usepackage{geometry}
-\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
-\usepackage{graphicx}
-\usepackage{fancyhdr}
+% PDFLaTeX
+\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
+%%%---------------------------------------------------
+\usepackage[math]{kurier}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
 \usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+\input{random.tex}   
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usepackage{mathtools}
+\usepackage{stackrel}
 \usepackage{enumitem}
+\usepackage{tkz-graph}
 
-\pagestyle{fancy}
+\usepackage{enumitem} 
+\usepackage[compatibility=false]{caption} % para usar subcaption
+\usepackage{subcaption} % para poner varias imagenes juntas
+\usetikzlibrary{arrows.meta}
+\usepackage{hyperref}
+\hypersetup{ 
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{hypcap}
+\numberwithin{equation}{section}
+% http://www.texnia.com/archive/enumitem.pdf (para las labels de los enumerate)
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate, 1]{label={(\arabic*)}}
+\setlist[enumerate, 2]{label=\emph{\alph*)}}
 
 
+\newcommand{\rta}{\noindent\textsc{Solución: }} 
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+%\setlength{\parindent}{0,7cm}% tamaño de sangria.
+\setlength{\parskip}{0,4cm} % separación entre parrafos.
+\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{comment}
+%%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+    \baselineskip=0.55truecm %original
+    
+    
+    {\bf \begin{center} Práctico 3 \\ Álgebra  II -- Año 2024/1 \\ FAMAF \end{center}}
 
 %\title{Pr\'actico 1}
 
-\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
-
-%\maketitle
-
-\centerline{\Large{Pr\' actico 3}}
-
-\
 
 \centerline{\textsc{\'Algebra de matrices}}
 
 \subsection*{Objetivos}
 
 \begin{itemize}
- \item Familiarizarse con las matrices y sus operaciones de suma y multiplicaci\'on, Ejercicios \eqref{ej} -- \eqref{ej:multiplicar por columna}.
-
- \
-
- \item Familiarizarse con la notaci\'on de sub\'indices para las entradas de matrices, Ejercicios \eqref{ej:multiplicar por columna} y \eqref{traza}.
-
- \
-
- \item Aprender la noci\'on de matriz inversa y c\'omo c\'alcularla, Ejercicios \eqref{ej:inversas} -- \eqref{nilpotene - id}.
-
- \
-
- \item Usar matrices para la resoluci\'on de sistemas de ecuaciones, Ejercicios \eqref{sol homog es subesp} -- \eqref{ej:sistemas ABX}.
+ \item Familiarizarse con las matrices y sus operaciones de suma y multiplicaci\'on, Ejercicios \ref{ej} -- \ref{ej:multiplicar por columna}.
+ \vskip .2cm
+ \item Familiarizarse con la notaci\'on de sub\'indices para las entradas de matrices, Ejercicios \ref{ej:multiplicar por columna} y \ref{traza}.
+ \vskip .2cm
+ \item Aprender la noci\'on de matriz inversa y c\'omo c\'alcularla, Ejercicios \ref{ej:inversas} -- \ref{nilpotene - id}.
+ \vskip .2cm
+ \item Usar matrices para la resoluci\'on de sistemas de ecuaciones, Ejercicios \ref{sol homog es subesp} -- \ref{ej:sistemas ABX}.
 \end{itemize}
 
 \bigbreak
 
 \subsection*{Ejercicios}
 
-Los ejercicios con el s\'imbolo $\textcircled{a}$ tienen una ayuda al final del archivo para que recurran a ella despu\'es de pensar un poco.
+Los ejercicios con el símbolo $\textcircled{a}$ tienen una ayuda al final del archivo para que recurran a ella despu\'es de pensar un poco.
 
 \begin{enumerate}[topsep=6pt,itemsep=6pt]
 
@@ -122,7 +176,7 @@ es decir, $C_1, ..., C_n$ denotan las columnas de $A$. Probar que $Av=\sum_{j=1}
 \item\label{traza} Si $A$ es una matriz cuadrada $n\times n$, se define la {\it \textbf{traza}} de $A$
 como $\operatorname{Tr}(A)=\displaystyle{\sum_{i=1}^n} a_{ii}$.
 \begin{enumerate}[topsep=5pt,itemsep=5pt]
- \item Calcular la traza de las matrices del ejercicio  \eqref{ej:inversas}.
+ \item Calcular la traza de las matrices del ejercicio  \ref{ej:inversas}.
  \item\label{ej:traza}$\textcircled{a}$ Probar que si $A,B\in\mathbb{R}^{n\times n}$ y $c\in\mathbb{R}$ entonces
  \begin{align*}
  \operatorname{Tr}(A+cB)=\operatorname{Tr}(A)+c\operatorname{Tr}(B)
@@ -181,12 +235,12 @@ Probar que:
 \end{enumerate}
 
 
-\
+
 
 \subsection*{Ejercicios de repaso}
 Si ya hizo los ejercicios anteriores continue con la siguiente gu\'ia. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los ex\'amenes.
 
-\
+
 
 \begin{enumerate}[resume, topsep=5pt,itemsep=5pt]
 
@@ -224,7 +278,7 @@ $$(A+B)^k = \sum_{j = 0}^k \binom{k}{j} \, A^j \, B^{k-j}.$$
 \item Sea $A\in\mathbb{R}^{m\times n}$. La \emph{matriz traspuesta} de $A$ es la matriz $A^t\in\mathbb{R}^{n\times m}$ tal que
 $(A^t)_{ij}=A_{ji}$, $1\le i\le n$, $1\le j\le m$.
 \begin{enumerate}[topsep=5pt,itemsep=5pt]
- \item Dar las matrices traspuestas de las matrices $A$, $B$ y $C$ de los ejercicios \eqref{ej} y \eqref{ej2}.
+ \item Dar las matrices traspuestas de las matrices $A$, $B$ y $C$ de los ejercicios \ref{ej} y \ref{ej2}.
  \item Probar que si $A,B\in\mathbb{R}^{m\times n}$, $C\in\mathbb{R}^{n\times p}$ y $c\in\mathbb{R}$ entonces
 $$(A+cB)^t=A^{t} + c B^t, \quad\quad (BC)^t= C^t B^t.$$
 
@@ -250,15 +304,15 @@ $$(A+cB)^t=A^{t} + c B^t, \quad\quad (BC)^t= C^t B^t.$$
 
 \subsection*{Ayudas}
 
-\eqref{ejemplos 2x2} Probar con algunos $0$ y $1$ en las entradas.
+\ref{ejemplos 2x2} Probar con algunos $0$ y $1$ en las entradas.
 
 \medskip
 
-\eqref{2x2 central} Elegir matrices $B$ apropiadas con muchos ceros y \textbf{un} $1$.
+\ref{2x2 central} Elegir matrices $B$ apropiadas con muchos ceros y \textbf{un} $1$.
 
 \medskip
 
-\eqref{eq:binomio} El objetivo del ejercicio es completar los puntos suspensivos en la siguiente frase:
+\ref{eq:binomio} El objetivo del ejercicio es completar los puntos suspensivos en la siguiente frase:
 
 
 ``$(A+B)^2=A^2+2AB+B^2$ si y s\'olo si $A$ y $B$ satisfacen ..... ''
@@ -269,22 +323,22 @@ y vean que les ``sobra'' para obtener la f\'ormula del binomio.  Misma idea para
 
 \medskip
 
-\eqref{ej:multiplicar por columna} Usar la notaci\'on de sub\'indices para las entradas de matrices.
+\ref{ej:multiplicar por columna} Usar la notaci\'on de sub\'indices para las entradas de matrices.
 
 \medskip
 
-\eqref{ej:traza} Usar la notaci\'on de sub\'indices para las entradas de matrices.
+\ref{ej:traza} Usar la notaci\'on de sub\'indices para las entradas de matrices.
 
 \medskip
 
-\eqref{nilpotene - id} Pensar en la f\'ormula de $\sum_{i=0}^na^i$ vista en \'Algebra I/Matem\'atica Discreta I.
+\ref{nilpotene - id} Pensar en la f\'ormula de $\sum_{i=0}^na^i$ vista en \'Algebra I/Matem\'atica Discreta I.
 
 \medskip
 
-\eqref{ej:sistemas ABX} Recordar el Ejercicio 11 del Pr\'actico 2.
+\ref{ej:sistemas ABX} Recordar el Ejercicio 11 del Pr\'actico 2.
 
 \medskip
 
-\eqref{ej: distributiva} Usar la notaci\'on de sub\'indices para las entradas de matrices.
+\ref{ej: distributiva} Usar la notaci\'on de sub\'indices para las entradas de matrices.
 
 \end{document}
