@@ -1,0 +1,229 @@
+% PDFLaTeX
+\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
+%%%---------------------------------------------------
+
+\usepackage[math]{kurier}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usepackage{mathtools}
+\usepackage{stackrel}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+%\usepackage{makeidx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{hypcap}
+\numberwithin{equation}{section}
+% http://www.texnia.com/archive/enumitem.pdf (para las labels de los enumerate)
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate, 1]{label={(\arabic*)}}
+\setlist[enumerate, 2]{label=\emph{\alph*)}}
+
+
+%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+%\setlength{\parindent}{0,7cm}% tamaño de sangria.
+\setlength{\parskip}{0,4cm} % separación entre parrafos.
+\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{comment}
+%%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\rta}{\noindent\textit{Rta: }} 
+\newcommand \Z{{\mathbb Z}}
+\newcommand \C{{\mathbb C}}
+\newcommand \N{{\mathbb N}}
+\newcommand \mcd{\operatorname{mcd}}
+\newcommand \mcm{\operatorname{mcm}}
+
+
+\begin{document}
+    \baselineskip=0.55truecm %original
+    
+    
+    {\bf \begin{center} Práctico 0 \\ Álgebra  II -- Año 2024/1 \\ FAMAF \end{center}}
+    
+
+
+\bigbreak
+
+\subsection*{Objetivos}
+
+\begin{itemize}
+ \item Familiarizarse con los números complejos.
+ \item Aprender a operar con números complejos (sumar, multiplicar, calcular inversos, conjugados y normas).
+\end{itemize}
+
+\subsection*{Ejercicios}
+
+
+\begin{enumerate}
+
+\item Expresar los siguientes n{ú}meros complejos en la forma $a +i b$.
+Hallar el módulo y conjugado de cada uno de ellos, y graficarlos.
+
+\begin{multicols}{3}
+\begin{enumerate}
+\item $(-1+i) (3-2i)$
+\item $i^{131} - i^9 +1$
+\item $\frac {1+i}{1+2i} + \frac{1-i}{1-2i}$
+\end{enumerate}
+\end{multicols}
+
+\vspace{.5cm}
+
+
+\item Encontrar números reales $x$ e $y$ tales que $3x+2yi-xi+5y = 7 + 5i$
+
+
+\vspace{.5cm}
+
+\item Probar que si $z \in \mathbb{C}$ tiene módulo $1$ entonces $z + z^{-1} \in \mathbb{R}.$
+
+\vspace{.5cm}
+
+\item Probar que si $a\in \mathbb{R}\backslash \{0\}$ entonces el polinomio $x^2+a^2$ tiene siempre dos raíces complejas distintas.
+
+\vspace{.5cm}
+
+\item
+Simplificar las siguientes expresiones:
+$$\begin{array}{ll}
+ \text{a) } \ \left(\dfrac{-3}{\frac{4}{5}+1}\right)^{-1}\cdot\left(\dfrac{4}{5}-1\right) + \dfrac{1}{3}, \quad &
+\text{ b)} \ \dfrac{a}{2\pi-6}(\pi-3)^2 -\dfrac{2a(\pi^2-9)}{\pi-3}.
+\end{array}$$
+
+\vspace{.5cm}
+
+
+\item Demostrar que  dados $z$, $z_1$, $z_2$ en $\C$ se cumple:
+\[ |\bar z|= |z|, \qquad |z_1 \, z_2|= |z_1| \, |z_2|. \]
+
+\vspace{.5cm}
+
+
+\item Sean $z=1+i$ y $w=\sqrt{2}-i$. Calcular:
+ \begin{enumerate}
+  \item $z^{-1}$; $1/w$; $z/w$; $w/z$.
+
+  \item $1+z+z^2+z^3+\dots+z^{2019}$.
+
+  \item $(z(z+w)^2-iz)/w$.
+ \end{enumerate}
+
+
+\vspace{.5cm}
+
+
+\item Sumar y multiplicar los siguientes pares de números complejos
+    \begin{enumerate}
+        \item $2+ 3i$ y $4$.
+        \item $2+ 3i$ y $4i$.
+        \item $1 + i$ y $ 1 -i$.
+        \item $3-2i$ y $1 +i$. 
+    \end{enumerate}
+
+\vspace{.5cm}
+
+
+ \item Expresar los siguientes n{ú}meros complejos en la forma $a +i b$.
+ Hallar el módulo, argumento y conjugado de cada uno de ellos y graficarlos.
+
+ $$\begin{array}{lll}
+ \text{a) }\ 2e^{\mathrm{i}\pi}-i,  \quad & \text{ b)} \  i^3 - 2i^{-7} -1, \quad &\text{ c)}\ (-2+i) (1+2i).
+  \end{array}$$
+
+\vspace{.5cm}
+
+\item Sean $a,b\in\mathbb{C}$. Decidir si existe $z \in \mathbb{C}$ tal que:
+\begin{enumerate}
+  \item $z^2=b$. ¿Es único? ¿Para qué valores de $b$ resulta $z$ ser un número real?
+  \item $z$ es imaginario puro y $z^2=4$.
+  \item $z$ es imaginario puro y $z^2=-4$.
+\end{enumerate}
+
+
+
+\end{enumerate}
+
+%============================================================
+\subsection*{Ejercicios de repaso} Si ya hizo los ejercicios anteriores continue a la siguiente guía. Los ejercicios que siguen son similares a los anteriores y le pueden servir para practicar antes de los exámenes.
+%============================================================
+
+\
+
+\begin{enumerate}[resume]
+
+\item Expresar los siguientes n{ú}meros complejos en la forma $a +i b$. Hallar el módulo y conjugado de cada uno de ellos, y graficarlos.
+
+$$\textrm{(a)}\; (\cos\theta - i\sin\theta)^{-1},\; 0\leq\theta<2\pi, \quad \qquad
+\textrm{(b)} \; 3 i(1 + i)^4, \quad \qquad
+\textrm{(c)} \; \dfrac{1+i}{1-i}$$
+
+
+\
+
+  \item Sea $z=2+\frac{1}{2}i$, calcular
+ \begin{multicols}{3}
+\begin{enumerate}
+\item $\dfrac{(z+i)(z-i)}{z^2+1}$.
+\item $z-2 + \dfrac{1}{z-2}$.
+\item $\left|\dfrac{1}{z-i}\right|^2$.
+\end{enumerate}
+\end{multicols}
+
+\
+
+\item Sea $z\in\mathbb{C}$. Calcular $\frac{1}{z}+\frac{1}{\overline{z}} - \frac{1}{|z|^2}$.
+
+%\
+%
+%\item Mostrar que las soluciones de la ecuación $z^4 + (-4+2i)z^2 - 1 =0$ son exactamente
+%$-1+\sqrt {1-i}$, $-1-\sqrt {1-i}$, $1+\sqrt {1-i}$ y $1-\sqrt {1-i}$.
+
+\
+
+\item\label{desT} (Desigualdad triangular) Sean $w$ y $z$ números complejos. Probar que
+\begin{eqnarray*}
+  |w + z| \leq |w| + |z|,
+\end{eqnarray*}
+y la igualdad se cumple si y sólo si $w= r\cdot z$ para algún número real $r \geq 0$.
+En general, sean $z_1,z_2,\ldots, z_n$ números complejos. Probar que
+\begin{eqnarray*}
+  \left|\sum_{k=1}^{n} z_k\right| \leq \sum_{k=1}^{n} |z_k|.
+\end{eqnarray*}
+
+\
+
+\item Sean $w$ y $z$ números complejos. Entonces
+\begin{eqnarray*}
+  ||w|-|z|| \leq |w-z|.
+\end{eqnarray*}
+
+\end{enumerate}
+
+
+\end{document}
