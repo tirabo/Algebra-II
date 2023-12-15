@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1702657279 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/practico2-sist-de-ecua-2024.tex" "practico2-sist-de-ecua-2024.pdf" "practico2-sist-de-ecua-2024" 1702657280
+["pdflatex"] 1702657680 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/practico2-sist-de-ecua-2024.tex" "practico2-sist-de-ecua-2024.pdf" "practico2-sist-de-ecua-2024" 1702657681
   "/etc/texmf/web2c/texmf.cnf" 1701780632 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/practico2-sist-de-ecua-2024.tex" 1702657278 19385 5aae3bc544b57cdf38fdf7860e34276c ""
+  "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/practico2-sist-de-ecua-2024.tex" 1702657679 9345 d668dadd324253eda38078f78fcd7448 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ec-kurier-sc.enc" 1276043553 2453 1d8617ea44de6f9e3d32432cbb362a22 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ec-kurier.enc" 1276043553 2028 f37bfbf3eae3af9eaa5d74b955cbf302 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ex-kurier.enc" 1276043553 3131 f9750a640e516fde8067358ed3647085 ""
@@ -190,9 +190,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1701780664 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1701780688 2800016 ec8e1385f8f3f50a7458c230af89926c ""
-  "practico2-sist-de-ecua-2024.aux" 1702657280 1249 2522af49c835bde4caf23cf5bd08ef55 "pdflatex"
-  "practico2-sist-de-ecua-2024.out" 1702657279 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "practico2-sist-de-ecua-2024.tex" 1702657278 19385 5aae3bc544b57cdf38fdf7860e34276c ""
+  "practico2-sist-de-ecua-2024.aux" 1702657681 1190 6025a54f555d0c3e91556e8a41633e6b "pdflatex"
+  "practico2-sist-de-ecua-2024.out" 1702657680 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "practico2-sist-de-ecua-2024.tex" 1702657679 9345 d668dadd324253eda38078f78fcd7448 ""
   (generated)
   "practico2-sist-de-ecua-2024.aux"
   "practico2-sist-de-ecua-2024.log"
