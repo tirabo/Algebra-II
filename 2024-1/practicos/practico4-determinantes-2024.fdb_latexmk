@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1702989280 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/practico4-determinantes-2024.tex" "practico4-determinantes-2024.pdf" "practico4-determinantes-2024" 1702989281
+["pdflatex"] 1702991461 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/practico4-determinantes-2024.tex" "practico4-determinantes-2024.pdf" "practico4-determinantes-2024" 1702991462
   "/etc/texmf/web2c/texmf.cnf" 1701780632 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/practico4-determinantes-2024.tex" 1702989280 11571 2ee8824e47794d1f9b5f203e41be3f58 ""
+  "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/practico4-determinantes-2024.tex" 1702991460 9862 b97a676ab2e9bed3f671250b80df70ff ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ec-kurier-sc.enc" 1276043553 2453 1d8617ea44de6f9e3d32432cbb362a22 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ec-kurier.enc" 1276043553 2028 f37bfbf3eae3af9eaa5d74b955cbf302 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ex-kurier.enc" 1276043553 3131 f9750a640e516fde8067358ed3647085 ""
@@ -191,9 +191,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1701780664 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1701780688 2800016 ec8e1385f8f3f50a7458c230af89926c ""
-  "practico4-determinantes-2024.aux" 1702989281 1370 23450e62805d32a5c31f059ca7482dc9 "pdflatex"
-  "practico4-determinantes-2024.out" 1702989281 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "practico4-determinantes-2024.tex" 1702989280 11571 2ee8824e47794d1f9b5f203e41be3f58 ""
+  "practico4-determinantes-2024.aux" 1702991461 1370 54af16121294fad4ba39a868fd03239f "pdflatex"
+  "practico4-determinantes-2024.out" 1702991461 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "practico4-determinantes-2024.tex" 1702991460 9862 b97a676ab2e9bed3f671250b80df70ff ""
   (generated)
   "practico4-determinantes-2024.aux"
   "practico4-determinantes-2024.log"
