@@ -1,19 +1,20 @@
 # Fdb version 3
-["bibtex main-practico"] 1703002971 "main-practico.aux" "main-practico.bbl" "main-practico" 1703002973
+["bibtex main-practico"] 1703004163 "main-practico.aux" "main-practico.bbl" "main-practico" 1703004178
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1643926307 65483 fc69f364ef63c07bf68a2ab4b323f197 ""
-  "main-practico-blx.bib" 1703002973 341 26ffd19cc17d46681fd4bc8be67069f0 "pdflatex"
-  "main-practico.aux" 1703002973 4996 7cb1499f1671517f5cb42bcbef4155a1 "pdflatex"
+  "classicthesis-contents.aux" 1703004177 5385 7553c5d2c678c4f3a5f217ac9b34e2f7 "pdflatex"
+  "main-practico-blx.bib" 1703004177 341 26ffd19cc17d46681fd4bc8be67069f0 "pdflatex"
+  "main-practico.aux" 1703004177 6626 931a37369f6c1f0b47eda584a18363a1 "pdflatex"
   (generated)
   "main-practico.bbl"
   "main-practico.blg"
-["makeindex main-practico.idx"] 1703002814 "main-practico.idx" "main-practico.ind" "main-practico" 1703002973
-  "main-practico.idx" 1703002971 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main-practico.idx"] 1703003262 "main-practico.idx" "main-practico.ind" "main-practico" 1703004178
+  "main-practico.idx" 1703004176 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main-practico.ilg"
   "main-practico.ind"
-["pdflatex"] 1703002971 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos-comp/main-practico.tex" "main-practico.pdf" "main-practico" 1703002973
+["pdflatex"] 1703004175 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos-comp/main-practico.tex" "main-practico.pdf" "main-practico" 1703004178
   "/etc/texmf/web2c/texmf.cnf" 1701780632 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos-comp/main-practico.tex" 1703002638 2283 5571a78b1b4d099336d5c7c20fb497d5 ""
+  "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos-comp/main-practico.tex" 1703003657 3258 7d3b390c44313ec7e77007a0092d6406 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136768653 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
@@ -335,16 +336,21 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1701780664 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1701780688 2800016 ec8e1385f8f3f50a7458c230af89926c ""
   "classicthesis-config.tex" 1703001174 11103 29b877734ab3a096c55b5b4133856f96 ""
+  "classicthesis-contents.aux" 1703004177 5385 7553c5d2c678c4f3a5f217ac9b34e2f7 "pdflatex"
+  "classicthesis-contents.tex" 1703003584 833 c3b2a7dbadfc810f5e533241f69911d7 ""
   "config-definiciones.tex" 1703001174 3688 5bdecdd9a4e0f329b4568aa419cccfb6 ""
-  "main-practico.aux" 1703002973 4996 7cb1499f1671517f5cb42bcbef4155a1 "pdflatex"
-  "main-practico.bbl" 1703002971 512 66cdc237e4f174d49cccf2a5e2afad50 "bibtex main-practico"
-  "main-practico.ind" 1703002814 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main-practico.idx"
-  "main-practico.out" 1703002972 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main-practico.run.xml" 1703002973 2680 8de3ba49b0e7d8b9ac1d9c4c7d6ec6ca "pdflatex"
-  "main-practico.tex" 1703002638 2283 5571a78b1b4d099336d5c7c20fb497d5 ""
-  "practico.01.tex" 1703002922 9302 32b5b43e46fdab5810bbf7fa5c52fecf ""
-  "practico.06.tex" 1703002968 19222 9693bff59a680f3a69b128f59ce25b0c ""
+  "main-practico.aux" 1703004177 6626 931a37369f6c1f0b47eda584a18363a1 "pdflatex"
+  "main-practico.bbl" 1703004163 512 66cdc237e4f174d49cccf2a5e2afad50 "bibtex main-practico"
+  "main-practico.ind" 1703003262 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main-practico.idx"
+  "main-practico.out" 1703004177 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main-practico.run.xml" 1703004177 2680 8de3ba49b0e7d8b9ac1d9c4c7d6ec6ca "pdflatex"
+  "main-practico.tex" 1703003657 3258 7d3b390c44313ec7e77007a0092d6406 ""
+  "main-practico.toc" 1703004177 433 be0a0d395bdbc93829d01a976dea40f5 "pdflatex"
+  "practico.01.tex" 1703004160 8260 17fe03692be2d34ca6b0d74fee888906 ""
+  "practico.02.tex" 1703003875 6655 b91e31fa4b645104ed66a7c7dc7be6c4 ""
+  "practico.06.tex" 1703004175 19252 6ad35be4a8a8ed194d01ee1710f6b937 ""
   (generated)
+  "classicthesis-contents.aux"
   "main-practico-blx.bib"
   "main-practico.aux"
   "main-practico.idx"
@@ -352,3 +358,4 @@
   "main-practico.out"
   "main-practico.pdf"
   "main-practico.run.xml"
+  "main-practico.toc"
