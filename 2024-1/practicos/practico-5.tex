@@ -1,4 +1,4 @@
-\section*{Práctico 5 \\ Álgebra  II -- Año 2024/1 \\ FAMAF}
+\chapter*{Práctico 5 \\ Álgebra  II -- Año 2024/1 \\ FAMAF}\label{practico-5}
 
 
     
@@ -72,7 +72,7 @@ Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)
 
 \begin{enumerate}[resume,topsep=6pt,itemsep=.4cm]
 
-\item Probar que si $A\in\mathbb{K}^{n\times n}$ es una matriz nilpotente entonces $0$ es el único autovalor de $A$. Usar esto para deducir que la matriz $\operatorname{Id}_n-A$ es invertible (esta es otra demostración del Ejercicio (13) del Práctico 3).
+\item Probar que si $A\in\mathbb{K}^{n\times n}$ es una matriz nilpotente entonces $0$ es el único autovalor de $A$. Usar esto para deducir que la matriz $\operatorname{Id}_n-A$ es invertible (esta es otra demostración del ejercicio \ref{nilpotene - id} del Práctico 3).
 
 
 \item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
@@ -89,7 +89,7 @@ Si ya hizo los ejercicios anteriores continue con la siguiente guía. Los ejerci
 
 \begin{enumerate}[resume,topsep=6pt,itemsep=.4cm]
 
-\item\label{mas} Repetir los Ejercicios 1 y 2 con las siguientes matrices.
+\item\label{mas} Repetir los ejercicios \ref{autovalores} y \ref{autovalores-complejos} con las siguientes matrices.
 
 $$\textrm{(a)\; }\begin{bmatrix} 2 & 3 \\ -1 & 1
 \end{bmatrix}, \qquad
@@ -150,7 +150,7 @@ Sea $A\in\mathbb{K}^{n\times n}$, y \ $\tilde\chi_A(x) = x^n+a_{n-1}x^{n-1}+\cdo
 \end{enumerate}
 
 \subsection*{Aclaración}
-Los Ejercicios \ref{tr det} (b) y \ref{complejos} (b) no son fáciles de probar y no son evaluables. Pero ya que enunciamos los items (a) es interesante saber que valen los items (b).
+Los ejercicios \ref{tr det} (b) y \ref{complejos} (b) no son fáciles de probar y no son evaluables. Pero ya que enunciamos los items (a) es interesante saber que valen los items (b).
 % Demostración: Por hipotesis el polinomio característico de $A$ se descompone de la siguiente manera:
 % \begin{align*}
 % \chi_A(x)=(x-\lambda_1)(x-\lambda_2)\cdots(x-\lambda_n).
@@ -185,5 +185,5 @@ De estos sumandos, el único sumando donde hay $x^{n-1}$ es $(x-a_{11})\det((x\o
 \begin{align*}
 \tilde\chi_A(x)=(x-\lambda_1)(x-\lambda_2)\cdots(x-\lambda_n). \qquad (\diamondsuit)
 \end{align*}
-Con esta igualdad podemos calcular los términos $a_0$ y $a_{n-1}$ de $\tilde\chi_A(x)$ de dos maneras. La primera es la obtenida en el Ejercicio \ref{tr det}. La segunda es usando la multiplicación del lado derecho de $(\diamondsuit)$. Para el término $a_0$ hay que evaluar en un valor apropiado. Para el término $a_{n-1}$ hay que notar que para obtener $x^{n-1}$ debemos elegir una $x$ de todos los factores salvo en uno y un término del estilo $-\lambda_i$. Igualando lo que obtengamos probamos el ejercicio.
+Con esta igualdad podemos calcular los términos $a_0$ y $a_{n-1}$ de $\tilde\chi_A(x)$ de dos maneras. La primera es la obtenida en el ejercicio \ref{tr det}. La segunda es usando la multiplicación del lado derecho de $(\diamondsuit)$. Para el término $a_0$ hay que evaluar en un valor apropiado. Para el término $a_{n-1}$ hay que notar que para obtener $x^{n-1}$ debemos elegir una $x$ de todos los factores salvo en uno y un término del estilo $-\lambda_i$. Igualando lo que obtengamos probamos el ejercicio.
 
