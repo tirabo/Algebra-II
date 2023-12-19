@@ -1,31 +1,91 @@
-\documentclass[12pt]{amsart}
-\usepackage{amssymb}
-\usepackage{enumerate}
-\usepackage{amsmath}
-\usepackage{geometry}
-\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
-\usepackage{graphicx}
-\usepackage{fancyhdr}
+% PDFLaTeX
+\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
+%%%---------------------------------------------------
+\usepackage[math]{kurier}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
 \usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+\input{random.tex}   
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usepackage{mathtools}
+\usepackage{stackrel}
 \usepackage{enumitem}
+\usepackage{tkz-graph}
 
-\newcommand{\este}{($\star$) \; }
+\usepackage{enumitem} 
+\usepackage[compatibility=false]{caption} % para usar subcaption
+\usepackage{subcaption} % para poner varias imagenes juntas
+\usetikzlibrary{arrows.meta}
+\usepackage{hyperref}
+\hypersetup{ 
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{hypcap}
+\numberwithin{equation}{section}
+% http://www.texnia.com/archive/enumitem.pdf (para las labels de los enumerate)
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate, 1]{label={(\arabic*)}}
+\setlist[enumerate, 2]{label=\emph{\alph*)}}
 
-\pagestyle{fancy}
 
+\newcommand{\rta}{\noindent\textsc{Solución: }} 
 
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newenvironment{amatrix}[1]{%
+  \left[\begin{array}{@{}*{#1}{c}|c@{}}
+}{%
+  \end{array}\right]
+}
+
+%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.3}
+\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{setspace}
+%\setlength{\parindent}{0,7cm}% tamaño de sangria.
+\setlength{\parskip}{0,4cm} % separación entre parrafos.
+\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{comment}
+%%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
-	
-\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
-	
-\centerline{\Large{Pr\' actico 4}}
-	
-\
-	
+    \baselineskip=0.55truecm %original
+    
+    
+    {\bf \begin{center} Práctico 4 \\ Álgebra  II -- Año 2024/1 \\ FAMAF \end{center}}
+
+
+
 \centerline{\textsc{Determinantes}}
 
-\
 
 \noindent \textbf{Objetivos.}
 
@@ -39,7 +99,7 @@
 		
 \
 
-\noindent \textbf{Ejercicios.} Los ejercicios con el s\'imbolo $\textcircled{a}$ tienen una ayuda al final del archivo para que recurran a ella despu\'es de pensar un poco.
+\noindent \textbf{Ejercicios.} Los ejercicios con el símbolo $\textcircled{a}$ tienen una ayuda al final del archivo para que recurran a ella después de pensar un poco.
 
 \begin{enumerate}
 \item Calcular el determinante de las siguientes matrices.
@@ -164,7 +224,7 @@ B=\begin{bmatrix} 1&c&-1\\ c&1&1\\0&1&c\end{bmatrix}.
 
 \
 
-\item Calcular el determinante de las siguientes matrices, usando operaciones elementales por fila y/o columnas u otras propiedades del determinante. Determinar cu\'ales de ellas son invertibles.
+\item Calcular el determinante de las siguientes matrices, usando operaciones elementales por fila y/o columnas u otras propiedades del determinante. Determinar cuáles de ellas son invertibles.
 
 \begin{align*}
 &A=
@@ -223,44 +283,35 @@ E=\begin{bmatrix}
 1 & \lambda_n & \lambda_n^2 & \cdots & \lambda_n^{n-1}\\
 \end{bmatrix}.
 \end{align*}
-Esta es la matriz del sistema de ecuaciones del Ejercicios 12 (c) del Pr\'actico 2.
+Esta es la matriz del sistema de ecuaciones del Ejercicios 12 (c) del Práctico 2.
 
-\
 
 \begin{enumerate}
 \item Si $n=2$, probar que $\det(\mathtt V) = \lambda_2-\lambda_1$.
 
-\
 
 \item Si $n=3$, probar que $\det(\mathtt V) = (\lambda_3-\lambda_2) (\lambda_3-\lambda_1) (\lambda_2-\lambda_1)$.
 
-\
 
 \item\label{vandermonde gral} $\textcircled{a}$ Probar que $\det(\mathtt V) = \prod_{1\leq i< j \leq n}(\lambda_j-\lambda_i)$ para todo $n\in\mathbb{N}$.
 
-\
 
-\item Dar una condici\'on necesaria y suficiente para que la matriz de Vandermonde sea invertible.
+\item Dar una condición necesaria y suficiente para que la matriz de Vandermonde sea invertible.
 
-\
 
-\item Usar lo anterior para responder a la pregunta del Ejercicio 12 (b) del Pr\'actico 2.
+\item Usar lo anterior para responder a la pregunta del Ejercicio 12 (b) del Práctico 2.
 \end{enumerate}
 
-\
 
-\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar con una demostraci\' on o con un contraejemplo, seg\' un corresponda.
+\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar con una demostración o con un contraejemplo, según corresponda.
 
-\
 
 \begin{enumerate}
 \item Sean $A$ y $B$ matrices $n \times n$. Entonces $\det(A + B) = \det (A) + \det(B)$.
 
-\
 
 \item Existen una matriz $3\times 2$, $A$, y una matriz $2\times 3$, $B$, tales que $\det(AB) \neq 0$.
 
-\
 
 \item Sea $A$ una matriz $n\times n$. Si $A^n$ es no invertible, entonces $A$ es no invertible.
 \end{enumerate}
@@ -272,10 +323,8 @@ Esta es la matriz del sistema de ecuaciones del Ejercicios 12 (c) del Pr\'actico
 
 
 
-\
-
 \subsection*{Ejercicios de repaso}
-Si ya hizo los ejercicios anteriores continue con la siguiente gu\'ia. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los ex\'amenes.
+Si ya hizo los ejercicios anteriores continue con la siguiente guía. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los exámenes.
 
 \
 
@@ -322,95 +371,39 @@ $$
 \
 
 \item
-Una matriz $A$ $n \times n$ se dice {\it antisim\'etrica}
+Una matriz $A$ $n \times n$ se dice {\it antisimétrica}
 si $A^t=-A$.
 
 \
 
 \begin{enumerate}
-\item\label{anti a} $\textcircled{a}$ Probar que si $n$ es impar y $A$ es antisim\'etrica, entonces
+\item\label{anti a} $\textcircled{a}$ Probar que si $n$ es impar y $A$ es antisimétrica, entonces
 $\det(A)=0$.
 
 \
 
-\item\label{anti b} $\textcircled{a}$ Para cada $n$ par, encontrar una matriz $A$ antisim\'etrica
+\item\label{anti b} $\textcircled{a}$ Para cada $n$ par, encontrar una matriz $A$ antisimétrica
 $n \times n$ tal que $\det(A)\not=0$.
 \end{enumerate}
-
-%\
-%
-%\item
-%Usar la Regla de Cramer [Secci\'on C.2 del libro {\it Notas de \'Algebra II}] para resolver los siguientes sistemas de
-%ecuaciones lineales.
-%\begin{align*}
-%&\begin{cases}
-%x+y+z=11\\
-%2x-6y -z= 0\\
-%3x+4y+2z=0
-%\end{cases}
-%&&\begin{cases}
-%3x-2y=7\\
-%3y-2z=6 \\
-%3z-2x=-1
-%\end{cases}
-%&&\begin{cases}
-%2ix-z=4\\
-%x-2y+2z=7+i \\
-%3x+2y=1
-%\end{cases}
-%\end{align*}
 	
 	
 \end{enumerate}
 
-\
 
 \subsection*{Ayudas}
 
 \
 
-\
+\ref{-A} Analizar primero los casos $n=2,3$.
 
-\eqref{-A} Analizar primero los casos $n=2,3$.
 
-\
+\ref{vandermonde}\,\ref{vandermonde gral} En Wikipedia hay una posible demostración.
 
-\eqref{vandermonde gral} En Wikipedia hay una posible demostraci\'on.
 
-\
+\ref{anti a} Usar el Ejercicio \ref{-A}.
 
-\eqref{anti a} Usar el Ejercicio \eqref{-A}.
 
-\
+\ref{anti b} Encontrar primero una matriz $A_0$ para el caso $2\times 2$. Para $n = 2m$ considerar la matriz $2m \times 2m$ formada por $m$ bloques diagonales iguales a $A_0$.
 
-\eqref{anti b} Encontrar primero una matriz $A_0$ para el caso $2\times 2$. Para $n = 2m$ considerar la matriz $2m \times 2m$ formada por $m$ bloques diagonales iguales a $A_0$.
-% \subsection*{Ejercicios un poco m\'as dif\' \i ciles}
-%
-% Si ya hizo los primeros ejercicios ya sabe lo que tiene que saber. Los siguientes ejercicios le pueden servir si esta muy aburridx con la cuarentena.
-%
-% \begin{enumerate}[resume, topsep=5pt,itemsep=5pt]
-%
-% \item Dados escalares $a_0, \ldots, a_{n-1}$ probar por inducci\' on que
-% \[
-%    \det\left(\begin{matrix}
-% t & 0 & 0 & \cdots & 0 & a_0\\
-% -1 & t & 0 & \cdots & 0 & a_1\\
-% 0 & -1 & t & \cdots & 0 & a_2\\
-% \vdots & & & & & \vdots\\
-% 0 & 0 & 0 & \cdots & -1 & \ t+a_{n-1}\end{matrix} \right) = t^n +a_{n-1}t^{n-1} + \dots + a_1t+a_0.
-%  \]
-%
-% \item Probar que si $k_1, \ldots, k_n$ son elementos de $\mathbb{R}$, entonces
-%   \[
-%     \det\begin{pmatrix}
-% 1+k_1 & k_2 & k_3 & \cdots & k_n \\
-% k_1 & 1+k_2 & k_3 & \cdots & k_n \\
-% k_1 & k_2 & 1+k_3 & \cdots & k_n \\
-% \vdots & \vdots & \vdots &\ddots& \vdots \\
-% k_1 & k_2 & k_3 & \cdots & 1+k_n
-% \end{pmatrix}
-% = 1+k_1+k_2 + \cdots +k_n.
-% \]
-% \end{enumerate}
 
 \end{document}

@@ -88,7 +88,7 @@
 \centerline{\textsc{\'Algebra de matrices}}
 \subsection*{Ejercicios resueltos}
 
-\begin{enumerate}[topsep=6pt,itemsep=6pt]
+\begin{enumerate}[topsep=6pt,itemsep=.4cm]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -119,8 +119,6 @@ Verificar que $A(BC)=(AB)C$, es decir que vale la asociatividad del producto.
 \end{equation*}
 Luego (*) = (**) y el resultado queda verificado. \qed
 
-
-\vskip .6cm
 
 \item\label{ej2} Determinar cuál de las siguientes matrices es $A$, cuál es $B$ y cuál es $C$ de modo tal que sea posible realizar el producto $ABC$ y verificar que $A(BC)=(AB)C$.
 \begin{equation*}
@@ -153,11 +151,6 @@ BC= \begin{bmatrix} 3 \\ 1 \\ -1\end{bmatrix}\begin{bmatrix} 1 & -1 \end{bmatrix
 \end{equation*}\qed
 
 
-
-
-
-\vskip .6cm
-
 \item Calcular $A^2$ y $A^3$ para la matriz \
 $
 A=\begin{bmatrix}
@@ -183,7 +176,7 @@ $
 
 \qed
 
-\vskip .6cm
+
 
 \item\label{ejemplos 2x2}  Dar ejemplos de matrices no nulas $A$ y $B$ de orden $2\times2$ tales que
 \begin{multicols}{2}
@@ -257,8 +250,6 @@ $
 		\end{bmatrix}.
 \end{equation*}
 \qed
-\vskip .6cm
-
 
 
 \item\label{2x2 central}  Sea $A \in\mathbb{R}^{2\times 2}$ tal que $AB=BA$ para toda $B\in\mathbb{R}^{2\times 2}$. Probar que $A$ es un múltiplo de $\operatorname{I}_2$.
@@ -301,7 +292,6 @@ Ya no hace falta hacer más ensayos, pues hemos probado que $a_{12} = a_{21} =0$
 \noindent \textbf{Observación.} El resultado es cierto también para matrices $n \times  n$ con $n \in \mathbb N$. Es decir,  si $A \in\mathbb{R}^{n\times n}$ tal que $AB=BA$ para toda $B\in\mathbb{R}^{n\times n}$,  entonces  $A$ es un múltiplo de $\operatorname{I}_n$. La estrategia para probar este resultado es la misma que para el caso $2 \times 2$: probar con las matrices $E_{ij}$ que son aquellas que tiene un 1 en la entrada $ij$ y  0  en las demás entradas. 
 
 \qed
-\vskip .6cm
 
 \item  Para cada $n\in\mathbb{N}$, con $n\geq 2$, hallar una matriz no nula $A\in\mathbb{R}^{n\times n}$ tal que $A^n=0$ pero $A^{n-1}\neq0$.
 \vskip .2cm
@@ -356,11 +346,6 @@ Probado esto, tenemos $A^{n-1} = [0 \;\cdots\; 0\; e_1] \ne 0$ y $A^n = A \cdot 
 \qed
 
 
-
-
-
-\vskip .6cm
-
 \item\label{eq:binomio}  Dar condiciones necesarias y suficientes sobre matrices $A$ y $B$ de tama\~{n}o $n\times n$ para que
 \begin{multicols}{2}
 	\begin{enumerate}
@@ -401,8 +386,6 @@ tenemos que
 
 
 
-
-\vskip .6cm
 \item\label{ej:multiplicar por columna}  Sean
 \begin{align*}
 v=\begin{bmatrix} v_1 \\ \vdots \\ v_n
@@ -439,7 +422,6 @@ Por lo tanto
 \end{equation*}
 \qed
 
-\vskip .6cm
 
 
 \item\label{traza} Si $A$ es una matriz cuadrada $n\times n$, se define la {\it \textbf{traza}} de $A$ 
@@ -478,7 +460,6 @@ Veamos la segunda afirmación de (b):
 \end{align*}
 
 \qed 
-\vskip .6cm
 
 \item\label{ej:inversas} Para cada una de las siguientes matrices, usar operaciones elementales
 por fila para decidir si son invertibles y hallar la matriz inversa cuando sea posible.
@@ -567,7 +548,7 @@ Finalmente, la última matriz  tiene una MERF con una fila nula. Por lo tanto no
 	\end{align*}
 
 	\qed 
-\vskip .6cm
+
 
 \item Sea $A$ la primera matriz del ejercicio anterior.
 Hallar matrices elementales $E_1,E_2,\dots,E_k$ tales que $E_kE_{k-1}\cdots E_2E_1A=\operatorname{I}_3$.
@@ -591,7 +572,7 @@ Donde
 \end{align*}
 
 \qed
-\vskip .6cm
+
 
 
 \item ¿Es cierto que si $A$ y $B$ son matrices invertibles entonces $A+B$ es una matriz invertible? Justificar su respuesta.
@@ -602,7 +583,6 @@ Donde
 \end{equation*}\qed
 
 
-\vskip .6cm
 
 \item\label{nilpotene - id} Una matriz $A\in\mathbb{R}^{n\times n}$ se dice \emph{nilpotente} si $A^k=0$ para algún $k\in\mathbb{N}$.
 Probar que si una matriz $A$ es nilpotente, entonces  $\operatorname{I}_n - A$  es invertible.
@@ -619,9 +599,6 @@ En efecto,
 \qed
 
 
-\vskip .6cm
-
-
 \item\label{sol homog es subesp} Sean  $v$ y $w$ dos soluciones del sistema homogéneo $AX=0$. Probar que $v+tw$ también es solución para todo $t\in\mathbb{K}$.
 \vskip .2cm
 \noindent\textsc{Solución:} Como $v,w$  soluciones de $AX=0$, tenemos que $Av=0$ y $Aw=0$.  Luego, por las propiedades que cumple el producto y suma de matrices:
@@ -631,7 +608,6 @@ En efecto,
 Es decir, $v +tw$  es solución de $AX=0$.
 \qed
 
-\vskip .6cm
 
 \item\label{homogeneo+no-homogeneo} Sea $v$ una solución del sistema $AX=Y$ y $w$ una solución del sistema homogéneo $AX=0$. Probar que $v+tw$ también es solución del sistema $AX=Y$ para todo $t\in\mathbb{K}$.
 \vskip .2cm
@@ -643,8 +619,6 @@ Es decir, $v +tw$  es solución de $AX=Y$.
 \qed
 
 
-\vskip .6cm
-
 \item Probar que si el sistema homogéneo  $AX=0$ posee alguna solución no trivial, entonces el sistema $AX=Y$ no tiene
 solución o tiene al menos dos soluciones distintas.
 \vskip .2cm
@@ -654,8 +628,6 @@ solución o tiene al menos dos soluciones distintas.
 
 \qed
 
-
-\vskip .6cm
 
 \item Supongamos que los sistemas $AX=Y$ y $AX=Z$ tienen solución. Probar que el sistema $AX=Y+tZ$ también tiene solución para todo $t\in\mathbb{K}$.
 \vskip .2cm
@@ -668,29 +640,25 @@ Es decir $v +tw$ es solución de $AX=Y+tZ$.
 \qed
 
 
-\vskip .6cm
-
 \item \label{sist-por-invertible}Sean $A$ una matriz invertible $n\times n$, y $B$ una matriz $n\times m$.  Probar que los sistemas $BX=Y$ y $ABX=AY$ tienen las mismas soluciones.
 \vskip .2cm
 \noindent\textsc{Solución:} 
 \begin{align*}
-	\text{$v$ es solución de $BX=Y$} \; &\Rightarrow \; Bv = Y&& \\
-	&\Rightarrow \;  ABv = AY &&(\text{mult. por $A$  a izquierda}) \\
-	&\Rightarrow \;   \text{$v$ es solución de $ABX=AY$}&&
+	\text{$v$ es vsol. de $BX=Y$} \; &\Rightarrow \; Bv = Y&& \\
+	&\Rightarrow \;  ABv = AY &&(\text{mult. por $A$  a izq.}) \\
+	&\Rightarrow \;   \text{$v$ es sol. de $ABX=AY$}&&
 \end{align*}
 Esta ``ida'' vale para cualquier matriz $A$,  sea invertible o no. Para la vuelta debemos utilizar la existencia de $A^{-1}$:
 \begin{align*}
-	\text{$v$ es solución de $ABX=AY$} \; &\Rightarrow \; ABv = AY&& \\
-	&\Rightarrow \;  A^{-1}ABv = A^{-1}AY &&(\text{mult. por $A^{-1}$  a izquierda}) \\
+	\text{$v$ es sol. de $ABX=AY$} \; &\Rightarrow \; ABv = AY&& \\
+	&\Rightarrow \;  A^{-1}ABv = A^{-1}AY &&(\text{mult. por $A^{-1}$  a izq.}) \\
 	&\Rightarrow \;  \operatorname{Id} Bv = \operatorname{Id}Y &&(\text{ $A^{-1}A= \operatorname{Id}$}) \\
 	&\Rightarrow \;   Bv =Y&&(\text{$\operatorname{Id}$ es neutro del prod.}) \\
-	&\Rightarrow \;   \text{$v$ es solución de $BX=Y$}&&
+	&\Rightarrow \;   \text{$v$ es sol. de $BX=Y$}&&
 \end{align*}
 
 \qed
 
-
-\newpage
 
 \item\label{ej:sistemas ABX} 
 Sean $A$ y $B$ matrices $r\times n$ y $n\times m$ respectivamente.
@@ -713,7 +681,6 @@ Ahora bien, por el ejercicio (\ref{sist-por-invertible}), los sistemas $PABX=PY$
 Demostremos, entonces, que existe $Y$  tal que $PABX=PY$ no tiene solución: como $PA$ tiene la última fila nula, $PABX$ también tiene la última fila nula. Sea $e_r$ la matriz $r \times 1$ con $1$ en la coordenada $r$ y $0$  en las otras coordenadas. Entonces $e_r = P(P^{-1}e_r)$  tiene la última fila no nula, por lo tanto el sistema $PABX=P(P^{-1}e_r)$ no tiene solución y, por lo dicho anteriormente, el sistema   $ABX=P^{-1}e_r$ no tiene solución.
 
 \qed 
-\vskip .6cm
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
