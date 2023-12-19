@@ -1,0 +1,260 @@
+\chapter*{Práctico 3 \\ Álgebra  II -- Año 2024/1 \\ FAMAF}\label{practico-3}
+    
+
+\centerline{\textsc{\'Algebra de matrices}}
+
+\subsection*{Objetivos}
+
+\begin{itemize}
+ \item Familiarizarse con las matrices y sus operaciones de suma y multiplicaci\'on, Ejercicios \ref{ej} -- \ref{ej:multiplicar por columna}.
+ \vskip .2cm
+ \item Familiarizarse con la notaci\'on de sub\'indices para las entradas de matrices, Ejercicios \ref{ej:multiplicar por columna} y \ref{traza}.
+ \vskip .2cm
+ \item Aprender la noci\'on de matriz inversa y c\'omo c\'alcularla, Ejercicios \ref{ej:inversas} -- \ref{nilpotene - id}.
+ \vskip .2cm
+ \item Usar matrices para la resoluci\'on de sistemas de ecuaciones, Ejercicios \ref{sol homog es subesp} -- \ref{ej:sistemas ABX}.
+\end{itemize}
+
+\bigbreak
+
+\subsection*{Ejercicios}
+
+Los ejercicios con el símbolo $\textcircled{a}$ tienen una ayuda al final del archivo para que recurran a ella despu\'es de pensar un poco.
+
+\begin{enumerate}[topsep=6pt,itemsep=.4cm]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item\label{ej} Sean
+$$
+A= \begin{bmatrix} 1&-2&0\\ 1&-2&1\\ 1&-2&-1\end{bmatrix},\quad
+\quad B= \begin{bmatrix}1&1&2\\ -2&0&-1\\ 1&3&5 \end{bmatrix},
+\quad\quad C=\begin{bmatrix}1&-1&1\\ 2&0&1\\ 3&0&1 \end{bmatrix}.
+$$
+
+Verificar que $A(BC)=(AB)C$, es decir que vale la asociatividad del producto.
+
+
+\item\label{ej2} Determinar cu\'al de las siguientes matrices es $A$, cu\'al es $B$ y cu\'al es $C$ de modo tal que sea posible realizar el producto $ABC$ y verificar que $A(BC)=(AB)C$.
+\begin{equation*}
+\begin{bmatrix} 2 & -1 & 1 \\ 1 & 2 &
+1\end{bmatrix},\qquad
+\begin{bmatrix} 3 \\ 1 \\ -1\end{bmatrix}, \qquad
+\begin{bmatrix} 1 & -1 \end{bmatrix}.
+\end{equation*}
+
+
+\item Calcular $A^2$ y $A^3$ para la matriz \
+$
+A=\begin{bmatrix}
+3 & 4\\ 6 & 8
+\end{bmatrix}.
+$
+
+
+\item\label{ejemplos 2x2} $\textcircled{a}$ Dar ejemplos de matrices no nulas $A$ y $B$ de orden $2\times2$ tales que
+\begin{multicols}{2}
+\begin{enumerate}[topsep=5pt,itemsep=5pt]
+ \item $A^2=0$ (dar dos ejemplos).
+ \item $AB\neq BA$.
+ \item $A^2=-\operatorname{I}_2$.
+ \item $A^2=A\neq\operatorname{I}_2$.
+\end{enumerate}
+\end{multicols}
+
+
+\item\label{2x2 central} $\textcircled{a}$ Sea $A \in\mathbb{R}^{2\times 2}$ tal que $AB=BA$ para toda $B\in\mathbb{R}^{2\times 2}$. Probar que $A$ es un m\'ultiplo de $\operatorname{I}_2$.
+
+
+\item  Para cada $n\in\mathbb{N}$, con $n\geq 2$, hallar una matriz no nula $A\in\mathbb{R}^{n\times n}$ tal que $A^n=0$ pero $A^{n-1}\neq0$.
+
+
+\item\label{eq:binomio} $\textcircled{a}$ Dar condiciones necesarias y suficientes sobre matrices $A$ y $B$ de tama\~{n}o $n\times n$ para que
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $(A + B)^2 = A^2 + 2AB + B^2$.
+        \item $A^2 - B^2 = (A - B)(A + B)$.
+    \end{enumerate}
+\end{multicols}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item\label{ej:multiplicar por columna} $\textcircled{a}$ Sean
+\begin{align*}
+v=\begin{bmatrix} v_1 \\ \vdots \\ v_n
+\end{bmatrix}\in\mathbb{R}^{n\times1}
+\quad\mbox{y}\quad A=\begin{bmatrix} \mid& \mid& &\mid\\ C_1 & C_2 & \cdots &C_n\\ \mid& \mid& &\mid\end{bmatrix}
+\in\mathbb{R}^{m\times n},
+\end{align*}
+es decir, $C_1, ..., C_n$ denotan las columnas de $A$. Probar que $Av=\sum_{j=1}^nv_jC_j$.
+
+
+\item\label{traza} Si $A$ es una matriz cuadrada $n\times n$, se define la {\it \textbf{traza}} de $A$
+como $\operatorname{Tr}(A)=\displaystyle{\sum_{i=1}^n} a_{ii}$.
+\begin{enumerate}[topsep=5pt,itemsep=5pt]
+ \item Calcular la traza de las matrices del ejercicio  \ref{ej:inversas}.
+ \item\label{ej:traza}$\textcircled{a}$ Probar que si $A,B\in\mathbb{R}^{n\times n}$ y $c\in\mathbb{R}$ entonces
+ \begin{align*}
+ \operatorname{Tr}(A+cB)=\operatorname{Tr}(A)+c\operatorname{Tr}(B)
+ \quad\mbox{y}\quad
+ \operatorname{Tr}(AB)=\operatorname{Tr}(BA).
+ \end{align*}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\item\label{ej:inversas} Para cada una de las siguientes matrices, usar operaciones elementales
+por fila para decidir si son invertibles y hallar la matriz inversa cuando sea posible.
+\begin{equation*}
+\begin{bmatrix} 3 & -1 & 2 \\ 2 & 1 & 1 \\ 1 & -3 & 0\end{bmatrix},\qquad
+\begin{bmatrix} -1 & -1 &4 \\ 1 & 3 & 8 \\ 1 & 2 & 5\end{bmatrix},\qquad
+\begin{bmatrix} 1 & 1 & 1 & 2 \\ 1 & -3 & 3 & -8 \\ -2 & 1 & 2 & -2 \\ 1 & 2 & 1 & 4 \end{bmatrix},\qquad
+\begin{bmatrix} 1 & -3 & 5 \\ 2 & -3 & 1 \\ 0 & -1 & 3 \end{bmatrix}.
+\end{equation*}
+(para que hagan menos cuentas: las matrices $3\times3$ aparecieron en el Pr\'actico 2).
+
+
+\item Sea $A$ la primera matriz del ejercicio anterior.
+Hallar matrices elementales $E_1,E_2,\dots,E_k$ tales que $E_kE_{k-1}\cdots E_2E_1A=\operatorname{I}_3$.
+
+
+\item ?` Es cierto que si $A$ y $B$ son matrices invertibles entonces $A+B$ es una matriz invertible? Justificar su respuesta.
+
+\item\label{nilpotene - id} $\textcircled{a}$ Una matriz $A\in\mathbb{R}^{n\times n}$ se dice \emph{nilpotente} si $A^k=0$ para alg\'un $k\in\mathbb{N}$.
+Probar que si una matriz $A$ es nilpotente, entonces  $\operatorname{I}_n - A$  es invertible.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\item\label{sol homog es subesp} Sean  $v$ y $w$ dos soluciones del sistema homog\'eneo $AX=0$. Probar que $v+tw$ tambi\'en es soluci\'on para todo $t\in\mathbb{K}$.
+
+\item Sea $v$ una soluci\'on del sistema $AX=Y$ y $w$ una soluci\'on del sistema homog\'eneo $AX=0$. Probar que $v+tw$ tambi\'en es soluci\'on del sistema $AX=Y$ para todo $t\in\mathbb{K}$.
+
+\item Probar que si el sistema homog\'eneo  $AX=0$ posee alguna soluci\'on no trivial, entonces el sistema $AX=Y$ no tiene
+soluci\'on o tiene al menos dos soluciones distintas.
+
+\item Supongamos que los sistemas $AX=Y$ y $AX=Z$ tienen soluci\'on. Probar que el sistema $AX=Y+tZ$ tambi\'en tiene soluci\'on para todo $t\in\mathbb{K}$.
+
+\item Sean $A$ una matriz invertible $n\times n$, y $B$ una matriz $n\times m$.  Probar que los sistemas $BX=Y$ y $ABX=AY$ tienen las mismas soluciones.
+
+\item\label{ej:sistemas ABX} $\textcircled{a}$
+Sean $A$ y $B$ matrices $r\times n$ y $n\times m$ respectivamente.
+Probar que:
+\begin{enumerate}[topsep=5pt,itemsep=5pt]
+    \item  Si $m>n$, entonces el sistema $ABX=0$ tiene soluciones no triviales.
+    \item  Si $r>n$, entonces existe un $Y$, $r\times 1$, tal que $ABX=Y$
+    no tiene soluci\'on.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{enumerate}
+
+
+
+
+\subsection*{Ejercicios de repaso}
+Si ya hizo los ejercicios anteriores continue con la siguiente gu\'ia. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los ex\'amenes.
+
+
+
+\begin{enumerate}[resume, topsep=6pt, itemsep=.4cm]
+
+
+\item\label{ej: distributiva} $\textcircled{a}$ Probar que si $A\in\mathbb{R}^{m\times n}$ y $B,C\in\mathbb{R}^{n\times p}$ entonces
+$A(B+ C)=AB + AC$.
+
+\item Probar que si $A,B\in\mathbb{R}^{m\times n}$ y $C\in\mathbb{R}^{n\times p}$ entonces
+$(A+B)C = AC + BC$.
+
+\item Sea $v=[v_1 \cdots v_m]\in\mathbb{R}^{1\times m}$ y $A\in\mathbb{R}^{m\times n}$. Probar que $vA=\sum_{i=1}^m v_iF_i$, donde $F_1, ..., F_m$ denotan las filas de $A$.
+
+\item Sea $D=(d_{ij})\in\mathbb{R}^{n\times n}$ una matriz diagonal y $A=(a_{ij})\in\mathbb{R}^{m\times n}$. Probar que \\ $AD=(d_{jj}a_{ij})\in\mathbb{R}^{m\times n}$.
+
+\item
+Probar las siguientes afirmaciones:
+\begin{enumerate}[topsep=5pt,itemsep=5pt]
+\item Si $A,B\in\mathbb{R}^{n\times n}$ son matrices diagonales, entonces $AB=BA$.
+\item Si $A=c \operatorname{I}_n$ para alg\'un $c \in \mathbb{R}$, entonces $AB=BA$ para toda $B\in\mathbb{R}^{n\times n}$.
+\end{enumerate}
+
+\item Probar que si $A\in\mathbb{R}^{n\times n}$ es una matriz diagonal tal que $\operatorname{Tr} (A^2)=0$, entonces $A=0$.
+
+\item Sea $A$ matriz $2\times 2$  tal que $\operatorname{Tr}(A)=0$ y $\operatorname{Tr}(A^2)=0$.
+
+\begin{enumerate}[topsep=5pt,itemsep=5pt]
+    \item  Probar que $A^2 = 0$.
+    \item   >Es cierta la rec\'iproca?
+    %    \item  >Puede generalizar el resultado?
+\end{enumerate}
+
+
+\item Probar que si $A$ y $B$ son matrices $n \times n$ \emph{que conmutan entre s\' \i}, entonces para todo $k \in \mathbb N \cup \{0\}$ se cumple que:
+$$(A+B)^k = \sum_{j = 0}^k \binom{k}{j} \, A^j \, B^{k-j}.$$
+
+\item Sea $A\in\mathbb{R}^{m\times n}$. La \emph{matriz traspuesta} de $A$ es la matriz $A^t\in\mathbb{R}^{n\times m}$ tal que
+$(A^t)_{ij}=A_{ji}$, $1\le i\le n$, $1\le j\le m$.
+\begin{enumerate}[topsep=5pt,itemsep=5pt]
+ \item Dar las matrices traspuestas de las matrices $A$, $B$ y $C$ de los ejercicios \ref{ej} y \ref{ej2}.
+ \item Probar que si $A,B\in\mathbb{R}^{m\times n}$, $C\in\mathbb{R}^{n\times p}$ y $c\in\mathbb{R}$ entonces
+$$(A+cB)^t=A^{t} + c B^t, \quad\quad (BC)^t= C^t B^t.$$
+
+\item Probar que si $D\in\mathbb{R}^{n\times n}$ es invertible, entonces $D^t$ tambi\'en lo es y $(D^{t})^{-1}=(D^{-1})^{t}$.
+\end{enumerate}
+
+\item Una matriz $A$ se dice {\it sim\'etrica} si $A^t=A$. Una matriz $B$ se dice {\it antisim\'etrica} si $B^t=-B$. Probar que toda matriz se puede expresar como la suma de una matriz sim\'etrica y una antisim\'etrica.
+
+\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
+\begin{enumerate}[topsep=5pt,itemsep=5pt]
+
+\item Si $A$ y $B$ son matrices cuadradas tales $AB=BA$ pero ninguna es m\'ultiplo de la otra, entonces $A$ o $B$ es diagonal.
+
+\item Existen una matriz $3\times 2$, $A$,  y una matriz $2\times 3$, $B$, tales que $AB$ es una matriz invertible.
+
+\item Existen una matriz $2\times 3$, $A$,  y una matriz $3\times 2$, $B$, tales que $AB$ es una matriz invertible.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\subsection*{Ayudas}
+
+\vskip .4cm\
+
+\ref{ejemplos 2x2} Probar con algunos $0$ y $1$ en las entradas.
+
+\vskip .4cm
+
+\ref{2x2 central} Elegir matrices $B$ apropiadas con muchos ceros y \textbf{un} $1$.
+
+\vskip .4cm
+
+\ref{eq:binomio} El objetivo del ejercicio es completar los puntos suspensivos en la siguiente frase:
+
+
+``$(A+B)^2=A^2+2AB+B^2$ si y s\'olo si $A$ y $B$ satisfacen ..... ''
+
+Desarrollen el cuadrado de la suma $A+B$ usando que el producto de matrices es distributivo y vean que les ``sobra'' para obtener la f\'ormula del binomio.  Misma idea para el item (b).
+
+\vskip .4cm
+
+\ref{ej:multiplicar por columna} Usar la notaci\'on de sub\'indices para las entradas de matrices.
+
+\vskip .4cm
+
+\ref{traza}\,\ref{ej:traza} Usar la notaci\'on de sub\'indices para las entradas de matrices.
+
+\vskip .4cm
+
+\ref{nilpotene - id} Pensar en la f\'ormula de $\sum_{i=0}^na^i$ vista en \'Algebra I/Matem\'atica Discreta I.
+
+\vskip .4cm
+
+\ref{ej:sistemas ABX} Recordar el Ejercicio 11 del Pr\'actico 2.
+
+\vskip .4cm
+
+\ref{ej: distributiva} Usar la notaci\'on de sub\'indices para las entradas de matrices.
+
