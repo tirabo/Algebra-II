@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt,twoside,spanish,reqno,dottedtoc]{scrbook}
+\usepackage[spanish,es-lcroman,es-nodecimaldot]{babel}
+
+\usepackage{imakeidx}  
+\makeindex  
+\input{classicthesis-config}
+\input{config-definiciones}
+
+\tolerance=10000
+\begin{document}
+    \pagenumbering{roman}
+    
+    \begin{titlepage}
+        
+        \begin{addmargin}[-1cm]{-3cm} 
+            \begin{center} 
+                \large
+                
+                \hfill
+                \vfill
+                
+                \begingroup
+                \color{Maroon}\spacedallcaps{\'Algebra II / \'Algebra - Prácticos } \\ \bigskip % Thesis title
+                \endgroup
+                
+                
+                \vfill
+                
+        
+                
+                Año 2024   \\ FAMAF  - UNC\\ \medskip % Thesis subtitle
+                %\myDegree \\
+                %\myDepartment \\
+                %\myFaculty \\
+                %\myUni \\ \bigskip
+                
+                %\today % Time and version
+                
+                \vfill
+                
+            \end{center}
+        \end{addmargin}
+        
+    \end{titlepage}
+    
+
+ 
+    %----------------------------------------------------------------------------------------
+    
+    \begingroup
+
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    \let\cleardoublepage\relax
+ 
+   
+    \pagenumbering{arabic}
+    
+    \setcounter{chapter}{0}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%
+    \cleardoublepage
+    %%% CAP1 =================
+        \input{practico.01.tex}
+    %%%=======================
+    %%%=======================
+    %%% CAP2 =================
+       % \input{practico.02.tex}
+    %%%=======================
+    %%%=======================
+    %%% CAP3 =================
+        % \input{practico.03.tex}
+    %%%=======================
+    %%%=======================
+    %%% CAP4 =================
+        % \input{practico.04.tex}
+    %%%=======================
+    %%%=======================
+    %%% CAP5 =================
+        % \input{practico.05.tex}
+    %%%=======================
+     %%% CAP6 =================
+     \input{practico.06.tex}
+     %%%=======================
+    %%% CAP7 =================
+     %\input{practico.07.tex}
+    %%%=======================
+
+\end{document}
