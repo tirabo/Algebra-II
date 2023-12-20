@@ -1,96 +1,22 @@
-% PDFLaTeX
-\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
-%%%---------------------------------------------------
-\usepackage[math]{kurier}
-
-\usepackage{etex}
-\usepackage{t1enc}
-\usepackage{latexsym}
-\usepackage[utf8]{inputenc}
-\usepackage{verbatim}
-\usepackage{multicol}
-\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
-\usepackage{amsthm}
-\usepackage{calc}         % From LaTeX distribution
-\usepackage{graphicx}     % From LaTeX distribution
-\usepackage{ifthen}
-\input{random.tex}   
-\usepackage{tikz}
-\usetikzlibrary{arrows}
-\usetikzlibrary{matrix}
-\usepackage{mathtools}
-\usepackage{stackrel}
-\usepackage{enumitem}
-\usepackage{tkz-graph}
-
-\usepackage{enumitem} 
-\usepackage[compatibility=false]{caption} % para usar subcaption
-\usepackage{subcaption} % para poner varias imagenes juntas
-\usetikzlibrary{arrows.meta}
-\usepackage{hyperref}
-\hypersetup{ 
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-}
-\usepackage{hypcap}
-\numberwithin{equation}{section}
-% http://www.texnia.com/archive/enumitem.pdf (para las labels de los enumerate)
-\renewcommand\labelitemi{$\circ$}
-\setlist[enumerate, 1]{label={(\arabic*)}}
-\setlist[enumerate, 2]{label=\emph{\alph*)}}
-
-
-\newcommand{\rta}{\noindent\textsc{Solución: }} 
-\newcommand \Z{{\mathbb Z}}
-\newcommand \C{{\mathbb C}}
-\newcommand \N{{\mathbb N}}
-\newcommand \mcd{\operatorname{mcd}}
-\newcommand \mcm{\operatorname{mcm}}
-
-%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tolerance=10000
-\renewcommand{\baselinestretch}{1.3}
-\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
-\usepackage{setspace}
-%\setlength{\parindent}{0,7cm}% tamaño de sangria.
-\setlength{\parskip}{0,4cm} % separación entre parrafos.
-\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\end{comment}
-%%% FIN FORMATOS  
-
-\begin{document}
-    \baselineskip=0.55truecm %original
-    
-    
-    {\bf \begin{center} Práctico 1 \\ Álgebra  II -- Año 2024/1 \\ FAMAF \end{center}}
+\chapter{Soluciones\\Álgebra  II -- Año 2024/1 -- FAMAF}\label{practico-1}
     
 
-
-\bigbreak
-
-\centerline{\textsc{Soluciones}}
-
-\bigbreak 
 
 %============================================================
 \subsection*{Vectores y producto escalar}
 %============================================================
 
-\begin{enumerate}
+\begin{enumerate}[topsep=6pt, itemsep=.4cm]
 
-\item Dados $v = (-1, 2, 0)$, $w = (2,-3,-1)$ y $u = (1,-1,1)$, calcular:
-\begin{enumerate}
-% 	\item $v + w$, 
-% 	\item $v - w$, 
-	\item $2v + 3w -5u$,
-	\item $5(v+w)$, 
-	\item $5v + 5w$ (y verificar que es igual al vector de arriba).
-\end{enumerate}
 
-\
+    \item Dados $v = (-1, 2, 0)$, $w = (2,-3,-1)$ y $u = (1,-1,1)$, calcular:
+    \begin{enumerate}
+    %     \item $v + w$,
+    %     \item $v - w$,
+        \item $2v + 3w -5u$,
+        \item $5(v+w)$,
+        \item $5v + 5w$ (y verificar que es igual al vector de arriba).
+    \end{enumerate}
 
 \rta
 
@@ -102,17 +28,15 @@ $ = (-2, 4, 0) + (6,-9,-3) + (-5,5,-5) = \boxed{(-1,0,-8)}$
 	\item $5v + 5w = 5 \cdot (-1, 2, 0) + 5 \cdot (2,-3,-1) = (-5, 10, 0) + (10,-15,-5) = \boxed{(5,-5,-5)}$
 \end{enumerate}
 
+\qed
 
-\
 
 \item Calcular los siguientes productos escalares. %\langle v , w  \rangle
 \begin{enumerate}
-  \item $\langle (-1, 2, -0) ,(2,-3,-1) \rangle$, 
+  \item $\langle (-1, 2, 0) ,(2,-3,-1) \rangle$,
 %   \item  $\langle (2,4,-3,-1),(1,-1,2, 1) \rangle$,
   \item  $\langle (4,-1),(-1,2) \rangle$.
 \end{enumerate}
-
-\
 
 \rta
 
@@ -122,7 +46,7 @@ $ = (-2, 4, 0) + (6,-9,-3) + (-5,5,-5) = \boxed{(-1,0,-8)}$
   \item  $\langle (4,-1),(-1,2) \rangle = 4 \cdot (-1) + (-1) \cdot 2 = -4 + (-2) = \boxed{-6}$
 \end{enumerate}
 
-\
+\qed
 
 \item Dados $v = (-1, 2,0)$, $w = (2,-3,-1)$  y $u = (1,-1,1)$, verificar que:
 \begin{equation*}
@@ -131,7 +55,6 @@ $ = (-2, 4, 0) + (6,-9,-3) + (-5,5,-5) = \boxed{(-1,0,-8)}$
 
 \rta Calculamos ambos miembros por separado.
 
-\
 
 Miembro izquierdo: $\langle 2v + 3w , -u   \rangle = \langle 2 \cdot (-1, 2,0) + 3 \cdot (2,-3,-1) , -  (1,-1,1) \rangle $
 
@@ -139,23 +62,19 @@ $= \langle (-2, 4,0) + (6,-9,-3) , (-1,1,-1) \rangle = \langle (4,-5,-3) , (-1,1
 
 $= 4 \cdot (-1) + (-5) \cdot 1 + (-3) \cdot (-1) = -4 + (-5) + 3 = \boxed{-6}$
 
-\
-
 Miembro derecho: $-2\langle v ,u \rangle -3 \langle w , u  \rangle = -2 \langle (-1, 2,0) ,(1,-1,1) \rangle -3 \langle (2,-3,-1) , (1,-1,1)  \rangle $
 
 $= -2 \cdot ( -1 \cdot 1 + 2 \cdot (-1) + 0 \cdot 1 ) - 3 \cdot ( 2 \cdot 1 + (-3) \cdot (-1) + (-1) \cdot 1 ) $
 
 $= -2 \cdot ( -1 + (-2) + 0) - 3 \cdot ( 2 + 3 + (-1)) = -2 \cdot (-3) - 3 \cdot  4 = 6 - 12 = \boxed{-6} $
 
-\
+\qed
 
 \item Probar  que 
 \begin{enumerate}
 	\item $(2,3,-1)$ y $(1, -2, -4)$ son ortogonales.
 	\item $(2,-1)$ y $(1,2)$ son ortogonales. Dibujar en el plano. 
 \end{enumerate}
-
-\ 
 
 \rta Calculamos su producto interno para ver si es nulo.
 
@@ -191,7 +110,7 @@ $= -2 \cdot ( -1 + (-2) + 0) - 3 \cdot ( 2 + 3 + (-1)) = -2 \cdot (-3) - 3 \cdot
 	\end{tikzpicture}
 \caption{Ejercicio 4.b}
 \end{figure}
-
+\qed
 
 \item Encontrar 
 \begin{enumerate}
@@ -199,8 +118,6 @@ $= -2 \cdot ( -1 + (-2) + 0) - 3 \cdot ( 2 + 3 + (-1)) = -2 \cdot (-3) - 3 \cdot
 	\item un vector no nulo ortogonal a $(2,-1,4)$,
 	\item un vector no nulo ortogonal a $(2,-1,4)$ y $(0,1,-1)$,
 \end{enumerate}
-
-\
 
 \rta 
 
@@ -224,7 +141,7 @@ $\langle (2,-1,4) , (a,b,b) \rangle = 2 \cdot a + (-1) \cdot b + 4 \cdot b = \bo
 Luego, si elegimos por ejemplo $a=-3$ y $b=2$ vamos a tener a nuestro candidato ortogonal a ambos vectores. Es decir, $(-3,2,2)$ cumple lo requerido.
 \end{enumerate}
 
-\
+\qed
 
 \item Encontrar la longitud de los vectores.
 \begin{align*}
@@ -241,9 +158,9 @@ Luego, si elegimos por ejemplo $a=-3$ y $b=2$ vamos a tener a nuestro candidato 
 \item $||(\cos\phi,\operatorname{sen}\phi)|| = \sqrt{\cos^2\phi + \operatorname{sen}^2\phi} = \sqrt{1} = \boxed{1}$
 \end{enumerate}
 
-\
+\qed
 
-\item Calcular $\langle v , w  \rangle$ y el {\'a}ngulo entre $v$ y $w$  para los siguientes vectores.
+\item Calcular $\langle v , w  \rangle$ y el ángulo entre $v$ y $w$  para los siguientes vectores.
 \begin{align*}
 &(a) \ v=(2,2), w=(1,0), &&  (b) \  v=(-5,3,1), w=(2,-4,-7).
 \end{align*}
@@ -268,14 +185,12 @@ $||w||=||(2,-4,-7)|| = \sqrt{2^2 + (-4)^2 + (-7)^2} = \sqrt{4+16+49} = \sqrt{69}
 $\theta = \cos^{-1} \left( \dfrac{\langle v,w \rangle}{||v|| \; ||w||} \right) = \cos^{-1} \left( \dfrac{ -29 }{ \sqrt{35} \sqrt{69} } \right) = \boxed{126^\circ 9'55.57''}$
 \end{enumerate}
 
-\
+\qed
 
-\item Recordar los vectores $e_1$, $e_2$ y $e_3$ dados en la p\'agina 12 del apunte. Sea $v=(x_1,x_2,x_3)\in\mathbb{R}^3$.  Verificar que 
+\item Recordar los vectores $e_1$, $e_2$ y $e_3$ dados en la página 12 del apunte. Sea $v=(x_1,x_2,x_3)\in\mathbb{R}^3$.  Verificar que 
 $$v=x_1e_1+x_2e_2+x_3e_3=\langle v,e_1\rangle e_1+\langle v,e_2\rangle e_2+\langle v,e_3\rangle e_3.$$
 
 \rta Podemos empezar desde el miembro de la derecha, pasar por el del medio y llegar al de la izquierda aplicando las definiciones y propiedades conocidas:
-
-\
 
 $ \langle v,e_1\rangle e_1+\langle v,e_2\rangle e_2+\langle v,e_3\rangle e_3 = $
 
@@ -285,17 +200,15 @@ $= (x_1 \cdot 1 + x_2 \cdot 0 + x_3 \cdot 0) e_1+ (x_1 \cdot 0 + x_2 \cdot 1 + x
 
 $= (x_1 + 0 + 0) e_1+ (0 + x_2 + 0) e_2+ (0 + 0 + x_3) e_3 = \boxed{x_1 e_1+ x_2 e_2 + x_3 e_3}$
 
-\
-
 $x_1 e_1+ x_2 e_2 + x_3 e_3 = x_1 (1,0,0) + x_2 (0,1,0) + x_3 (0,0,1) = $
 
 $= (x_1 \cdot 1,x_1 \cdot 0,x_1 \cdot 0) + (x_2 \cdot 0, x_2 \cdot 1 , x_2 \cdot 0 ) + (x_3 \cdot 0 , x_3 \cdot 0 , x_3 \cdot 1) $
 
 $= (x_1,0,0)+(0,x_2,0)+(0,0,x_3) = (x_1+0+0,0+x_2+0,0+0+x_3) = (x_1,x_2,x_3) = \boxed{v}$
 
-\
+\qed
 
-\item Probar, usando s\'olo las propiedades \textbf{P1}, \textbf{P2}, y \textbf{P3} del producto escalar, que dados $v, w, u \in \mathbb R^n$ y $\lambda_1, \lambda_2 \in \mathbb R$, 
+\item Probar, usando sólo las propiedades \textbf{P1}, \textbf{P2}, y \textbf{P3} del producto escalar, que dados $v, w, u \in \mathbb R^n$ y $\lambda_1, \lambda_2 \in \mathbb R$, 
 \begin{enumerate}
 	\item se cumple:
 	\begin{equation*}
@@ -313,43 +226,33 @@ $= (x_1,0,0)+(0,x_2,0)+(0,0,x_3) = (x_1+0+0,0+x_2+0,0+0+x_3) = (x_1,x_2,x_3) = \
 \begin{enumerate}
 \item $\langle \lambda_1 v + \lambda_2 w , u  \rangle \overset{\textbf{P2}}{=} \langle u , \lambda_1 v \rangle + \langle u , \lambda_2 w \rangle \overset{\textbf{P3}}{=} \lambda_1 \langle u,v \rangle + \lambda_2 \langle u,w \rangle \overset{\textbf{P1}}{=} \lambda_1 \langle v,u \rangle + \lambda_2 \langle w,u \rangle$
 
-\
-
 \item $ \langle \lambda_1 v + \lambda_2 w, \lambda_1 v + \lambda_2 w \rangle \overset{\textbf{P2}}{=} \langle \lambda_1 v + \lambda_2 w, \lambda_1 v \rangle + \langle \lambda_1 v + \lambda_2 w, \lambda_2 w \rangle \overset{\textbf{P2}}{=} $
 
 $ \overset{\textbf{P2}}{=} \langle \lambda_1 v , \lambda_1 v \rangle + \langle \lambda_1 v, \lambda_2 w \rangle + \langle \lambda_2 w, \lambda_1 v \rangle + \langle \lambda_2 w, \lambda_2 w \rangle \overset{\textbf{P3}}{=} $
 
 $ \overset{\textbf{P3}}{=} \lambda_1^2 \langle v , v \rangle + \lambda_1 \lambda_2 \langle v, w \rangle + \lambda_2 \lambda_1 \langle w, v \rangle + \lambda_2^2 \langle w, w \rangle \overset{\textbf{HIP}}{=} \lambda_1^2 \langle v , v \rangle + \lambda_2^2 \langle w, w \rangle $
 
-\ 
-
 En el último paso se utilizó la hipótesis $\langle v , w  \rangle =0$.
 
 \end{enumerate}
 
-\
+\qed
 
 \item Dados $v, w\in \mathbb R^n$, probar que si  $\langle v , w  \rangle =0$, es decir si $v$ y $w$ son ortogonales,  entonces
 	\begin{equation*}
 	||v + w||^2 = ||v||^2 + ||w||^2.
 	\end{equation*}
-	?`Cu\'al es el nombre con que se conoce este resultado en $\mathbb R^2$?
-
-\	
+	¿Cuál es el nombre con que se conoce este resultado en $\mathbb R^2$?
 	
 \rta Vamos a usar la definición de norma y el inciso b) del ejercicio anterior, tomando $\lambda_1 = \lambda_2 = 1$:
+$$||v + w||^2 \overset{def}{=} \langle v+w,v+w \rangle \overset{9.b)}{=} \langle v,v \rangle + \langle w,w \rangle \overset{def}{=} ||v||^2 + ||w||^2.$$
 
-\
-
-$||v + w||^2 \overset{def}{=} \langle v+w,v+w \rangle \overset{9.b)}{=} \langle v,v \rangle + \langle w,w \rangle \overset{def}{=} ||v||^2 + ||w||^2$ \qed
-
-\
 
 En $\mathbb R^2$ esta igualdad es el \emph{Teorema de Pitágoras}.
 
-\
+\qed
  
-\item\label{Schwarz} $\textcircled{a}$ Sean $v,w\in \mathbb R^2$, probar usando  solo la definici\'on explícita del producto escalar en $\mathbb R^2$ que 
+\item\label{Schwarz} $\textcircled{a}$ Sean $v,w\in \mathbb R^2$, probar usando  solo la definición explícita del producto escalar en $\mathbb R^2$ que 
 \begin{equation*}
 	|\langle v , w  \rangle| \le ||v||\,||w|| \qquad \text{(Desigualdad de Schwarz).}
 \end{equation*}
@@ -359,32 +262,21 @@ En $\mathbb R^2$ esta igualdad es el \emph{Teorema de Pitágoras}.
 \begin{equation}\label{cuad_izq}
 \langle v,w \rangle^2 = \langle (v_1,v_2) , (w_1,w_2) \rangle^2 =  (v_1 w_1 + v_2 w_2 )^2
 \end{equation}
-
 Ahora comenzamos por el cuadrado del lado derecho con el objetivo de llegar a (\ref{cuad_izq}):
-
-\
-
-$ ||v||^2||w||^2 = (v_1^2 + v_2^2)(w_1^2 + w_2^2) = (v_1 w_1)^2 + (v_1 w_2)^2 + (v_2 w_1)^2 + (v_2 w_2)^2$
-
-\
-
+\begin{equation*}
+||v||^2||w||^2 = (v_1^2 + v_2^2)(w_1^2 + w_2^2) = (v_1 w_1)^2 + (v_1 w_2)^2 + (v_2 w_1)^2 + (v_2 w_2)^2.
+\end{equation*}
 Mirando el primer y último término tenemos que si completamos ese cuadrado obtendríamos (\ref{cuad_izq}). Sumamos y restamos $2(v_1w_1)(v_2w_2)$ y agrupamos:
-
-\
-
-$||v||^2||w||^2 = (v_1 w_1)^2 + (v_1 w_2)^2 + (v_2 w_1)^2 + (v_2 w_2)^2 + 2(v_1w_1)(v_2w_2) - 2(v_1w_1)(v_2w_2) =$
-
-\
-
-$ = [(v_1 w_1)^2 + 2(v_1w_1)(v_2w_2) + (v_2 w_2)^2 ] + [(v_2 w_1)^2 - 2v_1w_1v_2w_2 + (v_1 w_2)^2 ] $
-
-\
-
+\begin{align*}
+    ||v||^2||w||^2 &= (v_1 w_1)^2 + (v_1 w_2)^2 + (v_2 w_1)^2 + (v_2 w_2)^2+ \\
+                & \qquad\qquad\qquad\qquad+ 2(v_1w_1)(v_2w_2) - 2(v_1w_1)(v_2w_2) = \\
+                = [(v_1 &w_1)^2 + 2(v_1w_1)(v_2w_2) + (v_2 w_2)^2 ] + [(v_2 w_1)^2 - 2v_1w_1v_2w_2 + (v_1 w_2)^2 ]
+\end{align*}
 El segundo grupo de términos también forma un cuadrado perfecto. Escribimos ambos como cuadrados y acotamos:
-
-\
-
-$||v||^2||w||^2 = \underset{= \langle v,w \rangle^2}{ \underbrace{ (v_1w_1 + v_2w_2)^2} } + \underset{\geq 0}{ \underbrace{ (v_2w_1 - v_1w_2)^2}} \geq \langle v,w \rangle^2 $ \qed
+\begin{equation*}
+    ||v||^2||w||^2 = \underset{= \langle v,w \rangle^2}{ \underbrace{ (v_1w_1 + v_2w_2)^2} } + \underset{\geq 0}{ \underbrace{ (v_2w_1 - v_1w_2)^2}} \geq \langle v,w \rangle^2.
+\end{equation*}
+  \qed
 
 \end{enumerate}
 
@@ -394,7 +286,7 @@ $||v||^2||w||^2 = \underset{= \langle v,w \rangle^2}{ \underbrace{ (v_1w_1 + v_2
 
 \
 
-\begin{enumerate}[resume]
+\begin{enumerate}[resume,topsep=6pt, itemsep=.4cm]
  
 \item En  cada uno de los siguientes casos determinar si los
 vectores  $\overrightarrow{vw}$ y $\overrightarrow{xy}$ son
@@ -404,10 +296,8 @@ equivalentes y/o paralelos.
 \item   $v=(1,-1,5)$,  $w=(-2,3,-4)$,  $x=(3,1,1)$,  $y=(-3,9,-17)$.
 \end{enumerate}
 
-\
 
-\rta Calulamos las diferencias correspondientes y las analizamos:
-
+\rta Calculamos las diferencias correspondientes y las analizamos:
 \begin{enumerate}
 \item $w - v = (4,3) - (1,-1) = (4-1,3-(-1)) = (3,4)$
 
@@ -423,17 +313,15 @@ No son equivalente pero si paralelos. Tomando $\lambda=2$ se tiene que $y-x = \l
 
 \end{enumerate}
 
-\
+\qed
 
 \item Sea $R_1$ la recta que pasa por $p_1=(2,0)$ y es ortogonal a $(1,3)$.
 \begin{enumerate}
- \item Dar la descripci\'on param{\'e}trica e impl{\'\i}cita de $R_1$.
+ \item Dar la descripción paramétrica e implícita de $R_1$.
  \item Graficar en el plano a $R_1$.
  \item Dar un punto $p$ por el que pase $R_1$ distinto a $p_1$.
  \item Verificar si $p+p_1$ y $-p$ pertenecen a $R_1$
 \end{enumerate}
-
-\
 
 \rta
 
@@ -441,8 +329,6 @@ No son equivalente pero si paralelos. Tomando $\lambda=2$ se tiene que $y-x = \l
  \item Para la descripción paramétrica necesitamos un vector paralelo a $R_1$, es decir, ortogonal a $(1,3)$. Un vector así puede ser el $(3,-1)$, con el que tenemos:
  
 Descripción paramétrica: $\boxed {R_1 = \{ (2,0) + t(3,-1) \; | \; t \in \mathbb{R} \} }$
-
-\
 
 Para la descripción implícita simplemente reemplazamos todos los datos dados en la ecuación $ax + by = \langle (x_0,y_0) , (a,b) \rangle $ y tenemos:
 
@@ -464,7 +350,7 @@ p+p_1 = (-1,1) + (2,0) = (1,1) &&& -p = (1,-1) \\
 
 \end{enumerate}
 
-\
+\qed
 
 \item Repetir el ejercicio anterior con las siguientes rectas.
 \begin{enumerate}
@@ -476,15 +362,11 @@ p+p_1 = (-1,1) + (2,0) = (1,1) &&& -p = (1,-1) \\
 % 	$R_4$: recta que pasa por los puntos $(-1,5,4)$ y $(0,3,-2)$.
 \end{enumerate}
 
-\
-
 \rta Los procedimientos son análogos a los del ejercicio 13. Las gráficas están en la figura \ref{ej13by14}
 
 \begin{enumerate}
 	\item 
 Descripción paramétrica: $\boxed {R_2 = \{ t(3,-1) \; | \; t \in \mathbb{R} \} }$
-
-\
 
 Descripción implícita: $\boxed {R_2 = \{ (x,y) \; | \; x+3y = 0 \} }$
 
@@ -502,12 +384,10 @@ p+p_2 = (-3,1) + (0,0) = (-3,1)	&&& -p = (3,-1) \\
 	
 Descripción paramétrica: $\boxed {R_3 = \{ (1,0) + t(3,-1) \; | \; t \in \mathbb{R} \} }$
 
-\
 
 Descripción implícita: $\boxed {R_3 = \{ (x,y) \; | \; x+3y = 1 \} }$
 
 Tomando $t=-1$ tenemos $\boxed {p = (-2,1) }$.
-
 \begin{equation*}
 \begin{array}{ll|ll}
 p+p_3 = (-2,1) + (1,0) = (-1,1)	&&& -p = (2,-1) \\
@@ -571,11 +451,9 @@ p+p_3 = (-2,1) + (1,0) = (-1,1)	&&& -p = (2,-1) \\
 \caption{}\label{ej13by14}
 \end{figure}
 
-\
+\qed
 
-\item Calcular, num\'erica y graficamente, las intersecciones $R_1\cap R_2$ y $R_1\cap R_3$. 
-
-\
+\item Calcular, numérica y graficamente, las intersecciones $R_1\cap R_2$ y $R_1\cap R_3$. 
 
 \rta Para el cálculo numérico, notar que las ecuaciones de las tres rectas son de la forma $x+3y = c$ donde $c$ vale 2, 0 y 1 para $R_1$, $R_2$ y $R_3$ respectivamente. Así tendremos por ejemplo que para calcular la intersección $R_1\cap R_2$ tendremos que resolver el sistema:
 
@@ -592,18 +470,17 @@ Para la determinación gráfica, se pueden observar los gráficos de la figura \
 
 En conclusión, tenemos $\boxed{ R_1 \cap R_2 = R_1 \cap R_3 = \emptyset }$
 
-\
+\qed
 
 \item Sea $v_0=(2,-1,1)$.
 \begin{enumerate}
-	\item Describir param{\'e}tricamente el conjunto
+	\item Describir param{é}tricamente el conjunto
 	$P_1=\{w\in\mathbb{ R}^3:\langle v_0 , w  \rangle=0\}$.
-	\item Describir param{\'e}tricamente el conjunto
+	\item Describir param{é}tricamente el conjunto
 	$P_2=\{w\in\mathbb{ R}^3:\langle v_0 , w  \rangle=1\}$.
-	\item ?`Qu\'e relaci\'on hay entre $P_1$ y $P_2$?
+	\item ?`Qué relación hay entre $P_1$ y $P_2$?
 \end{enumerate}
 
-\
 
 \rta
 
@@ -635,17 +512,15 @@ $ \therefore \boxed{ P_2 = \{ (0,-1,0) + s (1,2,0) + t (0,1,1) \; | \; s,t, \in 
 	\item Los planos $P_1$ y $P_2$ son paralelos.
 \end{enumerate}
 
-\
+\qed
 
-\item\label{ej-planos} Escribir la ecuaci{\'o}n param\'etrica  y la ecuaci{\'o}n normal de los siguientes planos.
+\item\label{ej-planos} Escribir la ecuación paramétrica  y la ecuación normal de los siguientes planos.
 \begin{enumerate}
 	\item $\pi_1$: el plano que pasa por $(0,0,0)$, $(1,1,0)$, $(1,-2,0)$.
 	\item $\pi_2$: el plano que pasa por $(1,2,-2)$ y es perpendicular a la
 	recta que pasa por $(2,1,-1)$, $(3,-2,1)$.
 	\item\label{ej-planos-c}  $\pi_3=\{w\in\mathbb{R}^3: w=s(1,2,0)+t(2,0,1)+(1,0,0);\,s,t\in \mathbb R\}$.
 \end{enumerate}
-
-\
 
 \rta
 
@@ -700,16 +575,15 @@ $\pi_3 = \{ w \in \mathbb{R}^3 \; | \; \langle w, (-2,1,4) \rangle =  \langle (1
 	
 \end{enumerate}
 
-\
+\qed
 
-\item ¿Cu\'ales de las siguientes rectas cortan al plano $\pi_3$ del  ejercicio \eqref{ej-planos-c}?
-Describir la intersecci{\'o}n en cada caso.
+\item ¿Cuáles de las siguientes rectas cortan al plano $\pi_3$ del  ejercicio \ref{ej-planos-c}?
+Describir la intersecci{ó}n en cada caso.
 \begin{align*}
 &(a) \ \{w: w=(3,2,1)+t(1,1,1)\}, && (b) \  \{w: w=(1,-1,1)+t(1,2,-1)\}, \\
 &(c)\  \{w: w=(-1,0,-1)+t(1,2,-1)\}, && (d) \  \{w: w=(1,-2,1)+t(2,-1,1)\}.
 \end{align*}
 
-\
 
 \rta La manera más directa de chequear si una recta interseca a un plano es con la forma normal del plano. Si la dirección de la recta es perpendicular a la dirección normal del plano, la recta es paralela al plano. Luego, o bien toda la recta está contenida en el plano, o bien la recta y el plano tienen intersección vacía.
 
@@ -766,16 +640,14 @@ El punto de intersección es $(1,-2,1) + 2 (2,-1,1) = \boxed{ ( 5,-4,3 ) }$
 
 \end{enumerate}
 
-\
+\qed
 
 \item\label{rectas como subespacio} Sea $L=\{(x,y)\in\mathbb{R}^2 : ax+by=c\}$ una recta en $\mathbb{R}^2$. Sean $p$ y $q$ dos puntos por los que pasa $L$.
 \begin{enumerate}
- \item ?`Para qu\'e valores de $c$ puede asegurar que $(0,0)\in L$?
- \item ?`Para qu\'e valores de $c$ puede asegurar que $\lambda q\in L$? donde $\lambda\in\mathbb{R}$.
- \item ?`Para qu\'e valores de $c$ puede asegurar que $p+q\in L$?
+ \item ?`Para qué valores de $c$ puede asegurar que $(0,0)\in L$?
+ \item ?`Para qué valores de $c$ puede asegurar que $\lambda q\in L$? donde $\lambda\in\mathbb{R}$.
+ \item ?`Para qué valores de $c$ puede asegurar que $p+q\in L$?
 \end{enumerate}
-
-\
 
 \rta 
 
@@ -783,13 +655,11 @@ El punto de intersección es $(1,-2,1) + 2 (2,-1,1) = \boxed{ ( 5,-4,3 ) }$
  \item Si $(0,0) \in L$, entonces esos valores de $x$ e $y$ deben verificar la ecuación normal de la recta. Es decir, debe suceder $c = ax + by = a\cdot 0 + b \cdot 0 = 0$. Con lo cual debe ser $c=0$ y por lo tanto es el único valor de $c$ con esta propiedad.
 
  \item Llamemos $q=(x_q , y_q)$. Como $q \in L$, sabemos que se cumple 
-
 \begin{equation}\label{q_in_L}
 a x_q + b y_q = c
 \end{equation} 
 
 Ahora supongamos que además $ \lambda q = (\lambda x_q, \lambda y_q) \in L$. Vamos a tener entonces:
-
 \begin{equation*}
 \begin{array}{rl}
 a (\lambda x_q ) + b (\lambda y_q) &= c \\
@@ -803,13 +673,11 @@ a (\lambda x_q ) + b (\lambda y_q) &= c \\
 Luego tenemos dos casos: Si $\lambda = 1$, entonces $c$ puede tomar cualquier valor. Si $\lambda \neq 1$ entonces sólo puede ser $c=0$. En particular, si $c=0$, $\lambda$ puede tener cualquier valor.
  
  \item Llamemos $p=(x_p,y_p)$. Como $p \in L$ vamos a tener el análogo a la ecuación \ref{q_in_L} para $p$:
- 
 \begin{equation}\label{p_in_L}
 a x_p + b y_p = c
 \end{equation} 
 
 Ahora suponemos que además $p+q = (x_p + x_q,y_p + y_q) \in L$ y tenemos:
-
 \begin{equation*}
 \begin{array}{rl}
 a (x_p + x_q ) + b (y_p + y_q) &= c \\
@@ -822,15 +690,12 @@ c &= 0
 \end{equation*}
 
 Por lo tanto debe ser $c=0$ y es el único valor con esta propiedad.
- 
 \end{enumerate}
 
-\
+\qed
 
-\item Sea $L$ una recta en $\mathbb{R}^2$. Probar que $L$ pasa por $(0,0)$ si y s\'olo si pasa por $p+\lambda q$ para todo par de puntos $p$ y $q$ de $L$ y para todo $\lambda\in\mathbb{R}$.
+\item Sea $L$ una recta en $\mathbb{R}^2$. Probar que $L$ pasa por $(0,0)$ si y sólo si pasa por $p+\lambda q$ para todo par de puntos $p$ y $q$ de $L$ y para todo $\lambda\in\mathbb{R}$.
 \end{enumerate}
-
-\
 
 \rta 
 
@@ -838,4 +703,3 @@ $\boxed{ \implies }$ Supongo que $(0,0) \in L$, entonces por el ejercicio 19.a) 
 
 $\boxed{ \impliedby }$ Considero un $p \in L$ cualquiera, y tomo $\lambda = -1$ y $q = p$. Tengo entonces por hipótesis que $p + \lambda q \in L$, pero $p + \lambda q = p + (-1) p = p - p = (0,0)$ y por lo tanto $(0,0) \in L$. \qed
 
-\end{document} 
