@@ -1,98 +1,6 @@
-% PDFLaTeX
-\documentclass[a4paper,12pt,twoside,spanish,reqno]{amsbook}
-%%%---------------------------------------------------
-\usepackage[math]{kurier}
+\chapter{Soluciones\\Álgebra  II -- Año 2024/1 -- FAMAF}\label{practico-2}
 
-\usepackage{etex}
-\usepackage{t1enc}
-\usepackage{latexsym}
-\usepackage[utf8]{inputenc}
-\usepackage{verbatim}
-\usepackage{multicol}
-\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
-\usepackage{amsthm}
-\usepackage{calc}         % From LaTeX distribution
-\usepackage{graphicx}     % From LaTeX distribution
-\usepackage{ifthen}
-\input{random.tex}   
-\usepackage{tikz}
-\usetikzlibrary{arrows}
-\usetikzlibrary{matrix}
-\usepackage{mathtools}
-\usepackage{stackrel}
-\usepackage{enumitem}
-\usepackage{tkz-graph}
-
-\usepackage{enumitem} 
-\usepackage[compatibility=false]{caption} % para usar subcaption
-\usepackage{subcaption} % para poner varias imagenes juntas
-\usetikzlibrary{arrows.meta}
-\usepackage{hyperref}
-\hypersetup{ 
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,      
-    urlcolor=cyan,
-}
-\usepackage{hypcap}
-\numberwithin{equation}{section}
-% http://www.texnia.com/archive/enumitem.pdf (para las labels de los enumerate)
-\renewcommand\labelitemi{$\circ$}
-\setlist[enumerate, 1]{label={(\arabic*)}}
-\setlist[enumerate, 2]{label=\emph{\alph*)}}
-
-
-\newcommand{\rta}{\noindent\textsc{Solución: }} 
-
-\newcommand{\img}{\operatorname{Im}}
-\newcommand{\nuc}{\operatorname{Nu}}
-\newcommand\im{\operatorname{Im}}
-\renewcommand\nu{\operatorname{Nu}}
-\newcommand{\la}{\langle}
-\newcommand{\ra}{\rangle}
-\renewcommand{\t}{{\operatorname{t}}}
-\renewcommand{\sin}{{\,\operatorname{sen}}}
-\newcommand{\Q}{\mathbb Q}
-\newcommand{\R}{\mathbb R}
-\newcommand{\C}{\mathbb C}
-\newcommand{\K}{\mathbb K}
-\newcommand{\F}{\mathbb F}
-\newcommand{\Z}{\mathbb Z}
-\newenvironment{amatrix}[1]{%
-  \left[\begin{array}{@{}*{#1}{c}|c@{}}
-}{%
-  \end{array}\right]
-}
-
-%%% FORMATOS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\tolerance=10000
-\renewcommand{\baselinestretch}{1.3}
-\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
-\usepackage{setspace}
-%\setlength{\parindent}{0,7cm}% tamaño de sangria.
-\setlength{\parskip}{0,4cm} % separación entre parrafos.
-\renewcommand{\baselinestretch}{0.90}% separacion del interlineado
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\end{comment}
-%%% FIN FORMATOS  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{document}
-    \baselineskip=0.55truecm %original
-    
-    
-    {\bf \begin{center} Práctico 2 \\ Álgebra  II -- Año 2024/1 \\ FAMAF \end{center}}
-
-\
-
-\centerline{\textsc{Sistemas de ecuaciones}}
-
-\centerline{\textsc{Soluciones}}
-
-\bigbreak
-
-
-
-\begin{enumerate}
+\begin{enumerate}[topsep=6pt, itemsep=.4cm]
 \item {\it Juego Suko}. Colocar los números del $1$ al $9$ en las celdas de la siguiente tabla de modo que el número en cada círculo sea igual a la suma de las cuatro celdas adyacentes, y la suma de las celdas del mismo color sea igual al número en el círculo de igual color.
 
 \begin{center}
@@ -123,8 +31,8 @@
     
     \end{tikzpicture}
 \end{center}
-\vskip.2cm
-\noindent\textsc{Solución:} Queremos ver que valor toma cada celda y, por lo tanto,  a cada celda le asignamos una variable:
+
+\rta Queremos ver que valor toma cada celda y, por lo tanto,  a cada celda le asignamos una variable:
 \begin{center}
   \begin{tikzpicture}
     \draw [fill=gray!10] (0,0) rectangle (1,-1); 
@@ -147,7 +55,7 @@
     \node at (2.5,-2.5) {$x_9$};
     \end{tikzpicture}
 \end{center}
-Tenemos entonces las 9 incógnitas que debemos resolver y la información del Suko original nos dice que se deben cumplir las siguientes ecuaciones:
+Tenemos entonces las $9$ incógnitas que debemos resolver y la información del Suko original nos dice que se deben cumplir las siguientes ecuaciones:
 \begin{align}
 &x_1 + x_2 +x_4 +x_5 =12,  \\
 &x_2+ x_3+x_5 +x_6 = 19, \\
@@ -161,7 +69,6 @@ Tenemos entonces las 9 incógnitas que debemos resolver y la información del Su
 
 Primero vamos a tratar de resolver el sistema de ecuaciones. Podríamos plantear  la matriz ampliada del sistema y  reducir la matriz, pero en este caso va a resultar más corto trabajar con las ecuaciones directamente. Hay 9 incógnitas y 7 ecuaciones, entonces en general es razonable que queden 7 variables dependientes y 2 variables libres. Con esto en mente trataremos de despejar todo en función de las variables $x_1$ y $x_3$ (esto fue elegido arbitrariamente). 
 
-\vskip .2cm 
 
 Como $x_4 + x_5 = 9$ $\;\stackrel{(1)}{\Rightarrow}\;$ $x_1 + x_2 + 9 =12$,  es decir $x_1 + x_2  =3$ o \colorbox{green!20}{$x_2 = 3 -x_1$ ($a$)}.
 
@@ -250,11 +157,11 @@ Es decir,  hay  una única solución para estas ecuaciones con las restricciones
   \end{array} 
 \end{equation*}
 \qed
-\vskip .6cm
+
 
 \item\label{polinomio} Encontrar los coeficientes reales del polinomio $p(x) = ax^2+bx+c$ de manera tal que $p(1)=2$, $p(2)=7$ y $p(3)=14$.
-\vskip.2cm
-\noindent\textsc{Solución:} Planteemos a nivel de los coeficientes del polinomio las condiciones:
+
+\rta Planteemos a nivel de los coeficientes del polinomio las condiciones:
 \begin{equation*}
  \begin{array}{rrrrrrrrr}
  P(1) =2 &\quad \Rightarrow \quad& a\cdot 1^2 &+ & b \cdot 1 &+ & c &= & 2 \\   
@@ -309,10 +216,8 @@ Luego $a = 1$, $b =2$, $c=-1$. Es decir el polinomio que satisface las hipótesi
 $$
 x^2 + 2x -1.
 $$
+\qed
 
-
-
-\vskip .6cm
 \item Determinar cuáles de las siguientes matrices son MERF.
 $$\begin{array}{lccccl}
 \begin{bmatrix}1 & 2 & 0 \\0 & 0 & 1 \end{bmatrix}, &
@@ -323,42 +228,33 @@ $$\begin{array}{lccccl}
 \begin{bmatrix}1 & 0 & 0  \\0 & 0 & 0 \\0 & 0 & 1 \end{bmatrix}.
 \end{array}$$
 \vskip.2cm
-\noindent\textsc{Solución:} Recordemos que una matriz MERF debe satisfacer:
+\rta Recordemos que una matriz MERF debe satisfacer:
 \begin{enumerate}
 \item[\textit{a})] la primera entrada no nula de una fila es 1 (el 1 principal).
 \item[\textit{b})] Cada columna que contiene un  1 principal tiene todos los otros elementos iguales a 0. 
 \item[\textit{c})] todas las filas cuyas entradas son todas iguales a cero están al final de la matriz, y
 \item[\textit{d})] en dos filas consecutivas no nulas el 1 principal de la fila inferior está más a la derecha que el 1 principal de la fila superior. 
 \end{enumerate}
-\vskip .3cm
 
 Las primeras cuatro matrices satisfacen la definición de MERF. 
 
 La 5º matriz no satisface \textit{b}), pues el 1 principal es la segunda fila está en la columna 3  y  en esa columna hay otro elemento no nulo (en la posición $33$ hay un 1).
 
-La 6º matriz tampoco es MERF pues la fila 2 es nula y la fila 3 no lo es. Luego  no satisface \textit{c}).  \qed
+La 6º matriz tampoco es MERF pues la fila 2 es nula y la fila 3 no lo es. Luego  no satisface \textit{c}).
 
-\vskip .5cm
+\qed
 
 \item Para cada una de las MERF del ejercicio anterior,
-
-\
-
 \begin{enumerate}
 \item
 asumir que es la matriz de un sistema homogéneo, escribir el sistema
 y dar las soluciones del sistema.
-
-\
-
 \item
 asumir que es la matriz ampliada de un sistema no homogéneo, escribir el sistema
 y dar las soluciones del sistema.
 \end{enumerate}
-\vskip.2cm
-\noindent\textsc{Solución:}
-Como ya vimos en el ejercicio anterior las MERF son
 
+\rta Como ya vimos en el ejercicio anterior las MERF son
 $$
 (i)\;\begin{bmatrix}1 & 2 & 0 \\0 & 0 & 1 \end{bmatrix}, \quad
 (ii)\; \begin{bmatrix}1 & 0 & 2 \\0 & 1 & -3 \end{bmatrix}, \quad
@@ -433,7 +329,7 @@ x_2&=0,
 luego  las soluciones son $\{ (t,0): t\in \mathbb R \}$.
 
 
-\vskip .5cm
+\qed
 
 \item\label{sistemas homogeneos} Para cada uno de los siguientes sistemas de ecuaciones, describir explícita o paramétricamente todas las soluciones e indicar cuál es la MERF asociada al sistema.
 
@@ -483,8 +379,8 @@ x-z+2t = 1\\
 
 \end{enumerate}
 \end{multicols}
-\vskip.2cm
-\noindent\textsc{Solución:}
+
+\rta
 
 (a) La matriz asociada a este sistema es la matriz $A_1$ que escribimos más abajo y a la cual luego reducimos a una MERF.
 
@@ -689,40 +585,33 @@ Por lo tanto,  las soluciones del sistema son  $\{ (u -2v +2, u-2v +2 ,u,v): u,v
 
 
 \qed
-\vskip .5cm
+
 
 \item\label{sistemas con soluciones} Para cada uno de los siguientes sistemas, describir implícitamente el conjunto de los vectores $(b_1,b_2,b_3)$
 o $(b_1,b_2,b_3,b_4)$ para los cuales cada sistema tiene solución.
-
 \begin{multicols}{3}
 \begin{enumerate}
-
 \item $\begin{cases}
  x - 3y + 5z = b_1\\
  2x-3y+z = b_2\\
  -y + 3z = b_3
 \end{cases}$
-
-
 \item $\begin{cases}
 x-z+2t = b_1\\
 -x+2y-z+2t = b_2\\
 -x+y = b_3\\
 y-z+2t=b_4
 \end{cases}$
-
-
 \item $\begin{cases}
  - x - y + 4 z = b_1\\
  x+3y+8z = b_2\\
  x + 2y + 5z = b_3
 \end{cases}$
-
 \end{enumerate}
 \end{multicols}
-\vskip.2cm
-\noindent\textsc{Solución:}
-\vskip .3cm
+
+\rta
+
 (a) La matriz ampliada del sistema es  
 \begin{equation*}
 [A_2|Y] = \left[\begin{array}{ccc|c}
@@ -842,20 +731,16 @@ A_1 &= \left[\begin{array}{ccc|c}
 \end{align*}
 Luego el conjunto de $b_i$'s para los cuales el sistema tiene solución es $\mathbb R^3$.
 
-
 \qed
-\vskip .5cm
+
 \item Sea $A=\begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 2 & 3 & 4 & \cdots & 2017 \\ 3&4&5& \cdots & 2018\\ \vdots & &&& \vdots \\ 100 & 101 & 102& \cdots& 2115\end{bmatrix}$.
-
-\
-
 \begin{enumerate}
    \item Encontrar todas las soluciones del sistema $AX=0$.
    \item Encontrar todas las soluciones del sistema $AX=\left[\begin{array}{c}
      1\\\vdots \\1 \end{array}\right]$.
 \end{enumerate}
-\vskip.2cm
-\noindent\textsc{Solución:}
+
+\rta
 
 \begin{enumerate}
    \item Reducimos la matriz A aplicando operaciones elementales por filas:
@@ -931,7 +816,7 @@ $\{ ( -1+\sum_{j=3}^{2016} (j-2) x_j , 1+\sum_{j=3}^{2016} (1-j) x_j , x_3 , x_4
 
 \end{enumerate}
 
-\
+\qed
 
      \item Sea $A=\begin{bmatrix}3 & -1 & 2 \\2 & 1 & 1 \\1&-3&0\end{bmatrix}$. Reduciendo $A$ por filas,
  \begin{enumerate}
@@ -939,8 +824,8 @@ $\{ ( -1+\sum_{j=3}^{2016} (j-2) x_j , 1+\sum_{j=3}^{2016} (1-j) x_j , x_3 , x_4
    \item encontrar todas las soluciones sobre $\mathbb{R}$ y $\mathbb{C}$ del sistema $AX=\left[\begin{array}{c}
      1\\i\\0 \end{array}\right]$.
  \end{enumerate}
-\vskip.2cm
-\noindent\textsc{Solución:}
+
+ \rta
 
 \begin{enumerate}
 \item Reducimos la matriz A aplicando operaciones elementales por filas:
@@ -965,7 +850,7 @@ A = &\begin{bmatrix}3 & -1 & 2 \\2 & 1 & 1 \\1&-3&0\end{bmatrix}
 
 Luego el sistema tiene solución trivial $(0,0,0)$ y la MERF es la matriz $\operatorname{Id}_3$. Notar que todas las operaciones realizadas valen tanto para $\mathbb{R}$ como para $\mathbb{C}$, por lo que $(0,0,0)$ es la solución para ambos casos.
 
-\
+\vskip .4cm
 
 \item Análogamente a lo realizado en el  ejercicio $(7.b)$, podemos repetir la secuencia de operaciones elementales sobre el vector $\left[\begin{array}{c}1\\i\\0 \end{array}\right]$ :
 
@@ -991,12 +876,13 @@ En este punto, si bien las operaciones propiamente dichas sólo involucraron nú
 
 \end{enumerate}
 
+\qed
+
 % \item >Para qué valores de $a$ el siguiente sistema tiene única o infinitas soluciones?
 % \begin{align*}
 % \left\{\begin{array}{l}ax-y+z=2 \\ x-y+z = 2  \\ 2x -2y + (2-a)z = 4a\end{array}\right.
 % \end{align*}
 
-\
 
 \item Suponga que tiene que resolver un sistema de ecuaciones lineales homogéneo y que tras hacer algunas operaciones elementales por fila a la matriz asociada obtiene una matriz con la siguiente forma
 \begin{align*}
@@ -1010,11 +896,11 @@ a & * & * & *\\
 \right)
 \end{align*}
 donde $a,b,c,d\in\R$ y $*$ son algunos números reales.
-?`Qué conclusiones puede inferir acerca del conjunto de soluciones a partir de los valores de $a$, $b$, $c$ y $d$?
-\vskip.2cm
-\noindent\textsc{Solución:}
+¿Qué conclusiones puede inferir acerca del conjunto de soluciones a partir de los valores de $a$, $b$, $c$ y $d$?
 
-Lo primero que podemos observar es que si $a$, $b$, $c$ y $d$ son todos no nulos entonces podemos aplicar las operaciones elementales por fila de multiplicar cada fila por $a^{-1}$, $b^{-1}$, $c^{-1}$ y $d^{-1}$. Luego de esto nos quedar\'ia una matriz con la siguiente forma
+\rta
+
+Lo primero que podemos observar es que si $a$, $b$, $c$ y $d$ son todos no nulos entonces podemos aplicar las operaciones elementales por fila de multiplicar cada fila por $a^{-1}$, $b^{-1}$, $c^{-1}$ y $d^{-1}$. Luego de esto nos quedaría una matriz con la siguiente forma
 \begin{align*}
 \left(
 \begin{array}{cccc}
@@ -1036,11 +922,11 @@ Luego podemos usando esos 1's principales podemos eliminar las entradas por enci
 \end{array}
 \right).
 \end{align*}
-En conclusión si $a$, $b$, $c$ y $d$ son todos no nulos podemos llegar mediante operaciones elementales por filas a la identidad y por lo tanto la \'unica soluci\'on del sistema es la trivial $(0,0,0,0)$, recordar el Teorema 2.4.5.
+En conclusión si $a$, $b$, $c$ y $d$ son todos no nulos podemos llegar mediante operaciones elementales por filas a la identidad y por lo tanto la única solución del sistema es la trivial $(0,0,0,0)$, recordar el Teorema 2.4.5.
 
-En cambio, si alguno de los escalares $a$, $b$, $c$ y $d$ es nulo, entonces no podemos obtener un 1 principal en su lugar. M\'as a\'un, la MERF a la que lleguemos tendr\'a una fila nula y por lo tanto el sistema tendr\'a infinitas soluciones, recordar el Teorema 2.4.2. 
+En cambio, si alguno de los escalares $a$, $b$, $c$ y $d$ es nulo, entonces no podemos obtener un 1 principal en su lugar. Más aún, la MERF a la que lleguemos tendrá una fila nula y por lo tanto el sistema tendrá infinitas soluciones, recordar el Teorema 2.4.2. 
 
-Por ejemplo, si $d=0$ esto es claro pues la matriz ser\'ia
+Por ejemplo, si $d=0$ esto es claro pues la matriz sería
 \begin{align*}
 \left(
 \begin{array}{cccc}
@@ -1062,7 +948,7 @@ a & * & * & *\\
 \end{array}
 \right).
 \end{align*}
-Luego, podemos multiplicar por $d^{-1}$ la \'ultima fila y luego anular la entrada por arriba del 1 que nos quede y as\'i obtener la matriz
+Luego, podemos multiplicar por $d^{-1}$ la última fila y luego anular la entrada por arriba del 1 que nos quede y así obtener la matriz
 \begin{align*}
 \left(
 \begin{array}{cccc}
@@ -1073,11 +959,11 @@ a & * & * & *\\
 \end{array}
 \right).
 \end{align*}
-Un razonamiento similar podr\'iamos hacer con las dem\'as posibilidades.
+Un razonamiento similar podríamos hacer con las demás posibilidades.
 
-Moraleja: para saber si un sistema homog\'eneo tiene una o infinitas soluciones no es necesario reducir la matriz hasta llegar a una MERF basta con llegar a una triangular superior. Pero para calcular de forma param\'etrica el conjunto de soluciones si es necesario llegar a una MERF.
+\textit{Moraleja:} para saber si un sistema homogéneo tiene una o infinitas soluciones no es necesario reducir la matriz hasta llegar a una MERF basta con llegar a una triangular superior. Pero para calcular de forma paramétrica el conjunto de soluciones si es necesario llegar a una MERF.
 
-\
+\qed
 
 \item Suponga que tiene que resolver un sistema de ecuaciones lineales y que tras hacer algunas operaciones elementales por fila a la matriz ampliada obtiene una matriz con la siguiente forma
 \begin{align*}
@@ -1091,13 +977,12 @@ a & * & * & * & *\\
 \right)
 \end{align*}
 donde $a,b,c,d\in\R$ y $*$ son algunos números reales.
-?`Qué conclusiones puede inferir acerca del conjunto de soluciones a partir de los valores de $a$, $b$, $c$ y $d$?
-\vskip.2cm
-\noindent\textsc{Solución:}
+¿Qué conclusiones puede inferir acerca del conjunto de soluciones a partir de los valores de $a$, $b$, $c$ y $d$?
+\rta
 
-Lo primero que podemos notar es que si $c$ es no nulo el sistema no tiene soluci\'on. Pues sería equivalente a un sistema cuya ecuaci\'on $0=c$ es falsa.
+Lo primero que podemos notar es que si $c$ es no nulo el sistema no tiene solución. Pues sería equivalente a un sistema cuya ecuación $0=c$ es falsa.
 
-Asumamos ahora que $c=0$. Si $a$, $b$ y $d$ son no nulos, entonces como antes podemos simplificarlos aplicando la operaci\'on elemental multiplicar la respectiva fila por $a^{-1}$, $b^{-1}$ y $d^{-1}$. Luego intercambiar la tercer y cuarta fila para obtener la matriz
+Asumamos ahora que $c=0$. Si $a$, $b$ y $d$ son no nulos, entonces como antes podemos simplificarlos aplicando la operación elemental multiplicar la respectiva fila por $a^{-1}$, $b^{-1}$ y $d^{-1}$. Luego intercambiar la tercer y cuarta fila para obtener la matriz
 \begin{align*}
 \left(
 \begin{array}{cccc|c}
@@ -1108,50 +993,35 @@ Asumamos ahora que $c=0$. Si $a$, $b$ y $d$ son no nulos, entonces como antes po
 \end{array}
 \right)
 \end{align*}
-Razonando como en el ejercicio anterior podemos transforma la matriz en una MERF que va a tener una fila nula. Adem\'as, este sistema tiene una soluci\'on. En efecto, para fijar ideas supongamos que $z_1$, $z_2$ y $z_3$ son las entradas de la \'ultima columna de la matriz ampliada entonces $(z_1,z_2,0,z_3)$ es una soluci\'on. Por el Teorema 2.4.2, en este caso el sistema tiene infinitas soluciones.
+Razonando como en el ejercicio anterior podemos transforma la matriz en una MERF que va a tener una fila nula. Además, este sistema tiene una solución. En efecto, para fijar ideas supongamos que $z_1$, $z_2$ y $z_3$ son las entradas de la última columna de la matriz ampliada entonces $(z_1,z_2,0,z_3)$ es una solución. Por el Teorema 2.4.2, en este caso el sistema tiene infinitas soluciones.
 
 Hay otros varios casos para analizar de manera similar. 
 
-Moraleja: al igual que antes no es necesario llegar a una MERF para saber si el sistema tendr\'a o no soluci\'on, una o infinitas. Pero para calcular de forma param\'etrica el conjunto de soluciones si es necesario llegar a una MERF.
+Moraleja: al igual que antes no es necesario llegar a una MERF para saber si el sistema tendrá o no solución, una o infinitas. Pero para calcular de forma paramétrica el conjunto de soluciones si es necesario llegar a una MERF.\qed
 
-\
+\item Suponga que tiene que resolver un sistema de $m$ ecuaciones lineales con $n$ incógnitas. Antes de empezar a hacer cuentas y apelando a la teoría, ¿Qué puede afirmar acerca del conjunto de soluciones en base a $m$ y $n$? ¿Cómo saber si es vacío o no vacío? ¿Si tiene una o varias soluciones?
+\rta
 
-\item Suponga que tiene que resolver un sistema de $m$ ecuaciones lineales con $n$ incógnitas. Antes de empezar a hacer cuentas y apelando a la teoría, ?`Qué puede afirmar acerca del conjunto de soluciones en base a $m$ y $n$? ?`Cómo saber si es vacío o no vacío? ?`Si tiene una o varias soluciones?
-\vskip.2cm
-\noindent\textsc{Solución:}
+No hay una respuesta concluyente a este ejercicio pero nos sirve para pensar un poco y repasar la teoría. Algunos razonamientos que podemos hacer son los siguientes.
 
-No hay una respuesta concluyente a este ejercicio pero nos sirve para pensar un poco y repasar la teor\'ia. Algunos razonamientos que podemos hacer son los siguientes.
+Si el sistema tiene menos incógnitas que ecuaciones hay chances de que no tenga solución. En cierto sentido, cada ecuación es una condición para el conjunto de soluciones y entonces podría ser que estemos poniendo demasiadas condiciones y que sean contradictorias entre ellas y así no habría una solución común a todas (ver la página 29 de la Clase 08 Teórica - Sistemas de ecuaciones 3 (17-09-20) del turno mañana).
 
-Si el sistema tiene menos inc\'ognitas que ecuaciones hay chances de que no tenga soluci\'on. En cierto sentido, cada ecuaci\'on es una condici\'on para el conjunto de soluciones y entonces podr\'ia ser que estemos poniendo demasiadas condiciones y que sean contradictorias entre ellas y as\'i no habr\'ia una soluci\'on com\'un a todas (ver la página 29 de la Clase 08 Teórica - Sistemas de ecuaciones 3 (17-09-20) del turno ma\~nana).
+Si el sistema tiene más incógnitas que ecuaciones y el sistema tiene solución entonces el sistema tiene infinitas soluciones. Esto es porque hay incógnitas que no van a ser 1 principal y entonces serían variables libres (ver la página 35 de la Clase 08 Teórica - Sistemas de ecuaciones 3 (17-09-20) del turno mañana).\qed
 
-Si el sistema tiene m\'as inc\'ognitas que ecuaciones y el sistema tiene soluci\'on entonces el sistema tiene infinitas soluciones. Esto es porque hay inc\'ognitas que no van a ser 1 principal y entonces ser\'ian variables libres (ver la p\'agina 35 de la Clase 08 Teórica - Sistemas de ecuaciones 3 (17-09-20) del turno ma\~nana).
-
-\
 
 \item\label{polinomios} $\textcircled{a}$ Sean $\lambda_1, ..., \lambda_n\in\R$ y $b_1, ..., b_n\in\R$.
-
-\
-
 \begin{enumerate}
- \item Para cada $n\in\{1,2,3,4,5\}$, plantear un sistema de ecuaciones lineales que le permita encontrar un polinomio $p(x)$ con coeficientes reales de grado $n-1$ tal que
+ \item\label{polinomios-a} Para cada $n\in\{1,2,3,4,5\}$, plantear un sistema de ecuaciones lineales que le permita encontrar un polinomio $p(x)$ con coeficientes reales de grado $n-1$ tal que
  $$
  p(\lambda_1)=b_1, \dots, p(\lambda_n)=b_n.
  $$
-
- \
-
-\item ?`Se le ocurre alguna condición con la cual pueda afirmar que el sistema anterior no tiene solución?
-
-\
-
-\item  ?`Puede dar una forma general del sistema para cualquier $n$?
-
+\item\label{polinomios-b} ¿Se le ocurre alguna condición con la cual pueda afirmar que el sistema anterior no tiene solución?
+\item\label{polinomios-c}  ¿Puede dar una forma general del sistema para cualquier $n$?
 \end{enumerate}
 
+\rta
 
-\vskip.2cm
-\noindent\textsc{Solución:}
- (a) En el ejercicio (\ref{polinomio}) hicimos  $n=3$   para un caso concreto ($p(1)=2$, $p(2) = 7$ y $p(3)=14$). como en ese caso,  una forma de resolver el problema es plantear un sistema de ecuaciones donde los coeficientes del polinomio sean la incógnitas. 
+\ref{polinomios-a} En el ejercicio \ref{polinomio} hicimos  $n=3$   para un caso concreto ($p(1)=2$, $p(2) = 7$ y $p(3)=14$). como en ese caso,  una forma de resolver el problema es plantear un sistema de ecuaciones donde los coeficientes del polinomio sean la incógnitas. 
  Sea 
  $$p_n(x) = a_0 + a_1x + a_2x^2 + \cdots a_{n-1}x^{n-1}, $$
  entonces, $p_n(\lambda_i) = b_i$ se traduce en la ecuación
@@ -1178,13 +1048,13 @@ Si el sistema tiene m\'as inc\'ognitas que ecuaciones y el sistema tiene soluci\
  
  \vskip .2cm
  
- (b) Si sobrentendemos  que todos los $\lambda_i$ son distintos entre si, la respuesta es \textit{no.} 
+ \ref{polinomios-b} Si sobrentendemos  que todos los $\lambda_i$ son distintos entre si, la respuesta es \textit{no.} 
  \vskip .2cm
  Obviamente si $\lambda_i = \lambda_j$ y $b_i \ne b_j$,  entonces $p(\lambda_i) = b_i \ne b_j = p(\lambda_j) = p(\lambda_i)$,  es decir llegamos a la conclusión que $p(\lambda_i)  \ne p(\lambda_i)$, lo cual es absurdo. 
  
  (Veremos más adelante, usando determinantes,  que si $\lambda_i \ne \lambda_j$ para $i \ne j$,  entonces siempre encontraremos un polinomio que satisfaga las condiciones del ejercicio). 
   \vskip .2cm
- (c) No es difícil generalizar (a) para cualquier $n$: la matriz ampliada del sistema de ecuaciones  correspondiente al caso  $n$ es
+  \ref{polinomios-c} No es difícil generalizar (a) para cualquier $n$: la matriz ampliada del sistema de ecuaciones  correspondiente al caso  $n$ es
  $$[V|Y] =
  \left[\begin{array}{ccccc|c}
      1 &\lambda_1&\lambda_1^2&\cdots &\lambda_1^{n-1} &b_1 \\
@@ -1194,10 +1064,7 @@ Si el sistema tiene m\'as inc\'ognitas que ecuaciones y el sistema tiene soluci\
      1 &\lambda_n&\lambda_n^2&\cdots&\lambda_n^{n-1}  &b_n
      \end{array}\right].
  $$
- (La matriz $V$ es  llamada \textit{la matriz de Vandermonde.})
+ (La matriz $V$ es  llamada \textit{la matriz de Vandermonde.})\qed
  
 \end{enumerate}
 
-
-
-\end{document}
