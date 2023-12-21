@@ -9,40 +9,98 @@
         &&
         C=\begin{bmatrix} 2&3&1&1\\ 0&2&-1&3 \\ 0&5&1&1 \\1&1&2&5\end{bmatrix}.
         \end{align*}
+        
         \rta
-
+        \begin{align*}
+            \left| A \right| &= 4\cdot 3 - 7\cdot 5 = -23,\\
+            \left| B \right| &= -3\cdot \left|\begin{matrix} -1&2\\ 4&0\end{matrix}\right| - 1\cdot \left|\begin{matrix} 2&4\\ 4&0\end{matrix}\right| - 1\cdot \left|\begin{matrix} 2&4\\ -1&2\end{matrix} \right|\\
+            &= -3\cdot (-8) - 1\cdot (-16) - 1\cdot 8\\ 
+            &= 24 + 16 -8 = 32,\\
+            \left| C \right| &= 2 \cdot\left| \begin{matrix} 2&-1&3\\ 5&1&1\\ 1&2&5\end{matrix} \right| - 0 \cdot \left| C(2|1) \right| + 0 \cdot \left| C(3|1) \right| -1 \cdot\left|  \begin{matrix} 3&1&1\\ 2&-1&3 \\ 5&1&1\end{matrix} \right| \tag{*}
+        \end{align*}
+        Debemos ahora calcular el determinante de las matrices $3 \times 3$ que aparecen en la expresión de $|C|$. 
+        \begin{align*}
+            \left|\begin{matrix} 2&-1&3\\ 5&1&1\\ 1&2&5\end{matrix} \right| &= 2\cdot  \left|\begin{matrix} 1&1\\ 2&5\end{matrix} \right| - 5\cdot  \left|\begin{matrix} -1&3\\ 2&5\end{matrix} \right| + 1\cdot  \left|\begin{matrix} -1&3\\ 1&1\end{matrix} \right| \\
+            &= 2\cdot 3  - 5\cdot (-11) + 1\cdot (-4) = 57,\\
+            \left|  \begin{matrix} 3&1&1\\ 2&-1&3 \\ 5&1&1\end{matrix} \right| &= 3\cdot  \left| \begin{matrix} -1&3\\ 1&1\end{matrix} \right| - 2\cdot  \left|  \begin{matrix} 1&1\\ 1&1\end{matrix} \right| + 5 \cdot  \left|  \begin{matrix} 1&1\\ -1&3\end{matrix} \right| \\
+            &= 3\cdot (-4) - 2\cdot 0 + 5\cdot 4 = -12 + 20 = 8.
+        \end{align*}
+        Luego, por (*):
+        \begin{align*}
+            \left| C \right| &= 2 \cdot 57 -1 \cdot 8 = 106.
+        \end{align*} 
         \qed
     
     \item Sean
             $$A=
-        \begin{bmatrix}
-            1&3&2 \\
-            3&0&2 \\
-            1&1&1
-        \end{bmatrix}, \qquad
+        \begin{bmatrix} 1&3&2 \\ 3&0&2 \\  1&1&1 \end{bmatrix}, \qquad
         B =
-        \begin{bmatrix}
-            1&-1&2\\
-            1&1&1 \\
-            -1&-1&3
-        \end{bmatrix}.
+        \begin{bmatrix} 1&-1&2\\ 1&1&1 \\ -1&-1&3 \end{bmatrix}.
         $$
         Calcular:
         \begin{multicols}{3}
         \begin{enumerate}
-            \item $\det(AB)$.
-            \item $\det(BA)$.
-            \item $\det(A^{-1})$.
-            \item $\det(A^{4})$.
-            \item $\det(A+B)$.
-            \item $\det(A+tB)$, con $t \in \mathbb{R}$.
+            \item\label{det-AB} $\det(AB)$.
+            \item\label{det-BA} $\det(BA)$.
+            \item\label{det-A-1} $\det(A^{-1})$.
+            \item\label{det-A4} $\det(A^{4})$.
+            \item\label{det-A+B} $\det(A+B)$.
+            \item\label{det-A+tB} $\det(A+tB)$, con $t \in \mathbb{R}$.
         \end{enumerate}
     \end{multicols}
     \rta
 
+    Primero nos conviene calcular los determinantes de $A$ y $B$, pues algunos cálculos se reducen a saber estos números. 
+    \begin{align*}
+        \det(A) =\left|\begin{matrix} 1&3&2 \\ 3&0&2 \\  1&1&1 \end{matrix}\right| &= 1\cdot  \left|\begin{matrix} 0&2 \\  1&1\end{matrix} \right| - 3\cdot  \left|\begin{matrix}3&2 \\ 1&1\end{matrix} \right| + 1\cdot  \left|\begin{matrix} 3&2 \\ 0&2\end{matrix} \right| \\
+        &= 1\cdot (-2)  - 3\cdot 1 + 1\cdot 6 = 1,\\
+        \det(B) =\left|  \begin{matrix}  1&-1&2\\ 1&1&1 \\ -1&-1&3 \end{matrix} \right| &= 1\cdot  \left| \begin{matrix}  1&1 \\ -1&3 \end{matrix} \right| - 1\cdot  \left|  \begin{matrix} -1&2 \\ -1&3\end{matrix} \right| -1  \cdot  \left|  \begin{matrix} -1&2\\ 1&1\end{matrix} \right| \\
+        &= 1\cdot 4 - 1\cdot (- 1)  -1\cdot (-3) = 8.
+    \end{align*}
+
+    Resumiendo $\det(A) = 1$ y $\det(B) = 8$. Ahora sí, calculemos los determinantes pedidos.
+    
+    \vskip .2cm
+    \ref{det-AB} $\det(AB) = \det(A)\det(B) = 1 \cdot 8 = 8$.
+
+    \vskip .2cm
+    \ref{det-BA} $\det(BA) = \det(B)\det(A) = 8 \cdot 1 = 8$.
+
+    \vskip .2cm
+    \ref{det-A-1} $\det(A^{-1}) = 1/ \det(A) = 1/1 = 1$.
+    
+    \vskip .2cm
+    \ref{det-A4} $\det(A^{4}) = \det(A)^{4} = 1^4 = 1$.
+    
+    \vskip .2cm
+    \ref{det-A+tB} El ejercicio \ref{det-A+B} es un caso especial de \ref{det-A+tB} para $t=1$.  Así que haremos este inciso primero. Para ello, antes que nada, calculemos la matriz $A + tB$:
+    \begin{align*}
+        A+ tB &= \begin{bmatrix} 1&3&2 \\ 3&0&2 \\  1&1&1 \end{bmatrix} + t \begin{bmatrix} 1&-1&2\\ 1&1&1 \\ -1&-1&3 \end{bmatrix} \\
+        &= \begin{bmatrix} 1+t&3-t&2+2t \\ 3+t&t&2+t \\  1-t&1-t&1+3t \end{bmatrix}.
+    \end{align*}
+    Entonces
+    \begin{align*}
+       \left| \begin{matrix} 1+t&3-t&2+2t \\ 3+t&t&2+t \\  1-t&1-t&1+3t \end{matrix}\right| & = (1+t)\cdot  \left| \begin{matrix} t&2+t \\  1-t&1+3t \end{matrix} \right| - (3+t)\cdot  \left| \begin{matrix} 3-t&2+2t \\  1-t&1+3t \end{matrix} \right|\\
+       &\qquad\qquad\qquad\qquad\qquad\qquad + (1-t)\cdot  \left| \begin{matrix} 3-t&2+2t \\ t&2+t  \end{matrix} \right| \\
+       &= (1+t)\cdot (t(1+3t) - (2+t)(1-t)) -\\
+       &\quad- (3+t)\cdot ((3-t)(1+3t) - (2+2t)(1-t)) +\\
+       &\quad + (1-t)\cdot ((3-t)(2+t) - (2+2t)t)\\
+         &= (1+t)\cdot (4 t^2 + 2 t - 2) +\\
+         &\quad- (3+t)\cdot (-t^2 + 8 t + 1) +\\
+            &\quad + (1-t)\cdot (-3 t^2 - t + 6)
+            \\
+            &= (4 t^3 + 6 t^2 - 2) + (t^3 - 5 t^2 - 25 t - 3) + (3 t^3 - 2 t^2 - 7 t + 6
+            )\\
+            &=8 t^3 - t^2 - 32 t + 1
+    \end{align*}
+
+    \vskip .2cm
+    \ref{det-A+B} $\det(A+B) = \det(a + 1\cdot B) \stackrel{\ref{det-A+tB}}{=}8 \cdot 1^3 - 1^2 - 32 \cdot 1 + 1 = -24.$
+
+
     \qed
     
-    \item Reduciendo a matrices triangulares superiores, calcular el determinante de las siguientes matrices.
+    \item Calcular el determinante de las siguientes matrices haciendo la reducción a matrices triangulares superiores.
     
             $$A =
             \begin{bmatrix}
@@ -50,7 +108,7 @@
                 1&a&1&1 \\
                 1&1&a&1 \\
                 1&1&1&a \\
-            \end{bmatrix}, \qquad	
+            \end{bmatrix}, \qquad    
             B =
             \begin{bmatrix}
                 1&1&1&1&1 \\
@@ -60,7 +118,54 @@
                 1&3&5&7&9 \\
             \end{bmatrix}.
             $$
-            \rta
+            \rta Recordemos que si $A$ es una matriz triangular superior, entonces $\det(A)$ es el producto de los elementos de la diagonal principal. Por otro  lado, las operaciones elementales por fila  tienen el siguiente efecto en el cálculo del determinante:
+            \begin{itemize}
+                \item el multiplicar una fila por un escalar $\lambda$ cambia el determinante por $\lambda$ veces el determinante anterior,
+                \item intercambiar dos filas cambia el signo del determinante, y
+                \item sumar a una fila un múltiplo de otra fila no cambia el determinante.
+            \end{itemize}
+
+            Es claro la matriz original tiene todas las filas iguales y por lo tanto $\det(A) = 0$. 
+            
+            Analicemos el caso  $a\ne 1$.
+
+            Veamos como reducimos $A$ a triangular superior:
+            \begin{align*}
+                A \underset{F_4 -F_2}{\underset{F_3 -F_2}{\stackrel{F_1-aF_2}{\longrightarrow}}} &=  \begin{bmatrix}
+                    0&1-a^2&1-a&1-a \\ 
+                    1&a&1&1 \\
+                    0&1-a&a-1&0 \\
+                    0&1-a&0&a-1 \\
+                \end{bmatrix}
+                \underset{F_4 / (1-a)}{\underset{F_3 / (1-a)}{\stackrel{F_1 /(1-a)}{\longrightarrow}}} 
+                \begin{bmatrix}
+                    0&1+a&1&1 \\ 
+                    1&a&1&1 \\
+                    0&1&-1&0 \\
+                    0&1&0&-1 \\
+                \end{bmatrix} \\
+                &\underset{F_3 -F_4}{\underset{F_2 -aF_4}{\stackrel{F_1-(1+a)F_4}{\longrightarrow}}}
+                \begin{bmatrix}
+                    0&0&1&2+a \\ 
+                    1&0&1&1+a \\
+                    0&0&-1&1 \\
+                    0&1&0&-1 \\
+                \end{bmatrix} 
+                \stackrel{(-1)F_3}{\longrightarrow}
+                \begin{bmatrix}
+                    0&0&1&2+a \\ 
+                    1&0&1&1+a \\
+                    0&0&1&-1 \\
+                    0&1&0&-1 \\
+                \end{bmatrix} 
+            \end{align*}
+            
+           
+
+
+
+
+
 
             \qed
 
