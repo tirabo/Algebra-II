@@ -367,26 +367,60 @@
 
     Averigüemos ahora el determinate de $E_1$. Podríamos hacerlo por cálculo directo, pero  lo haremos transformando   $E_1$ en triangular superior por medio de operaciones elementales de fila y luego multiplicando los elementos de la diagonal. 
     \begin{align*}
-        E_1 {\underset{F_3 -2F_1}{\stackrel{F_2-3F_1}{\longrightarrow}}} \begin{bmatrix}1&-1&2\\ 0&4&-2\\ 0&1&1  \end{bmatrix}
+        E_1 {\underset{F_3 -2F_1}{\stackrel{F_2-3F_1}{\longrightarrow}}} \begin{bmatrix}1&-1&2\\ 0&4&-2\\ 0&1&1  \end{bmatrix} 
+        \stackrel{F_2 \leftrightarrow F_3}{\longrightarrow}
+        \begin{bmatrix}1&-1&2\\ 0&1&1 \\ 0&4&-2 \end{bmatrix} 
+        \stackrel{F_3 -4 F_2}{\longrightarrow}
+        \begin{bmatrix}1&-1&2\\ 0&1&1 \\ 0&0&-6 \end{bmatrix}.
     \end{align*}
+    Como hay una permutación de filas tenemos que 
+    $$\det(E_1) = -(1\cdot 1 \cdot (-6)) = 6.$$
 
+    Luego $\det(E) = (4 \cdot 2 - 1) \cdot 6 = 42$. Por lo tanto, $E$  es invertible.
+    \vskip .4cm
+
+    \noindent\textbf{Observación.} Notemos que en este ejercicio 
+    $$
+    \det(E) = \det(E_1)\det(E_2),
+    $$
+    y este es un hecho general: si $E$ es una matriz  $n \times n$ de bloques diagonales $E_{1}$ y $E_{2}$, es decir
+    $$
+    E = \begin{bmatrix}  E_1&0\\0&E_2 \end{bmatrix},
+    $$
+    entonces 
+    $$
+    \det(E) = \det(E_1)\det(E_2).
+    $$
+    También vale  el resultado para un número arbitrario de bloques diagonales. Dejamos al lector interesado la demostración de este hecho.
     \qed
     
     \item Sean $A$ y  $B$ matrices $n \times n$. Probar que:
     \begin{enumerate}
-        \item $\det(AB) = \det (BA)$.
-        \item Si $B$ es invertible, entonces $\det(B A B^{-1}) = \det (A)$.
-        \item\label{-A} $\textcircled{a}$ $\det(-A) = (-1)^n\det (A)$.
-    \end{enumerate}
+        \item\label{det A.B} $\det(AB) = \det (BA)$.
+        \item\label{det B.A.B1} Si $B$ es invertible, entonces $\det(B A B^{-1}) = \det (A)$.
+        \item\label{-A} $\det(-A) = (-1)^n\det (A)$.
+    \end{enumerate} 
+    \rta En todos los incisos usamos la propiedad de que el determinate del producto de matrices es el producto de los determinantes de cada matriz.
 
 
-    \rta
+    \ref{det A.B} 
+    $$
+    \det(AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA).
+    $$
+
+    \ref{det B.A.B1} Como $BB^{-1} = Id$, entonces $\det(B^{-1})\det(B) = \det(Id) = 1$. Luego, $\det(B^{-1}) = 1/\det(B)$. Por lo tanto,
+    \begin{align*}
+        \det(B A B^{-1}) &= \det(B)\det(A)\det(B^{-1}) = \det(B)\det(B^{-1})\det(A)\\ &=  \det(B)\frac1{\det(B)}\det(A)=\det(A).
+    \end{align*}
+    
+
+    \ref{-A} Sea $Id$ es la matriz identidad $n \times n$. Observar que $-A = (-Id)A$. Luego, $\det(-A) = \det((-Id)A) = \det(-Id)\det(A)$. Como $-Id$ es una matriz diagonal con $-1$ en la diagonal, entonces $\det(-Id) = (-1)^n$. Por lo tanto, $\det(-A) = (-1)^n\det(A)$.
 
     \qed
     
     \item\label{vandermonde} Sean $\lambda_1, \lambda_2, \dots, \lambda_n$ escalares, la matriz de \emph{Vandermonde} asociada es
     \begin{align*}
-    \mathtt V = \begin{bmatrix}
+    \mathtt V_n = \begin{bmatrix}
     1 & \lambda_1 & \lambda_1^2 & \cdots & \lambda_1^{n-1}\\
     1 & \lambda_2 & \lambda_2^2 & \cdots & \lambda_2^{n-1}\\
     \vdots &\vdots &\vdots & &\vdots\\
@@ -397,13 +431,38 @@
     
     
     \begin{enumerate}
-        \item Si $n=2$, probar que $\det(\mathtt V) = \lambda_2-\lambda_1$.
-        \item Si $n=3$, probar que $\det(\mathtt V) = (\lambda_3-\lambda_2) (\lambda_3-\lambda_1) (\lambda_2-\lambda_1)$.
-        \item\label{vandermonde gral} $\textcircled{a}$ Probar que $\det(\mathtt V) = \prod_{1\leq i< j \leq n}(\lambda_j-\lambda_i)$ para todo $n\in\mathbb{N}$.
-        \item Dar una condición necesaria y suficiente para que la matriz de Vandermonde sea invertible.
-        \item Usar lo anterior para responder a la pregunta del ejercicio \ref{polinomios}\,\ref{polinomios-b} del Práctico \ref{practico-2}.
+        \item\label{vandermonde 2} Si $n=2$, probar que $\det(\mathtt V_n) = \lambda_2-\lambda_1$.
+        \item\label{vandermonde 3} Si $n=3$, probar que $\det(\mathtt V_n) = (\lambda_3-\lambda_2) (\lambda_3-\lambda_1) (\lambda_2-\lambda_1)$.
+        \item\label{vandermonde gral} Probar que $\det(\mathtt V_n) = \prod_{1\leq i< j \leq n}(\lambda_j-\lambda_i)$ para todo $n\in\mathbb{N}$.
+        \item\label{vandermonde inv} Dar una condición necesaria y suficiente para que la matriz de Vandermonde sea invertible.
+        \item\label{vandermonde sol} Usar lo anterior para responder a la pregunta del ejercicio \ref{polinomios}\,\ref{polinomios-b} del Práctico \ref{practico-2}.
         \end{enumerate}
     \rta
+
+    \ref{vandermonde 2} En  este caso la matriz es  $2 \times 2$ y por lo tanto es fácil calcular el determinante:      
+    \begin{align*}
+        \det(\mathtt V_2) &= \left|\begin{matrix} 1 & \lambda_1 \\ 1 & \lambda_2 \end{matrix}\right| = \lambda_2 - \lambda_1.
+    \end{align*}
+
+    \vskip .2cm
+    \ref{vandermonde 3} En  este caso la matriz es  $3 \times 3$ y calcularemos el determinante transformado la matriz por operaciones elementales de columnas y filas. El  método que haremos servirá para generalizarlo en el caso  \ref{vandermonde gral}.
+    \begin{align*}
+        \det(\mathtt V_3) &= \left|\begin{matrix} 1 & \lambda_1 & \lambda_1^2 \\ 1 & \lambda_2 & \lambda_2^2 \\ 1 & \lambda_3 & \lambda_3^2 \end{matrix}\right| \\
+        &\stackrel{C_3-\lambda_1 C_2}{=} \left|\begin{matrix}  1 & \lambda_1 & 0 \\ 1 & \lambda_2 & \lambda_2(\lambda_2-\lambda_1) \\ 1 & \lambda_3 & \lambda_3(\lambda_3-\lambda_1)  \end{matrix}\right| \\
+        &\stackrel{C_2-\lambda_1 C_1}{=} \left|\begin{matrix}  1 & 0 & 0 \\ 1 & \lambda_2 -\lambda_1& \lambda_2(\lambda_2-\lambda_1) \\ 1 & \lambda_3-\lambda_1 & \lambda_3(\lambda_3-\lambda_1)  \end{matrix}\right| \\
+        &\overset{F_2 /(\lambda_2-\lambda_1)}{\stackrel{F_3 /(\lambda_3-\lambda_1)}{=}}(\lambda_2-\lambda_1)(\lambda_3-\lambda_1)  \left|\begin{matrix}  1 & 0 & 0 \\ 1 & 1& \lambda_2 \\ 1 & 1 & \lambda_3 \end{matrix}\right| \\
+        &{=}(\lambda_2-\lambda_1)(\lambda_3-\lambda_1)  \left|\begin{matrix}   1& \lambda_2 \\ 1 & \lambda_3 \end{matrix}\right| \\
+        &= (\lambda_2-\lambda_1) (\lambda_3-\lambda_1)(\lambda_3-\lambda_2).
+    \end{align*}
+    Para el último cálculo desarrollamos por la primera fila. 
+
+    Observar que $\det(V_3)$ es $ (\lambda_2-\lambda_1) (\lambda_3-\lambda_1)$ por una matriz de Vandermonde de dimensión $2 \times 2$. Esto se  puede generalizar para calcular el determinante de una matriz de Vandermonde de mayor dimensión, como veremos a continuación. 
+
+    \vskip .2cm
+    \ref{vandermonde gral} 
+
+    \vskip .2cm
+    \ref{vandermonde sol}
 
     \qed
         
