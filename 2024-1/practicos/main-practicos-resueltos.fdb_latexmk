@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1703172302 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/main-practicos-resueltos.tex" "main-practicos-resueltos.pdf" "main-practicos-resueltos" 1703172303
+["pdflatex"] 1703249692 "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/main-practicos-resueltos.tex" "main-practicos-resueltos.pdf" "main-practicos-resueltos" 1703249694
   "/etc/texmf/web2c/texmf.cnf" 1701780632 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/alejandrotiraboschi/Documentos/GitHub/Algebra-II/2024-1/practicos/main-practicos-resueltos.tex" 1703160630 3390 69a72eef5bec815478414bdfd75e8e21 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/kurier/ec-kurier-sc.enc" 1276043553 2453 1d8617ea44de6f9e3d32432cbb362a22 ""
@@ -195,13 +195,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1701780664 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1701780688 2800016 ec8e1385f8f3f50a7458c230af89926c ""
-  "main-practicos-resueltos.aux" 1703172303 8293 d8d2d88a66de58a09e00767f7d38e384 "pdflatex"
-  "main-practicos-resueltos.out" 1703172303 2429 0bd1b6c4076ea28d475a655795b9d198 "pdflatex"
+  "main-practicos-resueltos.aux" 1703249693 8502 2d9d033882157caf75962a156f29644c "pdflatex"
+  "main-practicos-resueltos.out" 1703249693 2429 0bd1b6c4076ea28d475a655795b9d198 "pdflatex"
   "main-practicos-resueltos.tex" 1703160630 3390 69a72eef5bec815478414bdfd75e8e21 ""
   "practico-1-resuelto.tex" 1703160630 28762 e5e36a0d6df3572b8dcff849ed0dc88e ""
   "practico-2-resuelto.tex" 1703160630 39850 cfc58011028b071d5e3489eee36fa3ea ""
   "practico-3-resuelto.tex" 1703160630 26889 bd3561c7ba481a907d868bd01f323903 ""
-  "practico-4-resuelto.tex" 1703172302 12787 caee876e9d110492a511152ae9f9c478 ""
+  "practico-4-resuelto.tex" 1703249691 19851 2823037133a2ebfa7e2494d3d32fabc3 ""
   "practico-5-resuelto.tex" 1703160630 89 7cc154a75110b29a7494cc0d2d3f9fae ""
   "practico-6-resuelto.tex" 1703160630 89 e41475ed3ba756279673bf04835c9d85 ""
   "practico-7-resuelto.tex" 1703160630 89 c13d0a6f1e478c03f770e3f5ccbf8a95 ""
