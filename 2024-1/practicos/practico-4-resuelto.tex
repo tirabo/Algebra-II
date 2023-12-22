@@ -351,6 +351,25 @@
     \end{align*}
     En  el renglón anterior desarrollamos por la fila 2. Luego, $\det(D) = -2\pi$. Por lo tanto, $D$  es invertible.
 
+    \vskip .2cm
+    \textbf{Cálculo de $\det(E)$.} Para facilitar la escritura escribamos la matriz como una matriz de bloques, 
+    $$
+    E = \begin{bmatrix}  E_1&0\\0&E_2 \end{bmatrix},
+    $$
+    donde $E_1$ es el primer bloque diagonal $3 \times 3$ y $E_2$ es el segundo  bloque diagonal de $2 \times 2$.
+    
+    Desarrollemos por la última columna dos veces
+    \begin{align*}
+        \det(E) &= (-1) \cdot \left| \begin{matrix}  E_1&0\\0&1 \end{matrix} \right| + 4 \cdot\left| \begin{matrix}  E_1&0\\0&2 \end{matrix} \right| \\
+        &= (-1) \cdot 1 \left|   E_1 \right| + 4 \cdot 2\cdot\left|   E_1 \right| \\
+        &= ((-1) \cdot 1 + 4 \cdot 2) \left|   E_1 \right|.
+    \end{align*}
+
+    Averigüemos ahora el determinate de $E_1$. Podríamos hacerlo por cálculo directo, pero  lo haremos transformando   $E_1$ en triangular superior por medio de operaciones elementales de fila y luego multiplicando los elementos de la diagonal. 
+    \begin{align*}
+        E_1 {\underset{F_3 -2F_1}{\stackrel{F_2-3F_1}{\longrightarrow}}} \begin{bmatrix}1&-1&2\\ 0&4&-2\\ 0&1&1  \end{bmatrix}
+    \end{align*}
+
     \qed
     
     \item Sean $A$ y  $B$ matrices $n \times n$. Probar que:
@@ -359,6 +378,8 @@
         \item Si $B$ es invertible, entonces $\det(B A B^{-1}) = \det (A)$.
         \item\label{-A} $\textcircled{a}$ $\det(-A) = (-1)^n\det (A)$.
     \end{enumerate}
+
+
     \rta
 
     \qed
