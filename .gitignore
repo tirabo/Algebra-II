@@ -6,4 +6,6 @@
 *.toc
 *.ilg
 *.ind
+*.fdb_latexmk
+
 
