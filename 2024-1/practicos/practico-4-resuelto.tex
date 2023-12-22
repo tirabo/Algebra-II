@@ -118,14 +118,15 @@
                 1&3&5&7&9 \\
             \end{bmatrix}.
             $$
-            \rta Recordemos que si $A$ es una matriz triangular superior, entonces $\det(A)$ es el producto de los elementos de la diagonal principal. Por otro  lado, las operaciones elementales por fila  tienen el siguiente efecto en el cálculo del determinante:
+            \rta Recordemos que si $M$ es una matriz triangular superior, entonces $\det(M)$ es el producto de los elementos de la diagonal principal. Por otro  lado, las operaciones elementales por fila  necesarias para obtener una matriz triangular superior tienen el siguiente efecto en el cálculo del determinante:
             \begin{itemize}
-                \item el multiplicar una fila por un escalar $\lambda$ cambia el determinante por $\lambda$ veces el determinante anterior,
                 \item intercambiar dos filas cambia el signo del determinante, y
                 \item sumar a una fila un múltiplo de otra fila no cambia el determinante.
             \end{itemize}
+            La operación elemental de multiplicar una fila por una constante no es necesaria para conseguir una matriz triangular superior.
 
-            Es claro la matriz original tiene todas las filas iguales y por lo tanto $\det(A) = 0$. 
+            \vskip .2cm
+        \textbf{Cálculo de $\det(A)$.} Un  caso particular es cuando $a=0$,  en ese caso la matriz tiene todas las filas iguales y por lo tanto $\det(A) = 0$. 
             
             Analicemos el caso  $a\ne 1$.
 
@@ -137,30 +138,80 @@
                     0&1-a&a-1&0 \\
                     0&1-a&0&a-1 \\
                 \end{bmatrix}
-                \underset{F_4 / (1-a)}{\underset{F_3 / (1-a)}{\stackrel{F_1 /(1-a)}{\longrightarrow}}} 
+                {\stackrel{F_1 \leftrightarrow F_4}{\longrightarrow}} 
                 \begin{bmatrix}
-                    0&1+a&1&1 \\ 
+                    0&1-a&0&a-1 \\
                     1&a&1&1 \\
-                    0&1&-1&0 \\
-                    0&1&0&-1 \\
+                    0&1-a&a-1&0 \\
+                    0&1-a^2&1-a&1-a \\ 
                 \end{bmatrix} \\
-                &\underset{F_3 -F_4}{\underset{F_2 -aF_4}{\stackrel{F_1-(1+a)F_4}{\longrightarrow}}}
+                &{\stackrel{F_1 \leftrightarrow F_2}{\longrightarrow}}
                 \begin{bmatrix}
-                    0&0&1&2+a \\ 
-                    1&0&1&1+a \\
-                    0&0&-1&1 \\
-                    0&1&0&-1 \\
+                    1&a&1&1 \\
+                    0&1-a&0&a-1 \\
+                    0&1-a&a-1&0 \\
+                    0&1-a^2&1-a&1-a \\ 
                 \end{bmatrix} 
-                \stackrel{(-1)F_3}{\longrightarrow}
+                {\underset{F_4 -(1+a)F_2}{\stackrel{F_3-F_2}{\longrightarrow}}}
                 \begin{bmatrix}
-                    0&0&1&2+a \\ 
-                    1&0&1&1+a \\
-                    0&0&1&-1 \\
-                    0&1&0&-1 \\
+                    1&a&1&1 \\
+                    0&1-a&0&a-1 \\
+                    0&0&a-1&1-a \\
+                    0&0&1-a&2-a-a^2 \\ 
+                \end{bmatrix}  \\
+                &\stackrel{F_4 + F_3}{\longrightarrow}
+                \begin{bmatrix}
+                    1&a&1&1 \\
+                    0&1-a&0&a-1 \\
+                    0&0&a-1&1-a \\
+                    0&0&0&3-2a-a^2 \\ 
                 \end{bmatrix} 
             \end{align*}
-            
-           
+        Como solo hicimos dos permutaciones de filas, el determinante de  $A$ es igual al determinante de la última matriz,  es decir
+        $$
+        \det(A) = (1-a)(a-1)(3-2a-a^2) = a^4 - 6 a^2 + 8 a - 3.
+        $$
+        
+        \vskip .2cm
+
+        \textbf{Cálculo de $\det(B)$.}
+        \begin{align*}
+            B \underset{F_5 -F_1}{\underset{F_4 -F_1}{\underset{F_3 -F_1}{\underset{F_2 -F_1}{\longrightarrow}}}} &  \begin{bmatrix}
+                1&1&1&1&1 \\
+                0&2&2&2&2 \\
+                0&2&4&4&4 \\
+                0&2&4&6&6 \\
+                0&2&4&6&8 \\
+            \end{bmatrix}
+            \underset{F_5 -F_2}{\underset{F_4 -F_2}{\underset{F_3 -F_2}{\longrightarrow}}}
+            \begin{bmatrix}
+                1&1&1&1&1 \\
+                0&2&2&2&2 \\
+                0&0&2&2&2 \\
+                0&0&2&4&4 \\
+                0&0&2&4&6 \\
+            \end{bmatrix} \\
+            \underset{F_5 -F_3}{\underset{F_4 -F_3}{\longrightarrow}}&
+            \begin{bmatrix}
+                1&1&1&1&1 \\
+                0&2&2&2&2 \\
+                0&0&2&2&2 \\
+                0&0&0&2&2 \\
+                0&0&0&2&4 \\
+            \end{bmatrix}
+            \underset{F_5 -F_4}{\longrightarrow}
+            \begin{bmatrix}
+                1&1&1&1&1 \\
+                0&2&2&2&2 \\
+                0&0&2&2&2 \\
+                0&0&0&2&2 \\
+                0&0&0&0&2 \\
+            \end{bmatrix}.                
+        \end{align*}
+        El determinante de  $B$ es igual al determinante de la última matriz,  es decir:
+        $$
+        \det(B) = 2^4 = 16.
+        $$
 
 
 
@@ -173,7 +224,7 @@
     Calcular:
     
     \begin{enumerate}
-    \item $\det(PQR)$, donde $P$, $Q$ y $R$ son las matrices que se obtienen a partir de $A$, $B$ y $C$ mediante operaciones elementales por filas de la siguiente manera
+    \item\label{det pqr} $\det(PQR)$, donde $P$, $Q$ y $R$ son las matrices que se obtienen a partir de $A$, $B$ y $C$ mediante operaciones elementales por filas de la siguiente manera
      \begin{align*}
      A\overset{F_1+2F_2}{\longrightarrow} P,\quad
      B\overset{3F_3}{\longrightarrow} Q
@@ -186,9 +237,20 @@
       \item[$\circ$] $Q$ se obtiene a partir de $B$ multiplicando la fila $3$ por $3$.
       \item[$\circ$] $R$ se obtiene a partir de $C$ intercambiando las filas $1$ y $4$.
      \end{itemize}
-        \item $\det(A^2BC^tB^{-1})$ \ y \ $\det(B^2C^{-1}AB^{-1}C^{t})$.
+        \item\label{det a2bc..} $\det(A^2BC^tB^{-1})$ \ y \ $\det(B^2C^{-1}AB^{-1}C^{t})$.
     \end{enumerate}
     \rta
+
+    \ref{det pqr} La matriz $P$ se obtiene de $A$ sumando a la fila $1$ la fila $2$ multiplicada por $2$. Esta operación elemental no cambia el determinante, luego $\det(P) = \det(A) = -1$. La matriz $Q$ se obtiene de $B$ multiplicando la fila $3$ por $3$, luego $\det(Q) = 3\cdot \det(B) = 6$. La matriz $R$ se obtiene de $C$ intercambiando las filas $1$ y $4$, luego $\det(R) = -\det(C) = -3$. 
+
+    \vskip .2cm
+    \ref{det a2bc..}    \begin{align*}
+        \det(A^2BC^tB^{-1}) &= \det(A^2)\det(B)\det(C^t)\det(B^{-1})\\
+        &= \det(A)^2\det(B)\det(C)\det(B)^{-1}\\
+        &= (-1)^2\cdot 2\cdot 3\cdot 1/2\\
+        &= 3.
+    \end{align*}
+
 
     \qed
     
@@ -214,7 +276,9 @@
     \end{bmatrix}.
     $$
     \rta
+    $A \underset{F_2/2}{\overset{2F_1}{\longrightarrow}} B$, luego  $\det(B) = \frac12 \cdot 2\cdot \det(A) = \det(A) = 5$.
 
+    $A \underset{F_3+F_1}{\overset{F_2+3F_1}{\longrightarrow}} C$, luego  $\det(C) = \det(A) = 5$.
     \qed
     
     \item Determinar todos los valores de $c\in\mathbb{R}$ tales que las siguientes matrices sean invertibles.
@@ -222,39 +286,70 @@
     A=\begin{bmatrix}4& c&3\\c&2&c\\ 5&c&4 \end{bmatrix},\qquad
     B=\begin{bmatrix} 1&c&-1\\ c&1&1\\0&1&c\end{bmatrix}.
     \end{align*}
-    \rta
+    \rta recordar que una matriz es invertible si y solo si  su determinante es no nulo. Luego, debemos calcular el determinante de $A$ y $B$ y ver para qué valores de $c$ son distintos de cero.
 
+
+    Para el cálculo del determinante desarrollamos por la primera fila.
+    \begin{align*}
+        \det(A) &= 4\cdot \left|\begin{matrix} 2&c\\ c&4\end{matrix}\right| - c\cdot \left|\begin{matrix} c&c\\ 5&4\end{matrix}\right| + 3\cdot \left|\begin{matrix} c&2\\ 5&c\end{matrix}\right|\\
+        &= 4\cdot (8 - c^2) - c\cdot (4c - 5c) + 3\cdot (c^2 - 10)\\
+        &= 32 - 4c^2 - 4c^2 + 5c^2 + 3c^2 - 30\\
+        &=  2.    
+    \end{align*}
+    Como $\det(A) = 2 \ne 0$ independientemente del valor de $c$, la matriz $A$ es invertible para todo $c\in\mathbb{R}$.
+
+    Para el cálculo del determinante de $B$ desarrollamos por la primera fila.
+    \begin{align*}
+        \det(B) &= 1\cdot \left|\begin{matrix} 1&1\\ 1&c\end{matrix}\right| - c\cdot \left|\begin{matrix} c&1\\ 0&c\end{matrix}\right| - 1\cdot \left|\begin{matrix} c&1\\ 0&1\end{matrix}\right|\\
+        &= 1\cdot (c - 1) - c\cdot c^2 - 1\cdot c\\
+        &= -c^3 -  1.
+    \end{align*}
+    Luego, $\det(B) = 0$ si y solo si $c^3 = -1$, es decir si y solo si $c = -1$. Por lo tanto, la matriz $B$ es invertible si y solo si $c\ne -1$.
     \qed
+
+
     
     \item Calcular el determinante de las siguientes matrices, usando operaciones elementales por fila y/o columnas u otras propiedades del determinante. Determinar cuáles de ellas son invertibles.
-    
-    \begin{align*}
-    &A=
-    \begin{bmatrix}
-    -2&3&2&-6\\ 0&4&4&-5\\ 5&-6&-3&2\\ -3&7&0&0 \end{bmatrix},\quad
-    &&B=\begin{bmatrix} 2&0&0&0\\ 0&0&3&0\\ 0&-1&0&0\\ 0&0&0&4\end{bmatrix},\quad
-    &&
-    C=\begin{bmatrix}
-      -2&3&2&-6&0\\
-    0&4&4&-5&0\\
-    5&-6&-3&2&0\\
-    -3&7&0&0&0\\
-    1&1&1&1&1
-      \end{bmatrix},
-    \end{align*}
-    \begin{align*}
-    D=\begin{bmatrix}
-    1&2&3&0&0\\
-    -1&2&-13&6&\frac{1}{3}\\
-    2&0&0&0&0\\
-    11&1&0&0&0\\
-    \sqrt{2}&2&1&\pi&0\\
-    \end{bmatrix},&&
-    E=\begin{bmatrix}
-    1&-1&2&0&0\\ 3&1&4&0&0\\ 2&-1&5&0&0 \\0&0&0&2&1\\ 0&0&0&-1&4
-    \end{bmatrix}.
-    \end{align*}
+    \begin{equation*}
+    A=
+    \begin{bmatrix}-2&3&2&-6\\ 0&4&4&-5\\ 5&-6&-3&2\\ -3&7&0&0 \end{bmatrix},\quad
+    B=\begin{bmatrix} 2&0&0&0\\ 0&0&3&0\\ 0&-1&0&0\\ 0&0&0&4\end{bmatrix},\quad
+    \end{equation*}
+    \begin{equation*}
+        C=\begin{bmatrix} -2&3&2&-6&0\\ 0&4&4&-5&0\\ 5&-6&-3&2&0\\ -3&7&0&0&0\\ 1&1&1&1&1\end{bmatrix},\quad
+    D=\begin{bmatrix}1&2&3&0&0\\-1&2&-13&6&\frac{1}{3}\\2&0&0&0&0\\11&1&0&0&0\\\sqrt{2}&2&1&\pi&0\end{bmatrix},
+    \end{equation*}
+    \begin{equation*}
+    E=\begin{bmatrix}1&-1&2&0&0\\ 3&1&4&0&0\\ 2&-1&5&0&0 \\0&0&0&2&1\\ 0&0&0&-1&4    \end{bmatrix}.
+    \end{equation*}
     \rta
+
+    \textbf{Cálculo de $\det(A)$.} Calculamos el determinante de $A$ desarrollando por la última fila debido a que tiene dos   $0$. 
+    \begin{align*}
+        \det(A) &= 3\cdot \left|\begin{matrix} 3&2&-6\\ 4&4&-5\\ -6&-3&2\end{matrix}\right| + 7\cdot \left|\begin{matrix} -2&2&-6\\ 0&4&-5\\ 5&-3&2\end{matrix}\right|\\
+        &= 3\cdot (-49) + 7\cdot  84\\
+        &= 441.
+    \end{align*}
+    Como $\det(A) \ne 0$, la matriz $A$ es invertible.
+
+
+    \vskip .2cm
+    \textbf{Cálculo de $\det(B)$.} Permutando  la fila $2$ con la fila $3$ obtenemos una matriz diagonal con $2$, $3$, $-1$, $4$ en la diagonal, luego $\det(B) = -(2\cdot 3\cdot (-1)\cdot 4) = 24$. Por lo tanto, $B$  es invertible.
+
+    \vskip .2cm
+    \textbf{Cálculo de $\det(C)$.} En este caso conviene desarrollar por la última columna debido a que tiene cuatro $0$. Entonces
+    \begin{equation*}
+        \det(C) = 1\cdot \left|\begin{matrix} -2&3&2&-6\\ 0&4&4&-5\\ 5&-6&-3&2\\ -3&7&0&0\end{matrix}\right|
+    \end{equation*}
+    Observar que la matriz de la derecha es la matriz $A$ del ejercicio anterior. Luego $\det(C) = 1\cdot 441 = 441$. Por lo tanto, $C$  es invertible.
+
+    \vskip .2cm
+    \textbf{Cálculo de $\det(D)$.} Desarrollaremos por la última columna y luego de nuevo por la última columna.
+    \begin{align*}
+        \det(D) &= -\frac13 \cdot  \left|\begin{matrix}1&2&3&0\\2&0&0&0\\11&1&0&0\\\sqrt{2}&2&1&\pi\end{matrix}\right| =  -\frac13 \cdot\pi \cdot  \left|\begin{matrix}1&2&3\\2&0&0\\11&1&0\end{matrix}\right|\\
+        &=  -\frac13 \cdot\pi \cdot (-2) \cdot  \left|\begin{matrix}2&3\\1&0\end{matrix}\right| =  -\frac13 \cdot\pi \cdot (-2) \cdot (-3) = -2\pi.
+    \end{align*}
+    En  el renglón anterior desarrollamos por la fila 2. Luego, $\det(D) = -2\pi$. Por lo tanto, $D$  es invertible.
 
     \qed
     
