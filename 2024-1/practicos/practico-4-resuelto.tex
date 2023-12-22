@@ -461,6 +461,44 @@
     \vskip .2cm
     \ref{vandermonde gral} 
 
+
+$$\begin{vmatrix} V \end{vmatrix}=\begin{vmatrix}
+    1 & \lambda_1 & \lambda_1^2 & \dots & \lambda_1^{n-1}\\
+    1 & \lambda_2 & \lambda_2^2 & \dots & \lambda_2^{n-1}\\
+    1 & \lambda_3 & \lambda_3^2 & \dots & \lambda_3^{n-1}\\
+    \vdots & \vdots & \vdots & \ddots &\vdots \\
+    1 & \lambda_n & \lambda_n^2 & \dots & \lambda_n^{n-1}\\
+    \end{vmatrix}=\begin{vmatrix}
+    1 & 0 & 0 & \dots & 0\\
+    1 & \lambda_2-\lambda_1 & \lambda_2(\lambda_2-\lambda_1) & \dots & \lambda_2^{n-2}(\lambda_2-\lambda_1)\\
+    1 & \lambda_3-\lambda_1 & \lambda_3(\lambda_3-\lambda_1) & \dots & \lambda_3^{n-2}(\lambda_3-\lambda_1)\\
+    \vdots & \vdots & \vdots & \ddots &\vdots \\
+    1 & \lambda_n-\lambda_1 & \lambda_n(\lambda_n-\lambda_1) & \dots & \lambda_n^{n-2}(\lambda_n-\lambda_1)\\
+    \end{vmatrix}
+$$
+
+$$
+\begin{vmatrix} V \end{vmatrix}=\begin{vmatrix}
+\lambda_2-\lambda_1 & \lambda_2(\lambda_2-\lambda_1) & \dots & \lambda_2^{n-2}(\lambda_2-\lambda_1)\\
+\lambda_3-\lambda_1 & \lambda_3(\lambda_3-\lambda_1) & \dots & \lambda_3^{n-2}(\lambda_3-\lambda_1)\\
+\vdots & \vdots & &\vdots \\
+\lambda_n-\lambda_1 & \lambda_n(\lambda_n-\lambda_1) & \dots & \lambda_n^{n-2}(\lambda_n-\lambda_1)\\
+\end{vmatrix}
+$$
+
+$$
+\begin{vmatrix} V \end{vmatrix}=
+(\lambda_2-\lambda_1)(\lambda_3-\lambda_1)\dots(\lambda_n-\lambda_1)
+\begin{vmatrix}
+1 & \lambda_2 & \lambda_2^2 & \dots & \lambda_2^{n-2}\\
+1 & \lambda_3 & \lambda_3^2 & \dots & \lambda_3^{n-2}\\
+1 & \lambda_4 & \lambda_4^2 & \dots & \lambda_4^{n-2}\\
+\vdots & \vdots & \vdots & &\vdots \\
+1 & \lambda_n & \lambda_n^2 & \dots & \lambda_n^{n-2}\\
+\end{vmatrix}
+$$
+    
+
     \vskip .2cm
     \ref{vandermonde sol}
 
