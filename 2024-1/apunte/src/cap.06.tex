@@ -19,14 +19,14 @@
         \end{equation*}
         También recordemos que si  $x \in \R^n$,  entonces la norma de $x$ es $||x|| = \sqrt{\la x,x\ra} = \sqrt{ \sum_{i=1}^{n} x_i^2}$.
         
-        Como hemos visto en  el capítulo \ref{chap-vectores} el producto escalar  cumple cuatro propiedades básicas,  que hemos llamado \ref{prop-P1} (simetría), \ref{prop-P2} y \ref{prop-P3} (bilinealidad o linealidad en cada variable), y \ref{prop-P4} (positividad). Estas son las únicas propiedades que usaremos, y no la definición explícita de producto escalar,  para deducir los resultados de esta sección. 
+        Como hemos visto en  el capítulo \ref{chap-vectores} el producto escalar  cumple cuatro propiedades básicas,  que hemos llamado \ref{prop-P1} (simetría), \ref{prop-P2} y \ref{prop-P3} (bilinealidad o linealidad en cada variable), y \ref{prop-P4} (positividad).  Para deducir los resultados de esta sección las únicas propiedades que usaremos son  \ref{prop-P1}, \ref{prop-P2}, \ref{prop-P3} y \ref{prop-P4}. Nunca usaremos alguna  definición explícita de producto escalar. 
         
-        \begin{definicion} Sea $V$  un espacio  vectorial y  una función
+        \begin{definicion}si para todo $v, w, u \in V$, se satisface:
+             Sea $V$  un espacio  vectorial y  una función
             \begin{equation*}
             \la \,,\,\ra: V \times V \to \R .
             \end{equation*}
-            Diremos que $\la \,,\,\ra$ es un \textit{producto interno}\index{producto interno} si para todo $v, w, u \in V$, se satisface:
-            
+            Diremos que $\la \,,\,\ra$ es un \textit{producto interno}\index{producto interno} 
             \begin{enumerate}[label=\textbf{P\arabic*.},ref=P\arabic*]
                 \item\label{prop-P1-2}
                 \begin{equation*}
@@ -70,7 +70,12 @@
         \end{ejemplo*}
             
             
-        
+        \begin{definicion}
+            Sea $V$  un espacio  vectorial y $\la \,,\,\ra$ un producto interno en $V$, entonces para todo $v \in V$, definimos la \textit{norma}\index{norma} de $v$ como 
+            $$
+            ||v|| = \sqrt{\la v,v\ra}.
+            $$
+        \end{definicion}
         
         \begin{proposicion} Sea $V$  un $\R$-espacio vectorial con producto interno $\la \,,\,\ra$ y sean  $x,y \in V$. Entonces, 
             \begin{enumerate}
