@@ -17,25 +17,23 @@
 
 \begin{enumerate}[topsep=6pt,itemsep=.4cm]
 
-
 \item\label{autovalores} Para cada una de las siguientes matrices, hallar sus autovalores reales, y para cada autovalor, dar una descripción paramétrica del autoespacio asociado sobre $\mathbb{R}$.
-
-$$
-\textrm{(a)\; } \left[\begin{matrix} 2 & 1\\ -1 & 4 \end{matrix} \right],
-\quad
-\textrm{(b)\; }
-\left[\begin{matrix} 1 & 0\\ 1 & -2 \end{matrix} \right],
-\quad \textrm{(c)\; } \left[\begin{matrix}2 & 0 & 0\\ -1 & 1& -1\\ 0 & 0 & 2 \end{matrix} \right] ,\quad
-\textrm{(d)\; } \begin{bmatrix} 3 & -5 \\ 1 & -1 \end{bmatrix},
-$$
-
-$$
-\textrm{(e)\; } \begin{bmatrix} \lambda & 0 & 0 \\ 1 & \lambda & 0\\ 0 & 1 & \lambda \\ \end{bmatrix}, \; \lambda\in \mathbb R,\quad
-\textrm{(f)\; } \left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \operatorname{sen}\theta\\ 0 & -\operatorname{sen}\theta & \cos\theta \end{matrix} \right], 0\leq \theta<2\pi.
-$$ 
+    \begin{multicols}{2}
+    \begin{enumerate}
+        \item\label{autovalores-1} $\left[\begin{matrix} 2 & 1\\ -1 & 4 \end{matrix} \right]$,\vskip .6cm 
+        \item\label{autovalores-2} $ \left[\begin{matrix} 1 & 0\\ 1 & -2 \end{matrix} \right]$, \vskip .5cm
+        \item\label{autovalores-3} $\left[\begin{matrix}2 & 0 & 0\\ -1 & 1& -1\\ 0 & 0 & 2 \end{matrix} \right]$,\vskip .2cm
+        \item\label{autovalores-4} $\begin{bmatrix} 3 & -5 \\ 1 & -1 \end{bmatrix}$,\vskip .2cm
+        \item\label{autovalores-5}  $\begin{bmatrix} \lambda & 0 & 0 \\ 1 & \lambda & 0\\ 0 & 1 & \lambda \\ \end{bmatrix}$, $\lambda\in \mathbb R$
+        \vskip .2cm
+        \item\label{autovalores-6} $\left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \operatorname{sen}\theta\\ 0 & -\operatorname{sen}\theta & \cos\theta \end{matrix} \right]$, $0\leq \theta<2\pi$.
+    \end{enumerate}
+    \end{multicols}
 
 
-\item\label{autovalores-complejos} Calcular los autovalores complejos de las matrices (d) y (f) del ejercicio anterior, y para cada autovalor, dar una descripción paramétrica del autoespacio asociado sobre $\mathbb{C}$.
+
+\item\label{autovalores-complejos} Calcular los autovalores complejos de las matrices \ref{autovalores-4} y \ref{autovalores-6} del ejercicio anterior, y para cada autovalor, dar una descripción paramétrica del autoespacio asociado sobre $\mathbb{C}$.
+
 \end{enumerate}
 
 \textbf{Observación.} Es oportuno destacar algunos fenómenos que podemos observar en los ejercicios \ref{autovalores}-\ref{autovalores-complejos}.
@@ -80,23 +78,27 @@ Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)
     \item  Si $A$ es invertible, entonces todo autovector de $A$ es autovector de $A^{-1}$.
 \end{enumerate}
 
+
+
+\item\label{mas} Repetir los ejercicios \ref{autovalores} y \ref{autovalores-complejos} con las siguientes matrices.
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item\label{mas-autovalores-1} $\begin{bmatrix} 2 & 3 \\ -1 & 1
+        \end{bmatrix} $,\vskip .6cm 
+        \item\label{mas-autovalores-2} $\begin{bmatrix} -9 & 4 & 4 \\ -8 & 3 & 4 \\ -16 & 8 & 7 \end{bmatrix} $, \vskip .5cm
+        \item\label{mas-autovalores-3} $\left[\begin{matrix}4 & 4 & -12\\ 1 & -1 & 1\\ 5 & 3 & -11 \end{matrix} \right] $,\vskip .2cm
+        \item\label{mas-autovalores-4} $\left[\begin{matrix}2 & 1 & 0 & 0\\ -1 & 4 & 0 & 0\\ 0 & 0 & 1 & 1 \\ 0 & 0 & 3 & -1\end{matrix} \right] $,\vskip .2cm
+        \item\label{mas-autovalores-5} $\begin{bmatrix} \lambda & 0 & 0 & \dots & 0  \\ 1 & \lambda & 0 &\dots & 0  \\ 0 & 1 & \lambda&  \dots & 0  \\ \vdots & \vdots & \quad & \ddots & \vdots\\ 0 &  0&   \dots & 1  & \lambda \end{bmatrix}$, $\lambda\in \mathbb R$. \vskip .2cm
+    \end{enumerate}
+    \end{multicols}
+
+
 \end{enumerate}
 
 \textbf{Ejercicios de repaso}
 Si ya hizo los ejercicios anteriores continue con la siguiente guía. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los exámenes.
 
 \begin{enumerate}[resume,topsep=6pt,itemsep=.4cm]
-
-\item\label{mas} Repetir los ejercicios \ref{autovalores} y \ref{autovalores-complejos} con las siguientes matrices.
-
-$$\textrm{(a)\; }\begin{bmatrix} 2 & 3 \\ -1 & 1
-\end{bmatrix}, \qquad
-\textrm{(b)\; }\begin{bmatrix} -9 & 4 & 4 \\ -8 & 3 & 4 \\ -16 & 8 & 7 \end{bmatrix}, \qquad \textrm{(c)\; } \left[\begin{matrix}4 & 4 & -12\\ 1 & -1 & 1\\ 5 & 3 & -11 \end{matrix} \right],$$
-
-$$
-\textrm{(d)\; } \left[\begin{matrix}2 & 1 & 0 & 0\\ -1 & 4 & 0 & 0\\ 0 & 0 & 1 & 1 \\ 0 & 0 & 3 & -1\end{matrix} \right],
-\quad \textrm{(e)\; } \begin{bmatrix} \lambda & 0 & 0 & \dots & 0  \\ 1 & \lambda & 0 &\dots & 0  \\ 0 & 1 & \lambda&  \dots & 0  \\ \vdots & \vdots & \quad & \ddots & \vdots\\ 0 &  0&   \dots & 1  & \lambda \end{bmatrix}, \; \lambda\in \mathbb R.
-$$
 
 
 \item Sea $A\in\mathbb{K}^{n\times n}$, y sea $f(x) = a_0 + a_1 x + \dots + a_nx^n$, $n \geq 1$, $a_i\in\mathbb{K}$, $a_n \neq 0$, un polinomio. Sea $f(A)$ la matriz $n \times n$ definida por

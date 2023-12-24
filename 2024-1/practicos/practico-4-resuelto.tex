@@ -537,8 +537,7 @@ Hay otras situaciones donde el sistema tiene solución, pero no es única. Por  
     \ref{det VoF det(A+b)} Como ya fue visto en la teórica esta afirmación es falsa y un ejemplo sencillo es el siguiente:   
     \begin{equation*}
         A = \begin{bmatrix} 1&0\\0&0 \end{bmatrix}, \qquad B = \begin{bmatrix} 0&0\\0&1 \end{bmatrix}.
-    \end{equation*}Existen una matriz $3\times 2$, $A$, y una matriz $2\times 3$, $B$, tales que $\det(AB) \neq 0$.
-    En este caso $\det(A) = \det(B) = 0$ y $\det(A+B) = 1$.
+    \end{equation*} En este caso $\det(A) = \det(B) = 0$ y $\det(A+B) = 1$.
     
     \vskip .2cm
     \ref{det VoF det 3x2} Esta afirmación es falsa y la a continuación haremos una demostración de este hecho. Observar que con un contraejemplo no  basta, pues debemos demostrar  que dadas $A$ matriz  $3\times 2$ y $B$ matriz $2\times 3$, \textit{cualesquiera}, entonces  que $\det(AB) = 0$.
@@ -546,12 +545,12 @@ Hay otras situaciones donde el sistema tiene solución, pero no es única. Por  
     Haremos operaciones elementales por fila en la matriz $A$ para transformarla en una matriz triangular superior. Como en el caso $3 \times 3$  hacer operaciones elementales por fila  es equivalente a multiplicar a izquierda por matrices elementales $3 \times 3$. 
     
     Por lo tanto si $A'$ es una matriz triangular superior obtenida de $A$ por operaciones elementales por fila, entonces $A' = EA$ para alguna matriz $E$ invertible $3 \times 3$ donde  $E$ es producto de matrices elementales. Como $\det(EAB) = \det(E)\det(AB)$, entonces  $\det(EAB) \ne 0 $ si y solo si $\det(AB) \ne 0$.
-
+\vskip .2cm
     Ahora bien,  $A'$ una matriz $3 \times 2$ triangular superior tiene la forma 
     $$
     A' = \begin{bmatrix} a&b\\0&c\\0&0 \end{bmatrix},
     $$
-    por l0 tanto
+    por lo tanto
     $$
     A'B = \begin{bmatrix} a&b\\0&c\\0&0 \end{bmatrix} \begin{bmatrix} x&y&z\\u&v&w \end{bmatrix} = \begin{bmatrix} ax+bu&ay+bv&az+bw\\0&cy&cz\\0&0&0 \end{bmatrix}.
     $$ 
