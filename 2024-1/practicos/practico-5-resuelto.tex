@@ -148,6 +148,20 @@
     \item\label{autovalores-complejos} Calcular los autovalores complejos de las matrices \ref{autovalores-4} y \ref{autovalores-6} del ejercicio anterior, y para cada autovalor, dar una descripción paramétrica del autoespacio asociado sobre $\mathbb{C}$.
     
     \rta
+    
+    En el caso de la matriz \ref{autovalores-4} del ejercicio anterior, el polinomio característico es $x^2-2x+2$ como ya fue calculado en el ejercicio anterior. 
+    Por lo tanto sus raíces son
+    $$
+    \lambda_{1,2} = \frac{2\pm\sqrt{4-8}}{2} = 1\pm i.
+    $$
+    Para calcular el autoespacio asociado a $\lambda_1 = 1+i$ resolvemos el sistema  $((1+i)\Id-D)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} 1+i-3 & 5\\ -1 & 1+i+1 \end{bmatrix} = \begin{bmatrix} -2+i & 5\\ -1 & 2+i \end{bmatrix} \stackrel{F_2/(-1)}{\longrightarrow} \begin{bmatrix} -2+i & 5\\ 1 & -2-i \end{bmatrix} \\
+        &\qquad\stackrel{F_1 + (2-i) F_2}{\longrightarrow} \begin{bmatrix} 0 & 5-(2+i)(2-i)\\ 1 & -2-i \end{bmatrix} =\begin{bmatrix} 0 & 0\\ 1 & -2-i \end{bmatrix} 
+    \end{align*}
+
+    
+    
 
 
     \vskip .2cm
