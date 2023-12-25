@@ -60,7 +60,7 @@ Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)
         \item Si $A$ no es invertible, probar que los autovalores de  $A$ son $0$ y $\operatorname{Tr}(A)$.
     \end{enumerate}
 
-\item Sea $A\in\mathbb{K}^{n\times n}$. Probar que el polinomio $\tilde\chi_A(x)=\det(x\operatorname{Id}_n-A)$ y el polinomio característico de $A$ tienen las mismas raíces.
+    \item Sea $A\in\mathbb{K}^{n\times n}$. Probar que el polinomio $\tilde\chi_A(x)=\det(A-x\operatorname{Id}_n)$ y el polinomio característico de $A$ tienen las mismas raíces.
 
 \end{enumerate}
 
@@ -106,10 +106,10 @@ $$f(A) = a_0 \operatorname{Id}_n + a_1 A + \dots + a_n A^n.$$
 Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)$ con autovalor $f(\lambda)$.
 
 
-\item\label{caracteristico-otro} {En este ejercicio consideraremos el polinomio $\tilde\chi_A(x)=\det(x\operatorname{Id}_n-A)$.}
+\item\label{caracteristico-otro} 
 
 \begin{enumerate}
-\item  Calcular el polinomio $\tilde\chi_A(x)$ de las siguientes matrices.
+\item  Calcular el polinomio característico de las siguientes matrices.
 \begin{align*}
 A_2 := \begin{bmatrix} 0 & -a_0 \\ 1 & -a_1
 \end{bmatrix},\quad\quad
@@ -118,39 +118,33 @@ A_3 := \begin{bmatrix} 0 & 0 & -a_0 \\ 1 & 0 & -a_1 \\ 0 & 1 & -a_2
 \end{align*}
 donde $a_0, a_1, a_2$ son escalares.
 
-\item\label{matriz de un polinomio} $\textcircled{a}$ Sean $a_0, ..., a_{n-1}$ escalares. Calcular el polinomio $\tilde\chi_A(x)$ de
+\item\label{matriz de un polinomio} $\textcircled{a}$ Sean $a_0, ..., a_{n-1}$ escalares. Calcular el polinomio característico de
 \begin{align*}
 A_n := \begin{bmatrix} 0 & 0 & 0 &\dots & 0 & -a_0 \\ 1 & 0 & 0&  \dots & 0  & -a_1 \\ 0 & 1 & 0&  \dots & 0  & -a_2 \\ \vdots & \vdots & \ddots & \quad  & \vdots\\ 0 & 0 & 0 & \dots & 1  & -a_{n-1}
 \end{bmatrix}.        
  \end{align*}
 
- \item Deducir que dado un polinomio mónico $p(x)$ siempre existe una matriz $A$ tal que $\tilde\chi_A(x)=p(x)$.
-
-
+ \item Deducir que dado un polinomio mónico $p(x)$ siempre existe una matriz $A$ tal que $\chi_A(x)=p(x)$.
 \end{enumerate}
 
 
-\item\label{tr det}$\textcircled{a}$ {\bf En este ejercicio consideraremos el polinomio $\tilde\chi_A(x)=\det(x\operatorname{Id}_n-A)$.}
-Sea $A\in\mathbb{K}^{n\times n}$, y \ $\tilde\chi_A(x) = x^n+a_{n-1}x^{n-1}+\cdots+a_0$. Probar que
-
-
+\item\label{tr det}$\textcircled{a}$ 
+Sea $A\in\mathbb{K}^{n\times n}$, y \ $\chi_A(x) = x^n+a_{n-1}x^{n-1}+\cdots+a_0$. Probar que
 \begin{enumerate}
-    \item $a_0 = (-1)^n \det(A)$.
-    \item $a_{n-1} = - \operatorname{Tr}(A)$.
+    \item\label{tr det a} $a_0 = (-1)^n \det(A)$.
+    \item\label{tr det b} $a_{n-1} = - \operatorname{Tr}(A)$.
 \end{enumerate}
 
 
-\item\label{complejos} $\textcircled{a}$ {\bf En este ejercicio consideraremos el polinomio $\tilde\chi_A(x)=\det(x\operatorname{Id}_n-A)$.} Sea \\ $A\in\mathbb{C}^{n\times n}$. Probar que si $\lambda_1,\dots,\lambda_n \in \mathbb C$ son los autovalores de $A$
+\item\label{complejos} $\textcircled{a}$  Sea $A\in\mathbb{C}^{n\times n}$. Probar que si $\lambda_1,\dots,\lambda_n \in \mathbb C$ son los autovalores de $A$
 (posiblemente repetidos), entonces se cumple que:
-
-
 \begin{enumerate}
-    \item $\det(A)=\lambda_1\cdots \lambda_n$.
-    \item $\operatorname{Tr}(A)=\lambda_1+\cdots+\lambda_n$.
+    \item\label{complejos a} $\det(A)=\lambda_1\cdots \lambda_n$.
+    \item\label{complejos b} $\operatorname{Tr}(A)=\lambda_1+\cdots+\lambda_n$.
 \end{enumerate}
 
 \subsection*{Aclaración}
-Los ejercicios \ref{tr det} (b) y \ref{complejos} (b) no son fáciles de probar y no son evaluables. Pero ya que enunciamos los items (a) es interesante saber que valen los items (b).
+Los ejercicios \ref{tr det}  \ref{tr det b} y \ref{complejos}  \ref{complejos b} no son fáciles de probar y no sería posible que estuvieran en una evaluación. Pero dado que enunciamos los items  \ref{tr det}  \ref{tr det a} y \ref{complejos}  \ref{complejos a}, es interesante saber que valen los items  \ref{tr det}  \ref{tr det b} y \ref{complejos}  \ref{complejos b}, respectivamente.
 % Demostración: Por hipotesis el polinomio característico de $A$ se descompone de la siguiente manera:
 % \begin{align*}
 % \chi_A(x)=(x-\lambda_1)(x-\lambda_2)\cdots(x-\lambda_n).
@@ -169,21 +163,22 @@ Los ejercicios \ref{tr det} (b) y \ref{complejos} (b) no son fáciles de probar 
 \ref{caracteristico-otro}\,\ref{matriz de un polinomio} Desarrollar el determinante por la primera fila y hacer inducción.
 
 
-\ref{tr det} (a) Evaluar el polinomio $\tilde\chi_A(x)$ en un valor apropiado para obtener el término independiente $a_0$.
+\ref{tr det} \ref{tr det a}\ref{tr det a} Evaluar el polinomio $\chi_A(x)$ en un valor apropiado para obtener el término independiente $a_0$.
 
 
-\ref{tr det} (b) Desarrollar el determinante de $x\operatorname{Id}-A$ por la primera columna y hacer inducción en el tama\~no de la matriz. Es decir, primero
+\ref{tr det} \ref{tr det b} Desarrollar el determinante de $x\operatorname{Id}-A$ por la primera columna y hacer inducción en el tamaño de la matriz. Es decir, primero
 \begin{align*}
-\tilde\chi_A(x) = \det(x\operatorname{Id}-A)&=\\
-(x-a_{11})\det((x\operatorname{Id}-A)(1|1))&+a_{21}\det((x\operatorname{Id}-A)(2|1))+\cdots+(-1)^n a_{n1}\det((x\operatorname{Id}-A)(n|1)).
+\chi_A(x) &= \det(x\operatorname{Id}-A)\\
+&=(x-a_{11})\det((x\operatorname{Id}-A)(1|1))+a_{21}\det((x\operatorname{Id}-A)(2|1))+\cdots\\
+&\qquad+(-1)^n a_{n1}\det((x\operatorname{Id}-A)(n|1)).
 \end{align*}
 De estos sumandos, el único sumando donde hay $x^{n-1}$ es $(x-a_{11})\det((x\operatorname{Id}-A)(1|1))$. Además, $\det((x\operatorname{Id}-A)(1|1))$ es el polinomio característico de la submatriz $A(1|1)$. Podemos aplicar la hipótesis inductiva a esta matriz y deducir que el coeficiente de $x^{n-1}$ en el producto de polinomios $(x-a_{11})\det((x\operatorname{Id}-A)(1|1))$ es $- \operatorname{Tr}(A)$.
 
 
 
-\ref{complejos} Sobre $\mathbb{C}$ podemos descomponer el polinomio $\tilde\chi_A(x)$ de la siguiente manera
+\ref{complejos} Sobre $\mathbb{C}$ podemos descomponer el polinomio $\chi_A(x)$ de la siguiente manera
 \begin{align*}
-\tilde\chi_A(x)=(x-\lambda_1)(x-\lambda_2)\cdots(x-\lambda_n). \qquad (\diamondsuit)
+\chi_A(x)=(x-\lambda_1)(x-\lambda_2)\cdots(x-\lambda_n). \qquad (\diamondsuit)
 \end{align*}
-Con esta igualdad podemos calcular los términos $a_0$ y $a_{n-1}$ de $\tilde\chi_A(x)$ de dos maneras. La primera es la obtenida en el ejercicio \ref{tr det}. La segunda es usando la multiplicación del lado derecho de $(\diamondsuit)$. Para el término $a_0$ hay que evaluar en un valor apropiado. Para el término $a_{n-1}$ hay que notar que para obtener $x^{n-1}$ debemos elegir una $x$ de todos los factores salvo en uno y un término del estilo $-\lambda_i$. Igualando lo que obtengamos probamos el ejercicio.
+Con esta igualdad podemos calcular los términos $a_0$ y $a_{n-1}$ de $\chi_A(x)$ de dos maneras. La primera es la obtenida en el ejercicio \ref{tr det}. La segunda es usando la multiplicación del lado derecho de $(\diamondsuit)$. Para el término $a_0$ hay que evaluar en un valor apropiado. Para el término $a_{n-1}$ hay que notar que para obtener $x^{n-1}$ debemos elegir una $x$ de todos los factores salvo en uno y un término del estilo $-\lambda_i$. Igualando lo que obtengamos probamos el ejercicio.
 
