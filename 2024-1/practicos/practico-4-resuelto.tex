@@ -408,13 +408,13 @@
     \det(AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA).
     $$
 
-    \ref{det B.A.B1} Como $BB^{-1} = Id$, entonces $\det(B^{-1})\det(B) = \det(Id) = 1$. Luego, $\det(B^{-1}) = 1/\det(B)$. Por lo tanto,
+    \ref{det B.A.B1} Como $BB^{-1} = \Id$, entonces $\det(B^{-1})\det(B) = \det(\Id) = 1$. Luego, $\det(B^{-1}) = 1/\det(B)$. Por lo tanto,
     \begin{align*}
         \det(B A B^{-1}) &= \det(B)\det(A)\det(B^{-1}) = \det(B)\det(B^{-1})\det(A)\\ &=  \det(B)\frac1{\det(B)}\det(A)=\det(A).
     \end{align*}
     
 
-    \ref{-A} Sea $Id$ es la matriz identidad $n \times n$. Observar que $-A = (-Id)A$. Luego, $\det(-A) = \det((-Id)A) = \det(-Id)\det(A)$. Como $-Id$ es una matriz diagonal con $-1$ en la diagonal, entonces $\det(-Id) = (-1)^n$. Por lo tanto, $\det(-A) = (-1)^n\det(A)$.
+    \ref{-A} Sea $\Id$ es la matriz identidad $n \times n$. Observar que $-A = (-\Id)A$. Luego, $\det(-A) = \det((-\Id)A) = \det(-\Id)\det(A)$. Como $-\Id$ es una matriz diagonal con $-1$ en la diagonal, entonces $\det(-\Id) = (-1)^n$. Por lo tanto, $\det(-A) = (-1)^n\det(A)$.
 
     \qed
     
@@ -557,7 +557,7 @@ Hay otras situaciones donde el sistema tiene solución, pero no es única. Por  
     La matriz resultante tiene la última fila con todos los coeficientes iguales a $0$, por lo tanto $\det(A'B) = 0$, lo cual implica que $\det(AB) = 0$, como queríamos demostrar.
 
     \vskip .2cm
-    \ref{inv A^n} Esta afirmación es verdadera. Si $A^n$ es no invertible, entonces $\det(A^n) = 0$. Como $\det(A^n) = \det(A)^n$, entonces $\det(A)^n = 0$. Como $\det(A)^n = (\det(A))^n$, entonces $\det(A) = 0$. Por lo tanto, $A$ es no invertible.
+    \ref{inv A^n} Esta afirmación es verdadera. Si $A^n$ es no invertible, entonces $\det(A^n) = 0$. Como $\det(A^n) = \det(A)^n$, entonces $\det(A)^n = 0$ y por lo tantos $\det(A) = 0$. En  consecuencia, $A$ es no invertible.
 
 
     \qed

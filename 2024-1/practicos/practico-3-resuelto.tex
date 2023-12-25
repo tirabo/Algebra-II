@@ -81,7 +81,7 @@ $
     A^3 &= A\cdot A^2 = A\cdot 11A = 11A^2 = 11^2A. 
 \end{align*}
 
-\noindent \textbf{Observación.} Este es un caso muy particular. En  el caso de una matriz escalar $c\operatorname{Id}$,  tenemos que  $(c\operatorname{Id})^n= c^n \operatorname{Id}$. Aquí tenemos una matriz $A$ tal que $A^n = 11^{n-1}A$.
+\noindent \textbf{Observación.} Este es un caso muy particular. En  el caso de una matriz escalar $c\Id$,  tenemos que  $(c\Id)^n= c^n \Id$. Aquí tenemos una matriz $A$ tal que $A^n = 11^{n-1}A$.
 
 \qed
 
@@ -453,7 +453,7 @@ Finalmente, la última matriz  tiene una MERF con una fila nula. Por lo tanto no
 Hallar matrices elementales $E_1,E_2,\dots,E_k$ tales que $E_kE_{k-1}\cdots E_2E_1A=\operatorname{I}_3$.
 \rta en  la primera matriz del ejercicio \ref{ej:inversas} realizamos 10 operaciones elementales de fila para llevar la matriz a la identidad. Si llamamos a la matriz $A$, entonces
 $$
-\operatorname{Id}_3= E_{10}E_9E_8E_7E_6E_5E_4E_3E_2E_1A,
+\Id_3= E_{10}E_9E_8E_7E_6E_5E_4E_3E_2E_1A,
 $$
 Donde 
 $$
@@ -482,7 +482,7 @@ $$
 
 
 \item ¿Es cierto que si $A$ y $B$ son matrices invertibles entonces $A+B$ es una matriz invertible? Justificar su respuesta.
-\rta es  falso, el ejemplo más sencillo es $\operatorname{Id} +(-\operatorname{Id}) =0$. Otro ejemplo, 
+\rta es  falso, el ejemplo más sencillo es $\Id +(-\Id) =0$. Otro ejemplo, 
 \begin{equation*}
     \begin{bmatrix}  1&0\\0&1 \end{bmatrix} + \begin{bmatrix}  1&1\\0&-1 \end{bmatrix} = \begin{bmatrix}  2&1\\0&0 \end{bmatrix}. 
 \end{equation*}\qed
@@ -551,8 +551,8 @@ Esta ``ida'' vale para cualquier matriz $A$,  sea invertible o no. Para la vuelt
 \begin{align*}
     \text{$v$ es sol. de $ABX=AY$} \; &\Rightarrow \; ABv = AY&& \\
     &\Rightarrow \;  A^{-1}ABv = A^{-1}AY &&(\text{mult. por $A^{-1}$  a izq.}) \\
-    &\Rightarrow \;  \operatorname{Id} Bv = \operatorname{Id}Y &&(\text{ $A^{-1}A= \operatorname{Id}$}) \\
-    &\Rightarrow \;   Bv =Y&&(\text{$\operatorname{Id}$ es neutro del prod.}) \\
+    &\Rightarrow \;  \Id Bv = \Id Y &&(\text{ $A^{-1}A= \Id$}) \\
+    &\Rightarrow \;   Bv =Y&&(\text{$\Id$ es neutro del prod.}) \\
     &\Rightarrow \;   \text{$v$ es sol. de $BX=Y$}&&
 \end{align*}
 

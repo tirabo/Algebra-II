@@ -31,7 +31,7 @@
                 \item\label{prop-P1-2}
                 \begin{equation*}
                     \langle v , w \rangle = \langle w , v \rangle.
-                \end{equation*} 	
+                \end{equation*}     
                 \item\label{prop-P2-2} 
                 \begin{equation*}
                 \langle v , w + u \rangle =\langle v , w \rangle + \langle v , u \rangle = \langle w +u , v \rangle.
@@ -172,8 +172,8 @@
                 % vector v - w
                 %+--- \draw[fill] (-2,1) circle [radius=0.05];
                 % punteada de v-w  a v
-                \draw[loosely dotted, thick] (-9.5/17,42/17) -- (1.5,3);	
-                \draw[loosely dotted, thick] (36/17,9/17) -- (1.5,3);	
+                \draw[loosely dotted, thick] (-9.5/17,42/17) -- (1.5,3);    
+                \draw[loosely dotted, thick] (36/17,9/17) -- (1.5,3);    
                 
                 \end{tikzpicture}
                 \caption{Proyección de $v$ en $u$ cuando $||v||=1$.}\label{fig-proyeccion-ort}
@@ -201,7 +201,7 @@
             ||v||^2 &= ||v-cu||^2 +||cu||^2  \\
             &=||v-cu||^2 +|c|^2||u||^2.
             \end{align*}
-            Como $||v-cu||^2 \ge 0$, tenemos que $|c|^2||u||^2 \le 	||v||^2$ y sacando raíces cuadradas obtenemos
+            Como $||v-cu||^2 \ge 0$, tenemos que $|c|^2||u||^2 \le     ||v||^2$ y sacando raíces cuadradas obtenemos
             $$
             |c|||u|| \le ||v|| \Rightarrow \frac{|\la u,v\ra|}{||u||^2}||u|| \le ||v|| \Rightarrow \frac{|\la u,v\ra|}{||u||}\le ||v|| \Rightarrow |\la u,v\ra|\le ||v||||u||.
             $$
@@ -247,7 +247,7 @@
             \begin{equation*}
             \la \frac{v_i}{||v_i||} | \frac{v_i}{||v_i||}\ra = \frac{1}{||v_i||^2} \la v_i | v_i\ra=  \frac{1}{||v_i||^2}||v_i||^2 =1.
             \end{equation*}
-        \end{proof}	
+        \end{proof}    
             
             
             
@@ -314,7 +314,7 @@
             w_2 &= v_2 - \frac{\la v_2,w_1\ra}{\la w_1,w_1\ra}w_1, \tag{2}\\
             w_3 &= v_3 - \frac{\la v_3,w_1\ra}{\la w_1,w_1\ra}w_1- \frac{\la v_3,w_2\ra}{\la w_2,w_2\ra}w_2,\tag{3} \\
             \vdots &\quad \vdots \notag \\
-            w_n &= v_n - \frac{\la v_n,w_1\ra}{\la w_1,w_1\ra}w_1- \frac{\la v_n,w_2\ra}{\la w_2,w_2\ra}w_2 - \cdots - \frac{\la v_n,w_{n-1}\ra}{\la w_{n-1},w_{n-1}\ra}w_{n-1}.\tag{$n$}	
+            w_n &= v_n - \frac{\la v_n,w_1\ra}{\la w_1,w_1\ra}w_1- \frac{\la v_n,w_2\ra}{\la w_2,w_2\ra}w_2 - \cdots - \frac{\la v_n,w_{n-1}\ra}{\la w_{n-1},w_{n-1}\ra}w_{n-1}.\tag{$n$}    
             \end{align}
             En forma más breve, para $1 \le i \le n$, 
             \begin{equation}
@@ -335,7 +335,7 @@
             = \la v_k, w_i\ra -  \sum_{j = 1}^{k-1} \frac{\la v_k,w_{j}\ra}{\la w_{j},w_{j}\ra}\la w_{j} , w_i \ra \\
             &=  \la v_k, w_i\ra -  \la v_k, w_i\ra = 0.
             \end{align*}
-            Es decir $	\la w_k, w_i \ra =0$ para todo $i < k$. Por consiguiente,  $\{w_1,\ldots, w_{k}\}$ es ortogonal.
+            Es decir $    \la w_k, w_i \ra =0$ para todo $i < k$. Por consiguiente,  $\{w_1,\ldots, w_{k}\}$ es ortogonal.
             
             Demostremos ahora que $\operatorname{span}\{w_1,\ldots, w_{m}\} = \operatorname{span}\{v_1,\ldots, v_{m}\}$ para $1 \le m \le n$. 
             
@@ -345,7 +345,7 @@
             $$
             v_k = w_k + \sum_{j = 1}^{k-1} \frac{\la v_k,w_{j}\ra}{\la w_{j},w_{j}\ra}w_{j},
             $$
-            tenemos que 	$\operatorname{span}\{v_1,\ldots, v_{m}\} \subset \operatorname{span}\{w_1,\ldots, w_{m}\}$.
+            tenemos que     $\operatorname{span}\{v_1,\ldots, v_{m}\} \subset \operatorname{span}\{w_1,\ldots, w_{m}\}$.
         \end{proof}
         
         
@@ -405,172 +405,172 @@
 
 
     
-	\begin{section}{Suma directa de subespacios y proyecciones  (*)}
-		
-		En esta sección se define la descomposición de un espacio vectorial como suma directa des subespacios. Cuando el espacio vectorial es suma directa de dos subespacios, se muestra que esa descomposición equivale a a definir un operador idempotente en el espacio, al cual llamaremos \textit{proyección}. 
-		
-		\medskip
-		
-		Si  $V_1$, $V_2$, $W$  dos subespacios del espacio vectorial $V$,  entonces sabemos que 
-		\begin{equation*}
-		V_1 + V_2 = \{v_1+v_2: v_1 \in V_1, v_2 \in V_2\}, \qquad V_1 \cap V_2 = \{v: v \in V_1 \text{ y } v \in V_2 \}
-		\end{equation*}
-		son subespacios vectoriales. 
-		
-		\begin{definicion} Sean $V_1$, $V_2$, $W$  subespacios vectoriales del espacio vectorial $V$, entonces 
-			\begin{equation*}
-			W = V_1 \oplus V_2
-			\end{equation*}
-			es la \textit{suma directa}\index{suma directa} de $V_1$ y $V_2$ si $V_1 + V_2 = W$ y $V_1 \cap V_2 = 0$. 
-		\end{definicion}
-		
-		\begin{proposicion}
-			Sea $V$  espacio vectorial y $V_1$, $V_2$ subespacios vectoriales de $V$. Entonces, $V = V_1 \oplus V_2$ si y sólo si para todo vector $v \in V$ existe únicos  $v_1\in V_1, v_2 \in V_2$ tal que $v = v_1 + v_2$. 
-		\end{proposicion}
-		\begin{proof} {\,${}^{}$}
-			\begin{enumerate}
-				\item[$(\Rightarrow)$] Sea $v \in V$,  como $V = V_1 + V_2$, existen $v_1\in V_1, v_2 \in V_2$ tal que $v = v_1 + v_2$. Veamos que $v_1$ y $v_2$ son  únicos. Sean $v'_1\in V_1, v'_2 \in V_2$ tal que $v = v'_1 + v'_2$. Por lo tanto $v_1 + v_2 =  v'_1 + v'_2$. Haciendo pasajes de término obtenemos 
-				$$
-				v_1 -v_1' = v_2' - v_2.
-				$$
-				Sea  $v_0=v_1 -v_1' = v_2' - v_2$. Ahora bien, $v_1 -v_1' \in V_1$, por lo tanto $v_0= v_1 -v_1'  \in V_1$. Análogamente,  $v_2' -v_2 \in V_2$, por lo tanto $v_0= v_2' -v_2  \in V_2$. Es decir, $v_0 \in V_1 \cap V_2 = 0$, luego $v_0 =0$, por lo tanto $v_1 = v'_1$ y $v_2 = v'_2$. 
-				\item[$(\Leftarrow)$] Es claro que $V = V_1 + V_2$. Probemos que $V_1 \cap V_2 = 0$. Sea $v \in V_1 \cap V_2$. Por hipótesis, existe únicos $v_1\in V_1, v_2 \in V_2$ tal que $v = v_1 + v_2$.
-				Podemos escribir  entonces
-				$$
-				\begin{array}{rcllll}
-				v &=& v_1 + v_2,& \quad &v_1\in V_1,& v_2 \in V_2 \\
-				v &=& v + 0,& \quad &v\in V_1, &0 \in V_2 \\
-				v &=& 0 + v& \quad &0\in V_1, &v \in V_2. 
-				\end{array}
-				$$
-				Por la unicidad, resulta que $v_1 = v= 0$ y $v_2 = 0 =v$, es decir $v =0$.
-			\end{enumerate}	
-			
-		\end{proof}
-		\medskip 
-		
-		\begin{proposicion} Sea $V$  espacio vectorial de dimensión finita y sean $V_1$, $V_2$ dos subespacios de  $V$ tal que $V = V_1 \oplus V_2$. Sea $\mathcal{B}_1$ base de $V_1$ y $\mathcal{B}_2$ base de $V_2$, entonces $\mathcal{B} = \mathcal{B}_1 \cup \mathcal{B}_2$ es base de $V$.
-		\end{proposicion}
-		\begin{proof}
-			Sea $\mathcal{B}_1 = \{u_1,\ldots,u_r \}$ y $\mathcal{B}_2 = \{u_{r+1},\ldots,u_{r+s} \}$, debemos ver entonces que el conjunto  $\mathcal{B} = \{u_{1},\ldots,u_{r+s} \}$  genera todo el espacio y es LI.
-            \vskip .2cm
-			\noindent \textit{$\mathcal{B}$ genera $V$.}  Sea $v \in V$, como $V_1 + V_2 = V$, existen $v_1 \in V_1$ y  $v_2 \in V_2$ tales que $v = v_1 + v_2$. Como  $\mathcal{B}_1$ es base de $V_1$, tenemos que $v_1 = a_1u_1+\cdots+a_ru_r$, análogamente
-			$v_2 = a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s}$ y por lo tanto $v = a_{1}u_{1}+\cdots+a_{r+s}u_{r+s}$. Es decir  $\mathcal{B}$ genera $V$.
-			\vskip .2cm
-			\noindent \textit{$\mathcal{B}$ es LI.} Si $a_1u_1+\cdots+a_ru_r + a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s} = 0$, entonces 
-			$$a_1u_1+\cdots+a_ru_r = - a_{r+1}u_{r+1}-\cdots-a_{r+s}u_{r+s}.$$ Ahora bien, el termino de la izquierda en la última igualdad pertenece a $V_1$, mientras que el de a derecha pertenece a $V_2$. Como $V_1 \cap V_2 = 0$, tenemos que
-			$$a_1u_1+\cdots+a_ru_r = 0 = - a_{r+1}u_{r+1}-\cdots-a_{r+s}u_{r+s}.$$
-			Como $\mathcal{B}_1$ es base de $V_1$, $a_1 = \cdots = a_r = 0$ y como $\mathcal{B}_1$ es base de $V_1$, $a_{r+1} = \cdots = a_{r+s} =0$. Es decir $\mathcal{B}$ es LI.	
-		\end{proof}
-		
-		\begin{corolario}
-			Sea $V$  espacio vectorial de dimensión finita y sean $V_1$, $V_2$ dos subespacios de  $V$ tal que $V = V_1 \oplus V_2$.  Entonces $\dim(V) = \dim(V_1) + \dim(V_2)$.
-		\end{corolario}
-		\begin{proof}
-			Sea $\mathcal{B}_1 = \{u_1,\ldots,u_r \}$ base de $V_1$ y $\mathcal{B}_2 = \{u_{r+1},\ldots,u_{r+s} \}$ base de $V_2$. Por la proposición anterior, $\mathcal{B} = \{u_{1},\ldots,u_{r+s} \}$ es base de $V$. Luego   $\dim(V) = r +s = \dim(V_1) + \dim(V_2)$.
-		\end{proof}
-		
-		Se puede generalizar la noción de suma directa a varios subespacios. 
-		
-		\begin{definicion} Sean $V_1,\ldots,V_k$, $W$  subespacios vectoriales de un espacio vectorial $V$, entonces 
-			$$
-			W = V_1 \oplus V_2 \oplus \cdots \oplus V_k 
-			$$ 
-			si $V_1 + V_2 + \cdots +V_k= W$ y $V_j \cap (\sum_{i \ne j}V_i) = 0$. En  este caso  diremos que  $W$ es \textit{suma directa} de $V_1,\ldots,V_k$.
-		\end{definicion}
-		
-		Esta definición se reduce  a la de suma directa de dos subespacios cuando $k=2$.
-		
-		Observar que si definimos $W_j = \sum_{i \ne j}V_i$ ($j=1,\ldots,k$) entonces, 
-		$$W = V_1 \oplus V_2 \oplus \cdots \oplus V_k \;\text{ si y sólo si }\;W = V_j \oplus W_j\text{ \; }(j=1,\ldots,k).
-		$$
-		
-        \begin{definicion} Sea $W$  un subespacio vectorial de un espacio vectorial $V$. Entonces un \textit{complemento de $W$} es un subespacio $U$ de $V$ tal que $V=W\oplus U$. 
-		\end{definicion}
-		
-		\begin{proposicion} Sea $V$  espacio vectorial de dimensión finita y sea $W$ un subespacio de  $V$. Sean $\mathcal{B}_W$ una base de $W$ y $\mathcal{B}_V$ una base de $V$ tal que $\mathcal{B}_W\subset \mathcal{B}_V$. 
-			
-			Sea 
-			\[
-			\mathcal{B}'=\mathcal{B}_V -\mathcal{B}_W=\{b\in\mathcal{B}_V \text{ tales que } b\notin\mathcal{B}_W \}.
-			\]  
-			Entonces $U=\langle 	\mathcal{B}'\rangle$ es un complemento de $W$ y $\mathcal{B}'$ es una base de $U$.
-		\end{proposicion}
-		\begin{proof}
-			Sea $\mathcal{B}_W = \{u_1,\ldots,u_r \}$ y $\mathcal{B}_V = \{u_1,\ldots,u_r, u_{r+1},\ldots,u_{r+s}\}$. Así, 	$\mathcal{B}'=\{u_{r+1},\ldots,u_{r+s} \}$. Como este conjunto es LI, entonces es una base del espacio $U=\langle 	\mathcal{B}'\rangle$ que genera. Por otro lado, como $\mathcal{B}_V$ es base de $V$, entonces todo vector $v\in V$ puede escribirse como
-			\[
-			v=a_1u_1+\cdots+a_ru_r + a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s},
-			\]
-			para algunos $a_1,\dots a_{r+s}\in \K$.				
-			Ahora, definimos $v_W=a_1u_1+\cdots+a_ru_r$ y $v_U=a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s}$, de manera tal que  $v_W\in W$, $v_U\in U$ y $v=v_W+v_U$.
-			
-			Finalmente, si $v\in W\cap U$, entonces existen $a_1,\dots a_{r+s}\in \K$ tales que 
-			\[
-			v=a_1u_1+\cdots+a_ru_r = a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s}.
-			\]
-			Pero esto determina que $\mathcal{B}_V$ es LI (es una base). Luego, $W\cap U=\{0\}$ y por lo tanto $V=W\oplus U$.
-		\end{proof}
-		
-		La noción de suma directa está ligada a la noción de proyección.
-		
-        \begin{definicion} Sea $V = W \oplus U$. Definimos el operador lineal $P: V \to V$ por  $$P(w+u) = w,$$ con $w \in W$, $u\in U$. En este caso, diremos que $P$ es la \textit{proyección a $W$ paralela a $U$}. Si $V$  es un espacio con producto interno y  $W \perp U$, diremos que $P$ es la \textit{proyección ortogonal sobre $W$}. 
-		\end{definicion}
-		
-		Observar que $P$ está bien definida y que $P_{|W} = Id_{|W}$,  $P_{|U} = 0$. Observar también que si $P$  es una proyección ortogonal,  entonces $U = W^\perp$, luego $U$  está determinado por $W$. . 
-		
-		\medskip 
-		
-		\begin{proposicion}\label{matriz-proy}
-			Sea $P: V \to V$ una proyección, entonces existe una base $\mathcal{B}$ tal que 
-			$$
-			[P]_{\mathcal{B}} = diag(1,\ldots,1,0,\ldots,0).
-			$$
-			(una  matriz diagonal con la diagonal compuesta de  $1$'s  y a continuación $0$'s).
-		\end{proposicion}
-		\begin{proof}
-			Sean $V_1,V_2$ subespacios de $V$ tal que   $P$ es la {proyección a $V_1$ paralela a $V_2$}. Sea $\{v_1,\ldots,v_m\}$ una base de $V_1$ y completamos con $\{v_{m+1},\ldots,v_n\}$, vectores en $V_2$, a una base de $V$. Sea $\mathcal{B}= \{v_1,\ldots,v_n\}$. Como  $P_{|V_1} = Id_{|V_1}$ y  $P_{|V_2} = 0$, es claro que $
-			[P]_{\mathcal{B}} = diag(1,\ldots,1,0,\ldots,0)
-			$, donde la cantidad de $1$'s es  $m$  y la cantidad de $0$'s es $n-m$.
-		\end{proof}
-		
-		\medskip
-		
-		\begin{definicion} Sea $V$ espacio vectorial de dimensión finita. $P:V \to V$ una aplicación lineal. Diremos que $P$ es \textit{idempotente} si $P\circ P = P$. Denotemos $P \circ P = P^2$.
-		\end{definicion}
-		
-		
-		
-		
-		\begin{proposicion}\label{proy->idem}
-			Sea $P: V \to V$ una proyección a  $W$ paralela a  $U$, entonces $P^2 = P$.
-		\end{proposicion}
-		\begin{proof}
-			Como $P$ proyecta a  $W$ de forma paralela a  $U$, entonces para $w \in W, u \in U$ tenemos  $P(w+u) = w$, por lo tanto  $P^2(w+u) = P(w) = w= P(w+u)$.
-		\end{proof}
-		
-		\begin{teorema}\label{idem->proy}
-			Sea $P: V \to V$ un operador lineal. Si $P^2 = P$  entonces
-			$$
-			V = \nu(P) \oplus \im(P).
-			$$
-			Además, $P$ es la proyección  a $\im(P)$ paralela a $\nu(P)$.
-		\end{teorema}
-		\begin{proof} Veamos primero que $\nu(P) \cap \im(P)= 0$. Sea $v \in \nu(P) \cap \im(P)$. Como $v \in \im(P)$, entonces $v = P(w)$, luego   $P(v) = P^2(w) =P(w) = v$. Ahora bien, como $v\in  \nu(P)$, entonces $P(v)=0$. Es decir, si  $v \in\nu(P) \cap \im(P)$, entonces  $v= P(v)=0$. 
-			
-			Observar que $v = (v -P(v)) + P(v)$ y que $v -P(v)\in \nu(P)$ y $P(v) \in \im(P)$. Luego $v \in \nu(P) + \im(P)$. Como $v \in V$ es arbitrario,  tenemos que $V= \nu(P) + \im(P)$
-		\end{proof}
-
-		\begin{teorema} 
-			Sea $V$ espacio vectorial de dimensión finita y $P:V \to V$ una aplicación lineal. Entonces, $P$ es una proyección a $W$ paralela a  $U$ si y sólo si $P^2 = P$ y $W= \im(P)$, $U = \nu(P)$. 
-		\end{teorema}
-		\begin{proof} ($\Rightarrow$) es proposición \ref{proy->idem}. ($\Leftarrow$) es teorema \ref{idem->proy}.
+    \begin{section}{Suma directa de subespacios y proyecciones  (*)}
+        
+        En esta sección se define la descomposición de un espacio vectorial como suma directa des subespacios. Cuando el espacio vectorial es suma directa de dos subespacios, se muestra que esa descomposición equivale a a definir un operador idempotente en el espacio, al cual llamaremos \textit{proyección}. 
+        
+        \medskip
+        
+        Si  $V_1$, $V_2$, $W$  dos subespacios del espacio vectorial $V$,  entonces sabemos que 
+        \begin{equation*}
+        V_1 + V_2 = \{v_1+v_2: v_1 \in V_1, v_2 \in V_2\}, \qquad V_1 \cap V_2 = \{v: v \in V_1 \text{ y } v \in V_2 \}
+        \end{equation*}
+        son subespacios vectoriales. 
+        
+        \begin{definicion} Sean $V_1$, $V_2$, $W$  subespacios vectoriales del espacio vectorial $V$, entonces 
+            \begin{equation*}
+            W = V_1 \oplus V_2
+            \end{equation*}
+            es la \textit{suma directa}\index{suma directa} de $V_1$ y $V_2$ si $V_1 + V_2 = W$ y $V_1 \cap V_2 = 0$. 
+        \end{definicion}
+        
+        \begin{proposicion}
+            Sea $V$  espacio vectorial y $V_1$, $V_2$ subespacios vectoriales de $V$. Entonces, $V = V_1 \oplus V_2$ si y sólo si para todo vector $v \in V$ existe únicos  $v_1\in V_1, v_2 \in V_2$ tal que $v = v_1 + v_2$. 
+        \end{proposicion}
+        \begin{proof} {\,${}^{}$}
+            \begin{enumerate}
+                \item[$(\Rightarrow)$] Sea $v \in V$,  como $V = V_1 + V_2$, existen $v_1\in V_1, v_2 \in V_2$ tal que $v = v_1 + v_2$. Veamos que $v_1$ y $v_2$ son  únicos. Sean $v'_1\in V_1, v'_2 \in V_2$ tal que $v = v'_1 + v'_2$. Por lo tanto $v_1 + v_2 =  v'_1 + v'_2$. Haciendo pasajes de término obtenemos 
+                $$
+                v_1 -v_1' = v_2' - v_2.
+                $$
+                Sea  $v_0=v_1 -v_1' = v_2' - v_2$. Ahora bien, $v_1 -v_1' \in V_1$, por lo tanto $v_0= v_1 -v_1'  \in V_1$. Análogamente,  $v_2' -v_2 \in V_2$, por lo tanto $v_0= v_2' -v_2  \in V_2$. Es decir, $v_0 \in V_1 \cap V_2 = 0$, luego $v_0 =0$, por lo tanto $v_1 = v'_1$ y $v_2 = v'_2$. 
+                \item[$(\Leftarrow)$] Es claro que $V = V_1 + V_2$. Probemos que $V_1 \cap V_2 = 0$. Sea $v \in V_1 \cap V_2$. Por hipótesis, existe únicos $v_1\in V_1, v_2 \in V_2$ tal que $v = v_1 + v_2$.
+                Podemos escribir  entonces
+                $$
+                \begin{array}{rcllll}
+                v &=& v_1 + v_2,& \quad &v_1\in V_1,& v_2 \in V_2 \\
+                v &=& v + 0,& \quad &v\in V_1, &0 \in V_2 \\
+                v &=& 0 + v& \quad &0\in V_1, &v \in V_2. 
+                \end{array}
+                $$
+                Por la unicidad, resulta que $v_1 = v= 0$ y $v_2 = 0 =v$, es decir $v =0$.
+            \end{enumerate}    
+            
         \end{proof}
-		
-	\end{section}
+        \medskip 
+        
+        \begin{proposicion} Sea $V$  espacio vectorial de dimensión finita y sean $V_1$, $V_2$ dos subespacios de  $V$ tal que $V = V_1 \oplus V_2$. Sea $\mathcal{B}_1$ base de $V_1$ y $\mathcal{B}_2$ base de $V_2$, entonces $\mathcal{B} = \mathcal{B}_1 \cup \mathcal{B}_2$ es base de $V$.
+        \end{proposicion}
+        \begin{proof}
+            Sea $\mathcal{B}_1 = \{u_1,\ldots,u_r \}$ y $\mathcal{B}_2 = \{u_{r+1},\ldots,u_{r+s} \}$, debemos ver entonces que el conjunto  $\mathcal{B} = \{u_{1},\ldots,u_{r+s} \}$  genera todo el espacio y es LI.
+            \vskip .2cm
+            \noindent \textit{$\mathcal{B}$ genera $V$.}  Sea $v \in V$, como $V_1 + V_2 = V$, existen $v_1 \in V_1$ y  $v_2 \in V_2$ tales que $v = v_1 + v_2$. Como  $\mathcal{B}_1$ es base de $V_1$, tenemos que $v_1 = a_1u_1+\cdots+a_ru_r$, análogamente
+            $v_2 = a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s}$ y por lo tanto $v = a_{1}u_{1}+\cdots+a_{r+s}u_{r+s}$. Es decir  $\mathcal{B}$ genera $V$.
+            \vskip .2cm
+            \noindent \textit{$\mathcal{B}$ es LI.} Si $a_1u_1+\cdots+a_ru_r + a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s} = 0$, entonces 
+            $$a_1u_1+\cdots+a_ru_r = - a_{r+1}u_{r+1}-\cdots-a_{r+s}u_{r+s}.$$ Ahora bien, el termino de la izquierda en la última igualdad pertenece a $V_1$, mientras que el de a derecha pertenece a $V_2$. Como $V_1 \cap V_2 = 0$, tenemos que
+            $$a_1u_1+\cdots+a_ru_r = 0 = - a_{r+1}u_{r+1}-\cdots-a_{r+s}u_{r+s}.$$
+            Como $\mathcal{B}_1$ es base de $V_1$, $a_1 = \cdots = a_r = 0$ y como $\mathcal{B}_1$ es base de $V_1$, $a_{r+1} = \cdots = a_{r+s} =0$. Es decir $\mathcal{B}$ es LI.    
+        \end{proof}
+        
+        \begin{corolario}
+            Sea $V$  espacio vectorial de dimensión finita y sean $V_1$, $V_2$ dos subespacios de  $V$ tal que $V = V_1 \oplus V_2$.  Entonces $\dim(V) = \dim(V_1) + \dim(V_2)$.
+        \end{corolario}
+        \begin{proof}
+            Sea $\mathcal{B}_1 = \{u_1,\ldots,u_r \}$ base de $V_1$ y $\mathcal{B}_2 = \{u_{r+1},\ldots,u_{r+s} \}$ base de $V_2$. Por la proposición anterior, $\mathcal{B} = \{u_{1},\ldots,u_{r+s} \}$ es base de $V$. Luego   $\dim(V) = r +s = \dim(V_1) + \dim(V_2)$.
+        \end{proof}
+        
+        Se puede generalizar la noción de suma directa a varios subespacios. 
+        
+        \begin{definicion} Sean $V_1,\ldots,V_k$, $W$  subespacios vectoriales de un espacio vectorial $V$, entonces 
+            $$
+            W = V_1 \oplus V_2 \oplus \cdots \oplus V_k 
+            $$ 
+            si $V_1 + V_2 + \cdots +V_k= W$ y $V_j \cap (\sum_{i \ne j}V_i) = 0$. En  este caso  diremos que  $W$ es \textit{suma directa} de $V_1,\ldots,V_k$.
+        \end{definicion}
+        
+        Esta definición se reduce  a la de suma directa de dos subespacios cuando $k=2$.
+        
+        Observar que si definimos $W_j = \sum_{i \ne j}V_i$ ($j=1,\ldots,k$) entonces, 
+        $$W = V_1 \oplus V_2 \oplus \cdots \oplus V_k \;\text{ si y sólo si }\;W = V_j \oplus W_j\text{ \; }(j=1,\ldots,k).
+        $$
+        
+        \begin{definicion} Sea $W$  un subespacio vectorial de un espacio vectorial $V$. Entonces un \textit{complemento de $W$} es un subespacio $U$ de $V$ tal que $V=W\oplus U$. 
+        \end{definicion}
+        
+        \begin{proposicion} Sea $V$  espacio vectorial de dimensión finita y sea $W$ un subespacio de  $V$. Sean $\mathcal{B}_W$ una base de $W$ y $\mathcal{B}_V$ una base de $V$ tal que $\mathcal{B}_W\subset \mathcal{B}_V$. 
+            
+            Sea 
+            \[
+            \mathcal{B}'=\mathcal{B}_V -\mathcal{B}_W=\{b\in\mathcal{B}_V \text{ tales que } b\notin\mathcal{B}_W \}.
+            \]  
+            Entonces $U=\langle     \mathcal{B}'\rangle$ es un complemento de $W$ y $\mathcal{B}'$ es una base de $U$.
+        \end{proposicion}
+        \begin{proof}
+            Sea $\mathcal{B}_W = \{u_1,\ldots,u_r \}$ y $\mathcal{B}_V = \{u_1,\ldots,u_r, u_{r+1},\ldots,u_{r+s}\}$. Así,     $\mathcal{B}'=\{u_{r+1},\ldots,u_{r+s} \}$. Como este conjunto es LI, entonces es una base del espacio $U=\langle     \mathcal{B}'\rangle$ que genera. Por otro lado, como $\mathcal{B}_V$ es base de $V$, entonces todo vector $v\in V$ puede escribirse como
+            \[
+            v=a_1u_1+\cdots+a_ru_r + a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s},
+            \]
+            para algunos $a_1,\dots a_{r+s}\in \K$.                
+            Ahora, definimos $v_W=a_1u_1+\cdots+a_ru_r$ y $v_U=a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s}$, de manera tal que  $v_W\in W$, $v_U\in U$ y $v=v_W+v_U$.
+            
+            Finalmente, si $v\in W\cap U$, entonces existen $a_1,\dots a_{r+s}\in \K$ tales que 
+            \[
+            v=a_1u_1+\cdots+a_ru_r = a_{r+1}u_{r+1}+\cdots+a_{r+s}u_{r+s}.
+            \]
+            Pero esto determina que $\mathcal{B}_V$ es LI (es una base). Luego, $W\cap U=\{0\}$ y por lo tanto $V=W\oplus U$.
+        \end{proof}
+        
+        La noción de suma directa está ligada a la noción de proyección.
+        
+        \begin{definicion} Sea $V = W \oplus U$. Definimos el operador lineal $P: V \to V$ por  $$P(w+u) = w,$$ con $w \in W$, $u\in U$. En este caso, diremos que $P$ es la \textit{proyección a $W$ paralela a $U$}. Si $V$  es un espacio con producto interno y  $W \perp U$, diremos que $P$ es la \textit{proyección ortogonal sobre $W$}. 
+        \end{definicion}
+        
+        Observar que $P$ está bien definida y que $P_{|W} = \Id_{|W}$,  $P_{|U} = 0$. Observar también que si $P$  es una proyección ortogonal,  entonces $U = W^\perp$, luego $U$  está determinado por $W$. . 
+        
+        \medskip 
+        
+        \begin{proposicion}\label{matriz-proy}
+            Sea $P: V \to V$ una proyección, entonces existe una base $\mathcal{B}$ tal que 
+            $$
+            [P]_{\mathcal{B}} = diag(1,\ldots,1,0,\ldots,0).
+            $$
+            (una  matriz diagonal con la diagonal compuesta de  $1$'s  y a continuación $0$'s).
+        \end{proposicion}
+        \begin{proof}
+            Sean $V_1,V_2$ subespacios de $V$ tal que   $P$ es la {proyección a $V_1$ paralela a $V_2$}. Sea $\{v_1,\ldots,v_m\}$ una base de $V_1$ y completamos con $\{v_{m+1},\ldots,v_n\}$, vectores en $V_2$, a una base de $V$. Sea $\mathcal{B}= \{v_1,\ldots,v_n\}$. Como  $P_{|V_1} = \Id_{|V_1}$ y  $P_{|V_2} = 0$, es claro que $
+            [P]_{\mathcal{B}} = diag(1,\ldots,1,0,\ldots,0)
+            $, donde la cantidad de $1$'s es  $m$  y la cantidad de $0$'s es $n-m$.
+        \end{proof}
+        
+        \medskip
+        
+        \begin{definicion} Sea $V$ espacio vectorial de dimensión finita. $P:V \to V$ una aplicación lineal. Diremos que $P$ es \textit{idempotente} si $P\circ P = P$. Denotemos $P \circ P = P^2$.
+        \end{definicion}
+        
+        
+        
+        
+        \begin{proposicion}\label{proy->idem}
+            Sea $P: V \to V$ una proyección a  $W$ paralela a  $U$, entonces $P^2 = P$.
+        \end{proposicion}
+        \begin{proof}
+            Como $P$ proyecta a  $W$ de forma paralela a  $U$, entonces para $w \in W, u \in U$ tenemos  $P(w+u) = w$, por lo tanto  $P^2(w+u) = P(w) = w= P(w+u)$.
+        \end{proof}
+        
+        \begin{teorema}\label{idem->proy}
+            Sea $P: V \to V$ un operador lineal. Si $P^2 = P$  entonces
+            $$
+            V = \nu(P) \oplus \im(P).
+            $$
+            Además, $P$ es la proyección  a $\im(P)$ paralela a $\nu(P)$.
+        \end{teorema}
+        \begin{proof} Veamos primero que $\nu(P) \cap \im(P)= 0$. Sea $v \in \nu(P) \cap \im(P)$. Como $v \in \im(P)$, entonces $v = P(w)$, luego   $P(v) = P^2(w) =P(w) = v$. Ahora bien, como $v\in  \nu(P)$, entonces $P(v)=0$. Es decir, si  $v \in\nu(P) \cap \im(P)$, entonces  $v= P(v)=0$. 
+            
+            Observar que $v = (v -P(v)) + P(v)$ y que $v -P(v)\in \nu(P)$ y $P(v) \in \im(P)$. Luego $v \in \nu(P) + \im(P)$. Como $v \in V$ es arbitrario,  tenemos que $V= \nu(P) + \im(P)$
+        \end{proof}
+
+        \begin{teorema} 
+            Sea $V$ espacio vectorial de dimensión finita y $P:V \to V$ una aplicación lineal. Entonces, $P$ es una proyección a $W$ paralela a  $U$ si y sólo si $P^2 = P$ y $W= \im(P)$, $U = \nu(P)$. 
+        \end{teorema}
+        \begin{proof} ($\Rightarrow$) es proposición \ref{proy->idem}. ($\Leftarrow$) es teorema \ref{idem->proy}.
+        \end{proof}
+        
+    \end{section}
 
 
     \begin{section}{La adjunta de una transformaci\'on lineal (*)}\label{seccion-adjunta-de-una-transformacion-lineal} Mostraremos en esta sección como el producto interno nos permite asociar a cada transformación lineal $T: V \to W$ una nueva transformación  lineal $T^*: W \to V$ llamada la adjunta de $T$. 
-	
+    
         \begin{teorema}
             Sean $V, W$ espacios vectoriales de dimensión finita y con producto interno $\la \;,\;\ra$ y $\la \;,\;\ra$ respectivamente (se denotan igual). Sea $T: V \to W$ lineal, entonces existe una única $T^*: W \to V$ que cumple
             \begin{equation}\label{eq-adjunta}
@@ -581,7 +581,7 @@
         \begin{proof}
         Sea $\{v_1,\ldots,v_n\}$ una BON de $V$ y $\{w_1,\ldots,w_m\}$ una BON de $W$, observemos que la coordenada $j$ (en $V$) de $T^*w_i$ debe cumplir
         \begin{equation}\label{eq-transp}
-            \la T^*w_i,v_j\ra = 	\la w_i,Tv_j\ra.
+            \la T^*w_i,v_j\ra =     \la w_i,Tv_j\ra.
         \end{equation}
         Por lo tanto,  definimos
         \begin{equation*}
@@ -591,9 +591,9 @@
         
         Finalmente,  debemos comprobar que se verifica la ecuación \eqref{eq-adjunta}: sean  $w \in W$ y $v \in V$, entonces $w = \sum_{i=1}^{m} \la w_i,w\ra w_i$ y $v = \sum_{j=1}^{n} \la v_j,v\ra v_j$. Reemplazando en  la ecuación \eqref{eq-adjunta} $w$ y $v$ por su desarrollo en las bases se obtiene la igualdad. Para el lector curioso, a continuación desarrollamos la demostración:
         \begin{align*}
-            \la v,T^*w\ra &= 	\la v, T^*(\sum_{i=1}^{m} \la w_i,w\ra w_i) \ra\\
+            \la v,T^*w\ra &=     \la v, T^*(\sum_{i=1}^{m} \la w_i,w\ra w_i) \ra\\
              &= \la v, \sum_{i=1}^{m} \la w_i,w\ra T^*(w_i) \ra\\
-             &=	\sum_{i=1}^{m} \la w_i,w\ra\la v,  T^*(w_i) \ra\\
+             &=    \sum_{i=1}^{m} \la w_i,w\ra\la v,  T^*(w_i) \ra\\
              &=\sum_{i=1}^{m} \la w_i,w\ra\la v,  \sum_{j=1}^{n} \la w_i,Tv_j\ra v_j\ra\\
              &=\sum_{i=1}^{m} \la w_i,w\ra \sum_{j=1}^{n} \la w_i,Tv_j\ra\la v,  v_j\ra.
         \end{align*}
@@ -701,7 +701,7 @@
         \begin{proposicion}\label{adjprop}
             Sean $V$ espacio vectorial de dimensión finita con producto interno $\la \;,\;\ra$ y $T,S:V \to V$ transformaciones lineales. Entonces
             \begin{enumerate}
-                \item\label{adj0} $Id^* = Id$.
+                \item\label{adj0} $\Id^* = \Id$.
                 \item\label{adj1} Si $c \in \R$, entonces $(cR)^* = cR^*$.
                 \item\label{adj2} $(R+S)^* = R^* + S^*$.
                 \item\label{adj3} $(RS)^* = S^*R^*$.
@@ -1064,7 +1064,7 @@
             1&-1\\-1&2
             \end{bmatrix} > 0$  y  $\begin{bmatrix}
             1&1\\1&1
-            \end{bmatrix} \ge 0$.	
+            \end{bmatrix} \ge 0$.    
         \end{ejemplo*}
         
         
@@ -1106,7 +1106,7 @@
             $$ 
             Es decir $R(v_i)$ es un autovector de $T$ con  autovalor $\lambda_i$ y por lo tanto pertenece a  $V_{\lambda_i}$. 
             
-            (3)  Como $R(V_{\lambda_i}) \subseteq V_{\lambda_i}$, podemos restringir y correstringir  $R$ a $V_{\lambda_i}$ y obtenemos $R_i = R:  V_{\lambda_i} \to V_{\lambda_i}$. Es  fácil comprobar que $R_i$ es autoadjunta y por lo tanto existe una BON de $V_{\lambda_i}$ de autovectores de $R_i$. Sea $w$ un vector de la base con autovalor $\mu$, entonces 	$R_i(w) = \mu w$  y 
+            (3)  Como $R(V_{\lambda_i}) \subseteq V_{\lambda_i}$, podemos restringir y correstringir  $R$ a $V_{\lambda_i}$ y obtenemos $R_i = R:  V_{\lambda_i} \to V_{\lambda_i}$. Es  fácil comprobar que $R_i$ es autoadjunta y por lo tanto existe una BON de $V_{\lambda_i}$ de autovectores de $R_i$. Sea $w$ un vector de la base con autovalor $\mu$, entonces     $R_i(w) = \mu w$  y 
             $$
         \lambda_i w = T(w) = R^2(w) = R_i^2(w) = R_i(\mu w) = \mu^2 w. 
             $$
@@ -1195,7 +1195,7 @@
         A continuación una extensión del Teorema Espectral, válida para transformaciones lineales cualesquiera.
         
         \begin{teorema}[Teorema de los valores singulares]\index{teorema de los valores singulares}\label{teorema-de-los-valores-singulares}
-            Sea $T: V \to W$ una transformación lineal de rango $r$ entre espacios de dimensión finita 	con producto interno. Entonces, existen bases ortonormales $\{v_1,\ldots,v_n\}$ de $V$ y $\{w_1,\ldots,w_m\}$ de $W$ tales que $T(v_i) = \lambda_i w_i$,  $T^*(w_i) = \lambda_i v_i$, con $\lambda_i >0$ para $i=1,\ldots,r$. Además $T(v_i) = 0$,  $T^*(w_i) = 0$ para $i > r$. 
+            Sea $T: V \to W$ una transformación lineal de rango $r$ entre espacios de dimensión finita     con producto interno. Entonces, existen bases ortonormales $\{v_1,\ldots,v_n\}$ de $V$ y $\{w_1,\ldots,w_m\}$ de $W$ tales que $T(v_i) = \lambda_i w_i$,  $T^*(w_i) = \lambda_i v_i$, con $\lambda_i >0$ para $i=1,\ldots,r$. Además $T(v_i) = 0$,  $T^*(w_i) = 0$ para $i > r$. 
         \end{teorema}
         \begin{proof}
             Por la  proposición  \ref{prop5.26},  el operador $T^*T$ es no negativo y tiene rango  $r$. Como  $T^*T$  es autoadjunto, no negativo y  de rango  $r$; por el Teorema Espectral existe una base ortonormal $\{v_1,\ldots,v_n\}$ de $V$ tal que $T^*T(v_i) = \mu_i v_i$ con $\mu_i >0$ para $1 \le i \le r$ y  $\mu_i = 0$ para $i>r$. Definimos $\lambda_i = \sqrt{\mu_i}$. 
@@ -1224,7 +1224,7 @@
         \begin{observacion*} Por la demostración del teorema  \ref{teorema-de-los-valores-singulares},  los números positivos $\lambda_1,\ldots,\lambda_r$ son las raíces cuadradas de los autovalores del operador $T^*T$. 
         \end{observacion*}
         
-        \begin{definicion}  Sea $T: V \to W$ una transformación lineal de rango $r$ entre espacios de dimensión finita 	con producto interno. Entonces, las raíces cuadradas de los autovalores del operador $T^*T$ son llamados los \textit{valores singulares}\index{valores singulares} de  $T$. 
+        \begin{definicion}  Sea $T: V \to W$ una transformación lineal de rango $r$ entre espacios de dimensión finita     con producto interno. Entonces, las raíces cuadradas de los autovalores del operador $T^*T$ son llamados los \textit{valores singulares}\index{valores singulares} de  $T$. 
         \end{definicion}
         
        
@@ -1261,21 +1261,21 @@
             
         \begin{definicion}
             Sea $T:V\to V$ un operador lineal de $V$,  $\R$-espacio vectorial de dimensión finita con producto interno. diremos que $T$  es \textit{antisimétrico}\index{operador antisimétrico} si $\la Tv,w \ra = -\la v,Tw \ra$ para $v,w \in V$,  es decir si $T^* = -T$. Por otro lado diremos que $T$ es \textit{ortogonal}\index{operador ortogonal} si $T$ es inversible y $T^* = T^{-1}$. 
-        \end{definicion}	
+        \end{definicion}    
         
         \begin{ejemplo*}
             Sea $T(x,y,z) = (-y+2z,x+3z,-2x-3y)$. Veamos que $T$ es antisimétrico. 
             \begin{align*}
                 \la T^*(x,y,z),e_1 \ra &= \la (x,y,z), Te_1 \ra = \la (x,y,z),(0,1,-2) \ra = y -2z. \\
-                \la T^*(x,y,z),e_2 \ra &= \la (x,y,z), Te_2 \ra = \la (x,y,z),(-1,0,-3) \ra = -x -3z. \\	
+                \la T^*(x,y,z),e_2 \ra &= \la (x,y,z), Te_2 \ra = \la (x,y,z),(-1,0,-3) \ra = -x -3z. \\    
                 \la T^*(x,y,z),e_3 \ra &= \la (x,y,z), Te_3 \ra = \la (x,y,z),(2,3,0) \ra = 2x+3y. 
             \end{align*}
-            Luego, $T^*(x,y,z) = (y-2z,-x-3z,2x+3y) = -T(x,y,z)$.	
+            Luego, $T^*(x,y,z) = (y-2z,-x-3z,2x+3y) = -T(x,y,z)$.    
         \end{ejemplo*}
             
         \begin{definicion}
             Una matriz  $A \in M_{n}(\R)$  es \textit{antisimétrica} si $A^{\t}= -A$. Diremos que  $A$  es \textit{ortogonal} si $A$ tiene inversa y $A^{\t}=A^{-1}$.
-        \end{definicion}	
+        \end{definicion}    
             
         \begin{ejercicio*} $T$  es un operador antisimétrico si y solo si la matriz de $T$ en cualquier base ortonormal es antisimétrica.
         
@@ -1377,7 +1377,7 @@
                     A^{\t}A = [T^*]_{\mathcal V \mathcal U} [T]_{\mathcal U \mathcal V} = [T^*T]_{\mathcal V},\\
                     AA^{\t} = [T]_{\mathcal U \mathcal V}[T^*]_{\mathcal V \mathcal U} = [TT^*]_{\mathcal U}
             \end{align*} 
-            Luego $T^*T = Id$ si y solo si $A^{\t}A=I$ y  $TT^* = Id$ si y solo si $AA^{\t}=I$.
+            Luego $T^*T = \Id$ si y solo si $A^{\t}A=I$ y  $TT^* = \Id$ si y solo si $AA^{\t}=I$.
         \end{proof}
         
         \begin{teorema}\label{th-6.6}
@@ -1392,12 +1392,12 @@
         \begin{proof}
             \ref{oth0} $\Rightarrow$ \ref{oth1}
             $
-            \la Tv,Tw\ra =	\la v,T^*Tw\ra  = \la v,w \ra .
+            \la Tv,Tw\ra =    \la v,T^*Tw\ra  = \la v,w \ra .
             $
             
             
             %\ref{oth2}
-            %$||Tv||^2=  \la Tv,Tv\ra =	\la v,v\ra = ||v||^2.
+            %$||Tv||^2=  \la Tv,Tv\ra =    \la v,v\ra = ||v||^2.
             %$
             
             \ref{oth1} $\Rightarrow$ \ref{oth3} $\la Tu_i,Tu_j\ra = \la u_i,u_j\ra = \delta_{ij}$ (donde $\delta_{ij}$ es el símbolo de Kroneker, $\delta_{ij}=0$ si $i\ne j$ y $\delta_{ii}=1$), luego $\{Tu_1,\ldots,Tu_n\}$ es un conjunto ortonormal  de $n$ elementos, luego son LI y por consiguiente una BON. 

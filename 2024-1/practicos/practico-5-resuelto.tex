@@ -13,17 +13,138 @@
         \item\label{autovalores-4} $\begin{bmatrix} 3 & -5 \\ 1 & -1 \end{bmatrix}$,\vskip .2cm
         \item\label{autovalores-5}  $\begin{bmatrix} \lambda & 0 & 0 \\ 1 & \lambda & 0\\ 0 & 1 & \lambda \\ \end{bmatrix}$, $\lambda\in \mathbb R$
         \vskip .2cm
-        \item\label{autovalores-6} $\left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \operatorname{sen}\theta\\ 0 & -\operatorname{sen}\theta & \cos\theta \end{matrix} \right]$, $0\leq \theta<2\pi$.
+        \item\label{autovalores-6} $\left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \sen\theta\\ 0 & -\sen\theta & \cos\theta \end{matrix} \right]$, $0\leq \theta<2\pi$.
     \end{enumerate}
     \end{multicols}
 
 
     \rta
+    En todos los casos calculamos el polinomio característico, averiguamos sus raíces y luego resolvemos el sistema de ecuaciones que nos da el autoespacio asociado a cada autovalor.
+    
+    \vskip .2cm
+    \ref{autovalores-1}
+    Denominamos $A$  a la matriz del enunciado. El polinomio característico de $A$ es 
+    \begin{align*}
+        \chi_A(x) &= \left|\begin{matrix} x-2 & -1\\ 1 & x-4 \end{matrix} \right| \\ &= (x-2)(x-4)-(-1)(1) = x^2-6x+9 \\
+        &= (x-3)^2.
+    \end{align*}
+    Luego $\lambda=3$ es el único autovalor. Para calcular el autoespacio asociado a $\lambda=3$ resolvemos el sistema  $(3\Id-A)v=0$, es decir
+    \begin{align*}
+        \begin{bmatrix} 3-2 & -1\\ 1 & 3-4 \end{bmatrix} &= \begin{bmatrix} 1 & -1\\ 1 & -1 \end{bmatrix} \begin{bmatrix} v_1\\ v_2 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \end{bmatrix} \\
+        \Rightarrow \begin{bmatrix} v_1-v_2\\ v_1-v_2 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \end{bmatrix} &\Rightarrow v_1=v_2.
+    \end{align*}
+    Luego,  el único autovalor es $\lambda=3$ y el autoespacio asociado es $\{(t,t): t\in\mathbb{R}\}$.
+
+
+    
+    \vskip .2cm
+    \ref{autovalores-2} Denominamos $B$  a la matriz del enunciado. El polinomio característico de $B$ es
+    \begin{align*}
+        \chi_B(x) &= \left|\begin{matrix} x-1 & 0\\ -1 & x+2 \end{matrix} \right| \\ &= (x-1)(x+2)-(-1)(0) = x^2+x-2 \\
+        &= (x+2)(x-1).
+    \end{align*}
+    Luego $\lambda_1=-2$ y $\lambda_2=1$ son los autovalores. 
+    
+    Para calcular el autoespacio asociado a $\lambda_1=-2$ resolvemos el sistema  $(-2\Id-B)v=0$, es decir
+    \begin{align*}
+        \begin{bmatrix} -2-1 & 0\\ -1 & -2+2 \end{bmatrix} &= \begin{bmatrix} -3 & 0\\ -1 & 0 \end{bmatrix} \begin{bmatrix} v_1\\ v_2 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \end{bmatrix} \\
+        \Rightarrow \begin{bmatrix} -3v_1\\ -v_1 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \end{bmatrix} &\Rightarrow v_1=0.
+    \end{align*}
+    Luego,  el autovalor $\lambda_1=-2$ tiene autoespacio asociado $\{(0,t): t\in\mathbb{R}\}$.
+    Para calcular el autoespacio asociado a $\lambda_2=1$ resolvemos el sistema  $(\Id-B)v=0$, es decir
+    \begin{align*}
+        \begin{bmatrix} 1-1 & 0\\ -1 & 1+2 \end{bmatrix} &= \begin{bmatrix} 0 & 0\\ -1 & 3 \end{bmatrix} \begin{bmatrix} v_1\\ v_2 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \end{bmatrix} \\
+        \Rightarrow \begin{bmatrix} 0\\ -v_1+3v_2 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \end{bmatrix} &\Rightarrow v_1=3v_2.
+    \end{align*}
+    Luego,  el autovalor $\lambda_2=1$ tiene autoespacio asociado $\{(3t,t): t\in\mathbb{R}\}$.
+    
+
+    \vskip .2cm
+    \ref{autovalores-3}
+    Denominamos $C$  a la matriz del enunciado. El polinomio característico de $C$ es
+    \begin{align*}
+        \chi_C(x) &= \left|\begin{matrix} x-2 & 0 & 0\\ 1 & x-1 & 1\\ 0 & 0 & x-2 \end{matrix} \right| \\ &= (x-2)^2(x-1).
+    \end{align*}
+    Luego $\lambda_1=2$ y $\lambda_2=1$ son los autovalores.
+
+    Para calcular el autoespacio asociado a $\lambda_1=2$ resolvemos el sistema  $(2\Id-C)v=0$, es decir
+    \begin{align*}
+        \begin{bmatrix} 2-2 & 0 & 0\\ 1 & 2-1 & 1\\ 0 & 0 & 2-2 \end{bmatrix} &= \begin{bmatrix} 0 & 0 & 0\\ 1 & 1 & 1\\ 0 & 0 & 0 \end{bmatrix} \begin{bmatrix} v_1\\ v_2 \\ v_3\end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix} \\
+        \Rightarrow \begin{bmatrix} 0\\ v_1+v_2+v_3 \\ 0 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix} &\Rightarrow v_1=-v_2-v_3.
+    \end{align*}
+    Luego,  el autovalor $\lambda_1=2$ tiene autoespacio asociado $\{(-t,t,s): t,s\in\mathbb{R}\}$.
+
+    Para calcular el autoespacio asociado a $\lambda_2=1$ resolvemos el sistema  $(\Id-C)v=0$, es decir
+    \begin{align*}
+        \begin{bmatrix} 1-2 & 0 & 0\\ 1 & 1-1 & 1\\ 0 & 0 & 1-2 \end{bmatrix} &= \begin{bmatrix} -1 & 0 & 0\\ 1 & 0 & 1\\ 0 & 0 & -1 \end{bmatrix} \begin{bmatrix} v_1\\ v_2 \\ v_3\end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix} \\
+        \Rightarrow \begin{bmatrix} -v_1\\ v_1+v_3 \\ -v_3 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix} &\Rightarrow v_1=v_3=0.
+    \end{align*}
+    Luego,  el autovalor $\lambda_2=1$ tiene autoespacio asociado $\{(0,t,0): t\in\mathbb{R}\}$.
+
+    
+
+    \vskip .2cm
+    \ref{autovalores-4} Denominamos $D$  a la matriz del enunciado. El polinomio característico de $D$ es
+    \begin{align*}
+        \chi_D(x) &= \left|\begin{matrix} x-3 & 5\\ -1 & x+1 \end{matrix} \right| \\ &= (x-3)(x+1)-(-1)(5) = x^2-2x+2 
+    \end{align*}
+    El polinomio $ x^2-2x+2$ no tiene raíces reales, luego $D$ no tiene autovalores reales y por lo tanto tampoco hay autovectores.
 
 
     \vskip .2cm
+    \ref{autovalores-5} Denominamos $E$  a la matriz del enunciado. En realidad la matriz $E$ depende de $\lambda$ y  debemos analizar la existencia de autovalores y autovectores para diferentes valores de  $\lambda$. El polinomio característico de $E$ es
+    \begin{align*}
+        \chi_E(x) &= \left|\begin{matrix} x-\lambda & 0 & 0\\ 1 & x-\lambda & 0\\ 0 & 1 & x-\lambda \end{matrix} \right| \\ &= (x-\lambda)^3.
+    \end{align*}
+    Luego $\lambda$ es el único autovalor. Para calcular el autoespacio asociado a $\lambda$ resolvemos el sistema  $(\lambda\Id-E)v=0$, es decir   
+    \begin{align*}
+        \begin{bmatrix} \lambda-\lambda & 0 & 0\\ 1 & \lambda-\lambda & 0\\ 0 & 1 & \lambda-\lambda \end{bmatrix} &= \begin{bmatrix} 0 & 0 & 0\\ 1 & 0 & 0\\ 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} v_1\\ v_2 \\ v_3\end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix} \\
+        \Rightarrow \begin{bmatrix} 0\\ v_1 \\ v_2 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix} &\Rightarrow v_1=v_2=0.
+    \end{align*}
+    Luego,  el único autovalor es $\lambda$ y el autoespacio asociado es $\{(0,0,t): t\in\mathbb{R}\}$.
     
+
+    \vskip .2cm
+    \ref{autovalores-6} Denominamos $F$  a la matriz del enunciado. En realidad la matriz $F$ depende de $\theta$ y  debemos analizar la existencia de autovalores y autovectores para diferentes valores de  $\theta$. El polinomio característico de $F$ es
+    \begin{align*}
+        \chi_F(x) &= \left|\begin{matrix} x-1 & 0 & 0\\ 0 & x-\cos\theta & -\sen\theta\\ 0 & \sen\theta & x-\cos\theta \end{matrix} \right| \\ 
+        &= (x-1)((x-\cos\theta)^2+\sen(\theta)^2) \\
+        &= (x-1)(x^2-2x\cos\theta+\cos^2\theta+\sen(\theta)^2) \\
+        &= (x-1)(x^2-2x\cos\theta+1).
+    \end{align*}
+    Por lo tanto $\lambda_1=1$ es un autovalor.  Por otro lado, las raíces del polinomio $x^2-2x\cos\theta+1$ son
+    \begin{align*}
+        \lambda_{2,3} &= \frac{2\cos\theta-2\sqrt{\cos^2\theta-1}}{2} = \cos\theta \pm \sqrt{\cos^2\theta-1}= \cos\theta\pm\sqrt{-\sen^2\theta}
+    \end{align*}
+
+    Debemos dividir en 3 casos, según el valor de $\theta$.
+
+    \vskip .2cm
+
+    \textit{i}) Cuando $\theta=0$ o múltiplo de $2\pi$ tenemos que $\lambda_2 = \lambda_2 =1$. En  ese caso, $F$ es la matriz identidad y por lo tanto hay un único autovalor, 1, y  el autoespacio correspondiente es todo $\R^3$.
     
+    \vskip .2cm
+    \textit{ii}) Cuando $\theta= \pi + 2k\pi$ con $k\in\mathbb{Z}$ tenemos que $\lambda_2 = \lambda_3 =-1$. En  este caso la matriz es
+    $$
+    F = \begin{bmatrix}1 & 0& 0 \\ 0 & -1 & 0\\ 0 & 0 & -1 \end{bmatrix}
+    $$
+    Luego, los autoespacios son $V_1 = \{(t,0,0): t \in \R\}$ y $V_{-1} =\{(0,t,s): t,s \in \R\}$.
+    
+    \vskip .2cm
+    \textit{iii}) Cuando $\theta$ no es múltiplo de $\pi$ tenemos que $-\sen^2\theta < 0$ y por lo tanto el  único autovalor real es $\lambda_1 = 1$. Para calcular el autoespacio asociado a $\lambda_1=1$ resolvemos el sistema  $(\Id-F)v=0$, es decir 
+    \begin{align*}
+        \begin{bmatrix} 1-1 & 0 & 0\\ 0 & 1-\cos\theta & \sen\theta\\ 0 & -\sen\theta & 1-\cos\theta \end{bmatrix} &= \begin{bmatrix} 0 & 0 & 0\\ 0 & 1-\cos\theta & \sen\theta\\ 0 & -\sen\theta & 1-\cos\theta \end{bmatrix} \begin{bmatrix} v_1\\ v_2 \\ v_3\end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix} \\
+        &\Rightarrow \begin{bmatrix} 0\\ (1-\cos\theta)v_2+\sen\theta v_3 \\ -\sen\theta v_2+(1-\cos\theta)v_3 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix}.
+    \end{align*}
+    Luego $v_1$ es arbitrario y para ver los valores de $v_2$ y $v_3$ debemos resolver el sistema homogéneo:
+    \begin{align*}
+        \begin{bmatrix} 0\\ (1-\cos\theta)v_2+\sen\theta v_3 \\ -\sen\theta v_2+(1-\cos\theta)v_3 \end{bmatrix} \underset{F_3/\sen\theta}{\stackrel{F_2/\sen\theta}{\longrightarrow}} \begin{bmatrix} 0\\ \frac{1-\cos\theta}{\sen\theta}v_2+ v_3 \\ - v_2+\frac{1-\cos\theta}{\sen\theta}v_3 \end{bmatrix}
+    \end{align*}
+    Luego $v_3 = -\frac{1-\cos\theta}{\sen\theta}v_2$ y $v_2 = \frac{1-\cos\theta}{\sen\theta}v_3$, es decir $v_2 = -\frac{1-\cos\theta}{\sen\theta}\frac{1-\cos\theta}{\sen\theta}v_2$ o, equivalentemente $v_2 = -\frac{(1-\cos\theta)^2}{\sen^2\theta}v_2$. Si $v_2 = 0$, entonces $v_3=0$. Si $v_2 \ne 0$, entonces $-\frac{(1-\cos\theta)^2}{\sen^2\theta} = 1$,  lo cual no es posible pues $-\frac{(1-\cos\theta)^2}{\sen^2\theta} <0$.
+    \vskip .2cm
+    Concluyendo el caso 3): el único autovalor es $\lambda_1 = 1$ y el autoespacio asociado es $\{(t,0,0): t \in \R\}$.
+
+    \vskip .2cm
     \item\label{autovalores-complejos} Calcular los autovalores complejos de las matrices \ref{autovalores-4} y \ref{autovalores-6} del ejercicio anterior, y para cada autovalor, dar una descripción paramétrica del autoespacio asociado sobre $\mathbb{C}$.
     
     \rta
