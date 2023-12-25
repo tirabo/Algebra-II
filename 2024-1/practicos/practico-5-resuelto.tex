@@ -149,7 +149,7 @@
     
     \rta
     
-    En el caso de la matriz \ref{autovalores-4} del ejercicio anterior, el polinomio característico es $x^2-2x+2$ como ya fue calculado en el ejercicio anterior. 
+    En el caso de la matriz \ref{autovalores-4} del ejercicio anterior, el polinomio característico es $x^2-2x+2$ como ya fue calculado. 
     Por lo tanto sus raíces son
     $$
     \lambda_{1,2} = \frac{2\pm\sqrt{4-8}}{2} = 1\pm i.
@@ -157,8 +157,48 @@
     Para calcular el autoespacio asociado a $\lambda_1 = 1+i$ resolvemos el sistema  $((1+i)\Id-D)v=0$, es decir el sistema homogéneo
     \begin{align*}
         &\begin{bmatrix} 1+i-3 & 5\\ -1 & 1+i+1 \end{bmatrix} = \begin{bmatrix} -2+i & 5\\ -1 & 2+i \end{bmatrix} \stackrel{F_2/(-1)}{\longrightarrow} \begin{bmatrix} -2+i & 5\\ 1 & -2-i \end{bmatrix} \\
-        &\qquad\stackrel{F_1 + (2-i) F_2}{\longrightarrow} \begin{bmatrix} 0 & 5-(2+i)(2-i)\\ 1 & -2-i \end{bmatrix} =\begin{bmatrix} 0 & 0\\ 1 & -2-i \end{bmatrix} 
+        &\qquad\stackrel{F_1 + (2-i) F_2}{\longrightarrow} \begin{bmatrix} 0 & 5-(2+i)(2-i)\\ 1 & -2-i \end{bmatrix} =\begin{bmatrix} 0 & 0\\ 1 & -2-i \end{bmatrix}.
     \end{align*}
+    Por lo tanto $v_1 +(-2-i)v_2=0$, es decir $v_1 = (2+i)v_2$. Luego, el autoespacio asociado a $\lambda_1 = 1+i$ es $\{((2+i)t,t): t \in \C\}$.
+
+    Para calcular el autoespacio asociado a $\lambda_2 = 1-i$ resolvemos el sistema  $((1-i)\Id-D)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} 1-i-3 & 5\\ -1 & 1-i+1 \end{bmatrix} = \begin{bmatrix} -2-i & 5\\ -1 & 2-i \end{bmatrix} \stackrel{F_2/(-1)}{\longrightarrow} \begin{bmatrix} -2-i & 5\\ 1 & -2+i \end{bmatrix} \\
+        &\qquad\stackrel{F_1 + (2+i) F_2}{\longrightarrow} \begin{bmatrix} 0 & 5-(2-i)(2+i)\\ 1 & -2+i \end{bmatrix} =\begin{bmatrix} 0 & 0\\ 1 & -2+i \end{bmatrix}.
+    \end{align*}
+    Por lo tanto $v_1 +(-2+i)v_2=0$, es decir $v_1 = (2-i)v_2$. Luego, el autoespacio asociado a $\lambda_2 = 1-i$ es $\{((2-i)t,t): t \in \C\}$.
+
+    \vskip .2cm
+
+    En la resolución del punto \ref{autovalores-6} del ejercicio anterior, obtuvimos los autovalores $\lambda_1 = 1$ y $\lambda_{2,3} = \cos\theta\pm\sqrt{-\sen^2\theta}$. Luego, $\lambda_2 =\cos\theta + i\sen\theta$ y $\lambda_3 =\cos\theta - i\sen\theta$. Veamos ahora  los autoespacios asociados a los autovalores complejos, es decir cuando $\sen\theta \ne 0$. En  el caso $\lambda_2 =\cos\theta + i\sen\theta$ resolvemos el sistema  $((\cos\theta + i\sen\theta)\Id-F)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 & \cos\theta + i\sen\theta-\cos\theta & -\sen\theta\\ 0 & \sen\theta & \cos\theta + i\sen\theta-\cos\theta \end{bmatrix} \\
+        &= \begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 & i\sen\theta & -\sen\theta\\ 0 & \sen\theta & i\sen\theta \end{bmatrix} \stackrel{F_2\cdot i}{\longrightarrow} \begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 &  -\sen\theta & -i\sen\theta\\ 0 & \sen\theta & i\sen\theta \end{bmatrix} \\
+        &\qquad\overset{F_2/\sen\theta}{\stackrel{F_3/\sen\theta}{\longrightarrow}} \begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 & -1 & -i\\ 0 & 1 & i \end{bmatrix} \stackrel{F_3+F_2}{\longrightarrow}\begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 & -1 & -i\\ 0 & 0 & 0 \end{bmatrix}
+    \end{align*}
+    Por lo tanto $v_1 = 0$, y $-v_2-iv_3=0$, es decir $v_2 = -iv_3$. Luego, el autoespacio asociado a $\lambda_2 =\cos\theta + i\sen\theta$ es $\{t(0,-i,1): t \in \C\}$.
+
+    En el caso $\lambda_3 =\cos\theta - i\sen\theta$ resolvemos el sistema  $((\cos\theta - i\sen\theta)\Id-F)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 & \cos\theta - i\sen\theta-\cos\theta & -\sen\theta\\ 0 & \sen\theta & \cos\theta - i\sen\theta-\cos\theta \end{bmatrix} \\
+        &= \begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 & -i\sen\theta & -\sen\theta\\ 0 & \sen\theta & -i\sen\theta \end{bmatrix} \stackrel{F_2\cdot i}{\longrightarrow} \begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 &  \sen\theta & -i\sen\theta\\ 0 & \sen\theta & -i\sen\theta \end{bmatrix} \\
+        &\qquad\overset{F_2/\sen\theta}{\stackrel{F_3/\sen\theta}{\longrightarrow}} \begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 & 1 & -i\\ 0 & 1 & -i \end{bmatrix} \stackrel{F_3-F_2}{\longrightarrow}\begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 & 1 & -i\\ 0 & 0 & 0 \end{bmatrix} 
+    \end{align*}
+    Por lo tanto $v_1 = 0$, y $v_2-iv_3=0$, es decir $v_2 = iv_3$. Luego, el autoespacio asociado a $\lambda_3 =\cos\theta - i\sen\theta$ es $\{t(0,i,1): t \in \C\}$.
+
+    \vskip .2cm
+
+    \noindent \textbf{Conclusión.} Haremos un resumen de  los resultados acerca de autovalores y autovectores de la matriz del ejercicio \ref{autovalores} \ref{autovalores-6}, es decir de la matriz
+    \begin{equation*}
+        \left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \sen\theta\\ 0 & -\sen\theta & \cos\theta \end{matrix} \right].
+    \end{equation*}
+
+    \begin{itemize}
+        \item Si $\theta=0$ o múltiplo de $2\pi$, entonces $F$ tiene un único autovalor, 1, y  el autoespacio correspondiente es todo $\R^3$.
+        \item Si $\theta= \pi + 2k\pi$ con $k\in\mathbb{Z}$, entonces $F$ tiene dos autovalores, 1 y $-1$, y  los autoespacios correspondientes son $V_1 = \{(t,0,0): t \in \R\}$ y $V_{-1} =\{(0,t,s): t,s \in \R\}$.
+        \item Si $\theta$ no es múltiplo de $\pi$, entonces $F$ tiene un único autovalor real, 1, y  el autoespacio correspondiente es $\{(t,0,0): t \in \R\}$, y tiene dos autovalores complejos, $\lambda_2 =\cos\theta + i\sen\theta$ y $\lambda_3 =\cos\theta - i\sen\theta$, cuyos autoespacios son $\{t(0,-i,1): t \in \C\}$ y $\{t(0,i,1): t \in \C\}$, respectivamente.
+    \end{itemize}
+
 
     
     
