@@ -13,7 +13,7 @@
         \item\label{autovalores-4} $\begin{bmatrix} 3 & -5 \\ 1 & -1 \end{bmatrix}$,\vskip .2cm
         \item\label{autovalores-5}  $\begin{bmatrix} \lambda & 0 & 0 \\ 1 & \lambda & 0\\ 0 & 1 & \lambda \\ \end{bmatrix}$, $\lambda\in \mathbb R$
         \vskip .2cm
-        \item\label{autovalores-6} $\left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \sen\theta\\ 0 & -\sen\theta & \cos\theta \end{matrix} \right]$, $0\leq \theta<2\pi$.
+        \item\label{autovalores-6} $\left[\begin{matrix}\cos\theta & \sen\theta\\ -\sen\theta & \cos\theta \end{matrix} \right]$, $0\leq \theta<2\pi$.
     \end{enumerate}
     \end{multicols}
 
@@ -107,42 +107,31 @@
     \vskip .2cm
     \ref{autovalores-6} Denominamos $F$  a la matriz del enunciado. En realidad la matriz $F$ depende de $\theta$ y  debemos analizar la existencia de autovalores y autovectores para diferentes valores de  $\theta$. El polinomio característico de $F$ es
     \begin{align*}
-        \chi_F(x) &= \left|\begin{matrix} x-1 & 0 & 0\\ 0 & x-\cos\theta & -\sen\theta\\ 0 & \sen\theta & x-\cos\theta \end{matrix} \right| \\ 
-        &= (x-1)((x-\cos\theta)^2+\sen(\theta)^2) \\
-        &= (x-1)(x^2-2x\cos\theta+\cos^2\theta+\sen(\theta)^2) \\
-        &= (x-1)(x^2-2x\cos\theta+1).
+        \chi_F(x) &= \left|\begin{matrix} x-\cos\theta & -\sen\theta\\\sen\theta & x-\cos\theta \end{matrix} \right| \\ 
+        &= (x-\cos\theta)^2+\sen(\theta)^2\\
+        &= x^2-2x\cos\theta+\cos^2\theta+\sen(\theta)^2 \\
+        &= x^2-2x\cos\theta+1.
     \end{align*}
-    Por lo tanto $\lambda_1=1$ es un autovalor.  Por otro lado, las raíces del polinomio $x^2-2x\cos\theta+1$ son
+    Las raíces del polinomio $x^2-2x\cos\theta+1$ son
     \begin{align*}
-        \lambda_{2,3} &= \frac{2\cos\theta-2\sqrt{\cos^2\theta-1}}{2} = \cos\theta \pm \sqrt{\cos^2\theta-1}= \cos\theta\pm\sqrt{-\sen^2\theta}
+        \lambda_{1,2} &= \frac{2\cos\theta-2\sqrt{\cos^2\theta-1}}{2} = \cos\theta \pm \sqrt{\cos^2\theta-1}\\&= \cos\theta\pm\sqrt{-\sen^2\theta} \tag{*}
     \end{align*}
 
     Debemos dividir en 3 casos, según el valor de $\theta$.
 
     \vskip .2cm
 
-    \textit{i}) Cuando $\theta=0$ o múltiplo de $2\pi$ tenemos que $\lambda_2 = \lambda_2 =1$. En  ese caso, $F$ es la matriz identidad y por lo tanto hay un único autovalor, 1, y  el autoespacio correspondiente es todo $\R^3$.
+    \textit{i}) Cuando $\theta=0$ tenemos que $\lambda_1 = \lambda_2 =1$. En  ese caso, $F$ es la matriz identidad y por lo tanto hay un único autovalor, 1, y  el autoespacio correspondiente es todo $\R^3$.
     
     \vskip .2cm
-    \textit{ii}) Cuando $\theta= \pi + 2k\pi$ con $k\in\mathbb{Z}$ tenemos que $\lambda_2 = \lambda_3 =-1$. En  este caso la matriz es
+    \textit{ii}) Cuando $\theta= \pi$, tenemos que $\lambda_1 = \lambda_2 =-1$. En  este caso la matriz es
     $$
-    F = \begin{bmatrix}1 & 0& 0 \\ 0 & -1 & 0\\ 0 & 0 & -1 \end{bmatrix}
+    F = \begin{bmatrix} -1 & 0\\  0 & -1 \end{bmatrix}
     $$
-    Luego, los autoespacios son $V_1 = \{(t,0,0): t \in \R\}$ y $V_{-1} =\{(0,t,s): t,s \in \R\}$.
+    Luego, $F$ es $-\Id$, hay un solo autovalor, $-1$, y  el autoespacio correspondiente es todo $\R^2$
     
     \vskip .2cm
-    \textit{iii}) Cuando $\theta$ no es múltiplo de $\pi$ tenemos que $-\sen^2\theta < 0$ y por lo tanto el  único autovalor real es $\lambda_1 = 1$. Para calcular el autoespacio asociado a $\lambda_1=1$ resolvemos el sistema  $(\Id-F)v=0$, es decir 
-    \begin{align*}
-        \begin{bmatrix} 1-1 & 0 & 0\\ 0 & 1-\cos\theta & \sen\theta\\ 0 & -\sen\theta & 1-\cos\theta \end{bmatrix} &= \begin{bmatrix} 0 & 0 & 0\\ 0 & 1-\cos\theta & \sen\theta\\ 0 & -\sen\theta & 1-\cos\theta \end{bmatrix} \begin{bmatrix} v_1\\ v_2 \\ v_3\end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix} \\
-        &\Rightarrow \begin{bmatrix} 0\\ (1-\cos\theta)v_2+\sen\theta v_3 \\ -\sen\theta v_2+(1-\cos\theta)v_3 \end{bmatrix} = \begin{bmatrix} 0\\ 0 \\ 0\end{bmatrix}.
-    \end{align*}
-    Luego $v_1$ es arbitrario y para ver los valores de $v_2$ y $v_3$ debemos resolver el sistema homogéneo:
-    \begin{align*}
-        \begin{bmatrix} 0\\ (1-\cos\theta)v_2+\sen\theta v_3 \\ -\sen\theta v_2+(1-\cos\theta)v_3 \end{bmatrix} \underset{F_3/\sen\theta}{\stackrel{F_2/\sen\theta}{\longrightarrow}} \begin{bmatrix} 0\\ \frac{1-\cos\theta}{\sen\theta}v_2+ v_3 \\ - v_2+\frac{1-\cos\theta}{\sen\theta}v_3 \end{bmatrix}
-    \end{align*}
-    Luego $v_3 = -\frac{1-\cos\theta}{\sen\theta}v_2$ y $v_2 = \frac{1-\cos\theta}{\sen\theta}v_3$, es decir $v_2 = -\frac{1-\cos\theta}{\sen\theta}\frac{1-\cos\theta}{\sen\theta}v_2$ o, equivalentemente $v_2 = -\frac{(1-\cos\theta)^2}{\sen^2\theta}v_2$. Si $v_2 = 0$, entonces $v_3=0$. Si $v_2 \ne 0$, entonces $-\frac{(1-\cos\theta)^2}{\sen^2\theta} = 1$,  lo cual no es posible pues $-\frac{(1-\cos\theta)^2}{\sen^2\theta} <0$.
-    \vskip .2cm
-    Concluyendo el caso 3): el único autovalor es $\lambda_1 = 1$ y el autoespacio asociado es $\{(t,0,0): t \in \R\}$.
+    \textit{iii}) Cuando $\theta\ne 0, \pi$ y  en este caso tenemos que $-\sen^2\theta < 0$ y por lo tanto, por (*), no hay autovalores reales.
 
     \vskip .2cm
     \item\label{autovalores-complejos} Calcular los autovalores complejos de las matrices \ref{autovalores-4} y \ref{autovalores-6} del ejercicio anterior, y para cada autovalor, dar una descripción paramétrica del autoespacio asociado sobre $\mathbb{C}$.
@@ -170,40 +159,36 @@
 
     \vskip .2cm
 
-    En la resolución del punto \ref{autovalores-6} del ejercicio anterior, obtuvimos los autovalores $\lambda_1 = 1$ y $\lambda_{2,3} = \cos\theta\pm\sqrt{-\sen^2\theta}$. Luego, $\lambda_2 =\cos\theta + i\sen\theta$ y $\lambda_3 =\cos\theta - i\sen\theta$. Veamos ahora  los autoespacios asociados a los autovalores complejos, es decir cuando $\sen\theta \ne 0$. En  el caso $\lambda_2 =\cos\theta + i\sen\theta$ resolvemos el sistema  $((\cos\theta + i\sen\theta)\Id-F)v=0$, es decir el sistema homogéneo
+    En la resolución del punto \ref{autovalores-6} del ejercicio anterior, obtuvimos  $\lambda_{1,2} = \cos\theta\pm\sqrt{-\sen^2\theta}$. Luego, los autovalores son $\lambda_1 =\cos\theta + i\sen\theta$ y $\lambda_2 =\cos\theta - i\sen\theta$. Veamos ahora  los autoespacios asociados a estos autovalores complejos, es decir cuando $\sen\theta \ne 0$. En  el caso $\lambda_1 =\cos\theta + i\sen\theta$ resolvemos el sistema  $((\cos\theta + i\sen\theta)\Id-F)v=0$, es decir el sistema homogéneo
     \begin{align*}
-        &\begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 & \cos\theta + i\sen\theta-\cos\theta & -\sen\theta\\ 0 & \sen\theta & \cos\theta + i\sen\theta-\cos\theta \end{bmatrix} \\
-        &= \begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 & i\sen\theta & -\sen\theta\\ 0 & \sen\theta & i\sen\theta \end{bmatrix} \stackrel{F_2\cdot i}{\longrightarrow} \begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 &  -\sen\theta & -i\sen\theta\\ 0 & \sen\theta & i\sen\theta \end{bmatrix} \\
-        &\qquad\overset{F_2/\sen\theta}{\stackrel{F_3/\sen\theta}{\longrightarrow}} \begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 & -1 & -i\\ 0 & 1 & i \end{bmatrix} \stackrel{F_3+F_2}{\longrightarrow}\begin{bmatrix} \cos\theta + i\sen\theta-1 & 0 & 0\\ 0 & -1 & -i\\ 0 & 0 & 0 \end{bmatrix}
+        &\begin{bmatrix}\cos\theta + i\sen\theta-\cos\theta & -\sen\theta\\ \sen\theta & \cos\theta + i\sen\theta-\cos\theta \end{bmatrix} \\
+        &= \begin{bmatrix}  i\sen\theta & -\sen\theta\\ \sen\theta & i\sen\theta \end{bmatrix} \stackrel{F_1\cdot i}{\longrightarrow} \begin{bmatrix} -\sen\theta & -i\sen\theta\\ \sen\theta & i\sen\theta \end{bmatrix} \\
+        &\qquad\overset{F_1/\sen\theta}{\stackrel{F_2/\sen\theta}{\longrightarrow}} \begin{bmatrix}-1 & -i\\ 1 & i \end{bmatrix} \stackrel{F_2+F_1}{\longrightarrow}\begin{bmatrix}-1 & -i\\ 0 & 0 \end{bmatrix}
     \end{align*}
-    Por lo tanto $v_1 = 0$, y $-v_2-iv_3=0$, es decir $v_2 = -iv_3$. Luego, el autoespacio asociado a $\lambda_2 =\cos\theta + i\sen\theta$ es $\{t(0,-i,1): t \in \C\}$.
+    Por lo tanto $-v_1-iv_2=0$, es decir $v_1 = -iv_2$. Luego, el autoespacio asociado a $\lambda_1 =\cos\theta + i\sen\theta$ es $\{t(-i,1): t \in \C\}$.
 
-    En el caso $\lambda_3 =\cos\theta - i\sen\theta$ resolvemos el sistema  $((\cos\theta - i\sen\theta)\Id-F)v=0$, es decir el sistema homogéneo
+    \vskip .2cm 
+
+    En el caso $\lambda_2 =\cos\theta - i\sen\theta$ resolvemos el sistema  $((\cos\theta - i\sen\theta)\Id-F)v=0$, es decir el sistema homogéneo
     \begin{align*}
-        &\begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 & \cos\theta - i\sen\theta-\cos\theta & -\sen\theta\\ 0 & \sen\theta & \cos\theta - i\sen\theta-\cos\theta \end{bmatrix} \\
-        &= \begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 & -i\sen\theta & -\sen\theta\\ 0 & \sen\theta & -i\sen\theta \end{bmatrix} \stackrel{F_2\cdot i}{\longrightarrow} \begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 &  \sen\theta & -i\sen\theta\\ 0 & \sen\theta & -i\sen\theta \end{bmatrix} \\
-        &\qquad\overset{F_2/\sen\theta}{\stackrel{F_3/\sen\theta}{\longrightarrow}} \begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 & 1 & -i\\ 0 & 1 & -i \end{bmatrix} \stackrel{F_3-F_2}{\longrightarrow}\begin{bmatrix} \cos\theta - i\sen\theta-1 & 0 & 0\\ 0 & 1 & -i\\ 0 & 0 & 0 \end{bmatrix} 
+        &\begin{bmatrix} \cos\theta - i\sen\theta-\cos\theta & -\sen\theta\\  \sen\theta & \cos\theta - i\sen\theta-\cos\theta \end{bmatrix} \\
+        &= \begin{bmatrix} -i\sen\theta & -\sen\theta\\ \sen\theta & -i\sen\theta \end{bmatrix} \stackrel{F_1\cdot i}{\longrightarrow} \begin{bmatrix} \sen\theta & -i\sen\theta\\\sen\theta & -i\sen\theta \end{bmatrix} \\
+        &\qquad\overset{F_1/\sen\theta}{\stackrel{F_2/\sen\theta}{\longrightarrow}} \begin{bmatrix}1 & -i\\ 1 & -i \end{bmatrix} \stackrel{F_2-F_1}{\longrightarrow}\begin{bmatrix} 1 & -i\\  0 & 0 \end{bmatrix} 
     \end{align*}
-    Por lo tanto $v_1 = 0$, y $v_2-iv_3=0$, es decir $v_2 = iv_3$. Luego, el autoespacio asociado a $\lambda_3 =\cos\theta - i\sen\theta$ es $\{t(0,i,1): t \in \C\}$.
+    Por lo tanto $v_1-iv_2=0$, es decir $v_1 = iv_2$. Luego, el autoespacio asociado a $\lambda_2 =\cos\theta - i\sen\theta$ es $\{t(i,1): t \in \C\}$.
 
     \vskip .2cm
 
     \noindent \textbf{Conclusión.} Haremos un resumen de  los resultados acerca de autovalores y autovectores de la matriz del ejercicio \ref{autovalores} \ref{autovalores-6}, es decir de la matriz
     \begin{equation*}
-        \left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \sen\theta\\ 0 & -\sen\theta & \cos\theta \end{matrix} \right].
+        \left[\begin{matrix} \cos\theta & \sen\theta\\ -\sen\theta & \cos\theta \end{matrix} \right].
     \end{equation*}
 
     \begin{itemize}
-        \item Si $\theta=0$ o múltiplo de $2\pi$, entonces $F$ tiene un único autovalor, 1, y  el autoespacio correspondiente es todo $\R^3$.
-        \item Si $\theta= \pi + 2k\pi$ con $k\in\mathbb{Z}$, entonces $F$ tiene dos autovalores, 1 y $-1$, y  los autoespacios correspondientes son $V_1 = \{(t,0,0): t \in \R\}$ y $V_{-1} =\{(0,t,s): t,s \in \R\}$.
-        \item Si $\theta$ no es múltiplo de $\pi$, entonces $F$ tiene un único autovalor real, 1, y  el autoespacio correspondiente es $\{(t,0,0): t \in \R\}$, y tiene dos autovalores complejos, $\lambda_2 =\cos\theta + i\sen\theta$ y $\lambda_3 =\cos\theta - i\sen\theta$, cuyos autoespacios son $\{t(0,-i,1): t \in \C\}$ y $\{t(0,i,1): t \in \C\}$, respectivamente.
+        \item Si $\theta=0$, entonces $F$ tiene un único autovalor, 1, y  el autoespacio correspondiente es todo $\R^2$.
+        \item Si $\theta= \pi$, entonces $F$ tiene un único autovalor, -1, y  el autoespacio correspondiente es todo $\R^2$.
+        \item Si $\theta \ne 0, \pi$, entonces $F$  tiene dos autovalores complejos, $\lambda_1 =\cos\theta + i\sen\theta$ y $\lambda_2 =\cos\theta - i\sen\theta$, cuyos autoespacios son $\{t(-i,1): t \in \C\}$ y $\{t(i,1): t \in \C\}$, respectivamente.
     \end{itemize}
-
-
-    
-    
-
-
     \vskip .2cm
 
     \end{enumerate}
@@ -215,7 +200,29 @@
     
     \item Probar que hay una única matriz $A\in\mathbb{R}^{2\times 2}$ tal que $(1,1)$ es autovector de autovalor $2$, y $(-2,1)$ es autovector de autovalor $1$.
     
-    \rta
+    \rta Para encontrar la matriz debemos resolver los sistemas
+    \begin{align*}
+        \begin{bmatrix} x & y\\ z & w \end{bmatrix} \begin{bmatrix} 1\\ 1 \end{bmatrix} &= \begin{bmatrix} 2\\ 2 \end{bmatrix} \\
+        \begin{bmatrix}x &y\\z &w \end{bmatrix} \begin{bmatrix} -2\\ 1 \end{bmatrix} &= \begin{bmatrix} -2\\ 1 \end{bmatrix}.
+    \end{align*}
+    O, equivalentemente, 
+    \begin{align*}
+        \begin{bmatrix}x+y\\z+w \end{bmatrix} &= \begin{bmatrix} 2 \\ 2\end{bmatrix} \\
+        \begin{bmatrix} -2x +y\\ -2z +w \end{bmatrix} &= \begin{bmatrix} -2 \\ 1\end{bmatrix}.
+    \end{align*}
+    Son sistemas sencillos de resolver: 
+    $$x+y=2,\quad z+w=2,\quad -2x+y=-2,\quad -2z+w=1.$$ 
+    
+    Luego, $y = 2-x$ y por lo tanto $-2x+2-x=-2$, es decir  $-3x=-4$ $\Rightarrow$ $x = 4/3$, y  en consecuencia $y =2-x = 2- 4/3=2/3$. 
+
+    Por otro lado, $w = 2-z$ y por lo tanto $-2z+2-z=1$, es decir $-3z=-1$ $\Rightarrow$ $z = 1/3$, y  en consecuencia $w =2-z = 2- 1/3=5/3$.
+
+    Luego, la matriz buscada es 
+    $$
+    A = \begin{bmatrix} 4/3 & 2/3\\1/3  & 5/3 \end{bmatrix}.
+    $$
+
+
 
 
     \vskip .2cm

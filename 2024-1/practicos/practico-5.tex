@@ -26,7 +26,7 @@
         \item\label{autovalores-4} $\begin{bmatrix} 3 & -5 \\ 1 & -1 \end{bmatrix}$,\vskip .2cm
         \item\label{autovalores-5}  $\begin{bmatrix} \lambda & 0 & 0 \\ 1 & \lambda & 0\\ 0 & 1 & \lambda \\ \end{bmatrix}$, $\lambda\in \mathbb R$
         \vskip .2cm
-        \item\label{autovalores-6} $\left[\begin{matrix}1 & 0& 0 \\ 0 & \cos\theta & \operatorname{sen}\theta\\ 0 & -\operatorname{sen}\theta & \cos\theta \end{matrix} \right]$, $0\leq \theta<2\pi$.
+        \item\label{autovalores-6} $\left[\begin{matrix}\cos\theta & \sen\theta\\ -\sen\theta & \cos\theta \end{matrix} \right]$, $0\leq \theta<2\pi$.
     \end{enumerate}
     \end{multicols}
 
@@ -38,9 +38,9 @@
 
 \textbf{Observación.} Es oportuno destacar algunos fenómenos que podemos observar en los ejercicios \ref{autovalores}-\ref{autovalores-complejos}.
 \begin{itemize}
- \item[(i)] Una matriz con coeficientes reales puede no tener autovalores reales pero sí complejos (matriz $(d)$) o tener ambos (matriz $(f)$).
- \item[(ii)] Para describir paramétricamente los autoespacios podemos necesitar distintas cantidades de parámetros para los distintos autovalores (la matriz $(c)$). Esta cantidad mínima de parámetros es lo que llamaremos {\it dimensión}.
- \item[(iii)] La cantidad de autovalores distintos es menor o igual al tama\~no de la matriz. Incluso puede tener un sólo autovalor (matriz $(d)$ y más generalmente la matriz $(e)$ del Ejercicio \ref{mas}) o tener tantos como el tama\~no (matriz $(b)$ y $(f)$).
+ \item[(i)] Una matriz con coeficientes reales puede no tener autovalores reales pero sí complejos (matriz \ref{autovalores-4} y \ref{autovalores-6}) o tener ambos.
+ \item[(ii)] Para describir paramétricamente los autoespacios podemos necesitar distintas cantidades de parámetros para los distintos autovalores (la matriz \ref{autovalores-3}). Esta cantidad mínima de parámetros es lo que llamaremos {\it dimensión}.
+ \item[(iii)] La cantidad de autovalores distintos es menor o igual al tamaño de la matriz. Incluso puede tener un sólo autovalor (matriz \ref{autovalores-5} y más generalmente la matriz \ref{mas-autovalores-5} del Ejercicio \ref{mas}) o tener tantos como el tamaño (matriz \ref{autovalores-2}).
 \end{itemize}
 
 \begin{enumerate}[resume,topsep=6pt,itemsep=.4cm]
@@ -64,7 +64,7 @@ Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)
 
 \end{enumerate}
 
-\textbf{Observación} Algunos libros definen el polinomio característico de la matriz $A$ como $\tilde\chi_A(x)=\det(x\Id_n-A)$. Como vemos en el ejercicio anterior, ambas definiciones sirven para encontrar autovalores de $A$. El polinomio $\tilde\chi_A(x)$ tiene la particularidad de ser mónico, o sea que el coeficiente del término $x^n$ es $1$.
+\textbf{Observación} Algunos libros definen el polinomio característico de la matriz $A$ como $\tilde\chi_A(x)=\det(A-x\Id_n)$. Como vemos en el ejercicio anterior, ambas definiciones sirven para encontrar autovalores de $A$. El polinomio $\chi_A(x)$ tiene la particularidad de ser mónico, o sea que el coeficiente del término $x^n$ es $1$, mientras que el coeficiente del término $x^n$ de $\tilde\chi_A(x)=\det(A-x\Id_n)$ es $1$ si $n$ es par y $-1$ si $n$ es impar.
 
 \begin{enumerate}[resume,topsep=6pt,itemsep=.4cm]
 
