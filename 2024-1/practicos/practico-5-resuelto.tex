@@ -222,18 +222,23 @@
     A = \begin{bmatrix} 4/3 & 2/3\\1/3  & 5/3 \end{bmatrix}.
     $$
 
-
-
-
     \vskip .2cm
     
-        
     
     \item Sea $A\in\mathbb{K}^{n\times n}$, y sea $f(x) = ax^2+bx+c$ un polinomio, con $a,b,c\in\mathbb{K}$. Sea $f(A)$ la matriz $n \times n$ definida por
-    $$f(A) = a A^2+bA+c\operatorname{Id}_n.$$
+    $$f(A) = a A^2+bA+c\Id_n.$$
     Probar que todo autovector de $A$ con autovalor $\lambda$ es autovector de $f(A)$ con autovalor $f(\lambda)$.
     
-    \rta
+    \rta Sea $v$ un autovector de $A$ con autovalor $\lambda$, es decir $Av=\lambda v$. Entonces 
+    \begin{align*}
+        f(A)v &= (a A^2+bA+c\Id_n)v \\
+        &= a A^2v+bAv+c\Id_nv \\
+        &= a A(\lambda v)+b(\lambda v)+c\Id_n v \\
+        &=  a \lambda A(v)+\lambda bv+c v \\
+        &=a \lambda^2 v+\lambda bv+c v \\
+        &= (\lambda^2 a+\lambda b+c)v \\
+        &= f(\lambda)v.
+    \end{align*}
 
 
     \vskip .2cm
@@ -253,7 +258,7 @@
     \vskip .2cm
         
         
-    \item Sea $A\in\mathbb{K}^{n\times n}$. Probar que el polinomio $\tilde\chi_A(x)=\det(A-x\operatorname{Id}_n)$ y el polinomio característico de $A$ tienen las mismas raíces.
+    \item Sea $A\in\mathbb{K}^{n\times n}$. Probar que el polinomio $\tilde\chi_A(x)=\det(A-x\Id_n)$ y el polinomio característico de $A$ tienen las mismas raíces.
     
     \rta
 
@@ -265,7 +270,7 @@
     
     \begin{enumerate}[resume,topsep=6pt,itemsep=.4cm]
     
-    \item Probar que si $A\in\mathbb{K}^{n\times n}$ es una matriz nilpotente entonces $0$ es el único autovalor de $A$. Usar esto para deducir que la matriz $\operatorname{Id}_n-A$ es invertible (esta es otra demostración del ejercicio \ref{nilpotene - id} del Práctico \ref{practico-3}).
+    \item Probar que si $A\in\mathbb{K}^{n\times n}$ es una matriz nilpotente entonces $0$ es el único autovalor de $A$. Usar esto para deducir que la matriz $\Id_n-A$ es invertible (esta es otra demostración del ejercicio \ref{nilpotene - id} del Práctico \ref{practico-3}).
     
     \rta
 
