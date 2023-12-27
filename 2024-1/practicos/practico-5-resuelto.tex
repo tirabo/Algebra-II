@@ -139,7 +139,7 @@
     Luego, $F$ es $-\Id$, hay un solo autovalor, $-1$, y  el autoespacio correspondiente es todo $\R^2$
     
     \vskip .2cm
-    \textit{iii}) Cuando $\theta\ne 0, \pi$ y  en este caso tenemos que $-\sen^2\theta < 0$ y por lo tanto, por (*), no hay autovalores reales.
+    \textit{iii}) Cuando $\theta\ne 0, \pi$ y  en este caso tenemos que $-\sen^2\theta < 0$ y por lo tanto, por (*), no hay autovalores reales.\qed
 
     \vskip .2cm
     \item\label{autovalores-complejos} Calcular los autovalores complejos de las matrices \ref{autovalores-4} y \ref{autovalores-6} del ejercicio anterior, y para cada autovalor, dar una descripción paramétrica del autoespacio asociado sobre $\mathbb{C}$.
@@ -197,7 +197,7 @@
         \item Si $\theta= \pi$, entonces $F$ tiene un único autovalor, -1, y  el autoespacio correspondiente es todo $\R^2$.
         \item Si $\theta \ne 0, \pi$, entonces $F$  tiene dos autovalores complejos, $\lambda_1 =\cos\theta + i\sen\theta$ y $\lambda_2 =\cos\theta - i\sen\theta$, cuyos autoespacios son $\{t(-i,1): t \in \C\}$ y $\{t(i,1): t \in \C\}$, respectivamente.
     \end{itemize}
-    \vskip .2cm
+    \qed
 
     \end{enumerate}
     
@@ -230,7 +230,7 @@
     A = \begin{bmatrix} 4/3 & 2/3\\1/3  & 5/3 \end{bmatrix}.
     $$
 
-    \vskip .2cm
+    \qed
     
     
     \item Sea $A\in\mathbb{K}^{n\times n}$, y sea $f(x) = ax^2+bx+c$ un polinomio, con $a,b,c\in\mathbb{K}$. Sea $f(A)$ la matriz $n \times n$ definida por
@@ -247,32 +247,40 @@
         &= (\lambda^2 a+\lambda b+c)v \\
         &= f(\lambda)v.
     \end{align*}
+    \qed
 
-
-    \vskip .2cm
-    
-    
         
     \item Sea $A\in\mathbb{K}^{2\times 2}$.
     
         \begin{enumerate}     
-            \item Probar que el polinomio característico de $A$ es \ $\chi_A(x) = x^2-\operatorname{Tr}(A)x+\det(A)$.
-            \item Si $A$ no es invertible, probar que los autovalores de  $A$ son $0$ y $\operatorname{Tr}(A)$.
+            \item\label{char2x2} Probar que el polinomio característico de $A$ es \ $\chi_A(x) = x^2-\operatorname{Tr}(A)x+\det(A)$.
+            \item\label{no_inv2x2} Si $A$ no es invertible, probar que los autovalores de  $A$ son $0$ y $\operatorname{Tr}(A)$.
         \end{enumerate}
     
-    \rta
+    \rta \ref{char2x2} Si $A= [a_{ij}]$, entonces
+    \begin{align*}
+        \chi_A(x) &= \left|\begin{matrix} x-a_{11} & -a_{12}\\ -a_{21} & x-a_{22} \end{matrix} \right| \\ &= (x-a_{11})(x-a_{22})-(-a_{12})(-a_{21})\\& = x^2-(a_{11}+a_{22})x+a_{11}a_{22}-a_{12}a_{21} \\
+        &= x^2-\operatorname{Tr}(A)x+\det(A).
+    \end{align*}
+
+    \ref{no_inv2x2} Si $A$ no es invertible, entonces $\det(A)=0$ y por lo tanto $\chi_A(x) = x^2-\operatorname{Tr}(A)x$. Luego, los autovalores de $A$ son las raíces de $x^2-\operatorname{Tr}(A)x = x(x-\operatorname{Tr}(A))$, es decir $0$ y $\operatorname{Tr}(A)$. \qed
 
 
-    \vskip .2cm
+    
         
         
     \item Sea $A\in\mathbb{K}^{n\times n}$. Probar que el polinomio $\tilde\chi_A(x)=\det(A-x\Id_n)$ y el polinomio característico de $A$ tienen las mismas raíces.
     
-    \rta
+    \rta Observar que $A-x\Id_n$ es igual a $-\Id_n(x\Id_n-A)$ y por lo tanto,
+    \begin{align*}
+        \tilde\chi_A(x) &= \det(A-x\Id_n) \\
+        &= \det(-\Id_n(x\Id_n-A)) \\
+        &= \det(-\Id_n)\det(x\Id_n-A) \\
+        &= (-1)^n\det(x\Id_n-A) \\
+        &= (-1)^n\chi_A(x).
+    \end{align*}
+    Luego, $\tilde\chi_A(x)$ y $\chi_A(x)$ son polinomios que difieren por un factor $(-1)^n$, es decir tienen las mismas raíces. \qed
 
-
-    \vskip .2cm
-    
     
     \end{enumerate}
     
@@ -280,11 +288,9 @@
     
     \item Probar que si $A\in\mathbb{K}^{n\times n}$ es una matriz nilpotente entonces $0$ es el único autovalor de $A$. Usar esto para deducir que la matriz $\Id_n-A$ es invertible (esta es otra demostración del ejercicio \ref{nilpotene - id} del Práctico \ref{practico-3}).
     
-    \rta
+    \rta Recordemos que $A$ es nilpotente si existe $k \in \mathbb N$ tal que $A^k = 0$. Si $A$ es nilpotente y $v$ autovector con autovalor $\lambda$, entonces $Av = \lambda v$ y por lo tanto $A^2v = A(Av) = A(\lambda v) = \lambda Av = \lambda^2 v$. Iterando este argumento, obtenemos que $A^kv = \lambda^k v$. Pero $A^k = 0$, luego $\lambda^k v = 0$ y por lo tanto $\lambda^k = 0$ y  en consecuencia $\lambda = 0$. Luego, $0$ es el único autovalor de $A$.
 
-
-    \vskip .2cm
-    
+    Ahora bien, si $0$ es el único autovalor de $A$, entonces $\chi_A(x) = x^n$ y por lo tanto $1=\chi_A(1) = \det(\Id_n- A)$ como el determinate de $\Id_n-A$ es no nulo,  esa matriz es invertible. \qed    
     
     
     \item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
