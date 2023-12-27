@@ -295,11 +295,21 @@
     
     \item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
     \begin{enumerate}
-        \item Existe una matriz invertible $A$ tal que $0$ es autovalor de $A$.
-        \item  Si $A$ es invertible, entonces todo autovector de $A$ es autovector de $A^{-1}$.
+        \item\label{VoF-invertible-1} Existe una matriz invertible $A$ tal que $0$ es autovalor de $A$.
+        \item\label{VoF-invertible-2}  Si $A$ es invertible, entonces todo autovector de $A$ es autovector de $A^{-1}$.
     \end{enumerate}
-    
+
     \rta
+
+    \ref{VoF-invertible-1} Falso. Si $A$ es invertible, entonces $0$ no es autovalor de $A$. Dado $v$ tal que  $Av = 0v = 0$, entonces $v = A^{-1}Av = A^{-1}(0) =0$, por lo tanto no puede haber autovectores con autovalor $0$, por lo tanto  $0$ no es autovalor de $A$.
+    
+    \ref{VoF-invertible-2} Verdadero. Sea $v \ne 0$ autovector de $A$ con autovalor $\lambda$, luego $Av = \lambda v$. Aplicando $A^{-1}$ a ambos lados de la igualdad tenemos $A^{-1}Av = A^{-1}(\lambda v)$, o equivalentemente $v = \lambda A^{-1}v$, luego $A^{-1}v = \frac{1}{\lambda}v$. Es decir, $v$ es autovector de $A^{-1}$ con autovalor $\frac{1}{\lambda}$. 
+    
+    \qed
+    
+    
+    
+    
 
 
     \vskip .2cm
