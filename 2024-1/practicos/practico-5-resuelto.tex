@@ -333,10 +333,126 @@
 
     \rta
 
+    \ref{mas-autovalores-1} El polinomio característico de la matriz es
+    \begin{align*}
+        \chi_A(x) &= \left|\begin{matrix} x-2 & -3\\ 1 & x-1 \end{matrix} \right| \\ &= (x-2)(x-1)-(-3)(1) = x^2-3x+5.
+    \end{align*}
+    Luego $\lambda_{1,2}=\frac{3\pm\sqrt{-11}}{2} =\frac{3\pm i\sqrt{11}}{2}$ son los autovalores. Es decir, son autovalores complejos. Para calcular el autoespacio asociado a $\lambda_1=\frac{3+i\sqrt{11}}{2}$ resolvemos el sistema  $(\frac{3+i\sqrt{11}}{2}\Id-A)v=0$, es decir el sistema homogéneo     
+    \begin{align*}
+        &\begin{bmatrix} \frac{3+i\sqrt{11}}{2}-2 & -3\\ 1 & \frac{3+i\sqrt{11}}{2}-1 \end{bmatrix} = \begin{bmatrix} \frac{-1+i\sqrt{11}}{2} & -3\\ 1 & \frac{1+i\sqrt{11}}{2} \end{bmatrix} \\
+        &\stackrel{F_1 \cdot (-1-i\sqrt{11}/2)}{\longrightarrow} \begin{bmatrix} 3 & \frac{3}2 (1+i\sqrt{11})\\ 1 & \frac{1}{2} (1+i\sqrt{11}) \end{bmatrix} \stackrel{F_1-3F_2}{\longrightarrow} \begin{bmatrix} 0 & 0\\ 1 & \frac{1}{2} (1+i\sqrt{11}) \end{bmatrix}
+    \end{align*}
+    Por lo tanto $v_1 + \frac{1}{2} (1+i\sqrt{11})v_2 =0$, es decir $v_1 = -\frac{1}{2} (1+i\sqrt{11})v_2$. Luego, el autoespacio asociado a $\lambda_1=\frac{3+i\sqrt{11}}{2}$ es $\{(-\frac{1}{2} (1+i\sqrt{11})t,t): t \in \C\}$.
+
+    Para calcular el autoespacio asociado a $\lambda_2=\frac{3-i\sqrt{11}}{2}$ resolvemos el sistema  $(\frac{3-i\sqrt{11}}{2}\Id-A)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} \frac{3-i\sqrt{11}}{2}-2 & -3\\ 1 & \frac{3-i\sqrt{11}}{2}-1 \end{bmatrix} = \begin{bmatrix} \frac{-1-i\sqrt{11}}{2} & -3\\ 1 & \frac{1-i\sqrt{11}}{2} \end{bmatrix} \\
+        &\stackrel{F_1 \cdot (-1+i\sqrt{11}/2)}{\longrightarrow} \begin{bmatrix} 3 & \frac{3}2 (1-i\sqrt{11})\\ 1 & \frac{1}{2} (1-i\sqrt{11}) \end{bmatrix} \stackrel{F_1-3F_2}{\longrightarrow} \begin{bmatrix} 0 & 0\\ 1 & \frac{1}{2} (1-i\sqrt{11}) \end{bmatrix}
+    \end{align*}
+    Por lo tanto $v_1 + \frac{1}{2} (1-i\sqrt{11})v_2 =0$, es decir $v_1 = -\frac{1}{2} (1-i\sqrt{11})v_2$. Luego, el autoespacio asociado a $\lambda_2=\frac{3-i\sqrt{11}}{2}$ es $\{(-\frac{1}{2} (1-i\sqrt{11})t,t): t \in \C\}$.
+
+
 
     \vskip .2cm
+    \ref{mas-autovalores-2}  El polinomio característico de la matriz es
+    \begin{align*}
+        \chi_A(x) &= \left|\begin{matrix} x+9 & -4 & -4\\ 8 & x-3 & -4\\ 16 & -8 & x-7 \end{matrix} \right| \\ 
+        &= (x+9) \left|\begin{matrix} x-3 & -4\\ -8 & x-7 \end{matrix} \right| + 
+            4 \left|\begin{matrix}  8 & -4\\ 16  & x-7 \end{matrix} \right| 
+            -4\left|\begin{matrix} 8 & x-3\\ 16 & -8 \end{matrix} \right|\\
+        &= (x + 9) (x^2 - 10 x - 11) + 4 (8 x + 8)-4 (-16 x - 16) \\
+        &=x^3 - x^2 - 5 x - 3.
+    \end{align*}
+    Tanteando con enteros bajos nos podemos dar cuenta que $-1$ es raíz de $x^3 - x^2 - 5 x - 3$, luego $\chi_A(x) = (x+1)(x^2-2x-3)=(x+1)(x+1)(x-3)$. Por lo tanto, los autovalores son $-1$ y $3$. 
     
-    
-    
+    Para calcular el autoespacio asociado a $-1$ resolvemos el sistema  $(-\Id-A)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} -1+9 & -4 & -4\\ 8 & -1-3 & -4\\ 16 & -8 & -1-7 \end{bmatrix} =  \begin{bmatrix} 8 & -4 & -4\\ 8 & -4 & -4\\ 16 & -8 & -8 \end{bmatrix} \stackrel{F_2-F_1}{\longrightarrow} \begin{bmatrix} 8 & -4 & -4\\ 0 & 0 & 0\\ 16 & -8 & -8 \end{bmatrix} \\
+        &\qquad\stackrel{F_3-2F_1}{\longrightarrow} \begin{bmatrix} 8 & -4 & -4\\ 0 & 0 & 0\\ 0 & 0 & 0 \end{bmatrix} \stackrel{F_1/4}{\longrightarrow} \begin{bmatrix} 2 & -1 & -1\\ 0 & 0 & 0\\ 0 & 0 & 0 \end{bmatrix}
+    \end{align*}
+    Por lo tanto $2v_1 - v_2 - v_3 =0$, es decir $v_1 = \frac{1}{2} v_2 + \frac{1}{2} v_3$. Luego, el autoespacio asociado a $-1$ es $\{(\frac{1}{2} t_1 + \frac{1}{2} t_2,t_1,t_2): t_1,t_2 \in \C\}$.
+
+    Para calcular el autoespacio asociado a $3$ resolvemos el sistema  $(3\Id-A)v=0$, es decir el sistema homogéneo
+
+    \begin{align*}
+        &\begin{bmatrix} 3+9 & -4 & -4\\ 8 & 3-3 & -4\\ 16 & -8 & 3-7 \end{bmatrix} =  \begin{bmatrix} 12 & -4 & -4\\ 8 & 0 & -4\\ 16 & -8 & -4 \end{bmatrix} \stackrel{F_3-2F_2}{\longrightarrow} \begin{bmatrix} 12 & -4 & -4\\ 8 & 0 & -4\\ 0 & -8 & 4 \end{bmatrix} \\
+        & \stackrel{F_1-(3/2)F_2}{\longrightarrow} \begin{bmatrix} 0 & -4 & 2\\ 8 & 0 & -4\\ 0 & -8 & 4 \end{bmatrix} \stackrel{F1/2, F_2/4, F_3/4}{\longrightarrow} \begin{bmatrix} 0 & -2 & 1\\ 2 & 0 & -1\\ 0 & -2 & 1 \end{bmatrix}  \stackrel{F_3-F_1}{\longrightarrow} \begin{bmatrix} 0 & -2 & 1\\ 2 & 0 & -1\\ 0 & 0 & 0 \end{bmatrix}
+    \end{align*}
+    Por lo tanto $-2v_2 + v_3 =0$ y $2v_1 -v_3=0$, es decir $v_2 = \frac12 v_3$ y $v_1 = \frac12 v_3$. Luego, el autoespacio asociado a $3$ es $\{(\frac12t,\frac12t,t): t \in \C\}$.
+
+
+    \vskip .2cm
+    \ref{mas-autovalores-3} El polinomio característico de la matriz es
+    \begin{align*}
+        \chi_A(x) &= \left|\begin{matrix} x-4 & -4 & 12\\ -1 & x+1 & -1\\ -5 & -3 & x+11 \end{matrix} \right| \\ 
+        &= (x-4) \left|\begin{matrix} x+1 & -1\\ -3 & x+11 \end{matrix} \right| + 
+            4 \left|\begin{matrix} -1 & -1\\ -5 & x+11 \end{matrix} \right| 
+            -12\left|\begin{matrix} -1 & x+1\\ -5 & -3 \end{matrix} \right|\\
+        &= (x - 4) (x^2 + 12 x + 8) +4 (-x - 16)+12 (5 x + 8) \\
+        &=x^3 + 8 x^2 + 16 x \\
+        &=x(x^2 + 8 x + 16) \\
+        &=x(x+4)^2.
+    \end{align*}
+    Luego $\lambda_{1}=0$ y $\lambda_2=-4$ son los autovalores. Para calcular el autoespacio asociado a $\lambda_1=0$ resolvemos el sistema  $(0\Id-A)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} -4 & -4 & 12\\ -1 & 1 & -1\\ -5 & -3 & 11 \end{bmatrix} \stackrel{F_1/(-4)}{\longrightarrow} \begin{bmatrix} 1 & 1 & -3\\ -1 & 1 & -1\\ -5 & -3 & 11 \end{bmatrix} \stackrel{F_2+F_1}{\longrightarrow} \begin{bmatrix} 1 & 1 & -3\\ 0 & 2 & -4\\ -5 & -3 & 11 \end{bmatrix} \\
+        &\qquad\stackrel{F_3+5F_1}{\longrightarrow} \begin{bmatrix} 1 & 1 & -3\\ 0 & 2 & -4\\ 0 & 2 & -4 \end{bmatrix} \stackrel{F_3-F_2}{\longrightarrow} \begin{bmatrix} 1 & 1 & -3\\ 0 & 2 & -4\\ 0 & 0 & 0 \end{bmatrix}\stackrel{F_2/2}{\longrightarrow} \begin{bmatrix} 1 & 1 & -3\\ 0 & 1 & -2\\ 0 & 0 & 0 \end{bmatrix} \\
+        &\qquad\stackrel{F_1-F_2}{\longrightarrow} \begin{bmatrix} 1 & 0 & -1\\ 0 & 1 & -2\\ 0 & 0 & 0 \end{bmatrix}
+    \end{align*}
+    Por lo tanto $v_1 - v_3 =0$ y $v_2 -2v_3=0$, es decir $v_1 = v_3$ y $v_2 = 2v_3$. Luego, el autoespacio asociado a $\lambda_1=0$ es $\{(t,2t,t): t \in \C\}$.
+
+    Para calcular el autoespacio asociado a $\lambda_2=-4$ resolvemos el sistema  $(-4\Id-A)v=0$, es decir el sistema homogéneo
+
+    \begin{align*}
+        &\begin{bmatrix} -4-4 & -4 & 12\\ -1 & -4+1 & -1\\ -5 & -3 & -4+11 \end{bmatrix} =  \begin{bmatrix} -8 & -4 & 12\\ -1 & -3 & -1\\ -5 & -3 & 7 \end{bmatrix} \underset{F_3-5F_2}{\stackrel{F_1-8F2}{\longrightarrow}} \begin{bmatrix} 0 & 20 & 20\\ -1 & -3 & -1\\ 0 & 12 & 12 \end{bmatrix} \\
+        &\underset{F_3/12}{\stackrel{F_1/20}{\longrightarrow}} \begin{bmatrix} 0 & 1 & 1\\ -1 & -3 & -1\\ 0 & 1 & 1 \end{bmatrix} \underset{F_1-F3}{\stackrel{F_2+3F3}{\longrightarrow}} \begin{bmatrix} 0 & 0 & 0\\ -1 & 0 & 2\\ 0 & 1 & 1 \end{bmatrix}
+    \end{align*}
+    Por lo tanto $-v_1 + 2v_3 =0$ y $v_2 + v_3=0$, es decir $v_1 = 2v_3$ y $v_2 = -v_3$. Luego, el autoespacio asociado a $\lambda_2=-4$ es $\{(2t,-t,t): t \in \C\}$.
+
+    \vskip .2cm
+    \ref{mas-autovalores-4} El polinomio característico de la matriz es
+    \begin{align*}
+        \chi_A(x) &= \left|\begin{matrix} x-2 & -1 & 0 & 0\\ 1 & x-4 & 0 & 0\\ 0 & 0 & x-1 & -1 \\ 0 & 0 & -3 & x+1\end{matrix} \right| \\ 
+        &= (x-2)(x-4)\left|\begin{matrix}  x-1 & -1 \\  -3 & x+1\end{matrix} \right| + \left|\begin{matrix} x-2 & -1 \\ 1 & x-4 \end{matrix} \right|
+        \\&=((x-2)(x-4)+1)\left|\begin{matrix}  x-1 & -1 \\  -3 & x+1\end{matrix} \right| \\
+        &=((x-2)(x-4)+1)(x^2-4) \\
+        &=(x^2-6x+9)(x^2-4) \\
+        &=(x-3)^2(x+2)(x-2).
+    \end{align*}
+    Luego $\lambda_{1}=3$, $\lambda_{2}=-2$ y $\lambda_3 =2$ son los autovalores. Para calcular el autoespacio asociado a $\lambda_1=3$ resolvemos el sistema  $(3\Id-A)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} 3-2 & -1 & 0 & 0\\ 1 & 3-4 & 0 & 0\\ 0 & 0 & 3-1 & -1 \\ 0 & 0 & -3 & 3+1\end{bmatrix} =  \begin{bmatrix} 1 & -1 & 0 & 0\\ 1 & -1 & 0 & 0\\ 0 & 0 & 2 & -1 \\ 0 & 0 & -3 & 4 \end{bmatrix} \\
+        & \underset{F_4+(3/2)F_3}{\stackrel{F_2-F_1}{\longrightarrow}} \begin{bmatrix} 1 & -1 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 2 & -1 \\ 0 & 0 & 0 & 5/2 \end{bmatrix} \underset{F_1+F_3}{\stackrel{F_3/2}{\longrightarrow}} \begin{bmatrix} 1 & -1 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 2 & -1 \\ 0 & 0 & 0 & 5/2 \end{bmatrix} \longrightarrow\begin{bmatrix} 1 & -1 & 0 & 0\\ 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}
+    \end{align*}
+    Por lo tanto $v_1 - v_2 =0$, es decir $v_1 = v_2$. Luego, el autoespacio asociado a $\lambda_1=3$ es $\{(t,t,0,0): t \in \C\}$. 
+
+    Para calcular el autoespacio asociado a $\lambda_2=-2$ resolvemos el sistema  $(-2\Id-A)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} -2-2 & -1 & 0 & 0\\ 1 & -2-4 & 0 & 0\\ 0 & 0 & -2-1 & -1 \\ 0 & 0 & -3 & -2+1\end{bmatrix} =  \begin{bmatrix} -4 & -1 & 0 & 0\\ 1 & -6 & 0 & 0\\ 0 & 0 & -3 & -1 \\ 0 & 0 & -3 & -1 \end{bmatrix} \\
+        & \underset{F_4-F_3}{\stackrel{F_1+4F_1}{\longrightarrow}} \begin{bmatrix} 0 & -5 & 0 & 0\\ 1 & -6 & 0 & 0\\ 0 & 0 & -3 & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix} \longrightarrow \begin{bmatrix} 0 & 1 & 0 & 0\\ 1 & 0 & 0 & 0\\ 0 & 0 & -3 & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}
+    \end{align*}
+    Por lo tanto $v_1 = v_2 = 0$ y $-3v_3 - v_4 =0$, es decir $v_3 = -\frac13 v_4$. Luego, el autoespacio asociado a $\lambda_2=-2$ es $\{(0,0,-\frac13t,t): t \in \C\}$.
+
+    Para calcular el autoespacio asociado a $\lambda_3=2$ resolvemos el sistema  $(2\Id-A)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} 2-2 & -1 & 0 & 0\\ 1 & 2-4 & 0 & 0\\ 0 & 0 & 2-1 & -1 \\ 0 & 0 & -3 & 2+1\end{bmatrix} =  \begin{bmatrix} 0 & -1 & 0 & 0\\ 1 & -2 & 0 & 0\\ 0 & 0 & 1 & -1 \\ 0 & 0 & -3 & 3 \end{bmatrix} \\
+        & \stackrel{F_4+3F_3}{\longrightarrow} \begin{bmatrix} 0 & -1 & 0 & 0\\ 1 & -2 & 0 & 0\\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0& 0 \end{bmatrix} \longrightarrow \begin{bmatrix} 0 & 1 & 0 & 0\\ 1 & 0 & 0 & 0\\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0 & 0 \end{bmatrix}
+    \end{align*}
+    Por lo tanto $v_1 = v_2 = 0$ y $v_3 - v_4 =0$, es decir $v_3 = v_4$. Luego, el autoespacio asociado a $\lambda_3=2$ es $\{(0,0,t,t): t \in \C\}$.
+
+    \vskip .2cm
+    \ref{mas-autovalores-5}  El polinomio característico de la matriz es
+    \begin{align*}
+        \chi_A(x) &= \left|\begin{matrix} x-\lambda & 0 & 0 & \dots & 0  \\ -1 & x-\lambda & 0 &\dots & 0  \\ 0 & -1 & x-\lambda&  \dots & 0  \\ \vdots & \vdots & \quad & \ddots & \vdots\\ 0 &  0&   \dots & -1  & x-\lambda \end{matrix} \right| \\
+        &= (x-\lambda)^n.
+    \end{align*}
+    Esto se debe a que como la matriz es triangular superior su determinante es producto de los elementos de la diagonal. Luego, $\lambda$ es el único autovalor. Para calcular el autoespacio asociado a $\lambda$ resolvemos el sistema  $(\lambda\Id-A)v=0$, es decir el sistema homogéneo
+    \begin{align*}
+        &\begin{bmatrix} \lambda-\lambda & 0 & 0 & \dots & 0  \\ -1 & \lambda-\lambda & 0 &\dots & 0  \\ 0 & -1 & \lambda-\lambda&  \dots & 0  \\ \vdots & \vdots & \quad & \ddots & \vdots\\ 0 &  0&   \dots & -1  & \lambda-\lambda \end{bmatrix} = \begin{bmatrix} 0 & 0 & 0 & \dots & 0  \\ -1 & 0 & 0 &\dots & 0  \\ 0 & -1 & 0&  \dots & 0  \\ \vdots & \vdots & \quad & \ddots & \vdots\\ 0 &  0&   \dots & -1  & 0 \end{bmatrix} \\
+        &\longrightarrow \begin{bmatrix} 0 & 0 & 0 & \dots & 0  \\ 1 & 0 & 0 &\dots & 0  \\ 0 & 1 & 0&  \dots & 0  \\ \vdots & \vdots & \quad & \ddots & \vdots\\ 0 &  0&   \dots & 1  & 0 \end{bmatrix} 
+    \end{align*}
+    Por lo tanto $v_1 = v_2 = \cdots = v_{n-1} = 0$. Luego, el autoespacio asociado a $\lambda$ es $\{(0,0,\ldots,t): t \in \C\}$.
+
+    \qed
 
     \end{enumerate}
