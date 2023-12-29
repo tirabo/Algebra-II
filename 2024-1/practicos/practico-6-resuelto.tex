@@ -1,4 +1,317 @@
 
 \chapter{Soluciones\\Álgebra  II -- Año 2024/1 -- FAMAF}\label{practico-6}
 
-Completar.
+
+\begin{enumerate}[topsep=6pt, itemsep=.4cm]
+
+    
+    \item\label{sub Rn} Decidir si los siguientes subconjuntos de $\mathbb{R}^3$ son subespacios vectoriales.
+        \begin{enumerate}
+            \item\label{sub Rn 1} $A=\{(x_1, x_2 ,x_3) \in \mathbb{R}^3 \ : \ x_1 + x_2 + x_3=1\}$.
+            \item\label{sub Rn 0} $B=\{(x_1, x_2 ,x_3) \in \mathbb{R}^3 \ : \ x_1 + x_2 + x_3=0\}$.
+            \item\label{sub Rn geq} $C=\{(x_1, x_2 ,x_3) \in \mathbb{R}^3 \ : \ x_1 + x_2 + x_3 \geq 0\}$.
+            \item\label{sub Rn 1 30} $D=\{(x_1, x_2 ,x_3) \in \mathbb{R}^3 \ : \ x_3=0\}$.
+            \item\label{sub Rn cup} $B\cup D$.
+            \item\label{sub Rn cap} $B\cap D$.
+            \item\label{sub Rn q} $G=\{(x_1, x_2 ,x_3) \in \mathbb{R}^3 \ :\ x_1, x_2, x_3\in\mathbb{Q}\}$.
+        \end{enumerate}
+        
+    \rta 
+
+    \ref{sub Rn 1} No es subespacio vectorial. Por ejemplo $(1,0,0)$ y $(0,1,0)$ pertenecen a $A$, pero $(1,0,0)+(0,1,0)=(1,1,0)$ no pertenece a $A$.
+
+    \ref{sub Rn 0} Es subespacio vectorial. En efecto, si $(x_1, x_2 ,x_3)$ y $(y_1, y_2 ,y_3)$ pertenecen a $B$ y $\lambda,\mu\in\mathbb{R}$, entonces
+    \begin{align*}
+        \lambda(x_1, x_2 ,x_3)+\mu(y_1, y_2 ,y_3)&=(\lambda x_1+\mu y_1, \lambda x_2+\mu y_2, \lambda x_3+\mu y_3)\\
+        &=(\lambda x_1+\mu y_1)+(\lambda x_2+\mu y_2)+(\lambda x_3+\mu y_3)\\
+        &=\lambda(x_1+ x_2 + x_3)+\mu(y_1+ y_2 + y_3)\\
+        &=\lambda\cdot 0+\mu\cdot 0=0.
+    \end{align*}
+
+    \ref{sub Rn geq} No es subespacio vectorial. Por ejemplo $(1,0,0) \in C$ pero $(-1)(1,0,0) = (-1,0,0) \not\in C$, pues $-1+0+0<0$.
+
+    \ref{sub Rn 1 30} Es subespacio vectorial. En efecto, si $(x_1, x_2 ,0)$ y $(y_1, y_2 ,0)$ pertenecen a $D$ y $\lambda,\mu\in\mathbb{R}$, entonces
+    \begin{align*}
+        \lambda(x_1, x_2 ,0)+\mu(y_1, y_2 ,0)&=(\lambda x_1+\mu y_1, \lambda x_2+\mu y_2, 0) \in D.
+    \end{align*}
+
+    \ref{sub Rn cup} No es subespacio vectorial. Por ejemplo $(1,0,-1) \in B$ y $(0,1,0)$ pertenecen a $B\cup D$, pero $(1,0,-1)+(0,1,0)=(1,1,-1)$ no pertenece a $B\cup D$, pues $(1,1,-1) \not\in B$ y $(1,1,-1) \not\in D$.
+
+    \ref{sub Rn cap} Es subespacio vectorial
+    \begin{align*}
+        B \cap D &= \{(x_1, x_2 ,x_3) \in \mathbb{R}^3 \ : \ x_1 + x_2 + x_3=0 \text{ y } x_3=0\} \\&= \{(x_1, x_2 ,0) \in \mathbb{R}^3 \ : \ x_1 + x_2 =0\}.    
+    \end{align*}
+    Luego, si $(x_1, x_2 ,0)$ y $(y_1, y_2 ,0)$ pertenecen a $B\cap D$ y $\lambda,\mu\in\mathbb{R}$, entonces
+    \begin{align*}
+        \lambda(x_1, x_2 ,0)+\mu(y_1, y_2 ,0)&=(\lambda x_1+\mu y_1, \lambda x_2+\mu y_2, 0) \in B\cap D,
+    \end{align*}
+    pues $\lambda x_1+\mu y_1 + \lambda x_2+\mu y_2 = \lambda(x_1+ x_2) + \mu(y_1+ y_2) = \lambda(x_1+ x_2) + \mu(y_1+ y_2) = \lambda 0 + \mu 0 = 0$.
+
+    \ref{sub Rn q} No es subespacio vectorial. Por ejemplo $(1,0,0)$ pertenece a $G$, pero $\sqrt{2}(1,0,0)=(\sqrt{2},0 ,0)$ no pertenece a $G$.
+
+
+    \qed     
+
+    \end{enumerate}
+
+    
+    \begin{enumerate}[resume, topsep=6pt, itemsep=.4cm]
+    
+    \item\label{sub matrices} Decidir en cada caso si el conjunto dado es un subespacio vectorial de $M_{n\times n}(\mathbb{K})$.
+    \begin{enumerate}
+        \item\label{sub matrices invertibles} El conjunto de matrices  invertibles.
+        \item\label{sub matrices AB} El conjunto de matrices $A$ tales que $AB = BA$, donde $B$ es una matriz fija.
+        \item\label{sub matrices triangulares} El conjunto de matrices triangulares superiores.
+    \end{enumerate}
+    
+    \rta 
+
+    \ref{sub matrices invertibles} No es subespacio vectorial. Por ejemplo, $\Id_n$ y $-\Id_n$ son matrices invertibles,  pero $\Id_n+(-\Id_n)=0$ no es invertible.
+
+    \vskip .2cm
+    \ref{sub matrices AB} Es subespacio vectorial. En efecto, si $A$ y $A'$ pertenecen al conjunto y $\lambda,\mu\in\mathbb{R}$, entonces
+    \begin{align*}
+        (\lambda A+\mu A')B&=\lambda AB+\mu A'B&&\\
+        &=\lambda BA+\mu BA'&&\text{(por hipótesis)}\\
+        &=(\lambda A+\mu A')B.
+    \end{align*}
+    Luego $\lambda A+\mu A'$ pertenece al conjunto.
+
+    \vskip .2cm
+    \ref{sub matrices triangulares} Es subespacio vectorial. En efecto, si $A$ y $A'$ son matrices triangulares superiores y $\lambda,\mu\in\mathbb{R}$, entonces
+    \begin{align*}
+        \lambda A+\mu A' &=\lambda\begin{bmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            0 & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & a_{nn} \\
+        \end{bmatrix}+\mu\begin{bmatrix}
+            a'_{11} & a'_{12} & \cdots & a'_{1n} \\
+            0 & a'_{22} & \cdots
+            & a'_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & a'_{nn} \\
+        \end{bmatrix}\\
+        &=\begin{bmatrix}
+            \lambda a_{11} & \lambda a_{12} & \cdots & \lambda a_{1n} \\
+            0 & \lambda a_{22} & \cdots & \lambda a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & \lambda a_{nn} \\
+        \end{bmatrix}+\begin{bmatrix}
+            \mu a'_{11} & \mu a'_{12} & \cdots & \mu a'_{1n} \\
+            0 & \mu a'_{22} & \cdots & \mu a'_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & \mu a'_{nn} \\
+        \end{bmatrix}\\
+        &=\begin{bmatrix}
+            \lambda a_{11}+\mu a'_{11} & \lambda a_{12}+\mu a'_{12} & \cdots & \lambda a_{1n}+\mu a'_{1n} \\
+            0 & \lambda a_{22}+\mu a'_{22} & \cdots & \lambda a_{2n}+\mu a'_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            0 & 0 & \cdots & \lambda a_{nn}+\mu a'_{nn} \\
+        \end{bmatrix}.
+    \end{align*}
+    Luego $\lambda A+\mu A'$ es una matriz triangular superior.
+
+    \qed     
+    
+    
+    \item\label{rectas} Sea $L$ una recta en $\mathbb{R}^2$. Dar una condición necesaria y suficiente para que $L$ sea un subespacio vectorial de $\mathbb{R}^2$.
+    
+    
+    \rta Una recta en $\mathbb{R}^2$ es un subespacio vectorial si y sólo si pasa por el origen. 
+    
+    La ecuación general de la recta en el plano es $ax+by=c$ con $a,b,c\in\mathbb{R}$ y $a,b$ no ambos nulos.
+
+    ($\Rightarrow$) Si $L$ es un subespacio vectorial, entonces $(0,0) \in L$,  es decir la recta pasa por el origen. Además, como  $0 = a\cdot 0 + b \cdot 0= c$, la ecuación de la recta es  $ax+by=0$.
+
+    ($\Leftarrow$) Si la recta pasa por el origen, entonces $0 = a\cdot 0 + b \cdot 0= c$, es decir la ecuación de la recta es  $ax+by=0$. Luego, si $(x_1,y_1)$ y $(x_2,y_2)$ pertenecen a la recta y $\lambda,\mu\in\mathbb{R}$, entonces
+    \begin{align*}
+        a(\lambda x_1+\mu x_2)+b(\lambda y_1+\mu y_2)&=\lambda(ax_1+by_1)+\mu(ax_2+by_2)\\
+        &=\lambda\cdot 0+\mu\cdot 0=0.
+    \end{align*}
+    Luego $\lambda(x_1,y_1)+\mu(x_2,y_2)$ pertenece a la recta y por lo tanto la recta es un subespacio vectorial.
+
+    \qed     
+    
+    \item Sean $V$ un $\mathbb{K}$-espacio vectorial, $v\in V$ no nulo y $\lambda,\mu\in\mathbb{K}$ tales que $\lambda v=\mu v$. Probar que $\lambda=\mu$.
+    
+    
+    \rta Si $\lambda v=\mu v$, entonces $(\lambda-\mu)v=0$. Supongamos que $\lambda-\mu\neq 0$, entonces
+    \begin{align*}
+        v&= 1 \cdot v &&\text{(axioma P1)}\\
+        &=(\lambda-\mu)^{-1}(\lambda-\mu)v&&\\
+        &=(\lambda-\mu)^{-1}0&&\text{(por hipótesis)}\\
+        &=0.&&\text{(demostrado en la teórica)}
+    \end{align*}
+    Concluimos que $v=0$, lo cual contradice la hipótesis. El absurdo vino de suponer que $\lambda-\mu\neq 0$, luego $\lambda=\mu$.
+
+    \qed     
+    
+    \item Sean $W_1, W_2$ subespacios de un espacio vectorial $V$. Probar que $W_1 \cup W_2$ es un subespacio
+        de $V$ si y sólo si $W_1 \subseteq W_2$ o $W_2 \subseteq W_1$.
+        
+    
+    \rta 
+
+    \qed     
+        
+    \item Sean $u=(1,1)$, $v=(1,0)$, $w=(0,1)$ y $z=(3,4)$ vectores de $\mathbb{R}^2$.
+    \begin{enumerate}
+    \item Escribir $z$ como combinación lineal de $u,v$ y $w$, con coeficientes todos no nulos.
+    \item Escribir $z$ como combinación lineal de $u$ y $v$.
+    \item Escribir $z$ como combinación lineal de $u$ y $w$.
+    \item Escribir $z$ como combinación lineal de $v$ y $w$.
+    \end{enumerate}
+    
+    \rta 
+
+    \qed     
+    
+    \item Sean $p(x)=(1-x)(x+2)$, $q(x)=x^2-1$ y $r(x)=x(x^2-1)$ en $\mathbb{R}[x]$.
+    \begin{enumerate}
+    \item Describir todos los polinomios de grado menor o igual que $3$ que son combinación lineal de $p,q$ y $r$.
+    \item Elegir $a$ tal que el polinomio $x$ se pueda escribir como combinación lineal de $p,q$ y $2x^2+a$.
+    \end{enumerate}
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item\label{practicos anteriores} Dar un conjunto de generadores para los siguientes subespacios vectoriales.
+    \begin{enumerate}
+    \item Los conjuntos de soluciones de los sistemas homogéneos del ejercicio \ref{sistemas homogeneos} del Práctico \ref{practico-2}.
+    \item Los conjuntos descriptos en el ejercicio \ref{sistemas con soluciones} del Práctico  \ref{practico-2}.
+    \end{enumerate}
+    
+    \rta 
+
+    \qed     
+    
+    \item\label{caracterizar}  En cada caso, caracterizar con ecuaciones al subespacio vectorial dado por generadores.
+    \begin{enumerate}
+    \item ${\left\langle(1,0,3),(0,1,-2)\right\rangle}\subseteq \mathbb{R}^3$.
+    \item ${\left\langle(1,2,0,1),(0,-1,-1,0),(2,3,-1,4)\right\rangle}\subseteq \mathbb{R}^4$.
+    \end{enumerate}
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item\label{son LI} En cada caso, determinar si el subconjunto indicado es linealmente independiente.
+    \begin{enumerate}
+        \item $\{ (1,0,-1), (1,2,1), (0,-3,2) \}\subseteq \mathbb{R}^3$.
+        \item $\left\{  \begin{bmatrix} 1 & 0 & 2 \\ 0 & -1 & -3 \\ \end{bmatrix}, \quad
+        \begin{bmatrix} 1 & 0 & 1 \\ -2 & 1 & 0 \\ \end{bmatrix}, \quad
+        \begin{bmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \\ \end{bmatrix} \right\}\subseteq M_{2\times 3}(\mathbb{R})$.
+    \end{enumerate}
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item Dar un ejemplo de un conjunto de 3 vectores en $\mathbb{R}^3$ que sean LD, y tales que dos cualesquiera de ellos sean LI.
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item  Probar que si $\alpha$, $\beta$ y $\gamma$ son vectores LI en el $\mathbb{R}$-espacio vectorial $V$, entonces $\alpha +\beta$, $\alpha +\gamma$ y $\beta +\gamma $ también son LI.
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item Extender, de ser posible, los siguientes conjuntos a una base de los respectivos espacios vectoriales.
+    
+    \begin{enumerate}
+        \item Los conjuntos del ejercicio \ref{son LI}.
+        \item\label{10b} $\{ (1,2,0,0),(1,0,1,0) \}\subseteq\mathbb{R}^4$.
+        \item\label{10c} $\{ (1,2,1,1),(1,0,1,1),(3,2,3,3)\}\subseteq\mathbb{R}^4$.
+    \end{enumerate}
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item Dar subespacios vectoriales $W_0$, $W_1$, $W_2$ y $W_3$ de $\mathbb{R}^3$ tales que $W_0\subset W_1\subset W_2\subset W_3$ y $\dim W_0=0$, $\dim W_1=1$, $\dim W_2=2$ y $\dim W_3=3$.
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item Sea $V$ un espacio vectorial de dimensión $n$ y $\mathcal{B}=\{v_1, ..., v_n\}$ una base de $V$.
+    \begin{enumerate}
+    \item Probar que cualquier subconjunto no vacío de $\mathcal{B}$ es LI.
+    \item Para cada $k\in\mathbb{N}_0$,  con $0\leq k\leq n$, dar un subespacio vectorial de $V$ de dimensión $k$.
+    \end{enumerate}
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item Dar una base y calcular la dimensión de $\mathbb{C}^n$ como $\mathbb{C}$-espacio vectorial y como $\mathbb{R}$-espacio vectorial.
+    
+    
+    \rta 
+
+    \qed     
+    
+    \item  Exhibir una base y calcular la dimensión de los siguientes subespacios.
+    \begin{enumerate}
+        \item Los subespacios del ejercicio \ref{practicos anteriores}.
+        \item $W = \{(x,y,z,w,u) \in \mathbb{R}^5 \ : \ y = x - z,\, w = x + z,\,  u = 2x - 3z \}$.
+        \item $W = \langle (1, 0, -1, 1),  (1, 2, 1, 1), (0, 1, 1, 0), (0, -2, -2, 0) \rangle \subseteq \mathbb R^4$.
+        \item Matrices triangulares superiores $2\times 2$ y $3\times 3$.
+        \item Matrices triangulares superiores $n\times n$ para cualquier $n\in\mathbb{N}$, $n\geq 2$.
+    \end{enumerate}
+    
+    \rta 
+
+    \qed     
+    
+    \item Sean $W_1$ y $W_2$ los siguientes subespacios de $\mathbb{R}^3$:
+        \begin{align*}
+        W_1 &= \{ (x,y,z)\in\mathbb{R}^3\ : \ x+y-2z=0\},  \\
+        W_2 &= {\left\langle(1,-1,1),(2,1,-2),(3,0,-1)\right\rangle}.
+        \end{align*}
+        \begin{enumerate}
+            \item  Determinar $W_1 \cap W_2$, y describirlo por generadores y con ecuaciones.
+            \item  Determinar $W_1+W_2$, y describirlo por generadores y con ecuaciones.
+        \end{enumerate}
+    
+    
+    \rta 
+
+    \qed     
+        
+    \item\label{verdadero o falso} Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
+    
+    \begin{enumerate}
+    \item Si $W_1$ y $W_2$ son subespacios vectoriales de $\mathbb{K}^8$ de dimensión $5$, entonces $W_1\cap W_2=0$.
+    \item Si $W$ es un subespacio de $\mathbb{K}^{2\times2}$ de dimensión $2$, entonces existe una matriz triangular superior no nula que pertence a $W$.
+    \item Sean $v_1, v_2, w\in \mathbb{K}^{n}$ y $A\in\mathbb{K}^{n\times n}$ tales que $Av_1=Av_2=0\neq Aw$. Si $\{v_1, v_2\}$ es LI, entonces $\{v_1,v_2,w\}$ también es LI.
+    \item\label{cos}  $\{1,{\rm sen}(x),\cos(x)\}$ es un subconjunto LI del espacio de funciones de $\mathbb{R}$ en $\mathbb{R}$.
+    \item\label{cos2}  $\{1,{\rm sen}^2(x),\cos^2(x)\}$ es un subconjunto LI del espacio de funciones $\mathbb{R}$ en $\mathbb{R}$.
+    \item\label{exponencial}  $\{e^{\lambda_1x},e^{\lambda_2x},e^{\lambda_3x}\}$ es un subconjunto LI del espacio de funciones de
+    $\mathbb{R}$ en $\mathbb{R}$, si $\lambda_1$, $\lambda_2$ y $\lambda_3$ son todos distintos.
+    \end{enumerate}
+    
+    
+    \rta 
+
+    \qed     
+    
+    
+    
+    
+    \end{enumerate}
+    
+    
