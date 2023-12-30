@@ -138,43 +138,126 @@
     
     \rta Si $\lambda v=\mu v$, entonces $(\lambda-\mu)v=0$. Supongamos que $\lambda-\mu\neq 0$, entonces
     \begin{align*}
-        v&= 1 \cdot v &&\text{(axioma P1)}\\
+        v&= 1 \cdot v &&\text{(axioma P1 de esp. vectoriales)}\\
         &=(\lambda-\mu)^{-1}(\lambda-\mu)v&&\\
         &=(\lambda-\mu)^{-1}0&&\text{(por hipótesis)}\\
-        &=0.&&\text{(demostrado en la teórica)}
+        &=0.&&\text{(demostrado en la teórica: $0\cdot v = 0$)}
     \end{align*}
     Concluimos que $v=0$, lo cual contradice la hipótesis. El absurdo vino de suponer que $\lambda-\mu\neq 0$, luego $\lambda=\mu$.
 
     \qed     
     
-    \item Sean $W_1, W_2$ subespacios de un espacio vectorial $V$. Probar que $W_1 \cup W_2$ es un subespacio
-        de $V$ si y sólo si $W_1 \subseteq W_2$ o $W_2 \subseteq W_1$.
+    \item Sean $W_1, W_2$ subespacios de un espacio vectorial $V$. Probar que $W_1 \cup W_2$ es un subespacio  de $V$ si y sólo si $W_1 \subseteq W_2$ o $W_2 \subseteq W_1$.
         
     
     \rta 
+
+    ($\Rightarrow$)  Si $W_1 \subseteq W_2$ o $W_2 \subseteq W_1$ no hay nada que demostrar. Supongamos entonces que $W_1 \not\subseteq W_2$ y $W_2 \not\subseteq W_1$. Entonces existen $w_1\in W_1$ tal que $w_1\not\in W_2$ y $w_2\in W_2$ tal que $w_2\not\in W_1$. Como $w_1\in W_1$ y $w_2\in W_2$, entonces $w_1+w_2\in W_1\cup W_2$. Como $W_1 \cup W_2$ es un subespacio  de $V$, entonces $w_1+w_2\in W_1\cup W_2$ y por lo tanto $w_1+w_2\in W_1$ o $w_1+w_2\in W_2$. Supongamos que $w_1+w_2\in W_1$, entonces $w_2=w_1+w_2-w_1\in W_1$, lo cual es absurdo.Análogamente,  si $w_1+w_2\in W_2$, entonces $w_1\in W_2$, lo cual es absurdo. El absurdo vino de suponer que $W_1 \not\subseteq W_2$ y $W_2 \not\subseteq W_1$, luego $W_1 \subseteq W_2$ o $W_2 \subseteq W_1$.
+
+    ($\Leftarrow$) Supongamos que $W_1 \subseteq W_2$. Entonces $W_1 \cup W_2 = W_2$ y por lo tanto $W_1 \cup W_2$ es un subespacio  de $V$. Análogamente se demuestra que si $W_2 \subseteq W_1$, entonces $W_1 \cup W_2$ es un subespacio  de $V$.
 
     \qed     
         
     \item Sean $u=(1,1)$, $v=(1,0)$, $w=(0,1)$ y $z=(3,4)$ vectores de $\mathbb{R}^2$.
     \begin{enumerate}
-    \item Escribir $z$ como combinación lineal de $u,v$ y $w$, con coeficientes todos no nulos.
-    \item Escribir $z$ como combinación lineal de $u$ y $v$.
-    \item Escribir $z$ como combinación lineal de $u$ y $w$.
-    \item Escribir $z$ como combinación lineal de $v$ y $w$.
+    \item\label{comb-lin-u-v-w} Escribir $z$ como combinación lineal de $u,v$ y $w$, con coeficientes todos no nulos.
+    \item\label{comb-lin-u-v} Escribir $z$ como combinación lineal de $u$ y $v$.
+    \item\label{comb-lin-u-w} Escribir $z$ como combinación lineal de $u$ y $w$.
+    \item\label{comb-lin-v-w}Escribir $z$ como combinación lineal de $v$ y $w$.
     \end{enumerate}
     
-    \rta 
+    \rta En general tenemos que resolver la ecuación $z=\lambda u+\mu v+\nu w$, bajo ciertas condiciones sobre $\lambda,\mu,\nu$. En cada caso, las condiciones son distintas. Si escribimos en coordenadas la ecuación es
+    \begin{align*}
+        (3,4)&=\lambda (1,1)+\mu (1,0)+\nu (0,1)\\
+        &=(\lambda+\mu,\lambda+\nu).    \tag{*}
+    \end{align*}
+    El sistema es sencillo de resolver, pues la segunda coordenada nos dice que $\lambda+\nu=4$, es decir $\nu=4-\lambda$. Reemplazando en la primera coordenada obtenemos $\lambda+\mu=3$, es decir $\mu=3-\lambda$. Por lo tanto, $\lambda$ es libre y
+    \begin{equation*}
+        z=\lambda u+\mu v+\nu w=\lambda (1,1)+(3-\lambda) (1,0)+(4-\lambda) (0,1).
+    \end{equation*}
+    
+    \ref{comb-lin-u-v-w} Si $\lambda=1$, entonces $\mu=2$ y $\nu=3$ y por lo tanto
+    \begin{equation*}
+        z=1\cdot u+2\cdot v+3\cdot w.
+    \end{equation*}
 
+    \ref{comb-lin-u-v} Si $\lambda=4$, entonces $\mu=-1$ y $\nu=0$ y por lo tanto
+    \begin{equation*}
+        z=4\cdot u-1\cdot v.
+    \end{equation*}
+
+    \ref{comb-lin-u-w} Si $\lambda=3$, entonces $\mu=0$ y $\nu=1$ y por lo tanto
+    \begin{equation*}
+        z=3\cdot u+1\cdot w.
+    \end{equation*}
+
+    \ref{comb-lin-v-w} Si $\lambda=2$, entonces $\mu=1$ y $\nu=2$ y por lo tanto
+    \begin{equation*}
+        z=2\cdot v+2\cdot w.
+    \end{equation*}
     \qed     
     
     \item Sean $p(x)=(1-x)(x+2)$, $q(x)=x^2-1$ y $r(x)=x(x^2-1)$ en $\mathbb{R}[x]$.
-    \begin{enumerate}
-    \item Describir todos los polinomios de grado menor o igual que $3$ que son combinación lineal de $p,q$ y $r$.
-    \item Elegir $a$ tal que el polinomio $x$ se pueda escribir como combinación lineal de $p,q$ y $2x^2+a$.
-    \end{enumerate}
-    
+        \begin{enumerate}
+        \item\label{comb-lineal-pol-a} Describir todos los polinomios de grado menor o igual que $3$ que son combinación lineal de $p,q$ y $r$.
+        \item\label{comb-lineal-pol-b} Elegir $a$ tal que el polinomio $x$ se pueda escribir como combinación lineal de $p,q$ y $2x^2+a$.
+        \end{enumerate}
     
     \rta 
+
+    \ref{comb-lineal-pol-a} Debemos estudiar la ecuación 
+    \begin{align*}
+        ax^3+bx^2+cx +d &=\lambda (1-x)(x+2)+\mu (x^2-1)+\nu x(x^2-1)\\
+        &=\lambda(-x^2 -x +2)+\mu (x^2-1)+\nu (x^3-x) \\
+        &= \nu x^3 + (\mu-\lambda)x^2 + (-\nu-\lambda)x + (2\lambda-\mu).
+    \end{align*}
+    Debemos encontrar todos los $(a,b,c,d)\in\mathbb{R}^4$ tales que existe $\lambda,\mu,\nu\in\mathbb{R}$ que satisfacen la ecuación anterior. Es decir, debemos encontrar todos los $(a,b,c,d)\in\mathbb{R}^4$ tales que existe $\lambda,\mu,\nu\in\mathbb{R}$ que satisfacen el sistema
+    \begin{align*}
+        a&=\nu\\
+        b&=\mu-\lambda\\
+        c&=-\nu-\lambda\\
+        d&=2\lambda-\mu.
+    \end{align*}
+    Si consideramos $a,b,c,d$ como constantes y  $\lambda,\mu,\nu$ como incógnitas, entonces el sistema, presentado como matriz aumentada es:
+    \begin{align*}
+        &\begin{amatrix}{3}
+            0 & 0 & 1 & a \\
+            -1 & 1 & 0 & b \\
+            -1 & 0 & -1 & c \\
+            2 & -1 & 0 & d
+        \end{amatrix}
+        \underset{F_4 + 2F_2}{\stackrel{F_3-F_2}{\longrightarrow}}
+        \begin{amatrix}{3}
+            0 & 0 & 1 & a \\
+            -1 & 1 & 0 & b \\
+            0 & -1 & -1 & c-b \\
+            0 & 1 & 0 & d+2b
+        \end{amatrix} \\
+        &\underset{F_3 + F_4}{\stackrel{F_2-F_4}{\longrightarrow}}
+        \begin{amatrix}{3}
+            0 & 0 & 1 & a \\
+            -1 & 0 & 0 & -b-d \\
+            0 & 0 & -1 & b+c+d \\
+            0 & 1 & 0 & d+2b
+        \end{amatrix} \underset{F_3\cdot (-1)}{\stackrel{F_2\cdot (-1)}{\longrightarrow}} 
+        \begin{amatrix}{3}
+            0 & 0 & 1 & a \\
+            1 & 0 & 0 & b+d \\
+            0 & 0 & 1 & -b-c-d \\
+            0 & 1 & 0 & d+2b
+        \end{amatrix} \\
+    \end{align*}
+    Es decir, el sistema se reduce a 
+    \begin{align*}
+        \lambda &= b+d\\
+        \mu &= 2b+d\\
+        \nu &= a\\
+        \nu&= -b-c-d.
+    \end{align*}
+    Luego el sistema tiene solución si y sólo si $a=-b-c-d$ por lo tanto, el subespacio de polinomios que obtenemos es
+    \begin{equation*}
+        \{(-b-c-d) x^3 + bx^2 + cx + d: \ b,c,d\in\mathbb{R}\}.
+    \end{equation*}
 
     \qed     
     
