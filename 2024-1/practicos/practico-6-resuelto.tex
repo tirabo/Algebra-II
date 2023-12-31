@@ -205,6 +205,45 @@
     
     \rta 
 
+    \ref{comb-lineal-pol-a} Escribamos la versión expandida de $p$, $q$ y $r$:
+    \begin{align*}
+        p(x)&=x^2+x-2,\\
+        q(x)&=x^2-1,\\
+        r(x)&=x^3-x.                
+    \end{align*}
+    Debemos encontrar el subespacio generado por estos tres polinomios. Primero encontraremos una base del subespacio en término de los generadores canónicos  ($x^n$ con $n\in\mathbb{N}_0$). 
+    \begin{align*}
+        &\begin{bmatrix}
+            0 & 1 & 1 & -2 \\
+            0 & 1 & 0 & -1 \\
+            1 & 0 & -1 & 0 \\
+        \end{bmatrix}
+        \stackrel{F_2-F_1}{\longrightarrow}
+        \begin{bmatrix}
+            0 & 1 & 1 & -2 \\
+            0 & 0 & -1 & 1 \\
+            1 & 0 & -1 & 0 \\
+        \end{bmatrix} \\
+        &\underset{F_3-F_2}{\stackrel{F_1+F_2}{\longrightarrow}}
+        \begin{bmatrix}
+            0 & 1 & 0 & -1 \\
+            0 & 0 & -1 & 1 \\
+            1 & 0 & 0 & -1 \\
+        \end{bmatrix} \stackrel{-F_2}{\longrightarrow}
+        \begin{bmatrix}
+            0 & 1 & 0 & -1 \\
+            0 & 0 & 1 & -1 \\
+            1 & 0 & 0 & -1 \\
+        \end{bmatrix}.            
+    \end{align*}
+    Luego  
+    $$
+    \langle p,q,r\rangle = \langle x^2-1,x-1,x^3-1 \rangle.
+    $$
+
+
+
+
     \ref{comb-lineal-pol-a} Debemos estudiar la ecuación 
     \begin{align*}
         ax^3+bx^2+cx +d &=\lambda (1-x)(x+2)+\mu (x^2-1)+\nu x(x^2-1)\\
