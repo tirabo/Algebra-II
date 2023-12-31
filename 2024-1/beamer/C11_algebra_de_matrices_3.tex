@@ -1,0 +1,1017 @@
+%\documentclass[usenames,dvipsnames]{beamer} 
+\documentclass[handout,usenames,dvipsnames]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage[utf8]{inputenc}%esto permite (en Windows) escribir directamente 
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,arrows,babel,decorations.pathreplacing}
+\usepackage{verbatim} 
+\usepackage{xcolor} 
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{soul}
+%https://en.wikibooks.org/wiki/LaTeX/Colors
+\newcommand{\mathcolorbox}[2]{\colorbox{#1}{$\displaystyle #2$}}
+\newcommand{\hlfancy}[2]{\sethlcolor{#1}\hl{#2}}
+
+
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+\setbeamercolor{block}{fg=red, bg=red!40!white}
+\setbeamercolor{block example}{use=structure,fg=black,bg=white!20!white}
+
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\renewcommand{\figurename }{Figura}
+
+
+
+
+\renewenvironment{block}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{alertblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{red!80!black}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{exampleblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+
+\newenvironment{exercise}[1]% environment name
+{% begin code
+	\par\vspace{\baselineskip}\noindent
+	\textbf{Ejercicio (#1)}\begin{itshape}%
+		\par\vspace{\baselineskip}\noindent\ignorespaces
+	}%
+	{% end code
+	\end{itshape}\ignorespacesafterend
+}
+
+
+\newenvironment{definicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Definición}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{observacion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Observación}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejemplo}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejemplo}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejercicio}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejercicio}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{proof}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{demostracion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{idea}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Idea de la demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{solucion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Solución}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{lema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Lema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{proposicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Proposición}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{teorema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Teorema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+\newenvironment{corolario}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Corolario}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{propiedad}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Propiedad}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{conclusion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Conclusión}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nc}{\newcommand}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+\nc{\RR}{{\mathbb R}} \nc{\CC}{{\mathbb C}} \nc{\ZZ}{{\mathbb Z}}
+\nc{\FF}{{\mathbb F}} \nc{\NN}{{\mathbb N}} \nc{\QQ}{{\mathbb Q}}
+\nc{\PP}{{\mathbb P}} \nc{\DD}{{\mathbb D}} \nc{\Sn}{{\mathbb S}}
+\nc{\uno}{\mathbb{1}} \nc{\BB}{{\mathbb B}} \nc{\An}{{\mathbb A}}
+
+\nc{\ba}{\mathbf{a}} \nc{\bb}{\mathbf{b}} \nc{\bt}{\mathbf{t}}
+\nc{\bB}{\mathbf{B}}
+
+\nc{\cP}{\mathcal{P}} \nc{\cU}{\mathcal{U}} \nc{\cX}{\mathcal{X}}
+\nc{\cE}{\mathcal{E}} \nc{\cS}{\mathcal{S}} \nc{\cA}{\mathcal{A}}
+\nc{\cC}{\mathcal{C}} \nc{\cO}{\mathcal{O}} \nc{\cQ}{\mathcal{Q}}
+\nc{\cB}{\mathcal{B}} \nc{\cJ}{\mathcal{J}} \nc{\cI}{\mathcal{I}}
+\nc{\cM}{\mathcal{M}} \nc{\cK}{\mathcal{K}}
+
+\nc{\fD}{\mathfrak{D}} \nc{\fI}{\mathfrak{I}} \nc{\fJ}{\mathfrak{J}}
+\nc{\fS}{\mathfrak{S}} \nc{\gA}{\mathfrak{A}}
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+
+
+
+
+%%%%%%%%%%%%%%%%%yetter drinfield
+\newcommand{\ydg}{{}_{\ku G}^{\ku G}\mathcal{YD}}
+\newcommand{\ydgdual}{{}_{\ku^G}^{\ku^G}\mathcal{YD}}
+\newcommand{\ydf}{{}_{\ku F}^{\ku F}\mathcal{YD}}
+\newcommand{\ydgx}{{}_{\ku \Gx}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydgxy}{{}_{\ku \Gy}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydixq}{{}_{\ku \ixq}^{\ku \ixq}\mathcal{YD}}
+
+\newcommand{\ydl}{{}^H_H\mathcal{YD}}
+\newcommand{\ydll}{{}_{K}^{K}\mathcal{YD}}
+\newcommand{\ydh}{{}^H_H\mathcal{YD}}
+\newcommand{\ydhdual}{{}^{H^*}_{H^*}\mathcal{YD}}
+
+
+\newcommand{\ydha}{{}^H_A\mathcal{YD}}
+\newcommand{\ydhhaa}{{}^{\Hx}_{\Ay}\mathcal{YD}}
+
+
+\newcommand{\wydh}{\widehat{{}^H_H\mathcal{YD}}}
+\newcommand{\ydvh}{{}^{\ac(V)}_{\ac(V)}\mathcal{YD}}
+\newcommand{\ydrh}{{}^{R\# H}_{R\# H}\mathcal{YD}}
+\newcommand{\ydho}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}}
+\newcommand{\ydhsw}{{}^{H^{\sw}}_{H^{\sw}}\mathcal{YD}}
+
+\newcommand{\ydhlf}{{}^H_H\mathcal{YD}_{\text{loc fin}}}
+\newcommand{\ydholf}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}_{\text{loc fin}}}
+
+\nc{\yd}{\mathcal{YD}}
+
+\newcommand{\ydsn}{{}^{\ku{\Sn_n}}_{\ku{\Sn_n}}\mathcal{YD}}
+\newcommand{\ydsnd}{{}^{\ku^{\Sn_n}}_{\ku^{\Sn_n}}\mathcal{YD}}
+\nc{\ydSn}[1]{{}^{\Sn_{#1}}_{\Sn_{#1}}\yd}
+\nc{\ydSndual}[1]{{}^{\ku^{\Sn_{#1}}}_{\ku^{\Sn_{#1}}}\yd}
+\newcommand{\ydstres}{{}^{\ku^{\Sn_3}}_{\ku^{\Sn_3}}\mathcal{YD}}
+%%%%%%%%%%%%%%%%%yetter drinfield
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+\newcommand\Irr{\operatorname{Irr}}
+\newcommand\id{\operatorname{id}}
+\newcommand\ad{\operatorname{ad}}
+\newcommand\Ad{\operatorname{Ad}}
+\newcommand\Ext{\operatorname{Ext}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\gr{\operatorname{gr}}
+\newcommand\grdual{\operatorname{gr-dual}}
+\newcommand\Gr{\operatorname{Gr}}
+\newcommand\co{\operatorname{co}}
+\newcommand\car{\operatorname{car}}
+\newcommand\rk{\operatorname{rg}}
+\newcommand\ord{\operatorname{ord}}
+\newcommand\cop{\operatorname{cop}}
+\newcommand\End{\operatorname{End}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\Alg{\operatorname{Alg}}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\Int{\operatorname{Int}}
+\newcommand\Id{\operatorname{Id}}
+\newcommand\qAut{\operatorname{qAut}}
+\newcommand\Map{\operatorname{Map}}
+\newcommand\Jac{\operatorname{Jac}}
+\newcommand\Rad{\operatorname{Rad}}
+\newcommand\Rep{\operatorname{Rep}}
+\newcommand\Ker{\operatorname{Ker}}
+\newcommand\Img{\operatorname{Im}}
+\newcommand\Ind{\operatorname{Ind}}
+\newcommand\Comod{\operatorname{Comod}}
+\newcommand\Reg{\operatorname{Reg}}
+\newcommand\Pic{\operatorname{Pic}}
+\newcommand\textitb{\operatorname{Emb}}
+\newcommand\op{\operatorname{op}}
+\newcommand\Perm{\operatorname{Perm}}
+\newcommand\Res{\operatorname{Res}}
+\newcommand\res{\operatorname{res}}
+\newcommand{\sop}{\operatorname{Supp}}
+\newcommand\Cent{\operatorname{Cent}}
+\newcommand\sgn{\operatorname{sgn}}
+\nc{\GL}{\operatorname{GL}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+\nc{\D}{\Delta} 
+\nc{\e}{\varepsilon}
+\nc{\adl}{\ad_\ell}
+\nc{\ot}{\otimes}
+\nc{\Ho}{H_0} 
+\nc{\GH}{G(H)} 
+\nc{\coM}{\mathcal{M}^\ast(2,k)} 
+\nc{\PH}{\cP(H)}
+\nc{\Ftwist}{\overset{\curvearrowright}F}
+\nc{\rep}{{\mathcal Rep}(H)}
+\newcommand{\deltad}{_*\delta}
+\newcommand{\B}{\mathfrak{B}}
+\newcommand{\wB}{\widehat{\mathfrak{B}}}
+\newcommand{\Cg}[1]{C_{G}(#1)}
+\nc{\hmh}{{}_H\hspace{-1pt}{\mathcal M}_H}
+\nc{\hm}{{}_H\hspace{-1pt}{\mathcal M}}
+\renewcommand{\_}[1]{_{\left[ #1 \right]}}
+\renewcommand{\^}[1]{^{\left[ #1 \right]}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+\nc{\im}{\mathtt{i}}
+\renewcommand{\Re}{{\rm Re}}
+\renewcommand{\Im}{{\rm Im}}
+\nc{\Tr}{\mathrm{Tr}} 
+\nc{\cark}{char\,k} 
+\nc{\ku}{\Bbbk} 
+\newcommand{\fd}{finite dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+\newcommand{\xij}[1]{x_{(#1)}}
+\newcommand{\yij}[1]{y_{(#1)}}
+\newcommand{\Xij}[1]{X_{(#1)}}
+\newcommand{\dij}[1]{\delta_{#1}}
+\newcommand{\aij}[1]{a_{(#1)}}
+\newcommand{\hij}[1]{h_{(#1)}}
+\newcommand{\gij}[1]{g_{(#1)}}
+\newcommand{\eij}[1]{e_{(#1)}}
+\newcommand{\fij}[1]{f_{#1}}
+\newcommand{\tij}[1]{t_{(#1)}}
+\newcommand{\Tij}[1]{T_{(#1)}}
+\newcommand{\mij}[1]{m_{(#1)}}
+\newcommand{\Lij}[1]{L_{(#1)}}
+\newcommand{\mdos}[2]{m_{(#1)(#2)}}
+\newcommand{\mtres}[3]{m_{(#1)(#2)(#3)}}
+\newcommand{\mcuatro}{m_{\textsf{top}}}
+\newcommand{\trid}{\triangleright}
+\newcommand{\link}{\sim_{\ba}}
+
+
+
+
+
+
+
+
+\title[Clase 11 - Álgebra de matrices 3]{Álgebra/Álgebra II \\ Clase 11 - Álgebra de matrices 3}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+}
+\date[06/10/2020]{6 de octubre de 2020}
+
+%\titlegraphic{\includegraphics[width=0.2\textwidth]{logo_gimp100.pdf}}
+
+% Converted to PDF using ImageMagick:
+% # convert logo_gimp100.png logo_gimp100.pdf
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Resumen}
+	En esta clase veremos:
+	\pause
+	\vskip .4cm
+
+	\begin{itemize}
+		\item toda matriz elemental es invertible. \pause
+		\item Toda matriz invertible es producto de matrices elementales. \pause
+		\item Estudiaremos la forma de calcular la inversa de una matriz (cuando  existe) con operaciones elementales. \pause
+		\item Finalmente, probarémos que los sistemas de ecuaciones cuya matriz es invertible tienen una única solución.
+	\end{itemize}
+
+	\vskip .4cm \pause
+	
+	El tema de esta clase  está contenido de la sección la sección 2.7  del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
+\end{frame}
+
+\begin{frame}
+		
+	\begin{teorema}
+		Una matriz elemental es invertible.
+	\end{teorema} \pause
+	\begin{proof} \pause
+		Sea $E$ la matriz elemental que se obtiene a partir de $\Id_n$ por la operación elemental $e$. Sea $e'$ la operación elemental inversa  y $E' = e'(\Id_n)$. Entonces 
+		\begin{align*}
+			EE' &= e(e'(\Id_n)) = \Id_n, \\
+			E'E &= e'(e(\Id_n)) = \Id_n.
+		\end{align*}
+		Luego  $E' = E^{-1}$. \qed
+	\end{proof}	
+	
+	\vskip 2cm
+\end{frame}
+
+
+
+\begin{frame}
+		Es fácil encontrar explícitamente la matriz inversa de una matríz elemental, por ejemplo, en el caso $2 \times 2$ tenemos:
+		\pause
+		\vskip .4cm
+	\begin{enumerate}
+		\item Si $c \not=0$,
+		\begin{equation*}
+			\begin{bmatrix} c& 0\\ 0&1\end{bmatrix}^{-1}=\begin{bmatrix} 1/c& 0\\ 0&1\end{bmatrix}
+			\;\text{ y }\; \begin{bmatrix} 1& 0\\ 0&c\end{bmatrix}^{-1}=\begin{bmatrix} 1& 0\\ 0&1/c\end{bmatrix},
+		\end{equation*} \pause
+		\item si  $c \in \K$, ,
+		\begin{equation*}
+			\begin{bmatrix} 1& 0\\ c&1\end{bmatrix}^{-1}=\begin{bmatrix} 1& 0\\ -c&1\end{bmatrix}
+			\;\text{ y }\; \begin{bmatrix} 1& c\\ 0&1\end{bmatrix}^{-1}=\begin{bmatrix} 1& -c\\ 0&1\end{bmatrix}.
+		\end{equation*} \pause
+		\item Finalmente, 
+		\begin{equation*}
+			\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix} ^{-1}= 	\begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
+		\end{equation*}
+	\end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+	\begin{lema} Sea $R \in \K^{n \times n}$. Entonces
+\begin{equation*}
+	\text{$R$ es MERF } \wedge \text{ $R$ es invertible} \quad \Rightarrow \quad R = \Id_n.
+\end{equation*}
+	\end{lema}	 \pause
+	\begin{demostracion} \pause
+		Supongamos que la $r_{11} =0$. Como $R$ es MERF $\Rightarrow$ $C_1=0$. 
+		\vskip .2cm
+		Sea $t \not=0$ en $\K$. Como $C_1=0$, 
+		\begin{equation*}
+			R\begin{bmatrix}
+				t \\ 0 \\ \vdots \\0
+			\end{bmatrix} =
+			  \begin{bmatrix}
+				0 & * & \cdots &*\\ 0 & * & \cdots &*\\ \vdots \\0& * & \cdots &*
+			\end{bmatrix}
+			\begin{bmatrix}
+				t \\ 0 \\ \vdots \\0
+			\end{bmatrix} 
+			= 
+			\begin{bmatrix}
+				0 \\ 0 \\ \vdots \\0
+			\end{bmatrix} 
+		\end{equation*}
+
+	
+	\end{demostracion}
+\end{frame}
+
+\begin{frame}
+	Luego, como $R$ tiene inversa:
+	\begin{equation*}
+		\begin{bmatrix}
+			t \\ 0 \\ \vdots \\0
+		\end{bmatrix}  = 
+		\Id 
+		\begin{bmatrix}
+			t \\ 0 \\ \vdots \\0
+		\end{bmatrix}  = 
+		R^{-1}R
+		\begin{bmatrix}
+			t \\ 0 \\ \vdots \\0
+		\end{bmatrix}  =
+		R^{-1}\begin{bmatrix}
+			0 \\ 0 \\ \vdots \\0
+		\end{bmatrix} 
+		= 
+		\begin{bmatrix}
+			0 \\ 0 \\ \vdots \\0
+		\end{bmatrix} 
+	\end{equation*}
+
+Esto nos dice que $t=0$, lo cual es absurdo pues habíamos partido  de $t \not=0$. Por lo tanto 
+\begin{equation*}
+	R = \begin{bmatrix}
+		1 & * & \cdots &*\\ 0 & * & \cdots &*\\ \vdots \\0& * & \cdots &*
+	\end{bmatrix}.
+\end{equation*} 
+
+Por inducción podemos probar que $R= \Id_n$. \qed
+
+\end{frame}
+
+
+\begin{frame}
+		\begin{teorema}\label{mtrx-inv-equiv} Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Las siguientes afirmaciones son equivalentes
+		\begin{enumerate}
+			\item[\textit{i})] $A$ es invertible, \pause
+			\item[\textit{ii})] $A$  es equivalente por filas a $\Id_n$,  \pause
+			\item[\textit{iii})] $A$ es producto de matrices elementales. \pause
+		\end{enumerate}
+	\end{teorema} \pause
+	\begin{proof} \pause
+
+		\textit{i}) $\Rightarrow$ \textit{ii})\; Sea $R$ una MERF que se obtiene de a $A$.  \pause
+		\begin{itemize}
+			\item Existen $E_1,\ldots,E_k$ matrices elementales tal que $E_1,\ldots,E_kA = R$.
+			\pause
+			\item Como $E_1,\ldots,E_k$, $A$ invertibles $\Rightarrow$ $E_1,\ldots,E_kA = R$ invertible. 
+			\pause
+			\item $R$ es MERF e invertible $\Rightarrow$  $R=\Id_n$.
+			\pause
+			\item $A$  es equivalente por filas a $R=\Id_n$.
+		\end{itemize}
+		
+
+	\end{proof}	
+\end{frame}
+
+
+\begin{frame}
+			
+	\textit{ii}) $\Rightarrow$ \textit{iii})\; 
+	\begin{itemize}
+		\item $A$  es equivalente por filas a $\Id_n$  $\Rightarrow$
+		\pause
+		existen $E_1,\ldots,E_k$ matrices  elementales  tal que $E_1\cdots E_kA =\Id_n$.
+		\item Sean  $F_1,\ldots,F_k$ las inversas de $E_1,\ldots,E_k$, respectivamente  $\Rightarrow$ 
+		$$
+		(E_1\cdots E_k)^{-1} = E_k^{-1}\cdots E_1^{-1} = F_k\cdots F_1,
+		$$
+		luego
+		$$F_k\cdots F_1 E_1\cdots E_k A =\Id_n A= A.$$ \pause
+		\item Como $E_1\cdots E_kA =\Id_n$ $\Rightarrow$ $F_k\cdots F_1 = F_k\cdots F_1 \Id_n = A$.  \pause
+		Es decir 
+		$$
+		A = F_k\cdots F_1.
+		$$
+		
+	\end{itemize}
+	
+	\vskip .4cm \pause
+	
+	\textit{iii}) $\Rightarrow$ \textit{i}) \; Sea $A = E_1E_2,\ldots,E_k$ donde $E_i$  es una matriz elemental ($i=1,\ldots,k$). Como cada $E_i$ es invertible,  el producto de ellos es invertible,  por lo tanto $A$ es invertible.\qed
+\end{frame}
+
+
+
+\begin{frame}
+	
+	\begin{corolario}
+		Sean $A$ y $B$ matrices $m \times n$. Entonces,   $B$ es equivalente por filas a $A$ si y sólo si existe matriz invertible $P$ de orden $m \times m$ tal que $B =PA$ . 
+	\end{corolario} \pause
+	\begin{proof} \pause
+		($\Rightarrow$)
+		\begin{itemize}
+			\item  $B$ es equivalente por filas a $A$ $\Rightarrow$ $\exists \,E_1,\cdots, E_k$ elementales tal que $B =  E_1\ldots E_kA$. \pause
+			\item  Sea  $P = E_1\ldots E_k$, luego   $B =PA$. \pause
+			\item Cada $E_i$ es invertible $\Rightarrow$ $P =E_1\ldots E_k$ es invertible. \pause
+		\end{itemize}
+		($\Leftarrow$)   \pause
+		\begin{itemize}
+			\item Sea  $P$  matriz invertible tal que $B =PA$. \pause
+			\item Como $P$ es invertible $\Rightarrow$ $P = E_1\ldots E_k$, producto de matrices elementales. \pause
+			\item Por lo tanto,$B =PA = E_1\ldots E_kA$ es equivalente por filas a $A$. \qed
+		\end{itemize}
+
+	\end{proof}	
+	
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\begin{corolario}
+		Sea $A$ matriz $n \times n$. Sean $e_1,\ldots,e_k$  operaciones elementales por filas tal que 
+		\begin{equation*}
+			e_1(e_{2}(\cdots(e_k(A))\cdots)) =\Id_n.\tag{*}
+		\end{equation*} \pause
+		Entonces, $A$ invertible y  
+		\begin{equation*}
+			e_1(e_{2}(\cdots(e_k(\Id_n))\cdots)) =A^{-1}. \tag{**}
+		\end{equation*} 
+	\end{corolario} \pause
+	\vskip -.6cm 
+	\begin{proof}  \pause
+		\begin{itemize}
+			\item (*) $\Rightarrow$ $A$ es equivalente por filas a $\Id_{n}$ $\Rightarrow$  $A$ es invertible.  \pause
+			\item Sean las matrices elementales  $E_i = e_i(\Id_n)$ para $i=1,\ldots,k$,  entonces $E_1E_2\ldots E_kA = \Id_n$, por lo tanto, \pause
+			\begin{align*}
+			E_1E_2\ldots E_kA A^{-1}&= \Id_nA^{-1} \quad \Leftrightarrow \\
+			E_1E_2\ldots E_k\Id_n&= A^{-1} \quad \Leftrightarrow \\
+			e_1(e_{2}(\cdots(e_k(\Id_n))\cdots)) &=A^{-1}.
+			\end{align*}
+		\end{itemize}
+		\qed
+	\end{proof}
+\end{frame}
+
+\begin{frame}
+
+
+Este último corolario nos provee un método sencillo para calcular la inversa de una matriz cuadrada  $A$ invertible.
+\vskip .4cm \pause
+
+	\begin{enumerate}
+		\item Aplicando operaciones elementales $e_1,\ldots,e_k$ encontramos $R = \Id_n$ la MERF  de $A$. \pause
+		\item Aplicando las operaciones elementales $e_1,\ldots,e_k$ a $\Id_n$, obtenemos $A^{-1}$ la inversa de $A$.
+	\end{enumerate}
+\vskip .4cm \pause
+	Para facilitar el cálculo es  conveniente comenzar con $A$ e $\Id_n$ e ir aplicando paralelamente las operaciones elementales por fila.
+	\vskip .4cm \pause
+	En las próxima filminas veremos un ejemplo.
+
+\end{frame}
+
+
+
+\begin{frame}
+	\begin{ejemplo}
+		Calculemos la inversa (si tiene) de 
+		\begin{equation*}
+		A=\begin{bmatrix}2&-1\\1&3 \end{bmatrix}.
+		\end{equation*}
+	\end{ejemplo} \pause
+	\begin{solucion}  \pause Trataremos de reducir por filas a $A$ y todas las operaciones elementales las haremos en paralelo partiendo de la matriz identidad: \pause
+		\begin{align*}
+		[A|\Id] = &\left[\begin{array}{cc|cc}2&-1 &  1&0\\1&3& 0&1\end{array}\right] 
+		\stackrel{F_1\leftrightarrow F_2}{\longrightarrow} 
+		\left[\begin{array}{cc|cc}1&3& 0&1\\2&-1 &  1&0 \end{array}\right] \\
+		&\stackrel{F_2-2 F_1}{\longrightarrow}
+		\left[\begin{array}{cc|cc}1&3& 0&1\\0&-7 &  1&-2 \end{array}\right]
+		\stackrel{F_2/(-7)}{\longrightarrow}
+		\left[\begin{array}{cc|cc}1&3& 0&1\\0&1 &  -1/7&2/7\end{array}\right] \\
+		&\stackrel{F_1-3 F_2}{\longrightarrow}
+		\left[\begin{array}{cc|cc}1&0&  3/7&1/7\\0&1 &  -1/7&2/7 \end{array}\right].
+	\end{align*}
+		\vskip .2cm
+		
+	\end{solucion}
+\end{frame}
+
+
+
+\begin{frame}
+	Luego,  $A$ es invertible y su inversa es  
+		\vskip .2cm
+		\begin{equation*}
+		A^{-1}=\begin{bmatrix}3/7&1/7\\-1/7&2/7 \end{bmatrix}.
+		\end{equation*}
+		\qed
+		\vskip .2cm\vskip .2cm
+		\pause
+	\begin{itemize}
+		\item El lector desconfiado  podrá comprobar, haciendo el producto de matrices, que $AA^{-1} = A^{-1}A=\Id_2$.
+	\end{itemize}
+	\vskip 2cm
+\end{frame}
+
+
+
+\begin{frame}
+			
+	\begin{teorema}
+		Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces,  las siguientes afirmaciones son equivalentes.  \pause
+		\vskip .2cm
+		\begin{enumerate}
+			\item[\textit{i})] $A$ es invertible. \pause
+			\item[\textit{ii})] El sistema $AX=Y$ tiene una única solución para toda matriz $Y$ de orden $n \times 1$.  \pause
+			\item[\textit{iii})] El sistema homogéneo $AX=0$ tiene una única solución ($X=0$). \pause
+		\end{enumerate}
+	\end{teorema} \pause
+	\begin{proof} \pause
+		\textit{i}) $\Rightarrow$  \textit{ii}) Sea $X_0$ solución del sistema $AX=Y$, luego
+		\begin{equation*}
+		AX_0=Y  \quad \Rightarrow \quad  A^{-1}AX_0 = A^{-1}Y  \quad \Rightarrow \quad  X_0 = A^{-1}Y.
+		\end{equation*}
+		Es decir, $X_0$ es único (siempre igual  a $A^{-1}Y$).  
+		\pause
+		\vskip .2cm
+			
+		
+	\end{proof}
+	
+\end{frame}
+
+
+
+\begin{frame}
+
+	\textit{ii}) $\Rightarrow$  \textit{iii}) Es trivial, tomando $Y =0$.		
+	\vskip .4cm
+
+	\textit{iii}) $\Rightarrow$  \textit{i})  La hipótesis es $AX=0 \Rightarrow X=0$.
+	\vskip .2cm
+	\begin{itemize}
+		\item Sea $R$ la MERF equivalente a $A$.\vskip .2cm \pause
+		\item Si $R$ tiene una filas nulas hay variables que no corresponden a 1's principales, luego esas variables son libres. Por lo tanto, el sistema $AX =0$ tiene más de una solución, contradiciendo la hipótesis.\vskip .2cm \pause
+		\item  Por lo tanto, $R$ no tiene filas nulas.\vskip .2cm \pause
+		\item Como $R$ es una matriz cuadrada y es MERF, tenemos que $R=\Id_n$.\vskip .2cm \pause
+		\item Luego $A$ es equivalente por filas a $\Id_n$ $\Rightarrow$ $A$ es invertible.\vskip .2cm 
+	\end{itemize}
+	\qed
+	\vskip 0.8 cm
+\end{frame}
+
+
+
+\begin{frame}
+	\begin{corolario}
+		Sea $A$ una matriz $n \times n$ con coeficientes  en $\K$. 
+		\begin{enumerate}
+			\item Si  existe $B$ matriz $n \times n$ tal que $BA=\Id_n$,   entonces $AB = \Id_n$. 
+			\pause
+			($A$ tiene inversa a izquierda $\Rightarrow$ es invertible).
+			\item Si  existe $C$ matriz $n \times n$ tal que $AC=\Id_n$,   entonces $CA=\Id_n$. 
+			
+			($A$ tiene inversa a derecha $\Rightarrow$ es invertible).
+		\end{enumerate}
+	\end{corolario}	 \pause
+	\begin{proof} \pause
+		1. Sea $B$ tal que   $BA=\Id_n$. El sistema $AX=0$ tiene una única solución, pues 
+		$$AX_0=0 \quad\Rightarrow\quad BAX_0=B0=0  \quad\Rightarrow\quad\Id_nX_0 = 0 \quad\Rightarrow\quad X_0=0.$$ \pause
+		Luego, $A$  es invertible (y su inversa es $B$). 
+		\vskip .4cm \pause
+		2. Sea  $C$  tal que $AC=\Id_n$. Luego $A$ es la inversa a izquierda de $C$. Por  lo que demostramos más arriba,  $C$ es invertible y  su inversa es $A$, es decir $AC=\Id_n$ y $CA=\Id_n$, luego $C$  es invertible. \qed
+	\end{proof}	
+\end{frame}
+
+\begin{frame}
+Elsiguiente teorema reune algunos resultados ya demostrados.
+
+\vskip .3cm
+	\begin{block}{Teorema}
+	
+	Sea $A\in\K^{n\times n}$. Las siguientes afirmaciones son equivalentes \pause
+	\begin{enumerate}
+	 \item $A$ es invertible, \pause
+	 \item $A$ es equivalente por fila a $\Id_n$, \pause
+	 \item el sistema $AX=0$ tiene soluci\'on \'unica (la trivial), \pause
+	 \item el sistema $AX=Y$ tiene soluci\'on \'unica para todo $Y\in\K^n$ \ (la soluci\'on es $A^{-1}Y$), \pause
+	 \item $A$ es el producto de matrices elementales, \pause
+	 \item existe $B$  matriz $n \times n$ tal que $BA=\Id$, \pause
+	 \item existe $C$  matriz $n \times n$ tal que $AC=\Id$, \pause
+	 \item $\det(A)\neq0$ (esto  lo veremos en próximas clases).
+	\end{enumerate}
+	
+	\end{block}
+	 
+	\end{frame}
+
+\begin{frame}{Matrices invertibles $2 \times 2$}
+
+		Dados $a,b,c,d \in \mathbb R$, determinaremos cuando la matriz $A = \begin{bmatrix*} a&b\\c&d\end{bmatrix*}$  es invertible y en ese caso,  cual es su inversa. 
+\pause
+	\begin{solucion}\pause
+		
+Para poder aplicar el método de Gauss-Jordan debemos analizar dos casos:  $a\not=0$ y   $a=0$.\pause
+
+\vskip .3cm
+\textbf{Caso 1.}  $a\not=0$.\pause
+
+Como $a\not=0$, entonces 
+\begin{equation*}
+\begin{bmatrix}a&b\\c&d\end{bmatrix} \stackrel{F_1/a}{\longrightarrow}
+\begin{bmatrix}1&\dfrac{b}{a}\\[6pt]c&d\end{bmatrix} \stackrel{F_2 -cF_1}{\longrightarrow}
+\begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&d- c\dfrac{b}{a}\end{bmatrix} =
+\begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&\dfrac{ad-bc}{a}\end{bmatrix}
+\end{equation*}   
+\end{solucion} 
+	
+\end{frame}
+
+
+
+
+\begin{frame}
+	\textbf{Caso 1.1} $a\not=0$ y  $ad-bc=0$.\pause
+
+	Si $ad-bc=0$,  entonces la matriz se encuentra reducida por filas y la última fila es $0$, luego en ese caso no es invertible. 
+	\vskip .4cm 
+	\pause
+	\textbf{Caso 1.2} $a\not=0$ y  $ad-bc\not=0$.\pause
+
+	Entonces
+	\begin{equation*}
+	\begin{bmatrix}1&\dfrac{b}{a}\\[8pt]0&\dfrac{ad-bc}{a}\end{bmatrix} \stackrel{a/(ad-bc)\,F_2}{\longrightarrow}
+	\begin{bmatrix}1&\dfrac{b}{a}\\[6pt]0&1\end{bmatrix}
+	\stackrel{F1-b/a\,F_2}{\longrightarrow}
+	\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+	\end{equation*} \pause
+	Luego, en este  caso $a\not=0$, $ad-bc\not=0$ hemos reducido por filas la matriz $A$  a la identidad y por lo tanto $A$  es invertible. 
+	
+	
+	
+
+\end{frame}
+
+
+\begin{frame}
+	Además, podemos encontrar $A^{-1}$ aplicando a $\Id_2$ las mismas operaciones elementales que reducían $A$ a la identidad:
+	\pause
+	{\footnotesize
+	\begin{align*}
+	\begin{bmatrix}1&0\\0&1\end{bmatrix} 
+	&\stackrel{F_1/a}{\longrightarrow}
+	\begin{bmatrix}\dfrac1a&0\\[8pt]0&1\end{bmatrix} 
+	\stackrel{F_2 -cF_1}{\longrightarrow}
+	\begin{bmatrix*}[r]\dfrac1a&0\\[8pt]-\dfrac{c}{a}&1\end{bmatrix*}
+	\stackrel{a/(ad-bc)\,F_2}{\longrightarrow}
+	\begin{bmatrix*}[c]\dfrac1a&0\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*}
+	\stackrel{F1-b/a\,F_2}{\longrightarrow}
+	\\&\longrightarrow			
+	\begin{bmatrix*}[c]\dfrac1a+\dfrac{bc}{a(ad-bc)}&-\dfrac{b}{ad-bc}\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*} 
+	=
+	\begin{bmatrix*}[c]\dfrac{d}{ad-bc}&-\dfrac{b}{ad-bc}\\[8pt]-\dfrac{c}{ad-bc}&\dfrac{a}{ad-bc}\end{bmatrix*} .
+	\end{align*}  }
+	\pause
+	Concluyendo, en el caso $a\not=0$, $ad-bc\not=0$, $A$  es invertible y 
+
+	\begin{equation}\label{inv-2x2}
+	A^{-1} = \dfrac{1}{ad-bc}
+	\begin{bmatrix*}[c]d&-b\\-c&a\end{bmatrix*}.
+	\end{equation}
+\end{frame}
+
+
+
+\begin{frame}
+	\textbf{Caso 2.} $a=0$.\pause
+	\vskip .4cm
+	Si $c=0$ o $b=0$ , entonces la matriz no es invertible, pues en ambos casos nos quedan matrices que no pueden ser reducidas por fila a la identidad. 
+	\vskip .4cm
+	\pause
+	Luego la matriz puede ser invertible si $bc\not=0$ y en este caso la reducción por filas es:
+	\begin{equation*}
+	\begin{bmatrix}0&b\\c&d\end{bmatrix} \stackrel{F_1\leftrightarrow F_2}{\longrightarrow}
+	\begin{bmatrix}c&d\\0&b\end{bmatrix} \stackrel{F_1/c}{\longrightarrow}
+	\begin{bmatrix}1&\dfrac{d}{c}\\[6pt]0&b\end{bmatrix} \stackrel{F_2/b}{\longrightarrow}
+	\begin{bmatrix}1&\dfrac{d}{c}\\[6pt]0&1\end{bmatrix}
+	\stackrel{F_1 - d/c F_2}{\longrightarrow}
+	\begin{bmatrix}1&0\\0&1\end{bmatrix}.
+	\end{equation*}   
+	\vskip 2cm
+\end{frame}
+
+
+
+\begin{frame}
+	Luego $A$  es invertible y aplicando estas mismas operaciones elementales a la identidad  obtenemos la inversa:\pause
+	\begin{equation*}
+	\begin{bmatrix}1&0\\0&1\end{bmatrix} \stackrel{F_1\leftrightarrow F_2}{\longrightarrow}
+	\begin{bmatrix}0&1\\1&0\end{bmatrix} \stackrel{F_1/c}{\longrightarrow}
+	\begin{bmatrix}0&\dfrac{1}{c}\\[6pt]1&0\end{bmatrix} \stackrel{F_2/b}{\longrightarrow}
+	\begin{bmatrix}0&\dfrac{1}{c}\\[6pt]\dfrac{1}{b}&0\end{bmatrix}
+	\stackrel{F_1 - d/c F_2}{\longrightarrow}
+	\begin{bmatrix}-\dfrac{d}{bc}&\dfrac{1}{c}\\[6pt]\dfrac{1}{b}&0\end{bmatrix}.
+	\end{equation*}  \pause
+	Es decir, en el caso  que $a=0$, entonces $A$ invertible si  $b c\not=0$ y su inversa es
+	\begin{equation}\label{eq-amenos12}
+	A^{-1} = \begin{bmatrix}-\dfrac{d}{bc}&\dfrac{1}{c}\\[6pt]\dfrac{1}{b}&0\end{bmatrix} = 
+	\dfrac{1}{-bc}
+	\begin{bmatrix*}[c]d&-b\\-c&0\end{bmatrix*}.
+	\end{equation}\pause
+	Es decir, la expresión de la inversa es igual a (\ref{inv-2x2}) (considerando que  $a=0$).
+	
+\end{frame}
+
+
+
+\begin{frame}
+	
+	Reuniendo los dos casos: de (\ref{inv-2x2}) y (\ref{eq-amenos12}) se deduce:
+
+
+
+	\begin{equation*}
+		\begin{bmatrix*} a&b\\c&d\end{bmatrix*} \; \text{ es invertible} \quad  \Leftrightarrow \quad  ad-bc\not=0,
+	\end{equation*}
+	
+	  y en ese caso,  su inversa viene dada por 
+
+	\begin{equation*}
+	\begin{bmatrix*} a&b\\c&d\end{bmatrix*}^{-1} =  \dfrac{1}{ad-bc}
+	\begin{bmatrix*}[c]d&-b\\-c&a\end{bmatrix*}
+	\end{equation*} 
+	
+	\vskip .4cm
+	\pause
+	\begin{observacion}
+		Definiremos $\det(A) := ad-bc$. Luego, \pause
+		\begin{itemize}
+			\item $A$ invertible  si y solo si $\det(A) \ne 0$.\pause
+			\item Veremos en las próximas clases que el uso de determinantes permitirá establecer la generalización de este resultado para matrices $n \times n$ con $n\ge 1$.
+		\end{itemize}
+	\end{observacion}	
+	
+\end{frame}
+
+\begin{frame}
+
+Terminaremos la clase con un cálculo de matriz inversa.\pause
+\vskip .4cm
+	\begin{ejemplo}
+		Calcular la inversa (si tiene) de la matriz 
+		$$A=\begin{bmatrix} 1&-1&2\\ 3&2&4\\ 0&1&-2	\end{bmatrix}.$$ 
+	\end{ejemplo}\vskip -.4cm\pause
+	\begin{solucion}\vskip -.4cm\pause
+		\begin{align*} 
+		&\left[\begin{array}{rrr|rrr}	1&-1&2&1&0&0\\ 3&2&4&0&1&0\\ 0&1&-2&0&0&1 \end{array}\right]
+		\stackrel{F_2-3 F_1}{\longrightarrow}
+		\left[\begin{array}{rrr|rrr}	1&-1&2
+		&1&0&0\\ 0&5&-2&-3&1&0\\ 0&1&-2&0&0&1 \end{array}\right]
+		\stackrel{F_2\leftrightarrow F_3}{\longrightarrow} \\
+		&\longrightarrow 
+		\left[\begin{array}{rrr|rrr}	1&-1&2&1&0&0\\ 0&1&-2&0&0&1 \\ 0&5&-2&-3&1&0 \end{array}\right]
+		\stackrel{F_1 + F_2}{\longrightarrow}
+		\left[\begin{array}{rrr|rrr}	1&0&0&1&0&1\\ 0&1&-2&0&0&1 \\ 0&5&-2&-3&1&0 \end{array}\right]
+		\stackrel{F_3-5F_2}{\longrightarrow} 
+	\end{align*}
+		
+	\end{solucion}
+\end{frame}
+
+
+\begin{frame}
+	\begin{align*} 
+		&\longrightarrow
+		\left[\begin{array}{rrr|rrr}	1&0&0&1&0&1\\ 0&1&-2&0&0&1 \\ 0&0&8&-3&1&-5 \end{array}\right]
+		\stackrel{F_3/8}{\longrightarrow}
+		\left[\begin{array}{rrr|rrr}	1&0&0&1&0&1\\ 0&1&-2&0&0&1 \\ 0&0&1&-\frac38&\frac18&-\frac58 \end{array}\right]
+		\stackrel{F_2+2F_3}{\longrightarrow} \\
+		&\longrightarrow
+		\left[\begin{array}{rrr|rrr}	1&0&0&1&0&1\\ 0&1&0&-\frac34&\frac14&-\frac14 \\ 0&0&1&-\frac38&\frac18&-\frac58 \end{array}\right].
+	\end{align*}
+	\pause
+		Por lo tanto \pause
+		\begin{equation*}
+		A^{-1} = 	\begin{bmatrix*}[r]	1&0&1\\ -\frac34&\frac14&-\frac14 \\ -\frac38&\frac18&-\frac58 \end{bmatrix*}
+		\end{equation*}
+\qed
+\end{frame}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1290 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage[utf8]{inputenc}%esto permite (en Windows) escribir directamente 
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,arrows,babel,decorations.pathreplacing}
+\usepackage{verbatim} 
+\usepackage{xcolor} 
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{mathtools}
+\usepackage{xcolor}
+
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+
+\renewcommand{\figurename }{Figura}
+
+
+\setbeamercolor{block}{fg=red, bg=red!40!white}
+\setbeamercolor{block example}{use=structure,fg=black,bg=white!20!white}
+
+\renewenvironment{block}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{alertblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{red!80!black}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{exampleblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+
+\newenvironment{exercise}[1]% environment name
+{% begin code
+	\par\vspace{\baselineskip}\noindent
+	\textbf{Ejercicio (#1)}\begin{itshape}%
+		\par\vspace{\baselineskip}\noindent\ignorespaces
+	}%
+	{% end code
+	\end{itshape}\ignorespacesafterend
+}
+
+
+\newenvironment{definicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Definición}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{observacion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Observación}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejemplo}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejemplo}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejercicio}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejercicio}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{proof}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{demostracion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{idea}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Idea de la demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{solucion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Solución}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{lema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Lema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{proposicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Proposición}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{teorema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Teorema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+\newenvironment{corolario}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Corolario}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{propiedad}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Propiedad}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{conclusion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Conclusión}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nc}{\newcommand}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+\nc{\RR}{{\mathbb R}} \nc{\CC}{{\mathbb C}} \nc{\ZZ}{{\mathbb Z}}
+\nc{\FF}{{\mathbb F}} \nc{\NN}{{\mathbb N}} \nc{\QQ}{{\mathbb Q}}
+\nc{\PP}{{\mathbb P}} \nc{\DD}{{\mathbb D}} \nc{\Sn}{{\mathbb S}}
+\nc{\uno}{\mathbb{1}} \nc{\BB}{{\mathbb B}} \nc{\An}{{\mathbb A}}
+
+\nc{\ba}{\mathbf{a}} \nc{\bb}{\mathbf{b}} \nc{\bt}{\mathbf{t}}
+\nc{\bB}{\mathbf{B}}
+
+\nc{\cP}{\mathcal{P}} \nc{\cU}{\mathcal{U}} \nc{\cX}{\mathcal{X}}
+\nc{\cE}{\mathcal{E}} \nc{\cS}{\mathcal{S}} \nc{\cA}{\mathcal{A}}
+\nc{\cC}{\mathcal{C}} \nc{\cO}{\mathcal{O}} \nc{\cQ}{\mathcal{Q}}
+\nc{\cB}{\mathcal{B}} \nc{\cJ}{\mathcal{J}} \nc{\cI}{\mathcal{I}}
+\nc{\cM}{\mathcal{M}} \nc{\cK}{\mathcal{K}}
+
+\nc{\fD}{\mathfrak{D}} \nc{\fI}{\mathfrak{I}} \nc{\fJ}{\mathfrak{J}}
+\nc{\fS}{\mathfrak{S}} \nc{\gA}{\mathfrak{A}}
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+
+
+
+
+%%%%%%%%%%%%%%%%%yetter drinfield
+\newcommand{\ydg}{{}_{\ku G}^{\ku G}\mathcal{YD}}
+\newcommand{\ydgdual}{{}_{\ku^G}^{\ku^G}\mathcal{YD}}
+\newcommand{\ydf}{{}_{\ku F}^{\ku F}\mathcal{YD}}
+\newcommand{\ydgx}{{}_{\ku \Gx}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydgxy}{{}_{\ku \Gy}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydixq}{{}_{\ku \ixq}^{\ku \ixq}\mathcal{YD}}
+
+\newcommand{\ydl}{{}^H_H\mathcal{YD}}
+\newcommand{\ydll}{{}_{K}^{K}\mathcal{YD}}
+\newcommand{\ydh}{{}^H_H\mathcal{YD}}
+\newcommand{\ydhdual}{{}^{H^*}_{H^*}\mathcal{YD}}
+
+
+\newcommand{\ydha}{{}^H_A\mathcal{YD}}
+\newcommand{\ydhhaa}{{}^{\Hx}_{\Ay}\mathcal{YD}}
+
+
+\newcommand{\wydh}{\widehat{{}^H_H\mathcal{YD}}}
+\newcommand{\ydvh}{{}^{\ac(V)}_{\ac(V)}\mathcal{YD}}
+\newcommand{\ydrh}{{}^{R\# H}_{R\# H}\mathcal{YD}}
+\newcommand{\ydho}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}}
+\newcommand{\ydhsw}{{}^{H^{\sw}}_{H^{\sw}}\mathcal{YD}}
+
+\newcommand{\ydhlf}{{}^H_H\mathcal{YD}_{\text{loc fin}}}
+\newcommand{\ydholf}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}_{\text{loc fin}}}
+
+\nc{\yd}{\mathcal{YD}}
+
+\newcommand{\ydsn}{{}^{\ku{\Sn_n}}_{\ku{\Sn_n}}\mathcal{YD}}
+\newcommand{\ydsnd}{{}^{\ku^{\Sn_n}}_{\ku^{\Sn_n}}\mathcal{YD}}
+\nc{\ydSn}[1]{{}^{\Sn_{#1}}_{\Sn_{#1}}\yd}
+\nc{\ydSndual}[1]{{}^{\ku^{\Sn_{#1}}}_{\ku^{\Sn_{#1}}}\yd}
+\newcommand{\ydstres}{{}^{\ku^{\Sn_3}}_{\ku^{\Sn_3}}\mathcal{YD}}
+%%%%%%%%%%%%%%%%%yetter drinfield
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+\newcommand\Irr{\operatorname{Irr}}
+\newcommand\id{\operatorname{id}}
+\newcommand\ad{\operatorname{ad}}
+\newcommand\Ad{\operatorname{Ad}}
+\newcommand\Ext{\operatorname{Ext}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\gr{\operatorname{gr}}
+\newcommand\grdual{\operatorname{gr-dual}}
+\newcommand\Gr{\operatorname{Gr}}
+\newcommand\co{\operatorname{co}}
+\newcommand\car{\operatorname{car}}
+\newcommand\rk{\operatorname{rg}}
+\newcommand\ord{\operatorname{ord}}
+\newcommand\cop{\operatorname{cop}}
+\newcommand\End{\operatorname{End}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\Alg{\operatorname{Alg}}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\Int{\operatorname{Int}}
+\newcommand\Id{\operatorname{Id}}
+\newcommand\qAut{\operatorname{qAut}}
+\newcommand\Map{\operatorname{Map}}
+\newcommand\Jac{\operatorname{Jac}}
+\newcommand\Rad{\operatorname{Rad}}
+\newcommand\Rep{\operatorname{Rep}}
+\newcommand\Ker{\operatorname{Ker}}
+\newcommand\Img{\operatorname{Im}}
+\newcommand\Ind{\operatorname{Ind}}
+\newcommand\Comod{\operatorname{Comod}}
+\newcommand\Reg{\operatorname{Reg}}
+\newcommand\Pic{\operatorname{Pic}}
+\newcommand\textitb{\operatorname{Emb}}
+\newcommand\op{\operatorname{op}}
+\newcommand\Perm{\operatorname{Perm}}
+\newcommand\Res{\operatorname{Res}}
+\newcommand\res{\operatorname{res}}
+\newcommand{\sop}{\operatorname{Supp}}
+\newcommand\Cent{\operatorname{Cent}}
+\newcommand\sgn{\operatorname{sgn}}
+\nc{\GL}{\operatorname{GL}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+\nc{\D}{\Delta} 
+\nc{\e}{\varepsilon}
+\nc{\adl}{\ad_\ell}
+\nc{\ot}{\otimes}
+\nc{\Ho}{H_0} 
+\nc{\GH}{G(H)} 
+\nc{\coM}{\mathcal{M}^\ast(2,k)} 
+\nc{\PH}{\cP(H)}
+\nc{\Ftwist}{\overset{\curvearrowright}F}
+\nc{\rep}{{\mathcal Rep}(H)}
+\newcommand{\deltad}{_*\delta}
+\newcommand{\B}{\mathfrak{B}}
+\newcommand{\wB}{\widehat{\mathfrak{B}}}
+\newcommand{\Cg}[1]{C_{G}(#1)}
+\nc{\hmh}{{}_H\hspace{-1pt}{\mathcal M}_H}
+\nc{\hm}{{}_H\hspace{-1pt}{\mathcal M}}
+\renewcommand{\_}[1]{_{\left[ #1 \right]}}
+\renewcommand{\^}[1]{^{\left[ #1 \right]}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+\nc{\im}{\mathtt{i}}
+\renewcommand{\Re}{{\rm Re}}
+\renewcommand{\Im}{{\rm Im}}
+\nc{\Tr}{\mathrm{Tr}} 
+\nc{\cark}{char\,k} 
+\nc{\ku}{\Bbbk} 
+\newcommand{\fd}{finite dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+\newcommand{\xij}[1]{x_{(#1)}}
+\newcommand{\yij}[1]{y_{(#1)}}
+\newcommand{\Xij}[1]{X_{(#1)}}
+\newcommand{\dij}[1]{\delta_{#1}}
+\newcommand{\aij}[1]{a_{(#1)}}
+\newcommand{\hij}[1]{h_{(#1)}}
+\newcommand{\gij}[1]{g_{(#1)}}
+\newcommand{\eij}[1]{e_{(#1)}}
+\newcommand{\fij}[1]{f_{#1}}
+\newcommand{\tij}[1]{t_{(#1)}}
+\newcommand{\Tij}[1]{T_{(#1)}}
+\newcommand{\mij}[1]{m_{(#1)}}
+\newcommand{\Lij}[1]{L_{(#1)}}
+\newcommand{\mdos}[2]{m_{(#1)(#2)}}
+\newcommand{\mtres}[3]{m_{(#1)(#2)(#3)}}
+\newcommand{\mcuatro}{m_{\textsf{top}}}
+\newcommand{\trid}{\triangleright}
+\newcommand{\link}{\sim_{\ba}}
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+
+
+%%%%%%%%%%%beaamer%%%%%%%%%%%%%%%%%
+% Header: Secciones una arriba de la otra.
+% \usetheme{Copenhagen}
+% \usetheme{Warsaw}
+
+% Header: Secciones una al lado de la otra. Feo footer.
+% Los circulitos del header son medio chotos tambien.
+% \usetheme[compress]{Ilmenau}
+% Muy bueno: difuminado, sin footer:
+%\usetheme{Frankfurt}
+% agrego footer como el de Copenhagen.
+%\useoutertheme[footline=authortitle,subsection=false]{miniframes}
+
+
+
+
+\title[Clase 8 - Sistemas de ecuaciones lineales]{Álgebra/Álgebra II \\ Clase 8 -Sistemas de ecuaciones lineales 3}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+}
+\date[17/09/2020]{17 de septiembre de 2020}
+
+%\titlegraphic{\includegraphics[width=0.2\textwidth]{logo_gimp100.pdf}}
+
+% Converted to PDF using ImageMagick:
+% # convert logo_gimp100.png logo_gimp100.pdf
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+
+
+
+\begin{frame}
+
+En esta clase  veremos:
+\begin{itemize}
+ \item Qu\'e operaciones hacer para transformar un sistema cualquiera en otro donde las ecuaciones se resuelven fácilmente.
+ \item C\'omo saber si el sistema tiene o no tiene soluci\'on y  en el caso de tener solución, si tiene una o infinitas.
+\end{itemize}
+\vskip .6cm
+
+Todo se hará sistemáticamente pasando de sistemas de ecuaciones a matrices y reduciendo, vía el algoritmo de Gauss-Jordan,  la matriz  del sistema  a una matriz MERF.
+
+\
+
+
+
+
+\end{frame}
+
+
+\begin{frame}
+		\begin{definicion}
+		Una matriz $A$ de $m \times n$ se llama \textit{reducida por filas}\index{matriz!reducida por filas} o \textit{MRF}\index{MRF} si 
+		\begin{enumerate}
+			\item[(a)] la primera entrada no nula de una fila de $A$ es 1. Este 1 es llamado \textit{1 principal}\index{1 principal de una MRF}.
+			\item[(b)] Cada columna de $A$ que contiene un  1 principal tiene todos los otros elementos iguales a 0. 
+		\end{enumerate} 
+	\end{definicion} 
+	\pause
+	\begin{ejemplo} Las siguientes matrices son MRF:
+		\begin{equation*}
+		\begin{bmatrix}1 & 0& -1 \\ 0&1&3\\  0&0&0 \end{bmatrix}\; \qquad 
+		\begin{bmatrix} 0&1&3 \\1 & 0& -1\\  0&0&0 \end{bmatrix};
+		\end{equation*}
+		\end{ejemplo}
+		\end{frame}
+	\begin{frame}
+		\begin{ejemplo}
+			Las siguientes matrices, no son MRF:
+			\begin{equation*}
+			\begin{bmatrix}1 & 0& 1 \\ 0&2&3\\  0&0&0 \end{bmatrix}\; \text{no cumple (a),} \qquad
+			\begin{bmatrix}1 & 0& -1 \\ 0&1&3\\  0&0&1 \end{bmatrix}\; \text{no cumple (b)}. 
+			\end{equation*}
+		\end{ejemplo}
+\end{frame}
+
+
+\begin{frame}
+	\begin{definicion}
+			Una matriz $A$ de $m \times n$ es \textit{escalón reducida por fila}\index{matriz!escalón reducida por fila} o \textit{MERF}\index{MERF} si,  es  MRF y
+		\begin{enumerate}
+			\item[\textit{c})] todas las filas cuyas entradas son todas iguales a cero están al final de la matriz, y
+			\item[\textit{d})] en dos filas consecutivas no nulas el 1 principal de la fila inferior está más a la derecha que el 1 principal de la fila superior. 
+		\end{enumerate}
+	\end{definicion}
+\pause
+	\begin{ejemplo}
+	Las siguientes matrices son MERF:
+	\begin{equation*}
+	\begin{bmatrix} 1&0&0&2 \\ 0&1&0&5 \\ 0&0&1&4\end{bmatrix}, \qquad
+	\begin{bmatrix} 1&0&0 \\ 0&1&0 \\ 0&0&0\end{bmatrix}, \qquad
+	\begin{bmatrix} 0&0 \\ 0&0\end{bmatrix}, \qquad
+	\begin{bmatrix} 0&1&2&0&1 \\ 0&0&0&1&0 \\ 0&0&0&0&0 \\ 0&0&0&0&0\end{bmatrix}.
+	\end{equation*}
+\end{ejemplo}
+	
+\end{frame}
+
+
+\begin{frame}
+		\begin{ejemplo} Las siguientes matrices son MRF, pero  no MERF:
+		\begin{equation*}
+		\begin{bmatrix}1 & 0& -1 \\  0&0&0\\ 0&1&3 \end{bmatrix}\;  \text{no cumple (c),} \qquad
+		\begin{bmatrix} 0&1&3 \\1 & 0& -1\\  0&0&0 \end{bmatrix}\; \text{no cumple (d).} \qquad
+		\end{equation*}\pause
+		Las siguientes matrices, no son MRF:
+		\begin{equation*}
+		\begin{bmatrix}1 & 0& 1 \\ 0&2&3\\  0&0&0 \end{bmatrix}\; \text{no cumple (a),} \qquad
+		\begin{bmatrix}1 & 0& -1 \\ 0&1&3\\  0&0&1 \end{bmatrix}\; \text{no cumple (b)}. 
+		\end{equation*}
+	\end{ejemplo}
+\end{frame}
+
+
+
+\begin{frame}
+	En  general  una matriz escal\'on reducida por fila (MERF) tiene la siguiente forma
+	
+	\begin{align*}
+	\left[
+	\begin{matrix}
+	0& \cdots & 1 & *&0&* &* &0& * &*\\
+	0& \cdots &0 &\cdots & 1& *  & * & 0& * &*\\
+	\vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
+	0& \cdots &0& \cdots & 0&\cdots &\cdots & 1& * &* \\
+	0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0 \\
+	\vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
+	0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0
+	\end{matrix}
+	\right]
+	\end{align*}
+	
+\end{frame}
+
+\begin{frame}
+		
+	\begin{ejemplo}
+		Sea $I_n$ la matriz  $n \times n$ definida 
+		\begin{equation*}
+		[I_n]_{ij} = \left\{ \begin{matrix}
+		1 && \text{si $i=j$,}\\
+		0 && \text{si $i\not=j$,}
+		\end{matrix}\right.\qquad \text{ o bien }\qquad I_n =
+		\begin{bmatrix}
+		1 & 0 & \cdots & 0 \\
+		0 & 1 & \cdots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \cdots & 1
+		\end{bmatrix}
+		\end{equation*}
+		
+		\pause
+		Llamaremos a $I_n$ la \textit{matriz identidad $n \times n$}\index{matriz!identidad $n \times n$}. Observar que $I_n$ es una matriz escalón reducida por fila.
+		
+		
+	\end{ejemplo}
+\end{frame}
+
+
+\begin{frame}
+	
+	\begin{observacion}
+	 Es muy fácil obtener la solución de un sistema $AX=Y$ donde $A$  es una MERF. 
+	\end{observacion}
+	\pause
+	\begin{ejemplo}
+	La soluci\'on del sistema $AX=Y$ con
+	\begin{align*}
+	A=\left[
+	\begin{matrix} 
+	1&0&0\\ 
+	0&1&0\\ 
+	0&0&1
+	\end{matrix}
+	\right]
+	\quad\mbox{e}\quad
+	Y=\left[
+	\begin{array}{r}
+	-1\\ 
+	0\\ 
+	1
+	\end{array}
+	\right]
+	\end{align*}
+	es $(x_1,x_2,x_3)=(-1,0,1)$.
+	
+	\
+	\pause
+	En efecto, si escribimos explícitamente el sistema la soluci\'on queda determinada autom\'aticamente:
+	\begin{align*}
+	\left\{
+	\begin{array}{rcl}
+	x_1&=&-1\\
+	x_2&=&0\\
+	x_3&=&1
+	\end{array}
+	\right.
+	\end{align*}
+		\end{ejemplo}
+	
+\end{frame}
+
+
+
+\begin{frame}
+	
+	\begin{ejemplo}
+	El conjunto de soluciones del sistema $AX=Y$ con
+	\begin{align*}
+	A=\left[
+	\begin{matrix} 
+	1&0&2\\ 
+	0&1&-\frac{1}{3}\\ 
+	\end{matrix}
+	\right]
+	\quad\mbox{e}\quad
+	Y=\left[
+	\begin{array}{r}
+	1\\ 
+	-\frac{1}{3}
+	\end{array}
+	\right]
+	\end{align*}
+	es 
+	\begin{align*}
+	\left\{(-2x_3+1,\,\frac{1}{3}x_3-\frac{1}{3},\,x_3)\mid x_3\in\RR\right\}.
+	\end{align*}
+	
+	\
+	\pause
+	En efecto, si escribimos explicitamente el sistema:
+	\begin{align*}
+	\left\{
+	\begin{array}{rcl}
+	x_1+2x_3&=&1\\
+	x_2-\frac{1}{3}x_3&=&-\frac{1}{3}
+	\end{array}
+	\right.\qquad
+	\Longrightarrow
+	\qquad
+	\begin{array}{rcl}
+	x_1&=&-2x_3+1\\
+	x_2&=&\frac{1}{3}x_3-\frac{1}{3}
+	\end{array}
+	\end{align*}
+		\end{ejemplo}
+\end{frame}
+
+\begin{frame}
+	\begin{teorema}\label{th-mrf}
+		Toda matriz $m \times n$ sobre $\K$ es equivalente por fila a una matriz escalón reducida por fila.
+	\end{teorema}
+\pause
+\begin{block}{Idea de la demostración}
+		\begin{enumerate}
+		\item[P1.]  Nos ubicamos en la primera fila.\pause
+		\item[P2.]  Si la fila es 0 y no es la última, pasar a la fila siguiente y de nuevo {\color{blue}P2}.\pause
+		\item[P3.]  Si la fila no es 0, 
+		\begin{enumerate}
+			\item[P3.1] si el primera entrada no nula está en  la columna $k$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale 1),
+			\item[P3.2] con operaciones elementales del tipo $F_r+ tF_s$ hacer 0  todas las entradas en la columna $k$ (menos la de la columna actual).    
+		\end{enumerate}\pause
+		\item[P4.] Si la fila no es la última, pasar a la fila siguiente e ir a {\color{blue}P2}.  \pause
+		\item[P5.]  Intercambiando las filas, ponemos los $1$ principal de forma escalonada y las filas nulas al final.  
+	\end{enumerate}
+\end{block}\qed
+\end{frame}
+
+
+
+\begin{frame}{}
+	
+	\begin{observacion}
+		La demostración del teorema anterior nos da un algoritmo para encontrar MERF.
+	\end{observacion}
+	\vskip 5cm
+
+	
+\end{frame}
+
+
+\begin{frame}{Método de Gauss}
+
+Sea $AX=Y$  el sistema de ecuaciones lineales. El \textit{método de Gauss} consiste en llevar a cabo los siguientes pasos:
+\vskip .2cm\pause
+	\begin{itemize}
+		\item Escribir $[A|Y]$ la matriz extendida del sistema \pause
+		\item Reducimos la matriz  $[A|Y]$ $\leadsto$ $[R|Z]$  de tal forma   que $R$  sea  MERF (para ello utilizamos el  algoritmo P1$\cdots$P5).\pause
+		\item El sistema $RX=Z$ tiene soluciones fáciles de encontrar.
+	\end{itemize}
+
+\vskip .4cm
+\pause
+Claramente la parte más importante del  método de Gauss es utilizar el algoritmo P1$\cdots$P5,  que llamaremos el  \textit{algoritmo de Gauss-Jordan} o  \textit{eliminación de Gauss-Jordan}.
+\vskip .4cm\vskip .4cm\vskip .4cm
+\end{frame}
+
+\begin{frame}{Algoritmo de Gauss-Jordan}
+	
+	Sea $A$  una matriz $m \times n$. Repitamos el algoritmo:
+	
+	\vskip .2cm
+		\begin{enumerate}
+		\item[P1.]  Nos ubicamos en la primera fila.
+		\item[P2.]  Si la fila es 0 y no es la última, pasar a la fila siguiente y de nuevo {\color{blue}P2}.
+		\item[P3.]  Si la fila no es 0, 
+		\begin{enumerate}
+			\item[P3.1] si el primera entrada no nula está en  la columna $k$ y su valor es $c$, dividir la fila por $c$ (ahora la primera entrada no nula vale 1),
+			\item[P3.2] con operaciones elementales del tipo $F_r+ tF_s$ hacer 0  todas las entradas en la columna $k$ (menos la de la columna actual).    
+		\end{enumerate}
+		\item[P4.] Si la fila no es la última, pasar a la fila siguiente e ir a {\color{blue}P2}.  
+		\item[P5.]  Intercambiando las filas, ponemos los $1$ principal de forma escalonada y las filas nulas al final.  
+	\end{enumerate}
+
+\vskip .2cm	
+La matriz que se obtiene es una MERF.		
+	
+	
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+	\begin{ejemplo}
+	Aplicaremos el algoritmo de Gauss-Jordan a la siguiente matriz:
+	\begin{equation*}
+		A= \left[
+		\begin{array}{rrrr}
+		1 & 0 & 2 & 1 \\
+		1& -3& 3 & 2 \\
+		2& -3& 5 & 3
+		\end{array}
+		\right]
+	\end{equation*}
+	
+\pause
+	
+	Como la primera fila es no nulo, pasamos a P3:
+	\begin{equation*}
+		A\quad \stackrel{F_2 - F_1}{\longrightarrow} \quad
+		\left[
+		\begin{array}{rrrr}
+		1 & 0 & 2 & 1 \\
+		0& -3& 1 & 1 \\
+		2& -3& 5 & 3
+		\end{array}
+		\right]
+		\quad \stackrel{F_3 - 2F_1}{\longrightarrow} \quad
+		\left[
+		\begin{array}{rrrr}
+		1 & 0 & 2 & 1 \\
+		0& -3& 1 & 1 \\
+		0& -3& 1 & 1
+		\end{array}
+		\right]
+	\end{equation*}
+	
+		Por P4 pasamos a trabajar con la fila 2 y pasamos a P2. Como la fila no es nula hacemos P3.1
+	
+	\begin{equation*}
+	 \stackrel{-\frac{F_3}{3}}{\longrightarrow} \quad\left[
+	\begin{array}{rrrr}
+	1 & 0 & 2 & 1 \\
+	0& 1& -\frac{1}{3} & -\frac{1}{3} \\
+	0& -3& 1 & 1
+	\end{array}
+	\right]
+	\end{equation*}
+	
+
+
+\end{ejemplo}
+\end{frame}
+
+
+ \begin{frame}
+ 	Ahora P3.2:
+ 	\begin{equation*}
+ 		\stackrel{F_3 +3 F_2}{\longrightarrow} \quad
+ 		\left[
+ 		\begin{array}{rrrr}
+ 		1 & 0 & 2 & 1 \\
+ 		0& 1& -\frac{1}{3} & -\frac{1}{3} \\
+ 		0& 0& 0 & 0
+ 		\end{array}
+ 		\right]
+ 	\end{equation*}
+ 	
+ 	\vskip .4cm
+ 	
+ 		
+ 	Esta última matriz es una MERF. En  este caso, no hizo falta usar P5,  es decir permutar filas.
+ 	
+ 	\vskip 2cm
+ 
+ \end{frame}	
+
+
+
+\begin{frame}{Ejemplo del método de Gauss}
+
+A continuaci\'on explicaremos en $3$ pasos el m\'etodo de Gauss para resolver el sistema de ecuaciones 
+$$AX=Y.$$
+\pause
+Ejemplificaremos los pasos con el sistema
+\begin{align}
+\left[
+\begin{array}{rrr}
+1 & 0 & 2\\
+1& -3& 3\\
+2& -3& 5
+\end{array}
+\right]
+\left[
+\begin{array}{r}
+x_1\\
+x_2 \\
+x_3
+\end{array}
+\right]
+=
+\left[
+\begin{array}{r}
+1 \\
+2 \\
+3
+\end{array}
+\right]\tag{E}
+\end{align} 
+
+\vskip 1cm
+
+\end{frame}
+
+\begin{frame}{Primer paso: Matriz ampliada}
+\begin{itemize}
+ \item Armar la matriz ampliada:\pause
+ $$
+{A'=\left[A|Y\right]},
+ $$
+ es decir, le agregamos a $A$ una columna igual a $Y$. 
+\end{itemize}
+
+
+\vskip .3cm
+\pause
+En  nuestro caso, la matriz ampliada del sistema ${(E)}$ es  
+$$
+\left[
+\begin{array}{rrr|r}
+1 & 0 & 2 & 1 \\
+1& -3& 3 & 2 \\
+2& -3& 5 & 3
+\end{array}
+\right]
+$$
+
+
+Observar que esta matriz es igual a la del ejemplo anterior. 
+
+\end{frame}
+
+\begin{frame}{Segundo paso: reducir la matriz ampliada (Gauss-Jordan)}
+
+\begin{itemize}
+ \item Usar operaciones elementales por filas para transformar la matriz ampliada $A'$ en una matriz $B'$ de la forma
+ $$
+ B'=\left[B|Z\right]
+ $$
+donde $B$ es una MERF y $Z$ es una columna.
+\end{itemize}
+
+\vskip .3cm
+\pause
+En  el ejemplo: 
+
+{\footnotesize
+\begin{align*}
+A'=&
+\left[
+\begin{array}{rrr|r}
+1 & 0 & 2 & 1 \\
+1& -3& 3 & 2 \\
+2& -3& 5 & 3
+\end{array}
+\right]
+\overset{F_2-F_1}{\longrightarrow}
+\left[
+\begin{array}{rrr|r}
+1 & 0 & 2 & 1 \\
+0& -3& 1 & 1 \\
+2& -3& 5 & 3
+\end{array}
+\right]
+\overset{F_3-2F_1}{\longrightarrow}
+\left[
+\begin{array}{rrr|r}
+1 & 0 & 2 & 1 \\
+0& -3& 1 & 1 \\
+0& -3& 1 & 1
+\end{array}
+\right]
+\\
+&
+\\
+&\overset{-\frac{1}{3}F_2}{\longrightarrow}
+\left[
+\begin{array}{rrr|r}
+1 & 0 & 2 & 1 \\
+0& 1& -\frac{1}{3} & -\frac{1}{3} \\
+0& -3& 1 & 1
+\end{array}
+\right]
+\overset{F_3-3F_2}{\longrightarrow}
+\left[
+\begin{array}{rrr|r}
+1 & 0 & 2 & 1 \\
+0& 1& -\frac{1}{3} & -\frac{1}{3} \\
+0& 0& 0 & 0
+\end{array}
+\right]=B'
+\end{align*}
+} 
+
+
+\end{frame}
+
+
+\begin{frame}{Tercer paso: despejar y describir el conjunto de soluciones}
+\begin{itemize}
+ \item Escribir explicitamente el sistema
+ $BX=Z$. 
+ \item Despejar en cada ecuaci\'on la incognita correspondiente al $1$ principal.
+ \item Describir el conjunto de soluciones. Hay tres opciones: tener s\'olo una soluci\'on; infinitas, parametrizadas por las incognitas que no corresponden a $1$'s principales; no tener soluci\'on.
+
+\end{itemize}
+\vskip .8cm \pause 
+En el ejemplo:
+$$
+BX=Z\rightsquigarrow
+\left\{
+\begin{array}{l}
+x_1 +2x_3 = 1 \\
+x_2 -\frac{1}{3}x_3 = -\frac{1}{3}x_3
+\end{array}
+\right.
+\rightsquigarrow
+\begin{array}{l}
+x_1=-2x_3 +1 \\
+x_2=\frac{1}{3}x_3-\frac{1}{3}x_3
+\end{array}
+$$
+
+\end{frame}
+
+
+\begin{frame}{Tercer paso (continuación)}
+	
+	Entonces el conjunto de soluciones del sistema $AX=Y$ es
+	
+	\begin{align*}
+	\left\{(-2x_3+1,\,\frac{1}{3}x_3-\frac{1}{3},\,x_3)\mid x_3\in\RR\right\}.
+	\end{align*}
+	
+	Por ej., si $x_3=1$, entonces $(-1,0,1)$ es una soluci\'on del sistema.
+	
+	\vskip 1.8 cm
+\end{frame}
+
+
+
+\begin{frame}{Ejemplo}
+
+
+Resolver el sistema de ecuaciones:
+\begin{align*}
+(E)
+\left\{
+\begin{array}{l}
+x_2-x_3+x_4=1\\
+2x_3+x_4=3\\
+x_1+x_2-x_4=1\\
+x_1+2x_2-x_3=2 
+\end{array}
+\right.
+\end{align*}
+
+\pause
+\begin{block}{Solución}
+El conjunto de soluciones es
+
+\begin{align*}
+\operatorname{Sol}(E)&=\left\{\left[\frac{5}{2}x_4-\frac{3}{2},-\frac{3}{2}x_4+\frac{5}{2},-\frac{1}{2}x_4+\frac{3}{2},x_4\right]\mid x_4\in\RR\right\}
+\end{align*}
+\end{block}
+\end{frame}
+
+\begin{frame}
+
+Reducimos la matriz ampliada siguiendo al pie de la letra el algoritmo:\pause
+{\footnotesize
+	\begin{align*}
+	A'=&
+	\left[
+	\begin{array}{rrrr|r}
+	0& 1 & -1 & 1 & 1 \\
+	0&0& 2& 1 & 3 \\
+	1&1& 0&-1 & 1 \\
+	1&2& -1& 0 & 2
+	\end{array}
+	\right]
+		\underset{F_4-2F_1}{\stackrel{F_3- F_1}{\longrightarrow}}
+	\left[
+	\begin{array}{rrrr|r}
+	0& 1 & -1 & 1 & 1 \\
+	0&0& 2& 1 & 3 \\
+	1&0& 1&-2 & 0 \\
+	1&0& 1& -2 & 0
+	\end{array}
+	\right]
+	\\
+	&
+	\\
+	&	\overset{\frac{1}{2}F_2}{\longrightarrow}
+	\left[
+	\begin{array}{rrrr|r}
+	0& 1 & -1 & 1 & 1 \\
+	0&0& 1& {1}/{2} & {3}/{2} \\
+	1&0& 1&-2 & 0 \\
+	1&0& 1& -2 & 0
+	\end{array}
+	\right]
+		\underset{F_4-F_2}{\underset{F_3-F_2}{\stackrel{F_1+ F_2}{\longrightarrow}}}
+	\left[
+	\begin{array}{rrrr|r}
+	0& 1 & 0 & {3}/{2} &{5}/{2} \\
+	0&0& 1& {1}/{2} & {3}/{2} \\
+	1&0& 0&-{5}/{2} & -{3}/{2} \\
+	1&0& 0& -{5}/{2} & -{3}/{2}
+	\end{array}
+	\right]	\\
+	&	
+	\\
+	&	\overset{F_4-F_3}{\longrightarrow}
+	\left[
+	\begin{array}{rrrr|r}
+	0& 1 & 0 & {3}/{2} &{5}/{2} \\
+	0&0& 1& {1}/{2} & {3}/{2} \\
+	1&0& 0&-{5}/{2} & -{3}/{2} \\
+	0&0& 0&0 & 0
+	\end{array}
+	\right] =B'
+	\end{align*}
+} 
+\end{frame}
+
+
+\begin{frame}
+	Si reescribimos las ecuaciones a partir de $B'$, obtenemos\pause
+	\begin{align*}
+	(E')
+	\left\{
+	\begin{array}{l}
+	x_2+\frac{3}{2}x_4=\frac{5}{2}\\[1.0ex]
+	x_3+\frac{1}{2}x_4=\frac{3}{2}\\[1.0ex]
+	x_1-\frac{5}{2}x_4=-\frac{3}{2}
+	\end{array}
+	\right.
+	\end{align*}
+	
+	Si despejamos respecto a $x_4$, obtenemos \pause
+	\begin{equation*}
+	x_1=\frac{5}{2}x_4-\frac{3}{2}, \qquad 
+			x_2=-\frac{3}{2}x_4+\frac{5}{2}, \qquad 
+		x_3=-\frac{1}{2}x_4+\frac{3}{2},
+	\end{equation*}
+	que es la solución del sistema. 
+	
+\end{frame}
+
+
+
+\begin{frame}{Soluciones de los sistemas de ecuaciones lineales}
+	
+	{¿C\'omo saber si el sistema tiene o no tiene soluci\'on? ¿Una o infinitas?}
+	
+	\pause
+	Si $BX=Z$. depende de la forma de la MERF $B$ y de $Z$. 
+\vskip.2cm
+	Asumamos que $B\in\RR^{m\times n}$ y $Z\in\RR^{m\times 1}$ donde
+	\begin{align*}
+	&\begin{matrix}
+	\qquad\qquad&\quad \;\;\, & k_1 &\;\; \, &k_2&\quad\;\; &\;\;\;\, &k_r& &\\
+	& & \downarrow & &\downarrow& & &\downarrow&  &
+	\end{matrix} \\
+	B&=
+	\left[
+	\begin{matrix}
+	0& \cdots & 1 & *&0&* &* &0& * &*\\
+	0& \cdots &0 &\cdots & 1& *  & * & 0& * &*\\
+	\vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
+	0& \cdots &0& \cdots & 0&\cdots &\cdots & 1& * &* \\
+	0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0 \\
+	\vdots&  &\vdots &  &\vdots && &\vdots& &\vdots\\
+	0& \cdots &0& \cdots & 0&\cdots &\cdots & 0& \cdots &0
+	\end{matrix}
+	\right]
+	\quad\mbox{y}
+	\qquad
+	Z=\left[
+	\begin{matrix}
+	z_1\\
+	z_2\\
+	\vdots\\
+	z_r\\
+	z_{r+1}\\
+	\vdots\\
+	z_m
+	\end{matrix}
+	\right]
+	\end{align*}
+	
+\end{frame}
+
+\begin{frame}
+	
+	Si $ k_1,\ldots, k_r$ son las columnas que contienen 1 principales, el sistema $BX=Z$ tiene la siguiente forma
+	
+	\begin{align*}
+	\left\{
+	\begin{matrix}
+	&x_{k_1}& + &\sum_{ j \not= k_1,\ldots, k_r} b_{1j}\,x_j&=& &z_1\\
+	&x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j&=& &z_2\\
+	& \vdots& &  &\vdots \\
+	&x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j&=& &z_r\\
+	&&&0 &=& &z_{r+1}  \\
+	& & & \vdots &&&\vdots \\
+	&&&0 &=& &z_{m} 
+	\end{matrix}
+	\right.
+	\end{align*}
+	
+	\begin{block}{Teorema}
+		El sistema $BX=Z$ tiene soluci\'on si y s\'olo si $z_{r+1}=z_{r+2}=\cdots z_m=0$.
+	\end{block}
+	
+\end{frame}
+
+
+
+
+
+\begin{frame}
+	
+	\begin{demostracion}
+		$(\Rightarrow)$
+		
+		\textit{El sistema $BX=Z$ tiene soluci\'on \;$\Rightarrow$\; $z_{r+1}=z_{r+2}=\cdots z_m=0$.}
+		\vskip .4cm
+		Si el sistema tiene soluci\'on entonces $z_{r+1}=z_{r+2}=\cdots z_m=0$, pues si alguno de estos $z$'s fuera no nulo tendriamos un absurdo.
+		\begin{align*}
+		\left\{
+		\begin{matrix}
+		&x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&=& &z_1\\
+		&x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j&=& &z_2\\
+		& \vdots& &  &\vdots \\
+		&x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j&=& &z_r\\
+		& & & \vdots &&&\vdots \\
+		&&&\alert{0} &\alert{=}& &\alert{z_{i}\neq0}  \\
+		& & & \vdots &&&\vdots
+		\end{matrix}
+		\right.
+		\end{align*}
+		
+\end{demostracion}
+	
+\end{frame}
+
+\begin{frame}
+$(\Leftarrow)$
+		
+	\textit{	Si $z_{r+1}=z_{r+2}=\cdots z_m=0$ \;$\Rightarrow$\; el sistema $BX=Z$ tiene soluci\'on.	}	
+		
+		\vskip .4cm
+		Si $z_{r+1}=z_{r+2}=\cdots z_m=0$, obtenemos 
+		\begin{equation*}
+		\left\{
+		\begin{matrix}\label{sist-eq-hom-merf0}
+		x_{k_1} &= -\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j + z_1\\
+		x_{k_2} &= -\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j+ z_2\\
+		\vdots& \vdots \\
+		x_{k_r}  &= -\textstyle\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j+z_r
+		\end{matrix}.
+		\right.
+		\end{equation*} 
+		
+		
+		Entonces {$x_{k_1}=z_1$}, {$x_{k_2}=z_2$}, ..., {$x_{k_r}=z_r$} y todos los otros {$x_j=0$} es una soluci\'on al sistema.
+		\qed
+\end{frame}
+
+\begin{frame}
+	
+	\begin{observacion}
+
+
+	En la demostraci\'on de $\Leftarrow)$ encontramos una soluci\'on haciendo cero todas las incógnitas que no se corresponden con $1$ principales. 
+	
+	\vskip .6cm
+	
+	Pero le podríamos haber dado cualquier otro valor y as\'i encontrar otras soluciones, siempre y cuando hubiera incógnitas que no se corresponden con $1$ principales. 
+		\end{observacion}
+	\vskip 3cm
+	
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Teorema}
+		Supongamos que el sistema tiene soluci\'on y la cantidad de $1$ principales es igual a la cantidad de incognitas. Entonces el sistema $BX=Z$ tiene una \'unica soluci\'on, la cual es $X=Z$. 
+	\end{block}
+	
+	\begin{block}{Demostraci\'on}
+		
+		En este caso, el sistema $BX=Z$ tiene la siguiente forma
+		\begin{align*}
+		\left\{
+		\begin{matrix}
+		&x_{1}& &=& &z_1\\
+		&x_{2}& &=& &z_2\\
+		&\vdots& && &\vdots \\
+		&x_n& &=& &z_n\\
+		&0& &=& &z_{n+1}  \\
+		&&  &\vdots& &\vdots \\
+		&0& &=& &z_{m} 
+		\end{matrix}
+		\right.
+		\end{align*} 
+		y la soluci\'on queda determinada explícitamente. \qedsymbol
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Teorema}
+		Supongamos que el sistema tiene soluci\'on y hay m\'as incognitas que $1$ principales. Entonces el sistema $BX=Z$ tiene infinitas soluciones  de la forma
+		\begin{align*}
+		\begin{matrix}
+		x_{k_1}&=z_1-\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j\\
+		x_{k_2}&=z_2-\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j\\
+		\vdots&\\
+		x_{k_r}&=z_r-\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j
+		\end{matrix}
+		\end{align*}
+		y los $x_j$ con $j \not= k_1,\ldots, k_r$ pueden tomar cualquier valor real.
+	\end{block}
+	
+	\begin{block}{Demostraci\'on}
+		Como existe al menos un $j \not= k_1,\ldots, k_r$, variando los $x_j$ donde $j \not= k_1,\ldots, k_r$ obtenemos infinitas soluciones. \qedsymbol
+	\end{block}
+\end{frame}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

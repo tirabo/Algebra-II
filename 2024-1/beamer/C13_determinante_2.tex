@@ -1,0 +1,765 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+%\usepackage{makeidx}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usepackage[customcolors]{hf-tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools}
+\usepackage{stackrel}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usepackage{polynom}
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+\renewcommand\labelitemi{$\circ$}
+
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand{\im}{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand\sgn{\operatorname{sgn}}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\figurename }{Figura}
+
+\include{definiciones}
+
+
+
+\title[Clase 13 - Determinante 2]{Álgebra/Álgebra II \\ Clase 13 - Determinante 2}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+}
+\date[13/10/2020]{13 de octubre de 2020}
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Resumen}
+	En esta clase veremos 
+
+	\vskip .4cm
+\pause
+	\begin{itemize}
+		\item  Determinantes de matrices elementales.\pause
+		\item Si $A$ es invertible,  determinaremos el determinante de la inversa.\pause
+		\item Determinante del producto de matrices.
+
+	\end{itemize}
+
+	\vskip .4cm
+	\pause
+	El tema de esta clase  está contenido de la sección la sección 2.8  del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
+\end{frame}
+
+
+\begin{frame}
+
+Recordemos
+\vskip.4cm
+\begin{teorema}
+\pause
+    Sea $A\in\K^{n\times n}$.
+
+    \begin{enumerate}
+        \item[{\color{blue} E1.}]  Si $c\in\K$ no nulo, 
+        $$
+        A \stackrel{{cF_i}}{\longrightarrow} B \qquad \Rightarrow   \qquad     \det(B)=c\det(A).
+        $$\pause
+        \item[{\color{blue} E2.}]
+        Si $ 1 \le s , t \le n$ con $s\ne t$ y  $t\in\K$: 
+        $$
+        A \stackrel{{F_r+tF_s}}{\longrightarrow} B  \qquad \Rightarrow   \qquad \det(B)=\det(A).
+        $$\pause
+
+        \item[{\color{blue} E3.}]  
+        $$
+        A \stackrel{{F_r \leftrightarrow F_s}}{\longrightarrow} B  \qquad \Rightarrow   \qquad \det(B)=-\det(A).$$ 
+    \end{enumerate}
+
+\end{teorema}
+    
+\end{frame}
+
+
+\begin{frame}
+    \begin{corolario}\label{cor-filas-nulas} $A  \in \K^{n \times n}$.
+		\begin{enumerate}
+			\item Si $A$ tiene dos filas iguales,  entonces $\det A=0$.
+			\item Si $A$ tiene una fila nula, entonces $\det A =0$.
+		\end{enumerate}
+	\end{corolario}\pause
+	\begin{proof}\pause
+        1.Si  $F_r = F_s$ con $r\ne s$. Entonces,
+        $$
+        A \stackrel{F_r \leftrightarrow F_s}{\longrightarrow} A \qquad \stackrel{\text{T. E3}}{\Rightarrow} \qquad \det(A) = -\det(A).
+        $$
+        Luego $\det(A) =0$.
+\vskip .2cm
+        2. Si $F_r = 0$, 
+        $$
+        A  \stackrel{2F_r }{\longrightarrow} A \qquad \stackrel{\text{T. E1}}{\Rightarrow} \qquad \det(A) = 2\det(A). 
+        $$
+        Luego $\det(A) =0$.
+        \qed
+        
+	\end{proof}
+	
+\end{frame}
+
+\begin{frame}
+    	
+    \begin{corolario} Sea $E=e(\Id_n)$, matriz elemental en $\K^{n \times n}$. \pause
+        \begin{enumerate}
+            \item[{\color{blue} E1.}]  Si $c\in\K$ no nulo, 
+            $$
+            \Id_n \stackrel{{cF_i}}{\longrightarrow} E \qquad \Rightarrow   \qquad     \det(E)=c.
+            $$\pause
+            \item[{\color{blue} E2.}]
+            Si $ 1 \le s , t \le n$ con $s\ne t$ y  $t\in\K$: 
+            $$
+            \Id_n \stackrel{{F_r+tF_s}}{\longrightarrow} E  \qquad \Rightarrow   \qquad \det(E)=1.
+            $$
+              \pause
+            \item[{\color{blue} E3.}]  
+            $$
+            \Id_n \stackrel{{F_r \leftrightarrow F_s}}{\longrightarrow} E  \qquad \Rightarrow   \qquad \det(E)=-1.$$ 
+        \end{enumerate}
+\end{corolario}
+
+\pause
+\begin{demostracion}
+	Se  demuestra trivialmente considerando que en todos los casos $E=e(\Id_n)$ donde $e$  es una operación elemental por fila,  considerando  que $\det(\Id_n)=1$  y aplicando los teoremas E1, E2 y E3. \qed
+\end{demostracion}
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{teorema} Sea $A  \in \K^{n \times n}$ y $E$ una matriz elemental $n \times n$. Entonces
+        \begin{equation}\label{det-prod-elem-matr}
+        \det (EA) = \det E \det A.
+        \end{equation}  
+    \end{teorema}\pause
+    \begin{proof} \pause
+       En todos los casos $EA = e(A)$ donde $e$  es una operación elemental por fila.
+       \vskip .2cm
+       
+        (E1) Si $c \not=0$  y $\Id_n \stackrel{cF_r }{\longrightarrow}E$, tenemos $\det(E)=c$ y
+        \begin{equation*}
+            \det(EA) = \det(e(A)){=} c \cdot \det(A) {=} \det(E) \det(A). 
+        \end{equation*}
+       
+        
+        (E2) Si $\Id_n \stackrel{F_r + cF_s}{\longrightarrow}E$, luego $\det(E)=1$ y
+        \begin{equation*}
+            \det(EA) = \det(e(A)){=}  \det(A) {=} \det(E) \det(A). 
+        \end{equation*}
+    
+        (E3) Ejercicio. \qed
+    \end{proof}
+\end{frame}
+
+
+
+\begin{frame}
+
+       	
+    \begin{corolario}\label{cor-det-elem} Sea $A = E_1 E_2 \cdots E_k B$ donde  $E_1, E_2, \ldots, E_k$  son matrices elementales. 
+        Entonces, 
+        \begin{equation*}
+            \det(A) = \det(E_1) \det(E_2) \cdots \det(E_k)\det(B).
+        \end{equation*}
+\end{corolario}\pause
+\vskip -.6cm
+\begin{demostracion}\pause
+    \vskip -.6cm
+$$
+\det(A) = \det(E_1(E_2 \cdots E_k B)) = \det(E_1)\det(E_2 \cdots E_k B),
+$$
+y así sucesivamente (inducción). \qed
+\end{demostracion}
+    	\vskip .4cm\pause
+    \begin{corolario} Sea $A = E_1 E_2 \cdots E_k$ producto de matrices elementales en  $\K^{n \times n}$. 
+        Entonces, 
+        \begin{equation*}
+            \det(A) = \det(E_1) \det(E_2) \cdots \det(E_k).
+        \end{equation*}
+\qed
+\end{corolario}
+
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+    
+\begin{teorema}
+    $A \in \K^{n \times n}$ es invertible si y solo si $\det(A) \ne 0$.
+\end{teorema}
+\pause
+\begin{demostracion}\pause
+    ($\Rightarrow$) 
+    
+    $A$ invertible $\Rightarrow$ $A = E_1 E_2 \cdots E_k$  $\Rightarrow$  $\det(A) = \det(E_1) \det(E_2) \ldots \det(E_k)$. Como el determinante de matrices elementales en no nulo, $\det(A) \ne 0$.
+\vskip .4cm
+    ($\Leftarrow$) 
+    
+    Sean $E_1, E_2, \ldots, E_k$ matrices elementales tales que $R = E_1 E_2 \cdots E_k A$ y $R$ es MERF. Luego,
+    \begin{equation*}
+        \det(R) = \det(E_1) \det(E_2) \cdots \det(E_k) \det(A). 
+    \end{equation*}
+   
+
+
+\end{demostracion}
+
+\end{frame}
+
+
+
+\begin{frame}
+    Como los determinantes de matrices  elementales son no nulos
+    \begin{equation*}
+        \frac{\det(R)}{\det(E_1) \det(E_2) \cdots \det(E_k) } = \det(A). \tag{*}
+    \end{equation*}
+
+    
+    Supongamos que $R$ no es la identidad.
+    \vskip .3cm
+    Entonces $\det(R) =0$ (ver clase pasada) $\stackrel{\text{(*)}}{\Rightarrow}$  $\det(A)=0$, absurdo. 
+    \vskip .3cm
+    Luego, $R= \Id_n$  $\Rightarrow$ $A$ es equivalente por filas a $\Id_n$  $\Rightarrow$  $A$ invertible.
+
+    \qed
+    \vskip 2cm
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{teorema} Sean $A,B \in \K^{n \times n}$, entonces 
+        $$\det (A B) = \det(A)\det(B).$$ 
+    \end{teorema}\pause
+	\begin{proof}\pause
+       - Si $A$ invertible $\Rightarrow$  $A= E_1\cdots E_k$ y $AB =  E_1\cdots E_kB$, luego por los corolarios de {\color{blue}p. \ref{cor-det-elem}} $\det(AB) =  \det(E_1)\cdots \det(E_k)\det(B) = \det(A)\det(B)$.
+       \vskip .3cm
+       - Si $A$ no invertible $\Rightarrow$  $A= E_1\cdots E_kR$ y $R$ MERF con la última fila nula.        
+       \vskip .2cm
+       Luego,  
+       \begin{itemize}
+           \item $RB$ tiene la última fila nula $\Rightarrow$ $\det(RB) = 0$ (corolario {\color{blue}p. \ref{cor-filas-nulas}} ).
+           \item $\det(AB) = \det(E_1\cdots E_kRB) = \det(E_1\cdots E_k)\det(RB) = 0$.
+           \item Como $A$ no invertible $\Rightarrow$ $\det(A) = 0$ $\Rightarrow$ $\det(A)\det(B) = 0$.
+       \end{itemize}  
+        \qed
+	\end{proof}
+
+\end{frame}
+
+
+
+\begin{frame}
+    
+    \begin{corolario} San $A$, $B$ matrices $n \times n$, entonces
+        \begin{itemize}
+            \item $\det(A^m) = \det(A)^m$, para $m \in \N$.
+            \item $\det (AB) = \det(BA)$.
+        \end{itemize}
+	\end{corolario}\pause
+    \begin{proof}\pause
+        $\circ$  $\det(A^m) = \det(A \cdot A^{m-1})  =  \det(A )\cdot \det(A^{m-1})$ y se demuestra por inducción.
+        \vskip .4cm
+        $\circ$   $\det (AB) = \det(A)\det(B) = \det(B)\det(A) = \det(BA)$.
+        \qed
+	\end{proof}
+\vskip 3cm
+\end{frame}
+
+
+
+
+\begin{frame}
+
+    \begin{exampleblock}{Definición}
+    Sea $A\in\R^{m\times n}$. La \textit{transpuesta de $A$} es la matriz {$A^{\t}\in\R^{n\times m}$} cuyas entradas son definidas por
+    $$
+    [A^\t]_{ij}=[A]_{ji}
+    $$
+    \end{exampleblock}\pause
+
+    \begin{ejemplo}
+        Sea 
+        \begin{equation*}
+            A = \begin{bmatrix}
+                1&2&3\\
+                4&5&6\\
+                7&8&9\\
+            \end{bmatrix}
+            \qquad \Rightarrow \qquad
+            A^{\t} = \begin{bmatrix}
+                1&4&7\\
+                2&5&8\\
+                3&6&9\\
+            \end{bmatrix}
+        \end{equation*}
+        \vskip .3cm
+    ($  [A^\t]_{12}= [A]_{21} = 4$, $  [A^\t]_{13}= [A]_{31} = 3$,  etc.)
+    \end{ejemplo}
+    \end{frame}
+    
+    \begin{frame}
+        Para matrices cuadradas, en general: 
+    \begin{align*}
+    A&=
+    \left[
+    \begin{array}{ccccc}
+     a_{11} & \cdots & a_{1i} & \cdots & a_{1n}\\
+     \vdots & & \vdots & & \vdots\\
+     a_{i1} & \cdots &  a_{ii} & \cdots & a_{in}\\  
+     \vdots & & \vdots & & \vdots\\
+     a_{n1} & \cdots & a_{ni} & \cdots & a_{nn}
+    \end{array}
+    \right] 
+    \end{align*}
+    
+    \
+    \pause Entonces, 
+    \
+    
+    \begin{align*}
+    A^\t=
+    \left[
+    \begin{array}{ccccc}
+     a_{11} & \cdots & a_{i1} & \cdots & a_{n1}\\
+     \vdots & & \vdots & & \vdots\\
+     a_{1i} & \cdots & a_{ii} & \cdots & a_{ni}\\  
+     \vdots & & \vdots & & \vdots\\
+     a_{1n} & \cdots & a_{in} & \cdots & a_{nn}
+    \end{array}
+    \right] 
+    \end{align*} 
+    \end{frame}
+    
+    \begin{frame}
+    \begin{teorema}
+    El determinante de una matriz cuadrada  es igual al determinante de su transpuesta. 
+    \vskip.2cm
+    Es decir, si $A$ matriz $n \times n$,
+    $$
+    \det(A)=\det(A^\t).
+    $$
+    \end{teorema}
+    \vskip.3cm\pause
+    Pueden ver la demostración en las notas de curso.
+     \vskip .3cm
+   \begin{block}{Idea de la demostración}
+   
+   No es difícil ver que 
+   \begin{itemize}
+   	 \item para $E$ matriz elemental $\det(E^\t) = \det(E)$,
+   	 \item $(A_1 \cdot A_2 \cdots A_k)^\t = A_k^\t \cdots A_2^\t \cdot A_1^\t$.
+   \end{itemize}
+   Se sigue entonces de $A = E_1 \cdots E_s R$,  con $E_i$  elementales y $R$ MERF.
+   \end{block} 
+    \end{frame}
+    
+
+    \begin{frame}
+        Sea 
+        \begin{align*}
+        A= \left[
+        \begin{array}{ccccc}
+         a_{11} & \cdots & 0  & \cdots & 0\\
+         \vdots & & \vdots & & \vdots\\
+         a_{i1} & \cdots &  a_{ii} & \cdots & 0\\  
+         \vdots & & \vdots & & \vdots\\
+         a_{n1} & \cdots & a_{ni} & \cdots & a_{nn}
+        \end{array}
+        \right] 
+        \end{align*}
+        
+        \
+        triangular inferior. Entonces,
+        \
+        
+        \begin{align*}
+            A^\t =
+        \left[
+        \begin{array}{ccccc}
+         a_{11} & \cdots & a_{i1} & \cdots & a_{n1}\\
+         \vdots & & \vdots & & \vdots\\
+         0 & \cdots & a_{ii} & \cdots & a_{ni}\\  
+         \vdots & & \vdots & & \vdots\\
+         0 & \cdots & 0 & \cdots & a_{nn}
+        \end{array}
+        \right] 
+        \end{align*}
+        
+        es triangular superior.
+        \end{frame}
+        
+
+    
+    \begin{frame}
+    \begin{proposicion}
+    
+    El determinante de una matriz triangular inferior es igual al producto de los elementos de la diagonal.
+     
+    \end{proposicion}
+    
+\begin{demostracion}
+    La transpuesta de una una matriz triangular inferior es una matriz triangular superior.
+    
+    \
+    
+    Entonces la proposición es una consecuencia del teorema anterior y la proposición referida al determinante de una triangular superior.
+
+    \qed
+\end{demostracion}
+
+     
+    \end{frame}
+    
+   
+    
+    \begin{frame}
+    
+    
+    \begin{observacion}
+    La transpuesta transforma filas en columnas y columnas en filas 
+    \end{observacion}
+    
+    \
+    
+    Gracias a esta observación podemos deducir como cambia el determinante de una matriz al aplicarle ``operaciones elementales por columna''
+    \vskip 4cm
+    \end{frame}
+    
+    
+    \begin{frame}
+    \begin{exampleblock}{Ejemplo}
+    Si una matriz tiene una columna con muchos ceros,  podemos intercambiarla con la primera fila.
+    \end{exampleblock}
+    
+    \begin{align*}
+    A=\left[
+    \begin{array}{cccc}
+    1&5&6&1\\
+    2&0&7&1\\
+    3&0&8&1\\
+    4&0&1&1
+    \end{array}
+    \right]
+    \rightarrow
+    B=
+    \left[
+    \begin{array}{cccc}
+    5&1&6&1\\
+    0&2&7&1\\
+    0&3&8&1\\
+    0&4&1&1
+    \end{array}
+    \right]
+    \end{align*}
+    Entonces
+    \begin{align*}
+    \det(A)=-\det(B)=-5\det B(1|1)
+    \end{align*}
+    \end{frame}
+    
+    \begin{frame}
+    \begin{exampleblock}{Ejemplo}
+    Si una matriz tiene una fila con muchos ceros, entonces intercambio esta con la primer fila, luego transpongo y calculo el determinante.
+    \end{exampleblock}
+    
+    \begin{align*}
+    A= \left[
+    \begin{array}{cccc}
+    1&2&3&4\\
+    5&0&0&0\\
+    6&7&8&9\\
+    1&1&1&1
+    \end{array}
+    \right]
+    \rightarrow
+    B=
+     \left[
+    \begin{array}{cccc}
+    5&0&0&0\\
+    1&2&3&4\\
+    6&7&8&9\\
+    1&1&1&1
+    \end{array}
+    \right]
+    \rightarrow
+    B^\t=
+     \left[
+    \begin{array}{cccc}
+    5&1&6&1\\
+    0&2&7&1\\
+    0&3&8&1\\
+    0&4&1&1
+    \end{array}
+    \right]
+    \end{align*}
+    Entonces
+    \begin{align*}
+    \det(A)=-\det(B)=-\det(B^\t)=-5\det B^\t(1|1)
+    \end{align*}
+    \end{frame}
+    
+   
+    
+    
+    \begin{frame}
+    
+    El determinante se puede calcular desarrollando por cualquier columna o fila.
+    
+    \begin{teorema}
+        Sa $A$ matriz $n \times n$, entonces el determinante
+    \begin{itemize}
+     \item se puede calcular el determinante por la columna $j$ así:
+    \begin{align*}
+    \det(A)=\sum_{i=1}^n(-1)^{i+j}a_{ij}\det A(i|j),
+    \end{align*}
+     \item se puede calcular el determinante por la fila $i$ así:
+    \begin{align*}
+    \det(A)=\sum_{j=1}^n(-1)^{i+j}a_{ij}\det A(i|j)
+    \end{align*}
+    \end{itemize}
+    \end{teorema}
+    (la diferencia entre ambas fórmulas es la variable de la sumatoria)
+    \end{frame}
+    
+    \begin{frame}
+    La demostración de este teorema (que no la haremos),  se basa en dos resultados que ya mencionamos. 
+    \vskip .2cm
+    \begin{itemize}
+        \item[(A)]  Teorema E3:
+        $$
+        A \stackrel{{F_r \leftrightarrow F_s}}{\longrightarrow} B  \qquad \Rightarrow   \qquad \det(B)=-\det(A).$$ 
+        \item[(B)] $\det(A^\t) = det(A)$, 
+    \end{itemize}
+    y un resultado que no es difícil demostrar:
+    \begin{itemize}
+
+        \item[(C)]
+            $ A \stackrel{{C_r \leftrightarrow C_s}}{\longrightarrow} B  \qquad \Leftrightarrow   \qquad A^\t \stackrel{{F_r \leftrightarrow F_s}}{\longrightarrow} B^\t
+             .$
+            \end{itemize}
+            Luego,
+            \begin{itemize}
+        \item[(D)]  $\det(B) \stackrel{(B)}{=} \det(B^\t) \stackrel{(A)}{=} -det(A^\t) \stackrel{(B)}{=} -\det(A)$.
+    \end{itemize}
+   
+\vskip .3cm
+    Usando estos resultados, y un poco de manipulación de índices, se obtiene una demostración del teorema. 
+   
+    \end{frame}
+    
+\end{document}
+    
+    \begin{frame}{Matriz de Vandermonde}
+    La \textit{matriz de Vandermonde} es una matriz $n\times n$ de la siguiente forma
+    \[
+    \mathtt V = \begin{bmatrix}
+    1 & 1 & \cdots & 1\\
+    \lambda_1 & \lambda_2 & \cdots & \lambda_n\\
+    \lambda_1^2 & \lambda_2^2 & \cdots & \lambda_n^2\\
+    \vdots &\vdots & \ddots& \vdots\\
+    \lambda_1^{n-1} & \lambda_2^{n-1} & \cdots & \lambda_n^{n-1}\end{bmatrix}.
+    \]
+    donde $\lambda_1$, ..., $\lambda_n$ son escalares.
+    
+    \
+    
+    También se suele llamar matriz de Vandermonde a la transpuesta de esta.
+    
+    \
+    
+    Esta matriz aparece naturalmente al tratar de aproximar funciones mediante polinomios
+    \end{frame}
+    
+    \begin{frame}
+    \begin{exampleblock}{Problema}
+    Sean $\lambda_1$, ..., $\lambda_n$, $y_1$, ..., $y_n$ escalares. Hallar de ser posible un polinomio
+    $$
+    p(x)=a_{n-1}x^{n-1}+a_{n-2}x^{n-}+\cdots a_{1}x+a_0
+    $$
+    tal que 
+    $$
+    p(\lambda_1)=y_1,\quad p(\lambda_2)=y_2,\,..., \quad p(\lambda_n)=y_n
+    $$
+    \end{exampleblock}
+    
+    Desarrollando los polinomios evaluados en los $\lambda$'s, el problema se traduce en resolver el siguiente sistema de ecuaciones
+    \begin{align*}
+    \left\{
+    \begin{array}{l}
+    a_0+a_{1}\lambda_1+\cdots+a_{n-2}\lambda_1^{n-2}+ a_{n-1}\lambda_1^{n-1}=y_1\\
+    a_0+a_{1}\lambda_2+\cdots+a_{n-2}\lambda_2^{n-2}+ a_{n-1}\lambda_2^{n-1}=y_2\\
+    \vdots\\
+    a_0+a_{1}\lambda_n+\cdots+a_{n-2}\lambda_n^{n-2}+ a_{n-1}\lambda_n^{n-1}=y_n
+    \end{array}
+    \right.
+    \end{align*}
+    donde los coeficientes $a_0$, ..., $a_{n-1}$ son las incógnitas
+    \end{frame}
+    
+    \begin{frame}
+    Si escribimos este sistema en forma matricial aparece la matriz de Vandermonde transpuesta
+    \begin{align*}
+    {\mathtt V}^\t
+     \left[
+    \begin{array}{c}
+    a_0\\ \vdots\\a_{n-1}
+    \end{array}
+    \right]
+    =
+     \left[
+    \begin{array}{c}
+    y_1\\ \vdots\\y_{n}
+    \end{array}
+    \right]
+    \end{align*}
+    
+    Notemos que si ${\mathtt V}^\t$ es invertible, el sistema tiene solución única dada por
+    \begin{align*}
+     \left[
+    \begin{array}{c}
+    a_0\\ \vdots\\a_{n-1}
+    \end{array}
+    \right]
+    =
+    ({\mathtt V}^\t)^{-1}
+     \left[
+    \begin{array}{c}
+    y_1\\ \vdots\\y_{n}
+    \end{array}
+    \right]
+    \end{align*}
+    
+    Un ejercicio del Práctico 4 da una fórmula para el determinante de ${\mathtt V}$ que permite decidir cuando es invertible
+    \end{frame}
+    
+    \begin{frame}
+    \begin{exampleblock}{Ejercicio}
+    $$
+    \det(\mathtt V)=\Pi_{1\leq i<j\leq n}(\lambda_j-\lambda_i)
+    $$
+    Entonces $\mathtt V$ es invertible si y sólo si todos los $\lambda_i$'s son distintos
+    \end{exampleblock}
+     
+    La demostración es por inducción en $n$. Hay que hacer operaciones elementales por filas (y columnas) para reducir el caso $n$ al caso $n-1$ y aplicar la hipótesis inductiva.
+    \end{frame}
+    
+    \begin{frame}
+    Primero se aplican una a una las siguientes operaciones:
+    \begin{itemize}
+     \item La última fila menos $\lambda_1$ por la penúltima
+     \item La penúltima fila menos $\lambda_1$ por la antepenúltima
+     \item ... La fila $r$ menos $\lambda_1$ por la fila $r-1$  ...
+     \item La segunda fila menos $\lambda_1$ por la primera
+    \end{itemize}
+    
+    Así obtenemos la siguiente matriz
+    \[
+    A = \begin{pmatrix}
+    1 & 1 & \cdots & 1\\
+    0 & \lambda_2-\lambda_1 & \cdots & \lambda_n-\lambda_1\\
+    0 & (\lambda_2-\lambda_1)\lambda_2 & \cdots & (\lambda_n-\lambda_1)\lambda_n\\
+    \vdots &\vdots & \ddots& \vdots\\
+    0 & (\lambda_2-\lambda_1)\lambda_2^{n-2} & \cdots & (\lambda_n-\lambda_1)\lambda_n^{n-2}\end{pmatrix}.
+    \]
+    Por el tipo de operaciones que aplicamos resulta que
+    $$
+    \det\mathtt{V}=\det A=\det A(1|1)
+    $$
+    
+    \end{frame}
+    
+    \begin{frame}
+    Notemos que la columna $j$ de $A(1|1)$ es la columna $j$ de una matriz de Vandermonde $\mathtt{V}_{n-1}$ de tamaño $n-1$
+    \begin{align*}
+    (\lambda_j-\lambda_1)
+     \left[
+    \begin{array}{c}
+    1\\ \lambda_2\\ \vdots\\ \lambda_n
+    \end{array}
+    \right]
+    \end{align*}
+    
+    En otras palabras, $A(1|1)$ se obtiene a partir de $\mathtt{V}_{n-1}$ multiplicando la columna $j$ por $(\lambda_j-\lambda_1)$. Entonces
+    \begin{align*}
+    \det\mathtt{V}&=\det A=\det A(1|1)\\
+    &=(\lambda_2-\lambda_1)\cdots(\lambda_2-\lambda_1)\det\mathtt{V}_{n-1}\\
+    &=(\lambda_2-\lambda_1)\cdots(\lambda_2-\lambda_1)
+    \Pi_{2\leq i<j\leq n}(\lambda_j-\lambda_i)\\
+    &=\Pi_{1\leq i<j\leq n}(\lambda_j-\lambda_i)
+    \end{align*}
+    \end{frame}
+    
+
+
+
+\end{document}
+
