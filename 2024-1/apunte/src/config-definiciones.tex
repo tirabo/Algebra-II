@@ -124,3 +124,8 @@
 \newcommand{\sen}{\operatorname{sen}}
 \newcommand \circled[1]{\tikz[baseline=(char.base)]{
 		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newenvironment{amatrix}[1]{%
+        \left[\begin{array}{@{}*{#1}{c}|c@{}}
+    }{%
+        \end{array}\right]
+    }
