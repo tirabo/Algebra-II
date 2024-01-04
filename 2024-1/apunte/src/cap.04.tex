@@ -357,7 +357,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 
 \vskip .3cm
 
-\begin{observacion*}
+\begin{observacion}\label{vector-comb-lineal}
     La pregunta de si un vector $v =(b_1,\ldots,b_m) \in \K^m$ es combinación lineal de vectores $v_1,\ldots,v_n \in \K^m$ se resuelve con un sistema de ecuaciones lineales: si 
     $$
     v_i = (a_{1i},\ldots,a_{mi}), \quad \text{para $1 \le i \le n$,}
@@ -368,19 +368,19 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
         &= (\lambda_1a_{11} + \cdots+ \lambda_na_{1n}, \ldots, \lambda_1a_{m1} + \cdots+ \lambda_na_{mn}).
     \end{align*}
     Luego, $v$  es combinación lineal de los vectores $v_1,\ldots,v_n \in \K^m$ si y sólo si  el sistema de ecuaciones:
-    \begin{equation*}
+    \begin{equation}\label{sistema-combinacion-lineal}
     \begin{matrix}
     a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
     \vdots&  &\vdots& &&  &\vdots \\
     a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m,
     \end{matrix}
-    \end{equation*}
+    \end{equation}
 
     \noindent con incógnitas $\lambda_1,\ldots, \lambda_n$ tiene solución.
-\end{observacion*}
+\end{observacion}
 
 
-\begin{ejemplo*} Demostrar que $(5,12,5)$  es combinación lineal de los vectores $(1,-5,2), (0,1,-1), (1,2,-1)$. Planteamos la ecuación:
+\begin{ejemplo*} Demostrar que $(5,12,5)$  es combinación lineal de los vectores $(1,-5,2), (0,1,-1), (1,2,-1)$ y escribir la combinación lineal explícita. Planteamos la ecuación:
     \begin{align*}
         (5,12,5) &= \lambda_1(1,-5,2)+\lambda_2 (0,1,-1)+\lambda_3 (1,2,-1) 
         \\&= (\lambda_1+\lambda_3,-5\lambda_1+\lambda_2+2\lambda_3,2\lambda_1-\lambda_2-\lambda_3).
@@ -448,31 +448,49 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     Además, en este caso, diremos que el conjunto $S = \left\{ v_1,\ldots,v_k \right\}$ \textit{genera} al subespacio $W$  o que los vectores $v_1,\ldots,v_k$ \textit{generan} $W$.
 \end{definicion}
 
-\begin{subsection}{Determinación implícita de un subespacio de $\K^n$}
+\begin{subsection}{Determinación implícita de un subespacio de $\K^n$ a partir de generadores}
     
-Sea $W \subset \K^n$ un subespacio generado por $v_1,\ldots,v_k$, nos interesa tener una manera de decidir rápidamente si un vector esta en el subespacio o no.
+En la observación \ref{vector-comb-lineal} vimos que para averiguar si  un vector concreto $(b_1,b_2, \ldots,b_m) \in \K^m$ era combinación lineal de vectores $v_1,\ldots,v_n$ se planteaba el sistema de ecuaciones \eqref{sistema-combinacion-lineal} y lo resolvíamos. 
 
-Una forma sencilla de verificar si un vector pertenece a un subespacio $W \subseteq\K^n$ es obtener la descripción del  subespacio por un sistema de ecuaciones lineales homogéneas,  es decir 
+Ahora consideremos  $W \subset \K^m$ un subespacio vectorial generado por $v_1,\ldots,v_k$, nos interesa tener una manera de decidir rápidamente si un vector esta en el subespacio o no, es decir si un vector $(b_1,b_2, \ldots,b_m)$ pertenece a  $W$ o no. Es decir el problema es muy similar al planteado en la observación \ref{vector-comb-lineal}, pero ahora debemos analizar que vectores  $(b_1,b_2, \ldots,b_m)$ pueden ser solución del sistema \eqref{sistema-combinacion-lineal},  es decir del sistema 
 \begin{equation*}
-    W = \{v \in \K^n: Av =0\},
-\end{equation*} 
-o equivalentemente
-\begin{equation*}
-    v \in W \quad \Leftrightarrow \quad Av =0.
-\end{equation*} 
-
-Entonces comprobar si un vector $v$ pertenece o no a $W$  se reduce a calcular $Av$. 
+    \begin{matrix}
+    a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
+    \vdots&  &\vdots& &&  &\vdots \\
+    a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m,
+    \end{matrix}
+    \end{equation*}
+    donde $a_{ij}$ son las coordenadas de los $v_j$. Como vimos en la sección \ref{seccion-metodo-de-gauss}, donde estudiamos el método de eliminación de Gauss, si de la matriz ampliada original del sistema obtenemos una matriz ampliada equivalente de la forma
+    \begin{equation*}
+        \begin{amatrix}{1}A&b\end{amatrix} \stackrel{Gauss}{\longrightarrow} \begin{amatrix}{1}A'&b'\end{amatrix},
+    \end{equation*}
+    donde  $A'$ es una MERF con sistema asociado 
+    \begin{equation*}
+        \begin{matrix}
+        &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{1j}\,x_j&= &b'_1\\
+        &x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{2j}\,x_j&= &b'_2\\
+        & \vdots& &  &\vdots \\
+        &x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{rj}\,x_j&= &b'_r\\
+        &&  &0&= &b'_{r+1}\\
+        &&  &\vdots &\\
+        &&  &0&= &b'_{m}.\\
+        \end{matrix}
+    \end{equation*} 
+    Por lo tanto, el sistema tiene solución si y solo si  $b'_{r+1} = \cdots = b'_m =0$. Luego, 
+    \begin{equation*}
+        W = \{(b_1,b_2, \ldots,b_m) \in \K^m: b'_{r+1} = \cdots = b'_m =0\}.
+    \end{equation*}
         
-Ejemplificaremos con los siguientes vectores en $\R^4$:
-\begin{align*}
-v_1=(3,1,2,-1),&\quad
-v_2=(6,2,4,-2),\\
-v_3=(3,0,1,1),&\quad
-v_4=(15,3,8,-1)
-\end{align*}
-y el subespacio $W=\langle v_1,v_2,v_3,v_4\rangle$.
 
-\begin{ejemplo}  Caracterizar mediante ecuaciones el subespacio $\langle v_1, v_2, v_3, v_4\rangle$.
+
+\begin{ejemplo}  Ejemplificaremos con los siguientes vectores en $\R^4$:
+    \begin{align*}
+    v_1=(3,1,2,-1),&\quad
+    v_2=(6,2,4,-2),\\
+    v_3=(3,0,1,1),&\quad
+    v_4=(15,3,8,-1)
+    \end{align*}
+    y el subespacio $W=\langle v_1,v_2,v_3,v_4\rangle$.
 
 En otras palabras, queremos describir implícitamente el conjunto de los $b=(b_1,b_2,b_3,b_4)
 \in\R^4$ tales que $b\in\langle v_1, v_2, v_3, v_4\rangle$.
@@ -482,97 +500,17 @@ O sea, los $b=(b_1,b_2,b_3,b_4)
 \begin{equation*}
     b=\lambda_1v_1+\lambda_2v_2+\lambda_3v_3+\lambda_4v_4 \tag{*}
 \end{equation*}
-
-
-con $\lambda_1,\lambda_2,\lambda_3,\lambda_4\in\R$.
-\end{ejemplo}
-
-
-Planteemos la fórmula (*) en coordenadas, pero es conveniente hacerlo con vectores columna :
-\begin{align*}
-    \lambda_1 \begin{bmatrix*}[r] 
-        3\\
-1\\
-2\\
--1
-\end{bmatrix*}+
-\lambda_2\begin{bmatrix*}[r] 
-6\\
-2\\
-4\\
--2
-\end{bmatrix*}+
-\lambda_3
-\begin{bmatrix*}[r] 
-3\\
-0\\
-1\\
-1
-\end{bmatrix*}+\lambda_4
-\begin{bmatrix*}[r] 
-15\\
-3\\
-8\\
--1
-\end{bmatrix*}=
-\begin{bmatrix*}[r] 
-b_1\\
-b_2\\
-b_3\\
-b_4
-\end{bmatrix*}
-\end{align*}
-Luego 
-\begin{equation*}
-    \begin{bmatrix*}[r]
-        3\lambda_1+6\lambda_2+3\lambda_3+15\lambda_4\\
-    \lambda_1+2\lambda_2+3\lambda_4\\
-    2\lambda_1+4\lambda_2+ \lambda_3+8\lambda_4\\
-    -x-2\lambda_2+\lambda_3-\lambda_4
-    \end{bmatrix*}
-    = 
-    \begin{bmatrix}
-        b_1\\ b_2 \\b_3 \\ b_4 
-    \end{bmatrix}
-\end{equation*}
-
-En forma de producto de matrices podemos reescribirla asi:
-\begin{equation*}
-    \begin{bmatrix*}[r]    
-3&6&3&15\\
-1&2&0&3\\
-2&4&1&8\\
--1&-2&1&-1
-\end{bmatrix*}
-\begin{bmatrix*}[r]
-\lambda_1\\
-\lambda_2\\
-\lambda_3\\
-\lambda_4
-\end{bmatrix*}
-=
-\begin{bmatrix*}[r]
-b_1\\
-b_2\\
-b_3\\
-b_4 
-\end{bmatrix*}
-\end{equation*}
-        
-    En forma de sistema de ecuaciones esto es:
-        
+con $\lambda_1,\lambda_2,\lambda_3,\lambda_4\in\R$. Esta ecuación explícitamente es el sistema de ecuaciones lineales:
 \begin{equation*}
     \begin{cases}
         3\lambda_1+6\lambda_2+3\lambda_3+15\lambda_4 = b_1\\
     \lambda_1+2\lambda_2+3\lambda_4 = b_2\\
     2\lambda_1+4\lambda_2+ \lambda_3+8\lambda_4 = b_3\\
-    -x-2\lambda_2+\lambda_3-\lambda_4 = b_4
+    -\lambda_1-2\lambda_2+\lambda_3-\lambda_4 = b_4
     \end{cases}\tag{**}
 \end{equation*}
 
-Por lo tanto, $b\in\langle v_1,v_2,v_3,v_4\rangle$ si y sólo si el sistema anterior tiene solución.
-
-Resolvamos las ecuaciones del sistema (**) por el método de Gauss:
+Para resolver este sistema, usaremos el método de Gauss, partiendo de la matriz ampliada del sistema:
     \begin{align*}
     &\begin{amatrix}{4}
         3&6&3&15&b_1\\
@@ -595,7 +533,7 @@ Resolvamos las ecuaciones del sistema (**) por el método de Gauss:
     \end{amatrix}
     \end{align*}
 
-Obtenemos así un sistema de ecuaciones equivalente al original, que es más fácil de resolver:
+Obtenemos así un sistema de ecuaciones equivalente al original:
 \begin{equation*}
     \begin{cases}
         0 = b_1+3b_2-3b_3\\
@@ -604,42 +542,11 @@ Obtenemos así un sistema de ecuaciones equivalente al original, que es más fá
         0 = 3b_2-b_3+b_4.
     \end{cases}
 \end{equation*}
-Recordemos que este sistema tiene solución si y solo si $0 = b_1+3b_2-3b_3$ y $0 = 3b_2-b_3+b_4$. Por lo tanto, la respuesta a nuestro problema es
+Este sistema tiene solución si y solo si $0 = b_1+3b_2-3b_3$ y $0 = 3b_2-b_3+b_4$. Por lo tanto, la respuesta a nuestro problema es
 \begin{multline*}
     \langle v_1, v_2, v_3, v_4\rangle=\\\{(b_1,b_2,b_3,b_4)\in\mathbb{R}^4\mid b_1+3b_2-3b_3=0,b_1-6b_2-3b_4=0\}.
 \end{multline*}
-        
-Notemos que podemos repetir todo el razonamiento anterior para cualesquiera vectores $v_1, ..., v_k$ en cualquier $\R^n$ y cualquier $b\in\R^n$.
-
-Sólo hay que tener presente que multiplicar una matriz por un vector columna es lo mismo que hacer una combinación lineal de las columnas de la matriz:
-
-Es decir, si
-$$
-A=\left[
-\begin{array}{cccc}
-\mid& \mid& &\mid\\
-v_1 & v_2 & \cdots &v_k\\
-\mid& \mid& &\mid
-\end{array}
-\right]
-,$$ 
-entonces
-\begin{align*}
-A\left[
-\begin{array}{c}
-\lambda_1\\\vdots\\\lambda_k
-\end{array}
-\right]=
-\lambda_1v_1+\cdots+\lambda_kv_k
-\end{align*}
-        
-Repitiendo el razonamiento del ejemplo anterior, obtenemos el siguiente resultado.
-\begin{itemize}
-    \item El subespacio vectorial  $\langle v_1, ..., v_k\rangle$ es igual al conjunto de los $b\in\K^n$ para los cuales el sistema $AX=b$ tiene solución.
-    \vskip .2cm
-    \item Las ecuaciones vienen dadas por las filas nulas de una MRF equivalente a $A$. En particular, si no tiene filas nulas entonces $\langle v_1, ..., v_k\rangle=\K^n$ porque el sistema $AX=b$ siempre tiene solución.
-\end{itemize}
-
+\end{ejemplo}
 
 
 \end{subsection}
