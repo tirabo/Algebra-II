@@ -324,7 +324,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     $$
 \end{definicion}
 
-\begin{ejemplo*} ${}^{}$
+\begin{ejemplo}\label{subespacios-generados} ${}^{}$
 \begin{enumerate}
     \item Sean $v_1 = (1,0)$, $v_2 = (0,1)$ en $\C^2$ ¿es $v = (i,2)$ combinación lineal de $v_1,v_2$? La respuesta es sí, pues 
     $$
@@ -352,63 +352,43 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
    \end{align*}
     luego, la primera coordenada nos dice que $1=0$, lo cual es absurdo. Por lo tanto,  no existe un par $\lambda_1,\lambda_2 \in \K$ tal que  $(1,1,0) = \lambda_1(0,1,0)+ (0,1,1)$.
     
-\end{enumerate}
-\end{ejemplo*}
-
-\vskip .3cm
-
-\begin{observacion}\label{vector-comb-lineal}
-    La pregunta de si un vector $v =(b_1,\ldots,b_m) \in \K^m$ es combinación lineal de vectores $v_1,\ldots,v_n \in \K^m$ se resuelve con un sistema de ecuaciones lineales: si 
-    $$
-    v_i = (a_{1i},\ldots,a_{mi}), \quad \text{para $1 \le i \le n$,}
-    $$
-    entonces $v = \lambda_1v_1 + \cdots +\lambda_nv_n$ se traduce, en coordenadas, a
+    \item\label{vector-en-subespacio} Demostrar que $(7, 5, 4)$  es combinación lineal de los vectores $(1,-5,2), (1,-1,1)$ y escribir la combinación lineal explícita. Planteamos la ecuación:
     \begin{align*}
-        (b_1,\ldots,b_m) &= \lambda_1(a_{11},\ldots,a_{m1}) + \cdots +\lambda_n(a_{1n},\ldots,a_{mn}) \\
-        &= (\lambda_1a_{11} + \cdots+ \lambda_na_{1n}, \ldots, \lambda_1a_{m1} + \cdots+ \lambda_na_{mn}).
-    \end{align*}
-    Luego, $v$  es combinación lineal de los vectores $v_1,\ldots,v_n \in \K^m$ si y sólo si  el sistema de ecuaciones:
-    \begin{equation}\label{sistema-combinacion-lineal}
-    \begin{matrix}
-    a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
-    \vdots&  &\vdots& &&  &\vdots \\
-    a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m,
-    \end{matrix}
-    \end{equation}
-
-    \noindent con incógnitas $\lambda_1,\ldots, \lambda_n$ tiene solución.
-\end{observacion}
-
-
-\begin{ejemplo*} Demostrar que $(5,12,5)$  es combinación lineal de los vectores $(1,-5,2), (0,1,-1), (1,2,-1)$ y escribir la combinación lineal explícita. Planteamos la ecuación:
-    \begin{align*}
-        (5,12,5) &= \lambda_1(1,-5,2)+\lambda_2 (0,1,-1)+\lambda_3 (1,2,-1) 
-        \\&= (\lambda_1+\lambda_3,-5\lambda_1+\lambda_2+2\lambda_3,2\lambda_1-\lambda_2-\lambda_3).
+        (7, 5, 4) &= \lambda_1(1,-5,2)+\lambda_2 (1,-1,1)
+        \\
+        &= (\lambda_1+\lambda_2,-5\lambda_1-\lambda_2,2\lambda_1+\lambda_2).
     \end{align*}
     Por consiguiente,  esta ecuación se resuelve con el siguiente sistema de ecuaciones
     \begin{align*}
-        \lambda_1+\lambda_3 &= 5 \\
-        -5\lambda_1+\lambda_2+2\lambda_3 &= 12 \\
-        2\lambda_1-\lambda_2-\lambda_3 &= 5.
+        \lambda_1+\lambda_2 &= 7 \\
+        -5\lambda_1-\lambda_2&= 5 \\
+        2\lambda_1+\lambda_2 &= 4.
     \end{align*}
     Ahora bien, usando el método de Gauss
-                        \begin{multline*}
-    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ -5 & 1 & 2 &  12 \\	2 & -1 & -1 &  5  \end{array}\right]
-    \stackrel[F_3 -2F_1]{F_2 + 5F_1}{\longrightarrow} 
-    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & -1 & -3 &  -5  \end{array}\right]
-    \stackrel{F_3+F_1}{\longrightarrow} 
-    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & 0 & 4 & 32  \end{array}\right]
-    \\
-    \stackrel{F_3/4}{\longrightarrow} 
-    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 1 & 5 \\ 0 & 1 & 7 & 37 \\	0 & 0 & 1& 8  \end{array}\right]
-    \stackrel[F_2 -7F_3]{F_1 - F_3}{\longrightarrow}
-    \left[\begin{array}{@{}*{3}{c}|c@{}}1 & 0 & 0 & -3 \\ 0 & 1 & 0 &  -19 \\	0 & 0 & 1& 8  \end{array}\right].
-    \end{multline*}	
-    Luego $\lambda_1= -3$, $\lambda_2 = -19$ y $\lambda_3=8$,  es decir
     \begin{align*}
-    (5,12,5) &= -3(1,-5,2)-19 (0,1,-1)+8 (1,2,-1).
+    &\begin{amatrix}{2}
+    1 & 1 & 7 \\ -5 & -1 & 5 \\	2 & 1 & 4
+    \end{amatrix} \underset{F3-2F_1}{\stackrel{F_2+5F_1}{\longrightarrow}} 
+    \begin{amatrix}{2}
+    1 & 1 & 7 \\ 0 & 4 & 40 \\	0 & -1 & -10
+    \end{amatrix}\stackrel{F_2/4}{\longrightarrow}
+    \begin{amatrix}{2}
+    1 & 1 & 7 \\ 0 & 1 & 10 \\	0 & -1 & -10
+    \end{amatrix} \\
+    &\stackrel{F_3+F_2}{\longrightarrow}
+    \begin{amatrix}{2}
+    1 & 1 & 7 \\ 0 & 1 & 10 \\	0 & 0 & 0
+    \end{amatrix} \stackrel{F_1-F_2}{\longrightarrow}
+    \begin{amatrix}{2}
+    1 & 0 & -3 \\ 0 & 1 & 10 \\	0 & 0 & 0
+    \end{amatrix}.
+    \end{align*}	
+    Luego $\lambda_1= -3$ y $\lambda_2 = -10$,  es decir,
+    \begin{align*}
+    (7, 5, 4) &= -3(1,-5,2)+10 (1,-1,1).
     \end{align*}
-\end{ejemplo*}
+    \end{enumerate}
+\end{ejemplo}
 
 \vskip .4cm 
     \begin{teorema}
@@ -419,7 +399,7 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
     es un subespacio vectorial. Es decir,  el conjunto de las combinaciones lineales de $v_1,\ldots,v_k$ es un subespacio vectorial.
     \end{teorema}
     \begin{proof}
-     Sean $\lambda_1v_1+\cdots+\lambda_kv_k$ y $\mu_1v_1+\cdots+\mu_kv_k$ dos combinaciones lineales de $v_1,\ldots,v_k$, entonces 
+    Sean $\lambda_1v_1+\cdots+\lambda_kv_k$ y $\mu_1v_1+\cdots+\mu_kv_k$ dos combinaciones lineales de $v_1,\ldots,v_k$, entonces 
             \begin{align*}
                 (\lambda_1v_1+\cdots+\lambda_kv_k)+(\mu_1v_1+\cdots+\mu_kv_k) &=  \lambda_1v_1+\mu_1v_1+\cdots+\lambda_kv_k+\mu_kv_k\\
                 &= (\lambda_1+\mu_1)v_1+\cdots+(\lambda_k+\mu_k)v_k,
@@ -450,21 +430,22 @@ Finalmente, las propiedades de los axiomas \textbf{P1.}, \textbf{P2.}, \textbf{D
 
 \begin{subsection}{Determinación implícita de un subespacio de $\K^n$ a partir de generadores}
     
-En la observación \ref{vector-comb-lineal} vimos que para averiguar si  un vector concreto $(b_1,b_2, \ldots,b_m) \in \K^m$ era combinación lineal de vectores $v_1,\ldots,v_n$ se planteaba el sistema de ecuaciones \eqref{sistema-combinacion-lineal} y lo resolvíamos. 
+En  general,  si queremos  averiguar si  un vector concreto $(b_1,b_2, \ldots,b_m) \in \K^m$ es combinación lineal de vectores $v_1,\ldots,v_n \in \K^m$,  debemos plantear la ecuación
+\begin{equation*}
+    (b_1,b_2, \ldots,b_m) = \lambda_1v_1+\cdots+\lambda_nv_n,
+\end{equation*}
+y resolver el sistema correspondiente, así como lo hicimos en \ref{vector-en-subespacio} del ejemplo \ref{subespacios-generados}.
 
-Ahora consideremos  $W \subset \K^m$ un subespacio vectorial generado por $v_1,\ldots,v_k$, nos interesa tener una manera de decidir rápidamente si un vector esta en el subespacio o no, es decir si un vector $(b_1,b_2, \ldots,b_m)$ pertenece a  $W$ o no. Es decir el problema es muy similar al planteado en la observación \ref{vector-comb-lineal}, pero ahora debemos analizar que vectores  $(b_1,b_2, \ldots,b_m)$ pueden ser solución del sistema \eqref{sistema-combinacion-lineal},  es decir del sistema 
+
+Ahora consideremos  $W \subset \K^m$ un subespacio vectorial generado por $v_1,\ldots,v_k$, nos interesa tener una manera de decidir rápidamente si un vector esta en el subespacio o no, es decir si un vector $(b_1,b_2, \ldots,b_m)$ pertenece a  $W$ o no. Paraello, debemos analizar que vectores  $(b_1,b_2, \ldots,b_m)$ pueden ser solución del sistema de ecuaciones
 \begin{equation*}
     \begin{matrix}
     a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
     \vdots&  &\vdots& &&  &\vdots \\
     a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m,
     \end{matrix}
-    \end{equation*}
-    donde $a_{ij}$ son las coordenadas de los $v_j$. Como vimos en la sección \ref{seccion-metodo-de-gauss}, donde estudiamos el método de eliminación de Gauss, si de la matriz ampliada original del sistema obtenemos una matriz ampliada equivalente de la forma
-    \begin{equation*}
-        \begin{amatrix}{1}A&b\end{amatrix} \stackrel{Gauss}{\longrightarrow} \begin{amatrix}{1}A'&b'\end{amatrix},
-    \end{equation*}
-    donde  $A'$ es una MERF con sistema asociado 
+\end{equation*}
+    donde $a_{ij}$ son las coordenadas de los $v_j$. Como vimos en la sección \ref{seccion-metodo-de-gauss}, donde estudiamos el método de eliminación de Gauss, de la matriz ampliada original $\begin{amatrix}{1}A&b\end{amatrix}$ podemos obtener una MERF equivalente $\begin{amatrix}{1}A'&b'\end{amatrix}$. Explícitamente,  el sistema de ecuaciones lineales asociados a la MERF:
     \begin{equation*}
         \begin{matrix}
         &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{1j}\,x_j&= &b'_1\\
@@ -473,14 +454,16 @@ Ahora consideremos  $W \subset \K^m$ un subespacio vectorial generado por $v_1,\
         &x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{rj}\,x_j&= &b'_r\\
         &&  &0&= &b'_{r+1}\\
         &&  &\vdots &\\
-        &&  &0&= &b'_{m}.\\
+        &&  &0&= &b'_{m},\\
         \end{matrix}
     \end{equation*} 
+    donde $k_1 < k_2 < \cdots < k_r$.
     Por lo tanto, el sistema tiene solución si y solo si  $b'_{r+1} = \cdots = b'_m =0$. Luego, 
     \begin{equation*}
         W = \{(b_1,b_2, \ldots,b_m) \in \K^m: b'_{r+1} = \cdots = b'_m =0\}.
     \end{equation*}
-        
+    Las ecuaciones $ b'_{r+1} = \cdots = b'_m =0$ son las ecuaciones implícitas que definen a $W$ y nos permiten decidir rápidamente si un vector pertenece o no a $W$, simplemente viendo si sus coordenadas satisfacen las ecuaciones.
+
 
 
 \begin{ejemplo}  Ejemplificaremos con los siguientes vectores en $\R^4$:
@@ -544,9 +527,24 @@ Obtenemos así un sistema de ecuaciones equivalente al original:
 \end{equation*}
 Este sistema tiene solución si y solo si $0 = b_1+3b_2-3b_3$ y $0 = 3b_2-b_3+b_4$. Por lo tanto, la respuesta a nuestro problema es
 \begin{multline*}
-    \langle v_1, v_2, v_3, v_4\rangle=\\\{(b_1,b_2,b_3,b_4)\in\mathbb{R}^4\mid b_1+3b_2-3b_3=0,b_1-6b_2-3b_4=0\}.
+    \langle v_1, v_2, v_3, v_4\rangle=\\
+    \{(b_1,b_2,b_3,b_4)\in\mathbb{R}^4\mid b_1+3b_2-3b_3=0,b_1-6b_2-3b_4=0\}.
 \end{multline*}
+
+Apliquemos este resultado a vectores concretos ¿el  vector $(21,  5, 12, -3)$ pertenece al subespacio generado por  $v_1, v_2, v_3, v_4$? La respuesta es sí, pues
+\begin{align*}
+    b_1+3b_2-3b_3 &= 21 + 3\cdot 5 - 3 \cdot 12 = 21 +15 -36 =0 \\
+    b_1-6b_2-3b_4 &= 21 - 6\cdot 5 - 3 \cdot (-3) = 21 -30 +9 =0.
+\end{align*}
 \end{ejemplo}
+¿Y el vector $(-3,1,0,1)$? La respuesta es no, pues
+\begin{align*}
+    b_1+3b_2-3b_3 &= -3 + 3\cdot 1 - 3 \cdot 0 = -3 +3 =0 \\
+    b_1-6b_2-3b_4 &= -3 - 6\cdot 1 - 3 \cdot 1 = -3 -6 -3 =-12 \ne 0.
+\end{align*}
+Si alguna de las ecuaciones no se satisface, el vector no puede pertenecer al subespacio.  En este caso,  la segunda ecuación no se satisface y por lo tanto el vector no pertenece al subespacio.
+
+
 
 
 \end{subsection}
