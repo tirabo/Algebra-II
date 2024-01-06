@@ -437,7 +437,7 @@ En  general,  si queremos  averiguar si  un vector concreto $(b_1,b_2, \ldots,b_
 y resolver el sistema correspondiente, así como lo hicimos en \ref{vector-en-subespacio} del ejemplo \ref{subespacios-generados}.
 
 
-Ahora consideremos  $W \subset \K^m$ un subespacio vectorial generado por $v_1,\ldots,v_k$, nos interesa tener una manera de decidir rápidamente si un vector esta en el subespacio o no, es decir si un vector $(b_1,b_2, \ldots,b_m)$ pertenece a  $W$ o no. Paraello, debemos analizar que vectores  $(b_1,b_2, \ldots,b_m)$ pueden ser solución del sistema de ecuaciones
+Ahora consideremos  $W \subset \K^m$ un subespacio vectorial generado por $v_1,\ldots,v_k$, nos interesa tener una manera de decidir rápidamente si un vector esta en el subespacio o no, es decir si un vector $(b_1,b_2, \ldots,b_m)$ pertenece a  $W$ o no. Para ello, debemos analizar que vectores  $(b_1,b_2, \ldots,b_m)$ pueden ser solución del sistema de ecuaciones
 \begin{equation*}
     \begin{matrix}
     a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
@@ -445,7 +445,7 @@ Ahora consideremos  $W \subset \K^m$ un subespacio vectorial generado por $v_1,\
     a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m,
     \end{matrix}
 \end{equation*}
-    donde $a_{ij}$ son las coordenadas de los $v_j$. Como vimos en la sección \ref{seccion-metodo-de-gauss}, donde estudiamos el método de eliminación de Gauss, de la matriz ampliada original $\begin{amatrix}{1}A&b\end{amatrix}$ podemos obtener una MERF equivalente $\begin{amatrix}{1}A'&b'\end{amatrix}$. Explícitamente,  el sistema de ecuaciones lineales asociados a la MERF:
+    donde $a_{ij}$ son las coordenadas de los $v_j$. Como vimos en la sección \ref{seccion-metodo-de-gauss}, donde estudiamos el método de eliminación de Gauss, de la matriz ampliada original $\begin{amatrix}{1}A&b\end{amatrix}$ podemos obtener una MERF equivalente $\begin{amatrix}{1}A'&b'\end{amatrix}$. Explícitamente,  el sistema de ecuaciones lineales asociados a la MERF es
     \begin{equation*}
         \begin{matrix}
         &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{1j}\,x_j&= &b'_1\\
