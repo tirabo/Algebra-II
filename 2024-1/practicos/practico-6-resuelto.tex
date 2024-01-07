@@ -199,7 +199,7 @@
     
     \item Sean $p(x)=(1-x)(x+2)$, $q(x)=x^2-1$ y $r(x)=x(x^2-1)$ en $\mathbb{R}[x]$.
         \begin{enumerate}
-        \item\label{comb-lineal-pol-a} Describir todos los polinomios de grado menor o igual que $3$ que son combinación lineal de $p,q$ y $r$.
+        \item\label{comb-lineal-pol-a} Describir en forma implícita todos los polinomios de grado menor o igual que $3$ que son combinación lineal de $p,q$ y $r$.
         \item\label{comb-lineal-pol-b} Elegir $a$ tal que el polinomio $x$ se pueda escribir como combinación lineal de $p,q$ y $2x^2+a$.
         \end{enumerate}
     
@@ -211,6 +211,7 @@
         q(x)&=x^2-1,\\
         r(x)&=x^3-x.                
     \end{align*}
+    \begin{comment}
     Debemos encontrar el subespacio generado por estos tres polinomios. Primero encontraremos una base del subespacio en término de los generadores canónicos  ($x^n$ con $n\in\mathbb{N}_0$). 
     \begin{align*}
         &\begin{bmatrix}
@@ -240,63 +241,84 @@
     $$
     \langle p,q,r\rangle = \langle x^2-1,x-1,x^3-1 \rangle.
     $$
+\end{comment}
 
 
 
-
-    \ref{comb-lineal-pol-a} Debemos estudiar la ecuación 
-    \begin{align*}
-        ax^3+bx^2+cx +d &=\lambda (1-x)(x+2)+\mu (x^2-1)+\nu x(x^2-1)\\
-        &=\lambda(-x^2 -x +2)+\mu (x^2-1)+\nu (x^3-x) \\
-        &= \nu x^3 + (\mu-\lambda)x^2 + (-\nu-\lambda)x + (2\lambda-\mu).
-    \end{align*}
+Ahora, planteemos  la ecuación 
+    \begin{equation*}
+        \begin{aligned}
+        ax^3+bx^2+cx +d &=\lambda p +\mu q +\nu r\\
+        &= \lambda(x^2+x-2)+\mu(x^2-1)+\nu(x^3-x)\\
+        &= \nu x^3 +(\lambda+\mu)x^2+(\lambda-\nu)x+(-2\lambda-\mu).
+        \end{aligned} \tag{*}
+    \end{equation*}
     Debemos encontrar todos los $(a,b,c,d)\in\mathbb{R}^4$ tales que existe $\lambda,\mu,\nu\in\mathbb{R}$ que satisfacen la ecuación anterior. Es decir, debemos encontrar todos los $(a,b,c,d)\in\mathbb{R}^4$ tales que existe $\lambda,\mu,\nu\in\mathbb{R}$ que satisfacen el sistema
-    \begin{align*}
+    \begin{equation*}
+        \begin{aligned}
         a&=\nu\\
-        b&=\mu-\lambda\\
-        c&=-\nu-\lambda\\
-        d&=2\lambda-\mu.
-    \end{align*}
+        b&=\lambda+\mu\\
+        c&=-\lambda-\nu\\
+        d&=-2\lambda-\mu. 
+        \end{aligned} 
+    \end{equation*}
     Si consideramos $a,b,c,d$ como constantes y  $\lambda,\mu,\nu$ como incógnitas, entonces el sistema, presentado como matriz aumentada es:
+
     \begin{align*}
         &\begin{amatrix}{3}
             0 & 0 & 1 & a \\
-            -1 & 1 & 0 & b \\
-            -1 & 0 & -1 & c \\
-            2 & -1 & 0 & d
+            1 & 1 & 0 & b \\
+            1 & 0 & -1 & c \\
+            -2 & -1 & 0 & d
         \end{amatrix}
-        \underset{F_4 + 2F_2}{\stackrel{F_3-F_2}{\longrightarrow}}
+        \underset{F_4 +2F_2}{\stackrel{F_3-F_2}{\longrightarrow}}
         \begin{amatrix}{3}
             0 & 0 & 1 & a \\
-            -1 & 1 & 0 & b \\
-            0 & -1 & -1 & c-b \\
-            0 & 1 & 0 & d+2b
-        \end{amatrix} \\
-        &\underset{F_3 + F_4}{\stackrel{F_2-F_4}{\longrightarrow}}
+            1 & 1 & 0 & b \\
+            0 & -1 & -1 & -b+c \\
+            0 & 1 & 0 & 2b+d
+        \end{amatrix}\\
+        &\underset{F_3+F_4}{\stackrel{F_2-F_4}{\longrightarrow}}
         \begin{amatrix}{3}
             0 & 0 & 1 & a \\
-            -1 & 0 & 0 & -b-d \\
+            1 & 0 & 0 & -b-d \\
             0 & 0 & -1 & b+c+d \\
-            0 & 1 & 0 & d+2b
-        \end{amatrix} \underset{F_3\cdot (-1)}{\stackrel{F_2\cdot (-1)}{\longrightarrow}} 
+            0 & 1 & 0 & 2b+d
+        \end{amatrix}
+        \stackrel{F_3+F_1}{\longrightarrow}
         \begin{amatrix}{3}
             0 & 0 & 1 & a \\
-            1 & 0 & 0 & b+d \\
-            0 & 0 & 1 & -b-c-d \\
-            0 & 1 & 0 & d+2b
-        \end{amatrix} \\
+            1 & 0 & 0 & -b-d \\
+            0 & 0 & 0 & a+b+c+d\\
+            0 & 1 & 0 & 2b+d
+        \end{amatrix}.
     \end{align*}
-    Es decir, el sistema se reduce a 
-    \begin{align*}
-        \lambda &= b+d\\
-        \mu &= 2b+d\\
-        \nu &= a\\
-        \nu&= -b-c-d.
-    \end{align*}
-    Luego el sistema tiene solución si y sólo si $a=-b-c-d$ por lo tanto, el subespacio de polinomios que obtenemos es
+
+    Luego la ecuación (*) solo puede ser satisfecha si y sólo si $a+b+c+d  =0$ por lo tanto, el subespacio de polinomios que obtenemos es
+    \begin{equation*}
+        \{a x^3 + bx^2 + cx + d: \ a+b+c+d = 0, \ a,b,c,d\in\mathbb{R}\}.
+    \end{equation*}
+    También lo podríamos describir de la siguiente manera: 
     \begin{equation*}
         \{(-b-c-d) x^3 + bx^2 + cx + d: \ b,c,d\in\mathbb{R}\}.
     \end{equation*}
+
+    \ref{comb-lineal-pol-b} Debemos encontrar $a$ tal que existan $\lambda,\mu,\nu\in\mathbb{R}$ que satisfacen la ecuación
+    \begin{align*}
+        x&=\lambda p +\mu q +(2x^2+a) \nu \\
+        &= \lambda(x^2+x-2)+\mu(x^2-1)+\nu(2x^2+a)\\
+        &= (\lambda+\mu+2\nu)x^2+\lambda x+(-2\lambda-\mu-a\nu).
+    \end{align*}
+    Claramente $\lambda+\mu+2\nu=0$, $\lambda=1$  y $-2\lambda-\mu-a\nu=0$,  en consecuencia
+    \begin{align*}
+        0&=1+\mu+2\nu\\
+        0&=-2-\mu-a\nu,
+    \end{align*}
+    o, lo que es lo mismo, 
+    \begin{align*}
+        \mu+2\nu&=-1\\
+        -\mu-a\nu&=2,
+    \end{align*}
 
     \qed     
     
