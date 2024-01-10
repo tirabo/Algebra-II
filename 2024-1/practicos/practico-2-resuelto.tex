@@ -245,45 +245,44 @@ La 6º matriz tampoco es MERF pues la fila 2 es nula y la fila 3 no lo es. Luego
 \qed
 
 \item Para cada una de las MERF del ejercicio anterior,
-\begin{enumerate}
-\item
-asumir que es la matriz de un sistema homogéneo, escribir el sistema
-y dar las soluciones del sistema.
-\item
-asumir que es la matriz ampliada de un sistema no homogéneo, escribir el sistema
-y dar las soluciones del sistema.
-\end{enumerate}
+    \begin{enumerate}
+        \item\label{merf-homo} asumir que es la matriz de un sistema homogéneo, escribir el sistema y dar las soluciones del sistema,
+        \item\label{merf-ampliada} asumir que es la matriz ampliada de un sistema no homogéneo, escribir el sistema y dar las soluciones del sistema.
+    \end{enumerate}
 
 \rta Como ya vimos en el ejercicio anterior las MERF son
-$$
-(i)\;\begin{bmatrix}1 & 2 & 0 \\0 & 0 & 1 \end{bmatrix}, \quad
-(ii)\; \begin{bmatrix}1 & 0 & 2 \\0 & 1 & -3 \end{bmatrix}, \quad
-(iii)\;\begin{bmatrix}0 & 1 & 0 \\0 & 0 & 1 \end{bmatrix}, \quad
-(iv)\;\begin{bmatrix}0 & 1 & 0 \\0 & 0 & 0 \end{bmatrix}.$$
+\begin{multicols}{4}
+    \begin{enumerate}[label=\roman*)]
+        \item\label{merf-i} $\begin{bmatrix}1 & 2 & 0 \\0 & 0 & 1 \end{bmatrix}$, \quad
+        \item\label{merf-ii} $\begin{bmatrix}1 & 0 & 2 \\0 & 1 & -3 \end{bmatrix}$, \quad
+        \item\label{merf-iii} $\begin{bmatrix}0 & 1 & 0 \\0 & 0 & 1 \end{bmatrix}$, \quad
+        \item\label{merf-iv} $\begin{bmatrix}0 & 1 & 0 \\0 & 0 & 0 \end{bmatrix}$.
+    \end{enumerate}
+\end{multicols}
 
-\noindent (a) 
+\ref{merf-homo}
 
-(\textit{i}) El sistema homogéneo correspondiente  es 
+\ref{merf-i} El sistema homogéneo correspondiente  es 
 $$\begin{array}{rl}
 x_1 +  2x_2 &= 0 \\ x_3&=0, 
 \end{array}$$
 luego $x_1= -2x_2$ y las soluciones del sistema son $\{ (-2t, t,0): t\in \mathbb R \}$.
 
-(\textit{ii}) El sistema homogéneo correspondiente  es 
+\ref{merf-ii} El sistema homogéneo correspondiente  es 
 $$\begin{array}{rl}
 x_1+ 2x_3 &= 0 \\x_2  -3x_3 &= 0,
 \end{array}$$
 luego $x_1 = -2x_3$, $x_2 = 3x_3$ y las soluciones son $\{ (-2t, 3t,t): t\in \mathbb R \}$.
 
 
-(\textit{iii}) El sistema homogéneo correspondiente es 
+\ref{merf-iii} El sistema homogéneo correspondiente es 
 $$\begin{array}{rl}
 x_2 &= 0 \\ x_3&=0,
 \end{array}$$
 luego  las soluciones son $\{ (t, 0,0): t\in \mathbb R \}$.
 
 
-(\textit{iv}) El sistema homogéneo correspondiente  es 
+\ref{merf-iv} El sistema homogéneo correspondiente  es 
 $$\begin{array}{rl}
 x_2&=0,
 \end{array}$$
@@ -291,38 +290,40 @@ luego  las soluciones son $\{ (t,0,s): t, s\in \mathbb R \}$.
 
 
 \vskip .3cm
-\noindent (b) 
+\ref{merf-ampliada}
 Las matrices ampliadas son
-$$
-(i)\;\begin{amatrix}{2}1 & 2 & 0 \\0 & 0 & 1\end{amatrix}, \quad
-(ii)\;\begin{amatrix}{2}1 & 0 & 2 \\0 & 1 & -3 \end{amatrix},\quad 
-(iii)\;\begin{amatrix}{2}0 & 1 & 0 \\0 & 0 & 1 \end{amatrix}, \quad
-(iv)\;\begin{amatrix}{2}0 & 1 & 0 \\0 & 0 & 0 \end{amatrix}.
-$$
+\begin{multicols}{4}
+    \begin{enumerate}[label=\roman*)]
+        \item\label{merf-amp-i} $\begin{amatrix}{2}1 & 2 & 0 \\0 & 0 & 1 \end{amatrix}$,
+        \item\label{merf-amp-ii} $\begin{amatrix}{2}1 & 0 & 2 \\0 & 1 & -3 \end{amatrix}$,
+        \item\label{merf-amp-iii} $\begin{amatrix}{2}0 & 1 & 0 \\0 & 0 & 1 \end{amatrix}$,
+        \item\label{merf-amp-iv} $\begin{amatrix}{2}0 & 1 & 0 \\0 & 0 & 0 \end{amatrix}$.
+    \end{enumerate}
+\end{multicols}
 
 
 
-(\textit{i}) El sistema no homogéneo correspondiente  es 
+\ref{merf-amp-i} El sistema no homogéneo correspondiente  es 
 $$\begin{array}{rl}
 x_1 +  2x_2 &= 0 \\ 0&=1.
 \end{array}$$
 Por lo tanto no tiene solución.
 
-(\textit{ii}) El sistema  correspondiente  es 
+\ref{merf-amp-ii} El sistema  correspondiente  es 
 $$\begin{array}{rl}
 x_1&= 2 \\x_2 &= -3,
 \end{array}$$
 luego la solución es $(2,-3)$.
 
 
-(\textit{iii}) El sistema  correspondiente  es 
+\ref{merf-amp-iii} El sistema  correspondiente  es 
 $$\begin{array}{rl}
 x_2 &= 0 \\ 0&=1.
 \end{array}$$
 Por lo tanto no tiene solución.
 
 
-(\textit{iv}) El sistema correspondiente  es 
+\ref{merf-amp-iv} El sistema correspondiente  es 
 $$\begin{array}{rl}
 x_2&=0,
 \end{array}$$
@@ -756,53 +757,53 @@ Luego el conjunto de $b_i$'s para los cuales el sistema tiene solución es $\mat
 
 \qed
 
-\item Sea $A=\begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 2 & 3 & 4 & \cdots & 2017 \\ 3&4&5& \cdots & 2018\\ \vdots & &&& \vdots \\ 100 & 101 & 102& \cdots& 2115\end{bmatrix}$.
+\item\label{matriz-2115} Sea $A=\begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 2 & 3 & 4 & \cdots & 2017 \\ 3&4&5& \cdots & 2018\\ \vdots & &&& \vdots \\ 100 & 101 & 102& \cdots& 2115\end{bmatrix}$.
 \begin{enumerate}
-   \item Encontrar todas las soluciones del sistema $AX=0$.
-   \item Encontrar todas las soluciones del sistema $AX=\left[\begin{array}{c}
+   \item\label{matriz-2115-homo} Encontrar todas las soluciones del sistema $AX=0$.
+   \item\label{matriz-2115-no-homo} Encontrar todas las soluciones del sistema $AX=\left[\begin{array}{c}
      1\\\vdots \\1 \end{array}\right]$.
 \end{enumerate}
 
 \rta
 
-\begin{enumerate}
-   \item Reducimos la matriz A aplicando operaciones elementales por filas:
-
-\begin{align*}
-A = &\begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 2 & 3 & 4 & \cdots & 2017 \\ 3&4&5& \cdots & 2018\\ \vdots & &&& \vdots \\ 100 & 101 & 102& \cdots& 2115\end{bmatrix} \stackrel{F_2-F_1}{\stackrel{F_3 - F_1}{\stackrel{\vdots}{\stackrel{F_{100}-F_1}{\longrightarrow}}}}
-\begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 1 & 1 & 1 & \cdots & 1 \\ 2&2&2& \cdots & 2\\ \vdots & &&& \vdots \\ 99 & 99 & 99& \cdots& 99\end{bmatrix}
-\stackrel{F_3-2F_2}{\stackrel{F_4-3F_2}{\stackrel{\vdots}{\stackrel{F_{100}-99F_2}{\longrightarrow}}}} \\
-&\begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 1 & 1 & 1 & \cdots & 1 \\ 0&0&0& \cdots & 0\\ \vdots & &&& \vdots \\ 0 & 0 & 0& \cdots& 0\end{bmatrix}
-\stackrel{F_2 \leftrightarrow F_1}{\longrightarrow}
-\begin{bmatrix}1 & 1 & 1 & \cdots & 1 \\ 1 & 2 & 3 & \cdots & 2016 \\ 0&0&0& \cdots & 0\\ \vdots & &&& \vdots \\ 0 & 0 & 0& \cdots& 0\end{bmatrix}
-\stackrel{F_2-F_1}{\longrightarrow}
-\begin{bmatrix}1 & 1 & 1 & 1 & \cdots & 1 \\ 0 & 1 & 2 & 3 & \cdots & 2015 \\ 0&0&0&0& \cdots & 0\\ \vdots & &&&& \vdots \\ 0 & 0 & 0&0& \cdots& 0\end{bmatrix}
-\stackrel{F_1-F_2}{\longrightarrow} \\
-&\begin{bmatrix}1 & 0 & -1 & -2 & \cdots & -2014 \\ 0 & 1 & 2 & 3 & \cdots & 2015 \\ 0&0&0&0& \cdots & 0\\ \vdots & &&&& \vdots \\ 0 & 0 & 0&0& \cdots& 0\end{bmatrix} = R_A
-\end{align*}
+\ref{matriz-2115-homo} Reducimos la matriz A aplicando operaciones elementales por filas:
+\begin{equation*}
+    A = \begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 2 & 3 & 4 & \cdots & 2017 \\ 3&4&5& \cdots & 2018\\ \vdots & &&& \vdots \\ 100 & 101 & 102& \cdots& 2115\end{bmatrix} \stackrel{F_2-F_1}{\stackrel{F_3 - F_1}{\stackrel{\vdots}{\stackrel{F_{100}-F_1}{\longrightarrow}}}}
+    \begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 1 & 1 & 1 & \cdots & 1 \\ 2&2&2& \cdots & 2\\ \vdots & &&& \vdots \\ 99 & 99 & 99& \cdots& 99\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \stackrel{F_3-2F_2}{\stackrel{F_4-3F_2}{\stackrel{\vdots}{\stackrel{F_{100}-99F_2}{\longrightarrow}}}} 
+    \begin{bmatrix}1 & 2 & 3 & \cdots & 2016 \\ 1 & 1 & 1 & \cdots & 1 \\ 0&0&0& \cdots & 0\\ \vdots & &&& \vdots \\ 0 & 0 & 0& \cdots& 0\end{bmatrix}
+    \stackrel{F_2 \leftrightarrow F_1}{\longrightarrow}
+    \begin{bmatrix}1 & 1 & 1 & \cdots & 1 \\ 1 & 2 & 3 & \cdots & 2016 \\ 0&0&0& \cdots & 0\\ \vdots & &&& \vdots \\ 0 & 0 & 0& \cdots& 0\end{bmatrix}
+\end{equation*}
+\begin{equation*}
+    \stackrel{F_2-F_1}{\longrightarrow}
+    \begin{bmatrix}1 & 1 & 1 & 1 & \cdots & 1 \\ 0 & 1 & 2 & 3 & \cdots & 2015 \\ 0&0&0&0& \cdots & 0\\ \vdots & &&&& \vdots \\ 0 & 0 & 0&0& \cdots& 0\end{bmatrix}
+    \stackrel{F_1-F_2}{\longrightarrow} 
+    \begin{bmatrix}1 & 0 & -1 & -2 & \cdots & -2014 \\ 0 & 1 & 2 & 3 & \cdots & 2015 \\ 0&0&0&0& \cdots & 0\\ \vdots & &&&& \vdots \\ 0 & 0 & 0&0& \cdots& 0\end{bmatrix} = R_A
+\end{equation*}
 
 Luego $R_A$ es la MERF asociada al sistema. El sistema ahora es 
 \begin{equation*}
 \begin{cases}
 x_1 + (-1)x_3 + (-2)x_4 + \cdots + (-2014)x_{2016} = 0\\
-x_2 + 2 x_3 + 3 x_4 + \cdots + 2015 x_{2016} = 0
+x_2 + 2 x_3 + 3 x_4 + \cdots + 2015 x_{2016} = 0,
 \end{cases}
-\quad \Rightarrow \quad
+\end{equation*}
+que es equivalente al sistema
+\begin{equation*}
 \begin{cases}
 x_1 = \sum_{j=3}^{2016} (j-2) x_j \\
 x_2 = \sum_{j=3}^{2016} (1-j) x_j
 \end{cases}
 \end{equation*}
 Por lo tanto,  las soluciones del sistema son:
+$$\{ ( \sum_{j=3}^{2016} (j-2) x_j , \sum_{j=3}^{2016} (1-j) x_j , x_3 , x_4, \cdots, x_{2016}) : x_3,x_4,\cdots, x_{2016} \in \mathbb R \}.$$
 
-\
+\vskip .5cm
 
-$\{ ( \sum_{j=3}^{2016} (j-2) x_j , \sum_{j=3}^{2016} (1-j) x_j , x_3 , x_4, \cdots, x_{2016}) : x_3,x_4,\cdots, x_{2016} \in \mathbb R \}$.
-
-\
-
-\item Podemos repetir la secuencia de operaciones elementales sobre el vector de unos para obtener las soluciones:
-
+\ref{matriz-2115-no-homo} Podemos repetir la secuencia de operaciones elementales sobre el vector de unos para obtener las soluciones:
 \begin{align*}
 &\left[\begin{array}{c} 1\\ 1 \\ 1 \\ \vdots \\1 \end{array}\right]
 \stackrel{F_2-F_1}{\stackrel{F_3 - F_1}{\stackrel{\vdots}{\stackrel{F_{100}-F_1}{\longrightarrow}}}}
@@ -817,41 +818,37 @@ $\{ ( \sum_{j=3}^{2016} (j-2) x_j , \sum_{j=3}^{2016} (1-j) x_j , x_3 , x_4, \cd
 \left[\begin{array}{c} -1\\ 1 \\ 0 \\ \vdots \\0 \end{array}\right]
 \end{align*}
 
-Análogamente al inciso (a), el sistema ahora es:
+Análogamente al inciso \ref{matriz-2115-homo}, el sistema ahora es:
 \begin{equation*}
 \begin{cases}
 x_1 + (-1)x_3 + (-2)x_4 + \cdots + (-2014)x_{2016} = -1\\
-x_2 + 2 x_3 + 3 x_4 + \cdots + 2015 x_{2016} = 1
+x_2 + 2 x_3 + 3 x_4 + \cdots + 2015 x_{2016} = 1,
 \end{cases}
-\quad \Rightarrow \quad
+\end{equation*}
+equivalente a
+\begin{equation*}
 \begin{cases}
 x_1 = -1 + \sum_{j=3}^{2016} (j-2) x_j \\
 x_2 = 1 + \sum_{j=3}^{2016} (1-j) x_j
 \end{cases}
 \end{equation*}
 Por lo tanto,  las soluciones del sistema son:
+$$\{ ( -1+\sum_{j=3}^{2016} (j-2) x_j , 1+\sum_{j=3}^{2016} (1-j) x_j , x_3 , x_4, \cdots, x_{2016}) : x_3,x_4,\cdots, x_{2016} \in \mathbb R \}.$$
 
-\
-
-$\{ ( -1+\sum_{j=3}^{2016} (j-2) x_j , 1+\sum_{j=3}^{2016} (1-j) x_j , x_3 , x_4, \cdots, x_{2016}) : x_3,x_4,\cdots, x_{2016} \in \mathbb R \}$.
-
-\
-
-\end{enumerate}
 
 \qed
 
      \item Sea $A=\begin{bmatrix}3 & -1 & 2 \\2 & 1 & 1 \\1&-3&0\end{bmatrix}$. Reduciendo $A$ por filas,
- \begin{enumerate}
-   \item encontrar todas las soluciones sobre $\mathbb{R}$ y $\mathbb{C}$ del sistema $AX=0$.
-   \item encontrar todas las soluciones sobre $\mathbb{R}$ y $\mathbb{C}$ del sistema $AX=\left[\begin{array}{c}
-     1\\i\\0 \end{array}\right]$.
- \end{enumerate}
+        \begin{enumerate}
+        \item\label{soluciones-R-C-homo} encontrar todas las soluciones sobre $\mathbb{R}$ y $\mathbb{C}$ del sistema $AX=0$.
+        \item\label{soluciones-R-C-no-homo} encontrar todas las soluciones sobre $\mathbb{R}$ y $\mathbb{C}$ del sistema $AX=\left[\begin{array}{c}
+            1\\i\\0 \end{array}\right]$.
+        \end{enumerate}
 
  \rta
 
-\begin{enumerate}
-\item Reducimos la matriz A aplicando operaciones elementales por filas:
+
+\ref{soluciones-R-C-homo} Reducimos la matriz A aplicando operaciones elementales por filas:
 
 \begin{align*}
 A = &\begin{bmatrix}3 & -1 & 2 \\2 & 1 & 1 \\1&-3&0\end{bmatrix}
@@ -875,7 +872,7 @@ Luego el sistema tiene solución trivial $(0,0,0)$ y la MERF es la matriz $\Id_3
 
 \vskip .4cm
 
-\item Análogamente a lo realizado en el  ejercicio $(7.b)$, podemos repetir la secuencia de operaciones elementales sobre el vector $\left[\begin{array}{c}1\\i\\0 \end{array}\right]$ :
+\ref{soluciones-R-C-no-homo} Análogamente a lo realizado en el  ejercicio \ref{matriz-2115} \ref{matriz-2115-no-homo} podemos repetir la secuencia de operaciones elementales sobre el vector $\left[\begin{array}{c}1\\i\\0 \end{array}\right]$ :
 
 \begin{align*}
 & \left[\begin{array}{c}1\\i\\0 \end{array}\right]
@@ -897,7 +894,6 @@ Luego el sistema tiene solución trivial $(0,0,0)$ y la MERF es la matriz $\Id_3
 
 En este punto, si bien las operaciones propiamente dichas sólo involucraron números reales, tenemos que la solución tiene números complejos, por lo que el sistema no tiene solución en $\mathbb{R}$, pero si tiene solución en $\mathbb{C}$, y es $X = \left[\begin{array}{c} -\frac{1}{2}+i \\ -\frac{1}{6}+\frac{1}{3}i \\ \frac{7}{6}-\frac{4}{3} i \end{array}\right]$ 
 
-\end{enumerate}
 
 \qed
 
