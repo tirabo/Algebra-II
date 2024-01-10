@@ -92,8 +92,8 @@ $
 \begin{enumerate}[topsep=5pt,itemsep=5pt]
  \item\label{ejemplos 2x2-a} $A^2=0$ (dar dos ejemplos).
  \item\label{ejemplos 2x2-b} $AB\neq BA$.
- \item\label{ejemplos 2x2-c} $A^2=-\operatorname{I}_2$.
- \item\label{ejemplos 2x2-d} $A^2=A\neq\operatorname{I}_2$.
+ \item\label{ejemplos 2x2-c} $A^2=-\Id_2$.
+ \item\label{ejemplos 2x2-d} $A^2=A\neq\Id_2$.
 \end{enumerate}
 \end{multicols}
 \rta
@@ -160,7 +160,7 @@ $
 \qed
 
 
-\item\label{2x2 central}  Sea $A \in\mathbb{R}^{2\times 2}$ tal que $AB=BA$ para toda $B\in\mathbb{R}^{2\times 2}$. Probar que $A$ es un múltiplo de $\operatorname{I}_2$.
+\item\label{2x2 central}  Sea $A \in\mathbb{R}^{2\times 2}$ tal que $AB=BA$ para toda $B\in\mathbb{R}^{2\times 2}$. Probar que $A$ es un múltiplo de $\Id_2$.
 \rta Sea
 \begin{equation*}
     A = \begin{bmatrix} a_{11} & a_{12}\\ a_{21} & a_{22} \end{bmatrix},
@@ -196,7 +196,7 @@ Como $AE_{12} = E_{12}A$, tenemos que $a_{11} = a_{22}$.
 Ya no hace falta hacer más ensayos, pues hemos probado que $a_{12} = a_{21} =0$ y $a_{11} = a_{22}$, es decir $A$ es una matriz escalar y  al ser escalar sabemos que conmuta con todas las matrices. 
 
 \vskip .2cm
-\noindent \textbf{Observación.} El resultado es cierto también para matrices $n \times  n$ con $n \in \mathbb N$. Es decir,  si $A \in\mathbb{R}^{n\times n}$ tal que $AB=BA$ para toda $B\in\mathbb{R}^{n\times n}$,  entonces  $A$ es un múltiplo de $\operatorname{I}_n$. La estrategia para probar este resultado es la misma que para el caso $2 \times 2$: probar con las matrices $E_{ij}$ que son aquellas que tiene un 1 en la entrada $ij$ y  0  en las demás entradas. 
+\noindent \textbf{Observación.} El resultado es cierto también para matrices $n \times  n$ con $n \in \mathbb N$. Es decir,  si $A \in\mathbb{R}^{n\times n}$ tal que $AB=BA$ para toda $B\in\mathbb{R}^{n\times n}$,  entonces  $A$ es un múltiplo de $\Id_n$. La estrategia para probar este resultado es la misma que para el caso $2 \times 2$: probar con las matrices $E_{ij}$ que son aquellas que tiene un 1 en la entrada $ij$ y  0  en las demás entradas. 
 
 \qed
 
@@ -374,21 +374,21 @@ Veamos la segunda afirmación de (b):
 
 \begin{align*}
     [A|\operatornamewithlimits{Id}] &= 
-    \begin{bmatrix}3 & -1 & 2&\bigm| &1 &0 & 0\\2 & 1 & 1&\bigm|& 0 &1 &0 \\1&-3&0&\bigm| &0 &0 &1\end{bmatrix}
+    \left[\begin{array}{ccc|ccc}3 & -1 & 2 &1 &0 & 0\\2 & 1 & 1& 0 &1 &0 \\1&-3&0 &0 &0 &1\end{array}\right]
     \stackrel{F_1 \leftrightarrow F_3}{\longrightarrow}
-    \begin{bmatrix}1&-3&0&\bigm| &0 &0 &1\\2 & 1 & 1&\bigm|& 0 &1 &0 \\3 & -1 & 2&\bigm| &1 &0 & 0\end{bmatrix} \\
+    \left[\begin{array}{ccc|ccc}1&-3&0 &0 &0 &1\\2 & 1 & 1& 0 &1 &0 \\3 & -1 & 2 &1 &0 & 0\end{array}\right] \\
     &\stackrel{F_2 - 2 F_1}{\stackrel{F_3 - 3 F_1}{\longrightarrow}}
-    \begin{bmatrix} 1 & -3 & 0  &\bigm|&0 &0 &1\\ 0 & 7 & 1 &\bigm|& 0 &1 &-2 \\ 0 & 8 & 2 &\bigm| &1 &0 & -3\end{bmatrix}
+    \left[\begin{array}{ccc|ccc} 1 & -3 & 0  &0 &0 &1\\ 0 & 7 & 1 & 0 &1 &-2 \\ 0 & 8 & 2  &1 &0 & -3\end{array}\right]
     \stackrel{F_3-F_2}{\longrightarrow}
-    \begin{bmatrix} 1 & -3 & 0  &\bigm|&0 &0 &1\\ 0 & 7 & 1 &\bigm|& 0 &1 &-2 \\  0 & 1 & 1  &\bigm| &1 &-1 & -1\end{bmatrix}\\
+    \left[\begin{array}{ccc|ccc} 1 & -3 & 0  &0 &0 &1\\ 0 & 7 & 1 & 0 &1 &-2 \\  0 & 1 & 1   &1 &-1 & -1\end{array}\right]\\
     &\stackrel{F_3 \leftrightarrow F_2}{\longrightarrow} 
-    \begin{bmatrix} 1 & -3 & 0  &\bigm|&0 &0 &1\\  0 & 1 & 1  &\bigm| &1 &-1 & -1\\ 0 & 7 & 1 &\bigm|& 0 &1 &-2 \end{bmatrix}
+    \left[\begin{array}{ccc|ccc} 1 & -3 & 0  &0 &0 &1\\  0 & 1 & 1   &1 &-1 & -1\\ 0 & 7 & 1 & 0 &1 &-2 \end{array}\right]
     \stackrel{F_1 + 3 F_2}{\stackrel{F_3-7F_2}{\longrightarrow}}
-    \begin{bmatrix} 1 & 0 & 3 &\bigm|&3 & -3 &-2\\ 0 & 1 & 1 &\bigm| &1 &-1 & -1\\ 0 & 0 & -6 &\bigm|&-7&8&5\end{bmatrix} \\
+    \left[\begin{array}{ccc|ccc} 1 & 0 & 3 &3 & -3 &-2\\ 0 & 1 & 1  &1 &-1 & -1\\ 0 & 0 & -6 &-7&8&5\end{array}\right] \\
     &\stackrel{F_3 (-\frac{1}{6}) }{\longrightarrow}
-    \begin{bmatrix} 1 & 0 & 3 &\bigm|&3 & -3 &-2\\ 0 & 1 & 1 &\bigm| &1 &-1 & -1\\ 0 & 0 & 1 &\bigm|&7/6&-4/3&-5/6\end{bmatrix} \\
+    \left[\begin{array}{ccc|ccc} 1 & 0 & 3 &3 & -3 &-2\\ 0 & 1 & 1  &1 &-1 & -1\\ 0 & 0 & 1 &7/6&-4/3&-5/6\end{array}\right]\\
     &\stackrel{F_1 - 3 F_3}{\stackrel{F_2 - F_3 }{\longrightarrow}}
-    \begin{bmatrix} 1 & 0 & 0&\bigm|& -1/2&1&1/2\\ 0 & 1 & 0&\bigm|&-1/6 &1/3&-1/6\\ 0 & 0 & 1&\bigm|&7/6&-4/3&-5/6 \end{bmatrix}
+    \left[\begin{array}{ccc|ccc} 1 & 0 & 0& -1/2&1&1/2\\ 0 & 1 & 0&-1/6 &1/3&-1/6\\ 0 & 0 & 1&7/6&-4/3&-5/6 \end{array}\right]
     \end{align*}
     Luego  
     \begin{equation*}
@@ -450,7 +450,7 @@ Finalmente, la última matriz  tiene una MERF con una fila nula. Por lo tanto no
 
 
 \item Sea $A$ la primera matriz del ejercicio anterior.
-Hallar matrices elementales $E_1,E_2,\dots,E_k$ tales que $E_kE_{k-1}\cdots E_2E_1A=\operatorname{I}_3$.
+Hallar matrices elementales $E_1,E_2,\dots,E_k$ tales que $E_kE_{k-1}\cdots E_2E_1A=\Id_3$.
 \rta en  la primera matriz del ejercicio \ref{ej:inversas} realizamos 10 operaciones elementales de fila para llevar la matriz a la identidad. Si llamamos a la matriz $A$, entonces
 $$
 \Id_3= E_{10}E_9E_8E_7E_6E_5E_4E_3E_2E_1A,
@@ -474,7 +474,7 @@ $$
 $$
 $$
     E_9 = \begin{bmatrix} 1&0&-3 \\    0&1&0 \\ 0&0&1\end{bmatrix}\; (F_1-3F_3),\qquad 
-    E_{10} = \begin{bmatrix} 1&0&0 \\    0&1&-1 \\ 0&0&1\end{bmatrix}\; (F_2-F_3
+    E_{10} = \begin{bmatrix} 1&0&0 \\    0&1&-1 \\ 0&0&1\end{bmatrix}\; (F_2-F_3)
 $$
 
 \qed
@@ -490,14 +490,14 @@ $$
 
 
 \item\label{nilpotene - id} Una matriz $A\in\mathbb{R}^{n\times n}$ se dice \emph{nilpotente} si $A^k=0$ para algún $k\in\mathbb{N}$.
-Probar que si una matriz $A$ es nilpotente, entonces  $\operatorname{I}_n - A$  es invertible.
-\rta supongamos que $A^k=0$ para algún $k\in\mathbb{N}$, y probemos que: $$(\operatorname{I}_n - A)^{-1} = \operatorname{I}_n + A + A^2 +\cdots + A^{k-1} = \sum_{i=0}^{k-1} A^{i}.$$
+Probar que si una matriz $A$ es nilpotente, entonces  $\Id_n - A$  es invertible.
+\rta supongamos que $A^k=0$ para algún $k\in\mathbb{N}$, y probemos que: $$(\Id_n - A)^{-1} = \Id_n + A + A^2 +\cdots + A^{k-1} = \sum_{i=0}^{k-1} A^{i}.$$
 En efecto,
 \begin{align*}
-& (\operatorname{I}_n - A)(\operatorname{I}_n + A + A^2 +\cdots + A^{k-1})\\
-&= \operatorname{I}_n (\operatorname{I}_n + A + A^2 +\cdots + A^{k-1}) - A (\operatorname{I}_n + A + A^2 +\cdots + A^{k-1})\\
-&= (\operatorname{I}_n + A + A^2 +\cdots + A^{k-1}) - (A + A^2 + A^3 +\cdots + A^{k})\\
-&= \operatorname{I}_n - A^{k} = \operatorname{I}_n - 0 = \operatorname{I}_n.
+& (\Id_n - A)(\Id_n + A + A^2 +\cdots + A^{k-1})\\
+&= \Id_n (\Id_n + A + A^2 +\cdots + A^{k-1}) - A (\Id_n + A + A^2 +\cdots + A^{k-1})\\
+&= (\Id_n + A + A^2 +\cdots + A^{k-1}) - (A + A^2 + A^3 +\cdots + A^{k})\\
+&= \Id_n - A^{k} = \Id_n - 0 = \Id_n.
 \end{align*}
 
 \qed
