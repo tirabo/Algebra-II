@@ -57,51 +57,51 @@
 \end{center}
 Tenemos entonces las $9$ incógnitas que debemos resolver y la información del Suko original nos dice que se deben cumplir las siguientes ecuaciones:
 \begin{align}
-&x_1 + x_2 +x_4 +x_5 =12,  \\
-&x_2+ x_3+x_5 +x_6 = 19, \\
-&x_4 +x_5 +x_7 + x_8 = 23, \\
-&x_5 +x_6 +x_8 + x_9 = 26, \\
-&x_4 + x_5 = 9, \\
-&x_1+x_2 +x_3 +x_6 = 14, \\
-&x_7+ x_8 + x_9 = 22
+&x_1 + x_2 +x_4 +x_5 =12, \label{suko-1} \\
+&x_2+ x_3+x_5 +x_6 = 19, \label{suko-2}\\
+&x_4 +x_5 +x_7 + x_8 = 23, \label{suko-3}\\
+&x_5 +x_6 +x_8 + x_9 = 26, \label{suko-4}\\
+&x_4 + x_5 = 9, \label{suko-5}\\
+&x_1+x_2 +x_3 +x_6 = 14, \label{suko-6}\\
+&x_7+ x_8 + x_9 = 22\label{suko-7}
 \end{align}
 
 
-Primero vamos a tratar de resolver el sistema de ecuaciones. Podríamos plantear  la matriz ampliada del sistema y  reducir la matriz, pero en este caso va a resultar más corto trabajar con las ecuaciones directamente. Hay 9 incógnitas y 7 ecuaciones, entonces en general es razonable que queden 7 variables dependientes y 2 variables libres. Con esto en mente trataremos de despejar todo en función de las variables $x_1$ y $x_3$ (esto fue elegido arbitrariamente). 
+Primero vamos a tratar de resolver el sistema de ecuaciones. Podríamos plantear  la matriz ampliada del sistema y  reducir la matriz, pero en este caso va a resultar más corto trabajar con las ecuaciones directamente. Hay $9$ incógnitas y $7$ ecuaciones, entonces en general es razonable que queden $7$ variables dependientes y $2$ variables libres. Con esto en mente trataremos de despejar todo en función de las variables $x_1$ y $x_3$ (esto fue elegido arbitrariamente). 
 
 
-Como $x_4 + x_5 = 9$ $\;\stackrel{(1)}{\Rightarrow}\;$ $x_1 + x_2 + 9 =12$,  es decir $x_1 + x_2  =3$ o \colorbox{green!20}{$x_2 = 3 -x_1$ ($a$)}.
+Por \eqref{suko-5}, $x_4 + x_5 = 9$ $\;\stackrel{\eqref{suko-1}}{\Rightarrow}\;$ $x_1 + x_2 + 9 =12$,  es decir $x_1 + x_2  =3$ o \colorbox{green!20}{$x_2 = 3 -x_1$ ($a$)}.
 
 
-Como $x_4 + x_5 = 9$ 
-$\;\stackrel{(3)}{\Rightarrow}\;$ 
+Por \eqref{suko-5}, $x_4 + x_5 = 9$ 
+$\;\stackrel{\eqref{suko-3}}{\Rightarrow}\;$ 
 $9+x_7 + x_8 = 23$ 
 $\;\stackrel{}{\Rightarrow}\;$
 $x_7 + x_8 = 14$ 
-$\;\stackrel{(7)}{\Rightarrow}\;$
+$\;\stackrel{\eqref{suko-7}}{\Rightarrow}\;$
 $14 + x_9 = 22$ $\;\stackrel{}{\Rightarrow}\;$ \colorbox{green!20}{$x_9 = 8$ ($b$)}.
 
-Ahora, como $x_1 + x_2 = 3$ $\;\stackrel{(6)}{\Rightarrow}\;$ $3 +x_3 +x_6 = 14$,  es decir $x_3 +x_6 = 11$ o \colorbox{green!20}{$x_6 = 11 -x_3$ ($c$)}. 
+Por ($a$), $x_1 + x_2 = 3$ $\;\stackrel{\eqref{suko-6}}{\Rightarrow}\;$ $3 +x_3 +x_6 = 14$,  es decir $x_3 +x_6 = 11$ o \colorbox{green!20}{$x_6 = 11 -x_3$ ($c$)}. 
 
-Si en la ecuación (2) reemplazamos $x_2$ y $x_6$, obtenemos
+Si en la ecuación \eqref{suko-2} reemplazamos $x_2$ y $x_6$, obtenemos
 $$
 19 = x_2+ x_3+x_5 +x_6 = (3 -x_1) + x_3 + x_5 +(11 -x_3) = 14 -x_1 +x_5,
 $$
 o \colorbox{green!20}{$x_5 = 5 +x_1$ ($d$)}.
 
-Con todo lo que hemos averiguado hacemos reemplazos en (4):
+Con todo lo que hemos averiguado hacemos reemplazos en \eqref{suko-4}:
 $$
 26 = x_5 +x_6 +x_8 + x_9 = ( 5 +x_1) +( 11 -x_3) +x_8 + 8 = 24 +x_1 - x_3 + x_8, 
 $$ 
 luego \colorbox{green!20}{$x_8 = 2 -x_1 + x_3$ ($e$)}.
 
-De la fórmula (7), de ($e$) y de ($b$), obtenemos 
+De la fórmula \eqref{suko-7}, de ($e$) y de ($b$), obtenemos 
 $$
 22 = x_7+ x_8 + x_9 = x_7+ (2 -x_1 + x_3) + 8 =  10 + x_7 - x_1 +x_3, 
 $$
 luego \colorbox{green!20}{$x_7 = 12 + x_1 - x_3$ ($f$)}.
 
-Utilizando ($d$) y la fórmula (5):
+Utilizando ($d$) y la fórmula \eqref{suko-5}:
 
 
 $$
@@ -332,57 +332,58 @@ luego  las soluciones son $\{ (t,0): t\in \mathbb R \}$.
 \qed
 
 \item\label{sistemas homogeneos} Para cada uno de los siguientes sistemas de ecuaciones, describir explícita o paramétricamente todas las soluciones e indicar cuál es la MERF asociada al sistema.
-
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}
-\item $\begin{cases}
+\item\label{sistemas-homogeneos-merf-a} $\begin{cases}
  -x - y + 4z = 0\\
  x+3y+8z = 0\\
  x+2y + 5z = 0
 \end{cases}$
-\item $\begin{cases}
+\item\label{sistemas-homogeneos-merf-b} $\begin{cases}
  x - 3y + 5z = 0\\
  2x-3y+z = 0\\
  -y + 3z = 0
 \end{cases}$
+\end{enumerate}
+\end{multicols}
 
-\item $\begin{cases}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \addtocounter{enumii}{2}
+\item\label{sistemas-homogeneos-merf-c} $\begin{cases}
 x-z+2t = 0\\
 -x+2y-z+2t = 0\\
 -x+y = 0
 \end{cases}$
-
+\item\label{sistemas-homogeneos-merf-d} $\begin{cases}
+    -x - y + 4z = 1\\
+    x+3y+8z = 3\\
+    x+2y + 5z = 1
+   \end{cases}$
 \end{enumerate}
 \end{multicols}
 
-\begin{multicols}{3}
-\begin{enumerate}
-
-\item[(d)] $\begin{cases}
- -x - y + 4z = 1\\
- x+3y+8z = 3\\
- x+2y + 5z = 1
-\end{cases}$
-
-\item[(e)] $\begin{cases}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \addtocounter{enumii}{4}
+\item\label{sistemas-homogeneos-merf-e} $\begin{cases}
  x - 3y + 5z = 1\\
  2x-3y+z = 3\\
  -y + 3z = 1
 \end{cases}$
-
-
-\item[(f)] $\begin{cases}
+\item\label{sistemas-homogeneos-merf-f} $\begin{cases}
 x-z+2t = 1\\
 -x+2y-z+2t = 3\\
 -x+y = 1
 \end{cases}$
-
 \end{enumerate}
 \end{multicols}
 
 \rta
 
-(a) La matriz asociada a este sistema es la matriz $A_1$ que escribimos más abajo y a la cual luego reducimos a una MERF.
+\vskip .5cm
+
+\ref{sistemas-homogeneos-merf-a} La matriz asociada a este sistema es la matriz $A_1$ que escribimos más abajo y a la cual luego reducimos a una MERF.
 
 
 \begin{align*}
@@ -415,7 +416,10 @@ A_1 &= \left[\begin{array}{ccc}
 Luego el sistema tiene solución trivial $(0,0,0)$ y la MERF es la matriz $\Id_3$.
 
 \vskip .3cm
-(b)
+
+\vskip .5cm
+
+\ref{sistemas-homogeneos-merf-b}
 \begin{align*}
 A_2 &= \left[\begin{array}{ccc}
  1&-3&5\\
@@ -453,7 +457,12 @@ $$
 Por lo tanto las soluciones del sistema son $\{(4t,3t,t): t\in \mathbb R \}$.
 
 \vskip .3cm
-(c) Este es un sistema homogéneo de 3 ecuaciones con  4 incógnitas ($x$, $y$, $z$, $t$). La matriz del sistema es la $A_3$ que mostramos en la siguiente fila y luego la reducimos a MERF:
+
+\vskip .5cm
+
+
+\ref{sistemas-homogeneos-merf-c} Este es un sistema homogéneo de 3 ecuaciones con  4 incógnitas ($x$, $y$, $z$, $t$). La matriz del sistema es la $A_3$ que mostramos en la siguiente fila y luego la reducimos a MERF:
+
 \begin{align*}
 A_3 &= \begin{bmatrix}
  1&0&-1&2\\
@@ -489,7 +498,7 @@ Por lo tanto,  las soluciones del sistema son  $\{ (u -2v, u-2v,u,v): u,v\in \ma
 
 
 \vskip .3cm
-(d) Este es un sistema no homogéneo de 3 ecuaciones y 3 incógnitas. La matriz ampliada del sistema es $[A_1|Y]$, donde $A_1$ es la matriz del inciso (a). Luego  para reducir $A_1$  a MERF hacemos los mismos pasos que en (a):
+\ref{sistemas-homogeneos-merf-d} Este es un sistema no homogéneo de 3 ecuaciones y 3 incógnitas. La matriz ampliada del sistema es $[A_1|Y]$, donde $A_1$ es la matriz del inciso \ref{sistemas-homogeneos-merf-a}. Luego  para reducir $A_1$  a MERF hacemos los mismos pasos que en \ref{sistemas-homogeneos-merf-a}:
 \begin{align*}
 [A_1|Y] &= \left[\begin{array}{ccc|c}
  -1&-1&4&1\\
@@ -521,7 +530,7 @@ Luego la MERF asociada al sistema es $\Id_3$ (con en (a),  obviamente) y  la sol
 
 
 \vskip .3cm
-(e) Este es un sistema no homogéneo de 3 ecuaciones y 3 incógnitas. La matriz ampliada del sistema es $[A_2|Y]$ donde $A_2$ es la matriz del inciso (b). Luego  para reducir $A_2$  a MERF hacemos los mismos pasos que en (b):
+\ref{sistemas-homogeneos-merf-e} Este es un sistema no homogéneo de 3 ecuaciones y 3 incógnitas. La matriz ampliada del sistema es $[A_2|Y]$ donde $A_2$ es la matriz del inciso \ref{sistemas-homogeneos-merf-b}. Luego  para reducir $A_2$  a MERF hacemos los mismos pasos que en \ref{sistemas-homogeneos-merf-b}:
 \begin{align*}
 [A_2|Y] &= \left[\begin{array}{ccc|c}
  1&-3&5&1\\
@@ -549,7 +558,7 @@ Luego la MERF asociada al sistema es $R_2$ del ejercicio (b)  y  como en el nuev
 
 
 \vskip .3cm
-(f) Este es un sistema  no homogéneo de 3 ecuaciones con  4 incógnitas. La matriz ampliada del sistema es $[A_3|Y]$ donde $A_3$ es la matriz del inciso (c). Luego  para reducir $A_3$  a MERF hacemos los mismos pasos que en (c):
+\ref{sistemas-homogeneos-merf-f} Este es un sistema  no homogéneo de 3 ecuaciones con  4 incógnitas. La matriz ampliada del sistema es $[A_3|Y]$ donde $A_3$ es la matriz del inciso \ref{sistemas-homogeneos-merf-c}. Luego  para reducir $A_3$  a MERF hacemos los mismos pasos que en \ref{sistemas-homogeneos-merf-c}:
 \begin{align*}
 [A_3|Y] &= \left[\begin{array}{cccc|c}
  1&0&-1&2&1\\
@@ -589,20 +598,21 @@ Por lo tanto,  las soluciones del sistema son  $\{ (u -2v +2, u-2v +2 ,u,v): u,v
 
 \item\label{sistemas con soluciones} Para cada uno de los siguientes sistemas, describir implícitamente el conjunto de los vectores $(b_1,b_2,b_3)$
 o $(b_1,b_2,b_3,b_4)$ para los cuales cada sistema tiene solución.
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}
-\item $\begin{cases}
+\item\label{sistemas-con-soluciones-a} $\begin{cases}
  x - 3y + 5z = b_1\\
  2x-3y+z = b_2\\
  -y + 3z = b_3
 \end{cases}$
-\item $\begin{cases}
+\item\label{sistemas-con-soluciones-b}
+$\begin{cases}
 x-z+2t = b_1\\
 -x+2y-z+2t = b_2\\
 -x+y = b_3\\
 y-z+2t=b_4
 \end{cases}$
-\item $\begin{cases}
+\item\label{sistemas-con-soluciones-c}  \vskip .4cm  $\begin{cases}
  - x - y + 4 z = b_1\\
  x+3y+8z = b_2\\
  x + 2y + 5z = b_3
@@ -612,7 +622,9 @@ y-z+2t=b_4
 
 \rta
 
-(a) La matriz ampliada del sistema es  
+
+
+\ref{sistemas-con-soluciones-a} La matriz ampliada del sistema es  
 \begin{equation*}
 [A_2|Y] = \left[\begin{array}{ccc|c}
  1&-3&5&b_1\\
@@ -620,35 +632,46 @@ y-z+2t=b_4
  0&-1&3&b_3\end{array}\right] .
 \end{equation*}
 Observar que $A_2$ es la misma matriz que la de los ejercicios (\ref{sistemas homogeneos}) b) y e) y, por lo tanto, los pasos para reducir la matriz asociada al sistema serán los mismos. 
-\begin{align*}
-[A_2|Y] &= \left[\begin{array}{ccc|c}
- 1&-3&5&b_1\\
- 2&-3&1&b_2\\
- 0&-1&3&b_3\end{array}\right] \stackrel{F_2-2F_1}{\longrightarrow}   
- \left[\begin{array}{ccc|c}
- 1&-3&5&b_1\\
- 0&3&-9&b_2-2b_1\\
- 0&-1&3&b_3\end{array}\right]\stackrel{F_1-3F_3}{\stackrel{F_2+3F_3}{\longrightarrow}}  \\
- &\left[\begin{array}{ccc|c}
- 1&0&-4&b_1-3b_3\\
- 0&0&0&-2b_1 +b_2 + 3b_3\\
- 0&-1&3&b_3\end{array}\right] 
- {\stackrel{-F_3}{\longrightarrow}}  \quad
- \left[\begin{array}{ccc|c}
- 1&0&-4&b_1-3b_3\\
- 0&0&0&-2b_1 +b_2 + 3b_3\\
- 0&1&-3&-b_3\end{array} \right]
-  \\
-& {\stackrel{F_2 \leftrightarrow F_3}{\longrightarrow}}   
-  \left[\begin{array}{ccc|c}
-1&0&-4&b_1-3b_3\\
- 0&1&-3&-b_3\\
- 0&0&0&-2b_1 +b_2 + 3b_3 \end{array}\right].
-\end{align*}
+\begin{equation*}
+[A_2|Y] = 
+    \left[\begin{array}{ccc|c}
+        1&-3&5&b_1\\
+        2&-3&1&b_2\\
+        0&-1&3&b_3
+    \end{array}\right] 
+    \stackrel{F_2-2F_1}{\longrightarrow}   
+    \left[\begin{array}{ccc|c}
+        1&-3&5&b_1\\
+        0&3&-9&b_2-2b_1\\
+        0&-1&3&b_3
+    \end{array}\right]
+    \stackrel{F_1-3F_3}{\stackrel{F_2+3F_3}{\longrightarrow}}  
+\end{equation*}
+\begin{equation*}
+    \left[\begin{array}{ccc|c}
+        1&0&-4&b_1-3b_3\\
+        0&0&0&-2b_1 +b_2 + 3b_3\\
+        0&-1&3&b_3
+    \end{array}\right] 
+    \stackrel{-F_3}{\longrightarrow}  \quad
+    \left[\begin{array}{ccc|c}
+        1&0&-4&b_1-3b_3\\
+        0&0&0&-2b_1 +b_2 + 3b_3\\
+        0&1&-3&-b_3
+    \end{array} \right]
+\end{equation*}
+\begin{equation*}
+    \stackrel{F_2 \leftrightarrow F_3}{\longrightarrow}
+    \left[\begin{array}{ccc|c}
+        1&0&-4&b_1-3b_3\\
+        0&1&-3&-b_3\\
+        0&0&0&-2b_1 +b_2 + 3b_3 
+    \end{array}\right].
+\end{equation*}
 Luego el conjunto de $b_i$'s para los cuales el sistema tiene solución es $$\{(b_1,b_2,b_3)\in \mathbb R^3: -2b_1 +b_2 + 3b_3 = 0\}.$$
 
 \vskip .3cm
-(b) La matriz ampliada del sistema es  
+\ref{sistemas-con-soluciones-b} La matriz ampliada del sistema es  
 \begin{equation*}
 [B|Y] = \left[\begin{array}{cccc|c}
  1&0&-1&2&b_1\\
@@ -689,7 +712,7 @@ Luego el conjunto de $b_i$'s para los cuales el sistema tiene solución es
 $$\{(b_1,b_2,b_3,b_4)\in \mathbb R^3: \frac12b_1 -\frac12b_2 +b_3 = 0 \wedge -\frac12b_1 -\frac12b_2+b_4=0\}.$$
 
 \vskip .3cm
-(c) La matriz ampliada del sistema es  
+\ref{sistemas-con-soluciones-c} La matriz ampliada del sistema es  
 \begin{equation*}
 [A_1|Y] = \left[\begin{array}{ccc|c}
  -1&-1&4&b_1\\
