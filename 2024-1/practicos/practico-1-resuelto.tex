@@ -211,11 +211,11 @@ $= (x_1,0,0)+(0,x_2,0)+(0,0,x_3) = (x_1+0+0,0+x_2+0,0+0+x_3) = (x_1,x_2,x_3) = \
 
 \item Probar, usando sólo las propiedades \textbf{P1}, \textbf{P2}, y \textbf{P3} del producto escalar, que dados $v, w, u \in \mathbb R^n$ y $\lambda_1, \lambda_2 \in \mathbb R$, 
 \begin{enumerate}
-    \item se cumple:
+    \item\label{prop-prod-esc-a} se cumple:
     \begin{equation*}
     \langle \lambda_1 v + \lambda_2 w , u  \rangle =  \lambda_1\langle v , u  \rangle +   \lambda_2\langle w , u  \rangle.
     \end{equation*}
-    \item Si $\langle v , w  \rangle =0$, es decir si $v$ y $w$ son ortogonales,  entonces
+    \item\label{prop-prod-esc-b}  Si $\langle v , w  \rangle =0$, es decir si $v$ y $w$ son ortogonales,  entonces
     \begin{equation*}
         \langle \lambda_1 v + \lambda_2 w ,  \lambda_1 v + \lambda_2 w   \rangle =
         \lambda_1^2 \langle  v ,  v  \rangle + \lambda_2^2 \langle w,w  \rangle.
@@ -224,18 +224,16 @@ $= (x_1,0,0)+(0,x_2,0)+(0,0,x_3) = (x_1+0+0,0+x_2+0,0+0+x_3) = (x_1,x_2,x_3) = \
 
 \rta 
 
-\begin{enumerate}
-\item $\langle \lambda_1 v + \lambda_2 w , u  \rangle \overset{\textbf{P2}}{=} \langle u , \lambda_1 v \rangle + \langle u , \lambda_2 w \rangle \overset{\textbf{P3}}{=} \lambda_1 \langle u,v \rangle + \lambda_2 \langle u,w \rangle \overset{\textbf{P1}}{=} \lambda_1 \langle v,u \rangle + \lambda_2 \langle w,u \rangle$
 
-\item $ \langle \lambda_1 v + \lambda_2 w, \lambda_1 v + \lambda_2 w \rangle \overset{\textbf{P2}}{=} \langle \lambda_1 v + \lambda_2 w, \lambda_1 v \rangle + \langle \lambda_1 v + \lambda_2 w, \lambda_2 w \rangle \overset{\textbf{P2}}{=} $
+\noindent\ref{prop-prod-esc-a} $\langle \lambda_1 v + \lambda_2 w , u  \rangle \overset{\textbf{P2}}{=} \langle u , \lambda_1 v \rangle + \langle u , \lambda_2 w \rangle \overset{\textbf{P3}}{=} \lambda_1 \langle u,v \rangle + \lambda_2 \langle u,w \rangle \overset{\textbf{P1}}{=} \lambda_1 \langle v,u \rangle + \lambda_2 \langle w,u \rangle$
+
+\noindent\ref{prop-prod-esc-b} $ \langle \lambda_1 v + \lambda_2 w, \lambda_1 v + \lambda_2 w \rangle \overset{\textbf{P2}}{=} \langle \lambda_1 v + \lambda_2 w, \lambda_1 v \rangle + \langle \lambda_1 v + \lambda_2 w, \lambda_2 w \rangle \overset{\textbf{P2}}{=} $
 
 $ \overset{\textbf{P2}}{=} \langle \lambda_1 v , \lambda_1 v \rangle + \langle \lambda_1 v, \lambda_2 w \rangle + \langle \lambda_2 w, \lambda_1 v \rangle + \langle \lambda_2 w, \lambda_2 w \rangle \overset{\textbf{P3}}{=} $
 
 $ \overset{\textbf{P3}}{=} \lambda_1^2 \langle v , v \rangle + \lambda_1 \lambda_2 \langle v, w \rangle + \lambda_2 \lambda_1 \langle w, v \rangle + \lambda_2^2 \langle w, w \rangle \overset{\textbf{HIP}}{=} \lambda_1^2 \langle v , v \rangle + \lambda_2^2 \langle w, w \rangle $
 
 En el último paso se utilizó la hipótesis $\langle v , w  \rangle =0$.
-
-\end{enumerate}
 
 \qed
 
