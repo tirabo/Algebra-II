@@ -543,13 +543,15 @@ Es decir $v +tw$ es solución de $AX=Y+tZ$.
 \item \label{sist-por-invertible}Sean $A$ una matriz invertible $n\times n$, y $B$ una matriz $n\times m$.  Probar que los sistemas $BX=Y$ y $ABX=AY$ tienen las mismas soluciones.
 \rta
 \begin{align*}
-    \text{$v$ es vsol. de $BX=Y$} \; &\Rightarrow \; Bv = Y&& \\
+    \text{$v$ es sol.} &\text{ de $BX=Y$} \; \\
+    &\Rightarrow \; Bv = Y&& \\
     &\Rightarrow \;  ABv = AY &&(\text{mult. por $A$  a izq.}) \\
     &\Rightarrow \;   \text{$v$ es sol. de $ABX=AY$}&&
 \end{align*}
 Esta ``ida'' vale para cualquier matriz $A$,  sea invertible o no. Para la vuelta debemos utilizar la existencia de $A^{-1}$:
 \begin{align*}
-    \text{$v$ es sol. de $ABX=AY$} \; &\Rightarrow \; ABv = AY&& \\
+    \text{$v$ es sol.} &\text{ de $ABX=AY$} \; \\
+    &\Rightarrow \; ABv = AY&& \\
     &\Rightarrow \;  A^{-1}ABv = A^{-1}AY &&(\text{mult. por $A^{-1}$  a izq.}) \\
     &\Rightarrow \;  \Id Bv = \Id Y &&(\text{ $A^{-1}A= \Id$}) \\
     &\Rightarrow \;   Bv =Y&&(\text{$\Id$ es neutro del prod.}) \\
