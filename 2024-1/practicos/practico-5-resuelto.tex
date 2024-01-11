@@ -187,7 +187,7 @@
 
     \vskip .2cm
 
-    \noindent \textbf{Conclusión.} Haremos un resumen de  los resultados acerca de autovalores y autovectores de la matriz del ejercicio \ref{autovalores} \ref{autovalores-6}, es decir de la matriz
+     \textbf{Conclusión.} Haremos un resumen de  los resultados acerca de autovalores y autovectores de la matriz del ejercicio \ref{autovalores} \ref{autovalores-6}, es decir de la matriz
     \begin{equation*}
         \left[\begin{matrix} \cos\theta & \sen\theta\\ -\sen\theta & \cos\theta \end{matrix} \right].
     \end{equation*}
@@ -257,7 +257,9 @@
             \item\label{no_inv2x2} Si $A$ no es invertible, probar que los autovalores de  $A$ son $0$ y $\operatorname{Tr}(A)$.
         \end{enumerate}
     
-    \rta \ref{char2x2} Si $A= [a_{ij}]$, entonces
+    \rta 
+    
+    \ref{char2x2} Si $A= [a_{ij}]$, entonces
     \begin{align*}
         \chi_A(x) &= \left|\begin{matrix} x-a_{11} & -a_{12}\\ -a_{21} & x-a_{22} \end{matrix} \right| \\ &= (x-a_{11})(x-a_{22})-(-a_{12})(-a_{21})\\& = x^2-(a_{11}+a_{22})x+a_{11}a_{22}-a_{12}a_{21} \\
         &= x^2-\operatorname{Tr}(A)x+\det(A).
@@ -271,7 +273,7 @@
         
     \item Sea $A\in\mathbb{K}^{n\times n}$. Probar que el polinomio $\tilde\chi_A(x)=\det(A-x\Id_n)$ y el polinomio característico de $A$ tienen las mismas raíces.
     
-    \rta Observar que $A-x\Id_n$ es igual a $-\Id_n(x\Id_n-A)$ y por lo tanto,
+    \rta observar que $A-x\Id_n$ es igual a $-\Id_n(x\Id_n-A)$ y por lo tanto,
     \begin{align*}
         \tilde\chi_A(x) &= \det(A-x\Id_n) \\
         &= \det(-\Id_n(x\Id_n-A)) \\
@@ -288,7 +290,7 @@
     
     \item Probar que si $A\in\mathbb{K}^{n\times n}$ es una matriz nilpotente entonces $0$ es el único autovalor de $A$. Usar esto para deducir que la matriz $\Id_n-A$ es invertible (esta es otra demostración del ejercicio \ref{nilpotene - id} del Práctico \ref{practico-3}).
     
-    \rta Recordemos que $A$ es nilpotente si existe $k \in \mathbb N$ tal que $A^k = 0$. Si $A$ es nilpotente y $v$ autovector con autovalor $\lambda$, entonces $Av = \lambda v$ y por lo tanto $A^2v = A(Av) = A(\lambda v) = \lambda Av = \lambda^2 v$. Iterando este argumento, obtenemos que $A^kv = \lambda^k v$. Pero $A^k = 0$, luego $\lambda^k v = 0$ y por lo tanto $\lambda^k = 0$ y  en consecuencia $\lambda = 0$. Luego, $0$ es el único autovalor de $A$.
+    \rta recordemos que $A$ es nilpotente si existe $k \in \mathbb N$ tal que $A^k = 0$. Si $A$ es nilpotente y $v$ autovector con autovalor $\lambda$, entonces $Av = \lambda v$ y por lo tanto $A^2v = A(Av) = A(\lambda v) = \lambda Av = \lambda^2 v$. Iterando este argumento, obtenemos que $A^kv = \lambda^k v$. Pero $A^k = 0$, luego $\lambda^k v = 0$ y por lo tanto $\ lambda^k = 0$ y  en consecuencia $\lambda = 0$. Luego, $0$ es el único autovalor de $A$.
 
     Ahora bien, si $0$ es el único autovalor de $A$, entonces $\chi_A(x) = x^n$ y por lo tanto $1=\chi_A(1) = \det(\Id_n- A)$ como el determinate de $\Id_n-A$ es no nulo,  esa matriz es invertible. \qed    
     

@@ -75,18 +75,22 @@
     \vskip .2cm
     \ref{det-A+tB} El ejercicio \ref{det-A+B} es un caso especial de \ref{det-A+tB} para $t=1$.  Así que haremos este inciso primero. Para ello, antes que nada, calculemos la matriz $A + tB$:
     \begin{align*}
-        A+ tB &= \begin{bmatrix} 1&3&2 \\ 3&0&2 \\  1&1&1 \end{bmatrix} + t \begin{bmatrix} 1&-1&2\\ 1&1&1 \\ -1&-1&3 \end{bmatrix} \\
-        &= \begin{bmatrix} 1+t&3-t&2+2t \\ 3+t&t&2+t \\  1-t&1-t&1+3t \end{bmatrix}.
+        A+ tB &= \begin{bmatrix} 1&3&2 \\ 3&0&2 \\  1&1&1 \end{bmatrix} + t \begin{bmatrix} 1&-1&2\\ 1&1&1 \\ -1&-1&3 \end{bmatrix} 
+        = \begin{bmatrix} 1+t&3-t&2+2t \\ 3+t&t&2+t \\  1-t&1-t&1+3t \end{bmatrix}.
     \end{align*}
     Entonces
+    \begin{flalign*}
+        &\qquad\qquad\left| \begin{matrix} 1+t&3-t&2+2t \\ 3+t&t&2+t \\  1-t&1-t&1+3t \end{matrix}\right| =&& 
+    \end{flalign*}
+    \newpage
     \begin{align*}
-       \left| \begin{matrix} 1+t&3-t&2+2t \\ 3+t&t&2+t \\  1-t&1-t&1+3t \end{matrix}\right| & = (1+t)\cdot  \left| \begin{matrix} t&2+t \\  1-t&1+3t \end{matrix} \right| - (3+t)\cdot  \left| \begin{matrix} 3-t&2+2t \\  1-t&1+3t \end{matrix} \right|\\
-       &\qquad\qquad\qquad\qquad\qquad\qquad + (1-t)\cdot  \left| \begin{matrix} 3-t&2+2t \\ t&2+t  \end{matrix} \right| \\
-       &= (1+t)\cdot (t(1+3t) - (2+t)(1-t)) -\\
-       &\quad- (3+t)\cdot ((3-t)(1+3t) - (2+2t)(1-t)) +\\
-       &\quad + (1-t)\cdot ((3-t)(2+t) - (2+2t)t)\\
-         &= (1+t)\cdot (4 t^2 + 2 t - 2) +\\
-         &\quad- (3+t)\cdot (-t^2 + 8 t + 1) +\\
+         &= (1+t)\cdot  \left| \begin{matrix} t&2+t \\  1-t&1+3t \end{matrix} \right| - (3+t)\cdot  \left| \begin{matrix} 3-t&2+2t \\  1-t&1+3t \end{matrix} \right|\\
+        &\qquad\qquad\qquad\qquad\qquad\qquad + (1-t)\cdot  \left| \begin{matrix} 3-t&2+2t \\ t&2+t  \end{matrix} \right| \\
+        &= (1+t)\cdot (t(1+3t) - (2+t)(1-t)) -\\
+        &\quad- (3+t)\cdot ((3-t)(1+3t) - (2+2t)(1-t)) +\\
+        &\quad + (1-t)\cdot ((3-t)(2+t) - (2+2t)t)\\
+        &= (1+t)\cdot (4 t^2 + 2 t - 2) +\\
+        &\quad- (3+t)\cdot (-t^2 + 8 t + 1) +\\
             &\quad + (1-t)\cdot (-3 t^2 - t + 6)
             \\
             &= (4 t^3 + 6 t^2 - 2) + (t^3 - 5 t^2 - 25 t - 3) + (3 t^3 - 2 t^2 - 7 t + 6
@@ -126,33 +130,34 @@
             La operación elemental de multiplicar una fila por una constante no es necesaria para conseguir una matriz triangular superior.
 
             \vskip .2cm
-        \textbf{Cálculo de $\det(A)$.} Un  caso particular es cuando $a=0$,  en ese caso la matriz tiene todas las filas iguales y por lo tanto $\det(A) = 0$. 
+        \textbf{Cálculo de $\det(A)$.} Un  caso particular es cuando $a=1$,  en ese caso la matriz tiene todas las filas iguales y por lo tanto $\det(A) = 0$. 
             
             Analicemos el caso  $a\ne 1$.
 
             Veamos como reducimos $A$ a triangular superior:
             \begin{align*}
-                A \underset{F_4 -F_2}{\underset{F_3 -F_2}{\stackrel{F_1-aF_2}{\longrightarrow}}} &=  \begin{bmatrix}
-                    0&1-a^2&1-a&1-a \\ 
-                    1&a&1&1 \\
-                    0&1-a&a-1&0 \\
-                    0&1-a&0&a-1 \\
-                \end{bmatrix}
-                {\stackrel{F_1 \leftrightarrow F_4}{\longrightarrow}} 
+                A &\underset{F_4 -F_2}{\underset{F_3 -F_2}{\stackrel{F_1-aF_2}{\longrightarrow}}}   
                 \begin{bmatrix}
-                    0&1-a&0&a-1 \\
+                    0&1-a^2&1-a&1-a \\ 
                     1&a&1&1 \\
                     0&1-a&a-1&0 \\
-                    0&1-a^2&1-a&1-a \\ 
+                    0&1-a&0&a-1 \\
                 \end{bmatrix} \\
-                &{\stackrel{F_1 \leftrightarrow F_2}{\longrightarrow}}
+                &{\stackrel{F_1 \leftrightarrow F_4}{\longrightarrow}} 
                 \begin{bmatrix}
-                    1&a&1&1 \\
                     0&1-a&0&a-1 \\
+                    1&a&1&1 \\
                     0&1-a&a-1&0 \\
                     0&1-a^2&1-a&1-a \\ 
                 \end{bmatrix} 
-                {\underset{F_4 -(1+a)F_2}{\stackrel{F_3-F_2}{\longrightarrow}}}
+                {\stackrel{F_1 \leftrightarrow F_2}{\longrightarrow}}
+                \begin{bmatrix}
+                    1&a&1&1 \\
+                    0&1-a&0&a-1 \\
+                    0&1-a&a-1&0 \\
+                    0&1-a^2&1-a&1-a \\ 
+                \end{bmatrix} \\
+                &{\underset{F_4 -(1+a)F_2}{\stackrel{F_3-F_2}{\longrightarrow}}}
                 \begin{bmatrix}
                     1&a&1&1 \\
                     0&1-a&0&a-1 \\
@@ -167,7 +172,8 @@
                     0&0&0&3-2a-a^2 \\ 
                 \end{bmatrix} 
             \end{align*}
-        Como solo hicimos dos permutaciones de filas, el determinante de  $A$ es igual al determinante de la última matriz,  es decir
+        Como 
+         hicimos dos permutaciones de filas, el determinante de  $A$ es igual al determinante de la última matriz,  es decir
         $$
         \det(A) = (1-a)(a-1)(3-2a-a^2) = a^4 - 6 a^2 + 8 a - 3.
         $$
@@ -379,7 +385,7 @@
     Luego $\det(E) = (4 \cdot 2 - 1) \cdot 6 = 42$. Por lo tanto, $E$  es invertible.
     \vskip .4cm
 
-    \noindent\textbf{Observación.} Notemos que en este ejercicio 
+    \textbf{Observación.} Notemos que en este ejercicio 
     $$
     \det(E) = \det(E_1)\det(E_2),
     $$
@@ -400,7 +406,7 @@
         \item\label{det B.A.B1} Si $B$ es invertible, entonces $\det(B A B^{-1}) = \det (A)$.
         \item\label{-A} $\det(-A) = (-1)^n\det (A)$.
     \end{enumerate} 
-    \rta En todos los incisos usamos la propiedad de que el determinate del producto de matrices es el producto de los determinantes de cada matriz.
+    \rta en todos los incisos usamos la propiedad de que el determinate del producto de matrices es el producto de los determinantes de cada matriz.
 
 
     \ref{det A.B} 
@@ -465,7 +471,7 @@
     \vskip .2cm
     \ref{vandermonde gral} Haremos la demostración por inducción. El caso base es $n=2$ y en ese caso el resultado vale por \ref{vandermonde 2}. Supongamos ahora que valga el resultado \ref{vandermonde gral} para $n-1$. 
     
-    Fijarse que en el caso  anterior (\ref{vandermonde 3}) hicimos dos operaciones elementales de columna: $C_3-\lambda_1 C_2$ y $C_2-\lambda_1 C_1$,  en ese orden. En general, haremos  $n-1$ operaciones elementales de columnas de la forma $C_i-\lambda_1 C_{i-1}$, desde $i=n$ hasta $i=2$,  en ese orden con lo cual obtenemos la matriz
+    Fijarse que en el caso  anterior \ref{vandermonde 3} hicimos dos operaciones elementales de columna: $C_3-\lambda_1 C_2$ y $C_2-\lambda_1 C_1$,  en ese orden. En general, haremos  $n-1$ operaciones elementales de columnas de la forma $C_i-\lambda_1 C_{i-1}$, desde $i=n$ hasta $i=2$,  en ese orden, con lo cual obtenemos la matriz
 
 \begin{equation*}
     \begin{bmatrix}
