@@ -625,7 +625,17 @@ Ahora, planteemos  la ecuación
     \lambda_1 \begin{bmatrix} 1 & 0 & 2 \\ 0 & -1 & -3 \\ \end{bmatrix}+\lambda_2 \begin{bmatrix} 1 & 0 & 1 \\ -2 & 1 & 0 \\ \end{bmatrix}+\lambda_3 \begin{bmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \\ \end{bmatrix}=\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ \end{bmatrix},
     $$
     o sea
+    $$
+    \begin{bmatrix} 
+        \lambda_1 +\lambda_2 +\lambda_3 & 2\lambda_3 & 2\lambda_1 +\lambda_2+3\lambda_3 
+        \\ -2\lambda_2 +3\lambda_3 &-\lambda_1 + \lambda_2 +2\lambda_3 & -3\lambda_1 +\lambda_3 \\ 
+    \end{bmatrix}=
+    \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ \end{bmatrix}.
+    $$
+    Por la igualdad de fila $1$, columna $2$, claramente, $\lambda_3=0$. Luego, por la igualdad de fila $2$, columna $3$, $\lambda_1=0$. Finalmente, por la igualdad de fila $1$, columna $1$, $\lambda_2=0$. Es decir, la única solución es la trivial y por lo tanto los vectores son LI.
     
+
+
 
 
 
@@ -634,27 +644,170 @@ Ahora, planteemos  la ecuación
     \item Dar un ejemplo de un conjunto de 3 vectores en $\mathbb{R}^3$ que sean LD, y tales que dos cualesquiera de ellos sean LI.
     
     
-    \rta 
+    \rta tomemos $v_1= (1,0,0)$, $ v_2=(0,1,0)$ y el tercer vector la suma de ambos, es decir, $v_3= (1,1,0)$. Por lo tanto, esos tres vectores son LD ($v_1+v_2-v_3=0$). Ahora bien, si quitamos cualquiera de los vectores, los dos restantes son LI. Por ejemplo, si quitamos $v_1$, entonces $v_2$ y $v_3$ son LI, pues si $\lambda v_2+\mu v_3=0$, entonces $(\mu, \lambda+\mu,0)=(0,0,0)$ y por lo tanto $\mu=0$, luego $\lambda=0$.
 
     \qed     
     
     \item  Probar que si $\alpha$, $\beta$ y $\gamma$ son vectores LI en el $\mathbb{R}$-espacio vectorial $V$, entonces $\alpha +\beta$, $\alpha +\gamma$ y $\beta +\gamma $ también son LI.
     
     
-    \rta 
+    \rta debemos plantear la ecuación
+    $$
+    \lambda_1 (\alpha +\beta)+\lambda_2 (\alpha +\gamma)+\lambda_3 (\beta +\gamma)=0,
+    $$
+    y ver que la única solución es $\lambda_1=\lambda_2=\lambda_3=0$. La ecuación anterior es equivalente a 
+    $$
+    (\lambda_1+\lambda_2)\alpha+(\lambda_1+\lambda_3)\beta+(\lambda_2+\lambda_3)\gamma=0.
+    $$  
+    Como $\alpha$, $\beta$ y $\gamma$ son LI por hipótesis, entonces $\lambda_1+\lambda_2=\lambda_1+\lambda_3=\lambda_2+\lambda_3=0$. Resolvamos el sistema:
+    $$
+    \begin{bmatrix}
+        1 & 1 & 0\\
+        1 & 0 & 1\\
+        0 & 1 & 1
+    \end{bmatrix}
+    \stackrel{F_2-F_1}{\longrightarrow}
+    \begin{bmatrix}
+        1 & 1 & 0\\
+        0 & -1 & 1\\
+        0 & 1 & 1
+    \end{bmatrix}
+    \stackrel{F_3+F_2}{\longrightarrow}
+    \begin{bmatrix}
+        1 & 1 & 0\\
+        0 & -1 & 1\\
+        0 & 0 & 2
+    \end{bmatrix}.
+    $$
+    Por lo tanto, por la tercera fila, $\lambda_3=0$, por la segunda fila se deduce que $\lambda_2=0$ y por la primera fila se deduce que $\lambda_1=0$. Es decir, la única solución es la trivial y por lo tanto los vectores son LI.
 
     \qed     
     
     \item Extender, de ser posible, los siguientes conjuntos a una base de los respectivos espacios vectoriales.
     
     \begin{enumerate}
-        \item Los conjuntos del ejercicio \ref{son LI}.
-        \item\label{10b} $\{ (1,2,0,0),(1,0,1,0) \}\subseteq\mathbb{R}^4$.
-        \item\label{10c} $\{ (1,2,1,1),(1,0,1,1),(3,2,3,3)\}\subseteq\mathbb{R}^4$.
+        \item\label{extender-a} Los conjuntos del ejercicio \ref{son LI}.
+        \item\label{extender-b} $\{ (1,2,0,0),(1,0,1,0) \}\subseteq\mathbb{R}^4$.
+        \item\label{extender-c} $\{ (1,2,1,1),(1,0,1,1),(3,2,3,3)\}\subseteq\mathbb{R}^4$.
     \end{enumerate}
     
     
     \rta 
+
+    \ref{extender-a} Los conjuntos del ejercicio \ref{son LI} son LI. Luego el primer subconjunto es base, pues tiene $3$ elementos de  $\R^3$. 
+    
+    El segundo subconjunto no es base pues tiene $3$ vectores y $M_{2\times 3}(\mathbb{R})$ tiene dimensión $6$. 
+    
+    Extendamos entonces $$\left\{  \begin{bmatrix} 1 & 0 & 2 \\ 0 & -1 & -3 \\ \end{bmatrix}, \quad
+    \begin{bmatrix} 1 & 0 & 1 \\ -2 & 1 & 0 \\ \end{bmatrix}, \quad
+    \begin{bmatrix} 1 & 2 & 3 \\ 3 & 2 & 1 \\ \end{bmatrix} \right\}$$ a una base de $M_{2\times 3}(\mathbb{R})$.
+    
+    Convendrá mirar a las matrices como vectores de $\R^6$ para poder operar con estos vectores. La forma más obvia de hacerlo es construir  un vector de $6$ coordenadas a partir de cada matriz  con la primera fila y a continuación la segunda. Haciendo esto obtenemos los vectores
+    $$
+    (1, 0, 2, 0, -1, -3),\; (1, 0, 1, -2, 1, 0),\;  (1, 2, 3, 3, 2, 1).
+    $$
+    
+    \textbf{Primera solución.} Una forna de hacerlo es primero construir una matriz con los vectores fila y hallar la MERF. Los vectores que obtenemos en la MERF generan el mismo subespacio que los vectores originales y los podemos completar a una base de $\R^6$ con vectores canónicos. Hagamos el procedimiento: 
+    \begin{align*}
+    &\begin{bmatrix}
+        1 & 0 & 2 & 0 & -1 & -3\\
+        1 & 0 & 1 & -2 & 1 & 0\\
+        1 & 2 & 3 & 3 & 2 & 1
+    \end{bmatrix}
+    \underset{F_3-F_1}{\stackrel{F_2-F_1}{\longrightarrow}}
+    \begin{bmatrix}
+        1 & 0 & 2 & 0 & -1 & -3\\
+        0 & 0 & -1 & -2 & 2 & 3\\
+        0 & 2 & 1 & 3 & 3 & 4
+    \end{bmatrix} \\
+    &\underset{F_3/2}{\stackrel{F_2/(-1)}{\longrightarrow}}
+    \begin{bmatrix}
+        1 & 0 & 2 & 0 & -1 & -3\\
+        0 & 0 & 1 & 2 & -2 & -3\\
+        0 & 1 & \frac12 & \frac32 & \frac32 & 2
+    \end{bmatrix}
+    \underset{F_3-\frac12 F_2}{\stackrel{F_1-2F_2}{\longrightarrow}}
+    \begin{bmatrix}
+        1 & 0 & 0 & -4 & 3 & 3\\
+        0 & 0 & 1 & 2 & -2 & -3\\
+        0 & 1 & 0 & \frac12 & \frac52 & \frac72
+    \end{bmatrix} \\
+    &\stackrel{F_2 \leftrightarrow F_3}{\longrightarrow}
+    \begin{bmatrix}
+        1 & 0 & 0 & -4 & 3 & 3\\
+        0 & 1 & 0 & \frac12 & \frac52 & \frac72\\
+        0 & 0 & 1 & 2 & -2 & -3
+    \end{bmatrix}.
+    \end{align*}
+    Luego el conjunto LI
+    $$
+    \left\{(1, 0, 2, 0, -1, -3), (1, 0, 1, -2, 1, 0),  (1, 2, 3, 3, 2, 1)\right\}
+    $$ \
+    se puede completar a una base con los vectores canónicos 
+    $$(0,0,0,1,0,0),\; (0,0,0,0,1,0),\; (0,0,0,0,0,1).$$
+    Volviendo a $M_{2\times 3}(\mathbb{R})$, los vectores canónicos son las matrices
+    $$  
+    \begin{bmatrix} 0 & 0 & 0 \\ 1 & 0 & 0 \\ \end{bmatrix},\quad
+    \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ \end{bmatrix},\quad
+    \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ \end{bmatrix},
+    $$
+    que completan a una base.
+
+\vskip .3cm
+
+\textbf{Segunda solución.} Otra forma de hacerlo es encontrando la forma implícita del subespacio y luego agregar vectores con un criterio que explicaremos más adelante. 
+
+Debemos ahora caracterizar implícitamente los $b_1,\ldots, b_6$ tales que
+\begin{multline*}
+    \lambda_1(1, 0, 2, 0, -1, -3)+\lambda_2(1, 0, 1, -2, 1, 0)+\lambda_3(1, 2, 3, 3, 2, 1)=(b_1,b_2,b_3,b_4,b_6,b_6).
+\end{multline*}
+Es decir, debemos resolver el sistema
+$$
+\begin{cases}
+    \lambda_1+\lambda_2+\lambda_3=b_1\\
+    2\lambda_3=b_2\\
+    2\lambda_1+\lambda_2+3\lambda_3=b_3\\
+    -2\lambda_2+3\lambda_3=b_4\\
+    -\lambda_1+\lambda_2+2\lambda_3=b_5\\
+    -3\lambda_1+\lambda_3=b_6
+\end{cases}
+$$
+Planteamos la matriz ampliada y hacemos Gauss:
+\begin{align*}
+&\begin{amatrix}{3}
+    1 & 1 & 1 & b_1\\   
+    0 & 0 & 2 & b_2\\
+    2 & 1 & 3 & b_3\\
+    0 & -2 & 3 & b_4\\
+    -1 & 1 & 2 & b_5\\
+    -3 & 0 & 1 & b_6
+\end{amatrix}
+\underset{F_3+3F_1}{\underset{F_5+F_1}{\stackrel{F_2-2F_1}{\longrightarrow}}}
+\begin{amatrix}{3}
+    1 & 1 & 1 & b_1\\   
+    0 & 0 & 2 & b_2\\
+    0 & -1 & 1 & b_3-2b_1\\
+    0 & -2 & 3 & b_4\\
+    0 & 2 & 3 & b_5+b_1\\
+    0 & 3 & 4 & b_6+3b_1
+\end{amatrix}\\
+&\underset{F_6+3F_3}{\underset{F_5+2F_3}{\stackrel{F_4-2F_3}{\longrightarrow}}}
+\begin{amatrix}{3}
+    1 & 1 & 1 & b_1\\   
+    0 & 0 & 2 & b_2\\
+    0 & -1 & 1 & b_3-2b_1\\
+    0 & 0 & 1 &4b_1-2b_3 + b_4\\
+    0 & 0 & 5 &-3b_1+2b_3 + b_5\\
+    0 & 0 & 7 & -3b_1+3b_3+b_6
+\end{amatrix}\\
+\end{align*}
+    
+
+    \vskip .3cm
+    \ref{extender-b}
+
+    \vskip .3cm
+    \ref{extender-c}
 
     \qed     
     
