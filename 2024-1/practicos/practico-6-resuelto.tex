@@ -688,7 +688,7 @@ Ahora, planteemos  la ecuación
     \begin{enumerate}
         \item\label{extender-a} Los conjuntos del ejercicio \ref{son LI}.
         \item\label{extender-b} $\{ (1,2,0,0),(1,0,1,0) \}\subseteq\mathbb{R}^4$.
-        \item\label{extender-c} $\{ (1,2,1,1),(1,0,1,1),(3,2,3,3)\}\subseteq\mathbb{R}^4$.
+        \item\label{extender-c} $\{ (1,2,1,1),(1,0,1,1),(3,2,3,4)\}\subseteq\mathbb{R}^4$.
     \end{enumerate}
     
     
@@ -707,7 +707,8 @@ Ahora, planteemos  la ecuación
     (1, 0, 2, 0, -1, -3),\; (1, 0, 1, -2, 1, 0),\;  (1, 2, 3, 3, 2, 1).
     $$
     
-    \textbf{Primera solución.} Una forna de hacerlo es primero construir una matriz con los vectores fila y hallar la MERF. Los vectores que obtenemos en la MERF generan el mismo subespacio que los vectores originales y los podemos completar a una base de $\R^6$ con vectores canónicos. Hagamos el procedimiento: 
+    %\textbf{Primera solución.} 
+    Una forna de extender la base es primero construir una matriz con los vectores fila y hallar la MRF. Los vectores que obtenemos en la MRF generan el mismo subespacio que los vectores originales y los podemos completar a una base de $\R^6$ con vectores canónicos. Hagamos el procedimiento: 
     \begin{align*}
     &\begin{bmatrix}
         1 & 0 & 2 & 0 & -1 & -3\\
@@ -755,6 +756,7 @@ Ahora, planteemos  la ecuación
 
 \vskip .3cm
 
+\begin{comment}
 \textbf{Segunda solución.} Otra forma de hacerlo es encontrando la forma implícita del subespacio y luego agregar vectores con un criterio que explicaremos más adelante. 
 
 Debemos ahora caracterizar implícitamente los $b_1,\ldots, b_6$ tales que
@@ -782,14 +784,14 @@ Planteamos la matriz ampliada y hacemos Gauss:
     -1 & 1 & 2 & b_5\\
     -3 & 0 & 1 & b_6
 \end{amatrix}
-\underset{F_3+3F_1}{\underset{F_5+F_1}{\stackrel{F_2-2F_1}{\longrightarrow}}}
+\underset{F_6+3F_1}{\underset{F_5+F_1}{\stackrel{F_2-2F_1}{\longrightarrow}}}
 \begin{amatrix}{3}
     1 & 1 & 1 & b_1\\   
     0 & 0 & 2 & b_2\\
     0 & -1 & 1 & b_3-2b_1\\
     0 & -2 & 3 & b_4\\
-    0 & 2 & 3 & b_5+b_1\\
-    0 & 3 & 4 & b_6+3b_1
+    0 & 2 & 3 & b_1+b_5\\
+    0 & 3 & 4 & 3b_1+b_6
 \end{amatrix}\\
 &\overset{F_1+F_3}{\underset{F_6+3F_3}{\underset{F_5+2F_3}{\stackrel{F_4-2F_3}{\longrightarrow}}}}
 \begin{amatrix}{3}
@@ -800,14 +802,80 @@ Planteamos la matriz ampliada y hacemos Gauss:
     0 & 0 & 5 &-3b_1+2b_3 + b_5\\
     0 & 0 & 7 & -3b_1+3b_3+b_6
 \end{amatrix}\\
+&\underset{F_6-7F_4}{\underset{F_5-5F_4}{\stackrel{F_2-2F_4}{\longrightarrow}}}
+\begin{amatrix}{3}
+    1 & 0 & 0 & -b_1+b_3-2b_4\\   
+    0 & 0 & 0 &-8b_1+ b_2+4b_3-2b_4\\
+    0 & -1 & 0 & b_3-2b_1+b_4\\
+    0 & 0 & 1 &4b_1-2b_3 + b_4\\
+    0 & 0 & 0 &-23b_1+12b_3 + b_5-5b_4\\
+    0 & 0 & 0 & -3b_1+3b_3+b_6+7b_4
+\end{amatrix}\\
 \end{align*}
-    
+\end{comment}    
 
     \vskip .3cm
-    \ref{extender-b}
+    \ref{extender-b} Lo haremos de forma análoga alo que hicimos en \ref{extender-a}. Debemos hallar la MRF de la matriz formada por los vectores dados como filas:
+    $$
+    \begin{bmatrix}
+        1 & 2 & 0 & 0\\
+        1 & 0 & 1 & 0
+    \end{bmatrix}
+    \stackrel{F_2-F_1}{\longrightarrow}
+    \begin{bmatrix}
+        1 & 2 & 0 & 0\\
+        0 & -2 & 1 & 0
+    \end{bmatrix}
+    \stackrel{F_2/(-2)}{\longrightarrow}
+    \begin{bmatrix}
+        1 & 2 & 0 & 0\\
+        0 & 1 & -\frac12 & 0
+    \end{bmatrix}
+    \stackrel{F_1-2F_2}{\longrightarrow}
+    \begin{bmatrix}
+        1 & 0 & 1 & 0\\
+        0 & 1 & -\frac12 & 0
+    \end{bmatrix}.
+    $$
+    Luego, los vectores que completan a una base son $(0,0,1,0)$ y $(0,0,0,1)$. Por supuesto, también podemos completar con otros pares de vectores, pero  estos son los más simples. 
+
 
     \vskip .3cm
-    \ref{extender-c}
+    \ref{extender-c} Este inciso lo haremos de otra forma: primero encontraremos la forma implícita del subespacio y luego agregaremos vectores con un criterio que explicaremos más adelante. Para encontrar la forma implícita del subespacio planteamos la ecuación:
+    $$
+    \lambda_1(1,2,1,1)+\lambda_2(1,0,1,1)+\lambda_3(3,2,3,4)=(b_1,b_2,b_3,b_4).
+    $$
+    Es decir, debemos resolver el sistema
+    $$
+    \begin{cases}
+        \lambda_1+\lambda_2+3\lambda_3=b_1\\
+        2\lambda_1+2\lambda_3=b_2\\
+        \lambda_1+\lambda_2+3\lambda_3=b_3\\
+        \lambda_1+\lambda_2+4\lambda_3=b_4
+    \end{cases}
+    $$
+    Planteamos la matriz ampliada y hacemos Gauss:
+    \begin{align*}
+    &\begin{amatrix}{3}
+        1 & 1 & 3 & b_1\\
+        2 & 0 & 2 & b_2\\
+        1 & 1 & 3 & b_3\\
+        1 & 1 & 4 & b_4
+    \end{amatrix}
+    \underset{F_4-F_1}{\underset{F_3-F_1}{\stackrel{F_2-2F_1}{\longrightarrow}}}
+    \begin{amatrix}{3}
+        1 & 1 & 3 & b_1\\
+        0 & -2 & -4 & b_2-2b_1\\
+        0 & 0 & 0 & b_3-b_1\\
+        0 & 0 & 1 & b_4-b_1
+    \end{amatrix}\\
+    \end{align*}
+    Luego  el subespacio generado por los vectores del enunciado tiene por forma implícita
+    $$
+    \{(b_1,b_2,b_3,b_4)\in\R^4: b_3=b_1\}.
+    $$
+    Cualquier vector que no cumpla esta condición no pertenece al subespacio y por lo tanto completa a una base. Por ejemplo, $(0,0,1,0)$ completa a una base. 
+
 
     \qed     
     
