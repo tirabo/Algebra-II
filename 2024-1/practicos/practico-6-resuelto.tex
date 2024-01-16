@@ -384,9 +384,7 @@ Ahora, planteemos  la ecuación
 
     \vskip .3cm
 
-    \ref{pa-pr2-sistemas-con-soluciones}
-    \vskip .2cm
-    El primer conjunto era $\{(b_1, b_2, b_3) \in \R^3 : -2b_1 + b_2 + 3b_3 = 0\}$. Podemos despejar una de las variables respecto a las otras, por ejemplo $b_2 = 2b_1 -3b_3$, y en ese caso el conjunto se  puede escribir como
+    \ref{pa-pr2-sistemas-con-soluciones} el primer conjunto era $\{(b_1, b_2, b_3) \in \R^3 : -2b_1 + b_2 + 3b_3 = 0\}$. Podemos despejar una de las variables respecto a las otras, por ejemplo $b_2 = 2b_1 -3b_3$, y en ese caso el conjunto se  puede escribir como
     $$
     \{(b_1, -2b_1 - 3b_3, b_3) : b_1, b_3 \in \R\} = \{b_1(1, -2, 0) + b_3(0, -3, 1) : b_1, b_3 \in \R\}.
     $$
@@ -882,38 +880,155 @@ Planteamos la matriz ampliada y hacemos Gauss:
     \item Dar subespacios vectoriales $W_0$, $W_1$, $W_2$ y $W_3$ de $\mathbb{R}^3$ tales que $W_0\subset W_1\subset W_2\subset W_3$ y $\dim W_0=0$, $\dim W_1=1$, $\dim W_2=2$ y $\dim W_3=3$.
     
     
-    \rta 
+    \rta El único subespacio vectorial de dimensión $0$ es $\{0\}$. Por lo tanto, $W_0=\{0\}$. Sea $W_1=\langle (1,0,0)\rangle$ y $W_2=\langle (1,0,0), (0,1,0)\rangle$. El único subespacio de $\R^3$ de dimensión $3$ es $\R^3$. Por lo tanto, $W_3=\R^3$.
 
     \qed     
     
     \item Sea $V$ un espacio vectorial de dimensión $n$ y $\mathcal{B}=\{v_1, ..., v_n\}$ una base de $V$.
     \begin{enumerate}
-    \item Probar que cualquier subconjunto no vacío de $\mathcal{B}$ es LI.
-    \item Para cada $k\in\mathbb{N}_0$,  con $0\leq k\leq n$, dar un subespacio vectorial de $V$ de dimensión $k$.
+    \item\label{subconjunto-li} Probar que cualquier subconjunto no vacío de $\mathcal{B}$ es LI.
+    \item\label{subconjunto-dim-k} Para cada $k\in\mathbb{N}_0$,  con $0\leq k\leq n$, dar un subespacio vectorial de $V$ de dimensión $k$.
     \end{enumerate}
     
     
     \rta 
+
+    \ref{subconjunto-li} Sea $W=\{v_{i_1}, ..., v_{i_k}\}$ un subconjunto no vacío de $\mathcal{B}$. Supongamos que $W$ es LD. Entonces existen $\lambda_1, ..., \lambda_k\in\mathbb{K}$, no todos nulos, tales que 
+    $$
+    \lambda_1 v_{i_1}+\cdots+\lambda_k v_{i_k}=0.
+    $$
+    Luego existe una combinación lineal no trivial de los elementos de la base que da como resultado el vector nulo.  Más explicitamente si $\mu_i = 0$ para $i \ne i_1, \ldots, i_k$ y $\mu_{i_j} = \lambda_{j}$ para $j=1,\ldots,k$, entonces
+    $$
+    \mu_1 v_1+\cdots+\mu_n v_n=0,
+    $$
+    y no todos los $\mu_i$ son nulos. Esto contradice que $\mathcal{B}$ sea una base. Por lo tanto, $W$ es LI.
+
+
+    \vskip .3cm
+    \ref{subconjunto-dim-k} Sea $W_k=\langle v_1, ..., v_k\rangle$. Entonces $W_k$ es un subespacio de $V$ de dimensión $k$. En efecto, como $\mathcal{B}$ es una base de $V$, entonces $W_k$ es un subespacio de $V$. Por otra parte, por \ref{subconjunto-li}, los $v_1, ..., v_k$ son LI. Por lo tanto, $\dim W_k=k$.
 
     \qed     
     
     \item Dar una base y calcular la dimensión de $\mathbb{C}^n$ como $\mathbb{C}$-espacio vectorial y como $\mathbb{R}$-espacio vectorial.
     
     
-    \rta 
+    \rta una base de  $\mathbb{C}^n$ como $\mathbb{C}$-espacio vectorial es $\{e_1,\ldots,e_n\}$, donde $e_i$ es el vector cuyas coordenadas son todas nulas excepto la $i$-ésima que es $1$. Por lo tanto, $\dim_{\mathbb{C}} \mathbb{C}^n=n$.
+
+    Una base de $\mathbb{C}^n$ como $\mathbb{R}$-espacio vectorial es $\{e_1,\ldots,e_n,ie_1,\ldots,ie_n\}$, donde $e_i$ es el vector cuyas coordenadas son todas nulas excepto la $i$-ésima que es $1$. Por lo tanto, $\dim_{\mathbb{R}} \mathbb{C}^n=2n$.
 
     \qed     
     
     \item  Exhibir una base y calcular la dimensión de los siguientes subespacios.
     \begin{enumerate}
-        \item Los subespacios del ejercicio \ref{practicos anteriores}.
-        \item $W = \{(x,y,z,w,u) \in \mathbb{R}^5 \ : \ y = x - z,\, w = x + z,\,  u = 2x - 3z \}$.
-        \item $W = \langle (1, 0, -1, 1),  (1, 2, 1, 1), (0, 1, 1, 0), (0, -2, -2, 0) \rangle \subseteq \mathbb R^4$.
-        \item Matrices triangulares superiores $2\times 2$ y $3\times 3$.
-        \item Matrices triangulares superiores $n\times n$ para cualquier $n\in\mathbb{N}$, $n\geq 2$.
+        \item\label{dim-subespacios-a} Los subespacios del ejercicio \ref{practicos anteriores}.
+        \item\label{dim-subespacios-b} $W = \{(x,y,z,w,u) \in \mathbb{R}^5 \ : \ y = x - z,\, w = x + z,\,  u = 2x - 3z \}$.
+        \item\label{dim-subespacios-c} $W = \langle (1, 0, -1, 1),  (1, 2, 1, 1), (0, 1, 1, 0), (0, -2, -2, 0) \rangle \subseteq \mathbb R^4$.
+        \item\label{dim-subespacios-d} Matrices triangulares superiores $2\times 2$ y $3\times 3$.
+        \item\label{dim-subespacios-e} Matrices triangulares superiores $n\times n$ para cualquier $n\in\mathbb{N}$, $n\geq 2$.
     \end{enumerate}
     
     \rta 
+
+    \ref{dim-subespacios-a} En  el ejercicio \ref{practicos anteriores} ya dimos conjuntos de generadores para cada subespacio y es sencillo comprobar que cada uno  de estos subconjuntos son LI y por lo tanto son base. Solo resta calcular la dimensión. Listemos los subespacios y sus respectivas bases, lo cual nos dirá la dimensión de cada uno.
+    \begin{itemize}
+        \item $W_1= \{(0,0,0)\}$ es un subespacio de $\mathbb{R}^3$ y $\dim W_1=0$. Luego  su base es $\emptyset$.
+        \item $W_2=\langle (4,3,1)\rangle$ es un subespacio de $\mathbb{R}^3$ y $\dim W_2=1$.
+        \item $W_3=\langle (1,1,1,0),(-2,-2-,0-1)\rangle$ es un subespacio de $\mathbb{R}^4$ y $\dim W_3=2$.
+        \item $W_4=\langle (1,-2,0),(0,-3,1)\rangle$ es un subespacio de $\mathbb{R}^3$ y $\dim W_4=2$.
+        \item $W_5 = \langle (-1, 1, 1, 0), (1, 1, 0, 1) \rangle$ es un subespacio de $\mathbb{R}^4$ y $\dim W_5=2$.
+        \item $W_6 = \langle (1, 0, 0), (0, 1, 0), (0,0,1) \rangle$ es un subespacio de $\mathbb{R}^3$ y $\dim W_6=3$.
+    \end{itemize}
+
+    
+    \vskip.3cm
+    \ref{dim-subespacios-b} Observar que 
+    \begin{align*}
+    W &= \{(x,y,z,w,u) \in \mathbb{R}^5 \ : \ y = x - z,\, w = x + z,\,  u = 2x - 3z \}\\
+    &= \{(x,x-z,z,x+z,2x-3z) \in \mathbb{R}^5 \ : \ x,z \in \mathbb{R}\}\\
+    &= \{(x,x,0,x,2x)+(0,-z,z,z,-3z) \in \mathbb{R}^5 \ : \ x,z \in \mathbb{R}\}\\
+    &=\{x(1,1,0,1,2)+z(0,-1,1,1,-3) \in \mathbb{R}^5 \ : \ x,z \in \mathbb{R}\}\\
+    &= \langle (1,1,0,1,2), (0,-1,1,1,-3) \rangle.
+    \end{align*}
+    Por lo tanto, $\{ (1,1,0,1,2), (0,-1,1,1,-3)\}$ es una base y la dimensión del subespacio es $2$.
+
+    \vskip.3cm
+    \ref{dim-subespacios-c} Para ver la dimensión  planteamos la matriz donde en cada fila ponemos un vector y  hacemos Gauss:
+    \begin{align*}
+        &\begin{bmatrix}
+            1 & 1 & 0 & 0\\
+            0 & 2 & 1 & -2\\
+            -1 & 1 & 1 & -2\\
+            1 & 1 & 0 & 0
+        \end{bmatrix}
+        \underset{F_4-F_1}{\stackrel{F_3+F_1}{\longrightarrow}}
+        \begin{bmatrix}
+            1 & 1 & 0 & 0\\
+            0 & 2 & 1 & -2\\
+            0 & 2 & 1 & -2\\
+            0 & 0 & 0 & 0
+        \end{bmatrix}
+        \stackrel{F_3-F_2}{\longrightarrow}
+        \begin{bmatrix}
+            1 & 1 & 0 & 0\\
+            0 & 2 & 1 & -2\\
+            0 & 0 & 0 & 0\\
+            0 & 0 & 0 & 0
+        \end{bmatrix} 
+        \\
+        &\stackrel{F_2/2}{\longrightarrow}
+        \begin{bmatrix}
+            1 & 1 & 0 & 0\\
+            0 & 1 & \frac12 & -1\\
+            0 & 0 & 0 & 0\\
+            0 & 0 & 0 & 0
+        \end{bmatrix}
+        \underset{F_1-F_2}{\longrightarrow}
+        \begin{bmatrix}
+            1 & 0 & -\frac12 & 1\\
+            0 & 1 & \frac12 & -1\\
+            0 & 0 & 0 & 0\\
+            0 & 0 & 0 & 0
+        \end{bmatrix}.
+    \end{align*}
+    Luego  una base del subespacio es $\{(1,0,-\frac12,1), (0,1,\frac12,-1)\}$ y por lo tanto la dimensión es $2$.
+
+
+    \vskip.3cm
+    \ref{dim-subespacios-d} Una base de las matrices triangulares superiores $2\times 2$ es
+    $$
+    \left\{  \begin{bmatrix} 1 & 0 \\ 0 & 0 \\ \end{bmatrix}, \quad
+    \begin{bmatrix} 0 & 1 \\ 0 & 0 \\ \end{bmatrix}, \quad
+    \begin{bmatrix} 0 & 0 \\ 0 & 1 \\ \end{bmatrix} \right\},
+    $$
+    y por lo tanto su dimensión es $3$.
+
+    Una base de las matrices triangulares superiores $3\times 3$ es
+    $$
+    \left\{  \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \\ \end{bmatrix}, 
+    \begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \\ \end{bmatrix}, 
+    \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \\ \end{bmatrix}, 
+    \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \\ \end{bmatrix}, 
+    \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \\ \end{bmatrix}, 
+    \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \\ \end{bmatrix} \right\},
+    $$
+    y por lo tanto su dimensión es $6$.
+
+
+    \vskip.3cm
+    \ref{dim-subespacios-e} Este inciso es una generalización del anterior. Denotemos $E_{îj}$ a la matriz cuyas entradas son todas nulas excepto la $i$-ésima fila y la $j$-ésima columna, que es $1$. Es decir, $E_{îj}$ es la matriz que tiene un $1$ en la posición $(i,j)$ y ceros en el resto de las posiciones. Entonces, una base de las matrices triangulares superiores $n\times n$ es
+    $$
+    \mathcal B= \left\{  E_{11}, E_{12}, \ldots, E_{1n}, E_{22}, E_{23}, \ldots, E_{2n}, \ldots, E_{n-1,n}, E_{nn} \right\},
+    $$
+    escrito de forma más compacta y precisa,
+    $$
+    \mathcal B= \left\{  E_{ij} \in M_{n\times n}(\mathbb{R}) \ : \ 1\leq i\leq j\leq n \right\}.
+    $$
+    Calculemos ahora la dimensión de este subespacio. Para eso debemos ver cuántos elementos tiene $\mathcal B$. Observar que la diagonal tiene $n$ elementos de la base, todos los de la forma $E_{ii}$, $1 \le i \le n$.  Justo encima de la diagonal hay $n-1$ elementos de la base, todos los de la forma $E_{i,i+1}$, $1 \le i \le n-1$. Encima de esta última diagonal ``menor''  hay $n-2$ elementos de la base, todos los de la forma $E_{i,i+2}$, $1 \le i \le n-2$. Y así sucesivamente hasta llegar a la última diagonal menor, donde hay un solo elemento de la base, $E_{n,n}$. Por lo tanto, la cantidad de elementos de la base es 
+    $$
+    n + (n-1) + (n-2) + \cdots + 1 = \frac{n(n+1)}{2}.
+    $$
+    Luego la dimensión del subespacio formado por las matrices triangulares superiores es $\frac{n(n+1)}{2}$.
+
 
     \qed     
     
