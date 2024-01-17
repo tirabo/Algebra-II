@@ -1,4 +1,158 @@
 
 \chapter{Soluciones\\Álgebra  II -- Año 2024/1 -- FAMAF}\label{practico-7}
 
-Completar.
+\begin{enumerate}[topsep=6pt, itemsep=.4cm]
+    \item\label{transf-lineales-a} Decidir si las siguientes funciones son transformaciones lineales entre los respectivos espacios vectoriales sobre $\mathbb{K}$.
+    \begin{enumerate}[resume, topsep=5pt,itemsep=5pt]
+    \item\label{transf-lineales-b} La traza $\operatorname{Tr}:\mathbb{K}^{n\times n}\longrightarrow\mathbb{K}$ (recordar ejercicio \ref{traza}\,\ref{ej:traza} del Práctico  \ref{practico-3}) 
+    \item\label{transf-lineales-} $T:\mathbb{K}[x]\longrightarrow\mathbb{K}[x]$, $T(p(x))=q(x)\,p(x)$ donde $q(x)$ es un polinomio fijo.
+    \item\label{transf-lineales-c} $T:\mathbb{K}^2\longrightarrow\mathbb{K}$, $T(x,y)=xy$
+    \item\label{transf-lineales-d} $T:\mathbb{K}^2\longrightarrow\mathbb{K}^3$, $T(x,y)=(x,y,1)$
+    \item\label{transf-lineales-e} El determinante $\operatorname{det}:\mathbb{K}^{n\times n}\longrightarrow\mathbb{K}$.
+    \end{enumerate}
+
+    \rta
+    
+    
+    \item Sea $T:\mathbb{C}\longrightarrow\mathbb{C}$, $T(z)=\overline{z}$.
+    \begin{enumerate}
+    \item\label{conj-C} Considerar a $\mathbb{C}$ como un $\mathbb{C}$-espacio vectorial y decidir si $T$ es una transformación lineal.
+    \item\label{conj-R} Considerar a $\mathbb{C}$ como un $\mathbb{R}$-espacio vectorial y decidir si $T$ es una transformación lineal.
+    \end{enumerate}
+    
+    \rta
+    
+    
+    
+    \item\label{T en la base} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ una transformación lineal tal que $T(e_1)=(1,2,3)$, $T(e_2)=(-1,0,5)$ y $T(e_3)=(-2,3,1)$. 
+        \begin{enumerate}
+        \item\label{T en dos vectores} Calcular $T(2,3,8)$ y $T(0,1,-1)$. 
+        \item\label{T en la base b} Calcular $T(x,y,z)$ para todo $(x,y,z)\in\mathbb{K}^3$. Es decir, dar una fórmula para $T$ como la del ejercicio \ref{Txyz}.
+        \item\label{matriz otro}  Encontrar una matriz $A\in\mathbb{K}^{3\times3}$ tal que
+        $T(x,y,z)=A\begin{bmatrix}
+        x\\y\\z \end{bmatrix}$. En esta parte del ejercicio escribiremos/pensaremos a los vectores de $\mathbb{K}^3$ como columnas.
+        \end{enumerate}
+    
+        \rta
+    
+    
+        
+    \item\label{Txyz} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ definida por $T(x,y,z)=(x+2y+3z, y-z,x+5y)$.
+    \begin{enumerate}
+    \item\label{Txyz-vectores-nucleo} Decir cuáles de los siguientes vectores están en el núcleo: $(1,1,1)$, $(-5,1,1)$.
+    \item\label{Txyz imagen} Decir cuáles de los siguientes vectores están en la imagen: $(0,1,0)$, $(0,1,7)$.
+    \item\label{Txyz nucleo imagen} Describir mediante ecuaciones (implícitamente) el núcleo y dar un conjunto de generadores de la imagen.
+    \item\label{matriz} Encontrar una matriz  $A\in\mathbb{K}^{3\times 3}$ tal que $T(x,y,z)=A\left(\begin{matrix}
+        x\\y\\z \end{matrix}
+        \right)$.  Como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas.
+    \end{enumerate}
+    
+    \rta
+    
+    
+    
+    \item\label{tl-matriz} Sea $T: \mathbb{K}^4 \to \mathbb{K}^5$ dada por $T(v) = Av$ donde $A$ es la siguiente matriz
+        $$
+        A=\begin{bmatrix}
+        0& 2& 0&1\\   1& 3& 0&1\\  -1&-1&0&0\\3&0&3&0\\2&1&1&0 \end{bmatrix}
+        $$
+        \begin{enumerate}[topsep=5pt,itemsep=5pt]
+            \item\label{tl-matriz-a} Dar una base del núcleo y de la imagen de $T$. 
+            \item\label{tl-matriz-b} Dar la dimensión del núcleo y de la imagen de $T$.
+            \item\label{tl-matriz-c} Describir mediante ecuaciones (implícitamente) el núcleo y la imagen de $T$.
+            \item\label{tl-matriz-d} Decir cuáles de los siguientes vectores están en el núcleo:
+            $(1,2,3,4)$, $(1,-1,-1,2)$, $(1,0,2,1)$.
+            \item\label{tl-matriz-e} Decir cuáles de los siguientes vectores están en la imagen:
+            $(2,3,-1,0,1)$, $(1,1,0,3,1)$, $(1,0,2,1,0)$.
+        \end{enumerate}
+        
+    \rta
+
+        \item Sea $T:\mathbb{K}^{2\times 2}\longrightarrow\mathbb{K}_{4}[x]$ la transformación lineal definida por
+        \begin{align*}
+        T   \begin{bmatrix}  a&b\\c&d \end{bmatrix} &= (a-c+2d)x^3+(b+2c-d)x^2+ \\
+        &\qquad+(-a+2b+5c-4d)x+(2a-b-4c+5d)
+        \end{align*}
+        \begin{enumerate}
+            \item\label{tl-matrices-pol-a} Decir cuáles de los siguientes matrices están en el núcleo:
+                \begin{align*}
+                    A=\begin{bmatrix}
+                        2&0\\0&-1
+                    \end{bmatrix},
+                \quad
+                B=\begin{bmatrix}
+                    -1&-1\\1&1
+                \end{bmatrix},
+                \quad
+                C=\begin{bmatrix}
+                    -1&-1\\1&0
+                \end{bmatrix}.
+                \end{align*}
+            \item\label{tl-matrices-pol-b} Decir cuáles de los siguientes polinomios están en la imagen:
+                \begin{align*}
+                    p(x)=x^3+x^2+x+1,\quad q(x)=x^3, \quad r(x)=(x-1)(x-1) 
+                \end{align*}
+        \end{enumerate}
+    
+    \rta
+    
+    \item\label{funcional ej}  Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}$ definida por $T(x,y,z)=x+2y+3z$.
+    \begin{enumerate}
+        \item\label{funcional ej a} Probar que $T$ es un epimorfismo.
+        \item\label{funcional ej b} Dar la dimensión del núcleo de $T$.
+        \item\label{funcional ej c} Encontrar una matriz $A$ tal que
+            $T(x,y,z)=A\begin{bmatrix}
+            x\\y\\z \end{bmatrix}$. ¿De qué tamaño debe ser $A$? Como en el ejercicio \ref{Txyz}\, \ref{matriz} pensamos a los vectores como columnas. 
+    \end{enumerate}
+
+    \rta
+    
+    
+    \item Determinar cuáles transformaciones lineales de los ejercicios anteriores son monomorfismos, epimorfismos y/o isomorfismos.
+    
+    \rta
+
+
+    \item\label{usar-1} Encontrar en cada caso, cuando sea posible, una matriz $A\in\mathbb{K}^{3\times 3}$ tal que la transformación lineal $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$, $T(v)=Av$, satisfaga las condiciones exigidas (como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas). Cuando no sea posible, explicar por qué no es posible.
+    \begin{enumerate}[ topsep=5pt,itemsep=5pt]
+        \item\label{usar-1 a} $\operatorname{dim} \operatorname{Im}(T)=2$ y $\operatorname{dim}\operatorname{Nu}(T)=2$.
+        \item\label{usar-1 b} $T$ inyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
+        \item\label{usar-1 c} $T$ sobreyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
+        
+        \item\label{usar Txyz} $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
+        
+        \item\label{usar-1 e} $e_1\in\operatorname{Im}(T)$ y $(-5,1,1)\in\operatorname{Nu}(T)$.
+        
+        \item\label{usar-1 f} $\operatorname{dim} \operatorname{Im}(T)=2$.
+    \end{enumerate}
+        
+    \rta 
+
+
+    \item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
+    \begin{enumerate}
+        \item\label{tl-VoF-a} Si $T : \mathbb R^{13} \to \mathbb R^9$ es una transformación lineal, entonces $\dim \operatorname{Nu}(T) \geq  4$.
+        \item\label{tl-VoF-b} Sea $T:\mathbb{K}^{6}\longrightarrow\mathbb{K}^2$ un epimorfismo y $W$ un subespacio de $\mathbb{K}^{6}$ con $\dim W=3$. Entonces existe $0\neq w\in W$ tal que $T(w)=0$.
+        \item\label{tl-VoF-c} Existe una transformación lineal $T : \mathbb R^2 \to \mathbb R^4$ tal que los vectores $(1, 0, -1, 2)$, $(0, 1, 2,-1,)$ y $(0, 0, 2, 2)$ pertenecen a la imagen de $T$.
+    \end{enumerate}
+    
+    \rta
+
+
+
+    \item \label{funcionales} Sea $V$ un espacio vectorial no nulo y $T:V\longrightarrow\mathbb{K}$ probar que $T=0$ ó $T$ es sobreyectiva.
+    
+    \rta
+
+
+    \item Sea $V$ un espacio vectorial de dimensión finita y $T:V\longrightarrow V$ una transformación lineal. Probar las siguientes afirmaciones.
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $\operatorname{Nu}(T)\subseteq\operatorname{Nu}(T^2)$
+                \item\label{dimV impar} $\operatorname{Nu}(T)\neq\operatorname{Im}(T)$ si $\dim(V)$ es impar.
+            \end{enumerate}
+        \end{multicols}
+    
+    \rta
+        
+    \end{enumerate}
