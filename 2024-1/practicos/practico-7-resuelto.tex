@@ -122,15 +122,225 @@
     \item\label{Txyz} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ definida por $T(x,y,z)=(x+2y+3z, y-z,x+5y)$.
     \begin{enumerate}
     \item\label{Txyz-vectores-nucleo} Decir cuáles de los siguientes vectores están en el núcleo: $(1,1,1)$, $(-5,1,1)$.
-    \item\label{Txyz imagen} Decir cuáles de los siguientes vectores están en la imagen: $(0,1,0)$, $(0,1,7)$.
-    \item\label{Txyz nucleo imagen} Describir mediante ecuaciones (implícitamente) el núcleo y dar un conjunto de generadores de la imagen.
-    \item\label{matriz} Encontrar una matriz  $A\in\mathbb{K}^{3\times 3}$ tal que $T(x,y,z)=A\begin{bmatrix}
+    \item\label{Txyz imagen} Decir cuáles de los siguientes vectores están en la imagen: $(0,1,0)$, $(0,1,3)$.
+    \item\label{Txyz nucleo T implicito} Describir mediante ecuaciones (implícitamente) el núcleo de $T$.
+    \item\label{Txyz imagen T generadores} Dar un conjunto de generadores de la imagen.
+    \item\label{matriz de T} Encontrar una matriz  $A\in\mathbb{K}^{3\times 3}$ tal que $T(x,y,z)=A\begin{bmatrix}
         x\\y\\z \end{bmatrix}
         $.  Como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas.
     \end{enumerate}
     
     \rta
+
+    \ref{Txyz-vectores-nucleo} 
+    $$
+    T(1,1,1) = (1+2+3,1-1,1+5) = (6,0,6) \ne (0,0,0),
+    $$
+    por lo tanto $(1,1,1) \notin \operatorname{Nu}(T)$.
+
+    $$
+    T(-5,1,1) = (-5+2+3,1-1,-5+5) = (0,0,0),
+    $$
+    por lo tanto $(-5,1,1) \in \operatorname{Nu}(T)$.
+
+    \vskip .3cm
+    \ref{Txyz imagen}
     
+    Supongamos que $T(x,y,z) = (1,1,1)$. Entonces,
+    \begin{align*}
+        (x+2y+3z, y-z,x+5y) &= (1,1,1) \\
+        \Rightarrow \quad x+2y+3z &= 1, \\
+        y-z &= 1, \\
+        x+5y &= 1.
+    \end{align*} 
+    Resolvamos el sistema:
+    \begin{align*}
+        &\begin{amatrix}{3}
+            1 & 2 & 3 &1 \\
+            0 & 1 & -1 &1\\
+            1 & 5 & 0&1
+        \end{amatrix} 
+        \stackrel{F_3-F_1}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 2 & 3 &1 \\
+            0 & 1 & -1 &1\\
+            0 & 3 & -3&0
+        \end{amatrix}
+        \stackrel{F_3-3F_2}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 2 & 3 &1 \\
+            0 & 1 & -1 &1\\
+            0 & 0 & 0&-3
+        \end{amatrix}.
+    \end{align*}
+    La última fila de la última matriz nos dice que el sistema no tiene solución y por lo tanto $(1,1,1) \notin \operatorname{Im}(T)$.
+
+    \vskip .3cm
+    Supongamos que $T(x,y,z) = (0,1,3)$. Entonces,
+    \begin{align*}
+        (x+2y+3z, y-z,x+5y) &= (0,1,3) \\
+        \Rightarrow \quad x+2y+3z &= 0, \\
+        y-z &= 1, \\
+        x+5y &= 3.
+    \end{align*}
+    Resolvamos el sistema:
+    \begin{align*}
+        &\begin{amatrix}{3}
+            1 & 2 & 3 &0 \\
+            0 & 1 & -1 &1\\
+            1 & 5 & 0&3
+        \end{amatrix} 
+        \stackrel{F_3-F_1}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 2 & 3 &0 \\
+            0 & 1 & -1 &1\\
+            0 & 3 & -3&3
+        \end{amatrix}
+        \stackrel{F_3-3F_2}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 2 & 3 &0 \\
+            0 & 1 & -1 &1\\
+            0 & 0 & 0&0
+        \end{amatrix} \\
+        &\stackrel{F_1-2F_2}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 0 & 5 &-2 \\
+            0 & 1 & -1 &1\\
+            0 & 0 & 0&0
+        \end{amatrix}.
+    \end{align*}
+    Por lo tanto, $x = -2-5z$, $y = 1+z$ y $z$ es libre. Es decir, el sistema tiene infinitas soluciones, por ejemplo, para $z=0$ obtenemos $(x,y,z) = (-2,1,0)$ y es claro entonces que $T(-2,1,0) = (0,1,3)$.  Para $z=1$ obtenemos $(x,y,z) = (-7,2,1)$. En conclusión, $(0,1,3) \in \operatorname{Im}(T)$. 
+
+    \vskip .3cm
+    \ref{Txyz nucleo T implicito}   un vector $(x,y,z)$ está en el núcleo de $T$ si y sólo si $T(x,y,z) = (0,0,0)$. Es decir, si y sólo si
+    \begin{align*}
+        (x+2y+3z, y-z,x+5y) &= (0,0,0) \\
+        \Rightarrow \quad x+2y+3z &= 0, \\
+        y-z &= 0, \\
+        x+5y &= 0.
+    \end{align*}
+    Resolvamos el sistema:
+    \begin{align*}
+        &\begin{bmatrix}
+            1 & 2 & 3 \\
+            0 & 1 & -1\\
+            1 & 5 & 0
+        \end{bmatrix} 
+        \stackrel{F_3-F_1}{\longrightarrow}
+        \begin{bmatrix}
+            1 & 2 & 3 \\
+            0 & 1 & -1\\
+            0 & 3 & -3
+        \end{bmatrix}
+        \stackrel{F_3-3F_2}{\longrightarrow}
+        \begin{bmatrix}
+            1 & 2 & 3\\
+            0 & 1 & -1\\
+            0 & 0 & 0
+        \end{bmatrix} 
+        \stackrel{F_1-2F_2}{\longrightarrow}
+        \begin{bmatrix}
+            1 & 0 & 5 \\
+            0 & 1 & -1\\
+            0 & 0 & 0
+        \end{bmatrix}.
+    \end{align*}
+    Por lo tanto, $(x,y,z) \in \operatorname{Nu}(T)$ si y solo si  $x+5z=0$, $y - z=0$. Es decir,
+    $$
+    \operatorname{Nu}(T) = \{(x,y,z) \in \mathbb{K}^3: x+5z=0, y - z=0\}.
+    $$
+
+    \vskip .3cm
+    \ref{Txyz imagen T generadores} (primera forma) Debemos averiguar, los vectores $(x,y,z)$ tales que $T(x,y,z) = (b_1,b_2,b_3)$ para algún $ (b_1,b_2,b_3) \in \mathbb{K}^3$. Es decir, debemos averiguar, los vectores $(x,y,z)$ tales que
+    \begin{align*}
+        (x+2y+3z, y-z,x+5y) &= (b_1,b_2,b_3) \\
+        \Rightarrow \quad x+2y+3z &= b_1, \\
+        y-z &= b_2, \\
+        x+5y &= b_3.
+    \end{align*}
+    Resolvamos el sistema con matrices aumentadas:
+    \begin{align*}
+        &\begin{amatrix}{3}
+            1 & 2 & 3 &b_1 \\
+            0 & 1 & -1 &b_2\\
+            1 & 5 & 0&b_3
+        \end{amatrix} 
+        \stackrel{F_3-F_1}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 2 & 3 &b_1 \\
+            0 & 1 & -1 &b_2\\
+            0 & 3 & -3&b_3-b_1
+        \end{amatrix}
+        \stackrel{F_3-3F_2}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 2 & 3 &b_1 \\
+            0 & 1 & -1 &b_2\\
+            0 & 0 & 0&b_3-b_1-3b_2
+        \end{amatrix} \\
+        &\stackrel{F_1-2F_2}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 0 & 5 &b_1-2b_2 \\
+            0 & 1 & -1 &b_2\\
+            0 & 0 & 0&b_3-b_1-3b_2
+        \end{amatrix}.
+    \end{align*}
+    El sistema tiene solución si y solo si $b_3-b_1-3b_2 = 0$. Es decir,
+    \begin{align*}
+        \operatorname{Im}(T) &= \{(b_1,b_2,b_3) \in \mathbb{K}^3: b_3-b_1-3b_2 = 0\} \\ &= \{(b_1,b_2,b_3) \in \mathbb{K}^3: b_3 = b_1+3b_2\} \\
+        &= \{(b_1,b_2,b_1+3b_2) : b_1,b_2 \in \mathbb{K}\} \\
+        &= \{(b_1,0,b_1)  + (0,b_2,3b_2) : b_2, b_3 \in \mathbb{K}\} \\
+        &= \langle (1,0,1), (0,1,3) \rangle.
+    \end{align*}
+    Es decir que $(1,0,1), (0,1,3)$ son generadores de $\operatorname{Im}(T)$.
+
+    \ref{Txyz imagen T generadores} (segunda forma, más sencilla) Sabemos que $T$ de una base es un conjunto de generadores de la imagen. Por lo tanto, $\{T(e_1),T(e_2),T(e_3)\}$ es un conjunto de generadores de la imagen. Ahora bien, $T(e_1) = (1,0,1)$, $T(e_2) = (2,1,5)$ y $T(e_3) = (3,-1,0)$. Por lo tanto,  $(1,0,1),(2,1,5), (3,-1,0)$ son generadores de $\operatorname{Im}(T)$.
+
+    La solución de esta parte del ejercicio termina en el párrafo anterior, pero si queremos obtener una base de la imagen, planteamos una matriz donde las filas son las vectores y con Gauss obtenemos una MRF. Las filas no nulas serán una base de la imagen.
+    
+    En  este caso:
+    \begin{align*}
+        &\begin{bmatrix}
+            1 & 0 & 1 \\
+            2 & 1 & 5\\
+            3 & -1 & 0
+        \end{bmatrix}
+        \underset{F_3-3F_1}{\stackrel{F_2-2F_1}{\longrightarrow}}
+        \begin{bmatrix}
+            1 & 0 & 1 \\
+            0 & 1 & 3\\
+            0 & -1 & -3
+        \end{bmatrix}
+        \stackrel{F_3+F_2}{\longrightarrow}
+        \begin{bmatrix}
+            1 & 0 & 1 \\
+            0 & 1 & 3\\
+            0 & 0 & 0
+        \end{bmatrix}.    
+    \end{align*}
+    Por lo tanto, $\{(1,0,1),(0,1,3)\}$ es una base de la imagen de $T$.
+
+
+    \vskip .3cm
+    \ref{matriz de T} Observar  que 
+    $$
+    F_i(A)\cdot \begin{bmatrix} x\\y\\z \end{bmatrix} = T(x,y,z)_i.
+    $$
+    Es decir la fila $i$  de $A$ por el vector $(x,y,z)$ nos da la coordenada $i$ de $T(x,y,z)$. Como $T(x,y,z) = (x+2y+3z, y-z,x+5y)$, tenemos que
+    $$
+    A \begin{bmatrix} x\\y\\z \end{bmatrix} = \begin{bmatrix} x+2y+3z\\ y-z\\x+5y \end{bmatrix},
+    $$
+    y por lo tanto
+    \begin{align*}
+        A = \begin{bmatrix}
+            1 & 2 & 3 \\
+            0 & 1 & -1\\
+            1 & 5 & 0
+        \end{bmatrix}.  
+    \end{align*}
+
+
+
+
     
     
     \item\label{tl-matriz} Sea $T: \mathbb{K}^4 \to \mathbb{K}^5$ dada por $T(v) = Av$ donde $A$ es la siguiente matriz
