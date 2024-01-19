@@ -369,8 +369,11 @@
     $$
     Por lo tanto 
     \begin{equation}
-        T(x,y,z,t) = (2y+t,x+3y+t,-x-y,3x+3z,2x+y+z).
+        T(x,y,z,t) =  .
     \end{equation}
+    
+    
+    $$(-1,1,9,2) -4(0,0,0,1) -8(0,0,1,0) = (-1,1,1,-2)$$ 
 
     \ref{tl-matriz-a}  Como $T(v) = (0,0,0,0,0)$ si y solo si $Av=0$, el $\operatorname{Nu}(T)$ es el conjunto de soluciones del sistema $Av=0$,  que resolvemos  con Gauss:
     \begin{align*}
@@ -419,68 +422,174 @@
             1 & 0 & 0 &-1/2\\
             0 &0 &0 &0\\
             0 &0 &0 &0\\
-            0 &0 &1 &-9/2
+            0 &0 &1 &1/2
         \end{bmatrix}.
     \end{align*}
     Luego 
     \begin{equation}\label{eq-del-nucleo}
-        \operatorname{Nu}(T) = \{(x,y,z,t) \in \mathbb{K}^4: x +\frac{1}{2}t =0, y - \frac{1}{2}t=0, z - \frac{9}{2}t =0\} 
+        \operatorname{Nu}(T) = \{(x,y,z,t) \in \mathbb{K}^4: x -\frac{1}{2}t =0, y + \frac{1}{2}t=0, z + \frac{1}{2}t =0\},
     \end{equation}
     Por lo tanto,  
     \begin{align*}
-        \operatorname{Nu}(T) 
-        &=\{(x,y,z,t) \in \mathbb{K}^4: x = -\frac{1}{2}t, y = \frac{1}{2}t, z = \frac{9}{2}t\} \\ &= 
-        \left\{t\left(-\frac{1}{2},\frac{1}{2},\frac{9}{2},1\right): t \in \mathbb{K}\right\} \\ &=
-        \left\{t\left(-1,1,9,2\right): t \in \mathbb{K}\right\}.
+        \operatorname{Nu}(T) &= \{(x,y,z,t) \in \mathbb{K}^4: x =\frac{1}{2}t, y = -\frac{1}{2}t, z = -\frac{1}{2}t\} \\ &= 
+        \left\{\left(\frac{1}{2}t,-\frac{1}{2}t,-\frac{1}{2}t,t\right) : t \in \mathbb{K}\right\} \\ &=
+        \left\{t\left(\frac{1}{2},-\frac{1}{2},-\frac{1}{2},1\right) : t \in \mathbb{K}\right\} \\ &=
+        \langle \left(\frac{1}{2},-\frac{1}{2},-\frac{1}{2},1\right) \rangle.
     \end{align*}
-    Por lo tanto $\{(-1,1,9,2)\}$ es una base del núcleo de $T$.
+    En  consecuencia, $\{(1,-1,-1,2)\}$ es una base del núcleo de $T$. 
 
     \vskip .3cm
 
     Para encontrar una base de la imagen, calculamos $T(e_1),T(e_2),T(e_3),T(e_4)$ que es un sistema de generadores de la imagen. A partir de estos generadores encontramos una base.
     \begin{align*}
-        T(e_1) &= (2\cdot 0+0,1+3\cdot 0+0,-0-0,3\cdot 1+3\cdot 0,2\cdot 1+0+0) = (0,1,0,3,2), \\
-        T(e_2) &= (2\cdot 1+0,0+3\cdot 1+0,-0-1,3\cdot 0+3\cdot 0,2\cdot 0+1+0)= (2,3,-1,0,1), \\
-        T(e_3) &= (2\cdot 0+0,0+3\cdot 0+0,-0-0,3\cdot 0+3\cdot 1,2\cdot 0+0+1)= (0,0,0,3,1), \\
-        T(e_4) &= (2\cdot 0+1,0+3\cdot 0+1,-0-0,3\cdot 0+3\cdot 0,2\cdot 0+0+0)= (1,1,0,0,0).
+        T(e_1) &= (2\cdot 0+0,1+3\cdot 0+0,-1-0,3\cdot 1+3\cdot 0,2\cdot 1+0+0)\\ &= (0,1,-1,3,2), 
+    \end{align*}
+    \begin{align*}
+        T(e_2) &= (2\cdot 1+0,0+3\cdot 1+0,-0-1,3\cdot 0+3\cdot 0,2\cdot 0+1+0)\\ &= (2,3,-1,0,1), 
+    \end{align*}
+    \begin{align*}
+        T(e_3) &= (2\cdot 0+0,0+3\cdot 0+0,-0-0,3\cdot 0+3\cdot 1,2\cdot 0+0+1)\\ &= (0,0,0,3,1), 
+    \end{align*}
+    \begin{align*}
+        T(e_4) &= (2\cdot 0+1,0+3\cdot 0+1,-0-0,3\cdot 0+3\cdot 0,2\cdot 0+0+0)\\ &= (1,1,0,0,0).
     \end{align*}
     Encontramos una base de la imagen haciendo la matriz donde las filas son los vectores anteriores y hacemos Gauss:
     \begin{align*}
         &\begin{bmatrix}
-            0 & 1 & 0 &3 &2\\
+            0 & 1 & -1 &3 &2\\
             2 & 3 & -1 &0 &1\\
             0 & 0 & 0 &3 &1\\
             1 & 1 & 0 &0 &0
         \end{bmatrix}
         \stackrel{F_2-2F_4}{\longrightarrow}
         \begin{bmatrix}
-            0 & 1 & 0 &3 &2\\
+            0 & 1 & -1 &3 &2\\
             0 & 1 & -1 &0 &1\\
             0 & 0 & 0 &3 &1\\
             1 & 1 & 0 &0 &0
         \end{bmatrix}
         \underset{F_4-F_1}{\stackrel{F_2-F_1}{\longrightarrow}}
         \begin{bmatrix}
-            0 & 1 & 0 &3 &2\\
-            0 & 0 & -1 &-3 &-1\\
+            0 & 1 & -1 &3 &2\\
+            0 & 0 & 0 &-3 &-1\\
             0 & 0 & 0 &3 &1\\
-            1 & 0 & 0 &-3 &-2
+            1 & 0 & 1 &-3 &-2
         \end{bmatrix} \\
         &\underset{F_4+F_3}{\underset{F_2+F_3}{\stackrel{F_1-F_3}{\longrightarrow}}}
         \begin{bmatrix}
-            0 & 1 & 0 &0 &1\\
-            0 & 0 & -1 &0 &0\\
+            0 & 1 & -1 &0 &1\\
+            0 & 0 & 0 &0 &0\\
             0 & 0 & 0 &3 &1\\
-            1 & 0 & 0 &0 &-1
-        \end{bmatrix}
-        \underset{F_4+F_2}{\stackrel{F_1-F_2}{\longrightarrow}}
-        \begin{bmatrix}
-            0 & 1 & 0 &0 &1\\
-            0 & 0 & -1 &0 &0\\
-            0 & 0 & 0 &3 &1\\
-            1 & 0 & 0 &0 &-1
+            1 & 0 & 1 &0 &-1
         \end{bmatrix}
     \end{align*}
+    Luego, una base de la imagen es $\{(1,0,1,0,-1),(0, 1, -1, 0, 1),(0,0,0,3,1)\}$.
+
+    \vskip .3cm
+    \ref{tl-matriz-b} Hemos visto más arriba que el núcleo tiene una base de un elemento y la imagen tiene una base de tres elementos, por consiguiente  $\dim \operatorname{Nu}(T) = 1$ y $\dim \operatorname{Im}(T) = 3$. Observar que  $\dim \operatorname{Nu}(T) + \dim \operatorname{Im}(T) = 4$, que es la dimensión del dominio.
+
+    \vskip .3cm
+    \ref{tl-matriz-c}  El núcleo está descripto en \eqref{eq-del-nucleo} o,  equivalentemente,
+    \begin{equation}\label{eq-del-nucleo-2}
+        \operatorname{Nu}(T) = \{(x,y,z,t) \in \mathbb{K}^4: 2x -t =0, 2y + t=0, 2z + t =0\}.
+    \end{equation}
+    
+    Para  la imagen,  debemos plantear la ecuación $T(x,y,z,t) = (b_1,b_2,b_3,b_4,b_5)$ y resolver el sistema. Es decir, debemos resolver
+    \begin{align*}
+        (2y+t,x+3y+t,-x-y,3x+3z,2x+y+z) &= (b_1,b_2,b_3,b_4,b_5) \\
+        \Rightarrow \quad 2y+t &= b_1, \\
+        x+3y+t &= b_2, \\
+        -x-y &= b_3, \\
+        3x+3z &= b_4, \\
+        2x+y+z &= b_5.
+    \end{align*}
+    Resolvamos el sistema con matrices aumentadas:
+    \begin{align*}
+        &\begin{amatrix}{4}
+            0 & 2 & 0 &1 &b_1\\
+            1 & 3 & 0 &1 &b_2\\
+            -1 &-1 &0 &0 &b_3\\
+            3 &0 &3 &0 &b_4\\
+            2 &1 &1 &0 &b_5
+        \end{amatrix}
+        \underset{F_5-2F_2}{\underset{F_4-3F_2}{\stackrel{F_3+F_2}{\longrightarrow}}}
+        \begin{amatrix}{4}
+            0 & 2 & 0 &1 &b_1\\
+            1 & 3 & 0 &1 &b_2\\
+            0 &2 &0 &1 &b_2+b_3\\
+            0 &-9 &3 &-3 &-3b_2 +b_4\\
+            0 &-5 &1 &-2 &+-2b_2b_5
+        \end{amatrix} 
+    \end{align*}
+    \begin{align*}
+        &\stackrel{F_3-F_1}{\longrightarrow}
+        \begin{amatrix}{4}
+            0 & 2 & 0 &1 &b_1\\
+            1 & 3 & 0 &1 &b_2\\
+            0 &0 &0 &0 &-b_1+b_2+b_3\\
+            0 &-9 &3 &-3 &-3b_2 +b_4\\
+            0 &-5 &1 &-2 &-2b_2+b_5
+        \end{amatrix}
+        \stackrel{F_1/2}{\longrightarrow}
+        \begin{amatrix}{4}
+            0 & 1 & 0 &1/2 &b_1/2\\
+            1 & 3 & 0 &1 &b_2\\
+            0 &0 &0 &0 &-b_1+b_2+b_3\\
+            0 &-9 &3 &-3 &-3b_2 +b_4\\
+            0 &-5 &1 &-2 &-2b_2+b_5
+        \end{amatrix} 
+    \end{align*}
+    \begin{align*}
+        &\underset{F_5+5F_1}{\underset{F_4+9F_1}{\stackrel{F_2-3F_1}{\longrightarrow}}}
+        \begin{amatrix}{4}
+            0 & 1 & 0 &1/2 &b_1/2\\
+            1 & 0 & 0 &-1/2 &b_2-3b_1/2\\
+            0 &0 &0 &0 &-b_1+b_2+b_3\\
+            0 &0 &3 &3/2 &-3b_2 +b_4+9b_1/2\\
+            0 &0 &1 &1/2 &-2b_2+b_5+5b_1/2
+        \end{amatrix} 
+    \end{align*}
+    \begin{align*}
+        &\stackrel{F_4-3F_5}{\longrightarrow}
+        \begin{amatrix}{4}
+            0 & 1 & 0 &1/2 &b_1/2\\
+            1 & 0 & 0 &-1/2 &b_2-3b_1/2\\
+            0 &0 &0 &0 &-b_1+b_2+b_3\\
+            0 &0 &0 &0 &-6b_1/2+3b_2 +b_4-3b_5\\
+            0 &0 &1 &1/2 &-2b_2+b_5+5b_1/2
+        \end{amatrix}.
+    \end{align*}
+    Lo importante de estas ecuaciones son las filas donde  los coeficientes son $0$: $(b_1,b_2.b_3,b_4) \in \operatorname{Im}(T)$ si y solo si $-b_1+b_2+b_3=0$ y $-6b_1/2+3b_2 +b_4-3b_5=0$. Es decir,
+    \begin{equation}\label{eq-del-imagen-2}
+        \begin{aligned}
+        \operatorname{Im}(T) &= \{(b_1,b_2,b_3,b_4,b_5) \in \mathbb{K}^5: \\ 
+        &\qquad\qquad  -b_1+b_2+b_3=0 \text{ y } -3b_1+3b_2 +b_4-3b_5=0\}.
+        \end{aligned}
+    \end{equation}
+
+
+    \vskip .3cm
+    \ref{tl-matriz-d}  Para ver si $(1,2,3,4)$,  $(1,-1,-1,2)$, $(1,0,2,1)$ están en $\operatorname{Nu}(T)$ debemos ver si $T$ de cada vector es $(0,0,0,0,0)$ o si  cumplen con la ecuación \eqref{eq-del-nucleo-2} o si, como vimos en \ref{tl-matriz-a}, son múltiplos de $(1,-1,-1,2)$. El tercer método es el más sencillo y, por lo tanto, lo usaremos. 
+    
+    Es claro que $(1,2,3,4)$ no es múltiplo de $(1,-1,-1,2)$, por lo tanto, $(1,2,3,4)$ no está en $\operatorname{Nu}(T)$.
+
+    Por  el contrario $(1,-1,-1,2)$ es múltiplo de $(1,-1,-1,2)$, por lo tanto, $(1,-1,-1,2)$ está en $\operatorname{Nu}(T)$.
+
+    Finalmente, $(1,0,2,1)$ no es múltiplo de $(1,-1,-1,2)$, por lo tanto, $(1,0,2,1)$ no está en $\operatorname{Nu}(T)$.
+
+
+    \vskip .3cm
+    \ref{tl-matriz-e}  Para ver si $(2,3,-1,0,1)$, $(1,1,0,3,1)$, $(1,0,2,1,0)$ están en $\operatorname{Im}(T)$ debemos ver si  cumplen con la ecuación \eqref{eq-del-imagen-2}. Es decir 
+    $$
+    (x_1,x_2,x_3,x_4,x_5) \in \operatorname{Im}(T) \Leftrightarrow -x_1+x_2+x_3=0 \text{\; y } -3x_1+3x_2 +x_4-3x_5=0.
+    $$
+
+
+    Para $(2,3,-1,0,1)$,  $-2+3-1=0$ y $-6+9-3=0$, por lo tanto, $(2,3,-1,0,1)$ está en $\operatorname{Im}(T)$.
+
+    Para $(1,1,0,3,1)$,  $-1+1+0=0$ y $-3+3+3-3=0$, por lo tanto, $(1,1,0,3,1)$ está en $\operatorname{Im}(T)$.
+
+    Para $(1,0,2,1,0)$,  $-1+0+2=1$ y $-3+0+3-0=0$, por lo tanto, $(1,0,2,1,0)$ no está en $\operatorname{Im}(T)$.
     
 
 
