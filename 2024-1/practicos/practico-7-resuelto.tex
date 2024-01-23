@@ -120,6 +120,120 @@
         \end{align*}
     \qed
     \vskip .3cm
+
+
+        
+    \item \label{lineales1} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.	\begin{enumerate}
+		\item\label{lineales1-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
+		\item\label{lineales1-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
+	\end{enumerate}
+
+    \rta el método más general para resolver este tipo de ejercicios es el siguiente:
+    dada $T: \R^n \to \R^m$ transformación lineal,  calculamos la imagen encontrando la ecuación implícita de los $(b_1,\ldots,b_m) \in \R^m$ tales que $T(x_1,\ldots,x_n) = (b_1,\ldots,b_m)$ para $(x_1,\ldots,x_n) \in \R^n$. Esto se hará planteando las ecuaciones lineales y resolviendo por Gauss obtenemos una  MRF $[A|b]$. Las filas de $A$ que son cero  nos darán las condiciones que deben cumplir los $b_i$.  Resolviendo  las ecuaciones que deben cumplir los $b_i$ obtenemos una base de la imagen de $T$. Por otro lado, con las ecuaciones ya resueltas y especializando en  $b_1= \cdots = b_m = 0$ obtenemos las ecuaciones implícitas del núcleo en las filas no nulas de $A$. Una base de  núcleo se obtiene despejando los pivotes.
+
+    \ref{lineales1-a} Como ya dijimos vamos a caracterizar los $(b_1,b_2,b_3) \in \R^3$ tales que $T(x,y) = (b_1,b_2,b_3)$ para $(x,y) \in \R^2$. Es decir, debemos resolver el sistema
+    \begin{align*}
+        (x-y,x+y,2x+3y) &= (b_1,b_2,b_3) \\
+        \Rightarrow \quad x-y &= b_1, \\
+        x+y &= b_2, \\
+        2x+3y &= b_3.
+    \end{align*}
+    Resolvamos el sistema con matrices aumentadas:
+    \begin{align*}
+        &\begin{amatrix}{2}
+            1 & -1 & b_1 \\
+            1 & 1 & b_2 \\
+            2 & 3 & b_3
+        \end{amatrix}
+        \stackrel{F_3-2F_1}{\stackrel{F_2-F_1}{\longrightarrow}}
+        \begin{amatrix}{2}
+            1 & -1 & b_1 \\
+            0 & 2 & -b_1+b_2 \\
+            0 & 5 & -2b_1+b_3
+        \end{amatrix}\\
+        &\stackrel{F_2/2}{\longrightarrow}
+        \begin{amatrix}{2}
+            1 & -1 & b_1 \\
+            0 & 1 & -b_1/2+b_2/2 \\
+            0 & 5 & -2b_1+b_3
+        \end{amatrix}
+        \stackrel{F_1+F_2}{\stackrel{F_3-5F_2}{\longrightarrow}}
+        \begin{amatrix}{2}
+            1 & 0 & b_1/2+b_2/2  \\
+            0 & 1 & -b_1/2+b_2/2 \\
+            0 & 0 & b_1/2-5b_2/2+b_3
+        \end{amatrix}. \tag{*}
+    \end{align*}
+
+    Luego, el sistema tiene solución si y solo si $b_1/2-5b_2/2+b_3 = 0$. Es decir,
+    \begin{equation}\label{lineales1-a-imagen}
+        \operatorname{Im}(T) = \{(b_1,b_2,b_3) \in \R^3: b_1-5b_2+2b_3 = 0\}.
+    \end{equation}
+    Encontrar una base de $\operatorname{Im}(T)$ es fácil:
+    \begin{align*}
+        \operatorname{Im}(T) &= \{(b_1,b_2,b_3) \in \R^3: b_1-5b_2+2b_3 = 0\} \\
+        &= \{(b_1,b_2,b_3)\in \R^3: b_1 =5b_2-2b_3 \} \\
+        &= \{(5b_2-2b_3,b_2,b_3): b_2,b_3 \in \R \} \\
+        &= \{b_2(5,1,0)+b_3(-2,0,1): b_2,b_3 \in \R \} \\
+        &= \langle (5,1,0),(-2,0,1) \rangle.
+    \end{align*}
+    Es decir podemos considerar como base de $\operatorname{Im}(T)$ a $\{(5,1,0),(-2,0,1)\}$.
+
+    Para encontrar la ecuación implícita del núcleo debemos resolver el sistema homogéneo asociado a $T(x) =0$. Es decir, debemos resolver el sistema
+    \begin{align*}
+        (x-y,x+y,2x+3y) &= (0,0,0) \\
+        \Rightarrow \quad x-y &= 0, \\
+        x+y &= 0, \\
+        2x+3y &= 0.
+    \end{align*}
+    Pero esto ya lo hicimos más arriba, si tomamos $b_1=b_2=b_3=0$ en la MRF (*). Claramente, la  matriz nos indica que $x=y=0$. Es decir, $\operatorname{Nu}(T) = \{(0,0)\}$ y  la base es el conjunto $\emptyset$.
+
+
+    \vskip .3cm
+    \ref{lineales1-b} Como ya dijimos vamos a caracterizar los $(b_1,b_2) \in \R^2$ tales que $S(x,y,z) = (b_1,b_2)$ para $(x,y,z) \in \R^3$. Es decir, debemos resolver el sistema
+    \begin{align*}
+        (x-y+z,2x-y+2z) &= (b_1,b_2) \\
+        \Rightarrow \quad x-y+z &= b_1, \\
+        2x-y+2z &= b_2.
+    \end{align*}
+    Resolvamos el sistema con matrices aumentadas:
+    \begin{align*}
+        &\begin{amatrix}{3}
+            1 & -1 & 1 & b_1 \\
+            2 & -1 & 2 & b_2
+        \end{amatrix}
+        \stackrel{F_2-2F_1}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & -1 & 1 & b_1 \\
+            0 & 1 & 0 & -2b_1+b_2
+        \end{amatrix}\\
+        &\stackrel{F_1+F_2}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 0 & 1 & -b_1+b_2 \\
+            0 & 1 & 0 & b_2-2b_1
+        \end{amatrix}. \tag{**}
+    \end{align*}
+    Como no hay ninguna condición sobre los $b_i$, el sistema tiene solución para todo $(b_1,b_2) \in \R^2$. Es decir, 
+    \begin{equation}\label{lineales1-b-imagen}
+        \operatorname{Im}(S) = \R^2.    
+    \end{equation}
+    Claramente,  una base  podría ser $\{(1,0),(0,1)\}$.
+
+    Para encontrar la ecuación implícita del núcleo debemos resolver el sistema homogéneo asociado a $S(x) =0$. Es decir, debemos resolver el sistema
+    \begin{align*}
+        (x-y+z,2x-y+2z) &= (0,0) \\
+        \Rightarrow \quad x-y+z &= 0, \\
+        2x-y+2z &= 0.
+    \end{align*}
+    Pero esto ya lo hicimos más arriba, si tomamos $b_1=b_2=0$ en la MRF (**). Claramente, la  matriz nos indica que $x+z=0$ e $y=0$. Es decir, 
+    \begin{align*}
+        \operatorname{Nu}(S) &= \{(x,y,z) \in \R^3: x+z=0, y =0 \}  \tag{***}\\ &= \{(-z,0,z) : z \in \R\} = \{z(-1,0,1) : z \in \R\}
+        \\&= \langle (1,0,-1) \rangle.
+    \end{align*}
+    Luego (***) es la ecuación implícita del núcleo y $\{(1,0,-1)\}$ es una base de $\operatorname{Nu}(S)$.
+    
+    \qed
+
         
     \item\label{Txyz} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ definida por $T(x,y,z)=(x+2y+3z, y-z,x+5y)$.
         \begin{enumerate}
