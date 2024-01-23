@@ -34,6 +34,8 @@
 
     \vskip .3cm
     \ref{transf-lineales-e} No, no es una transformación lineal. Por ejemplo,  $\operatorname{det}(2\Id_2) = 4 \ne 2 = 2 \operatorname{det}(\Id_2)$. En general, $\operatorname{det}(\lambda A) = \lambda^n \operatorname{det}(A)$, donde $n$ es el tamaño de la matriz $A$.
+
+    \qed
     
     
     \item Sea $T:\mathbb{C}\longrightarrow\mathbb{C}$, $T(z)=\overline{z}$.
@@ -52,7 +54,7 @@
         T((a+bi) + \lambda (a'+b'i)) &= T((a+\lambda a') + (b+\lambda b')i) = (a+\lambda a') - (b+\lambda b')i \\
         &= (a-bi) + \lambda (a'-b'i) = T(a+bi) + \lambda T(a'+b'i).
     \end{align*}
-
+    \qed
 
     
     
@@ -116,7 +118,7 @@
                 x-y-2z\\2x+3z\\3x+5y+z
             \end{bmatrix} = T(x,y,z).
         \end{align*}
-    
+    \qed
     \vskip .3cm
         
     \item\label{Txyz} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ definida por $T(x,y,z)=(x+2y+3z, y-z,x+5y)$.
@@ -337,7 +339,7 @@
             1 & 5 & 0
         \end{bmatrix}.  
     \end{align*}
-
+\qed
 
 \vskip .4cm
 
@@ -591,7 +593,7 @@
 
     Para $(1,0,2,1,0)$,  $-1+0+2=1$ y $-3+0+3-0=0$, por lo tanto, $(1,0,2,1,0)$ no está en $\operatorname{Im}(T)$.
     
-
+\qed
 
 
 
@@ -623,8 +625,104 @@
                 \end{align*}
         \end{enumerate}
     
-    \rta
+    \rta 
+
+    \ref{tl-matrices-pol-a}  Para ver si $A$, $B$ y $C$ están en el núcleo debemos ver si $T$ de cada matriz es el polinomio nulo. Por la definición de $T$,
+    $$
+    \begin{bmatrix}  a&b\\c&d \end{bmatrix} \in \operatorname{Nu}(T) \Leftrightarrow \begin{cases}
+        a-c+2d=0\\
+        b+2c-d=0\\
+        -a+2b+5c-4d=0\\
+        2a-b-4c+5d=0.
+    \end{cases}
+    $$
+    Podemos comprobar en cada matriz estas ecuacines, o podemos simplificar el sistema para que resulta más fácil al comprobación. Haremos esto último con Gauss:
+    \begin{equation*}
+        \begin{bmatrix}
+            1 & 0 & -1 & 2 \\
+            0 & 1 & 2 & -1 \\
+            -1 & 2 & 5 & -4 \\
+            2 & -1 & -4 & 5
+        \end{bmatrix}
+        \underset{F_4-2F_1}{\stackrel{F_3+F_1}{\longrightarrow}}
+        \begin{bmatrix}
+            1 & 0 & -1 & 2 \\
+            0 & 1 & 2 & -1 \\
+            0 & 2 & 4 & -2 \\
+            0 & -1 & -2 & 1
+        \end{bmatrix}
+        \underset{F_4+F_2}{\stackrel{F_3-2F_2}{\longrightarrow}}
+        \begin{bmatrix}
+            1 & 0 & -1 & 2 \\
+            0 & 1 & 2 & -1 \\
+            0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 0
+        \end{bmatrix}.
+    \end{equation*}
+    Por lo tanto, 
+    $$
+    \begin{bmatrix}  a&b\\c&d \end{bmatrix} \in \operatorname{Nu}(T) \Leftrightarrow \begin{cases}
+        a-c+2d\\
+        b+2c-d.
+    \end{cases}
+    $$
+    Veamos ahora si  las matrices $A$, $B$ y $C$ cumplen con estas ecuaciones:
+    \begin{enumerate}
+        \item[$A$:] $a=2$, $b=0$, $c=0$, $d=-1$, por lo tanto, $a-c+2d=2-0+2\cdot (-1)=0$ y $b+2c-d=0+2\cdot 0-(-1)=1$, es decir, $A \notin \operatorname{Nu}(T)$.
+        \item[$B$:] $a=-1$, $b=-1$, $c=1$, $d=1$, por lo tanto, $a-c+2d=-1-1+2\cdot 1=0$ y $b+2c-d=-1+2\cdot 1-1=0$, es decir, $B \in \operatorname{Nu}(T)$.
+        \item[$C$:] $a=-1$, $b=-1$, $c=1$, $d=0$, por lo tanto, $a-c+2d=-1-1+2\cdot 0=0$ y $b+2c-d=-1+2\cdot 1-0=1$, es decir, $C \notin \operatorname{Nu}(T)$. 
+    \end{enumerate}
+
+    \vskip .3cm
+    \ref{tl-matrices-pol-b}  Para ver si $p(x)$, $q(x)$ y $r(x)$ están en la imagen debemos caracterizar la imagen.
+
+    Por la definición de $T$, $a_3x^3+a_2x^2+a_1x+a_0 \in \operatorname{Im}(T)$ si y solo si existe $A \in \mathbb{K}^{2\times 2}$ tal que $T(A) = a_3x^3+a_2x^2+a_1x+a_0$. Es decir, si y solo si
+    \begin{align*}
+        \begin{cases}
+            a-c+2d=a_3\\
+            b+2c-d=a_2\\
+            -a+2b+5c-4d=a_1\\
+            2a-b-4c+5d=a_0.
+        \end{cases}
+    \end{align*}
+    Resolvamos el sistema con Gauss.
+    \begin{align*}
+        &\begin{amatrix}{4}
+            1 & 0 & -1 & 2 & a_3 \\
+            0 & 1 & 2 & -1 & a_2 \\
+            -1 & 2 & 5 & -4 & a_1 \\
+            2 & -1 & -4 & 5 & a_0
+        \end{amatrix}
+        \underset{F_4-2F_1}{\stackrel{F_3+F_1}{\longrightarrow}}
+        \begin{amatrix}{4}
+            1 & 0 & -1 & 2 & a_3 \\
+            0 & 1 & 2 & -1 & a_2 \\
+            0 & 2 & 4 & -2 & a_1+a_3 \\
+            0 & -1 & -2 & 1 & a_0-2a_3
+        \end{amatrix} \\
+        &\underset{F_4+F_2}{\stackrel{F_3-2F_2}{\longrightarrow}}
+        \begin{amatrix}{4}
+            1 & 0 & -1 & 2 & a_3 \\
+            0 & 1 & 2 & -1 & a_2 \\
+            0 & 0 & 0 & 0 & a_1-2a_2+a_3 \\
+            0 & 0 & 0 & 0 & a_0+a_2-2a_3
+        \end{amatrix}.
+    \end{align*}
+    Por lo tanto, 
+    $$
+    a_3x^3+a_2x^2+a_1x+a_0 \in \operatorname{Im}(T) \quad \Leftrightarrow \quad a_1-2a_2+a_3=0 \text{\; y \;} a_0+a_2-2a_3=0.
+    $$
+
+    En  el caso de $p(x)=x^3+x^2+x+1$, $a_3=1$, $a_2=1$, $a_1=1$, $a_0=1$, por lo tanto, $a_1-2a_2+a_3=1-2+1=0$ y $a_0+a_2-2a_3=1+1-2=0$, es decir, $p(x) \in \operatorname{Im}(T)$. 
     
+    Para $q(x)=x^3$, $a_3=1$, $a_2=0$, $a_1=0$, $a_0=0$, por lo tanto, $a_1-2a_2+a_3=1 \ne 0$, es decir, $q(x) \notin \operatorname{Im}(T)$. 
+    
+    Finalmente para $r(x)=(x-1)(x-1) = x^2 -2x +1$, $a_3=0$, $a_2=1$, $a_1=-2$, $a_0=1$, por lo tanto, $a_1-2a_2+a_3=-2-2+0=-4 \ne 0$, es decir, $r(x) \notin \operatorname{Im}(T)$.
+    
+    \qed
+
+
+
     \item\label{funcional ej}  Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}$ definida por $T(x,y,z)=x+2y+3z$.
     \begin{enumerate}
         \item\label{funcional ej a} Probar que $T$ es un epimorfismo.
