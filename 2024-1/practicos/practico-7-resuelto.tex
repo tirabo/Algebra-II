@@ -56,18 +56,18 @@
     \end{align*}
     \qed
 
-    
-    
+    \vskip .3cm
+
     \item\label{T en la base} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ una transformación lineal tal que $T(e_1)=(1,2,3)$, $T(e_2)=(-1,0,5)$ y $T(e_3)=(-2,3,1)$. 
-        \begin{enumerate}
+    \begin{enumerate}
         \item\label{T en dos vectores} Calcular $T(2,3,8)$ y $T(0,1,-1)$. 
-        \item\label{T en la base b} Calcular $T(x,y,z)$ para todo $(x,y,z)\in\mathbb{K}^3$. Es decir, dar una fórmula para $T$ como la del ejercicio \ref{Txyz}.
-        \item\label{matriz otro}  Encontrar una matriz $A\in\mathbb{K}^{3\times3}$ tal que
-        $T(x,y,z)=A\begin{bmatrix}
-        x\\y\\z \end{bmatrix}$. En esta parte del ejercicio escribiremos/pensaremos a los vectores de $\mathbb{K}^3$ como columnas.
-        \end{enumerate}
+        \item\label{T en la base b} Calcular $T(x,y,z)$ para todo $(x,y,z)\in\mathbb{K}^3$. Es decir, dar una fórmula para $T$ donde en cada coordenada del vector de llegada hay una combinación lineal de $x,y,z$.
+        \item\label{matriz otro}  Encontrar una matriz $A\in\mathbb{K}^{3\times3}$ tal que $T(x,y,z)=A\begin{bmatrix}  x\\y\\z \end{bmatrix}$. En esta parte del ejercicio escribiremos/pensaremos a los vectores de $\mathbb{K}^3$ como columnas.
+    \end{enumerate}
     
         \rta
+
+    
 
         \ref{T en dos vectores} 
         \begin{align*}
@@ -98,7 +98,7 @@
         $$
         \begin{bmatrix} a&b&c \end{bmatrix} \begin{bmatrix} x\\y\\z \end{bmatrix} = ax+by+cz.
         $$ 
-        Basándonos en esta observación, obtenemos la matrizs
+        Basándonos en esta observación, obtenemos la matriz
         \begin{align*}
             A = \begin{bmatrix}
                 1 & -1 & -2 \\
@@ -119,134 +119,40 @@
             \end{bmatrix} = T(x,y,z).
         \end{align*}
     \qed
-    \vskip .3cm
-
-
-        
-    \item \label{lineales1} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.	\begin{enumerate}
-		\item\label{lineales1-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
-		\item\label{lineales1-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
-	\end{enumerate}
-
-    \rta el método más general para resolver este tipo de ejercicios es el siguiente:
-    dada $T: \R^n \to \R^m$ transformación lineal,  calculamos la imagen encontrando la ecuación implícita de los $(b_1,\ldots,b_m) \in \R^m$ tales que $T(x_1,\ldots,x_n) = (b_1,\ldots,b_m)$ para $(x_1,\ldots,x_n) \in \R^n$. Esto se hará planteando las ecuaciones lineales y resolviendo por Gauss obtenemos una  MRF $[A|b]$. Las filas de $A$ que son cero  nos darán las condiciones que deben cumplir los $b_i$.  Resolviendo  las ecuaciones que deben cumplir los $b_i$ obtenemos una base de la imagen de $T$. Por otro lado, con las ecuaciones ya resueltas y especializando en  $b_1= \cdots = b_m = 0$ obtenemos las ecuaciones implícitas del núcleo en las filas no nulas de $A$. Una base de  núcleo se obtiene despejando los pivotes.
-
-    \ref{lineales1-a} Como ya dijimos vamos a caracterizar los $(b_1,b_2,b_3) \in \R^3$ tales que $T(x,y) = (b_1,b_2,b_3)$ para $(x,y) \in \R^2$. Es decir, debemos resolver el sistema
-    \begin{align*}
-        (x-y,x+y,2x+3y) &= (b_1,b_2,b_3) \\
-        \Rightarrow \quad x-y &= b_1, \\
-        x+y &= b_2, \\
-        2x+3y &= b_3.
-    \end{align*}
-    Resolvamos el sistema con matrices aumentadas:
-    \begin{align*}
-        &\begin{amatrix}{2}
-            1 & -1 & b_1 \\
-            1 & 1 & b_2 \\
-            2 & 3 & b_3
-        \end{amatrix}
-        \stackrel{F_3-2F_1}{\stackrel{F_2-F_1}{\longrightarrow}}
-        \begin{amatrix}{2}
-            1 & -1 & b_1 \\
-            0 & 2 & -b_1+b_2 \\
-            0 & 5 & -2b_1+b_3
-        \end{amatrix}\\
-        &\stackrel{F_2/2}{\longrightarrow}
-        \begin{amatrix}{2}
-            1 & -1 & b_1 \\
-            0 & 1 & -b_1/2+b_2/2 \\
-            0 & 5 & -2b_1+b_3
-        \end{amatrix}
-        \stackrel{F_1+F_2}{\stackrel{F_3-5F_2}{\longrightarrow}}
-        \begin{amatrix}{2}
-            1 & 0 & b_1/2+b_2/2  \\
-            0 & 1 & -b_1/2+b_2/2 \\
-            0 & 0 & b_1/2-5b_2/2+b_3
-        \end{amatrix}. \tag{*}
-    \end{align*}
-
-    Luego, el sistema tiene solución si y solo si $b_1/2-5b_2/2+b_3 = 0$. Es decir,
-    \begin{equation}\label{lineales1-a-imagen}
-        \operatorname{Im}(T) = \{(b_1,b_2,b_3) \in \R^3: b_1-5b_2+2b_3 = 0\}.
-    \end{equation}
-    Encontrar una base de $\operatorname{Im}(T)$ es fácil:
-    \begin{align*}
-        \operatorname{Im}(T) &= \{(b_1,b_2,b_3) \in \R^3: b_1-5b_2+2b_3 = 0\} \\
-        &= \{(b_1,b_2,b_3)\in \R^3: b_1 =5b_2-2b_3 \} \\
-        &= \{(5b_2-2b_3,b_2,b_3): b_2,b_3 \in \R \} \\
-        &= \{b_2(5,1,0)+b_3(-2,0,1): b_2,b_3 \in \R \} \\
-        &= \langle (5,1,0),(-2,0,1) \rangle.
-    \end{align*}
-    Es decir podemos considerar como base de $\operatorname{Im}(T)$ a $\{(5,1,0),(-2,0,1)\}$.
-
-    Para encontrar la ecuación implícita del núcleo debemos resolver el sistema homogéneo asociado a $T(x) =0$. Es decir, debemos resolver el sistema
-    \begin{align*}
-        (x-y,x+y,2x+3y) &= (0,0,0) \\
-        \Rightarrow \quad x-y &= 0, \\
-        x+y &= 0, \\
-        2x+3y &= 0.
-    \end{align*}
-    Pero esto ya lo hicimos más arriba, si tomamos $b_1=b_2=b_3=0$ en la MRF (*). Claramente, la  matriz nos indica que $x=y=0$. Es decir, $\operatorname{Nu}(T) = \{(0,0)\}$ y  la base es el conjunto $\emptyset$.
-
-
-    \vskip .3cm
-    \ref{lineales1-b} Como ya dijimos vamos a caracterizar los $(b_1,b_2) \in \R^2$ tales que $S(x,y,z) = (b_1,b_2)$ para $(x,y,z) \in \R^3$. Es decir, debemos resolver el sistema
-    \begin{align*}
-        (x-y+z,2x-y+2z) &= (b_1,b_2) \\
-        \Rightarrow \quad x-y+z &= b_1, \\
-        2x-y+2z &= b_2.
-    \end{align*}
-    Resolvamos el sistema con matrices aumentadas:
-    \begin{align*}
-        &\begin{amatrix}{3}
-            1 & -1 & 1 & b_1 \\
-            2 & -1 & 2 & b_2
-        \end{amatrix}
-        \stackrel{F_2-2F_1}{\longrightarrow}
-        \begin{amatrix}{3}
-            1 & -1 & 1 & b_1 \\
-            0 & 1 & 0 & -2b_1+b_2
-        \end{amatrix}\\
-        &\stackrel{F_1+F_2}{\longrightarrow}
-        \begin{amatrix}{3}
-            1 & 0 & 1 & -b_1+b_2 \\
-            0 & 1 & 0 & b_2-2b_1
-        \end{amatrix}. \tag{**}
-    \end{align*}
-    Como no hay ninguna condición sobre los $b_i$, el sistema tiene solución para todo $(b_1,b_2) \in \R^2$. Es decir, 
-    \begin{equation}\label{lineales1-b-imagen}
-        \operatorname{Im}(S) = \R^2.    
-    \end{equation}
-    Claramente,  una base  podría ser $\{(1,0),(0,1)\}$.
-
-    Para encontrar la ecuación implícita del núcleo debemos resolver el sistema homogéneo asociado a $S(x) =0$. Es decir, debemos resolver el sistema
-    \begin{align*}
-        (x-y+z,2x-y+2z) &= (0,0) \\
-        \Rightarrow \quad x-y+z &= 0, \\
-        2x-y+2z &= 0.
-    \end{align*}
-    Pero esto ya lo hicimos más arriba, si tomamos $b_1=b_2=0$ en la MRF (**). Claramente, la  matriz nos indica que $x+z=0$ e $y=0$. Es decir, 
-    \begin{align*}
-        \operatorname{Nu}(S) &= \{(x,y,z) \in \R^3: x+z=0, y =0 \}  \tag{***}\\ &= \{(-z,0,z) : z \in \R\} = \{z(-1,0,1) : z \in \R\}
-        \\&= \langle (1,0,-1) \rangle.
-    \end{align*}
-    Luego (***) es la ecuación implícita del núcleo y $\{(1,0,-1)\}$ es una base de $\operatorname{Nu}(S)$.
     
-    \qed
-
-        
+    \vskip .3cm
+    
     \item\label{Txyz} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ definida por $T(x,y,z)=(x+2y+3z, y-z,x+5y)$.
         \begin{enumerate}
-        \item\label{Txyz-vectores-nucleo} Decir cuáles de los siguientes vectores están en el núcleo: $(1,1,1)$, $(-5,1,1)$.
-        \item\label{Txyz imagen} Decir cuáles de los siguientes vectores están en la imagen: $(0,1,0)$, $(0,1,3)$.
-        \item\label{Txyz nucleo T implicito} Describir mediante ecuaciones (implícitamente) el núcleo de $T$.
-        \item\label{Txyz imagen T generadores} Dar un conjunto de generadores de la imagen.
-        \item\label{matriz de T} Encontrar una matriz  $A\in\mathbb{K}^{3\times 3}$ tal que $T(x,y,z)=A\begin{bmatrix}
-            x\\y\\z \end{bmatrix}
-            $.  Como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas.
-        \end{enumerate}
+            \item\label{matriz de T} Encontrar una matriz  $A\in\mathbb{K}^{3\times 3}$ tal que $T(x,y,z)=A\begin{bmatrix}
+                    x\\y\\z \end{bmatrix}
+                    $.  Como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas.
+            \item\label{Txyz-vectores-nucleo} Decir cuáles de los siguientes vectores están en el núcleo: $(1,1,1)$, $(-5,1,1)$.
+            \item\label{Txyz nucleo imagen de T implicito} Describir mediante ecuaciones (implícitamente) el núcleo y la imagen de $T$.
+            \item\label{Txyz  nucleo imagen T generadores} Dar un conjunto de generadores del núcleo y la imagen de $T$.
+            \item\label{Txyz imagen} Decir cuáles de los siguientes vectores están en la imagen: $(0,1,0)$, $(0,1,3)$.
+    \end{enumerate}
     
     \rta
+
+    \ref{matriz de T} Observar  que 
+    $$
+    F_i(A)\cdot \begin{bmatrix} x\\y\\z \end{bmatrix} = T(x,y,z)_i.
+    $$
+    Es decir la fila $i$  de $A$ por el vector $(x,y,z)$ nos da la coordenada $i$ de $T(x,y,z)$. Como $T(x,y,z) = (x+2y+3z, y-z,x+5y)$, tenemos que
+    $$
+    A \begin{bmatrix} x\\y\\z \end{bmatrix} = \begin{bmatrix} x+2y+3z\\ y-z\\x+5y \end{bmatrix},
+    $$
+    y por lo tanto
+    \begin{align*}
+        A = \begin{bmatrix}
+            1 & 2 & 3 \\
+            0 & 1 & -1\\
+            1 & 5 & 0
+        \end{bmatrix}.  
+    \end{align*}
+
+    \vskip .3cm
 
     \ref{Txyz-vectores-nucleo} 
     $$
@@ -260,120 +166,13 @@
     por lo tanto $(-5,1,1) \in \operatorname{Nu}(T)$.
 
     \vskip .3cm
-    \ref{Txyz imagen}
     
-    Supongamos que $T(x,y,z) = (1,1,1)$. Entonces,
-    \begin{align*}
-        (x+2y+3z, y-z,x+5y) &= (1,1,1) \\
-        \Rightarrow \quad x+2y+3z &= 1, \\
-        y-z &= 1, \\
-        x+5y &= 1.
-    \end{align*} 
-    Resolvamos el sistema:
-    \begin{align*}
-        &\begin{amatrix}{3}
-            1 & 2 & 3 &1 \\
-            0 & 1 & -1 &1\\
-            1 & 5 & 0&1
-        \end{amatrix} 
-        \stackrel{F_3-F_1}{\longrightarrow}
-        \begin{amatrix}{3}
-            1 & 2 & 3 &1 \\
-            0 & 1 & -1 &1\\
-            0 & 3 & -3&0
-        \end{amatrix}
-        \stackrel{F_3-3F_2}{\longrightarrow}
-        \begin{amatrix}{3}
-            1 & 2 & 3 &1 \\
-            0 & 1 & -1 &1\\
-            0 & 0 & 0&-3
-        \end{amatrix}.
-    \end{align*}
-    La última fila de la última matriz nos dice que el sistema no tiene solución y por lo tanto $(1,1,1) \notin \operatorname{Im}(T)$.
 
-    \vskip .3cm
-    Supongamos que $T(x,y,z) = (0,1,3)$. Entonces,
-    \begin{align*}
-        (x+2y+3z, y-z,x+5y) &= (0,1,3) \\
-        \Rightarrow \quad x+2y+3z &= 0, \\
-        y-z &= 1, \\
-        x+5y &= 3.
-    \end{align*}
-    Resolvamos el sistema:
-    \begin{align*}
-        &\begin{amatrix}{3}
-            1 & 2 & 3 &0 \\
-            0 & 1 & -1 &1\\
-            1 & 5 & 0&3
-        \end{amatrix} 
-        \stackrel{F_3-F_1}{\longrightarrow}
-        \begin{amatrix}{3}
-            1 & 2 & 3 &0 \\
-            0 & 1 & -1 &1\\
-            0 & 3 & -3&3
-        \end{amatrix}
-        \stackrel{F_3-3F_2}{\longrightarrow}
-        \begin{amatrix}{3}
-            1 & 2 & 3 &0 \\
-            0 & 1 & -1 &1\\
-            0 & 0 & 0&0
-        \end{amatrix} \\
-        &\stackrel{F_1-2F_2}{\longrightarrow}
-        \begin{amatrix}{3}
-            1 & 0 & 5 &-2 \\
-            0 & 1 & -1 &1\\
-            0 & 0 & 0&0
-        \end{amatrix}.
-    \end{align*}
-    Por lo tanto, $x = -2-5z$, $y = 1+z$ y $z$ es libre. Es decir, el sistema tiene infinitas soluciones, por ejemplo, para $z=0$ obtenemos $(x,y,z) = (-2,1,0)$ y es claro entonces que $T(-2,1,0) = (0,1,3)$.  Para $z=1$ obtenemos $(x,y,z) = (-7,2,1)$. En conclusión, $(0,1,3) \in \operatorname{Im}(T)$. 
-
-    \vskip .3cm
-    \ref{Txyz nucleo T implicito}   un vector $(x,y,z)$ está en el núcleo de $T$ si y sólo si $T(x,y,z) = (0,0,0)$. Es decir, si y sólo si
-    \begin{align*}
-        (x+2y+3z, y-z,x+5y) &= (0,0,0) \\
-        \Rightarrow \quad x+2y+3z &= 0, \\
-        y-z &= 0, \\
-        x+5y &= 0.
-    \end{align*}
-    Resolvamos el sistema:
-    \begin{align*}
-        &\begin{bmatrix}
-            1 & 2 & 3 \\
-            0 & 1 & -1\\
-            1 & 5 & 0
-        \end{bmatrix} 
-        \stackrel{F_3-F_1}{\longrightarrow}
-        \begin{bmatrix}
-            1 & 2 & 3 \\
-            0 & 1 & -1\\
-            0 & 3 & -3
-        \end{bmatrix}
-        \stackrel{F_3-3F_2}{\longrightarrow}
-        \begin{bmatrix}
-            1 & 2 & 3\\
-            0 & 1 & -1\\
-            0 & 0 & 0
-        \end{bmatrix} 
-        \stackrel{F_1-2F_2}{\longrightarrow}
-        \begin{bmatrix}
-            1 & 0 & 5 \\
-            0 & 1 & -1\\
-            0 & 0 & 0
-        \end{bmatrix}.
-    \end{align*}
-    Por lo tanto, $(x,y,z) \in \operatorname{Nu}(T)$ si y solo si  $x+5z=0$, $y - z=0$. Es decir,
-    $$
-    \operatorname{Nu}(T) = \{(x,y,z) \in \mathbb{K}^3: x+5z=0, y - z=0\}.
-    $$
-
-    \vskip .3cm
-    \ref{Txyz imagen T generadores} (primera forma) Debemos averiguar, los vectores $(x,y,z)$ tales que $T(x,y,z) = (b_1,b_2,b_3)$ para algún $ (b_1,b_2,b_3) \in \mathbb{K}^3$. Es decir, debemos averiguar, los vectores $(x,y,z)$ tales que
-    \begin{align*}
-        (x+2y+3z, y-z,x+5y) &= (b_1,b_2,b_3) \\
-        \Rightarrow \quad x+2y+3z &= b_1, \\
-        y-z &= b_2, \\
-        x+5y &= b_3.
-    \end{align*}
+    \ref{Txyz nucleo imagen de T implicito} Debemos resolver la ecuación $AX=b$, entonces
+    \begin{itemize}
+        \item el núcleo de $T$ es el conjunto de soluciones del sistema homogéneo $AX=0$,
+        \item la imagen de $T$ es el conjunto de los $b\in\R^m$ para los cuales el sistema $AX=b$ tiene solución
+    \end{itemize} 
     Resolvamos el sistema con matrices aumentadas:
     \begin{align*}
         &\begin{amatrix}{3}
@@ -401,59 +200,49 @@
         \end{amatrix}.
     \end{align*}
     El sistema tiene solución si y solo si $b_3-b_1-3b_2 = 0$. Es decir,
+    
+    Es decir que 
+    \begin{align}\label{Txyz imagen ecuacion}
+        \operatorname{Im}(T) &= \{(b_1,b_2,b_3) \in \mathbb{K}^3: b_3-b_1-3b_2 = 0\} 
+    \end{align}
+
+    Por otro lado, el sistema homogéneo asociado a $AX=0$ tiene como soluciones los $(x,y,z)$ tales que $x+5z=0$, $y - z=0$. Es decir,
+    $$
+    \operatorname{Nu}(T) = \{(x,y,z) \in \mathbb{K}^3: x+5z=0, y - z=0\}.
+    $$
+
+
+    \vskip .3cm
+
+    \ref{Txyz  nucleo imagen T generadores} Por lo visto en el inciso anterior
     \begin{align*}
         \operatorname{Im}(T) &= \{(b_1,b_2,b_3) \in \mathbb{K}^3: b_3-b_1-3b_2 = 0\} \\ &= \{(b_1,b_2,b_3) \in \mathbb{K}^3: b_3 = b_1+3b_2\} \\
         &= \{(b_1,b_2,b_1+3b_2) : b_1,b_2 \in \mathbb{K}\} \\
         &= \{(b_1,0,b_1)  + (0,b_2,3b_2) : b_2, b_3 \in \mathbb{K}\} \\
         &= \langle (1,0,1), (0,1,3) \rangle.
     \end{align*}
-    Es decir que $(1,0,1), (0,1,3)$ son generadores de $\operatorname{Im}(T)$.
+    Por lo tanto, podemos elegir $(1,0,1), (0,1,3)$ generadores de $\operatorname{Im}(T)$.
 
-    \ref{Txyz imagen T generadores} (segunda forma, más sencilla) Sabemos que $T$ de una base es un conjunto de generadores de la imagen. Por lo tanto, $\{T(e_1),T(e_2),T(e_3)\}$ es un conjunto de generadores de la imagen. Ahora bien, $T(e_1) = (1,0,1)$, $T(e_2) = (2,1,5)$ y $T(e_3) = (3,-1,0)$. Por lo tanto,  $(1,0,1),(2,1,5), (3,-1,0)$ son generadores de $\operatorname{Im}(T)$.
-
-    La solución de esta parte del ejercicio termina en el párrafo anterior, pero si queremos obtener una base de la imagen, planteamos una matriz donde las filas son las vectores y con Gauss obtenemos una MRF. Las filas no nulas serán una base de la imagen.
-    
-    En  este caso:
+    Por otro lado,
     \begin{align*}
-        &\begin{bmatrix}
-            1 & 0 & 1 \\
-            2 & 1 & 5\\
-            3 & -1 & 0
-        \end{bmatrix}
-        \underset{F_3-3F_1}{\stackrel{F_2-2F_1}{\longrightarrow}}
-        \begin{bmatrix}
-            1 & 0 & 1 \\
-            0 & 1 & 3\\
-            0 & -1 & -3
-        \end{bmatrix}
-        \stackrel{F_3+F_2}{\longrightarrow}
-        \begin{bmatrix}
-            1 & 0 & 1 \\
-            0 & 1 & 3\\
-            0 & 0 & 0
-        \end{bmatrix}.    
-    \end{align*}
-    Por lo tanto, $\{(1,0,1),(0,1,3)\}$ es una base de la imagen de $T$.
-
+        \operatorname{Nu}(T) &= \{(x,y,z)\} \\
+        &= \{(x,y,z) \in \mathbb{K}^3: x=-5z, y = z\} \\
+        &= \{(-5z,z,z) : z \in \mathbb{K}\} \\
+        &= \{(-5,1,1)z : z \in \mathbb{K}\} \\
+        &= \langle (-5,1,1) \rangle.
+    \end{align*} 
+    Por lo tanto, podemos elegir $(-5,1,1)$ como generador de $\operatorname{Nu}(T)$.
 
     \vskip .3cm
-    \ref{matriz de T} Observar  que 
-    $$
-    F_i(A)\cdot \begin{bmatrix} x\\y\\z \end{bmatrix} = T(x,y,z)_i.
-    $$
-    Es decir la fila $i$  de $A$ por el vector $(x,y,z)$ nos da la coordenada $i$ de $T(x,y,z)$. Como $T(x,y,z) = (x+2y+3z, y-z,x+5y)$, tenemos que
-    $$
-    A \begin{bmatrix} x\\y\\z \end{bmatrix} = \begin{bmatrix} x+2y+3z\\ y-z\\x+5y \end{bmatrix},
-    $$
-    y por lo tanto
-    \begin{align*}
-        A = \begin{bmatrix}
-            1 & 2 & 3 \\
-            0 & 1 & -1\\
-            1 & 5 & 0
-        \end{bmatrix}.  
-    \end{align*}
+
+    \ref{Txyz imagen} Debemos comprobar si los vectores  $(0,1,0)$, $(0,1,3)$ satisfacen las ecuaciones que definen la imagen, es decir  las de la fórmula \eqref{Txyz imagen ecuacion}. Explícitamente, $(b_1,b_2,b_3) \in \operatorname{Im}(T)$ si y solo si $b_3-b_1-3b_2 = 0$. 
+    
+    Ahora bien, $(0,1,0) \in \operatorname{Im}(T)$ si y solo si $0-0-3\cdot 1 = -3 = 0$, lo cual es falso. Por lo tanto, $(0,1,0) \notin \operatorname{Im}(T)$
+    
+    Por otro lado, $(0,1,3) \in \operatorname{Im}(T)$ si y solo si $3-0-3\cdot 1 = 0$, lo cual es verdadero. Por lo tanto, $(0,1,3) \in \operatorname{Im}(T)$.
+
 \qed
+
 
 \vskip .4cm
 
@@ -711,6 +500,133 @@
 
 
 
+\vskip .3cm
+
+
+        
+    \item \label{lineales1} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.    \begin{enumerate}
+        \item\label{lineales1-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
+        \item\label{lineales1-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
+    \end{enumerate}
+
+    \rta 
+
+    \ref{lineales1-a} Como ya dijimos vamos a caracterizar los $(b_1,b_2,b_3) \in \R^3$ tales que $T(x,y) = (b_1,b_2,b_3)$ para $(x,y) \in \R^2$. Es decir, debemos resolver el sistema
+    \begin{align*}
+        (x-y,x+y,2x+3y) &= (b_1,b_2,b_3) \\
+        \Rightarrow \quad x-y &= b_1, \\
+        x+y &= b_2, \\
+        2x+3y &= b_3.
+    \end{align*}
+    Resolvamos el sistema con matrices aumentadas:
+    \begin{align*}
+        &\begin{amatrix}{2}
+            1 & -1 & b_1 \\
+            1 & 1 & b_2 \\
+            2 & 3 & b_3
+        \end{amatrix}
+        \stackrel{F_3-2F_1}{\stackrel{F_2-F_1}{\longrightarrow}}
+        \begin{amatrix}{2}
+            1 & -1 & b_1 \\
+            0 & 2 & -b_1+b_2 \\
+            0 & 5 & -2b_1+b_3
+        \end{amatrix}\\
+        &\stackrel{F_2/2}{\longrightarrow}
+        \begin{amatrix}{2}
+            1 & -1 & b_1 \\
+            0 & 1 & -b_1/2+b_2/2 \\
+            0 & 5 & -2b_1+b_3
+        \end{amatrix}
+        \stackrel{F_1+F_2}{\stackrel{F_3-5F_2}{\longrightarrow}}
+        \begin{amatrix}{2}
+            1 & 0 & b_1/2+b_2/2  \\
+            0 & 1 & -b_1/2+b_2/2 \\
+            0 & 0 & b_1/2-5b_2/2+b_3
+        \end{amatrix}. \tag{*}
+    \end{align*}
+
+    Luego, el sistema tiene solución si y solo si $b_1/2-5b_2/2+b_3 = 0$. Es decir,
+    \begin{equation}\label{lineales1-a-imagen}
+        \operatorname{Im}(T) = \{(b_1,b_2,b_3) \in \R^3: b_1-5b_2+2b_3 = 0\}.
+    \end{equation}
+    Encontrar una base de $\operatorname{Im}(T)$ es fácil:
+    \begin{align*}
+        \operatorname{Im}(T) &= \{(b_1,b_2,b_3) \in \R^3: b_1-5b_2+2b_3 = 0\} \\
+        &= \{(b_1,b_2,b_3)\in \R^3: b_1 =5b_2-2b_3 \} \\
+        &= \{(5b_2-2b_3,b_2,b_3): b_2,b_3 \in \R \} \\
+        &= \{b_2(5,1,0)+b_3(-2,0,1): b_2,b_3 \in \R \} \\
+        &= \langle (5,1,0),(-2,0,1) \rangle.
+    \end{align*}
+    Es decir podemos considerar como base de $\operatorname{Im}(T)$ a $\{(5,1,0),(-2,0,1)\}$.
+
+    Para encontrar la ecuación implícita del núcleo debemos resolver el sistema homogéneo asociado a $T(x) =0$. Es decir, debemos resolver el sistema
+    \begin{align*}
+        (x-y,x+y,2x+3y) &= (0,0,0) \\
+        \Rightarrow \quad x-y &= 0, \\
+        x+y &= 0, \\
+        2x+3y &= 0.
+    \end{align*}
+    Pero esto ya lo hicimos más arriba, si tomamos $b_1=b_2=b_3=0$ en la MRF (*). Claramente, la  matriz nos indica que $x=y=0$. Es decir, $\operatorname{Nu}(T) = \{(0,0)\}$ y  la base es el conjunto $\emptyset$.
+
+
+    \vskip .3cm
+    \ref{lineales1-b} Como ya dijimos vamos a caracterizar los $(b_1,b_2) \in \R^2$ tales que $S(x,y,z) = (b_1,b_2)$ para $(x,y,z) \in \R^3$. Es decir, debemos resolver el sistema
+    \begin{align*}
+        (x-y+z,2x-y+2z) &= (b_1,b_2) \\
+        \Rightarrow \quad x-y+z &= b_1, \\
+        2x-y+2z &= b_2.
+    \end{align*}
+    Resolvamos el sistema con matrices aumentadas:
+    \begin{align*}
+        &\begin{amatrix}{3}
+            1 & -1 & 1 & b_1 \\
+            2 & -1 & 2 & b_2
+        \end{amatrix}
+        \stackrel{F_2-2F_1}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & -1 & 1 & b_1 \\
+            0 & 1 & 0 & -2b_1+b_2
+        \end{amatrix}\\
+        &\stackrel{F_1+F_2}{\longrightarrow}
+        \begin{amatrix}{3}
+            1 & 0 & 1 & -b_1+b_2 \\
+            0 & 1 & 0 & b_2-2b_1
+        \end{amatrix}. \tag{**}
+    \end{align*}
+    Como no hay ninguna condición sobre los $b_i$, el sistema tiene solución para todo $(b_1,b_2) \in \R^2$. Es decir, 
+    \begin{equation}\label{lineales1-b-imagen}
+        \operatorname{Im}(S) = \R^2.    
+    \end{equation}
+    Claramente,  una base  podría ser $\{(1,0),(0,1)\}$.
+
+    Para encontrar la ecuación implícita del núcleo debemos resolver el sistema homogéneo asociado a $S(x) =0$. Es decir, debemos resolver el sistema
+    \begin{align*}
+        (x-y+z,2x-y+2z) &= (0,0) \\
+        \Rightarrow \quad x-y+z &= 0, \\
+        2x-y+2z &= 0.
+    \end{align*}
+    Pero esto ya lo hicimos más arriba, si tomamos $b_1=b_2=0$ en la MRF (**). Claramente, la  matriz nos indica que $x+z=0$ e $y=0$. Es decir, 
+    \begin{align*}
+        \operatorname{Nu}(S) &= \{(x,y,z) \in \R^3: x+z=0, y =0 \}  \tag{***}\\ &= \{(-z,0,z) : z \in \R\} = \{z(-1,0,1) : z \in \R\}
+        \\&= \langle (1,0,-1) \rangle.
+    \end{align*}
+    Luego (***) es la ecuación implícita del núcleo y $\{(1,0,-1)\}$ es una base de $\operatorname{Nu}(S)$.
+    
+    \qed
+
+    \vskip .3cm
+
+    
+\item \label{lineales2} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.    
+\begin{enumerate}
+    \item $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
+    \item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
+    \item $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
+    \item $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
+\end{enumerate}
+
+\rta
+    \vskip .3cm
 
 
         \item Sea $T:\mathbb{K}^{2\times 2}\longrightarrow\mathbb{K}_{4}[x]$ la transformación lineal definida por
@@ -836,63 +752,33 @@
     \qed
 
 
-
     \item\label{funcional ej}  Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}$ definida por $T(x,y,z)=x+2y+3z$.
     \begin{enumerate}
-        \item\label{funcional ej a} Probar que $T$ es un epimorfismo.
-        \item\label{funcional ej b} Dar la dimensión del núcleo de $T$.
-        \item\label{funcional ej c} Encontrar una matriz $A$ tal que
+        \item Probar que $T$ es un epimorfismo.
+        \item Dar la dimensión del núcleo de $T$.
+        \item Encontrar una matriz $A$ tal que
             $T(x,y,z)=A\begin{bmatrix}
-            x\\y\\z \end{bmatrix}$. ¿De qué tamaño debe ser $A$? Como en el ejercicio \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas. 
+            x\\y\\z \end{bmatrix}$. ¿De qué tamaño debe ser $A$? Como en el ejercicio \ref{Txyz}\, \ref{matriz de T} pensamos a los vectores como columnas. 
     \end{enumerate}
-
-    \rta
-    
-    
-    \item Determinar cuáles transformaciones lineales de los ejercicios anteriores son monomorfismos, epimorfismos y/o isomorfismos.
     
     \rta
-
-
+    
+    \item Determinar cuáles transformaciones lineales de los ejercicios  \ref{lineales1} y \ref{lineales2} son monomorfismos, epimorfismos y/o isomorfismos.
+    
+    \rta
+    
     \item\label{usar-1} Encontrar en cada caso, cuando sea posible, una matriz $A\in\mathbb{K}^{3\times 3}$ tal que la transformación lineal $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$, $T(v)=Av$, satisfaga las condiciones exigidas (como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas). Cuando no sea posible, explicar por qué no es posible.
     \begin{enumerate}[ topsep=5pt,itemsep=5pt]
-        \item\label{usar-1 a} $\operatorname{dim} \operatorname{Im}(T)=2$ y $\operatorname{dim}\operatorname{Nu}(T)=2$.
-        \item\label{usar-1 b} $T$ inyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
-        \item\label{usar-1 c} $T$ sobreyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
+        \item $\operatorname{dim} \operatorname{Im}(T)=2$ y $\operatorname{dim}\operatorname{Nu}(T)=2$.
+        \item $T$ inyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
+        \item $T$ sobreyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
         
-        \item\label{usar Txyz} $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
+        \item\label{usar Txyz} \textcircled{a} $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
         
-        \item\label{usar-1 e} $e_1\in\operatorname{Im}(T)$ y $(-5,1,1)\in\operatorname{Nu}(T)$.
+        \item $e_1\in\operatorname{Im}(T)$ y $(-5,1,1)\in\operatorname{Nu}(T)$.
         
-        \item\label{usar-1 f} $\operatorname{dim} \operatorname{Im}(T)=2$.
+        \item $\operatorname{dim} \operatorname{Im}(T)=2$.
     \end{enumerate}
-        
-    \rta 
-
-
-    \item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
-    \begin{enumerate}
-        \item\label{tl-VoF-a} Si $T : \mathbb R^{13} \to \mathbb R^9$ es una transformación lineal, entonces $\dim \operatorname{Nu}(T) \geq  4$.
-        \item\label{tl-VoF-b} Sea $T:\mathbb{K}^{6}\longrightarrow\mathbb{K}^2$ un epimorfismo y $W$ un subespacio de $\mathbb{K}^{6}$ con $\dim W=3$. Entonces existe $0\neq w\in W$ tal que $T(w)=0$.
-        \item\label{tl-VoF-c} Existe una transformación lineal $T : \mathbb R^2 \to \mathbb R^4$ tal que los vectores $(1, 0, -1, 2)$, $(0, 1, 2,-1,)$ y $(0, 0, 2, 2)$ pertenecen a la imagen de $T$.
-    \end{enumerate}
-    
-    \rta
-
-
-
-    \item \label{funcionales} Sea $V$ un espacio vectorial no nulo y $T:V\longrightarrow\mathbb{K}$ probar que $T=0$ ó $T$ es sobreyectiva.
-    
-    \rta
-
-
-    \item Sea $V$ un espacio vectorial de dimensión finita y $T:V\longrightarrow V$ una transformación lineal. Probar las siguientes afirmaciones.
-        \begin{multicols}{2}
-            \begin{enumerate}
-                \item $\operatorname{Nu}(T)\subseteq\operatorname{Nu}(T^2)$
-                \item\label{dimV impar} $\operatorname{Nu}(T)\neq\operatorname{Im}(T)$ si $\dim(V)$ es impar.
-            \end{enumerate}
-        \end{multicols}
     
     \rta
         

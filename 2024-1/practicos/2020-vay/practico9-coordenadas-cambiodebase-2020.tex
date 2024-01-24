@@ -1,0 +1,211 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+%\usepackage{enumitem}
+
+\newcommand{\este}{($\star$) \; }
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+	
+\noindent {\tiny \'Algebra / \'Algebra II \hfill Primer Cuatrimestre 2020}
+	
+\centerline{\Large{Pr\' actico 8}}
+	
+\
+	
+\centerline{\textsc{Coordenadas - Matriz de cambio de base}}
+	
+\
+	
+\noindent \textbf{Objetivos.} 
+	
+\begin{itemize}
+		
+\item Aprender a determinar las coordenadas de un vector en una base ordenada de un espacio vectorial.
+
+\item Dadas dos bases ordenadas, aprender a operar con la matriz de cambio de base.
+
+\end{itemize}
+	
+	\
+	
+	\noindent \textbf{Ejercicios.} 
+	
+\begin{enumerate}
+
+	
+	\item
+Probar que los vectores $\;v_1=(1,0,-i),\;
+v_2=(1+i,1-i,1),\;v_3=(i,i,i)$ forman una base de $\mathbb{C}^3$,
+y dar las coordenadas de un vector $(x,y,z)$ en esta base.
+
+\
+
+\item Dados los siguientes vectores de $\mathbb{R}^4$,
+$$
+v_1=(1,1,0,0), \quad v_2=(0,0,1,1), \quad v_3=(1,0,0,4),
+\quad v_4=(0,0,0,2).
+$$
+\begin{enumerate}
+	\item Demostrar que
+	$\mathcal{B}=\{v_1,v_2,v_3,v_4\}$ es una base de
+	$\mathbb{R}^{4}$.
+	\item Hallar las coordenadas de los vectores de la
+	base can\'onica respecto de $\mathcal{B}$.
+	\item Hallar las matrices de cambio de base de la base can\'onica
+	a $\mathcal{B}$ y viceversa.
+\end{enumerate}
+
+\
+
+\item  Sea $V=P_3$.
+Sean
+$$ g_1=1-x,\quad g_2=x+x^2, \quad g_3=(x+1)^2.$$
+\begin{enumerate}
+	\item Demostrar que $\mathcal{B}=\{g_1,g_2,g_3\}$ es una base de $V$.
+	\item Hallar las matrices de cambio de base con respecto a $\mathcal{B}$
+	y a la base can{\'o}nica $\{1,x,x^2\}$.
+\end{enumerate}
+
+\
+
+\item Sea $\mathcal{B}=
+\left\{
+\begin{bmatrix}
+2 & 0& 0 \\
+0 & 3& 1
+\end{bmatrix},
+\begin{bmatrix}
+0& 2& -1\\
+0& 2&-1
+\end{bmatrix},
+\begin{bmatrix}
+-1 &1&1 \\
+2 & 0 &2
+\end{bmatrix},
+\begin{bmatrix}
+1 &0 &1\\
+0 &0 &0
+\end{bmatrix},
+\begin{bmatrix}
+1& 0& 0\\
+0 &2 &0
+\end{bmatrix},
+\begin{bmatrix}
+0 &0 & 0\\
+1 & 2&1
+\end{bmatrix}
+\right\}$.
+
+
+\begin{enumerate}
+	\item Demostrar que
+	$\mathcal{B}$ es una base de $M_{2\times3}(\mathbb{R})$.
+	\item Hallar las coordenadas de
+	$
+	\begin{bmatrix}
+	1 & 1& 1 \\
+	1 & 1& 1
+	\end{bmatrix}$ con respecto a la base $\mathcal{B}$.
+	\item Hallar las matrices de cambio de base de la base can\'onica
+	a $\mathcal{B}$ y viceversa.
+\end{enumerate}
+
+\
+
+\item Sea $W=<v_1,v_2>$, el subespacio de $\mathbb{C}^3$
+generado por $v_1=(1,0,i)$ y $v_2=(1+i,1,-1)$.
+\begin{enumerate}
+	\item Demostrar que $\mathcal{B}_1=\{v_1,v_2\}$ es una base de $W$.
+	\item Describir $W$ impl{\'\i}citamente.
+	\item Demostrar que los vectores $w_1=(1,1,0)$ y
+	$w_2=(1,i,1+i)$ pertenecen a $W$ y que $\mathcal{B}_2=\{w_1,w_2\}$
+	es otra base de $W$.
+	\item  ¿Cu{\'a}les son las coordenadas de $v_1$ y $v_2$ en la
+	base ordenada $\mathcal{B}_2$?
+	\item Hallar las matrices de cambio de base
+	$P_{\mathcal{B}_1,\mathcal{B}_2}$ y $P_{\mathcal{B}_2,\mathcal{B}_1}$.
+\end{enumerate}
+
+\
+
+\item Sea $\mathcal{B}=
+\left\{
+\begin{bmatrix}
+2 & 0\\
+0 & -1
+\end{bmatrix},
+\begin{bmatrix}
+0& -1\\
+0& 0
+\end{bmatrix},
+\begin{bmatrix}
+-1 &0\\
+\; 0 & 1
+\end{bmatrix},
+\begin{bmatrix}
+0 &1 \\
+1 &0
+\end{bmatrix}
+\right\} \subseteq M_2(\mathbb R)$.
+
+
+\
+
+
+\begin{enumerate}
+	\item Demostrar que $\mathcal{B}$ es una base de $M_2(\mathbb R)$.
+	
+
+	\item Hallar las matrices de cambio de base de la base ordenada can\'onica de $M_2(\mathbb R)$ a la base ordenada $\mathcal{B}$ y viceversa.
+		
+	\item Hallar las coordenadas de la matriz
+	$
+	\begin{bmatrix}
+	2 & 1\\
+	1 & 2
+	\end{bmatrix}$ con respecto a la base ordenada $\mathcal{B}$.
+\end{enumerate}
+
+
+\end{enumerate}
+
+%============================================================
+\subsection*{M\'as ejercicios}
+%============================================================
+
+\begin{enumerate}
+
+\item Sea $\mathcal{B}=
+\{ (1, 1, 0, 0), (0,0,1,1), (1, 0, 0, 2), (0, 0, -1, 1)\} \subseteq \mathbb R^4$.
+Hallar la matriz de cambio de base de la base ordenada $\mathcal B' = \{(0, 0, 1, 0), (0, 0, 0, 1), (0, 1, 0, 0), (1, 0, 0, 0)\}$ a la base ordenada $\mathcal{B}$.
+
+
+\
+
+
+\item  Sea $W$ el subespacio de $\mathbb R^4$ generado los vectores $\alpha_1 = (-3, 1, 0, 0)$, $\alpha_2 = (-2, 0, 1, 0)$ y $\alpha_3 = (-1,1,-1,1)$.
+
+Probar que $\mathcal B = \{\alpha_1, \alpha_2, \alpha_3\}$ es  base de $W$ y dar las coordenadas de un vector $(x, y, z, t)$ de $W$ en la base ordenada $\mathcal B$.
+
+\
+
+\item Calcular la matriz de cambio de base de la base ordenada $\mathcal B$ a la base ordenada $\mathcal B'$, donde:
+\begin{equation*}\mathcal B  = \{ (0, 1, 1, -1), (0, 2, 0, 0), (2, 0, 1,
+-1), (1, 1, 1, 1)\}, \quad \mathcal B'  = \{ e_1-e_2, e_1, e_3-e_4,
+e_3\},\end{equation*} siendo $\{ e_1, e_2, e_3, e_4\}$ la base
+ordenada can\' onica de $\mathbb R^4$.
+
+\end{enumerate}
+
+\end{document} 

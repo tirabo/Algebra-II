@@ -49,43 +49,77 @@
             2x_1 - x_3 \\ -x_1+3x_2+x_3
             \end{bmatrix}.
             $$
-            Es decir,  si $\cC_n$  es la báse canónica de $\K^n$ y $[x]_{\cC_3}$ es la matriz de $x$ en la base canónica,  entonces 
-            $$
-            A\,[x]_{\cC_3} = [T(x)]_{\cC_2}.
-            $$ 
             \end{ejemplo*}
+
+
+            \begin{ejemplo*}
+                Sea $V = \R[x]$ el espacio vectorial de los polinomios con coeficientes reales. Definimos $D:V \to V$, por
+                $$
+                D(P)(x) = P'(x),\quad x \in \R. 
+                $$
+                Observemos primero que la derivada de un polinomio es un polinomio, pues 
+                $$
+                (a_nx^n+ a_{n-1}x^{n-1}+\cdots + a_1 x + a_0)' = na_nx^{n-1}+ (n-1)a_{n-1}x^{n-2}+\cdots + a_1.
+                $$
+                Además  $D$  es lineal, pues $(f+g)' = f' + g'$ y $(\lambda f)' = \lambda f'$, para $f,g$ funciones derivables y $\lambda \in \R$.
+            \end{ejemplo*} 
+
+            \vskip .4cm 
+            
+            \begin{observacion*}
+                Las transformaciones lineales preservan  combinaciones lineales, es decir si $T:V \to W$ es una transformación lineal, $ v_1,\ldots,v_k \in V$ y $\lambda_1, \ldots+ \lambda_k \in \K$,  entonces
+                $$
+                T(\lambda_1 v_1 + \cdots+ \lambda_k v_k) = \lambda_1 T(v_1) + \cdots+ \lambda_k T(v_k).
+                $$
+                Observar que el caso $k=2$ se demuestra de la siguiente manera
+                $$
+                T(\lambda_1 v_1 +  \lambda_2 v_2) =T(\lambda_1 v_1) + T(\lambda_2 v_2) =\lambda_1 T(v_1) + \lambda_2T( v_2).
+                $$
+                El caso general se demuestra por inducción. 
+            
+            \end{observacion*}
+            \vskip .4cm
         
-            \begin{obs}\label{obs-tl-1.5} 	Sea $T: \K^n \to \K^m$. En  general si $T(x_1,\ldots,x_n)$ en cada coordenada tiene una combinación lineal de los $x_1,\ldots,x_n$,  entonces $T$ es una transformación lineal. Mas precisamente, si $T$ está definida por
-                \begin{align*}
-                T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )\\
-                &=(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j),
-                \end{align*}
-                con $a_{ij} \in \K$, entonces $T$  es lineal. 
-            \end{obs}
-            \begin{proof} Se puede hacer directamente como ejercicio. También se demuestra más adelante en la observación \ref{obs-nu-im}. 
-            \begin{comment}
+            \begin{observacion}\label{obs-tl-1.5} 	Sea $T: \K^n \to \K^m$. En  general si $T(x_1,\ldots,x_n)$ en cada coordenada tiene una combinación lineal de los $x_1,\ldots,x_n$,  entonces $T$ es una transformación lineal. Mas precisamente, si $T$ está definida por
+            \begin{equation}\label{eq-tl-1.1}
+                \begin{aligned}
+                    T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )\\
+            &=(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j),
+                \end{aligned}
+            \end{equation}
+            con $a_{ij} \in \K$, entonces $T$  es lineal. 
+            \end{observacion}
+            \begin{proof}
                 Sean $(x_1,\cdots,x_n), (y_1,\cdots,y_n) \in \K^n$ y $\lambda \in \K$,  entonces
                 \begin{align*}
-                T(\lambda(x_1,\cdots,x_n)+ (y_1,\cdots,y_n)) &= T(\lambda x_1+y_1,\ldots,\lambda x_n+y_n) \\
+                T(\lambda(x_1,\cdots,x_n)&+ (y_1,\cdots,y_n)) = T(\lambda x_1+y_1,\ldots,\lambda x_n+y_n) \\
                 &= (\sum_{j=1}^n a_{1j} (\lambda x_j+y_j),\ldots,\sum_{j=1}^n a_{mj} (\lambda x_j+y_j)) \\
                 &= (\lambda\sum_{j=1}^n a_{1j} x_j+\sum_{j=1}^n a_{1j} y_j,\ldots,\lambda\sum_{j=1}^n a_{mj} x_j+\sum_{j=1}^n a_{mj} y_j) \\
                 &= \lambda(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j) +(\sum_{j=1}^n a_{1j} y_j,\ldots,\sum_{j=1}^n a_{mj} y_j) \\
                 & =\lambda T(x_1,\cdots,x_n)+ T(y_1,\cdots,y_n).
                 \end{align*}
-            \end{comment}
+    
             \end{proof}
+
+            \vskip .4cm
         
-            \begin{ejemplo*}
-            Sea $V = \R[x]$ el espacio vectorial de los polinomios con coeficientes reales. Definimos $D:V \to V$, por
-            $$
-            D(P)(x) = P'(x),\quad x \in \R. 
-            $$
-            Observemos primero que la derivada de un polinomio es un polinomio, pues 
-            $$
-            (a_nx^n+ a_{n-1}x^{n-1}+\cdots + a_1 x + a_0)' = na_nx^{n-1}+ (n-1)a_{n-1}x^{n-2}+\cdots + a_1.
-            $$
-            Además  $D$  es lineal, pues $(f+g)' = f' + g'$ y $(\lambda f)' = \lambda f'$, para$f,g$ funciones derivables y $\lambda \in \R$.
-            \end{ejemplo*} 
+            \begin{observacion}\label{obs-tl-1.6} Recíprocamente, si $T: \K^n \to \K^m$ es transformación lineal entonces $T$ está definida por una fórmula como \eqref{eq-tl-1.1} de la de la observación \ref{obs-tl-1.5}. En efecto,  si 
+                \begin{align*}
+                T(e_j) &=  (a_{ij}, a_{2j},\ldots,a_{mj}) \\
+                &= a_{1j}e_1+\cdots+a_{mj}e_m.
+                \end{align*}
+                Luego, si $v = (x_1,\ldots,x_n)$,  entonces
+                \begin{align*}
+                T(v) &= T(x_1e_1+\cdots+x_ne_n) = x_1T(e_1)+\cdots+x_nT(e_n) \\
+                &= (x_1a_{11}+\cdots+x_na_{1n})e_1+\cdots+(x_1a_{m1}+\cdots+x_na_{mn})e_m \\
+                &= (x_1a_{11}+\cdots+x_na_{1n},\ldots,x_1a_{m1}+\cdots+x_na_{mn}).
+                \end{align*} 
+
+            \end{observacion}
+            
+            \vskip .4cm
+
+
         
         \begin{observacion*}	Sean $V$ y $W$ dos espacios vectoriales sobre el cuerpo $\K$ y 	 $T:V \to W$			un transformación lineal. Entonces $T(0) =0$
         \end{observacion*}
@@ -95,18 +129,6 @@
             \end{align*}
         \end{proof}
         
-        \begin{observacion*}
-            Las transformaciones lineales preservan  combinaciones lineales, es decir si $T:V \to W$ es una transformación lineal, $ v_1,\ldots,v_k \in V$ y $\lambda_1, \ldots+ \lambda_k \in \K$,  entonces
-            $$
-            T(\lambda_1 v_1 + \cdots+ \lambda_k v_k) = \lambda_1 T(v_1) + \cdots+ \lambda_k T(v_k).
-            $$
-            Observar que el caso $k=2$ se demuestra de la siguiente manera
-            $$
-            T(\lambda_1 v_1 +  \lambda_2 v_2) =T(\lambda_1 v_1) + T(\lambda_2 v_2) =\lambda_1 T(v_1) + \lambda_2T( v_2).
-            $$
-            El caso general se demuestra por inducción. 
-        
-        \end{observacion*}
         
         
         \begin{teorema}\label{th-tl-definida-en-base}
@@ -322,7 +344,11 @@ Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2)
                 &v &\mapsto &Av.
         \end{array}
         \end{align*}
-        Diremos que $T$  es \textit{la transformación lineal asociada a $A$} o  \textit{la transformación lineal inducida por $A$}. Muchas veces denotaremos a esta transformación lineal con el mismo símbolo que la matriz, es decir, en este caso con $A$.  
+        Diremos que $T$  es \textit{la transformación lineal asociada a $A$} o  \textit{la transformación lineal inducida por $A$}. 
+        
+        Recíprocamente si $T(x_1,\ldots,x_n)=(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j)$ transformación lineal de $\R^n$ en $\R^m$, entonces $A= [a_{ij}] \in \R^{m \times n}$ es la \textit{matriz asociada a $T$,} y $T(v) = Av$ para todo $v \in \R^n$.
+        
+        Muchas veces denotaremos a esta transformación lineal con el mismo símbolo que la matriz, es decir, en este caso con $A$.  
 \end{definicion}
 
 
@@ -375,11 +401,10 @@ Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2)
 
 \begin{proposicion}
 
-    Sea $A\in\R^{m\times n}$ y $T:\R^n\longrightarrow\R^m$ la transformación lineal asociada. Entonces
+    Sea $T:\R^n\longrightarrow\R^m$ una transformación lineal y $A\in\R^{m\times n}$ la matriz  asociada. Entonces
     \begin{itemize}
-     \item El núcleo de $T$ es el conjunto de soluciones del sistema homogéneo $AX=0$
-     
-     \item La imagen de $T$ es el conjunto de los $b\in\R^m$ para los cuales el sistema $AX=b$ tiene solución
+    \item El núcleo de $T$ es el conjunto de soluciones del sistema homogéneo $AX=0$. 
+    \item La imagen de $T$ es el conjunto de los $b\in\R^m$ para los cuales el sistema $AX=b$ tiene solución
     \end{itemize}
     \end{proposicion}
     \begin{proof}
@@ -396,7 +421,7 @@ Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2)
 \end{proof}
     
         
-\begin{ejemplo*}
+\begin{ejemplo}
         Sea $T: \R^3 \to \R^4$, definida
         $$
         T(x,y,z) = (x +y ,\,x +2y +z,\,3y +3z,\,2x +4y +2z).
@@ -405,7 +430,7 @@ Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2)
             \item Describir $\nuc(T)$  en forma paramétrica y dar una base.
             \item Describir $\img(T)$  en forma paramétrica y  dar una base. 
         \end{enumerate}
-        \end{ejemplo*}
+\end{ejemplo}
 \begin{proof}[Solución]
     La matriz asociada a esta transformación lineal  es 
     \begin{equation*}

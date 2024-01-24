@@ -1,0 +1,267 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{ a4paper, total={210mm,297mm}, left=2cm, right=2cm, top=1.5cm, bottom=2.5cm, }
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+\pagestyle{fancy}
+
+
+
+\begin{document}
+
+%\title{Pr\'actico 1}
+
+\noindent {\tiny \'Algebra / \'Algebra II \hfill Segundo Cuatrimestre 2020}
+
+%\maketitle
+
+\centerline{\Large{Pr\' actico 8}}
+
+\
+
+\centerline{\textsc{Coordenadas, Matrices de transformaciones lineales}}
+\centerline{\textsc{y Diagonalizaci\'on}}
+
+\bigbreak
+
+\subsection*{Objetivos}
+
+\begin{itemize}
+ \item Aprender a calcular coordenadas y la matriz de cambio de base.
+ \item Aprender a calcular la matriz de una transformaci\'on lineal.
+ \item Saber decidir si una transformaci\'on lineal es diagonalizable.
+ \item Aprender a construir transformaciones lineales que satisfagan las propiedades \linebreak solicitadas.
+\end{itemize}
+
+
+\bigbreak
+
+
+\subsection*{Ejercicios} Los ejercicios con el s\'imbolo $\textcircled{a}$ tienen una ayuda al final del archivo para que recurran a ella despu\'es de pensar un poco.
+
+\
+
+\begin{enumerate}
+\item Dar las coordenadas de la matriz
+$A=\left[\begin{array}{cc}
+   1&2\\3&4
+   \end{array}
+   \right]\in \mathbb{K}^{2\times 2}
+$ en la base ordenada
+$$
+\mathcal{B}=\left\{
+\left[\begin{array}{cc}
+   0&1\\0&0
+   \end{array}
+\right],
+\left[\begin{array}{cc}
+   0&0\\0&1
+   \end{array}
+   \right],
+   \left[\begin{array}{cc}
+   1&0\\0&0
+   \end{array}
+   \right],
+   \left[\begin{array}{cc}
+   0&0\\1&0
+   \end{array}
+   \right]
+\right\}.
+$$
+M\'as generalmente, dar las coordenadas de cualquier matriz $\left[\begin{array}{cc}
+   a&b\\c&d
+   \end{array}
+   \right]$ en la base $\mathcal{B}$.
+
+\
+
+\item Dar las coordenadas del polinomio $p(x) = -1+10x+2x^2\in\mathbb{K}_3[x]$ en la base ordenada $$\mathcal{B}=\{1,1+x,1+x+x^2\}.$$
+
+\
+
+\item
+\begin{enumerate}
+\item Dar una base ordenada del subespacio $W=\{(x,y,z)\in\mathbb{K}^3\mid x-y+2z=0\}$.
+
+\
+
+\item Dar las coordenadas de $w=(1,-1,-1)$ en la base que haya dado en el item anterior.
+
+\
+
+\item Dado $(x,y,z)\in W$, dar las coordenadas de $(x,y,z)$ en la base que haya calculado en el item (a).
+\end{enumerate}
+
+\
+
+\item\label{otras bases} Sea $\mathcal{C}$ la base can\'onica de $\mathbb{R}^2$ y
+	$\mathcal{B}=\{(1,0),(1,1)\}$ otra base ordenada de $\mathbb{R}^2$.
+	\begin{enumerate}
+		\item Encontrar la matriz de cambio de base $P_{\mathcal{C},\mathcal{B}}$ de $\mathcal{C}$ a $\mathcal{B}$.
+		\item Encontrar la matriz de cambio de base $P_{\mathcal{B},\mathcal{C}}$ de $\mathcal{B}$ a $\mathcal{C}$.
+		\item ?`Qu\'e relaci\'on hay entre $P_{\mathcal{C},\mathcal{B}}$ y $P_{\mathcal{B},\mathcal{C}}$?
+		\item Encontrar $(x,y),(z,w)\in\mathbb{R}^2$ tal que $[(x,y)]_{\mathcal{B}}=(1,4)$ y $[(z,w)]_{\mathcal{B}}=(1,-1)$.
+		\item Determinar las coordenadas de $(2,3)$, y m\'{a}s generalmente de cualquier $(x,y)$, en la base $\mathcal{B}$.
+	\end{enumerate}
+	
+	\
+
+\item Sea $P=\left[\begin{array}{ccc}
+      1&1&0\\2&1&1\\3&1&0
+      \end{array}
+\right]\in\mathbb{K}^{3\times 3}
+$.
+
+\begin{enumerate}
+\item Calcular la inversa de $P$.
+\item\label{base de P} $\textcircled{a}$ Dar una base ordenada $\mathcal{B}$ de $\mathbb{K}^3$
+tal que $P$ es la matriz de cambio de base de la base can\'onica $\mathcal{C}$ de $\mathbb{K}^3$ a la
+base $\mathcal{B}$.
+
+\item Encontrar $(x,y,z)\in\mathbb{K}^3$ tal que su vector de coordenadas con respecto a $\mathcal{B}$ es
+$$[(x,y,z)]_{\mathcal{B}}=(2,-1,-1).$$
+\end{enumerate}
+
+\
+
+\item\label{matriz transformaciones ejemplo} Sea
+$T:\mathbb{R}^3\longrightarrow\mathbb{R}^2$ la transformaci\'on lineal definida por $$T(x,y,z)=(x-y,x-z).$$ Sean $\mathcal{C}$ la base can\'onica de $\mathbb{R}^3$ y $\mathcal{B}'=\{(1,1),(1,-1)\}$ una base ordenada de $\mathbb{R}^2$.
+
+\begin{enumerate}
+ \item Calcular la matriz $[T]_{\mathcal{C}\mathcal{B}'}$, es decir la matriz de $T$ respecto de las bases $\mathcal{C}$ y $\mathcal{B}'$.
+ \item Sea $(x,y,z)\in\mathbb{R}^3$. Dar las coordenadas de $T(x,y,z)$ respecto de la base $\mathcal{B}'$.
+ \item Sea $S:\mathbb{R}^2\longrightarrow\mathbb{R}^3$ una transformaci\'on lineal tal que su matriz respecto a las bases $\mathcal{B}'$ y $\mathcal{C}$ es
+ \begin{align*}
+[S]_{\mathcal{B}'\mathcal{C}}=\left[\begin{array}{cr}
+1&2\\1&-1\\1&0
+\end{array}\right].
+ \end{align*}
+Calcular la matriz de la composici\'on $T\circ S:\mathbb{R}^2\longrightarrow\mathbb{R}^2$ con respecto a la base $\mathcal{B}'$.
+\item Calcular la matriz de $T\circ S$ respecto a la base $\mathcal{B}$ del Ejercicio \eqref{otras bases} usando las matrices de cambio de base calculadas en ese ejercicio.
+\end{enumerate}
+
+\
+
+\item Sea $A$ la primer matriz del Ejercicio 1 del Pr\'actico 5 y $T_A:\mathbb{R}^2\longrightarrow\mathbb{R}^2$ la transformaci\'on lineal dada por $T_A(v)=Av$. Hallar los autovalores de $T_A$, y para cada uno de ellos, dar una base de autovectores del correspondiente autoespacio. Decidir si $T_A$ es o no diagonalizable. En caso de serlo dar una matriz invertible $P$ tal que $P^{-1}AP$ es diagonal. Repetir esto para cada una de las matrices de dicho ejercicio.
+
+\
+
+\item Repetir el ejercicio anterior para cada matriz del Ejercicio 1 del Pr\'actico 5 pero ahora considerando a la transformaci\'on como una transformaci\'on lineal entre los $\mathbb{C}$-espacios vectoriales $\mathbb{C}^n$.
+
+\
+
+\item Sea $V$ un $\mathbb{K}-$espacio vectorial, y \ $T:V\longrightarrow V$ una transformaci\'on lineal tal que $v\in V$ es un autovector de autovalor $\lambda$. Probar las siguientes afirmaciones.
+\begin{enumerate}
+ \item Si $\lambda=0$, entonces $v\in\operatorname{Nu}(T)$.
+ \item Si $\lambda\neq0$, entonces $v\in\operatorname{Im}(T)$.
+  \item Si $T^2=0$, entonces $T-\operatorname{Id}$ es un isomorfismo.
+\end{enumerate}
+
+\
+
+\item \label{base nilp} Sea $V$ un $\mathbb{K}$-espacio vectorial de dimensi\'on $3$, y $T:V\longrightarrow V$ una transformaci\'on lineal. Supongamos que existe $v\in V$ tal que $T^3(v)=0$ pero $T^{2}(v)\neq 0$.
+\begin{enumerate}
+ \item\label{base nilp a} $\textcircled{a}$ Probar que $\mathcal{B}=\{v,T(v),T^2(v)\}$ es una base de $V$.
+ \item Calcular la matriz de $T$ respecto de la base $\mathcal{B}$.
+ \item Calcular los autovalores de $T$ y sus correspondientes autoespacios. Decidir si $T$ es diagonalizable.
+\end{enumerate}
+
+\
+
+\item Definir en cada caso una transformaci\'on lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ que satisfaga las condiciones requeridas. ?`Es posible definir m\'as de una transformaci\'on lineal?
+\begin{enumerate}
+ \item $(1,0,0)\in \operatorname{Nu}(T)$
+ \item $(1,0,0)\in \operatorname{Im}(T)$
+ \item $\{(1,0,0),(1,2,1)\}\subseteq\operatorname{Nu}(T)$ y $(1,0,0) \in  \operatorname{Im}(T)$
+\end{enumerate}
+
+\
+
+\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
+
+\begin{enumerate}
+\item Existe una transformaci\'on lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\{(1,0,1), (0,1,0)\}$ es una base de $\operatorname{Nu}(T)$ y  $\{(1,0,-1), (0,1,0)\}$ es una base de la $\operatorname{Im}(T)$.
+
+ \
+
+ \item Existe una transformaci\'on lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\{(1,0,1)\}$ es una base de $\operatorname{Nu}(T)$ y  $\{(1,0,-1), (0,1,0)\}$ es una base de la $\operatorname{Im}(T)$.
+
+\
+
+\item Existe una transformaci\'on lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\langle(1,2,3),(2,1,-1)\rangle$ es el autoespacio asociado a $0$ y $\langle(3,1,1),(1,1,3)\rangle$ es el autoespacio asociado a $5$.
+
+\
+
+\item Existe una transformaci\'on lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\langle(1,2,3)\rangle$ es el autoespacio asociado a $0$ y $\langle(3,1,1)\rangle$ es el autoespacio asociado a $5$.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\
+
+
+\subsection*{Ejercicios de repaso}
+Si ya hizo los ejercicios anteriores continue con la siguiente gu\'ia. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los ex\'amenes.
+
+\
+
+\begin{enumerate}[resume, topsep=5pt,itemsep=5pt]
+ \item\label{otras bases 3} Repetir el ejercicio \eqref{otras bases} con la base can\'onica de $\mathbb{R}^3$ y la base ordenada $$\mathcal{B}=\{(1,0,0),(1,1,0),(1,1,1)\}.$$ Considerar las $3$-uplas $(1,2,3)$ y $(0,1,2)$ para el \'{\i}tem (d), y $(2,3,1)$
+     para el \'{\i}tem (e).
+
+ \
+
+\item\label{cambio de base} $\textcircled{a}$ Sea $V$ un $\mathbb{K}-$espacio vectorial con base $\mathcal{B}=\{v_1, ..., v_n\}$ y $A=(a_{ij})\in\mathbb{K}^{n\times n}$ una matriz. Sea $\mathcal{B}'=\{v_1', ..., v_n'\}$ donde
+\begin{align*}
+v_j'=\sum_{i=1}^na_{ij}v_i\,\mbox{ para todo $1\leq j\leq n$}.
+\end{align*}
+Probar que $\mathcal{B}'$ es una base de $V$ si y s\'olo si $A$ es invertible. En tal caso determinar la matriz de cambio de base de la base $\mathcal{B}'$ a la base $\mathcal{B}$, y viceversa.
+
+\
+
+\item Repetir los \'ultimos items del Ejercicio \eqref{matriz transformaciones ejemplo} con la transformaci\'on lineal $S\circ T$ y la base
+$\mathcal{B}$ del Ejercicio \eqref{otras bases 3}.
+
+\
+
+\item Para cada una de las siguientes transformaciones lineales, hallar sus autovalores, y para cada uno de ellos, dar una base de autovectores del espacio propio asociado.  Decidir si la transformaci\'on considerada es o no  diagonalizable.
+	\begin{enumerate}
+		\item $T:\mathbb{R}^2\to \mathbb{R}^2$, \ $T(x,y)=(y,0)$.
+		\item $T:\mathbb{R}^3\to \mathbb{R}^3$, \ $T(x,y,z)=(x+2z,-x-y+z,x+2y+z)$.
+		\item $T:\mathbb{R}^3\to \mathbb{R}^3$, \ $T(x,y,z)=(4x+y+5z,4x-y+3z,-12x+y-11z)$.
+        \item $T:\mathbb{R}^4\to \mathbb{R}^4$, \ $T(x,y,z,w)=(2x-y,x+4y,z+3w,z-w)$.
+	\end{enumerate}
+
+\
+
+\item Repetir el Ejercicio \eqref{base nilp} pero para cualquier $n\in\mathbb{N}$ en vez de 3.
+
+
+\end{enumerate}
+
+\
+
+\subsection*{Ayudas}
+
+\eqref{base de P} Usar que $P_{\mathcal{C},\mathcal{B}}=P_{\mathcal{B},\mathcal{C}}^{-1}$ y recordar como se define $P_{\mathcal{B},\mathcal{C}}$.
+
+\
+
+\eqref{base nilp a} Es suficiente probar que $\mathcal{B}=\{v, T(v), T^2(v)\}$ es LI. Sean $a,b,c$ escalares tales que $av+bT(v)+cT^2(v)=0$. Si aplicamos $T^2$ en ambos lados deducimos que $aT^2(v)=0$ dado que $T^3(v)=0$. Entonces $a=0$ porque (completar argumento). Con un razonamiento similar deducir que $a=b=c=0$.
+
+\
+
+\eqref{cambio de base} Es suficiente probar que $\mathcal{B}'$ es LI si y s\'olo si $A$ es invertible. Usar una estrategia similar a la demostraci\'on del Teorema 3.3.1 para probar esta equivalencia.
+
+
+
+
+
+\end{document}

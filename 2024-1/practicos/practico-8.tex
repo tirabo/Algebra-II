@@ -1,0 +1,205 @@
+\chapter{Coordenadas - Matriz de cambio de base \\ Álgebra  II -- Año 2024/1 -- FAMAF}\label{practico-8}
+    
+
+\subsection*{Objetivos}
+\begin{itemize}
+\item Aprender a determinar las coordenadas de un vector en una base ordenada de un espacio vectorial.
+\item Aprender a calcular la matriz de una transformación respecto a las bases canónicas.
+\item Dadas dos bases ordenadas, aprender a operar con la matriz de cambio de base.
+\end{itemize}
+    
+    
+\subsection*{Ejercicios} 
+    
+\begin{enumerate}[topsep=6pt, itemsep=.4cm]
+
+\item
+Probar que los vectores $\;v_1=(1,0,-i),\;
+v_2=(1+i,1-i,1),\;v_3=(i,i,i)$ forman una base de $\mathbb{C}^3$,
+y dar las coordenadas de un vector $(x,y,z)$ en esta base.
+
+
+\item Dados los siguientes vectores de $\mathbb{R}^4$,
+$$
+v_1=(1,1,0,0), \quad v_2=(0,0,1,1), \quad v_3=(1,0,0,4),
+\quad v_4=(0,0,0,2).
+$$
+\begin{enumerate}
+    \item Demostrar que
+    $\mathcal{B}=\{v_1,v_2,v_3,v_4\}$ es una base de
+    $\mathbb{R}^{4}$.
+    \item Hallar las coordenadas de los vectores de la
+    base can\'onica respecto de $\mathcal{B}$.
+    \item Hallar las matrices de cambio de base de la base can\'onica
+    a $\mathcal{B}$ y viceversa.
+\end{enumerate}
+
+
+\item  Sea $V=P_3$.
+Sean
+$$ g_1=1-x,\quad g_2=x+x^2, \quad g_3=(x+1)^2.$$
+\begin{enumerate}
+    \item Demostrar que $\mathcal{B}=\{g_1,g_2,g_3\}$ es una base de $V$.
+    \item Hallar las matrices de cambio de base con respecto a $\mathcal{B}$
+    y a la base can{\'o}nica $\{1,x,x^2\}$.
+\end{enumerate}
+
+
+
+\item \label{lineales1-bases} Escribir las matrices de las transformaciones lineales de las siguientes transformaciones lineales respecto de las bases canónicas de los espacios involucrados.
+
+    \begin{enumerate}
+        \item\label{lineales1-bases-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
+        \item\label{lineales1-bases-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
+        \item\label{lineales1-base-c} $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
+        \item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
+        \item\label{lineales1-base-d} $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
+        \item\label{lineales1-base-e} $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
+    \end{enumerate}
+
+
+
+\item Sea $\mathcal{B}$ el conjunto 
+$$
+\left\{
+\begin{bmatrix}
+2 & 0& 0 \\
+0 & 3& 1
+\end{bmatrix},
+\begin{bmatrix}
+0& 2& -1\\
+0& 2&-1
+\end{bmatrix},
+\begin{bmatrix}
+-1 &1&1 \\
+2 & 0 &2
+\end{bmatrix},
+\begin{bmatrix}
+1 &0 &1\\
+0 &0 &0
+\end{bmatrix},
+\begin{bmatrix}
+1& 0& 0\\
+0 &2 &0
+\end{bmatrix},
+\begin{bmatrix}
+0 &0 & 0\\
+1 & 2&1
+\end{bmatrix}
+\right\}.$$
+
+
+\begin{enumerate}
+    \item Demostrar que
+    $\mathcal{B}$ es una base de $M_{2\times3}(\mathbb{R})$.
+    \item Hallar las coordenadas de
+    $
+    \begin{bmatrix}
+    1 & 1& 1 \\
+    1 & 1& 1
+    \end{bmatrix}$ con respecto a la base $\mathcal{B}$.
+    \item Hallar las matrices de cambio de base de la base can\'onica
+    a $\mathcal{B}$ y viceversa.
+\end{enumerate}
+
+
+
+\item Sea $W=<v_1,v_2>$, el subespacio de $\mathbb{C}^3$
+generado por $v_1=(1,0,i)$ y $v_2=(1+i,1,-1)$.
+\begin{enumerate}
+    \item Demostrar que $\mathcal{B}_1=\{v_1,v_2\}$ es una base de $W$.
+    \item Describir $W$ impl{\'\i}citamente.
+    \item Demostrar que los vectores $w_1=(1,1,0)$ y
+    $w_2=(1,i,1+i)$ pertenecen a $W$ y que $\mathcal{B}_2=\{w_1,w_2\}$
+    es otra base de $W$.
+    \item  ¿Cu{\'a}les son las coordenadas de $v_1$ y $v_2$ en la
+    base ordenada $\mathcal{B}_2$?
+    \item Hallar las matrices de cambio de base
+    $P_{\mathcal{B}_1,\mathcal{B}_2}$ y $P_{\mathcal{B}_2,\mathcal{B}_1}$.
+\end{enumerate}
+
+
+\item Sea $\mathcal{B}=
+\left\{
+\begin{bmatrix}
+2 & 0\\
+0 & -1
+\end{bmatrix},
+\begin{bmatrix}
+0& -1\\
+0& 0
+\end{bmatrix},
+\begin{bmatrix}
+-1 &0\\
+\; 0 & 1
+\end{bmatrix},
+\begin{bmatrix}
+0 &1 \\
+1 &0
+\end{bmatrix}
+\right\} \subseteq M_2(\mathbb R)$.
+
+
+
+\begin{enumerate}
+    \item Demostrar que $\mathcal{B}$ es una base de $M_2(\mathbb R)$.
+    
+
+    \item Hallar las matrices de cambio de base de la base ordenada can\'onica de $M_2(\mathbb R)$ a la base ordenada $\mathcal{B}$ y viceversa.
+        
+    \item Hallar las coordenadas de la matriz
+    $
+    \begin{bmatrix}
+    2 & 1\\
+    1 & 2
+    \end{bmatrix}$ con respecto a la base ordenada $\mathcal{B}$.
+\end{enumerate}
+
+
+\item\label{otras bases} Sean $\mathcal{C}_n$, $n=2,3$, las bases canónica de $\R^2$ y $\R^3$ respectivamente. Sean
+$\mathcal{B}_2=\{(1,0),(1,1)\}$ y $\mathcal{B}_3=\{(1,0,0),(1,1,0),(1,1,1)\}$ bases de $\R^2$, $\R^3$, respectivamente.
+\begin{enumerate}
+    \item Escribir la matriz de cambio de base $P_{{\mathcal{C}_n},{\mathcal{B}_n}}$ de $\mathcal{C}_n$ a $\mathcal{B}_n$, $n=2,3$.
+    \item Escribir la matriz de cambio de base $P_{{\mathcal{B}_n},{\mathcal{C}_n}}$ de $\mathcal{B}_n$ a $\mathcal{C}_n$, $n=2,3$.
+    \item ¿Qué relación hay entre $P_{{\mathcal{C}_n},{\mathcal{B}_n}}$ y $P_{{\mathcal{B}_n},{\mathcal{C}_n}}$?
+\end{enumerate}
+
+
+\item \label{basesRn} Sean $\mathcal{C}_n, \mathcal{B}_n$ como en el ejercicio anterior.
+\begin{enumerate}
+    \item Dar las matrices de las transformaciones de los ejercicios  \ref{lineales1-bases}\ref{lineales1-bases-a}  y \ref{lineales1-bases}\ref{lineales1-bases-b} respecto de las bases $\mathcal{B}_n$ y
+    $\mathcal{C}_n$.
+    \item Dar las matrices de las transformaciones  de los ejercicios  \ref{lineales1-bases}\ref{lineales1-bases-a}  y \ref{lineales1-bases}\ref{lineales1-bases-b} respecto de las bases $\mathcal{C}_n$ y
+    $\mathcal{B}_n$.
+    \item Dar las matrices de las transformaciones  de los ejercicios  \ref{lineales1-bases}\ref{lineales1-bases-a}  y \ref{lineales1-bases}\ref{lineales1-bases-b} respecto de las bases $\mathcal{B}_n$ y
+    $\mathcal{B}_n$.
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+
+%============================================================
+\subsection*{Más ejercicios}
+%============================================================
+
+\begin{enumerate}[resume, topsep=5pt,itemsep=.4cm]
+
+\item Sea $\mathcal{B}=
+\{ (1, 1, 0, 0), (0,0,1,1), (1, 0, 0, 2), (0, 0, -1, 1)\} \subseteq \mathbb R^4$.
+Ha\-llar la matriz de cambio de base de la base ordenada $\mathcal B'$ $=$ $\{(0, 0, 1, 0), (0, 0, 0, 1), (0, 1, 0, 0), (1, 0, 0, 0)\}$ a la base ordenada $\mathcal{B}$.
+
+
+
+\item  Sea $W$ el subespacio de $\mathbb R^4$ generado los vectores $\alpha_1 = (-3, 1, 0, 0)$, $\alpha_2 = (-2, 0, 1, 0)$ y $\alpha_3 = (-1,1,-1,1)$.
+
+Probar que $\mathcal B = \{\alpha_1, \alpha_2, \alpha_3\}$ es  base de $W$ y dar las coordenadas de un vector $(x, y, z, t)$ de $W$ en la base ordenada $\mathcal B$.
+
+
+\item Calcular la matriz de cambio de base de la base ordenada $\mathcal B$ a la base ordenada $\mathcal B'$, donde: $$\mathcal B  = \{ (0, 1, 1, -1), (0, 2, 0, 0), (2, 0, 1,-1), (1, 1, 1, 1)\}$$ y $$\mathcal B'  = \{ e_1-e_2, e_1, e_3-e_4,
+e_3\},$$ siendo $\{ e_1, e_2, e_3, e_4\}$ la base ordenada canónica de $\mathbb R^4$.
+
+\end{enumerate}
+
+

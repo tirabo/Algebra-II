@@ -6,9 +6,7 @@
 \begin{itemize}
  \item Familiarizarse con las transformaciones lineales.
  \item Aprender a decidir si un función es una transformación lineal, monomorfismos, epimorfismo o isomorfismo.
- \item Aprender a calcular la matriz de una transformaci\'con respecto a las bases canónicas.
  \item Aprender a calcular el núcleo y la imagen de una transformación.
-
  \item Familiarizarse con el teorema sobre la dimensión del núcleo y la imagen.
 \end{itemize}
 
@@ -18,13 +16,13 @@
 
 \begin{enumerate}[topsep=6pt, itemsep=.4cm]
 \item Decidir si las siguientes funciones son transformaciones lineales entre los respectivos espacios vectoriales sobre $\mathbb{K}$.
-\begin{enumerate}[resume, topsep=5pt,itemsep=5pt]
- \item La traza $\operatorname{Tr}:\mathbb{K}^{n\times n}\longrightarrow\mathbb{K}$ (recordar ejercicio \ref{traza}\,\ref{ej:traza} del Práctico  \ref{practico-3}) 
- \item $T:\mathbb{K}[x]\longrightarrow\mathbb{K}[x]$, $T(p(x))=q(x)\,p(x)$ donde $q(x)$ es un polinomio fijo.
- \item $T:\mathbb{K}^2\longrightarrow\mathbb{K}$, $T(x,y)=xy$
- \item $T:\mathbb{K}^2\longrightarrow\mathbb{K}^3$, $T(x,y)=(x,y,1)$
- \item El determinante $\operatorname{det}:\mathbb{K}^{n\times n}\longrightarrow\mathbb{K}$.
-\end{enumerate}
+    \begin{enumerate}
+    \item La traza $\operatorname{Tr}:\mathbb{K}^{n\times n}\longrightarrow\mathbb{K}$ (recordar ejercicio \ref{traza}\,\ref{ej:traza} del Práctico  \ref{practico-3}) 
+    \item $T:\mathbb{K}[x]\longrightarrow\mathbb{K}[x]$, $T(p(x))=q(x)\,p(x)$ donde $q(x)$ es un polinomio fijo.
+    \item $T:\mathbb{K}^2\longrightarrow\mathbb{K}$, $T(x,y)=xy$
+    \item $T:\mathbb{K}^2\longrightarrow\mathbb{K}^3$, $T(x,y)=(x,y,1)$
+    \item El determinante $\operatorname{det}:\mathbb{K}^{n\times n}\longrightarrow\mathbb{K}$.
+    \end{enumerate}
 
 
 \item Sea $T:\mathbb{C}\longrightarrow\mathbb{C}$, $T(z)=\overline{z}$.
@@ -36,12 +34,12 @@
 
 \item\label{T en la base} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ una transformación lineal tal que $T(e_1)=(1,2,3)$, $T(e_2)=(-1,0,5)$ y $T(e_3)=(-2,3,1)$. 
     \begin{enumerate}
-     \item Calcular $T(2,3,8)$ y $T(0,1,-1)$. 
-     \item\label{T en la base b} Calcular $T(x,y,z)$ para todo $(x,y,z)\in\mathbb{K}^3$. Es decir, dar una fórmula para $T$ como la del ejercicio \ref{Txyz}.
-     \item\label{matriz otro}  Encontrar una matriz $A\in\mathbb{K}^{3\times3}$ tal que $T(x,y,z)=A\begin{bmatrix}  x\\y\\z \end{bmatrix}$. En esta parte del ejercicio escribiremos/pensaremos a los vectores de $\mathbb{K}^3$ como columnas.
+        \item Calcular $T(2,3,8)$ y $T(0,1,-1)$. 
+        \item\label{T en la base b} Calcular $T(x,y,z)$ para todo $(x,y,z)\in\mathbb{K}^3$. Es decir, dar una fórmula para $T$ donde en cada coordenada del vector de llegada hay una combinación lineal de $x,y,z$.
+        \item\label{matriz otro}  Encontrar una matriz $A\in\mathbb{K}^{3\times3}$ tal que $T(x,y,z)=A\begin{bmatrix}  x\\y\\z \end{bmatrix}$. En esta parte del ejercicio escribiremos/pensaremos a los vectores de $\mathbb{K}^3$ como columnas.
     \end{enumerate}
 
-    \vskip .3cm
+\vskip .3cm
 
 \textbf{Observación.} 
 En el ejercicio \ref{T en la base}\,\ref{T en la base b} lo que hicimos fue deducir cuánto vale la transformación lineal en todos los vectores de $\mathbb{K}^3$ a partir de saber cuánto vale la transformación lineal en la base canónica. A partir del valor de $T$ en una base vectores podemos saber el valor de $T$ en todo el espacio. Esto vale para cualquier transformación lineal entre espacios vectoriales y cualquier base porque las transformaciones lineales respetan combinaciones lineales y todo vector de un espacio vectorial es combinación lineal de los vectores de una base.
@@ -51,23 +49,29 @@ En el ejercicio \ref{T en la base}\,\ref{T en la base b} lo que hicimos fue dedu
 \textbf{Observación.} La matriz del ejercicio  \ref{T en la base}\,\ref{matriz otro} es la matriz de la transformación lineal $T$ con respecto a la base canónica. En el próximo práctico aprenderemos a calcular la matriz de una transformación lineal 
     con respecto a distintas bases.
 
-    
-    
-    \item \label{lineales1} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.	\begin{enumerate}
-		\item\label{lineales1-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
-		\item\label{lineales1-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
-	\end{enumerate}
+    \vskip .3cm
 
+\textbf{Observación.} Para la resolución de los siguientes ejercicios se debe tener en cuenta la proposición 5.2.7 y  el ejemplo 5.2.8 de las notas de la materia,  versión 2024. Recordemos brevemente el resultado: 
+
+{\it Sea $T:\R^n\longrightarrow\R^m$ una transformación lineal y $A\in\R^{m\times n}$ la matriz  asociada. Entonces
+\begin{itemize}
+\item El núcleo de $T$ es el conjunto de soluciones del sistema homogéneo $AX=0$. 
+\item La imagen de $T$ es el conjunto de los $b\in\R^m$ para los cuales el sistema $AX=b$ tiene solución
+\end{itemize}
+}
+Por lo tanto,  resolviendo $AX=b$ obtenemos una descripción de la imagen de $T$ y haciendo $b=0$ obtenemos una descripción del núcleo de $T$.
+
+\vskip .6cm
     
     \item\label{Txyz} Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$ definida por $T(x,y,z)=(x+2y+3z, y-z,x+5y)$.
         \begin{enumerate}
-        \item\label{Txyz-vectores-nucleo} Decir cuáles de los siguientes vectores están en el núcleo: $(1,1,1)$, $(-5,1,1)$.
-        \item\label{Txyz imagen} Decir cuáles de los siguientes vectores están en la imagen: $(0,1,0)$, $(0,1,3)$.
-        \item\label{Txyz nucleo T implicito} Describir mediante ecuaciones (implícitamente) el núcleo de $T$.
-        \item\label{Txyz imagen T generadores} Dar un conjunto de generadores de la imagen.
         \item\label{matriz de T} Encontrar una matriz  $A\in\mathbb{K}^{3\times 3}$ tal que $T(x,y,z)=A\begin{bmatrix}
-            x\\y\\z \end{bmatrix}
-            $.  Como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas.
+                x\\y\\z \end{bmatrix}
+                $.  Como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas.
+        \item\label{Txyz-vectores-nucleo} Decir cuáles de los siguientes vectores están en el núcleo: $(1,1,1)$, $(-5,1,1)$.
+        \item\label{Txyz nucleo imagen de T implicito} Describir mediante ecuaciones (implícitamente) el núcleo y la imagen de $T$.
+        \item\label{Txyz  nucleo imagen T generadores} Dar un conjunto de generadores del núcleo y la imagen de $T$.
+        \item\label{Txyz imagen} Decir cuáles de los siguientes vectores están en la imagen: $(0,1,0)$, $(0,1,3)$.
         \end{enumerate}
 
 
@@ -77,15 +81,28 @@ En el ejercicio \ref{T en la base}\,\ref{T en la base b} lo que hicimos fue dedu
     0& 2& 0&1\\   1& 3& 0&1\\  -1&-1&0&0\\3&0&3&0\\2&1&1&0 \end{bmatrix}
     $$
     \begin{enumerate}[topsep=5pt,itemsep=5pt]
-        \item Dar una base del núcleo y de la imagen de $T$. 
-        \item Dar la dimensión del núcleo y de la imagen de $T$.
         \item Describir mediante ecuaciones (implícitamente) el núcleo y la imagen de $T$.
+        \item Dar una base del núcleo y de la imagen de $T$ y decir cuál es la dimensión de cada uno. 
         \item Decir cuáles de los siguientes vectores están en el núcleo:
         $(1,2,3,4)$, $(1,-1,-1,2)$, $(1,0,2,1)$.
         \item Decir cuáles de los siguientes vectores están en la imagen:
         $(2,3,-1,0,1)$, $(1,1,0,3,1)$, $(1,0,2,1,0)$.
     \end{enumerate}
     
+
+\item \label{lineales1} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.    
+    \begin{enumerate}
+        \item\label{lineales1-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
+        \item\label{lineales1-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
+    \end{enumerate}
+
+\item \label{lineales2} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.    
+    \begin{enumerate}
+        \item $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
+        \item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
+        \item $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
+        \item $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
+    \end{enumerate}
 
 \item Sea $T:\mathbb{K}^{2\times 2}\longrightarrow\mathbb{K}_{4}[x]$ la transformación lineal definida por
     \begin{align*}
@@ -122,11 +139,12 @@ En el ejercicio \ref{T en la base}\,\ref{T en la base b} lo que hicimos fue dedu
     \item Dar la dimensión del núcleo de $T$.
     \item Encontrar una matriz $A$ tal que
         $T(x,y,z)=A\begin{bmatrix}
-        x\\y\\z \end{bmatrix}$. ¿De qué tamaño debe ser $A$? Como en el ejercicio \ref{Txyz}\, \ref{matriz} pensamos a los vectores como columnas. 
+        x\\y\\z \end{bmatrix}$. ¿De qué tamaño debe ser $A$? Como en el ejercicio \ref{Txyz}\, \ref{matriz de T} pensamos a los vectores como columnas. 
 \end{enumerate}
 
 
-\item Determinar cuáles transformaciones lineales de los ejercicios anteriores son monomorfismos, epimorfismos y/o isomorfismos.
+\item Determinar cuáles transformaciones lineales de los ejercicios  \ref{lineales1} y \ref{lineales2} son monomorfismos, epimorfismos y/o isomorfismos.
+
 
 
 \item\label{usar-1} Encontrar en cada caso, cuando sea posible, una matriz $A\in\mathbb{K}^{3\times 3}$ tal que la transformación lineal $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$, $T(v)=Av$, satisfaga las condiciones exigidas (como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas). Cuando no sea posible, explicar por qué no es posible.
@@ -142,24 +160,6 @@ En el ejercicio \ref{T en la base}\,\ref{T en la base b} lo que hicimos fue dedu
     \item $\operatorname{dim} \operatorname{Im}(T)=2$.
 \end{enumerate}
     
-
-\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
-\begin{enumerate}
-    \item  Si $T : \mathbb R^{13} \to \mathbb R^9$ es una transformación lineal, entonces $\dim \operatorname{Nu}(T) \geq  4$.
-    \item Sea $T:\mathbb{K}^{6}\longrightarrow\mathbb{K}^2$ un epimorfismo y $W$ un subespacio de $\mathbb{K}^{6}$ con $\dim W=3$. Entonces existe $0\neq w\in W$ tal que $T(w)=0$.
-    \item Existe una transformación lineal $T : \mathbb R^2 \to \mathbb R^4$ tal que los vectores $(1, 0, -1, 2)$, $(0, 1, 2,-1,)$ y $(0, 0, 2, 2)$ pertenecen a la imagen de $T$.
-\end{enumerate}
-
-\item \label{funcionales} \textcircled{a} Sea $V$ un espacio vectorial no nulo y $T:V\longrightarrow\mathbb{K}$ probar que $T=0$ ó $T$ es sobreyectiva.
-
-\item Sea $V$ un espacio vectorial de dimensión finita y $T:V\longrightarrow V$ una transformación lineal. Probar las siguientes afirmaciones.
-    \begin{multicols}{2}
-        \begin{enumerate}
-            \item $\operatorname{Nu}(T)\subseteq\operatorname{Nu}(T^2)$
-            \item\label{dimV impar} $\operatorname{Nu}(T)\neq\operatorname{Im}(T)$ si $\dim(V)$ es impar.
-        \end{enumerate}
-    \end{multicols}
-
 
 
 \end{enumerate}
@@ -192,18 +192,31 @@ pertenecen al núcleo de $T$.
 \end{enumerate}
 
  
+\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar.
+\begin{enumerate}
+    \item  Si $T : \mathbb R^{13} \to \mathbb R^9$ es una transformación lineal, entonces $\dim \operatorname{Nu}(T) \geq  4$.
+    \item Sea $T:\mathbb{K}^{6}\longrightarrow\mathbb{K}^2$ un epimorfismo y $W$ un subespacio de $\mathbb{K}^{6}$ con $\dim W=3$. Entonces existe $0\neq w\in W$ tal que $T(w)=0$.
+    \item Existe una transformación lineal $T : \mathbb R^2 \to \mathbb R^4$ tal que los vectores $(1, 0, -1, 2)$, $(0, 1, 2,-1,)$ y $(0, 0, 2, 2)$ pertenecen a la imagen de $T$.
+\end{enumerate}
+
+\item Sea $V$ un espacio vectorial de dimensión finita y $T:V\longrightarrow V$ una transformación lineal. Probar las siguientes afirmaciones.
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $\operatorname{Nu}(T)\subseteq\operatorname{Nu}(T^2)$
+            \item\label{dimV impar} $\operatorname{Nu}(T)\neq\operatorname{Im}(T)$ si $\dim(V)$ es impar.
+        \end{enumerate}
+    \end{multicols}
+
+
 
 \end{enumerate}
 
 \subsection*{Ayudas}
 
-\
+\ 
 
-    Ejercicio \ref{Txyz}\,\ref{matriz}: recordar en el ejercicio \ref{ej:multiplicar por columna} de la Práctica 3 como podemos interpretar el producto de una matriz por un vector columna. 
-
-    Ejercicio \ref{funcionales}: usar como inspiración el ejercicio \ref{funcional ej} que es un caso particular de esta situación.
+    Ejercicio \ref{Txyz}\,\ref{matriz de T}: recordar en el ejercicio \ref{ej:multiplicar por columna} de la Práctica 3 como podemos interpretar el producto de una matriz por un vector columna. 
 
     Ejercicio \ref{usar-1}\,\ref{usar Txyz} Usar el ejercicio \ref{Txyz}.
 
-    Ejercicio \ref{funcionales}: asumir lo contrario y usar el Teorema de la dimensión del núcleo y la imagen.
 
