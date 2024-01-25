@@ -619,13 +619,155 @@
     
 \item \label{lineales2} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.    
 \begin{enumerate}
-    \item $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
-    \item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
-    \item $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
-    \item $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
+    \item\label{lineales2-a} $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
+    \item\label{lineales2-b} $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
+    \item\label{lineales2-c} $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
+    \item\label{lineales2-d} $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
 \end{enumerate}
 
 \rta
+
+\ref{lineales2-a}  Como ya dijimos vamos a caracterizar los $q(x) \in P_4$ tales que $D(p(x)) = q(x)$ para $p(x) \in P_4$. Es decir, debemos resolver el sistema
+\begin{align*}
+    D(a + bx + c x^2 + d x^3) &= b_0 + b_1x + b_2 x^2 + b_3 x^3 \\
+    \Rightarrow \quad b + 2c x + 3d x^2 &=  b_0 + b_1x + b_2 x^2 + b_3 x^3.
+\end{align*}
+Cuyas soluciones son muy fáciles de obtener:
+\begin{align*}
+    b &= b_0, \\
+    2c &= b_1, \\
+    3d &= b_2, \\
+    0 &= b_3.
+\end{align*}
+Es decir,
+\begin{equation*}
+    \operatorname{Im}(D) = \{a+ bx + c x^2 : a,b,c \in \R\}.
+\end{equation*}
+
+Para encontrar la ecuación implícita del núcleo debemos resolver el sistema homogéneo asociado a $D(p(x)) =0$. Es decir, $b=c=d=0$, luego
+\begin{equation*}
+    \operatorname{Nu}(D) = \{a : a \in \R\}.
+\end{equation*}
+
+\vskip .3cm
+
+\ref{lineales2-b}  Como $T$ es no nula, por ejemplo $T(\Id_2) = 2 \ne 0$, entonces $\operatorname{Im}(T) = \mathbb{K}$. Para averiguar el núcleo debemos resolver el sistema homogéneo asociado a $T(A) =0$. Es decir, $\operatorname{tr}(A) = 0$, luego,
+$$
+\operatorname{Nu}(T) = \{A \in M_{2\times 2}(\mathbb{K}) : \operatorname{tr}(A) = 0\}.
+$$
+Equivalentemente, 
+$$
+\operatorname{Nu}(T) = \left\{\begin{bmatrix} a & b \\ c & d \end{bmatrix} \in M_{2\times 2}(\mathbb{K}) : a+d = 0\right\},
+$$
+y  esta sería la forma implícita del núcleo de $T$. Escrito de otra forma,
+$$
+\operatorname{Nu}(T) = \left\{\begin{bmatrix} a & b \\ c & -a \end{bmatrix} : a,b,c \in \mathbb{K}\right\}.
+$$
+Por lo tanto podríamos tomas como base de $\operatorname{Nu}(T)$ a $\left\{\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix},\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix},\begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}\right\}$.
+
+\vskip .3cm
+
+\ref{lineales2-c}  Debemos caracterizar las matrices $B \in M_{2\times 2}(\R)$ tales que $L(p(x)) = B$ para $p(x) \in P_3$. Es decir, debemos resolver el sistema
+\begin{align*}
+    L(a + bx + c x^2) &= \begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}= \begin{bmatrix} b_1 & b_2 \\ b_3 & b_4 \end{bmatrix}.
+\end{align*}
+Por lo tanto, el sistema es
+\begin{align*}
+    a &= b_1, \\
+    b+c &= b_2, \\
+    b+c &= b_3, \\
+    a &= b_4.
+\end{align*}
+Restando la primera ecuación a la cuarta y le segunda a la tercera obtenemos el sistema equivalente:
+\begin{align*}
+    a &= b_1, \\
+    b+c &= b_2, \\
+    0 &= b_3-b_2, \\
+    0 &= b_4-b_1.
+\end{align*}
+Por lo tanto, 
+\begin{equation*}
+    \operatorname{Im}(L) = \left\{\begin{bmatrix} b_1 & b_2 \\ b_3 & b_4 \end{bmatrix} \in M_{2\times 2}(\R): 0 = b_3-b_2,  0 = b_4-b_1\right\},
+\end{equation*}
+y 
+$$
+\operatorname{Nu}(L) = \left\{a + bx + c x^2 +\in P_3: a=0, b+c=0\right\}.
+$$
+
+Encontremos ahora bases de $\operatorname{Im}(L)$ y $\operatorname{Nu}(L)$. Para $\operatorname{Im}(L)$, notemos que
+\begin{align*}
+    \operatorname{Im}(L) &= \left\{\begin{bmatrix} b_1 & b_2 \\ b_2 & b_1 \end{bmatrix}:b_1,b_2  \in \R\right\} \\
+    &= \left\{b_1\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}+b_2\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}:b_1,b_2  \in \R\right\} \\
+    &= \langle \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix},\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \rangle.
+\end{align*}
+Es decir, $\left\{\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix},\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}\right\}$ es una base de $\operatorname{Im}(L)$.
+
+Para $\operatorname{Nu}(L)$, notemos que
+\begin{align*}
+    \operatorname{Nu}(L) &= \left\{a + bx + c x^2 \in P_3: a=0, b+c=0\right\} \\
+    &= \left\{bx - b x^2 \in P_3: b\in \R\right\} \\
+    &= \left\{b(x -  x^2): b \in \R\right\} \\
+    &= \langle x -  x^2 \rangle.
+\end{align*}
+Es decir, $\{x -  x^2\}$ es una base de $\operatorname{Nu}(L)$.
+
+\vskip .3cm
+
+\ref{lineales2-d}  Debemos caracterizar los $q(x) \in P_4$ tales que $Q(p(x)) = q(x)$ para $p(x) \in P_3$. Es decir, debemos resolver el sistema
+\begin{align*}
+    Q(a + bx + c x^2 ) &= (x+1)(a + bx + c x^2) \\
+    &= a + (a+b)x + (b+c)x^2 +cx^3  \\
+    &= b_0 + b_1x + b_2 x^2 + b_3 x^3.
+\end{align*}
+Escrito de otra forma, debemos resolver el sistema:
+\begin{align*}
+    a &= b_0, \\
+    a +b&= b_1, \\
+    b+c &= b_2, \\
+    c &= b_3.
+\end{align*}
+Escribamos la matriz aumentada correspondiente y hagamos Gauss:
+\begin{align*}
+    &\begin{amatrix}{3}
+        1 & 0 & 0 & b_0 \\
+        1 & 1 & 0 & b_1 \\
+        0 & 1 & 1 & b_2 \\
+        0 & 0 & 1 & b_3
+    \end{amatrix}
+    \underset{F_3-F_4}{\stackrel{F_2-F_1}{\longrightarrow}}
+    \begin{amatrix}{3}
+        1 & 0 & 0 & b_0 \\
+        0 & 1 & 0 & b_1-b_0 \\
+        0 & 1 & 0 & b_2 -b_3 \\
+        0 & 0 & 1 & b_3
+    \end{amatrix}
+    \stackrel{F_3-F_2}{\longrightarrow}
+    \begin{amatrix}{3}
+        1 & 0 & 0 & b_0 \\
+        0 & 1 & 0 & b_1-b_0 \\
+        0 & 0 & 0 & b_0-b_1 + b_2 -b_3 \\
+        0 & 0 & 1 & b_3
+    \end{amatrix}.
+\end{align*}
+Por lo tanto, 
+\begin{equation*}
+    \operatorname{Im}(Q) = \left\{b_0 + b_1x + b_2 x^2 + b_3 x^3 \in P_4: b_0-b_1 + b_2 -b_3 = 0\right\},
+\end{equation*}
+e 
+$$
+\operatorname{Nu}(Q) = \left\{a + bx + c x^2  \in P_3: a=0, b=0, c=0\right\} = \{0\}.
+$$
+Obtenemos una base de $\operatorname{Im}(Q)$:
+\begin{align*}
+    \operatorname{Im}(Q)  &= \left\{b_0 + b_1x + b_2 x^2 + b_3 x^3 \in P_4: b_0 = b_1 - b_2 +b_3 \right\} \\
+    &= \left\{(b_1 - b_2 +b_3) + b_1x + b_2 x^2 + b_3 x^3 \in P_4: b_1,b_2,b_3 \in \R \right\} \\
+    &= \left\{b_1(1+x) + b_2 (x^2-1) + b_3 (x^3+1) \in P_4: b_1,b_2,b_3 \in \R \right\} \\
+    &= \langle 1+x,1-x^2,1+x^3 \rangle.
+\end{align*}
+Por lo tanto, $\{1+x,1-x^2,1+x^3\}$ es una base de $\operatorname{Im}(Q)$.
+\qed
+
+
     \vskip .3cm
 
 
@@ -666,7 +808,7 @@
         2a-b-4c+5d=0.
     \end{cases}
     $$
-    Podemos comprobar en cada matriz estas ecuacines, o podemos simplificar el sistema para que resulta más fácil al comprobación. Haremos esto último con Gauss:
+    Podemos comprobar en cada matriz estas ecuaciones, o podemos simplificar el sistema para que resulta más fácil al comprobación. Haremos esto último con Gauss:
     \begin{equation*}
         \begin{bmatrix}
             1 & 0 & -1 & 2 \\
@@ -739,9 +881,9 @@
         \end{amatrix}.
     \end{align*}
     Por lo tanto, 
-    $$
-    a_3x^3+a_2x^2+a_1x+a_0 \in \operatorname{Im}(T) \quad \Leftrightarrow \quad a_1-2a_2+a_3=0 \text{\; y \;} a_0+a_2-2a_3=0.
-    $$
+    $$a_3x^3+a_2x^2+a_1x+a_0 \in \operatorname{Im}(T)$$
+    $$\Updownarrow$$
+    $$a_1-2a_2+a_3=0 \text{\; y \;} a_0+a_2-2a_3=0.$$
 
     En  el caso de $p(x)=x^3+x^2+x+1$, $a_3=1$, $a_2=1$, $a_1=1$, $a_0=1$, por lo tanto, $a_1-2a_2+a_3=1-2+1=0$ y $a_0+a_2-2a_3=1+1-2=0$, es decir, $p(x) \in \operatorname{Im}(T)$. 
     
