@@ -3,7 +3,6 @@
 \begin{enumerate}[topsep=6pt, itemsep=.4cm]
 
 \item \label{lineales1-bases} Escribir las matrices de las siguientes transformaciones lineales respecto de las bases canónicas de los espacios involucrados.
-
 \begin{enumerate}
     \item\label{lineales1-bases-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
     \item\label{lineales1-bases-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
@@ -13,7 +12,94 @@
     \item\label{lineales1-base-e} $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
 \end{enumerate}
 
+\rta denotemos $\mathcal{C}_n$  a la base canónica de $\R^n$, Denotemos $\mathcal{B}_n$ a la base $\{1,x,x^2,\ldots,x^{n-1}\}$ de $P_n$ y denotemos $\mathcal{M}_{2\times 2}$ a la base$\{E_{11},E_{12},E_{21},E_{22}\}$ de  $M_{2\times 2}(\mathbb{K})$.
+
+\vskip .3cm
+
+\ref{lineales1-bases-a} 
+\begin{align*}
+    T(e_1) &= T(1,0) = (1,1,2) = 1(1,0,0) + 1(0,1,0) +2(0,0,1)\\
+    T(e_2) &= T(0,1) = (-1,1,3) = -1(1,0,0) +1(0,1,0) +3(0,0,1).
+\end{align*}
+Por lo tanto, la matriz de $T$ respecto de las bases canónicas es
+\begin{align*}
+    [T]_{\,\mathcal{C}_2\,\mathcal{C}_3} = \begin{bmatrix} 1 & -1 \\ 1 & 1 \\ 2 & 3 \end{bmatrix}.
+\end{align*}
+
+\vskip .3cm
+
+\ref{lineales1-bases-b} 
+\begin{align*}
+    S(e_1) &= S(1,0,0) = (1,2) = 1(1,0) + 2(0,1)\\
+    S(e_2) &= S(0,1,0) = (-1,-1) = -1(1,0) -1(0,1)\\
+    S(e_3) &= S(0,0,1) = (1,2) = 1(1,0) + 2(0,1).
+\end{align*}
+Por lo tanto, la matriz de $S$ respecto de las bases canónicas es
+\begin{align*}
+    [S]_{\,\mathcal{C}_3\,\mathcal{C}_2} = \begin{bmatrix} 1 & -1 & 1 \\ 2 & -1 & 2 \end{bmatrix}.
+\end{align*}
+
+\vskip .3cm
+
+\ref{lineales1-base-c} 
+\begin{align*}
+    D(1) &= 0 = 0 \cdot 1 + 0\cdot x + 0\cdot x^2 + 0\cdot x^3\\
+    D(x) &= 1 =1 \cdot 1 + 0\cdot x + 0\cdot x^2 + 0\cdot x^3\\
+    D(x^2) &= 2x =0 \cdot 1 + 2\cdot x + 0\cdot x^2 + 0\cdot x^3\\
+    D(x^3) &= 3x^2 =0 \cdot 1 + 0\cdot x + 3\cdot x^2 + 0\cdot x^3.
+\end{align*}
+Por lo tanto, la matriz de $D$ respecto de las bases canónicas es
+\begin{align*}
+    [D]_{\,\mathcal{B}_4\,\mathcal{B}_4} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 3 \\ 0 & 0 & 0 & 0 \end{bmatrix}.
+\end{align*}
+
+
+\vskip .3cm
+
+\ref{lineales1-base-d} 
+\begin{align*}
+    L(1) &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = 1\cdot E_{11} + 0\cdot E_{12} + 0\cdot E_{21} + 1\cdot E_{22}\\
+    L(x) &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = 0\cdot E_{11} + 1\cdot E_{12} + 1\cdot E_{21} + 0\cdot E_{22}\\
+    L(x^2) &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}= 0\cdot E_{11} + 1\cdot E_{12} + 1\cdot E_{21} + 0\cdot E_{22}\\
+\end{align*}
+Por lo tanto, la matriz de $L$ respecto de las bases canónicas es
+\begin{align*}
+    [L]_{\,\mathcal{B}_3\,\mathcal{M}_{2\times 2}} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 1 & 1 \\ 1 & 0 & 0 \end{bmatrix}.
+\end{align*}
+
+\vskip .3cm
+
+\ref{lineales1-base-e}
+\begin{align*}
+    Q(1) &= x+1 = 1\cdot 1 + 1\cdot x + 0\cdot x^2 + 0\cdot x^3\\
+    Q(x) &= (x+1)x = 0\cdot 1 + 1\cdot x + 1\cdot x^2 + 0\cdot x^3\\
+    Q(x^2) &= (x+1)x^2 = 0\cdot 1 + 0\cdot x + 1\cdot x^2 + 1\cdot x^3.
+\end{align*}
+Por lo tanto, la matriz de $Q$ respecto de las bases canónicas es
+\begin{align*}
+    [Q]_{\,\mathcal{B}_3\,\mathcal{B}_4} = \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix}.
+\end{align*}
+\qed
+
 \item Dar las coordenadas del polinomio $2x^2+10x-1\in\mathbb{K}_3[x]$ en la base ordenada $$\mathcal{B}=\{1,x+1,x^2+x+1\}.$$
+
+\rta 
+\begin{align*}
+    [2x^2+10x-1]_{\mathcal{B}}&= (a,b,c) \\
+    &\Updownarrow \\
+    2x^2+10x-1&=a\cdot 1+b\cdot (x+1)+c\cdot (x^2+x+1) \\
+    &\Updownarrow \\
+    2x^2+10x-1&=cx^2+(b+c)x+(a+b+c) \\ 
+    &\Updownarrow \\
+    c=2,\; b+c &= 10, \;a+b+c=-1.
+\end{align*}
+Este último renglón es un sistema que se resuelve fácilmente por sustitución: $c=2$, $b=8$ y $a=-11$. Por lo tanto,
+\begin{align*}
+    [2x^2+10x-1]_{\mathcal{B}}&= (-11,8,2).
+\end{align*}
+
+\qed
+
 
 \item Dar las coordenadas de la matriz 
 $A=\begin{bmatrix}
@@ -40,17 +126,79 @@ Más generalmente, dar las coordenadas de cualquier matriz $\begin{bmatrix}
     a&b\\c&d 
     \end{bmatrix}$ en la base $\mathcal{B}$.
 
+    \rta
+    \begin{align*}
+        \begin{bmatrix}
+            a&b\\c&d 
+            \end{bmatrix} &= b\begin{bmatrix}
+            0&1\\0&0 
+            \end{bmatrix}+d\begin{bmatrix}
+            0&0\\0&1 
+            \end{bmatrix}+a\begin{bmatrix}
+            1&0\\0&0 
+            \end{bmatrix}+c\begin{bmatrix}
+            0&0\\1&0 
+            \end{bmatrix} \\
+            &\Updownarrow \\
+            [A]_{\mathcal{B}} &= (b,d,a,c). 
+    \end{align*}
+    En particular,
+    \begin{align*}
+        \begin{bmatrix}
+            1&2\\3&4 
+            \end{bmatrix}_{\mathcal{B}} &= (2,4,1,3).
+    \end{align*}
+
+
+    \qed
+    
+    
 
 \item 
 \begin{enumerate}
-\item Dar una base del subespacio $W=\{(x,y,z)\in\mathbb{K}^3\mid x-y+2z=0\}$. 
-
-
-\item Dar las coordenadas de $w=(1,-1,-1)$ en la base que haya dado en el item anterior.
-
-
-\item Dado $(x,y,z)\in W$, dar las coordenadas de $(x,y,z)$ en la base que haya calculado en el item anterior. 
+    \item\label{subespacio W a} Dar una base del subespacio $W=\{(x,y,z)\in\mathbb{K}^3\mid x-y+2z=0\}$. 
+    \item\label{subespacio W b} Dar las coordenadas de $w=(1,-1,-1)$ en la base que haya dado en el item anterior.
+    \item\label{subespacio W c} Dado $(x,y,z)\in W$, dar las coordenadas de $(x,y,z)$ en la base que haya calculado en el item anterior. 
 \end{enumerate}
+
+\rta
+
+\ref{subespacio W a} 
+\begin{align*}
+    W &= \{(x,y,z)\in\mathbb{K}^3\mid x-y+2z=0\} \\
+    &= \{(x,y,z)\in\mathbb{K}^3\mid x=y-2z\} \\
+    &= \{(y-2z,y,z)\mid y,z\in\mathbb{K}\} \\
+    &= \{y(1,1,0)+z(-2,0,1)\mid y,z\in\mathbb{K}\}.
+\end{align*}
+Por lo tanto, $\{(1,1,0),(-2,0,1)\}$ generan $W$. Además, como $(1,1,0)$ y $(-2,0,1)$ son LI, entonces $\mathcal{B}\{(1,1,0),(-2,0,1)\}$ es una base ordenada de $W$. 
+
+\vskip .3cm
+
+\ref{subespacio W b} Primero,  es claro que $w=(1,-1,-1)\in W$, pues cumple con la ecuación implícita que define $W$. Entonces
+\begin{align*}
+    [w]_{\mathcal{B}} = (a,b) &\Leftrightarrow (1,-1,-1) = a(1,1,0)+b(-2,0,1) \\
+    &\Leftrightarrow 1=a-2b, \;-1=a, \;-1=b.
+\end{align*}
+Por lo tanto
+\begin{align*}
+    [w]_{\mathcal{B}} &= (-1,-1).
+\end{align*}
+
+\vskip .3cm
+
+\ref{subespacio W c} Sea $(x,y,z)\in W$. Entonces
+\begin{align*}
+    [(x,y,z)]_{\mathcal{B}} = (a,b)&\Leftrightarrow (x,y,z) = a(1,1,0)+b(-2,0,1) \\
+    &\Leftrightarrow x=a-2b, \;y=a, \;z=b.
+\end{align*}
+Por lo tanto
+\begin{align*}
+    [(x,y,z)]_{\mathcal{B}} &= (y,z).
+\end{align*}
+
+
+\qed
+
 
 
 \item\label{otras bases} Sea $\mathcal{C}$ la base canónica de $\mathbb{K}^2$ y 
@@ -62,6 +210,111 @@ Más generalmente, dar las coordenadas de cualquier matriz $\begin{bmatrix}
         \item\label{otras bases-d} Encontrar $(x,y),(z,w)\in\mathbb{K}^2$ tal que $[(x,y)]_{\mathcal{B}}=(1,4)$ y $[(z,w)]_{\mathcal{B}}=(1,-1)$.
         \item\label{otras bases-e} Determinar las coordenadas de $(2,3)$ y $(0,1)$ en las bases $\mathcal{B}_2$.
     \end{enumerate}
+
+    \rta recordar que si $V$ es un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y  $\mathcal{B}$ y $\mathcal{B'}$ son bases ordenadas de $V$, la matriz $[\Id]_{\mathcal{B}\mathcal{B'}}$  es llamada la \textit{matriz de cambio de base} de la base $\mathcal{B}'$  a la base $\mathcal{B}$. 
+
+    \ref{otras bases-a} 
+    \begin{align*}
+        \Id(1,0) &= 1 \cdot (1,0) + 0 \cdot (1,1) \\
+        \Id(0,1) &= (-1) \cdot (1,0) + 1 \cdot (1,1).
+    \end{align*}
+    Por lo tanto, 
+    $$
+    P_{\mathcal{C},\mathcal{B}} = \begin{bmatrix} 1 & -1 \\ 0 & 1 \end{bmatrix}.
+    $$
+
+    \vskip .3cm
+
+    \ref{otras bases-b} 
+    \begin{align*}
+        \Id(1,0) &= 1 \cdot (1,0) + 0 \cdot (0,1) \\
+        \Id(1,1) &= 1 \cdot (1,0) + 1 \cdot (0,1).
+    \end{align*}
+    Por lo tanto,
+    $$
+    P_{\mathcal{B},\mathcal{C}} = \begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}.
+    $$
+
+    \vskip .3cm
+
+    \ref{otras bases-c}
+    $$
+    P_{\mathcal{C},\mathcal{B}}  P_{\mathcal{B},\mathcal{C}} = \Id.    
+    $$
+    Por la teórica sabemos que esta relación vale en general.
+
+    \vskip .3cm
+
+    \ref{otras bases-d} 
+    \begin{align*}
+        [(x,y)]_{\mathcal{B}} = (1,4)  &\Leftrightarrow (x,y) = 1 \cdot (1,0) + 4 \cdot (1,1) \\
+        &\Leftrightarrow x=5, \;y=4.
+    \end{align*}
+    También es posible hacerlo por la matriz de cambio de base:
+    \begin{align*}
+        \begin{bmatrix}
+            x \\ y
+        \end{bmatrix} = P_{\mathcal{B}, \mathcal{C}} [(x,y)]_\mathcal{B} = P_{\mathcal{B}, \mathcal{C}} \begin{bmatrix}
+            1 \\ 4
+        \end{bmatrix} = \begin{bmatrix}
+            1 & 1 \\ 0 & 1
+        \end{bmatrix} \begin{bmatrix}
+            1 \\ 4
+        \end{bmatrix} = \begin{bmatrix}
+            5 \\ 4
+        \end{bmatrix}.
+    \end{align*}
+
+    De forma análoga, 
+    \begin{align*}
+        [(z,w)]_{\mathcal{B}} = (1,-1)  &\Leftrightarrow (z,w) = 1 \cdot (1,0) + (-1) \cdot (1,1) \\
+        &\Leftrightarrow z=0, \;w=-1.
+    \end{align*}
+    Obviamente, también es posible hacerlo por la matriz de cambio de base:
+    \begin{align*}
+        \begin{bmatrix}
+            z \\ w
+        \end{bmatrix} = P_{\mathcal{B}, \mathcal{C}} [(z,w)]_\mathcal{B} = P_{\mathcal{B}, \mathcal{C}} \begin{bmatrix}
+            1 \\ -1
+        \end{bmatrix} = \begin{bmatrix}
+            1 & 1 \\ 0 & 1
+        \end{bmatrix} \begin{bmatrix}
+            1 \\ -1
+        \end{bmatrix} = \begin{bmatrix}
+            0 \\ -1
+        \end{bmatrix}.
+    \end{align*}
+
+    \vskip .3cm
+
+    \ref{otras bases-e}
+    \begin{align*}
+        [(2,3)]_{\mathcal{B}} = P_{\mathcal{C},\mathcal{B}} [(2,3)]_\mathcal{C} = P_{\mathcal{C},\mathcal{B}} \begin{bmatrix}
+            2 \\ 3
+        \end{bmatrix} = \begin{bmatrix}
+            1 & -1 \\ 0 & 1
+        \end{bmatrix} \begin{bmatrix}
+            2 \\ 3
+        \end{bmatrix} = \begin{bmatrix}
+            -1 \\ 3
+        \end{bmatrix}.
+    \end{align*}
+    El caso general es análogo:
+    \begin{align*}
+        [(a,b)]_{\mathcal{B}} = P_{\mathcal{C},\mathcal{B}} [(a,b)]_\mathcal{C} = P_{\mathcal{C},\mathcal{B}} \begin{bmatrix}
+            a \\ b
+        \end{bmatrix} = \begin{bmatrix}
+            1 & -1 \\ 0 & 1
+        \end{bmatrix} \begin{bmatrix}
+            a \\ b
+        \end{bmatrix} = \begin{bmatrix}
+            a-b \\ b
+        \end{bmatrix}.
+    \end{align*}
+
+
+    \qed
+    
     
 
     \item\label{matriz P} Sea $P=\begin{bmatrix}
@@ -77,6 +330,12 @@ base $\mathcal{B}$.
 \item\label{encontrar vector} Encontrar $(x,y,z)\in\mathbb{K}^3$ tal que su vector de coordenadas con respecto a $\mathcal{B}$ es 
 $$[(x,y,z)]_{\mathcal{B}}=(2,-1,-1).$$
 \end{enumerate}
+
+\rta
+
+
+\qed
+
 
 
 \item\label{matriz transformaciones ejemplo} Sea 
@@ -94,13 +353,31 @@ $T:\mathbb{R}^3\longrightarrow\mathbb{R}^2$ la transformación lineal definida p
     \item\label{matriz transformaciones ejemplo-d} Calcular la matriz de $T\circ S$ respecto a la base $\mathcal{B}$ del ejercicio \ref{otras bases} usando las matrices de cambio de base calculadas en ese ejercicio.
 \end{enumerate}
 
+\rta
+
+
+\qed
+
+
 
 \item Sea $A$ la matriz  del ejercicio \ref{autovalores}\ref{autovalores-1} del práctico \ref{practico-5} y $T_A:\mathbb{R}^2\longrightarrow\mathbb{R}^2$ la transformación lineal dada por $T_A(v)=Av$. Hallar los autovalores de $T_A$, y para cada uno de ellos, dar una base de autovectores del correspondiente autoespacio. Decidir si $T_A$ es o no diagonalizable. En caso de serlo dar una matriz invertible $P$ tal que $P^{-1}AP$ es diagonal. 
 
 Repetir esto para cada una de las matrices de dicho ejercicio.
 
+\rta
+
+
+\qed
+
+
 
 \item Repetir el ejercicio anterior para cada matriz del ejercicio \ref{autovalores} del práctico \ref{practico-5} pero ahora consideradando a la transformación como una transformación lineal entre los $\mathbb{C}$-espacios vectoriales $\mathbb{C}^n$.
+
+\rta
+
+
+\qed
+
 
 
 \item Sea $T:V\longrightarrow V$ una transformación lineal y $v\in V$ un autovector de autovalor $\lambda$. Probar las siguientes afirmaciones.
@@ -110,6 +387,12 @@ Repetir esto para cada una de las matrices de dicho ejercicio.
     \item\label{autovalor-autovector-c} Si $T^2=0$, entonces $T-\operatorname{Id}$ es un isomorfismo.
 \end{enumerate}
 
+\rta
+
+
+\qed
+
+
 
 \item\label{base nilp}  Sea $V$ un espacio vectorial de dimensión $3$ y $T:V\longrightarrow V$ una transformación lineal. Supongamos que existe $v\in V$ tal que $T^3(v)=0$ pero $T^2(v)\neq0$.
 \begin{enumerate}
@@ -117,6 +400,12 @@ Repetir esto para cada una de las matrices de dicho ejercicio.
     \item\label{base nilp b} Calcular la matriz de $T$ respecto de la base $\mathcal{B}$.
     \item\label{base nilp c} Calcular los autovalores de $T$ y sus correspondientes autoespacios. Decidir si $T$ es diagonalizable.
 \end{enumerate}
+
+\rta
+
+
+\qed
+
 
         
 \item Definir en cada caso una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ que satisfaga las condiciones requeridas. ¿Es posible definir más de una transformación lineal?
@@ -126,6 +415,12 @@ Repetir esto para cada una de las matrices de dicho ejercicio.
     \item\label{tl-condiciones-c} $(1,0,0),(1,2,1)\in\operatorname{Nu}(T)$ y $(1,0,0) \in  \operatorname{Im}(T)$
 \end{enumerate}
 
+\rta
+
+
+\qed
+
+
 
 \item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar. 
 \begin{enumerate}
@@ -134,6 +429,12 @@ Repetir esto para cada una de las matrices de dicho ejercicio.
     \item\label{tl-V-o-F-c} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\{(1,0,1), (0,1,0)\}$ es una base de $\operatorname{Nu}(T)$ y  $\{(1,0,-1), (0,1,0)\}$ es una base de la $\operatorname{Im}(T)$.
     \item\label{tl-V-o-F-d} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\{(1,0,1)\}$ es una base de $\operatorname{Nu}(T)$ y  $\{(1,0,-1), (0,1,0)\}$ es una base de la $\operatorname{Im}(T)$. 
 \end{enumerate}
+
+\rta
+
+
+\qed
+
 
 \end{enumerate}
 
