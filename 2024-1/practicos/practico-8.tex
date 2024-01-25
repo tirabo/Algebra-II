@@ -13,193 +13,182 @@
     
 \begin{enumerate}[topsep=6pt, itemsep=.4cm]
 
-\item
-Probar que los vectores $\;v_1=(1,0,-i),\;
-v_2=(1+i,1-i,1),\;v_3=(i,i,i)$ forman una base de $\mathbb{C}^3$,
-y dar las coordenadas de un vector $(x,y,z)$ en esta base.
-
-
-\item Dados los siguientes vectores de $\mathbb{R}^4$,
-$$
-v_1=(1,1,0,0), \quad v_2=(0,0,1,1), \quad v_3=(1,0,0,4),
-\quad v_4=(0,0,0,2).
-$$
-\begin{enumerate}
-    \item Demostrar que
-    $\mathcal{B}=\{v_1,v_2,v_3,v_4\}$ es una base de
-    $\mathbb{R}^{4}$.
-    \item Hallar las coordenadas de los vectores de la
-    base can\'onica respecto de $\mathcal{B}$.
-    \item Hallar las matrices de cambio de base de la base can\'onica
-    a $\mathcal{B}$ y viceversa.
-\end{enumerate}
-
-
-\item  Sea $V=P_3$.
-Sean
-$$ g_1=1-x,\quad g_2=x+x^2, \quad g_3=(x+1)^2.$$
-\begin{enumerate}
-    \item Demostrar que $\mathcal{B}=\{g_1,g_2,g_3\}$ es una base de $V$.
-    \item Hallar las matrices de cambio de base con respecto a $\mathcal{B}$
-    y a la base can{\'o}nica $\{1,x,x^2\}$.
-\end{enumerate}
-
-
 
 \item \label{lineales1-bases} Escribir las matrices de las transformaciones lineales de las siguientes transformaciones lineales respecto de las bases canónicas de los espacios involucrados.
 
-    \begin{enumerate}
-        \item\label{lineales1-bases-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
-        \item\label{lineales1-bases-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
-        \item\label{lineales1-base-c} $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
-        \item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
-        \item\label{lineales1-base-d} $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
-        \item\label{lineales1-base-e} $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
-    \end{enumerate}
+\begin{enumerate}
+    \item\label{lineales1-bases-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
+    \item\label{lineales1-bases-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
+    \item\label{lineales1-base-c} $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
+    \item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
+    \item\label{lineales1-base-d} $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
+    \item\label{lineales1-base-e} $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
+\end{enumerate}
 
+\item Dar las coordenadas del polinomio $2x^2+10x-1\in\mathbb{K}_3[x]$ en la base ordenada $$\mathcal{B}=\{1,x+1,x^2+x+1\}.$$
 
-
-\item Sea $\mathcal{B}$ el conjunto 
+\item Dar las coordenadas de la matriz 
+$A=\begin{bmatrix}
+    1&2\\3&4 
+    \end{bmatrix}
+$ en la base ordenada 
 $$
-\left\{
+\mathcal{B}=\left\{
 \begin{bmatrix}
-2 & 0& 0 \\
-0 & 3& 1
-\end{bmatrix},
+    0&1\\0&0 
+    \end{bmatrix},
 \begin{bmatrix}
-0& 2& -1\\
-0& 2&-1
-\end{bmatrix},
-\begin{bmatrix}
--1 &1&1 \\
-2 & 0 &2
-\end{bmatrix},
-\begin{bmatrix}
-1 &0 &1\\
-0 &0 &0
-\end{bmatrix},
-\begin{bmatrix}
-1& 0& 0\\
-0 &2 &0
-\end{bmatrix},
-\begin{bmatrix}
-0 &0 & 0\\
-1 & 2&1
-\end{bmatrix}
-\right\}.$$
-
-
-\begin{enumerate}
-    \item Demostrar que
-    $\mathcal{B}$ es una base de $M_{2\times3}(\mathbb{R})$.
-    \item Hallar las coordenadas de
-    $
+    0&0\\0&1 
+    \end{bmatrix},
     \begin{bmatrix}
-    1 & 1& 1 \\
-    1 & 1& 1
-    \end{bmatrix}$ con respecto a la base $\mathcal{B}$.
-    \item Hallar las matrices de cambio de base de la base can\'onica
-    a $\mathcal{B}$ y viceversa.
+    1&0\\0&0 
+    \end{bmatrix},
+    \begin{bmatrix}
+    0&0\\1&0 
+    \end{bmatrix}
+\right\}.
+$$
+Más generalmente, dar las coordenadas de cualquier matriz $\begin{bmatrix}
+    a&b\\c&d 
+    \end{bmatrix}$ en la base $\mathcal{B}$.
+
+
+\item 
+\begin{enumerate}
+\item Dar una base del subespacio $W=\{(x,y,z)\in\mathbb{K}^3\mid x-y+2z=0\}$. 
+
+
+\item Dar las coordenadas de $w=(1,-1,-1)$ en la base que haya dado en el item anterior.
+
+
+\item Dado $(x,y,z)\in W$, dar las coordenadas de $(x,y,z)$ en la base que haya calculado en el item anterior. 
 \end{enumerate}
 
 
-
-\item Sea $W=<v_1,v_2>$, el subespacio de $\mathbb{C}^3$
-generado por $v_1=(1,0,i)$ y $v_2=(1+i,1,-1)$.
-\begin{enumerate}
-    \item Demostrar que $\mathcal{B}_1=\{v_1,v_2\}$ es una base de $W$.
-    \item Describir $W$ impl{\'\i}citamente.
-    \item Demostrar que los vectores $w_1=(1,1,0)$ y
-    $w_2=(1,i,1+i)$ pertenecen a $W$ y que $\mathcal{B}_2=\{w_1,w_2\}$
-    es otra base de $W$.
-    \item  ¿Cu{\'a}les son las coordenadas de $v_1$ y $v_2$ en la
-    base ordenada $\mathcal{B}_2$?
-    \item Hallar las matrices de cambio de base
-    $P_{\mathcal{B}_1,\mathcal{B}_2}$ y $P_{\mathcal{B}_2,\mathcal{B}_1}$.
-\end{enumerate}
-
-
-\item Sea $\mathcal{B}=
-\left\{
-\begin{bmatrix}
-2 & 0\\
-0 & -1
-\end{bmatrix},
-\begin{bmatrix}
-0& -1\\
-0& 0
-\end{bmatrix},
-\begin{bmatrix}
--1 &0\\
-\; 0 & 1
-\end{bmatrix},
-\begin{bmatrix}
-0 &1 \\
-1 &0
-\end{bmatrix}
-\right\} \subseteq M_2(\mathbb R)$.
-
-
-
-\begin{enumerate}
-    \item Demostrar que $\mathcal{B}$ es una base de $M_2(\mathbb R)$.
+\item\label{otras bases} Sea $\mathcal{C}$ la base canónica de $\mathbb{K}^2$ y 
+    $\mathcal{B}=\{(1,0),(1,1)\}$ otra base de $\mathbb{R}^2$.
+    \begin{enumerate}
+        \item\label{otras bases-a} Encontrar la matriz de cambio de base $P_{\mathcal{C},\mathcal{B}}$ de $\mathcal{C}$ a $\mathcal{B}$.
+        \item\label{otras bases-b} Encontrar la matriz de cambio de base $P_{\mathcal{B},\mathcal{C}}$ de $\mathcal{B}$ a $\mathcal{C}$.
+        \item\label{otras bases-c} ¿Qué relación hay entre $P_{\mathcal{C},\mathcal{B}}$ y $P_{\mathcal{B},\mathcal{C}}$?
+        \item\label{otras bases-d} Encontrar $(x,y),(z,w)\in\mathbb{K}^2$ tal que $[(x,y)]_{\mathcal{B}}=(1,4)$ y $[(z,w)]_{\mathcal{B}}=(1,-1)$.
+        \item\label{otras bases-e} Determinar las coordenadas de $(2,3)$ y $(0,1)$ en las bases $\mathcal{B}_2$.
+    \end{enumerate}
     
 
-    \item Hallar las matrices de cambio de base de la base ordenada can\'onica de $M_2(\mathbb R)$ a la base ordenada $\mathcal{B}$ y viceversa.
+    \item\label{matriz P} Sea $P=\begin{bmatrix}
+        1&1&0\\2&1&1\\3&1&0
+        \end{bmatrix}
+        \in\mathbb{K}^{3\times 3}$.
+        \vskip .2cm
+\begin{enumerate}
+\item\label{inversa de P} Calcular la inversa de $P$.
+\item\label{base de P} $\textcircled{a}$ Dar una base ordenada $\mathcal{B}$ de $\mathbb{K}^3$  
+tal que $P$ es la matriz de cambio de coordenadas de la base canónica de $\mathbb{K}^3$ a la
+base $\mathcal{B}$.
+\item\label{encontrar vector} Encontrar $(x,y,z)\in\mathbb{K}^3$ tal que su vector de coordenadas con respecto a $\mathcal{B}$ es 
+$$[(x,y,z)]_{\mathcal{B}}=(2,-1,-1).$$
+\end{enumerate}
+
+
+\item\label{matriz transformaciones ejemplo} Sea 
+$T:\mathbb{R}^3\longrightarrow\mathbb{R}^2$ la transformación lineal definida por $$T(x,y,z)=(x-y,x-z).$$ Sean $\mathcal{C}$ la base canónica de $\mathbb{R}^3$ y $\mathcal{B}'=\{(1,1),(1,-1)\}$ base de $\mathbb{R}^2$.
+\begin{enumerate}
+    \item\label{matriz transformaciones ejemplo-a} Calcular la matriz $[T]_{\mathcal{C}\mathcal{B}'}$, es decir la matriz de $T$ respecto de las bases $\mathcal{C}$ y $\mathcal{B}'$.
+    \item\label{matriz transformaciones ejemplo-b} Sea $(x,y,z)\in\mathbb{R}^3$. Dar las coordenadas de $T(x,y,z)$ respecto de la base $\mathcal{B}'$.
+    \item\label{matriz transformaciones ejemplo-c} Sea $S:\mathbb{R}^2\longrightarrow\mathbb{R}^3$ una transformación lineal tal que su matriz respecto a las bases $\mathcal{B}'$ y $\mathcal{C}$ es
+    \begin{align*}
+    [S]_{\mathcal{B}'\mathcal{C}}=\begin{bmatrix}
+    1&2\\1&-1\\1&0
+    \end{bmatrix}. 
+    \end{align*}
+    Calcular la matriz de la composición $T\circ S:\mathbb{R}^2\longrightarrow\mathbb{R}^2$ con respecto a la base $\mathcal{B}'$. 
+    \item\label{matriz transformaciones ejemplo-d} Calcular la matriz de $T\circ S$ respecto a la base $\mathcal{B}$ del ejercicio \ref{otras bases} usando las matrices de cambio de base calculadas en ese ejercicio.
+\end{enumerate}
+
+
+\item Sea $A$ la matriz  del ejercicio \ref{autovalores}\ref{autovalores-1} del práctico \ref{practico-5} y $T_A:\mathbb{R}^2\longrightarrow\mathbb{R}^2$ la transformación lineal dada por $T_A(v)=Av$. Hallar los autovalores de $T_A$, y para cada uno de ellos, dar una base de autovectores del correspondiente autoespacio. Decidir si $T_A$ es o no diagonalizable. En caso de serlo dar una matriz invertible $P$ tal que $P^{-1}AP$ es diagonal. 
+
+Repetir esto para cada una de las matrices de dicho ejercicio.
+
+
+\item Repetir el ejercicio anterior para cada matriz del ejercicio \ref{autovalores} del práctico \ref{practico-5} pero ahora consideradando a la transformación como una transformación lineal entre los $\mathbb{C}$-espacios vectoriales $\mathbb{C}^n$.
+
+
+\item Sea $T:V\longrightarrow V$ una transformación lineal y $v\in V$ un autovector de autovalor $\lambda$. Probar las siguientes afirmaciones.
+\begin{enumerate}
+    \item\label{autovalor-autovector-a} Si $\lambda=0$, entonces $v\in\operatorname{Nu}(T)$.
+    \item\label{autovalor-autovector-b} Si $\lambda\neq0$, entonces $v\in\operatorname{Im}(T)$.
+    \item\label{autovalor-autovector-c} Si $T^2=0$, entonces $T-\operatorname{Id}$ es un isomorfismo.
+\end{enumerate}
+
+
+\item\label{base nilp} $\textcircled{a}$ Sea $V$ un espacio vectorial de dimensión $3$ y $T:V\longrightarrow V$ una transformación lineal. Supongamos que existe $v\in V$ tal que $T^3(v)=0$ pero $T^2(v)\neq0$.
+\begin{enumerate}
+    \item\label{base nilp a} $\textcircled{a}$ Probar que $\mathcal{B}=\{v,T(v),T^2(v)\}$ es una base de $V$.
+    \item\label{base nilp b} Calcular la matriz de $T$ respecto de la base $\mathcal{B}$.
+    \item\label{base nilp c} Calcular los autovalores de $T$ y sus correspondientes autoespacios. Decidir si $T$ es diagonalizable.
+\end{enumerate}
+
         
-    \item Hallar las coordenadas de la matriz
-    $
-    \begin{bmatrix}
-    2 & 1\\
-    1 & 2
-    \end{bmatrix}$ con respecto a la base ordenada $\mathcal{B}$.
-\end{enumerate}
-
-
-\item\label{otras bases} Sean $\mathcal{C}_n$, $n=2,3$, las bases canónica de $\R^2$ y $\R^3$ respectivamente. Sean
-$\mathcal{B}_2=\{(1,0),(1,1)\}$ y $\mathcal{B}_3=\{(1,0,0),(1,1,0),(1,1,1)\}$ bases de $\R^2$, $\R^3$, respectivamente.
+\item Definir en cada caso una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ que satisfaga las condiciones requeridas. ¿Es posible definir más de una transformación lineal?
 \begin{enumerate}
-    \item Escribir la matriz de cambio de base $P_{{\mathcal{C}_n},{\mathcal{B}_n}}$ de $\mathcal{C}_n$ a $\mathcal{B}_n$, $n=2,3$.
-    \item Escribir la matriz de cambio de base $P_{{\mathcal{B}_n},{\mathcal{C}_n}}$ de $\mathcal{B}_n$ a $\mathcal{C}_n$, $n=2,3$.
-    \item ¿Qué relación hay entre $P_{{\mathcal{C}_n},{\mathcal{B}_n}}$ y $P_{{\mathcal{B}_n},{\mathcal{C}_n}}$?
+    \item\label{tl-condiciones-a} $(1,0,0)\in \operatorname{Nu}(T)$ 
+    \item\label{tl-condiciones-b} $(1,0,0)\in \operatorname{Im}(T)$ 
+    \item\label{tl-condiciones-c} $(1,0,0),(1,2,1)\in\operatorname{Nu}(T)$ y $(1,0,0) \in  \operatorname{Im}(T)$
 \end{enumerate}
 
 
-\item \label{basesRn} Sean $\mathcal{C}_n, \mathcal{B}_n$ como en el ejercicio anterior.
+\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar. 
 \begin{enumerate}
-    \item Dar las matrices de las transformaciones de los ejercicios  \ref{lineales1-bases}\ref{lineales1-bases-a}  y \ref{lineales1-bases}\ref{lineales1-bases-b} respecto de las bases $\mathcal{B}_n$ y
-    $\mathcal{C}_n$.
-    \item Dar las matrices de las transformaciones  de los ejercicios  \ref{lineales1-bases}\ref{lineales1-bases-a}  y \ref{lineales1-bases}\ref{lineales1-bases-b} respecto de las bases $\mathcal{C}_n$ y
-    $\mathcal{B}_n$.
-    \item Dar las matrices de las transformaciones  de los ejercicios  \ref{lineales1-bases}\ref{lineales1-bases-a}  y \ref{lineales1-bases}\ref{lineales1-bases-b} respecto de las bases $\mathcal{B}_n$ y
-    $\mathcal{B}_n$.
+    \item\label{tl-V-o-F-a} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\langle(1,2,3),(2,1,-1)\rangle$ es el autoespacio asociado a $0$ y $\langle(3,1,1),(1,1,3)\rangle$ es el autoespacio asociado a $5$.
+    \item\label{tl-V-o-F-b} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\langle(1,2,3)\rangle$ es el autoespacio asociado a $0$ y $\langle(3,1,1)\rangle$ es el autoespacio asociado a $5$.
+    \item\label{tl-V-o-F-c} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\{(1,0,1), (0,1,0)\}$ es una base de $\operatorname{Nu}(T)$ y  $\{(1,0,-1), (0,1,0)\}$ es una base de la $\operatorname{Im}(T)$.
+    \item\label{tl-V-o-F-d} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\{(1,0,1)\}$ es una base de $\operatorname{Nu}(T)$ y  $\{(1,0,-1), (0,1,0)\}$ es una base de la $\operatorname{Im}(T)$. 
 \end{enumerate}
-
-
-
-
-\end{enumerate}
-
-%============================================================
-\subsection*{Más ejercicios}
-%============================================================
-
-\begin{enumerate}[resume, topsep=5pt,itemsep=.4cm]
-
-\item Sea $\mathcal{B}=
-\{ (1, 1, 0, 0), (0,0,1,1), (1, 0, 0, 2), (0, 0, -1, 1)\} \subseteq \mathbb R^4$.
-Ha\-llar la matriz de cambio de base de la base ordenada $\mathcal B'$ $=$ $\{(0, 0, 1, 0), (0, 0, 0, 1), (0, 1, 0, 0), (1, 0, 0, 0)\}$ a la base ordenada $\mathcal{B}$.
-
-
-
-\item  Sea $W$ el subespacio de $\mathbb R^4$ generado los vectores $\alpha_1 = (-3, 1, 0, 0)$, $\alpha_2 = (-2, 0, 1, 0)$ y $\alpha_3 = (-1,1,-1,1)$.
-
-Probar que $\mathcal B = \{\alpha_1, \alpha_2, \alpha_3\}$ es  base de $W$ y dar las coordenadas de un vector $(x, y, z, t)$ de $W$ en la base ordenada $\mathcal B$.
-
-
-\item Calcular la matriz de cambio de base de la base ordenada $\mathcal B$ a la base ordenada $\mathcal B'$, donde: $$\mathcal B  = \{ (0, 1, 1, -1), (0, 2, 0, 0), (2, 0, 1,-1), (1, 1, 1, 1)\}$$ y $$\mathcal B'  = \{ e_1-e_2, e_1, e_3-e_4,
-e_3\},$$ siendo $\{ e_1, e_2, e_3, e_4\}$ la base ordenada canónica de $\mathbb R^4$.
 
 \end{enumerate}
 
 
+\subsection*{Ejercicios de repaso}
+Si ya hizo los ejercicios anteriores continue con la siguiente guía. Los ejercicios que siguen son similares y le pueden servir para practicar antes de los exámenes.
+
+\begin{enumerate}[resume, topsep=5pt,itemsep=5pt]
+
+    \item\label{otras bases 3} Repetir el ejercicio \ref{otras bases} con la base canónica de $\mathbb{R}^3$ y la base $\mathcal{B}_3=\{(1,0,0),(1,1,0),(1,1,1)\}$. Considerar las $3$-upla $(1,2,3)$ y $(0,1,2)$ para los últimos dos items.
+
+
+\item Repetir los últimos items del ejercicio \ref{matriz transformaciones ejemplo} con la transformación lineal $S\circ T$ y la base del ejercicio anterior.
+
+\item\label{cambio de base} $\textcircled{a}$ Sea $V$ un espacio vectorial con base $\mathcal{B}=\{v_1, ..., v_n\}$ y $A=(a_{ij})\in\mathbb{K}^{n\times n}$ una matriz. Sea $\mathcal{B}'=\{v_1', ..., v_n'\}$ donde
+\begin{align*}
+v_j'=\sum_{i=1}^na_{ij}v_i\,\mbox{ para todo $1\leq j\leq n$}. 
+\end{align*}
+
+Probar que $\mathcal{B}'$ es una base de $V$ si y sólo si $A$ es inversible. En tal caso determinar la matriz de cambio de base de la base $\mathcal{B}'$ a la base $\mathcal{B}$ y viceversa.
+
+\item Para cada una de las siguientes transformaciones lineales, hallar sus autovalores,
+    y para cada uno de ellos, dar una base de autovectores del espacio propio asociado. Luego, decir si la
+    transformación considerada es o no  diagonalizable.
+    \begin{enumerate}
+        \item $T:\mathbb{R}^2\to \mathbb{R}^2$, \ $T(x,y)=(y,0)$.
+        \item $T:\mathbb{R}^3\to \mathbb{R}^3$, \ $T(x,y,z)=(x+2z,-x-y+z,x+2y+z)$.
+        \item $T:\mathbb{R}^3\to \mathbb{R}^3$, \ $T(x,y,z)=(4x+y+5z,4x-y+3z,-12x+y-11z)$.
+        \item $T:\mathbb{R}^4\to \mathbb{R}^4$, \ $T(x,y,z,w)=(2x-y,x+4y,z+3w,z-w)$.
+    \end{enumerate}
+
+\item Repetir el ejercicio \ref{base nilp}  pero para cualquier $n\in\mathbb{N}$ en vez de $3$.
+
+\end{enumerate}
+
+\subsection*{Ayudas}
+
+\
+
+\ref{matriz P}\ref{base de P} Usar que $P_{\mathcal{C},\mathcal{B}}=P_{\mathcal{B},\mathcal{C}}^{-1}$ y recordar como se define $P_{\mathcal{B},\mathcal{C}}$.
+
+
+\ref{base nilp}\ref{base nilp a} Es suficiente probar que $\mathcal{B}=\{v, T(v), T^2(v)\}$ es LI. Sean $a,b,c$ escalares tales que $av+bT(v)+cT^2(v)=0$. Si aplicamos $T^2$ en ambos lados deducimos que $aT^2(v)=0$ dado que $T^3(v)=0$. Entonces $a=0$ porque (completar argumento). Con un razonamiento similar deducir que $a=b=c=0$.
+
+
+\ref{cambio de base} Es suficiente probar que $\mathcal{B}'$ es LI si y sólo si $A$ es invertible. Usar una estrategia similar a la demostración del Teorema 3.3.1 para probar esta equivalencia.
