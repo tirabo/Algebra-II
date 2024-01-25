@@ -504,11 +504,12 @@
 
 
         
-    \item \label{lineales1} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos.    \begin{enumerate}
+    \item \label{lineales1} Para cada una de las siguientes transformaciones lineales calcular el núcleo y la imagen. Describir ambos subespacios implícitamente y encontrar una base de cada uno de ellos. 
+    
+\begin{enumerate}
         \item\label{lineales1-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
         \item\label{lineales1-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
     \end{enumerate}
-
     \rta 
 
     \ref{lineales1-a} Como ya dijimos vamos a caracterizar los $(b_1,b_2,b_3) \in \R^3$ tales que $T(x,y) = (b_1,b_2,b_3)$ para $(x,y) \in \R^2$. Es decir, debemos resolver el sistema
@@ -896,32 +897,139 @@ Por lo tanto, $\{1+x,1-x^2,1+x^3\}$ es una base de $\operatorname{Im}(Q)$.
 
     \item\label{funcional ej}  Sea $T:\mathbb{K}^3\longrightarrow\mathbb{K}$ definida por $T(x,y,z)=x+2y+3z$.
     \begin{enumerate}
-        \item Probar que $T$ es un epimorfismo.
-        \item Dar la dimensión del núcleo de $T$.
-        \item Encontrar una matriz $A$ tal que
+        \item\label{funcional ej-a} Probar que $T$ es un epimorfismo.
+        \item\label{funcional ej-b} Dar la dimensión del núcleo de $T$.
+        \item\label{funcional ej-c} Encontrar una matriz $A$ tal que
             $T(x,y,z)=A\begin{bmatrix}
             x\\y\\z \end{bmatrix}$. ¿De qué tamaño debe ser $A$? Como en el ejercicio \ref{Txyz}\, \ref{matriz de T} pensamos a los vectores como columnas. 
     \end{enumerate}
     
     \rta
+    \ref{funcional ej-a}  Como el codominio de $T$ es de dimensión $1$, solo debemos ver que $T$ es no nulo. Pero $T(1,0,0)=1 \ne 0$, por lo tanto, $T$ es un epimorfismo.
     
+    \vskip .3cm
+
+    \ref{funcional ej-b}  Por el teorema del núcleo-imagen, $\operatorname{dim} \operatorname{Nu}(T) + \operatorname{dim} \operatorname{Im}(T) = \operatorname{dim} \mathbb{K}^3 = 3$. Como $T$ es un epimorfismo, $\operatorname{dim} \operatorname{Im}(T) = 1$, luego $\operatorname{dim} \operatorname{Nu}(T) = 2$.
+
+    \vskip .3cm
+    \ref{funcional ej-c} El tamaño de $A$ debe ser $1 \times 3$, pues la multiplicación de una matriz $1 \times 3$ por una matriz $ 3 \times 1$, el vector columna,  resulta en una matriz de $1 \times 1$, un elemento de $\mathbb{K}$. La matriz es
+    $$
+    A = \begin{bmatrix}
+        1 & 2 & 3
+    \end{bmatrix}.
+    $$
+    \qed 
+
+
     \item Determinar cuáles transformaciones lineales de los ejercicios  \ref{lineales1} y \ref{lineales2} son monomorfismos, epimorfismos y/o isomorfismos.
     
     \rta
+
+
+    Ejercicio \ref{lineales1}\ref{lineales1-a}. $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$. $T$ no  puede ser sobreyectiva, por dimensión ($2<3$). $T$ es inyectiva, pues probamos en  el ejercicio \ref{lineales1}\ref{lineales1-a} que $\operatorname{Nu}(T) = \{0\}$.
+
+    \vskip .3cm
+
+    Ejercicio \ref{lineales1}\ref{lineales1-b}. $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$. Por dimensión, $S$ no puede ser inyectiva ($3>2$). $S$ es sobreyectiva, pues probamos en  el ejercicio \ref{lineales1}\ref{lineales1-b} que $\operatorname{Im}(S) = \R^2$.
+
+    \vskip .3cm
+
+    Ejercicio \ref{lineales2}\ref{lineales2-a}. $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$. $D$ no es inyectiva, pues $D$ de una constante es $0$ o, alternativamente, ya probamos que $\operatorname{Nu}(D) = \{a : a \in \R\} \ne \{0\}$. $D$ no es sobreyectiva y la forma más sencilla de argumentar es por el teorema de la dimensión,  que nos dice que $\operatorname{dim} \operatorname{Im}(D) + \operatorname{dim} \operatorname{Nu}(D) = \operatorname{dim} P_4 = 4$. Como $\operatorname{dim} \operatorname{Nu}(D) = 1$, $\operatorname{dim} \operatorname{Im}(D) = 3$, es decir, $\operatorname{Im}(D) \ne P_4$.
+
+    \vskip .3cm
+
+    Ejercicio \ref{lineales2}\ref{lineales2-b}. $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$. La traza es una aplicación no nula y como el codominio es de dimensión $1$, $T$ es sobreyectiva. $T$ no es inyectiva, pues, por ejemplo, $T\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} =0 = T\begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix}$.
+
+    \vskip .3cm
+    
+    Ejercicio \ref{lineales2}\ref{lineales2-c}. $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$. $L$ no puede ser sobreyectiva pues el dominio de $L$ es de dimensión $3$ y el codominio es de dimensión $4$. Vimos en  \ref{lineales2}\ref{lineales2-c} que $\operatorname{Nu}(L) = \langle x -  x^2 \rangle$. Como $\operatorname{Nu}(L) \ne \{0\}$, $L$ no es inyectiva. 
+
+    \vskip .3cm
+    
+    Ejercicio \ref{lineales2}\ref{lineales2-d}. $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$. $Q$ no puede ser sobreyectiva pues el dominio de $Q$ es de dimensión $3$ y el codominio es de dimensión $4$. Vimos en  \ref{lineales2}\ref{lineales2-d} que $\operatorname{Nu}(Q) = \{0\}$ y por lo tanto $Q$ es inyectiva.
+
+    \qed
     
     \item\label{usar-1} Encontrar en cada caso, cuando sea posible, una matriz $A\in\mathbb{K}^{3\times 3}$ tal que la transformación lineal $T:\mathbb{K}^3\longrightarrow\mathbb{K}^3$, $T(v)=Av$, satisfaga las condiciones exigidas (como en el ejercicio  \ref{T en la base}\,\ref{matriz otro} pensamos a los vectores como columnas). Cuando no sea posible, explicar por qué no es posible.
     \begin{enumerate}[ topsep=5pt,itemsep=5pt]
-        \item $\operatorname{dim} \operatorname{Im}(T)=2$ y $\operatorname{dim}\operatorname{Nu}(T)=2$.
-        \item $T$ inyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
-        \item $T$ sobreyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
-        
-        \item\label{usar Txyz} \textcircled{a} $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
-        
-        \item $e_1\in\operatorname{Im}(T)$ y $(-5,1,1)\in\operatorname{Nu}(T)$.
-        
-        \item $\operatorname{dim} \operatorname{Im}(T)=2$.
+        \item\label{usar-1-a} $\operatorname{dim} \operatorname{Im}(T)=2$ y $\operatorname{dim}\operatorname{Nu}(T)=2$.
+        \item\label{usar-1-b} $T$ inyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
+        \item\label{usar-1-c} $T$ sobreyectiva y $T(e_1)=(1,0,0)$, $T(e_2)=(2,1,5)$ y $T(e_3)=(3,-1,0)$.
+        \item\label{usar-1-d} $e_1\in\operatorname{Im}(T)$ y $(-5,1,1)\in\operatorname{Nu}(T)$.
+        \item\label{usar-1-e} $\operatorname{dim} \operatorname{Im}(T)=2$.
     \end{enumerate}
     
     \rta
+
+    \ref{usar-1-a}  Por el teorema de la dimensión, para cualquier $T$ lineal tendríamos $\operatorname{dim} \operatorname{Im}(T) + \operatorname{dim} \operatorname{Nu}(T) = \operatorname{dim} \mathbb{K}^3 = 3$.  Por lo tanto, no puede existir $T$ con  $\operatorname{dim} \operatorname{Im}(T)=2$ y $\operatorname{dim}\operatorname{Nu}(T)=2$, pues en ese caso sería $\operatorname{dim} \operatorname{Im}(T) + \operatorname{dim} \operatorname{Nu}(T) = 4$.
+
+    \vskip .3cm
+
+    \ref{usar-1-b} $T$ está bien definida, pues está definida en una base. Como la base es la canónica,  es sencillo calcular $A$, pues $F_i(A)v = T(v)_i$,  es decir la fila $i$ de $A$ por un vector devuelve la coordenada $i$-ésima de $T(v)$. Por lo tanto, 
+    $$
+    A = \begin{bmatrix}
+        1 & 2 & 3 \\
+        0 & 1 & -1 \\
+        0 & 5 & 0
+    \end{bmatrix}.
+    $$ 
+    
+    
+    Para que sea inyectiva debemos comprobar que $\operatorname{Nu}(T) = \{0\}$. Es decir, debemos ver que el sistema homogéneo asociado a $T(v) = 0$ solo tiene la solución trivial:
+    \begin{align*}
+        T(a,b,c) &= (0,0,0) \\
+        \Rightarrow \quad a(1,0,0) + b(2,1,5) + c(3,-1,0) &= (0,0,0) \\
+        \Rightarrow \quad (a+2b+3c, b-c, 5b) &= (0,0,0) \\
+        \Rightarrow \quad \begin{cases}
+            a+2b+3c &= 0 \\
+            b-c &= 0 \\
+            5b &= 0
+        \end{cases}
+        \Rightarrow \quad \begin{cases}
+            a &= 0 \\
+            b &= 0 \\
+            c &= 0
+        \end{cases}.
+    \end{align*}
+    Por lo tanto $T$ es inyectiva.
+
+    \vskip .3cm
+
+    \ref{usar-1-c} $T$ es la transformación lineal del inciso anterior que ya vimos que es inyectiva. Por el teorema de la dimensión, $\operatorname{dim} \operatorname{Im}(T) = 3$, por lo tanto, $T$ es sobreyectiva.
+
+    \vskip .3cm
+
+    \ref{usar-1-d} Debemos definir una $T$ tal que que cumpla las condiciones del enunciado. Una podría ser  $T(e_1) = e_1$, $T(e_2) = 0$, $T(e_3)= 5e_1$. Como $T$ está definida en una base, se puede extender a una transformación lineal:
+    $$
+    T(x,y,z) = xT(e_1) + yT(e_2) + zT(e_3) = x e_1 + 5z e_1 = (x+5z,0,0).
+    $$
+    Por lo tanto, $e_1 \in \operatorname{Im}(T)$ y como $T(-5,1,1) = (-5 +5,0,0) = (0,0,0)$, entonces $(-5,1,1) \in \operatorname{Nu}(T)$.
+
+    La matriz $A$ está formada por las columnas $[T(e_1)$ $T(e_2)$  $T(e_3)]$, es decir,
+    $$
+    A = \begin{bmatrix}
+        1 & 0 & 5 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}.
+    $$
+    
+    \vskip .3cm
+
+    \ref{usar-1-e}  Definamos $T(e_1) = e_1$, $T(e_2) = e_2$, $T(e_3)= 0$. Como $T$ está definida en una base, se puede extender a una transformación lineal:
+    $$
+    T(x,y,z) = xT(e_1) + yT(e_2) + zT(e_3) = x e_1 + y e_2 = (x,y,0).
+    $$
+    Es claro que $\operatorname{dim} \operatorname{Im}(T) = 2$ y  que
+    $$
+    A = \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}.
+    $$
+
+    \qed
+
         
     \end{enumerate}
