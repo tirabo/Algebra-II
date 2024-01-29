@@ -170,7 +170,7 @@ Más generalmente, dar las coordenadas de cualquier matriz $\begin{bmatrix}
     &= \{(y-2z,y,z)\mid y,z\in\mathbb{K}\} \\
     &= \{y(1,1,0)+z(-2,0,1)\mid y,z\in\mathbb{K}\}.
 \end{align*}
-Por lo tanto, $\{(1,1,0),(-2,0,1)\}$ generan $W$. Además, como $(1,1,0)$ y $(-2,0,1)$ son LI, entonces $\mathcal{B}\{(1,1,0),(-2,0,1)\}$ es una base ordenada de $W$. 
+Por lo tanto, $\{(1,1,0),(-2,0,1)\}$ generan $W$. Además, como $(1,1,0)$ y $(-2,0,1)$ son LI, entonces $\mathcal{B}=\{(1,1,0),(-2,0,1)\}$ es una base ordenada de $W$. 
 
 \vskip .3cm
 
@@ -331,7 +331,51 @@ base $\mathcal{B}$.
 $$[(x,y,z)]_{\mathcal{B}}=(2,-1,-1).$$
 \end{enumerate}
 
-\rta
+\rta 
+
+\ref{inversa de P} Utilizamos el método de Gauss-Jordan:
+\begin{align*}
+    &\left[\begin{array}{ccc|ccc}
+    1&1&0&1&0&0\\2&1&1&0&1&0\\3&1&0&0&0&1
+    \end{array}\right] \underset{F_3-3F_1}{\stackrel{F_2-2F_1}{\longrightarrow}} \left[\begin{array}{ccc|ccc}
+    1&1&0&1&0&0\\0&-1&1&-2&1&0\\0&-2&0&-3&0&1
+    \end{array}\right] \\
+    &\stackrel{-F_2}{\longrightarrow} \left[\begin{array}{ccc|ccc}
+    1&1&0&1&0&0\\0&1&-1&2&-1&0\\0&-2&0&-3&0&1
+    \end{array}\right] \underset{F_3+2F_2}{\stackrel{F_1-F_2}{\longrightarrow}} 
+    \left[\begin{array}{ccc|ccc}
+    1&0&1&-1&1&0\\0&1&-1&2&-1&0\\0&0&-2&1&-2&1
+    \end{array}\right] \\
+    &\underset{-\frac{1}{2}F_3}{\longrightarrow} \left[\begin{array}{ccc|ccc}
+    1&0&1&-1&1&0\\0&1&-1&2&-1&0\\0&0&1&-\frac{1}{2}&1&-\frac{1}{2}
+    \end{array}\right] \underset{F_2+F_3}{\stackrel{F_1-F_3}{\longrightarrow}}
+    \left[\begin{array}{ccc|ccc}
+    1&0&0&-\frac{1}{2}&0&\frac{1}{2}\\0&1&0&\frac{3}{2}&0&-\frac{1}{2}\\0&0&1&-\frac{1}{2}&1&-\frac{1}{2}
+    \end{array}\right].
+\end{align*}
+Concluyendo, 
+\begin{align*}
+    P^{-1} = \begin{bmatrix}
+        -\frac{1}{2}&0&\frac{1}{2}\\
+        \frac{3}{2}&0&-\frac{1}{2}\\
+        -\frac{1}{2}&1&-\frac{1}{2}
+    \end{bmatrix} = \frac12 \begin{bmatrix}
+        -1&0&1\\
+        3&0&-1\\
+        -1&2&-1
+    \end{bmatrix}.
+\end{align*} 
+
+\vskip .3cm
+
+\ref{base de P} Si $\mathcal C$ es la base canónica, queremos encontrar  $\mathcal{B}=\{v_1,v_2,v_3\}$, tal que $[\Id]_{\mathcal{C}\mathcal{B}}=P$. Es decir, queremos encontrar $v_1,v_2,v_3$ tal que
+\begin{align*}
+    P(e_1) &=  (1,2,3) \\
+    v_2 &= \Id(v_2) = P(0,1,0) = (1,1,1) \\
+    v_3 &= \Id(v_3) = P(0,0,1) = (0,1,0).
+\end{align*}
+Por lo tanto, $\mathcal{B}=\{(1,2,3),(1,1,1),(0,1,0)\}$ es una base de $\mathbb{K}^3$ tal que $[\Id]_{\mathcal{C}\mathcal{B}}=P$.
+
 
 
 \qed

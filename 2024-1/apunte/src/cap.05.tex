@@ -1419,13 +1419,66 @@ Luego,
                     T(x_1,\ldots,x_n):= \begin{bmatrix} a_{11} &\cdots &a_{1n} \\ \vdots &\ddots& \vdots \\a_{m1} &\cdots &a_{mn}
                     \end{bmatrix}\begin{bmatrix}x_1\\\vdots\\x_n\end{bmatrix}.
                 \end{equation}
-         	
         
                 Sean  $\cC_n$ y $\cC_m$ las bases canónicas de $\R^n$ y $\R^m$,  respectivamente, entonces 
                     \begin{equation*}
                         [T]_{\cC_n\cC_m} =A.
                     \end{equation*}
                 \end{observacion*}
+
+            \begin{ejemplo}\label{ejemplo-matriz-de-t-R3-R3-1ra} 
+                Sea $T: \R^3 \to \R^3$ definida
+                $$
+                T(x,y,z) = (2x+y, 3y, x+4z),
+                $$
+                y sean  $\cB = \{(1,1,1),(1,1,0),(1,0,0)\}$ y  $\cB' = \{(1,0,1),(1,1,0),(0,1,0)\}$, bases ordenadas. Encontremos $[T]_{\cB \cB'}$
+            \end{ejemplo}
+                \begin{proof}    
+                \begin{equation*}
+                    \begin{array}{ccccrcrcrcr}
+                    T(1,1,1) & = & (3,3,5) & = & a_{11}(1,0,1) &+& a_{21}(1,1,0) &+& a_{31} (0,1,0)   \\
+                    T(1,1,0) & = & (3,3,1) & = &  a_{12}(1,0,1) &+& a_{22}(1,1,0) &+& a_{32} (0,1,0)   \\
+                    T(1,0,0) & = & (2,0,1) & = & a_{13}(1,0,1) &+& a_{23}(1,1,0) &+& a_{33} (0,1,0).
+                    \end{array}
+                \end{equation*}
+                Para encontrar los coeficientes $a_{ij}$,  debemos resolver los sistemas de ecuaciones
+                \begin{align*}
+                    (3,3,5) & =  (a_{11} +a_{21},a_{21}+a_{31}, a_{11})\\
+                    (3,3,1) & =  (a_{12} +a_{22},a_{22}+a_{32}, a_{12})\\
+                    (2,0,1) & =  (a_{13} +a_{23},a_{23}+a_{33}, a_{13}).
+                \end{align*}
+                Genéricamente, debemos resolver el sistema
+                \begin{align*}
+                    \lambda_1+\lambda_2 &= x\\
+                    \lambda_2 +\lambda_3&= y\\
+                    \lambda_1 &=z,
+                \end{align*}
+                que es muy fácil de resolver y sus soluciones son $\lambda_1 = z$, $\lambda_2 = x-z$ y $\lambda_3 = -x+y+z$. Por lo tanto,
+                \begin{align*}
+                    &a_{11} =5,&  &a_{21} = 3-5 = -2,&  &a_{31} = -3 + 3 + 5 =5,&&& \\
+                    &a_{12} =1,&  &a_{22} = 3-1= 2,&  &a_{32} = -3 + 3 +1 =1,&&& \\
+                    &a_{13} =1,&  &a_{23} = 2-1 = 1,&  &a_{33} = -2 + 0 +1 =-1.&&&
+                \end{align*}
+                Es decir,
+                \begin{equation*}
+                    [T]_{\cB \cB'} =\begin{bmatrix} 5&1&1 \\-2&2&1 \\5&1&-1 
+                    \end{bmatrix}.
+                \end{equation*}
+
+            Veremos otra forma de calcular $[T]_{\cB \cB'}$ en el ejemplo \ref{ejemplo-matriz-de-t-R3-R3-2da}.
+            \end{proof}
+            
+
+            En general, dada una transformación lineal $T: \K^n \to \K^m$  y dos bases ordenadas $\cB = \{v_i\}$, $\cB' = \{w_i\}$, de $ \K^n$ y  $\K^m$, respectivamente, para averiguar la matriz $[T]_{\cB\cB'}$ encontramos sus coeficientes $a_{ij}$ resolviendo los sistemas de ecuaciones
+                \begin{equation*}
+                    Tv_j = \sum_{i=1}^{m} a_{ij} w_i, \quad 1 \le j \le n.
+                \end{equation*}
+                Observar que, genéricamente, los sistemas se repiten para cada $j$ y solo debemos resolver el sistema
+                \begin{equation*}
+                    \lambda_1 w_1 + \cdots + \lambda_m w_m = (x_1,\ldots,x_m),
+                \end{equation*}
+                y luego especializar en cada caso. Eso el  lo que hicimos en el ejemplo anterior.
+            
     
             \begin{proposicion}\label{prop-matriz-de-tv} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\cB = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\cB' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
             \begin{equation}\label{matriz-de-tl-2}
@@ -1465,24 +1518,43 @@ Luego,
         \begin{corolario}\label{cor-cambio-de-base}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\cB$, $\cB'$  bases ordenadas de $V$. Entonces 
             \begin{equation*}
-                [v]_{\cB} = [\Id]_{\cB' \cB}\, [v]_{\cB'}, \quad \forall v \in V.
+                [v]_{\cB'} = [\Id]_{\cB \cB'}\, [v]_{\cB}, \quad \forall v \in V.
             \end{equation*}
         \end{corolario}
         \begin{proof}
             Por la proposición \ref{prop-matriz-de-tv} tenemos que 
             $$
-            [\Id]_{\cB' \cB}  [v]_{\cB'} = [\Id (v)]_{\cB} = [v]_{\cB}.
+            [\Id]_{\cB \cB'}  [v]_{\cB} = [\Id (v)]_{\cB'} = [v]_{\cB'}.
             $$
         \end{proof}
 
         \begin{definicion}
-            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\cB$ y $\cB'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\cB' \cB}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\cB'$  a la base $\cB$. 
+            Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\cB$ y $\cB'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\cB \cB'}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\cB$  a la base $\cB'$. 
         \end{definicion}
 
-        La matriz de cambio de base nos permite calcular los cambios de  coordenadas: dadas dos bases ordenadas $\cB$ y $\cB'$,  y dadas las coordenadas de $v$ en la base  $\cB'$ es decir la matriz columna $[v]_{\cB'}$, tenemos, por corolario \ref{cor-cambio-de-base}, que
-        \begin{equation*}
-            [v]_{\cB} =P\, [v]_{\cB'}, \quad \forall v \in V.
-        \end{equation*}
+        
+
+        \begin{ejemplo*}
+            Sea $V = \R^2$ y sean $\cB = \{(1,1),(1,-1)\}$ y $\cB' = \{(1,0),(0,-1)\}$ bases ordenadas de $V$. Calcular la matriz de cambio de base de $\cB'$ a $\cB$.
+        \end{ejemplo*}
+        \begin{proof}[Solución] 
+            Como $\cB$ y $\cB'$ son bases ordenadas de $V$,  tenemos que
+            \begin{align*}
+                \Id(1,0) &= (1,0) = a_{11}(1,1) + a_{21}(1,-1) , \\ 
+                \Id(0,-1) &= (0,-1) = a_{12}(1,1) + a_{22}(1,-1),
+            \end{align*}
+            para ciertos $a_{ij} \in \R$. Es decir
+            \begin{align*}
+                (1, 0) &= (a_{11}+a_{21}, a_{11}-a_{21}),\\
+                (0, -1) &= (a_{12}+a_{22}, a_{12}-a_{22}).
+            \end{align*}
+            lo que implica que $a_{12} = a_{21} = \frac12$ y $-a_{12} = a_{22} = \frac12$. Por lo tanto,
+            \begin{equation*}
+                P = [\Id]_{\cB' \cB} = \begin{bmatrix} \frac12 & -\frac12 \\ \frac12 & \frac12 \end{bmatrix}.
+            \end{equation*}
+
+        \end{proof}
+
         
         \begin{teorema}[*]
             Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y $\cB = \{v_1,\ldots,v_n\}$ y $\cB' = \{w_1,\ldots,w_m\}$ dos bases  ordenadas de $V$ y $W$ respectivamente. Entonces 
@@ -1543,7 +1615,7 @@ Luego,
         \begin{proof} 
             Sean
             \begin{equation*}
-                 \cB = \{v_1,\ldots,v_n\},\quad\cB' = \{w_1,\ldots,w_m\},\quad  \cB''= \{z_1,\ldots,z_l\}
+                \cB = \{v_1,\ldots,v_n\},\quad\cB' = \{w_1,\ldots,w_m\},\quad  \cB''= \{z_1,\ldots,z_l\}
             \end{equation*}
             y
             \begin{equation*}
@@ -1595,14 +1667,115 @@ Luego,
             \begin{equation*}
                 \Id = [\Id]_{\cB} =  [T T^{-1}]_{\cB} =  [T]_{\cB} [T^{-1}]_{\cB}.
             \end{equation*}
-             Análogamente, $\Id = T^{-1} T$, luego
+            Análogamente, $\Id = T^{-1} T$, luego
             \begin{equation*}
             \Id = [\Id]_{\cB} =  [T^{-1} T]_{\cB} =  [T^{-1}]_{\cB} [T]_{\cB}. 
             \end{equation*}
             Por  lo tanto $[T]_{\cB}^{-1} = [T^{-1}]_{\cB}$.
         \end{proof}	
     
-    
+        \begin{corolario}\label{corolario-tl-en-bases-distintas}
+            Sea $T:\K^n \to \K^m$ una transformación lineal y sean $\cB$ y $\cB'$ bases ordenadas de $\K^n$ y $\K^m$, respectivamente. Entonces
+            \begin{equation}\label{eq-tl-en-bases-distintas}
+                [T]_{\cB \cB'} = [\Id_m]_{\cC_m \cB'} [T]_{\cC_n \cC_m} [\Id_n]_{ \cB \cC_n}.
+            \end{equation}
+            donde $\cC_n$ y $\cC_m$ las bases canónicas de $\K^n$ y $\K^m$, respectivamente. 
+        \end{corolario}
+        \begin{proof}
+            Es claro que $T = \Id_m \circ T \circ \Id_n$, luego 
+            \begin{align*}
+                [T]_{\cB\cB'} &=  [\Id_m \circ T \circ \Id_n]_{\cB\cB'}& \qquad& \\
+                &= [\Id_m]_{\cC_m \cB'} [T \circ \Id_n]_{\cB \cC_m}& &(\text{teorema \ref{th-producto-de-matrices-bases}})  \\
+                &= [\Id_m]_{\cC_m \cB'} [T]_{\cB \cC_m} [\Id_n]_{\cC_n \cB}& &(\text{teorema \ref{th-producto-de-matrices-bases}}).
+            \end{align*} 
+        \end{proof}
+
+        \begin{observacion*}
+            El corolario \ref{corolario-tl-en-bases-distintas} nos da una forma metódica de calcular la matriz de una transformación lineal en bases distintas de las canónicas.
+
+            En las hipótesis del corolario observemos que 
+            \begin{itemize}
+                \item $[\Id_n]_{\cB \cC_n}$ es muy fácil de calcular pues es la matriz donde las columnas son los vectores de la base ordenada $\cB$.
+                \item $[T]_{\cC_n \cC_m}$ también es fácil de calcular, pues es la matriz de $T$ en las bases canónicas.
+                \item Finalmente, calculamos $[\Id_m]_{\cB'\cC_m }$ que es la matriz donde las columnas son los vectores de la base ordenada $\cB'$ y por corolario  \ref{cor-inversa-matriz-cambio-de-base} tenemos que $[\Id_m]_{\cB'\cC_m } = [\Id_m]_{\cC_m\cB' }^{-1}$.
+            \end{itemize}
+        \end{observacion*}
+
+        \begin{ejemplo} \label{ejemplo-matriz-de-t-R3-R3-2da} Repitamos el ejemplo \ref{ejemplo-matriz-de-t-R3-R3-1ra} pero ahora usando el corolario \ref{corolario-tl-en-bases-distintas}. Es decir, si $T: \R^3 \to \R^3$ definida
+            $$
+            T(x,y,z) = (2x+y, 3y, x+4z),
+            $$
+            y $\cB = \{(1,1,1),(1,1,0),(1,0,0)\}$ y  $\cB' = \{(1,0,1),(1,1,0),(0,1,0)\}$, entonces calculemos $[T]_{\cB \cB'}$ con la fórmula \eqref{eq-tl-en-bases-distintas}.
+        \end{ejemplo}
+        \begin{proof}[Solución]
+            Las dos matríces más fáciles de calcular son:
+            \begin{align*}
+                [\Id_3]_{\cB \cC} = \begin{bmatrix} 1&1&1\\1&1&0\\1&0&0 
+                \end{bmatrix},\qquad 
+                [\Id_3]_{\cB'\cC } = \begin{bmatrix}
+                    1&1&0\\0&1&1\\1&0&0
+                \end{bmatrix}.
+            \end{align*}
+            Por otro lado,
+            \begin{align*}
+                T(1,0,0) &= (2,0,1) = 2(1,0,1) + 0(1,1,0) + 1(0,1,0) \\
+                T(0,1,0) &= (1,3,0) = 1(1,0,1) + 3(1,1,0) + 0(0,1,0) \\
+                T(0,0,1) &= (0,0,4) = 0(1,0,1) + 0(1,1,0) + 4(0,1,0).
+            \end{align*}
+            por lo tanto,
+            \begin{equation*}
+                [T]_{\cC \cC} = \begin{bmatrix} 2&1&0\\0&3&0\\1&0&4 
+                \end{bmatrix}.
+            \end{equation*}
+            Calculemos ahora $[\Id_3]_{\cC \cB'}= [\Id_3]_{\cB'\cC }^{-1}$:
+            \begin{align*}
+                \left[\begin{array}{ccc|ccc}
+                    1&1&0&1&0&0\\
+                    0&1&1&0&1&0\\
+                    1&0&0&0&0&1
+                \end{array}\right] &\stackrel{F_1\leftrightarrow F_3}{\longrightarrow}
+                \left[\begin{array}{ccc|ccc}
+                    1&0&0&0&0&1\\
+                    0&1&1&0&1&0\\
+                    1&1&0&1&0&0
+                \end{array}\right] \\
+                \stackrel{F_3-F_1}{\longrightarrow}
+                \left[\begin{array}{ccc|ccc}
+                    1&0&0&0&0&1\\
+                    0&1&1&0&1&0\\
+                    0&1&0&1&0&-1
+                \end{array}\right] &\stackrel{F_2\leftrightarrow F_3}{\longrightarrow}
+                \left[\begin{array}{ccc|ccc}
+                    1&0&0&0&0&1\\
+                    0&1&0&1&0&-1\\
+                    0&1&1&0&1&0
+                \end{array}\right] \\
+                \stackrel{F_3-F_2}{\longrightarrow}
+                \left[\begin{array}{ccc|ccc}
+                    1&0&0&0&0&1\\
+                    0&1&0&1&0&-1\\
+                    0&0&1&-1&1&1
+                \end{array}\right].
+            \end{align*}
+            Por lo tanto, 
+            $$
+            [\Id_3]_{\cC \cB'} = \begin{bmatrix} 0&0&1\\1&0&-1\\-1&1&1
+            \end{bmatrix}.
+            $$
+            Finalmente, por la fórmula \eqref{eq-tl-en-bases-distintas} tenemos que
+            \begin{align*}
+                [T]_{\cB \cB'} &= [\Id_3]_{\cC \cB'} [T]_{\cC \cC} [\Id_3]_{\cB \cC} \\
+                &= \begin{bmatrix} 0&0&1\\1&0&-1\\-1&1&1
+                \end{bmatrix} \begin{bmatrix} 2&1&0\\0&3&0\\1&0&4
+                \end{bmatrix} \begin{bmatrix} 1&1&1\\1&1&0\\1&0&0
+                \end{bmatrix} \\
+                &= \begin{bmatrix}1 & 0 & 4 \\ 1 & 1 & -4 \\-1 & 2 & 4 \end{bmatrix} \begin{bmatrix} 1&1&1\\1&1&0\\1&0&0
+                \end{bmatrix} \\
+                &= \begin{bmatrix} 5 & 1 & 1 \\ -2 & 2 & 1 \\ 5 & 1 & -1 \end{bmatrix}.
+            \end{align*}
+        \end{proof}
+
+
             
         \begin{teorema}\label{th-cambio-de-base}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean
@@ -1618,11 +1791,11 @@ Luego,
                 [T]_{\cB'} = [\Id]_{\cB \cB'} [T]_{\cB} [\Id]_{\cB' \cB}.
             \end{equation}
         \end{teorema}
-        \begin{proof} Tenemos que $T = \Id T$ y $T =T  \Id$, luego 
+        \begin{proof} La demostración es muy parecida a la demostración del corolario \ref{corolario-tl-en-bases-distintas}.   Tenemos que $T = \Id \circ T$ y $T =T \circ \Id$, luego 
             \begin{align*}
-                [T]_{\cB'\cB'} &=  [\Id T]_{\cB'\cB'}& \qquad& \\
+                [T]_{\cB'\cB'} &=  [\Id  \circ T]_{\cB'\cB'}& \qquad& \\
                 &= [\Id]_{\cB \cB'} [T]_{\cB' \cB}& &(\text{teorema \ref{th-producto-de-matrices-bases}})  \\
-                &= [\Id]_{\cB \cB'} [T \Id]_{\cB' \cB}& &\\
+                &= [\Id]_{\cB \cB'} [T \circ  \Id]_{\cB' \cB}& &\\
                 &= [\Id]_{\cB \cB'} [T]_{\cB\cB} [\Id]_{\cB' \cB}& &(\text{teorema \ref{th-producto-de-matrices-bases}}) \\
                 &=P^{-1}[T]_{\cB\cB}P& &(\text{corolario \ref{cor-inversa-matriz-cambio-de-base}}).
             \end{align*} 
