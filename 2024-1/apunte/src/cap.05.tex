@@ -1379,7 +1379,10 @@ Luego,
                 \begin{equation*}
             [T]_{\cB\cB'} = \left[[T(v_1)]_{\cB'}\; \cdots \;[T(v_j)]_{\cB'} \;\cdots \;[T(v_n)]_{\cB'} \right].
                 \end{equation*}
-            Es decir, la matriz de $T$ respecto a las bases ordenadas $\cB$ y $\cB'$ es la matriz cuyas columnas son las coordenadas de los vectores $T(v_j)$ en la base ordenada $\cB'$. 
+            Es decir, la matriz de $T$ respecto a las bases ordenadas $\cB$ y $\cB'$ es la matriz cuyas columnas son las coordenadas de los vectores $T(v_j)$ en la base ordenada $\cB'$. En particular, si $T: \K^n \to \K^m$ una transformación lineal,  $\cB = \{v_1,\ldots,v_n\}$ es una base ordenada de $ \K^n$ y $\cC$ es la base canónica de  $\K^m$,  entonces
+            \begin{equation*}
+                [T]_{\cB\cC} =  \begin{bmatrix} \mid & \mid & & \mid & \mid\\ Tv_1 & Tv_2 &\cdots &Tv_{n-1} & Tv_n\\ \mid & \mid & & \mid & \mid\end{bmatrix}.
+            \end{equation*}
             \end{observacion*}
             
             \begin{ejemplo*}

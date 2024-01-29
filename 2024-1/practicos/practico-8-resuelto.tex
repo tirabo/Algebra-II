@@ -2,85 +2,6 @@
 
 \begin{enumerate}[topsep=6pt, itemsep=.4cm]
 
-\item \label{lineales1-bases} Escribir las matrices de las siguientes transformaciones lineales respecto de las bases canónicas de los espacios involucrados.
-\begin{enumerate}
-    \item\label{lineales1-bases-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
-    \item\label{lineales1-bases-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
-    \item\label{lineales1-base-c} $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
-    \item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
-    \item\label{lineales1-base-d} $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
-    \item\label{lineales1-base-e} $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
-\end{enumerate}
-
-\rta denotemos $\mathcal{C}_n$  a la base canónica de $\R^n$, Denotemos $\mathcal{B}_n$ a la base $\{1,x,x^2,\ldots,x^{n-1}\}$ de $P_n$ y denotemos $\mathcal{M}_{2\times 2}$ a la base$\{E_{11},E_{12},E_{21},E_{22}\}$ de  $M_{2\times 2}(\mathbb{K})$.
-
-\vskip .3cm
-
-\ref{lineales1-bases-a} 
-\begin{align*}
-    T(e_1) &= T(1,0) = (1,1,2) = 1(1,0,0) + 1(0,1,0) +2(0,0,1)\\
-    T(e_2) &= T(0,1) = (-1,1,3) = -1(1,0,0) +1(0,1,0) +3(0,0,1).
-\end{align*}
-Por lo tanto, la matriz de $T$ respecto de las bases canónicas es
-\begin{align*}
-    [T]_{\,\mathcal{C}_2\,\mathcal{C}_3} = \begin{bmatrix} 1 & -1 \\ 1 & 1 \\ 2 & 3 \end{bmatrix}.
-\end{align*}
-
-\vskip .3cm
-
-\ref{lineales1-bases-b} 
-\begin{align*}
-    S(e_1) &= S(1,0,0) = (1,2) = 1(1,0) + 2(0,1)\\
-    S(e_2) &= S(0,1,0) = (-1,-1) = -1(1,0) -1(0,1)\\
-    S(e_3) &= S(0,0,1) = (1,2) = 1(1,0) + 2(0,1).
-\end{align*}
-Por lo tanto, la matriz de $S$ respecto de las bases canónicas es
-\begin{align*}
-    [S]_{\,\mathcal{C}_3\,\mathcal{C}_2} = \begin{bmatrix} 1 & -1 & 1 \\ 2 & -1 & 2 \end{bmatrix}.
-\end{align*}
-
-\vskip .3cm
-
-\ref{lineales1-base-c} 
-\begin{align*}
-    D(1) &= 0 = 0 \cdot 1 + 0\cdot x + 0\cdot x^2 + 0\cdot x^3\\
-    D(x) &= 1 =1 \cdot 1 + 0\cdot x + 0\cdot x^2 + 0\cdot x^3\\
-    D(x^2) &= 2x =0 \cdot 1 + 2\cdot x + 0\cdot x^2 + 0\cdot x^3\\
-    D(x^3) &= 3x^2 =0 \cdot 1 + 0\cdot x + 3\cdot x^2 + 0\cdot x^3.
-\end{align*}
-Por lo tanto, la matriz de $D$ respecto de las bases canónicas es
-\begin{align*}
-    [D]_{\,\mathcal{B}_4\,\mathcal{B}_4} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 3 \\ 0 & 0 & 0 & 0 \end{bmatrix}.
-\end{align*}
-
-
-\vskip .3cm
-
-\ref{lineales1-base-d} 
-\begin{align*}
-    L(1) &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = 1\cdot E_{11} + 0\cdot E_{12} + 0\cdot E_{21} + 1\cdot E_{22}\\
-    L(x) &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = 0\cdot E_{11} + 1\cdot E_{12} + 1\cdot E_{21} + 0\cdot E_{22}\\
-    L(x^2) &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}= 0\cdot E_{11} + 1\cdot E_{12} + 1\cdot E_{21} + 0\cdot E_{22}\\
-\end{align*}
-Por lo tanto, la matriz de $L$ respecto de las bases canónicas es
-\begin{align*}
-    [L]_{\,\mathcal{B}_3\,\mathcal{M}_{2\times 2}} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 1 & 1 \\ 1 & 0 & 0 \end{bmatrix}.
-\end{align*}
-
-\vskip .3cm
-
-\ref{lineales1-base-e}
-\begin{align*}
-    Q(1) &= x+1 = 1\cdot 1 + 1\cdot x + 0\cdot x^2 + 0\cdot x^3\\
-    Q(x) &= (x+1)x = 0\cdot 1 + 1\cdot x + 1\cdot x^2 + 0\cdot x^3\\
-    Q(x^2) &= (x+1)x^2 = 0\cdot 1 + 0\cdot x + 1\cdot x^2 + 1\cdot x^3.
-\end{align*}
-Por lo tanto, la matriz de $Q$ respecto de las bases canónicas es
-\begin{align*}
-    [Q]_{\,\mathcal{B}_3\,\mathcal{B}_4} = \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix}.
-\end{align*}
-\qed
-
 \item Dar las coordenadas del polinomio $2x^2+10x-1\in\mathbb{K}_3[x]$ en la base ordenada $$\mathcal{B}=\{1,x+1,x^2+x+1\}.$$
 
 \rta 
@@ -200,6 +121,85 @@ Por lo tanto
 \qed
 
 
+\item \label{lineales1-bases} Escribir las matrices de las siguientes transformaciones lineales respecto de las bases canónicas de los espacios involucrados.
+\begin{enumerate}
+    \item\label{lineales1-bases-a} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
+    \item\label{lineales1-bases-b} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
+    \item\label{lineales1-base-c} $D:P_4  \longrightarrow P_4$, $D(p(x))=p'(x)$.
+    \item $T:M_{2\times 2}(\mathbb{K}) \longrightarrow \mathbb{K}$, $T(A)=\operatorname{tr}(A)$.
+    \item\label{lineales1-base-d} $L:P_3 \longrightarrow M_{2\times 2}(\R)$, $L(ax^2+bx+c)=\begin{bmatrix} a & b+c \\ b+c & a \end{bmatrix}$.
+    \item\label{lineales1-base-e} $Q:P_3 \longrightarrow P_4$, $Q(p(x))=(x+1)p(x)$.
+\end{enumerate}
+
+\rta denotemos $\mathcal{C}_n$  a la base canónica de $\R^n$, Denotemos $\mathcal{B}_n$ a la base $\{1,x,x^2,\ldots,x^{n-1}\}$ de $P_n$ y denotemos $\mathcal{M}_{2\times 2}$ a la base$\{E_{11},E_{12},E_{21},E_{22}\}$ de  $M_{2\times 2}(\mathbb{K})$.
+
+\vskip .3cm
+
+\ref{lineales1-bases-a} 
+\begin{align*}
+    T(e_1) &= T(1,0) = (1,1,2) = 1(1,0,0) + 1(0,1,0) +2(0,0,1)\\
+    T(e_2) &= T(0,1) = (-1,1,3) = -1(1,0,0) +1(0,1,0) +3(0,0,1).
+\end{align*}
+Por lo tanto, la matriz de $T$ respecto de las bases canónicas es
+\begin{align*}
+    [T]_{\,\mathcal{C}_2\,\mathcal{C}_3} = \begin{bmatrix} 1 & -1 \\ 1 & 1 \\ 2 & 3 \end{bmatrix}.
+\end{align*}
+
+\vskip .3cm
+
+\ref{lineales1-bases-b} 
+\begin{align*}
+    S(e_1) &= S(1,0,0) = (1,2) = 1(1,0) + 2(0,1)\\
+    S(e_2) &= S(0,1,0) = (-1,-1) = -1(1,0) -1(0,1)\\
+    S(e_3) &= S(0,0,1) = (1,2) = 1(1,0) + 2(0,1).
+\end{align*}
+Por lo tanto, la matriz de $S$ respecto de las bases canónicas es
+\begin{align*}
+    [S]_{\,\mathcal{C}_3\,\mathcal{C}_2} = \begin{bmatrix} 1 & -1 & 1 \\ 2 & -1 & 2 \end{bmatrix}.
+\end{align*}
+
+\vskip .3cm
+
+\ref{lineales1-base-c} 
+\begin{align*}
+    D(1) &= 0 = 0 \cdot 1 + 0\cdot x + 0\cdot x^2 + 0\cdot x^3\\
+    D(x) &= 1 =1 \cdot 1 + 0\cdot x + 0\cdot x^2 + 0\cdot x^3\\
+    D(x^2) &= 2x =0 \cdot 1 + 2\cdot x + 0\cdot x^2 + 0\cdot x^3\\
+    D(x^3) &= 3x^2 =0 \cdot 1 + 0\cdot x + 3\cdot x^2 + 0\cdot x^3.
+\end{align*}
+Por lo tanto, la matriz de $D$ respecto de las bases canónicas es
+\begin{align*}
+    [D]_{\,\mathcal{B}_4\,\mathcal{B}_4} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 3 \\ 0 & 0 & 0 & 0 \end{bmatrix}.
+\end{align*}
+
+
+\vskip .3cm
+
+\ref{lineales1-base-d} 
+\begin{align*}
+    L(1) &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = 1\cdot E_{11} + 0\cdot E_{12} + 0\cdot E_{21} + 1\cdot E_{22}\\
+    L(x) &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = 0\cdot E_{11} + 1\cdot E_{12} + 1\cdot E_{21} + 0\cdot E_{22}\\
+    L(x^2) &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}= 0\cdot E_{11} + 1\cdot E_{12} + 1\cdot E_{21} + 0\cdot E_{22}\\
+\end{align*}
+Por lo tanto, la matriz de $L$ respecto de las bases canónicas es
+\begin{align*}
+    [L]_{\,\mathcal{B}_3\,\mathcal{M}_{2\times 2}} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 1 & 1 \\ 1 & 0 & 0 \end{bmatrix}.
+\end{align*}
+
+\vskip .3cm
+
+\ref{lineales1-base-e}
+\begin{align*}
+    Q(1) &= x+1 = 1\cdot 1 + 1\cdot x + 0\cdot x^2 + 0\cdot x^3\\
+    Q(x) &= (x+1)x = 0\cdot 1 + 1\cdot x + 1\cdot x^2 + 0\cdot x^3\\
+    Q(x^2) &= (x+1)x^2 = 0\cdot 1 + 0\cdot x + 1\cdot x^2 + 1\cdot x^3.
+\end{align*}
+Por lo tanto, la matriz de $Q$ respecto de las bases canónicas es
+\begin{align*}
+    [Q]_{\,\mathcal{B}_3\,\mathcal{B}_4} = \begin{bmatrix} 1 & 0 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix}.
+\end{align*}
+\qed
+
 
 \item\label{otras bases} Sea $\mathcal{C}$ la base canónica de $\mathbb{K}^2$ y 
     $\mathcal{B}=\{(1,0),(1,1)\}$ otra base de $\mathbb{R}^2$.
@@ -317,9 +317,7 @@ Por lo tanto
     
     
 
-    \item\label{matriz P} Sea $P=\begin{bmatrix}
-        1&1&0\\2&1&1\\3&1&0
-        \end{bmatrix}
+    \item\label{matriz P} Sea $P=\begin{bmatrix}1&1&0\\2&1&1\\3&1&0\end{bmatrix}
         \in\mathbb{K}^{3\times 3}$.
         \vskip .2cm
 \begin{enumerate}
@@ -368,18 +366,121 @@ Concluyendo,
 
 \vskip .3cm
 
-\ref{base de P} Si $\mathcal C$ es la base canónica, queremos encontrar  $\mathcal{B}=\{v_1,v_2,v_3\}$, tal que $[\Id]_{\mathcal{C}\mathcal{B}}=P$. Es decir, queremos encontrar $v_1,v_2,v_3$ tal que
+\ref{base de P} Si $\mathcal C$ es la base canónica, queremos encontrar  $\mathcal{B}=\{v_1,v_2,v_3\}$, tal que $[\Id]_{\mathcal{C}\mathcal{B}}=P$. Es decir,  queremos encontrar $v_1,v_2,v_3 \in \R^3$ tal que
 \begin{align*}
-    P(e_1) &=  (1,2,3) \\
-    v_2 &= \Id(v_2) = P(0,1,0) = (1,1,1) \\
-    v_3 &= \Id(v_3) = P(0,0,1) = (0,1,0).
+    e_1 &= \Id(e_1) = 1 \cdot v_1 + 2 \cdot v_2 + 3 \cdot v3\\
+    e_2 &= \Id(e_2) = 1 \cdot v_1 + 1 \cdot v_2 + 1 \cdot v3 \\
+    e_3 &= \Id(e_3) = 0 \cdot v_1 + 1 \cdot v_2 + 0 \cdot v3.
 \end{align*}
-Por lo tanto, $\mathcal{B}=\{(1,2,3),(1,1,1),(0,1,0)\}$ es una base de $\mathbb{K}^3$ tal que $[\Id]_{\mathcal{C}\mathcal{B}}=P$.
+Podemos plantear este sistemas de ecuaciones en coordenadas y resolverlo, pero es más fácil observar que $P^{-1} = [\Id]_{\mathcal{B}\mathcal{C}}$ y por lo tanto, $v_1,v_2,v_3$ son las columnas de $P^{-1}$, es decir
+\begin{align*}
+    \mathcal{B} = \left\{ (-\frac{1}{2},\frac{3}{2},-\frac{1}{2}), (0,0,1), (\frac{1}{2},-\frac{1}{2},-\frac{1}{2}) \right\}.
+\end{align*}
+
+
+\vskip .3cm
+
+\ref{encontrar vector} Recordar que 
+$$
+[v]_{\mathcal{B}} = (a,b,c) \qquad \Leftrightarrow \qquad v = a \cdot v_1 + b \cdot v_2 + c \cdot v_3.
+$$
+por lo tanto, $[(x,y,z)]_{\mathcal{B}}=(2,-1,-1)$ significa que
+\begin{align*}
+    (x,y,z) &= 2 \cdot (-\frac{1}{2},\frac{3}{2},-\frac{1}{2}) + (-1) \cdot (0,0,1) + (-1) \cdot (\frac{1}{2},-\frac{1}{2},-\frac{1}{2}) \\
+    &=  (-1,3,-1) +  (0,0,-1) +  (-\frac{1}{2},\frac{1}{2},\frac{1}{2})\\
+    &=  (-\frac{3}{2},\frac{5}{2},-\frac{3}{2}).
+\end{align*}
+
+\qed
+
+
+\item\label{otras bases 2} Sean $\mathcal{C}_n$, $n=2,3$, las bases canónica de $\R^2$ y $\R^3$ respectivamente. Sean
+$\mathcal{B}_2=\{(1,0),(1,1)\}$ y $\mathcal{B}_3=\{(1,0,0),(1,1,0),(1,1,1)\}$ bases de $\R^2$, $\R^3$, respectivamente.
+\begin{enumerate}
+    \item\label{otras bases 2a} Escribir la matriz de cambio de base $P_{{\mathcal{B}_n},{\mathcal{C}_n}}$ de $\mathcal{B}_n$ a $\mathcal{C}_n$, $n=2,3$.
+    \item\label{otras bases 2b}  Escribir la matriz de cambio de base $P_{{\mathcal{C}_n},{\mathcal{B}_n}}$ de $\mathcal{C}_n$ a $\mathcal{B}_n$, $n=2,3$. 
+\end{enumerate}
+
+\rta
+
+\ref{otras bases 2a} Denotemos  $v_1 = (1, 0)$, $v_2=(1 ,1)$. 
+Luego, por definición la matriz de cambio de base  de  $\mathcal B_2$ a $\mathcal C_2$ es
+    \begin{equation*}
+        P_{{\mathcal{B}_2},{\mathcal{C}_2}}=  [\operatorname{Id}]_{\mathcal B_2\mathcal C_2} =
+        \begin{bmatrix}  \mid & \mid\\ v_1 & v_2\\ \mid & \mid &\end{bmatrix} =
+        \begin{bmatrix}
+        1&1 \\
+        0&1\end{bmatrix}. \tag{*}
+    \end{equation*}
+
+Análogamente, denotemos  $w_1 = (1, 0,0)$, $w_2=(1 ,1,0)$, $w_3=(1 ,1,1)$, por lo tanto
+    \begin{equation*}
+        P_{{\mathcal{B}_3},{\mathcal{C}_3}}=  [\operatorname{Id}]_{\mathcal B_3\mathcal C_3} =
+        \begin{bmatrix}  \mid & \mid & \mid\\ w_1 & w_2 & w_3\\ \mid & \mid & \mid \end{bmatrix} =
+        \begin{bmatrix}
+        1&1&1 \\
+        0&1&1\\
+        0&0&1\end{bmatrix}. \tag{**}
+    \end{equation*}
+
+\ref{otras bases 2b} La matriz de cambio de base  de  $\mathcal C_2$ a $\mathcal B_2$ es $[\Id]_{\mathcal C_2\mathcal B_2} = [\Id]_{{\mathcal{B}_2},{\mathcal{C}_2}}^{-1}$, por lo tanto debemos calcular la inversa de la matriz (*). Utilizamos el método de Gauss-Jordan:
+\begin{align*}
+    &\left[\begin{array}{cc|cc}
+    1&1&1&0\\0&1&0&1
+    \end{array}\right] \underset{F_1-F_2}{\longrightarrow} \left[\begin{array}{cc|cc}
+    1&0&1&-1\\0&1&0&1
+    \end{array}\right].
+\end{align*}
+En  consecuencia:
+    \begin{equation*}
+        P_{{\mathcal{C}_2},{\mathcal{B}_2}}=  [\operatorname{Id}]_{\mathcal C_2\mathcal B_2} =
+        \begin{bmatrix}
+        1&-1 \\
+        0&1\end{bmatrix}. 
+    \end{equation*}
+    
+    Análogamente, la matriz de cambio de base  de  $\mathcal C_3$ a $\mathcal B_3$ es $[\Id]_{\mathcal C_3\mathcal B_3} = [\Id]_{{\mathcal{B}_3},{\mathcal{C}_3}}^{-1}$, por lo tanto debemos calcular la inversa de la matriz (**). Utilizamos el método de Gauss-Jordan:
+\begin{align*}
+    &\left[\begin{array}{ccc|ccc}
+    1&1&1&1&0&0\\0&1&1&0&1&0\\0&0&1&0&0&1
+    \end{array}\right] \underset{F_2-F_3}{\stackrel{F_1-F_3}{\longrightarrow}} \left[\begin{array}{ccc|ccc}
+    1&1&0&1&0&-1\\0&1&0&0&1&-1\\0&0&1&0&0&1
+    \end{array}\right] \\
+    &\underset{F_1-F_2}{\longrightarrow} \left[\begin{array}{ccc|ccc}
+    1&0&0&1&-1&0\\0&1&0&0&1&-1\\0&0&1&0&0&1
+    \end{array}\right].
+\end{align*}
+En  consecuencia:
+    \begin{equation*}
+        P_{{\mathcal{C}_3},{\mathcal{B}_3}}=  [\operatorname{Id}]_{\mathcal C_3\mathcal B_3} =
+        \begin{bmatrix}
+        1&-1&0 \\
+        0&1&-1\\
+        0&0&1\end{bmatrix}. 
+    \end{equation*}
+
 
 
 
 \qed
+    
+\item \label{basesRn} Sean $\mathcal{C}_n, \mathcal{B}_n$ como en el ejercicio \ref{otras bases 2} y sean las siguientes transformaciones lineales:
+\begin{itemize}
+    \item\label{lineales1-a-2} $T:\R^2 \longrightarrow \R^3$, $T(x,y)=(x-y,x+y,2x+3y)$.
+    \item\label{lineales1-b-2} $S:\R^3 \longrightarrow \R^2$, $S(x,y,z)=(x-y+z,2x-y+2z)$.
+\end{itemize}
 
+Entonces, para cada una de las transformaciones lineales anteriores,
+\begin{enumerate}
+    \item Dar las matrices respecto a las bases $\mathcal{B}_n$ y $\mathcal{C}_n$.
+    \item Dar las matrices respecto a las bases $\mathcal{C}_n$ y $\mathcal{B}_n$.
+    \item Dar las matrices respecto a las bases $\mathcal{B}_n$ y $\mathcal{B}_n$.
+\end{enumerate}
+
+\rta
+
+
+\qed
 
 
 \item\label{matriz transformaciones ejemplo} Sea 
@@ -451,33 +552,6 @@ Repetir esto para cada una de las matrices de dicho ejercicio.
 \qed
 
 
-        
-\item Definir en cada caso una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ que satisfaga las condiciones requeridas. ¿Es posible definir más de una transformación lineal?
-\begin{enumerate}
-    \item\label{tl-condiciones-a} $(1,0,0)\in \operatorname{Nu}(T)$ 
-    \item\label{tl-condiciones-b} $(1,0,0)\in \operatorname{Im}(T)$ 
-    \item\label{tl-condiciones-c} $(1,0,0),(1,2,1)\in\operatorname{Nu}(T)$ y $(1,0,0) \in  \operatorname{Im}(T)$
-\end{enumerate}
-
-\rta
-
-
-\qed
-
-
-
-\item Decidir si las siguientes afirmaciones son verdaderas o falsas. Justificar. 
-\begin{enumerate}
-    \item\label{tl-V-o-F-a} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\langle(1,2,3),(2,1,-1)\rangle$ es el autoespacio asociado a $0$ y $\langle(3,1,1),(1,1,3)\rangle$ es el autoespacio asociado a $5$.
-    \item\label{tl-V-o-F-b} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\langle(1,2,3)\rangle$ es el autoespacio asociado a $0$ y $\langle(3,1,1)\rangle$ es el autoespacio asociado a $5$.
-    \item\label{tl-V-o-F-c} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\{(1,0,1), (0,1,0)\}$ es una base de $\operatorname{Nu}(T)$ y  $\{(1,0,-1), (0,1,0)\}$ es una base de la $\operatorname{Im}(T)$.
-    \item\label{tl-V-o-F-d} Existe una transformación lineal $T:\mathbb{R}^3\longrightarrow\mathbb{R}^3$ tal que $\{(1,0,1)\}$ es una base de $\operatorname{Nu}(T)$ y  $\{(1,0,-1), (0,1,0)\}$ es una base de la $\operatorname{Im}(T)$. 
-\end{enumerate}
-
-\rta
-
-
-\qed
 
 
 \end{enumerate}
