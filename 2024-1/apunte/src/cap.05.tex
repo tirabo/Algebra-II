@@ -1264,7 +1264,7 @@ Luego,
     $$
     [v]_\mathcal{B} = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}.
     $$
-    (Usamos la misma notación).
+    En lo que sigue, usaremos la misma notación para la $n$-tupla y para la matriz.
     \end{definicion}
 
 
@@ -1373,6 +1373,14 @@ Luego,
                 $$
                 Si $T: V \to V$ una transformación lineal y $\cB$ es una base ordenada de $V$,  a la matriz $[T]_{\cB \cB}$ también se la denota $[T]_{\cB}$.
             \end{definicion}
+
+            \begin{observacion*}
+                En las hipótesis de la notación anterior, observar que 
+                \begin{equation*}
+            [T]_{\cB\cB'} = \left[[T(v_1)]_{\cB'}\; \cdots \;[T(v_j)]_{\cB'} \;\cdots \;[T(v_n)]_{\cB'} \right].
+                \end{equation*}
+            Es decir, la matriz de $T$ respecto a las bases ordenadas $\cB$ y $\cB'$ es la matriz cuyas columnas son las coordenadas de los vectores $T(v_j)$ en la base ordenada $\cB'$. 
+            \end{observacion*}
             
             \begin{ejemplo*}
                 Sea $T: \R^3 \to \R^4$ definida
@@ -1382,9 +1390,9 @@ Luego,
                 Sean  $\cC_3 = \{e_1,e_2,e_3\}$ la base canónica de $\R^3$ y  $\cC_4 = \{e_1,e_2,e_3,e_4\}$ la base canónica de $\R^4$. Entonces
                 \begin{equation*}
                     \begin{array}{ccccrcrcrcr}
-                    T(e_1) & = & (2,0,1,0) & = &  2e_1& + & 0.e_2& + &   e_3& + & 0.e_4  \\
-                    T(e_2) & = & (1,3,0,0) & = &   e_1& + &  3e_2& + & 0.e_3& + & 0.e_4  \\
-                    T(e_3) & = & (0,0,4,1) & = & 0.e_1& + & 0.e_2& + &  4e_3& + &   e_4
+                    T(e_1) & = & (2,0,1,0) & = &  2 \cdot e_1& + & 0 \cdot e_2& + & 1 \cdot   e_3& + & 0 \cdot e_4  \\
+                    T(e_2) & = & (1,3,0,0) & = &  1 \cdot  e_1& + &  3 \cdot e_2& + & 0 \cdot e_3& + & 0 \cdot e_4  \\
+                    T(e_3) & = & (0,0,4,1) & = & 0 \cdot e_1& + & 0 \cdot e_2& + &  4 \cdot e_3& + &  1 \cdot  e_4
                     \end{array}
                 \end{equation*}
                 Por  lo tanto
@@ -1431,9 +1439,9 @@ Luego,
                 $$
                 T(x,y,z) = (2x+y, 3y, x+4z),
                 $$
-                y sean  $\cB = \{(1,1,1),(1,1,0),(1,0,0)\}$ y  $\cB' = \{(1,0,1),(1,1,0),(0,1,0)\}$, bases ordenadas. Encontremos $[T]_{\cB \cB'}$
+                y sean  $\cB = \{(1,1,1),(1,1,0),(1,0,0)\}$ y  $\cB' = \{(1,0,1),(1,1,0),(0,1,0)\}$, bases ordenadas. Encontrar $[T]_{\cB \cB'}$
             \end{ejemplo}
-                \begin{proof}    
+                \begin{proof}[Solución]    
                 \begin{equation*}
                     \begin{array}{ccccrcrcrcr}
                     T(1,1,1) & = & (3,3,5) & = & a_{11}(1,0,1) &+& a_{21}(1,1,0) &+& a_{31} (0,1,0)   \\
@@ -1465,10 +1473,10 @@ Luego,
                     \end{bmatrix}.
                 \end{equation*}
 
-            Veremos otra forma de calcular $[T]_{\cB \cB'}$ en el ejemplo \ref{ejemplo-matriz-de-t-R3-R3-2da}.
+            Veremos otra forma, creemos más conveniente, de calcular $[T]_{\cB \cB'}$ en el ejemplo \ref{ejemplo-matriz-de-t-R3-R3-2da}.
             \end{proof}
             
-
+            \begin{comment}
             En general, dada una transformación lineal $T: \K^n \to \K^m$  y dos bases ordenadas $\cB = \{v_i\}$, $\cB' = \{w_i\}$, de $ \K^n$ y  $\K^m$, respectivamente, para averiguar la matriz $[T]_{\cB\cB'}$ encontramos sus coeficientes $a_{ij}$ resolviendo los sistemas de ecuaciones
                 \begin{equation*}
                     Tv_j = \sum_{i=1}^{m} a_{ij} w_i, \quad 1 \le j \le n.
@@ -1478,7 +1486,7 @@ Luego,
                     \lambda_1 w_1 + \cdots + \lambda_m w_m = (x_1,\ldots,x_m),
                 \end{equation*}
                 y luego especializar en cada caso. Eso el  lo que hicimos en el ejemplo anterior.
-            
+            \end{comment}
     
             \begin{proposicion}\label{prop-matriz-de-tv} 	Sea $V$  y $W$ un espacios vectoriales de dimensión $n$ y $m$ respectivamente y sea $T: V \to W$ una transformación lineal. Sea $\cB = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, y $\cB' = \{w_1,\ldots,w_n\}$ una base ordenada de $W$. Entonces
             \begin{equation}\label{matriz-de-tl-2}
@@ -1695,9 +1703,11 @@ Luego,
 
             En las hipótesis del corolario observemos que 
             \begin{itemize}
-                \item $[\Id_n]_{\cB \cC_n}$ es muy fácil de calcular pues es la matriz donde las columnas son los vectores de la base ordenada $\cB$.
+                \item $[\Id_n]_{\cB \cC_n}$ es muy fácil de calcular pues es la matriz donde las columnas son las coordenadas canónicas de los vectores de la base ordenada $\cB$.
                 \item $[T]_{\cC_n \cC_m}$ también es fácil de calcular, pues es la matriz de $T$ en las bases canónicas.
-                \item Finalmente, calculamos $[\Id_m]_{\cB'\cC_m }$ que es la matriz donde las columnas son los vectores de la base ordenada $\cB'$ y por corolario  \ref{cor-inversa-matriz-cambio-de-base} tenemos que $[\Id_m]_{\cB'\cC_m } = [\Id_m]_{\cC_m\cB' }^{-1}$.
+                \item Calculamos $[\Id_m]_{\cB'\cC_m }$ que es la matriz donde las columnas son las coordenadas canónicas de los vectores de la base ordenada $\cB'$.
+                \item Obtenemos la matriz inversa de  $[\Id_m]_{\cB'\cC_m }$ que, por corolario  \ref{cor-inversa-matriz-cambio-de-base}, es $[\Id_m]_{\cB'\cC_m }^{-1}= [\Id_m]_{\cC_m\cB' }$.
+                \item Finalmente, calculamos $[\Id_m]_{\cB'\cC_m }^{-1} [T]_{\cC_n \cC_m} [\Id_n]_{ \cB \cC_n} = [T]_{\cB \cB'}$.
             \end{itemize}
         \end{observacion*}
 
@@ -1727,36 +1737,41 @@ Luego,
                 [T]_{\cC \cC} = \begin{bmatrix} 2&1&0\\0&3&0\\1&0&4 
                 \end{bmatrix}.
             \end{equation*}
+
             Calculemos ahora $[\Id_3]_{\cC \cB'}= [\Id_3]_{\cB'\cC }^{-1}$:
-            \begin{align*}
-                \left[\begin{array}{ccc|ccc}
+            \begin{flalign*}
+                \qquad\left[\begin{array}{ccc|ccc}
                     1&1&0&1&0&0\\
                     0&1&1&0&1&0\\
                     1&0&0&0&0&1
-                \end{array}\right] &\stackrel{F_1\leftrightarrow F_3}{\longrightarrow}
+                \end{array}\right] \stackrel{F_1\leftrightarrow F_3}{\longrightarrow}
                 \left[\begin{array}{ccc|ccc}
                     1&0&0&0&0&1\\
                     0&1&1&0&1&0\\
                     1&1&0&1&0&0
-                \end{array}\right] \\
-                \stackrel{F_3-F_1}{\longrightarrow}
+                \end{array}\right] &&
+            \end{flalign*}
+            \begin{flalign*}
+                \qquad\stackrel{F_3-F_1}{\longrightarrow}
                 \left[\begin{array}{ccc|ccc}
                     1&0&0&0&0&1\\
                     0&1&1&0&1&0\\
                     0&1&0&1&0&-1
-                \end{array}\right] &\stackrel{F_2\leftrightarrow F_3}{\longrightarrow}
+                \end{array}\right] \stackrel{F_2\leftrightarrow F_3}{\longrightarrow}
                 \left[\begin{array}{ccc|ccc}
                     1&0&0&0&0&1\\
                     0&1&0&1&0&-1\\
                     0&1&1&0&1&0
-                \end{array}\right] \\
-                \stackrel{F_3-F_2}{\longrightarrow}
+                \end{array}\right]&&
+            \end{flalign*}
+            \begin{flalign*}
+                \qquad\stackrel{F_3-F_2}{\longrightarrow}
                 \left[\begin{array}{ccc|ccc}
                     1&0&0&0&0&1\\
                     0&1&0&1&0&-1\\
                     0&0&1&-1&1&1
-                \end{array}\right].
-            \end{align*}
+                \end{array}\right]. &&
+            \end{flalign*}
             Por lo tanto, 
             $$
             [\Id_3]_{\cC \cB'} = \begin{bmatrix} 0&0&1\\1&0&-1\\-1&1&1
@@ -1775,7 +1790,7 @@ Luego,
             \end{align*}
         \end{proof}
 
-
+        \vskip .3cm
             
         \begin{teorema}\label{th-cambio-de-base}
             Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean
