@@ -458,10 +458,6 @@ En  consecuencia:
         0&1&-1\\
         0&0&1\end{bmatrix}. 
     \end{equation*}
-
-
-
-
 \qed
     
 \item \label{basesRn} Sean $\mathcal{C}_n, \mathcal{B}_n$ como en el ejercicio \ref{otras bases 2} y sean las siguientes transformaciones lineales:
@@ -472,14 +468,188 @@ En  consecuencia:
 
 Entonces, para cada una de las transformaciones lineales anteriores,
 \begin{enumerate}
-    \item Dar las matrices respecto a las bases $\mathcal{B}_n$ y $\mathcal{C}_n$.
-    \item Dar las matrices respecto a las bases $\mathcal{C}_n$ y $\mathcal{B}_n$.
-    \item Dar las matrices respecto a las bases $\mathcal{B}_n$ y $\mathcal{B}_n$.
+    \item \label{basesRn-a} Dar las matrices respecto a las bases $\mathcal{B}_n$ y $\mathcal{C}_n$.
+    \item \label{basesRn-b} Dar las matrices respecto a las bases $\mathcal{C}_n$ y $\mathcal{B}_n$.
+    \item \label{basesRn-c} Dar las matrices respecto a las bases $\mathcal{B}_n$ y $\mathcal{B}_n$.
 \end{enumerate}
+
 
 \rta
 
+\ref{basesRn-a} Para calcular $[T]_{\mathcal{B}_2\mathcal{C}_3}$ debemos calcular $T(v_1)$ y $T(v_2)$ en función de la base $\mathcal{C}_3$. Pero como esta última es la canónica debemos calcular $T(1,0)$ y $T(1,1)$ y ponerlos como columnas:
+\begin{align*}
+    T(1,0) &= (1,1,2) = 1 \cdot (1,0,0) + 1 \cdot (0,1,0) + 2 \cdot (0,0,1) \\
+    T(1,1) &= (0,2,5) = 0 \cdot (1,0,0) + 2 \cdot (0,1,0) + 5 \cdot (0,0,1).
+\end{align*}
+Luego,
+$$
+[T]_{\mathcal{B}_2\mathcal{C}_3} = \begin{bmatrix}
+    1 & 0 \\ 1 & 2 \\ 2 & 5 
+\end{bmatrix}.
+$$
 
+
+Análogamente,
+\begin{align*}
+    S(1,0,0) &= (1,2), \\ S(1,1,0) &= (0,1), \\  S(1,1,1) &= (1,3).
+\end{align*}
+Luego, 
+$$
+[S]_{\mathcal{B}_3\mathcal{C}_2} = \begin{bmatrix}
+    1 & 0 & 1 \\ 2 & 1 & 3
+\end{bmatrix}.
+$$
+
+\ref{basesRn-b} Para calcular $[T]_{\mathcal{C}_2\mathcal{B}_3}$ debemos calcular $T(e_1)$ y $T(e_2)$ en función de la base $\mathcal{B}_3$. Ahora bien,
+\begin{align*}
+    T(1,0) = (1,1,2) &= a_{11} \cdot (1,0,0) + a_{21} \cdot (1,1,0) + a_{31} \cdot (1,1,1) \\
+    &=(a_{11} + a_{21} + a_{31}, a_{21} + a_{31}, a_{31}) \\
+    T(0,1) = (-1,1,3) &= a_{12} \cdot (1,0,0) + a_{22} \cdot (1,1,0) + a_{32} \cdot (1,1,1)\\
+    &=(a_{12} + a_{22} + a_{32}, a_{22} + a_{32}, a_{32}),
+\end{align*}
+y debemos calcular los $a_{ij}$. Estas ecuaciones son muy sencillas de resolver pues $a_{31} = 2$, $a_{21} = 1 -a_{31} = -1$, $a_{11} = 1 - a_{21} - a_{31} = 0$. Análogamente, $a_{32} = 3$, $a_{22} = 1 - a_{32} = -2$, $a_{12} = -1 - a_{22} - a_{32} = -2$. Por lo tanto,
+$$
+[T]_{\mathcal{C}_2\mathcal{B}_3} = \begin{bmatrix}
+    0 & -2  \\ -1 & -2 \\ 2 & 3
+\end{bmatrix}.
+$$ 
+
+Análogamente, para calcular $[S]_{\mathcal{C}_3\mathcal{B}_2}$ debemos calcular $S(e_1)$, $S(e_2)$ y $S(e_3)$ en función de la base $\mathcal{B}_2$. Ahora bien,
+\begin{align*}
+    S(1,0,0) &= (1,2) = a_{11} \cdot (1,0) + a_{21} \cdot (1,1)=(a_{11} + a_{21}, a_{21}) \\
+    S(0,1,0) &= (-1,-1) = a_{12} \cdot (1,0) + a_{22} \cdot (1,1)=(a_{12} + a_{22}, a_{22}) \\
+    S(0,0,1) &= (1,2) = a_{13} \cdot (1,0) + a_{23} \cdot (1,1)=(a_{13} + a_{23}, a_{23}).
+\end{align*}
+Por lo tanto, $a_{21} = 2$, $a_{11} = 1 - a_{21} = -1$, $a_{22} = -1$, $a_{12} = -1 - a_{22} = 0$, $a_{23} = 2$, $a_{13} = 1 - a_{23} = -1$. En  consecuencia,
+$$
+[S]_{\mathcal{C}_3\mathcal{B}_2} = \begin{bmatrix}
+    -1 & 0 & -1 \\ 2 & -1 & 2
+\end{bmatrix}.
+$$
+
+\ref{basesRn-c} Para calcular $[T]_{\mathcal{B}_2\mathcal{B}_3}$ debemos calcular $T(1,0)$ y $T(1,1)$ en función de la base $\{(1,0,0), (1,1,0), (1,1,1)\}$. Ahora bien,
+\begin{align*}
+    T(1,0) &= (1,1,2) = 0 \cdot (1,0,0) + (-1) \cdot (1,1,0) + 2 \cdot (1,1,1) \\
+    T(1,1) &= (0,2,5) = (-2) \cdot (1,0,0) + (-3) \cdot (1,1,0) + 5 \cdot (1,1,1).
+\end{align*}
+Esto sale por cálculos sencillos. Por lo tanto, 
+$$
+[T]_{\mathcal{B}_2\mathcal{B}_3} = \begin{bmatrix}
+    0 & -2 \\ -1 & -3 \\ 2 & 5
+\end{bmatrix}.
+$$
+
+Análogamente, para calcular $[S]_{\mathcal{B}_3\mathcal{B}_2}$ debemos calcular $S(1,0,0)$, $S(1,1,0)$ y $S(1,1,1)$ en función de la base $\{(1,0), (1,1)\}$. Ahora bien,
+\begin{align*}
+    S(1,0,0) &= (1,2) = (-1) \cdot (1,0) + 2 \cdot (1,1) \\
+    S(1,1,0) &= (0,1) = (-1) \cdot (1,0) + 1 \cdot (1,1) \\
+    S(1,1,1) &= (1,3) = (-2) \cdot (1,0) + 3 \cdot (1,1).
+\end{align*}
+Por lo tanto,
+$$
+[S]_{\mathcal{B}_3\mathcal{B}_2} = \begin{bmatrix}
+    -1 & -1 & -2 \\ 2 & 1 & 3
+\end{bmatrix}.
+$$
+
+\vskip .3cm
+
+\noindent\textbf{Observación.} Es posible hacer los incisos \ref{basesRn-b} y \ref{basesRn-c} de otra forma, utilizando las matrices de cambio de base. En estos casos quizás no valga la pena, pues la cuentas ``directas'' son muy sencillas, pero de cualquier forma lo haremos a modo ilustrativo.
+
+\vskip .3cm
+\ref{basesRn-b} (Otra forma) Observemos que
+\begin{equation*}
+    [T]_{\mathcal{C}_2\mathcal{B}_3} = [\Id]_{\mathcal{C}_3\mathcal{B}_3} [T]_{\mathcal{C}_2\mathcal{C}_3} = [\Id]_{\mathcal{B}_3\mathcal{C}_3}^{-1} [T]_{\mathcal{C}_2\mathcal{C}_3}.
+\end{equation*}
+Luego debemos primero calcular  $[\Id]_{\mathcal{B}_3\mathcal{C}_3}$ y $[T]_{\mathcal{C}_2\mathcal{C}_3}$, después la inversa de la primera matriz y finalmente multiplicar matrices. La matriz $[\Id]_{\mathcal{B}_3\mathcal{C}_3}$ esta formada por los vectores de la base $\mathcal{B}_3$ como columnas:
+\begin{equation*}
+    [\Id]_{\mathcal{B}_3\mathcal{C}_3} = \begin{bmatrix}
+        1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1
+    \end{bmatrix}.
+\end{equation*}
+Ya vimos que
+\begin{align*}
+    T(1,0) &= (1,1,2) \\
+    T(0,1) &= (-1,1,3),
+\end{align*}
+y por lo tanto 
+\begin{equation*}
+    [T]_{\mathcal{C}_2\mathcal{C}_3} = \begin{bmatrix}
+        1 & -1 \\ 1 & 1 \\ 2 & 3
+    \end{bmatrix}.
+\end{equation*}
+Calculemos ahora la inversa de $[\Id]_{\mathcal{B}_3\mathcal{C}_3}$:
+\begin{align*}
+    &\left[\begin{array}{ccc|ccc}
+    1&1&1&1&0&0\\0&1&1&0&1&0\\0&0&1&0&0&1
+    \end{array}\right] \underset{F_2-F_3}{\stackrel{F_1-F_3}{\longrightarrow}} \left[\begin{array}{ccc|ccc}
+    1&1&0&1&0&-1\\0&1&0&0&1&-1\\0&0&1&0&0&1
+    \end{array}\right] \\
+    &\underset{F_1-F_2}{\longrightarrow} \left[\begin{array}{ccc|ccc}
+    1&0&0&1&-1&0\\0&1&0&0&1&-1\\0&0&1&0&0&1
+    \end{array}\right].
+\end{align*}
+Por lo tanto,
+\begin{equation*}
+    [\Id]_{\mathcal{B}_3\mathcal{C}_3}^{-1} = \begin{bmatrix}
+        1 & -1 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 1
+    \end{bmatrix}.
+\end{equation*}
+Finalmente,
+\begin{equation*}
+    [T]_{\mathcal{C}_2\mathcal{B}_3} = \begin{bmatrix}
+        1 & -1 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 1
+    \end{bmatrix} \begin{bmatrix}
+        1 & -1 \\ 1 & 1 \\ 2 & 3
+    \end{bmatrix} = \begin{bmatrix}
+        0 & -2 \\ -1 & -3 \\ 2 & 3
+    \end{bmatrix},
+\end{equation*}
+matriz que, obviamente,  ya habíamos obtenido. 
+
+\vskip .3cm
+
+Para calcular, $[S]_{\mathcal{C}_3\mathcal{B}_2}$ usamos la fórmula:
+$$
+[S]_{\mathcal{C}_3\mathcal{B}_2} = [\Id]_{\mathcal{C}_2\mathcal{B}_2} [S]_{\mathcal{C}_3\mathcal{C}_2} = [\Id]_{\mathcal{B}_2\mathcal{C}_2}^{-1} [S]_{\mathcal{C}_3\mathcal{C}_2}.
+$$
+
+\vskip .3cm
+
+\ref{basesRn-c} (Otra forma) Observemos que
+\begin{equation*}
+    [T]_{\mathcal{B}_2\mathcal{B}_3} = [\Id]_{\mathcal{C}_3\mathcal{B}_3} [T]_{\mathcal{C}_2\mathcal{C}_3}  [\Id]_{\mathcal{B}_2\mathcal{C}_2} = [\Id]_{\mathcal{B}_3\mathcal{C}_3}^{-1} [T]_{\mathcal{C}_2\mathcal{C}_3} [\Id]_{\mathcal{B}_2\mathcal{C}_2}.
+\end{equation*}
+Ahora bien, 
+$$
+[\Id]_{\mathcal{B}_3\mathcal{C}_3}^{-1} = \begin{bmatrix}
+    1 & -1 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 1
+\end{bmatrix}, \quad 
+[T]_{\mathcal{C}_2\mathcal{C}_3} = \begin{bmatrix}
+    1 & -1 \\ 1 & 1 \\ 2 & 3
+\end{bmatrix}, \quad 
+[\Id]_{\mathcal{B}_2\mathcal{C}_2} = \begin{bmatrix}
+    1 & 1 \\ 0 & 1
+\end{bmatrix}.
+$$
+Las dos primeras matrices fueron calculadas en el inciso anterior y la tercera es obvia. Por lo tanto,
+\begin{equation*}
+    [T]_{\mathcal{B}_2\mathcal{B}_3} = \begin{bmatrix}
+        1 & -1 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 1
+    \end{bmatrix} \begin{bmatrix}
+        1 & -1 \\ 1 & 1 \\ 2 & 3
+    \end{bmatrix} \begin{bmatrix}
+        1 & 1 \\ 0 & 1
+    \end{bmatrix} = \begin{bmatrix}
+        0 & -2 \\ -1 & -3 \\ 2 & 5
+    \end{bmatrix}.
+\end{equation*}
+
+\vskip .3cm
+Finalmente, para calcular $[S]_{\mathcal{B}_3\mathcal{B}_2}$ usamos la fórmula:
+$$
+[S]_{\mathcal{B}_3\mathcal{B}_2} = [\Id]_{\mathcal{C}_2\mathcal{B}_2} [S]_{\mathcal{C}_3\mathcal{C}_2} [\Id]_{\mathcal{B}_3\mathcal{C}_3} = [\Id]_{\mathcal{B}_2\mathcal{C}_2}^{-1} [S]_{\mathcal{C}_3\mathcal{C}_2} [\Id]_{\mathcal{B}_3\mathcal{C}_3}.
+$$
 \qed
 
 
@@ -495,11 +665,55 @@ $T:\mathbb{R}^3\longrightarrow\mathbb{R}^2$ la transformación lineal definida p
     \end{bmatrix}. 
     \end{align*}
     Calcular la matriz de la composición $T\circ S:\mathbb{R}^2\longrightarrow\mathbb{R}^2$ con respecto a la base $\mathcal{B}'$. 
-    \item\label{matriz transformaciones ejemplo-d} Calcular la matriz de $T\circ S$ respecto a la base $\mathcal{B}$ del ejercicio \ref{otras bases} usando las matrices de cambio de base calculadas en ese ejercicio.
 \end{enumerate}
 
 \rta
 
+\ref{matriz transformaciones ejemplo-a} 
+$$
+\begin{array}{cclcccccccc}
+    T(1,0,0) &= &(1,1)  &= &1 &\cdot &(1,1) &+ &0 &\cdot &(1,-1) \\
+    T(0,1,0) &= &(-1,0) &= &(-\frac12) &\cdot &(1,1) &+ &(-\frac12) &\cdot &(1,-1) \\
+    T(0,0,1) &= &(0,-1) &= &(-\frac12) &\cdot &(1,1) &+  &\frac12 &\cdot &(1,-1).
+\end{array}
+$$
+Por lo tanto, 
+$$
+[T]_{\mathcal{C}\mathcal{B}'} = \begin{bmatrix}
+    0 & -1/2 & -1/2 \\ 1 & -1/2 & 1/2
+\end{bmatrix}.
+$$
+
+\vskip .3cm
+\ref{matriz transformaciones ejemplo-b} Dado el vector $(x,y,z)$, debemos resolver el sistema
+\begin{align*}
+    (x-y,x-z) &= a \cdot (1,1) + b \cdot (1,-1) \quad \Rightarrow\\
+    (x-y,x-z) &= (a+b,a-b).
+\end{align*}
+Por lo tanto
+\begin{align*}
+    (x-y) + (x-z) &= 2a \;\Rightarrow\;  2x-y-z = 2 \;\Rightarrow\; a = \frac12 (2x-y-z) \\
+    (x-y) - (x-z) &= 2b \;\Rightarrow\;  z-y = 2b \;\Rightarrow\; b = \frac12 (z-y).
+\end{align*} 
+Es decir,
+$$
+[T(x,y,z)]_{\mathcal{B}'} = \frac12 (2x-y-z, z-y).
+$$
+
+\vskip .3cm
+\ref{matriz transformaciones ejemplo-c} Calculamos en en inciso \ref{matriz transformaciones ejemplo-a} la matriz  $[T]_{\mathcal{C}\mathcal{B}'}$,  entonces
+\begin{align*}
+    [T \circ S]_{\mathcal{B}'\mathcal{B}'} &= [T]_{\mathcal{C}\mathcal{B}'} [S]_{\mathcal{B}'\mathcal{C}} \\
+    &= \begin{bmatrix}
+        0 & -1/2 & -1/2 \\
+        1 & -1/2 & 1/2
+    \end{bmatrix} \begin{bmatrix}
+        1 & 2 \\ 1 & -1 \\ 1 & 0
+    \end{bmatrix} \\
+    &= \begin{bmatrix}
+        -1 & 1/2 \\ 1 & 5/2
+    \end{bmatrix}.
+\end{align*}
 
 \qed
 
@@ -509,8 +723,89 @@ $T:\mathbb{R}^3\longrightarrow\mathbb{R}^2$ la transformación lineal definida p
 
 Repetir esto para cada una de las matrices de dicho ejercicio.
 
-\rta
+\rta Resolvemos el ejercicio para cada una de las matrices del ejercicio  \ref{autovalores} del práctico \ref{practico-5}. Recordemos que para que una transformación lineal $T$ sea diagonalizable, es necesario y suficiente que exista una base de autovectores. En  caso de existir, la matriz de $T$ en dicha base, digamos $\mathcal{B}$,  es diagonal y los valores de la diagonal son los autovalores de $T$. Más aún, si $P$ es la matriz de cambio de base de la base canónica a $\mathcal{B}$, entonces $P^{-1}AP$ es la matriz diagonal de $T$ en la base canónica. 
 
+    \vskip .2cm
+
+\ref{autovalores-1}
+    Denominamos $A$  a la matriz del enunciado \ref{autovalores-1} del práctico \ref{practico-5}. entonces,
+    $$
+    T_A(x,y)=A\begin{bmatrix} x\\ y \end{bmatrix}= \begin{bmatrix} 2 & -1\\ 1 & 4 \end{bmatrix} \begin{bmatrix} x\\ y \end{bmatrix} = \begin{bmatrix} 2x-y\\ x+4y \end{bmatrix}.
+    $$ 
+    Como ya fue calculado hay un solo autovalor $\lambda = 3$ y el autoespacio asociado es $\{(t,t): t\in\mathbb{R}\}$. Por lo tanto, $T_A$ no es diagonalizable. 
+
+    
+    \vskip .2cm
+    \ref{autovalores-2} Denominamos $B$  a la matriz del enunciado. Luego, 
+    $$
+    T_B(x,y) = \begin{bmatrix} 1&0\\ 1&-2 \end{bmatrix}\begin{bmatrix} x\\ y \end{bmatrix} = \begin{bmatrix} x\\ x-2y \end{bmatrix}.
+    $$
+    Los autovalores son  $\lambda_1=-2$ y $\lambda_2=1$ y los autoespacios son  $V_{-2}=\{(0,t): t\in\mathbb{R}\}$ y $V_1 = \{(3t,t): t\in\mathbb{R}\}$. Por lo tanto una base  de autovectores es $\mathcal{B} = \{(0,1),(3,1)\}$ y $T_B$ es diagonalizable. La matriz de cambio de base de la base canónica a $\mathcal{B}$ se calcula resolviendo el sistema
+    \begin{align*}
+        (1,0) &= a_{11} \cdot (0,1) + a_{21} \cdot (3,1) \\
+        (0,1) &= a_{12} \cdot (0,1) + a_{22} \cdot (3,1),
+    \end{align*}
+    el cual se soluciona fácilmente: $a_{11} = -1/3$, $a_{21} = 1/3$, $a_{12} = 1$, $a_{22} = 0$. Por lo tanto,
+    $$
+    P = \begin{bmatrix}
+        -1/3 & 1 \\ 1/3 & 0
+    \end{bmatrix}.
+    $$
+    
+
+    \vskip .2cm
+    \ref{autovalores-3}
+    Denominamos $C$  a la matriz del enunciado. Por lo tanto
+    $$
+    T_C(x,y,z) = \begin{bmatrix} 2&0&0\\ -1&1&-1\\ 0&0&2 \end{bmatrix}\begin{bmatrix} x\\ y \\ z\end{bmatrix} = \begin{bmatrix} 2x\\ -x+y-z \\ 2z \end{bmatrix}.
+    $$
+    Los autovalores son  $\lambda_1=2$ y $\lambda_2=1$  y los autoespacios son $V_2=\{(-t,t,s): t,s\in\mathbb{R}\}$ y $V_1 =\{(0,t,0): t\in\mathbb{R}\}$, por lo tanto, podemos elegir como base $\mathcal{B} = \{(-1,1,0),(0,0,1),(0,1,0)\}$ y $T_C$ es diagonalizable. La matriz de cambio de base de la base canónica a $\mathcal{B}$ se calcula resolviendo el sistema
+    \begin{align*}
+        (1,0,0) &= a_{11} \cdot (-1,1,0) + a_{21} \cdot (0,0,1) + a_{31} \cdot (0,1,0) \\
+        (0,1,0) &= a_{12} \cdot (-1,1,0) + a_{22} \cdot (0,0,1) + a_{32} \cdot (0,1,0) \\
+        (0,0,1) &= a_{13} \cdot (-1,1,0) + a_{23} \cdot (0,0,1) + a_{33} \cdot (0,1,0).
+    \end{align*}
+    Las soluciones son, $a_{11} = -1$, $a_{21} = 0$, $a_{31} = 1$, $a_{12} = 0$, $a_{22} = 0$, $a_{32} = 1$, $a_{13} = 0$, $a_{23} = 1$, $a_{33} = 0$. Por lo tanto,
+    $$
+    P = \begin{bmatrix}
+        -1 & 0 & 0 \\ 0 & 0 & 1 \\ 1 & 1 & 0
+    \end{bmatrix}.
+    $$
+    
+
+    \vskip .2cm
+    \ref{autovalores-4} Denominamos $D$  a la matriz del enunciado. Entonces, 
+    $$
+    T_D(x,y,z) = \begin{bmatrix} -1&0&0\\ 0&3&-5\\ 0&1&-1 \end{bmatrix}\begin{bmatrix} x\\ y \\ z\end{bmatrix} = \begin{bmatrix} -x\\ 3y-5z \\ y-z \end{bmatrix}.
+    $$
+    El  único autovalor real de $T_D$ es $-1$ y el autoespacio asociado es $\{(t,0,0): t\in\mathbb{R}\}$, por lo tanto el operador no es diagonalizable.
+
+
+    \vskip .2cm
+    \ref{autovalores-5} Denominamos $E$  a la matriz del enunciado. Entonces,
+    $$
+    T_E(x,y,z) = \begin{bmatrix} \lambda&0&0\\ 1&\lambda&0\\ 0&1&\lambda \end{bmatrix}\begin{bmatrix} x\\ y \\ z\end{bmatrix} = \begin{bmatrix} \lambda x\\ x+\lambda y \\ y+\lambda z \end{bmatrix}.
+    $$
+    Hay un único autovalor,  que es $\lambda$ y $V_\lambda = \{(0,0,t): t\in\mathbb{R}\}$, por lo tanto el operador no es diagonalizable.
+    
+
+    \vskip .2cm
+    \ref{autovalores-6} Denominamos $F$  a la matriz del enunciado. Entonces
+    $$
+    T_F(x,y) = \begin{bmatrix}\cos\theta & \sen\theta\\ -\sen\theta & \cos\theta \end{bmatrix}\begin{bmatrix} x\\ y\end{bmatrix} = \begin{bmatrix} x\cos\theta + y\sen\theta\\ -x\sen\theta + y\cos\theta \end{bmatrix}.
+    $$ 
+
+    Como vimos cuando resolvimos el ejercicio \ref{autovalores-6} del práctico \ref{practico-5}, hay tres casos para analizar según el valor de $\theta$.
+
+    \vskip .2cm
+
+    \textit{i}) Cuando $\theta=0$ tenemos que $\lambda_1 = \lambda_2 =1$. En  ese caso, $T_F$ es la identidad y por lo tanto hay un único autovalor, $1$, y  el autoespacio correspondiente es todo $\R^2$. Por lo tanto, $T_F$ es diagonalizable y podemos tomar como base la base canónica, por lo tanto $P = \Id$.
+    
+    \vskip .2cm
+    \textit{ii}) Cuando $\theta= \pi$, tenemos que $\lambda_1 = \lambda_2 =-1$. En  este caso $T_F = -\Id$  y hay un solo autovalor, $-1$, y  el autoespacio correspondiente es todo $\R^2$.  Por lo tanto, $T_F$ es diagonalizable y podemos tomar como base la base canónica, por lo tanto $P = \Id$.
+    
+    \vskip .2cm
+    \textit{iii}) Cuando $\theta\ne 0, \pi$ y  en este caso  no hay autovalores reales. Por lo tanto, $T_F$ no es diagonalizable.
 
 \qed
 
@@ -518,7 +813,35 @@ Repetir esto para cada una de las matrices de dicho ejercicio.
 
 \item Repetir el ejercicio anterior para cada matriz del ejercicio \ref{autovalores} del práctico \ref{practico-5} pero ahora consideradando a la transformación como una transformación lineal entre los $\mathbb{C}$-espacios vectoriales $\mathbb{C}^n$.
 
-\rta
+\rta Los incisos \ref{autovalores-1}, \ref{autovalores-2}, \ref{autovalores-3} y \ref{autovalores-5} tienen la misma respuesta que en el ejercicio anterior, pues los polinomios característicos no tienen raíces complejas. Para resolver los casos \ref{autovalores-4} y \ref{autovalores-6} usamos los resultados del ejercicio \ref{autovalores-complejos} del práctico \ref{practico-5}.
+
+\vskip .3cm
+
+\ref{autovalores-4}  Los autovalores de $T_D$ son  $\lambda_1 = 1+i$, $\lambda_2 = 1-i$ y los autoespacios son $V_{\lambda_1} =\{((2+i)t,t): t \in \C\}$, $V_{\lambda_2} = \{((2-i)t,t): t \in \C\}$. Por lo tanto, $T_D$ es diagonalizable. Una base de autovectores es $\mathcal{B} = \{(2+i,1),(2-i,1)\}$. La matriz de cambio de base de la base canónica a $\mathcal{B}$ se calcula resolviendo el sistema
+\begin{align*}
+    (1,0) &= a_{11} \cdot (2+i,1) + a_{21} \cdot (2-i,1) \\
+    (0,1) &= a_{12} \cdot (2+i,1) + a_{22} \cdot (2-i,1),
+\end{align*}
+Por lo tanto $a_{11}(2+i) +a_{21}(2-i) = 1$, $a_{11} +a_{21} = 0$. Resolviendo este sistema obtenemos $a_{11} = -i/2$, $a_{21} = i/2$. De forma análoga, $a_{12} + a_{22} = 1$, $a_{12}(2+i) +a_{22}(2-i) = 0$ y resolviendo este sistema obtenemos $a_{12} = i/2$, $a_{22} = -i/2$. Por lo tanto,  
+$$
+P = \begin{bmatrix}
+    -i/2 & i/2 \\ i/2 & -i/2
+\end{bmatrix}.
+$$
+
+
+\vskip .2cm
+\ref{autovalores-6} Los casos  $\theta=0, \pi$ ya se hicieron en el ejercicio  anterior. Cuando $\theta \ne 0, \pi$ los autovalores de $T_F$ son  $\lambda_1 =\cos\theta + i\sen\theta$ y $\lambda_2 =\cos\theta - i\sen\theta$ y los autoespacios son  $V_{\lambda_1} = \{t(-i,1): t \in \C\}$, $V_{\lambda_2} = \{t(i,1): t \in \C\}$. Por lo tanto, $T_F$ es diagonalizable. Una base de autovectores es $\mathcal{B} = \{(-i,1),(i,1)\}$. La matriz de cambio de base de la base canónica a $\mathcal{B}$ se calcula resolviendo el sistema
+\begin{align*}
+    (1,0) &= a_{11} \cdot (-i,1) + a_{21} \cdot (i,1) \\
+    (0,1) &= a_{12} \cdot (-i,1) + a_{22} \cdot (i,1),
+\end{align*}
+cuyas  soluciones son $a_{11} = i/2$, $a_{21} = -i/2$, $a_{12} = 1/2$, $a_{22} = 1/2$. Por lo tanto,
+$$
+P = \begin{bmatrix}
+    i/2 & 1/2 \\ -i/2 & 1/2
+\end{bmatrix}.
+$$
 
 
 \qed
@@ -534,9 +857,20 @@ Repetir esto para cada una de las matrices de dicho ejercicio.
 
 \rta
 
+\ref{autovalor-autovector-a} Como $v$ es autovector de autovalor $0$, entonces $T(v) = 0 \cdot v =0$. Por lo tanto, $v \in \operatorname{Nu}(T)$.
 
+\vskip .3cm
+
+\ref{autovalor-autovector-b} Como $v$ es autovector de autovalor $\lambda$, entonces $T(v) = \lambda v$. Como $\lambda \ne 0$, podemos dividir por $\lambda$ y en consecuencia $T(v/\lambda) = \lambda v/\lambda = v$.  Por lo tanto, $v \in \operatorname{Im}(T)$.
+
+\vskip .3cm
+
+\ref{autovalor-autovector-c} Observemos que 
+$$
+(T- \operatorname{Id})(T+\operatorname{Id}) = T^2 - \operatorname{Id} \circ T + T \circ \operatorname{Id} - \operatorname{Id}^2  = T^2 - \operatorname{Id}^2 = - \operatorname{Id}.
+$$
+Por lo tanto, $(T- \operatorname{Id})(-T-\operatorname{Id}) = \operatorname{Id}$, análogamente $(-T-\operatorname{Id})(T- \operatorname{Id}) = \operatorname{Id}$. Por lo tanto, $T- \operatorname{Id}$ es invertible y su inversa es $-T-\operatorname{Id}$.
 \qed
-
 
 
 \item\label{base nilp}  Sea $V$ un espacio vectorial de dimensión $3$ y $T:V\longrightarrow V$ una transformación lineal. Supongamos que existe $v\in V$ tal que $T^3(v)=0$ pero $T^2(v)\neq0$.
