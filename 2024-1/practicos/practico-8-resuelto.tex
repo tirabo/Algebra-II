@@ -882,6 +882,46 @@ Por lo tanto, $(T- \operatorname{Id})(-T-\operatorname{Id}) = \operatorname{Id}$
 
 \rta
 
+\ref{base nilp a} Alcanza con probar que $v,T(v),T^2(v)$ son LI. Si $a,b,c \in \K$ son tales que $av + bT(v) + cT^2(v) = 0$, entonces 
+\begin{equation*}
+    0=T^2(av + bT(v) + cT^2(v)) = aT^2(v) + bT^3(v)+cT^4(v) , \tag{*}    
+\end{equation*}
+por hipótesis $T^3(v) = 0$, luego también $T^4(v)=0$ y por lo tanto la ecuación (*) $\Rightarrow$ $aT^2(v) =0$. Por hipótesis, $T^2(v) \ne 0$ y por lo tanto $a=0$, lo cual implica que $bT(v) + cT^2(v) = 0$. Aplicando $T$ a esto último,
+\begin{equation*}
+    0=T(bT(v) + cT^2(v)) = bT^2(v) + cT^3(v) = bT^2(v).
+\end{equation*}
+Como $T^2(v) \ne 0$, entonces $b=0$ y por lo tanto $cT^2(v) = 0$. Como $T^2(v) \ne 0$, entonces $c=0$. Por lo tanto, $a=b=c=0$ y $\mathcal{B}$ es LI. Como $\dim V = 3$, $\mathcal{B}$ es una base de $V$.
+
+\vskip .3cm
+
+\ref{base nilp b} La base es  $\mathcal{B}=\{v,T(v),T^2(v)\}$ y apliquemos $T$ a cada uno de los vectores de la base:
+\begin{align*}
+    T(v) &= T(v) = 0 \cdot v + 1 \cdot T(v) + 0 \cdot T^2(v) \ \\
+    T(T(v)) &= T^2(v) = 0 \cdot v + 0 \cdot T(v) + 1 \cdot T^2(v) \\
+    T(T^2(v)) &= T^3(v) =0 = 0 \cdot v + 0 \cdot T(v) + 0 \cdot T^2(v).
+\end{align*}
+Por lo tanto, la matriz de $T$ respecto de la base $\mathcal{B}$ es
+\begin{equation*}
+    [T]_{\mathcal{B}} = \begin{bmatrix}
+        0 & 0 & 0 \\
+        1 & 0 & 0 \\
+        0 & 1 & 0
+    \end{bmatrix}.
+\end{equation*}
+
+\vskip .3cm
+
+\ref{base nilp c} El polinomio característico de $T$ es
+\begin{equation*}
+    p_T(\lambda) = \det \begin{bmatrix}
+        \lambda & 0 & 0 \\
+        -1 & \lambda & 0 \\
+        0 & -1 & \lambda
+    \end{bmatrix} = \lambda^3.
+\end{equation*}
+En  consecuencia, el único autovalor de $T$ es $0$ y el autoespacio asociado es $V_0 = \{v \in V: T(v) = 0\} = \operatorname{Nu}(T)$. Ahora bien, $\operatorname{Im}(T) = \langle T(v), T^2(v), T^3(v) \rangle = \langle T(v), T^2(v) \rangle$ y como $T(v), T^2(v)$ son LI entonces $\dim \operatorname{Im}(T) = 2$. Por el teorema de la dimensión sabemos que $\dim \operatorname{Nu}(T) + \dim \operatorname{Im}(T) = \dim V = 3$, por lo tanto $\dim \operatorname{Nu}(T) = 1$. Como $\dim \operatorname{Nu}(T) = 1$ y $\operatorname{Nu}(T) = V_0$, se concluye que $T$ no es diagonalizable.
+
+
 
 \qed
 
