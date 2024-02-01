@@ -1,0 +1,1156 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage[utf8]{inputenc}%esto permite (en Windows) escribir directamente 
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,arrows,babel,decorations.pathreplacing}
+\usepackage{verbatim} 
+\usepackage{xcolor} 
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{mathtools}
+\usepackage{xcolor}
+
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+
+\renewcommand{\figurename }{Figura}
+
+
+\setbeamercolor{block}{fg=red, bg=red!40!white}
+\setbeamercolor{block example}{use=structure,fg=black,bg=white!20!white}
+
+\renewenvironment{block}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{alertblock}[1]% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{red!80!black}#1}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\newenvironment{exercise}[1]% environment name
+{% begin code
+	\par\vspace{\baselineskip}\noindent
+	\textbf{Ejercicio (#1)}\begin{itshape}%
+		\par\vspace{\baselineskip}\noindent\ignorespaces
+	}%
+	{% end code
+	\end{itshape}\ignorespacesafterend
+}
+
+
+\newenvironment{definicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Definición}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{observacion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Observación}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejemplo}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejemplo}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{ejercicio}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Ejercicio}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\renewenvironment{proof}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{demostracion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{idea}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Idea de la demostración}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+\newenvironment{solucion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Solución}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\newenvironment{lema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Lema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{proposicion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Proposición}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{teorema}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Teorema}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+\newenvironment{corolario}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Corolario}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{propiedad}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Propiedad}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{conclusion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\color{blue}Conclusión}\begin{itshape}%
+		\par\vskip .2cm
+	}%
+	{% end code
+	\end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nc}{\newcommand}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+\nc{\RR}{{\mathbb R}} \nc{\CC}{{\mathbb C}} \nc{\ZZ}{{\mathbb Z}}
+\nc{\FF}{{\mathbb F}} \nc{\NN}{{\mathbb N}} \nc{\QQ}{{\mathbb Q}}
+\nc{\PP}{{\mathbb P}} \nc{\DD}{{\mathbb D}} \nc{\Sn}{{\mathbb S}}
+\nc{\uno}{\mathbb{1}} \nc{\BB}{{\mathbb B}} \nc{\An}{{\mathbb A}}
+
+\nc{\ba}{\mathbf{a}} \nc{\bb}{\mathbf{b}} \nc{\bt}{\mathbf{t}}
+\nc{\bB}{\mathbf{B}}
+
+\nc{\cP}{\mathcal{P}} \nc{\cU}{\mathcal{U}} \nc{\cX}{\mathcal{X}}
+\nc{\cE}{\mathcal{E}} \nc{\cS}{\mathcal{S}} \nc{\cA}{\mathcal{A}}
+\nc{\cC}{\mathcal{C}} \nc{\cO}{\mathcal{O}} \nc{\cQ}{\mathcal{Q}}
+\nc{\cB}{\mathcal{B}} \nc{\cJ}{\mathcal{J}} \nc{\cI}{\mathcal{I}}
+\nc{\cM}{\mathcal{M}} \nc{\cK}{\mathcal{K}}
+
+\nc{\fD}{\mathfrak{D}} \nc{\fI}{\mathfrak{I}} \nc{\fJ}{\mathfrak{J}}
+\nc{\fS}{\mathfrak{S}} \nc{\gA}{\mathfrak{A}}
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+
+
+
+
+%%%%%%%%%%%%%%%%%yetter drinfield
+\newcommand{\ydg}{{}_{\ku G}^{\ku G}\mathcal{YD}}
+\newcommand{\ydgdual}{{}_{\ku^G}^{\ku^G}\mathcal{YD}}
+\newcommand{\ydf}{{}_{\ku F}^{\ku F}\mathcal{YD}}
+\newcommand{\ydgx}{{}_{\ku \Gx}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydgxy}{{}_{\ku \Gy}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydixq}{{}_{\ku \ixq}^{\ku \ixq}\mathcal{YD}}
+
+\newcommand{\ydl}{{}^H_H\mathcal{YD}}
+\newcommand{\ydll}{{}_{K}^{K}\mathcal{YD}}
+\newcommand{\ydh}{{}^H_H\mathcal{YD}}
+\newcommand{\ydhdual}{{}^{H^*}_{H^*}\mathcal{YD}}
+
+
+\newcommand{\ydha}{{}^H_A\mathcal{YD}}
+\newcommand{\ydhhaa}{{}^{\Hx}_{\Ay}\mathcal{YD}}
+
+
+\newcommand{\wydh}{\widehat{{}^H_H\mathcal{YD}}}
+\newcommand{\ydvh}{{}^{\ac(V)}_{\ac(V)}\mathcal{YD}}
+\newcommand{\ydrh}{{}^{R\# H}_{R\# H}\mathcal{YD}}
+\newcommand{\ydho}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}}
+\newcommand{\ydhsw}{{}^{H^{\sw}}_{H^{\sw}}\mathcal{YD}}
+
+\newcommand{\ydhlf}{{}^H_H\mathcal{YD}_{\text{loc fin}}}
+\newcommand{\ydholf}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}_{\text{loc fin}}}
+
+\nc{\yd}{\mathcal{YD}}
+
+\newcommand{\ydsn}{{}^{\ku{\Sn_n}}_{\ku{\Sn_n}}\mathcal{YD}}
+\newcommand{\ydsnd}{{}^{\ku^{\Sn_n}}_{\ku^{\Sn_n}}\mathcal{YD}}
+\nc{\ydSn}[1]{{}^{\Sn_{#1}}_{\Sn_{#1}}\yd}
+\nc{\ydSndual}[1]{{}^{\ku^{\Sn_{#1}}}_{\ku^{\Sn_{#1}}}\yd}
+\newcommand{\ydstres}{{}^{\ku^{\Sn_3}}_{\ku^{\Sn_3}}\mathcal{YD}}
+%%%%%%%%%%%%%%%%%yetter drinfield
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+\newcommand\Irr{\operatorname{Irr}}
+\newcommand\id{\operatorname{id}}
+\newcommand\ad{\operatorname{ad}}
+\newcommand\Ad{\operatorname{Ad}}
+\newcommand\Ext{\operatorname{Ext}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\gr{\operatorname{gr}}
+\newcommand\grdual{\operatorname{gr-dual}}
+\newcommand\Gr{\operatorname{Gr}}
+\newcommand\co{\operatorname{co}}
+\newcommand\car{\operatorname{car}}
+\newcommand\rk{\operatorname{rg}}
+\newcommand\ord{\operatorname{ord}}
+\newcommand\cop{\operatorname{cop}}
+\newcommand\End{\operatorname{End}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\Alg{\operatorname{Alg}}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\Int{\operatorname{Int}}
+\newcommand\Id{\operatorname{Id}}
+\newcommand\qAut{\operatorname{qAut}}
+\newcommand\Map{\operatorname{Map}}
+\newcommand\Jac{\operatorname{Jac}}
+\newcommand\Rad{\operatorname{Rad}}
+\newcommand\Rep{\operatorname{Rep}}
+\newcommand\Ker{\operatorname{Ker}}
+\newcommand\Img{\operatorname{Im}}
+\newcommand\Ind{\operatorname{Ind}}
+\newcommand\Comod{\operatorname{Comod}}
+\newcommand\Reg{\operatorname{Reg}}
+\newcommand\Pic{\operatorname{Pic}}
+\newcommand\Emb{\operatorname{Emb}}
+\newcommand\op{\operatorname{op}}
+\newcommand\Perm{\operatorname{Perm}}
+\newcommand\Res{\operatorname{Res}}
+\newcommand\res{\operatorname{res}}
+\newcommand{\sop}{\operatorname{Supp}}
+\newcommand\Cent{\operatorname{Cent}}
+\newcommand\sgn{\operatorname{sgn}}
+\nc{\GL}{\operatorname{GL}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+\nc{\D}{\Delta} 
+\nc{\e}{\varepsilon}
+\nc{\adl}{\ad_\ell}
+\nc{\ot}{\otimes}
+\nc{\Ho}{H_0} 
+\nc{\GH}{G(H)} 
+\nc{\coM}{\mathcal{M}^\ast(2,k)} 
+\nc{\PH}{\cP(H)}
+\nc{\Ftwist}{\overset{\curvearrowright}F}
+\nc{\rep}{{\mathcal Rep}(H)}
+\newcommand{\deltad}{_*\delta}
+\newcommand{\B}{\mathfrak{B}}
+\newcommand{\wB}{\widehat{\mathfrak{B}}}
+\newcommand{\Cg}[1]{C_{G}(#1)}
+\nc{\hmh}{{}_H\hspace{-1pt}{\mathcal M}_H}
+\nc{\hm}{{}_H\hspace{-1pt}{\mathcal M}}
+\renewcommand{\_}[1]{_{\left( #1 \right)}}
+\renewcommand{\^}[1]{^{\left( #1 \right)}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+\nc{\im}{\mathtt{i}}
+\renewcommand{\Re}{{\rm Re}}
+\renewcommand{\Im}{{\rm Im}}
+\nc{\Tr}{\mathrm{Tr}} 
+\nc{\cark}{char\,k} 
+\nc{\ku}{\Bbbk} 
+\newcommand{\fd}{finite dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+\newcommand{\xij}[1]{x_{(#1)}}
+\newcommand{\yij}[1]{y_{(#1)}}
+\newcommand{\Xij}[1]{X_{(#1)}}
+\newcommand{\dij}[1]{\delta_{#1}}
+\newcommand{\aij}[1]{a_{(#1)}}
+\newcommand{\hij}[1]{h_{(#1)}}
+\newcommand{\gij}[1]{g_{(#1)}}
+\newcommand{\eij}[1]{e_{(#1)}}
+\newcommand{\fij}[1]{f_{#1}}
+\newcommand{\tij}[1]{t_{(#1)}}
+\newcommand{\Tij}[1]{T_{(#1)}}
+\newcommand{\mij}[1]{m_{(#1)}}
+\newcommand{\Lij}[1]{L_{(#1)}}
+\newcommand{\mdos}[2]{m_{(#1)(#2)}}
+\newcommand{\mtres}[3]{m_{(#1)(#2)(#3)}}
+\newcommand{\mcuatro}{m_{\textsf{top}}}
+\newcommand{\trid}{\triangleright}
+\newcommand{\link}{\sim_{\ba}}
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+
+
+%%%%%%%%%%%beaamer%%%%%%%%%%%%%%%%%
+% Header: Secciones una arriba de la otra.
+% \usetheme{Copenhagen}
+% \usetheme{Warsaw}
+
+% Header: Secciones una al lado de la otra. Feo footer.
+% Los circulitos del header son medio chotos tambien.
+% \usetheme[compress]{Ilmenau}
+% Muy bueno: difuminado, sin footer:
+%\usetheme{Frankfurt}
+% agrego footer como el de Copenhagen.
+%\useoutertheme[footline=authortitle,subsection=false]{miniframes}
+
+
+
+\title[Clase 3 - Sistemas de ecuaciones lineales]{Álgebra/Álgebra II \\ Clase 3 -Sistemas de ecuaciones lineales 1}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+}
+\date[19/03/2024]{19 de marzo de 2020}
+
+
+%\titlegraphic{\includegraphics[width=0.2\textwidth]{logo_gimp100.pdf}}
+
+% Converted to PDF using ImageMagick:
+% # convert logo_gimp100.png logo_gimp100.pdf
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+\begin{frame}
+
+\begin{block}{Objetivo}
+En las próximas clases aprenderemos a resolver sistemas de ecuaciones lineales sobre $\RR$ usando el \textit{método de Gauss.} 
+\end{block}
+
+\pause
+ 
+ \vskip .4cm
+Con este fin, veremos en esta clase\pause
+\begin{itemize}
+ \item[$\circ$] La definición de sistemas de ecuaciones lineales. \pause
+  \item[$\circ$] Resolveremos algunos sistemas de ecuaciones concretos  usando el  método de \textit{eliminación de variables.}\pause
+  \item[$\circ$] Justificaremos el método de eliminación de variables.
+\end{itemize}
+\pause
+\vskip .4cm
+
+
+El método de Gauss no es más que una forma de utilizar el método de eliminación de variables de manera sistemática y algorítmica. 
+\pause
+\vskip .4cm
+
+El  método de Gauss será visto en las próximas clases. 
+
+\end{frame}
+
+
+
+\begin{frame}{El problema general}
+			
+	El problema a resolver será el siguiente: buscamos números  $x_1,\ldots,x_n$ en el cuerpo $\K$ ($= \R$ o $\C$)  que satisfagan las siguientes condiciones
+	\vskip .3cm
+	\begin{equation}\label{sist-eq}
+	\begin{matrix}
+	a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+	\vdots&  &\vdots& &&  &\vdots \\
+	a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
+	\end{matrix} \tag{*}
+	\end{equation}
+	\vskip .3cm
+	donde $y_1, \ldots,y_m$ y $a_{ij}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$.
+	
+	
+	\vskip .5cm\pause
+	
+	Se dice que las ecuaciones (*) forman un  \textit{sistema de ecuaciones lineales} de $m$ ecuaciones y $n$ incógnitas.
+	\vskip .3cm
+	\begin{itemize}
+		\item  El sistema es \textit{homogeneo} si $y_i=0$ para todo $i$.  
+		\item  El sistema es \textit{no homogeneo} si $y_i\not=0$ para algún $i$.  
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}
+	
+		Los siguientes son sistemas de 2 ecuaciones lineales con 2 incógnitas:
+		\begin{align*}
+		\text{(1)}\qquad & 
+		\begin{matrix}
+		2x_1 + 8x_2 &= 0 &  \\
+		2x_1 + x_2 &=  1& 
+		\end{matrix}  \\
+		&
+		\\
+		\text{(2)}\qquad & 
+		\begin{matrix}
+		2x_1 + x_2 &= 0 &  \\
+		2x_1 - x_2 &=  1& 
+		\end{matrix} \\
+		&
+		\\
+		\text{(3)}\qquad & 
+		\begin{matrix}
+		2x + y &= 1 &  \\
+		4x +2 y &=  2& 
+		\end{matrix} 
+		\end{align*}
+		
+
+\end{frame}
+
+\begin{frame}
+
+
+
+\begin{block}{Problema 1}
+Encontrar las soluciones $(x,y,z)$ del sistema de ecuaciones:
+\begin{equation*}
+\begin{matrix}
+x &  & & &2z & = 1 \\
+x&  -&3y & +&3z & =2 \\
+2x& -&y & +&5z & =3
+\end{matrix}
+\end{equation*}
+Es decir, queremos encontrar los n\'umeros reales $x$, $y$ y $z$ que satisfagan las ecuaciones anteriores.
+\end{block}
+
+\vskip .5cm\pause
+ 
+\begin{solucion}
+Veremos que la única solución es $(x,y,z)=(-1,0,1)$. 
+\end{solucion}
+
+
+\end{frame}
+
+\begin{frame}
+
+Supongamos que $(x,y,z)$ es una solución de nuestro sistema
+
+
+
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&x& -&3y & +&3z & = & 2 \\
+(-1)\cdot&(x & & & +&2z) & = &(-1)\cdot1 \\
+\hline
+&& -&3y & +&z & = & 1  
+\end{matrix}
+\end{equation*}
+
+ \pause
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x & & & +&2z & = 1 \\
+& -&3y & +&z & = 1   \\
+2x& -&y & +&5z & =3
+\end{matrix}
+\end{equation*}
+\end{frame}
+
+
+\begin{frame}
+Dado que $(x,y,z)$ es solución del sistema
+\begin{equation*}
+    \begin{matrix}
+        x & & & +&2z & = 1 \\
+        & -&3y & +&z & = 1   \\
+        2x& -&y & +&5z & =3
+    \end{matrix}
+\end{equation*}
+
+
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&2x& -&y & +&5z & = &3 \\
+(-2)\cdot&(x & & & +&2z) & = &(-2)\cdot1 \\
+\hline
+& & -&y & +& z & = & 1  
+\end{matrix}
+\end{equation*}
+\pause
+ 
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x & & & +&2z & = 1 \\
+& -&3y & +&z & = 1   \\
+& -&y & +&z & =1
+\end{matrix}
+\qquad\mbox{equivalentemente}\qquad
+\begin{matrix}
+x & & & +&2z & = 1 \\
+& -&y & +&z & =1\\
+& -&3y & +&z & = 1 
+\end{matrix}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+Dado que $(x,y,z)$ es solución del sistema
+\begin{equation*}
+    \begin{matrix}
+        x & & & +&2z & = 1 \\
+        & -&y & +&z & =1\\
+        & -&3y & +&z & = 1 
+    \end{matrix}
+\end{equation*}
+
+ 
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+& -3y & +z & = & 1 \\
+(-3)\cdot&( -y & +z) & = &(-3)\cdot1 \\
+\hline
+&   & -2z & = & -2  
+\end{matrix}
+\end{equation*}
+
+ \pause
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -y & +z & =1 \\
+&    & -2z & = -2
+\end{matrix}
+\qquad\mbox{equivalentemente}\qquad
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -y & +z & =1 \\
+&    & z & = 1
+\end{matrix}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+Dado $(x,y,z)$ es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -y & +z & =1 \\
+&    & z & = 1
+\end{matrix}
+\end{equation*}
+
+ 
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+ &x & +2z & = & 1 \\
+(-2)\cdot&(&z) & = &(-2)\cdot1 \\
+\hline
+&   & x & = & -1    
+\end{matrix}
+\qquad\mbox{y}\qquad
+\begin{matrix}
+&-y & +z & = & 1 \\
+(-1)\cdot&(&z) & = &(-1)\cdot1 \\
+\hline
+&   & -y & = & 0
+\end{matrix}
+\end{equation*}
+\pause
+ 
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  &  & = -1 \\
+& -y &  & =0 \\
+&    & z & = 1
+\end{matrix}
+\qquad\mbox{equivalentemente}\qquad
+\begin{matrix}
+x & = -1 \\
+y & =0 \\
+z & = 1
+\end{matrix}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+En resumen, supusimos que $(x,y,z)$ es una solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+x& -3y & +3z & =2 \\
+2x& -y & +3z & =1
+\end{matrix}
+\end{equation*}
+ 
+y probamos que 
+\begin{equation*}
+x=-1\quad y=0,\quad z=1. 
+\end{equation*}\qed
+
+ \pause
+ \vskip .4cm
+\textbf{Comprobemos.} Si reemplazamos en el sistema  $x$, $y$ y $z$ por estos valores
+\begin{equation*}
+\begin{matrix}
+(-1) &  & +2\cdot(1) & = 1 \\
+(-1)& -3\cdot 0 & +3\cdot (1) & =2 \\
+2\cdot(-1)& -0 & +3 \cdot (1) & =1
+\end{matrix}
+\end{equation*}
+vemos que verifican las igualdades del sistema.
+\end{frame}
+
+
+
+
+\begin{frame}
+Podría suceder que el sistema no tenga solución como en el siguiente caso.
+\begin{block}{Problema 2}
+Encontrar las soluciones $(x,y,z)$ del sistema de ecuaciones:
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+x& -3y & +3z & =2 \\
+2x& -3y & +5z & =4
+\end{matrix}
+\end{equation*}
+\end{block}
+
+ \pause
+\begin{solucion}
+Veremos  que el sistema no tiene solución.
+\end{solucion}
+
+ 
+\end{frame}
+
+\begin{frame}
+Supongamos que $(x,y,z)$ es una solución de nuestro sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+x& -3y & +3z & =2 \\
+2x& -3y & +5z & =4
+\end{matrix}
+\end{equation*}
+
+ 
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&x& -3y & +3z & = & 2 \\
+(-1)\cdot&(x &  & +2z) & = &(-1)\cdot1 \\
+\hline
+&& -3y & +z & = & 1  
+\end{matrix}
+\end{equation*}
+\pause
+ 
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1   \\
+2x& -3y & +5z & =4
+\end{matrix}
+\end{equation*}
+ 
+\end{frame}
+
+
+\begin{frame}
+
+Dado que $(x,y,z)$ es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1   \\
+2x& -3y & +5z & =4
+\end{matrix}
+\end{equation*}
+
+ 
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&2x& -3y & +5z & = &4 \\
+(-2)\cdot&(x &  & +2z) & = &(-2)\cdot1 \\
+\hline
+& & -3y & + z & = & 2  
+\end{matrix}
+\end{equation*}
+
+ \pause
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1   \\
+& -3y & +z & = 2
+\end{matrix}
+\end{equation*}
+\end{frame}
+
+
+
+\begin{frame}
+Dado que $(x,y,z)$ es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1   \\
+& -3y & +z & = 2
+\end{matrix}
+\end{equation*}
+
+ 
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&& -3y & +z & = &2 \\
+(-1)\cdot&(& -3y & +z) & = &(-1)\cdot1 \\
+\hline
+& &  & 0 & = & 1  
+\end{matrix}
+\end{equation*}
+
+ \pause
+Esta igualdad es un absurdo, el cual provino de suponer que nuestro sistema tenía solución. \qed
+\end{frame}
+
+
+
+\begin{frame}
+
+Un sistema también puede tener infinitas soluciones.
+
+\begin{block}{Problema 3}
+Encontrar las soluciones $(x,y,z)$ del sistema de ecuaciones:
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+x& -3y & +3z & =2 \\
+2x& -3y & +5z & =3
+\end{matrix}
+\end{equation*}
+\end{block}
+
+ \pause
+\begin{solucion}
+Veremos que el conjunto de soluciones del sistema es
+\begin{equation*}
+\left\{(-2z+1,\frac{z-1}{3},z): z\in\mathbb R\right\}.
+\end{equation*}
+Es decir, todas las soluciones son de la forma 
+\begin{equation*}
+x=-2z+1\,\mbox{ e }\,y=\frac{z-1}{3}\,\mbox{donde $z\in\R$.} 
+\end{equation*}
+\end{solucion}
+\end{frame}
+
+
+
+
+\begin{frame}
+	
+Supongamos que $(x,y,z)$ es una solución de nuestro sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+x& -3y & +3z & =2 \\
+2x& -3y & +5z & =3
+\end{matrix}
+\end{equation*}
+
+ 
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&x& -3y & +3z & = & 2 \\
+(-1)\cdot&(x &  & +2z) & = &(-1)\cdot1 \\
+\hline
+&& -3y & +z & = & 1  
+\end{matrix}
+\end{equation*}
+
+  \pause
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1   \\
+2x& -3y & +5z & =3
+\end{matrix}
+\end{equation*}
+\end{frame}
+
+
+
+\begin{frame}
+
+Dado que $(x,y,z)$ es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1   \\
+2x& -3y & +5z & =3
+\end{matrix}
+\end{equation*}
+
+
+
+Entonces también vale que: 
+\begin{equation*}
+\begin{matrix}
+&2x& -3y & +5z & = &3 \\
+(-2)\cdot&(x &  & +2z) & = &(-2)\cdot1 \\
+\hline
+& & -3y & + z & = & 1  
+\end{matrix}
+\end{equation*}
+
+ \pause
+ 
+Por lo tanto $(x,y,z)$ también es solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1   \\
+& -3y & +z & = 1
+\end{matrix}
+\qquad\mbox{equivalentemente}\qquad
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1 
+\end{matrix}
+\end{equation*}
+\end{frame}
+
+
+\begin{frame}
+Dado que $(x,y,z)$ es solución del sistema 
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+& -3y & +z & = 1 
+\end{matrix}
+\end{equation*}
+ 
+podemos despejar $x$ e $y$ en función de $z$.  \pause Esto es,
+\begin{align*}
+x&=-2z+1\\
+y&=\frac{z-1}{3}
+\end{align*}
+y no tenemos ninguna condición sobre $z$.
+\end{frame}
+
+
+
+\begin{frame}
+En resumen, supusimos que $(x,y,z)$ es una solución del sistema
+\begin{equation*}
+\begin{matrix}
+x &  & +2z & = 1 \\
+x& -3y & +3z & =2 \\
+2x& -3y & +5z & =3
+\end{matrix}
+\end{equation*}
+ 
+y probamos que 
+\begin{equation*}
+x=-2z+1\,\mbox{ e }\,y=\frac{z-1}{3}.
+\end{equation*}\qed
+
+ 
+  \pause
+\vskip .4cm
+\textbf{Comprobemos.} Si reemplazamos $x$, $y$ y $z$ por estos valores
+\begin{equation*}
+\begin{matrix}
+(-2z+1) &  & +2z & = 1 \\
+(-2z+1)& -3\cdot(\displaystyle\frac{z-1}{3}) & +3z & =2 \\
+2\cdot(-2z+1)& -3\cdot(\displaystyle\frac{z-1}{3}) & +5z & =3
+\end{matrix}
+\end{equation*}
+vemos que verifican las igualdades del sistema.
+
+ 
+
+\end{frame}
+
+\begin{frame}{Justificación  del método de eliminación de incógnitas}
+		\begin{proposicion}\label{sist-impl}
+		Sean $c_1,\ldots,c_m$ en $\K$. Si $(x_1,\ldots,x_n) \in \K^n$  es solución del sistema de ecuaciones
+		\begin{equation*}
+		\begin{matrix}
+		a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+		\vdots&  &\vdots& &&  &\vdots \\
+		a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m.
+		\end{matrix}
+		\end{equation*}
+		entonces $(x_1,\ldots,x_n)$ también es solución de la ecuación
+		\begin{equation*}
+		\sum_{i=1}^m c_i(a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n) = \sum_i c_iy_i.
+		\end{equation*}
+	\end{proposicion}
+ 
+ \color{gray}{(se usa en p. \ref{prop-equiv})}
+ 
+\end{frame}
+
+
+\begin{frame}
+		\begin{demostracion} \pause
+		Por hipótesis
+		\begin{equation*}
+		a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n = y_i,\; \text{ para } 1 \le i \le m.
+		\end{equation*}
+		Luego, 
+		\begin{equation*}
+		\sum_{i=1}^m c_i(a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n) = \sum_i c_iy_i.
+		\end{equation*}
+		\qed
+	\end{demostracion}
+
+\pause
+\begin{observacion}
+	La ecuación anterior se puede reescribir:
+	\begin{equation*}
+	\left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +  	\left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}	c_{i}y_{i}.
+	\end{equation*}
+	Es decir es una nueva ecuación lineal con $n$ incógnitas.
+\end{observacion}
+\end{frame}
+
+\begin{frame}
+	La idea de hacer combinaciones lineales de ecuaciones es fundamental en el proceso de eliminación de incógnitas.
+		\vskip .4cm \pause
+	\begin{definicion}
+		Decimos que dos sistemas de ecuaciones lineales son \textit{equivalentes}\index{sistemas lineales equivalentes} si cada ecuación de un sistema es combinación lineal del otro.
+	\end{definicion}
+	 \pause
+	\vskip .4cm
+	\begin{teorema}
+		Dos sistemas de ecuaciones lineales equivalentes tienen las mismas soluciones.
+	\end{teorema}
+	\vskip .4cm
+\end{frame}
+
+\begin{frame}
+	\begin{proof} \pause
+		Sea 
+		\begin{equation}\label{sist-01} \tag{*}
+		\begin{matrix}
+		a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+		\vdots&  &\vdots& &&  &\vdots \\
+		a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
+		\end{matrix}
+		\end{equation}
+		\vskip .4cm
+		equivalente a
+		
+		\begin{equation}\label{sist-02} \tag{**}
+		\begin{matrix}
+		b_{11}x_1& + &b_{12}x_2& + &\cdots& + &b_{1n}x_n &= &z_1\\
+		\vdots&  &\vdots& &&  &\vdots \\
+		b_{k1}x_1& + &b_{k2}x_2& + &\cdots& + &b_{kn}x_n &=&z_k,
+		\end{matrix}.
+		\end{equation}
+		\vskip .4cm
+
+	\end{proof}
+		\vskip .4cm
+	\end{frame}
+
+\begin{frame}
+	Esto quiere decir  que 
+	
+	\begin{enumerate}
+		\item las ecuaciones  de (\ref{sist-02}) se obtienen a partir de combinaciones lineales de las ecuaciones del sistema  (\ref{sist-01}), y
+		\item las ecuaciones  de (\ref{sist-01}) se obtienen a partir de combinaciones lineales de las ecuaciones del sistema  (\ref{sist-02}).
+	\end{enumerate} \pause
+		\vskip .4cm
+		Luego, por proposición de la diapositiva \ref{sist-impl}:\label{prop-equiv}
+			\vskip .4cm
+		\begin{enumerate}
+			\item si  $(x_1,\ldots,x_n)$  es solución de  (\ref{sist-01}), también será solución de cada una de las ecuaciones de (\ref{sist-02}) y por lo tanto solución  del sistema  (\ref{sist-02}), y 
+			\item si  $(x_1,\ldots,x_n)$  es solución de  (\ref{sist-02}), también será solución de cada una de las ecuaciones de (\ref{sist-01}) y por lo tanto solución  del sistema  (\ref{sist-01}). 
+		\end{enumerate}
+		
+		\qed
+		
+\end{frame}
+
+
+\begin{frame}
+	\begin{observacion}
+		Las combinaciones lineales que hemos utilizado  en los tres sistemas que hemos trabajado son \pause
+		\begin{itemize}
+			\item sumar a una ecuación una constante por otra, \pause
+			\item multiplicar una ecuación por una constante no nula, y \pause
+			\item permutar ecuaciones.  
+		\end{itemize}
+		
+		 \pause
+		\vskip .4cm
+		Veremos que estas operaciones son ``reversibles'',  es decir, así como  haciendo estas  operaciones en la ecuaciones   llegamos de 
+		
+		\begin{equation*}
+		\begin{matrix}
+		x &  & +2z & = 1 \\
+		x& -3y & +3z & =2 \\
+		2x& -y & +5z & =3
+		\end{matrix}
+		\qquad \text{ a } 
+		\qquad 
+		\begin{matrix}x=-1\\ y=0 \\ z=1.
+		\end{matrix}
+		\end{equation*}
+	\end{observacion}
+	
+\end{frame}
+
+
+\begin{frame}
+	Haciendo  las ``operaciones inversas'' (que son del mismo tipo)  podemos llegar de  
+		\begin{equation*}
+\begin{matrix}x=-1\\ y=0 \\ z=1.
+\end{matrix}
+	\qquad \text{ a } 
+	\qquad 
+		\begin{matrix}
+	x &  & +2z & = 1 \\
+	x& -3y & +3z & =2 \\
+	2x& -y & +5z & =3
+	\end{matrix}.
+	\end{equation*}
+	
+		\vskip .4cm
+	 \pause	
+	Luego,  ambos sistemas son equivalentes y, por lo tanto, tiene las mismas soluciones.
+	
+		\vskip .4cm
+			\vskip .4cm
+				\vskip .4cm
+				
+\end{frame}
+
+
+
+\begin{frame}{Conclusiones}
+	 \pause
+	\begin{itemize}
+		\item[$\circ$]Un sistema de ecuaciones puede tener una, ninguna o infinitas soluciones. \pause
+		
+		\item[$\circ$]Hemos cambiado nuestro sistema inicial haciendo combinaciones lineales de las ecuaciones. \pause
+		
+		\item[$\circ$]El nuevo sistema es más sencillo en el sentido que: \pause
+		\begin{itemize}
+			\item Cada ecuación tiene menos incógnitas.
+			\item Las soluciones quedan descriptas explícitamente.
+		\end{itemize}
+		 \pause
+		\item[$\circ$]Las soluciones del nuevo sistema son las soluciones de nuestro sistema original.
+		
+	\end{itemize}
+\end{frame}
+
+\end{document}

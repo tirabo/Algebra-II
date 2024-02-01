@@ -205,7 +205,7 @@
 
 
 
-\title[Clase 3 - Rectas y planos 1]{Álgebra/Álgebra II \\ Clase 2 - Producto escalar y ortogonalidad en $\R^n$}
+\title[Clase 2 - Producto escalar y ortogonalidad]{Álgebra/Álgebra II \\ Clase 2 - Producto escalar y ortogonalidad en $\R^n$}
 %\author[C. Olmos / A. Tiraboschi]{Carlos Olmos / Alejandro Tiraboschi}
 \institute[]{\normalsize FAMAF / UNC
     \\[\baselineskip] ${}^{}$
@@ -219,23 +219,160 @@
 \begin{document}
     
     \frame{\titlepage} 
-    
+
+        
     \begin{frame}
         
-        En este clase introduciremos las nociones de  ``norma'', ``distancia'' y ``ángulo'' en $\R^n$ usando el producto escalar.
+        En este clase introduciremos la noción de ``producto escalar'' y posteriormente  ``norma'', ``distancia'' y ``ángulo'' en $\R^n$ usando el producto escalar.
         
         \
         
-        Además veremos la noción de perpendicularidad u ortogonalidad y explicaremos el proceso de ortogonalización de Gram-Schmidt.
+        Además veremos la noción de perpendicularidad u ortogonalidad.
         
         
         \
         
-        Estas diapositivas están basadas en la Secciones 1.2,  1.3 y 1.7 de las {\it Notas de Álgebra II} disponibles en Classroom. Allí se pueden encontrar más detalles y el sustento teórico de todas nuestras afirmaciones.
+        Estas diapositivas están basadas en la Secciones 1.2 y  1.3 de las {\it Notas de Álgebra II} disponibles en Classroom. Allí se pueden encontrar más detalles y el sustento teórico de todas nuestras afirmaciones.
     \end{frame}
     
     
     
+    
+\begin{frame}\frametitle{Producto escalar}
+            
+    En 2-espacios, dados dos vectores $v = (x_1, x_2)$ y $w= (y_l, y_2)$, definimos su \textit{producto escalar}\index{producto escalar} como
+    \begin{equation*}
+    \langle v , w  \rangle :=x_1y_1 + x_2y_2.
+    \end{equation*}\pause
+    Para el caso de 3-espacios, sean   $v = (x_1, x_2,x_3)$ y $w= (y_l, y_2,y_3)$,  entonces el \textit{producto escalar de $v$ y $w$} es
+    \begin{equation*}
+    \langle v , w  \rangle :=x_1y_1 + x_2y_2+x_3y_3.
+    \end{equation*}\pause
+    Finalmente, en los $n$-espacios,  generalizamos la definición de la manera obvia: sean  $v = (x_1, \ldots,x_n)$ y $w= (y_l, \ldots,y_n)$,  definimos el \textit{producto escalar de $v$ y $w$} por        
+    \begin{equation*}
+    \langle v , w \rangle :=x_1y_1 + x_2y_2+\cdots+x_ny_n.
+    \end{equation*}
+\end{frame}
+
+
+
+\begin{frame}
+    Es importante notar  que este ``producto'' es un número real. 
+    
+    \vskip .4 cm \pause
+    Por ejemplo, si
+    \vskip .2 cm 
+    \begin{equation*}
+    v= (1, 3, - 2) \quad\text{ y } \quad w= (- 1, 4, - 3),
+    \end{equation*}
+    entonces
+    \begin{equation*}
+    \langle v , w \rangle= 1 \cdot(-1) +3\cdot 4 + (-2) \cdot (-3) = -1 + 12 + 6 = 17.
+    \end{equation*}
+    \vskip .2 cm \pause
+    En  algunos libros de texto se denota al producto escalar como $v \cdot w$.
+    \vskip .6 cm 
+    Por el momento, no le damos una interpretación geométrica al producto escalar y veremos esto cuando veamos la norma de un vector. 
+    \vskip 1 cm 
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Propiedades básicas del producto escalar}
+    
+Las siguientes propiedades son  básicas y muy importantes. 
+\vskip .3 cm \pause
+Sean $v$, $w$, $u$  tres vectores, entonces
+
+\vskip .3 cm \pause
+
+\begin{enumerate}
+    \item[\textbf{P1.}]    $\langle v , w \rangle = \langle w , v \rangle$.\pause
+    \vskip .3 cm 
+    \item[\textbf{P2.}] $\langle v , w + u \rangle =\langle v , w \rangle + \langle v , u \rangle$ y 
+    \item[\,] $\langle v + w , u \rangle=\langle v , u \rangle + \langle w , u \rangle$.
+    \vskip .3 cm \pause
+    \item[\textbf{P3.}] Si $\lambda$ es un número, entonces 
+    \begin{equation*}
+    \langle \lambda v , w \rangle = \lambda \langle v , w \rangle \quad \text{ y } \quad  \langle v , \lambda w \rangle = \lambda \langle v , w \rangle.
+    \end{equation*}
+    \vskip .3 cm \pause
+    \item[\textbf{P4.}] Si $v=0$, entonces $\langle v , v \rangle =0$,  de lo contrario
+    \begin{equation*}
+    \langle v , v \rangle >0
+    \end{equation*}
+\end{enumerate}
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Demostración de \textbf{P1}}
+    \pause
+    Sean $v =(x_1, x_2,\ldots,x_n)$ y $w =(y_1, y_2,\ldots,y_n)$.     Tenemos que 
+    \begin{align*}
+    \langle v , w \rangle & =x_1y_1 + x_2y_2+\cdots+x_ny_n,  \\
+    \langle w , v \rangle &= y_1x_1 + y_2x_2+\cdots+y_nx_n.
+    \end{align*}
+    \vskip .6 cm 
+    Como en $\R$ vale que para cualquier para de números $x, y$, se cumple que $xy=yx$, obviamente ambas expresiones son iguales. 
+    \vskip .6 cm 
+    Esto prueba la propiedad \textbf{P1}. 
+    
+    \vskip 1 cm 
+    
+
+    
+
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Demostración de \textbf{P2}}
+    
+    \pause
+    Sea $u = (z_1, \ldots, z_n)$. Entonces
+    \begin{equation*}
+    w + u = (y_1+z_1, \ldots, y_n+ z_n)
+    \end{equation*}
+    y
+    \begin{align*}
+    \langle v , w + u \rangle &= \langle (x_1, \ldots,x_n) , (y_1+z_1, \ldots, y_n+ z_n) \rangle\\
+    &= x_1(y_1+z_1) + \cdots x_n(y_n+z_n) \\
+    &= x_1y_1+x_1z_1 + \cdots x_ny_n+x_nz_n
+    \end{align*}\pause
+    Reordenando los términos obtenemos
+    \begin{equation*}
+    \langle v , w + u \rangle =  x_1y_1+\cdots +  x_ny_n +x_1z_1 + \cdots+x_nz_n,
+    \end{equation*}
+    que no es otra cosa que $\langle v , w \rangle + \langle v , u \rangle$.
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Demostración de \textbf{P3}}
+        \pause
+        Dejamos la demostración de la propiedad \textbf{P3} como ejercicio.
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Demostración de \textbf{P4}}
+Observemos que 
+    \begin{equation}\label{eq-v-escalar-v}
+    \langle v , v \rangle = x_1^2 + x_2^2 + \cdots + x_n^2.
+    \end{equation}
+    \vskip .6 cm \pause
+    Como $x_i^2 \ge 0$ para todo $i$,  entonces $\langle v , v \rangle \ge 0$. 
+    
+    \vskip .6 cm \pause
+    Además, es claro que si $v$ tiene todas las coordenadas iguales a 0,  entonces  $\langle v , v \rangle =0$. 
+    
+    \vskip .6 cm \pause
+    En  el caso que $v\not=0$, entonces,  existe algún $i$  tal que  $x_i \ne 0$, por lo tanto $x_i^2>0$ y por la ecuación (\ref{eq-v-escalar-v}), tenemos que  $\langle v , v \rangle>0$.
+\end{frame}
+
+
 
 \begin{frame}\frametitle{La norma de un vector}
     
@@ -463,167 +600,6 @@
     
 
 \end{frame}
-
-\begin{frame}\frametitle{Rectas en $\R^2$}
-        \begin{definicion} Una  \textit{recta}\index{recta} está formada por el conjunto de puntos $(x,y)$ en $\R^2$ que satisfacen la ecuación
-        \begin{equation}\label{eq-implicita-de-la-recta}
-        ax +by =c,
-        \end{equation}
-        con $a,b,c \in \R$ y tal que $a,b$ no pueden ser simultáneamente $0$.  También suele decirse que la ecuación (\ref{eq-implicita-de-la-recta}) es la \textit{ecuación implícita de la recta}\index{recta!ecuación implícita}.
-        \pause
-        \vskip .3cm
-        Más formalmente, la recta es el conjunto
-        \begin{equation*}
-            \{ (x,y) \in \R^2:ax +by =c\}.
-        \end{equation*}
-    \end{definicion}
-    
-\pause
-    \begin{observacion}
-        \begin{itemize}
-            \item Si $b\ne0$, entonces la recta es \, $y= -\displaystyle\frac{a}{b}x + \displaystyle\frac{c}{b}$, 
-            \item si $b=0$,  entonces $a\ne 0$ y la recta es \, $x =\displaystyle\frac{c}{a}$.
-        \end{itemize}
-    \end{observacion}
-
-\end{frame}
-
-
-
-\begin{frame}\frametitle{Rectas en $\R^2$: ejemplos}
-    
-    
-    
-    \begin{center}
-        \begin{tabular}{cc}
-            \begin{tikzpicture}[scale=0.65]
-            \draw[thick,->] (-4.0,0) -- (4.0,0) node[right] {$x$}; % eje x
-            \draw[thick,->] (0,-2) -- (0,3) node[above] {$y$}; % eje y
-            \foreach \x in {-2,...,-1} \draw (\x,3pt) -- (\x,-3pt) node[anchor=north] {\x};
-            \foreach \x in {1,...,3} \draw (\x,3pt) -- (\x,-3pt) node[anchor=north] {\x};
-            \foreach \y in {-1,...,-1} \draw (3pt,\y) -- (-3pt,\y) node[anchor=east] {\y}; 
-            \foreach \y in {1,...,2} \draw (3pt,\y) -- (-3pt,\y) node[anchor=east] {\y}; 
-            \draw[scale=1,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{0.5*\x +1});
-            \node [right] at (-2,-3) {La recta $-\frac12x +y = 1$.};
-            \end{tikzpicture}
-            & 
-            \begin{tikzpicture}[scale=0.65]
-            \draw[thick,->] (-4.0,0) -- (4.0,0) node[right] {$x$}; % eje x
-            \draw[thick,->] (0,-2) -- (0,3) node[above] {$y$}; % eje y
-            \foreach \x in {-2,...,-1} \draw (\x,3pt) -- (\x,-3pt) node[anchor=north] {\x};
-            \foreach \x in {1,...,3} \draw (\x,3pt) -- (\x,-3pt) node[anchor=north] {\x};
-            \foreach \y in {-1,...,-1} \draw (3pt,\y) -- (-3pt,\y) node[anchor=east] {\y}; 
-            \foreach \y in {1,...,2} \draw (3pt,\y) -- (-3pt,\y) node[anchor=east] {\y}; 
-            \draw[scale=1,domain=-2:3,smooth,variable=\x,blue] plot ({2.5},{\x});
-            \node [right] at (-2,-3) {La recta $x=2.5$.};
-            \end{tikzpicture}
-        \end{tabular}
-
-    \end{center}
-    
-\end{frame}
-
-
-
-\begin{frame}
-    Si  consideramos  el vector $(a,b)$ en $\R^2$, $c \in \R$ y $L$ la recta definida por los puntos $(x,y)$ tal que $ax +by =c$,  entonces 
-    \begin{align*}
-    L &=     \{ (x,y) \in \R^2:ax +by =c\} \\
-    &=  \{ (x,y) \in \R^2:\langle (x,y), (a,b) \rangle = c\}.
-    \end{align*}
-    \pause 
-    Ahora bien, consideremos $(x_0,y_0)$ un punto de la recta, entonces,  obviamente tenemos que $\langle (x_0,y_0), (a,b) \rangle = c$.
-    \vskip .4cm    \pause 
-    Por lo tanto 
-    \begin{equation*}
-    L =  \{ (x,y) \in \R^2:\langle (x,y), (a,b) \rangle = \langle (x_0,y_0), (a,b) \rangle\}.
-    \end{equation*}    
-
-\end{frame}
-
-
-
-\begin{frame}
-        Por la propiedad \textbf{P2} del producto escalar, llegamos a la conclusión que 
-    \begin{equation*}
-    L = \{(x,y) \in \R^2: \langle (x,y)-(x_0,y_0)\,,\, (a,b) \rangle = 0 \}.
-    \end{equation*}    \pause 
-    Sea $v_0 =(x_0,y_0)$ y $v =(x,y)$,   representemos gráficamente la situación: 
-    \begin{center}
-        \begin{tikzpicture}[scale=0.8]
-        \def\vx{3}
-        \def\vy{2}
-        \def\wx{4}
-        \def\wy{1}    
-        \def\tv{3.0}
-        \def\tw{1.4}
-        \def\taa{1.5}
-        \def\tab{-1.5}
-        \def\rr{\tv*\vy-\tv*\wy}    
-        \def\ss{\tv*\wx-\tv*\vx}        
-        \def\rrm{-\tw*\vy+\tw*\wy}    
-        \def\ssm{-\tw*\wx+\tw*\vx}        
-        \draw[thick,-] (-4,0) -- (4,0);
-        \draw[thick,-] (0,-1) -- (0,3);
-        %\node[inner sep=1.5pt,fill,circle] at (\vx,\vy) {};
-        \draw[very thick,->] (0,0) -- (\vx,\vy) node[above]{$v_0$};
-        \draw[very thick,->] (0,0) -- (\wx,\wy) node[above]{\;$v$};
-        \draw[very thick,->] (0,0) -- (\wx-\vx,\wy-\vy) node[right]{$v-v_0$};
-        \draw[thick,blue,-] (\vx- \tab*\vx + \tab*\wx ,\vy - \tab*\vy + \tab*\wy) --  (\vx- \taa*\vx + \taa*\wx ,\vy - \taa*\vy + \taa*\wy);
-        \draw[very thick,->] (0,0) -- (\tw*\vy-\tw*\wy,\tw*\wx-\tw*\vx) node[left]{$(a,b)$};
-        \draw[dashed, thick,-] (0,0) -- (\rr,\ss);
-        \draw[dashed, thick,-] (0,0) -- (\rr,\ss);
-        \draw[dashed, thick,-] (\rrm,\ssm) -- (0,0);
-        %\draw[dashed,thick] (0,0) (\tw*\wx,\tw*\wy) -- (\vx+\tw*\wx,\vy+\tw*\wy+0.1);
-        %\node[inner sep=1.5pt,fill,circle,blue] at (\vx+\tw*\wx+0.04*\wx,\vy+\tw*\wy+0.04*\wy)  {};
-        %\node[right] at (\vx+\tw*\wx,\vy+\tw*\wy+0.1){$v+tw$};
-        \end{tikzpicture}
-    \end{center} 
-    
-    
-    La recta $L$ es, entonces,\textit{ la recta perpendicular a $(a,b)$ y que pasa por $v_0$. }
-\end{frame}
-
-
-
-\begin{frame}
-    \begin{conclusion}
-        \textit{La ecuación implícita de la recta $L$ perpendicular a $(a,b)$ y que pasa por $(x_0,y_0)$ es
-            \begin{equation*}
-            ax +by = \langle (x_0,y_0), (a,b) \rangle.
-            \end{equation*}}
-    \end{conclusion}
-     
-    \vskip 2cm
-    
-
-\end{frame}
-
-
-
-\begin{frame}
-        
-    \begin{ejemplo}
-        Encontrar la ecuación implícita de la recta que pasa por $(2,-1)$ y  es perpendicular a $(-2,3)$.
-    \end{ejemplo}
-    \begin{solucion}    \pause 
-        Por lo visto anteriormente la recta esta formada por los puntos  $(x,y)$ tales que
-        \begin{equation*}
-        -2x+3y = c
-        \end{equation*}
-        y debemos determinar el valor de $c$. Como $(2,-1)$ pertenece a la recta
-        \begin{equation*}
-        c = -2\cdot 2+3\cdot (-1) = -7.
-        \end{equation*}
-        Luego, la ecuación implícita de la recta es
-        \begin{equation*}
-        -2x+3y = -7.
-        \end{equation*}
-        \qed
-    \end{solucion}
-\end{frame}
-
-
 
 
 

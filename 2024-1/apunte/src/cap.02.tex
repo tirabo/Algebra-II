@@ -1189,32 +1189,42 @@ x& -3y & +3z & =&2 \\
     \end{ejemplo*} 
     
     
-    Veamos ahora formalmente cuales son en forma genérica las soluciones del sistema $BX=Z$. 
+    Veamos ahora formalmente cuales son en forma genérica las soluciones de un sistema de ecuaciones usando  el  método de Gauss-Jordan. 
     
-    Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros $1$'s en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
-    \begin{equation}
-    \begin{matrix}
-    &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&= &z_1\\
-    &x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j&= &z_2\\
-    & \vdots& &  &\vdots \\
-    &x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j&= &z_r\\
-    &&  &0&= &z_{r+1}\\
-    &&  &\vdots &\\
-    &&  &0&= &z_{m}.\\
-    \end{matrix}
-    \end{equation}  
-    y, por lo tanto, el sistema tiene solución si y solo si  $z_{r+1} = \cdots = z_m =0$ y en ese caso las soluciones son: 
-    \begin{equation}
-    \begin{matrix}\label{sist-eq-hom-merf0}
-    x_{k_1} &= z_1-\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j\\
-    x_{k_2} &= z_2-\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j\\
-    \vdots& \vdots \\
-    x_{k_r}  &= z_r-\textstyle\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j
-    \end{matrix}.
-    \end{equation} 
-    Llamaremos a  $x_{k_1}, x_{k_2}, \ldots, x_{k_r}$ las \textit{variables principales}\index{sistema de ecuaciones lineales!variables principales} del sistema  y  las $n-r$ variables restantes son las \textit{variables libres}.\index{sistema de ecuaciones lineales!variables libres} Es claro entonces que variando de forma arbitraria todas las variables libres obtenemos todas las soluciones del sistema.
-    
-        Las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones \eqref{sist-eq-hom-merf0}.
+    \begin{teorema}\label{teorema-gauss-jordan-general}
+        Sea $AX=Y$ un sistema de $m$ ecuaciones lineales y $n$ incógnitas con coeficientes en $\K$. Sea $[B|Z]$ la matriz escalón reducida por fila equivalente por fila a $[A|Y]$. 
+
+        Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros $1$'s en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
+        \begin{equation}
+            \begin{matrix}
+                &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&= &z_1\\
+                &x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j&= &z_2\\
+                & \vdots& &  &\vdots \\
+                &x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j&= &z_r\\
+                &&  &0&= &z_{r+1}\\
+                &&  &\vdots &\\
+                &&  &0&= &z_{m}.\\
+            \end{matrix}
+        \end{equation}  
+        Entonces, el sistema tiene solución si y solo si  $z_{r+1} = \cdots = z_m =0$ y en ese caso las soluciones son: 
+        \begin{equation}
+            \begin{matrix}\label{sist-eq-hom-merf0}
+                x_{k_1} &= z_1-\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j\\
+                x_{k_2} &= z_2-\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j\\
+                \vdots& \vdots \\
+                x_{k_r}  &= z_r-\textstyle\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j
+            \end{matrix},
+        \end{equation}
+        donde las $x_j$ con $j \not= k_1,\ldots, k_r$ son variables libres y pueden tomar cualquier valor en $\K$.
+    \end{teorema}
+    \begin{proof}
+        La demostración es inmediata a partir de la forma de la matriz ampliada $[B|Z]$.
+    \end{proof}
+
+    Este teorema es uno de los más importantes de la materia y  se usará repetidamente en los próximos capítulos.
+
+
+    En la notación del teorema \ref{teorema-gauss-jordan-general}, llamaremos a  $x_{k_1}, x_{k_2}, \ldots, x_{k_r}$ las \textit{variables principales}\index{sistema de ecuaciones lineales!variables principales} del sistema  y  las $n-r$ variables restantes son las \textit{variables libres}.\index{sistema de ecuaciones lineales!variables libres} Es claro entonces que dándoles valores arbitrarios a las variables libres obtenemos todas las soluciones del sistema, dicho de otra forma, las soluciones del sistema son, entonces,  los $(x_1,\ldots,x_n)\in \K^n$ tal que $x_{k_1},\ldots,x_{k_r}$ satisfacen las ecuaciones \eqref{sist-eq-hom-merf0}.
 
     \begin{teorema}\label{inf-sol-var-libres}
         Sea $AX=Y$ un sistema de $m$ ecuaciones lineales y $n$ incógnitas con coeficientes en $\K$. Entonces
@@ -1224,9 +1234,9 @@ x& -3y & +3z & =&2 \\
         \end{enumerate} 
     \end{teorema}
     \begin{proof}
-        \ref{sol-homogeneo}  Un  sistema homogéneo siempre tiene a $X=0$ como solución, pues $A0 =0$, y  las soluciones son de la forma dada por la ecuación \eqref{sist-eq-hom-merf0}, donde los $z_i$ son $0$. Si  no hay varables libres, entonces $x_1=x_2= \cdots =x_n =0$ es la única solución. Si hay variables libres,  entonces hay infinitas soluciones (variando las variables libres).  
+        \ref{sol-homogeneo}  Un  sistema homogéneo siempre tiene a $X=0$ como solución, pues $A0 =0$. Por el teorema \ref{teorema-gauss-jordan-general},  las soluciones son de la forma dada por la ecuación \eqref{sist-eq-hom-merf0}, donde los $z_i$ son $0$. Si  no hay varables libres, entonces $x_1=x_2= \cdots =x_n =0$ es la única solución. Si hay variables libres,  entonces hay infinitas soluciones (variando las variables libres).  
         
-        \ref{sol-no-homogeneo} Si el  sistema tiene solución, las soluciones son de la forma dada por la ecuación \eqref{sist-eq-hom-merf0}. Si  no hay variables libres la solución es única ($x_1=z_1,\ldots,x_n =z_n$). Si hay variables libres,  entonces hay infinitas soluciones.   
+        \ref{sol-no-homogeneo} Si el  sistema tiene solución, por el teorema \ref{teorema-gauss-jordan-general} las soluciones son de la forma dada por la ecuación \eqref{sist-eq-hom-merf0}. Si  no hay variables libres la solución es única ($x_1=z_1,\ldots,x_n =z_n$). Si hay variables libres,  entonces hay infinitas soluciones.   
     \end{proof}
     
     \begin{corolario}\label{inf-sol}
