@@ -1,0 +1,1236 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage[utf8]{inputenc}%esto permite (en Windows) escribir directamente 
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,arrows,babel,decorations.pathreplacing}
+\usepackage{verbatim} 
+\usepackage{xcolor} 
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{mathtools}
+\usepackage[customcolors]{hf-tikz}
+
+
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+
+\renewcommand{\figurename }{Figura}
+
+
+\setbeamercolor{block}{fg=red, bg=red!40!white}
+\setbeamercolor{block example}{use=structure,fg=black,bg=white!20!white}
+
+\renewenvironment{block}[1]% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}#1}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+
+\renewenvironment{alertblock}[1]% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{red!80!black}#1}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+
+\renewenvironment{exampleblock}[1]% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}#1}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+
+
+
+\newenvironment{exercise}[1]% environment name
+{% begin code
+    \par\vspace{\baselineskip}\noindent
+    \textbf{Ejercicio (#1)}\begin{itshape}%
+        \par\vspace{\baselineskip}\noindent\ignorespaces
+    }%
+    {% end code
+    \end{itshape}\ignorespacesafterend
+}
+
+
+\newenvironment{definicion}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Definición}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+\newenvironment{observacion}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Observación}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+\newenvironment{ejemplo}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Ejemplo}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+\newenvironment{ejercicio}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Ejercicio}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+
+\renewenvironment{proof}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Demostración}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+
+
+\newenvironment{demostracion}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Demostración}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+\newenvironment{idea}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Idea de la demostración}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+\newenvironment{solucion}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Solución}%
+    \vskip .2cm
+}%
+{%
+    \vskip .2cm}% end code
+
+
+
+\newenvironment{lema}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Lema}\begin{itshape}%
+        \par\vskip .2cm
+    }%
+    {% end code
+    \end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{proposicion}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Proposición}\begin{itshape}%
+        \par\vskip .2cm
+    }%
+    {% end code
+    \end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{teorema}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Teorema}\begin{itshape}%
+        \par\vskip .2cm
+    }%
+    {% end code
+    \end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+\newenvironment{corolario}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Corolario}\begin{itshape}%
+        \par\vskip .2cm
+    }%
+    {% end code
+    \end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{propiedad}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Propiedad}\begin{itshape}%
+        \par\vskip .2cm
+    }%
+    {% end code
+    \end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+\newenvironment{conclusion}% environment name
+{% begin code
+    \par\vskip .2cm%
+    {\color{blue}Conclusión}\begin{itshape}%
+        \par\vskip .2cm
+    }%
+    {% end code
+    \end{itshape}\vskip .2cm\ignorespacesafterend
+}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\nc}{\newcommand}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+\nc{\RR}{{\mathbb R}} \nc{\CC}{{\mathbb C}} \nc{\ZZ}{{\mathbb Z}}
+\nc{\FF}{{\mathbb F}} \nc{\NN}{{\mathbb N}} \nc{\QQ}{{\mathbb Q}}
+\nc{\PP}{{\mathbb P}} \nc{\DD}{{\mathbb D}} \nc{\Sn}{{\mathbb S}}
+\nc{\uno}{\mathbb{1}} \nc{\BB}{{\mathbb B}} \nc{\An}{{\mathbb A}}
+
+\nc{\ba}{\mathbf{a}} \nc{\bb}{\mathbf{b}} \nc{\bt}{\mathbf{t}}
+\nc{\bB}{\mathbf{B}}
+
+\nc{\cP}{\mathcal{P}} \nc{\cU}{\mathcal{U}} \nc{\cX}{\mathcal{X}}
+\nc{\cE}{\mathcal{E}} \nc{\cS}{\mathcal{S}} \nc{\cA}{\mathcal{A}}
+\nc{\cC}{\mathcal{C}} \nc{\cO}{\mathcal{O}} \nc{\cQ}{\mathcal{Q}}
+\nc{\cB}{\mathcal{B}} \nc{\cJ}{\mathcal{J}} \nc{\cI}{\mathcal{I}}
+\nc{\cM}{\mathcal{M}} \nc{\cK}{\mathcal{K}}
+
+\nc{\fD}{\mathfrak{D}} \nc{\fI}{\mathfrak{I}} \nc{\fJ}{\mathfrak{J}}
+\nc{\fS}{\mathfrak{S}} \nc{\gA}{\mathfrak{A}}
+%%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
+
+
+
+
+%%%%%%%%%%%%%%%%%yetter drinfield
+\newcommand{\ydg}{{}_{\ku G}^{\ku G}\mathcal{YD}}
+\newcommand{\ydgdual}{{}_{\ku^G}^{\ku^G}\mathcal{YD}}
+\newcommand{\ydf}{{}_{\ku F}^{\ku F}\mathcal{YD}}
+\newcommand{\ydgx}{{}_{\ku \Gx}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydgxy}{{}_{\ku \Gy}^{\ku \Gx}\mathcal{YD}}
+
+\newcommand{\ydixq}{{}_{\ku \ixq}^{\ku \ixq}\mathcal{YD}}
+
+\newcommand{\ydl}{{}^H_H\mathcal{YD}}
+\newcommand{\ydll}{{}_{K}^{K}\mathcal{YD}}
+\newcommand{\ydh}{{}^H_H\mathcal{YD}}
+\newcommand{\ydhdual}{{}^{H^*}_{H^*}\mathcal{YD}}
+
+
+\newcommand{\ydha}{{}^H_A\mathcal{YD}}
+\newcommand{\ydhhaa}{{}^{\Hx}_{\Ay}\mathcal{YD}}
+
+
+\newcommand{\wydh}{\widehat{{}^H_H\mathcal{YD}}}
+\newcommand{\ydvh}{{}^{\ac(V)}_{\ac(V)}\mathcal{YD}}
+\newcommand{\ydrh}{{}^{R\# H}_{R\# H}\mathcal{YD}}
+\newcommand{\ydho}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}}
+\newcommand{\ydhsw}{{}^{H^{\sw}}_{H^{\sw}}\mathcal{YD}}
+
+\newcommand{\ydhlf}{{}^H_H\mathcal{YD}_{\text{loc fin}}}
+\newcommand{\ydholf}{{}^{H^{\dop}}_{H^{\dop}}\mathcal{YD}_{\text{loc fin}}}
+
+\nc{\yd}{\mathcal{YD}}
+
+\newcommand{\ydsn}{{}^{\ku{\Sn_n}}_{\ku{\Sn_n}}\mathcal{YD}}
+\newcommand{\ydsnd}{{}^{\ku^{\Sn_n}}_{\ku^{\Sn_n}}\mathcal{YD}}
+\nc{\ydSn}[1]{{}^{\Sn_{#1}}_{\Sn_{#1}}\yd}
+\nc{\ydSndual}[1]{{}^{\ku^{\Sn_{#1}}}_{\ku^{\Sn_{#1}}}\yd}
+\newcommand{\ydstres}{{}^{\ku^{\Sn_3}}_{\ku^{\Sn_3}}\mathcal{YD}}
+%%%%%%%%%%%%%%%%%yetter drinfield
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+\newcommand\Irr{\operatorname{Irr}}
+\newcommand\id{\operatorname{id}}
+\newcommand\ad{\operatorname{ad}}
+\newcommand\Ad{\operatorname{Ad}}
+\newcommand\Ext{\operatorname{Ext}}
+\newcommand\tr{\operatorname{tr}}
+\newcommand\gr{\operatorname{gr}}
+\newcommand\grdual{\operatorname{gr-dual}}
+\newcommand\Gr{\operatorname{Gr}}
+\newcommand\co{\operatorname{co}}
+\newcommand\car{\operatorname{car}}
+\newcommand\rk{\operatorname{rg}}
+\newcommand\ord{\operatorname{ord}}
+\newcommand\cop{\operatorname{cop}}
+\newcommand\End{\operatorname{End}}
+\newcommand\Hom{\operatorname{Hom}}
+\newcommand\Alg{\operatorname{Alg}}
+\newcommand\Aut{\operatorname{Aut}}
+\newcommand\Int{\operatorname{Int}}
+\newcommand\Id{\operatorname{Id}}
+\newcommand\qAut{\operatorname{qAut}}
+\newcommand\Map{\operatorname{Map}}
+\newcommand\Jac{\operatorname{Jac}}
+\newcommand\Rad{\operatorname{Rad}}
+\newcommand\Rep{\operatorname{Rep}}
+\newcommand\Ker{\operatorname{Ker}}
+\newcommand\Img{\operatorname{Im}}
+\newcommand\Ind{\operatorname{Ind}}
+\newcommand\Comod{\operatorname{Comod}}
+\newcommand\Reg{\operatorname{Reg}}
+\newcommand\Pic{\operatorname{Pic}}
+\newcommand\textitb{\operatorname{Emb}}
+\newcommand\op{\operatorname{op}}
+\newcommand\Perm{\operatorname{Perm}}
+\newcommand\Res{\operatorname{Res}}
+\newcommand\res{\operatorname{res}}
+\newcommand{\sop}{\operatorname{Supp}}
+\newcommand\Cent{\operatorname{Cent}}
+\newcommand\sgn{\operatorname{sgn}}
+\nc{\GL}{\operatorname{GL}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operatorename
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+\nc{\D}{\Delta} 
+\nc{\e}{\varepsilon}
+\nc{\adl}{\ad_\ell}
+\nc{\ot}{\otimes}
+\nc{\Ho}{H_0} 
+\nc{\GH}{G(H)} 
+\nc{\coM}{\mathcal{M}^\ast(2,k)} 
+\nc{\PH}{\cP(H)}
+\nc{\Ftwist}{\overset{\curvearrowright}F}
+\nc{\rep}{{\mathcal Rep}(H)}
+\newcommand{\deltad}{_*\delta}
+\newcommand{\B}{\mathfrak{B}}
+\newcommand{\wB}{\widehat{\mathfrak{B}}}
+\newcommand{\Cg}[1]{C_{G}(#1)}
+\nc{\hmh}{{}_H\hspace{-1pt}{\mathcal M}_H}
+\nc{\hm}{{}_H\hspace{-1pt}{\mathcal M}}
+\renewcommand{\_}[1]{_{\left[ #1 \right]}}
+\renewcommand{\^}[1]{^{\left[ #1 \right]}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales de hopf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+\nc{\im}{\mathtt{i}}
+\renewcommand{\Re}{{\rm Re}}
+\renewcommand{\Im}{{\rm Im}}
+\nc{\Tr}{\mathrm{Tr}} 
+\nc{\cark}{char\,k} 
+\nc{\ku}{\Bbbk} 
+\newcommand{\fd}{finite dimensional}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Usuales
+
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+\newcommand{\xij}[1]{x_{(#1)}}
+\newcommand{\yij}[1]{y_{(#1)}}
+\newcommand{\Xij}[1]{X_{(#1)}}
+\newcommand{\dij}[1]{\delta_{#1}}
+\newcommand{\aij}[1]{a_{(#1)}}
+\newcommand{\hij}[1]{h_{(#1)}}
+\newcommand{\gij}[1]{g_{(#1)}}
+\newcommand{\eij}[1]{e_{(#1)}}
+\newcommand{\fij}[1]{f_{#1}}
+\newcommand{\tij}[1]{t_{(#1)}}
+\newcommand{\Tij}[1]{T_{(#1)}}
+\newcommand{\mij}[1]{m_{(#1)}}
+\newcommand{\Lij}[1]{L_{(#1)}}
+\newcommand{\mdos}[2]{m_{(#1)(#2)}}
+\newcommand{\mtres}[3]{m_{(#1)(#2)(#3)}}
+\newcommand{\mcuatro}{m_{\textsf{top}}}
+\newcommand{\trid}{\triangleright}
+\newcommand{\link}{\sim_{\ba}}
+%%%%%%%%%%%%%%%%%%%%%%%%Especiales para liftings de duales de Sn
+
+
+%%%%%%%%%%%beaamer%%%%%%%%%%%%%%%%%
+% Header: Secciones una arriba de la otra.
+% \usetheme{Copenhagen}
+% \usetheme{Warsaw}
+
+% Header: Secciones una al lado de la otra. Feo footer.
+% Los circulitos del header son medio chotos tambien.
+% \usetheme[compress]{Ilmenau}
+% Muy bueno: difuminado, sin footer:
+%\usetheme{Frankfurt}
+% agrego footer como el de Copenhagen.
+%\useoutertheme[footline=authortitle,subsection=false]{miniframes}
+
+
+
+
+\title[Clase 07 - Álgebra de matrices 2]{Álgebra/Álgebra II \\ Clase 07 - Álgebra de matrices 2}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+    \\[\baselineskip] ${}^{}$
+    \\[\baselineskip]
+}
+\date[09/04/2024]{09 de abril de 2024}
+
+%\titlegraphic{\includegraphics[width=0.2\textwidth]{logo_gimp100.pdf}}
+
+% Converted to PDF using ImageMagick:
+% # convert logo_gimp100.png logo_gimp100.pdf
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+
+\begin{frame}{Resumen}
+    En esta clase veremos
+
+    \vskip .4cm\pause
+
+    \begin{itemize}
+        \item La relación entre sistemas de ecuaciones y  multiplicación de matrices.\pause
+        \item Las matrices elementales, que servirán para recuperar como productos las operaciones elementales de fila de las matrices.\pause
+        \item La definición de inversa de una matriz (cuando existe) y  algunas propiedades de la inversa de una matriz.
+
+    \end{itemize}
+
+    \vskip 2cm
+\end{frame}
+
+
+\begin{frame}{Sistemas de ecuaciones y multiplicación de matrices}
+        Sistema de $m$  ecuaciones lineales con $n$ incógnitas: 
+        \vskip .2cm
+            \begin{equation*}
+        \begin{matrix}
+        a_{11}x_1& + &a_{12}x_2& + &\cdots& + &a_{1n}x_n &= &y_1\\
+        \vdots&  &\vdots& &&  &\vdots \\
+        a_{m1}x_1& + &a_{m2}x_2& + &\cdots& + &a_{mn}x_n &=&y_m
+        \end{matrix}\tag{*}
+        \end{equation*}
+    
+    \vskip .4cm
+        donde $y_1, \ldots,y_m$ y $a_{i,j}$ ($1 \le i \le m$, $1 \le j \le n$) son números en $\K$. 
+ 
+\end{frame}
+
+\begin{frame}
+    Si denotamos
+    \begin{equation*}
+    A = \begin{bmatrix}
+    a_{11}& a_{12}& \cdots &a_{1n} \\
+    \vdots&\vdots  &  &\vdots \\
+    a_{m1} &a_{m2}&\cdots &a_{mn}\end{bmatrix},\qquad
+    X = \begin{bmatrix}
+    x_1 \\ \vdots \\ x_n 
+    \end{bmatrix},
+    \qquad 
+    Y = \begin{bmatrix}
+    y_1 \\ \vdots \\ y_n
+    \end{bmatrix},
+    \end{equation*}\pause
+    y hacemos el producto de matrices
+    \begin{equation*}
+    A\cdot X = \begin{bmatrix}
+    a_{11}& a_{12}& \cdots &a_{1n} \\
+    \vdots&\vdots  &  &\vdots \\
+    a_{m1} &a_{m2}&\cdots &a_{mn}\end{bmatrix} \begin{bmatrix} 
+    x_1 \\ \vdots \\ x_n 
+    \end{bmatrix}
+    \end{equation*}\pause
+    
+    obtenemos 
+    
+ 
+\end{frame}
+
+\begin{frame}
+    \begin{equation*}
+    \begin{bmatrix}
+    a_{11}x_1+ a_{12}x_2+ \cdots +a_{1n}x_n \\
+    \vdots \\
+    a_{m1}x_1 +a_{m2}x_2+\cdots +a_{mn}x_n\end{bmatrix} =
+    \begin{bmatrix}
+    y_1 \\ \vdots \\ y_m
+    \end{bmatrix}.
+    \end{equation*}
+    \vskip .4cm\pause
+    Como dos matrices son iguales si y sólo si sus coeficientes son iguales, la igualdad anterior significa que recuperamos el sistema de ecuaciones original. 
+    
+        \vskip .4cm
+        \pause
+    Esto nos dice que la notación matricial antes utilizada para expresar un sistema de ecuaciones
+    $$
+    AX = Y
+    $$\pause
+    es consistente con el, ahora definido, producto de matrices
+    $$
+    A \cdot X = Y.
+    $$
+\end{frame}
+
+\begin{frame}
+    
+
+    \begin{ejemplo}
+        Sea el sistema de ecuaciones
+    
+        $$
+        \left\{
+        \begin{array}{r}
+        3x+6y+3z+15w=-3\\
+        x+2y+3w=1\\
+        2x+4y+z+8w=0
+       \end{array}
+       \right.
+       $$
+      
+     La matriz del sistema es 
+
+     \begin{equation*} A= 
+        \begin{bmatrix}
+            3&6&3&15\\
+            1&2&0&3\\
+            2&4&1&8
+           \end{bmatrix}.     
+     \end{equation*}
+     
+     
+    \end{ejemplo}
+
+\end{frame}
+
+\begin{frame}
+    Si multiplicamos $A$ por el vector $X$ de la incógnitas obtenemos:
+     \begin{equation*}
+        \begin{bmatrix}
+            3&6&3&15\\
+            1&2&0&3\\
+            2&4&1&8
+           \end{bmatrix}
+        \begin{bmatrix}
+            x\\y\\z\\w
+        \end{bmatrix}
+        =     
+        \begin{bmatrix*}
+            3x+6y+3z+15w\\
+            x+2y+3w\\
+            2x+4y+z+8w
+        \end{bmatrix*}.     
+     \end{equation*}
+     Si igualamos $AX$ al vector columna correspondiente a las constantes, obtenemos 
+     \begin{equation*}AX = 
+        \begin{bmatrix}
+            3&6&3&15\\
+            1&2&0&3\\
+            2&4&1&8
+           \end{bmatrix}
+        \begin{bmatrix}
+            x\\y\\z\\w
+        \end{bmatrix}
+        =     
+        \begin{bmatrix*}
+            3x+6y+3z+15w\\
+            x+2y+3w\\
+            2x+4y+z+8w
+        \end{bmatrix*}
+        =
+        \begin{bmatrix*}
+            3\\
+            1\\
+            0
+        \end{bmatrix*}
+        .     
+     \end{equation*}
+     Como dos matrices son iguales si y solo si sus coeficientes son iguales,  en la primera fila recuperamos la primera ecuación, en la segunda, la segunda,  etc.
+\end{frame}
+
+
+\begin{frame}
+    \begin{block}{Pregunta}
+        \begin{itemize}
+            \item     ¿Cuál es la relación entre las operaciones elementales que nos llevan $A$ a una MERF y el producto de matrices?
+    \end{itemize}    
+    \end{block}\pause
+        \vskip .2cm
+        \begin{block}{Respuesta}
+            \begin{itemize}
+            \item Veremos que hacer una operación elemental en la matriz $A$ es lo mismo que multiplicar $A$ por una matriz elemental (a definir más abajo), \pause y que
+            \item reducir por filas a $A$  se obtiene multiplicando  repetidas veces a $A$ por matrices elementales.
+        \end{itemize}
+        \end{block}
+\end{frame}
+
+    \begin{frame}
+        
+        \begin{block}{Observación}
+            \begin{itemize}
+                    \item En el lenguaje matricial, al vector $v = (t_1,t_2,\ldots,t_n)\in\R^n$, lo representamos como la matriz columna
+                     \begin{equation*}
+                         \begin{bmatrix}
+                             t_1\\t_2\\\vdots\\ t_n
+                         \end{bmatrix}.
+                     \end{equation*}
+                         \vskip .4cm\pause
+            \item  Para saber si $v$,  es solución del sistema $AX=Y$ debemos verificar que vale la igualdad $Av=Y$. 
+            
+        \vskip .4cm
+        
+        
+            \item  \qquad $v\in\RR^n\,\mbox{ es solución de }\, AX=Y \Longleftrightarrow     Av=Y$.
+
+            \vskip .4cm    \pause
+    
+            \item  \qquad $\operatorname{Sol}(\text{*})=\left\{v\in\RR^n\mid Av=Y\right\} $.
+    
+        
+      \end{itemize}    
+    
+    \end{block}
+        % (como lo hacemos en un ecuación de números reales)
+    \end{frame}
+    
+    \begin{frame}
+        
+        Esta observación es útil como herramienta para demostrar ciertas  propiedades de los sistemas.
+        
+        \vskip .4cm\pause
+        
+        \begin{block}{Proposición}
+            Sean $v$ y $w$ soluciones del sistema homogéneo $AX=0$. Entonces $v+tw$ también es solución del sistema $AX=0$ para todo $t\in\mathbb{R}$. 
+        \end{block}\pause
+    
+            \begin{demostracion}
+                \vskip -.4cm
+        \begin{align*}
+            A(v+tw)&=Av+A(tw)&
+            \qquad&(\mbox{{distributividad}})\\
+            &=0+(At)w
+            &\qquad&(\mbox{{$AV=0$ + asociatividad}})\\
+            &=(tA)w
+            &\qquad&(\mbox{{conmutatividad $\times$ escalares}})\\
+            &=t(Aw)
+            &\qquad&(\mbox{{conmutatividad $\times$ escalares}})\\
+            &=t0
+            &\qquad&(\mbox{{$Aw=0$}})\\
+            &=0.&& 
+        \end{align*}\qed
+    \end{demostracion}
+    
+    \end{frame}
+    
+
+    
+    
+
+\begin{frame}{Matrices elementales}
+        \begin{definicion} Una matriz $m \times m$  se dice  \textit{elemental}\index{matriz!elemental} si fue obtenida por medio de una única operación elemental a partir de la matriz identidad $\Id_m$.
+    \end{definicion}
+    \pause
+
+\begin{ejemplo}
+
+
+
+Las  siguientes matrices (coloreadas) son elementales:
+\vskip .2cm
+\hfsetfillcolor{blue!30}
+\hfsetbordercolor{blue!30}
+
+$    \begin{bmatrix}
+        1&0&0 \\
+        0&1&0 \\
+        0&0&1
+    \end{bmatrix}
+    \stackrel{F_2 + 2F_1}{\longrightarrow}
+    \tikzmarkin{a}(0.0,-0.6)(0.0,0.8)
+    \begin{bmatrix}
+        1&0&0 \\
+        2&1&0 \\
+        0&0&1
+    \end{bmatrix}
+    \tikzmarkend{a}$, \qquad
+    $\begin{bmatrix}
+        1&0&0&0 \\
+        0&1&0&0 \\
+        0&0&1&0  \\
+        0&0&0&1 
+    \end{bmatrix}
+    \stackrel{F_1 \leftrightarrow F_4}{\longrightarrow}
+    \tikzmarkin{b}(0.0,-0.8)(0.0,1)
+    \begin{bmatrix}
+        0&0&0&1 \\
+        0&1&0&0 \\
+        0&0&1&0  \\
+        1&0&0&0 
+    \end{bmatrix}
+    \tikzmarkend{b}$, 
+    
+
+    $\begin{bmatrix}
+            1&0&0 \\
+            0&1&0 \\
+            0&0&1
+        \end{bmatrix}
+        \stackrel{3F_2}{\longrightarrow}
+        \tikzmarkin{c}(0.0,-0.6)(0.0,0.8)
+        \begin{bmatrix}
+            1&0&0 \\
+            0&3&0 \\
+            0&0&1
+        \end{bmatrix}
+        \tikzmarkend{c}
+        $. 
+
+    
+\end{ejemplo}
+
+    
+\end{frame}
+
+\begin{frame}{Matrices elementales  $2 \times 2$}
+    \pause
+        \begin{enumerate}
+            \item[\color{blue}{E1.}] Si $c \not=0$, multiplicar por  $c$ la primera fila y multiplicar $c$ por la segunda fila son, respectivamente,
+            \begin{equation*}
+            \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}\;\text{ y }\; \begin{bmatrix} 1& 0\\ 0&c\end{bmatrix},
+            \end{equation*}
+            \vskip.2cm\pause
+            \item[\color{blue}{E2.}] si  $c \in \K$, sumar a la fila 2 la fila 1 multiplicada por $c$ o sumar a la fila 1 la fila 2 multiplicada por $c$ son, respectivamente,
+            \begin{equation*}
+            \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}\;\text{ y }\; \begin{bmatrix} 1& c\\ 0&1\end{bmatrix}.
+            \end{equation*}
+            \vskip.2cm\pause
+            \item[\color{blue}{E3.}] Finalmente, intercambiando la fila 1 por la fila 2 obtenemos la matriz
+            \begin{equation*}
+            \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
+            \end{equation*}
+        \end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{Matrices elementales  $m \times m$}
+    \begin{enumerate}\pause
+        \item[\color{blue}{E1.}] Si $c \not=0$, multiplicar por  $c$ la fila $k$ de la matriz identidad, resulta en la matriz elemental que tiene todos 1's en la diagonal, excepto en la posición $k,k$ donde vale $c$,  es decir si $e(\Id_m) = [a_{ij}]$,  entonces
+        \begin{equation*}
+        a_{ij} = \left\{ 
+        \begin{matrix*}[l]
+        1 &\text{si $i=j$ e $i\ne k$,}\\
+        c &\text{si $i=j=k$,} \\
+        0 \quad&\text{si $i \ne j$.}
+        \end{matrix*}\right.
+        \end{equation*}\pause
+        Gráficamente,
+        {\footnotesize
+        \begin{align*}
+        &\begin{matrix}
+        {}^{}&{}^{}&{}^{}&{}^{}&\overset{k}{\downarrow}&{}^{}&{}^{}&{}^{}
+        \end{matrix} \\
+        \begin{matrix}
+        {}^{}\\
+        {}^{}\\
+        \overset{k}{\to}\\
+        {}^{}\\
+        {}^{}
+        \end{matrix}
+        &\begin{bmatrix}
+        1 & 0 &  &\cdots & 0  \\
+        \vdots  & \ddots  & & & \vdots \\
+        0 & \cdots &c &\cdots &0 \\
+        \vdots  &   & &\ddots & \vdots \\
+        0  & \cdots  & &\cdots & 1
+        \end{bmatrix}\tag{E1}
+        \end{align*}
+    }
+    \end{enumerate}
+\end{frame}
+
+
+
+
+\begin{frame}
+    \begin{enumerate}
+
+        \item[\color{blue}{E2.}]  si  $c \in \K$, sumar a la fila $r$  la fila $s$ multiplicada por $c$.
+         
+        \begin{equation*}\label{elem-tipo-2}
+        a_{ij} = \left\{ 
+        \begin{matrix*}[l]
+        1 &\text{si $i=j$}\\
+        c &\text{si $i=r$, $j=s$,} \\
+        0 \quad&\text{otro caso.}
+        \end{matrix*}\right.
+        \end{equation*}\pause
+        Gráficamente, 
+            {\footnotesize
+                \begin{align*}
+        &\begin{matrix}
+        {}^{}&{}^{}&{}^{}&{}^{}&\overset{r}{\downarrow}&{}^{}&{}^{}&{}^{}{}^{}\overset{s}{\downarrow}&{}^{}
+        \end{matrix} \\
+        \begin{matrix}
+        {}^{}\\{}^{}\\
+        \overset{r}{\to}\\
+        {}^{}\\
+        {}^{}\\
+        {}^{}
+        \end{matrix}
+        &\begin{bmatrix}
+        1 & 0 &  &\cdots &&& 0  \\
+        \vdots  & \ddots  & & &&& \vdots \\
+        0 & \cdots &1 &\cdots&c&\cdots &0 \\
+        \vdots  &   & &\ddots &&& \vdots \\
+        \vdots  &   & & &\ddots&& \vdots \\
+        0  & \cdots  & &\cdots &&& 1
+        \end{bmatrix}\tag{E2}
+        \end{align*}
+        }
+    \end{enumerate}
+\end{frame}
+
+
+
+
+\begin{frame}
+    \begin{enumerate}
+    \item[\color{blue}{E3.}]  Finalmente, intercambiar la fila $r$ por la fila $s$ resulta ser
+        \begin{equation*}\label{elem-tipo-3}
+        a_{ij} = \left\{ 
+        \begin{matrix*}[l]
+        1 &\text{si ($i=j$, $i \ne r$, $i \ne s$) o ($i=r$, $j=s$) o ($i=s$, $j=r$) }\\
+        0 \quad&\text{otro caso.}
+        \end{matrix*}\right.
+        \end{equation*}\pause
+        Gráficamente, 
+            {\footnotesize
+                \begin{align*}
+        &\begin{matrix}
+        {}^{}&{}^{}&{}^{}&{}^{}&\overset{r}{\downarrow}&{}^{}&{}^{}&{}^{}{}^{}\overset{s}{\downarrow}&{}^{}
+        \end{matrix} \\
+        \begin{matrix}
+        {}^{}\\{}^{}\\
+        \overset{r}{\to}\\
+        {}^{}\\
+        \overset{s}{\to}\\{}^{}\\
+        {}^{}
+        \end{matrix}
+        &\begin{bmatrix}
+        1 & \cdots &  &\cdots &&\cdots& 0  \\
+        \vdots  & \ddots  & & &&& \vdots \\
+        0 & \cdots &0 &\cdots&1&\cdots &0 \\
+        \vdots  &   & &\ddots &&& \vdots \\
+        0  & \cdots  &1 &\cdots &0& \cdots& 0 \\
+        \vdots  &   & & &&\ddots& \vdots \\
+        0  & \cdots  & &\cdots &&\cdots& 1
+        \end{bmatrix}\tag{E3}
+        \end{align*}
+        }
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+
+    Si  $e$ es una operación elemental por filas, denotemos, como antes, $e(A)$ la matriz que se obtien a partir de $A$ haciendo  la operación elemental $e$. 
+\vskip .4cm
+        \begin{teorema}\label{th-mrtx-elem}
+        Sea $A$ matriz $n \times n$, sea $e$ una operación elemental por fila , entonces $$e(A) = e(\Id_m)A.$$
+    \end{teorema}
+    \pause
+    \begin{block}{Demostración}
+        Hagamos en las siguientes pantallas la prueba para matrices $2 \times 2$. 
+        
+        \vskip .4cm\pause
+        
+        La prueba en general es similar.
+    \end{block}
+\vskip 2cm
+\end{frame}
+
+\begin{frame}
+        
+        \begin{enumerate}
+            \item[\color{blue}{E1.}] Si $c \not=0$, y sea $e$ la operación elemental de multiplicar por  $c$ la primera fila. Entonces, $E=e(\Id_2)$  resulta en la matriz elemental
+            \begin{equation*}
+                E = \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}.
+            \end{equation*}\pause
+            Ahora bien, 
+            \begin{multline*}
+                E A= \begin{bmatrix} c& 0\\ 0&1\end{bmatrix}
+            \begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} \\
+            = 
+            \begin{bmatrix} 
+            c\,.\,a_{11} + 0 \,.\,a_{21}&c\,.\,a_{12}+0\,.\,a_{22}\\
+            0\,.\,a_{11} + 1 \,.\,a_{21}&0\,.\,a_{12}+1\,.\,a_{22}\end{bmatrix} 
+            =
+            \begin{bmatrix} 
+            c\,.\,a_{11}&c\,.\,a_{12}\\
+            a_{21}&a_{22}\end{bmatrix} = e(A).
+            \end{multline*}\pause
+            De forma análoga se demuestra en el caso que la operación elemental sea  multiplicar la segunda fila por $c$.
+        \end{enumerate}
+
+        
+
+
+\end{frame}
+
+
+
+\begin{frame}
+            \begin{enumerate}
+        \item[\color{blue}{E2.}] Sea  $c \in \K$, y  sea $e$ la operación elemental de a la fila 2 le sumarle  la fila 1 multiplicada por $c$. Entonces. $E=e(\Id_2)$ resulta en la matriz elemental:
+        \begin{equation*}
+            E = \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}.
+        \end{equation*}\pause
+        Ahora bien,
+        \begin{equation*}
+            EA= \begin{bmatrix} 1& 0\\ c&1\end{bmatrix}    \begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
+        \begin{bmatrix} 
+        a_{11} &a_{12}\\
+        c\,.\,a_{11} + a_{21}&c\,.\,a_{12}+a_{22}\end{bmatrix} = e(A).
+        \end{equation*}
+        \vskip .4cm\pause
+        La demostración es análoga si la operación elemental es sumar a la fila 1 la fila 2 multiplicada por $c$.
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}
+                \begin{enumerate}
+
+        \item[\color{blue}{E3.}] Finalmente, sea $e$  intercambiar la fila 1 por la fila 2. Entonces,  $E=e(\Id_2)$ es la matriz elemental
+        \begin{equation*}
+            E = \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}.
+        \end{equation*}\pause
+        Ahora bien,
+        \begin{equation*}
+            EA= \begin{bmatrix} 0& 1\\ 1&0\end{bmatrix}    \begin{bmatrix} a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix} = 
+        \begin{bmatrix}
+        a_{21} &a_{22}\\
+        a_{11} &a_{12}\end{bmatrix} = e(A).
+        \end{equation*}
+    \end{enumerate}\qed
+\end{frame}
+
+
+\begin{frame}
+        \begin{corolario}
+        Sean $A$ y $B$ matrices $m \times n$. Entonces 
+        \begin{itemize}
+            \item     $B$ equivalente por filas a $A$ si y sólo si $B=PA$ donde $P$ es  producto de matrices elementales. 
+        \end{itemize}
+    
+        
+        Más aún, 
+        \begin{itemize}
+            \item si  $e_1,e_2,\ldots,e_k$ son operaciones elementales de fila y $E_i=e_i(\Id)$,  entonces
+            \begin{equation*}
+                B = e_k(e_{k-1}(\cdots(e_1(A))\cdots)) \Rightarrow B =  E_kE_{k-1}\cdots E_1A.
+            \end{equation*}
+        \end{itemize}
+        
+    \end{corolario}
+\vskip 2.5cm
+\end{frame}
+
+\begin{frame}
+        \begin{block}{Demostración     ($\Rightarrow$)} \pause
+        
+     Si $B$ equivalente por filas a $A$  existen operaciones elementales $e_1,\ldots,e_k$ tal que 
+     \begin{equation*}
+     B = e_k(e_{k-1}(\cdots(e_1(A))\cdots)). 
+     \end{equation*}
+     \pause
+Más formalmente, si 
+\begin{itemize}
+    \item $A_1 = e_1(A)$, 
+    \item $A_i = e_i(A_{i-1})$  para $i=2,\ldots,k$, y
+    \item $e_k(A_{k-1})= B$.
+\end{itemize}
+\pause Entonces,  si $E_i = e_i(\Id_m)$, por el teorema anterior
+ \begin{itemize}
+     \item $A_1 = E_1A$, 
+     \item $A_i = E_iA_{i-1}$  para $i=2,\ldots,k$, y
+     \item $E_kA_{k-1}= B$.
+ \end{itemize}
+ \pause
+En otras palabras 
+\begin{equation*}
+    B = PA \quad \text{ con }\quad P =  E_kE_{k-1}\cdots E_1.
+\end{equation*}
+        
+
+    \end{block} 
+
+
+\end{frame}
+
+\begin{frame}
+    \begin{block}{Demostración ($\Leftarrow$)}\pause
+                 Si $B= PA$, con  $P = E_kE_{k-1}\cdots E_1$ donde $E_i=e_i(\Id_m)$ es una matriz elemental,  entonces (razonamiento similar al anterior)
+        \begin{equation*}
+                B = PA = E_kE_{k-1}\cdots E_1A 
+        \end{equation*}\pause
+    Más formalmente, si
+    \begin{itemize}
+        \item $A_1 = E_1A$, 
+        \item $A_i = E_iA_{i-1}$  para $i=2,\ldots,k$, y
+        \item $E_kA_{k-1}= B$.
+    \end{itemize}\pause
+Luego, por el teorema anterior, 
+\begin{itemize}
+    \item $A_1 = e_1(A)$, 
+    \item $A_i = e_i(A_{i-1})$  para $i=2,\ldots,k$, y
+    \item $e_k(A_{k-1})= B$,
+\end{itemize}
+\pause
+        Por lo tanto, $B$ es equivalente por filas a $A$. \qed
+    \end{block}
+\end{frame}
+
+\begin{frame}{Matrices invertibles}
+    \begin{definicion} Sea $A$ una  matriz $n \times n$ con coeficientes en $\K$. 
+        
+        \vskip .2cm
+        Una matriz $B \in M_{n\times n}(\K)$  es \textit{inversa  de $A$}\index{matriz!inversa} si $BA=AB=\Id_n$. 
+        \vskip .2cm
+        En  ese caso,  diremos que  $A$ es \textit{invertible}.\index{matriz!invertible}
+    \end{definicion}
+    \vskip .4cm\pause
+    \begin{ejemplo}
+        La matriz $\begin{bmatrix} 2&-1\\0&1\end{bmatrix}$ tiene inversa 
+        $\begin{bmatrix} \frac12&\frac12\\0&1\end{bmatrix}$ pues es fácil comprobar que 
+        \begin{equation*}
+        \begin{bmatrix} 2&-1\\0&1\end{bmatrix}
+        \begin{bmatrix} \frac12&\frac12\\0&1\end{bmatrix} =
+        \begin{bmatrix} 1&0\\0&1\end{bmatrix}\quad\text{ y } \quad
+        \begin{bmatrix} \frac12&\frac12\\0&1\end{bmatrix} 
+        \begin{bmatrix} 2&-1\\0&1\end{bmatrix}=
+        \begin{bmatrix} 1&0\\0&1\end{bmatrix}.
+        \end{equation*}
+    \end{ejemplo}
+
+\end{frame}
+
+
+\begin{frame}{Preguntas (y respuestas)}
+    \begin{itemize}
+    \item ¿Toda matriz no nula tiene inversa?\pause
+    \vskip .2cm
+    Respuesta: \textbf{no}, por ejemplo
+    \begin{equation*}
+        \begin{bmatrix}
+        0&1\\
+        0&0
+        \end{bmatrix}
+    \end{equation*}
+    \vskip .3cm\pause
+    \item Si la matriz tiene una inversa ¿es única?
+    \vskip .2cm\pause
+        Respuesta: \textbf{sí.} Se  verá en la próxima pantalla. 
+    \vskip .3cm\pause
+    \item Si $BA=\Id_n$ ¿es cierto que $AB=\Id_n$? Es decir, ¿si $A$ tiene inversa a izquierda,  entonces tiene inversa a derecha y es la misma matriz?
+    \vskip .2cm\pause
+        Respuesta: \textbf{sí.} Se verá en la clase que viene.
+    
+    
+    
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+            \begin{proposicion}
+        Sea $A  \in M_{n\times n}(\K)$, 
+        \begin{enumerate}
+            \item    sean $B, C \in M_{n \times n}(\K)$ tales que $BA =\Id_n$ y $AC = \Id_n$, entonces $B=C$;
+            \item  si $A$ invertible la inversa es única.
+        \end{enumerate}
+    \end{proposicion}
+    \begin{proof} \pause
+        1.
+        \begin{equation*}
+        B = B\Id_n = B(AC) = (BA)C = \Id_nC = C.
+        \end{equation*}
+        \pause
+        2. 
+        
+        Sean $B$ y $C$ inversas de $A$, es decir $BA=AB=\Id_n$ y  $CA=AC=\Id_n$. En particular, $BA=\Id_n$ y $AC= \Id_n$, luego, por 1., $B=C$.  \qed
+    \end{proof}
+    
+\end{frame}
+
+\begin{frame}
+            \begin{definicion}
+        Sea $A\in M_{n\times n}(\K)$ invertible. A la única matriz inversa de $A$ la llamamos \textit{la matriz inversa de $A$} y la denotamos $A^{-1}$.
+    \end{definicion}
+
+    \pause
+    \begin{ejemplo}
+        Sea $A$ la matriz 
+        \begin{equation*}
+        \begin{bmatrix} 2&1&-2\\ 1&1&-2\\ -1&0&1
+        \end{bmatrix}.
+        \end{equation*}
+        Entonces,  $A$ es invertible y su inversa es
+        \begin{equation*}
+        A^{-1} = \begin{bmatrix} 1&-1&0\\ 1&0&2\\ 1&-1&1
+        \end{bmatrix}.
+        \end{equation*}
+        Esto se resuelve comprobando que $AA^{-1}=\Id_3$ y $A^{-1}A=\Id_3$.
+    \end{ejemplo} 
+\end{frame}
+
+\begin{frame}
+        \begin{teorema}\label{th-prod-inv-impl-inv}
+        Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Entonces
+        \begin{itemize}
+            \item \label{inv-itm1} si $A$ invertible,  entonces $A^{-1}$  es invertible y su inversa es $A$,  es decir 
+            $$(A^{-1})^{-1}=A.$$
+        \end{itemize}\pause
+    \end{teorema}
+    \vskip -.6cm
+    \begin{demostracion}\pause
+        \vskip -.3cm
+        \begin{align*}
+            AA^{-1}=\Id_n \quad &\Rightarrow \quad \text{la inversa a izquierda de $A^{-1}$ es $A$,} \\
+            A^{-1}A=\Id_n \quad &\Rightarrow \quad \text{la inversa a derecha de $A^{-1}$ es $A$,}
+        \end{align*}
+        \vskip .3cm\pause
+    Concluyendo: $A$  es la inversa de $A^{-1}$.
+\end{demostracion} \qed    
+
+    
+\end{frame}
+
+
+\begin{frame}
+            \begin{teorema}\label{th-prod-inv-impl-inv}
+        Sean $A$ y $B$ matrices $n \times n$ con coeficientes en $\K$. Entonces
+        \begin{itemize}
+
+            \item \label{inv-itm2} si $A$ y $B$ son invertibles, entonces $AB$ es invertible y 
+            $$(AB)^{-1} = B^{-1}A^{-1}.$$
+        \end{itemize}
+    \end{teorema}\pause
+    \vskip -.6cm
+    \begin{proof}\pause
+ Simplemente debemos comprobar que $B^{-1}A^{-1}$ es inversa a izquierda y derecha de $AB$:
+        \begin{equation*}
+        (B^{-1}A^{-1})AB = B^{-1}(A^{-1}A)B = B^{-1}\Id_nB =B^{-1}B = \Id_n.
+        \end{equation*}\pause
+        Análogamente,
+        \begin{equation*}
+        AB(B^{-1}A^{-1}) = A(BB^{-1})A^{-1} = A\Id_nA^{-1} =AA^{-1} = \Id_n.
+        \end{equation*} 
+    \end{proof}\qed
+
+\end{frame}
+
+\begin{frame}
+        
+    
+    \begin{observacion}
+        Si $A_1,\ldots,A_k$  son invertibles,  entonces $A_1\ldots A_k$ es invertible y su inversa es  $$(A_1\ldots A_k)^{-1} = A_k^{-1}\ldots A_1^{-1} .$$
+        El resultado es una generalización del punto (2) del teorema anterior y su demostración se hace por inducción en $k$ (usando (2)  del teorema anterior). Se deja como ejercicio al lector. 
+    \end{observacion}
+
+    \vskip .8cm
+    \pause
+    \begin{observacion}
+        La suma de matrices invertibles no necesariamente es invertible, por ejemplo $A+ (-A)= 0$ que no es invertible. 
+    \end{observacion}    
+\end{frame}
+
+\end{document}
+
+
+
+
+\begin{frame}
+
+\begin{equation*}
+    [A^n]_{jk} = \left\{ 
+        \begin{matrix*}[l]
+        1 &\text{si $k =j+n$}\\
+        0 &\text{si $k \not=j+n$.}
+        \end{matrix*}\right. \tag*{(HI)}
+\end{equation*}
+Luego,
+\vskip .3cm
+$[A^{n+1}]_{jk} = [A\cdot A^n]_{jk} = \sum_{r} a_{jr} [A^n]_{rk} = (*)$
+\vskip .3cm
+como $a_{jr} =1$ solo si $r = j+1$ y en las otra posiciones es $0$:
+\vskip .3cm
+$(*)     =  \stackrel{1}{\overbrace{a_{j,j+1}}} [A^n]_{j+1,k} =   [A^n]_{j+1,k} =(**)$
+\vskip .3cm
+(aca usar (HI) y seguir...)
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
