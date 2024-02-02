@@ -279,11 +279,11 @@ x& -3y & +3z & =&2 \\
             \end{equation*}
             Expandiendo la ecuación y tomando como factor común los $x_j$ ($1 \le j \le n$) obtenemos la ecuación
             \begin{multline*}
-            (c_{1}a_{11} + c_2a_{21}+ \cdots + c_ma_{m1})x_1 + \cdots +  	(c_{1}a_{1n} + c_2a_{2n}+ \cdots + c_ma_{mn})x_n = \\ = 	c_{1}y_{1} + c_2y_{2}+ \cdots + c_my_{m},
+            (c_{1}a_{11} + c_2a_{21}+ \cdots + c_ma_{m1})x_1 + \cdots +      (c_{1}a_{1n} + c_2a_{2n}+ \cdots + c_ma_{mn})x_n = \\ =     c_{1}y_{1} + c_2y_{2}+ \cdots + c_my_{m},
             \end{multline*}
             o,  escrito de otra forma, 
             \begin{equation}\label{comb-lin-eq}
-            \left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +  	\left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}	c_{i}y_{i},
+            \left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +      \left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}    c_{i}y_{i},
             \end{equation}
             la cual es una \textit{combinación lineal} de las ecuaciones dadas en \eqref{sist-eq-2}. 
             Observar que la ecuación \eqref{comb-lin-eq},  es  una ecuación lineal con $n$ incógnitas, es decir  es del mismo tipo que cada una de las ecuaciones que componen el sistema de ecuaciones original.
@@ -299,7 +299,7 @@ x& -3y & +3z & =&2 \\
                 \end{equation*}
                  entonces $(x_1,\ldots,x_n)$ también es solución de la ecuación
                  \begin{equation*}
-                 \left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +  	\left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}	c_{i}y_{i},
+                 \left(\sum_{i=1}^{m}c_{i}a_{i1}\right)x_1 + \cdots +      \left(\sum_{i=1}^{m}c_{i}a_{in}\right)x_n = \sum_{i=1}^{m}    c_{i}y_{i},
                  \end{equation*}
             \end{proposicion}
             \begin{proof}
@@ -600,19 +600,19 @@ x& -3y & +3z & =&2 \\
             \begin{subsection}{Operaciones elementales por fila}
                 Sea $A = [a_{ij}]$ una matriz $m \times  n$,  entonces la fila $i$ es 
                 $$
-                \begin{bmatrix} a_{i1}& a_{i2}& \cdots &a_{in} 	\end{bmatrix},
+                \begin{bmatrix} a_{i1}& a_{i2}& \cdots &a_{in}     \end{bmatrix},
                 $$
                 y la denotamos $F_i(A)$ o simplemente $F_i$ si $A$ está sobreentendido. Si $c\in \K$,  entonces 
                 $$
-                cF_i = \begin{bmatrix} ca_{i1}& ca_{i2}& \cdots &ca_{in} 	\end{bmatrix}
+                cF_i = \begin{bmatrix} ca_{i1}& ca_{i2}& \cdots &ca_{in}     \end{bmatrix}
                 $$
                 y
                 $$
-                F_r + F_s = \begin{bmatrix} a_{r1}+a_{s1}& a_{i2}+a_{s2}& \cdots &a_{in}+a_{sn} 	\end{bmatrix}.
+                F_r + F_s = \begin{bmatrix} a_{r1}+a_{s1}& a_{i2}+a_{s2}& \cdots &a_{in}+a_{sn}     \end{bmatrix}.
                 $$ 
                 Diremos que la fila $i$ es nula si 
                 $$
-                F_i = \begin{bmatrix} 0& 0& \cdots &0 	\end{bmatrix},
+                F_i = \begin{bmatrix} 0& 0& \cdots &0     \end{bmatrix},
                 $$
                 
                 \begin{definicion}
@@ -625,25 +625,25 @@ x& -3y & +3z & =&2 \\
                     \ref{elem-1}, \ref{elem-2} y \ref{elem-1} son las tres operaciones elementales por fila. Veamos más precisamente  el efecto que tienen ellas sobre matrices genéricas. Sea 
                     \begin{equation*}
                     A = \begin{bmatrix} 
-                    F_1 \\  \vdots \\	F_m
+                    F_1 \\  \vdots \\    F_m
                     \end{bmatrix},
                     \end{equation*} entonces 
                     \begin{enumelem}
                         \item si multiplicamos la fila $r$ por $c \not=0$, 
                         $$ e(A) = \begin{bmatrix} 
-                        F_1 \\ 	\vdots \\ cF_r \\ \vdots \\	F_m
+                        F_1 \\     \vdots \\ cF_r \\ \vdots \\    F_m
                         \end{bmatrix} $$ con $c \not=0$, o
                         \item si $r\not=s$, multiplicamos la fila $s$ por  $t \in \K$ y la sumamos a la fila $r$, 
                         $$ e(A)= \begin{bmatrix} 
-                        F_1 \\  \vdots \\ F_r + t F_s\\ \vdots \\	F_m
+                        F_1 \\  \vdots \\ F_r + t F_s\\ \vdots \\    F_m
                         \end{bmatrix}.$$
                         \item La última operación elemental es  permutar la fila $r$ por la fila $s$:
                         $$
                         A= \begin{bmatrix} 
-                        F_1 \\ 	\vdots \\ F_r \\ \vdots \\ F_s\\ \vdots \\	F_m
+                        F_1 \\     \vdots \\ F_r \\ \vdots \\ F_s\\ \vdots \\    F_m
                         \end{bmatrix} \quad \Rightarrow \quad
                         e(A)= \begin{bmatrix} 
-                        F_1 \\ 	\vdots \\ F_s \\ \vdots \\ F_r\\ \vdots \\	F_m
+                        F_1 \\     \vdots \\ F_s \\ \vdots \\ F_r\\ \vdots \\    F_m
                         \end{bmatrix}.$$
                     \end{enumelem}
                 \end{definicion} 
@@ -752,7 +752,7 @@ x& -3y & +3z & =&2 \\
                 \begin{ejemplo*}
                     Veamos que la matriz 
                     \begin{equation*}
-                    A= 	\begin{bmatrix}
+                    A=     \begin{bmatrix}
                     3 & 9 & 6 \\ 4&8&4 \\ 0&2&2
                     \end{bmatrix}
                     \end{equation*}
@@ -764,7 +764,7 @@ x& -3y & +3z & =&2 \\
                     \end{equation*}
                         \end{ejemplo*}
                     
-                    \begin{proof}[Solución]				
+                    \begin{proof}[Solución]                
                     Hasta ahora, no hemos aprendido ningún algoritmo o método que nos lleve una matriz a otra por operaciones elementales por fila, pero no es difícil, en este caso, encontrar una forma de llevar la matriz $A$ a la matriz $B$:
                     \begin{multline*}
                     \begin{bmatrix}
@@ -1161,17 +1161,17 @@ x& -3y & +3z & =&2 \\
         \end{equation*}
         apliquemos el método de Gauss:
         \begin{multline*}
-        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\	0 & 5 & -1 &  0  \end{array}\right]
+        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 2 & 1 & 1 &  2 \\    0 & 5 & -1 &  0  \end{array}\right]
         \stackrel{F_2 - 2F_1}{\longrightarrow} 
-        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\	0 & 5 & -1 &  0  \end{array}\right]
+        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\    0 & 5 & -1 &  0  \end{array}\right]
         \stackrel{F_3-F_1}{\longrightarrow} 
-        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\	0 & 0 & 0 & 0  \end{array}\right]
+        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 5 & -1 &  0 \\    0 & 0 & 0 & 0  \end{array}\right]
         \\
         \stackrel{F_2/5}{\longrightarrow} 
-        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 1 & -1/5 &  0 \\	0 & 0 & 0 &  0  \end{array}\right]
+        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & -2 & 1 &  1 \\ 0 & 1 & -1/5 &  0 \\    0 & 0 & 0 &  0  \end{array}\right]
         \stackrel{F_1+2 F_2}{\longrightarrow} 
-        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & 0 & 3/5 & 1 \\ 0 & 1 & -1/5 &  0 \\	0 & 0 & 0 &  0  \end{array}\right].
-        \end{multline*}	
+        \left[\begin{array}{@{}*{3}{r}|r@{}}1 & 0 & 3/5 & 1 \\ 0 & 1 & -1/5 &  0 \\    0 & 0 & 0 &  0  \end{array}\right].
+        \end{multline*}    
         Luego,  el sistema se reduce  a
         \begin{align*}
         x_1  + 3/5x_3  &= 1\\
@@ -1189,12 +1189,12 @@ x& -3y & +3z & =&2 \\
     \end{ejemplo*} 
     
     
-    Veamos ahora formalmente cuales son en forma genérica las soluciones de un sistema de ecuaciones usando  el  método de Gauss-Jordan. 
+    ¿Cómo saber si un  sistema de ecuaciones lineales tiene o no tiene solución? ¿Una o infinitas? Enunciemos ahora formalmente cuales son, en forma genérica, las soluciones de un sistema de ecuaciones usando  el  método de Gauss-Jordan. 
     
     \begin{teorema}\label{teorema-gauss-jordan-general}
-        Sea $AX=Y$ un sistema de $m$ ecuaciones lineales y $n$ incógnitas con coeficientes en $\K$. Sea $[B|Z]$ la matriz escalón reducida por fila equivalente por fila a $[A|Y]$. 
+        Sea $AX=Y$ un sistema de $m$ ecuaciones lineales y $n$ incógnitas con coeficientes en $\K$ y sea $[B|Z]$ la matriz escalón reducida por fila equivalente por fila a $[A|Y]$. 
 
-        Sea $r$ el número de filas no nulas de $B$ y $k_1,\ldots, k_r$ las columnas donde aparecen los primeros $1$'s en las primeras $r$ filas. Entonces, $k_1 < k_2 < \cdots< k_r$ y el sistema de ecuaciones asociado a $B$ es:
+        Sea $r$ el número de filas no nulas de $B$ y sean $k_1,\ldots, k_r$ las columnas donde aparecen los primeros $1$'s en las primeras $r$ filas con $k_1 < k_2 < \cdots< k_r$ y tenemos que el sistema de ecuaciones asociado a $B$ es:
         \begin{equation}
             \begin{matrix}
                 &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&= &z_1\\
@@ -1218,7 +1218,34 @@ x& -3y & +3z & =&2 \\
         donde las $x_j$ con $j \not= k_1,\ldots, k_r$ son variables libres y pueden tomar cualquier valor en $\K$.
     \end{teorema}
     \begin{proof}
-        La demostración es inmediata a partir de la forma de la matriz ampliada $[B|Z]$.
+        $(\Rightarrow)$ Si el sistema tiene solución entonces $z_{r+1}=z_{r+2}=\cdots z_m=0$, pues si alguno de estos $z$'s fuera no nulo tendriamos un absurdo.
+        \begin{align*}
+            \left\{
+                \begin{matrix}
+                    &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j&=& &z_1&\\
+                    &x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j&=& &z_2&\\
+                    & \vdots& &  &\vdots& \\
+                    &x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j&=& &z_r&\\
+                    & & & \vdots &&&\vdots &\\
+                    &&&{0} &{=}& &{z_{i}\neq0}  &\quad \text{$\leftarrow$ (absurdo)}\\
+                    & & & \vdots &&&\vdots
+                \end{matrix}
+            \right.
+        \end{align*}
+
+$(\Leftarrow)$ Si $z_{r+1}=z_{r+2}=\cdots z_m=0$, obtenemos 
+        \begin{equation*}
+            \left\{
+                \begin{matrix}\label{sist-eq-hom-merf0}
+                    x_{k_1} &= -\sum_{j \not= k_1,\ldots, k_r} b_{1j}\,x_j + z_1\\
+                    x_{k_2} &= -\sum_{j \not= k_1,\ldots, k_r} b_{2j}\,x_j+ z_2\\
+                    \vdots& \vdots \\
+                    x_{k_r}  &= -\textstyle\sum_{j \not= k_1,\ldots, k_r} b_{rj}\,x_j+z_r
+                \end{matrix}.
+            \right.
+        \end{equation*} 
+        Entonces, con cualquier asignación de valores a  los $x_j$ donde $j \not= k_1,\ldots, k_r$ se obtiene  una solución del sistema.
+        \qed
     \end{proof}
 
     Este teorema es uno de los más importantes de la materia y  se usará repetidamente en los próximos capítulos.
@@ -1263,7 +1290,7 @@ x& -3y & +3z & =&2 \\
         Como  $R$ es reducida por fila y no tiene filas nulas, cada fila tiene  un $1$ en alguna entrada y en la columna donde está el $1$ todos las otras entradas son nulas, por  lo tanto hay $n$ $1$'s principales distribuidos en $n$ columnas. Concluyendo: hay un $1$ por columna y en esa columna todas las demás entradas son nulas. 
         
         Ahora bien como $R$ es una MERF, la primera fila contiene el $1$ que está más a la izquierda, que no puede estar en otra ubicación que no sea la primera (pues si no la primera columna sería nula). Con el mismo razonamiento vemos que en la segunda fila hay un $1$ en la columna $2$ y en general en la fila $k$-ésima hay un $1$ en la columna $k$. Luego $R=\Id_n$.
-    \end{proof}			
+    \end{proof}            
     
     \begin{teorema}
         Sea $A$ una matriz $n \times n$. Entonces, $A$ es equivalente por filas a la matriz $\Id_n$  si y sólo si el sistema $AX = Y$ tiene un única solución. 
