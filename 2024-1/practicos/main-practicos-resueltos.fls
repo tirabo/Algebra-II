@@ -1114,8 +1114,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/nowacki/kurier/ec-kurierr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/nowacki/kurier/ec-kurierb.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/nowacki/kurier/ec-kurierr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/nowacki/kurier/ec-kurierb.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/nowacki/kurier/ec-kurierr.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/nowacki/kurier/ec-kurierr-sc.tfm
 INPUT ./practico-2-resuelto.tex
 INPUT practico-2-resuelto.tex
 INPUT ./practico-2-resuelto.tex
@@ -1151,6 +1149,10 @@ INPUT ./practico-7-resuelto.tex
 INPUT practico-7-resuelto.tex
 INPUT ./practico-7-resuelto.tex
 INPUT practico-7-resuelto.tex
+INPUT ./practico-8-resuelto.tex
+INPUT practico-8-resuelto.tex
+INPUT ./practico-8-resuelto.tex
+INPUT practico-8-resuelto.tex
 INPUT main-practicos-resueltos.aux
 INPUT ./main-practicos-resueltos.out
 INPUT ./main-practicos-resueltos.out
