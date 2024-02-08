@@ -1,0 +1,599 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+%\usepackage{makeidx}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usepackage[customcolors]{hf-tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools}
+\usepackage{stackrel}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usepackage{polynom}
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+\renewcommand\labelitemi{$\circ$}
+\usepackage{nicematrix} %https://ctan.dcc.uchile.cl/macros/latex/contrib/nicematrix/nicematrix.pdf
+
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand{\im}{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand\sgn{\operatorname{sgn}}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\figurename }{Figura}
+
+\include{definiciones}
+
+
+
+
+
+\title[Clase 10 - Autovalores y autovectores]{Álgebra/Álgebra II \\ Clase 10 - Autovalores y autovectores}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+}
+\date[23/04/2024]{23 de abril de 2024}
+
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}{Resumen}
+	
+    En esta clase definiremos
+    \begin{itemize}\pause
+     \item autovalor\pause
+     \item autovector\pause
+     \item polinomio característico
+    \end{itemize}\pause
+    Y explicaremos como calcularlos.
+    
+    \
+    \pause
+   El tema de esta clase  está contenido de la sección 2.9  del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
+    \end{frame}
+    
+    
+    \begin{frame}
+    \begin{exampleblock}{Definición}
+    Sea $A\in\K^{n\times n}$. Se dice que {$\lambda\in\K$} es un \textit{autovalor} de $A$ y si existe \textit{$v\in\K^{n}$} no nulo tal que 
+    \begin{align*}
+    A v=\lambda v .
+    \end{align*}
+    En ese caso decimos que $v$  es un \textit{autovector} asociado a $\lambda$
+    \end{exampleblock}\pause
+    \vskip .5cm
+    \begin{exampleblock}{Ejemplo}
+    $1$ es un autovalor de  $\Id_n$ y todo $v\in\K^n$ es un autovector asociado a $1$ pues
+    \begin{align*}
+    \Id_n v= v 
+    \end{align*}
+    \end{exampleblock}
+    \end{frame}
+    
+    \begin{frame}
+    
+    
+    
+    \begin{observacion}
+    El autovalor puede ser $0$ pero el autovector \textit{nunca} puede ser $0$ 
+    \end{observacion}
+    \vskip .8cm\pause
+    
+    \begin{exampleblock}{Ejemplo}
+    $0$ es un autovalor de  
+    $\left[\begin{array}{cc} 0&1\\0&0 \end{array}\right]$
+    y $\left[\begin{array}{c}1\\0 \end{array} \right]$ es un autovector asociado a $0$ pues
+    \begin{align*}
+    \left[\begin{array}{cc}0&1\\0&0\end{array}\right]
+    \left[\begin{array}{c}1\\0 \end{array}\right]
+    =
+    \left[\begin{array}{c}0\\0 \end{array}\right]=
+    0\left[\begin{array}{c}1\\0 \end{array}\right]
+    \end{align*}
+    \end{exampleblock}
+    \end{frame}
+    
+
+    \begin{frame}
+
+    \begin{block}{Observación}
+    La existencia de autovalores dependen del cuerpo donde estamos trabajando. 
+    \vskip .6cm\pause
+    Por ejemplo sea $A \in \R^{2\times 2}$ 
+    $$
+    A=\begin{bmatrix} 0&-1\\1&0\end{bmatrix}.
+    $$ 
+    Entonces,  $A$ no tiene autovalores reales. \pause
+    \vskip .6cm
+    Veremos que si permitimos autovalores complejos entonces $A$ sí tiene autovalores.
+    \end{block}
+
+    \end{frame}
+    
+
+    
+    
+    \begin{frame}
+    
+    \begin{exampleblock}{Definición}
+    
+    Dado $i\in\{1, ..., n\}$, se denota \textit{$e_i$} al vector de $\K^n$ cuyas coordenadas son todas ceros excepto la coordenada $i$ que es un $1$.\pause
+    \begin{align*}
+    e_i=\begin{bmatrix}0\\ \vdots\\1\\ \vdots\\0\end{bmatrix}
+    \end{align*}
+    El conjunto $\{e_1, ..., e_n\}$ se llama \textit{base canónica} de $\K^n$.
+    \end{exampleblock}
+    \pause
+
+    \begin{exampleblock}{Ejemplo}
+    En $\K^3$ la base canónica es 
+    $e_1 = \begin{bmatrix} 1\\0\\0 \end{bmatrix}$, 
+    $e_2 = \begin{bmatrix} 0\\1\\0\end{bmatrix}$, 
+    $e_3 = \begin{bmatrix} 0\\0\\1\end{bmatrix}$.
+    \end{exampleblock}
+
+    \end{frame}
+    
+
+
+    \begin{frame}
+    \begin{exampleblock}{Ejemplo: Matriz diagonal}
+    Sea $D\in\K^{n\times n}$ una matriz diagonal con entradas $\lambda_1$, $\lambda_2$, ..., $\lambda_n$.
+    \vskip .2cm
+    Entonces $e_i$ es un autovector con autovalor $\lambda_i$  $\,\forall\, i\in\{1, ..., n\}$
+    \end{exampleblock}   \pause
+    
+    \begin{demostracion}   \pause
+        Recordar que la multiplicación $De_i$ se corresponde con multiplicar cada fila de $e_i$ por el elemento correspondiente de la diagonal. 
+    \vskip .2cm
+        Como las filas (en este caso entradas) de $e_i$ son todas nulas excepto un $1$ en la entrada $i$ queda queda
+        $$
+        De_i=\begin{bmatrix} 0\\ \vdots\\\lambda_i\\ \vdots\\0 \end{bmatrix}
+        =\lambda_i e_i
+        $$
+        \qed
+    \end{demostracion}
+  
+    \end{frame}
+    
+
+    
+    \begin{frame}
+    
+    \begin{block}{Observación}
+    Puede haber varios autovectores con el mismo autovalor.    \pause
+    \end{block}
+    
+    Vimos esto en el ejemplo con $\Id$ y en el caso de la diagonal si tiene entradas iguales sucede lo mismo. 
+    \pause
+    \
+    
+    Más aún
+    el conjunto de todos los autovectores con un mismo autovalor es \textit{invariante por la suma y la multiplicación por escalares.}
+    \pause
+    \
+    
+    En particular los múltiplos de un autovector son autovectores con el mismo autovalor.
+    
+    \end{frame}
+         
+  
+    \begin{frame}
+    
+    \begin{block}{Definición}
+    Sea $A\in\K^{n\times n}$ y $\lambda\in\K$ un autovalor de $A$. El \textit{autoespacio} asociado a $\lambda$ es
+    $$
+    V_\lambda=
+    \{v\in\K^n\mid A v=\lambda v\}.
+    $$
+    Es decir, \textit{$V_\lambda$} es el conjunto  formado por todos los autovectores asociados a $\lambda$ y el vector nulo.
+    \end{block}
+    \pause
+    
+    \begin{teorema}
+    Si $v$ y $w$ pertenecen al autoespacio de $A$ asociado a $\lambda$, entonces $v+tw$ también pertenece a $V_\lambda$.
+    \end{teorema}
+    \pause
+    \begin{demostracion}   \pause
+     $$
+    A(v+t w)=A v+t A w=\lambda v+t\lambda w=\lambda(v+t w).
+    $$
+    \qed
+    \end{demostracion}
+    
+    \end{frame}
+
+
+    
+    \begin{frame}
+    
+    \begin{proposicion}
+    Un autovector no puede tener dos autovalores distintos. 
+    \vskip .2cm
+    \pause
+    Por lo tanto autovectores con autovalores distintos son distintos.
+    \end{proposicion}   \pause
+    
+   \begin{demostracion}   \pause
+    Supongamos que $Av=\lambda v$ y $Av=\mu v$. Entonces $\lambda v=\mu v$ y por lo tanto 
+    $$
+    (\lambda-\mu) v=
+    \begin{bmatrix}
+    (\lambda-\mu)v_1\\ \vdots\\(\lambda-\mu)v_n
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    0\\ \vdots\\0
+    \end{bmatrix}
+    $$
+    
+    Como $v\neq0$ por ser autovector, alguna de sus coordenadas es no nula. Entonces $\lambda-\mu$ tiene que ser $0$ o dicho de otro modo $\lambda=\mu$. \qed
+   \end{demostracion}
+    
+     
+    \end{frame}
+    
+
+    \begin{frame}
+    
+    \begin{exampleblock}{Problema}
+    Hallar los autovalores de $A\in\K^{n\times n}$ y para cada autovalor, describir explícitamente o paramétricamente el autoespacio asociado
+    \end{exampleblock}\pause
+    
+    \begin{itemize}
+        \item En otras palabras nos preguntamos que $\lambda\in\K$ y  que $v\in\K^{n}$ satisfacen
+        $$
+        A v=\lambda v
+        \Longleftrightarrow
+        A v-\lambda v=0
+        \Longleftrightarrow
+        (A-\lambda\Id)v=0 .
+        $$\pause
+        \item La última igualdad es un sistema de ecuaciones lineales. Queremos ver entonces si existe un $v\in\K^{n}$ no nulo que sea solución del sistema homogéneo
+        \begin{equation*}
+            (A-\lambda\Id)X=0.\tag{*}
+        \end{equation*}\pause
+        \item  Un  sistema $BX =0$ tiene solución no trivial sii $\det(B)=0$. Por lo tanto (*) tiene  solución no trivial si y sólo si 
+        $$
+        \det(A-\lambda\Id)=0.
+        $$ 
+    \end{itemize}
+
+    \end{frame}
+
+
+    \begin{frame}
+    
+    \begin{conclusion}
+    $\lambda\in\K$ es un autovalor de $A$ y $v\in\K^n$ es un autovector asociado a $\lambda$ si y sólo si
+    \begin{itemize}
+     \item $\det(A-\lambda\Id)=0$
+     \item $v$ es solución del sistema homogéneo $(A-\lambda\Id)X=0$
+    \end{itemize}
+    \end{conclusion}
+    \vskip .6cm\pause
+    Esta es casi la respuesta a nuestro problema. Para dar una respuesta más operativa introducimos el siguiente polinomio.
+    \end{frame}
+    
+    \begin{frame}
+    
+    \begin{exampleblock}{Definición}
+    
+    Sea $A\in\K^{n\times n}$. El \textit{polinomio característico} de $A$ es
+    \begin{align*}
+    \chi_A(x)=\det(A-x\Id)
+    \end{align*}
+    \end{exampleblock}\pause
+    \vskip .2cm
+    \begin{exampleblock}{Ejemplo}
+    El polinomio  característico de $\Id_n$ es 
+    \begin{align*}
+    \chi_{\Id_n}(x)=(1-x)^n 
+    \end{align*}
+    \end{exampleblock} \vskip -.6cm\pause
+    \begin{demostracion}\pause
+        $\Id-x\Id=(1-x)\Id$ es una matriz diagonal con $(1-x)$ en todas las entradas de la diagonal. Entonces el determinante es el producto de la diagonal. \qed
+    \end{demostracion}
+
+    \end{frame}
+    
+\begin{frame}
+    En general,  si $A = [a_{ij}]$ matriz $n \times n$, tenemos que
+		\begin{equation*}
+		\chi_A(x) = \det(A- x\,Id) = \det
+		\begin{bmatrix}
+		a_{11}-x&a_{12}&\cdots&a_{1n}\\
+		a_{21}&a_{22}-x&\cdots&a_{2n}\\
+		\vdots&\vdots&\ddots&\vdots\\
+		a_{n1}&a_{n2}&\cdots&a_{nn}-x\\
+		\end{bmatrix}
+        \end{equation*} 
+        y el polinomio característico de $A$ es un polinomio  de grado $n$, \pause más precisamente  
+		$$
+		\chi_A(x) =(-1)^n x^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
+		$$ 
+		Esto se puede demostrar por inducción. 
+		
+\end{frame}
+
+
+
+    \begin{frame}
+        
+    \begin{exampleblock}{Ejemplo}
+    El polinomio  característico de 
+    $A= \begin{bmatrix}  0&1\\0&0  \end{bmatrix}$ es 
+    $\chi_{A}(x)=x^2$.
+    \end{exampleblock}\vskip -.4cm\pause
+    \begin{demostracion}\pause
+        $A-x\Id=\begin{bmatrix}  -x&1\\0&-x \end{bmatrix}$ es triangular superior. Entonces el determinante es el producto de la diagonal. \qed
+    \end{demostracion}
+ 
+    \vskip .2cm
+    
+    \begin{exampleblock}{Ejemplo}
+    Si
+    $
+    A=
+    \begin{bmatrix}  a&b\\c&d  \end{bmatrix}$, entonces $ \chi_{A}(x)=(a-x)(d-x)-bc $.
+    \end{exampleblock}
+    \vskip -.2cm\pause
+    \begin{demostracion}\pause
+        $A-x\Id=\begin{bmatrix} a-x&b\\c&d-x\end{bmatrix}$ y usamos la fórmula del determinante de una $2\times 2$. \qed
+    \end{demostracion}
+
+    \end{frame}
+    
+ 
+
+    \begin{frame}
+    
+   
+		
+		\begin{proposicion}\label{autovalores}
+			Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico.  
+		\end{proposicion}\pause
+		\begin{proof}\pause
+			\begin{tabular}{rl}
+    $\lambda$ es autovalor &$\Leftrightarrow$ existe $v \ne 0$ tal que $Av = \lambda v$ \\
+                &\\
+                &$\Leftrightarrow$ $0 = Av-\lambda v  =   Av-\lambda \Id v =  (A-\lambda \Id)v$ \\
+                &\\
+                &$\Leftrightarrow$ $(A-\lambda \Id)X=0$ tiene solución no trivial \\
+                &\\
+                &$\Leftrightarrow$ $\chi_A(\lambda) = \det(A-\lambda \Id) =0$ \\
+                &\\
+                &$\Leftrightarrow$ $\lambda$ es raíz del polinomio característico.  
+            \end{tabular}
+			 
+			\qed  
+		\end{proof}
+    
+    \end{frame}
+    
+\begin{frame}
+    \begin{block}{Método para encontrar autovalores y autovectores de $A$}
+        \vskip .2cm\pause
+        \begin{enumerate}
+            \item Calcular $\chi_A(x) =\det(A-x\Id{})$,
+            \vskip .2cm\pause
+            \item Encontrar las raíces $\lambda_1,\ldots,\lambda_k$ de $\chi_A(x)$.
+            
+            (no siempre se puede. No hay una fórmula o método  general para encontrar las raíces de polinomios de grado 5 o superior).\pause
+            \vskip .2cm
+            \item Para cada $i$ con $1 \le i \le k$ resolver el sistema de ecuaciones lineales:
+            \begin{equation*}
+                (A-\lambda_i\Id)X = 0.
+            \end{equation*}
+            Las soluciones no triviales  de este sistema son los autovectores con autovalor $\lambda_i$.
+
+        \end{enumerate}
+    \end{block}
+\end{frame}
+    
+\begin{frame}
+    \begin{ejemplo}
+        Encontrar autovalores y autovectores de la matriz 
+        \begin{equation*}
+            A=\begin{bmatrix}
+                3&-2 \\ 1&0
+            \end{bmatrix}.
+        \end{equation*}
+    \end{ejemplo}\pause
+    \vskip -.4cm
+    \begin{solucion}\pause
+        \begin{enumerate}
+            \item  $            \chi_A(x)= \det\left[\begin{matrix}
+            3-x& -2 \\ 1 & -x
+            \end{matrix} \right]= x^2 -3x +2   =(x -1)(x -2)$.\pause
+            \item Los autovalores de $A$ son las raíces de  $\chi_A(x)$: $1$ y $2$.\pause
+            \item Debemos resolver los sistemas de ecuaciones:
+            \begin{equation*}
+                (A - \Id)X = 0,\qquad (A - 2\Id)X = 0.
+            \end{equation*}
+        \end{enumerate}
+    \end{solucion}
+\end{frame}
+
+\begin{frame}
+    Es decir,  debemos resolver los sistemas
+    \begin{align*}
+        \begin{bmatrix}
+            3 - 1&-2 \\ 1&-1
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1\\x_2
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0\\0
+        \end{bmatrix}
+        \qquad &\Rightarrow \qquad 
+        \begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix}
+        \begin{bmatrix}
+            x_1\\x_2
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0\\0
+        \end{bmatrix} \tag{S1}
+        \\
+        &
+        \\
+        \begin{bmatrix}
+            3 - 2&-2 \\ 1&-2
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1\\x_2
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0\\0
+        \end{bmatrix}
+        \qquad &\Rightarrow \qquad 
+        \begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix}
+        \begin{bmatrix}
+            x_1\\x_2
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0\\0
+        \end{bmatrix} \tag{S2}
+    \end{align*}
+\vskip .4cm\pause
+    (S1) $\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix} \stackrel{F_1 -2F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-1 \end{bmatrix}$  $\Rightarrow$ $x_1-x_2=0$ $\Rightarrow$ $(t,t)$ es solución. 
+    \vskip .4cm
+    (S2)  $\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix} \stackrel{F_2 -F_1}{\longrightarrow} \begin{bmatrix}1&-2 \\ 0&0\end{bmatrix}$  $\Rightarrow$ $x_1-2x_2=0$ $\Rightarrow$ $(2t,t)$ es solución. 
+
+\end{frame}
+
+
+\begin{frame}
+    \begin{block}{Respuesta final}
+        \begin{itemize}
+            \item Los autovalores de $A$ son $1$ y $2$.\pause
+            \item El auto espacio correspondiente al  autovalor $1$ es
+            \begin{equation*}
+                V_1 = \{t(1,1): t \in \R\}.
+            \end{equation*}\pause
+            \item El auto espacio correspondiente al  autovalor $2$ es
+            \begin{equation*}
+                V_2 = \{t(2,1): t \in \R\}.
+            \end{equation*}
+        \end{itemize}
+\qed\vskip 2cm
+        
+    \end{block}
+\end{frame}
+
+
+    
+    \begin{frame}
+
+    \begin{ejemplo}
+     Sea $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix} \in \R^2$. Encontrar los autovalores \textit{reales} de $A$.    
+    \end{ejemplo}\pause
+    \begin{solucion}\pause
+        $A-x\Id= \begin{bmatrix}-x&-1\\1&-x\end{bmatrix}$, luego
+        \begin{align*}
+            \chi_A(x)=x^2+1.
+            \end{align*}
+\vskip .2cm
+        El polinomio no tiene raíces reales, por lo tanto no existen autovalores reales (obviamente no hay autovectores).
+
+        \qed
+    \end{solucion}
+\end{frame}
+
+
+    
+\begin{frame}
+    Sin embargo si nos dicen 
+    \vskip .2cm
+    \textit{encontrar autovalores y autovectores complejos de la matriz  $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix}$}, 
+    \vskip .2cm
+    la respuesta va a ser diferente. \pause
+    \vskip .3cm
+    Lo  que ocurre es que 
+    \begin{align*}
+    \chi_A(x)=x^2+1=(x+i)(x-i),
+    \end{align*}
+    y este polinomio \textit{sí} tiene raíces (complejas): $i$ y $-i$.\pause
+    \vskip .2cm
+  En este caso, entonces, $i$ y $-i$ son los autovalores  y es fácil ver que
+  \begin{equation*}
+      V_i = \left\{ \omega(i,1): \omega\in \C \right\}, \qquad  V_{-i} = \left\{ \omega(-i,1): \omega\in \C \right\}.
+  \end{equation*} 
+    
+    \end{frame}
+\begin{frame}
+    Nunca está de más comprobar los resultados:
+    \pause
+    \begin{align*}
+        \begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}i\\1\end{bmatrix} &= \begin{bmatrix}-1\\i\end{bmatrix} = i \begin{bmatrix}i\\1\end{bmatrix}.\\
+        \\
+        \begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}-i\\1\end{bmatrix} &= \begin{bmatrix}-1\\-i\end{bmatrix} = (-i) \begin{bmatrix}-i\\1\end{bmatrix}.
+    \end{align*}
+
+    \vskip 2cm
+\end{frame}
+
+
+\end{document}
+
