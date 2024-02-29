@@ -80,12 +80,10 @@
     
     
     
-    \begin{enumerate}
-    \setlength\itemsep{1.1em}
+\begin{enumerate}[topsep=6pt, itemsep=.4cm]
 
 \item Expresar los siguientes números complejos en la forma $a +i b$.
 Hallar el módulo y conjugado de cada uno de ellos, y graficarlos.
-
 \begin{multicols}{3}
 \begin{enumerate}
 \item $(-1+i) (3-2i)$
@@ -94,94 +92,84 @@ Hallar el módulo y conjugado de cada uno de ellos, y graficarlos.
 \end{enumerate}
 \end{multicols}
 
+
+
 \rta
-
-\
-
 \begin{enumerate}
     \item $(-1+i) (3-2i) = -3 + 3i + 2i - 2i^2 = -3 + 5i + 2 = \boxed{-1 + 5i}$
 
-\
-
 $ | (-1+i) (3-2i) | = | -1 + 5i | = \sqrt{ (-1)^2 + 5^2 } = \sqrt{1 + 25 } = \boxed{\sqrt{ 26}}$
 
-\
 
 $ \overline{ (-1+i) (3-2i) } = \overline { -1 + 5i } = \boxed{ -1 -5i }$
 
-\
+\vskip .4cm
 
 \item $i^{131} - i^9 +1 = i^{4 \cdot 32 + 3} - i^{4 \cdot 2 + 1} +1 = 
 (i^4)^{32} \cdot i^3 - (i^4)^2 \cdot i^1 + 1 = i^3 - i +1 = -i -i +1 = \boxed{ 1-2i}$
 
-\
 
 $ | i^{131} - i^9 +1 | = | 1-2i | = \sqrt{ 1^2 + (-2)^2 } = \sqrt{1 + 4 } = \boxed{\sqrt{ 5}}$
 
-\
 
 $ \overline{ i^{131} - i^9 +1  } = \overline { 1-2i} = \boxed{ 1+2i}$
 
-\
+\vskip .4cm
 
 \item $\dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} = \dfrac{(1+i)(1-2i)+(1-i)(1+2i)}{1^2 + 2^2} = \dfrac{2 Re( 1 - 2i + i - 2 i^2) }{5} = \boxed{ \dfrac{6}{5} }$
 
-\
 
 $ \left| \dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} \right| = \left| \dfrac{6}{5} \right| = \boxed{ \dfrac{6}{5} }$
 
-\
 
-\
-
-$ \overline{\; \dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} \;} = \overline {\; \dfrac{6}{5} \;} = \boxed{ \dfrac{6}{5} }$
+$ \overline{\; \dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} \;} = \overline {\; \dfrac{6}{5} \;} = \boxed{ \dfrac{6}{5} }$ \qed
 \end{enumerate}
 
 \begin{figure}[!h]
 
 \begin{subfigure}{.3\textwidth}
-	\begin{tikzpicture}
-		\draw[->] (-2.0,0) -- (1.0,0) node[right] {}; % eje x
-		\draw[->] (0,-1) -- (0,6) node[above] {}; % eje y
-		\draw[fill] (-1,5) circle [radius=0.05];
-		\node [above left] at (-1,5) {$-1 + 5 i$};
-		\node [below] at (-1,-3pt) {$-1$};
-		\node [right] at (3pt,5) {$5$};
-		\draw (-1,-3pt) -- (-1,3pt);
-		\draw (-3pt, 5) -- (3pt, 5);
-		\draw [dashed] (0,5) -- (-1,5);
-		\draw [dashed] (-1,0) -- (-1,5);
-	\end{tikzpicture}
+    \begin{tikzpicture}[scale=0.8]
+        \draw[->] (-2.0,0) -- (1.0,0) node[right] {}; % eje x
+        \draw[->] (0,-1) -- (0,6) node[above] {}; % eje y
+        \draw[fill] (-1,5) circle [radius=0.05];
+        \node [above left] at (-1,5) {$-1 + 5 i$};
+        \node [below] at (-1,-3pt) {$-1$};
+        \node [right] at (3pt,5) {$5$};
+        \draw (-1,-3pt) -- (-1,3pt);
+        \draw (-3pt, 5) -- (3pt, 5);
+        \draw [dashed] (0,5) -- (-1,5);
+        \draw [dashed] (-1,0) -- (-1,5);
+    \end{tikzpicture}
 \caption{}
 \end{subfigure}
 \begin{subfigure}{.3\textwidth}
-	\begin{tikzpicture}
-		\draw[->] (-1.0,0) -- (2.0,0) node[right] {}; % eje x
-		\draw[->] (0,-3) -- (0,1) node[above] {}; % eje y
-		\draw[fill] (1,-2) circle [radius=0.05];
-		\node [below right] at (1,-2) {$1 -2 i$};
-		\node [above] at (1,3pt) {$1$};
-		\node [left] at (-3pt,-2) {$-2$};
-		\draw (1,-3pt) -- (1,3pt);
-		\draw (-3pt, -2) -- (3pt, -2);
-		\draw [dashed] (0,-2) -- (1,-2);
-		\draw [dashed] (1,0) -- (1,-2);
-	\end{tikzpicture}
+    \begin{tikzpicture}[scale=0.8]
+        \draw[->] (-1.0,0) -- (2.0,0) node[right] {}; % eje x
+        \draw[->] (0,-3) -- (0,1) node[above] {}; % eje y
+        \draw[fill] (1,-2) circle [radius=0.05];
+        \node [below right] at (1,-2) {$1 -2 i$};
+        \node [above] at (1,3pt) {$1$};
+        \node [left] at (-3pt,-2) {$-2$};
+        \draw (1,-3pt) -- (1,3pt);
+        \draw (-3pt, -2) -- (3pt, -2);
+        \draw [dashed] (0,-2) -- (1,-2);
+        \draw [dashed] (1,0) -- (1,-2);
+    \end{tikzpicture}
 \caption{}
 \end{subfigure}
 \begin{subfigure}{.3\textwidth}
-	\begin{tikzpicture}
-		\draw[->] (-1.0,0) -- (1+6/5,0) node[right] {}; % eje x
-		\draw[->] (0,-1) -- (0,1) node[above] {}; % eje y
-		\draw[fill] (6/5,0) circle [radius=0.05];
-%		\node [above right] at (6/5,0) {$ \frac{6}{5}$};
-		\node [above] at (6/5,3pt) {$\frac{6}{5}$};
-%		\node [left] at (-3pt,-2) {$-2$};
-		\draw (6/5,-3pt) -- (6/5,3pt);
-%		\draw (-3pt, -2) -- (3pt, -2);
-%		\draw [dashed] (0,-2) -- (1,-2);
-%		\draw [dashed] (1,0) -- (1,-2);
-	\end{tikzpicture}
+    \begin{tikzpicture}[scale=0.8]
+        \draw[->] (-1.0,0) -- (1+6/5,0) node[right] {}; % eje x
+        \draw[->] (0,-1) -- (0,1) node[above] {}; % eje y
+        \draw[fill] (6/5,0) circle [radius=0.05];
+%        \node [above right] at (6/5,0) {$ \frac{6}{5}$};
+        \node [above] at (6/5,3pt) {$\frac{6}{5}$};
+%        \node [left] at (-3pt,-2) {$-2$};
+        \draw (6/5,-3pt) -- (6/5,3pt);
+%        \draw (-3pt, -2) -- (3pt, -2);
+%        \draw [dashed] (0,-2) -- (1,-2);
+%        \draw [dashed] (1,0) -- (1,-2);
+    \end{tikzpicture}
 \caption{}
 \end{subfigure}
 \caption{Ejercicio 1}
@@ -189,20 +177,18 @@ $ \overline{\; \dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} \;} = \overline {\; \dfrac
 
 \newpage
 
-\item Encontrar números reales $x$ e $y$ tales que $3x+2yi-xi+5y = 7 + 5i$.
-
-\
+\item Encontrar números reales $x$ e $y$ tales que $3x+2yi-xi+5y = 7 + 5i$
 
 \rta Sean $x, y \in \mathbb{R}$, separo las partes real e imaginaria de la ecuación y planteo un sistema de ecuaciones:
 
 \begin{equation*}
 \begin{array}{rl}
 3x+2yi-xi+5y = 7 + 5i &\implies \left\{ \begin{array}{rl}
-\operatorname{Re} (3x+2yi-xi+5y) &= \operatorname{Re} ( 7 + 5i)	\\
+\operatorname{Re} (3x+2yi-xi+5y) &= \operatorname{Re} ( 7 + 5i)    \\
 \operatorname{Im} (3x+2yi-xi+5y) &= \operatorname{Im}( 7 + 5i)
 \end{array}\right. \\
 &\implies \left\{ \begin{array}{rl}
-3x+ 5y &= 7	\\
+3x+ 5y &= 7    \\
 2y -x &= 5
 \end{array}\right.
 \end{array}
@@ -211,35 +197,34 @@ $ \overline{\; \dfrac {1+i}{1+2i} + \dfrac{1-i}{1-2i} \;} = \overline {\; \dfrac
 \begin{equation*}
 \begin{array}{l|r}
 \begin{array}{rl|rl}
-3 (2y -5) + 5y &= 7		 &	2 \cdot 2 - 5 &= x \\
-6y - 15 + 5 y &= 7		 &	-1 &= x \\
-11 y &= 22	& &  \\
-y &= 2		& & 
+3 (2y -5) + 5y &= 7         &    2 \cdot 2 - 5 &= x \\
+6y - 15 + 5 y &= 7         &    -1 &= x \\
+11 y &= 22    & &  \\
+y &= 2        & & 
 \end{array} & 
 \boxed{\begin{array}{rl}
 y &= 2 \\
 x &= -1
 \end{array}}
 \end{array}
-\end{equation*}
+\end{equation*}\qed
 
-\
-
+\vskip .3cm
 
 
 \item Probar que si $z \in \mathbb{C}$ tiene módulo $1$ entonces $z + z^{-1} \in \mathbb{R}$.
 
-\
+\vskip .3cm
 
 \rta Sabemos que el inverso de $z$ se puede escribir $z^{-1} = \frac{\overline{z} }{|z|^2}$. Como por hipótesis tenemos que $|z|=1$, resulta $z^{-1} = \overline{z}$. Luego:
 
 $z + z^{-1} = z + \overline{z} = 2 \operatorname{Re} (z) \in \mathbb{R}$ \qed 
 
-\
+\vskip .3cm
 
 \item Probar que si $a\in \mathbb{R} \backslash \{0\} $ entonces el polinomio $x^2+a^2$ tiene siempre dos raíces complejas distintas.
 
-\
+\vskip .3cm
 
 \rta Se iguala a $0$ el polinomio:
 
@@ -250,126 +235,209 @@ x_2 &= -ai
 \end{array} \right.
 \end{equation*}
 
-Se tendrá $x_1 \neq x_2 \Leftrightarrow a \neq 0$.
-
-\item
-Simplificar las siguientes expresiones:
-$$\begin{array}{ll}
- \text{a) } \ \left(\dfrac{-3}{\frac{4}{5}+1}\right)^{-1}\cdot\left(\dfrac{4}{5}-1\right) + \dfrac{1}{3}, \quad &
-\text{ b)} \ \dfrac{a}{2\pi-6}(\pi-3)^2 -\dfrac{2a(\pi^2-9)}{\pi-3}.
-\end{array}$$
-	
-\ 
-
-\rta 
-
-\ 
-
-
-\vspace{.5cm}
-
+Se tendrá $x_1 \neq x_2 \Leftrightarrow a \neq 0$.\qed
 
 \item Demostrar que  dados $z$, $z_1$, $z_2$ en $\C$ se cumple:
 \[ |\bar z|= |z|, \qquad |z_1 \, z_2|= |z_1| \, |z_2|. \]
 
-\
+\vskip .3cm
 
 \rta 
-
-\
 
 Si $z = a + bi$, entonces $\overline{z} = a - bi$. Luego:
 $$
 |\bar z| = \sqrt{ a^2  + (-b)^2  }  = \sqrt{ a^2  + b^2  } = |z|. 
 $$
 
-\	
 
 Si $z_1 = a + bi$, $z_2 = c + di$, entonces $z_1 \, z_2 = (ac - bd) + (ad + bc)i$. Luego:
 \begin{align*}
-	|z_1 \, z_2| &= \sqrt{ (ac - bd)^2  + (ad + bc)^2  }  \\
-	& = \sqrt{ a^2c^2 -2acbd +b^2d^2  + a^2d^2 +2ad bc +b^2c^2  } \\
-	& = \sqrt{ a^2c^2 +b^2d^2  + a^2d^2  +b^2c^2  }. 
+    |z_1 \, z_2| &= \sqrt{ (ac - bd)^2  + (ad + bc)^2  }  \\
+    & = \sqrt{ a^2c^2 -2acbd +b^2d^2  + a^2d^2 +2ad bc +b^2c^2  } \\
+    & = \sqrt{ a^2c^2 +b^2d^2  + a^2d^2  +b^2c^2  }. 
 \end{align*}
 Por otro lado,
 \begin{align*}
-	|z_1| \, |z_2| &= \sqrt{ a^2 + b^2} \, \sqrt{c^2 +d^2 }  \\
-	& = \sqrt{ a^2c^2 + a^2d^2  +b^2c^2 +b^2d^2   },
+    |z_1| \, |z_2| &= \sqrt{ a^2 + b^2} \, \sqrt{c^2 +d^2 }  \\
+    & = \sqrt{ a^2c^2 + a^2d^2  +b^2c^2 +b^2d^2   },
 \end{align*}
-con lo que  resulta que $|z_1 \, z_2|= |z_1| \, |z_2|$. 
+con lo que  resulta que $|z_1 \, z_2|= |z_1| \, |z_2|$. \qed
 
-\vspace{.5cm}
+\vskip .3cm
 
 
 \item Sean $z=1+i$ y $w=\sqrt{2}-i$. Calcular:
- \begin{enumerate}
-  \item $z^{-1}$; $1/w$; $z/w$; $w/z$.
+\begin{enumerate}
+    \item\label{ej6-a} $z^{-1}$; $1/w$; $z/w$; $w/z$.
+    \item\label{ej6-b} $1+z+z^2+z^3+\dots+z^{2019}$.
+    \item\label{ej6-c} $(z(z+w)^2-iz)/w$.
+\end{enumerate}
+\vskip .3cm
 
-  \item $1+z+z^2+z^3+\dots+z^{2019}$.
+\rta
 
-  \item $(z(z+w)^2-iz)/w$.
- \end{enumerate}
-	
- \ 
+\ref{ej6-a} 
+\begin{align*}
+    z^{-1} &= \frac{\overline{z}}{|z|^2} = \frac{1-i}{2}, \\
+    \frac{1}{w} &= \frac{1}{\sqrt{2}-i}= \frac{\sqrt{2}+i}{(\sqrt{2}-i)(\sqrt{2}+i)} = \frac{\sqrt{2}+i}{3}, \\
+    \frac{z}{w} &= \frac{1+i}{\sqrt{2}-i} = \frac{(1+i)(\sqrt{2}+i)}{3} = \frac{\sqrt{2}+1+i(\sqrt{2}+1)}{3}, \\
+    \frac{w}{z} &= \frac{\sqrt{2}-i}{1+i} = \frac{(\sqrt{2}-i)(1-i)}{2} = \frac{\sqrt{2}-1-i(\sqrt{2}+1)}{2}.
+\end{align*}
 
- \rta 
- 
- \  
+\ref{ej6-b} 
+Por un lado 
+\begin{equation*}
+    1+z+z^2+z^3+\dots+z^{2019} = \frac{1-z^{2020}}{1-z} = \frac{1-(1+i)^{2020}}{-i} =i(1-z^{2020}). 
+\end{equation*}
 
-\vspace{.5cm}
+Por otro lado, tenemos que $1+ i = \sqrt{2} e^{i \pi/4}$, luego $z = \sqrt{2} e^{i \pi/4}$, y por lo tanto $z^{2020} = 2^{1010} e^{i 1010 \pi/4} = 2^{1010} e^{i 252 \pi} = 2^{1010} e^{i 0} = 2^{1010}$.
 
+Por lo tanto,
+$$
+1+z+z^2+z^3+\dots+z^{2019} = i(1-z^{2020}) = i(1- 2^{1010}).
+$$
+
+\ref{ej6-c} Primero calculemos el numerador por partes:
+\begin{align*}
+    z(z+w)^2 &= (1+i)(1+i + \sqrt{2}-i)^2 = (1+i)(1+\sqrt{2})^2 \\
+    &= (1+i)(1+2\sqrt{2} + 2) = (1+i)(3+2\sqrt{2}) \\
+    &= 3+2\sqrt{2} + 3i + 2i\sqrt{2}.
+\end{align*}
+Luego, 
+\begin{align*}
+    z(z+w)^2-iz &= 3+2\sqrt{2} + 3i + 2i\sqrt{2} -i(1+i) \\
+    &= 3+2\sqrt{2} + 3i + 2i\sqrt{2} -i -i^2 \\
+    &= 3+2\sqrt{2} + 3i + 2i\sqrt{2} -i +1 \\
+    &= 4+2\sqrt{2} + 2i + 2i\sqrt{2}.
+\end{align*}
+Dividir por $w$ es multiplicar por $\overline{w}/|w|^2 = \dfrac{\sqrt{2} +i}{3}$, y por lo tanto,
+\begin{align*}
+    \frac{z(z+w)^2-iz}{w} &= \frac{(4+2\sqrt{2} + 2i + 2i\sqrt{2})(\sqrt{2} +i)}{3} \\
+    &= \frac{4\sqrt{2} + 4 + 2\sqrt{2} + 2i\sqrt{2} + 2\sqrt{2} + 2i - 2 + 2\sqrt{2}i + 2i^2}{3} \\
+    &= \frac{6\sqrt{2} + 4 + 4i}{3}.
+\end{align*}
+\qed
+
+
+\vskip .3cm
 
 \item Sumar y multiplicar los siguientes pares de números complejos
     \begin{enumerate}
-        \item $2+ 3i$ y $4$.
-        \item $2+ 3i$ y $4i$.
-        \item $1 + i$ y $ 1 -i$.
-        \item $3-2i$ y $1 +i$. 
+        \item\label{ej7-a} $2+ 3i$ y $4$.
+        \item\label{ej7-b} $2+ 3i$ y $4i$.
+        \item\label{ej7-c} $1 + i$ y $ 1 -i$.
+        \item\label{ej7-d} $3-2i$ y $1 +i$. 
     \end{enumerate}
+    \vskip .3cm
 
-\ 
+    \rta
+    \ref{ej7-a} 
+    \begin{align*}
+        2+ 3i + 4 &= 6+3i, \\
+        (2+ 3i) \cdot 4 &= 8+12i.
+    \end{align*}
 
-\rta 
+    \ref{ej7-b}
+    \begin{align*}
+        2+ 3i + 4i &= 2+7i, \\
+        (2+ 3i) \cdot 4i &= -12+8i.
+    \end{align*}
 
-\ 
+    \ref{ej7-c}
+    \begin{align*}
+        1 + i + 1 -i &= 2, \\
+        (1 + i) \cdot (1 -i) &= 1 -i +i -i^2 = 1+1 = 2.
+    \end{align*}
 
-\vspace{.5cm}
+    \ref{ej7-d}
+    \begin{align*}
+        3-2i + 1 +i &= 4-i, \\
+        (3-2i) \cdot (1 +i) &= 3-2i+3i-2i^2 =5 +i.
+    \end{align*}
+    \qed
 
-
- \item Expresar los siguientes n{ú}meros complejos en la forma $a +i b$.
- Hallar el módulo, argumento y conjugado de cada uno de ellos y graficarlos.
-
- $$\begin{array}{lll}
- \text{a) }\ 2e^{\mathrm{i}\pi}-i,  \quad & \text{ b)} \  i^3 - 2i^{-7} -1, \quad &\text{ c)}\ (-2+i) (1+2i).
-  \end{array}$$
-	
-  \ 
-
-  \rta 
-  
-  \ 
     
-\vspace{.5cm}
+    
+    \vskip .3cm
+
+\item Expresar los siguientes números complejos en la forma $a +i b$.
+Hallar el módulo, argumento y conjugado de cada uno de ellos y graficarlos.
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item\label{ej8-a} $2e^{\mathrm{i}\pi}-i$,
+        \item\label{ej8-b} $ i^3 - 2i^{-7} -1$,
+        \item\label{ej8-c} $(-2+i) (1+2i)$.
+    \end{enumerate}
+\end{multicols}
+\vskip .3cm
+
+\rta
+
+\ref{ej8-a}
+\begin{align*}
+    2e^{\mathrm{i}\pi}-i &= 2(\cos(\pi) + i \sin(\pi)) -i = 2(-1) -i = -2-i, \\
+    |2e^{\mathrm{i}\pi}-i| &= \sqrt{(-2)^2 + (-1)^2} = \sqrt{4+1} = \sqrt{5}, \\
+    \overline{2e^{\mathrm{i}\pi}-i} &= -2+i.
+\end{align*}
+Faltaría calcular el argumento. Debemos calcular $\theta$ tal que
+$$
+-2-i = \sqrt{5} (\cos(\theta) + i \sin(\theta)).
+$$
+Por un lado, $| -2-i | = \sqrt{5}$, y por otro lado, $-2/\sqrt{5} = \cos(\theta)$ y $-1/\sqrt{5} = \sin(\theta)$. Luego, $\theta = \arctan(-1/-2) = \arctan(1/2)$.
+
+
+\ref{ej8-b} Como $(-i)\cdot i=1$, tenemos que $i^{-1} = -i$. Luego, $i^{-7} =(-i)^7 = -i^7 = -i^4 \cdot i^3 = -i^3 = -i \cdot i^2 = i$. 
+\begin{align*}
+    i^3 - 2i^{-7} -1 &= -i -2i +1 = 1-3i, \\
+    |i^3 - 2i^{-7} -1| &= \sqrt{1^2 + (-3)^2} = \sqrt{1+9} = \sqrt{10}, \\
+    \overline{i^3 - 2i^{-7} -1} &= 1+3i.
+\end{align*}
+Faltaría calcular el argumento. Debemos calcular $\theta$ tal que
+$$
+1-3i = \sqrt{10} (\cos(\theta) + i \sin(\theta)).
+$$
+Por un lado, $| 1-3i | = \sqrt{10}$, y por otro lado, $1/\sqrt{10} = \cos(\theta)$ y $-3/\sqrt{10} = \sin(\theta)$. Luego, $\theta = \arctan(-3/1) = \arctan(-3)$.
+
+\ref{ej8-c}
+\begin{align*}
+    (-2+i) (1+2i) &= -2 +i -4i -2 = -4 -3i   \\
+    |(-2+i) (1+2i)| &= \sqrt{(-4)^2 + (-3)^2} = \sqrt{16+9} = \sqrt{25} = 5, \\
+    \overline{(-2+i) (1+2i)} &= -4 +3i.
+\end{align*}
+Faltaría calcular el argumento. Debemos calcular $\theta$ tal que
+$$
+-4-3i = 5 (\cos(\theta) + i \sin(\theta)).
+$$
+Por un lado, $| -4-3i | = 5$, y por otro lado, $-4/5 = \cos(\theta)$ y $-3/5 = \sin(\theta)$. Luego, $\theta = \arctan(-3/-4) = \arctan(3/4)$.
+
+\qed
+
+
+
+\vskip .3cm
 
 \item Sean $a,b\in\mathbb{C}$. Decidir si existe $z \in \mathbb{C}$ tal que:
 \begin{enumerate}
-  \item $z^2=b$. ¿Es único? ¿Para qué valores de $b$ resulta $z$ ser un número real?
-  \item $z$ es imaginario puro y $z^2=4$.
-  \item $z$ es imaginario puro y $z^2=-4$.
+    \item\label{ej9-a} $z^2=b$. ¿Es único? ¿Para qué valores de $b$ resulta $z$ ser un número real?
+    \item\label{ej9-b} $z$ es imaginario puro y $z^2=4$.
+    \item\label{ej9-c} $z$ es imaginario puro y $z^2=-4$.
 \end{enumerate}
-	
-\ 
+\vskip .3cm
 
 \rta 
 
-\ 
+\ref{ej9-a} Si $b=0$, entonces $z=0$ es la única solución. Si $b\neq 0$, usaremos la forma polar de $b$. Si $b = r e^{i\theta}$ con $r \ne 0$, entonces $z = \pm \sqrt{r} e^{i\theta/2}$ son los dos valores posible de $z$ tal que $z^2 = b$. Ahora bien, $z \in \mathbb{R}$ si y solo si  $e^{i\theta/2}\in \mathbb{R}$ si y solo si $\theta/2 \in \{0, \pi\} + 2\pi \Z$ si y solo si $\theta \in \{0, 2\pi\} + 4\pi \Z$. Como wl argumento de $b$ es $\theta$, concluimos que $z \in \mathbb{R}$ si y solo si el argumento de $b$ es un múltiplo entero de $2\pi$, es decir si $b$ es real positivo.
 
+\ref{ej9-b} Si $z$ es imaginario puro, entonces $z = i a$ para algún $a \in \mathbb{R}$. Luego, $z^2 = -a^2 = 4$, y por lo tanto $a^2 = -4$, lo que no tiene solución en $\mathbb{R}$.
+
+\ref{ej9-c} Si $z$ es imaginario puro, entonces $z = i a$ para algún $a \in \mathbb{R}$. Luego, $z^2 = -a^2 = -4$, y por lo tanto $a^2 = 4$, lo que tiene solución en $\mathbb{R}$, a saber, $a = \pm 2$.
+
+\qed
+
+    
 
 
 
 \end{enumerate}
-
-
-
 \end{document}
 
