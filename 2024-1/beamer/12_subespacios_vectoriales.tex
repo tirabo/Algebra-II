@@ -245,8 +245,65 @@ El tema de esta clase  está contenido de la sección 4.2 del apunte de clase ``
     
     
 \end{frame}
-    
 
+
+\begin{frame}
+    \begin{ejemplo}\label{vector-en-subespacio}
+        Demostrar que $(7, 5, 4)$  es combinación lineal de los vectores $(1,-5,2), (1,-1,1)$ y escribir la combinación lineal explícita.
+    \end{ejemplo} 
+    
+    \begin{solucion}
+        
+    
+    Planteamos la ecuación:
+    \begin{align*}
+        (7, 5, 4) &= \lambda_1(1,-5,2)+\lambda_2 (1,-1,1)
+        \\
+        &= (\lambda_1+\lambda_2,-5\lambda_1-\lambda_2,2\lambda_1+\lambda_2).
+    \end{align*}
+    Por consiguiente,  esta ecuación se resuelve con el siguiente sistema de ecuaciones
+    \begin{align*}
+        \lambda_1+\lambda_2 &= 7 \\
+        -5\lambda_1-\lambda_2&= 5 \\
+        2\lambda_1+\lambda_2 &= 4.
+    \end{align*}
+
+    \end{solucion}
+    \end{frame}
+
+
+    \begin{frame}
+    Ahora bien, usando el método de Gauss
+    \begin{align*}
+        &\left[\begin{array}{rr|r}
+        1 & 1 & 7 \\ -5 & -1 & 5 \\	2 & 1 & 4
+        \end{array}\right] 
+        \underset{F3-2F_1}{\stackrel{F_2+5F_1}{\longrightarrow}} 
+        \left[\begin{array}{rr|r}
+        1 & 1 & 7 \\ 0 & 4 & 40 \\	0 & -1 & -10
+        \end{array}\right]\stackrel{F_2/4}{\longrightarrow}
+        \left[\begin{array}{rr|r}
+        1 & 1 & 7 \\ 0 & 1 & 10 \\	0 & -1 & -10
+        \end{array}\right] \\
+        &\stackrel{F_3+F_2}{\longrightarrow}
+        \left[\begin{array}{rr|r}
+        1 & 1 & 7 \\ 0 & 1 & 10 \\	0 & 0 & 0
+        \end{array}\right] \stackrel{F_1-F_2}{\longrightarrow}
+        \left[\begin{array}{rr|r}
+        1 & 0 & -3 \\ 0 & 1 & 10 \\	0 & 0 & 0
+        \end{array}\right].
+    \end{align*}	
+        Luego $\lambda_1= -3$ y $\lambda_2 = -10$,  es decir,
+        \begin{align*}
+        (7, 5, 4) &= -3(1,-5,2)+10 (1,-1,1).
+        \end{align*} 
+
+        \qed
+
+
+\end{frame}
+    
+\begin{comment}
 
 \begin{frame}
 
@@ -283,7 +340,7 @@ El tema de esta clase  está contenido de la sección 4.2 del apunte de clase ``
     
 \end{frame}
     
-    
+
 \begin{frame}
     
     \begin{ejemplo} Demostrar que $(5,12,5)$  es combinación lineal de los vectores $(1,-5,2), (0,1,-1), (1,2,-1)$. 
@@ -350,7 +407,7 @@ Luego $\lambda_1= -3$, $\lambda_2 = -19$ y $\lambda_3=8$,  es decir
             
 \end{frame}
 
-                            
+\end{comment}                    
     
 
 \begin{frame}
@@ -402,29 +459,72 @@ Luego $\lambda_1= -3$, $\lambda_2 = -19$ y $\lambda_3=8$,  es decir
 
 \begin{frame}{Determinación ``implícita'' de un subespacio de $\K^n$}
     
-    Nos interesa tener una manera de decidir rápidamente si un vector esta en el subespacio generado o no.
-    \pause
+    En  general,  si queremos  averiguar si  un vector concreto $(b_1,b_2, \ldots,b_m) \in \K^m$ es combinación lineal de vectores $v_1,\ldots,v_n \in \K^m$,  debemos plantear la ecuación
+\begin{equation*}
+    (b_1,b_2, \ldots,b_m) = \lambda_1v_1+\cdots+\lambda_nv_n, \tag{*}
+\end{equation*}
+y resolver el sistema correspondiente, así como lo hicimos en el ejemplo de  la página \ref{vector-en-subespacio}.
 
-    \
-    
-    Una forma sencilla de verificar si un vector pertenece a un subespacio $W \subseteq\K^n$ es obtener la descripción del  subespacio por un sistema de ecuaciones lineales homogéneas,  es decir 
-    \begin{equation*}
-        W = \{v \in \K^n: Av =0\},
-    \end{equation*} 
-    o equivalentemente
-    \begin{equation*}
-        v \in W \quad \Leftrightarrow \quad Av =0.
-    \end{equation*} 
-    
-    Entonces comprobar si un vector $v$ pertenece o no a $W$  se reduce a calcular $Av$. 
-    \pause
+\vskip .4cm
 
-    \
-    
-    (Ejercicios 7 y 9 del Pr\'actico 6)
-    \vskip 2cm
+Es decir, si 
+$$
+W = \{\lambda_1v_1+\cdots+\lambda_nv_n: \lambda_1,\ldots,\lambda_n \in \K \},
+$$
+queremos averiguar si el vector $(b_1,b_2, \ldots,b_m) \in \K^m$  pertenece a $W$ o, equivalentemente,  si es combinación lineal de $v_1,\ldots,v_n$.:
+
     \end{frame}
     
+
+\begin{frame}
+    
+Ahora, si
+\begin{align*}
+    v_1&=(a_{11},a_{21},\ldots,a_{m1}),\\
+    v_2&=(a_{12},a_{22},\ldots,a_{m2}),\\
+    &\vdots\\
+    v_n&=(a_{1n},a_{2n},\ldots,a_{mn}),
+\end{align*}
+la ecuación (*) de la página anterior se traduce en el sistema de ecuaciones
+\begin{equation*}
+    \begin{matrix}
+    a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
+    \vdots&  &\vdots& &&  &\vdots \\
+    a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m.
+    \end{matrix}
+\end{equation*}
+
+\end{frame}
+
+
+\begin{frame}
+    De la matriz ampliada original $\left[\begin{array}{r|r}A&b\end{array}\right]$ podemos obtener una MERF equivalente $\left[\begin{array}{r|r}A'&b'\end{array}\right]$ y el sistema asociado. 
+    
+    \vskip .4cm
+
+    \begin{equation*}
+        \begin{matrix}
+        &x_{k_1}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{1j}\,x_j&= &b'_1\\
+        &x_{k_2}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{2j}\,x_j&= &b'_2\\
+        & \vdots& &  &\vdots \\
+        &x_{k_r}& + &\sum_{j \not= k_1,\ldots, k_r} a'_{rj}\,x_j&= &b'_r\\
+        &&  &0&= &b'_{r+1}\\
+        &&  &\vdots &\\
+        &&  &0&= &b'_{m},\\
+        \end{matrix}
+    \end{equation*} 
+    donde $k_1 < k_2 < \cdots < k_r$.
+    
+\end{frame}
+
+\begin{frame}
+    Por lo tanto, el sistema tiene solución si y solo si  $b'_{r+1} = \cdots = b'_m =0$. Luego, 
+    \begin{equation*}
+        W = \{(b_1,b_2, \ldots,b_m) \in \K^m: b'_{r+1} = \cdots = b'_m =0\}.
+    \end{equation*}
+    Las ecuaciones $ b'_{r+1} = \cdots = b'_m =0$ son las ecuaciones implícitas que definen a $W$ y nos permiten decidir rápidamente si un vector pertenece o no a $W$, simplemente viendo si sus coordenadas satisfacen las ecuaciones.
+
+\end{frame}
     
     \begin{frame}
     Ejemplificaremos con los siguientes vectores en $\R^4$:
