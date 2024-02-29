@@ -22,10 +22,10 @@
 \usetikzlibrary{arrows}
 \usetikzlibrary{matrix}
 \tikzset{
-	every picture/.append style={
-		execute at begin picture={\deactivatequoting},
-		execute at end picture={\activatequoting}
-	}
+    every picture/.append style={
+        execute at begin picture={\deactivatequoting},
+        execute at end picture={\activatequoting}
+    }
 }
 \usetikzlibrary{decorations.pathreplacing,angles,quotes}
 \usetikzlibrary{shapes.geometric}
@@ -36,9 +36,9 @@
 \usepackage{tkz-graph}
 \usepackage{polynom}
 \polyset{%
-	style=B,
-	delims={(}{)},
-	div=:
+    style=B,
+    delims={(}{)},
+    div=:
 }
 \renewcommand\labelitemi{$\circ$}
 \setlist[enumerate]{label={(\arabic*)}}
@@ -79,8 +79,8 @@
 
 \author[]{}
 \institute[]{\normalsize FAMAF / UNC
-	\\[\baselineskip] ${}^{}$
-	\\[\baselineskip]
+    \\[\baselineskip] ${}^{}$
+    \\[\baselineskip]
 } 
 \date[09/05/2024]{9 de mayo de 2024}
 
@@ -89,6 +89,25 @@
 \begin{document}
 \begin{frame}
 \maketitle
+\end{frame}
+
+\begin{frame}
+    Una transformación lineal es una función entre dos espacios vectoriales que preserva la suma y multiplicación por escalares.
+\begin{equation*}
+    T: V \to W, \quad \text{ tal que }\quad T(v + \lambda v_0) = T(v) + \lambda T(v_0)
+\end{equation*}
+
+Ya conocemos algunas transformaciones lineales, aunque no las llamemos así. Por ejemplo:
+\begin{itemize}
+    \item La derivada: $f + cg \mapsto f' + cg'$.
+    \item La integral: $\int_a^b (f + cg) \,dx = \int_a^b f \,dx + c \int_a^b g \,dx$.
+    \item La multiplicación por matrices: $A(v + \lambda v_0) = Av + \lambda Av_0$.
+\end{itemize}
+\vskip .4cm
+La propiedad de preservar las operaciones de espacios vectoriales es de utilidad para
+facilitar cálculos.
+\vskip .4cm
+En esta parte de la materia estudiaremos las transformaciones lineales y veremos que información nos dan de los espacios vectoriales.
 \end{frame}
 
 \begin{frame}
@@ -122,7 +141,7 @@
 \begin{frame}
 
 
-Ya conocemos algunas transformaciones lineales. Por ejemplo:\pause
+Como ya fue dicho, ya conocemos algunas transformaciones lineales. Por ejemplo:\pause
 \vskip .4cm
 \begin{itemize}
     \item La derivada: 
@@ -133,35 +152,6 @@ Ya conocemos algunas transformaciones lineales. Por ejemplo:\pause
 
 \
 
-
-\end{frame}
-
-\begin{frame}
-
-Un isomorfismo lineal es una transformación lineal que es biyectiva.
-\pause
-\
-
-
-Por ejemplo,  si definimos 
-\begin{align*}
-&T:\R_{<n}[x]\longrightarrow\R^n,\\ &T(a_{n-1}x^{n-1}+\cdots+a_0)=(a_{n-1}, ...,, a_0) 
-\end{align*}
-
-Esta identificación es un isomorfismo.  
-\vskip .4cm\pause
-Otro isomorfismo que hemos mencionado repetidas veces es 
-\begin{equation*}
-    \begin{array}{rccc}
-        S: &\K^{2 \times 2}& \to &\K^4 \\
-    &\begin{bmatrix}
-        a_{11} & a_{12} \\ a_{21}&a_{22}
-    \end{bmatrix}    &\mapsto &( a_{11}, a_{12}, a_{21},a_{22})
-    \end{array}
-\end{equation*}
-
-\begin{teorema} Sean $V$ y $W$ dos espacios vectoriales de dimensión finita tal que $\dim(V) = \dim(W)$ entonces $V$ y $W$ son isomorfos.
-\end{teorema}
 
 \end{frame}
 
@@ -208,7 +198,7 @@ Otro isomorfismo que hemos mencionado repetidas veces es
 \end{frame}
 
 \begin{frame}
-    \begin{observacion}\label{obs-tl-1.5} 	Sea $T: \K^n \to \K^m$. En  general si $T(x_1,\ldots,x_n)$ en cada coordenada tiene una combinación lineal de los $x_1,\ldots,x_n$,  entonces $T$ es una transformación lineal. Mas precisamente, si $T$ está definida por
+    \begin{observacion}\label{obs-tl-1.5}     Sea $T: \K^n \to \K^m$. En  general si $T(x_1,\ldots,x_n)$ en cada coordenada tiene una combinación lineal de los $x_1,\ldots,x_n$,  entonces $T$ es una transformación lineal. Mas precisamente, si $T$ está definida por
         \begin{align*}
         T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )\\
         &=(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j),
@@ -219,29 +209,6 @@ Otro isomorfismo que hemos mencionado repetidas veces es
     \end{proof}
 \end{frame}
 
-\begin{frame}{Ejemplos (continuado)}
-
-    \begin{ejemplo}
-
-Sea $C^1$ el espacio de funciones derivables. Entonces la derivada es una transformación lineal pues:
-$$
-(f+g)'=f'+g'\quad\mbox{y}\quad
-(\lambda f)'=\lambda f'
-$$
-
-\end{ejemplo}
-
-\pause
-
-\begin{ejemplo}
-
-Sea $V$ un espacio vectorial. La función \textit{identidad $\Id:V\longrightarrow V$},
-$$
-\Id(v)=v\quad\forall\, v\in V,
-$$
-es una transformación lineal. 
-\end{ejemplo}
-\end{frame}
 
 
 \begin{frame}{(contra)Ejemplos}
@@ -256,31 +223,6 @@ $$
  \vskip 3cm
 \end{frame}
 
-\begin{frame}
-
-
-
- Podemos dar una definición equivalente de transformación lineal que reúna las dos condiciones en sólo una. 
- \vskip .4cm
-Algo similar a la definición de subespacio.
-\pause
-\vskip .4cm
-  \begin{definicion}
-
-Una \textit{transformación lineal} entre dos espacios vectoriales $V$ y $W$ es una función $T:V\longrightarrow W$ tal que
-\vskip .2cm
-\begin{itemize}
- \item $
- T(\lambda v+v')=\lambda T(v)+T(v')
- \quad\forall\,v,v'\in V, \lambda\in\R
- $
-\end{itemize}
-\end{definicion}
-\vskip .4cm
-Podemos usar cualquiera de las dos definiciones para decidir si una función es transformación lineal o no.
-
-
-\end{frame}
 
 
 \begin{frame}
@@ -595,7 +537,7 @@ A(0,1,\pi)&=(1+\pi,2+2\pi)\in\im(A)
 
 
 \begin{frame}
-    \begin{observacion}\label{obs-nu-im} 	Sea $T: \K^n \to \K^m$ definida por
+    \begin{observacion}\label{obs-nu-im}     Sea $T: \K^n \to \K^m$ definida por
         \begin{align*}
         T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )
         \end{align*}
