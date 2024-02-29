@@ -1,0 +1,836 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+%\usepackage{makeidx}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usepackage[customcolors]{hf-tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools}
+\usepackage{stackrel}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usepackage{polynom}
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+\renewcommand\labelitemi{$\circ$}
+\usepackage{nicematrix} %https://ctan.dcc.uchile.cl/macros/latex/contrib/nicematrix/nicematrix.pdf
+
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand{\im}{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand\sgn{\operatorname{sgn}}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\figurename }{Figura}
+
+\include{definiciones}
+
+
+
+
+
+\title[Clase 12 - Subespacios vectoriales]{Álgebra/Álgebra II \\ Clase 12- Subespacios vectoriales.}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+}
+\date[30/04/2024]{30 de abril de 2024}
+
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+\begin{frame}{Resumen}
+
+    En esta clase veremos que
+    \begin{itemize}
+    \item más ejemplos de subespacios, 
+        \item combinaciones lineales de vectores,
+        \item vectores generadores de subespacios,  y
+        \item Determinación implícita de un subespacio de $\mathbb{K}^n$ a
+        partir de generadores
+        \item Intersección y suma de subespacios vectoriales . 
+    \end{itemize}
+    
+
+\
+
+El tema de esta clase  está contenido de la sección 4.2 del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
+\end{frame}
+
+
+    \begin{frame}{Ejemplos de subespacio vectoriales}
+    
+    
+        \begin{enumerate}     
+            \item[4.] Sean $V=\K^n$ y $1\le j \le n$. Definimos 
+            $$
+            W = \left\{ (x_1,x_2,\ldots,x_n): x_i \in \K\; (1 \le i \le n), x_j =0\right\}.
+            $$
+            Es decir $W$  es el subconjunto de $V$ de todas las $n$-tuplas con la coordenada $j$ igual a 0. Por ejemplo  si $j=1$ 
+            $$
+            W = \left\{ (0,x_2,\ldots,x_n): x_i \in \K \;(2 \le i \le n)\right\}.
+            $$
+            \pause
+            Veamos que este último es un subespacio.
+            
+            Si $(0,x_2,\ldots,x_n), (0,y_2,\ldots,y_n) \in W$ y  $\lambda \in \K$,  entonces
+            $$(0,x_2,\ldots,x_n)+ \lambda(0,y_2,\ldots,y_n) = (0,x_2+\lambda y_2,\ldots,x_n+\lambda y_n) \in W.$$
+            
+            
+            La demostración para $j >1$ es completamente análoga. 
+        \end{enumerate}
+
+    
+    \end{frame}
+    
+
+    
+    
+    
+
+    \begin{frame}
+        \begin{enumerate}     
+            \item[5.] Sea $\operatorname{Sim}_n(\K) = \left\{A \in M_n(\K): A^\t = A\right\}$.    \pause
+            \vskip .2cm 
+            Es claro que: \quad   $A \in \operatorname{Sim}_n(\K)$ $\Leftrightarrow$  $[A]_{ij} = [A]_{ji}\; \forall i,j $.     \pause
+            \vskip .3cm
+            \begin{proposicion}
+                $A \in \operatorname{Sim}_n(\K)$ es subespacio de $M_n(\K)$
+            \end{proposicion}    \pause
+            \begin{demostracion}    \pause
+            Sean $A=[a_{ij}]$, $B= [b_{ij}]$ tales que $A=A^\t$ y $B=B^\t$ y sea  $\lambda \in \K$, entonces debemos verificar que:\quad  $A+ \lambda B \in  \operatorname{Sim}_n(\K)$.
+                \begin{align*}
+                    [(A+\lambda B)^\t]_{ij} &=  [(A+\lambda B)]_{ji}&& (\text{definición de transpuesta}) \\
+                    &= [A]_{ji} + \lambda [B]_{ji}&& (\text{def. de suma y prod. por escalar}) \\
+                    &= [A]_{ij} + \lambda [B]_{ij}&& (\text{$A$ y $B$ simétricas}) \\
+                    &= [A+ \lambda B]_{ij}&& (\text{def. de suma y prod. por escalar}) \\
+                \end{align*}
+        Luego $A+\lambda B\in \operatorname{Sim}_n(\K) $.\qed
+            \end{demostracion}
+        \end{enumerate}
+    \end{frame}
+    
+    
+
+    
+    
+
+    \begin{frame}
+        \begin{enumerate}     
+        \item[6.] El  conjunto $\R[x] = \left\{P(x): P(x) \text{ es polinomio en $\R$} \right\}$, es subespacio de $\operatorname{F}(\R)$, pues $\R[x] \subset \operatorname{F}(\R)$ y las operaciones de suma y producto por un escalar son cerradas en $\R[x]$.
+        \vskip .4cm     \pause
+        \item[7.] Sea $\operatorname{C}(\R)$ las funciones continuas de $\R$ en $\R$. Entonces, $\operatorname{C}(\R)$ es subespacio de $\operatorname{F}(\R)$.     \pause
+        \begin{demostracion}
+            Sean $f,g$ funciones continuas, es decir $\lim_{x \to a} f(x) = f(a)$ y $\lim_{x \to a} g(x) = g(a)$, $\forall a \in \R$. Sea $\lambda \in \R$.  Por las propiedades de los límites 
+            $$
+            \lim_{x \to a} (f + \lambda g)(x) =  \lim_{x \to a} f + \lambda \lim_{x \to a} g(x) = f(a) + \lambda g(a) = 
+            (f + \lambda g)(a)
+            $$\qed
+        \end{demostracion} 
+        
+        \pause
+        De forma análoga, el conjunto $\R[x]$ es subespacio de $\operatorname{C}(\R)$.
+        \end{enumerate}
+    \end{frame}
+    
+\begin{frame}{Combinaciones lineales}
+    \begin{definicion}
+        Sea $V$ espacio vectorial sobre $\K$ y $v_1,\ldots,v_n$ vectores en $V$. Dado $v \in V$, diremos que\textit{ $v$  es combinación lineal de los $v_1,\ldots,v_n$ }\index{combinación lineal} si existen escalares $\lambda_1,\ldots,\lambda_n$ en $\K$,  tal que 
+        $$
+        v = \lambda_1v_1+\cdots+\lambda_nv_n.
+        $$
+    \end{definicion}
+    
+    \vskip 2cm
+\end{frame}
+
+
+\begin{frame}
+    
+
+\begin{ejemplo}
+    
+    Sean $v_1 = (1,0)$, $v_2 = (0,1)$ en $\C^2$ ¿es $v = (i,2)$ combinación lineal de $v_1,v_2$?    \pause La respuesta es sí, pues 
+        $$
+        v = iv_1+2v_2.
+        $$    \pause
+        Observar además que es la única combinación lineal posible, pues si 
+        $$
+        v = \lambda_1v_1+ \lambda_2 v_2,
+        $$
+        entonces
+        $$
+        (i,2) = (\lambda_1,0)+(0,\lambda_2) = (\lambda_1,\lambda_2),
+        $$
+        luego $\lambda_1=i$ y $\lambda_2= 2$.
+        
+
+\end{ejemplo}
+\end{frame}
+
+
+\begin{frame}
+
+\begin{ejemplo}
+    Puede ocurrir que un vector sea combinación lineal de otros vectores de varias formas diferentes. Por ejemplo,   si   $v = (i,2)$ y $v_1 = (1,0)$, $v_2 = (0,1)$, $v_3 = (1,1)$,  tenemos que
+        \begin{align*}
+            v &= iv_1+2v_2+0v_3,\quad\quad\quad\text{y también}\\
+            v &= (i-1)v_1 + v_2 + v_3.  
+        \end{align*}
+\end{ejemplo}
+\pause
+\begin{ejemplo}
+        Sean $(0,1,0)$, $(0,1,1)$ en $\C^3$ ¿es $(1,1,0)$ combinación lineal de $(0,1,0)$, $(0,1,1)$? La respuesta es no, pues si 
+        $$
+        (1,1,0) = \lambda_1(0,1,0)+ \lambda_2(0,1,1) = (0,\lambda_1,0)+ (0,\lambda_2,\lambda_2) = (0,\lambda_1+\lambda_2,\lambda_2),
+        $$ 
+        luego, la primera coordenada nos dice que $1=0$, lo cual es absurdo. 
+        
+\end{ejemplo}
+    
+    
+\end{frame}
+    
+
+
+\begin{frame}
+
+\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\hfsetfillcolor{airforceblue!30}
+\hfsetbordercolor{blue!10}
+
+
+    \begin{block}{Observación (muy importante)}\label{obs-muy-importante}
+        ¿Es $v =(b_1,\ldots,b_m) \in \K^m$  c. l. de vectores $v_1,\ldots,v_n \in \K^m$? 
+        \vskip .3cm     \pause
+        Sea $v_i = (a_{1i},\ldots,a_{mi})$ $(1 \le i \le n)$, entonces $v = \lambda_1v_1 + \cdots +\lambda_nv_n$ $\Rightarrow$
+        \begin{align*}
+            (b_1,\ldots,b_m) &= \lambda_1(a_{11},\ldots,a_{m1}) + \cdots +\lambda_n(a_{1n},\ldots,a_{mn}) \\
+            &= (\lambda_1a_{11} + \cdots+ \lambda_na_{1n}, \,\ldots,\, \lambda_1a_{m1} + \cdots+ \lambda_na_{mn}).
+        \end{align*}    \pause
+        Luego, 
+        \begin{center}
+            \tikzmarkin{a}(0.2,-0.3)(-0.2,0.5) {$v$  es combinación lineal de los vectores $v_1,\ldots,v_n \in \K^m$} \tikzmarkend{a}
+        \end{center}
+            si y sólo si tiene solución el siguiente sistema de ecuaciones: 
+        \begin{equation*}
+            \tikzmarkin{b}(0.2,-0.8)(-0.2,1) 
+        \begin{matrix}
+        a_{11}\lambda_1& + &a_{12}\lambda_2& + &\cdots& + &a_{1n}\lambda_n &= &b_1\\
+        \vdots&  &\vdots& &&  &\vdots \\
+        a_{m1}\lambda_1& + &a_{m2}\lambda_2& + &\cdots& + &a_{mn}\lambda_n &=&b_m.
+        \end{matrix}
+        \tikzmarkend{b}
+        \end{equation*}
+        
+    \end{block}
+    
+    
+\end{frame}
+    
+    
+\begin{frame}
+    
+    \begin{ejemplo} Demostrar que $(5,12,5)$  es combinación lineal de los vectores $(1,-5,2), (0,1,-1), (1,2,-1)$. 
+    \end{ejemplo}    \pause
+        \vskip .2cm
+        
+        \begin{solucion}  \pause
+            Planteamos la ecuación:
+        \begin{align*}
+            (5,12,5) &= \lambda_1(1,-5,2)+\lambda_2 (0,1,-1)+\lambda_3 (1,2,-1) \\
+            &= (\lambda_1,-5\lambda_1,2\lambda_1)+ (0,\lambda_2,-\lambda_2)+(\lambda_3 ,2\lambda_3 ,-\lambda_3 )	\\
+            &= (\lambda_1+\lambda_3,-5\lambda_1+\lambda_2+2\lambda_3,2\lambda_1-\lambda_2-\lambda_3).
+        \end{align*}  \pause
+        Por consiguiente,  esta ecuación se resuelve con el siguiente sistema de ecuaciones
+        \vskip -.6cm
+        \begin{align*}
+            \lambda_1+\lambda_3 &= 5 \\
+            -5\lambda_1+\lambda_2+2\lambda_3 &= 12 \\
+            2\lambda_1-\lambda_2-\lambda_3 &= 5.
+        \end{align*}
+        \end{solucion}
+        
+    
+
+
+\end{frame}
+
+
+\begin{frame}
+    Ahora bien, usando el método de Gauss
+    \begin{multline*}
+\left[\begin{array}{rrr|r}1 & 0 & 1 &  5 \\ -5 & 1 & 2 &  12 \\	2 & -1 & -1 &  5  \end{array}\right]
+\stackrel[F_3 -2F_1]{F_2 + 5F_1}{\longrightarrow} 
+\left[\begin{array}{rrr|r}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & -1 & -3 &  -5  \end{array}\right]
+\\ \stackrel{F_3+F_1}{\longrightarrow}
+\left[\begin{array}{rrr|r}1 & 0 & 1 &  5 \\ 0 & 1 & 7 &  37 \\	0 & 0 & 4 & 32  \end{array}\right]
+\stackrel{F_3/4}{\longrightarrow} 
+\left[\begin{array}{rrr|r}1 & 0 & 1 & 5 \\ 0 & 1 & 7 & 37 \\	0 & 0 & 1& 8  \end{array}\right]
+\\ \stackrel[F_2 -7F_3]{F_1 - F_3}{\longrightarrow}
+\left[\begin{array}{rrr|r}1 & 0 & 0 & -3 \\ 0 & 1 & 0 &  -19 \\	0 & 0 & 1& 8  \end{array}\right].
+\end{multline*}	  \pause
+Luego $\lambda_1= -3$, $\lambda_2 = -19$ y $\lambda_3=8$,  es decir
+\begin{align*}
+(5,12,5) &= -3(1,-5,2)-19 (0,1,-1)+8 (1,2,-1).\qed
+\end{align*}
+\end{frame}
+                    
+\begin{frame}
+    \begin{proposicion}
+        Sea $W$ subespacio de $V$ y $w_1,\ldots,w_k \in W$,  entonces cualquier combinación lineal de los $w_1,\ldots,w_k$ pertenece a $W$.
+    \end{proposicion}  \pause
+
+    \begin{demostracion}  \pause
+        Debemos probar que, para cualesquiera $\lambda_1,\ldots,\lambda_k \in \K$, se cumple que  $\lambda_1w_1+\cdots+\lambda_kw_k \in W$. 
+            \vskip .2cm
+            
+            Ahora bien,  como $W$ es subespacio, $\lambda_iw_i \in W$ para $1\le i \le k$. 
+            
+            \vskip .2cm
+            Por un argumento inductivo, como $W$  es subespacio, no es difícil probar que la suma de $k$ términos en $W$ es un elemento de $W$, por lo tanto $\lambda_1w_1+\cdots+\lambda_kw_k \in W$. 
+            
+            \qed
+    \end{demostracion}
+            
+\end{frame}
+
+                            
+    
+
+\begin{frame}
+
+\begin{teorema}
+    Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_k \in V$. Entonces
+    $$
+    W = \{\lambda_1v_1+\cdots+\lambda_kv_k: \lambda_1,\ldots,\lambda_k \in \K \}
+    $$
+    es un subespacio vectorial. Es decir,  el conjunto de las combinaciones lineales de $v_1,\ldots,v_k$ es un subespacio vectorial.
+    \end{teorema}  \pause
+    \begin{proof}  \pause
+                Sean $\lambda_1v_1+\cdots+\lambda_kv_k$, $\mu_1v_1+\cdots+\mu_kv_k$ dos combinaciones lineales de $v_1,\ldots,v_k$ y $\lambda \in \K$, entonces 
+            \begin{align*}
+                (\lambda_1v_1+\cdots+\lambda_kv_k)&+\lambda (\mu_1v_1+\cdots+\mu_kv_k) \\&=  \lambda_1v_1+\lambda\mu_1v_1+\cdots+\lambda_kv_k+\lambda\mu_kv_k\\
+                &= (\lambda_1+\lambda\mu_1)v_1+\cdots+(\lambda_k+\lambda\mu_k)v_k,
+            \end{align*}
+            que es  una combinación lineal de  $v_1,\ldots,v_k$ y por lo tanto pertenece a $W$. 
+            
+            \qed
+    \end{proof}
+    
+\end{frame}
+
+        
+
+\begin{frame}
+
+\begin{definicion}
+    Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_k \in V$. Al  subespacio vectorial $	W = \{\lambda_1v_1+\cdots+\lambda_kv_k: \lambda_1,\ldots,\lambda_k \in \K \}$ de las combinaciones lineales de $v_1,\ldots,v_k$ se lo denomina \textit{subespacio generado por $v_1,\ldots,v_k$}\index{subespacio generado} y se lo denota  
+    \begin{equation*}
+        W \; = \; \langle v_1,\ldots,v_k \rangle \; = \; \operatorname{gen}\left\{ v_1,\ldots,v_k\right\}  \; = \;  \operatorname{span}\left\{ v_1,\ldots,v_k\right\}.
+    \end{equation*}  \pause
+    Además, en este caso, diremos que el conjunto $S = \left\{ v_1,\ldots,v_k \right\}$ \textit{genera} al subespacio $W$ o que los vectores $v_1,\ldots,v_k$ \textit{generan} $W$. 
+    \vskip .2cm 
+\end{definicion}  \pause
+    \begin{observacion}
+        Un caso especial,  que será de suma importancia,  es el caso en que consideramos todo $V$. 
+
+        \vskip .2cm
+        \pause
+        Estudiaremos en las clases que siguen conjuntos de generadores de $V$ llamados \textit{bases}, que tienen la propiedad de que todo vector de $V$  se escribe de una única forma como c.l.  de los generadores.  
+        
+    \end{observacion}
+
+\end{frame}
+
+
+
+\begin{frame}{Determinación ``implícita'' de un subespacio de $\K^n$}
+    
+    Nos interesa tener una manera de decidir rápidamente si un vector esta en el subespacio generado o no.
+    \pause
+
+    \
+    
+    Una forma sencilla de verificar si un vector pertenece a un subespacio $W \subseteq\K^n$ es obtener la descripción del  subespacio por un sistema de ecuaciones lineales homogéneas,  es decir 
+    \begin{equation*}
+        W = \{v \in \K^n: Av =0\},
+    \end{equation*} 
+    o equivalentemente
+    \begin{equation*}
+        v \in W \quad \Leftrightarrow \quad Av =0.
+    \end{equation*} 
+    
+    Entonces comprobar si un vector $v$ pertenece o no a $W$  se reduce a calcular $Av$. 
+    \pause
+
+    \
+    
+    (Ejercicios 7 y 9 del Pr\'actico 6)
+    \vskip 2cm
+    \end{frame}
+    
+    
+    \begin{frame}
+    Ejemplificaremos con los siguientes vectores en $\R^4$:
+    \begin{align*}
+    v_1=(3,1,2,-1),&\quad
+    v_2=(6,2,4,-2),\\
+    v_3=(3,0,1,1),&\quad
+    v_4=(15,3,8,-1)
+    \end{align*}
+    \pause
+
+    \begin{exampleblock}{Problema}\pause
+    
+    Caracterizar mediante ecuaciones el subespacio $\langle v_1, v_2, v_3, v_4\rangle$.
+    
+    \pause
+    
+    \
+    
+    En otras palabras, queremos describir implícitamente el conjunto de los $b=(b_1,b_2,b_3,b_4)
+    \in\R^4$ tales que $b\in\langle v_1, v_2, v_3, v_4\rangle$.
+    
+    \
+
+    \pause
+    O sea, los $b=(b_1,b_2,b_3,b_4)
+    \in\R^4$ tales que 
+    \begin{equation*}
+        b=\lambda_1v_1+\lambda_2v_2+\lambda_3v_3+\lambda_4v_4 \tag{*}
+    \end{equation*}
+    
+    
+    con $\lambda_1,\lambda_2,\lambda_3,\lambda_4\in\R$.
+    \end{exampleblock}
+    \end{frame}
+    
+
+    \begin{frame}
+        Planteemos la fórmula (*) en coordenadas, pero es conveniente hacerlo con vectores columna :
+        \begin{align*}
+            \lambda_1 \begin{bmatrix*}[r] 
+                3\\
+    1\\
+    2\\
+    -1
+    \end{bmatrix*}+
+    \lambda_2\begin{bmatrix*}[r] 
+    6\\
+    2\\
+    4\\
+    -2
+        \end{bmatrix*}+
+    \lambda_3
+    \begin{bmatrix*}[r] 
+    3\\
+    0\\
+    1\\
+    1
+\end{bmatrix*}+\lambda_4
+    \begin{bmatrix*}[r] 
+    15\\
+    3\\
+    8\\
+    -1
+\end{bmatrix*}=
+    \begin{bmatrix*}[r] 
+    b_1\\
+    b_2\\
+    b_3\\
+    b_4
+\end{bmatrix*}
+        \end{align*}
+        
+\pause Luego 
+
+\begin{equation*}
+\begin{bmatrix*}[r]
+    3\lambda_1+6\lambda_2+3\lambda_3+15\lambda_4\\
+\lambda_1+2\lambda_2+3\lambda_4\\
+2\lambda_1+4\lambda_2+ \lambda_3+8\lambda_4\\
+-x-2\lambda_2+\lambda_3-\lambda_4
+\end{bmatrix*}
+= 
+\begin{bmatrix}
+    b_1\\ b_2 \\b_3 \\ b_4 
+\end{bmatrix}
+\end{equation*}
+
+    \end{frame}
+
+    \begin{frame}
+    
+    En forma de producto de matrices podemos reescribirla asi:
+    
+    \begin{equation*}
+        \begin{bmatrix*}[r]    
+    3&6&3&15\\
+    1&2&0&3\\
+    2&4&1&8\\
+    -1&-2&1&-1
+\end{bmatrix*}
+    \begin{bmatrix*}[r]
+    \lambda_1\\
+    \lambda_2\\
+    \lambda_3\\
+    \lambda_4
+\end{bmatrix*}
+    =
+    \begin{bmatrix*}[r]
+    b_1\\
+    b_2\\
+    b_3\\
+    b_4 
+\end{bmatrix*}
+\end{equation*}
+    
+\pause  En forma de sistema de ecuaciones esto es:
+    
+    \begin{equation*}
+        \begin{cases}
+            3\lambda_1+6\lambda_2+3\lambda_3+15\lambda_4 = b_1\\
+        \lambda_1+2\lambda_2+3\lambda_4 = b_2\\
+        2\lambda_1+4\lambda_2+ \lambda_3+8\lambda_4 = b_3\\
+        -x-2\lambda_2+\lambda_3-\lambda_4 = b_4
+        \end{cases}\tag{**}
+    \end{equation*}
+
+    \pause
+    
+    \begin{block}{Conclusión}
+    $b\in\langle v_1,v_2,v_3,v_4\rangle$ si y s\'olo si el sistema anterior tiene soluci\'on.
+    \end{block}
+    
+    \end{frame}
+    
+    \begin{frame}
+    
+    El  sistema (**) tiene solución si el siguiente sistema la tiene  (es cambio de notación solamente)
+
+    \begin{equation*}
+        \begin{cases}
+            3x+6y+3z+15w=b_1\\
+            x+2y+3w=b_2\\
+            2x+4y+z+8w=b_3\\
+            -x-2y+z-w=b_4
+        \end{cases}
+    \end{equation*}
+    \vskip .4cm\pause
+    Este es exactamente el Ejercicio 2 de la Tarea 2. Entonces la respuesta a nuestro problema es
+    \vskip .3cm
+    \begin{block}{Respuesta}
+        \vskip -.8cm 
+    \begin{multline*}
+        \langle v_1, v_2, v_3, v_4\rangle=\\\{(b_1,b_2,b_3,b_4)\in\mathbb{R}^4\mid b_1+3b_2-3b_3=0,b_1-6b_2-3b_4=0\}.
+    \end{multline*}
+        
+    
+    \end{block}
+    
+    \end{frame}
+    
+    \begin{frame}
+    Notemos que podemos repetir todo el razonamiento anterior para cualesquiera vectores $v_1, ..., v_k$ en cualquier $\R^n$ y cualquier $b\in\R^n$.\pause
+    
+    \
+    
+    Sólo hay que tener presente que multiplicar una matriz por un vector columna es lo mismo que hacer una combinación lineal de las columnas de la matriz:\pause
+    
+    \
+    
+    Es decir, si
+    $$
+    A=\left[
+    \begin{array}{cccc}
+    \mid& \mid& &\mid\\
+    v_1 & v_2 & \cdots &v_k\\
+    \mid& \mid& &\mid
+    \end{array}
+    \right]
+    ,$$ 
+    entonces
+    \begin{align*}
+    A\left[
+    \begin{array}{c}
+    \lambda_1\\\vdots\\\lambda_k
+    \end{array}
+    \right]=
+    \lambda_1v_1+\cdots+\lambda_kv_k
+    \end{align*}
+    \end{frame}
+    
+    \begin{frame}
+    
+    \begin{block}{Conclusión}
+        
+        Sean $v_1, ..., v_k\in\K^n$ y $A\in\K^{n\times k}$ la matriz cuyas  columnas son los vectores $v_1, ..., v_k$, es decir
+    $$
+    A=\left[
+    \begin{array}{cccc}
+    \mid& \mid& &\mid\\
+    v_1 & v_2 & \cdots &v_k\\
+    \mid& \mid& &\mid
+    \end{array}
+    \right]
+    .$$\pause
+    
+    Entonces
+    \begin{itemize}
+        \item El subespacio vectorial  $\langle v_1, ..., v_k\rangle$ es igual al conjunto de los $b\in\K^n$ para los cuales el sistema $AX=b$ tiene solución.
+        \vskip .2cm
+        \item Las ecuaciones vienen dadas por las filas nulas de la MERF equivalente a $A$. En particular, si no tiene filas nulas entonces $\langle v_1, ..., v_k\rangle=\K^n$ porque el sistema $AX=b$ siempre tiene solución.
+    \end{itemize}
+\end{block}
+    \end{frame}
+    
+
+
+
+
+\begin{frame}{Intersección y suma de subespacios vectoriales}
+
+    \begin{teorema}\label{th-interseccion}
+        Sea $V$ un espacio vectorial sobre $\K$. Entonces la intersección de subespacios vectoriales es un subespacio vectorial. 
+    \end{teorema}  \pause
+\begin{proof}  \pause
+    Veamos el caso de la intersección de dos subespacios. 
+    \vskip .2cm
+    Debemos probar que si $W_1$, $W_2$ subespacios $\Rightarrow$ $W_1 \cap W_2$  es subespacio. 
+    \vskip .2cm
+    Observemos:\quad  $w \in W_1 \cap W_2 \quad \Leftrightarrow\quad w \in W_1 \;\wedge\; w \in W_2$.
+\begin{align*}
+\text{ Sea  $\lambda \in \K$. } u,v \in  W_1 \cap W_2\quad &\Rightarrow \quad u,v \in W_1 \;\wedge\; u,v \in W_2 \\
+&\Rightarrow \quad u+\lambda v \in W_1 \;\wedge\; u+\lambda v\in W_2\qquad\qquad\qquad\\
+&\Rightarrow\quad  u+\lambda v  \in W_1 \cap W_2. 
+\end{align*}
+
+Luego $W_1 \cap W_2$  es subespacio.
+\qed
+\end{proof}
+\end{frame}
+
+
+
+\begin{frame}
+\begin{ejemplo}
+    Sean 
+    \begin{align*}
+        W_1 = \left\{ (x,y,z):  -3x + y + 2z = 0\right\}
+    \end{align*}
+    y
+    \begin{align*}
+            W_2 = \left\{ (x,y,z):  x - y + 2z = 0\right\}.
+    \end{align*}
+    Encontrar generadores de $W_1 \cap W_2$. 
+\end{ejemplo}  \pause
+\begin{solucion}  \pause
+    Es claro que
+    \begin{equation*}
+        W_1 \cap W_2 = \left\{ (x,y,z):  -3x + y + 2z = 0 \;\wedge \;  x - y + 2z = 0\right\}.
+    \end{equation*}
+\end{solucion}
+
+\end{frame}
+
+\begin{frame}
+Por lo tanto debemos resolver el sistema de ecuaciones
+\begin{equation*}
+    \begin{cases}
+    -3x + y + 2z = 0 \\  x - y + 2z = 0
+    \end{cases}
+\end{equation*}\pause
+Reduzcamos la matriz del sistema a una MRF:
+\begin{align*}
+    \begin{bmatrix}
+    -3&1&2 \\  1&-1&2
+    \end{bmatrix} &
+    \stackrel{F_1+3F_2}{\longrightarrow}
+    \begin{bmatrix}
+    0&-2&8 \\  1&-1&2
+    \end{bmatrix} 
+    \stackrel{F_1/(-2)}{\longrightarrow}
+    \begin{bmatrix}
+    0&1&-4 \\  1&-1&2
+    \end{bmatrix} 
+    &\stackrel{F_2+F_1}{\longrightarrow}
+    \begin{bmatrix}
+    0&1&-4 \\  1&0&-2
+    \end{bmatrix} 
+\end{align*}\pause
+
+Por lo tanto, $x_2 -4x_3 =0$ y $ x_1 -2x_3 =0$,  es decir  $x_2 = 4x_3$ y $ x_1 =2x_3 $. 
+\vskip .2cm\pause
+Luego, 
+\begin{equation*}
+W_1 \cap W_2 = \left\{ (2t,4t,t):  \t \in \R\right\} =  \left\{ t(2,4,1):  \t \in \R\right\}.
+\end{equation*}\pause
+
+La respuesta es entonces: $(2,4,1)$ es generador $ W_1 \cap W_2$. 
+
+
+
+
+\qed
+
+\end{frame}
+    
+
+    
+
+\begin{frame}
+\begin{teorema}
+    Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_k \in V$. Entonces,  la intersección de todos los subespacios vectoriales que contienen  a $v_1,\ldots,v_k$ es igual a $\langle v_1,\ldots,v_k \rangle$.	
+\end{teorema}	  \pause
+\begin{proof}  \pause
+    Denotemos 
+    \begin{itemize}
+        \item  $U= \bigcap$ de todos los subespacios vectoriales $\supseteq$ $\{ v_1,\ldots,v_k\}$.
+    \end{itemize}
+    \vskip .3cm  \pause
+    Probaremos que  $U = \langle v_1,\ldots,v_k \rangle$ con la doble inclusión,  es decir probando que 
+    $$U \subseteq  \langle v_1,\ldots,v_k \rangle \quad \text{y} \quad  \langle v_1,\ldots,v_k \rangle \subseteq U.$$
+\end{proof}
+                
+\end{frame}
+
+    
+
+\begin{frame}
+    
+($U\subseteq\langle v_1, ..., v_k\rangle$) \;   \pause
+\vskip .3cm
+Primero, $U\subseteq\langle v_1, ..., v_k\rangle$ vale puesto que  $\langle v_1, ..., v_k\rangle$ es un subespacio que contiene a $\{v_1, ..., v_k\}$.
+\pause
+\vskip .6cm
+    
+    
+    
+($\langle v_1,\ldots,v_k \rangle \subseteq U$) \;   \pause
+\vskip .3cm
+$U$  es intersección de subespacios $\Rightarrow$ (teor. p. \ref{th-interseccion}) $U$ es un subespacio.  
+\vskip .3cm  \pause
+Luego, $\{v_1, ..., v_k\}\subset U$  $\Rightarrow$ $\lambda_1v_1+\cdots+\lambda_kv_k\in U$, \; $\forall\,\lambda_1, ..., \lambda_k\in\K$.
+\vskip .3cm  \pause
+Por lo tanto $\langle v_1, ..., v_k\rangle\subseteq U.$ \qed
+
+    
+\end{frame}
+
+
+\begin{frame}
+\begin{observacion}
+    Si $V$ es un $\K$-espacio vectorial, $S$ y $T$ subespacios de $V$.   \pause
+    \vskip .3cm
+    Entonces $S \cup T$ \textit{no es necesariamente un subespacio} de $V$. 
+    \vskip .3cm  \pause
+    
+
+    En efecto, consideremos en $\R^2$ los subespacios 
+    $$S = \R(1,0)\quad \text{ y } T = \R(0,1).$$ 	
+    \pause
+    \begin{itemize}
+        \item  $(1,0)\in  S$ y $(0,1) \in  T$ $\Rightarrow$  $(1,0), (0,1) \in  S \cup T$. \vskip .2cm
+        \pause             \item Ahora bien $(1,0) + (0,1) = (1,1) \not\in S \cup T$, puesto que $(1,1) \not\in S$ y $(1,1) \not\in T$.
+    \end{itemize}
+\end{observacion}
+\end{frame}
+        
+
+    
+\begin{frame}
+    \begin{definicion} Sea $V$ un espacio vectorial sobre $\K$ y sean $S_1,\ldots,S_k$ subconjuntos  de $V$.
+        definimos 
+        \begin{equation*}
+            S_1+  \cdots +S_k := \left\{s_1+\cdots+s_k: s_i \in S_i, 1 \le i \le k \right\},
+        \end{equation*}
+        el conjunto \textit{suma de los  $S_1,\ldots,S_k$.}
+    \end{definicion}	
+    \pause
+    \vskip .8cm
+    \begin{teorema}
+        Sea $V$ un espacio vectorial sobre $\K$ y sean $W_1,\ldots,W_k$ subespacios  de $V$. Entonces $W= W_1+\cdots+W_k$ es un subespacio de $V$.
+    \end{teorema}  \pause
+    \begin{demostracion}  \pause
+        Ejercicio (ver apunte). \qed
+    \end{demostracion}
+    \end{frame}
+    
+    
+    
+    \begin{frame}
+    \begin{proposicion}
+        Sea $V$ un espacio vectorial sobre $\K$ y sean $v_1,\ldots,v_r$ elementos de   de $V$. Entonces
+        \begin{equation*}
+            \langle v_1,\ldots,v_r \rangle = \langle v_1 \rangle+ \cdots + \langle v_r \rangle.
+        \end{equation*}
+    \end{proposicion}  \pause
+    \begin{proof}  \pause
+        Probemos el resultado viendo que los dos conjuntos se incluyen mutuamente.  \pause
+        
+        ($\subseteq$) Sea $w \in \langle v_1,\ldots,v_r \rangle$, luego $w = \lambda_1 v_1 +\cdots+ \lambda_r v_r$. Como $ \lambda_i v_i \in \langle v_i \rangle$, $1 \le i \le r$ ,  tenemos que  $w \in \langle v_1 \rangle+ \cdots + \langle v_r \rangle$.  En  consecuencia, $\langle v_1,\ldots,v_r \rangle \subseteq \langle v_1 \rangle+ \cdots + \langle v_r \rangle$.   \pause
+        
+        ($\supseteq$) Si $w \in \langle v_1 \rangle+ \cdots + \langle v_r \rangle$, entonces $w = w_1 + \cdots+w_r$ con $w_i \in \langle v_i\rangle$ para todo $i$. Por lo tanto, $w_i = \lambda_i v_i$ para algún $\lambda_i \in \K$ y  $w = \lambda_1 v_1 +\cdots+ \lambda_r v_r \in \langle v_1,\ldots,v_r \rangle $. En  consecuencia, $\langle v_1 \rangle+ \cdots + \langle v_r \rangle \subseteq \langle v_1,\ldots,v_r \rangle$. \qedhere
+    \end{proof}
+    
+    \end{frame}
+    
+
+\end{document}
+
