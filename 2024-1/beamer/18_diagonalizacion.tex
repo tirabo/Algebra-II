@@ -92,20 +92,256 @@
 \nc{\fS}{\mathfrak{S}} \nc{\gA}{\mathfrak{A}}
 %%%%%%%%%%%%%%%%%%%%%%%%%LETRAS
 
-\title[Clase 25 -  Diagonalización]{Álgebra/Álgebra II \\Clase 25 -  Diagonalización}
+\title[Clase 18 -  Matriz de una transformación lineal. Diagonalización]{Álgebra/Álgebra II \\Clase 18 -  Matriz de una transformación lineal. Diagonalización}
 
 \author[]{}
 \institute[]{\normalsize FAMAF / UNC
 	\\[\baselineskip] ${}^{}$
 	\\[\baselineskip]
 } 
-\date[26/11/2020]{26 de noviembre de 2020}
+\date[30/05/2024]{30 de mayo de 2024}
 
 
 \begin{document}
 
 \begin{frame}
 \maketitle
+\end{frame}
+
+
+
+\begin{frame}
+    \begin{observacion}
+        Con sólo conocer cuanto vale la transformación en una base conocemos cuanto vale en todo el espacio.
+\vskip .4cm
+En efecto, a la matriz de la transformación la armamos calculando la transformación en los vectores de una base. Y la proposición anterior nos dice que para calcular la transformación en un vector cualquier debemos multiplicar por esa matriz.
+    \end{observacion}
+    \pause
+También vale  lo siguiente.
+\pause
+\begin{teorema}\label{th-tl-definida-en-base}
+    Sean $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y $\{v_1,\ldots,v_n\}$  una base ordenada de $V$. Sean $W$ un espacio vectorial sobre el mismo cuerpo y $\{w_1,\ldots,w_n\}$, vectores cualesquiera de $W$. Entonces existe una única transformación  lineal $T$ de $V$ en $W$ tal que
+    \begin{equation*}
+    T(v_j) = w_j, \quad j=1,\ldots,n.
+    \end{equation*}
+\end{teorema}
+
+\end{frame}
+
+\begin{frame}
+    \begin{corolario}\label{cor-cambio-de-base}
+        Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$, sean $\mathcal B$, $\mathcal B'$  bases ordenadas de $V$. Entonces 
+        \begin{equation*}
+            [v]_{\mathcal B} = [\Id]_{\mathcal B' \mathcal B}\, [v]_{\mathcal B'}, \quad \forall v \in V.
+        \end{equation*}
+    \end{corolario}\pause
+    \begin{proof}\pause
+        Por la proposición 3.5.1 tenemos que 
+        $$
+        [\Id]_{\mathcal B' \mathcal B}  [v]_{\mathcal B'} = [\Id (v)]_{\mathcal B} = [v]_{\mathcal B}.
+        $$
+    \end{proof}
+    \pause
+    \begin{definicion}
+        Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\mathcal B$ y $\mathcal B'$ bases ordenadas de $V$. La matriz $P =[\Id]_{\mathcal B' \mathcal B}$  es llamada la \textit{matriz de cambio de base} \index{matriz!de cambio de base} de la base $\mathcal B'$  a la base $\mathcal B$. 
+    \end{definicion}
+
+    
+
+\end{frame}
+
+
+\begin{frame}
+
+\begin{teorema} [4.5.3]
+Sean $V$, $W$ y $Z$ espacios vectoriales de dimensión finita con bases $\cB$, $\cB'$ y $\cB''$, respectivamente.
+
+\vskip .2cm
+
+Sean $T:V\longrightarrow W$ y $U:W\longrightarrow Z$ transformaciones lineales.
+
+\vskip .2cm
+
+Entonces la matriz de la tranfomación lineal $$UT:V\longrightarrow Z,$$ es decir la composición de $T$ con $U$, satisface
+\begin{align*}
+[UT]_{\cB\cB''}=[U]_{\cB'\cB''}[T]_{\cB\cB'}
+\end{align*}
+\end{teorema}
+(multiplicación de matrices)
+\end{frame}
+
+
+\begin{frame}
+    \begin{corolario}\label{cor-inversa-matriz-cambio-de-base} Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean $\mathcal B$ y $\mathcal B'$ bases ordenadas de $V$. La matriz de cambio de base  $P =[\Id]_{\mathcal B' \mathcal B}$ es invertible y su  inversa es $P^{-1} =[\Id]_{\mathcal B \mathcal B'}$
+    \end{corolario}\pause
+    \begin{proof}\pause
+        \begin{equation*}
+            [\Id]_{\mathcal B \mathcal B'} P =[\Id]_{\mathcal B \mathcal B'}[\Id]_{\mathcal B' \mathcal B} = [\Id]_{\mathcal B'} = \Id.
+        \end{equation*}
+
+        Luego $=[\Id]_{\mathcal B \mathcal B'} = P^{-1}$.
+    \end{proof}\qed
+
+\end{frame}
+
+
+\begin{frame}
+\begin{block}{Notación}
+Si $T:V\longrightarrow V$ es Una transformación lineal que va de un espacio en si mismo, diremos que $T$ es un \textit{operador lineal en $V$}.
+\pause
+\vskip .4cm
+
+Si $\cB$ es una base de $V$, \textit{$[T]_{\cB}$} denota la matriz de $T$ en la base $\cB$ y $\cB$, o sea si la base de salida y llegada es la misma, entonces usamos un sólo subíndice.
+\end{block}
+\pause
+\vskip .4cm
+\begin{corolario}[4.5.3]
+Sea $V$ un espacio vectorial de dimensión finita con base $\cB$ y $U,T:V\longrightarrow V$ dos transformaciones lineales. Entonces
+\begin{enumerate}
+ \item $[UT]_{\cB}=[U]_{\cB}[T]_{\cB}$
+ \item $T$ es un isomorfismo si y sólo si $[T]_\cB$ es una matriz invertible. En tal caso 
+ $$
+ [T^{-1}]_{\cB}=[T]_{\cB}^{-1}
+ $$
+\end{enumerate}
+\end{corolario}
+
+\end{frame}
+
+
+\begin{frame}
+
+Los espacios vectoriales no tienen una base ``natural'' es decir una que es más importante que otras. Cuando trabajamos con bases estamos haciendo una elección y hay infinitas elecciones posible. \pause
+
+\vskip .4cm
+
+El siguiente teorema nos dice como se relacionan las matrices de una transformación lineal respecto a distintas bases.\pause
+
+\vskip .4cm
+
+      
+\begin{teorema}\label{th-cambio-de-base}
+    Sea $V$ un espacio vectorial de dimensión finita sobre el cuerpo $\K$ y sean
+    $$
+    \mathcal B = \{v_1,\ldots,v_n \}, \qquad \mathcal B' = \{w_1,\ldots,w_n \}
+    $$
+    bases ordenadas de $V$. Sea $T$ es un operador lineal sobre V. Entonces, si $P$ es la matriz de cambio de base de $\mathcal B'$ a $\mathcal B$, se cumple que   
+    \begin{equation*}
+    [T]_{\mathcal B'} = P^{-1}[T]_{\mathcal B}  P.
+    \end{equation*}\pause
+    Es decir
+    \begin{equation*}\label{eq-cambio de base}
+        [T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B}.
+    \end{equation*}
+\end{teorema}
+
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{proof} \pause Tenemos que $T = \Id T$ y $T =T  \Id$, luego 
+        \begin{align*}
+            [T]_{\mathcal B'\mathcal B'} &=  [\Id T]_{\mathcal B'\mathcal B'}& \qquad& \\\noalign{\vskip .2cm}
+            &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B' \mathcal B}& &(\text{teorema 4.5.3})  \\\noalign{\vskip .2cm}
+            &= [\Id]_{\mathcal B \mathcal B'} [T \Id]_{\mathcal B' \mathcal B}& &\\\noalign{\vskip .2cm}
+            &= [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B\mathcal B} [\Id]_{\mathcal B' \mathcal B}& &(\text{teorema 4.5.3}).
+        \end{align*} 
+        
+        Por lo tanto  $ [T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B} = P^{-1} [T]_{\mathcal B\mathcal B}P$.
+        \vskip .2cm
+        \qed
+    \end{proof}
+
+\end{frame}
+
+\begin{frame}
+    Las fórmulas
+    \begin{align}
+        &[T]_{\mathcal B'} = [\Id]_{\mathcal B \mathcal B'} [T]_{\mathcal B} [\Id]_{\mathcal B' \mathcal B} \tag{*}\\
+        &[\Id]_{\mathcal B \mathcal B'} [\Id]_{\mathcal B' \mathcal B}= \Id \tag{**} \\
+        &[v]_{\mathcal B} = [\Id]_{\mathcal B' \mathcal B} [v]_{\mathcal B'} \tag{***}
+    \end{align}
+    son importantes por si mismas y debemos recordarlas.\pause
+
+    \vskip .4cm
+
+    Como ya dijimos, la matriz $P =[\Id]_{\mathcal B' \mathcal B} $  es llamada la {matriz de cambio de base} de la base $\mathcal B'$  a la base $\mathcal B$. \pause
+    \vskip .4cm
+    La matriz de cambio de base nos permite calcular los cambios de  coordenadas de los vectores y los cambio de base de las transformaciones lineales.
+    \vskip .4cm
+
+
+\end{frame}
+
+
+
+\begin{frame}
+
+\begin{observacion} Sea $T: \K^n \to \K^n$ operador lineal, $\cB = \{v_1,\ldots,v_n\}$ base ordenada y $\cC$ la base canónica,  entonces 
+$$
+[T]_{\cB\cC} = \begin{bmatrix}
+    Tv_1 & Tv_2 & \cdots &Tv_n
+\end{bmatrix}.
+$$
+\end{observacion}\pause
+    
+
+\begin{observacion}
+Pudimos probar el teorema de cambio de base usando adecuadamente el teorema 4.5.3, es decir la fórmula
+\begin{align*}
+    [UT]_{\cB\cB''}=[U]_{\cB'\cB''}[T]_{\cB\cB'}
+\end{align*}\pause
+Con igual argumento podemos deducir otras igualdades que son útiles para armar todas las matrices a partir de matrices asociadas a bases canónicas, que, como  dijimos en la observación anterior, es fácil calcularlas. 
+\end{observacion}
+\end{frame}
+
+
+\begin{frame}
+
+\begin{observacion}
+Sea $T:\R^n\longrightarrow\R^n$ una transformación lineal.
+
+\vskip .4cm
+
+Sean $\cB$ y $\cB'$ bases de $\R^n$.
+
+\vskip .4cm
+
+Entonces 
+\begin{align*}
+[T]_{\cB'\cB}=[\Id]_{\cC\cB}\,[T]_{\cC\cC}\,[\Id]_{\cB'\cC}=[\Id]_{\cB\cC}^{-1}\,[T]_{\cC\cC}\,[\Id]_{\cB'\cC}
+\end{align*}\pause
+
+\vskip .4cm
+
+En palabras: para ir de $\cB'$ a $\cB$ con $T$, primero vamos de $\cB'$ a $\cC$, despues de $\cC$ a $\cC$ con $T$ y finalmente vamos de $\cC$ a $\cB$.\pause
+
+\vskip .4cm
+
+Las matrices $[\Id]_{\cB\cC}$ y $[\Id]_{\cB'\cC}$ son fáciles de calcular, ubicamos los vectores de $\cB$ y $\cB'$ como columnas. Similarmente, la matriz de $T$ en la base canónica también es fácil de calcular.
+\end{observacion}
+\end{frame}
+
+\begin{frame}
+
+\begin{observacion}
+Sean $\cB$ y $\cB'$ dos bases de $\R^n$.
+
+Entonces la matriz de cambio de base de $\cB'$ a $\cB$ es 
+\begin{align*}
+[\Id]_{\cB'\cB}=[\Id]_{\cC\cB}\,[\Id]_{\cB'\cC}=[\Id]_{\cB\cC}^{-1}\,[\Id]_{\cB'\cC}
+\end{align*}\pause
+
+\
+
+En palabras, 
+``para ir de $\cB'$ a $\cB$, primero vamos de $\cB'$ a $\cC$ y despues vamos de $\cC$ a $\cB$''.
+
+\
+
+Las matrices $[\Id]_{\cB\cC}$ y $[\Id]_{\cB'\cC}$ son fáciles de calcular, ponemos los vectores de $\cB$ y $\cB'$ como columnas.
+\end{observacion}
 \end{frame}
 
 

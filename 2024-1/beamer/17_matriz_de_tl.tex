@@ -1,0 +1,742 @@
+%\documentclass{beamer} 
+\documentclass[handout]{beamer} % sin pausas
+\usetheme{CambridgeUS}
+
+\usepackage{etex}
+\usepackage{t1enc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+%\usepackage{makeidx}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usepackage[customcolors]{hf-tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\tikzset{
+	every picture/.append style={
+		execute at begin picture={\deactivatequoting},
+		execute at end picture={\activatequoting}
+	}
+}
+\usetikzlibrary{decorations.pathreplacing,angles,quotes}
+\usetikzlibrary{shapes.geometric}
+\usepackage{mathtools}
+\usepackage{stackrel}
+%\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{tkz-graph}
+\usepackage{polynom}
+\polyset{%
+	style=B,
+	delims={(}{)},
+	div=:
+}
+\renewcommand\labelitemi{$\circ$}
+\setlist[enumerate]{label={(\arabic*)}}
+%\setbeamertemplate{background}[grid][step=8 ]
+\setbeamertemplate{itemize item}{$\circ$}
+\setbeamertemplate{enumerate items}[default]
+\definecolor{links}{HTML}{2A1B81}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
+
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand{\im}{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand\sgn{\operatorname{sgn}}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\figurename }{Figura}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\cB}{\mathcal{B}}
+
+\include{definiciones}
+
+\setlength{\parskip}{.2cm} % espacio entre párrafo y párrafo
+\setlist{itemsep=.15cm}
+
+
+\title[Clase 17 - Coordenadas. Matriz de una transformación lineal]{Álgebra/Álgebra II \\ Clase 17 - Coordenadas. Matriz de una transformación lineal}
+
+\author[]{}
+\institute[]{\normalsize FAMAF / UNC
+	\\[\baselineskip] ${}^{}$
+	\\[\baselineskip]
+} 
+\date[28/05/2024]{28 de mayo de 2024}
+
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+
+\begin{frame}
+
+    En esta clase introduciremos coordenadas respecto a una base ordenada y la matriz de una transformación lineal respecto a dos bases ordenadas.\pause
+    
+    \
+    
+    Esta presentación está basada  en la primera parte de la sección 3.5 y en la sección 4.5 de las notas de la marteria.\pause
+    \
+    
+    \end{frame}
+    
+    
+        \begin{frame}
+        
+        Hasta aquí hemos estudiado espacios vectoriales de manera general, abstrayendo las propiedades de $\R^n$.\pause
+        
+        \
+        
+        Esto nos facilitó deducir propiedades válidas, no sólo para $\R^n$, si no también para polinomios, matrices, funciones, etc. sin tener que probar las propiedades en cada caso.\pause
+        
+        \
+        
+        Sin embargo, cada vez que queremos operar en ejercicios particulares, sí recurrimos al auxilio de números concretos. Por ejemplo, hacemos esto cada vez que en lugar de usar un polinómio nos quedamos con sus coeficientes.\pause
+        
+        \
+        
+        Estos números concretos que determinan de manera precisa a un vector es lo que llamaremos coordenadas. En el caso de $\K^n$, obtendremos las coordenadas usuales.\pause
+        
+        \
+        
+        Las coordenadas nos permiten hacer más tangibles los vectores de un espacio vectorial abstracto.
+        \end{frame}
+        
+        
+        \begin{frame}
+        
+        \begin{definicion}[3.5.1]
+        Sea $V$ un espacio vectorial de dimensión finita y $\mathcal{B}$ una base de $V$. Se dice que $\cB$ es una \textit{base ordenada} si los vectores que la forman están ordenados. 
+        \end{definicion}\pause
+        
+    
+        \begin{ejemplo}
+        La base canónica de $\mathbb{R}^n$:\; $\cC=\{e_1, e_2, ..., e_n\}$\; es una base ordenada. 
+        
+        \vskip .4cm
+        
+        Si cambiamos el orden tenemos otra base ordenada. Por ejemplo,
+        \begin{align*}
+        \cC'=\{e_n, e_{n-1}, ..., e_2, e_1\} 
+        \end{align*}
+        es otra base ordenada distinta a $\cC$.
+    \end{ejemplo}\pause
+    \vskip .8cm
+        El orden es importante para luego definir las coordenadas.
+        \end{frame}
+        
+        \begin{frame}
+        
+        \begin{proposicion}[3.5.1]
+        Sea $V$ un $\K$-espacio vectorial de dimensión finita y $\cB=\{v_1, ..., v_n\}$ una base ordenada de $V$. Entonces, para cada $v\in V$, existen únicos escalares $x_1, ..., x_n\in\K$ tales que
+        \begin{align*}
+        v=x_1v_1+\cdots+x_nv_n 
+        \end{align*}
+        \end{proposicion}\pause
+        
+        \begin{proof}\pause Dichos escalares existen porque $\cB$ genera a $V$.
+        
+        \vskip .4cm 	
+        Veamos que son únicos. S
+        \vskip .2cm
+        Sean $y_1, ..., y_n\in\K$ otros escalares que satisfacen el enunciado. 
+        \vskip .2cm
+        Entonces tenemos que
+        \begin{align*}
+        x_1v_1+\cdots+x_nv_n=v=y_1v_1+\cdots+y_nv_n  
+        \end{align*}
+        
+        \end{proof}
+    
+        \end{frame}
+        
+    \begin{frame}
+        Restando la sumatoria de  la derecha a la de la izquierda obtenemos:
+        \begin{align*}
+        (x_1-y_1)v_1+\cdots+(x_n-y_n)v_n=0. 
+        \end{align*}
+        
+        Dado que $\cB$ es LI, $x_i-y_i=0$ $(1\le i \le n)$, o dicho de otro modo
+        \begin{align*}
+        x_i=y_i\qquad(1\le i \le n).
+        \end{align*}
+        \qed
+    
+        \vskip 1cm
+        \pause
+        La proposición 3.5.1 permite, dada una base ordenada,  asociar a cada vector una $n$-tupla que serán la coordenadas del vector en esa base.
+        
+    \end{frame}
+    
+    
+    \begin{frame}
+    
+        \begin{definicion}
+        Sea $V$  espacio vectorial de dimensión finita y sea $\mathcal{B} = \{v_1,\ldots,v_n\}$ una base ordenada de $V$, si $v \in V$ y $$v =   x_1v_1 + \cdots +x_nv_n,$$  entonces \textit{$x_i$ es la coordenada $i$-ésima de $v$} y denotamos
+        $$
+        [v]_\mathcal{B} = (x_1,\ldots,x_n).
+        $$
+        El vector $ [v]_\mathcal{B}$  es  el \textit{vector de coordenadas de $v$} respecto a la base $\cB$.\pause
+    
+        \vskip .2cm
+    
+        También nos será útil describir a $v$ como una matriz $n \times 1$ y en ese caso hablaremos de \textit{la matriz de $v$  en la base  $\mathcal{B}$}:
+        $$
+        [v]_\mathcal{B} = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}.
+        $$
+        (Usamos la misma notación).
+        \end{definicion}
+    
+    \end{frame}
+    
+        
+        
+        \begin{frame}
+            
+        \begin{observacion}
+        Recordemos siempre:
+        $$
+        v =   x_1v_1 + \cdots +x_nv_n \qquad \Longleftrightarrow \qquad 
+        [v]_\mathcal{B} = (x_1,\ldots,x_n).
+        $$
+        \end{observacion}\pause
+    
+        \begin{ejemplo}
+        Las coordenadas de $v\in\K^n$ con respecto a la base canónica $\cC$ son las coordenadas usuales de $\K^n$. 
+        \end{ejemplo}\pause
+        
+        En efecto, si $v=(x_1, ..., x_n)\in\K^n$ entonces
+        \begin{align*}
+        [v]_\cC=(x_1, ..., x_n) \qquad \Longleftrightarrow \qquad v= x_1e_1+\cdots+x_ne_n.
+        \end{align*}
+        
+    
+        
+        \end{frame}
+        
+        \begin{frame}
+        
+    
+        \begin{ejemplo}  Sea $\cB=\{(1,-1), (2,3)\}$  una base ordenada de $\R^2$.
+        Encontrar las coordenadas de $(1,0)\in\R^2$ en la base $\cB$.
+        \end{ejemplo}\pause
+        
+        \begin{solucion}\pause
+            Debemos encontrar escalares $x_1,x_2\in\R$ tales que
+        \begin{align*}
+        (1,0)=x_1(1,-1)+x_2(2,3) 
+        \end{align*}
+        Entonces tenemos que resolver el sistema
+        \begin{align*}
+        \begin{cases}
+        x_1+2x_2=1\\ 
+        -x_1+3x_2=0
+        \end{cases} 
+        \end{align*}
+        La solución es $x_1=\frac{3}{5}$ y $x_2=\frac{1}{5}$. Es decir
+        \begin{align*}
+        [(1,0)]_{\cB}=\left(\frac{3}{5},\frac{1}{5}\right) 
+        \end{align*}	\qed
+        \end{solucion}
+    \end{frame}
+    
+    
+        \begin{frame}
+        
+        \begin{observacion}
+        Las coordenadas determinan un único vector.
+        \end{observacion}\pause
+        
+        \begin{ejemplo}
+        ¿Qué vector de $\R^2$ tiene coordenadas $1$ y $2$ en la base ordenada $\cB=\{(1,-1), (2,3)\}$?
+        \pause
+        \vskip.2cm
+        Dicho de otro modo, 
+        \vskip.2cm
+        ¿Qué $v\in\R^2$ tiene coordenadas $[v]_{\cB}=(1,2)$?
+        \end{ejemplo}\pause
+        \begin{block}{Respuesta} \pause
+        $v=(5,5)\in\R^2$
+        \end{block}
+        
+        En efecto, si $1$ y $2$ son las coordenadas de $v$ en la base $\cB$ quiere decir que 
+        \begin{align*}
+        v=1(1,-1)+2(2,3)=(5,5)
+        \end{align*}
+        \end{frame}
+        
+    
+        \begin{frame}
+        
+        La siguiente simple observación suele ser muy útil y la usaremos más adelante.\pause
+        \vskip .4cm
+        \begin{observacion}
+        Sea $V$ un espacio vectorial de dimensión finita y $\cB=\{v_1, ..., v_n\}$ una base ordenada de $V$.
+        \vskip .4cm
+        Las coordenadas de $v_i\in\cB$ son
+        \begin{align*}
+        [v_i]_{\cB}=(0, ..., 1, ..., 0),
+        \end{align*}
+        es decir, todas $0$ salvo un $1$ en la $i$-esima coordenada.
+        \vskip .4cm
+        Pues, $
+        v_i=0v_1+\cdots+1v_i+\cdots+0v_n$.
+        
+        \end{observacion}
+        \end{frame}
+        
+        
+        \begin{frame}
+        Sea $V$ un espacio vectorial de dimensión finita y $\cB=\{v_1, ..., v_n\}$ una base ordenada de $V$.\pause
+        
+        \
+        
+        El vector de coordenadas $[v]_\cB$ es un vector en $\K^n$ entonces lo podemos sumar y multiplicar por escalares. \pause
+        
+        \
+        
+        A continuación veremos como se relacionan estas operaciones con las operaciones propias del espacio vectorial $V$.
+        \end{frame}
+        
+        \begin{frame}
+    
+        \begin{proposicion}[3.5.2]\label{vectorbase->lineal}
+            Sea $\mathcal{B}=\{v_1,\ldots,v_n\}$ una base ordenada de $V$ un $\K$-espacio vectorial. Entonces\pause
+            \begin{enumerate}
+                \item\label{itm-coor-1}Las coordenadas de la suma es la suma de las coordenada:
+                \begin{align*}
+                [v+w]_\cB=[v]_\cB+[w]_\cB\quad\forall v,w\in V .
+                \end{align*}\pause
+                \item\label{itm-coor-2} Las coordenadas del producto por un escalar es igual a multiplicar las coordenadas por el escalar:
+                \begin{align*}
+                [\lambda v]_\cB=\lambda[v]_\cB\quad\forall v\in V,\,\lambda\in\K.
+                \end{align*}
+            \end{enumerate}
+        \end{proposicion} 	
+        \pause
+        
+        A continuación la demostración.
+        
+        \end{frame}
+        
+    \begin{frame}
+        \begin{proof}
+            \ref{itm-coor-1} Si \;$v = x_1v_1 + \cdots +x_nv_n$\; y \;$w = y_1v_1 + \cdots +y_nv_n$, \;entonces 
+            $$
+            v + w = (x_1+y_1)v_1 + \cdots +(x_n+y_n)v_n,
+            $$
+            luego
+            $$
+            [v + w]_\mathcal{B} = \begin{bmatrix}x_1+y_1 \\ \vdots \\ x_n+y_n\end{bmatrix}
+            = \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix}+\begin{bmatrix}y_1 \\ \vdots \\ y_n\end{bmatrix} = [v]_\mathcal{B} +[w]_\mathcal{B}.
+            $$
+            
+            \ref{itm-coor-2} Si $v = x_1v_1 + \cdots +x_nv_n$ y $\ \in \K$, entonces 
+            $$
+            \lambda v = (\lambda x_1)v_1 + \cdots +(\lambda x_n)v_n,
+            $$
+            luego
+            $$
+            [\lambda v ]_\mathcal{B} = \begin{bmatrix}\lambda x_1 \\ \vdots \\ \lambda x_n\end{bmatrix}
+            = \lambda \begin{bmatrix}x_1 \\ \vdots \\ x_n\end{bmatrix} = \lambda [v]_\mathcal{B}.
+            $$\qed
+        \end{proof}
+    \end{frame}
+    
+    
+    \begin{frame}
+        \begin{corolario}
+            Sea Sea $\mathcal{B}=\{v_1,\ldots,v_n\}$ una base ordenada de $V$ un $\K$-espacio vectorial. Entonces la aplicación
+            \begin{equation*}
+                \begin{matrix}
+                    \Theta:& V &\to &\K^n \\
+                    &v &\mapsto&[v]_\mathcal{B}
+                \end{matrix}
+            \end{equation*} 
+        es un isomorfismo. 
+        \end{corolario}	
+        \begin{proof}
+            La proposición 3.5.2 nos dice que $\Theta$  es lineal. 
+            \vskip .2cm 
+            Por otro  lado, $\Theta(v_i) = [v_i]_{\cB} = e_i$, luego $\Theta$ manda base en base y por lo tanto es un isomorfismo. 
+        \end{proof}\qed
+    \end{frame}
+    
+    \begin{frame}
+    
+    Existe una forma general de  pasar de las coordenadas de un vector en una base ordenada $\cB$  a las coordenadas de otra base ordenada $\cB'$ (teorema 3.5.3 del apunte). \pause
+    
+    \vskip .4cm
+    
+    La teoría que vamos a comenzar a desarrollar,  que esencialmente es poner en coordenadas una transformación lineal, nos servirá para mirar las transformaciones lineales como matrices. \pause
+    
+    \vskip .4cm
+    
+    Esta teoría, la matriz de una transformación lineal, permite obtener resultados muy interesantes y nos indica que nuestra intuición de transformaciones lineales como matrices es la correcta.\pause
+    
+    \vskip .4cm
+    Veremos en la clase que viene, entre otros resultados, que  la fórmula general para cambio de coordenadas se deduce de un resultado más general (teorema 4.5.5). 
+    
+    
+    
+    \end{frame}
+    
+    \begin{frame}
+              
+        \begin{definicion}[4.5.1] Sean $V$ y $W$  dos $\K$-espacios vectoriales con bases ordenadas $\mathcal B = \{v_1,\ldots,v_n\}$  y $\mathcal B' = \{w_1,\ldots,w_m\}$, respectivamente. 
+            
+            Sea $T: V \to W$ una transformación lineal tal que 
+            \begin{equation*}\label{matriz-de-T-1}
+                Tv_j = \sum_{i=1}^{m} a_{ij} w_i.
+            \end{equation*}
+            A  $A$  La matriz $m \times n$  definida por $[A]_{ij} = a_{ij}$ se la  denomina \textit{la matriz de $T$ respecto a las bases ordenadas $\mathcal B$ y $\mathcal B'$;}\index{matriz!de una transformación lineal} y se la denota 
+            $$
+            [T]_{\mathcal B \mathcal B'} = A .
+            $$.
+        \end{definicion}
+    
+        \pause
+    Notar que $[T]_{\cB\cB'}\in\K^{m\times n}$ con $n=\dim V$ y $m=\dim W$.
+    \end{frame}
+    
+    
+    \begin{frame}
+        \begin{ejemplo}
+            Sea $T:\K^3\longrightarrow\K^2$ definida por 
+        $$T(x,y,z)=(2x-z,-x+3y+z)$$
+        y $\cB=\{(1,1,1),(0,1,1),(0,0,1)\}$ base ordenada de $\K^3$.
+        \vskip .2cm
+        Calculemos la matriz de $T$ en la base $\cB$ y la base canónica $\cC_2$ de $\K^2$
+        \begin{align*}
+            T(1,1,1) &= (1,3) = 1e_1 + 3e_2 \\
+            T(0,1,1) &= (-1,4) = (-1)e_1 + 4e_2 \\
+            T(0,0,1) &= (-1,1) = (-1)e_1 + 1e_2. \\
+        \end{align*}
+    
+        Luego 
+        $$
+        [T]_{\cB\cC} = \begin{bmatrix}
+            1&-1&-1\\ 3&4&1
+        \end{bmatrix}. 
+        $$
+    \end{ejemplo}
+    
+        
+    \end{frame}
+    
+    
+    
+    \begin{frame}
+    
+    \begin{observacion}
+        \begin{equation*}\label{matriz-de-T-1}
+            Tv_j = \sum_{i=1}^{m} a_{ij} w_i \quad \Leftrightarrow \quad [Tv_j ]_{\cB'} =\begin{bmatrix}
+                a_{1j} \\ a_{2j} \\ \vdots \\ a_{nj} 
+            \end{bmatrix}
+        \end{equation*}\pause
+    
+    Luego, 
+    \begin{align*}
+    [T]_{\cB\cB'}=
+    \begin{bmatrix}
+        \mid& \mid& &\mid\\
+    $[$Tv_1$]$_{\cB'}&$[$Tv_2$]$_{\cB'}&\cdots&$[$Tv_n$]$_{\cB'}\\
+    \mid& \mid& &\mid
+    \end{bmatrix}
+    \end{align*}
+    es decir, las columnas son los vectores de coordenadas de $Tv_i\in W$ con respecto a la base $\cB'$
+    \end{observacion}
+    
+    \end{frame}
+    
+    
+    \begin{frame}
+    
+    \begin{ejemplo}
+    
+    Sean  $\cC = \{e_1,e_2,e_3\}$ y $\cC = \{e_1,e_2\}$ las base canónicas de $\K^3$ y $\K^2$, respectivamente.
+    
+    (Por abuso de notación, denotamos $\cC$ la base canónica de $\K^2$ y $\K^3$)
+    \vskip .4cm
+    Sea  $T:\mathbb{R}^3\longrightarrow\mathbb{R}^2$ una transformación lineal tal que 
+    $$T(e_1)=(1,1),\quad T(e_2)=(1,2),\quad  T(e_3)=(1,3).$$ 
+    
+    La matriz de $T$ con respecto a las bases canónicas de $\mathbb{R}^3$ y $\mathbb{R}^2$.
+    $$
+    [T(e_1)]_\cC=
+    \begin{bmatrix}
+        1\\1
+    \end{bmatrix}
+    ,\quad 
+    [T(e_2)]_\cC=
+    \begin{bmatrix}
+        1\\2
+    \end{bmatrix}
+    ,\quad
+    [T(e_3)]_\cC=
+    \begin{bmatrix}
+        1\\3
+    \end{bmatrix}.
+    $$
+    Entonces,
+    $$
+    [T]_{\cC\cC}= 
+    \begin{bmatrix}
+        1&1&1\\1&2&3
+    \end{bmatrix}
+    $$
+    \end{ejemplo}
+    \end{frame}
+    
+    
+    
+    \begin{frame}
+    
+    
+        \begin{ejemplo}
+        Sea $T:\K^3\longrightarrow\K^2$ definida por 
+        $$T(x,y,z)=(2x-z,-x+3y+z).$$
+        
+        Entonces la matriz en las bases canónicas de $\K^3$ y $\K^2$ es
+        \begin{align*}
+        [T]_{\cC_3,\cC_2}
+        &=\left[
+        \begin{array}{ccc}
+        \mid& \mid& \mid\\
+        $[$T(e_1)$]$_{\cC_2}&$[$T(e_2)$]$_{\cC_2}&$[$T(e_3)$]$_{\cC_2}\\
+        \mid& \mid& \mid
+        \end{array}
+        \right]\\
+        \\
+        &=\left[
+        \begin{array}{rrr}
+        \quad\quad2&\quad\quad\quad0&\quad\quad\quad-1\quad\\-1&3&1\quad
+        \end{array}
+        \right]
+        \end{align*}
+        
+        Esta es la transformación lineal que hemos considerado en clases pasadas donde vimos que era igual a la transformación lineal ``multiplicar por la matriz $A=[T]_{\cC_3,\cC_2}$''.
+        \end{ejemplo}
+        
+        
+        \end{frame}
+        
+        
+        
+        \begin{frame}
+        
+        
+        \begin{exampleblock}{Ejemplo}
+        Sea $T:\K^3\longrightarrow\K^2$ definida por 
+        $$T(x,y,z)=(2x-z,-x+3y+z)$$
+        y $\cB=\{(1,1,1),(0,1,1),(0,0,1)\}$ base ordenada de $\K^3$.
+        
+        La matriz de $T$ en la base $\cB$ y la base canónica $\cC_2$ de $\K^2$ es
+        \begin{align*}
+        [T]_{\cB,\cC_2}
+        &=\left[
+        \begin{array}{ccc}
+        \mid& \mid& \mid\\
+        $[$T(1,1,1)$]$_{\cC_2}&$[$T(0,1,1)$]$_{\cC_2}&$[$T(0,0,1)$]$_{\cC_2}\\
+        \mid& \mid& \mid
+        \end{array}
+        \right]\\
+        \\
+        &=\left[
+             \begin{array}{rrr}
+        \quad\quad\quad1&\quad\quad\quad\quad-1&\quad\quad\quad\quad-1\quad\quad\\3&4&1\quad\quad
+        \end{array}
+        \right] 
+        \end{align*}
+        \end{exampleblock}
+        
+        
+        \end{frame}
+    
+    
+\begin{frame}
+
+    \begin{block}{Proposición 3.5.1}
+    Sean $V$ y $W$ espacios vectoriales de dimensión finita con bases ordenadas $\cB=\{v_1, ..., v_n\}$ y $\cB'=\{w_1, ..., w_m\}$, respectivamente. 
+    
+    Si $T:V\longrightarrow W$ es una transformación lineal, entonces
+    \begin{align*}
+    [T(v)]_{\cB'}=[T]_{\cB\cB'}[v]_{\cB}
+    \end{align*}
+    para todo $v\in V$.
+    \end{block}
+    \pause
+    En palabras, el vector de coordenadas de $T(v)$ en la base $\cB'$ es igual a multiplicar la matriz de $T$ en las bases $\cB$ y $\cB'$ por el vector de coordenadas de $v$ en la base $\cB$.
+    
+    \
+    
+    
+    
+    \end{frame}
+    
+    \begin{frame}
+    La demostración se puede ver en el apunte de clase.
+    \pause
+    \
+    
+    La demostración sigue los mismos pasos del siguiente ejemplo pero escribiendo todo en forma más abstracta: con letras y subíndices en lugar de números concretos.
+    \end{frame}
+    
+    
+    
+    \begin{frame}
+        \begin{ejemplo}
+            Sean las bases ordenadas de $\R^3$
+            $$\cB = \{(1,0,-1),(0,1,-1),(1,1,0)\}\quad \textbf{ y } \quad\cB' = \{e_1,e_2,e_3\}.$$ 
+            Sea $T: \R^3 \to \R^3$ definida
+            $$
+            T(x,y,z) = (x-2y+z, x+y, -x-y+z),
+            $$ 
+            y sea $v=(-4,4,6)$. Veamos  que 
+        \begin{align*}
+            [T(v)]_{\cB'}=[T]_{\cB\cB'}[v]_{\cB}
+            \end{align*}
+        \end{ejemplo}\pause
+        \begin{solucion}\pause
+            Primero debemos calcular (1) $[T(v)]_{\cB'}$,\; (2) $[v]_{\cB}$\; y \;(3) $[T]_{\cB\cB'}$.
+        \end{solucion}	
+    \end{frame}
+    
+    
+    \begin{frame}
+        Aplicando la definición de $T$, calculamos
+        $$
+        T(-4,4,6) = (-6,0,6) = -6(1,0,0) +0(0,1,0) + 6(0,0,1).
+        $$
+        Es decir 
+        \begin{equation*}
+            [T(v)]_{\cB'} = \begin{bmatrix}
+                -6 \\0\\6
+            \end{bmatrix}.\tag{1}
+        \end{equation*}
+        \pause
+        Por otro  lado
+        \begin{align*}
+            (-4,4,6) = -7(1,0,-1) +1(0,1,-1)+3(1,1,0),
+        \end{align*}
+        Luego
+        \begin{equation*}
+            [v]_{\cB} = \begin{bmatrix}
+                -7 \\1\\3
+            \end{bmatrix}.\tag{2}
+        \end{equation*}
+    \end{frame}
+    
+    
+    \begin{frame}
+        
+        \begin{align*}
+        \text{Finalmente, \quad}	T(1,0,-1) &= (0,1,-2)\\ 
+            T(0,1,-1) &= (-3,1,-2)\\
+            T(1,1,0) &= (-1,2,-2)\\
+        \end{align*}
+        \vskip -.8cm\pause Luego
+        \begin{equation*}
+            [T]_{\cB \cB' } = \begin{bmatrix}
+                0&-3&1 \\1&1&2\\-2&-2&-2
+            \end{bmatrix}.\tag{3}
+        \end{equation*}
+        \pause
+        $\Rightarrow$
+        \pause
+        \begin{align*}
+            [T]_{\cB\cB'}[v]_{\cB} &= 
+            \begin{bmatrix} 0&-3&1 \\1&1&2\\-2&-2&-2\end{bmatrix} \begin{bmatrix}-7 \\1\\3\end{bmatrix}
+            =   \begin{bmatrix}	-6 \\0\\6\end{bmatrix}\\
+            &= [T(v)]_{\cB'}.
+            \end{align*}\qed
+    \end{frame}
+    
+    
+    
+    \begin{frame}
+    ¿Por  qué se  cumple esta ``mágica'' igualdad? 
+    \vskip .4cm\pause
+    Escribiendo $v$ como combinación lineal de la base $\cB'$ y luego  calculando $T(v)$ se devela  el ``misterio''.\pause En  nuestro caso 
+    $$
+    v = (-4,4,6) = -7(1,0,-1)+ 1(0,1,-1)+3(1,1,0),
+    $$
+    Luego,
+        \begin{align*}
+            T(-4,4,6) &= T(-7(1,0,-1)+ 1(0,1,-1)+3(1,1,0)) \\ \noalign{\vskip.2cm}
+            &= -7T(1,0,-1)+ 1T(0,1,-1)+3T(1,1,0) \\\noalign{\vskip.2cm}
+            &= -7(0,1,2) +1(-3,1,-2) +3(-1,2,-2) \\\noalign{\vskip.2cm}
+            &=
+            \begin{bmatrix*}[l]
+                -7\cdot 0 &+& 1\cdot (-3) &+&3 \cdot (-1) \\
+                -7\cdot 1 &+& 1\cdot 1 &+&3 \cdot 2\\ 
+                -7\cdot 2 &+& 1\cdot (-2) &+&3 \cdot (-2)
+            \end{bmatrix*} =  [T(v)]_{\cB'}
+        \end{align*}	
+        \vskip .4cm 
+        
+    
+    
+    \end{frame}
+    
+    \begin{frame}
+        Repasando \pause
+        $$
+        [T]_{\cB \cB'} = \begin{bmatrix} 0&-3&1 \\1&1&2\\-2&-2&-2\end{bmatrix},
+        $$\pause
+        $$
+        [v]_{\cB} = \begin{bmatrix}-7 \\1\\3\end{bmatrix}
+        $$\pause
+        $$
+        [T(v)]_{\cB'} =\begin{bmatrix*}[l]
+            -7\cdot 0 &+& 1\cdot (-3) &+&3 \cdot (-1) \\
+            -7\cdot 1 &+& 1\cdot 1 &+&3 \cdot 2\\ 
+            -7\cdot 2 &+& 1\cdot (-2) &+&3 \cdot (-2)
+        \end{bmatrix*}
+        $$\pause
+        Es decir 
+        \begin{equation*}
+            \underbrace{\begin{bmatrix} 0&-3&1 \\1&1&2\\-2&-2&-2\end{bmatrix}}_{[T]_{\cB \cB' }} 
+            \underbrace{\begin{bmatrix}-7 \\1\\3\end{bmatrix}}_{[v]_{\cB}}= 
+            \underbrace{
+                \begin{bmatrix*}[l]
+                    -7\cdot 0 &+& 1\cdot (-3) &+&3 \cdot (-1) \\
+                    -7\cdot 1 &+& 1\cdot 1 &+&3 \cdot 2\\ 
+                    -7\cdot 2 &+& 1\cdot (-2) &+&3 \cdot (-2)
+                \end{bmatrix*}}_{ [T(v)]_{\cB'}}
+        \end{equation*}
+    \end{frame}
+    
+    
+    
+    
+\end{document}
+
+
+
