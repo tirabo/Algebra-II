@@ -525,24 +525,23 @@ la ecuación (*) de la página anterior se traduce en el sistema de ecuaciones
     Las ecuaciones $ b'_{r+1} = \cdots = b'_m =0$ son las ecuaciones implícitas que definen a $W$ y nos permiten decidir rápidamente si un vector pertenece o no a $W$, simplemente viendo si sus coordenadas satisfacen las ecuaciones.
 
 \end{frame}
-    
-    \begin{frame}
-    Ejemplificaremos con los siguientes vectores en $\R^4$:
-    \begin{align*}
-    v_1=(3,1,2,-1),&\quad
-    v_2=(6,2,4,-2),\\
-    v_3=(3,0,1,1),&\quad
-    v_4=(15,3,8,-1)
-    \end{align*}
-    \pause
 
-    \begin{exampleblock}{Problema}\pause
-    
-    Caracterizar mediante ecuaciones el subespacio $\langle v_1, v_2, v_3, v_4\rangle$.
-    
+\begin{frame}
+    \begin{ejemplo}
+        Caracterizar mediante ecuaciones el subespacio del subespacio generado por 
+        \begin{align*}
+            v_1=(3,1,2,-1),&\quad
+            v_2=(6,2,4,-2),\\
+            v_3=(3,0,1,1),&\quad
+            v_4=(15,3,8,-1).
+            \end{align*}
+    \end{ejemplo}
+
     \pause
     
-    \
+    \begin{solucion}
+        
+
     
     En otras palabras, queremos describir implícitamente el conjunto de los $b=(b_1,b_2,b_3,b_4)
     \in\R^4$ tales que $b\in\langle v_1, v_2, v_3, v_4\rangle$.
@@ -558,133 +557,81 @@ la ecuación (*) de la página anterior se traduce en el sistema de ecuaciones
     
     
     con $\lambda_1,\lambda_2,\lambda_3,\lambda_4\in\R$.
-    \end{exampleblock}
+
+    \end{solucion}
+
     \end{frame}
     
 
     \begin{frame}
-        Planteemos la fórmula (*) en coordenadas, pero es conveniente hacerlo con vectores columna :
+        Planteemos la fórmula (*) en como un sistema de ecuaciones. Obtenemos:
         \begin{align*}
-            \lambda_1 \begin{bmatrix*}[r] 
-                3\\
-    1\\
-    2\\
-    -1
-    \end{bmatrix*}+
-    \lambda_2\begin{bmatrix*}[r] 
-    6\\
-    2\\
-    4\\
-    -2
-        \end{bmatrix*}+
-    \lambda_3
-    \begin{bmatrix*}[r] 
-    3\\
-    0\\
-    1\\
-    1
-\end{bmatrix*}+\lambda_4
-    \begin{bmatrix*}[r] 
-    15\\
-    3\\
-    8\\
-    -1
-\end{bmatrix*}=
-    \begin{bmatrix*}[r] 
-    b_1\\
-    b_2\\
-    b_3\\
-    b_4
-\end{bmatrix*}
+            b_1&=3\lambda_1+6\lambda_2+3\lambda_3+15\lambda_4\\
+            b_2&=\lambda_1+2\lambda_2+3\lambda_4\\
+            b_3&=2\lambda_1+4\lambda_2+ \lambda_3+8\lambda_4\\
+            b_4&=-\lambda_1-2\lambda_2+\lambda_3-\lambda_4
         \end{align*}
         
-\pause Luego 
+        \pause Luego, escrito como producto de matrices, el sistema es
 
-\begin{equation*}
-\begin{bmatrix*}[r]
-    3\lambda_1+6\lambda_2+3\lambda_3+15\lambda_4\\
-\lambda_1+2\lambda_2+3\lambda_4\\
-2\lambda_1+4\lambda_2+ \lambda_3+8\lambda_4\\
--x-2\lambda_2+\lambda_3-\lambda_4
-\end{bmatrix*}
-= 
-\begin{bmatrix}
-    b_1\\ b_2 \\b_3 \\ b_4 
-\end{bmatrix}
-\end{equation*}
+        \begin{equation*}
+            \begin{bmatrix*}[r]    
+        3&6&3&15\\
+        1&2&0&3\\
+        2&4&1&8\\
+        -1&-2&1&-1
+    \end{bmatrix*}
+        \begin{bmatrix*}[r]
+        \lambda_1\\
+        \lambda_2\\
+        \lambda_3\\
+        \lambda_4
+    \end{bmatrix*}
+        =
+        \begin{bmatrix*}[r]
+        b_1\\
+        b_2\\
+        b_3\\
+        b_4 
+    \end{bmatrix*}
+    \end{equation*}
 
     \end{frame}
 
     \begin{frame}
     
-    En forma de producto de matrices podemos reescribirla asi:
-    
-    \begin{equation*}
-        \begin{bmatrix*}[r]    
-    3&6&3&15\\
-    1&2&0&3\\
-    2&4&1&8\\
-    -1&-2&1&-1
-\end{bmatrix*}
-    \begin{bmatrix*}[r]
-    \lambda_1\\
-    \lambda_2\\
-    \lambda_3\\
-    \lambda_4
-\end{bmatrix*}
-    =
-    \begin{bmatrix*}[r]
-    b_1\\
-    b_2\\
-    b_3\\
-    b_4 
-\end{bmatrix*}
-\end{equation*}
-    
-\pause  En forma de sistema de ecuaciones esto es:
-    
-    \begin{equation*}
-        \begin{cases}
-            3\lambda_1+6\lambda_2+3\lambda_3+15\lambda_4 = b_1\\
-        \lambda_1+2\lambda_2+3\lambda_4 = b_2\\
-        2\lambda_1+4\lambda_2+ \lambda_3+8\lambda_4 = b_3\\
-        -x-2\lambda_2+\lambda_3-\lambda_4 = b_4
-        \end{cases}\tag{**}
-    \end{equation*}
+    Resolvamos  el sistema anterior.  \pause
 
-    \pause
-    
-    \begin{block}{Conclusión}
-    $b\in\langle v_1,v_2,v_3,v_4\rangle$ si y s\'olo si el sistema anterior tiene soluci\'on.
-    \end{block}
-    
-    \end{frame}
-    
-    \begin{frame}
-    
-    El  sistema (**) tiene solución si el siguiente sistema la tiene  (es cambio de notación solamente)
-
-    \begin{equation*}
-        \begin{cases}
-            3x+6y+3z+15w=b_1\\
-            x+2y+3w=b_2\\
-            2x+4y+z+8w=b_3\\
-            -x-2y+z-w=b_4
-        \end{cases}
-    \end{equation*}
-    \vskip .4cm\pause
-    Este es exactamente el Ejercicio 2 de la Tarea 2. Entonces la respuesta a nuestro problema es
-    \vskip .3cm
-    \begin{block}{Respuesta}
-        \vskip -.8cm 
+    \begin{align*}
+        &\left[\begin{array}{cccc|c}
+        3&6&3&15&b_1\\
+        1&2&0&3&b_2\\
+        2&4&1&8&b_3\\
+        -1&-2&1&-1&b_4
+        \end{array}\right] 
+        \underset{F_4+F_2}{\underset{F_3-2F_2}{\stackrel{F1-3F_2}{\longrightarrow}}} 
+        \left[\begin{array}{cccc|c}
+        0&0&3&6&b_1-3b_2\\
+        1&2&0&3&b_2\\
+        0&0&1&2&b_3-2b_2\\
+        0&0&1&2&b_4+b_2
+        \end{array}\right] \\
+        &\underset{F_4-F_3}{\stackrel{F_1-3F_3}{\longrightarrow}}
+        \left[\begin{array}{cccc|c}
+        0&0&0&0&b_1+3b_2-3b_3\\
+        1&2&0&3&b_2\\
+        0&0&1&2&b_3-2b_2\\
+        0&0&0&0&3b_2-b_3+b_4
+        \end{array}\right].
+    \end{align*}
+    \pause Luego el sistema tiene solución si y solo si $b_1+3b_2-3b_3=0$ y $3b_2-b_3+b_4=0$. Por lo tanto, el subespacio que estamos buscando es
     \begin{multline*}
-        \langle v_1, v_2, v_3, v_4\rangle=\\\{(b_1,b_2,b_3,b_4)\in\mathbb{R}^4\mid b_1+3b_2-3b_3=0,b_1-6b_2-3b_4=0\}.
+        \langle v_1, v_2, v_3, v_4\rangle=\\\{(b_1,b_2,b_3,b_4)\in\mathbb{R}^4\mid b_1+3b_2-3b_3=0,3b_2-b_3+b_4=0\}.\qed
     \end{multline*}
-        
-    
-    \end{block}
     
     \end{frame}
+    
+    
     
     \begin{frame}
     Notemos que podemos repetir todo el razonamiento anterior para cualesquiera vectores $v_1, ..., v_k$ en cualquier $\R^n$ y cualquier $b\in\R^n$.\pause
