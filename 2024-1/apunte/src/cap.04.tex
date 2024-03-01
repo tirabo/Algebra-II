@@ -746,8 +746,27 @@ Si alguna de las ecuaciones no se satisface, el vector no puede pertenecer al su
         
         Si el conjunto $S$ tiene solo un número finito de vectores $v_1,\ldots,v_n$, diremos, para simplificar, que los $v_1,\ldots,v_n$ son LD (o LI), en vez de decir
         que $S$ es LD (o LI, respectivamente).
-        
     \end{definicion}
+
+
+    \begin{proposicion}
+    Sea $V$ un espacio vectorial y $v_1, ..., v_n\in V$. Entonces $v_1, ..., v_n$ son LD si y solo si alguno de ellos es combinación lineal de los otros.
+    \end{proposicion}
+    
+    \begin{proof}[Demostración]
+    $(\Rightarrow)$ Supongamos que son LD. Entonces $\lambda_1v_1+\cdots+\lambda_n v_n=0$ donde algún escalar es no nulo. Digamos que tal escalar es $\lambda_i$. Podemos entonces despejar $v_i$, es decir escribirlo como combinación lineal de los otros:
+    \begin{align*}
+        v_i=-\frac{\lambda_1}{\lambda_i}v_1-\cdots-\frac{\lambda_{i-1}}{\lambda_{i-1}}v_{i-1}-\frac{\lambda_{i+1}}{\lambda_{i+1}}v_{i+1}-\cdots-\frac{\lambda_n}{\lambda_i}v_n
+        \end{align*}
+    
+    $(\Leftarrow)$ 
+    Supongamos que $v_i$ es combinación lineal de los otros, es decir 
+    \begin{align*}
+    &v_i=\lambda_1v_1+\cdots+\lambda_n\lambda_nv_n\\
+    \Rightarrow&0=\lambda_1v_1+\cdots-v_i+\cdots+\lambda_n\lambda_iv_n
+    \end{align*}
+    como $-1\neq0$ esta multiplicando a $v_i$, la última igualdad dice que los vectores son LD.
+    \end{proof}
 
  Por definición, un conjunto $S = \left\{v_1,\ldots,v_n \right\}$ es independiente si se cumple cualquiera de las dos afirmaciones siguientes:
 	
