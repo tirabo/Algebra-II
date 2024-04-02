@@ -1267,6 +1267,101 @@ $(\Leftarrow)$
     \end{block}
 \end{frame}
 
+\begin{frame}{Ejemplo}
+    \begin{block}{Ejercicio}
+        Dado el sistema de ecuaciones
+        \begin{equation*}
+            \left\{
+                \begin{matrix}
+                    2x + y + z +t &= b_1 \\
+                    x -2y +6z -2t &= b_2 \\
+                    3x -3y+4z-4t &= b_3 \\
+                    x + y -8z  &= b_4
+                \end{matrix}
+            \right.
+        \end{equation*}
+        con $b_1$, $b_2$, $b_3$, $b_4$ $\in \mathbb R$.
+        \begin{enumerate}
+            \item Determinar para qué valores de $b_1$, $b_2$, $b_3$ y $b_4$ el sistema tiene solución. 
+            \item Determinar para qué valores de $b_1$, $b_2$, $b_3$ y $b_4$ el sistema tiene solución única 
+        \end{enumerate}    
+    \end{block}
+    
+\end{frame}
+
+
+\begin{frame}
+    \begin{block}{Solución}
+    \end{block}
+    Escribimos la matriz ampliado del sistema y aplicamos el método de Gauss-Jordan:
+    {\footnotesize
+    \begin{align*}
+        &\left[
+            \begin{array}{cccc|c}
+                2 & 1 & 1 & 1 & b_1 \\
+                1 & -2 & 6 & -2 & b_2 \\
+                3 & -3 & 4 & -4 & b_3 \\
+                1 & 1 & -8 & 0 & b_4
+            \end{array}
+        \right]
+        \stackrel{F_1\leftrightarrow F_2}{\longrightarrow}
+        \left[
+            \begin{array}{cccc|c}
+                1 & -2 & 6 & -2 & b_2 \\
+                2 & 1 & 1 & 1 & b_1 \\
+                3 & -3 & 4 & -4 & b_3 \\
+                1 & 1 & -8 & 0 & b_4
+            \end{array}
+        \right]\\
+        {}^{}\\
+        &\underset{F_4-F_1}{\underset{F_3-3F_1}{\stackrel{F_2 -2 F_1}{\longrightarrow}}}
+        \left[
+            \begin{array}{cccc|c}
+                1 & -2 & 6 & -2 & b_2 \\
+                0 & 5 & -11 & 5 & b_1 - 2b_2 \\
+                0 & 3 & -14 & 2 & -3b_2 + b_3 \\
+                0 & 3 & -14 & 2 & -b_2 + b_4
+            \end{array}
+        \right]
+    \end{align*}
+    }
+\end{frame}
+
+\begin{frame}
+
+    {\footnotesize
+    \begin{align*}
+        &\stackrel{F_4-F_3}{\longrightarrow}
+        \left[
+            \begin{array}{cccc|c}
+                1 & -2 & 6 & -2 & b_2 \\
+                0 & 5 & -11 & 5 & b_1 - 2b_2 \\
+                0 & 3 & -14 & 2 &  -3b_2 + b_3 \\
+                0 & 0 & 0 & 0 & 2b_2 - b_3 + b_4 
+            \end{array}
+        \right]
+        \\
+        {}^{}\\
+        &\stackrel{F_3/3}{\longrightarrow}
+        \left[
+            \begin{array}{cccc|c}
+                1 & -2 & 6 & -2 & b_2 \\
+                0 & 5 & -11 & 5 & b_1 - 2b_2 \\
+                0 & 1 & -\frac{14}{3} & \frac{2}{3} &  -b_2 + \frac{b_3}{3} \\
+                0 & 0 & 0 & 0 & 2b_2 - b_3 + b_4 
+            \end{array}
+        \right]
+    \end{align*}
+    }
+\end{frame}
+
+\begin{frame}
+    b
+\end{frame}
+
+\begin{frame}
+    c
+\end{frame}
 
 
 
