@@ -1170,6 +1170,8 @@ Reducimos la matriz ampliada siguiendo al pie de la letra el algoritmo:\pause
         \end{equation}
         donde las $x_j$ con $j \not= k_1,\ldots, k_r$ son variables libres y pueden tomar cualquier valor en $\K$.
     \end{block}
+
+    \label{teorema-gauss-jordan-general}
 \end{frame}
 
 
@@ -1273,17 +1275,18 @@ $(\Leftarrow)$
         \begin{equation*}
             \left\{
                 \begin{matrix}
-                    2x + y - z + 3w &= b_1 \\
-                    x - 3y + 2z - w &= b_2 \\
-                    4x + 2y + 3z + 2wt &= b_3 \\
-                    x -3y +3z + 7w &= b_4
+                    2x_1 + x_2 - x_3 + 3x_4 &= b_1 \\
+                    x_1 - 3x_2 + 2x_3 - x_4 &= b_2 \\
+                    4x_1 + 2x_2 + 3x_3 + 2x_4 &= b_3 \\
+                    7x_1 +4x_3 + 4x_4 &= b_4
                 \end{matrix}
             \right.
         \end{equation*}
         con $b_1$, $b_2$, $b_3$, $b_4$ $\in \mathbb R$.
+        \vskip .4cm
         \begin{enumerate}
             \item Determinar para qué valores de $b_1$, $b_2$, $b_3$ y $b_4$ el sistema tiene solución. 
-            \item Determinar para qué valores de $b_1$, $b_2$, $b_3$ y $b_4$ el sistema tiene solución única 
+            \item En  caso de tener solución, describir el conjunto de soluciones.
         \end{enumerate}    
     \end{block}
     
@@ -1405,7 +1408,7 @@ $(\Leftarrow)$
         \left[
             \begin{array}{cccc|c}
                 0 & 1 & 0 & 1/7 & -b_1/7 -2 b_2/7 + b_3/7 \\
-                1 & 0 & 0 & 36/35 & -b_1/35 + 4b_2/35 + 3b_3/35 \\
+                1 & 0 & 0 & 36/35 & -13b_1/35 + b_2/7 + b_3/35 \\
                 0 & 0 & 1 & -4/5 &-2b_1/5 + b_3/5 \\
                 0 & 0 & 0 & 0 & -b_1 - b_2 - b_3 + b_4
             \end{array}
@@ -1415,21 +1418,50 @@ $(\Leftarrow)$
 \end{frame}
 
 \begin{frame}
-    El sistema de ecuaciones tiene solución si y solo si $-b_1 - b_2 - b_3 + b_4 = 0$,  es decir, si $b_4 = b_1 + b_2 + b_3$.
+
+    El sistema de ecuaciones correspondiente a esta matriz ampliada es
+
+    \begin{align*}
+        \left\{
+        \begin{matrix}
+            &x_1 &+ &36/35\, x_4 &=& -13b_1/35 + b_2/7 + b_3/35 \\
+            &x_2 &+ & 1/7\,x_4 &=& b_2/7 + b_3/35 \\
+            &x_3 &- &4/5\, x_4 &=& -2b_1/5 + b_3/5 \\
+            &&&0 &=& -b_1 - b_2 - b_3 + b_4
+        \end{matrix}
+        \right.
+    \end{align*}
+
+    \vskip .4cm
+
+    Por el teorema de la página \ref{teorema-gauss-jordan-general} el sistema tiene solución si y solo si $-b_1 - b_2 - b_3 + b_4 = 0$ o equivalentemente si 
+    $$
+    b_4 = b_1 + b_2 + b_3.
+    $$
+
+\end{frame}
+
+\begin{frame}
     
     En  el caso de que $b_4 = b_1 + b_2 + b_3$, si denotamos
     \begin{align*}
-        c_1 &= -b_1/35 + 4b_2/35 + 3b_3/35 \\
+        c_1 &=  -13b_1/35 + b_2/7 + b_3/35 \\
         c_2 &= -b_1/7 -2 b_2/7 + b_3/7 \\
         c_3 &= -2b_1/5 + b_3/5
     \end{align*}
-    entonces la soluciones del sistema son $(x,y,z,w)$ tales que
+    entonces la soluciones del sistema son $(x_1,x_2,x_3,x_4)$ tales que
     \begin{align*}
-        x &= -36/35w + c_1\\
-        y &= -1/7 w + c_2 \\
-        z &= 4/5 w + c_3
+        x_1 &= -36/35x_4 + c_1\\
+        x_2 &= -1/7 x_4 + c_2 \\
+        x_3 &= 4/5 x_4 + c_3
     \end{align*}
-    siendo $w$ una variable libre.
+    siendo $x_4$ una variable libre.
+
+    También podemos decir que el conjunto de soluciones es
+    $$
+    \left\{(-36/35x_4 + c_1, -1/7 x_4 + c_2, 4/5 x_4 + c_3, x_4) \mid x_4 \in \mathbb R\right\}.
+    $$
+
 \qed
 
 \end{frame}
