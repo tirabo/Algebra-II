@@ -723,7 +723,7 @@ $$
     
     \
     
-    En fórmula, $A$ es triangular superior si $a_{ij}=0$ para todo $i<j$.
+    En fórmula, $A$ es triangular superior si $a_{ij}=0$ para todo $i>j$.
 \end{frame}
 
 \begin{frame}{Matriz triangular superior:  ejemplos }
@@ -778,7 +778,7 @@ $$
     
     \
     
-    En fórmula, $A$ es triangular inferior si $a_{ij}=0$ para todo $i>j$.
+    En fórmula, $A$ es triangular inferior si $a_{ij}=0$ para todo $i<j$.
 \end{frame}
 
 
@@ -1012,7 +1012,7 @@ $$
         \begin{equation*}
                 A = \begin{bmatrix}1&0\\-3&1\end{bmatrix}, \qquad B = \begin{bmatrix}5&-1&2\\15&4&8\end{bmatrix},
     \end{equation*}
-como $A$ es $2 \cdot 2$ y $B$ es $2 \cdot 3$, la matriz $AB$ será $2 \cdot 3$. \pause Obtenemos:
+como $A$ es $2 \times 2$ y $B$ es $2 \times 3$, la matriz $AB$ será $2 \times 3$. \pause Obtenemos:
 \begin{equation*}
 AB = \begin{bmatrix}1\cdot  5 + 0\cdot 15&1\cdot (-1) + 0\cdot 4&1\cdot 2 + 0\cdot 8
     \\-3\cdot 5 + 1\cdot 15&-3\cdot (-1) + 1\cdot 4&-3\cdot 2 + 1\cdot 8
@@ -1192,7 +1192,7 @@ Observemos que, debido a nuestra definición, no es posible multiplicar $B$ por 
     &
     =\sum_{l=1}^p\biggl(\sum_{k=1}^n [A]_{ik}\cdot[B]_{kl}\biggr)\cdot [C]_{lj}
     =
-    \sum_{l=1}^n[A\cdot B]_{il}\cdot [C]_{lj}
+    \sum_{l=1}^p[A\cdot B]_{il}\cdot [C]_{lj}
     =[(A\cdot B)\cdot C]_{ij}
 \end{align*}\qed
 \end{block}
@@ -1366,7 +1366,7 @@ Observemos que, debido a nuestra definición, no es posible multiplicar $B$ por 
         \end{array}
         \right]
         $
-        y $A=[a_{ij}]\in\K^{m\times n}$\pause entonces
+        y $A=[a_{ij}]\in\K^{m\times m}$\pause entonces
         $$
         [DA]_{ij}=\sum_{k=1}^m[D]_{ik}\cdot[A]_{kj}=[D]_{ii}[A]_{ij}=d_ia_{ij}
         $$
@@ -1408,7 +1408,29 @@ y por lo tanto $AD=[d_ja_{ij}]\in\K^{n\times m}$, $\Rightarrow$
 
 \end{frame}
 
+\begin{frame}
 
+    Sea $E$ la matriz $n \times n$ escalar con $c \in \mathbb K$ en la diagonal, es decir
+        $$
+        E = \left[
+            \begin{array}{cccc}
+                c&0&\cdots&0\\ 
+                0&c&\cdots&0\\
+                \cdots&\cdots&\ddots&\vdots\\
+                0&0&\cdots&c
+            \end{array}
+            \right],
+        $$
+    y sea $A = [a_{ij}]$ una matriz $n \times n$, entonces por lo dicho en la página anterior
+    $$
+    EA = [ca_{ij}] = AE.
+    $$
+
+    En particular, 
+    $$
+        \Id_n A = A\Id_n = A.
+    $$
+\end{frame}
 
 
 \begin{frame}{Multiplicación de una matriz por un escalar}
