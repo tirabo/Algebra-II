@@ -1,7 +1,7 @@
-\documentclass{beamer} % descomentar para tener pausas
-%\documentclass[handout]{beamer} % descomentar para no tener pausas
+%\documentclass{beamer} % descomentar para tener pausas
+\documentclass[handout]{beamer} % descomentar para no tener pausas
 \usetheme{CambridgeUS}
-\setbeamertemplate{background}[grid][step=8 ] % cuadriculado
+%\setbeamertemplate{background}[grid][step=8 ] % cuadriculado
 
 \usepackage[utf8]{inputenc}%esto permite (en Windows) escribir directamente 
 \usepackage{graphicx}
@@ -879,10 +879,10 @@ $    \begin{bmatrix}
 
 \begin{frame}
 
-    Si  $e$ es una operación elemental por filas, denotemos, como antes, $e(A)$ la matriz que se obtien a partir de $A$ haciendo  la operación elemental $e$. 
+    Si  $e$ es una operación elemental por filas, denotemos, como antes, $e(A)$ la matriz que se obtiene a partir de $A$ haciendo  la operación elemental $e$. 
 \vskip .4cm
         \begin{teorema}\label{th-mrtx-elem}
-        Sea $A$ matriz $n \times n$, sea $e$ una operación elemental por fila , entonces $$e(A) = e(\Id_m)A.$$
+        Sea $A$ matriz $m \times n$, sea $e$ una operación elemental por fila , entonces $$e(A) = e(\Id_m)A.$$
     \end{teorema}
     \pause
     \begin{block}{Demostración}
@@ -966,7 +966,7 @@ $    \begin{bmatrix}
         \begin{corolario}
         Sean $A$ y $B$ matrices $m \times n$. Entonces 
         \begin{itemize}
-            \item     $B$ equivalente por filas a $A$ si y sólo si $B=PA$ donde $P$ es  producto de matrices elementales. 
+            \item     $B$ equivalente por filas a $A$ si y sólo si $B=PA$ donde $P$ es una matriz $m \times m$ producto de matrices elementales. 
         \end{itemize}
     
         
