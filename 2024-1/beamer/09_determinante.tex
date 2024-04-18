@@ -280,7 +280,7 @@
     \\[\baselineskip] ${}^{}$
     \\[\baselineskip]
 }
-\date[16/04/2024]{16 de abril de 2024}
+\date[18/04/2024]{18 de abril de 2024}
 
 
 \begin{document}
@@ -303,7 +303,7 @@
 
     \vskip .4cm
     \pause
-    El tema de esta clase  está contenido de la sección la sección 2.8  del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
+    El tema de esta clase  está contenido de la sección la sección 3.5  del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
 \end{frame}
 
 
@@ -369,7 +369,7 @@ Para la definición del determinante de una matriz cuadrada $A$ usaremos \textit
 \vskip .3cm
 \begin{definicion}
 Sea $A\in\K^{n\times n}$ y sean $i,j$ tales que $1\leq i,j\leq n$. Entonces 
-$${A(i|j)}\in\K^{n-1\times n-1}$$ es la matriz que se obtine eliminando la fila $i$ y la columna $j$ de $A$. 
+$${A(i|j)}\in\K^{n-1\times n-1}$$ es la matriz que se obtiene eliminando la fila $i$ y la columna $j$ de $A$. 
 \end{definicion}
 
 
@@ -617,13 +617,13 @@ Este es el \textit{cálculo del determinante por desarrollo de la primera column
     \begin{equation*}
         A^{-1} = \dfrac{1}{\det(A)}
         \begin{bmatrix}
-            d&c\\b&a
+            d&-b\\-c&a
         \end{bmatrix}.
     \end{equation*} \pause
     Se puede reescribir como
     \begin{equation*}
         A^{-1} = \dfrac{1}{\det(A)}
-        \begin{bmatrix*}[c]C_{11}&C_{12}\\C_{21}&C_{22}\end{bmatrix*}.
+        \begin{bmatrix*}[c]C_{11}&C_{21}\\C_{12}&C_{22}\end{bmatrix*}.
     \end{equation*} 
     \vskip .4cm\pause
     Esta fórmula se puede generalizar a matrices $n \times n$.
@@ -709,7 +709,7 @@ entonces
             a_{21} & a_{22} & a_{23}  \\
             a_{31} & a_{32} & a_{33}  \\
             a_{11} & a_{12} & a_{13} \\
-            a_{21} & a_{22} & a_{13}\\
+            a_{21} & a_{22} & a_{23}\\
         };
         
         \draw [BarreStyle=blue] (A-1-1.north west) node[SignePlus=blue] {$+$} to (A-3-3.south east) ;
@@ -1351,7 +1351,7 @@ $$
 $$
 y así sucesivamente (inducción). \qed
 \end{demostracion}
-        \vskip .4cm\pause
+    \pause
     \begin{corolario} Sea $A = E_1 E_2 \cdots E_k$ producto de matrices elementales en  $\K^{n \times n}$. 
         Entonces, 
         \begin{equation*}
@@ -1527,21 +1527,21 @@ y así sucesivamente (inducción). \qed
     \end{teorema}
     \vskip.3cm\pause
     Pueden ver la demostración en las notas de curso.
-     \vskip .3cm
-   \begin{block}{Idea de la demostración}
+     \vskip 3cm
    
-   No es difícil ver que 
-   \begin{itemize}
-        \item para $E$ matriz elemental $\det(E^\t) = \det(E)$,
-        \item $(A_1 \cdot A_2 \cdots A_k)^\t = A_k^\t \cdots A_2^\t \cdot A_1^\t$.
-   \end{itemize}
-   Se sigue entonces de $A = E_1 \cdots E_s R$,  con $E_i$  elementales y $R$ MERF.
-   \end{block} 
     \end{frame}
     
 
-    \begin{frame}
-        Sea 
+    
+        \begin{frame}
+            \begin{proposicion}
+            
+            El determinante de una matriz triangular inferior es igual al producto de los elementos de la diagonal.
+             
+            \end{proposicion}
+            
+        \begin{demostracion}
+            Sea 
         \begin{align*}
         A= \left[
         \begin{array}{ccccc}
@@ -1556,7 +1556,13 @@ y así sucesivamente (inducción). \qed
         
         \
         triangular inferior. Entonces,
-        \
+    \end{demostracion}
+    \end{frame}
+        
+
+
+    
+    \begin{frame}
         
         \begin{align*}
             A^\t =
@@ -1572,27 +1578,16 @@ y así sucesivamente (inducción). \qed
         \end{align*}
         
         es triangular superior.
-        \end{frame}
-        
-
-
-    
-        \begin{frame}
-            \begin{proposicion}
-            
-            El determinante de una matriz triangular inferior es igual al producto de los elementos de la diagonal.
-             
-            \end{proposicion}
-            
-        \begin{demostracion}
-            La transpuesta de una una matriz triangular inferior es una matriz triangular superior.
             
             \
             
-            Entonces la proposición es una consecuencia del teorema anterior y la proposición referida al determinante de una triangular superior.
+            Luego, 
+            $$
+            \det(A)=\det(A^\t)=a_{11}a_{22}\cdots a_{nn}.
+            $$
         
             \qed
-        \end{demostracion}
+        
         
              
             \end{frame}
