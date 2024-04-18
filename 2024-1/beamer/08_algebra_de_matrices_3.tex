@@ -482,6 +482,8 @@
 
 
 \begin{frame}
+
+    \label{lema-merf-invertible}
     \begin{lema} Sea $R \in \K^{n \times n}$. Entonces
 \begin{equation*}
     \text{$R$ es MERF } \wedge \text{ $R$ es invertible} \quad \Rightarrow \quad R = \Id_n.
@@ -545,6 +547,60 @@ Por inducción podemos probar que $R= \Id_n$. \qed
 
 \end{frame}
 
+\begin{frame}{Otra demostración del lema de la página \ref{lema-merf-invertible}}
+    \begin{demostracion} \pause
+       Debemos demostrar  que 
+       \begin{equation*}
+        \text{$R$ es MERF } \wedge \text{ $R$ es invertible} \quad \Rightarrow \quad R = \Id_n.
+    \end{equation*} \pause
+    \vskip .4cm
+    Si $R$ es MERF  y si la fila $i$ no es $0$, el 1 principal de la fila $i$ se encuentra en la columna $j$ con $j \ge i$.  \pause
+
+    \vskip .4cm
+
+    Esto se puede demostrar por inducción: 
+    \begin{itemize}
+        \item La afirmación para la fila $1$ es trivial, y
+        \item si eliminamos la fila $1$ y la columna $1$ de $R$,  nos queda una matriz $(n-1) \times (n-1)$  que es MERF y aplicando la hipótesis inductiva a la matriz resultante, obtenemos el resultado. 
+    \end{itemize}
+
+    \end{demostracion}
+
+
+\end{frame}
+
+
+
+    
+\begin{frame}
+
+    Ahora, supongamos que $R$ tiene un $1$ principal en la fila $i$ y columna $j$ con $j > i$. \pause
+
+    \vskip .4cm
+
+    Entonces en la fila $i+1$ el 1 principal está en la posición $j'$ con $j' > j > i$ y por lo tanto $j' > i + 1$. \pause
+
+    \vskip .4cm
+
+    Si seguimos este razonamiento hasta la última fila, llegamos a la conclusión que el 1 principal de fila $n$ está en la columna $j''$ con $j'' > n$, lo cual es absurdo. 
+    
+    \vskip .4cm \pause
+
+    El absurdo vino de suponer  de que en la columna $i$ el 1 principal no está en la columna $i$. Por lo tanto todos los 1 principales están en la diagonal. \pause 
+    
+    \vskip .4cm
+
+    Como $R$ no puede tener una fila de ceros,  la diagonal de $R$ son todos 1 principales. Por lo tanto $R = \Id_n$.
+    \qed
+
+
+  
+
+
+
+
+    
+\end{frame}
 
 \begin{frame}
         \begin{teorema}\label{mtrx-inv-equiv} Sea $A$ matriz $n \times n$ con coeficientes en $\K$. Las siguientes afirmaciones son equivalentes
