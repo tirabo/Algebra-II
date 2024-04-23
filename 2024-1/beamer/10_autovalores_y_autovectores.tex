@@ -23,10 +23,10 @@
 \usetikzlibrary{arrows}
 \usetikzlibrary{matrix}
 \tikzset{
-	every picture/.append style={
-		execute at begin picture={\deactivatequoting},
-		execute at end picture={\activatequoting}
-	}
+    every picture/.append style={
+        execute at begin picture={\deactivatequoting},
+        execute at end picture={\activatequoting}
+    }
 }
 \usetikzlibrary{decorations.pathreplacing,angles,quotes}
 \usetikzlibrary{shapes.geometric}
@@ -37,9 +37,9 @@
 \usepackage{tkz-graph}
 \usepackage{polynom}
 \polyset{%
-	style=B,
-	delims={(}{)},
-	div=:
+    style=B,
+    delims={(}{)},
+    div=:
 }
 \renewcommand\labelitemi{$\circ$}
 \usepackage{nicematrix} %https://ctan.dcc.uchile.cl/macros/latex/contrib/nicematrix/nicematrix.pdf
@@ -81,8 +81,8 @@
 
 \author[]{}
 \institute[]{\normalsize FAMAF / UNC
-	\\[\baselineskip] ${}^{}$
-	\\[\baselineskip]
+    \\[\baselineskip] ${}^{}$
+    \\[\baselineskip]
 }
 \date[23/04/2024]{23 de abril de 2024}
 
@@ -95,7 +95,7 @@
 \end{frame}
 
 \begin{frame}{Resumen}
-	
+    
     En esta clase definiremos
     \begin{itemize}\pause
      \item autovalor\pause
@@ -106,7 +106,7 @@
     
     \
     \pause
-   El tema de esta clase  está contenido de la sección 2.9  del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
+   El tema de esta clase  está contenido de la sección 3.6 del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
     \end{frame}
     
     
@@ -155,14 +155,17 @@
 
     \begin{block}{Observación}
     La existencia de autovalores dependen del cuerpo donde estamos trabajando. 
-    \vskip .6cm\pause
+    \vskip .4cm\pause
     Por ejemplo sea $A \in \R^{2\times 2}$ 
     $$
     A=\begin{bmatrix} 0&-1\\1&0\end{bmatrix}.
     $$ 
     Entonces,  $A$ no tiene autovalores reales. \pause
-    \vskip .6cm
+    \vskip .4cm
     Veremos que si permitimos autovalores complejos entonces $A$ sí tiene autovalores.
+        \vskip .4cm\pause
+    Etos resultados se verán en el ejemplo de la página \ref{ejemplo-autovalores-complejos}.
+
     \end{block}
 
     \end{frame}
@@ -218,23 +221,29 @@
     \begin{frame}
     
     \begin{block}{Observación}
-    Puede haber varios autovectores con el mismo autovalor.    \pause
+    
     \end{block}
+    \begin{itemize}
+        \item Puede haber varios autovectores con el mismo autovalor.    \pause
+
+        \vskip .4cm
+
+        \item Vimos esto en el ejemplo con $\Id$ y en el caso de la diagonal si tiene entradas iguales sucede lo mismo. 
+        \pause
+        \vskip .4cm
+
+        \item Más aún el conjunto de todos los autovectores con un mismo autovalor es \textit{invariante por la suma y la multiplicación por escalares.}
+        \pause
+        \vskip .4cm
+
+        \item En particular los múltiplos de un autovector son autovectores con el mismo autovalor.
+
+    \end{itemize}
     
-    Vimos esto en el ejemplo con $\Id$ y en el caso de la diagonal si tiene entradas iguales sucede lo mismo. 
-    \pause
-    \
-    
-    Más aún
-    el conjunto de todos los autovectores con un mismo autovalor es \textit{invariante por la suma y la multiplicación por escalares.}
-    \pause
-    \
-    
-    En particular los múltiplos de un autovector son autovectores con el mismo autovalor.
     
     \end{frame}
-         
-  
+
+
     \begin{frame}
     
     \begin{block}{Definición}
@@ -268,7 +277,7 @@
     Un autovector no puede tener dos autovalores distintos. 
     \vskip .2cm
     \pause
-    Por lo tanto autovectores con autovalores distintos son distintos.
+    Por lo tanto, autovectores con autovalores distintos son distintos.
     \end{proposicion}   \pause
     
    \begin{demostracion}   \pause
@@ -338,39 +347,39 @@
     
     Sea $A\in\K^{n\times n}$. El \textit{polinomio característico} de $A$ es
     \begin{align*}
-    \chi_A(x)=\det(A-x\Id)
+    \chi_A(x)=\det(x\Id -A)
     \end{align*}
     \end{exampleblock}\pause
     \vskip .2cm
     \begin{exampleblock}{Ejemplo}
     El polinomio  característico de $\Id_n$ es 
     \begin{align*}
-    \chi_{\Id_n}(x)=(1-x)^n 
+    \chi_{\Id_n}(x)=(x-1)^n 
     \end{align*}
     \end{exampleblock} \vskip -.6cm\pause
     \begin{demostracion}\pause
-        $\Id-x\Id=(1-x)\Id$ es una matriz diagonal con $(1-x)$ en todas las entradas de la diagonal. Entonces el determinante es el producto de la diagonal. \qed
+        $x\Id-\Id=(x -1)\Id$ es una matriz diagonal con $(x-1)$ en todas las entradas de la diagonal. Entonces el determinante es el producto de la diagonal. \qed
     \end{demostracion}
 
     \end{frame}
     
 \begin{frame}
     En general,  si $A = [a_{ij}]$ matriz $n \times n$, tenemos que
-		\begin{equation*}
-		\chi_A(x) = \det(A- x\,Id) = \det
-		\begin{bmatrix}
-		a_{11}-x&a_{12}&\cdots&a_{1n}\\
-		a_{21}&a_{22}-x&\cdots&a_{2n}\\
-		\vdots&\vdots&\ddots&\vdots\\
-		a_{n1}&a_{n2}&\cdots&a_{nn}-x\\
-		\end{bmatrix}
+        \begin{equation*}
+        \chi_A(x) = \det(x\,Id-A) = \det
+        \begin{bmatrix}
+        x -a_{11}&-a_{12}&\cdots&-a_{1n}\\
+        -a_{21}&x-a_{22}&\cdots&-a_{2n}\\
+        \vdots&\vdots&\ddots&\vdots\\
+        -a_{n1}&-a_{n2}&\cdots&x-a_{nn}\\
+        \end{bmatrix}
         \end{equation*} 
         y el polinomio característico de $A$ es un polinomio  de grado $n$, \pause más precisamente  
-		$$
-		\chi_A(x) =(-1)^n x^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
-		$$ 
-		Esto se puede demostrar por inducción. 
-		
+        $$
+        \chi_A(x) = x^n + a_{n-1}x^{n-1}+ \cdots + a_1x + a_0.
+        $$ 
+        Esto se puede demostrar por inducción. 
+        
 \end{frame}
 
 
@@ -383,7 +392,7 @@
     $\chi_{A}(x)=x^2$.
     \end{exampleblock}\vskip -.4cm\pause
     \begin{demostracion}\pause
-        $A-x\Id=\begin{bmatrix}  -x&1\\0&-x \end{bmatrix}$ es triangular superior. Entonces el determinante es el producto de la diagonal. \qed
+        $x\Id -A=\begin{bmatrix}  x&-1\\0&x \end{bmatrix}$ es triangular superior. Entonces el determinante es el producto de la diagonal. \qed
     \end{demostracion}
  
     \vskip .2cm
@@ -392,39 +401,38 @@
     Si
     $
     A=
-    \begin{bmatrix}  a&b\\c&d  \end{bmatrix}$, entonces $ \chi_{A}(x)=(a-x)(d-x)-bc $.
+    \begin{bmatrix}  a&b\\c&d  \end{bmatrix}$, entonces $ \chi_{A}(x)=(x-a)(x-d)-bc $.
     \end{exampleblock}
     \vskip -.2cm\pause
     \begin{demostracion}\pause
-        $A-x\Id=\begin{bmatrix} a-x&b\\c&d-x\end{bmatrix}$ y usamos la fórmula del determinante de una $2\times 2$. \qed
+        $x\Id-A=\begin{bmatrix} x-a&-b\\-c&x-d\end{bmatrix}$ y usamos la fórmula del determinante de una matriz $2\times 2$. \qed
     \end{demostracion}
 
     \end{frame}
     
- 
+
 
     \begin{frame}
     
-   
-		
-		\begin{proposicion}\label{autovalores}
-			Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico.  
-		\end{proposicion}\pause
-		\begin{proof}\pause
-			\begin{tabular}{rl}
+        
+        \begin{proposicion}\label{autovalores}
+            Sea $A\in \K^{n \times n}$.  Entonces $\lambda\in \K$ es autovalor si y sólo si $\lambda$ es raíz del polinomio característico.  
+        \end{proposicion}\pause
+        \begin{proof}\pause
+            \begin{tabular}{rl}
     $\lambda$ es autovalor &$\Leftrightarrow$ existe $v \ne 0$ tal que $Av = \lambda v$ \\
                 &\\
-                &$\Leftrightarrow$ $0 = Av-\lambda v  =   Av-\lambda \Id v =  (A-\lambda \Id)v$ \\
+                &$\Leftrightarrow$ $0 = \lambda v-Av  =   \lambda \Id v -Av =  (\lambda \Id-A)v$ \\
                 &\\
-                &$\Leftrightarrow$ $(A-\lambda \Id)X=0$ tiene solución no trivial \\
+                &$\Leftrightarrow$ $(\lambda \Id-A)X=0$ tiene solución no trivial \\
                 &\\
-                &$\Leftrightarrow$ $\chi_A(\lambda) = \det(A-\lambda \Id) =0$ \\
+                &$\Leftrightarrow$ $\chi_A(\lambda) = \det(\lambda \Id-A) =0$ \\
                 &\\
                 &$\Leftrightarrow$ $\lambda$ es raíz del polinomio característico.  
             \end{tabular}
-			 
-			\qed  
-		\end{proof}
+            
+            \qed  
+        \end{proof}
     
     \end{frame}
     
@@ -432,7 +440,7 @@
     \begin{block}{Método para encontrar autovalores y autovectores de $A$}
         \vskip .2cm\pause
         \begin{enumerate}
-            \item Calcular $\chi_A(x) =\det(A-x\Id{})$,
+            \item Calcular $\chi_A(x) =\det(x\Id -A)$,
             \vskip .2cm\pause
             \item Encontrar las raíces $\lambda_1,\ldots,\lambda_k$ de $\chi_A(x)$.
             
@@ -440,7 +448,7 @@
             \vskip .2cm
             \item Para cada $i$ con $1 \le i \le k$ resolver el sistema de ecuaciones lineales:
             \begin{equation*}
-                (A-\lambda_i\Id)X = 0.
+                (\lambda_i\Id-A)X = 0.
             \end{equation*}
             Las soluciones no triviales  de este sistema son los autovectores con autovalor $\lambda_i$.
 
@@ -460,8 +468,8 @@
     \vskip -.4cm
     \begin{solucion}\pause
         \begin{enumerate}
-            \item  $            \chi_A(x)= \det\left[\begin{matrix}
-            3-x& -2 \\ 1 & -x
+            \item  $\chi_A(x)= \det\left[\begin{matrix}
+            x-3& 2 \\ -1 & x
             \end{matrix} \right]= x^2 -3x +2   =(x -1)(x -2)$.\pause
             \item Los autovalores de $A$ son las raíces de  $\chi_A(x)$: $1$ y $2$.\pause
             \item Debemos resolver los sistemas de ecuaciones:
@@ -547,43 +555,43 @@
     
     \begin{frame}
 
-    \begin{ejemplo}
-     Sea $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix} \in \R^2$. Encontrar los autovalores \textit{reales} de $A$.    
+    \begin{ejemplo} \label{ejemplo-autovalores-complejos}
+    Sea $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix} \in \R^2$. 
+    \begin{enumerate}
+        \item Encontrar los autovalores y  autovectores \textit{reales} de $A$.  
+        \item Encontrar los autovalores y  autovectores \textit{complejos} de $A$.  
+    \end{enumerate}
+    
     \end{ejemplo}\pause
     \begin{solucion}\pause
-        $A-x\Id= \begin{bmatrix}-x&-1\\1&-x\end{bmatrix}$, luego
+        
+        1. $x\Id-A= \begin{bmatrix}x&1\\-1&x\end{bmatrix}$, luego
         \begin{align*}
             \chi_A(x)=x^2+1.
             \end{align*}
 \vskip .2cm
         El polinomio no tiene raíces reales, por lo tanto no existen autovalores reales (obviamente no hay autovectores).
 
-        \qed
+
     \end{solucion}
 \end{frame}
 
 
     
 \begin{frame}
-    Sin embargo si nos dicen 
-    \vskip .2cm
-    \textit{encontrar autovalores y autovectores complejos de la matriz  $A= \begin{bmatrix}0&-1\\1&0\end{bmatrix}$}, 
-    \vskip .2cm
-    la respuesta va a ser diferente. \pause
-    \vskip .3cm
-    Lo  que ocurre es que 
+    
+    2. En  este caso, el polinomio característico se factoriza:
     \begin{align*}
     \chi_A(x)=x^2+1=(x+i)(x-i),
     \end{align*}
     y este polinomio \textit{sí} tiene raíces (complejas): $i$ y $-i$.\pause
     \vskip .2cm
-  En este caso, entonces, $i$ y $-i$ son los autovalores  y es fácil ver que
-  \begin{equation*}
-      V_i = \left\{ \omega(i,1): \omega\in \C \right\}, \qquad  V_{-i} = \left\{ \omega(-i,1): \omega\in \C \right\}.
-  \end{equation*} 
+    En este caso, entonces, $i$ y $-i$ son los autovalores  y es fácil ver que
+    \begin{equation*}
+        V_i = \left\{ \omega(i,1): \omega\in \C \right\}, \qquad  V_{-i} = \left\{ \omega(-i,1): \omega\in \C \right\}.
+    \end{equation*}  
     
-    \end{frame}
-\begin{frame}
+
     Nunca está de más comprobar los resultados:
     \pause
     \begin{align*}
@@ -592,7 +600,7 @@
         \begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}-i\\1\end{bmatrix} &= \begin{bmatrix}-1\\-i\end{bmatrix} = (-i) \begin{bmatrix}-i\\1\end{bmatrix}.
     \end{align*}
 
-    \vskip 2cm
+    \qed
 \end{frame}
 
 
