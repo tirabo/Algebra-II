@@ -84,7 +84,7 @@
     \\[\baselineskip] ${}^{}$
     \\[\baselineskip]
 }
-\date[23/04/2024]{23 de abril de 2024}
+\date[25/04/2024]{25 de abril de 2024}
 
 
 
@@ -109,14 +109,40 @@
    El tema de esta clase  está contenido de la sección 3.6 del apunte de clase ``Álgebra II / Álgebra - Notas del teórico''.
     \end{frame}
     
-    
+        
     \begin{frame}
+
+        Sea $A\in\K^{n\times n}$ y $v = (t_1,\ldots,t_n) \in \K^n$. Entonces, podemos ver a $v$ como una matriz columna de $n \times 1$ y multiplicar $A$ por $v$:
+        \begin{equation*}
+            A v = A \begin{bmatrix} t_1 \\ \vdots \\ t_n \end{bmatrix} = \begin{bmatrix} a_{11}t_1 + \cdots + a_{1n}t_n \\ \vdots \\ a_{n1}t_1 + \cdots + a_{nn}t_n \end{bmatrix}.
+        \end{equation*}\pause
+
+        \vskip .4cm
+
+        Mirada de esta forma la multiplicación de matrices es una operación que toma una matriz $n \times n$ y un vector de $\K^n$ y devuelve otro vector de $\K^n$ y  es lo que llamaremos luego  una \textit{transformación lineal} de $\K^n$ en $\K^n$:
+        $$
+        A(v + \lambda w) = Av + \lambda Aw, \quad \forall v,w \in \K^n, \lambda \in \K,
+        $$
+        (conmuta con la  suma de vectores  y la  multiplicación por escalares). 
+
+    \end{frame}
+        
+
+
+    \begin{frame}
+
+    
+
     \begin{exampleblock}{Definición}
     Sea $A\in\K^{n\times n}$. Se dice que {$\lambda\in\K$} es un \textit{autovalor} de $A$ y si existe \textit{$v\in\K^{n}$} no nulo tal que 
     \begin{align*}
     A v=\lambda v .
     \end{align*}
     En ese caso decimos que $v$  es un \textit{autovector} asociado a $\lambda$
+    \pause 
+    \vskip .4cm
+    Estudiar los autovalores y autovectores de una matriz es un problema fundamental en álgebra lineal y tiene aplicaciones en muchas áreas de la matemática y la física.
+
     \end{exampleblock}\pause
     \vskip .5cm
     \begin{exampleblock}{Ejemplo}
@@ -126,11 +152,11 @@
     \end{align*}
     \end{exampleblock}
     \end{frame}
+
+
+
     
     \begin{frame}
-    
-    
-    
     \begin{observacion}
     El autovalor puede ser $0$ pero el autovector \textit{nunca} puede ser $0$ 
     \end{observacion}
