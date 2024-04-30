@@ -84,7 +84,7 @@
 	\\[\baselineskip] ${}^{}$
 	\\[\baselineskip]
 }
-\date[25/04/2024]{25 de abril de 2024}
+\date[30/04/2024]{30 de abril de 2024}
 
 
 
@@ -532,6 +532,9 @@ La demostración es similar  a las propiedades análogas de los números reales 
 Si $\lambda=0$ no hay nada que demostrar. 
 \vskip .2cm
 Supongamos que $\lambda\neq0$. Sea $\lambda^{-1}\in\R$ su inverso multiplicativo.
+
+\vskip .2cm
+Por 1. $\lambda^{-1}\cdot 0 =0$, luego 
 \begin{align*}
 \lambda^{-1}\cdot 0&=\lambda^{-1}\cdot(\lambda\cdot v)&&\mbox{(por hipótesis)}\\
 0&=(\lambda^{-1}\lambda)\cdot v&\quad&\mbox{(asociatividad)}\\
@@ -547,14 +550,14 @@ Supongamos que $\lambda\neq0$. Sea $\lambda^{-1}\in\R$ su inverso multiplicativo
 \begin{itemize}
     \item $(-1)\cdot v=-v$, en palabras, $-1$ por $v$ es igual al opuesto de $v$
 \end{itemize}
+vskip .2cm
+Usaremos el  hecho de que el opuesto es único, luego si $(-1)\cdot v + v = 0$ entonces $(-1)v = -v$.
+
 \begin{align*}
-0&=0\cdot v&&\text{(por 2.)}\\
-0&=(1+(-1))v&&\text{}\\
-0&=1\cdot v+(-1)\cdot v&&\text{(distributividad)}\\
-0&=v+(-1)\cdot v&&\text{(elemento neutro $\cdot$)}\\
--v+0&=-v+ v+(-1)\cdot v&&\text{(sumo $-v$ a ambos miembros)}\\
--v&= 0 +(-1)\cdot v&&\text{(elemento neutro $+$ y opuesto)}\\
--v&=(-1)\cdot v&&\text{(elemento neutro $+$)}
+(-1)\cdot v + v &=(-1)v + 1\cdot v &&\text{}\\
+&=((-1)+1)v&&\text{}\\
+&=0 \cdot v&&\text{}\\
+&=0.
 \end{align*}
 \end{block} \qed
 \end{frame}
