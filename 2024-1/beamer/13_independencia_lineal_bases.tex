@@ -84,7 +84,7 @@
 	\\[\baselineskip] ${}^{}$
 	\\[\baselineskip]
 }
-\date[02/05/2024]{2 de mayo de 2024}
+\date[07/05/2024]{7 de mayo de 2024}
 
 
 
@@ -598,6 +598,195 @@
     
     
 
+    \begin{frame} 
+    
+        \begin{corolario}
+        Si $V$ es un espacio vectorial de dimensión finita, entonces dos bases cualesquiera de $V$ tienen el mismo número de elementos.
+        \end{corolario}\pause
+        \begin{proof}\pause
+                $V$ es de dimensión finita $\Rightarrow$ $\exists\;\mathcal B$  base con  $|\mathcal B| < \infty$.
+        
+        \vskip .2cm
+            Sea $\mathcal B'$  otra base de $V$.\pause
+            \vskip .2cm
+            Como $\mathcal B$ es base $\Rightarrow$ $\la \mathcal B \ra  = V$ y  $\mathcal B'$ es   LI $\stackrel{(\ref{eq-1})}{\Rightarrow}$  $|\mathcal B'| \le |\mathcal B|$. 
+            
+            \vskip .2cm\pause
+        
+            Como $\mathcal B'$ es base  $\Rightarrow$  $\la \mathcal B' \ra  = V$ y  $\mathcal B$ es LI  $\stackrel{(\ref{eq-1})}{\Rightarrow}$  $|\mathcal B| \le |\mathcal B'|$.
+            \pause
+            \vskip .4cm
+            En consecuencia $|\mathcal B| = |\mathcal B'|$. \qed
+        \end{proof}
+        \end{frame}  
+        
+        
+        \begin{frame}
+            Hemos demostrado: si $V$  es un espacio vectorial de dimensión finita y $\mathcal B,\mathcal B' $ dos bases de $V$,  entonces $|\mathcal B|=|\mathcal B'|$.
+            \vskip .2cm Esto nos permite hacer la siguiente definición. 
+        
+            \vskip .4cm\pause
+        
+            \begin{definicion}
+                Sea $V$ espacio vectorial de dimensión finita. 
+                \vskip .2cm
+                Diremos que $n$  es \textit{la dimensión de $V$}\index{dimensión de un espacio vectorial} y  denotaremos $\dim V =n$,  si existe una base de $V$  de $n$  vectores. 
+                \pause
+            \vskip .2cm Si $V = \{0\}$,  entonces definimos $\dim V =0$.
+            \end{definicion}
+            
+        \end{frame}  
+        
+        
+        \begin{frame}
+            
+        
+        
+        \begin{block}{Ejemplos} Sean $m,n \in \mathbb N$. 
+        \vskip .4cm\pause
+        \begin{enumerate}
+            \item $\dim \K^n= n$, pues  la base canónica tiene $n$ elementos.\vskip .4cm\pause
+            \item $\dim M_{m \times n}(\K) = mn$, pues la base canónica de $M_{m \times n}(\K)$ tiene $mn$  elementos.  \vskip .4cm\pause
+            \item $\dim \K_n[x] =n$, pues $1,x,x^2,\ldots,x^{n-1}$ es una base.   
+        \end{enumerate}
+        \end{block}
+            
+        \end{frame}  
+        
+                                                
+                                
+        \begin{frame}
+            
+        \begin{corolario}
+        Sea $V$ un espacio vectorial de dimensión finita y sea $n = \dim V$. 
+        Entonces
+        \begin{enumerate}
+            \item  $S \subset V$  y  $|S| > n$ $\Rightarrow$ $S$  es LD.
+            \item  $S \subset V$  y  $|S| < n$ $\Rightarrow$ $\la S \ra \subsetneqq V$.
+        \end{enumerate} 
+        \end{corolario}\pause
+        \begin{block}{Demostración} \pause Sea $\mathcal B$ base de $V$. 
+        \begin{enumerate}
+        \item Como $\mathcal B$ es base $\Rightarrow$ $\la \mathcal B \ra  = V$ y  $|S| > |\mathcal B|$ $\stackrel{(\ref{eq-2})}{\Rightarrow}$  $S$ es LD. 
+        \vskip .4cm    \pause
+        \item Supongamos que $\la S \ra  = V$.
+        \vskip .2cm    
+        Como $\mathcal B$ es base $\Rightarrow$ $\mathcal B$ es LI.
+        \vskip .2cm    
+        $\la S \ra  = V$ y $\mathcal B$ es LI  $\stackrel{(\ref{eq-1})}{\Rightarrow}$ $n=|\mathcal B| \le |S|$. Absurdo.
+        
+        \end{enumerate} \qed
+        \end{block}
+        \end{frame}
+        
+        
+        \begin{frame}
+        
+        \begin{lema}\label{li+vec=li} Sea $V$ espacio vectorial. 
+        \begin{itemize}
+            \item  Sea $S \subset V$ y $S$ es LI.
+            \item Sea $w$ tal que $w \not\in \la S \ra$.
+        \end{itemize}
+        \vskip .2cm
+        Entonces $S \cup  \{w\}$ es LI.
+        \end{lema}\pause
+        \vskip .4cm
+        \begin{proof}\pause
+        Sean  $v_1,\ldots,v_n$  vectores distintos de $S$ y  $\lambda_i,\lambda \in \K$  tales que
+        \begin{equation}\label{eq-dep-lin}
+            \lambda_1 v_1 + \cdots + \lambda_n v_n + \lambda w =0 .
+        \end{equation}
+        Debemos probar que $\lambda_i=0$, $1 \le i \le n$, y $\lambda =0$.
+        
+        
+        \end{proof}
+        
+        
+        \end{frame}
+        
+        \begin{frame}
+        
+        Supongamos que $\lambda \ne 0$, entonces podemos dividir la ecuación por $\lambda$ y haciendo  pasaje de término  obtenemos
+        $$
+        w = \left(-\frac{\lambda_1}{\lambda}\right) v_1 + \cdots   \left(-\frac{\lambda_n}{\lambda}\right) v_n.
+        $$
+        \pause
+        Luego $w$ estaría  en el subespacio generado por $S$, lo cual contradice la hipótesis. 
+        \vskip .4cm 
+        Por  lo tanto $\lambda =0$ y, en consecuencia  
+        $$
+        \lambda_1 v_1 + \cdots + \lambda_n v_n =0.
+        $$ 
+        Como $S$ es un conjunto linealmente independiente, todo $\lambda_i = 0$. 
+        
+        \qed
+        \end{frame}
+        
+        
+        
+        \begin{frame}
+        
+        
+        \begin{teorema}\label{completar-bases}
+        Sea $V$ espacio vectorial de dimensión finita $n$ y $S_0$ un subconjunto LI de $V$. Entonces $S_0$  es finito  y existen $w_1,\ldots,w_m$ vectores en  $V$ tal que  $S_0 \cup \{w_1,\ldots,w_m\}$ es una base de $V$. 
+        \end{teorema}
+        
+        \pause
+        
+        
+        \begin{corolario}
+            Sea $W$  un subespacio de un espacio vectorial con de dimensión finita $n$ y $S_0$ un subconjunto LI de $W$. Entonces, $S_0$ se puede completar a una base de $W$. 
+        \end{corolario}
+        
+        \pause
+        \begin{corolario}
+            Sea $V$ espacio vectorial de dimensión finita y $V \ne \{0\}$, entonces $\dim V >0$.
+        \end{corolario}
+        
+        \end{frame}
+        
+        
+        
+        
+        \begin{frame}
+        
+        \begin{corolario}\label{dimw-menor-dimv}
+        Si $W$ es un subespacio propio de un espacio vectorial de dimensión finita $V$, entonces $W$ es de dimensión finita y  $\dim W < \dim V$.
+        \end{corolario}\pause
+        \begin{proof}\pause Si $W = \{0\}$, entonces $\dim W = 0$,  como $W \subsetneq V$,  tenemos que $V$  es no nulo y por lo tanto $\dim W = 0 < \dim V$. 
+        \vskip .4cm 
+        Si $W \ne \{0\}$, sea $\mathcal{B}'$ base de $W$. 
+        
+        Si $\la  \mathcal{B}' \ra =V$, entonces $W = V$,  absurdo. Luego $\la  \mathcal{B}' \ra \ne V$ $\Rightarrow$ existen $w_1, \ldots, w_r$ que completan a una base de $V$ $\Rightarrow$ $\dim(W) = \dim(V) -r < \dim(V)$. 
+        
+        
+        
+        
+        
+        \qed
+        \end{proof}
+        
+        \end{frame}
+        
+        
+        \begin{frame}
+        Hemos visto que si  $V$  es un espacio de dimensión finita,  entonces todo conjunto LI se puede extender a una base. También vale: 
+        \pause
+        
+        \begin{teorema}\label{gen->base}
+        Sea $V \ne 0$ espacio vectorial y $S$ un conjunto finito de generadores de $V$,  entonces existe un subconjunto $\mathcal B$  de $S$ que es una base.  
+        \end{teorema} 
+        \vskip .4cm\pause
+        El siguiente resultado relaciona dimensión con  suma e intersección de subespacios. 
+        \pause
+        \begin{teorema}
+        Si $W_1$, y $W_2$ son subespacios de dimensión finita de un espacio vectorial, entonces $W_1+ W_2$ es de dimensión finita y 
+        $$\dim (W_1 + W_2) = \dim W_1 + \dim W_2 - \dim (W_1 \cap W_2).$$
+        \end{teorema}
+        \end{frame}
+        
+        
+        
 
 
 \end{document}

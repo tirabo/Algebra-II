@@ -83,7 +83,7 @@
     \\[\baselineskip] ${}^{}$
     \\[\baselineskip]
 } 
-\date[09/05/2024]{9 de mayo de 2024}
+\date[28/05/2024]{28 de mayo de 2024}
 
 
 
@@ -92,24 +92,8 @@
 \maketitle
 \end{frame}
 
-\begin{frame}
-    Una transformación lineal es una función entre dos espacios vectoriales que preserva la suma y multiplicación por escalares.
-\begin{equation*}
-    T: V \to W, \quad \text{ tal que }\quad T(v + \lambda v_0) = T(v) + \lambda T(v_0)
-\end{equation*}
 
-Ya conocemos algunas transformaciones lineales, aunque no las llamemos así. Por ejemplo:
-\begin{itemize}
-    \item La derivada: $f + cg \mapsto f' + cg'$.
-    \item La integral: $\int_a^b (f + cg) \,dx = \int_a^b f \,dx + c \int_a^b g \,dx$.
-    \item La multiplicación por matrices: $A(v + \lambda v_0) = Av + \lambda Av_0$.
-\end{itemize}
-\vskip .4cm
-La propiedad de preservar las operaciones de espacios vectoriales es de utilidad para
-facilitar cálculos.
-\vskip .4cm
-En esta parte de la materia estudiaremos las transformaciones lineales y veremos que información nos dan de los espacios vectoriales.
-\end{frame}
+
 
 \begin{frame}
     \begin{definicion}
@@ -139,17 +123,49 @@ En esta parte de la materia estudiaremos las transformaciones lineales y veremos
     
 \end{frame}
 
+
+
 \begin{frame}
 
+    Ya conocemos transformaciones lineales muy importantes.\pause
 
-Como ya fue dicho, ya conocemos algunas transformaciones lineales. Por ejemplo:\pause
-\vskip .4cm
-\begin{itemize}
-    \item La derivada: 
+    \begin{block}{Observación}\label{obs-matriz->tl}
+    Sea $A\in\R^{m\times n}$ y consideramos la función 
+    \begin{align*}
+    \begin{array}{rccc}
+        T : &\R^n &\to &\R^m \\
+            &v &\mapsto &Av.
+    \end{array}
+    \end{align*}
+    Entonces $T$ es una transformación lineal. \pause
+    \end{block}
+    \begin{proof}\pause
+        Debemos ver que $T$ respeta suma y producto por escalares.
+    \end{proof}
+    
+    \pause
+    Sean $v_1,v_2\in\R^n$ y $\lambda\in\R$ entonces
+    \begin{align*}
+    T(v_1+\lambda v_2)=A(v_1+\lambda v_2)=
+    Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2).
+    \end{align*}
+    \qed
+    
+    
+    \end{frame}
+
+\begin{frame}
+
+\begin{ejemplo*} Sea $D(\mathbb R) = \{f:\mathbb R \to \mathbb R: \exists f'(x),\, \forall x \in \mathbb R\}$ el espacio vectorial de todas las funciones reales derivables.  \pause
+
+    Entonces la derivada es una transformación lineal de $D(\mathbb R)$ a $F(\mathbb R)$,  el espacio vectorial de funciones de $\mathbb R$ en  $\mathbb R$, pues
     $$(f+cg)'=f'+cg'$$\pause
-    \item La integral: $$\int_a^b (f+cg) \,dx=\int_a^b f \,dx+ c \int_a^b g \,dx.$$\pause
-    \item La multiplicación por matrices: $$A(v+\lambda v')=Av+\lambda Av'$$
-   \end{itemize}
+\end{ejemplo*}
+
+\begin{ejemplo*} La integral indefinida es una transformación lineal de funciones continuas en funciones continuas, pues
+    $$\int (f+cg) \,dx=\int f \,dx+ c \int g \,dx.$$\pause
+\end{ejemplo*}
+
 
 \
 
@@ -167,19 +183,11 @@ Como ya fue dicho, ya conocemos algunas transformaciones lineales. Por ejemplo:\
         $$
         T(x_1,x_2,x_3) = (2x_1 - x_3, -x_1+3x_2+x_3).
         $$
-        Entonces, $T$  es una transformación lineal. 
-        
-        \vskip .4cm\pause
-
-        La demostración es rutinaria y  parte de un resultado más general. 
-        
-        \vskip .4cm\pause
-
-    Observar que si 
+        Entonces, $T$  es una transformación lineal, pues observar que si 
     $$
-     A = \begin{bmatrix}
-     2&0&-1 \\ -1&3&1
-     \end{bmatrix},
+    A = \begin{bmatrix}
+    2&0&-1 \\ -1&3&1
+    \end{bmatrix},
     $$
     entonces
     $$
@@ -193,28 +201,43 @@ Como ya fue dicho, ya conocemos algunas transformaciones lineales. Por ejemplo:\
     2x_1 - x_3 \\ -x_1+3x_2+x_3
     \end{bmatrix}.
     $$
- 
+    Luego por el resultado de la p. \ref{obs-matriz->tl}, $T$ es una transformación lineal.
     \end{ejemplo*}   
 
 \end{frame}
 
+
 \begin{frame}
-    \begin{observacion}\label{obs-tl-1.5}     Sea $T: \K^n \to \K^m$. En  general si $T(x_1,\ldots,x_n)$ en cada coordenada tiene una combinación lineal de los $x_1,\ldots,x_n$,  entonces $T$ es una transformación lineal. Mas precisamente, si $T$ está definida por
+    \begin{observacion}\label{obs-nu-im}     Sea $T: \K^n \to \K^m$ definida por
         \begin{align*}
-        T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )\\
-        &=(\sum_{j=1}^n a_{1j} x_j,\ldots,\sum_{j=1}^n a_{mj} x_j),
+        T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )
         \end{align*}
-        con $a_{ij} \in \K$, entonces $T$  es lineal. 
-    \end{observacion}\pause
-    \begin{proof} Ejercicio. \pause Lo  vemos  en  p. \ref{obs-nu-im}. \qed
-    \end{proof}
+        con $a_{ij} \in \K$, \pause entonces 
+        \begin{equation*}
+            T(x) = \begin{bmatrix*}
+                a_{11}& a_{12} & \cdots &a_{1n} \\
+                a_{21}& a_{22} & \cdots &a_{2n} \\
+                \vdots&\vdots&\ddots&\vdots \\
+                a_{m1}& a_{m2} & \cdots &a_{mn}
+            \end{bmatrix*}
+            \begin{bmatrix}
+                x_1 \\ x_2 \\ \vdots \\ x_n
+            \end{bmatrix}
+        \end{equation*} 
+        \pause
+        Es decir, si  $A = [a_{ij}]$, entonces  $T$ es la transformación lineal inducida como en la p. \ref{obs-matriz->tl} por la matriz $A$. 
+        \vskip .4cm\pause
+    \end{observacion}
 \end{frame}
 
 
 
 \begin{frame}{(contra)Ejemplos}
 \begin{exampleblock}{Ejemplo}
-No todas las funciones son transformaciones lineales. La función $f(x)=x^2$ de $\R$ en $\R$ no es lineal. Probamos esto dando un ejemplo concreto donde no se verifique algunas de las propiedades. Por ejemplo:
+No todas las funciones son transformaciones lineales. La función $f(x)=x^2$ de $\R$ en $\R$ no es lineal. 
+\pause
+\vskip .5cm
+Probamos esto dando un ejemplo concreto donde no se verifique algunas de las propiedades. Por ejemplo:
 $$
 (1+1)^2=4\neq2= 1^2+1^2.
 $$
@@ -445,46 +468,33 @@ Sea $T:V\longrightarrow W$ una transformación lineal y supongamos que $V$ es de
 
 \begin{frame}
 
-Todas las transformaciones lineales entre $\R^n$ y $\R^m$ son de la forma ``multiplicar por una matriz''.
-\pause
-\
+    Vimos en la p. \ref{obs-matriz->tl} que toda matriz $m \times n$ induce una transformación lineal de $\R^n$ en $\R^m$. \pause
 
-Más aún,  toda transformación lineal entre espacios vectoriales de dimensión finita se puede expresar de esta forma.
-\pause
-\
 
-Así que analicemos un poco más en detalle este tipo de transformaciones.
+\begin{observacion}
+Toda transformación lineal entre $\R^n$ y $\R^m$ es de la forma ``multiplicar por una matriz''.
+\end{observacion}
+
+\pause
+\begin{demostracion}
+    La demostración es parte de un resultado más general, por ahora solo decimos que si $\{e_i\}$ es la base canónica, 
+    $$
+    T(e_i) = a_{1i}e_1 + a_{2i}e_2 + \cdots + a_{mi}e_m,\text{ para } i=1,\ldots,n,
+    $$
+    y $A = [a_{ij}]$, entonces  $Tv = Av$.
+    \qed
+\end{demostracion}
+
+
+\pause
+\vskip .5cm
+
+Así que analicemos un poco más en detalle las transformaciones lineales inducidas por matrices.
 
 \vskip 3 cm
 \end{frame}
 
 
-\begin{frame}
-
-\begin{block}{Observación}
-Sea $A\in\R^{m\times n}$ y consideramos la función 
-\begin{align*}
-\begin{array}{rccc}
-    T : &\R^n &\to &\R^m \\
-        &v &\mapsto &Av.
-\end{array}
-\end{align*}
-Entonces $T$ es una transformación lineal. \pause
-\end{block}
-\begin{proof}\pause
-    Debemos ver que $T$ respeta suma y producto por escalares.
-\end{proof}
-
-\pause
-Sean $v_1,v_2\in\R^n$ y $\lambda\in\R$ entonces
-\begin{align*}
-T(v_1+\lambda v_2)=A(v_1+\lambda v_2)=
-Av_1+\lambda Av_2=T(v_1)+\lambda T(v_2).
-\end{align*}
-\qed
-
-
-\end{frame}
 
 \begin{frame}
 
@@ -536,30 +546,6 @@ A(0,1,\pi)&=(1+\pi,2+2\pi)\in\im(A)
 
 
 
-
-\begin{frame}
-    \begin{observacion}\label{obs-nu-im}     Sea $T: \K^n \to \K^m$ definida por
-        \begin{align*}
-        T(x_1,\ldots,x_n) &= (a_{11}x_1+\cdots + a_{1n}x_n,\, \ldots\,,a_{m1}x_1+\cdots + a_{mn}x_n )
-        \end{align*}
-        con $a_{ij} \in \K$, \pause entonces 
-        \begin{equation*}
-            T(x) = \begin{bmatrix*}
-                a_{11}& a_{12} & \cdots &a_{1n} \\
-                a_{21}& a_{22} & \cdots &a_{2n} \\
-                \vdots&\vdots&\ddots&\vdots \\
-                a_{m1}& a_{m2} & \cdots &a_{mn}
-            \end{bmatrix*}
-            \begin{bmatrix}
-                x_1 \\ x_2 \\ \vdots \\ x_n
-            \end{bmatrix}
-        \end{equation*} 
-        \pause
-        Es decir,  $T$ es la transformación lineal inducida por la matriz $A = [a_{ij}]$. 
-        \vskip .4cm\pause
-        Esto demuestra la observación de la p. \ref{obs-tl-1.5}.
-    \end{observacion}
-\end{frame}
 
 
 \begin{frame}

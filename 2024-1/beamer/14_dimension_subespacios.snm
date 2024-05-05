@@ -1,11 +1,6 @@
 \beamer@slide {eq-1}{3}
 \beamer@slide {eq-2}{3}
-\beamer@slide {li+vec=li}{8}
-\beamer@slide {eq-dep-lin}{8}
-\beamer@slide {completar-bases}{10}
-\beamer@slide {dimw-menor-dimv}{11}
-\beamer@slide {gen->base}{12}
-\beamer@slide {espacio-fila-columna}{17}
-\beamer@slide {subesp-merf}{21}
-\beamer@slide {inv-impl-filasgen}{22}
-\beamer@slide {ej-4.5}{24}
+\beamer@slide {espacio-fila-columna}{8}
+\beamer@slide {subesp-merf}{12}
+\beamer@slide {inv-impl-filasgen}{13}
+\beamer@slide {ej-4.5}{15}
