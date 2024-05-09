@@ -1,4 +1,7 @@
 *.aux
+*.fls
+*.nav
+*.snm
 *.idx
 *.out
 *.log
@@ -7,5 +10,11 @@
 *.ilg
 *.ind
 *.fdb_latexmk
+*.bib
+*.bbl
+*.blg
+*.fdb_latexmk
+*.lot
+*.run.xml
 
 
