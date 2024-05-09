@@ -1,7 +1,7 @@
-\documentclass{beamer} % descomentar para tener pausas
-%\documentclass[handout]{beamer} % descomentar para no tener pausas
+%\documentclass{beamer} % descomentar para tener pausas
+\documentclass[handout]{beamer} % descomentar para no tener pausas
 \usetheme{CambridgeUS}
-\setbeamertemplate{background}[grid][step=8 ] % cuadriculado
+%\setbeamertemplate{background}[grid][step=8 ] % cuadriculado
 
 \usepackage{etex}
 \usepackage{t1enc}
@@ -169,7 +169,7 @@
     \begin{demostracion}\pause
     $(\Rightarrow)$ \pause Supongamos que son LD. Entonces $\lambda_1v_1+\cdots+\lambda_n v_n=0$ donde algún escalar es no nulo. Digamos que tal escalar es $\lambda_i$. Podemos entonces despejar $v_i$, es decir escribirlo como combinación lineal de los otros:
     \begin{align*}
-        v_i=-\frac{\lambda_1}{\lambda_i}v_1-\cdots-\frac{\lambda_{i-1}}{\lambda_{i-1}}v_{i-1}-\frac{\lambda_{i+1}}{\lambda_{i+1}}v_{i+1}-\cdots-\frac{\lambda_n}{\lambda_i}v_n
+        v_i=-\frac{\lambda_1}{\lambda_i}v_1-\cdots-\frac{\lambda_{i-1}}{\lambda_{i}}v_{i-1}-\frac{\lambda_{i+1}}{\lambda_{i}}v_{i+1}-\cdots-\frac{\lambda_n}{\lambda_i}v_n
         \end{align*}
     
     \vskip .4cm\pause
@@ -520,10 +520,10 @@
     
     
     \begin{teorema}\label{indep-menorigual-gen}
-        Sea $V$ un espacio vectorial generado por un conjunto finito de vectores $w_1,\ldots,w_m$. Entonces 
-        $$
-        S \subset V \text{ es LI } \Rightarrow |S| \le m.
-        $$
+        Sea  $w_1,\ldots,w_m$  un conjunto finito de vectores. Entonces 
+        \begin{equation}
+            S \subset \langle w_1,\ldots,w_m \rangle \text{ es LI } \Rightarrow |S| \le m. \label{eq-1}\tag{TI}
+        \end{equation}
     \end{teorema}
     \begin{proof} 
         Para demostrar este teorema es suficiente probar el contrarrecíproco del enunciado, es decir:
@@ -680,7 +680,8 @@
         
         
         \begin{frame}
-        
+            
+    
         \begin{lema}\label{li+vec=li} Sea $V$ espacio vectorial. 
         \begin{itemize}
             \item  Sea $S \subset V$ y $S$ es LI.
