@@ -500,7 +500,7 @@
             \item Los autovalores de $A$ son las raíces de  $\chi_A(x)$: $1$ y $2$.\pause
             \item Debemos resolver los sistemas de ecuaciones:
             \begin{equation*}
-                (A - \Id)X = 0,\qquad (A - 2\Id)X = 0.
+                (\Id-A)X = 0,\qquad (2\Id-A)X = 0.
             \end{equation*}
         \end{enumerate}
     \end{solucion}
@@ -510,7 +510,7 @@
     Es decir,  debemos resolver los sistemas
     \begin{align*}
         \begin{bmatrix}
-            3 - 1&-2 \\ 1&-1
+            1-3&2 \\ -1&1
         \end{bmatrix}
         \begin{bmatrix}
             x_1\\x_2
@@ -520,7 +520,7 @@
             0\\0
         \end{bmatrix}
         \qquad &\Rightarrow \qquad 
-        \begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix}
+        \begin{bmatrix} -2&2 \\ -1&1 \end{bmatrix}
         \begin{bmatrix}
             x_1\\x_2
         \end{bmatrix}
@@ -532,7 +532,7 @@
         &
         \\
         \begin{bmatrix}
-            3 - 2&-2 \\ 1&-2
+            2-3&2 \\ -1&2
         \end{bmatrix}
         \begin{bmatrix}
             x_1\\x_2
@@ -542,7 +542,7 @@
             0\\0
         \end{bmatrix}
         \qquad &\Rightarrow \qquad 
-        \begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix}
+        \begin{bmatrix}-1&2 \\ -1&2\end{bmatrix}
         \begin{bmatrix}
             x_1\\x_2
         \end{bmatrix}
@@ -552,9 +552,9 @@
         \end{bmatrix} \tag{S2}
     \end{align*}
 \vskip .4cm\pause
-    (S1) $\begin{bmatrix} 2&-2 \\ 1&-1 \end{bmatrix} \stackrel{F_1 -2F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ 1&-1 \end{bmatrix}$  $\Rightarrow$ $x_1-x_2=0$ $\Rightarrow$ $(t,t)$ es solución. 
+    (S1) $\begin{bmatrix} -2&2 \\ -1&1 \end{bmatrix} \stackrel{F_1 -2F_2}{\longrightarrow} \begin{bmatrix} 0&0 \\ -1&1 \end{bmatrix}$  $\Rightarrow$ $-x_1+x_2=0$ $\Rightarrow$ $(t,t)$ es solución. 
     \vskip .4cm
-    (S2)  $\begin{bmatrix}1&-2 \\ 1&-2\end{bmatrix} \stackrel{F_2 -F_1}{\longrightarrow} \begin{bmatrix}1&-2 \\ 0&0\end{bmatrix}$  $\Rightarrow$ $x_1-2x_2=0$ $\Rightarrow$ $(2t,t)$ es solución. 
+    (S2)  $\begin{bmatrix}-1&2 \\ -1&2\end{bmatrix} \stackrel{F_2 -F_1}{\longrightarrow} \begin{bmatrix}-1&2 \\ 0&0\end{bmatrix}$  $\Rightarrow$ $-x_1+2x_2=0$ $\Rightarrow$ $(2t,t)$ es solución. 
 
 \end{frame}
 
