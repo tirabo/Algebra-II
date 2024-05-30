@@ -95,7 +95,7 @@
 
 
 \begin{frame}
-Los dos teoremas que vamos a ver aquí son muy fuertes, en el sentido que dan mucha información por si solos y que además serán de utilidad para estudiar transformaciones inyectivas, suryectivas y biyectivas.
+Los dos teoremas (los de pp. \ref{th-dim-nu-im} y \ref{th-rango-fila-columna}) que vamos a ver aquí son muy fuertes, en el sentido que dan mucha información por si solos y que además serán de utilidad para estudiar transformaciones inyectivas, suryectivas y biyectivas.
 \pause
 
 \
@@ -116,7 +116,7 @@ Las demostraciones no son difíciles, pero requieren concentración y maduració
 \begin{frame}
 El siguiente resultado relaciona las dimensiones del núcleo y la imagen. 
 \vskip .4cm \pause
-\begin{teorema}
+\begin{teorema}\label{th-dim-nu-im}
 Sea $T:V\longrightarrow W$ una transformación lineal. Si $V$ es de dimensión finita entonces
 \begin{align*}
 \dim V=\dim\nu(T)+\dim\im(T)
@@ -352,7 +352,7 @@ Sea $A\in\R^{m\times n}$.  \pause
 
 
 
-\begin{teorema}
+\begin{teorema}\label{th-rango-fila-columna}
 Sea $A\in\R^{m\times n}$. El rango fila de $A$ es igual al rango columna de $A$.
 \end{teorema}\pause
 
@@ -417,7 +417,7 @@ $\im(T) = \langle v_1,\ldots,v_n \rangle$.  Entonces, rango columna de $A$ $=$  
 
 \begin{frame}
 
-Segundo, por el Corolario 2.5.2 las filas no nulas de la MERF equivalente a $A$ forman una base del espacio fila de $A$. \pause
+Segundo, por el Corolario 4.4.3 de las Notas (visto en la clase 14) las filas no nulas de la MERF equivalente a $A$ forman una base del espacio fila de $A$. \pause
 
 \
 
@@ -494,7 +494,7 @@ Por lo tanto, por el teorema de la dimensión,
 
    
    \vskip .3cm
-   \begin{definicion}[4.3.1-4.3.2]
+   \begin{definicion}[(5.3.1 de las Notas)]
     Sean $V$, $W$ espacios vectoriales sobre un cuerpo $\K$ y sea $T:V \to W$ una transformación lineal.
     \begin{itemize} \vskip .3cm\pause
         \item $T$  es \textit{epimorfismo}\index{epimorfismo} si $T$ es suryectiva. \pause
@@ -515,7 +515,7 @@ Por lo tanto, por el teorema de la dimensión,
     
     \begin{frame}
     
-        \begin{observacion}[4.3.1]
+        \begin{observacion}
             \begin{itemize}
                 \item  $T$  es epimorfismo si y sólo si 
                 $$
@@ -538,7 +538,7 @@ Por lo tanto, por el teorema de la dimensión,
     \begin{frame}
         
             
-        \begin{block}{Proposición 4.3.1}\label{inyectiva-sii-nuT=0}
+        \begin{block}{Proposición}\label{inyectiva-sii-nuT=0}
             Sea $T:V \to W$ una transformación lineal. Entonces $T$ es monomorfismo si y sólo si $\nuc(T) =0$.
         \end{block}	\pause
         \begin{proof} \pause
@@ -560,7 +560,7 @@ Por lo tanto, por el teorema de la dimensión,
     \end{frame}
 
     \begin{frame}
-        \begin{observacion}[4.3.2] Sea $T: V \to W$ transformación lineal, \pause
+        \begin{observacion} Sea $T: V \to W$ transformación lineal, \pause
             \begin{enumerate}
                 \item $T$  es {epimorfismo} $\Leftrightarrow$ $\img(T) = W$ $\Leftrightarrow$ $\dim\im(T) = \dim W$.\pause
                 \item $T$ es {monomorfismo} $\Leftrightarrow$ $\nuc(T) = 0$ $\Leftrightarrow$ $\dim\nu(T) =0$.
@@ -568,7 +568,7 @@ Por lo tanto, por el teorema de la dimensión,
         \end{observacion}		
     
         \pause
-        \begin{proposicion}[4.3.2]\label{prop-T-mono-sii-li-2-li} Sea $T:V \to W$ transformación lineal. Entonces,
+        \begin{proposicion}\label{prop-T-mono-sii-li-2-li} Sea $T:V \to W$ transformación lineal. Entonces,
             \begin{enumerate}\pause
                 \item\label{itm-T-mono-sii} $T$ es monomorfismo si y sólo si $T$ de un conjunto LI  es  LI.\pause
                 \item\label{itm-T-epi-sii} $T$ es epimorfismo si y sólo si $T$ de un conjunto de generadores de $V$ es un conjunto de generadores de $W$.
@@ -578,7 +578,6 @@ Por lo tanto, por el teorema de la dimensión,
         \vskip .2cm
 
         En  las próximas pantallas veremos la demostración.
-       
 
     \end{frame}
     
@@ -586,8 +585,7 @@ Por lo tanto, por el teorema de la dimensión,
 
 
     \begin{frame}
-   
-          
+
         \ref{itm-T-mono-sii} ($\Rightarrow$) Sea $\{v_1,\ldots,v_n \}$  LI en $V$ y  $\lambda_1,\ldots,\lambda_n \in \K$ tales que
         $$
         \lambda_1T(v_1) +\cdots+ \lambda_{n}T(v_n) =0.
@@ -696,9 +694,9 @@ Por lo tanto, por el teorema de la dimensión,
         \begin{proof} \pause
             \vskip -.2cm
          ($\Rightarrow$) 
-           Sea $ \mathcal B$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición 4.3.2, $T(\mathcal B)$ es LI y genera $W$,  es decir,  es base de $W$.
+           Sea $ \mathcal B$ base de $V$.  Como $T$ es isomorfismo, $T$ es mono y epi, luego por proposición de p. \ref{prop-T-mono-sii-li-2-li}, $T(\mathcal B)$ es LI y genera $W$,  es decir,  es base de $W$.
 
-           ($\Leftarrow$) Sea $ \mathcal B$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\mathcal B)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición 4.3.2, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo. \qed
+           ($\Leftarrow$) Sea $ \mathcal B$ base de $V$ y $T:V \to W$ transformación lineal tal que $T(\mathcal B)$ es base. Por lo tanto, manda un conjunto LI a un conjunto LI y un conjunto de generadores de $V$ a un conjunto de generadores de $W$. Por proposición de p. \ref{prop-T-mono-sii-li-2-li}, $T$ es mono  y epi, por lo tanto $T$ es un isomorfismo. \qed
         \end{proof}
 
         \begin{corolario}
@@ -715,7 +713,7 @@ Por lo tanto, por el teorema de la dimensión,
     \begin{frame}
     Recordar que si una función es biyectiva entonces se puede definir la función inversa.
     \vskip .4cm \pause
-    \begin{teorema}[4.3.3]
+    \begin{teorema}
     Sea $T:V\longrightarrow W$ un isomorfismo. Entonces la función inversa $$T^{-1}:W\longrightarrow V$$ es también un isomorfismo. 
     
     Es decir, $T^{-1}$ es una transformación lineal biyectiva.
@@ -745,7 +743,7 @@ Por lo tanto, por el teorema de la dimensión,
 
     \begin{frame}
     
-    \begin{teorema}[4.3.4]\vskip -.2cm
+    \begin{teorema}\label{th-equiv-epi-mono}\vskip -.2cm
     Sea $T:V\longrightarrow W$ una transformación lineal con $\dim V=\dim W$. Entonces las siguientes afirmaciones son equivalentes
     \begin{enumerate}\pause
         \item\label{a-dimV=dimW} $T$ es un  isomorfismo.\pause
@@ -813,18 +811,17 @@ Por lo tanto, por el teorema de la dimensión,
         \vskip .2cm
         Luego $T$ es un isomorfismo. 	 \qed
 
-       
     \end{frame}
 
 
     
     \begin{frame}
     
-    \begin{definicion}[4.3.2]
+    \begin{definicion}
     Dos espacios vectoriales $V$ y $W$ se dicen \textit{isomorfos}, en símbolos $V\;{\cong}\; W$, si existe un isomorfismo $T:V\longrightarrow W$
     \end{definicion}
     \pause
-    \begin{corolario}[4.3.5 (del teorema 4.3.4)]
+    \begin{corolario}[(del teorema de p. \ref{th-equiv-epi-mono}) ]
     Sean $V$ y $W$ espacios de vectoriales dimensión finita. Entonces
     \begin{align*}
     \dim V=\dim W \quad\Rightarrow\quad V\cong W.
@@ -889,7 +886,7 @@ Por lo tanto, por el teorema de la dimensión,
         \begin{itemize}
             \item $\nu(T) = \{x: Ax =0\}$, $\im(T) = \{b: Ax=b$, algún $x\}$.\vskip .4cm\pause
             \item rango fila de $A$ $=$ rango  columna de $A$. \vskip .4cm\pause
-            \item $|$filas no nulas de $A|$ \;$=$\; rg-fil $A$ \;$=$\; rg-col $A$ \;$=$\; $\dim \im(A)$.\vskip .4cm\pause
+            \item $|$filas no nulas de $R|$ \;$=$\; rg-fil $A$ \;$=$\; rg-col $A$ \;$=$\; $\dim \im(A)$.\vskip .4cm\pause
             \item $\dim\nu(A)$ \;$=$\;  $|$variables libres de $RX=0|$ \;$=$\; $n-$rg-fil $A$. 
         \end{itemize}
     
