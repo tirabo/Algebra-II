@@ -156,8 +156,6 @@ Si probamos que $\{T({w_1}), ..., T({w_m})\}$ es una base de $\im(T)$ el teorema
 Pues, de ser así, deducimos que
 \begin{align*}
 \dim V&= k +m \\
-&=|\{v_1, ..., v_k\}|\quad+\quad|\{{w_1}, ..., {w_m}\}|\\
-\noalign{\smallskip}
 &=\dim\nu(T)\quad+\quad|\{T({w_1}), ..., T({w_m})\}|\\
 \noalign{\smallskip}
 &=\dim\nu(T)\quad+\quad\dim\im(T)
@@ -353,7 +351,10 @@ Sea $A\in\R^{m\times n}$.  \pause
 
 
 \begin{teorema}\label{th-rango-fila-columna}
-Sea $A\in\R^{m\times n}$. El rango fila de $A$ es igual al rango columna de $A$.
+    Si $A$ es una matriz $m \times n$ con coeficientes  en $\K$, entonces
+    $$
+    \text{\textit{rango fila }} (A) = \text{\textit{rango  columna }} (A).
+    $$
 \end{teorema}\pause
 
 Notar que si $n\neq m$, estamos comparando subespacios de distintos espacios vectoriales.
@@ -364,10 +365,26 @@ Notar que si $n\neq m$, estamos comparando subespacios de distintos espacios vec
 
 \begin{frame}
 
-\begin{proof}
-	
+    \begin{proof}
+        Sea $T$ la transformación lineal
+                \begin{equation*}
+                    \begin{array}{lllll}
+                    &T: &\K^{n \times 1} &\to &\K^{m \times 1} \\
+                    &&X &\mapsto &AX.
+                    \end{array}
+                \end{equation*}
+                Observar que
+                $$
+                \nuc(T) = \{X \in \K^{n \times 1}: AX=0 \}.
+                $$
+    
+            \end{proof}    
+\end{frame}
+    
 
+\begin{frame}
 
+    \begin{proof}
 Consideremos la transformación lineal $T:\R^n\longrightarrow\R^m$ dada por la multiplicación por $A$. \pause
 
 \
@@ -411,6 +428,25 @@ $\Rightarrow$
 \vskip .2cm
 $\im(T) = \langle v_1,\ldots,v_n \rangle$.  Entonces, rango columna de $A$ $=$  $\dim\im(T)$.
 
+
+\end{frame}
+
+
+\begin{frame}
+
+    Sea $R$ la MERF equivalente por filas a $A$. \pause
+    
+    \begin{itemize}
+        \item Sea $r$ la cantidad de filas no nulas de $R$.\pause
+        \item  or el Corolario 4.4.3 de las Notas (visto en la clase 14) las filas
+        no nulas de $R$ forman una base del espacio de fila $\Rightarrow$ rango fila de $A = r$. \pause
+    \end{itemize}
+
+    \begin{itemize}
+        \item Como $r$ la cantidad de filas no nulas de $R$, hay $n-r$ filas nulas en $R$.\pause
+        \item  por el Corolario 4.4.3 de las Notas (visto en la clase 14) las filas
+        no nulas de $R$ forman una base del espacio de fila $\Rightarrow$ rango fila de $A = r$. \pause
+    \end{itemize}
 
 \end{frame}
 
