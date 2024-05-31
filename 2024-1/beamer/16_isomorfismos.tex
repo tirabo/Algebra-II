@@ -373,136 +373,88 @@ Notar que si $n\neq m$, estamos comparando subespacios de distintos espacios vec
                     &&X &\mapsto &AX.
                     \end{array}
                 \end{equation*}
-                Observar que
-                $$
-                \nuc(T) = \{X \in \K^{n \times 1}: AX=0 \}.
-                $$
-    
+
+
+Sea $R$ la MERF equivalente por filas a $A$. Sea $k$ la cantidad de filas de $R$ no nulas y, entonces, $n-k$ es la cantidad de variables libres de $R$. \pause
+
+
+\vskip .4cm
+
+Por el Corolario 4.4.3 de las Notas (visto en la clase 14) las filas no
+nulas de $R$ forman una base del espacio de de fila, luego 
+\vskip .4cm 
+\begin{equation*}
+    \textit{rango fila de } A = k.\tag{*}
+\end{equation*}
+
+
             \end{proof}    
 \end{frame}
     
 
 \begin{frame}
 
-    \begin{proof}
-Consideremos la transformación lineal $T:\R^n\longrightarrow\R^m$ dada por la multiplicación por $A$. \pause
+    
+    Observar que
+    $$
+    \nuc(T) = \{X \in \K^{n \times 1}: AX=0 \}.
+    $$
+    \pause
+    \vskip .4cm 
+Luego, por el lema anterior, $\dim\nuc(T) = n-k$.
 
-\
+Como por el teorema de la dimensión $\dim\K^n = n$, tenemos que 
+\begin{equation*}
+    \dim\nuc(T) + \dim\im(T) = n,
+\end{equation*}
 
-Es decir, $T(v)=Av$ para todo $v\in\R^n$\pause
+Se deduce que
+\begin{equation*}
+    \dim\im(T) = k.\tag{**}
+\end{equation*}
 
-\
-
-La demostración consiste en comparar el núcleo y la imagen de $T$ con los espacios fila y columna de $A$.
-\end{proof}
-\vskip 1cm \pause
-Primero, el espacio columna de $A$ es igual a la imagen de $T$. 
-
-\
 \end{frame}
+
 
 \begin{frame}
 
+    El espacio columna de $A$ es igual a la imagen de $T$.\pause
+    
+    \vskip .4cm
 
 Esto es por la forma en que multiplicamos matrices:\pause
+
 \begin{align*}
 A=&\left[
 \begin{array}{cccc}
 \mid& \mid& &\mid\\
-v_1 & v_2 & \cdots &v_k\\
+C_1 & C_2 & \cdots &C_n\\
 \mid& \mid& &\mid
 \end{array}
 \right] \qquad \Rightarrow\\
 &
-T(e_i) =
-A\left[
+T(x_1,\ldots,x_n) = \left[\begin{array}{cccc}
+    \mid& \mid& &\mid\\
+    C_1 & C_2 & \cdots &C_n\\
+    \mid& \mid& &\mid
+    \end{array}
+    \right]
+\left[
 \begin{array}{c}
-0\\\vdots \\ 1 \\ \vdots \\0
+x_1\\\vdots \\ \vdots \\x_n
 \end{array}
 \right]=
-v_i
+x_1C_1+\ldots+x_nC_n.
 \end{align*}\pause
-Luego \quad $T(\lambda_1,\ldots,\lambda_n) =T(\sum \lambda_i e_i)= \lambda_1v_1+\cdots+\lambda_nv_n$\pause
-\vskip .2cm
-$\Rightarrow$
-\vskip .2cm
-$\im(T) = \langle v_1,\ldots,v_n \rangle$.  Entonces, rango columna de $A$ $=$  $\dim\im(T)$.
+
+Luego $\im(T) = \langle C_1,\ldots,C_n \rangle$.
+
+Por lo tanto,  $\dim\im(T) =$  rango columna de $A$ $\overset{(**)}{=}$ $k$. \qed
 
 
 \end{frame}
 
 
-\begin{frame}
-
-    Sea $R$ la MERF equivalente por filas a $A$. \pause
-    
-    \begin{itemize}
-        \item Sea $r$ la cantidad de filas no nulas de $R$.\pause
-        \item  or el Corolario 4.4.3 de las Notas (visto en la clase 14) las filas
-        no nulas de $R$ forman una base del espacio de fila $\Rightarrow$ rango fila de $A = r$. \pause
-    \end{itemize}
-
-    \begin{itemize}
-        \item Como $r$ la cantidad de filas no nulas de $R$, hay $n-r$ filas nulas en $R$.\pause
-        \item  por el Corolario 4.4.3 de las Notas (visto en la clase 14) las filas
-        no nulas de $R$ forman una base del espacio de fila $\Rightarrow$ rango fila de $A = r$. \pause
-    \end{itemize}
-
-\end{frame}
-
-
-\begin{frame}
-
-Segundo, por el Corolario 4.4.3 de las Notas (visto en la clase 14) las filas no nulas de la MERF equivalente a $A$ forman una base del espacio fila de $A$. \pause
-
-\
-
-Por lo tanto, el rango fila de $A$ es igual a la cantidad de $1$'s principales de la MERF. O dicho de otro modo,
-\vskip .2cm
-\begin{itemize}
- \item Rango fila de $A$ es igual a $n$ menos la cantidad de variables libres.
-
- ($n$ es la cantidad de columnas de $A$.)
-\end{itemize}
-
-\vskip .4cm\pause
-
-Por otro lado, el $\nu(T)$ es igual al conjunto de soluciones de $AX=0$. 
-\vskip .2cm\pause
-Entonces, por el lema anterior,
-\begin{itemize}
-	\vskip .2cm
- \item $\dim\nu(T)$ es igual a la cantidad de variables libres
-\end{itemize}
-
-\end{frame}
-
-
-
-
-\begin{frame}
-En resumen: sea $r$ la cantidad de variables libres:\pause
-\vskip .2cm
-\begin{enumerate}
- \item Rango columna de $A$ es igual a $\dim\im(T)$\pause
- \vskip .2cm
- \item Rango fila de $A$ es igual a $n$ menos la cantidad de variables libres: $n-r$ . \pause
- \vskip .2cm
- \item $\dim\nu(T)$ es igual a la cantidad de variables libres: $r$.\pause
- \vskip .2cm
- \item $\dim\R^n=n$.
-\end{enumerate}
-\vskip .2cm\pause
-
-Por lo tanto, por el teorema de la dimensión, 
-\begin{align*}
-	\dim(\K^n) &= \dim\nu(T) + \dim\im(T)& &\\
-	n &= r + \text{rgcol}(A)& &\text{(por (4), (3) y (1))}\\
-	n &= n -  \text{rgfil}(A) + \text{rgcol}(A)& &\text{(por (2))}\\
-	0 &=-  \text{rgfil}(A) + \text{rgcol}(A).&&
-\end{align*}\qed
-
-\end{frame}
 
 
 \begin{frame}{Isomorfismos}
