@@ -955,42 +955,27 @@ Planteamos la matriz ampliada y hacemos Gauss:
     \ref{dim-subespacios-c} Para ver la dimensión  planteamos la matriz donde los vectores fila son los vectores del enunciado y  hacemos Gauss para obtener una MRF:
     \begin{align*}
         &\begin{bmatrix}
-            1 & 1 & 0 & 0\\
-            0 & 2 & 1 & -2\\
-            -1 & 1 & 1 & -2\\
-            1 & 1 & 0 & 0
+            1& 0& -1& 1 \\  
+            1& 2& 1& 1 \\ 
+            0& 1& 1& 0 \\ 
+            0& -2& -2& 0
         \end{bmatrix}
-        \underset{F_4-F_1}{\stackrel{F_3+F_1}{\longrightarrow}}
+        \stackrel{F_2-F_1}{\longrightarrow}
         \begin{bmatrix}
-            1 & 1 & 0 & 0\\
-            0 & 2 & 1 & -2\\
-            0 & 2 & 1 & -2\\
-            0 & 0 & 0 & 0
+            1& 0& -1& 1 \\  
+            0& 2& 2& 0 \\ 
+            0& 1& 1& 0 \\ 
+            0& -2& -2& 0
         \end{bmatrix}
-        \stackrel{F_3-F_2}{\longrightarrow}
+        \underset{F_4+2F_3}{\stackrel{F_2-2F_3}{\longrightarrow}}
         \begin{bmatrix}
-            1 & 1 & 0 & 0\\
-            0 & 2 & 1 & -2\\
-            0 & 0 & 0 & 0\\
-            0 & 0 & 0 & 0
-        \end{bmatrix} 
-        \\
-        &\stackrel{F_2/2}{\longrightarrow}
-        \begin{bmatrix}
-            1 & 1 & 0 & 0\\
-            0 & 1 & \frac12 & -1\\
-            0 & 0 & 0 & 0\\
-            0 & 0 & 0 & 0
-        \end{bmatrix}
-        \underset{F_1-F_2}{\longrightarrow}
-        \begin{bmatrix}
-            1 & 0 & -\frac12 & 1\\
-            0 & 1 & \frac12 & -1\\
-            0 & 0 & 0 & 0\\
-            0 & 0 & 0 & 0
-        \end{bmatrix}.
+            1& 0& -1& 1 \\  
+            0& 0& 0& 0 \\ 
+            0& 1& 1& 0 \\ 
+            0& 0& 0& 0
+        \end{bmatrix} .
     \end{align*}
-    Luego  una base del subespacio es $\{(1,0,-\frac12,1), (0,1,\frac12,-1)\}$ y por lo tanto la dimensión es $2$.
+    Luego  una base del subespacio es $\{(1,0,-1,1), (0,1,1,0)\}$ y por lo tanto la dimensión es $2$.
 
 
     \vskip.3cm
