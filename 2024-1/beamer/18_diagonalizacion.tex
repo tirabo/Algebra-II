@@ -1,7 +1,7 @@
-%\documentclass{beamer} % descomentar para tener pausas
-\documentclass[handout]{beamer} % descomentar para no tener pausas
+\documentclass{beamer} % descomentar para tener pausas
+%\documentclass[handout]{beamer} % descomentar para no tener pausas
 \usetheme{CambridgeUS}
-%\setbeamertemplate{background}[grid][step=8 ] % cuadriculado
+\setbeamertemplate{background}[grid][step=8 ] % cuadriculado
 
 \usepackage{etex}
 \usepackage{t1enc}
@@ -112,12 +112,26 @@
 
 
 \begin{frame}
+    Repasemos:
+    \begin{proposicion}[(Proposición 5.6.3 de las Notas)]
+        Sean $V$ y $W$ espacios vectoriales de dimensión finita con bases ordenadas $\cB=\{v_1, ..., v_n\}$ y $\cB'=\{w_1, ..., w_m\}$, respectivamente. 
+        
+        Si $T:V\longrightarrow W$ es una transformación lineal, entonces
+        \begin{align*}
+        [T(v)]_{\cB'}=[T]_{\cB\cB'}[v]_{\cB}
+        \end{align*}
+        para todo $v\in V$.
+    \end{proposicion}
+
     \begin{observacion}
         Con sólo conocer cuanto vale la transformación en una base conocemos cuanto vale en todo el espacio.
 \vskip .4cm
 En efecto, a la matriz de la transformación la armamos calculando la transformación en los vectores de una base. Y la proposición anterior nos dice que para calcular la transformación en un vector cualquier debemos multiplicar por esa matriz.
     \end{observacion}
-    \pause
+\end{frame}
+
+\begin{frame}
+
 También vale  lo siguiente.
 \pause
 \begin{teorema}\label{th-tl-definida-en-base}
@@ -126,8 +140,9 @@ También vale  lo siguiente.
     T(v_j) = w_j, \quad j=1,\ldots,n.
     \end{equation*}
 \end{teorema}
-
+\vskip 2cm
 \end{frame}
+
 
 \begin{frame}
     \begin{corolario}[(de la Proposición 5.6.3 de las Notas)]\label{cor-cambio-de-base}
