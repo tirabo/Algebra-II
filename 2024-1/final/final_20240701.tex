@@ -1,0 +1,337 @@
+% PDFLaTeX \documentclass[a4paper,12pt,twoside,spanish]{amsbook} %\documentclass[a4paper,11pt,twoside]{book}
+%\documentclass[a4paper,11pt,twoside,spanish]{amsbook}
+
+%%%---------------------------------------------------
+   
+
+\usepackage{etex}
+\tolerance=10000
+\renewcommand{\baselinestretch}{1.1}
+
+\renewcommand{\familydefault}{\sfdefault} % la font por default es sans serif
+
+% Para hacer el  indice en linea de comando hacer 
+% makeindex main
+%% En http://www.tug.org/pracjourn/2006-1/hartke/hartke.pdf hay ejemplos de packages de fonts libres, como los siguientes:
+%\usepackage{cmbright}
+%\usepackage{pxfonts}
+%\usepackage[varg]{txfonts}
+%\usepackage{ccfonts}
+%\usepackage[math]{iwona}
+%\usepackage[math]{kurier}
+
+
+\usepackage{t1enc}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amsfonts,amssymb}
+\usepackage{amsthm}
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}
+\input{random.tex}        % From CTAN/macros/generic
+\usepackage{subfigure} 
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+%\usetikzlibrary{graphs}
+%\usepackage{tikz-3dplot} %for tikz-3dplot functionality
+%\usepackage{pgfplots}
+\usepackage{mathtools}
+\usepackage{stackrel}
+\usepackage{enumerate}
+\usepackage{tkz-graph}
+%\usepackage{makeidx}
+\usepackage{enumitem}
+\makeindex
+
+%%%----------------------------------------------------------------------------
+\usepackage[a4paper, top=3cm, left=3cm, right=2cm, bottom=2.5cm]{geometry}
+%% CONTROLADORES DE.
+% Tamaño de la hoja de impresión.
+% Tamaños de los laterales del documento. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% \theoremstyle{plain} %% This is the default
+%\oddsidemargin 0.0in \evensidemargin -1.0cm \topmargin 0in
+%\headheight .3in \headsep .2in \footskip .2in
+%\setlength{\textwidth}{16cm} %ancho para apunte
+%\setlength{\textheight}{21cm} %largo para apunte
+%%%%\leftmargin 2.5cm
+%%%%\rightmargin 2.5cm
+%\topmargin 0.5 cm
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+\usepackage{hypcap}
+
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+\newtheorem{teorema}{Teorema}[section]
+\newtheorem{proposicion}[teorema]{Proposición}
+\newtheorem{corolario}[teorema]{Corolario}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{propiedad}[teorema]{Propiedad}
+
+\theoremstyle{definition}
+
+\newtheorem{definicion}{Definición}[section]
+\newtheorem{ejemplo}{Ejemplo}[section]
+\newtheorem{problema}{Problema}[section]
+\newtheorem{ejercicio}{Ejercicio}[section]
+\newtheorem{ejerciciof}{}[section]
+
+\theoremstyle{remark}
+\newtheorem{observacion}{Observación}[section]
+\newtheorem{nota}{Nota}[section]
+
+\renewcommand{\partname }{Parte }
+\renewcommand{\indexname}{Indice }
+\renewcommand{\figurename }{Figura }
+\renewcommand{\tablename }{Tabla }
+\renewcommand{\proofname}{Demostración}
+\renewcommand{\appendixname }{}
+\renewcommand{\contentsname }{Contenidos }
+\renewcommand{\chaptername }{}
+\renewcommand{\bibname }{Bibliograf\'\i a }
+
+\newcommand{\img}{\operatorname{Im}}
+\newcommand{\nuc}{\operatorname{Nu}}
+\newcommand\im{\operatorname{Im}}
+\renewcommand\nu{\operatorname{Nu}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\renewcommand{\t}{{\operatorname{t}}}
+\renewcommand{\sin}{{\,\operatorname{sen}}}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\K}{\mathbb K}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Z}{\mathbb Z}
+
+\newcommand{\parcial}[2]{
+	\begin{center}
+		{\Large {Álgebra/Álgebra II/Álgebra Lineal} - 2024/1} \vskip.4cm
+		{\Large Parcial #1 - Tema #2}\vskip .4cm
+\end{center}}
+
+\newcommand{\recuperatorio}[1]{
+	\begin{center}
+		{\Large {Álgebra/Álgebra II/Álgebra Lineal} - 2024/1} \vskip.4cm
+		{\Large Parcial #1 -- Recuperatorio }\vskip .4cm
+\end{center}}
+
+\newcommand{\final}[1]{
+	\begin{center}
+		{\Large {Álgebra/Álgebra II/Álgebra Lineal}} \vskip.4cm
+		{\Large Examen Final -- #1}\vskip .4cm
+\end{center}}
+\renewenvironment{ejercicio}% environment name
+{% begin code
+	\par\vskip .5cm%
+	{\noindent\color{blue}Ejercicio}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\newenvironment{ejercicios}% environment name
+{% begin code
+	\par\vskip .5cm%
+	{\noindent\color{blue}Ejercicios}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+	
+	
+\newenvironment{ejercicios-teoricos}% environment name
+{% begin code
+	\par\vskip .5cm%
+	{\noindent\color{blue}Ejercicios teóricos}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+	
+\newenvironment{ejercicios-practicos}% environment name
+{% begin code
+	\par\vskip .5cm%
+	{\noindent\color{blue}Ejercicios prácticos}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+\newenvironment{solucion}% environment name
+{% begin code
+	\par\vskip .2cm%
+	{\noindent\color{blue}Solución}%
+	\vskip .2cm
+}%
+{%
+	\vskip .2cm}% end code
+
+
+
+\pagenumbering{gobble}
+
+\begin{document}
+	
+	%\frame{\titlepage} 
+	
+	
+
+	\final{1/7/2024}
+	
+	
+	
+	
+	
+	\noindent{Nombres y  apellidos: }
+	\vskip 0.1cm
+	\noindent{Correo UNC: }\hskip 8cm Carrera: 
+	
+	\vskip .4cm
+	
+	\noindent\textbf{Importante}
+	\begin{itemize}
+		\item Todos los resultados deben estar debidamente justificados, mostrando paso a paso la obtención de los mismos. 
+		\item No podés usar calculadora, celular o cualquier otro dispositivo electrónico mientras estés haciendo el
+		examen.
+		\item Los alumnos en Condición Regular no deben resolver el ítem (b) del Ejercicio 3: el puntaje  del mismo se les sumará automáticamente por revestir esta condición.
+	\end{itemize}
+	
+	{\noindent\color{blue}Ejercicios teóricos}%
+	\vskip .2cm
+	
+	\begin{enumerate}
+				\item {(10\%)} Demostrar que si $A,B$ son  matrices $n \times n$ invertibles, entonces $AB$ es una matriz invertible y decir cual es la inversa de $AB$.
+				\item {(10\%)} sudo a  pt clean  sudo apt autoremove
+	\end{enumerate}
+		
+
+	{\noindent\color{blue}Ejercicios}%
+	\vskip .2cm
+
+		\begin{enumerate}[resume]
+			
+		
+		\item 
+			\begin{enumerate}
+			\item {(5\%)} Describir de manera paramétrica el conjunto solución del sistema homogéneo:
+			\begin{align*}
+				\begin{cases}
+					2y  + z = 0\\
+					-x+ y+2z = 0\\
+					x + 3y  = 0
+				\end{cases}
+			\end{align*}
+			
+			\item {(5\%)} ({\bf solo alumnos libres}) Indicar cuál es la MERF asociada al sistema anterior. Debe justificar la respuesta.
+			
+			\end{enumerate}
+			
+			\vskip .2cm
+		
+		\item{(10\%)} Sea $A=\begin{bmatrix}
+			1 & -1 & 2\\3 & 2 & 1\\0 & 1 & -2
+		\end{bmatrix}$ la matriz
+			\begin{enumerate} 
+			\item Calcular el determinante de $A$.
+			\item Calcular la inversa de $A$. Usar el método explicado en clase, con operaciones de filas. 
+			\end{enumerate}
+		\vskip .2cm 
+		
+		\item{(20\%)} Sean $W_1$ y $W_2$ los siguientes subespacios de $\mathbb{R}^3$:
+		\begin{align*}
+			W_1 &= \{ (x,y,z)\in\mathbb{R}^3\ : \ x+y-2z=0\},  \\
+			W_2 &= {\left\langle(1,-1,1),(2,1,-2),(3,0,-1)\right\rangle}.
+		\end{align*}
+		\begin{enumerate}
+			\item Dar una base de $W_1$ (justificar).
+			\item  Determinar $W_1 \cap W_2$, y describirlo por generadores y con ecuaciones.
+			%\item  Determinar $W_1+W_2$, y describirlo por generadores y con ecuaciones.
+			%\item  ?`Es la suma $W_1+W_2$ directa?
+			%        \item  Dar un complemento de $W_1$.
+			%        \item  Dar un complemento de $W_2$.
+		\end{enumerate}
+	
+		\vskip .2cm
+		
+		\item{(20\%)}  Sea $T:P_{2} \longrightarrow P_{3}$, la transformación lineal definida $$T(ax+b)=(2a+3b)x^{2} +(a+b)x+ a-b.$$ 
+			\begin{enumerate}
+			\item Dar una base del núcleo y la imagen de $T$.
+			\item Dar la matriz de $T$ en las bases $\mathcal{B}_2=\{1,x+1\}$ y $\mathcal{B}_3=\{1,1+x,1+x+x^{2}\}$ de $P_{2}$ y $P_{3}$, respectivamente.
+			\end{enumerate}
+		\vskip .2cm 
+		\item {(10\%)} 
+		Sea $A=\begin{bmatrix}7 & 1\\2 & 8\end{bmatrix}$.
+			\begin{enumerate}
+			\item Calcular los autovalores de $A$.
+			
+			\item Describir paramétricamente los autoespacios asociados a los autovalores de $A$, y decidir si $A$ es diagonalizable.
+			\end{enumerate}
+			
+		\vskip .2cm 
+		\item {(10\%)} Sean $T: \R^{3} \to W$ y $S: W \to \R^{3}$ dos transformaciones lineales entre espacios vectoriales tal que $S \circ T(x,y,z) = (x+y,y+z,x+z)$.
+		\begin{enumerate}
+		\item {(2\%)} Probar que $Nu(S \circ T) =0$.
+		\item {(3\%)} Probar que  $S\circ T$ es biyectiva.
+		\item {(5\%)} Probar que $T$  es inyectiva.
+		\end{enumerate}
+
+		\end{enumerate}
+
+	
+	\vskip1cm
+	
+	\scriptsize
+	
+	\begin{tabular}{|c|c|c|c|cc|}
+		\hline
+		Ejercicio & \hspace{0.5cm} 1\hspace{0.5cm}  &\hspace{0.5cm}  2\hspace{0.5cm} & \hspace{0.5cm} 3\hspace{0.5cm} & \hspace{0.5cm} 4\hspace{0.5cm}&\\ \hline
+		&  & & & &\\
+		\% & &  & & & \\
+		&  & & & &\\ \hline
+	\end{tabular}
+	\hspace*{0.5cm}
+	\begin{tabular}{|c|}
+		\hline
+		\hspace{0.0cm} {\bf Total \%}\hspace{0.0cm}   \\ \hline
+		\\
+		\\
+		\\ \hline
+	\end{tabular}
+	\hspace*{0.5cm}
+	\begin{tabular}{|c|}
+		\hline
+		\hspace{0.3cm} {\bf Nota}\hspace{0.3cm}   \\ \hline
+		\\
+		\\
+		\\ \hline
+	\end{tabular}
+	
+		\begin{tabular}{|c|c|c|c|cc|}
+		\hline
+		Ejercicio & \hspace{0.5cm} 5\hspace{0.5cm}  &\hspace{0.5cm}  6\hspace{0.5cm} & \hspace{0.5cm} 7\hspace{0.5cm} & \hspace{0.5cm} 8\hspace{0.5cm}&\\ \hline
+		&  & & & &\\
+		\% & &  & & & \\
+		&  & & & &\\ \hline
+	\end{tabular}
+	
+\end{document}
+
