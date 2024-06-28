@@ -596,16 +596,17 @@
     \end{frame}
     
     
+
     
     \begin{frame}
         \begin{ejemplo}
             Sean las bases ordenadas de $\R^3$
-            $$\cB = \{(1,0,-1),(0,1,-1),(1,1,0)\}\quad \textbf{ y } \quad\cB' = \{e_1,e_2,e_3\}.$$ 
+            $$\cB = \{(1,0,-1),(0,1,-1),(1,1,-1)\}\quad \textbf{ y } \quad\cB' = \{e_1,e_2,e_3\}.$$ 
             Sea $T: \R^3 \to \R^3$ definida
             $$
             T(x,y,z) = (x-2y+z, x+y, -x-y+z),
             $$ 
-            y sea $v=(-4,4,6)$. Veamos  que 
+            y sea $v \in \R^3$. Veamos  que 
         \begin{align*}
             [T(v)]_{\cB'}=[T]_{\cB\cB'}[v]_{\cB}
             \end{align*}
@@ -614,113 +615,100 @@
             Primero debemos calcular (1) $[T(v)]_{\cB'}$,\; (2) $[v]_{\cB}$\; y \;(3) $[T]_{\cB\cB'}$.
         \end{solucion}	
     \end{frame}
-    
-    
+
+
     \begin{frame}
-        Aplicando la definición de $T$, calculamos
-        $$
-        T(-4,4,6) = (-6,0,6) = -6(1,0,0) +0(0,1,0) + 6(0,0,1).
-        $$
-        Es decir 
-        \begin{equation*}
-            [T(v)]_{\cB'} = \begin{bmatrix}
-                -6 \\0\\6
-            \end{bmatrix}.\tag{1}
-        \end{equation*}
-        \pause
-        Por otro  lado
+        Si $ v= (t_1, t_2, t_3)$, veamos como se escribe $v$ en la base $\cB$: $[v]_{\cB} = (x_1, x_2, x_3)$ si y solo si:
         \begin{align*}
-            (-4,4,6) = -7(1,0,-1) +1(0,1,-1)+3(1,1,0),
+            (t_1, t_2, t_3) &= x_1(1,0,-1) + x_2(0,1,-1) + x_3(1,1,-1)\\
+            &= (x_1, 0,-x_1) + (0, x_2, -x_2) + (x_3, x_3, -x_3)\\
+            &= (x_1+x_3, x_2+x_3, -x_1-x_2-x_3).
         \end{align*}
-        Luego
-        \begin{equation*}
-            [v]_{\cB} = \begin{bmatrix}
-                -7 \\1\\3
-            \end{bmatrix}.\tag{2}
-        \end{equation*}
+        Es decir 
+        \begin{align*}
+            t_1 = x_1+x_3, \quad t_2 = x_2+x_3, \quad t_3 = -x_1-x_2-x_3.
+        \end{align*}
+    Resolvamos ese sistema para encontrar $x_1, x_2, x_3$ en función de $t_1, t_2, t_3$.
+    \begin{align*}
+    &\left[\begin{array}{ccc|c}
+        1&0&1&t_1\\
+        0&1&1&t_2\\
+        -1&-1&-1&t_3
+    \end{array}\right]
+    \underset{F_3+F_2}{\stackrel{F_3+F_1}{\longrightarrow}}
+    \left[\begin{array}{ccc|c}
+        1&0&1&t_1\\
+        0&1&1&t_2\\
+        0&0&1&t_1+t_2+t_3
+    \end{array}\right] \\[10pt]
+    &\underset{F_2-F_3}{\stackrel{F_1-F_3}{\longrightarrow}}
+    \left[\begin{array}{ccc|c}
+        1&0&0&-t_2-t_3\\
+        0&1&0&-t_1-t_3\\
+        0&0&1&t_1+t_2+t_3
+    \end{array}\right]
+    \end{align*}
+
+
     \end{frame}
-    
+
     
     \begin{frame}
         
+        Por lo tanto, $x_1 = -t_2-t_3$, $x_2 = -t_1-t_3$ y $x_3 = t_1+t_2+t_3$. Es decir,
+        \begin{align}\label{matriz-v-B}	
+            [v]_{\cB} = \begin{bmatrix}
+                -t_2-t_3\\ -t_1-t_3\\t_1+t_2+t_3
+            \end{bmatrix}. \tag{*}
+        \end{align}
+        \pause
+        \vskip .6cm
+        Calculamos ahora $[T(v)]_{\cB'}$. Como $\cB'$  es la base canónica de $\R^3$, tenemos que si $v=(t_1, t_2, t_3)$, entonces $T(v) = (t_1-2t_2+t_3, t_1+t_2, -t_1-t_2+t_3)$, y por lo tanto 
+        \begin{align}\label{matriz-T-v-B'}
+            [T(v)]_{\cB'} = \begin{bmatrix}
+                t_1-2t_2+t_3\\ t_1+t_2\\ -t_1-t_2+t_3 \tag{**}
+            \end{bmatrix}.
+        \end{align}
+
+    \end{frame}
+
+
+    
+
+    \begin{frame}
+        
+        Finalmente,  calculemos  $[T]_{\cB\cB'}$. Para ello debemos calcular $T(1,0,-1)$, $T(0,1,-1)$ y $T(1,1,-1)$.
+
         \begin{align*}
-        \text{Finalmente, \quad}	T(1,0,-1) &= (0,1,-2)\\ 
-            T(0,1,-1) &= (-3,1,-2)\\
-            T(1,1,0) &= (-1,2,-2)\\
+            T(1,0,-1) &= (1-2\cdot 0-1, 1+0, -1-0-1) = (0,1,-2)\\
+            T(0,1,-1) &= (0-2\cdot 1-1, 0+1, -0-1-1) = (-3,1,-2)\\
+            T(1,1,-1) &= (1-2\cdot 1-1, 1+1, -1-1-1) = (-2,2,-3).
         \end{align*}
-        \vskip -.8cm\pause Luego
-        \begin{equation*}
-            [T]_{\cB \cB' } = \begin{bmatrix}
-                0&-3&1 \\1&1&2\\-2&-2&-2
-            \end{bmatrix}.\tag{3}
-        \end{equation*}
-        \pause
-        $\Rightarrow$
-        \pause
+
+        Por lo tanto
+        \begin{align}\label{matriz-T-B-B'}
+            [T]_{\cB\cB'} = \begin{bmatrix}
+                0&-3&-2\\ 1&1&2\\ -2&-2&-3
+            \end{bmatrix}. \tag{***}
+        \end{align}
+
+    \end{frame}
+
+
+    \begin{frame}
+
+        Debemos ahora comprobar que se cumple la proposición. Es decir, debemos comprobar que las matrices \eqref{matriz-v-B}, \eqref{matriz-T-v-B'} y \eqref{matriz-T-B-B'} cumplen que $[T]_{\cB\cB'}[v]_{\cB} = [T(v)]_{\cB'}$.
+
         \begin{align*}
             [T]_{\cB\cB'}[v]_{\cB} &= 
-            \begin{bmatrix} 0&-3&1 \\1&1&2\\-2&-2&-2\end{bmatrix} \begin{bmatrix}-7 \\1\\3\end{bmatrix}
-            =   \begin{bmatrix}	-6 \\0\\6\end{bmatrix}\\
+            \begin{bmatrix} 0&-3&-2\\ 1&1&2\\ -2&-2&-3\end{bmatrix} \begin{bmatrix}-t_2-t_3 \\-t_1-t_3\\ t_1+t_2+t_3\end{bmatrix} \\
+            &=   \begin{bmatrix}	t_1-2t_2+t_3 \\ t_1+t_2\\ -t_1-t_2+t_3\end{bmatrix}\\
             &= [T(v)]_{\cB'}.
-            \end{align*}\qed
+        \end{align*}
+        \qed
     \end{frame}
-    
-    
-    
-    \begin{frame}
-    ¿Por  qué se  cumple esta ``mágica'' igualdad? 
-    \vskip .4cm\pause
-    Escribiendo $v$ como combinación lineal de la base $\cB'$ y luego  calculando $T(v)$ se devela  el ``misterio''.\pause En  nuestro caso 
-    $$
-    v = (-4,4,6) = -7(1,0,-1)+ 1(0,1,-1)+3(1,1,0),
-    $$
-    Luego,
-        \begin{align*}
-            T(-4,4,6) &= T(-7(1,0,-1)+ 1(0,1,-1)+3(1,1,0)) \\ \noalign{\vskip.2cm}
-            &= -7T(1,0,-1)+ 1T(0,1,-1)+3T(1,1,0) \\\noalign{\vskip.2cm}
-            &= -7(0,1,2) +1(-3,1,-2) +3(-1,2,-2) \\\noalign{\vskip.2cm}
-            &=
-            \begin{bmatrix*}[l]
-                -7\cdot 0 &+& 1\cdot (-3) &+&3 \cdot (-1) \\
-                -7\cdot 1 &+& 1\cdot 1 &+&3 \cdot 2\\ 
-                -7\cdot 2 &+& 1\cdot (-2) &+&3 \cdot (-2)
-            \end{bmatrix*} =  [T(v)]_{\cB'}
-        \end{align*}	
-        \vskip .4cm 
-        
-    
-    
-    \end{frame}
-    
-    \begin{frame}
-        Repasando \pause
-        $$
-        [T]_{\cB \cB'} = \begin{bmatrix} 0&-3&1 \\1&1&2\\-2&-2&-2\end{bmatrix},
-        $$\pause
-        $$
-        [v]_{\cB} = \begin{bmatrix}-7 \\1\\3\end{bmatrix}
-        $$\pause
-        $$
-        [T(v)]_{\cB'} =\begin{bmatrix*}[l]
-            -7\cdot 0 &+& 1\cdot (-3) &+&3 \cdot (-1) \\
-            -7\cdot 1 &+& 1\cdot 1 &+&3 \cdot 2\\ 
-            -7\cdot 2 &+& 1\cdot (-2) &+&3 \cdot (-2)
-        \end{bmatrix*}
-        $$\pause
-        Es decir 
-        \begin{equation*}
-            \underbrace{\begin{bmatrix} 0&-3&1 \\1&1&2\\-2&-2&-2\end{bmatrix}}_{[T]_{\cB \cB' }} 
-            \underbrace{\begin{bmatrix}-7 \\1\\3\end{bmatrix}}_{[v]_{\cB}}= 
-            \underbrace{
-                \begin{bmatrix*}[l]
-                    -7\cdot 0 &+& 1\cdot (-3) &+&3 \cdot (-1) \\
-                    -7\cdot 1 &+& 1\cdot 1 &+&3 \cdot 2\\ 
-                    -7\cdot 2 &+& 1\cdot (-2) &+&3 \cdot (-2)
-                \end{bmatrix*}}_{ [T(v)]_{\cB'}}
-        \end{equation*}
-    \end{frame}
-    
-    
+
+
     
     
 \end{document}
